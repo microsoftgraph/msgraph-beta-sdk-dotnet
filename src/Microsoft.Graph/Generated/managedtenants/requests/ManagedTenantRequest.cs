@@ -252,6 +252,12 @@ namespace Microsoft.Graph.ManagedTenants
                     // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.AggregatedPolicyCompliances.AdditionalData = managedTenantToInitialize.AdditionalData;
                 }
+                if (managedTenantToInitialize.AppPerformances != null && managedTenantToInitialize.AppPerformances.CurrentPage != null)
+                {
+                    managedTenantToInitialize.AppPerformances.InitializeNextPageRequest(this.Client, managedTenantToInitialize.AppPerformancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.AppPerformances.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
                 if (managedTenantToInitialize.AuditEvents != null && managedTenantToInitialize.AuditEvents.CurrentPage != null)
                 {
                     managedTenantToInitialize.AuditEvents.InitializeNextPageRequest(this.Client, managedTenantToInitialize.AuditEventsNextLink);
@@ -288,11 +294,23 @@ namespace Microsoft.Graph.ManagedTenants
                     // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.CredentialUserRegistrationsSummaries.AdditionalData = managedTenantToInitialize.AdditionalData;
                 }
+                if (managedTenantToInitialize.DeviceAppPerformances != null && managedTenantToInitialize.DeviceAppPerformances.CurrentPage != null)
+                {
+                    managedTenantToInitialize.DeviceAppPerformances.InitializeNextPageRequest(this.Client, managedTenantToInitialize.DeviceAppPerformancesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.DeviceAppPerformances.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
                 if (managedTenantToInitialize.DeviceCompliancePolicySettingStateSummaries != null && managedTenantToInitialize.DeviceCompliancePolicySettingStateSummaries.CurrentPage != null)
                 {
                     managedTenantToInitialize.DeviceCompliancePolicySettingStateSummaries.InitializeNextPageRequest(this.Client, managedTenantToInitialize.DeviceCompliancePolicySettingStateSummariesNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.DeviceCompliancePolicySettingStateSummaries.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
+                if (managedTenantToInitialize.DeviceHealthStatuses != null && managedTenantToInitialize.DeviceHealthStatuses.CurrentPage != null)
+                {
+                    managedTenantToInitialize.DeviceHealthStatuses.InitializeNextPageRequest(this.Client, managedTenantToInitialize.DeviceHealthStatusesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.DeviceHealthStatuses.AdditionalData = managedTenantToInitialize.AdditionalData;
                 }
                 if (managedTenantToInitialize.ManagedDeviceCompliances != null && managedTenantToInitialize.ManagedDeviceCompliances.CurrentPage != null)
                 {

@@ -55,6 +55,13 @@ namespace Microsoft.Graph
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
+        /// <summary>
+        /// Gets or sets role scope tag ids.
+        /// List of Scope Tags for this Entity instance
+        /// </summary>
+        [JsonPropertyName("roleScopeTagIds")]
+        public IEnumerable<string> RoleScopeTagIds { get; set; }
+    
     }
 }
 

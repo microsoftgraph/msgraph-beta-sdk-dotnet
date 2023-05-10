@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new ManagedAppConfigurationRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for Settings.
+        /// </summary>
+        /// <returns>The <see cref="IManagedAppConfigurationSettingsCollectionRequestBuilder"/>.</returns>
+        public IManagedAppConfigurationSettingsCollectionRequestBuilder Settings
+        {
+            get
+            {
+                return new ManagedAppConfigurationSettingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("settings"), this.Client);
+            }
+        }
+    
     }
 }

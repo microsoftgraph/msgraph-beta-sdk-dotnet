@@ -260,6 +260,12 @@ namespace Microsoft.Graph
         IDeviceManagementReusableSettingsCollectionRequestBuilder ReusableSettings { get; }
 
         /// <summary>
+        /// Gets the request builder for TemplateInsights.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementTemplateInsightsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementTemplateInsightsCollectionRequestBuilder TemplateInsights { get; }
+
+        /// <summary>
         /// Gets the request builder for TemplateSettings.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementTemplateSettingsCollectionRequestBuilder"/>.</returns>
@@ -426,12 +432,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementMobileAppTroubleshootingEventsCollectionRequestBuilder"/>.</returns>
         IDeviceManagementMobileAppTroubleshootingEventsCollectionRequestBuilder MobileAppTroubleshootingEvents { get; }
-
-        /// <summary>
-        /// Gets the request builder for OemWarrantyInformationOnboarding.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementOemWarrantyInformationOnboardingCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementOemWarrantyInformationOnboardingCollectionRequestBuilder OemWarrantyInformationOnboarding { get; }
 
         /// <summary>
         /// Gets the request builder for RemoteActionAudits.

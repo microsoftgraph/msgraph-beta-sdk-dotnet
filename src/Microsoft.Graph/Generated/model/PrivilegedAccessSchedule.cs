@@ -31,30 +31,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
+        /// When the schedule was created. Optional.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created using.
+        /// The identifier of the access assignment or eligibility request that created this schedule. Optional.
         /// </summary>
         [JsonPropertyName("createdUsing")]
         public string CreatedUsing { get; set; }
     
         /// <summary>
         /// Gets or sets modified date time.
+        /// When the schedule was last modified. Optional.
         /// </summary>
         [JsonPropertyName("modifiedDateTime")]
         public DateTimeOffset? ModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets schedule info.
+        /// Represents the period of the access assignment or eligibility. The scheduleInfo can represent a single occurrence or multiple recurring instances. Required.
         /// </summary>
         [JsonPropertyName("scheduleInfo")]
         public RequestSchedule ScheduleInfo { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// The status of the access assignment or eligibility request. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable. Optional.
         /// </summary>
         [JsonPropertyName("status")]
         public string Status { get; set; }

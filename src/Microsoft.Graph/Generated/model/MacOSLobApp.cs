@@ -50,13 +50,6 @@ namespace Microsoft.Graph
         public IEnumerable<MacOSLobChildApp> ChildApps { get; set; }
     
         /// <summary>
-        /// Gets or sets identity version.
-        /// The identity version. This property is being deprecated in 2211(November 2022).
-        /// </summary>
-        [JsonPropertyName("identityVersion")]
-        public string IdentityVersion { get; set; }
-    
-        /// <summary>
         /// Gets or sets ignore version detection.
         /// When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature.
         /// </summary>

@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets definitions.
+        /// A generic representation of a team template definition for a team with a specific structure and configuration.
         /// </summary>
         [JsonPropertyName("definitions")]
         public ITeamTemplateDefinitionsCollectionPage Definitions { get; set; }

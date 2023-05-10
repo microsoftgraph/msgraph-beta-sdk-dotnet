@@ -22,6 +22,12 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets content meta data.
+        /// </summary>
+        [JsonPropertyName("contentMetaData")]
+        public ClassificationRequestContentMetaData ContentMetaData { get; set; }
+    
+        /// <summary>
         /// Gets or sets file extension.
         /// </summary>
         [JsonPropertyName("fileExtension")]

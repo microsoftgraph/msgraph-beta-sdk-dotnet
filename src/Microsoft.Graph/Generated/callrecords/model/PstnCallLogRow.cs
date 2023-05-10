@@ -30,14 +30,14 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets calleeNumber.
-        /// Number dialed in E.164 format.
+        /// Number of the user or bot who received the call (E.164).
         /// </summary>
         [JsonPropertyName("calleeNumber")]
         public string CalleeNumber { get; set; }
     
         /// <summary>
         /// Gets or sets callerNumber.
-        /// Number that received the call for inbound calls or the number dialed for outbound calls. E.164 format.
+        /// Number of the user or bot who made the call (E.164).
         /// </summary>
         [JsonPropertyName("callerNumber")]
         public string CallerNumber { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets callType.
-        /// Whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.
+        /// Indicates whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.
         /// </summary>
         [JsonPropertyName("callType")]
         public string CallType { get; set; }
@@ -79,14 +79,14 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets currency.
-        /// Type of currency used to calculate the cost of the call. For details, see ISO 4217.
+        /// Type of currency used to calculate the cost of the call (ISO 4217).
         /// </summary>
         [JsonPropertyName("currency")]
         public string Currency { get; set; }
     
         /// <summary>
         /// Gets or sets destinationContext.
-        /// Whether the call was domestic (within a country or region) or international (outside a country or region) based on the user's location.
+        /// Indicates whether the call was Domestic (within a country or region) or International (outside a country or region) based on the user's location.
         /// </summary>
         [JsonPropertyName("destinationContext")]
         public string DestinationContext { get; set; }
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets id.
-        /// Unique call identifier. GUID.
+        /// Unique call identifier (GUID).
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }
@@ -139,6 +139,13 @@ namespace Microsoft.Graph.CallRecords
         /// </summary>
         [JsonPropertyName("operator")]
         public string Operator { get; set; }
+    
+        /// <summary>
+        /// Gets or sets otherPartyCountryCode.
+        /// Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.
+        /// </summary>
+        [JsonPropertyName("otherPartyCountryCode")]
+        public string OtherPartyCountryCode { get; set; }
     
         /// <summary>
         /// Gets or sets startDateTime.
@@ -170,7 +177,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets userId.
-        /// Calling user's ID in Graph. GUID. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).
+        /// The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types (ucap_in, ucap_out).
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }

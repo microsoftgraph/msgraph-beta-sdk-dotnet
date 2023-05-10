@@ -309,7 +309,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets registered owners.
-        /// The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
+        /// The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("registeredOwners")]
         public IDeviceRegisteredOwnersCollectionWithReferencesPage RegisteredOwners { get; set; }

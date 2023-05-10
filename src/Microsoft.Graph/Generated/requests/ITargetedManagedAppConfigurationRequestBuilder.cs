@@ -57,6 +57,13 @@ namespace Microsoft.Graph
             IEnumerable<TargetedManagedAppPolicyAssignment> assignments = null);
 
         /// <summary>
+        /// Gets the request builder for TargetedManagedAppConfigurationChangeSettings.
+        /// </summary>
+        /// <returns>The <see cref="ITargetedManagedAppConfigurationChangeSettingsRequestBuilder"/>.</returns>
+        ITargetedManagedAppConfigurationChangeSettingsRequestBuilder ChangeSettings(
+            IEnumerable<DeviceManagementConfigurationSetting> settings = null);
+
+        /// <summary>
         /// Gets the request builder for TargetedManagedAppConfigurationTargetApps.
         /// </summary>
         /// <returns>The <see cref="ITargetedManagedAppConfigurationTargetAppsRequestBuilder"/>.</returns>

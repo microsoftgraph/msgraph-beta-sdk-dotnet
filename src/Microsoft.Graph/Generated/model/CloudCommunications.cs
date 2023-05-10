@@ -17,21 +17,9 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Cloud Communications.
     /// </summary>
-    public partial class CloudCommunications : Entity
+    [JsonConverter(typeof(DerivedTypeConverter<CloudCommunications>))]
+    public partial class CloudCommunications
     {
-    
-        /// <summary>
-        /// Gets or sets calls.
-        /// </summary>
-        [JsonPropertyName("calls")]
-        public ICloudCommunicationsCallsCollectionPage Calls { get; set; }
-
-        /// <summary>
-        /// Gets or sets callsNextLink.
-        /// </summary>
-        [JsonPropertyName("calls@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string CallsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets call records.
@@ -45,6 +33,19 @@ namespace Microsoft.Graph
         [JsonPropertyName("callRecords@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string CallRecordsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets calls.
+        /// </summary>
+        [JsonPropertyName("calls")]
+        public ICloudCommunicationsCallsCollectionPage Calls { get; set; }
+
+        /// <summary>
+        /// Gets or sets callsNextLink.
+        /// </summary>
+        [JsonPropertyName("calls@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string CallsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets online meetings.
@@ -71,6 +72,18 @@ namespace Microsoft.Graph
         [JsonPropertyName("presences@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string PresencesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonPropertyName("@odata.type")]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

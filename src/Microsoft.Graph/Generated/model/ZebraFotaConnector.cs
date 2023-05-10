@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets state.
-        /// The Zebra connector state. Possible values are: none, connected, disconnected, unknownFutureValue.
+        /// The Zebra connector state.
         /// </summary>
         [JsonPropertyName("state")]
         public ZebraFotaConnectorState? State { get; set; }

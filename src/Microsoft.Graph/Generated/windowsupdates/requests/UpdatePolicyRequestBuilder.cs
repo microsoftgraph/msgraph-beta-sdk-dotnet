@@ -53,12 +53,12 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <summary>
         /// Gets the request builder for Audience.
         /// </summary>
-        /// <returns>The <see cref="IDeploymentAudienceWithReferenceRequestBuilder"/>.</returns>
-        public IDeploymentAudienceWithReferenceRequestBuilder Audience
+        /// <returns>The <see cref="IDeploymentAudienceRequestBuilder"/>.</returns>
+        public IDeploymentAudienceRequestBuilder Audience
         {
             get
             {
-                return new DeploymentAudienceWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("audience"), this.Client);
+                return new DeploymentAudienceRequestBuilder(this.AppendSegmentToRequestUrl("audience"), this.Client);
             }
         }
 

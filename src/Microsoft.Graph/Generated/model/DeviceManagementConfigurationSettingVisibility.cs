@@ -35,5 +35,10 @@ namespace Microsoft.Graph
         /// </summary>
         Template = 2,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 4,
+	
     }
 }

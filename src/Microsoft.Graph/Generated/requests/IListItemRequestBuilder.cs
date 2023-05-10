@@ -77,7 +77,8 @@ namespace Microsoft.Graph
             DateTimeOffset? expirationDateTime = null,
             string password = null,
             IEnumerable<DriveRecipient> recipients = null,
-            bool? retainInheritedPermissions = null);
+            bool? retainInheritedPermissions = null,
+            bool? sendNotification = null);
 
         /// <summary>
         /// Gets the request builder for ListItemGetActivitiesByInterval.

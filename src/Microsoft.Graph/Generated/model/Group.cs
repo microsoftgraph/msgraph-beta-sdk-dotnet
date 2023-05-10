@@ -59,7 +59,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
-        /// Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+        /// Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -271,6 +271,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("securityIdentifier")]
         public string SecurityIdentifier { get; set; }
+    
+        /// <summary>
+        /// Gets or sets service provisioning errors.
+        /// </summary>
+        [JsonPropertyName("serviceProvisioningErrors")]
+        public IEnumerable<ServiceProvisioningError> ServiceProvisioningErrors { get; set; }
     
         /// <summary>
         /// Gets or sets theme.

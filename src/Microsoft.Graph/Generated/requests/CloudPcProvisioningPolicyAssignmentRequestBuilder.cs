@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new CloudPcProvisioningPolicyAssignmentRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for AssignedUsers.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcProvisioningPolicyAssignmentAssignedUsersCollectionWithReferencesRequestBuilder"/>.</returns>
+        public ICloudPcProvisioningPolicyAssignmentAssignedUsersCollectionWithReferencesRequestBuilder AssignedUsers
+        {
+            get
+            {
+                return new CloudPcProvisioningPolicyAssignmentAssignedUsersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("assignedUsers"), this.Client);
+            }
+        }
+    
     }
 }

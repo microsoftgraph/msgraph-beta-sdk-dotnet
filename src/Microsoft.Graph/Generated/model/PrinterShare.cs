@@ -67,6 +67,7 @@ namespace Microsoft.Graph
         /// Gets or sets allowed users.
         /// The users who have access to print using the printer.
         /// </summary>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("allowedUsers")]
         public IPrinterShareAllowedUsersCollectionWithReferencesPage AllowedUsers { get; set; }
 

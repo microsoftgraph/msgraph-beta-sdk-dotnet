@@ -111,6 +111,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets open shift change requests.
+        /// The open shift requests in the schedule.
         /// </summary>
         [JsonPropertyName("openShiftChangeRequests")]
         public IScheduleOpenShiftChangeRequestsCollectionPage OpenShiftChangeRequests { get; set; }
@@ -124,6 +125,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets open shifts.
+        /// The set of open shifts in a scheduling group in the schedule.
         /// </summary>
         [JsonPropertyName("openShifts")]
         public IScheduleOpenShiftsCollectionPage OpenShifts { get; set; }
@@ -165,6 +167,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets swap shifts change requests.
+        /// The swap requests for shifts in the schedule.
         /// </summary>
         [JsonPropertyName("swapShiftsChangeRequests")]
         public IScheduleSwapShiftsChangeRequestsCollectionPage SwapShiftsChangeRequests { get; set; }
@@ -205,6 +208,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets time off requests.
+        /// The time off requests in the schedule.
         /// </summary>
         [JsonPropertyName("timeOffRequests")]
         public IScheduleTimeOffRequestsCollectionPage TimeOffRequests { get; set; }

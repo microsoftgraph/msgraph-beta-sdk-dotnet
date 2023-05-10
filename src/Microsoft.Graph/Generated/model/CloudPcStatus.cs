@@ -72,7 +72,17 @@ namespace Microsoft.Graph
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 999,
+        UnknownFutureValue = 10,
+	
+        /// <summary>
+        /// Moving Region
+        /// </summary>
+        MovingRegion = 11,
+	
+        /// <summary>
+        /// Resize Pending License
+        /// </summary>
+        ResizePendingLicense = 12,
 	
     }
 }

@@ -184,5 +184,10 @@ namespace Microsoft.Graph
         /// </summary>
         ServiceProvider = 32,
 	
+        /// <summary>
+        /// Microsoft Admin Portals
+        /// </summary>
+        MicrosoftAdminPortals = 33,
+	
     }
 }

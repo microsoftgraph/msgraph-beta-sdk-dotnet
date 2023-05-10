@@ -110,7 +110,16 @@ namespace Microsoft.Graph
             }
         }
     
-        
+        /// <summary>
+        /// Gets the request builder for OrgContactRetryServiceProvisioning.
+        /// </summary>
+        /// <returns>The <see cref="IOrgContactRetryServiceProvisioningRequestBuilder"/>.</returns>
+        public IOrgContactRetryServiceProvisioningRequestBuilder RetryServiceProvisioning()
+        {
+            return new OrgContactRetryServiceProvisioningRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.retryServiceProvisioning"),
+                this.Client);
+        }
     
     }
 }

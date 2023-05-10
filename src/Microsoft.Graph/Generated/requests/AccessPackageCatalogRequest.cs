@@ -246,6 +246,12 @@ namespace Microsoft.Graph
 
             if (accessPackageCatalogToInitialize != null)
             {
+                if (accessPackageCatalogToInitialize.AccessPackageCustomWorkflowExtensions != null && accessPackageCatalogToInitialize.AccessPackageCustomWorkflowExtensions.CurrentPage != null)
+                {
+                    accessPackageCatalogToInitialize.AccessPackageCustomWorkflowExtensions.InitializeNextPageRequest(this.Client, accessPackageCatalogToInitialize.AccessPackageCustomWorkflowExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    accessPackageCatalogToInitialize.AccessPackageCustomWorkflowExtensions.AdditionalData = accessPackageCatalogToInitialize.AdditionalData;
+                }
                 if (accessPackageCatalogToInitialize.AccessPackageResourceRoles != null && accessPackageCatalogToInitialize.AccessPackageResourceRoles.CurrentPage != null)
                 {
                     accessPackageCatalogToInitialize.AccessPackageResourceRoles.InitializeNextPageRequest(this.Client, accessPackageCatalogToInitialize.AccessPackageResourceRolesNextLink);

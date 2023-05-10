@@ -71,6 +71,13 @@ namespace Microsoft.Graph
         public RegistrationEnforcement RegistrationEnforcement { get; set; }
     
         /// <summary>
+        /// Gets or sets system credential preferences.
+        /// Prompt users with their most-preferred credential for multifactor authentication.
+        /// </summary>
+        [JsonPropertyName("systemCredentialPreferences")]
+        public SystemCredentialPreferences SystemCredentialPreferences { get; set; }
+    
+        /// <summary>
         /// Gets or sets authentication method configurations.
         /// Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
         /// </summary>

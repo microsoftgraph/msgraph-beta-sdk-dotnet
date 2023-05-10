@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets sign in preferences.
+        /// The settings and preferences for to the sign-in experience of a user.
+        /// </summary>
+        [JsonPropertyName("signInPreferences")]
+        public SignInPreferences SignInPreferences { get; set; }
+    
+        /// <summary>
         /// Gets or sets email methods.
         /// Represents the email addresses registered to a user for authentication.
         /// </summary>

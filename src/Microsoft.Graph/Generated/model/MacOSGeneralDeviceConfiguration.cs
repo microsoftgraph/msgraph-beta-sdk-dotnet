@@ -30,6 +30,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets activation lock when supervised allowed.
+        /// When TRUE, activation lock is allowed when the devices is in the supervised mode. When FALSE, activation lock is not allowed. Default is false.
+        /// </summary>
+        [JsonPropertyName("activationLockWhenSupervisedAllowed")]
+        public bool? ActivationLockWhenSupervisedAllowed { get; set; }
+    
+        /// <summary>
         /// Gets or sets adding game center friends blocked.
         /// Yes prevents users from adding friends to Game Center. Available for devices running macOS versions 10.13 and later.
         /// </summary>

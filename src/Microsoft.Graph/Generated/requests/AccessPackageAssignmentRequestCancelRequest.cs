@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AccessPackageAssignmentRequestCancelRequest.
     /// </summary>
+    [Obsolete("")]
     public partial class AccessPackageAssignmentRequestCancelRequest : BaseRequest, IAccessPackageAssignmentRequestCancelRequest
     {
         /// <summary>

@@ -58,6 +58,12 @@ namespace Microsoft.Graph
         public PrivilegedAccessRoot PrivilegedAccess { get; set; }
     
         /// <summary>
+        /// Gets or sets role management alerts.
+        /// </summary>
+        [JsonPropertyName("roleManagementAlerts")]
+        public RoleManagementAlert RoleManagementAlerts { get; set; }
+    
+        /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
         [JsonPropertyName("@odata.type")]

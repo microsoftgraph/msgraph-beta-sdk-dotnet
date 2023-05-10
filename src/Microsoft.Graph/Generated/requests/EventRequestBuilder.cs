@@ -152,14 +152,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventAcceptRequestBuilder"/>.</returns>
         public IEventAcceptRequestBuilder Accept(
-            string Comment = null,
-            bool? SendResponse = null)
+            bool? SendResponse = null,
+            string Comment = null)
         {
             return new EventAcceptRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.accept"),
                 this.Client,
-                Comment,
-                SendResponse);
+                SendResponse,
+                Comment);
         }
 
         /// <summary>
@@ -167,16 +167,16 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventDeclineRequestBuilder"/>.</returns>
         public IEventDeclineRequestBuilder Decline(
-            string Comment = null,
+            TimeSlot ProposedNewTime = null,
             bool? SendResponse = null,
-            TimeSlot ProposedNewTime = null)
+            string Comment = null)
         {
             return new EventDeclineRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.decline"),
                 this.Client,
-                Comment,
+                ProposedNewTime,
                 SendResponse,
-                ProposedNewTime);
+                Comment);
         }
 
         /// <summary>
@@ -223,16 +223,16 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventTentativelyAcceptRequestBuilder"/>.</returns>
         public IEventTentativelyAcceptRequestBuilder TentativelyAccept(
-            string Comment = null,
+            TimeSlot ProposedNewTime = null,
             bool? SendResponse = null,
-            TimeSlot ProposedNewTime = null)
+            string Comment = null)
         {
             return new EventTentativelyAcceptRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.tentativelyAccept"),
                 this.Client,
-                Comment,
+                ProposedNewTime,
                 SendResponse,
-                ProposedNewTime);
+                Comment);
         }
     
     }

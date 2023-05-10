@@ -22,13 +22,13 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication strength.
+        /// Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy.
         /// </summary>
         [JsonPropertyName("authenticationStrength")]
         public AuthenticationStrengthRoot AuthenticationStrength { get; set; }
     
         /// <summary>
         /// Gets or sets authentication strengths.
-        /// Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy .
         /// </summary>
         [Obsolete("The 'authenticationStrengths' segment is deprecated. Please use 'authenticationStrength' instead.")]
         [JsonPropertyName("authenticationStrengths")]

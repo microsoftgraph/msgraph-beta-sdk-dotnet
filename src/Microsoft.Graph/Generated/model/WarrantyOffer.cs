@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
-        /// Warranty offer type. Possible values are: unknown, manufacturer, contractual, unknownFutureValue.
+        /// Warranty offer type
         /// </summary>
         [JsonPropertyName("type")]
         public WarrantyType? Type { get; set; }

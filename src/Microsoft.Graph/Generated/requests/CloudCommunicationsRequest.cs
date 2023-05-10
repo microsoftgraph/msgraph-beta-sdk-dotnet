@@ -246,17 +246,17 @@ namespace Microsoft.Graph
 
             if (cloudCommunicationsToInitialize != null)
             {
-                if (cloudCommunicationsToInitialize.Calls != null && cloudCommunicationsToInitialize.Calls.CurrentPage != null)
-                {
-                    cloudCommunicationsToInitialize.Calls.InitializeNextPageRequest(this.Client, cloudCommunicationsToInitialize.CallsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    cloudCommunicationsToInitialize.Calls.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
-                }
                 if (cloudCommunicationsToInitialize.CallRecords != null && cloudCommunicationsToInitialize.CallRecords.CurrentPage != null)
                 {
                     cloudCommunicationsToInitialize.CallRecords.InitializeNextPageRequest(this.Client, cloudCommunicationsToInitialize.CallRecordsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     cloudCommunicationsToInitialize.CallRecords.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
+                }
+                if (cloudCommunicationsToInitialize.Calls != null && cloudCommunicationsToInitialize.Calls.CurrentPage != null)
+                {
+                    cloudCommunicationsToInitialize.Calls.InitializeNextPageRequest(this.Client, cloudCommunicationsToInitialize.CallsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    cloudCommunicationsToInitialize.Calls.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
                 }
                 if (cloudCommunicationsToInitialize.OnlineMeetings != null && cloudCommunicationsToInitialize.OnlineMeetings.CurrentPage != null)
                 {

@@ -22,57 +22,64 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets assignment filter management type.
+        /// Indicates filter is applied to either 'devices' or 'apps' management type. Possible values are devices, apps. Default filter will be applied to 'devices'. Possible values are: devices, apps, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("assignmentFilterManagementType")]
+        public AssignmentFilterManagementType? AssignmentFilterManagementType { get; set; }
+    
+        /// <summary>
         /// Gets or sets created date time.
-        /// Creation time of the Assignment Filter.
+        /// The creation time of the assignment filter. The value cannot be modified and is automatically populated during new assignment filter process. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// Description of the Assignment Filter.
+        /// Optional description of the Assignment Filter.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// DisplayName of the Assignment Filter.
+        /// The name of the Assignment Filter.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// Last modified time of the Assignment Filter.
+        /// Last modified time of the Assignment Filter. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets payloads.
-        /// Associated assignments for a specific filter
+        /// Indicates associated assignments for a specific filter.
         /// </summary>
         [JsonPropertyName("payloads")]
         public IEnumerable<PayloadByFilter> Payloads { get; set; }
     
         /// <summary>
         /// Gets or sets platform.
-        /// Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
+        /// Indicates filter is applied to which flatform. Possible values are android,androidForWork,iOS,macOS,windowsPhone81,windows81AndLater,windows10AndLater,androidWorkProfile, unknown, androidAOSP,androidMobileApplicationManagement, iOSMobileApplicationManagement. Default filter will be applied to 'unknown'. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown, androidAOSP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("platform")]
         public DevicePlatformType? Platform { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tags.
-        /// RoleScopeTags of the Assignment Filter.
+        /// Indicates role scope tags assigned for the assignment filter.
         /// </summary>
         [JsonPropertyName("roleScopeTags")]
         public IEnumerable<string> RoleScopeTags { get; set; }
     
         /// <summary>
         /// Gets or sets rule.
-        /// Rule definition of the Assignment Filter.
+        /// Rule definition of the assignment filter.
         /// </summary>
         [JsonPropertyName("rule")]
         public string Rule { get; set; }

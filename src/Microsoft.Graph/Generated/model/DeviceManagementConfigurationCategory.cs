@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets category description.
-        /// Description of the category header
+        /// Description of the category header in policy summary.
         /// </summary>
         [JsonPropertyName("categoryDescription")]
         public string CategoryDescription { get; set; }
@@ -37,21 +37,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// Description of the item
+        /// Description of the category. For example: Display
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// Display name of the item
+        /// Name of the category. For example: Device Lock
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets help text.
-        /// Help text of the item
+        /// Help text of the category. Give more details of the category.
         /// </summary>
         [JsonPropertyName("helpText")]
         public string HelpText { get; set; }
@@ -65,14 +65,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets parent category id.
-        /// Parent id of the category.
+        /// Direct parent id of the category. If the category is the root, the parent id is same as its id.
         /// </summary>
         [JsonPropertyName("parentCategoryId")]
         public string ParentCategoryId { get; set; }
     
         /// <summary>
         /// Gets or sets platforms.
-        /// Platforms types, which settings in the category have. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
+        /// Platforms types, which settings in the category have. Possible values are: none. android, androidEnterprise, iOs, macOs, windows10X, windows10, aosp, and linux. If this property is not set, or set to none, returns categories in all platforms. Supports: $filters, $select. Read-only. Possible values are: none, android, iOS, macOS, windows10X, windows10, linux, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("platforms")]
         public DeviceManagementConfigurationPlatforms? Platforms { get; set; }
@@ -86,14 +86,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets setting usage.
-        /// Indicates that the category contains settings that are used for Compliance or Configuration. Possible values are: none, configuration, compliance.
+        /// Indicates that the category contains settings that are used for compliance, configuration, or reusable settings. Possible values are: configuration, compliance, reusableSetting. Each setting usage has separate API end-point to call. Read-only. Possible values are: none, configuration, compliance, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("settingUsage")]
         public DeviceManagementConfigurationSettingUsage? SettingUsage { get; set; }
     
         /// <summary>
         /// Gets or sets technologies.
-        /// Technologies types, which settings in the category have. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, enrollment, endpointPrivilegeManagement, unknownFutureValue.
+        /// Technologies types, which settings in the category have. Possible values are: none, mdm, configManager, intuneManagementExtension, thirdParty, documentGateway, appleRemoteManagement, microsoftSense, exchangeOnline, edgeMam, linuxMdm, extensibility, enrollment, endpointPrivilegeManagement. If this property is not set, or set to none, returns categories in all platforms. Supports: $filters, $select. Read-only. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, mobileApplicationManagement, linuxMdm, enrollment, endpointPrivilegeManagement, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("technologies")]
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }

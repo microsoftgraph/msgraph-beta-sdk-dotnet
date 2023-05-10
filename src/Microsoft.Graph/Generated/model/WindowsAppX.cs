@@ -31,49 +31,49 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets applicable architectures.
-        /// The Windows architecture(s) for which this app can run on. Possible values are: none, x86, x64, arm, neutral, arm64.
+        /// The Windows architecture(s) on which this app can run. Possible values are: none, x86, x64, arm, neutral; default value is none. Possible values are: none, x86, x64, arm, neutral, arm64.
         /// </summary>
         [JsonPropertyName("applicableArchitectures")]
         public WindowsArchitecture? ApplicableArchitectures { get; set; }
     
         /// <summary>
         /// Gets or sets identity name.
-        /// The Identity Name.
+        /// The identity name of the uploaded app package. For example: 'Contoso.DemoApp'.
         /// </summary>
         [JsonPropertyName("identityName")]
         public string IdentityName { get; set; }
     
         /// <summary>
         /// Gets or sets identity publisher hash.
-        /// The Identity Publisher Hash.
+        /// The identity publisher hash of the uploaded app package. This is the hash of the publisher from the manifest. For example: 'AB82CD0XYZ'.
         /// </summary>
         [JsonPropertyName("identityPublisherHash")]
         public string IdentityPublisherHash { get; set; }
     
         /// <summary>
         /// Gets or sets identity resource identifier.
-        /// The Identity Resource Identifier.
+        /// The identity resource identifier of the uploaded app package. For example: 'TestResourceId'.
         /// </summary>
         [JsonPropertyName("identityResourceIdentifier")]
         public string IdentityResourceIdentifier { get; set; }
     
         /// <summary>
         /// Gets or sets identity version.
-        /// The identity version.
+        /// The identity version of the uploaded app package. For example: '1.0.0.0'.
         /// </summary>
         [JsonPropertyName("identityVersion")]
         public string IdentityVersion { get; set; }
     
         /// <summary>
         /// Gets or sets is bundle.
-        /// Whether or not the app is a bundle.
+        /// When TRUE, indicates that the app is a bundle. When FALSE, indicates that the app is not a bundle. By default, property is set to FALSE.
         /// </summary>
         [JsonPropertyName("isBundle")]
         public bool? IsBundle { get; set; }
     
         /// <summary>
         /// Gets or sets minimum supported operating system.
-        /// The value for the minimum applicable operating system.
+        /// The value for the minimum applicable operating system. Valid values for a WindowsAppX app include v8_0, v8_1 and v10_0. If the app is a bundle, the minimum supported OS has to be at least v8_1.
         /// </summary>
         [JsonPropertyName("minimumSupportedOperatingSystem")]
         public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem { get; set; }

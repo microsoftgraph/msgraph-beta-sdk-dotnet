@@ -23,56 +23,56 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets content.
-        /// The Windows Enterprise Code-Signing Certificate in the raw data format.
+        /// The Windows Enterprise Code-Signing Certificate in the raw data format. Set to null once certificate has been uploaded and other properties have been populated.
         /// </summary>
         [JsonPropertyName("content")]
         public byte[] Content { get; set; }
     
         /// <summary>
         /// Gets or sets expiration date time.
-        /// The Cert Expiration Date.
+        /// The cert expiration date and time (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
         /// </summary>
         [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets issuer.
-        /// The Issuer value for the cert.
+        /// The issuer value for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
         /// </summary>
         [JsonPropertyName("issuer")]
         public string Issuer { get; set; }
     
         /// <summary>
         /// Gets or sets issuer name.
-        /// The Issuer Name for the cert.
+        /// The issuer name for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
         /// </summary>
         [JsonPropertyName("issuerName")]
         public string IssuerName { get; set; }
     
         /// <summary>
         /// Gets or sets status.
-        /// The Certificate Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned.
+        /// Whether the Certificate Status Provisioned or not Provisioned. Possible values are: notProvisioned, provisioned. Default is notProvisioned. Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported. Possible values are: notProvisioned, provisioned.
         /// </summary>
         [JsonPropertyName("status")]
         public CertificateStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets subject.
-        /// The Subject Value for the cert.
+        /// The subject value for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
         /// </summary>
         [JsonPropertyName("subject")]
         public string Subject { get; set; }
     
         /// <summary>
         /// Gets or sets subject name.
-        /// The Subject Name for the cert.
+        /// The subject name for the cert. This might contain information such as country (C), state or province (S), locality (L), common name of the cert (CN), organization (O), and organizational unit (OU). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
         /// </summary>
         [JsonPropertyName("subjectName")]
         public string SubjectName { get; set; }
     
         /// <summary>
         /// Gets or sets upload date time.
-        /// The date time of CodeSigning Cert when it is uploaded.
+        /// The date time of CodeSigning Cert when it is uploaded (using ISO 8601 format, in UTC time). Uploading a valid cert file through the Intune admin console will automatically populate this value in the HTTP response. Supports: $filter, $select, $top, $OrderBy, $skip. $Search is not supported.
         /// </summary>
         [JsonPropertyName("uploadDateTime")]
         public DateTimeOffset? UploadDateTime { get; set; }

@@ -27,6 +27,21 @@ namespace Microsoft.Graph
         [JsonPropertyName("target")]
         public CloudPcManagementAssignmentTarget Target { get; set; }
     
+        /// <summary>
+        /// Gets or sets assigned users.
+        /// The assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. This property is read-only. Supports$expand.
+        /// </summary>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
+        [JsonPropertyName("assignedUsers")]
+        public ICloudPcProvisioningPolicyAssignmentAssignedUsersCollectionWithReferencesPage AssignedUsers { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignedUsersNextLink.
+        /// </summary>
+        [JsonPropertyName("assignedUsers@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AssignedUsersNextLink { get; set; }
+    
     }
 }
 

@@ -30,14 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets identity name.
-        /// The Identity Name. This property is deprecated starting in February 2023 (Release 2302).
+        /// The Identity Name. This property is being deprecated in 2302(February 2023).
         /// </summary>
         [JsonPropertyName("identityName")]
         public string IdentityName { get; set; }
     
         /// <summary>
         /// Gets or sets identity version.
-        /// The identity version. This property is deprecated starting in February 2023 (Release 2302).
+        /// The identity version. This property is being deprecated in 2302(February 2023).
         /// </summary>
         [JsonPropertyName("identityVersion")]
         public string IdentityVersion { get; set; }

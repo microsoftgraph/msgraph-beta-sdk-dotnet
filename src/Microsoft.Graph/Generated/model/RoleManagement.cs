@@ -34,6 +34,19 @@ namespace Microsoft.Graph
         public RbacApplicationMultiple CloudPC { get; set; }
     
         /// <summary>
+        /// Gets or sets enterprise apps.
+        /// </summary>
+        [JsonPropertyName("enterpriseApps")]
+        public IRoleManagementEnterpriseAppsCollectionPage EnterpriseApps { get; set; }
+
+        /// <summary>
+        /// Gets or sets enterpriseAppsNextLink.
+        /// </summary>
+        [JsonPropertyName("enterpriseApps@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string EnterpriseAppsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets exchange.
         /// </summary>
         [JsonPropertyName("exchange")]

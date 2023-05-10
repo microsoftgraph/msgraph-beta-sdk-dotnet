@@ -60,6 +60,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
         /// Gets or sets subject.
         /// The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
         /// </summary>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("subject")]
         public Microsoft.Graph.User Subject { get; set; }
     

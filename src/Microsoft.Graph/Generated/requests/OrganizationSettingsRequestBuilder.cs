@@ -109,6 +109,18 @@ namespace Microsoft.Graph
                 return new OrganizationSettingsProfileCardPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("profileCardProperties"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Pronouns.
+        /// </summary>
+        /// <returns>The <see cref="IPronounsSettingsRequestBuilder"/>.</returns>
+        public IPronounsSettingsRequestBuilder Pronouns
+        {
+            get
+            {
+                return new PronounsSettingsRequestBuilder(this.AppendSegmentToRequestUrl("pronouns"), this.Client);
+            }
+        }
     
     }
 }

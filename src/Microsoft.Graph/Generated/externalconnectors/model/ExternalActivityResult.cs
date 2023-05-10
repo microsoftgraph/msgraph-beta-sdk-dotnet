@@ -30,7 +30,7 @@ namespace Microsoft.Graph.ExternalConnectors
 
         /// <summary>
         /// Gets or sets error.
-        /// Error information explaining failure to process external activity.
+        /// Error information that explains the failure to process an external activity.
         /// </summary>
         [JsonPropertyName("error")]
         public Microsoft.Graph.PublicError Error { get; set; }

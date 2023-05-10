@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets synchronizationPreventionType.
-        /// The status of the accidental deletion prevention feature. The possible values are: disabled, enabledForCount, enabledForPercentage.
+        /// The status of the accidental deletion prevention feature. The possible values are: disabled, enabledForCount, enabledForPercentage, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("synchronizationPreventionType")]
         public OnPremisesDirectorySynchronizationDeletionPreventionType? SynchronizationPreventionType { get; set; }

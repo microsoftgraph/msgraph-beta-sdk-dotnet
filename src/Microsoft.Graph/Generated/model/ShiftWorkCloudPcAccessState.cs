@@ -10,11 +10,13 @@
 
 namespace Microsoft.Graph
 {
+    using System;
     using System.Text.Json.Serialization;
 
     /// <summary>
     /// The enum ShiftWorkCloudPcAccessState.
     /// </summary>
+    [Obsolete("The waitlisted value is deprecated and will stop returning on May 17, 2023.")]
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum ShiftWorkCloudPcAccessState
     {
@@ -53,6 +55,11 @@ namespace Microsoft.Graph
         /// Unknown Future Value
         /// </summary>
         UnknownFutureValue = 6,
+	
+        /// <summary>
+        /// Standby Mode
+        /// </summary>
+        StandbyMode = 7,
 	
     }
 }

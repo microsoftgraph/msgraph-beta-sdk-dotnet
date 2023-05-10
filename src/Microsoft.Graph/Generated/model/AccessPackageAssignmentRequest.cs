@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Access Package Assignment Request.
     /// </summary>
+    [Obsolete("")]
     public partial class AccessPackageAssignmentRequestObject : Entity
     {
     
@@ -42,9 +43,17 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets custom extension callout instances.
+        /// Information about all the custom extension calls that were made during the access package assignment request workflow.
+        /// </summary>
+        [JsonPropertyName("customExtensionCalloutInstances")]
+        public IEnumerable<CustomExtensionCalloutInstance> CustomExtensionCalloutInstances { get; set; }
+    
+        /// <summary>
         /// Gets or sets custom extension handler instances.
         /// A collection of custom workflow extension instances being run on an assignment request. Read-only.
         /// </summary>
+        [Obsolete("")]
         [JsonPropertyName("customExtensionHandlerInstances")]
         public IEnumerable<CustomExtensionHandlerInstance> CustomExtensionHandlerInstances { get; set; }
     
@@ -95,6 +104,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("schedule")]
         public RequestSchedule Schedule { get; set; }
+    
+        /// <summary>
+        /// Gets or sets verified credentials data.
+        /// The details of the verifiable credential that was presented by the requestor, such as the issuer and claims. Read-only.
+        /// </summary>
+        [JsonPropertyName("verifiedCredentialsData")]
+        public IEnumerable<VerifiedCredentialData> VerifiedCredentialsData { get; set; }
     
         /// <summary>
         /// Gets or sets access package.

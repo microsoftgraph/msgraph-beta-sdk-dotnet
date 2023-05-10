@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets consented permission set.
+        /// The set of resource-specific permissions consented to while installing or upgrading the teamsApp.
+        /// </summary>
+        [JsonPropertyName("consentedPermissionSet")]
+        public TeamsAppPermissionSet ConsentedPermissionSet { get; set; }
+    
+        /// <summary>
         /// Gets or sets teams app.
         /// The app that is installed.
         /// </summary>

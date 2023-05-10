@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets templateType.
-        /// The template type that is sent with the collection request. Possible values are: predefined.
+        /// Indicates The template type that is sent with the collection request. defaule is Predefined. Possible values are: predefined, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("templateType")]
         public DeviceLogCollectionTemplateType? TemplateType { get; set; }

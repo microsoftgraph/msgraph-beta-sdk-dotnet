@@ -30,14 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets maximum count.
-        /// Maximum number of simple settings in the collection. Valid values 1 to 100
+        /// Maximum number of simple settings in the collection
         /// </summary>
         [JsonPropertyName("maximumCount")]
         public Int32? MaximumCount { get; set; }
     
         /// <summary>
         /// Gets or sets minimum count.
-        /// Minimum number of simple settings in the collection. Valid values 1 to 100
+        /// Minimum number of simple settings in the collection
         /// </summary>
         [JsonPropertyName("minimumCount")]
         public Int32? MinimumCount { get; set; }

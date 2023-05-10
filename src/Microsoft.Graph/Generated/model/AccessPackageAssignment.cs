@@ -56,6 +56,13 @@ namespace Microsoft.Graph
         public string CatalogId { get; set; }
     
         /// <summary>
+        /// Gets or sets custom extension callout instances.
+        /// Information about all the custom extension calls that were made during the access package assignment workflow.
+        /// </summary>
+        [JsonPropertyName("customExtensionCalloutInstances")]
+        public IEnumerable<CustomExtensionCalloutInstance> CustomExtensionCalloutInstances { get; set; }
+    
+        /// <summary>
         /// Gets or sets expired date time.
         /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>
@@ -94,12 +101,14 @@ namespace Microsoft.Graph
         /// Gets or sets access package assignment policy.
         /// Read-only. Nullable. Supports $filter (eq) on the id property
         /// </summary>
+        [Obsolete("")]
         [JsonPropertyName("accessPackageAssignmentPolicy")]
         public AccessPackageAssignmentPolicy AccessPackageAssignmentPolicy { get; set; }
     
         /// <summary>
         /// Gets or sets access package assignment requests.
         /// </summary>
+        [Obsolete("")]
         [JsonPropertyName("accessPackageAssignmentRequests")]
         public IAccessPackageAssignmentAccessPackageAssignmentRequestsCollectionPage AccessPackageAssignmentRequests { get; set; }
 

@@ -84,20 +84,6 @@ namespace Microsoft.Graph
         [JsonPropertyName("partnerState")]
         public DeviceManagementPartnerTenantState? PartnerState { get; set; }
     
-        /// <summary>
-        /// Gets or sets windows enrollment assignments.
-        /// User groups which enroll Windows devices through partner.
-        /// </summary>
-        [JsonPropertyName("windowsEnrollmentAssignments")]
-        public IEnumerable<ComplianceManagementPartnerAssignment> WindowsEnrollmentAssignments { get; set; }
-    
-        /// <summary>
-        /// Gets or sets windows onboarded.
-        /// Partner onboarded for Windows devices.
-        /// </summary>
-        [JsonPropertyName("windowsOnboarded")]
-        public bool? WindowsOnboarded { get; set; }
-    
     }
 }
 

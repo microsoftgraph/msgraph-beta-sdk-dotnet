@@ -115,6 +115,12 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceManagementIntentCompareRequestBuilder"/>.</returns>
         IDeviceManagementIntentCompareRequestBuilder Compare(
             string templateId = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementIntentGetCustomizedSettings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementIntentGetCustomizedSettingsRequestBuilder"/>.</returns>
+        IDeviceManagementIntentGetCustomizedSettingsRequestBuilder GetCustomizedSettings();
     
     }
 }

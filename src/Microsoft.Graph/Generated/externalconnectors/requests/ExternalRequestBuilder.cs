@@ -51,6 +51,18 @@ namespace Microsoft.Graph.ExternalConnectors
         }
     
         /// <summary>
+        /// Gets the request builder for IndustryData.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.IndustryData.IIndustryDataRootRequestBuilder"/>.</returns>
+        public Microsoft.Graph.IndustryData.IIndustryDataRootRequestBuilder IndustryData
+        {
+            get
+            {
+                return new Microsoft.Graph.IndustryData.IndustryDataRootRequestBuilder(this.AppendSegmentToRequestUrl("industryData"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Connections.
         /// </summary>
         /// <returns>The <see cref="IExternalConnectionsCollectionRequestBuilder"/>.</returns>

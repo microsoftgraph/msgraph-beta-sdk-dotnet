@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets client state.
-        /// Optional. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
+        /// Required. Specifies the value of the clientState property sent by the service in each change notification. The maximum length is 255 characters. The client can check that the change notification came from the service by comparing the value of the clientState property sent with the subscription with the value of the clientState property received with each change notification.
         /// </summary>
         [JsonPropertyName("clientState")]
         public string ClientState { get; set; }
@@ -106,7 +106,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets notification url.
-        /// Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol.
+        /// Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.
         /// </summary>
         [JsonPropertyName("notificationUrl")]
         public string NotificationUrl { get; set; }

@@ -43,7 +43,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets activities.
-        /// Write-only property. Returns results.
+        /// Returns a list of activities performed on the item. Write-only.
         /// </summary>
         [JsonPropertyName("activities")]
         public IExternalItemActivitiesCollectionPage Activities { get; set; }

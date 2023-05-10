@@ -80,6 +80,11 @@ namespace Microsoft.Graph
         ChatMessage = 12,
 	
         /// <summary>
+        /// Person
+        /// </summary>
+        Person = 13,
+	
+        /// <summary>
         /// Qna
         /// </summary>
         Qna = 16,

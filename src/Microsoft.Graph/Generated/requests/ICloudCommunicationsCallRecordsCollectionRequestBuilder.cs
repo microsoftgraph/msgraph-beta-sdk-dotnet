@@ -36,6 +36,28 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="Microsoft.Graph.CallRecords.ICallRecordRequestBuilder"/>.</returns>
         Microsoft.Graph.CallRecords.ICallRecordRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for CallRecordGetPstnBlockedUsersLog.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.CallRecords.ICallRecordGetPstnBlockedUsersLogRequestBuilder"/>.</returns>
+        Microsoft.Graph.CallRecords.ICallRecordGetPstnBlockedUsersLogRequestBuilder GetPstnBlockedUsersLog(
+            DateTimeOffset? fromDateTime = null,
+            DateTimeOffset? toDateTime = null);
+
+        /// <summary>
+        /// Gets the request builder for CallRecordGetPstnOnlineMeetingDialoutReport.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.CallRecords.ICallRecordGetPstnOnlineMeetingDialoutReportRequestBuilder"/>.</returns>
+        Microsoft.Graph.CallRecords.ICallRecordGetPstnOnlineMeetingDialoutReportRequestBuilder GetPstnOnlineMeetingDialoutReport(
+            DateTimeOffset? fromDateTime = null,
+            DateTimeOffset? toDateTime = null);
+
+        /// <summary>
+        /// Gets the request builder for CallRecordGetSmsLog.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.CallRecords.ICallRecordGetSmsLogRequestBuilder"/>.</returns>
+        Microsoft.Graph.CallRecords.ICallRecordGetSmsLogRequestBuilder GetSmsLog(
+            DateTimeOffset? fromDateTime = null,
+            DateTimeOffset? toDateTime = null);
     }
 }

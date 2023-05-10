@@ -66,6 +66,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPrivilegedAccessRootRequestBuilder"/>.</returns>
         IPrivilegedAccessRootRequestBuilder PrivilegedAccess { get; }
+
+        /// <summary>
+        /// Gets the request builder for RoleManagementAlerts.
+        /// </summary>
+        /// <returns>The <see cref="IRoleManagementAlertRequestBuilder"/>.</returns>
+        IRoleManagementAlertRequestBuilder RoleManagementAlerts { get; }
     
     }
 }

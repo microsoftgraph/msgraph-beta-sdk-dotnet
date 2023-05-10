@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
-        /// Possible values are: Boolean, Binary, Reference, Integer, String. Default is String.
+        /// The possible values are: String, Integer, Reference, Binary, Boolean, DateTime. Default is String.
         /// </summary>
         [JsonPropertyName("type")]
         public AttributeType? Type { get; set; }

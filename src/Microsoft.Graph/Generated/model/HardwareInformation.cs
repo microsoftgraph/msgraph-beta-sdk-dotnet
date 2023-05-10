@@ -100,7 +100,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets deviceLicensingStatus.
-        /// Device based subscription licensing status. The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing. In case it is not supported, the value will be set to unknown (-1). Possible values are: licenseRefreshStarted, licenseRefreshPending, deviceIsNotAzureActiveDirectoryJoined, verifyingMicrosoftDeviceIdentity, deviceIdentityVerificationFailed, verifyingMirosoftAccountIdentity, mirosoftAccountVerificationFailed, acquiringDeviceLicense, refreshingDeviceLicense, deviceLicenseRefreshSucceed, deviceLicenseRefreshFailed, removingDeviceLicense, deviceLicenseRemoveSucceed, deviceLicenseRemoveFailed, unknownFutureValue, unknown.
+        /// Device based subscription licensing status. The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing. In case it is not supported, the value will be set to unknown (-1). Possible values are: licenseRefreshStarted, licenseRefreshPending, deviceIsNotAzureActiveDirectoryJoined, verifyingMicrosoftDeviceIdentity, deviceIdentityVerificationFailed, verifyingMicrosoftAccountIdentity, microsoftAccountVerificationFailed, acquiringDeviceLicense, refreshingDeviceLicense, deviceLicenseRefreshSucceed, deviceLicenseRefreshFailed, removingDeviceLicense, deviceLicenseRemoveSucceed, deviceLicenseRemoveFailed, unknownFutureValue, unknown.
         /// </summary>
         [JsonPropertyName("deviceLicensingStatus")]
         public DeviceLicensingStatus? DeviceLicensingStatus { get; set; }

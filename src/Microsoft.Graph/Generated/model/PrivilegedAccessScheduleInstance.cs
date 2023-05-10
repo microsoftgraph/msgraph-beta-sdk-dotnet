@@ -31,12 +31,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets end date time.
+        /// When the schedule instance ends. Required.
         /// </summary>
         [JsonPropertyName("endDateTime")]
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
+        /// When this instance starts. Required.
         /// </summary>
         [JsonPropertyName("startDateTime")]
         public DateTimeOffset? StartDateTime { get; set; }

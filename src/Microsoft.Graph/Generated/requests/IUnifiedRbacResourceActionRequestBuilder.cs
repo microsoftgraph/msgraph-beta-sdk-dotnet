@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IUnifiedRbacResourceActionRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AuthenticationContext.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationContextClassReferenceWithReferenceRequestBuilder"/>.</returns>
+        IAuthenticationContextClassReferenceWithReferenceRequestBuilder AuthenticationContext { get; }
+
+        /// <summary>
         /// Gets the request builder for ResourceScope.
         /// </summary>
         /// <returns>The <see cref="IUnifiedRbacResourceScopeRequestBuilder"/>.</returns>

@@ -47,7 +47,8 @@ namespace Microsoft.Graph
         /// Gets the request builder for TeamsAppInstallationUpgrade.
         /// </summary>
         /// <returns>The <see cref="ITeamsAppInstallationUpgradeRequestBuilder"/>.</returns>
-        ITeamsAppInstallationUpgradeRequestBuilder Upgrade();
+        ITeamsAppInstallationUpgradeRequestBuilder Upgrade(
+            TeamsAppPermissionSet consentedPermissionSet = null);
     
     }
 }

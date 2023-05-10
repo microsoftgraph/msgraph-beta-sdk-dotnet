@@ -56,12 +56,6 @@ namespace Microsoft.Graph
         IPrintPrinterSharesCollectionRequestBuilder PrinterShares { get; }
 
         /// <summary>
-        /// Gets the request builder for Reports.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootRequestBuilder"/>.</returns>
-        IReportRootRequestBuilder Reports { get; }
-
-        /// <summary>
         /// Gets the request builder for Services.
         /// </summary>
         /// <returns>The <see cref="IPrintServicesCollectionRequestBuilder"/>.</returns>

@@ -65,12 +65,24 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for CertificateBasedAuthConfiguration.
         /// </summary>
-        /// <returns>The <see cref="IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesRequestBuilder CertificateBasedAuthConfiguration
+        /// <returns>The <see cref="IOrganizationCertificateBasedAuthConfigurationCollectionRequestBuilder"/>.</returns>
+        public IOrganizationCertificateBasedAuthConfigurationCollectionRequestBuilder CertificateBasedAuthConfiguration
         {
             get
             {
-                return new OrganizationCertificateBasedAuthConfigurationCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("certificateBasedAuthConfiguration"), this.Client);
+                return new OrganizationCertificateBasedAuthConfigurationCollectionRequestBuilder(this.AppendSegmentToRequestUrl("certificateBasedAuthConfiguration"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for PartnerInformation.
+        /// </summary>
+        /// <returns>The <see cref="IPartnerInformationRequestBuilder"/>.</returns>
+        public IPartnerInformationRequestBuilder PartnerInformation
+        {
+            get
+            {
+                return new PartnerInformationRequestBuilder(this.AppendSegmentToRequestUrl("partnerInformation"), this.Client);
             }
         }
 
@@ -98,23 +110,6 @@ namespace Microsoft.Graph
             }
         }
     
-        /// <summary>
-        /// Gets the request builder for OrganizationActivateService.
-        /// </summary>
-        /// <returns>The <see cref="IOrganizationActivateServiceRequestBuilder"/>.</returns>
-        public IOrganizationActivateServiceRequestBuilder ActivateService(
-            string service = null,
-            Guid? servicePlanId = null,
-            Guid? skuId = null)
-        {
-            return new OrganizationActivateServiceRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.activateService"),
-                this.Client,
-                service,
-                servicePlanId,
-                skuId);
-        }
-
         /// <summary>
         /// Gets the request builder for OrganizationSetMobileDeviceManagementAuthority.
         /// </summary>

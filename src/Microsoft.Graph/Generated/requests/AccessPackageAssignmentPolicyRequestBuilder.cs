@@ -85,6 +85,18 @@ namespace Microsoft.Graph
                 return new AccessPackageAssignmentPolicyCustomExtensionHandlersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("customExtensionHandlers"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for CustomExtensionStageSettings.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageAssignmentPolicyCustomExtensionStageSettingsCollectionRequestBuilder"/>.</returns>
+        public IAccessPackageAssignmentPolicyCustomExtensionStageSettingsCollectionRequestBuilder CustomExtensionStageSettings
+        {
+            get
+            {
+                return new AccessPackageAssignmentPolicyCustomExtensionStageSettingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("customExtensionStageSettings"), this.Client);
+            }
+        }
     
     }
 }

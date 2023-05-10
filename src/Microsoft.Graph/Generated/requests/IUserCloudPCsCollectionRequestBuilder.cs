@@ -36,6 +36,28 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ICloudPCRequestBuilder"/>.</returns>
         ICloudPCRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for CloudPCBulkResize.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCBulkResizeRequestBuilder"/>.</returns>
+        ICloudPCBulkResizeRequestBuilder BulkResize(
+            IEnumerable<string> cloudPcIds = null,
+            string targetServicePlanId = null);
+
+        /// <summary>
+        /// Gets the request builder for CloudPCValidateBulkResize.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCValidateBulkResizeRequestBuilder"/>.</returns>
+        ICloudPCValidateBulkResizeRequestBuilder ValidateBulkResize(
+            IEnumerable<string> cloudPcIds = null,
+            string targetServicePlanId = null);
+
+        /// <summary>
+        /// Gets the request builder for CloudPCGetProvisionedCloudPCs.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCGetProvisionedCloudPCsRequestBuilder"/>.</returns>
+        ICloudPCGetProvisionedCloudPCsRequestBuilder GetProvisionedCloudPCs(
+            string groupId = null,
+            string servicePlanId = null);
     }
 }

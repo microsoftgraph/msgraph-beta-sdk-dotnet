@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allow user requests for app access.
-        /// Indicates whether Teams users are allowed to request admins access to certain Teams apps.
+        /// Indicates whether users are allowed to request access to the unavailable Teams apps.
         /// </summary>
         [JsonPropertyName("allowUserRequestsForAppAccess")]
         public bool? AllowUserRequestsForAppAccess { get; set; }

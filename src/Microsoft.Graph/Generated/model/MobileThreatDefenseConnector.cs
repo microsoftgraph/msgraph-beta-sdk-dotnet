@@ -23,77 +23,77 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allow partner to collect iosapplication metadata.
-        /// When TRUE, indicates the data sync partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.
+        /// When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.
         /// </summary>
         [JsonPropertyName("allowPartnerToCollectIOSApplicationMetadata")]
         public bool? AllowPartnerToCollectIOSApplicationMetadata { get; set; }
     
         /// <summary>
         /// Gets or sets allow partner to collect iospersonal application metadata.
-        /// When TRUE, indicates the data sync partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the data sync partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.
+        /// When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.
         /// </summary>
         [JsonPropertyName("allowPartnerToCollectIOSPersonalApplicationMetadata")]
         public bool? AllowPartnerToCollectIOSPersonalApplicationMetadata { get; set; }
     
         /// <summary>
         /// Gets or sets android device blocked on missing partner data.
-        /// For Android, set whether Intune must receive data from the data sync partner prior to marking a device compliant
+        /// For Android, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
         /// </summary>
         [JsonPropertyName("androidDeviceBlockedOnMissingPartnerData")]
         public bool? AndroidDeviceBlockedOnMissingPartnerData { get; set; }
     
         /// <summary>
         /// Gets or sets android enabled.
-        /// For Android, set whether data from the data sync partner should be used during compliance evaluations
+        /// For Android, set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
         /// </summary>
         [JsonPropertyName("androidEnabled")]
         public bool? AndroidEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets android mobile application management enabled.
-        /// When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
+        /// When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for Android devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for Android devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
         /// </summary>
         [JsonPropertyName("androidMobileApplicationManagementEnabled")]
         public bool? AndroidMobileApplicationManagementEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets ios device blocked on missing partner data.
-        /// For IOS, set whether Intune must receive data from the data sync partner prior to marking a device compliant
+        /// For IOS, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
         /// </summary>
         [JsonPropertyName("iosDeviceBlockedOnMissingPartnerData")]
         public bool? IosDeviceBlockedOnMissingPartnerData { get; set; }
     
         /// <summary>
         /// Gets or sets ios enabled.
-        /// For IOS, get or set whether data from the data sync partner should be used during compliance evaluations
+        /// For IOS, get or set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
         /// </summary>
         [JsonPropertyName("iosEnabled")]
         public bool? IosEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets ios mobile application management enabled.
-        /// When TRUE, inidicates that data from the data sync partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the data sync partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
+        /// When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.
         /// </summary>
         [JsonPropertyName("iosMobileApplicationManagementEnabled")]
         public bool? IosMobileApplicationManagementEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets last heartbeat date time.
-        /// DateTime of last Heartbeat recieved from the Data Sync Partner
+        /// DateTime of last Heartbeat recieved from the Mobile Threat Defense partner
         /// </summary>
         [JsonPropertyName("lastHeartbeatDateTime")]
         public DateTimeOffset? LastHeartbeatDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets mac device blocked on missing partner data.
-        /// For Mac, get or set whether Intune must receive data from the data sync partner prior to marking a device compliant
+        /// For Mac, get or set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant
         /// </summary>
         [JsonPropertyName("macDeviceBlockedOnMissingPartnerData")]
         public bool? MacDeviceBlockedOnMissingPartnerData { get; set; }
     
         /// <summary>
         /// Gets or sets mac enabled.
-        /// For Mac, get or set whether data from the data sync partner should be used during compliance evaluations
+        /// For Mac, get or set whether data from the Mobile Threat Defense partner should be used during compliance evaluations
         /// </summary>
         [JsonPropertyName("macEnabled")]
         public bool? MacEnabled { get; set; }
@@ -107,7 +107,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets partner state.
-        /// Data Sync Partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
+        /// Mobile Threat Defense partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
         /// </summary>
         [JsonPropertyName("partnerState")]
         public MobileThreatPartnerTenantState? PartnerState { get; set; }
@@ -121,21 +121,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets partner unsupported os version blocked.
-        /// Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Data Sync Partner
+        /// Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner
         /// </summary>
         [JsonPropertyName("partnerUnsupportedOsVersionBlocked")]
         public bool? PartnerUnsupportedOsVersionBlocked { get; set; }
     
         /// <summary>
         /// Gets or sets windows device blocked on missing partner data.
-        /// When TRUE, inidicates that Intune must receive data from the data sync partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the data sync partner for Windows. Default value is FALSE.
+        /// When TRUE, inidicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the Mobile Threat Defense partner for Windows. Default value is FALSE.
         /// </summary>
         [JsonPropertyName("windowsDeviceBlockedOnMissingPartnerData")]
         public bool? WindowsDeviceBlockedOnMissingPartnerData { get; set; }
     
         /// <summary>
         /// Gets or sets windows enabled.
-        /// When TRUE, inidicates that data from the data sync partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the data sync partner should not be used during compliance evaluations for Windows. Default value is FALSE.
+        /// When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during compliance evaluations for Windows. Default value is FALSE.
         /// </summary>
         [JsonPropertyName("windowsEnabled")]
         public bool? WindowsEnabled { get; set; }

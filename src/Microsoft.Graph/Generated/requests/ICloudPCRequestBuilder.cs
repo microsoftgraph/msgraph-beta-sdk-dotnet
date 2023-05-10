@@ -45,6 +45,18 @@ namespace Microsoft.Graph
         ICloudPCEndGracePeriodRequestBuilder EndGracePeriod();
 
         /// <summary>
+        /// Gets the request builder for CloudPCPowerOff.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCPowerOffRequestBuilder"/>.</returns>
+        ICloudPCPowerOffRequestBuilder PowerOff();
+
+        /// <summary>
+        /// Gets the request builder for CloudPCPowerOn.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCPowerOnRequestBuilder"/>.</returns>
+        ICloudPCPowerOnRequestBuilder PowerOn();
+
+        /// <summary>
         /// Gets the request builder for CloudPCReboot.
         /// </summary>
         /// <returns>The <see cref="ICloudPCRebootRequestBuilder"/>.</returns>
@@ -77,6 +89,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ICloudPCRetryPartnerAgentInstallationRequestBuilder"/>.</returns>
         ICloudPCRetryPartnerAgentInstallationRequestBuilder RetryPartnerAgentInstallation();
+
+        /// <summary>
+        /// Gets the request builder for CloudPCStart.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCStartRequestBuilder"/>.</returns>
+        ICloudPCStartRequestBuilder Start();
+
+        /// <summary>
+        /// Gets the request builder for CloudPCStop.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCStopRequestBuilder"/>.</returns>
+        ICloudPCStopRequestBuilder Stop();
 
         /// <summary>
         /// Gets the request builder for CloudPCTroubleshoot.

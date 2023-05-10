@@ -20,6 +20,10 @@ namespace Microsoft.Graph
     /// </summary>
     public partial interface ITeamsAppInstallationUpgradeRequest : IBaseRequest
     {
+        /// <summary>
+        /// Gets the request body.
+        /// </summary>
+        TeamsAppInstallationUpgradeRequestBody RequestBody { get; }
 
 
         /// <summary>

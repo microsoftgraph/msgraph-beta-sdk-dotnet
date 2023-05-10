@@ -61,5 +61,11 @@ namespace Microsoft.Graph
         IDirectoryObjectGetUserOwnedObjectsRequestBuilder GetUserOwnedObjects(
             string userId = null,
             string type = null);
+
+        /// <summary>
+        /// Gets the request builder for DirectoryObjectDelta.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectDeltaRequestBuilder"/>.</returns>
+        IDirectoryObjectDeltaRequestBuilder Delta();
     }
 }

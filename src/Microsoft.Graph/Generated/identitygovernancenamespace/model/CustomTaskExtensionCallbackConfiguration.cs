@@ -27,5 +27,11 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
             this.ODataType = "microsoft.graph.identityGovernance.customTaskExtensionCallbackConfiguration";
         }
 
+        /// <summary>
+        /// Gets or sets authorizedApps.
+        /// </summary>
+        [JsonPropertyName("authorizedApps")]
+        public IEnumerable<Microsoft.Graph.Application> AuthorizedApps { get; set; }
+    
     }
 }

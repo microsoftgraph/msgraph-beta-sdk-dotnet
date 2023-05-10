@@ -43,10 +43,24 @@ namespace Microsoft.Graph
         public OnlineMeetingPresenters? AllowedPresenters { get; set; }
     
         /// <summary>
+        /// Gets or sets allow meeting chat.
+        /// Specifies the mode of meeting chat.
+        /// </summary>
+        [JsonPropertyName("allowMeetingChat")]
+        public MeetingChatMode? AllowMeetingChat { get; set; }
+    
+        /// <summary>
         /// Gets or sets allow participants to change name.
+        /// Specifies if participants are allowed to rename themselves in an instance of the meeting.
         /// </summary>
         [JsonPropertyName("allowParticipantsToChangeName")]
         public bool? AllowParticipantsToChangeName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allow recording.
+        /// </summary>
+        [JsonPropertyName("allowRecording")]
+        public bool? AllowRecording { get; set; }
     
         /// <summary>
         /// Gets or sets allow teamwork reactions.
@@ -54,6 +68,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("allowTeamworkReactions")]
         public bool? AllowTeamworkReactions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets allow transcription.
+        /// </summary>
+        [JsonPropertyName("allowTranscription")]
+        public bool? AllowTranscription { get; set; }
     
         /// <summary>
         /// Gets or sets alternative recording.
@@ -194,6 +214,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets share meeting chat history default.
+        /// Specifies whether meeting chat history is shared with participants.  Possible values are: all, none, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("shareMeetingChatHistoryDefault")]
         public MeetingChatHistoryDefaultMode? ShareMeetingChatHistoryDefault { get; set; }
@@ -221,7 +242,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets watermark protection.
-        /// Specifies whether a watermark applies for different entities.
+        /// Specifies whether a watermark should be applied to a content type by the client application.
         /// </summary>
         [JsonPropertyName("watermarkProtection")]
         public WatermarkProtectionValues WatermarkProtection { get; set; }
@@ -229,6 +250,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets virtual appointment.
         /// </summary>
+        [Obsolete("The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API.")]
         [JsonPropertyName("virtualAppointment")]
         public VirtualAppointment VirtualAppointment { get; set; }
     

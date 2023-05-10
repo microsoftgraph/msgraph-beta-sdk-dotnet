@@ -61,6 +61,18 @@ namespace Microsoft.Graph
                 return new LearningProviderLearningContentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("learningContents"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for LearningCourseActivities.
+        /// </summary>
+        /// <returns>The <see cref="ILearningProviderLearningCourseActivitiesCollectionRequestBuilder"/>.</returns>
+        public ILearningProviderLearningCourseActivitiesCollectionRequestBuilder LearningCourseActivities
+        {
+            get
+            {
+                return new LearningProviderLearningCourseActivitiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("learningCourseActivities"), this.Client);
+            }
+        }
     
     }
 }

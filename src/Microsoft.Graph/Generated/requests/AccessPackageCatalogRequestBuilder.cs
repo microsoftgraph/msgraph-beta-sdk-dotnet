@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AccessPackageCustomWorkflowExtensions.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageCatalogAccessPackageCustomWorkflowExtensionsCollectionRequestBuilder"/>.</returns>
+        public IAccessPackageCatalogAccessPackageCustomWorkflowExtensionsCollectionRequestBuilder AccessPackageCustomWorkflowExtensions
+        {
+            get
+            {
+                return new AccessPackageCatalogAccessPackageCustomWorkflowExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackageCustomWorkflowExtensions"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AccessPackageResourceRoles.
         /// </summary>
         /// <returns>The <see cref="IAccessPackageCatalogAccessPackageResourceRolesCollectionRequestBuilder"/>.</returns>
@@ -89,12 +101,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for AccessPackages.
         /// </summary>
-        /// <returns>The <see cref="IAccessPackageCatalogAccessPackagesCollectionRequestBuilder"/>.</returns>
-        public IAccessPackageCatalogAccessPackagesCollectionRequestBuilder AccessPackages
+        /// <returns>The <see cref="IAccessPackageCatalogAccessPackagesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IAccessPackageCatalogAccessPackagesCollectionWithReferencesRequestBuilder AccessPackages
         {
             get
             {
-                return new AccessPackageCatalogAccessPackagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("accessPackages"), this.Client);
+                return new AccessPackageCatalogAccessPackagesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("accessPackages"), this.Client);
             }
         }
 

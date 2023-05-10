@@ -36,6 +36,12 @@ namespace Microsoft.Graph.SecurityNamespace
         public string AzureAdUserId { get; set; }
     
         /// <summary>
+        /// Gets or sets displayName.
+        /// </summary>
+        [JsonPropertyName("displayName")]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets domainName.
         /// The name of the Active Directory domain of which the user is a member.
         /// </summary>

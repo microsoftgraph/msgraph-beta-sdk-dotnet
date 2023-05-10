@@ -274,6 +274,12 @@ namespace Microsoft.Graph
         public string PermissionsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets retention label.
+        /// </summary>
+        [JsonPropertyName("retentionLabel")]
+        public ItemRetentionLabel RetentionLabel { get; set; }
+    
+        /// <summary>
         /// Gets or sets subscriptions.
         /// The set of subscriptions on the item. Only supported on the root of a drive.
         /// </summary>

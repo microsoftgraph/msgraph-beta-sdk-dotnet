@@ -313,6 +313,18 @@ namespace Microsoft.Graph
                 return new SecurityUserSecurityProfilesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userSecurityProfiles"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for ThreatIntelligence.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.IThreatIntelligenceRequestBuilder"/>.</returns>
+        public Microsoft.Graph.SecurityNamespace.IThreatIntelligenceRequestBuilder ThreatIntelligence
+        {
+            get
+            {
+                return new Microsoft.Graph.SecurityNamespace.ThreatIntelligenceRequestBuilder(this.AppendSegmentToRequestUrl("threatIntelligence"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for SecurityRunHuntingQuery.

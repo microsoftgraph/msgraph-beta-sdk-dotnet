@@ -22,21 +22,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets application name.
-        /// Field indicating the app name of the source that is sending the linkedResource.
+        /// The app name of the source that sends the linkedResource.
         /// </summary>
         [JsonPropertyName("applicationName")]
         public string ApplicationName { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// Field indicating the title of the linkedResource.
+        /// The title of the linkedResource.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets external id.
-        /// Id of the object that is associated with this task on the third-party/partner system.
+        /// ID of the object that is associated with this task on the third-party/partner system.
         /// </summary>
         [JsonPropertyName("externalId")]
         public string ExternalId { get; set; }

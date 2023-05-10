@@ -170,7 +170,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device platform.
-        /// Device platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown, androidAOSP.
+        /// Device platform. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown, androidAOSP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("devicePlatform")]
         public DevicePlatformType? DevicePlatform { get; set; }

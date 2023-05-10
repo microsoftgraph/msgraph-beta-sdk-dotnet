@@ -146,7 +146,16 @@ namespace Microsoft.Graph
             }
         }
     
-        
+        /// <summary>
+        /// Gets the request builder for OnlineMeetingGetVirtualAppointmentJoinWebUrl.
+        /// </summary>
+        /// <returns>The <see cref="IOnlineMeetingGetVirtualAppointmentJoinWebUrlRequestBuilder"/>.</returns>
+        public IOnlineMeetingGetVirtualAppointmentJoinWebUrlRequestBuilder GetVirtualAppointmentJoinWebUrl()
+        {
+            return new OnlineMeetingGetVirtualAppointmentJoinWebUrlRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getVirtualAppointmentJoinWebUrl"),
+                this.Client);
+        }
     
     }
 }

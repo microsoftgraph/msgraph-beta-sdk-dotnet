@@ -51,12 +51,14 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets totalTasks.
+        /// The total number of tasks processed by a workflow.
         /// </summary>
         [JsonPropertyName("totalTasks")]
         public Int32? TotalTasks { get; set; }
     
         /// <summary>
         /// Gets or sets totalUsers.
+        /// The total number of users processed by a workflow.
         /// </summary>
         [JsonPropertyName("totalUsers")]
         public Int32? TotalUsers { get; set; }

@@ -246,6 +246,12 @@ namespace Microsoft.Graph
 
             if (privilegedAccessGroupToInitialize != null)
             {
+                if (privilegedAccessGroupToInitialize.AssignmentApprovals != null && privilegedAccessGroupToInitialize.AssignmentApprovals.CurrentPage != null)
+                {
+                    privilegedAccessGroupToInitialize.AssignmentApprovals.InitializeNextPageRequest(this.Client, privilegedAccessGroupToInitialize.AssignmentApprovalsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    privilegedAccessGroupToInitialize.AssignmentApprovals.AdditionalData = privilegedAccessGroupToInitialize.AdditionalData;
+                }
                 if (privilegedAccessGroupToInitialize.AssignmentScheduleInstances != null && privilegedAccessGroupToInitialize.AssignmentScheduleInstances.CurrentPage != null)
                 {
                     privilegedAccessGroupToInitialize.AssignmentScheduleInstances.InitializeNextPageRequest(this.Client, privilegedAccessGroupToInitialize.AssignmentScheduleInstancesNextLink);

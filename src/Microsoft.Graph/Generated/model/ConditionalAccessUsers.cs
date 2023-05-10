@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets excludeGuestsOrExternalUsers.
-        /// Internal guests or external users excluded in the policy scope. Optionally populated.
+        /// Internal guests or external users excluded from the policy scope. Optionally populated.
         /// </summary>
         [JsonPropertyName("excludeGuestsOrExternalUsers")]
         public ConditionalAccessGuestsOrExternalUsers ExcludeGuestsOrExternalUsers { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets includeGroups.
-        /// Group IDs in scope of policy unless explicitly excluded, or All.
+        /// Group IDs in scope of policy unless explicitly excluded.
         /// </summary>
         [JsonPropertyName("includeGroups")]
         public IEnumerable<string> IncludeGroups { get; set; }
@@ -65,14 +65,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets includeRoles.
-        /// Role IDs in scope of policy unless explicitly excluded, or All.
+        /// Role IDs in scope of policy unless explicitly excluded.
         /// </summary>
         [JsonPropertyName("includeRoles")]
         public IEnumerable<string> IncludeRoles { get; set; }
     
         /// <summary>
         /// Gets or sets includeUsers.
-        /// User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.
+        /// User IDs in scope of policy unless explicitly excluded, None, All, or GuestsOrExternalUsers.
         /// </summary>
         [JsonPropertyName("includeUsers")]
         public IEnumerable<string> IncludeUsers { get; set; }

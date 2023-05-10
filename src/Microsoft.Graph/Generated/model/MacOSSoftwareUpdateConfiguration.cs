@@ -65,6 +65,20 @@ namespace Microsoft.Graph
         public MacOSSoftwareUpdateBehavior? FirmwareUpdateBehavior { get; set; }
     
         /// <summary>
+        /// Gets or sets max user deferrals count.
+        /// The maximum number of times the system allows the user to postpone an update before it’s installed. Supported values: 0 - 366. Valid values 0 to 365
+        /// </summary>
+        [JsonPropertyName("maxUserDeferralsCount")]
+        public Int32? MaxUserDeferralsCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets priority.
+        /// The scheduling priority for downloading and preparing the requested update. Default: Low. Possible values: Null, Low, High. Possible values are: low, high, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("priority")]
+        public MacOSPriority? Priority { get; set; }
+    
+        /// <summary>
         /// Gets or sets update schedule type.
         /// Update schedule type. Possible values are: alwaysUpdate, updateDuringTimeWindows, updateOutsideOfTimeWindows.
         /// </summary>

@@ -17,9 +17,15 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AndroidFotaDeploymentAssignmentTarget.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<AndroidFotaDeploymentAssignmentTarget>))]
-    public partial class AndroidFotaDeploymentAssignmentTarget
+    public partial class AndroidFotaDeploymentAssignmentTarget : DeviceAndAppManagementAssignmentTarget
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AndroidFotaDeploymentAssignmentTarget"/> class.
+        /// </summary>
+        public AndroidFotaDeploymentAssignmentTarget()
+        {
+            this.ODataType = "microsoft.graph.androidFotaDeploymentAssignmentTarget";
+        }
 
         /// <summary>
         /// Gets or sets groupId.
@@ -27,18 +33,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("groupId")]
         public string GroupId { get; set; }
-    
-        /// <summary>
-        /// Gets or sets additional data.
-        /// </summary>
-        [JsonExtensionData]
-        public IDictionary<string, object> AdditionalData { get; set; }
-
-        /// <summary>
-        /// Gets or sets @odata.type.
-        /// </summary>
-        [JsonPropertyName("@odata.type")]
-        public string ODataType { get; set; }
     
     }
 }

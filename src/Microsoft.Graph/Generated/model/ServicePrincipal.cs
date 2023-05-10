@@ -205,14 +205,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preferred token signing key end date time.
-        /// Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint.
+        /// Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.
         /// </summary>
         [JsonPropertyName("preferredTokenSigningKeyEndDateTime")]
         public DateTimeOffset? PreferredTokenSigningKeyEndDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets preferred token signing key thumbprint.
-        /// Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.
+        /// This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.
         /// </summary>
         [JsonPropertyName("preferredTokenSigningKeyThumbprint")]
         public string PreferredTokenSigningKeyThumbprint { get; set; }
@@ -268,14 +268,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sign in audience.
-        /// Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization’s Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization’s Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization’s Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
+        /// Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization's Azure AD tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization's Azure AD tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization's Azure AD tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.
         /// </summary>
         [JsonPropertyName("signInAudience")]
         public string SignInAudience { get; set; }
     
         /// <summary>
         /// Gets or sets tags.
-        /// Custom strings that can be used to categorize and identify the service principal. Not nullable. Supports $filter (eq, not, ge, le, startsWith).
+        /// Custom strings that can be used to categorize and identify the service principal. Not nullable. The value is the union of strings set here and on the associated application entity's tags property.Supports $filter (eq, not, ge, le, startsWith).
         /// </summary>
         [JsonPropertyName("tags")]
         public IEnumerable<string> Tags { get; set; }
@@ -531,6 +531,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets synchronization.
+        /// Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
         /// </summary>
         [JsonPropertyName("synchronization")]
         public Synchronization Synchronization { get; set; }

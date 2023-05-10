@@ -50,6 +50,13 @@ namespace Microsoft.Graph.CallRecords
         public FailureInfo FailureInfo { get; set; }
     
         /// <summary>
+        /// Gets or sets is test.
+        /// Specifies whether the session is a test.
+        /// </summary>
+        [JsonPropertyName("isTest")]
+        public bool? IsTest { get; set; }
+    
+        /// <summary>
         /// Gets or sets modalities.
         /// List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.
         /// </summary>

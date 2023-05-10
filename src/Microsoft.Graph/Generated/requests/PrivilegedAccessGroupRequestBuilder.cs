@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AssignmentApprovals.
+        /// </summary>
+        /// <returns>The <see cref="IPrivilegedAccessGroupAssignmentApprovalsCollectionRequestBuilder"/>.</returns>
+        public IPrivilegedAccessGroupAssignmentApprovalsCollectionRequestBuilder AssignmentApprovals
+        {
+            get
+            {
+                return new PrivilegedAccessGroupAssignmentApprovalsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignmentApprovals"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AssignmentScheduleInstances.
         /// </summary>
         /// <returns>The <see cref="IPrivilegedAccessGroupAssignmentScheduleInstancesCollectionRequestBuilder"/>.</returns>

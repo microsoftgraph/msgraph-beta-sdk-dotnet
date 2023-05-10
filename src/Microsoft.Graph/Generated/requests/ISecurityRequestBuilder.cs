@@ -162,6 +162,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISecurityUserSecurityProfilesCollectionRequestBuilder"/>.</returns>
         ISecurityUserSecurityProfilesCollectionRequestBuilder UserSecurityProfiles { get; }
+
+        /// <summary>
+        /// Gets the request builder for ThreatIntelligence.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.SecurityNamespace.IThreatIntelligenceRequestBuilder"/>.</returns>
+        Microsoft.Graph.SecurityNamespace.IThreatIntelligenceRequestBuilder ThreatIntelligence { get; }
     
         /// <summary>
         /// Gets the request builder for SecurityRunHuntingQuery.

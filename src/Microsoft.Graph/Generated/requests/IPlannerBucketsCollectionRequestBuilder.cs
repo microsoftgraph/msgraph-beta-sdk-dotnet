@@ -36,6 +36,10 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IPlannerBucketRequestBuilder"/>.</returns>
         IPlannerBucketRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for PlannerBucketDelta.
+        /// </summary>
+        /// <returns>The <see cref="IPlannerBucketDeltaRequestBuilder"/>.</returns>
+        IPlannerBucketDeltaRequestBuilder Delta();
     }
 }

@@ -48,5 +48,12 @@ namespace Microsoft.Graph
         [JsonPropertyName("subscriptionId")]
         public string SubscriptionId { get; set; }
     
+        /// <summary>
+        /// Gets or sets url.
+        /// The URL to the logic app endpoint that will be triggered. Only required for app-only token scenarios where app is creating a customCalloutExtension without a signed-in user.
+        /// </summary>
+        [JsonPropertyName("url")]
+        public string Url { get; set; }
+    
     }
 }

@@ -87,6 +87,7 @@ namespace Microsoft.Graph
         /// Gets or sets access package assignment policies.
         /// Read-only. Nullable. Supports $expand.
         /// </summary>
+        [Obsolete("")]
         [JsonPropertyName("accessPackageAssignmentPolicies")]
         public IAccessPackageAccessPackageAssignmentPoliciesCollectionPage AccessPackageAssignmentPolicies { get; set; }
 
@@ -100,6 +101,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets access package catalog.
         /// </summary>
+        [Obsolete("")]
         [JsonPropertyName("accessPackageCatalog")]
         public AccessPackageCatalog AccessPackageCatalog { get; set; }
     

@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAccessPackageAssignmentPolicyCustomExtensionHandlersCollectionRequestBuilder"/>.</returns>
         IAccessPackageAssignmentPolicyCustomExtensionHandlersCollectionRequestBuilder CustomExtensionHandlers { get; }
+
+        /// <summary>
+        /// Gets the request builder for CustomExtensionStageSettings.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageAssignmentPolicyCustomExtensionStageSettingsCollectionRequestBuilder"/>.</returns>
+        IAccessPackageAssignmentPolicyCustomExtensionStageSettingsCollectionRequestBuilder CustomExtensionStageSettings { get; }
     
     }
 }

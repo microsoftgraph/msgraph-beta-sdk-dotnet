@@ -60,6 +60,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IOrganizationSettingsProfileCardPropertiesCollectionRequestBuilder"/>.</returns>
         IOrganizationSettingsProfileCardPropertiesCollectionRequestBuilder ProfileCardProperties { get; }
+
+        /// <summary>
+        /// Gets the request builder for Pronouns.
+        /// </summary>
+        /// <returns>The <see cref="IPronounsSettingsRequestBuilder"/>.</returns>
+        IPronounsSettingsRequestBuilder Pronouns { get; }
     
     }
 }

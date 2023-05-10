@@ -75,6 +75,28 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for CloudPCPowerOff.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCPowerOffRequestBuilder"/>.</returns>
+        public ICloudPCPowerOffRequestBuilder PowerOff()
+        {
+            return new CloudPCPowerOffRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.powerOff"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CloudPCPowerOn.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCPowerOnRequestBuilder"/>.</returns>
+        public ICloudPCPowerOnRequestBuilder PowerOn()
+        {
+            return new CloudPCPowerOnRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.powerOn"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for CloudPCReboot.
         /// </summary>
         /// <returns>The <see cref="ICloudPCRebootRequestBuilder"/>.</returns>
@@ -134,6 +156,28 @@ namespace Microsoft.Graph
         {
             return new CloudPCRetryPartnerAgentInstallationRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.retryPartnerAgentInstallation"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CloudPCStart.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCStartRequestBuilder"/>.</returns>
+        public ICloudPCStartRequestBuilder Start()
+        {
+            return new CloudPCStartRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.start"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CloudPCStop.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCStopRequestBuilder"/>.</returns>
+        public ICloudPCStopRequestBuilder Stop()
+        {
+            return new CloudPCStopRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.stop"),
                 this.Client);
         }
 

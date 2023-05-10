@@ -208,6 +208,12 @@ namespace Microsoft.Graph
             IEnumerable<Guid> removeLicenses);
 
         /// <summary>
+        /// Gets the request builder for GroupRetryServiceProvisioning.
+        /// </summary>
+        /// <returns>The <see cref="IGroupRetryServiceProvisioningRequestBuilder"/>.</returns>
+        IGroupRetryServiceProvisioningRequestBuilder RetryServiceProvisioning();
+
+        /// <summary>
         /// Gets the request builder for GroupCheckGrantedPermissionsForApp.
         /// </summary>
         /// <returns>The <see cref="IGroupCheckGrantedPermissionsForAppRequestBuilder"/>.</returns>

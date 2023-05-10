@@ -60,6 +60,49 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for CallRecordGetPstnBlockedUsersLog.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.CallRecords.ICallRecordGetPstnBlockedUsersLogRequestBuilder"/>.</returns>
+        public Microsoft.Graph.CallRecords.ICallRecordGetPstnBlockedUsersLogRequestBuilder GetPstnBlockedUsersLog(
+            DateTimeOffset? fromDateTime = null,
+            DateTimeOffset? toDateTime = null)
+        {
+            return new Microsoft.Graph.CallRecords.CallRecordGetPstnBlockedUsersLogRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.callRecords.getPstnBlockedUsersLog"),
+                this.Client,
+                fromDateTime,
+                toDateTime);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CallRecordGetPstnOnlineMeetingDialoutReport.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.CallRecords.ICallRecordGetPstnOnlineMeetingDialoutReportRequestBuilder"/>.</returns>
+        public Microsoft.Graph.CallRecords.ICallRecordGetPstnOnlineMeetingDialoutReportRequestBuilder GetPstnOnlineMeetingDialoutReport(
+            DateTimeOffset? fromDateTime = null,
+            DateTimeOffset? toDateTime = null)
+        {
+            return new Microsoft.Graph.CallRecords.CallRecordGetPstnOnlineMeetingDialoutReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.callRecords.getPstnOnlineMeetingDialoutReport"),
+                this.Client,
+                fromDateTime,
+                toDateTime);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CallRecordGetSmsLog.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.CallRecords.ICallRecordGetSmsLogRequestBuilder"/>.</returns>
+        public Microsoft.Graph.CallRecords.ICallRecordGetSmsLogRequestBuilder GetSmsLog(
+            DateTimeOffset? fromDateTime = null,
+            DateTimeOffset? toDateTime = null)
+        {
+            return new Microsoft.Graph.CallRecords.CallRecordGetSmsLogRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.callRecords.getSmsLog"),
+                this.Client,
+                fromDateTime,
+                toDateTime);
+        }
     }
 }

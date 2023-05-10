@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         public TeamsAppInstallationScopes? AllowedInstallationScopes { get; set; }
     
         /// <summary>
+        /// Gets or sets authorization.
+        /// Authorization requirements specified in the Teams app manifest.
+        /// </summary>
+        [JsonPropertyName("authorization")]
+        public TeamsAppAuthorization Authorization { get; set; }
+    
+        /// <summary>
         /// Gets or sets azure adapp id.
         /// The WebApplicationInfo.Id from the Teams app manifest.
         /// </summary>

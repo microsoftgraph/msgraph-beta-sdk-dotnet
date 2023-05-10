@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets code.
+        /// The error code. For example, AzureDirectoryB2BManagementPolicyCheckFailure.
         /// </summary>
         [JsonPropertyName("code")]
         public string Code { get; set; }
     
         /// <summary>
         /// Gets or sets message.
+        /// The error message. For example, Policy permitting auto-redemption of invitations not configured.
         /// </summary>
         [JsonPropertyName("message")]
         public string Message { get; set; }
     
         /// <summary>
         /// Gets or sets tenantActionable.
+        /// The action to take to resolve the error. For example, false.
         /// </summary>
         [JsonPropertyName("tenantActionable")]
         public bool? TenantActionable { get; set; }

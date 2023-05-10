@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new ICloudPcProvisioningPolicyAssignmentRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for AssignedUsers.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcProvisioningPolicyAssignmentAssignedUsersCollectionWithReferencesRequestBuilder"/>.</returns>
+        ICloudPcProvisioningPolicyAssignmentAssignedUsersCollectionWithReferencesRequestBuilder AssignedUsers { get; }
+    
     }
 }

@@ -120,6 +120,12 @@ namespace Microsoft.Graph
         public IEnumerable<string> ProxyAddresses { get; set; }
     
         /// <summary>
+        /// Gets or sets service provisioning errors.
+        /// </summary>
+        [JsonPropertyName("serviceProvisioningErrors")]
+        public IEnumerable<ServiceProvisioningError> ServiceProvisioningErrors { get; set; }
+    
+        /// <summary>
         /// Gets or sets surname.
         /// Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values)
         /// </summary>

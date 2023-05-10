@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets flowType.
-        /// Defines when this attribute should be updated in the target directory. Possible values are: Always (default), ObjectAddOnly (only when new object is created), MultiValueAddOnly (only when the change is adding new values to a multi-valued attribute).
+        /// Defines when this attribute should be updated in the target directory. Possible values are: Always (default) ObjectAddOnly - only when new object is created  MultiValueAddOnly - only when the change is adding new values to a multi-valued attribute  ValueAddOnly - If there is a current value, only flows 'Add' operations; will not flow 'Remove' operations   AttributeAddOnly - Only propagates changes if no current value exists at all
         /// </summary>
         [JsonPropertyName("flowType")]
         public AttributeFlowType? FlowType { get; set; }

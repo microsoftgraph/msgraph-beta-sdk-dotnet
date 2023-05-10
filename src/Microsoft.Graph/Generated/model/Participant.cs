@@ -69,11 +69,25 @@ namespace Microsoft.Graph
         public RecordingInfo RecordingInfo { get; set; }
     
         /// <summary>
+        /// Gets or sets removed state.
+        /// Indicates the reason why the participant was removed from the roster.
+        /// </summary>
+        [JsonPropertyName("removedState")]
+        public RemovedState RemovedState { get; set; }
+    
+        /// <summary>
         /// Gets or sets restricted experience.
         /// Indicates the reason or reasons why media content from this participant is restricted.
         /// </summary>
         [JsonPropertyName("restrictedExperience")]
         public OnlineMeetingRestricted RestrictedExperience { get; set; }
+    
+        /// <summary>
+        /// Gets or sets roster sequence number.
+        /// Indicates the roster sequence number the participant was last updated in.
+        /// </summary>
+        [JsonPropertyName("rosterSequenceNumber")]
+        public Int64? RosterSequenceNumber { get; set; }
     
     }
 }

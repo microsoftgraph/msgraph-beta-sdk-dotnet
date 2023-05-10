@@ -57,6 +57,12 @@ namespace Microsoft.Graph.SecurityNamespace
         public IEnumerable<string> CustomTags { get; set; }
     
         /// <summary>
+        /// Gets or sets description.
+        /// </summary>
+        [JsonPropertyName("description")]
+        public string Description { get; set; }
+    
+        /// <summary>
         /// Gets or sets determination.
         /// Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
         /// </summary>
@@ -85,6 +91,18 @@ namespace Microsoft.Graph.SecurityNamespace
         public DateTimeOffset? LastUpdateDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets recommended actions.
+        /// </summary>
+        [JsonPropertyName("recommendedActions")]
+        public string RecommendedActions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets recommended hunting queries.
+        /// </summary>
+        [JsonPropertyName("recommendedHuntingQueries")]
+        public IEnumerable<RecommendedHuntingQuery> RecommendedHuntingQueries { get; set; }
+    
+        /// <summary>
         /// Gets or sets redirect incident id.
         /// Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.
         /// </summary>
@@ -104,6 +122,12 @@ namespace Microsoft.Graph.SecurityNamespace
         /// </summary>
         [JsonPropertyName("status")]
         public IncidentStatus? Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets system tags.
+        /// </summary>
+        [JsonPropertyName("systemTags")]
+        public IEnumerable<string> SystemTags { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.

@@ -246,6 +246,12 @@ namespace Microsoft.Graph
 
             if (employeeExperienceToInitialize != null)
             {
+                if (employeeExperienceToInitialize.LearningCourseActivities != null && employeeExperienceToInitialize.LearningCourseActivities.CurrentPage != null)
+                {
+                    employeeExperienceToInitialize.LearningCourseActivities.InitializeNextPageRequest(this.Client, employeeExperienceToInitialize.LearningCourseActivitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    employeeExperienceToInitialize.LearningCourseActivities.AdditionalData = employeeExperienceToInitialize.AdditionalData;
+                }
                 if (employeeExperienceToInitialize.LearningProviders != null && employeeExperienceToInitialize.LearningProviders.CurrentPage != null)
                 {
                     employeeExperienceToInitialize.LearningProviders.InitializeNextPageRequest(this.Client, employeeExperienceToInitialize.LearningProvidersNextLink);

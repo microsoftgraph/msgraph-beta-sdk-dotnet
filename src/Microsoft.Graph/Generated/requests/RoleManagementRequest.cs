@@ -244,6 +244,18 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(RoleManagement roleManagementToInitialize)
         {
 
+            if (roleManagementToInitialize != null)
+            {
+                if (roleManagementToInitialize.EnterpriseApps != null && roleManagementToInitialize.EnterpriseApps.CurrentPage != null)
+                {
+                    roleManagementToInitialize.EnterpriseApps.InitializeNextPageRequest(this.Client, roleManagementToInitialize.EnterpriseAppsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    roleManagementToInitialize.EnterpriseApps.AdditionalData = roleManagementToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

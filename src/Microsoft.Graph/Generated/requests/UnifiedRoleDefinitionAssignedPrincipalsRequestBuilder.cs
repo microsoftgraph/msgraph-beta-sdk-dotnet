@@ -79,6 +79,16 @@ namespace Microsoft.Graph
                 ids);
         }
         /// <summary>
+        /// Gets the request builder for DirectoryObjectDeltaRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectDeltaRequestBuilder"/>.</returns>
+        public IDirectoryObjectDeltaRequestBuilder Delta()
+        {
+            return new DirectoryObjectDeltaRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
+                this.Client);
+        }
+        /// <summary>
         /// Gets the request builder for DirectoryObjectGetByIdsRequestBuilder.
         /// </summary>
         /// <param name="ids">A ids parameter for the OData method call.</param>

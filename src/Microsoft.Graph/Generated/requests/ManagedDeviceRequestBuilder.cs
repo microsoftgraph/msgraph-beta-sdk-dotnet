@@ -137,12 +137,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for DeviceHealthScriptStates.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceDeviceHealthScriptStatesCollectionWithReferencesRequestBuilder"/>.</returns>
-        public IManagedDeviceDeviceHealthScriptStatesCollectionWithReferencesRequestBuilder DeviceHealthScriptStates
+        /// <returns>The <see cref="IManagedDeviceDeviceHealthScriptStatesCollectionRequestBuilder"/>.</returns>
+        public IManagedDeviceDeviceHealthScriptStatesCollectionRequestBuilder DeviceHealthScriptStates
         {
             get
             {
-                return new ManagedDeviceDeviceHealthScriptStatesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("deviceHealthScriptStates"), this.Client);
+                return new ManagedDeviceDeviceHealthScriptStatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceHealthScriptStates"), this.Client);
             }
         }
 
@@ -554,6 +554,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceRotateLocalAdminPassword.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceRotateLocalAdminPasswordRequestBuilder"/>.</returns>
+        public IManagedDeviceRotateLocalAdminPasswordRequestBuilder RotateLocalAdminPassword()
+        {
+            return new ManagedDeviceRotateLocalAdminPasswordRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.rotateLocalAdminPassword"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceSendCustomNotificationToCompanyPortal.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
@@ -661,6 +672,7 @@ namespace Microsoft.Graph
             bool? keepEnrollmentData = null,
             bool? keepUserData = null,
             string macOsUnlockCode = null,
+            ObliterationBehavior? obliterationBehavior = null,
             bool? persistEsimDataPlan = null,
             bool? useProtectedWipe = null)
         {
@@ -670,49 +682,9 @@ namespace Microsoft.Graph
                 keepEnrollmentData,
                 keepUserData,
                 macOsUnlockCode,
+                obliterationBehavior,
                 persistEsimDataPlan,
                 useProtectedWipe);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceCreateRemoteHelpSession.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceCreateRemoteHelpSessionRequestBuilder"/>.</returns>
-        public IManagedDeviceCreateRemoteHelpSessionRequestBuilder CreateRemoteHelpSession(
-            string sessionType = null)
-        {
-            return new ManagedDeviceCreateRemoteHelpSessionRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.createRemoteHelpSession"),
-                this.Client,
-                sessionType);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceEndRemoteHelpSession.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceEndRemoteHelpSessionRequestBuilder"/>.</returns>
-        public IManagedDeviceEndRemoteHelpSessionRequestBuilder EndRemoteHelpSession(
-            string sessionKey = null)
-        {
-            return new ManagedDeviceEndRemoteHelpSessionRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.endRemoteHelpSession"),
-                this.Client,
-                sessionKey);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceRequestRemoteHelpSessionAccess.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceRequestRemoteHelpSessionAccessRequestBuilder"/>.</returns>
-        public IManagedDeviceRequestRemoteHelpSessionAccessRequestBuilder RequestRemoteHelpSessionAccess(
-            string sessionKey = null,
-            string pubSubConnectionId = null)
-        {
-            return new ManagedDeviceRequestRemoteHelpSessionAccessRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.requestRemoteHelpSessionAccess"),
-                this.Client,
-                sessionKey,
-                pubSubConnectionId);
         }
 
         /// <summary>
@@ -768,19 +740,6 @@ namespace Microsoft.Graph
             return new ManagedDeviceGetOemWarrantyRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getOemWarranty"),
                 this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceRetrieveRemoteHelpSession.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceRetrieveRemoteHelpSessionRequestBuilder"/>.</returns>
-        public IManagedDeviceRetrieveRemoteHelpSessionRequestBuilder RetrieveRemoteHelpSession(
-            string sessionKey = null)
-        {
-            return new ManagedDeviceRetrieveRemoteHelpSessionRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.retrieveRemoteHelpSession"),
-                this.Client,
-                sessionKey);
         }
     
     }

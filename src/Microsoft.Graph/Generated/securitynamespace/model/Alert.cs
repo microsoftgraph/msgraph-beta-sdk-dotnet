@@ -190,6 +190,12 @@ namespace Microsoft.Graph.SecurityNamespace
         public AlertStatus? Status { get; set; }
     
         /// <summary>
+        /// Gets or sets system tags.
+        /// </summary>
+        [JsonPropertyName("systemTags")]
+        public IEnumerable<string> SystemTags { get; set; }
+    
+        /// <summary>
         /// Gets or sets tenant id.
         /// The Azure Active Directory tenant the alert was created in.
         /// </summary>

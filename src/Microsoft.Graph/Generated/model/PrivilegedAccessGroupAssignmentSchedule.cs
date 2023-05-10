@@ -31,48 +31,56 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets access id.
+        /// The identifier of the membership or ownership assignment to the group that is governed by PIM. Required. The possible values are: owner, member, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("accessId")]
         public PrivilegedAccessGroupRelationships? AccessId { get; set; }
     
         /// <summary>
         /// Gets or sets assignment type.
+        /// Indicates whether the membership or ownership assignment for the principal is granted through activation or direct assignment. Required. The possible values are: assigned, activated, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("assignmentType")]
         public PrivilegedAccessGroupAssignmentType? AssignmentType { get; set; }
     
         /// <summary>
         /// Gets or sets group id.
+        /// The identifier of the group representing the scope of the membership or ownership assignment through PIM for groups. Required.
         /// </summary>
         [JsonPropertyName("groupId")]
         public string GroupId { get; set; }
     
         /// <summary>
         /// Gets or sets member type.
+        /// Indicates whether the assignment is derived from a direct group assignment or through a transitive assignment. The possible values are: direct, group, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("memberType")]
         public PrivilegedAccessGroupMemberType? MemberType { get; set; }
     
         /// <summary>
         /// Gets or sets principal id.
+        /// The identifier of the principal whose membership or ownership assignment is granted through PIM for groups. Required.
         /// </summary>
         [JsonPropertyName("principalId")]
         public string PrincipalId { get; set; }
     
         /// <summary>
         /// Gets or sets activated using.
+        /// When the request activates an ownership or membership assignment in PIM for groups, this object represents the eligibility relationship. Otherwise, it is null. Supports $expand.
         /// </summary>
         [JsonPropertyName("activatedUsing")]
         public PrivilegedAccessGroupEligibilitySchedule ActivatedUsing { get; set; }
     
         /// <summary>
         /// Gets or sets group.
+        /// References the group that is the scope of the membership or ownership assignment through PIM for groups. Supports $expand.
         /// </summary>
         [JsonPropertyName("group")]
         public Group Group { get; set; }
     
         /// <summary>
         /// Gets or sets principal.
+        /// References the principal that's in the scope of this membership or ownership assignment request to the group that's governed by PIM. Supports $expand.
         /// </summary>
         [JsonPropertyName("principal")]
         public DirectoryObject Principal { get; set; }

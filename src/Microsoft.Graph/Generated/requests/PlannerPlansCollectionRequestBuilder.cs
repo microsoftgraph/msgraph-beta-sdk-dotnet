@@ -60,6 +60,15 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for PlannerPlanDelta.
+        /// </summary>
+        /// <returns>The <see cref="IPlannerPlanDeltaRequestBuilder"/>.</returns>
+        public IPlannerPlanDeltaRequestBuilder Delta()
+        {
+            return new PlannerPlanDeltaRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
+                this.Client);
+        }
     }
 }

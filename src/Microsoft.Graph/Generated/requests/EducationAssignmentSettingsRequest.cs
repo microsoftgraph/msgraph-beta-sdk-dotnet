@@ -244,6 +244,18 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(EducationAssignmentSettings educationAssignmentSettingsToInitialize)
         {
 
+            if (educationAssignmentSettingsToInitialize != null)
+            {
+                if (educationAssignmentSettingsToInitialize.GradingCategories != null && educationAssignmentSettingsToInitialize.GradingCategories.CurrentPage != null)
+                {
+                    educationAssignmentSettingsToInitialize.GradingCategories.InitializeNextPageRequest(this.Client, educationAssignmentSettingsToInitialize.GradingCategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    educationAssignmentSettingsToInitialize.GradingCategories.AdditionalData = educationAssignmentSettingsToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

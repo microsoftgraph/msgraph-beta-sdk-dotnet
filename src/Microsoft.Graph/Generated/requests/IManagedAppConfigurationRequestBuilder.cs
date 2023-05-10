@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IManagedAppConfigurationRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for Settings.
+        /// </summary>
+        /// <returns>The <see cref="IManagedAppConfigurationSettingsCollectionRequestBuilder"/>.</returns>
+        IManagedAppConfigurationSettingsCollectionRequestBuilder Settings { get; }
+    
     }
 }

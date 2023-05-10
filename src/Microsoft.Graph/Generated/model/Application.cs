@@ -233,7 +233,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tags.
-        /// Custom strings that can be used to categorize and identify the application. Not nullable.Supports $filter (eq, not, ge, le, startsWith).
+        /// Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.
         /// </summary>
         [JsonPropertyName("tags")]
         public IEnumerable<string> Tags { get; set; }
@@ -392,6 +392,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets synchronization.
+        /// Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
         /// </summary>
         [JsonPropertyName("synchronization")]
         public Synchronization Synchronization { get; set; }

@@ -315,6 +315,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets user.
         /// </summary>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("user")]
         public User User { get; set; }
     

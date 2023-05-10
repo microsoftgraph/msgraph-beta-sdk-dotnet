@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for LastModifiedBy.
+        /// </summary>
+        /// <returns>The <see cref="IUserWithReferenceRequestBuilder"/>.</returns>
+        public IUserWithReferenceRequestBuilder LastModifiedBy
+        {
+            get
+            {
+                return new UserWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("lastModifiedBy"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Member.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>

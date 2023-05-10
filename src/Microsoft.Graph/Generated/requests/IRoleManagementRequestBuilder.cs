@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         IRbacApplicationMultipleRequestBuilder CloudPC { get; }
 
         /// <summary>
+        /// Gets the request builder for EnterpriseApps.
+        /// </summary>
+        /// <returns>The <see cref="IRoleManagementEnterpriseAppsCollectionRequestBuilder"/>.</returns>
+        IRoleManagementEnterpriseAppsCollectionRequestBuilder EnterpriseApps { get; }
+
+        /// <summary>
         /// Gets the request builder for Exchange.
         /// </summary>
         /// <returns>The <see cref="IUnifiedRbacApplicationRequestBuilder"/>.</returns>

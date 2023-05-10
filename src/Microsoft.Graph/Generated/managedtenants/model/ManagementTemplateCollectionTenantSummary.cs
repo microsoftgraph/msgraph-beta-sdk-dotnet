@@ -111,10 +111,28 @@ namespace Microsoft.Graph.ManagedTenants
         public string ManagementTemplateCollectionId { get; set; }
     
         /// <summary>
+        /// Gets or sets regressed steps count.
+        /// </summary>
+        [JsonPropertyName("regressedStepsCount")]
+        public Int32? RegressedStepsCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets regressed users count.
+        /// </summary>
+        [JsonPropertyName("regressedUsersCount")]
+        public Int32? RegressedUsersCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets tenant id.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets unlicensed users count.
+        /// </summary>
+        [JsonPropertyName("unlicensedUsersCount")]
+        public Int32? UnlicensedUsersCount { get; set; }
     
     }
 }

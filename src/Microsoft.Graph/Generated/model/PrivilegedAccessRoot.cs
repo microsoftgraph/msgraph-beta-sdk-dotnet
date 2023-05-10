@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets group.
+        /// A group that's governed through Privileged Identity Management (PIM).
         /// </summary>
         [JsonPropertyName("group")]
         public PrivilegedAccessGroup Group { get; set; }

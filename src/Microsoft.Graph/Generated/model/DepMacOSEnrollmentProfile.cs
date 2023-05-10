@@ -36,6 +36,27 @@ namespace Microsoft.Graph
         public bool? AccessibilityScreenDisabled { get; set; }
     
         /// <summary>
+        /// Gets or sets admin account full name.
+        /// Indicates what the full name for the admin account is
+        /// </summary>
+        [JsonPropertyName("adminAccountFullName")]
+        public string AdminAccountFullName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets admin account password.
+        /// Indicates what the password for the admin account is
+        /// </summary>
+        [JsonPropertyName("adminAccountPassword")]
+        public string AdminAccountPassword { get; set; }
+    
+        /// <summary>
+        /// Gets or sets admin account user name.
+        /// Indicates what the user name for the admin account is
+        /// </summary>
+        [JsonPropertyName("adminAccountUserName")]
+        public string AdminAccountUserName { get; set; }
+    
+        /// <summary>
         /// Gets or sets auto unlock with watch disabled.
         /// Indicates if UnlockWithWatch screen is disabled
         /// </summary>
@@ -69,6 +90,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("fileVaultDisabled")]
         public bool? FileVaultDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets hide admin account.
+        /// Indicates whether the admin account should be hidded or not
+        /// </summary>
+        [JsonPropertyName("hideAdminAccount")]
+        public bool? HideAdminAccount { get; set; }
     
         /// <summary>
         /// Gets or sets i cloud diagnostics disabled.

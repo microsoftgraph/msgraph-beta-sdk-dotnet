@@ -84,5 +84,10 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 21,
 	
+        /// <summary>
+        /// Device Configuration Scripts
+        /// </summary>
+        DeviceConfigurationScripts = 22,
+	
     }
 }

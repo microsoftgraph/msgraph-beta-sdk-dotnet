@@ -61,6 +61,18 @@ namespace Microsoft.Graph
                 return new CallTranscriptContentRequestBuilder(this.AppendSegmentToRequestUrl("content"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for MetadataContent.
+        /// </summary>
+        /// <returns>The <see cref="ICallTranscriptMetadataContentRequestBuilder"/>.</returns>
+        public ICallTranscriptMetadataContentRequestBuilder MetadataContent
+        {
+            get
+            {
+                return new CallTranscriptMetadataContentRequestBuilder(this.AppendSegmentToRequestUrl("metadataContent"), this.Client);
+            }
+        }
     
     }
 }

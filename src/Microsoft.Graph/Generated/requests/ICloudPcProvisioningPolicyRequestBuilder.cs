@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         ICloudPcProvisioningPolicyAssignmentsCollectionRequestBuilder Assignments { get; }
     
         /// <summary>
+        /// Gets the request builder for CloudPcProvisioningPolicyApply.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcProvisioningPolicyApplyRequestBuilder"/>.</returns>
+        ICloudPcProvisioningPolicyApplyRequestBuilder Apply();
+
+        /// <summary>
         /// Gets the request builder for CloudPcProvisioningPolicyAssign.
         /// </summary>
         /// <returns>The <see cref="ICloudPcProvisioningPolicyAssignRequestBuilder"/>.</returns>

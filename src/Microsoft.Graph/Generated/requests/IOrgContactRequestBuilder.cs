@@ -61,7 +61,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IOrgContactTransitiveReportsCollectionWithReferencesRequestBuilder"/>.</returns>
         IOrgContactTransitiveReportsCollectionWithReferencesRequestBuilder TransitiveReports { get; }
     
-        
+        /// <summary>
+        /// Gets the request builder for OrgContactRetryServiceProvisioning.
+        /// </summary>
+        /// <returns>The <see cref="IOrgContactRetryServiceProvisioningRequestBuilder"/>.</returns>
+        IOrgContactRetryServiceProvisioningRequestBuilder RetryServiceProvisioning();
     
     }
 }

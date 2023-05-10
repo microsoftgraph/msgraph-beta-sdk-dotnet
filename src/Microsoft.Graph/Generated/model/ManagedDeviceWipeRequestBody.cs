@@ -39,6 +39,12 @@ namespace Microsoft.Graph
         public string MacOsUnlockCode { get; set; }
     
         /// <summary>
+        /// Gets or sets ObliterationBehavior.
+        /// </summary>
+        [JsonPropertyName("obliterationBehavior")]
+        public ObliterationBehavior? ObliterationBehavior { get; set; }
+    
+        /// <summary>
         /// Gets or sets PersistEsimDataPlan.
         /// </summary>
         [JsonPropertyName("persistEsimDataPlan")]

@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The image's display name.
+        /// The display name of the image.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -37,21 +37,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as '2014-01-01T00:00:00Z'.
+        /// The data and time that the image was last modified. The time is shown in ISO 8601 format and  Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets operating system.
-        /// The image's operating system. For example: Windows 10 Enterprise.
+        /// The operating system of the image. For example, Windows 10 Enterprise.
         /// </summary>
         [JsonPropertyName("operatingSystem")]
         public string OperatingSystem { get; set; }
     
         /// <summary>
         /// Gets or sets os build number.
-        /// The image's OS build version. For example: 1909.
+        /// The OS build version of the image. For example, 1909.
         /// </summary>
         [JsonPropertyName("osBuildNumber")]
         public string OsBuildNumber { get; set; }
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets source image resource id.
-        /// The ID of the source image resource on Azure. Required format: '/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}'.
+        /// The ID of the source image resource on Azure. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}.
         /// </summary>
         [JsonPropertyName("sourceImageResourceId")]
         public string SourceImageResourceId { get; set; }
@@ -79,14 +79,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status details.
-        /// The details of the image's status, which indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, and sourceImageNotGeneralized.
+        /// The details of the status of the image that indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, and sourceImageNotGeneralized.
         /// </summary>
         [JsonPropertyName("statusDetails")]
         public CloudPcDeviceImageStatusDetails? StatusDetails { get; set; }
     
         /// <summary>
         /// Gets or sets version.
-        /// The image version. For example: 0.0.1, 1.5.13.
+        /// The image version. For example, 0.0.1 and 1.5.13.
         /// </summary>
         [JsonPropertyName("version")]
         public string Version { get; set; }

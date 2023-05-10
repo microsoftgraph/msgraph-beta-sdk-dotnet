@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for GradingCategory.
+        /// </summary>
+        /// <returns>The <see cref="IEducationGradingCategoryWithReferenceRequestBuilder"/>.</returns>
+        public IEducationGradingCategoryWithReferenceRequestBuilder GradingCategory
+        {
+            get
+            {
+                return new EducationGradingCategoryWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("gradingCategory"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Resources.
         /// </summary>
         /// <returns>The <see cref="IEducationAssignmentResourcesCollectionRequestBuilder"/>.</returns>
@@ -106,6 +118,28 @@ namespace Microsoft.Graph
         {
             return new EducationAssignmentPublishRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.publish"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for EducationAssignmentActivate.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentActivateRequestBuilder"/>.</returns>
+        public IEducationAssignmentActivateRequestBuilder Activate()
+        {
+            return new EducationAssignmentActivateRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.activate"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for EducationAssignmentDeactivate.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentDeactivateRequestBuilder"/>.</returns>
+        public IEducationAssignmentDeactivateRequestBuilder Deactivate()
+        {
+            return new EducationAssignmentDeactivateRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.deactivate"),
                 this.Client);
         }
 

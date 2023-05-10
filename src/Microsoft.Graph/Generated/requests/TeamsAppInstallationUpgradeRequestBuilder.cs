@@ -23,11 +23,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
+        /// <param name="consentedPermissionSet">A consentedPermissionSet parameter for the OData method call.</param>
         public TeamsAppInstallationUpgradeRequestBuilder(
             string requestUrl,
-            IBaseClient client)
+            IBaseClient client,
+            TeamsAppPermissionSet consentedPermissionSet)
             : base(requestUrl, client)
         {
+            this.SetParameter("consentedPermissionSet", consentedPermissionSet, true);
         }
 
         /// <summary>
@@ -39,6 +42,11 @@ namespace Microsoft.Graph
         protected override ITeamsAppInstallationUpgradeRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
         {
             var request = new TeamsAppInstallationUpgradeRequest(functionUrl, this.Client, options);
+
+            if (this.HasParameter("consentedPermissionSet"))
+            {
+                request.RequestBody.ConsentedPermissionSet = this.GetParameter<TeamsAppPermissionSet>("consentedPermissionSet");
+            }
 
             return request;
         }

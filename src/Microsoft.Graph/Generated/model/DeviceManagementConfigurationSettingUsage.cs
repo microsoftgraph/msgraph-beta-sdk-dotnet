@@ -35,5 +35,10 @@ namespace Microsoft.Graph
         /// </summary>
         Compliance = 2,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 8,
+	
     }
 }

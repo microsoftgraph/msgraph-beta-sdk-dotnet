@@ -63,6 +63,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for CloudPcProvisioningPolicyApply.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcProvisioningPolicyApplyRequestBuilder"/>.</returns>
+        public ICloudPcProvisioningPolicyApplyRequestBuilder Apply()
+        {
+            return new CloudPcProvisioningPolicyApplyRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.apply"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for CloudPcProvisioningPolicyAssign.
         /// </summary>
         /// <returns>The <see cref="ICloudPcProvisioningPolicyAssignRequestBuilder"/>.</returns>

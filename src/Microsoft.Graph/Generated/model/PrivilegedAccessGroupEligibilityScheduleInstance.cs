@@ -31,42 +31,49 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets access id.
+        /// The identifier of the membership or ownership eligibility relationship to the group. Required. The possible values are: owner, member.
         /// </summary>
         [JsonPropertyName("accessId")]
         public PrivilegedAccessGroupRelationships? AccessId { get; set; }
     
         /// <summary>
         /// Gets or sets eligibility schedule id.
+        /// The identifier of the privilegedAccessGroupEligibilitySchedule from which this instance was created. Required.
         /// </summary>
         [JsonPropertyName("eligibilityScheduleId")]
         public string EligibilityScheduleId { get; set; }
     
         /// <summary>
         /// Gets or sets group id.
+        /// The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required.
         /// </summary>
         [JsonPropertyName("groupId")]
         public string GroupId { get; set; }
     
         /// <summary>
         /// Gets or sets member type.
+        /// Indicates whether the assignment is derived from a group assignment. It can further imply whether the calling principal can manage the assignment schedule. Required. The possible values are: direct, group, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("memberType")]
         public PrivilegedAccessGroupMemberType? MemberType { get; set; }
     
         /// <summary>
         /// Gets or sets principal id.
+        /// The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for groups. Required.
         /// </summary>
         [JsonPropertyName("principalId")]
         public string PrincipalId { get; set; }
     
         /// <summary>
         /// Gets or sets group.
+        /// References the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
         /// </summary>
         [JsonPropertyName("group")]
         public Group Group { get; set; }
     
         /// <summary>
         /// Gets or sets principal.
+        /// References the principal that's in the scope of the membership or ownership eligibility request through the group that's governed by PIM. Supports $expand.
         /// </summary>
         [JsonPropertyName("principal")]
         public DirectoryObject Principal { get; set; }

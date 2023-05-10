@@ -281,20 +281,6 @@ namespace Microsoft.Graph
         [JsonPropertyName("userWindowsUpdateScanAccess")]
         public Enablement? UserWindowsUpdateScanAccess { get; set; }
     
-        /// <summary>
-        /// Gets or sets device update states.
-        /// Windows update for business configuration device states. This collection can contain a maximum of 500 elements.
-        /// </summary>
-        [JsonPropertyName("deviceUpdateStates")]
-        public IWindowsUpdateForBusinessConfigurationDeviceUpdateStatesCollectionPage DeviceUpdateStates { get; set; }
-
-        /// <summary>
-        /// Gets or sets deviceUpdateStatesNextLink.
-        /// </summary>
-        [JsonPropertyName("deviceUpdateStates@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string DeviceUpdateStatesNextLink { get; set; }
-    
     }
 }
 

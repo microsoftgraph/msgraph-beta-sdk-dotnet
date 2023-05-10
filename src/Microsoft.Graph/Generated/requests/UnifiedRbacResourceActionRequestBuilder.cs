@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AuthenticationContext.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationContextClassReferenceWithReferenceRequestBuilder"/>.</returns>
+        public IAuthenticationContextClassReferenceWithReferenceRequestBuilder AuthenticationContext
+        {
+            get
+            {
+                return new AuthenticationContextClassReferenceWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("authenticationContext"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ResourceScope.
         /// </summary>
         /// <returns>The <see cref="IUnifiedRbacResourceScopeRequestBuilder"/>.</returns>

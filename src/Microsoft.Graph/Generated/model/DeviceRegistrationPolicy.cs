@@ -50,6 +50,13 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets local admin password.
+        /// Specifies the setting for Local Admin Password Solution (LAPS) within your organization.
+        /// </summary>
+        [JsonPropertyName("localAdminPassword")]
+        public LocalAdminPasswordSettings LocalAdminPassword { get; set; }
+    
+        /// <summary>
         /// Gets or sets multi factor auth configuration.
         /// Specifies the authentication policy for a user to complete registration using Azure AD Join or Azure AD registered within your organization. The possible values are: 0 (meaning notRequired), 1 (meaning required), and 2 (meaning unknownFutureValue). The default value is 0.
         /// </summary>

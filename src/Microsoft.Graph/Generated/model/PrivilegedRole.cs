@@ -22,14 +22,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets name.
-        /// Role name.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
-        /// The assignments for this role. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("assignments")]
         public IPrivilegedRoleAssignmentsCollectionWithReferencesPage Assignments { get; set; }
@@ -43,14 +41,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets settings.
-        /// The settings for this role. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("settings")]
         public PrivilegedRoleSettings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets summary.
-        /// The summary information for this role. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("summary")]
         public PrivilegedRoleSummary Summary { get; set; }

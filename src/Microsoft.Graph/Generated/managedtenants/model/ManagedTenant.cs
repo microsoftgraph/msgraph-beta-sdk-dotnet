@@ -35,6 +35,19 @@ namespace Microsoft.Graph.ManagedTenants
         public string AggregatedPolicyCompliancesNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets app performances.
+        /// </summary>
+        [JsonPropertyName("appPerformances")]
+        public IManagedTenantAppPerformancesCollectionPage AppPerformances { get; set; }
+
+        /// <summary>
+        /// Gets or sets appPerformancesNextLink.
+        /// </summary>
+        [JsonPropertyName("appPerformances@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AppPerformancesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets audit events.
         /// The collection of audit events across managed tenants.
         /// </summary>
@@ -119,6 +132,19 @@ namespace Microsoft.Graph.ManagedTenants
         public string CredentialUserRegistrationsSummariesNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets device app performances.
+        /// </summary>
+        [JsonPropertyName("deviceAppPerformances")]
+        public IManagedTenantDeviceAppPerformancesCollectionPage DeviceAppPerformances { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceAppPerformancesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceAppPerformances@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string DeviceAppPerformancesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets device compliance policy setting state summaries.
         /// Summary information for device compliance policy setting states across managed tenants.
         /// </summary>
@@ -131,6 +157,19 @@ namespace Microsoft.Graph.ManagedTenants
         [JsonPropertyName("deviceCompliancePolicySettingStateSummaries@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string DeviceCompliancePolicySettingStateSummariesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device health statuses.
+        /// </summary>
+        [JsonPropertyName("deviceHealthStatuses")]
+        public IManagedTenantDeviceHealthStatusesCollectionPage DeviceHealthStatuses { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceHealthStatusesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceHealthStatuses@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string DeviceHealthStatusesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets managed device compliances.

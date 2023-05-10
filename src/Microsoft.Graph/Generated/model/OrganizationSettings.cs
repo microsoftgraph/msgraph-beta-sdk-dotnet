@@ -61,6 +61,13 @@ namespace Microsoft.Graph
         [JsonConverter(typeof(NextLinkConverter))]
         public string ProfileCardPropertiesNextLink { get; set; }
     
+        /// <summary>
+        /// Gets or sets pronouns.
+        /// Represents administrator settings that manage the support of pronouns in an organization.
+        /// </summary>
+        [JsonPropertyName("pronouns")]
+        public PronounsSettings Pronouns { get; set; }
+    
     }
 }
 

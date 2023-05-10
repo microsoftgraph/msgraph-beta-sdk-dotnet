@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets state.
-        /// Possible values are: Active, Disabled.
+        /// The possible values are: Active, Disabled, Paused.
         /// </summary>
         [JsonPropertyName("state")]
         public SynchronizationScheduleState? State { get; set; }

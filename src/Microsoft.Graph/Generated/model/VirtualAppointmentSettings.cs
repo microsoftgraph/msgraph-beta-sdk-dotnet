@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type VirtualAppointmentSettings.
     /// </summary>
+    [Obsolete("The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API.")]
     [JsonConverter(typeof(DerivedTypeConverter<VirtualAppointmentSettings>))]
     public partial class VirtualAppointmentSettings
     {

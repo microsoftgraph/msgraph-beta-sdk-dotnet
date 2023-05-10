@@ -252,6 +252,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     accessPackageAssignmentPolicyToInitialize.CustomExtensionHandlers.AdditionalData = accessPackageAssignmentPolicyToInitialize.AdditionalData;
                 }
+                if (accessPackageAssignmentPolicyToInitialize.CustomExtensionStageSettings != null && accessPackageAssignmentPolicyToInitialize.CustomExtensionStageSettings.CurrentPage != null)
+                {
+                    accessPackageAssignmentPolicyToInitialize.CustomExtensionStageSettings.InitializeNextPageRequest(this.Client, accessPackageAssignmentPolicyToInitialize.CustomExtensionStageSettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    accessPackageAssignmentPolicyToInitialize.CustomExtensionStageSettings.AdditionalData = accessPackageAssignmentPolicyToInitialize.AdditionalData;
+                }
 
             }
 

@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IAccessPackageCatalogRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AccessPackageCustomWorkflowExtensions.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageCatalogAccessPackageCustomWorkflowExtensionsCollectionRequestBuilder"/>.</returns>
+        IAccessPackageCatalogAccessPackageCustomWorkflowExtensionsCollectionRequestBuilder AccessPackageCustomWorkflowExtensions { get; }
+
+        /// <summary>
         /// Gets the request builder for AccessPackageResourceRoles.
         /// </summary>
         /// <returns>The <see cref="IAccessPackageCatalogAccessPackageResourceRolesCollectionRequestBuilder"/>.</returns>
@@ -52,8 +58,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for AccessPackages.
         /// </summary>
-        /// <returns>The <see cref="IAccessPackageCatalogAccessPackagesCollectionRequestBuilder"/>.</returns>
-        IAccessPackageCatalogAccessPackagesCollectionRequestBuilder AccessPackages { get; }
+        /// <returns>The <see cref="IAccessPackageCatalogAccessPackagesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IAccessPackageCatalogAccessPackagesCollectionWithReferencesRequestBuilder AccessPackages { get; }
 
         /// <summary>
         /// Gets the request builder for CustomAccessPackageWorkflowExtensions.

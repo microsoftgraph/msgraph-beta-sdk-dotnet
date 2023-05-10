@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets child ids.
-        /// Dependent child settings to this group of settings
+        /// Dependent child settings to this group of settings.
         /// </summary>
         [JsonPropertyName("childIds")]
         public IEnumerable<string> ChildIds { get; set; }

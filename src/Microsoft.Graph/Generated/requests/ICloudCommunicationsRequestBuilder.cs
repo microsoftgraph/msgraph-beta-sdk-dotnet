@@ -16,32 +16,32 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICloudCommunicationsRequestBuilder.
     /// </summary>
-    public partial interface ICloudCommunicationsRequestBuilder : IEntityRequestBuilder
+    public partial interface ICloudCommunicationsRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new ICloudCommunicationsRequest Request();
+        ICloudCommunicationsRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new ICloudCommunicationsRequest Request(IEnumerable<Option> options);
+        ICloudCommunicationsRequest Request(IEnumerable<Option> options);
     
-        /// <summary>
-        /// Gets the request builder for Calls.
-        /// </summary>
-        /// <returns>The <see cref="ICloudCommunicationsCallsCollectionRequestBuilder"/>.</returns>
-        ICloudCommunicationsCallsCollectionRequestBuilder Calls { get; }
-
         /// <summary>
         /// Gets the request builder for CallRecords.
         /// </summary>
         /// <returns>The <see cref="ICloudCommunicationsCallRecordsCollectionRequestBuilder"/>.</returns>
         ICloudCommunicationsCallRecordsCollectionRequestBuilder CallRecords { get; }
+
+        /// <summary>
+        /// Gets the request builder for Calls.
+        /// </summary>
+        /// <returns>The <see cref="ICloudCommunicationsCallsCollectionRequestBuilder"/>.</returns>
+        ICloudCommunicationsCallsCollectionRequestBuilder Calls { get; }
 
         /// <summary>
         /// Gets the request builder for OnlineMeetings.

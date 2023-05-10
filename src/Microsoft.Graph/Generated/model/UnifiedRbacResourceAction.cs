@@ -61,6 +61,12 @@ namespace Microsoft.Graph
         public string ResourceScopeId { get; set; }
     
         /// <summary>
+        /// Gets or sets authentication context.
+        /// </summary>
+        [JsonPropertyName("authenticationContext")]
+        public AuthenticationContextClassReference AuthenticationContext { get; set; }
+    
+        /// <summary>
         /// Gets or sets resource scope.
         /// </summary>
         [JsonPropertyName("resourceScope")]

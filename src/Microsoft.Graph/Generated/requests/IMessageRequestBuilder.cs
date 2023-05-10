@@ -116,6 +116,20 @@ namespace Microsoft.Graph
             string Comment = null);
 
         /// <summary>
+        /// Gets the request builder for MessageMarkAsJunk.
+        /// </summary>
+        /// <returns>The <see cref="IMessageMarkAsJunkRequestBuilder"/>.</returns>
+        IMessageMarkAsJunkRequestBuilder MarkAsJunk(
+            bool MoveToJunk);
+
+        /// <summary>
+        /// Gets the request builder for MessageMarkAsNotJunk.
+        /// </summary>
+        /// <returns>The <see cref="IMessageMarkAsNotJunkRequestBuilder"/>.</returns>
+        IMessageMarkAsNotJunkRequestBuilder MarkAsNotJunk(
+            bool MoveToInbox);
+
+        /// <summary>
         /// Gets the request builder for MessageReply.
         /// </summary>
         /// <returns>The <see cref="IMessageReplyRequestBuilder"/>.</returns>

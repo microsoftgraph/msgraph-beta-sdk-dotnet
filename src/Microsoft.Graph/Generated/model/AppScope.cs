@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type App Scope.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AppScope>))]
     public partial class AppScope : Entity
     {
     

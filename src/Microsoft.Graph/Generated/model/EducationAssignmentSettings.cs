@@ -27,6 +27,19 @@ namespace Microsoft.Graph
         [JsonPropertyName("submissionAnimationDisabled")]
         public bool? SubmissionAnimationDisabled { get; set; }
     
+        /// <summary>
+        /// Gets or sets grading categories.
+        /// </summary>
+        [JsonPropertyName("gradingCategories")]
+        public IEducationAssignmentSettingsGradingCategoriesCollectionPage GradingCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets gradingCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("gradingCategories@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string GradingCategoriesNextLink { get; set; }
+    
     }
 }
 

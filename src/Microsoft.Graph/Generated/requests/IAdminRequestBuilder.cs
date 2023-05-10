@@ -40,8 +40,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Sharepoint.
         /// </summary>
-        /// <returns>The <see cref="Microsoft.Graph.TenantAdmin.ISharepointRequestBuilder"/>.</returns>
-        Microsoft.Graph.TenantAdmin.ISharepointRequestBuilder Sharepoint { get; }
+        /// <returns>The <see cref="ISharepointRequestBuilder"/>.</returns>
+        ISharepointRequestBuilder Sharepoint { get; }
 
         /// <summary>
         /// Gets the request builder for ServiceAnnouncement.

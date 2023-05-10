@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Custom Access Package Workflow Extension.
     /// </summary>
+    [Obsolete("")]
     public partial class CustomAccessPackageWorkflowExtension : CustomCalloutExtension
     {
     

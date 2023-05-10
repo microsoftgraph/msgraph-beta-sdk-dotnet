@@ -17,8 +17,15 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Unified Role Definition.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<UnifiedRoleDefinition>))]
     public partial class UnifiedRoleDefinition : Entity
     {
+    
+        /// <summary>
+        /// Gets or sets allowed principal types.
+        /// </summary>
+        [JsonPropertyName("allowedPrincipalTypes")]
+        public AllowedRolePrincipalTypes? AllowedPrincipalTypes { get; set; }
     
         /// <summary>
         /// Gets or sets description.

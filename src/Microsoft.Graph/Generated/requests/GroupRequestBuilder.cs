@@ -402,6 +402,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for GroupRetryServiceProvisioning.
+        /// </summary>
+        /// <returns>The <see cref="IGroupRetryServiceProvisioningRequestBuilder"/>.</returns>
+        public IGroupRetryServiceProvisioningRequestBuilder RetryServiceProvisioning()
+        {
+            return new GroupRetryServiceProvisioningRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.retryServiceProvisioning"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for GroupCheckGrantedPermissionsForApp.
         /// </summary>
         /// <returns>The <see cref="IGroupCheckGrantedPermissionsForAppRequestBuilder"/>.</returns>

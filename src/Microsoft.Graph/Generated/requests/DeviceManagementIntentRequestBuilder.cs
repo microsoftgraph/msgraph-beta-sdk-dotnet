@@ -214,6 +214,17 @@ namespace Microsoft.Graph
                 this.Client,
                 templateId);
         }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementIntentGetCustomizedSettings.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementIntentGetCustomizedSettingsRequestBuilder"/>.</returns>
+        public IDeviceManagementIntentGetCustomizedSettingsRequestBuilder GetCustomizedSettings()
+        {
+            return new DeviceManagementIntentGetCustomizedSettingsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getCustomizedSettings"),
+                this.Client);
+        }
     
     }
 }

@@ -244,6 +244,18 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(CloudPcProvisioningPolicyAssignment cloudPcProvisioningPolicyAssignmentToInitialize)
         {
 
+            if (cloudPcProvisioningPolicyAssignmentToInitialize != null)
+            {
+                if (cloudPcProvisioningPolicyAssignmentToInitialize.AssignedUsers != null && cloudPcProvisioningPolicyAssignmentToInitialize.AssignedUsers.CurrentPage != null)
+                {
+                    cloudPcProvisioningPolicyAssignmentToInitialize.AssignedUsers.InitializeNextPageRequest(this.Client, cloudPcProvisioningPolicyAssignmentToInitialize.AssignedUsersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    cloudPcProvisioningPolicyAssignmentToInitialize.AssignedUsers.AdditionalData = cloudPcProvisioningPolicyAssignmentToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

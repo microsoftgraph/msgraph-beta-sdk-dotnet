@@ -39,6 +39,11 @@ namespace Microsoft.Graph
         IDirectoryObjectCheckMemberObjectsRequestBuilder CheckMemberObjects(
             IEnumerable<string> ids);
         /// <summary>
+        /// Gets the request builder for DirectoryObjectDeltaRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectDeltaRequestBuilder"/>.</returns>
+        IDirectoryObjectDeltaRequestBuilder Delta();
+        /// <summary>
         /// Gets the request builder for DirectoryObjectGetByIdsRequestBuilder.
         /// </summary>
         /// <param name="ids">A ids parameter for the OData method call.</param>

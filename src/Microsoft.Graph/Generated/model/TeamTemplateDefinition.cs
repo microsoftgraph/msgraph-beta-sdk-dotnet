@@ -23,72 +23,84 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets audience.
+        /// Describes the audience the team template is available to. The possible values are: organization, user, public, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("audience")]
         public TeamTemplateAudience? Audience { get; set; }
     
         /// <summary>
         /// Gets or sets categories.
+        /// The assigned categories for the team template.
         /// </summary>
         [JsonPropertyName("categories")]
         public IEnumerable<string> Categories { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// A brief description of the team template as it will appear to the users in Microsoft Teams.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The user defined name of the team template.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets icon url.
+        /// The icon url for the team template.
         /// </summary>
         [JsonPropertyName("iconUrl")]
         public string IconUrl { get; set; }
     
         /// <summary>
         /// Gets or sets language tag.
+        /// Language the template is available in.
         /// </summary>
         [JsonPropertyName("languageTag")]
         public string LanguageTag { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
+        /// The identity of the user who last modified the team template.
         /// </summary>
         [JsonPropertyName("lastModifiedBy")]
         public IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// The date time of when the team template was last modified.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets parent template id.
+        /// The templateId for the team template
         /// </summary>
         [JsonPropertyName("parentTemplateId")]
         public string ParentTemplateId { get; set; }
     
         /// <summary>
         /// Gets or sets publisher name.
+        /// The organization which published the team template.
         /// </summary>
         [JsonPropertyName("publisherName")]
         public string PublisherName { get; set; }
     
         /// <summary>
         /// Gets or sets short description.
+        /// A short-description of the team template as it will appear to the users in Microsoft Teams.
         /// </summary>
         [JsonPropertyName("shortDescription")]
         public string ShortDescription { get; set; }
     
         /// <summary>
         /// Gets or sets team definition.
+        /// Collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.
         /// </summary>
         [JsonPropertyName("teamDefinition")]
         public Team TeamDefinition { get; set; }

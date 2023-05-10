@@ -36,13 +36,6 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets creation date time.
-        /// </summary>
-        [Obsolete("The creationDateTime property is deprecated and will stop returning data on December 31, 2020. Please use the createdDateTime property.")]
-        [JsonPropertyName("creationDateTime")]
-        public DateTimeOffset? CreationDateTime { get; set; }
-    
-        /// <summary>
         /// Gets or sets password.
         /// For security, the password is always returned as null from a LIST or GET operation.
         /// </summary>

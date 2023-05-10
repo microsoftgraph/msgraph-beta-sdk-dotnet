@@ -622,6 +622,20 @@ namespace Microsoft.Graph
         public string ReusableSettingsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets template insights.
+        /// List of setting insights in a template
+        /// </summary>
+        [JsonPropertyName("templateInsights")]
+        public IDeviceManagementTemplateInsightsCollectionPage TemplateInsights { get; set; }
+
+        /// <summary>
+        /// Gets or sets templateInsightsNextLink.
+        /// </summary>
+        [JsonPropertyName("templateInsights@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string TemplateInsightsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets template settings.
         /// List of all TemplateSettings
         /// </summary>
@@ -984,20 +998,6 @@ namespace Microsoft.Graph
         [JsonPropertyName("mobileAppTroubleshootingEvents@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string MobileAppTroubleshootingEventsNextLink { get; set; }
-    
-        /// <summary>
-        /// Gets or sets oem warranty information onboarding.
-        /// List of OEM Warranty Statuses
-        /// </summary>
-        [JsonPropertyName("oemWarrantyInformationOnboarding")]
-        public IDeviceManagementOemWarrantyInformationOnboardingCollectionPage OemWarrantyInformationOnboarding { get; set; }
-
-        /// <summary>
-        /// Gets or sets oemWarrantyInformationOnboardingNextLink.
-        /// </summary>
-        [JsonPropertyName("oemWarrantyInformationOnboarding@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string OemWarrantyInformationOnboardingNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets remote action audits.

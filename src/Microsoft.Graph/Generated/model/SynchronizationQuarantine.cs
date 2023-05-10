@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets reason.
-        /// A code that signifies why the quarantine was imposed. Possible values are: EncounteredBaseEscrowThreshold, EncounteredTotalEscrowThreshold, EncounteredEscrowProportionThreshold, EncounteredQuarantineException, QuarantinedOnDemand, TooManyDeletes, Unknown.
+        /// A code that signifies why the quarantine was imposed. The possible values are: EncounteredBaseEscrowThreshold, EncounteredTotalEscrowThreshold, EncounteredEscrowProportionThreshold, EncounteredQuarantineException, Unknown, QuarantinedOnDemand, TooManyDeletes, IngestionInterrupted.
         /// </summary>
         [JsonPropertyName("reason")]
         public QuarantineReason? Reason { get; set; }

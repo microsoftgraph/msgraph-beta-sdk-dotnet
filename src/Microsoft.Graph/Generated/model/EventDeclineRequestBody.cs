@@ -21,10 +21,10 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets or sets Comment.
+        /// Gets or sets ProposedNewTime.
         /// </summary>
-        [JsonPropertyName("Comment")]
-        public string Comment { get; set; }
+        [JsonPropertyName("ProposedNewTime")]
+        public TimeSlot ProposedNewTime { get; set; }
     
         /// <summary>
         /// Gets or sets SendResponse.
@@ -33,10 +33,10 @@ namespace Microsoft.Graph
         public bool? SendResponse { get; set; }
     
         /// <summary>
-        /// Gets or sets ProposedNewTime.
+        /// Gets or sets Comment.
         /// </summary>
-        [JsonPropertyName("ProposedNewTime")]
-        public TimeSlot ProposedNewTime { get; set; }
+        [JsonPropertyName("Comment")]
+        public string Comment { get; set; }
     
     }
 }

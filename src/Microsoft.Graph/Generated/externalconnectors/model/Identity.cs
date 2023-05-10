@@ -23,6 +23,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets type.
+        /// The type of identity. Possible values are: user or group for Azure AD identities and externalgroup for groups in an external system.
         /// </summary>
         [JsonPropertyName("type")]
         public IdentityType? Type { get; set; }

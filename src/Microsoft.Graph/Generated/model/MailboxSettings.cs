@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets archiveFolder.
-        /// Folder ID of an archive folder for the user. Read only.
+        /// Folder ID of an archive folder for the user. Read-only.
         /// </summary>
         [JsonPropertyName("archiveFolder")]
         public string ArchiveFolder { get; set; }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets userPurpose.
-        /// The purpose of the mailbox. Used to differentiate a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Read only.
+        /// The purpose of the mailbox. Differentiates a mailbox for a single user from a shared mailbox and equipment mailbox in Exchange Online. Possible values are: user, linked, shared, room, equipment, others, unknownFutureValue. Read-only.
         /// </summary>
         [JsonPropertyName("userPurpose")]
         public UserPurpose? UserPurpose { get; set; }

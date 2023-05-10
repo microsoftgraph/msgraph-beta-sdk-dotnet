@@ -85,17 +85,17 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventAcceptRequestBuilder"/>.</returns>
         IEventAcceptRequestBuilder Accept(
-            string Comment = null,
-            bool? SendResponse = null);
+            bool? SendResponse = null,
+            string Comment = null);
 
         /// <summary>
         /// Gets the request builder for EventDecline.
         /// </summary>
         /// <returns>The <see cref="IEventDeclineRequestBuilder"/>.</returns>
         IEventDeclineRequestBuilder Decline(
-            string Comment = null,
+            TimeSlot ProposedNewTime = null,
             bool? SendResponse = null,
-            TimeSlot ProposedNewTime = null);
+            string Comment = null);
 
         /// <summary>
         /// Gets the request builder for EventDismissReminder.
@@ -123,9 +123,9 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEventTentativelyAcceptRequestBuilder"/>.</returns>
         IEventTentativelyAcceptRequestBuilder TentativelyAccept(
-            string Comment = null,
+            TimeSlot ProposedNewTime = null,
             bool? SendResponse = null,
-            TimeSlot ProposedNewTime = null);
+            string Comment = null);
     
     }
 }

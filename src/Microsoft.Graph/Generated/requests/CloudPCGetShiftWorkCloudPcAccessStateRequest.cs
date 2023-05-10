@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CloudPCGetShiftWorkCloudPcAccessStateRequest.
     /// </summary>
+    [Obsolete("The waitlisted value is deprecated and will stop returning on May 17, 2023.")]
     public partial class CloudPCGetShiftWorkCloudPcAccessStateRequest : BaseRequest, ICloudPCGetShiftWorkCloudPcAccessStateRequest
     {
         /// <summary>

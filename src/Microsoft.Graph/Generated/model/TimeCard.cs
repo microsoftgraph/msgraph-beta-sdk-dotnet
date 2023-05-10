@@ -52,7 +52,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets confirmed by.
-        /// Indicate if this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.
+        /// Indicates whether this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("confirmedBy")]
         public ConfirmedBy? ConfirmedBy { get; set; }

@@ -78,6 +78,12 @@ namespace Microsoft.Graph
         public bool? IsSsprRegistered { get; set; }
     
         /// <summary>
+        /// Gets or sets last updated date time.
+        /// </summary>
+        [JsonPropertyName("lastUpdatedDateTime")]
+        public DateTimeOffset? LastUpdatedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets methods registered.
         /// Collection of authentication methods registered, such as mobilePhone, email, fido2. Supports $filter (any with eq).
         /// </summary>

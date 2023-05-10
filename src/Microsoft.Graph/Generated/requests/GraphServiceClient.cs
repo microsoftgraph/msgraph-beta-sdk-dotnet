@@ -97,6 +97,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceUsers request builder.
         /// </summary>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         public virtual IGraphServiceUsersCollectionRequestBuilder Users
         {
             get
@@ -191,6 +192,17 @@ namespace Microsoft.Graph
             get
             {
                 return new GraphServiceIdentityProvidersCollectionRequestBuilder(this.BaseUrl + "/identityProviders", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceDeviceLocalCredentials request builder.
+        /// </summary>
+        public virtual IGraphServiceDeviceLocalCredentialsCollectionRequestBuilder DeviceLocalCredentials
+        {
+            get
+            {
+                return new GraphServiceDeviceLocalCredentialsCollectionRequestBuilder(this.BaseUrl + "/deviceLocalCredentials", this);
             }
         }
     
@@ -1099,6 +1111,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceMe request builder.
         /// </summary>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         public virtual IUserRequestBuilder Me
         {
             get
@@ -1207,17 +1220,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceOfficeConfiguration request builder.
-        /// </summary>
-        public virtual IOfficeConfigurationRequestBuilder OfficeConfiguration
-        {
-            get
-            {
-                return new OfficeConfigurationRequestBuilder(this.BaseUrl + "/officeConfiguration", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceSearch request builder.
         /// </summary>
         public virtual ISearchEntityRequestBuilder Search
@@ -1313,17 +1315,6 @@ namespace Microsoft.Graph
             get
             {
                 return new TeamworkRequestBuilder(this.BaseUrl + "/teamwork", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceStorage request builder.
-        /// </summary>
-        public virtual IStorageRequestBuilder Storage
-        {
-            get
-            {
-                return new StorageRequestBuilder(this.BaseUrl + "/storage", this);
             }
         }
     

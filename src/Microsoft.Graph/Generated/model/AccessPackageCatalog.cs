@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Access Package Catalog.
     /// </summary>
+    [Obsolete("")]
     public partial class AccessPackageCatalog : Entity
     {
     
@@ -84,6 +85,20 @@ namespace Microsoft.Graph
         public DateTimeOffset? ModifiedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets access package custom workflow extensions.
+        /// The attributes of a logic app, which can be called at various stages of an access package request and assignment cycle.
+        /// </summary>
+        [JsonPropertyName("accessPackageCustomWorkflowExtensions")]
+        public IAccessPackageCatalogAccessPackageCustomWorkflowExtensionsCollectionPage AccessPackageCustomWorkflowExtensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets accessPackageCustomWorkflowExtensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("accessPackageCustomWorkflowExtensions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AccessPackageCustomWorkflowExtensionsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets access package resource roles.
         /// The roles in each resource in a catalog. Read-only.
         /// </summary>
@@ -128,7 +143,7 @@ namespace Microsoft.Graph
         /// The access packages in this catalog. Read-only. Nullable. Supports $expand.
         /// </summary>
         [JsonPropertyName("accessPackages")]
-        public IAccessPackageCatalogAccessPackagesCollectionPage AccessPackages { get; set; }
+        public IAccessPackageCatalogAccessPackagesCollectionWithReferencesPage AccessPackages { get; set; }
 
         /// <summary>
         /// Gets or sets accessPackagesNextLink.
@@ -140,6 +155,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets custom access package workflow extensions.
         /// </summary>
+        [Obsolete("")]
         [JsonPropertyName("customAccessPackageWorkflowExtensions")]
         public IAccessPackageCatalogCustomAccessPackageWorkflowExtensionsCollectionPage CustomAccessPackageWorkflowExtensions { get; set; }
 

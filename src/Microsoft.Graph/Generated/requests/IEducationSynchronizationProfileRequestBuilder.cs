@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         IEducationSynchronizationProfileStatusRequestBuilder ProfileStatus { get; }
     
         /// <summary>
+        /// Gets the request builder for EducationSynchronizationProfileStart.
+        /// </summary>
+        /// <returns>The <see cref="IEducationSynchronizationProfileStartRequestBuilder"/>.</returns>
+        IEducationSynchronizationProfileStartRequestBuilder Start();
+
+        /// <summary>
         /// Gets the request builder for EducationSynchronizationProfilePause.
         /// </summary>
         /// <returns>The <see cref="IEducationSynchronizationProfilePauseRequestBuilder"/>.</returns>
@@ -60,12 +66,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEducationSynchronizationProfileResumeRequestBuilder"/>.</returns>
         IEducationSynchronizationProfileResumeRequestBuilder Resume();
-
-        /// <summary>
-        /// Gets the request builder for EducationSynchronizationProfileStart.
-        /// </summary>
-        /// <returns>The <see cref="IEducationSynchronizationProfileStartRequestBuilder"/>.</returns>
-        IEducationSynchronizationProfileStartRequestBuilder Start();
 
         /// <summary>
         /// Gets the request builder for EducationSynchronizationProfileUploadUrl.

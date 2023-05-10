@@ -50,6 +50,13 @@ namespace Microsoft.Graph.CallRecords
         public Int64? AverageBandwidthEstimate { get; set; }
     
         /// <summary>
+        /// Gets or sets averageFreezeDuration.
+        /// Average of the received freeze duration related to the video stream.
+        /// </summary>
+        [JsonPropertyName("averageFreezeDuration")]
+        public Microsoft.Graph.Duration AverageFreezeDuration { get; set; }
+    
+        /// <summary>
         /// Gets or sets averageJitter.
         /// Average jitter for the stream computed as specified in [RFC 3550][], denoted in [ISO 8601][] format. For example, 1 second is denoted as 'PT1S', where 'P' is the duration designator, 'T' is the time designator, and 'S' is the second designator.
         /// </summary>
@@ -113,6 +120,13 @@ namespace Microsoft.Graph.CallRecords
         public DateTimeOffset? EndDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets isAudioForwardErrorCorrectionUsed.
+        /// Indicates whether the forward error correction (FEC) was used at some point during the session. The default value is null.
+        /// </summary>
+        [JsonPropertyName("isAudioForwardErrorCorrectionUsed")]
+        public bool? IsAudioForwardErrorCorrectionUsed { get; set; }
+    
+        /// <summary>
         /// Gets or sets lowFrameRateRatio.
         /// Fraction of the call where frame rate is less than 7.5 frames per second.
         /// </summary>
@@ -174,6 +188,13 @@ namespace Microsoft.Graph.CallRecords
         /// </summary>
         [JsonPropertyName("postForwardErrorCorrectionPacketLossRate")]
         public Single? PostForwardErrorCorrectionPacketLossRate { get; set; }
+    
+        /// <summary>
+        /// Gets or sets rmsFreezeDuration.
+        /// Root mean square of the received freeze duration related to the video stream.
+        /// </summary>
+        [JsonPropertyName("rmsFreezeDuration")]
+        public Microsoft.Graph.Duration RmsFreezeDuration { get; set; }
     
         /// <summary>
         /// Gets or sets startDateTime.

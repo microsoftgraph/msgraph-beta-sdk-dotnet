@@ -56,6 +56,15 @@ namespace Microsoft.Graph
         IAccessPackageAssignmentRequestCancelRequestBuilder Cancel();
 
         /// <summary>
+        /// Gets the request builder for AccessPackageAssignmentRequestResume.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageAssignmentRequestResumeRequestBuilder"/>.</returns>
+        IAccessPackageAssignmentRequestResumeRequestBuilder Resume(
+            string source = null,
+            string type = null,
+            CustomExtensionData data = null);
+
+        /// <summary>
         /// Gets the request builder for AccessPackageAssignmentRequestReprocess.
         /// </summary>
         /// <returns>The <see cref="IAccessPackageAssignmentRequestReprocessRequestBuilder"/>.</returns>

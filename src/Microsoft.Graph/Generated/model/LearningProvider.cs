@@ -28,13 +28,6 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets is enabled.
-        /// The state of the provider. Optional.
-        /// </summary>
-        [JsonPropertyName("isEnabled")]
-        public bool? IsEnabled { get; set; }
-    
-        /// <summary>
         /// Gets or sets login web url.
         /// Authentication URL to access the courses for the provider. Optional.
         /// </summary>
@@ -43,28 +36,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets long logo web url for dark theme.
-        /// The long logo URL for the dark mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.
+        /// The long logo URL for the dark mode that needs to be a publicly accessible image. This image would be saved to the blob storage of Viva Learning for rendering within the Viva Learning app. Required.
         /// </summary>
         [JsonPropertyName("longLogoWebUrlForDarkTheme")]
         public string LongLogoWebUrlForDarkTheme { get; set; }
     
         /// <summary>
         /// Gets or sets long logo web url for light theme.
-        /// The long logo URL for the light mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering  within the Viva Learning app. Required.
+        /// The long logo URL for the light mode that needs to be a publicly accessible image. This image would be saved to the blob storage of Viva Learning for rendering  within the Viva Learning app. Required.
         /// </summary>
         [JsonPropertyName("longLogoWebUrlForLightTheme")]
         public string LongLogoWebUrlForLightTheme { get; set; }
     
         /// <summary>
         /// Gets or sets square logo web url for dark theme.
-        /// The square logo URL for the dark mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.
+        /// The square logo URL for the dark mode that needs to be a publicly accessible image. This image would be saved to the blob storage of Viva Learning for rendering within the Viva Learning app. Required.
         /// </summary>
         [JsonPropertyName("squareLogoWebUrlForDarkTheme")]
         public string SquareLogoWebUrlForDarkTheme { get; set; }
     
         /// <summary>
         /// Gets or sets square logo web url for light theme.
-        /// The square logo URL for the light mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.
+        /// The square logo URL for the light mode that needs to be a publicly accessible image. This image would be saved to the blob storage of Viva Learning for rendering within the Viva Learning app. Required.
         /// </summary>
         [JsonPropertyName("squareLogoWebUrlForLightTheme")]
         public string SquareLogoWebUrlForLightTheme { get; set; }
@@ -82,6 +75,19 @@ namespace Microsoft.Graph
         [JsonPropertyName("learningContents@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string LearningContentsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets learning course activities.
+        /// </summary>
+        [JsonPropertyName("learningCourseActivities")]
+        public ILearningProviderLearningCourseActivitiesCollectionPage LearningCourseActivities { get; set; }
+
+        /// <summary>
+        /// Gets or sets learningCourseActivitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("learningCourseActivities@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string LearningCourseActivitiesNextLink { get; set; }
     
     }
 }

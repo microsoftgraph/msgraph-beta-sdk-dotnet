@@ -29,10 +29,17 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isRemovable.
-        /// Whether or not the app can be removed by the user.
+        /// When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.
         /// </summary>
         [JsonPropertyName("isRemovable")]
         public bool? IsRemovable { get; set; }
+    
+        /// <summary>
+        /// Gets or sets preventManagedAppBackup.
+        /// When TRUE, indicates that the app should not be backed up to iCloud. When FALSE, indicates that the app may be backed up to iCloud. By default, this property is set to null which internally is treated as FALSE.
+        /// </summary>
+        [JsonPropertyName("preventManagedAppBackup")]
+        public bool? PreventManagedAppBackup { get; set; }
     
         /// <summary>
         /// Gets or sets uninstallOnDeviceRemoval.
