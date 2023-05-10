@@ -1,8 +1,6 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item.Contacts;
-using Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item.MultiValueExtendedProperties;
-using Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item.SingleValueExtendedProperties;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -19,14 +17,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item 
         /// <summary>Provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.</summary>
         public ContactsRequestBuilder Contacts { get =>
             new ContactsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contactFolder entity.</summary>
-        public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
-            new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contactFolder entity.</summary>
-        public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
-            new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new ContactFolderItemRequestBuilder and sets the default values.

@@ -1,9 +1,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.Contacts.Item.Extensions;
-using Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.Contacts.Item.MultiValueExtendedProperties;
 using Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.Contacts.Item.Photo;
-using Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.Contacts.Item.SingleValueExtendedProperties;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -21,17 +19,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.Contacts.Item {
         public ExtensionsRequestBuilder Extensions { get =>
             new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contact entity.</summary>
-        public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
-            new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the photo property of the microsoft.graph.contact entity.</summary>
         public PhotoRequestBuilder Photo { get =>
             new PhotoRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contact entity.</summary>
-        public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
-            new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new ContactItemRequestBuilder and sets the default values.

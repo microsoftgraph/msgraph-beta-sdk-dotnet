@@ -9,11 +9,9 @@ using Microsoft.Graph.Beta.Me.Messages.Item.MarkAsJunk;
 using Microsoft.Graph.Beta.Me.Messages.Item.MarkAsNotJunk;
 using Microsoft.Graph.Beta.Me.Messages.Item.Mentions;
 using Microsoft.Graph.Beta.Me.Messages.Item.Move;
-using Microsoft.Graph.Beta.Me.Messages.Item.MultiValueExtendedProperties;
 using Microsoft.Graph.Beta.Me.Messages.Item.Reply;
 using Microsoft.Graph.Beta.Me.Messages.Item.ReplyAll;
 using Microsoft.Graph.Beta.Me.Messages.Item.Send;
-using Microsoft.Graph.Beta.Me.Messages.Item.SingleValueExtendedProperties;
 using Microsoft.Graph.Beta.Me.Messages.Item.Unsubscribe;
 using Microsoft.Graph.Beta.Me.Messages.Item.Value;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -79,10 +77,6 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item {
         public MoveRequestBuilder Move { get =>
             new MoveRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.message entity.</summary>
-        public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
-            new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the reply method.</summary>
         public ReplyRequestBuilder Reply { get =>
             new ReplyRequestBuilder(PathParameters, RequestAdapter);
@@ -94,10 +88,6 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item {
         /// <summary>Provides operations to call the send method.</summary>
         public SendRequestBuilder Send { get =>
             new SendRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.message entity.</summary>
-        public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
-            new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unsubscribe method.</summary>
         public UnsubscribeRequestBuilder Unsubscribe { get =>

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The user experience analytics Device not windows autopilot ready.
+    /// </summary>
     public class UserExperienceAnalyticsNotAutopilotReadyDevice : Entity, IParsable {
         /// <summary>The intune device&apos;s autopilotProfileAssigned.</summary>
         public bool? AutoPilotProfileAssigned {

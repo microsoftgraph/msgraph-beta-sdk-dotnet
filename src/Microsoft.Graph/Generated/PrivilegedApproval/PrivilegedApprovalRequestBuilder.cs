@@ -45,8 +45,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval {
         public PrivilegedApprovalRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedApproval{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of privilegedapproval objects. To filter the results from the query, use the standard OData ``$filter`` expressions in the URIs.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/privilegedapproval-list?view=graph-rest-1.0" />
+        /// Get entities from privilegedApproval
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -65,8 +64,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval {
             return await RequestAdapter.SendAsync<PrivilegedApprovalCollectionResponse>(requestInfo, PrivilegedApprovalCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Use this API to create a new privilegedApproval.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/privilegedapproval-post-privilegedapproval?view=graph-rest-1.0" />
+        /// Add new entity to privilegedApproval
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +85,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrivilegedApproval>(requestInfo, Microsoft.Graph.Beta.Models.PrivilegedApproval.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of privilegedapproval objects. To filter the results from the query, use the standard OData ``$filter`` expressions in the URIs.
+        /// Get entities from privilegedApproval
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new privilegedApproval.
+        /// Add new entity to privilegedApproval
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -141,7 +139,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of privilegedapproval objects. To filter the results from the query, use the standard OData ``$filter`` expressions in the URIs.
+        /// Get entities from privilegedApproval
         /// </summary>
         public class PrivilegedApprovalRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

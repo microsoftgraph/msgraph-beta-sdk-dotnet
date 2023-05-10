@@ -7,6 +7,13 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.30.0-preview] - 2023-05-10
+
+- Latest metadata updates from 9th May 2023
+- Fixes incorrect namespace for static helpers (https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/issues/654)
+- Fixes invalid paths for singleValueExtendedProperties and multiValueExtendedProperties nav properties (https://github.com/microsoftgraph/msgraph-metadata/issues/246)
+- Fixes invalid paths for catalogs/accessPackages nav properties (https://github.com/microsoftgraph/msgraph-metadata/issues/338)
+
 ## [5.29.0-preview] - 2023-05-03
 
 - Latest metadata updates from 2nd May 2023

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The Group Policy Object file uploaded by admin.
+    /// </summary>
     public class GroupPolicyObjectFile : Entity, IParsable {
         /// <summary>The Group Policy Object file content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

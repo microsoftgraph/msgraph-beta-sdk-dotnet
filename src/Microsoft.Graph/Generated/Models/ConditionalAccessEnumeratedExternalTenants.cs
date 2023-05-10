@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ConditionalAccessEnumeratedExternalTenants : ConditionalAccessExternalTenants, IParsable {
-        /// <summary>Represents a collection of tenant ids in the scope of Conditional Access for guests and external users policy targeting.</summary>
+        /// <summary>A collection of tenant IDs that define the scope of a policy targeting conditional access for guests and external users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Members {

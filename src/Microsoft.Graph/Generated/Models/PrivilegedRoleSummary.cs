@@ -5,27 +5,27 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedRoleSummary : Entity, IParsable {
-        /// <summary>The number of users that have the role assigned and the role is activated.</summary>
+        /// <summary>The elevatedCount property</summary>
         public int? ElevatedCount {
             get { return BackingStore?.Get<int?>("elevatedCount"); }
             set { BackingStore?.Set("elevatedCount", value); }
         }
-        /// <summary>The number of users that have the role assigned but the role is deactivated.</summary>
+        /// <summary>The managedCount property</summary>
         public int? ManagedCount {
             get { return BackingStore?.Get<int?>("managedCount"); }
             set { BackingStore?.Set("managedCount", value); }
         }
-        /// <summary>true if the role activation requires MFA. false if the role activation doesn&apos;t require MFA.</summary>
+        /// <summary>The mfaEnabled property</summary>
         public bool? MfaEnabled {
             get { return BackingStore?.Get<bool?>("mfaEnabled"); }
             set { BackingStore?.Set("mfaEnabled", value); }
         }
-        /// <summary>Possible values are: ok, bad. The value depends on the ratio of (managedCount / usersCount). If the ratio is less than a predefined threshold, ok is returned. Otherwise, bad is returned.</summary>
+        /// <summary>The status property</summary>
         public RoleSummaryStatus? Status {
             get { return BackingStore?.Get<RoleSummaryStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The number of users that are assigned with the role.</summary>
+        /// <summary>The usersCount property</summary>
         public int? UsersCount {
             get { return BackingStore?.Get<int?>("usersCount"); }
             set { BackingStore?.Set("usersCount", value); }

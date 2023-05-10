@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings.GradingCategories;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -13,6 +14,10 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings {
     /// Provides operations to manage the assignmentSettings property of the microsoft.graph.educationClass entity.
     /// </summary>
     public class AssignmentSettingsRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the gradingCategories property of the microsoft.graph.educationAssignmentSettings entity.</summary>
+        public GradingCategoriesRequestBuilder GradingCategories { get =>
+            new GradingCategoriesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new AssignmentSettingsRequestBuilder and sets the default values.
         /// </summary>

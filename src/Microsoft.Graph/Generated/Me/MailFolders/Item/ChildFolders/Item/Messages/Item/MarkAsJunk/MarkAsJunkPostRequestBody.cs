@@ -13,10 +13,10 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.It
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The moveToJunk property</summary>
+        /// <summary>The MoveToJunk property</summary>
         public bool? MoveToJunk {
-            get { return BackingStore?.Get<bool?>("moveToJunk"); }
-            set { BackingStore?.Set("moveToJunk", value); }
+            get { return BackingStore?.Get<bool?>("MoveToJunk"); }
+            set { BackingStore?.Set("MoveToJunk", value); }
         }
         /// <summary>
         /// Instantiates a new markAsJunkPostRequestBody and sets the default values.
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.It
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"moveToJunk", n => { MoveToJunk = n.GetBoolValue(); } },
+                {"MoveToJunk", n => { MoveToJunk = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.It
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("moveToJunk", MoveToJunk);
+            writer.WriteBoolValue("MoveToJunk", MoveToJunk);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

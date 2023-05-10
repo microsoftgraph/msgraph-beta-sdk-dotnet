@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<TimeSpan?>("approvalDuration"); }
             set { BackingStore?.Set("approvalDuration", value); }
         }
-        /// <summary>Possible values are: pending, approved, denied, aborted, canceled.</summary>
+        /// <summary>The approvalState property</summary>
         public Microsoft.Graph.Beta.Models.ApprovalState? ApprovalState {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApprovalState?>("approvalState"); }
             set { BackingStore?.Set("approvalState", value); }
@@ -43,12 +43,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("approverReason", value); }
         }
 #endif
-        /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>The endDateTime property</summary>
         public DateTimeOffset? EndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
-        /// <summary>Read-only. The role assignment request for this approval object</summary>
+        /// <summary>The request property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PrivilegedRoleAssignmentRequest? Request {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleInfo", value); }
         }
 #endif
-        /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>The startDateTime property</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }

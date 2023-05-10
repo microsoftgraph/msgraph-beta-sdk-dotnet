@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get assignmentSchedules from identityGovernance
+        /// The assignment schedules to activate a just-in-time access.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
             return requestInfo;
         }
         /// <summary>
-        /// Get assignmentSchedules from identityGovernance
+        /// The assignment schedules to activate a just-in-time access.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
             }
         }
         /// <summary>
-        /// Get assignmentSchedules from identityGovernance
+        /// The assignment schedules to activate a just-in-time access.
         /// </summary>
         public class PrivilegedAccessGroupAssignmentScheduleItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

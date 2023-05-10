@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("excludeGroups", value); }
         }
 #endif
-        /// <summary>Internal guests or external users excluded in the policy scope. Optionally populated.</summary>
+        /// <summary>Internal guests or external users excluded from the policy scope. Optionally populated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ConditionalAccessGuestsOrExternalUsers? ExcludeGuestsOrExternalUsers {

@@ -5,8 +5,6 @@ using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Copy;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.MessageRules;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Move;
-using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.MultiValueExtendedProperties;
-using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.SingleValueExtendedProperties;
 using Microsoft.Graph.Beta.Users.Item.MailFolders.Item.UserConfigurations;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -40,14 +38,6 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item {
         /// <summary>Provides operations to call the move method.</summary>
         public MoveRequestBuilder Move { get =>
             new MoveRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.mailFolder entity.</summary>
-        public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
-            new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.mailFolder entity.</summary>
-        public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
-            new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.</summary>
         public UserConfigurationsRequestBuilder UserConfigurations { get =>

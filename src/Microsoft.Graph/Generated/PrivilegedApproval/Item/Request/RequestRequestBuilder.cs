@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.Request {
         public RequestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}/request{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read-only. The role assignment request for this approval object
+        /// Get request from privilegedApproval
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.Request {
             return await RequestAdapter.SendAsync<PrivilegedRoleAssignmentRequest>(requestInfo, PrivilegedRoleAssignmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read-only. The role assignment request for this approval object
+        /// Get request from privilegedApproval
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.Request {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. The role assignment request for this approval object
+        /// Get request from privilegedApproval
         /// </summary>
         public class RequestRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

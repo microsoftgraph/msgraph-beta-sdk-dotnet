@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item.Activities.I
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Write-only property. Returns results.
+        /// Returns a list of activities performed on the item. Write-only.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item.Activities.I
             return requestInfo;
         }
         /// <summary>
-        /// Write-only property. Returns results.
+        /// Returns a list of activities performed on the item. Write-only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +186,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item.Activities.I
             }
         }
         /// <summary>
-        /// Write-only property. Returns results.
+        /// Returns a list of activities performed on the item. Write-only.
         /// </summary>
         public class ExternalActivityItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item.Activities {
         public ActivitiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/items/{externalItem%2Did}/activities{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Write-only property. Returns results.
+        /// Returns a list of activities performed on the item. Write-only.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item.Activities {
             return await RequestAdapter.SendAsync<ExternalActivity>(requestInfo, ExternalActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Write-only property. Returns results.
+        /// Returns a list of activities performed on the item. Write-only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item.Activities {
             return requestInfo;
         }
         /// <summary>
-        /// Write-only property. Returns results.
+        /// Returns a list of activities performed on the item. Write-only.
         /// </summary>
         public class ActivitiesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

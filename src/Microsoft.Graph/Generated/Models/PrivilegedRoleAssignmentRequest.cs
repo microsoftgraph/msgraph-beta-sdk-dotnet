@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedRoleAssignmentRequest : Entity, IParsable {
-        /// <summary>The state of the assignment. The value can be Eligible for eligible assignment Active - if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.</summary>
+        /// <summary>The assignmentState property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignmentState {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assignmentState", value); }
         }
 #endif
-        /// <summary>The duration of a role assignment.</summary>
+        /// <summary>The duration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Duration {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("duration", value); }
         }
 #endif
-        /// <summary>The reason for the role assignment.</summary>
+        /// <summary>The reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reason {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("reason", value); }
         }
 #endif
-        /// <summary>Read-only. The request create time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>The requestedDateTime property</summary>
         public DateTimeOffset? RequestedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("requestedDateTime"); }
             set { BackingStore?.Set("requestedDateTime", value); }
         }
-        /// <summary>The id of the role.</summary>
+        /// <summary>The roleId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RoleId {
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleId", value); }
         }
 #endif
-        /// <summary>The roleInfo object of the role assignment request.</summary>
+        /// <summary>The roleInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PrivilegedRole? RoleInfo {
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleInfo", value); }
         }
 #endif
-        /// <summary>The schedule object of the role assignment request.</summary>
+        /// <summary>The schedule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GovernanceSchedule? Schedule {
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
-        /// <summary>Read-only.The status of the role assignment request. The value can be NotStarted,Completed,RequestedApproval,Scheduled,Approved,ApprovalDenied,ApprovalAborted,Cancelling,Cancelled,Revoked,RequestExpired.</summary>
+        /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status {
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
 #endif
-        /// <summary>The ticketNumber for the role assignment.</summary>
+        /// <summary>The ticketNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TicketNumber {
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ticketNumber", value); }
         }
 #endif
-        /// <summary>The ticketSystem for the role assignment.</summary>
+        /// <summary>The ticketSystem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TicketSystem {
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ticketSystem", value); }
         }
 #endif
-        /// <summary>Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators add users to roles;UserAdd: Users add role assignments.</summary>
+        /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type {
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("type", value); }
         }
 #endif
-        /// <summary>The id of the user.</summary>
+        /// <summary>The userId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {
