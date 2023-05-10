@@ -22,7 +22,7 @@ using Microsoft.Graph.Beta.Drives.Item.Items.Item.Thumbnails;
 using Microsoft.Graph.Beta.Drives.Item.List.Items.Item.Versions;
 using Microsoft.Kiota.Abstractions;
 
-namespace Microsoft.Graph;
+namespace Microsoft.Graph.Beta;
 
 public static class DriveItemRequestBuilderExtensions
 {
