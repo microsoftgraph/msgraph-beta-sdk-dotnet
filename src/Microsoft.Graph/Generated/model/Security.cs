@@ -269,6 +269,12 @@ namespace Microsoft.Graph
         [JsonConverter(typeof(NextLinkConverter))]
         public string UserSecurityProfilesNextLink { get; set; }
     
+        /// <summary>
+        /// Gets or sets threat intelligence.
+        /// </summary>
+        [JsonPropertyName("threatIntelligence")]
+        public Microsoft.Graph.SecurityNamespace.ThreatIntelligence ThreatIntelligence { get; set; }
+    
     }
 }
 

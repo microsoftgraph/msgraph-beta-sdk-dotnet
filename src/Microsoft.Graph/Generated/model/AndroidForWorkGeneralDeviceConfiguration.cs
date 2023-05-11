@@ -30,6 +30,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets allowed google account domains.
+        /// Determine domains allow-list for accounts that can be added to work profile.
+        /// </summary>
+        [JsonPropertyName("allowedGoogleAccountDomains")]
+        public IEnumerable<string> AllowedGoogleAccountDomains { get; set; }
+    
+        /// <summary>
         /// Gets or sets password block face unlock.
         /// Indicates whether or not to block face unlock.
         /// </summary>
@@ -126,6 +133,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("vpnEnableAlwaysOnLockdownMode")]
         public bool? VpnEnableAlwaysOnLockdownMode { get; set; }
+    
+        /// <summary>
+        /// Gets or sets work profile account use.
+        /// Control user's ability to add accounts in work profile including Google accounts. Possible values are: allowAllExceptGoogleAccounts, blockAll, allowAll, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("workProfileAccountUse")]
+        public AndroidWorkProfileAccountUse? WorkProfileAccountUse { get; set; }
     
         /// <summary>
         /// Gets or sets work profile allow widgets.

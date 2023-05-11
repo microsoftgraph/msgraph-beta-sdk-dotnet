@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AccessPackageCatalogSearchRequest.
     /// </summary>
+    [Obsolete("")]
     public partial class AccessPackageCatalogSearchRequest : BaseRequest, IAccessPackageCatalogSearchRequest
     {
         /// <summary>

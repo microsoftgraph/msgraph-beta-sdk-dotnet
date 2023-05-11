@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IEducationAssignmentSettingsRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for GradingCategories.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentSettingsGradingCategoriesCollectionRequestBuilder"/>.</returns>
+        IEducationAssignmentSettingsGradingCategoriesCollectionRequestBuilder GradingCategories { get; }
+    
     }
 }

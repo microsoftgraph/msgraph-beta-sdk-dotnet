@@ -10,11 +10,13 @@
 
 namespace Microsoft.Graph
 {
+    using System;
     using System.Text.Json.Serialization;
 
     /// <summary>
     /// The enum AccessPackageCustomExtensionHandlerStatus.
     /// </summary>
+    [Obsolete("")]
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum AccessPackageCustomExtensionHandlerStatus
     {

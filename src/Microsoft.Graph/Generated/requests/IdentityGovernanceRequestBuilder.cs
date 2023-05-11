@@ -121,6 +121,18 @@ namespace Microsoft.Graph
                 return new PrivilegedAccessRootRequestBuilder(this.AppendSegmentToRequestUrl("privilegedAccess"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for RoleManagementAlerts.
+        /// </summary>
+        /// <returns>The <see cref="IRoleManagementAlertRequestBuilder"/>.</returns>
+        public IRoleManagementAlertRequestBuilder RoleManagementAlerts
+        {
+            get
+            {
+                return new RoleManagementAlertRequestBuilder(this.AppendSegmentToRequestUrl("roleManagementAlerts"), this.Client);
+            }
+        }
     
     }
 }

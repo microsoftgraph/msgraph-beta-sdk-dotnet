@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Notification.
     /// </summary>
+    [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
     [JsonConverter(typeof(DerivedTypeConverter<Notification>))]
     public partial class Notification : Entity
     {

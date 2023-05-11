@@ -184,17 +184,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Adds the specified skip value to the request.
-        /// </summary>
-        /// <param name="value">The skip value.</param>
-        /// <returns>The request object to send.</returns>
-        public IGraphServiceUsersCollectionRequest Skip(int value)
-        {
-            this.QueryOptions.Add(new QueryOption("$skip", value.ToString()));
-            return this;
-        }
-
-        /// <summary>
         /// Adds the specified orderby value to the request.
         /// </summary>
         /// <param name="value">The orderby value.</param>

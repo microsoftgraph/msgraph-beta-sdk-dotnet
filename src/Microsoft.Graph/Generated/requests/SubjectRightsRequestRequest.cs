@@ -246,6 +246,18 @@ namespace Microsoft.Graph
 
             if (subjectRightsRequestObjectToInitialize != null)
             {
+                if (subjectRightsRequestObjectToInitialize.Approvers != null && subjectRightsRequestObjectToInitialize.Approvers.CurrentPage != null)
+                {
+                    subjectRightsRequestObjectToInitialize.Approvers.InitializeNextPageRequest(this.Client, subjectRightsRequestObjectToInitialize.ApproversNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    subjectRightsRequestObjectToInitialize.Approvers.AdditionalData = subjectRightsRequestObjectToInitialize.AdditionalData;
+                }
+                if (subjectRightsRequestObjectToInitialize.Collaborators != null && subjectRightsRequestObjectToInitialize.Collaborators.CurrentPage != null)
+                {
+                    subjectRightsRequestObjectToInitialize.Collaborators.InitializeNextPageRequest(this.Client, subjectRightsRequestObjectToInitialize.CollaboratorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    subjectRightsRequestObjectToInitialize.Collaborators.AdditionalData = subjectRightsRequestObjectToInitialize.AdditionalData;
+                }
                 if (subjectRightsRequestObjectToInitialize.Notes != null && subjectRightsRequestObjectToInitialize.Notes.CurrentPage != null)
                 {
                     subjectRightsRequestObjectToInitialize.Notes.InitializeNextPageRequest(this.Client, subjectRightsRequestObjectToInitialize.NotesNextLink);

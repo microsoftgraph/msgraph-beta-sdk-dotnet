@@ -234,6 +234,7 @@ namespace Microsoft.Graph
         /// Gets or sets owners.
         /// The list of this team's owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
         /// </summary>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("owners")]
         public ITeamOwnersCollectionWithReferencesPage Owners { get; set; }
 
@@ -295,6 +296,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets template definition.
+        /// Generic representation of a team template definition for a team with a specific structure and configuration.
         /// </summary>
         [JsonPropertyName("templateDefinition")]
         public TeamTemplateDefinition TemplateDefinition { get; set; }

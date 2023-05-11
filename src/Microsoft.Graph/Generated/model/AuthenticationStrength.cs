@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         public string AuthenticationStrengthId { get; set; }
     
         /// <summary>
+        /// Gets or sets authenticationStrengthResult.
+        /// The result of the authentication strength. The possible values are: notSet, skippedForProofUp, satisfied, singleChallengeRequired, multipleChallengesRequired, singleRegistrationRequired, multipleRegistrationsRequired, cannotSatisfyDueToCombinationConfiguration, cannotSatisfy, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("authenticationStrengthResult")]
+        public AuthenticationStrengthResult? AuthenticationStrengthResult { get; set; }
+    
+        /// <summary>
         /// Gets or sets displayName.
         /// The name of the authentication strength.
         /// </summary>

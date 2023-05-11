@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserGetEffectiveDeviceEnrollmentConfigurationsRequest.
     /// </summary>
+    [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
     public partial class UserGetEffectiveDeviceEnrollmentConfigurationsRequest : BaseRequest, IUserGetEffectiveDeviceEnrollmentConfigurationsRequest
     {
         /// <summary>

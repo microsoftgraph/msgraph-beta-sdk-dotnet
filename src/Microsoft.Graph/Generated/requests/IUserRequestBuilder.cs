@@ -414,15 +414,13 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ITodoRequestBuilder"/>.</returns>
         ITodoRequestBuilder Todo { get; }
-    
-        /// <summary>
-        /// Gets the request builder for UserActivateServicePlan.
-        /// </summary>
-        /// <returns>The <see cref="IUserActivateServicePlanRequestBuilder"/>.</returns>
-        IUserActivateServicePlanRequestBuilder ActivateServicePlan(
-            Guid servicePlanId,
-            Guid skuId);
 
+        /// <summary>
+        /// Gets the request builder for EmployeeExperience.
+        /// </summary>
+        /// <returns>The <see cref="IEmployeeExperienceUserRequestBuilder"/>.</returns>
+        IEmployeeExperienceUserRequestBuilder EmployeeExperience { get; }
+    
         /// <summary>
         /// Gets the request builder for UserAssignLicense.
         /// </summary>
@@ -450,6 +448,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IUserReprocessLicenseAssignmentRequestBuilder"/>.</returns>
         IUserReprocessLicenseAssignmentRequestBuilder ReprocessLicenseAssignment();
+
+        /// <summary>
+        /// Gets the request builder for UserRetryServiceProvisioning.
+        /// </summary>
+        /// <returns>The <see cref="IUserRetryServiceProvisioningRequestBuilder"/>.</returns>
+        IUserRetryServiceProvisioningRequestBuilder RetryServiceProvisioning();
 
         /// <summary>
         /// Gets the request builder for UserRevokeSignInSessions.

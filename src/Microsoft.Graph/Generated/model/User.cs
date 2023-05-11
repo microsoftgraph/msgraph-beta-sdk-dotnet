@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User.
     /// </summary>
+    [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
     public partial class User : DirectoryObject
     {
     
@@ -30,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets sign in activity.
-        /// Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but, not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.Note: There's a known issue with retrieving this property.This property is not returned for a user who has never signed in or last signed in before April 2020.
+        /// Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but not with any other filterable properties. Note:  Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.This property is not returned for a user who has never signed in or last signed in before April 2020.
         /// </summary>
         [JsonPropertyName("signInActivity")]
         public SignInActivity SignInActivity { get; set; }
@@ -162,7 +163,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets employee leave date time.
-        /// The date and time when the user left or will leave the organization. To read or write this property, the calling app must be assigned the User-LifeCycleInfo.Read.All or User-LifeCycleInfo.ReadWrite.All permissions respectively. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin. To write this property in delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
+        /// The date and time when the user left or will leave the organization. To read this property, the calling app must be assigned the User-LifeCycleInfo.Read.All permission. To write this property, the calling app must be assigned the User.Read.All and User-LifeCycleInfo.ReadWrite.All permissions. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Administrator. To write this property in delegated scenarios, the admin needs the Global Administrator role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.
         /// </summary>
         [JsonPropertyName("employeeLeaveDateTime")]
         public DateTimeOffset? EmployeeLeaveDateTime { get; set; }
@@ -438,6 +439,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("securityIdentifier")]
         public string SecurityIdentifier { get; set; }
+    
+        /// <summary>
+        /// Gets or sets service provisioning errors.
+        /// </summary>
+        [JsonPropertyName("serviceProvisioningErrors")]
+        public IEnumerable<ServiceProvisioningError> ServiceProvisioningErrors { get; set; }
     
         /// <summary>
         /// Gets or sets show in address list.
@@ -1179,6 +1186,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets notifications.
         /// </summary>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("notifications")]
         public IUserNotificationsCollectionPage Notifications { get; set; }
 
@@ -1332,6 +1340,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("todo")]
         public Todo Todo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets employee experience.
+        /// </summary>
+        [JsonPropertyName("employeeExperience")]
+        public EmployeeExperienceUser EmployeeExperience { get; set; }
     
     }
 }

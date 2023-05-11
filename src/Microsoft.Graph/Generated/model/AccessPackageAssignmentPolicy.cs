@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Access Package Assignment Policy.
     /// </summary>
+    [Obsolete("")]
     public partial class AccessPackageAssignmentPolicy : Entity
     {
     
@@ -117,6 +118,13 @@ namespace Microsoft.Graph
         public RequestorSettings RequestorSettings { get; set; }
     
         /// <summary>
+        /// Gets or sets verifiable credential settings.
+        /// Settings for verifiable credentials set up through the Azure AD Verified ID service. These settings represent the verifiable credentials that a requestor of an access package in this policy can present to be assigned the access package.
+        /// </summary>
+        [JsonPropertyName("verifiableCredentialSettings")]
+        public VerifiableCredentialSettings VerifiableCredentialSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets access package.
         /// The access package with this policy. Read-only. Nullable. Supports $expand.
         /// </summary>
@@ -126,6 +134,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets access package catalog.
         /// </summary>
+        [Obsolete("")]
         [JsonPropertyName("accessPackageCatalog")]
         public AccessPackageCatalog AccessPackageCatalog { get; set; }
     
@@ -133,6 +142,7 @@ namespace Microsoft.Graph
         /// Gets or sets custom extension handlers.
         /// The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
         /// </summary>
+        [Obsolete("")]
         [JsonPropertyName("customExtensionHandlers")]
         public IAccessPackageAssignmentPolicyCustomExtensionHandlersCollectionPage CustomExtensionHandlers { get; set; }
 
@@ -142,6 +152,20 @@ namespace Microsoft.Graph
         [JsonPropertyName("customExtensionHandlers@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string CustomExtensionHandlersNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom extension stage settings.
+        /// The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.
+        /// </summary>
+        [JsonPropertyName("customExtensionStageSettings")]
+        public IAccessPackageAssignmentPolicyCustomExtensionStageSettingsCollectionPage CustomExtensionStageSettings { get; set; }
+
+        /// <summary>
+        /// Gets or sets customExtensionStageSettingsNextLink.
+        /// </summary>
+        [JsonPropertyName("customExtensionStageSettings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string CustomExtensionStageSettingsNextLink { get; set; }
     
     }
 }

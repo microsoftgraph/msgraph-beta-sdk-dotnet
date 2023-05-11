@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         public string ApplicationId { get; set; }
     
         /// <summary>
+        /// Gets or sets device id.
+        /// Device identifier created or collected by Intune.
+        /// </summary>
+        [JsonPropertyName("deviceId")]
+        public string DeviceId { get; set; }
+    
+        /// <summary>
         /// Gets or sets history.
         /// Intune Mobile Application Troubleshooting History Item
         /// </summary>

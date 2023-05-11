@@ -28,6 +28,27 @@ namespace Microsoft.Graph.CallRecords
         }
 
         /// <summary>
+        /// Gets or sets cpuCoresCount.
+        /// CPU number of cores used by the media endpoint.
+        /// </summary>
+        [JsonPropertyName("cpuCoresCount")]
+        public Int32? CpuCoresCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cpuName.
+        /// CPU name used by the media endpoint.
+        /// </summary>
+        [JsonPropertyName("cpuName")]
+        public string CpuName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cpuProcessorSpeedInMhz.
+        /// CPU processor speed used by the media endpoint.
+        /// </summary>
+        [JsonPropertyName("cpuProcessorSpeedInMhz")]
+        public Int32? CpuProcessorSpeedInMhz { get; set; }
+    
+        /// <summary>
         /// Gets or sets feedback.
         /// The feedback provided by the user of this endpoint about the quality of the session.
         /// </summary>
@@ -40,6 +61,13 @@ namespace Microsoft.Graph.CallRecords
         /// </summary>
         [JsonPropertyName("identity")]
         public Microsoft.Graph.IdentitySet Identity { get; set; }
+    
+        /// <summary>
+        /// Gets or sets name.
+        /// Name of the device used by the media endpoint.
+        /// </summary>
+        [JsonPropertyName("name")]
+        public string Name { get; set; }
     
     }
 }

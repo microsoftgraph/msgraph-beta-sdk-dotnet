@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ILearningProviderLearningContentsCollectionRequestBuilder"/>.</returns>
         ILearningProviderLearningContentsCollectionRequestBuilder LearningContents { get; }
+
+        /// <summary>
+        /// Gets the request builder for LearningCourseActivities.
+        /// </summary>
+        /// <returns>The <see cref="ILearningProviderLearningCourseActivitiesCollectionRequestBuilder"/>.</returns>
+        ILearningProviderLearningCourseActivitiesCollectionRequestBuilder LearningCourseActivities { get; }
     
     }
 }

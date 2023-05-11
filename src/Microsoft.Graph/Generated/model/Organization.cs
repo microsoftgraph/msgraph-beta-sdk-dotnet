@@ -221,7 +221,7 @@ namespace Microsoft.Graph
         /// Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
         /// </summary>
         [JsonPropertyName("certificateBasedAuthConfiguration")]
-        public IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesPage CertificateBasedAuthConfiguration { get; set; }
+        public IOrganizationCertificateBasedAuthConfigurationCollectionPage CertificateBasedAuthConfiguration { get; set; }
 
         /// <summary>
         /// Gets or sets certificateBasedAuthConfigurationNextLink.
@@ -229,6 +229,12 @@ namespace Microsoft.Graph
         [JsonPropertyName("certificateBasedAuthConfiguration@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string CertificateBasedAuthConfigurationNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets partner information.
+        /// </summary>
+        [JsonPropertyName("partnerInformation")]
+        public PartnerInformation PartnerInformation { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.

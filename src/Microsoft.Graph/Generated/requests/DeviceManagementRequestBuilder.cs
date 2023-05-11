@@ -507,6 +507,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for TemplateInsights.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementTemplateInsightsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementTemplateInsightsCollectionRequestBuilder TemplateInsights
+        {
+            get
+            {
+                return new DeviceManagementTemplateInsightsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("templateInsights"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for TemplateSettings.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementTemplateSettingsCollectionRequestBuilder"/>.</returns>
@@ -839,18 +851,6 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementMobileAppTroubleshootingEventsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("mobileAppTroubleshootingEvents"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for OemWarrantyInformationOnboarding.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementOemWarrantyInformationOnboardingCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementOemWarrantyInformationOnboardingCollectionRequestBuilder OemWarrantyInformationOnboarding
-        {
-            get
-            {
-                return new DeviceManagementOemWarrantyInformationOnboardingCollectionRequestBuilder(this.AppendSegmentToRequestUrl("oemWarrantyInformationOnboarding"), this.Client);
             }
         }
 

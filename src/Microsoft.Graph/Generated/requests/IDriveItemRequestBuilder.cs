@@ -68,6 +68,12 @@ namespace Microsoft.Graph
         IDriveItemPermissionsCollectionRequestBuilder Permissions { get; }
 
         /// <summary>
+        /// Gets the request builder for RetentionLabel.
+        /// </summary>
+        /// <returns>The <see cref="IItemRetentionLabelRequestBuilder"/>.</returns>
+        IItemRetentionLabelRequestBuilder RetentionLabel { get; }
+
+        /// <summary>
         /// Gets the request builder for Subscriptions.
         /// </summary>
         /// <returns>The <see cref="IDriveItemSubscriptionsCollectionRequestBuilder"/>.</returns>
@@ -148,7 +154,8 @@ namespace Microsoft.Graph
             string password = null,
             string message = null,
             IEnumerable<DriveRecipient> recipients = null,
-            bool? retainInheritedPermissions = null);
+            bool? retainInheritedPermissions = null,
+            bool? sendNotification = null);
 
         /// <summary>
         /// Gets the request builder for DriveItemExtractSensitivityLabels.

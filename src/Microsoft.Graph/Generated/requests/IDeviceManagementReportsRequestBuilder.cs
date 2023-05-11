@@ -762,6 +762,118 @@ namespace Microsoft.Graph
             string filter = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDevicePoliciesComplianceReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDevicePoliciesComplianceReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetDevicePoliciesComplianceReportRequestBuilder GetDevicePoliciesComplianceReport(
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDevicePolicySettingsComplianceReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDevicePolicySettingsComplianceReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetDevicePolicySettingsComplianceReportRequestBuilder GetDevicePolicySettingsComplianceReport(
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDevicesStatusByPolicyPlatformComplianceReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDevicesStatusByPolicyPlatformComplianceReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetDevicesStatusByPolicyPlatformComplianceReportRequestBuilder GetDevicesStatusByPolicyPlatformComplianceReport(
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDevicesStatusBySettingReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDevicesStatusBySettingReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetDevicesStatusBySettingReportRequestBuilder GetDevicesStatusBySettingReport(
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDeviceStatusByCompliacePolicyReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDeviceStatusByCompliacePolicyReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetDeviceStatusByCompliacePolicyReportRequestBuilder GetDeviceStatusByCompliacePolicyReport(
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDeviceStatusByCompliancePolicySettingReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDeviceStatusByCompliancePolicySettingReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetDeviceStatusByCompliancePolicySettingReportRequestBuilder GetDeviceStatusByCompliancePolicySettingReport(
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDeviceStatusSummaryByCompliacePolicyReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDeviceStatusSummaryByCompliacePolicyReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetDeviceStatusSummaryByCompliacePolicyReportRequestBuilder GetDeviceStatusSummaryByCompliacePolicyReport(
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDeviceStatusSummaryByCompliancePolicySettingsReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDeviceStatusSummaryByCompliancePolicySettingsReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetDeviceStatusSummaryByCompliancePolicySettingsReportRequestBuilder GetDeviceStatusSummaryByCompliancePolicySettingsReport(
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequestBuilder"/>.</returns>

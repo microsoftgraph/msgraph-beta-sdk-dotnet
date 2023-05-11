@@ -54,5 +54,10 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 6,
 	
+        /// <summary>
+        /// Approval
+        /// </summary>
+        Approval = 7,
+	
     }
 }

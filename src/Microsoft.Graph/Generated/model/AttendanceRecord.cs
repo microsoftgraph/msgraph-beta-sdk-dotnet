@@ -29,14 +29,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets email address.
-        /// Email address of the user associated with this atttendance record.
+        /// Email address of the user associated with this attendance record.
         /// </summary>
         [JsonPropertyName("emailAddress")]
         public string EmailAddress { get; set; }
     
         /// <summary>
         /// Gets or sets identity.
-        /// Identity of the user associated with this atttendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.
+        /// Identity of the user associated with this attendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.
         /// </summary>
         [JsonPropertyName("identity")]
         public Identity Identity { get; set; }

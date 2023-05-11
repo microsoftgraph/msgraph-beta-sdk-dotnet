@@ -22,6 +22,12 @@ namespace Microsoft.Graph.ExternalConnectors
     {
     
         /// <summary>
+        /// Gets or sets industry data.
+        /// </summary>
+        [JsonPropertyName("industryData")]
+        public Microsoft.Graph.IndustryData.IndustryDataRoot IndustryData { get; set; }
+    
+        /// <summary>
         /// Gets or sets connections.
         /// </summary>
         [JsonPropertyName("connections")]

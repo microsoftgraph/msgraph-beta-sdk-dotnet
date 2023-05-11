@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets companionAppAllowedState.
+        /// Determines whether users will be able to approve push notifications on other Microsoft applications such as Outlook Mobile.
+        /// </summary>
+        [JsonPropertyName("companionAppAllowedState")]
+        public AuthenticationMethodFeatureConfiguration CompanionAppAllowedState { get; set; }
+    
+        /// <summary>
         /// Gets or sets displayAppInformationRequiredState.
         /// Determines whether the user's Authenticator app will show them the client app they are signing into.
         /// </summary>

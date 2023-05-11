@@ -23,14 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets key.
-        /// Key.
+        /// The mapping of the user type from the source system to the target system. For example:User to User - For Azure AD to Azure AD synchronization worker to user - For Workday to Azure AD synchronization.
         /// </summary>
         [JsonPropertyName("key")]
         public string Key { get; set; }
     
         /// <summary>
         /// Gets or sets value.
-        /// Value.
+        /// Total number of synchronized objects.
         /// </summary>
         [JsonPropertyName("value")]
         public Int64? Value { get; set; }

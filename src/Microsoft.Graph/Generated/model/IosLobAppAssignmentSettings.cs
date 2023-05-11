@@ -35,6 +35,13 @@ namespace Microsoft.Graph
         public bool? IsRemovable { get; set; }
     
         /// <summary>
+        /// Gets or sets preventManagedAppBackup.
+        /// When TRUE, indicates that the app should not be backed up to iCloud. When FALSE, indicates that the app may be backed up to iCloud. By default, this property is set to null which internally is treated as FALSE.
+        /// </summary>
+        [JsonPropertyName("preventManagedAppBackup")]
+        public bool? PreventManagedAppBackup { get; set; }
+    
+        /// <summary>
         /// Gets or sets uninstallOnDeviceRemoval.
         /// Whether or not to uninstall the app when device is removed from Intune.
         /// </summary>

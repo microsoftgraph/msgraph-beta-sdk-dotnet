@@ -420,6 +420,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ReusableSettings.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
+                if (deviceManagementToInitialize.TemplateInsights != null && deviceManagementToInitialize.TemplateInsights.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.TemplateInsights.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.TemplateInsightsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.TemplateInsights.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
                 if (deviceManagementToInitialize.TemplateSettings != null && deviceManagementToInitialize.TemplateSettings.CurrentPage != null)
                 {
                     deviceManagementToInitialize.TemplateSettings.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.TemplateSettingsNextLink);
@@ -563,12 +569,6 @@ namespace Microsoft.Graph
                     deviceManagementToInitialize.MobileAppTroubleshootingEvents.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.MobileAppTroubleshootingEventsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.MobileAppTroubleshootingEvents.AdditionalData = deviceManagementToInitialize.AdditionalData;
-                }
-                if (deviceManagementToInitialize.OemWarrantyInformationOnboarding != null && deviceManagementToInitialize.OemWarrantyInformationOnboarding.CurrentPage != null)
-                {
-                    deviceManagementToInitialize.OemWarrantyInformationOnboarding.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.OemWarrantyInformationOnboardingNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    deviceManagementToInitialize.OemWarrantyInformationOnboarding.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
                 if (deviceManagementToInitialize.RemoteActionAudits != null && deviceManagementToInitialize.RemoteActionAudits.CurrentPage != null)
                 {

@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AccessPackageAssignmentRequestFilterByCurrentUserRequest.
     /// </summary>
+    [Obsolete("")]
     public partial class AccessPackageAssignmentRequestFilterByCurrentUserRequest : BaseRequest, IAccessPackageAssignmentRequestFilterByCurrentUserRequest
     {
         /// <summary>

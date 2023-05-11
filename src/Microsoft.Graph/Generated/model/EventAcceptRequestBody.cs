@@ -21,16 +21,16 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Gets or sets Comment.
-        /// </summary>
-        [JsonPropertyName("Comment")]
-        public string Comment { get; set; }
-    
-        /// <summary>
         /// Gets or sets SendResponse.
         /// </summary>
         [JsonPropertyName("SendResponse")]
         public bool? SendResponse { get; set; }
+    
+        /// <summary>
+        /// Gets or sets Comment.
+        /// </summary>
+        [JsonPropertyName("Comment")]
+        public string Comment { get; set; }
     
     }
 }

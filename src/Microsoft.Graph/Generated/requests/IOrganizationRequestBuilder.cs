@@ -40,8 +40,14 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for CertificateBasedAuthConfiguration.
         /// </summary>
-        /// <returns>The <see cref="IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesRequestBuilder"/>.</returns>
-        IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesRequestBuilder CertificateBasedAuthConfiguration { get; }
+        /// <returns>The <see cref="IOrganizationCertificateBasedAuthConfigurationCollectionRequestBuilder"/>.</returns>
+        IOrganizationCertificateBasedAuthConfigurationCollectionRequestBuilder CertificateBasedAuthConfiguration { get; }
+
+        /// <summary>
+        /// Gets the request builder for PartnerInformation.
+        /// </summary>
+        /// <returns>The <see cref="IPartnerInformationRequestBuilder"/>.</returns>
+        IPartnerInformationRequestBuilder PartnerInformation { get; }
 
         /// <summary>
         /// Gets the request builder for Extensions.
@@ -55,15 +61,6 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IOrganizationSettingsRequestBuilder"/>.</returns>
         IOrganizationSettingsRequestBuilder Settings { get; }
     
-        /// <summary>
-        /// Gets the request builder for OrganizationActivateService.
-        /// </summary>
-        /// <returns>The <see cref="IOrganizationActivateServiceRequestBuilder"/>.</returns>
-        IOrganizationActivateServiceRequestBuilder ActivateService(
-            string service = null,
-            Guid? servicePlanId = null,
-            Guid? skuId = null);
-
         /// <summary>
         /// Gets the request builder for OrganizationSetMobileDeviceManagementAuthority.
         /// </summary>

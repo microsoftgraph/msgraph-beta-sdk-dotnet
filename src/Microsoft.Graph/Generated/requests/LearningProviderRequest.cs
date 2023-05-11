@@ -252,6 +252,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     learningProviderToInitialize.LearningContents.AdditionalData = learningProviderToInitialize.AdditionalData;
                 }
+                if (learningProviderToInitialize.LearningCourseActivities != null && learningProviderToInitialize.LearningCourseActivities.CurrentPage != null)
+                {
+                    learningProviderToInitialize.LearningCourseActivities.InitializeNextPageRequest(this.Client, learningProviderToInitialize.LearningCourseActivitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    learningProviderToInitialize.LearningCourseActivities.AdditionalData = learningProviderToInitialize.AdditionalData;
+                }
 
             }
 

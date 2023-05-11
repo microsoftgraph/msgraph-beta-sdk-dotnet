@@ -63,6 +63,18 @@ namespace Microsoft.Graph.ManagedTenants
         }
 
         /// <summary>
+        /// Gets the request builder for AppPerformances.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantAppPerformancesCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantAppPerformancesCollectionRequestBuilder AppPerformances
+        {
+            get
+            {
+                return new ManagedTenantAppPerformancesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appPerformances"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AuditEvents.
         /// </summary>
         /// <returns>The <see cref="IManagedTenantAuditEventsCollectionRequestBuilder"/>.</returns>
@@ -135,6 +147,18 @@ namespace Microsoft.Graph.ManagedTenants
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceAppPerformances.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantDeviceAppPerformancesCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantDeviceAppPerformancesCollectionRequestBuilder DeviceAppPerformances
+        {
+            get
+            {
+                return new ManagedTenantDeviceAppPerformancesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceAppPerformances"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicySettingStateSummaries.
         /// </summary>
         /// <returns>The <see cref="IManagedTenantDeviceCompliancePolicySettingStateSummariesCollectionRequestBuilder"/>.</returns>
@@ -143,6 +167,18 @@ namespace Microsoft.Graph.ManagedTenants
             get
             {
                 return new ManagedTenantDeviceCompliancePolicySettingStateSummariesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceCompliancePolicySettingStateSummaries"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceHealthStatuses.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantDeviceHealthStatusesCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantDeviceHealthStatusesCollectionRequestBuilder DeviceHealthStatuses
+        {
+            get
+            {
+                return new ManagedTenantDeviceHealthStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceHealthStatuses"), this.Client);
             }
         }
 

@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets activation lock bypass code.
-        /// The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. Individual GET call with select query options is needed to retrieve actual values. Supports: $select. $Search is not supported. Read-only. This property is read-only.
+        /// The code that allows the Activation Lock on managed device to be bypassed. Default, is Null (Non-Default property) for this property when returned as part of managedDevice entity in LIST call. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
         /// </summary>
         [JsonPropertyName("activationLockBypassCode")]
         public string ActivationLockBypassCode { get; set; }
@@ -92,7 +92,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets chrome osdevice info.
-        /// List of properties of the ChromeOS Device.
+        /// List of properties of the ChromeOS Device. Default is an empty list. To retrieve actual values GET call needs to be made, with device id and included in select parameter.
         /// </summary>
         [JsonPropertyName("chromeOSDeviceInfo")]
         public IEnumerable<ChromeOSDeviceProperty> ChromeOSDeviceInfo { get; set; }
@@ -106,7 +106,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets compliance state.
-        /// Compliance state of the device. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager.
+        /// Compliance state of the device. Examples: Compliant, Conflict, Error, etc. Default is unknown. Supports $filter operator 'eq' and 'or'. This property is read-only. Possible values are: unknown, compliant, noncompliant, conflict, error, inGracePeriod, configManager.
         /// </summary>
         [JsonPropertyName("complianceState")]
         public ComplianceState? ComplianceState { get; set; }
@@ -141,7 +141,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device category display name.
-        /// Device category display name. This property is read-only.
+        /// Device category display name. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
         /// </summary>
         [JsonPropertyName("deviceCategoryDisplayName")]
         public string DeviceCategoryDisplayName { get; set; }
@@ -183,7 +183,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device type.
-        /// Platform of the device. This property is read-only. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.
+        /// Platform of the device. Examples: Desktop, WindowsRT, etc. Default is unknown. Supports $filter operator 'eq' and 'or'. This property is read-only. Possible values are: desktop, windowsRT, winMO6, nokia, windowsPhone, mac, winCE, winEmbedded, iPhone, iPad, iPod, android, iSocConsumer, unix, macMDM, holoLens, surfaceHub, androidForWork, androidEnterprise, windows10x, androidnGMS, chromeOS, linux, blackberry, palm, unknown, cloudPC.
         /// </summary>
         [JsonPropertyName("deviceType")]
         public DeviceType? DeviceType { get; set; }
@@ -218,7 +218,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enrolled date time.
-        /// Enrollment time of the device. This property is read-only.
+        /// Enrollment time of the device. Supports $filter operator 'lt' and 'gt'. This property is read-only.
         /// </summary>
         [JsonPropertyName("enrolledDateTime")]
         public DateTimeOffset? EnrolledDateTime { get; set; }
@@ -267,14 +267,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hardware information.
-        /// The hardward details for the device.  Includes information such as storage space, manufacturer, serial number, etc. Return default value in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
+        /// The hardward details for the device. Includes information such as storage space, manufacturer, serial number, etc. By default most property of this type are set to null/0/false and enum defaults for associated types. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
         /// </summary>
         [JsonPropertyName("hardwareInformation")]
         public HardwareInformation HardwareInformation { get; set; }
     
         /// <summary>
         /// Gets or sets iccid.
-        /// Integrated Circuit Card Identifier, it is A SIM card's unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
+        /// Integrated Circuit Card Identifier, it is A SIM card's unique identification number. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
         /// </summary>
         [JsonPropertyName("iccid")]
         public string Iccid { get; set; }
@@ -302,7 +302,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets jail broken.
-        /// whether the device is jail broken or rooted. This property is read-only.
+        /// Whether the device is jail broken or rooted. Default is an empty string. Supports $filter operator 'eq' and 'or'. This property is read-only.
         /// </summary>
         [JsonPropertyName("jailBroken")]
         public string JailBroken { get; set; }
@@ -316,7 +316,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last sync date time.
-        /// The date and time that the device last completed a successful sync with Intune. This property is read-only.
+        /// The date and time that the device last completed a successful sync with Intune. Supports $filter operator 'lt' and 'gt'. This property is read-only.
         /// </summary>
         [JsonPropertyName("lastSyncDateTime")]
         public DateTimeOffset? LastSyncDateTime { get; set; }
@@ -344,7 +344,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets management agent.
-        /// Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.
+        /// Management channel of the device. Examples: Intune, EAS, etc. Default is unknown. Supports $filter operator 'eq' and 'or'. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.
         /// </summary>
         [JsonPropertyName("managementAgent")]
         public ManagementAgentType? ManagementAgent { get; set; }
@@ -365,7 +365,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets management state.
-        /// Management state of the device. This property is read-only. Possible values are: managed, retirePending, retireFailed, wipePending, wipeFailed, unhealthy, deletePending, retireIssued, wipeIssued, wipeCanceled, retireCanceled, discovered.
+        /// Management state of the device. Examples: Managed, RetirePending, etc. Default is managed. Supports $filter operator 'eq' and 'or'. This property is read-only. Possible values are: managed, retirePending, retireFailed, wipePending, wipeFailed, unhealthy, deletePending, retireIssued, wipeIssued, wipeCanceled, retireCanceled, discovered.
         /// </summary>
         [JsonPropertyName("managementState")]
         public ManagementState? ManagementState { get; set; }
@@ -393,7 +393,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets notes.
-        /// Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.
+        /// Notes on the device created by IT Admin. Default is null. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported.
         /// </summary>
         [JsonPropertyName("notes")]
         public string Notes { get; set; }
@@ -414,7 +414,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owner type.
-        /// Ownership of the device. Can be 'company' or 'personal'. Possible values are: unknown, company, personal.
+        /// Ownership of the device. Possible values are, 'company' or 'personal'. Default is unknown. Supports $filter operator 'eq' and 'or'. Possible values are: unknown, company, personal.
         /// </summary>
         [JsonPropertyName("ownerType")]
         public OwnerType? OwnerType { get; set; }
@@ -435,7 +435,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets physical memory in bytes.
-        /// Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.
+        /// Total Memory in Bytes. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. Read-only. This property is read-only.
         /// </summary>
         [JsonPropertyName("physicalMemoryInBytes")]
         public Int64? PhysicalMemoryInBytes { get; set; }
@@ -463,7 +463,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets remote assistance session url.
-        /// Url that allows a Remote Assistance session to be established with the device. This property is read-only.
+        /// Url that allows a Remote Assistance session to be established with the device. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.
         /// </summary>
         [JsonPropertyName("remoteAssistanceSessionUrl")]
         public string RemoteAssistanceSessionUrl { get; set; }
@@ -533,7 +533,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets udid.
-        /// Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
+        /// Unique Device Identifier for iOS and macOS devices. Default is an empty string. To retrieve actual values GET call needs to be made, with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
         /// </summary>
         [JsonPropertyName("udid")]
         public string Udid { get; set; }
@@ -575,14 +575,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets windows active malware count.
-        /// Count of active malware for this windows device. This property is read-only.
+        /// Count of active malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.
         /// </summary>
         [JsonPropertyName("windowsActiveMalwareCount")]
         public Int32? WindowsActiveMalwareCount { get; set; }
     
         /// <summary>
         /// Gets or sets windows remediated malware count.
-        /// Count of remediated malware for this windows device. This property is read-only.
+        /// Count of remediated malware for this windows device. Default is 0. To retrieve actual values GET call needs to be made, with device id and included in select parameter. This property is read-only.
         /// </summary>
         [JsonPropertyName("windowsRemediatedMalwareCount")]
         public Int32? WindowsRemediatedMalwareCount { get; set; }
@@ -683,7 +683,7 @@ namespace Microsoft.Graph
         /// Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
         /// </summary>
         [JsonPropertyName("deviceHealthScriptStates")]
-        public IManagedDeviceDeviceHealthScriptStatesCollectionWithReferencesPage DeviceHealthScriptStates { get; set; }
+        public IManagedDeviceDeviceHealthScriptStatesCollectionPage DeviceHealthScriptStates { get; set; }
 
         /// <summary>
         /// Gets or sets deviceHealthScriptStatesNextLink.
@@ -710,6 +710,7 @@ namespace Microsoft.Graph
         /// Gets or sets users.
         /// The primary users associated with the managed device.
         /// </summary>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("users")]
         public IManagedDeviceUsersCollectionWithReferencesPage Users { get; set; }
 

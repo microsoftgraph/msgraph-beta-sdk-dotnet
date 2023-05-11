@@ -92,6 +92,13 @@ namespace Microsoft.Graph
         public VpnTrafficRuleRoutingPolicyType? RoutingPolicyType { get; set; }
     
         /// <summary>
+        /// Gets or sets vpnTrafficDirection.
+        /// Specify whether the rule applies to inbound traffic or outbound traffic. Possible values are: outbound, inbound, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("vpnTrafficDirection")]
+        public VpnTrafficDirection? VpnTrafficDirection { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

@@ -30,24 +30,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets contract type.
+        /// Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.
         /// </summary>
         [JsonPropertyName("contractType")]
         public string ContractType { get; set; }
     
         /// <summary>
         /// Gets or sets customer id.
+        /// The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant's organization resource.
         /// </summary>
         [JsonPropertyName("customerId")]
         public Guid? CustomerId { get; set; }
     
         /// <summary>
         /// Gets or sets default domain name.
+        /// A copy of the customer tenant's default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's default domain name changes.
         /// </summary>
         [JsonPropertyName("defaultDomainName")]
         public string DefaultDomainName { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// A copy of the customer tenant's display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant's display name changes.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

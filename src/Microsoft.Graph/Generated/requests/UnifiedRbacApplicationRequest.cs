@@ -246,6 +246,12 @@ namespace Microsoft.Graph
 
             if (unifiedRbacApplicationToInitialize != null)
             {
+                if (unifiedRbacApplicationToInitialize.CustomAppScopes != null && unifiedRbacApplicationToInitialize.CustomAppScopes.CurrentPage != null)
+                {
+                    unifiedRbacApplicationToInitialize.CustomAppScopes.InitializeNextPageRequest(this.Client, unifiedRbacApplicationToInitialize.CustomAppScopesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    unifiedRbacApplicationToInitialize.CustomAppScopes.AdditionalData = unifiedRbacApplicationToInitialize.AdditionalData;
+                }
                 if (unifiedRbacApplicationToInitialize.ResourceNamespaces != null && unifiedRbacApplicationToInitialize.ResourceNamespaces.CurrentPage != null)
                 {
                     unifiedRbacApplicationToInitialize.ResourceNamespaces.InitializeNextPageRequest(this.Client, unifiedRbacApplicationToInitialize.ResourceNamespacesNextLink);

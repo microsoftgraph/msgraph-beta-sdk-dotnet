@@ -22,11 +22,23 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets containerFilter.
+        /// </summary>
+        [JsonPropertyName("containerFilter")]
+        public ContainerFilter ContainerFilter { get; set; }
+    
+        /// <summary>
         /// Gets or sets editable.
         /// true if the synchronization rule can be customized; false if this rule is read-only and should not be changed.
         /// </summary>
         [JsonPropertyName("editable")]
         public bool? Editable { get; set; }
+    
+        /// <summary>
+        /// Gets or sets groupFilter.
+        /// </summary>
+        [JsonPropertyName("groupFilter")]
+        public GroupFilter GroupFilter { get; set; }
     
         /// <summary>
         /// Gets or sets id.

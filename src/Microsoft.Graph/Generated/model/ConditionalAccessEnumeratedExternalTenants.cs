@@ -29,7 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets members.
-        /// Represents a collection of tenant ids in the scope of Conditional Access for guests and external users policy targeting.
+        /// A collection of tenant IDs that define the scope of a policy targeting conditional access for guests and external users.
         /// </summary>
         [JsonPropertyName("members")]
         public IEnumerable<string> Members { get; set; }

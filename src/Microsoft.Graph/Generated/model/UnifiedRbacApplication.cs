@@ -21,7 +21,21 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets custom app scopes.
+        /// </summary>
+        [JsonPropertyName("customAppScopes")]
+        public IUnifiedRbacApplicationCustomAppScopesCollectionPage CustomAppScopes { get; set; }
+
+        /// <summary>
+        /// Gets or sets customAppScopesNextLink.
+        /// </summary>
+        [JsonPropertyName("customAppScopes@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string CustomAppScopesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets resource namespaces.
+        /// Resource that represents a collection of related actions.
         /// </summary>
         [JsonPropertyName("resourceNamespaces")]
         public IUnifiedRbacApplicationResourceNamespacesCollectionPage ResourceNamespaces { get; set; }
@@ -35,6 +49,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role assignments.
+        /// Resource to grant access to users or groups.
         /// </summary>
         [JsonPropertyName("roleAssignments")]
         public IUnifiedRbacApplicationRoleAssignmentsCollectionPage RoleAssignments { get; set; }
@@ -48,6 +63,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role definitions.
+        /// The roles allowed by RBAC providers and the permissions assigned to the roles.
         /// </summary>
         [JsonPropertyName("roleDefinitions")]
         public IUnifiedRbacApplicationRoleDefinitionsCollectionPage RoleDefinitions { get; set; }
@@ -61,6 +77,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets transitive role assignments.
+        /// Resource to grant access to users or groups that are transitive.
         /// </summary>
         [JsonPropertyName("transitiveRoleAssignments")]
         public IUnifiedRbacApplicationTransitiveRoleAssignmentsCollectionPage TransitiveRoleAssignments { get; set; }

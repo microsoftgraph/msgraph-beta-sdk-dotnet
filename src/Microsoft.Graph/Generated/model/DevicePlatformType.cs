@@ -69,5 +69,20 @@ namespace Microsoft.Graph
         /// </summary>
         AndroidAOSP = 9,
 	
+        /// <summary>
+        /// Android Mobile Application Management
+        /// </summary>
+        AndroidMobileApplicationManagement = 10,
+	
+        /// <summary>
+        /// IOSMobile Application Management
+        /// </summary>
+        IOSMobileApplicationManagement = 11,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 12,
+	
     }
 }

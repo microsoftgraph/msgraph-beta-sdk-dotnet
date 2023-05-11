@@ -79,7 +79,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IOnlineMeetingRecordingRequestBuilder"/>.</returns>
         IOnlineMeetingRecordingRequestBuilder Recording { get; }
     
-        
+        /// <summary>
+        /// Gets the request builder for OnlineMeetingGetVirtualAppointmentJoinWebUrl.
+        /// </summary>
+        /// <returns>The <see cref="IOnlineMeetingGetVirtualAppointmentJoinWebUrlRequestBuilder"/>.</returns>
+        IOnlineMeetingGetVirtualAppointmentJoinWebUrlRequestBuilder GetVirtualAppointmentJoinWebUrl();
     
     }
 }

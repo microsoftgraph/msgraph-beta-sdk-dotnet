@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CustomExtensionHandlerInstance.
     /// </summary>
+    [Obsolete("")]
     [JsonConverter(typeof(DerivedTypeConverter<CustomExtensionHandlerInstance>))]
     public partial class CustomExtensionHandlerInstance
     {
@@ -46,6 +47,7 @@ namespace Microsoft.Graph
         /// Gets or sets status.
         /// Status of the request to run the access package custom extension workflow that is associated with the logic app. The possible values are: requestSent, requestReceived, unknownFutureValue.
         /// </summary>
+        [Obsolete("")]
         [JsonPropertyName("status")]
         public AccessPackageCustomExtensionHandlerStatus? Status { get; set; }
     

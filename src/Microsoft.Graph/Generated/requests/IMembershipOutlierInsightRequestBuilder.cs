@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IDirectoryObjectWithReferenceRequestBuilder Container { get; }
 
         /// <summary>
+        /// Gets the request builder for LastModifiedBy.
+        /// </summary>
+        /// <returns>The <see cref="IUserWithReferenceRequestBuilder"/>.</returns>
+        IUserWithReferenceRequestBuilder LastModifiedBy { get; }
+
+        /// <summary>
         /// Gets the request builder for Member.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectWithReferenceRequestBuilder"/>.</returns>

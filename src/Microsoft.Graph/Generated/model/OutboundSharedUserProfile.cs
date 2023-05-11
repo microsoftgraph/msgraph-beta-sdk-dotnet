@@ -23,12 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user id.
+        /// The object id of the external user. Read-only.
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets tenants.
+        /// The collection of external Azure AD tenants that the user has shared profile data with. Read-only.
         /// </summary>
         [JsonPropertyName("tenants")]
         public IOutboundSharedUserProfileTenantsCollectionPage Tenants { get; set; }

@@ -188,6 +188,34 @@ namespace Microsoft.Graph
         public SubjectRightsRequestType? Type { get; set; }
     
         /// <summary>
+        /// Gets or sets approvers.
+        /// </summary>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
+        [JsonPropertyName("approvers")]
+        public ISubjectRightsRequestApproversCollectionWithReferencesPage Approvers { get; set; }
+
+        /// <summary>
+        /// Gets or sets approversNextLink.
+        /// </summary>
+        [JsonPropertyName("approvers@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ApproversNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets collaborators.
+        /// </summary>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
+        [JsonPropertyName("collaborators")]
+        public ISubjectRightsRequestCollaboratorsCollectionWithReferencesPage Collaborators { get; set; }
+
+        /// <summary>
+        /// Gets or sets collaboratorsNextLink.
+        /// </summary>
+        [JsonPropertyName("collaborators@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string CollaboratorsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets notes.
         /// List of notes associated with the request.
         /// </summary>

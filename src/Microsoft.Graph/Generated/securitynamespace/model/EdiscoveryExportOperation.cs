@@ -31,7 +31,6 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets azure blob container.
-        /// The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.
         /// </summary>
         [Obsolete("The azureBlobContainer will be deprecated on April 30, 2023.")]
         [JsonPropertyName("azureBlobContainer")]
@@ -39,7 +38,6 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets azure blob token.
-        /// The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location.
         /// </summary>
         [Obsolete("The azureBlobToken will be deprecated on April 30, 2023.")]
         [JsonPropertyName("azureBlobToken")]
@@ -56,11 +54,11 @@ namespace Microsoft.Graph.SecurityNamespace
         /// Gets or sets export file metadata.
         /// </summary>
         [JsonPropertyName("exportFileMetadata")]
-        public ExportFileMetadata ExportFileMetadata { get; set; }
+        public IEnumerable<ExportFileMetadata> ExportFileMetadata { get; set; }
     
         /// <summary>
         /// Gets or sets export options.
-        /// The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags.
+        /// The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags. The fileInfo member is deprecated and will stop returning data on April 30th, 2023. Going forward, the summary and load file are always included.
         /// </summary>
         [JsonPropertyName("exportOptions")]
         public ExportOptions? ExportOptions { get; set; }

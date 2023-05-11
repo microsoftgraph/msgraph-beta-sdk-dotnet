@@ -42,6 +42,13 @@ namespace Microsoft.Graph
         public bool? IsAssigned { get; set; }
     
         /// <summary>
+        /// Gets or sets is migrating to configuration policy.
+        /// Signifies whether or not the intent is being migrated to the configurationPolicies endpoint
+        /// </summary>
+        [JsonPropertyName("isMigratingToConfigurationPolicy")]
+        public bool? IsMigratingToConfigurationPolicy { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// When the intent was last modified
         /// </summary>

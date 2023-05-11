@@ -315,6 +315,11 @@ namespace Microsoft.Graph
         InternalServerErrorUnableToRunDscScript = 903,
 	
         /// <summary>
+        /// Sso Check Kerberos Configuration Error
+        /// </summary>
+        SsoCheckKerberosConfigurationError = 904,
+	
+        /// <summary>
         /// Internal Server Unknown Error
         /// </summary>
         InternalServerUnknownError = 999,

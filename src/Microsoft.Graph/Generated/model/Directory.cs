@@ -118,6 +118,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets inbound shared user profiles.
+        /// A collection of external Azure AD users whose profile data has been shared with the Azure AD tenant. Nullable.
         /// </summary>
         [JsonPropertyName("inboundSharedUserProfiles")]
         public IDirectoryInboundSharedUserProfilesCollectionPage InboundSharedUserProfiles { get; set; }

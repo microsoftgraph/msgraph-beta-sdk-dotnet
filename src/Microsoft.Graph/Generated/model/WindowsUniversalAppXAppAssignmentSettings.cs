@@ -29,7 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets useDeviceContext.
-        /// Whether or not to use device execution context for Windows Universal AppX mobile app.
+        /// If true, uses device execution context for Windows Universal AppX mobile app. Device-context install is not allowed when this type of app is targeted with Available intent. Defaults to false.
         /// </summary>
         [JsonPropertyName("useDeviceContext")]
         public bool? UseDeviceContext { get; set; }

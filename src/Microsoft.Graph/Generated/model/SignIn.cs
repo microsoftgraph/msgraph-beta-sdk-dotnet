@@ -246,6 +246,13 @@ namespace Microsoft.Graph
         public SignInLocation Location { get; set; }
     
         /// <summary>
+        /// Gets or sets managed service identity.
+        /// Contains information about the managed identity used for the sign in, including its type and associated Azure Resource Manager (ARM) resource ID.
+        /// </summary>
+        [JsonPropertyName("managedServiceIdentity")]
+        public ManagedIdentity ManagedServiceIdentity { get; set; }
+    
+        /// <summary>
         /// Gets or sets mfa detail.
         /// </summary>
         [JsonPropertyName("mfaDetail")]

@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new EducationAssignmentSettingsRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for GradingCategories.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentSettingsGradingCategoriesCollectionRequestBuilder"/>.</returns>
+        public IEducationAssignmentSettingsGradingCategoriesCollectionRequestBuilder GradingCategories
+        {
+            get
+            {
+                return new EducationAssignmentSettingsGradingCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("gradingCategories"), this.Client);
+            }
+        }
+    
     }
 }

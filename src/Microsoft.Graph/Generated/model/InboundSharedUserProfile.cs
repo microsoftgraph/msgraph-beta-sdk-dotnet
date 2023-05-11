@@ -23,24 +23,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
+        /// The name displayed in the address book for teh user at the time when the sharing record was created. Read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets home tenant id.
+        /// The home tenant id of the external user. Read-only.
         /// </summary>
         [JsonPropertyName("homeTenantId")]
         public string HomeTenantId { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
+        /// The object id of the external user. Read-only.
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
+        /// The user principal name (UPN) of the external user. Read-only.
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }

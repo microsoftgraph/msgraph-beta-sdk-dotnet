@@ -57,6 +57,12 @@ namespace Microsoft.Graph
         public PersistentBrowserSessionControl PersistentBrowser { get; set; }
     
         /// <summary>
+        /// Gets or sets secureSignInSession.
+        /// </summary>
+        [JsonPropertyName("secureSignInSession")]
+        public SecureSignInSessionControl SecureSignInSession { get; set; }
+    
+        /// <summary>
         /// Gets or sets signInFrequency.
         /// Session control to enforce signin frequency.
         /// </summary>

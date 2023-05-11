@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Virtual Appointment.
     /// </summary>
+    [Obsolete("The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API.")]
     public partial class VirtualAppointment : Entity
     {
     
@@ -31,6 +32,7 @@ namespace Microsoft.Graph
         /// Gets or sets appointment clients.
         /// The client information for the virtual appointment, including name, email, and SMS phone number. Optional.
         /// </summary>
+        [Obsolete("The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API.")]
         [JsonPropertyName("appointmentClients")]
         public IEnumerable<VirtualAppointmentUser> AppointmentClients { get; set; }
     
@@ -52,6 +54,7 @@ namespace Microsoft.Graph
         /// Gets or sets settings.
         /// The settings associated with the virtual appointment resource. Optional.
         /// </summary>
+        [Obsolete("The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API.")]
         [JsonPropertyName("settings")]
         public VirtualAppointmentSettings Settings { get; set; }
     

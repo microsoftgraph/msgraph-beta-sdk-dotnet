@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets assignmentTarget.
+        /// The Azure Active Directory (Azure AD) we are deploying firmware updates to (e.g.: d93c8f48-bd42-4514-ba40-bc6b84780930). NOTE: Use this property moving forward because the existing property, target, is deprecated.
+        /// </summary>
+        [JsonPropertyName("assignmentTarget")]
+        public DeviceAndAppManagementAssignmentTarget AssignmentTarget { get; set; }
+    
+        /// <summary>
         /// Gets or sets displayName.
         /// The display name of the Azure AD security group used for the assignment.
         /// </summary>

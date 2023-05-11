@@ -22,6 +22,19 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets learning course activities.
+        /// </summary>
+        [JsonPropertyName("learningCourseActivities")]
+        public IEmployeeExperienceLearningCourseActivitiesCollectionPage LearningCourseActivities { get; set; }
+
+        /// <summary>
+        /// Gets or sets learningCourseActivitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("learningCourseActivities@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string LearningCourseActivitiesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets learning providers.
         /// A collection of learning providers.
         /// </summary>

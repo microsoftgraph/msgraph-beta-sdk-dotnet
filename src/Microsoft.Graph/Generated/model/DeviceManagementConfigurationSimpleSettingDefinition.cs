@@ -31,28 +31,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets default value.
-        /// Default setting value for this setting
+        /// Default setting value for this setting.
         /// </summary>
         [JsonPropertyName("defaultValue")]
         public DeviceManagementConfigurationSettingValue DefaultValue { get; set; }
     
         /// <summary>
         /// Gets or sets depended on by.
-        /// list of child settings that depend on this setting
+        /// list of child settings that depend on this setting.
         /// </summary>
         [JsonPropertyName("dependedOnBy")]
         public IEnumerable<DeviceManagementConfigurationSettingDependedOnBy> DependedOnBy { get; set; }
     
         /// <summary>
         /// Gets or sets dependent on.
-        /// list of parent settings this setting is dependent on
+        /// list of parent settings this setting is dependent on.
         /// </summary>
         [JsonPropertyName("dependentOn")]
         public IEnumerable<DeviceManagementConfigurationDependentOn> DependentOn { get; set; }
     
         /// <summary>
         /// Gets or sets value definition.
-        /// Definition of the value for this setting
+        /// Definition of the value for this setting.
         /// </summary>
         [JsonPropertyName("valueDefinition")]
         public DeviceManagementConfigurationSettingValueDefinition ValueDefinition { get; set; }

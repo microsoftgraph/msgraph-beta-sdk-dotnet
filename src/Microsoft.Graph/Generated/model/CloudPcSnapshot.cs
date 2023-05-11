@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets expiration date time.
+        /// The date and time when the snapshot expires. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
@@ -50,6 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets snapshot type.
+        /// The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual. Default value is automatic.
         /// </summary>
         [JsonPropertyName("snapshotType")]
         public CloudPcSnapshotType? SnapshotType { get; set; }

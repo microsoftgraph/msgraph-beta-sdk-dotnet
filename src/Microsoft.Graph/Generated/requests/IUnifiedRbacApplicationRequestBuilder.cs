@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IUnifiedRbacApplicationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for CustomAppScopes.
+        /// </summary>
+        /// <returns>The <see cref="IUnifiedRbacApplicationCustomAppScopesCollectionRequestBuilder"/>.</returns>
+        IUnifiedRbacApplicationCustomAppScopesCollectionRequestBuilder CustomAppScopes { get; }
+
+        /// <summary>
         /// Gets the request builder for ResourceNamespaces.
         /// </summary>
         /// <returns>The <see cref="IUnifiedRbacApplicationResourceNamespacesCollectionRequestBuilder"/>.</returns>

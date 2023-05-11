@@ -3,9 +3,9 @@ name: Validate Pull Request
 on:
   workflow_dispatch:
   push:
-    branches: [ 'master' ]
+    branches: [ 'master' ,'support/*']
   pull_request:
-    branches: [ 'master' ]
+    branches: [ 'master' ,'support/*']
 
 jobs:
   build:

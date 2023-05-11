@@ -94,13 +94,6 @@ namespace Microsoft.Graph
         IGraphServiceUsersCollectionRequest Filter(string value);
 
         /// <summary>
-        /// Adds the specified skip value to the request.
-        /// </summary>
-        /// <param name="value">The skip value.</param>
-        /// <returns>The request object to send.</returns>
-        IGraphServiceUsersCollectionRequest Skip(int value);
-
-        /// <summary>
         /// Adds the specified orderby value to the request.
         /// </summary>
         /// <param name="value">The orderby value.</param>

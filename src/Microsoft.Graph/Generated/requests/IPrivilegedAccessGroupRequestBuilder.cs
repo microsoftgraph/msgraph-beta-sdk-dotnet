@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IPrivilegedAccessGroupRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AssignmentApprovals.
+        /// </summary>
+        /// <returns>The <see cref="IPrivilegedAccessGroupAssignmentApprovalsCollectionRequestBuilder"/>.</returns>
+        IPrivilegedAccessGroupAssignmentApprovalsCollectionRequestBuilder AssignmentApprovals { get; }
+
+        /// <summary>
         /// Gets the request builder for AssignmentScheduleInstances.
         /// </summary>
         /// <returns>The <see cref="IPrivilegedAccessGroupAssignmentScheduleInstancesCollectionRequestBuilder"/>.</returns>

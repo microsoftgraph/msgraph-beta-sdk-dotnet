@@ -60,6 +60,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
         /// Gets or sets execution scope.
         /// The unique identifier of the Azure AD identity that last modified the workflow object.
         /// </summary>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("executionScope")]
         public IWorkflowExecutionScopeCollectionWithReferencesPage ExecutionScope { get; set; }
 
@@ -72,6 +73,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets runs.
+        /// Workflow runs.
         /// </summary>
         [JsonPropertyName("runs")]
         public IWorkflowRunsCollectionPage Runs { get; set; }
@@ -99,6 +101,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets user processing results.
+        /// Per-user workflow execution results.
         /// </summary>
         [JsonPropertyName("userProcessingResults")]
         public IWorkflowUserProcessingResultsCollectionPage UserProcessingResults { get; set; }

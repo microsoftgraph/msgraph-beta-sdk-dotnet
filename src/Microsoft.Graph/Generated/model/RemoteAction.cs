@@ -169,5 +169,10 @@ namespace Microsoft.Graph
         /// </summary>
         InitiateOnDemandProactiveRemediation = 29,
 	
+        /// <summary>
+        /// Rotate Local Admin Password
+        /// </summary>
+        RotateLocalAdminPassword = 32,
+	
     }
 }

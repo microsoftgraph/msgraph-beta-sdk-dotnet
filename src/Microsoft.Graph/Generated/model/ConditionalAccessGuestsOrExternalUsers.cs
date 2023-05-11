@@ -23,14 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets externalTenants.
-        /// The tenant ids of the selected types of external users. It could be either all b2b tenant, or a collection of tenant ids. External tenants can be specified only when guestOrExternalUserTypes is not null or an empty string.
+        /// The tenant IDs of the selected types of external users. Either all B2B tenant or a collection of tenant IDs. External tenants can be specified only when the property guestOrExternalUserTypes is not null or an empty String.
         /// </summary>
         [JsonPropertyName("externalTenants")]
         public ConditionalAccessExternalTenants ExternalTenants { get; set; }
     
         /// <summary>
         /// Gets or sets guestOrExternalUserTypes.
-        /// Represents internal guests or external user types. This is a multi-valued property. Supported values are: b2bCollaborationGuest, b2bCollaborationMember, b2bDirectConnectUser, internalGuest, OtherExternalUser, serviceProvider and unknownFutureValue.
+        /// Indicates internal guests or external user types. This is a multi-valued property. Possible values are: none, internalGuest, b2bCollaborationGuest, b2bCollaborationMember, b2bDirectConnectUser,  otherExternalUser, serviceProvider, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("guestOrExternalUserTypes")]
         public ConditionalAccessGuestOrExternalUserTypes? GuestOrExternalUserTypes { get; set; }

@@ -20,27 +20,6 @@ namespace Microsoft.Graph
     public partial class OemWarrantyInformationOnboarding : Entity
     {
     
-        /// <summary>
-        /// Gets or sets available.
-        /// Specifies whether warranty API is available. This property is read-only.
-        /// </summary>
-        [JsonPropertyName("available")]
-        public bool? Available { get; set; }
-    
-        /// <summary>
-        /// Gets or sets enabled.
-        /// Specifies whether warranty query is enabled for given OEM. This property is read-only.
-        /// </summary>
-        [JsonPropertyName("enabled")]
-        public bool? Enabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets oem name.
-        /// OEM name. This property is read-only.
-        /// </summary>
-        [JsonPropertyName("oemName")]
-        public string OemName { get; set; }
-    
     }
 }
 

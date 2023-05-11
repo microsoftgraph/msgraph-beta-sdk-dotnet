@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for EnterpriseApps.
+        /// </summary>
+        /// <returns>The <see cref="IRoleManagementEnterpriseAppsCollectionRequestBuilder"/>.</returns>
+        public IRoleManagementEnterpriseAppsCollectionRequestBuilder EnterpriseApps
+        {
+            get
+            {
+                return new RoleManagementEnterpriseAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("enterpriseApps"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Exchange.
         /// </summary>
         /// <returns>The <see cref="IUnifiedRbacApplicationRequestBuilder"/>.</returns>

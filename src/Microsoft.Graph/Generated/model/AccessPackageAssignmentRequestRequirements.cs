@@ -92,6 +92,13 @@ namespace Microsoft.Graph
         public RequestSchedule Schedule { get; set; }
     
         /// <summary>
+        /// Gets or sets verifiableCredentialRequirementStatus.
+        /// The status of the process to process the verifiable credential, if any.
+        /// </summary>
+        [JsonPropertyName("verifiableCredentialRequirementStatus")]
+        public VerifiableCredentialRequirementStatus VerifiableCredentialRequirementStatus { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

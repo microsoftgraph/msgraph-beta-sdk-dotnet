@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets discoverabilities.
-        /// Read only value indicating what type of discovery the app supports. Possible values are: AttributeDataTypes, AttributeNames, AttributeReadOnly, None, ReferenceAttributes, UnknownFutureValue.
+        /// Read-only value indicating what type of discovery the app supports. The possible values are: None, AttributeNames, AttributeDataTypes, AttributeReadOnly, ReferenceAttributes, UnknownFutureValue. This is a multi-valued object.
         /// </summary>
         [JsonPropertyName("discoverabilities")]
         public DirectoryDefinitionDiscoverabilities? Discoverabilities { get; set; }
@@ -51,6 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets read only.
+        /// Whether this object is read-only.
         /// </summary>
         [JsonPropertyName("readOnly")]
         public bool? ReadOnly { get; set; }

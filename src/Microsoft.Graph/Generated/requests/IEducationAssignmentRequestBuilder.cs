@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IEducationAssignmentCategoriesCollectionRequestBuilder Categories { get; }
 
         /// <summary>
+        /// Gets the request builder for GradingCategory.
+        /// </summary>
+        /// <returns>The <see cref="IEducationGradingCategoryWithReferenceRequestBuilder"/>.</returns>
+        IEducationGradingCategoryWithReferenceRequestBuilder GradingCategory { get; }
+
+        /// <summary>
         /// Gets the request builder for Resources.
         /// </summary>
         /// <returns>The <see cref="IEducationAssignmentResourcesCollectionRequestBuilder"/>.</returns>
@@ -60,6 +66,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEducationAssignmentPublishRequestBuilder"/>.</returns>
         IEducationAssignmentPublishRequestBuilder Publish();
+
+        /// <summary>
+        /// Gets the request builder for EducationAssignmentActivate.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentActivateRequestBuilder"/>.</returns>
+        IEducationAssignmentActivateRequestBuilder Activate();
+
+        /// <summary>
+        /// Gets the request builder for EducationAssignmentDeactivate.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentDeactivateRequestBuilder"/>.</returns>
+        IEducationAssignmentDeactivateRequestBuilder Deactivate();
 
         /// <summary>
         /// Gets the request builder for EducationAssignmentSetUpFeedbackResourcesFolder.

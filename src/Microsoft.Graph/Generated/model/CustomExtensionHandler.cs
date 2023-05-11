@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Custom Extension Handler.
     /// </summary>
+    [Obsolete("")]
     [JsonConverter(typeof(DerivedTypeConverter<CustomExtensionHandler>))]
     public partial class CustomExtensionHandler : Entity
     {
@@ -32,6 +33,7 @@ namespace Microsoft.Graph
         /// Gets or sets custom extension.
         /// Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.
         /// </summary>
+        [Obsolete("")]
         [JsonPropertyName("customExtension")]
         public CustomAccessPackageWorkflowExtension CustomExtension { get; set; }
     

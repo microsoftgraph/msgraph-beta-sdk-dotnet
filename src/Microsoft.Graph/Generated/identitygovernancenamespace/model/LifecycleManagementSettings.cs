@@ -21,6 +21,13 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     {
     
         /// <summary>
+        /// Gets or sets email settings.
+        /// Defines the settings for emails sent out from email-specific tasks within workflows. Accepts 2 parameterssenderDomain- Defines the domain of who is sending the email. useCompanyBranding- A boolean value that defines if company branding is to be used with the email.
+        /// </summary>
+        [JsonPropertyName("emailSettings")]
+        public Microsoft.Graph.EmailSettings EmailSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets workflow schedule interval in hours.
         /// The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.
         /// </summary>

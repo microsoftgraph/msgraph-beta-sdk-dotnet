@@ -213,6 +213,32 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for MessageMarkAsJunk.
+        /// </summary>
+        /// <returns>The <see cref="IMessageMarkAsJunkRequestBuilder"/>.</returns>
+        public IMessageMarkAsJunkRequestBuilder MarkAsJunk(
+            bool MoveToJunk)
+        {
+            return new MessageMarkAsJunkRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.markAsJunk"),
+                this.Client,
+                MoveToJunk);
+        }
+
+        /// <summary>
+        /// Gets the request builder for MessageMarkAsNotJunk.
+        /// </summary>
+        /// <returns>The <see cref="IMessageMarkAsNotJunkRequestBuilder"/>.</returns>
+        public IMessageMarkAsNotJunkRequestBuilder MarkAsNotJunk(
+            bool MoveToInbox)
+        {
+            return new MessageMarkAsNotJunkRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.markAsNotJunk"),
+                this.Client,
+                MoveToInbox);
+        }
+
+        /// <summary>
         /// Gets the request builder for MessageReply.
         /// </summary>
         /// <returns>The <see cref="IMessageReplyRequestBuilder"/>.</returns>

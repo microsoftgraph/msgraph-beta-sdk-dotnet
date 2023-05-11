@@ -817,22 +817,19 @@ namespace Microsoft.Graph
                 return new TodoRequestBuilder(this.AppendSegmentToRequestUrl("todo"), this.Client);
             }
         }
-    
-        /// <summary>
-        /// Gets the request builder for UserActivateServicePlan.
-        /// </summary>
-        /// <returns>The <see cref="IUserActivateServicePlanRequestBuilder"/>.</returns>
-        public IUserActivateServicePlanRequestBuilder ActivateServicePlan(
-            Guid servicePlanId,
-            Guid skuId)
-        {
-            return new UserActivateServicePlanRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.activateServicePlan"),
-                this.Client,
-                servicePlanId,
-                skuId);
-        }
 
+        /// <summary>
+        /// Gets the request builder for EmployeeExperience.
+        /// </summary>
+        /// <returns>The <see cref="IEmployeeExperienceUserRequestBuilder"/>.</returns>
+        public IEmployeeExperienceUserRequestBuilder EmployeeExperience
+        {
+            get
+            {
+                return new EmployeeExperienceUserRequestBuilder(this.AppendSegmentToRequestUrl("employeeExperience"), this.Client);
+            }
+        }
+    
         /// <summary>
         /// Gets the request builder for UserAssignLicense.
         /// </summary>
@@ -882,6 +879,17 @@ namespace Microsoft.Graph
         {
             return new UserReprocessLicenseAssignmentRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.reprocessLicenseAssignment"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserRetryServiceProvisioning.
+        /// </summary>
+        /// <returns>The <see cref="IUserRetryServiceProvisioningRequestBuilder"/>.</returns>
+        public IUserRetryServiceProvisioningRequestBuilder RetryServiceProvisioning()
+        {
+            return new UserRetryServiceProvisioningRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.retryServiceProvisioning"),
                 this.Client);
         }
 

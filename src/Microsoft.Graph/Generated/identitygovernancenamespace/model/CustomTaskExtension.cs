@@ -30,7 +30,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
 
         /// <summary>
         /// Gets or sets callback configuration.
-        /// The callback configuration for a custom extension.
+        /// The callback configuration for a custom task extension.
         /// </summary>
         [JsonPropertyName("callbackConfiguration")]
         public Microsoft.Graph.CustomExtensionCallbackConfiguration CallbackConfiguration { get; set; }
@@ -53,6 +53,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
         /// Gets or sets created by.
         /// The unique identifier of the Azure AD user that created the custom task extension.Supports $filter(eq, ne) and $expand.
         /// </summary>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("createdBy")]
         public Microsoft.Graph.User CreatedBy { get; set; }
     
@@ -60,6 +61,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
         /// Gets or sets last modified by.
         /// The unique identifier of the Azure AD user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.
         /// </summary>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("lastModifiedBy")]
         public Microsoft.Graph.User LastModifiedBy { get; set; }
     

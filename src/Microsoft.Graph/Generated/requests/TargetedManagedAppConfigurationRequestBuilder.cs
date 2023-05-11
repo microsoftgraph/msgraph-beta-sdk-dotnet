@@ -100,6 +100,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for TargetedManagedAppConfigurationChangeSettings.
+        /// </summary>
+        /// <returns>The <see cref="ITargetedManagedAppConfigurationChangeSettingsRequestBuilder"/>.</returns>
+        public ITargetedManagedAppConfigurationChangeSettingsRequestBuilder ChangeSettings(
+            IEnumerable<DeviceManagementConfigurationSetting> settings = null)
+        {
+            return new TargetedManagedAppConfigurationChangeSettingsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.changeSettings"),
+                this.Client,
+                settings);
+        }
+
+        /// <summary>
         /// Gets the request builder for TargetedManagedAppConfigurationTargetApps.
         /// </summary>
         /// <returns>The <see cref="ITargetedManagedAppConfigurationTargetAppsRequestBuilder"/>.</returns>

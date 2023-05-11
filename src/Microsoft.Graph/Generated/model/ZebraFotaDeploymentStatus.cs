@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? CompleteOrCanceledDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets errorCode.
+        /// An error code indicating the failure reason, when the deployment state is createFailed. Possible values: See zebraFotaErrorCode enum. Possible values are: success, noDevicesFoundInSelectedAadGroups, noIntuneDevicesFoundInSelectedAadGroups, noZebraFotaEnrolledDevicesFoundForCurrentTenant, noZebraFotaEnrolledDevicesFoundInSelectedAadGroups, noZebraFotaDevicesFoundForSelectedDeviceModel, zebraFotaCreateDeploymentRequestFailure, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("errorCode")]
+        public ZebraFotaErrorCode? ErrorCode { get; set; }
+    
+        /// <summary>
         /// Gets or sets lastUpdatedDateTime.
         /// Date and time when the deployment status was updated from Zebra
         /// </summary>

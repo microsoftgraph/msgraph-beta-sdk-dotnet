@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets end date.
-        /// The date in which this image is no longer within long-term support. The Cloud PC will continue to provide short-term support. Read-only.
+        /// The date in which this image is no longer within long-term support. The Cloud PC continues to provide short-term support. Read-only.
         /// </summary>
         [JsonPropertyName("endDate")]
         public Date EndDate { get; set; }
@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets offer.
-        /// The offer name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
+        /// The offer name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
         /// </summary>
         [JsonPropertyName("offer")]
         public string Offer { get; set; }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets publisher.
-        /// The publisher name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
+        /// The publisher name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
         /// </summary>
         [JsonPropertyName("publisher")]
         public string Publisher { get; set; }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sku.
-        /// The SKU name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.
+        /// The SKU name of the gallery image. This value is passed to Azure to get the image resource. Read-only.
         /// </summary>
         [JsonPropertyName("sku")]
         public string Sku { get; set; }

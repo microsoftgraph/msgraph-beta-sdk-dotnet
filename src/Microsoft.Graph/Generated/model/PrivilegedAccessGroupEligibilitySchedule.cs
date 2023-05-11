@@ -31,36 +31,42 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets access id.
+        /// The identifier of the membership or ownership eligibility to the group that is governed by PIM. Required. The possible values are: owner, member.
         /// </summary>
         [JsonPropertyName("accessId")]
         public PrivilegedAccessGroupRelationships? AccessId { get; set; }
     
         /// <summary>
         /// Gets or sets group id.
+        /// The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required.
         /// </summary>
         [JsonPropertyName("groupId")]
         public string GroupId { get; set; }
     
         /// <summary>
         /// Gets or sets member type.
+        /// Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the schedule. Required. The possible values are: direct, group, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("memberType")]
         public PrivilegedAccessGroupMemberType? MemberType { get; set; }
     
         /// <summary>
         /// Gets or sets principal id.
+        /// The identifier of the principal whose membership or ownership eligibility is granted through PIM for groups. Required.
         /// </summary>
         [JsonPropertyName("principalId")]
         public string PrincipalId { get; set; }
     
         /// <summary>
         /// Gets or sets group.
+        /// References the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
         /// </summary>
         [JsonPropertyName("group")]
         public Group Group { get; set; }
     
         /// <summary>
         /// Gets or sets principal.
+        /// References the principal that's in the scope of this membership or ownership eligibility request to the group that's governed by PIM. Supports $expand.
         /// </summary>
         [JsonPropertyName("principal")]
         public DirectoryObject Principal { get; set; }

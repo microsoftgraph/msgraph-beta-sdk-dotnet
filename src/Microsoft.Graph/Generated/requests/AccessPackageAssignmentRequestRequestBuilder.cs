@@ -98,6 +98,23 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AccessPackageAssignmentRequestResume.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageAssignmentRequestResumeRequestBuilder"/>.</returns>
+        public IAccessPackageAssignmentRequestResumeRequestBuilder Resume(
+            string source = null,
+            string type = null,
+            CustomExtensionData data = null)
+        {
+            return new AccessPackageAssignmentRequestResumeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.resume"),
+                this.Client,
+                source,
+                type,
+                data);
+        }
+
+        /// <summary>
         /// Gets the request builder for AccessPackageAssignmentRequestReprocess.
         /// </summary>
         /// <returns>The <see cref="IAccessPackageAssignmentRequestReprocessRequestBuilder"/>.</returns>

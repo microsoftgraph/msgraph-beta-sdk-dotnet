@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets provisioning type.
+        /// Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("provisioningType")]
+        public CloudPcProvisioningType? ProvisioningType { get; set; }
+    
+        /// <summary>
         /// Gets or sets ram in gb.
         /// The size of the RAM in GB. Read-only.
         /// </summary>
@@ -44,6 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets supported solution.
+        /// The supported service or solution for the region. The possible values are: windows365, devBox, rpaBox, unknownFutureValue. Read-only.
         /// </summary>
         [JsonPropertyName("supportedSolution")]
         public CloudPcManagementService? SupportedSolution { get; set; }

@@ -78,6 +78,13 @@ namespace Microsoft.Graph.ExternalConnectors
         public string Name { get; set; }
     
         /// <summary>
+        /// Gets or sets rankingHint.
+        /// Specifies the property ranking hint. Developers can specify which properties are most important, allowing Microsoft Search to determine the search relevance of the content.
+        /// </summary>
+        [JsonPropertyName("rankingHint")]
+        public RankingHint RankingHint { get; set; }
+    
+        /// <summary>
         /// Gets or sets type.
         /// The data type of the property. Possible values are: string, int64, double, dateTime, boolean, stringCollection, int64Collection, doubleCollection, dateTimeCollection, unknownFutureValue. Required.
         /// </summary>

@@ -83,12 +83,6 @@ namespace Microsoft.Graph
         public string PrinterSharesNextLink { get; set; }
     
         /// <summary>
-        /// Gets or sets reports.
-        /// </summary>
-        [JsonPropertyName("reports")]
-        public ReportRoot Reports { get; set; }
-    
-        /// <summary>
         /// Gets or sets services.
         /// The list of available Universal Print service endpoints.
         /// </summary>

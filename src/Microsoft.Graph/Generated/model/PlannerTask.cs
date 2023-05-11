@@ -164,6 +164,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets recurrence.
+        /// Defines active or inactive recurrence for the task. null when the recurrence has never been defined for the task.
         /// </summary>
         [JsonPropertyName("recurrence")]
         public PlannerTaskRecurrence Recurrence { get; set; }

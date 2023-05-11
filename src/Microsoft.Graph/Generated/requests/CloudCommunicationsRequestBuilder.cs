@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CloudCommunicationsRequestBuilder.
     /// </summary>
-    public partial class CloudCommunicationsRequestBuilder : EntityRequestBuilder, ICloudCommunicationsRequestBuilder
+    public partial class CloudCommunicationsRequestBuilder : BaseRequestBuilder, ICloudCommunicationsRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new ICloudCommunicationsRequest Request()
+        public ICloudCommunicationsRequest Request()
         {
             return this.Request(null);
         }
@@ -45,23 +45,11 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new ICloudCommunicationsRequest Request(IEnumerable<Option> options)
+        public ICloudCommunicationsRequest Request(IEnumerable<Option> options)
         {
             return new CloudCommunicationsRequest(this.RequestUrl, this.Client, options);
         }
     
-        /// <summary>
-        /// Gets the request builder for Calls.
-        /// </summary>
-        /// <returns>The <see cref="ICloudCommunicationsCallsCollectionRequestBuilder"/>.</returns>
-        public ICloudCommunicationsCallsCollectionRequestBuilder Calls
-        {
-            get
-            {
-                return new CloudCommunicationsCallsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("calls"), this.Client);
-            }
-        }
-
         /// <summary>
         /// Gets the request builder for CallRecords.
         /// </summary>
@@ -71,6 +59,18 @@ namespace Microsoft.Graph
             get
             {
                 return new CloudCommunicationsCallRecordsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("callRecords"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Calls.
+        /// </summary>
+        /// <returns>The <see cref="ICloudCommunicationsCallsCollectionRequestBuilder"/>.</returns>
+        public ICloudCommunicationsCallsCollectionRequestBuilder Calls
+        {
+            get
+            {
+                return new CloudCommunicationsCallsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("calls"), this.Client);
             }
         }
 

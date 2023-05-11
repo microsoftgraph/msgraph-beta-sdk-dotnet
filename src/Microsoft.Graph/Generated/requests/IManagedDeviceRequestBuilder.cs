@@ -76,8 +76,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for DeviceHealthScriptStates.
         /// </summary>
-        /// <returns>The <see cref="IManagedDeviceDeviceHealthScriptStatesCollectionWithReferencesRequestBuilder"/>.</returns>
-        IManagedDeviceDeviceHealthScriptStatesCollectionWithReferencesRequestBuilder DeviceHealthScriptStates { get; }
+        /// <returns>The <see cref="IManagedDeviceDeviceHealthScriptStatesCollectionRequestBuilder"/>.</returns>
+        IManagedDeviceDeviceHealthScriptStatesCollectionRequestBuilder DeviceHealthScriptStates { get; }
 
         /// <summary>
         /// Gets the request builder for LogCollectionRequests.
@@ -299,6 +299,12 @@ namespace Microsoft.Graph
         IManagedDeviceRotateFileVaultKeyRequestBuilder RotateFileVaultKey();
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceRotateLocalAdminPassword.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceRotateLocalAdminPasswordRequestBuilder"/>.</returns>
+        IManagedDeviceRotateLocalAdminPasswordRequestBuilder RotateLocalAdminPassword();
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceSendCustomNotificationToCompanyPortal.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceSendCustomNotificationToCompanyPortalRequestBuilder"/>.</returns>
@@ -360,30 +366,9 @@ namespace Microsoft.Graph
             bool? keepEnrollmentData = null,
             bool? keepUserData = null,
             string macOsUnlockCode = null,
+            ObliterationBehavior? obliterationBehavior = null,
             bool? persistEsimDataPlan = null,
             bool? useProtectedWipe = null);
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceCreateRemoteHelpSession.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceCreateRemoteHelpSessionRequestBuilder"/>.</returns>
-        IManagedDeviceCreateRemoteHelpSessionRequestBuilder CreateRemoteHelpSession(
-            string sessionType = null);
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceEndRemoteHelpSession.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceEndRemoteHelpSessionRequestBuilder"/>.</returns>
-        IManagedDeviceEndRemoteHelpSessionRequestBuilder EndRemoteHelpSession(
-            string sessionKey = null);
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceRequestRemoteHelpSessionAccess.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceRequestRemoteHelpSessionAccessRequestBuilder"/>.</returns>
-        IManagedDeviceRequestRemoteHelpSessionAccessRequestBuilder RequestRemoteHelpSessionAccess(
-            string sessionKey = null,
-            string pubSubConnectionId = null);
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceGetCloudPcRemoteActionResults.
@@ -414,13 +399,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceGetOemWarrantyRequestBuilder"/>.</returns>
         IManagedDeviceGetOemWarrantyRequestBuilder GetOemWarranty();
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceRetrieveRemoteHelpSession.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceRetrieveRemoteHelpSessionRequestBuilder"/>.</returns>
-        IManagedDeviceRetrieveRemoteHelpSessionRequestBuilder RetrieveRemoteHelpSession(
-            string sessionKey = null);
     
     }
 }

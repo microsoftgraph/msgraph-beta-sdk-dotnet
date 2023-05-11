@@ -36,6 +36,20 @@ namespace Microsoft.Graph
         [JsonPropertyName("customSettings")]
         public IEnumerable<KeyValuePair> CustomSettings { get; set; }
     
+        /// <summary>
+        /// Gets or sets settings.
+        /// List of settings contained in this App Configuration policy
+        /// </summary>
+        [JsonPropertyName("settings")]
+        public IManagedAppConfigurationSettingsCollectionPage Settings { get; set; }
+
+        /// <summary>
+        /// Gets or sets settingsNextLink.
+        /// </summary>
+        [JsonPropertyName("settings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string SettingsNextLink { get; set; }
+    
     }
 }
 

@@ -132,7 +132,8 @@ namespace Microsoft.Graph
             DateTimeOffset? expirationDateTime = null,
             string password = null,
             IEnumerable<DriveRecipient> recipients = null,
-            bool? retainInheritedPermissions = null)
+            bool? retainInheritedPermissions = null,
+            bool? sendNotification = null)
         {
             return new ListItemCreateLinkRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.createLink"),
@@ -142,7 +143,8 @@ namespace Microsoft.Graph
                 expirationDateTime,
                 password,
                 recipients,
-                retainInheritedPermissions);
+                retainInheritedPermissions,
+                sendNotification);
         }
 
         /// <summary>

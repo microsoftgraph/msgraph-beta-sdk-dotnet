@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// Tag description as it will appear to the user in Microsoft Teams.
+        /// Tag description as it will appear to the user in Microsoft Teams. A teamworkTag can't have more than 200 teamworkTagMembers.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }

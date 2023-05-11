@@ -23,7 +23,7 @@ namespace Microsoft.Graph.CallRecords
 
         /// <summary>
         /// Gets or sets calleeNumber.
-        /// Number of the user or bot who received the call. E.164 format, but may include additional data.
+        /// Number of the user or bot who received the call (E.164 format, but may include additional data).
         /// </summary>
         [JsonPropertyName("calleeNumber")]
         public string CalleeNumber { get; set; }
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets callerNumber.
-        /// Number of the user or bot who made the call. E.164 format, but may include additional data.
+        /// Number of the user or bot who made the call (E.164 format, but may include additional data).
         /// </summary>
         [JsonPropertyName("callerNumber")]
         public string CallerNumber { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets correlationId.
-        /// Identifier for the call that you can use when calling Microsoft Support. GUID.
+        /// Identifier (GUID) for the call that you can use when calling Microsoft Support.
         /// </summary>
         [JsonPropertyName("correlationId")]
         public string CorrelationId { get; set; }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets finalSipCode.
-        /// The code with which the call ended, RFC 3261.
+        /// The code with which the call ended (RFC 3261).
         /// </summary>
         [JsonPropertyName("finalSipCode")]
         public Int32? FinalSipCode { get; set; }
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets id.
-        /// Unique call identifier. GUID.
+        /// Unique call identifier (GUID).
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }
@@ -114,14 +114,21 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets mediaPathLocation.
-        /// The datacenter used for media path in non-bypass call.
+        /// The data center used for media path in non-bypass call.
         /// </summary>
         [JsonPropertyName("mediaPathLocation")]
         public string MediaPathLocation { get; set; }
     
         /// <summary>
+        /// Gets or sets otherPartyCountryCode.
+        /// Country code of the caller in case of an incoming call, or callee in case of an outgoing call. For details, see ISO 3166-1 alpha-2.
+        /// </summary>
+        [JsonPropertyName("otherPartyCountryCode")]
+        public string OtherPartyCountryCode { get; set; }
+    
+        /// <summary>
         /// Gets or sets signalingLocation.
-        /// The datacenter used for signaling for both bypass and non-bypass calls.
+        /// The data center used for signaling for both bypass and non-bypass calls.
         /// </summary>
         [JsonPropertyName("signalingLocation")]
         public string SignalingLocation { get; set; }
@@ -148,6 +155,13 @@ namespace Microsoft.Graph.CallRecords
         public string TrunkFullyQualifiedDomainName { get; set; }
     
         /// <summary>
+        /// Gets or sets userCountryCode.
+        /// Country code of the user. For details, see ISO 3166-1 alpha-2.
+        /// </summary>
+        [JsonPropertyName("userCountryCode")]
+        public string UserCountryCode { get; set; }
+    
+        /// <summary>
         /// Gets or sets userDisplayName.
         /// Display name of the user.
         /// </summary>
@@ -156,14 +170,14 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets userId.
-        /// Calling user's ID in Graph. This and other user info will be null/empty for bot call types. GUID.
+        /// The unique identifier (GUID) of the user in Azure Active Directory. This and other user info will be null/empty for bot call types.
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets userPrincipalName.
-        /// UserPrincipalName (sign-in name) in Azure Active Directory. This is usually the same as user's SIP Address, and can be same as user's e-mail address.
+        /// The user principal name (sign-in name) in Azure Active Directory. This is usually the same as the user's SIP address, and can be same as the user's e-mail address.
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }

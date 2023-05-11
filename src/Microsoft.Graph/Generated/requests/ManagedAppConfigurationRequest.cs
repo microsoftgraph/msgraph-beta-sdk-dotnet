@@ -244,6 +244,18 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ManagedAppConfiguration managedAppConfigurationToInitialize)
         {
 
+            if (managedAppConfigurationToInitialize != null)
+            {
+                if (managedAppConfigurationToInitialize.Settings != null && managedAppConfigurationToInitialize.Settings.CurrentPage != null)
+                {
+                    managedAppConfigurationToInitialize.Settings.InitializeNextPageRequest(this.Client, managedAppConfigurationToInitialize.SettingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedAppConfigurationToInitialize.Settings.AdditionalData = managedAppConfigurationToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

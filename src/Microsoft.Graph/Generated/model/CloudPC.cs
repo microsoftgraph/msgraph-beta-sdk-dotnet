@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets connectivity result.
-        /// The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC is able to be connected or not.
+        /// The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC can be connected.
         /// </summary>
         [JsonPropertyName("connectivityResult")]
         public CloudPcConnectivityResult ConnectivityResult { get; set; }
@@ -120,6 +120,12 @@ namespace Microsoft.Graph
         public IEnumerable<CloudPcPartnerAgentInstallResult> PartnerAgentInstallResults { get; set; }
     
         /// <summary>
+        /// Gets or sets power state.
+        /// </summary>
+        [JsonPropertyName("powerState")]
+        public CloudPcPowerState? PowerState { get; set; }
+    
+        /// <summary>
         /// Gets or sets provisioning policy id.
         /// The provisioning policy ID of the Cloud PC.
         /// </summary>
@@ -135,6 +141,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets provisioning type.
+        /// The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue. Default value is dedicated.
         /// </summary>
         [JsonPropertyName("provisioningType")]
         public CloudPcProvisioningType? ProvisioningType { get; set; }

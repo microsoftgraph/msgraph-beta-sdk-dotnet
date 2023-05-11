@@ -134,12 +134,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets teams channel messages count.
+        /// The number of channel messages in Teams team.
         /// </summary>
         [JsonPropertyName("teamsChannelMessagesCount")]
         public Int64? TeamsChannelMessagesCount { get; set; }
     
         /// <summary>
         /// Gets or sets teams meetings organized count.
+        /// The number of meetings organized in Teams team.
         /// </summary>
         [JsonPropertyName("teamsMeetingsOrganizedCount")]
         public Int64? TeamsMeetingsOrganizedCount { get; set; }

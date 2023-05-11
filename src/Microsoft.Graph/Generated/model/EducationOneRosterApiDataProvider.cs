@@ -29,36 +29,42 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets connectionSettings.
+        /// The [OAuth 1.0][onerosteroauth1] or [OAuth 2.0][onerosteroauth2] settings for the OneRoster instance.
         /// </summary>
         [JsonPropertyName("connectionSettings")]
         public EducationSynchronizationConnectionSettings ConnectionSettings { get; set; }
     
         /// <summary>
         /// Gets or sets connectionUrl.
+        /// The connection URL to the OneRoster instance.
         /// </summary>
         [JsonPropertyName("connectionUrl")]
         public string ConnectionUrl { get; set; }
     
         /// <summary>
         /// Gets or sets customizations.
+        /// Optional customization to be applied to the synchronization profile.
         /// </summary>
         [JsonPropertyName("customizations")]
         public EducationSynchronizationCustomizations Customizations { get; set; }
     
         /// <summary>
         /// Gets or sets providerName.
+        /// The OneRoster Service Provider name as defined by the [OneRoster specification][oneroster].
         /// </summary>
         [JsonPropertyName("providerName")]
         public string ProviderName { get; set; }
     
         /// <summary>
         /// Gets or sets schoolsIds.
+        /// The list of [School/Org][orgs] sourcedId to sync.
         /// </summary>
         [JsonPropertyName("schoolsIds")]
         public IEnumerable<string> SchoolsIds { get; set; }
     
         /// <summary>
         /// Gets or sets termIds.
+        /// The list of [academic sessions][terms] to sync.
         /// </summary>
         [JsonPropertyName("termIds")]
         public IEnumerable<string> TermIds { get; set; }

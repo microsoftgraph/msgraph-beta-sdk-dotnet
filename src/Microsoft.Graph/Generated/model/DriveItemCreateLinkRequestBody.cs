@@ -62,5 +62,11 @@ namespace Microsoft.Graph
         [JsonPropertyName("retainInheritedPermissions")]
         public bool? RetainInheritedPermissions { get; set; }
     
+        /// <summary>
+        /// Gets or sets SendNotification.
+        /// </summary>
+        [JsonPropertyName("sendNotification")]
+        public bool? SendNotification { get; set; }
+    
     }
 }

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Microsoft Authenticator Authentication Method.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<MicrosoftAuthenticatorAuthenticationMethod>))]
     public partial class MicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod
     {
     
@@ -28,6 +29,13 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.microsoftAuthenticatorAuthenticationMethod";
         }
 
+        /// <summary>
+        /// Gets or sets client app name.
+        /// The app that the user has registered to use to approve push notifications. The possible values are: microsoftAuthenticator, outlookMobile, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("clientAppName")]
+        public MicrosoftAuthenticatorAuthenticationMethodClientAppName? ClientAppName { get; set; }
+    
         /// <summary>
         /// Gets or sets created date time.
         /// The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.

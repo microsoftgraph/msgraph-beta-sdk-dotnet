@@ -34,8 +34,8 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <summary>
         /// Gets the request builder for Audience.
         /// </summary>
-        /// <returns>The <see cref="IDeploymentAudienceWithReferenceRequestBuilder"/>.</returns>
-        IDeploymentAudienceWithReferenceRequestBuilder Audience { get; }
+        /// <returns>The <see cref="IDeploymentAudienceRequestBuilder"/>.</returns>
+        IDeploymentAudienceRequestBuilder Audience { get; }
 
         /// <summary>
         /// Gets the request builder for ComplianceChanges.

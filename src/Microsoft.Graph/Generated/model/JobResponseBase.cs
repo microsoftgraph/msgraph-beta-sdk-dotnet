@@ -63,6 +63,12 @@ namespace Microsoft.Graph
         [JsonPropertyName("type")]
         public string Type { get; set; }
     
+        /// <summary>
+        /// Gets or sets user id.
+        /// </summary>
+        [JsonPropertyName("userId")]
+        public string UserId { get; set; }
+    
     }
 }
 

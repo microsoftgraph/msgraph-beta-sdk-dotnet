@@ -51,6 +51,30 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Approvers.
+        /// </summary>
+        /// <returns>The <see cref="ISubjectRightsRequestApproversCollectionWithReferencesRequestBuilder"/>.</returns>
+        public ISubjectRightsRequestApproversCollectionWithReferencesRequestBuilder Approvers
+        {
+            get
+            {
+                return new SubjectRightsRequestApproversCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("approvers"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Collaborators.
+        /// </summary>
+        /// <returns>The <see cref="ISubjectRightsRequestCollaboratorsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public ISubjectRightsRequestCollaboratorsCollectionWithReferencesRequestBuilder Collaborators
+        {
+            get
+            {
+                return new SubjectRightsRequestCollaboratorsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("collaborators"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Notes.
         /// </summary>
         /// <returns>The <see cref="ISubjectRightsRequestNotesCollectionRequestBuilder"/>.</returns>

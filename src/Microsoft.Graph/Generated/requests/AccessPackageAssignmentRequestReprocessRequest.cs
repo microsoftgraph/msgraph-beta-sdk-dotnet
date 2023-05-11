@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AccessPackageAssignmentRequestReprocessRequest.
     /// </summary>
+    [Obsolete("")]
     public partial class AccessPackageAssignmentRequestReprocessRequest : BaseRequest, IAccessPackageAssignmentRequestReprocessRequest
     {
         /// <summary>

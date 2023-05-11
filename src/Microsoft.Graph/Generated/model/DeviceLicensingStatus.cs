@@ -50,14 +50,14 @@ namespace Microsoft.Graph
         DeviceIdentityVerificationFailed = 4,
 	
         /// <summary>
-        /// Verifying Mirosoft Account Identity
+        /// Verifying Microsoft Account Identity
         /// </summary>
-        VerifyingMirosoftAccountIdentity = 5,
+        VerifyingMicrosoftAccountIdentity = 5,
 	
         /// <summary>
-        /// Mirosoft Account Verification Failed
+        /// Microsoft Account Verification Failed
         /// </summary>
-        MirosoftAccountVerificationFailed = 6,
+        MicrosoftAccountVerificationFailed = 6,
 	
         /// <summary>
         /// Acquiring Device License

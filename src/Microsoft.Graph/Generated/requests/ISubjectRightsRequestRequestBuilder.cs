@@ -32,6 +32,18 @@ namespace Microsoft.Graph
         new ISubjectRightsRequestRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Approvers.
+        /// </summary>
+        /// <returns>The <see cref="ISubjectRightsRequestApproversCollectionWithReferencesRequestBuilder"/>.</returns>
+        ISubjectRightsRequestApproversCollectionWithReferencesRequestBuilder Approvers { get; }
+
+        /// <summary>
+        /// Gets the request builder for Collaborators.
+        /// </summary>
+        /// <returns>The <see cref="ISubjectRightsRequestCollaboratorsCollectionWithReferencesRequestBuilder"/>.</returns>
+        ISubjectRightsRequestCollaboratorsCollectionWithReferencesRequestBuilder Collaborators { get; }
+
+        /// <summary>
         /// Gets the request builder for Notes.
         /// </summary>
         /// <returns>The <see cref="ISubjectRightsRequestNotesCollectionRequestBuilder"/>.</returns>

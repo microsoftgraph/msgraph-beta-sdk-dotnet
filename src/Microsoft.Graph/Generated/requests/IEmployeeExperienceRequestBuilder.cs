@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         IEmployeeExperienceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for LearningCourseActivities.
+        /// </summary>
+        /// <returns>The <see cref="IEmployeeExperienceLearningCourseActivitiesCollectionRequestBuilder"/>.</returns>
+        IEmployeeExperienceLearningCourseActivitiesCollectionRequestBuilder LearningCourseActivities { get; }
+
+        /// <summary>
         /// Gets the request builder for LearningProviders.
         /// </summary>
         /// <returns>The <see cref="IEmployeeExperienceLearningProvidersCollectionRequestBuilder"/>.</returns>

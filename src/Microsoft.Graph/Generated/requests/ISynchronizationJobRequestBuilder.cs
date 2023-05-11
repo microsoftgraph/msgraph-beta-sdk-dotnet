@@ -38,16 +38,22 @@ namespace Microsoft.Graph
         ISynchronizationSchemaRequestBuilder Schema { get; }
     
         /// <summary>
-        /// Gets the request builder for SynchronizationJobPause.
-        /// </summary>
-        /// <returns>The <see cref="ISynchronizationJobPauseRequestBuilder"/>.</returns>
-        ISynchronizationJobPauseRequestBuilder Pause();
-
-        /// <summary>
         /// Gets the request builder for SynchronizationJobStart.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationJobStartRequestBuilder"/>.</returns>
         ISynchronizationJobStartRequestBuilder Start();
+
+        /// <summary>
+        /// Gets the request builder for SynchronizationJobStop.
+        /// </summary>
+        /// <returns>The <see cref="ISynchronizationJobStopRequestBuilder"/>.</returns>
+        ISynchronizationJobStopRequestBuilder Stop();
+
+        /// <summary>
+        /// Gets the request builder for SynchronizationJobPause.
+        /// </summary>
+        /// <returns>The <see cref="ISynchronizationJobPauseRequestBuilder"/>.</returns>
+        ISynchronizationJobPauseRequestBuilder Pause();
 
         /// <summary>
         /// Gets the request builder for SynchronizationJobProvisionOnDemand.
@@ -62,12 +68,6 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ISynchronizationJobRestartRequestBuilder"/>.</returns>
         ISynchronizationJobRestartRequestBuilder Restart(
             SynchronizationJobRestartCriteria criteria = null);
-
-        /// <summary>
-        /// Gets the request builder for SynchronizationJobStop.
-        /// </summary>
-        /// <returns>The <see cref="ISynchronizationJobStopRequestBuilder"/>.</returns>
-        ISynchronizationJobStopRequestBuilder Stop();
 
         /// <summary>
         /// Gets the request builder for SynchronizationJobValidateCredentials.

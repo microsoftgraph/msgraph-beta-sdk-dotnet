@@ -63,17 +63,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the request builder for SynchronizationJobPause.
-        /// </summary>
-        /// <returns>The <see cref="ISynchronizationJobPauseRequestBuilder"/>.</returns>
-        public ISynchronizationJobPauseRequestBuilder Pause()
-        {
-            return new SynchronizationJobPauseRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.pause"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for SynchronizationJobStart.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationJobStartRequestBuilder"/>.</returns>
@@ -81,6 +70,28 @@ namespace Microsoft.Graph
         {
             return new SynchronizationJobStartRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.start"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for SynchronizationJobStop.
+        /// </summary>
+        /// <returns>The <see cref="ISynchronizationJobStopRequestBuilder"/>.</returns>
+        public ISynchronizationJobStopRequestBuilder Stop()
+        {
+            return new SynchronizationJobStopRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.stop"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for SynchronizationJobPause.
+        /// </summary>
+        /// <returns>The <see cref="ISynchronizationJobPauseRequestBuilder"/>.</returns>
+        public ISynchronizationJobPauseRequestBuilder Pause()
+        {
+            return new SynchronizationJobPauseRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.pause"),
                 this.Client);
         }
 
@@ -108,17 +119,6 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.restart"),
                 this.Client,
                 criteria);
-        }
-
-        /// <summary>
-        /// Gets the request builder for SynchronizationJobStop.
-        /// </summary>
-        /// <returns>The <see cref="ISynchronizationJobStopRequestBuilder"/>.</returns>
-        public ISynchronizationJobStopRequestBuilder Stop()
-        {
-            return new SynchronizationJobStopRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.stop"),
-                this.Client);
         }
 
         /// <summary>

@@ -37,5 +37,7 @@ namespace Microsoft.Graph.CallRecords
         /// <returns>The <see cref="ICallRecordSessionsCollectionRequestBuilder"/>.</returns>
         ICallRecordSessionsCollectionRequestBuilder Sessions { get; }
     
+        
+    
     }
 }

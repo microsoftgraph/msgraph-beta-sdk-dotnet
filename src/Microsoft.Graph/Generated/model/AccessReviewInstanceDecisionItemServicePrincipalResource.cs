@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets appId.
+        /// The globally unique identifier of the application to which access has been granted.
         /// </summary>
         [JsonPropertyName("appId")]
         public string AppId { get; set; }

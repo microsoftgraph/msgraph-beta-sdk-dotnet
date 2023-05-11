@@ -244,18 +244,6 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToInitialize)
         {
 
-            if (windowsUpdateForBusinessConfigurationToInitialize != null)
-            {
-                if (windowsUpdateForBusinessConfigurationToInitialize.DeviceUpdateStates != null && windowsUpdateForBusinessConfigurationToInitialize.DeviceUpdateStates.CurrentPage != null)
-                {
-                    windowsUpdateForBusinessConfigurationToInitialize.DeviceUpdateStates.InitializeNextPageRequest(this.Client, windowsUpdateForBusinessConfigurationToInitialize.DeviceUpdateStatesNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    windowsUpdateForBusinessConfigurationToInitialize.DeviceUpdateStates.AdditionalData = windowsUpdateForBusinessConfigurationToInitialize.AdditionalData;
-                }
-
-            }
-
-
         }
     }
 }

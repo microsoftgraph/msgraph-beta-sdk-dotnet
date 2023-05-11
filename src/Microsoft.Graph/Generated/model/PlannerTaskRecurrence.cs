@@ -23,36 +23,42 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets nextInSeriesTaskId.
+        /// The taskId of the next task in this series. This value is assigned at the time the next task in the series is created, and is null prior to that time.
         /// </summary>
         [JsonPropertyName("nextInSeriesTaskId")]
         public string NextInSeriesTaskId { get; set; }
     
         /// <summary>
         /// Gets or sets occurrenceId.
+        /// The 1-based index of this task within the recurrence series. The first task in a series has the value 1, the next task in the series has the value 2, and so on.
         /// </summary>
         [JsonPropertyName("occurrenceId")]
         public Int32? OccurrenceId { get; set; }
     
         /// <summary>
         /// Gets or sets previousInSeriesTaskId.
+        /// The taskId of the previous task in this series. null for the first task in a series since it has no predecessor. All subsequent tasks in the series have a value that corresponds to their predecessors.
         /// </summary>
         [JsonPropertyName("previousInSeriesTaskId")]
         public string PreviousInSeriesTaskId { get; set; }
     
         /// <summary>
         /// Gets or sets recurrenceStartDateTime.
+        /// The date and time when this recurrence series begin. For the first task in a series (occurrenceId = 1) this value is copied from schedule.patternStartDateTime. For subsequent tasks in the series (occurrenceId &amp;gt;= 2) this value is copied from the previous task and never changes; it preserves the start date of the recurring series. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("recurrenceStartDateTime")]
         public DateTimeOffset? RecurrenceStartDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets schedule.
+        /// The schedule for recurrence. Clients define and edit recurrence by specifying the schedule. If nextInSeriesTaskId isn't assigned, clients may terminate the series by assigning null to this property.
         /// </summary>
         [JsonPropertyName("schedule")]
         public PlannerRecurrenceSchedule Schedule { get; set; }
     
         /// <summary>
         /// Gets or sets seriesId.
+        /// The recurrence series this task belongs to. A GUID-based value that serves as the unique identifier for a series.
         /// </summary>
         [JsonPropertyName("seriesId")]
         public string SeriesId { get; set; }

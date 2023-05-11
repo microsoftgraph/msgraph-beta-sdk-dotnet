@@ -25,6 +25,7 @@ namespace Microsoft.Graph
         /// Gets or sets account enabled.
         /// true if the service principal account is enabled; otherwise, false.
         /// </summary>
+        [Obsolete("The accountEnabled field will soon be deprecated on 2023-07-12. Please use isEnabled instead.")]
         [JsonPropertyName("accountEnabled")]
         public bool? AccountEnabled { get; set; }
     
@@ -41,6 +42,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is enabled.
+        /// </summary>
+        [JsonPropertyName("isEnabled")]
+        public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets is processing.

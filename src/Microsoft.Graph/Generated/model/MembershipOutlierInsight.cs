@@ -65,6 +65,14 @@ namespace Microsoft.Graph
         public DirectoryObject Container { get; set; }
     
         /// <summary>
+        /// Gets or sets last modified by.
+        /// Navigation link to a member object who modified the record. For example, to a user.
+        /// </summary>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
+        [JsonPropertyName("lastModifiedBy")]
+        public User LastModifiedBy { get; set; }
+    
+        /// <summary>
         /// Gets or sets member.
         /// Navigation link to a member object. For example, to a user.
         /// </summary>

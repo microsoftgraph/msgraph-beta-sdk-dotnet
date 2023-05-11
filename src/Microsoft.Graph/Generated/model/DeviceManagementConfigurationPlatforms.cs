@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 1073741824,
+        UnknownFutureValue = 256,
 	
     }
 }

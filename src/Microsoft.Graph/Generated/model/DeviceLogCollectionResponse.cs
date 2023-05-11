@@ -17,12 +17,13 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Device Log Collection Response.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DeviceLogCollectionResponse>))]
     public partial class DeviceLogCollectionResponse : Entity
     {
     
         /// <summary>
         /// Gets or sets enrolled by user.
-        /// The User Principal Name (UPN) of the user that enrolled the device
+        /// The User Principal Name (UPN) of the user that enrolled the device.
         /// </summary>
         [JsonPropertyName("enrolledByUser")]
         public string EnrolledByUser { get; set; }
@@ -36,35 +37,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets expiration date time utc.
-        /// The DateTime of the expiration of the logs
+        /// The DateTime of the expiration of the logs.
         /// </summary>
         [JsonPropertyName("expirationDateTimeUTC")]
         public DateTimeOffset? ExpirationDateTimeUTC { get; set; }
     
         /// <summary>
         /// Gets or sets initiated by user principal name.
-        /// The UPN for who initiated the request
+        /// The UPN for who initiated the request.
         /// </summary>
         [JsonPropertyName("initiatedByUserPrincipalName")]
         public string InitiatedByUserPrincipalName { get; set; }
     
         /// <summary>
         /// Gets or sets managed device id.
-        /// The device Id
+        /// Indicates Intune device unique identifier.
         /// </summary>
         [JsonPropertyName("managedDeviceId")]
         public Guid? ManagedDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets received date time utc.
-        /// The DateTime the request was received
+        /// The DateTime the request was received.
         /// </summary>
         [JsonPropertyName("receivedDateTimeUTC")]
         public DateTimeOffset? ReceivedDateTimeUTC { get; set; }
     
         /// <summary>
         /// Gets or sets requested date time utc.
-        /// The DateTime of the request
+        /// The DateTime of the request.
         /// </summary>
         [JsonPropertyName("requestedDateTimeUTC")]
         public DateTimeOffset? RequestedDateTimeUTC { get; set; }
@@ -77,11 +78,18 @@ namespace Microsoft.Graph
         public double? Size { get; set; }
     
         /// <summary>
+        /// Gets or sets size in kb.
+        /// The size of the logs in KB. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// </summary>
+        [JsonPropertyName("sizeInKB")]
+        public double? SizeInKB { get; set; }
+    
+        /// <summary>
         /// Gets or sets status.
-        /// The status of the log collection request
+        /// Indicates the status for the app log collection request if it is pending, completed or failed, Default is pending. Possible values are: pending, completed, failed, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
-        public string Status { get; set; }
+        public AppLogUploadState? Status { get; set; }
     
     }
 }

@@ -36,6 +36,20 @@ namespace Microsoft.Graph
         public string CloudPcLaunchUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets windows365SwitchCompatible.
+        /// Indicates whether the Cloud PC supports switch functionality. If the value is true, it supports switch functionality; otherwise,  false.
+        /// </summary>
+        [JsonPropertyName("windows365SwitchCompatible")]
+        public bool? Windows365SwitchCompatible { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows365SwitchNotCompatibleReason.
+        /// Indicates the reason the Cloud PC doesn't support switch. CPCOsVersionNotMeetRequirement indicates that the user needs to update their Cloud PC operation system version. CPCHardwareNotMeetRequirement indicates that the Cloud PC needs more CPU or RAM to support the functionality.
+        /// </summary>
+        [JsonPropertyName("windows365SwitchNotCompatibleReason")]
+        public string Windows365SwitchNotCompatibleReason { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

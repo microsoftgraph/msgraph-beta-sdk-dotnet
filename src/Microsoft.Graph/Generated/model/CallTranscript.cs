@@ -34,6 +34,13 @@ namespace Microsoft.Graph
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
+        /// <summary>
+        /// Gets or sets metadata content.
+        /// A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+        /// </summary>
+        [JsonPropertyName("metadataContent")]
+        public Stream MetadataContent { get; set; }
+    
     }
 }
 

@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for LearningCourseActivities.
+        /// </summary>
+        /// <returns>The <see cref="IEmployeeExperienceLearningCourseActivitiesCollectionRequestBuilder"/>.</returns>
+        public IEmployeeExperienceLearningCourseActivitiesCollectionRequestBuilder LearningCourseActivities
+        {
+            get
+            {
+                return new EmployeeExperienceLearningCourseActivitiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("learningCourseActivities"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for LearningProviders.
         /// </summary>
         /// <returns>The <see cref="IEmployeeExperienceLearningProvidersCollectionRequestBuilder"/>.</returns>

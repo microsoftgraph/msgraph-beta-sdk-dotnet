@@ -40,8 +40,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Analytics.
         /// </summary>
-        /// <returns>The <see cref="IItemAnalyticsWithReferenceRequestBuilder"/>.</returns>
-        IItemAnalyticsWithReferenceRequestBuilder Analytics { get; }
+        /// <returns>The <see cref="IItemAnalyticsRequestBuilder"/>.</returns>
+        IItemAnalyticsRequestBuilder Analytics { get; }
 
         /// <summary>
         /// Gets the request builder for Columns.

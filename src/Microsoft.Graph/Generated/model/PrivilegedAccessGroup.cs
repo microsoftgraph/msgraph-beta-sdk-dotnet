@@ -21,7 +21,21 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets assignment approvals.
+        /// </summary>
+        [JsonPropertyName("assignmentApprovals")]
+        public IPrivilegedAccessGroupAssignmentApprovalsCollectionPage AssignmentApprovals { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentApprovalsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignmentApprovals@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AssignmentApprovalsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets assignment schedule instances.
+        /// The instances of assignment schedules to activate a just-in-time access.
         /// </summary>
         [JsonPropertyName("assignmentScheduleInstances")]
         public IPrivilegedAccessGroupAssignmentScheduleInstancesCollectionPage AssignmentScheduleInstances { get; set; }
@@ -35,6 +49,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets assignment schedule requests.
+        /// The schedule requests for operations to create, update, delete, extend, and renew an assignment.
         /// </summary>
         [JsonPropertyName("assignmentScheduleRequests")]
         public IPrivilegedAccessGroupAssignmentScheduleRequestsCollectionPage AssignmentScheduleRequests { get; set; }
@@ -48,6 +63,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets assignment schedules.
+        /// The assignment schedules to activate a just-in-time access.
         /// </summary>
         [JsonPropertyName("assignmentSchedules")]
         public IPrivilegedAccessGroupAssignmentSchedulesCollectionPage AssignmentSchedules { get; set; }
@@ -61,6 +77,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets eligibility schedule instances.
+        /// The instances of eligibility schedules to activate a just-in-time access.
         /// </summary>
         [JsonPropertyName("eligibilityScheduleInstances")]
         public IPrivilegedAccessGroupEligibilityScheduleInstancesCollectionPage EligibilityScheduleInstances { get; set; }
@@ -74,6 +91,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets eligibility schedule requests.
+        /// The schedule requests for operations to create, update, delete, extend, and renew an eligibility.
         /// </summary>
         [JsonPropertyName("eligibilityScheduleRequests")]
         public IPrivilegedAccessGroupEligibilityScheduleRequestsCollectionPage EligibilityScheduleRequests { get; set; }
@@ -87,6 +105,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets eligibility schedules.
+        /// The eligibility schedules to activate a just-in-time access.
         /// </summary>
         [JsonPropertyName("eligibilitySchedules")]
         public IPrivilegedAccessGroupEligibilitySchedulesCollectionPage EligibilitySchedules { get; set; }

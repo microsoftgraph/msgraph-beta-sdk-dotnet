@@ -123,6 +123,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for RetentionLabel.
+        /// </summary>
+        /// <returns>The <see cref="IItemRetentionLabelRequestBuilder"/>.</returns>
+        public IItemRetentionLabelRequestBuilder RetentionLabel
+        {
+            get
+            {
+                return new ItemRetentionLabelRequestBuilder(this.AppendSegmentToRequestUrl("retentionLabel"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Subscriptions.
         /// </summary>
         /// <returns>The <see cref="IDriveItemSubscriptionsCollectionRequestBuilder"/>.</returns>
@@ -267,7 +279,8 @@ namespace Microsoft.Graph
             string password = null,
             string message = null,
             IEnumerable<DriveRecipient> recipients = null,
-            bool? retainInheritedPermissions = null)
+            bool? retainInheritedPermissions = null,
+            bool? sendNotification = null)
         {
             return new DriveItemCreateLinkRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.createLink"),
@@ -278,7 +291,8 @@ namespace Microsoft.Graph
                 password,
                 message,
                 recipients,
-                retainInheritedPermissions);
+                retainInheritedPermissions,
+                sendNotification);
         }
 
         /// <summary>

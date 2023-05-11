@@ -37,6 +37,7 @@ namespace Microsoft.Graph
         /// Gets or sets access package assignment policies.
         /// Represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.
         /// </summary>
+        [Obsolete("")]
         [JsonPropertyName("accessPackageAssignmentPolicies")]
         public IEntitlementManagementAccessPackageAssignmentPoliciesCollectionPage AccessPackageAssignmentPolicies { get; set; }
 
@@ -51,6 +52,7 @@ namespace Microsoft.Graph
         /// Gets or sets access package assignment requests.
         /// Represents access package assignment requests created by or on behalf of a user.
         /// </summary>
+        [Obsolete("")]
         [JsonPropertyName("accessPackageAssignmentRequests")]
         public IEntitlementManagementAccessPackageAssignmentRequestsCollectionPage AccessPackageAssignmentRequests { get; set; }
 
@@ -93,6 +95,7 @@ namespace Microsoft.Graph
         /// Gets or sets access package catalogs.
         /// A container of access packages.
         /// </summary>
+        [Obsolete("")]
         [JsonPropertyName("accessPackageCatalogs")]
         public IEntitlementManagementAccessPackageCatalogsCollectionPage AccessPackageCatalogs { get; set; }
 

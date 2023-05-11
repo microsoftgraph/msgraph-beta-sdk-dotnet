@@ -163,7 +163,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// Status of the Assignment.  You can not PATCH this value.  Possible values are: draft, scheduled, published, assigned.
+        /// Status of the Assignment.  You can not PATCH this value.  Possible values are: draft, scheduled, published, assigned, unknownFutureValue and inactive. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.
         /// </summary>
         [JsonPropertyName("status")]
         public EducationAssignmentStatus? Status { get; set; }
@@ -188,6 +188,12 @@ namespace Microsoft.Graph
         [JsonPropertyName("categories@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string CategoriesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets grading category.
+        /// </summary>
+        [JsonPropertyName("gradingCategory")]
+        public EducationGradingCategory GradingCategory { get; set; }
     
         /// <summary>
         /// Gets or sets resources.

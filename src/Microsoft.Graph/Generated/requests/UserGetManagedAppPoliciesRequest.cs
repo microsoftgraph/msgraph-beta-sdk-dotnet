@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserGetManagedAppPoliciesRequest.
     /// </summary>
+    [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
     public partial class UserGetManagedAppPoliciesRequest : BaseRequest, IUserGetManagedAppPoliciesRequest
     {
         /// <summary>

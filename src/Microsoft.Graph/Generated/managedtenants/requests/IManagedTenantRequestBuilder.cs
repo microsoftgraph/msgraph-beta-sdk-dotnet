@@ -38,6 +38,12 @@ namespace Microsoft.Graph.ManagedTenants
         IManagedTenantAggregatedPolicyCompliancesCollectionRequestBuilder AggregatedPolicyCompliances { get; }
 
         /// <summary>
+        /// Gets the request builder for AppPerformances.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantAppPerformancesCollectionRequestBuilder"/>.</returns>
+        IManagedTenantAppPerformancesCollectionRequestBuilder AppPerformances { get; }
+
+        /// <summary>
         /// Gets the request builder for AuditEvents.
         /// </summary>
         /// <returns>The <see cref="IManagedTenantAuditEventsCollectionRequestBuilder"/>.</returns>
@@ -74,10 +80,22 @@ namespace Microsoft.Graph.ManagedTenants
         IManagedTenantCredentialUserRegistrationsSummariesCollectionRequestBuilder CredentialUserRegistrationsSummaries { get; }
 
         /// <summary>
+        /// Gets the request builder for DeviceAppPerformances.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantDeviceAppPerformancesCollectionRequestBuilder"/>.</returns>
+        IManagedTenantDeviceAppPerformancesCollectionRequestBuilder DeviceAppPerformances { get; }
+
+        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicySettingStateSummaries.
         /// </summary>
         /// <returns>The <see cref="IManagedTenantDeviceCompliancePolicySettingStateSummariesCollectionRequestBuilder"/>.</returns>
         IManagedTenantDeviceCompliancePolicySettingStateSummariesCollectionRequestBuilder DeviceCompliancePolicySettingStateSummaries { get; }
+
+        /// <summary>
+        /// Gets the request builder for DeviceHealthStatuses.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantDeviceHealthStatusesCollectionRequestBuilder"/>.</returns>
+        IManagedTenantDeviceHealthStatusesCollectionRequestBuilder DeviceHealthStatuses { get; }
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceCompliances.

@@ -32,6 +32,12 @@ namespace Microsoft.Graph.ExternalConnectors
         IExternalRequest Request(IEnumerable<Microsoft.Graph.Option> options);
     
         /// <summary>
+        /// Gets the request builder for IndustryData.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.IndustryData.IIndustryDataRootRequestBuilder"/>.</returns>
+        Microsoft.Graph.IndustryData.IIndustryDataRootRequestBuilder IndustryData { get; }
+
+        /// <summary>
         /// Gets the request builder for Connections.
         /// </summary>
         /// <returns>The <see cref="IExternalConnectionsCollectionRequestBuilder"/>.</returns>

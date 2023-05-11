@@ -55,5 +55,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IPlannerProgressTaskBoardTaskFormatRequestBuilder"/>.</returns>
         IPlannerProgressTaskBoardTaskFormatRequestBuilder ProgressTaskBoardFormat { get; }
     
+        
+    
     }
 }

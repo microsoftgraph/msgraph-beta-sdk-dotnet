@@ -1463,6 +1463,222 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDevicePoliciesComplianceReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDevicePoliciesComplianceReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetDevicePoliciesComplianceReportRequestBuilder GetDevicePoliciesComplianceReport(
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetDevicePoliciesComplianceReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getDevicePoliciesComplianceReport"),
+                this.Client,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDevicePolicySettingsComplianceReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDevicePolicySettingsComplianceReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetDevicePolicySettingsComplianceReportRequestBuilder GetDevicePolicySettingsComplianceReport(
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetDevicePolicySettingsComplianceReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getDevicePolicySettingsComplianceReport"),
+                this.Client,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDevicesStatusByPolicyPlatformComplianceReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDevicesStatusByPolicyPlatformComplianceReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetDevicesStatusByPolicyPlatformComplianceReportRequestBuilder GetDevicesStatusByPolicyPlatformComplianceReport(
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetDevicesStatusByPolicyPlatformComplianceReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getDevicesStatusByPolicyPlatformComplianceReport"),
+                this.Client,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDevicesStatusBySettingReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDevicesStatusBySettingReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetDevicesStatusBySettingReportRequestBuilder GetDevicesStatusBySettingReport(
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetDevicesStatusBySettingReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getDevicesStatusBySettingReport"),
+                this.Client,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDeviceStatusByCompliacePolicyReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDeviceStatusByCompliacePolicyReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetDeviceStatusByCompliacePolicyReportRequestBuilder GetDeviceStatusByCompliacePolicyReport(
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetDeviceStatusByCompliacePolicyReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getDeviceStatusByCompliacePolicyReport"),
+                this.Client,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDeviceStatusByCompliancePolicySettingReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDeviceStatusByCompliancePolicySettingReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetDeviceStatusByCompliancePolicySettingReportRequestBuilder GetDeviceStatusByCompliancePolicySettingReport(
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetDeviceStatusByCompliancePolicySettingReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getDeviceStatusByCompliancePolicySettingReport"),
+                this.Client,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDeviceStatusSummaryByCompliacePolicyReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDeviceStatusSummaryByCompliacePolicyReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetDeviceStatusSummaryByCompliacePolicyReportRequestBuilder GetDeviceStatusSummaryByCompliacePolicyReport(
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetDeviceStatusSummaryByCompliacePolicyReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getDeviceStatusSummaryByCompliacePolicyReport"),
+                this.Client,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDeviceStatusSummaryByCompliancePolicySettingsReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDeviceStatusSummaryByCompliancePolicySettingsReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetDeviceStatusSummaryByCompliancePolicySettingsReportRequestBuilder GetDeviceStatusSummaryByCompliancePolicySettingsReport(
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetDeviceStatusSummaryByCompliancePolicySettingsReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getDeviceStatusSummaryByCompliancePolicySettingsReport"),
+                this.Client,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequestBuilder"/>.</returns>

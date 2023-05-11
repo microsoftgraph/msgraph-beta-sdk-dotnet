@@ -60,6 +60,49 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for CloudPCBulkResize.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCBulkResizeRequestBuilder"/>.</returns>
+        public ICloudPCBulkResizeRequestBuilder BulkResize(
+            IEnumerable<string> cloudPcIds = null,
+            string targetServicePlanId = null)
+        {
+            return new CloudPCBulkResizeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.bulkResize"),
+                this.Client,
+                cloudPcIds,
+                targetServicePlanId);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CloudPCValidateBulkResize.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCValidateBulkResizeRequestBuilder"/>.</returns>
+        public ICloudPCValidateBulkResizeRequestBuilder ValidateBulkResize(
+            IEnumerable<string> cloudPcIds = null,
+            string targetServicePlanId = null)
+        {
+            return new CloudPCValidateBulkResizeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.validateBulkResize"),
+                this.Client,
+                cloudPcIds,
+                targetServicePlanId);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CloudPCGetProvisionedCloudPCs.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCGetProvisionedCloudPCsRequestBuilder"/>.</returns>
+        public ICloudPCGetProvisionedCloudPCsRequestBuilder GetProvisionedCloudPCs(
+            string groupId = null,
+            string servicePlanId = null)
+        {
+            return new CloudPCGetProvisionedCloudPCsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getProvisionedCloudPCs"),
+                this.Client,
+                groupId,
+                servicePlanId);
+        }
     }
 }
