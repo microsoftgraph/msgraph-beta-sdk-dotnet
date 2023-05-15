@@ -76,5 +76,49 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Extensions
             Assert.Equal(expectedRequestUri, itemRequestInformation.URI);
 
         }
+        
+        [Fact]
+        public void ItemByPath_BuildRequestWithNestedPathSlash()
+        {
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/drives/driveId/root:/item/with/path:/children");
+            var itemRequestInformation = graphServiceClient.Drives["driveId"].Root.ItemWithPath("/item/with/path").Children.ToGetRequestInformation();
+            
+            Assert.NotNull(itemRequestInformation);
+            Assert.Equal(expectedRequestUri, itemRequestInformation.URI);
+        }
+        
+        [Fact]
+        public void ItemByPath_BuildRequestWithNestedPathSlash2()
+        {
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/drives/driveId/root:/item/with/path:/versions");
+            var itemRequestInformation = graphServiceClient.Drives["driveId"].Root.ItemWithPath("/item/with/path").Versions.ToGetRequestInformation();
+            
+            Assert.NotNull(itemRequestInformation);
+            Assert.Equal(expectedRequestUri, itemRequestInformation.URI);
+        }
+        
+        [Fact]
+        public void ItemByPath_BuildRequestWithNestedPathSlashAndQueryParameters()
+        {
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/drives/driveId/root:/item/with/path:?%24expand=children");
+            var itemRequestInformation = graphServiceClient.Drives["driveId"].Root.ItemWithPath("/item/with/path").ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Expand = new []{"children"});
+            
+            Assert.NotNull(itemRequestInformation);
+            Assert.Equal(expectedRequestUri, itemRequestInformation.URI);
+        }
+        
+        [Fact]
+        public void ItemByPath_BuildRequestWithNestedPathSlashAndQueryParameters2()
+        {
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/drives/driveId/root:/item/with/path:/versions?%24count=true");
+            var itemRequestInformation = graphServiceClient.Drives["driveId"].Root.ItemWithPath("/item/with/path").Versions.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Count = true);
+            
+            Assert.NotNull(itemRequestInformation);
+            Assert.Equal(expectedRequestUri, itemRequestInformation.URI);
+        }
     }
 }
