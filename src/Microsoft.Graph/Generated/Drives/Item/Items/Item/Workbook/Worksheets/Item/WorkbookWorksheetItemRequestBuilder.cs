@@ -76,7 +76,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
         public WorkbookWorksheetItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property worksheets for drives
+        /// Deletes the worksheet from the workbook.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/worksheet-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -95,7 +96,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents a collection of worksheets associated with the workbook. Read-only.
+        /// Retrieve the properties and relationships of worksheet object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/worksheet-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +116,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
             return await RequestAdapter.SendAsync<WorkbookWorksheet>(requestInfo, WorkbookWorksheet.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property worksheets in drives
+        /// Update the properties of worksheet object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/worksheet-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -143,7 +146,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
             return new RangeWithAddressRequestBuilder(PathParameters, RequestAdapter, address);
         }
         /// <summary>
-        /// Delete navigation property worksheets for drives
+        /// Deletes the worksheet from the workbook.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,7 +170,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents a collection of worksheets associated with the workbook. Read-only.
+        /// Retrieve the properties and relationships of worksheet object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -193,7 +196,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property worksheets in drives
+        /// Update the properties of worksheet object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -245,7 +248,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
             }
         }
         /// <summary>
-        /// Represents a collection of worksheets associated with the workbook. Read-only.
+        /// Retrieve the properties and relationships of worksheet object.
         /// </summary>
         public class WorkbookWorksheetItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

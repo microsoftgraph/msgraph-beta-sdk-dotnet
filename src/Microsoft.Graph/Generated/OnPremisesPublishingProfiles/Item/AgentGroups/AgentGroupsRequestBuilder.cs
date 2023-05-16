@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups {
         public AgentGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/agentGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List of existing onPremisesAgentGroup objects. Read-only. Nullable.
+        /// Retrieve a list of onPremisesAgentGroup objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/onpremisesagentgroup-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups {
             return await RequestAdapter.SendAsync<OnPremisesAgentGroupCollectionResponse>(requestInfo, OnPremisesAgentGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to agentGroups for onPremisesPublishingProfiles
+        /// Create a new onPremisesAgentGroup object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/onpremisesagentgroup-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups {
             return await RequestAdapter.SendAsync<OnPremisesAgentGroup>(requestInfo, OnPremisesAgentGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List of existing onPremisesAgentGroup objects. Read-only. Nullable.
+        /// Retrieve a list of onPremisesAgentGroup objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to agentGroups for onPremisesPublishingProfiles
+        /// Create a new onPremisesAgentGroup object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups {
             return requestInfo;
         }
         /// <summary>
-        /// List of existing onPremisesAgentGroup objects. Read-only. Nullable.
+        /// Retrieve a list of onPremisesAgentGroup objects.
         /// </summary>
         public class AgentGroupsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

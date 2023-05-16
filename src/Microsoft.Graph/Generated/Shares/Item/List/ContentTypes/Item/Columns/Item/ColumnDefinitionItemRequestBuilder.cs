@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns.Item {
         public ColumnDefinitionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/contentTypes/{contentType%2Did}/columns/{columnDefinition%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property columns for shares
+        /// Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -52,7 +53,8 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of column definitions for this contentType.
+        /// Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/columndefinition-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -71,7 +73,8 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns.Item {
             return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, ColumnDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property columns in shares
+        /// Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/columndefinition-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +95,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns.Item {
             return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, ColumnDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property columns for shares
+        /// Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +119,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of column definitions for this contentType.
+        /// Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +145,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property columns in shares
+        /// Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +189,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns.Item {
             }
         }
         /// <summary>
-        /// The collection of column definitions for this contentType.
+        /// Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
         /// </summary>
         public class ColumnDefinitionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

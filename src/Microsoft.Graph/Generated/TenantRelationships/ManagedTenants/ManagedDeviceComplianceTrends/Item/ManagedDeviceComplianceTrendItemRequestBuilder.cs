@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceC
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Trend insights for device compliance across managed tenants.
+        /// Read the properties and relationships of a managedDeviceComplianceTrend object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/managedtenants-manageddevicecompliancetrend-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceC
             return requestInfo;
         }
         /// <summary>
-        /// Trend insights for device compliance across managed tenants.
+        /// Read the properties and relationships of a managedDeviceComplianceTrend object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +182,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceC
             }
         }
         /// <summary>
-        /// Trend insights for device compliance across managed tenants.
+        /// Read the properties and relationships of a managedDeviceComplianceTrend object.
         /// </summary>
         public class ManagedDeviceComplianceTrendItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

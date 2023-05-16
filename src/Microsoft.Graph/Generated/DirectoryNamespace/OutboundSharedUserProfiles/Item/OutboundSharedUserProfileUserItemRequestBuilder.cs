@@ -52,7 +52,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get outboundSharedUserProfiles from directory
+        /// Get the details of an outboundSharedUserProfile.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/outboundshareduserprofile-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +117,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Get outboundSharedUserProfiles from directory
+        /// Get the details of an outboundSharedUserProfile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +187,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Ite
             }
         }
         /// <summary>
-        /// Get outboundSharedUserProfiles from directory
+        /// Get the details of an outboundSharedUserProfile.
         /// </summary>
         public class OutboundSharedUserProfileUserItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

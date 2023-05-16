@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.IncomingChannels {
         public IncomingChannelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/incomingChannels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List of channels shared with the team.
+        /// Get the list of incoming channels (channels shared with a team).
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/team-list-incomingchannels?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.IncomingChannels {
             return await RequestAdapter.SendAsync<ChannelCollectionResponse>(requestInfo, ChannelCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List of channels shared with the team.
+        /// Get the list of incoming channels (channels shared with a team).
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +86,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.IncomingChannels {
             return requestInfo;
         }
         /// <summary>
-        /// List of channels shared with the team.
+        /// Get the list of incoming channels (channels shared with a team).
         /// </summary>
         public class IncomingChannelsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

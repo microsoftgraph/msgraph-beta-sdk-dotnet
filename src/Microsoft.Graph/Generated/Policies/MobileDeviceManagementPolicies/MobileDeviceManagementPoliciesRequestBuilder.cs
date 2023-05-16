@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies {
         public MobileDeviceManagementPoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/mobileDeviceManagementPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get mobileDeviceManagementPolicies from policies
+        /// Get a list of the mobilityManagementPolicy objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/mobiledevicemanagementpolicies-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies {
             return await RequestAdapter.SendAsync<MobilityManagementPolicy>(requestInfo, MobilityManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get mobileDeviceManagementPolicies from policies
+        /// Get a list of the mobilityManagementPolicy objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Get mobileDeviceManagementPolicies from policies
+        /// Get a list of the mobilityManagementPolicy objects and their properties.
         /// </summary>
         public class MobileDeviceManagementPoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

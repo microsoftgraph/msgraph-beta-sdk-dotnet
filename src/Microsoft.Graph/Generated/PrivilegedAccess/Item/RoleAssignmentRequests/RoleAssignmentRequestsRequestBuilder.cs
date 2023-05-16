@@ -59,7 +59,8 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests {
             return await RequestAdapter.SendAsync<GovernanceRoleAssignmentRequestCollectionResponse>(requestInfo, GovernanceRoleAssignmentRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to roleAssignmentRequests for privilegedAccess
+        /// Create a role assignment request to represent the operation you want on a role assignment. The following table lists the operations.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/governanceroleassignmentrequest-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +107,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to roleAssignmentRequests for privilegedAccess
+        /// Create a role assignment request to represent the operation you want on a role assignment. The following table lists the operations.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
         public DeviceCompliancePolicySettingStateSummariesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/deviceCompliancePolicySettingStateSummaries{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Summary information for device compliance policy setting states across managed tenants.
+        /// Get a list of the deviceCompliancePolicySettingStateSummary objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/managedtenants-managedtenant-list-devicecompliancepolicysettingstatesummary?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
             return await RequestAdapter.SendAsync<DeviceCompliancePolicySettingStateSummary>(requestInfo, DeviceCompliancePolicySettingStateSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Summary information for device compliance policy setting states across managed tenants.
+        /// Get a list of the deviceCompliancePolicySettingStateSummary objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
             return requestInfo;
         }
         /// <summary>
-        /// Summary information for device compliance policy setting states across managed tenants.
+        /// Get a list of the deviceCompliancePolicySettingStateSummary objects and their properties.
         /// </summary>
         public class DeviceCompliancePolicySettingStateSummariesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

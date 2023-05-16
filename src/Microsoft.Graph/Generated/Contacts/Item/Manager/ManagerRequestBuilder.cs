@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Contacts.Item.Manager {
         public ManagerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/contacts/{orgContact%2Did}/manager{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The user or contact that is this contact&apos;s manager. Read-only. Supports $expand and $filter (eq) by id.
+        /// Get the contact&apos;s manager
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/orgcontact-get-manager?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item.Manager {
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The user or contact that is this contact&apos;s manager. Read-only. Supports $expand and $filter (eq) by id.
+        /// Get the contact&apos;s manager
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +74,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item.Manager {
             return requestInfo;
         }
         /// <summary>
-        /// The user or contact that is this contact&apos;s manager. Read-only. Supports $expand and $filter (eq) by id.
+        /// Get the contact&apos;s manager
         /// </summary>
         public class ManagerRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

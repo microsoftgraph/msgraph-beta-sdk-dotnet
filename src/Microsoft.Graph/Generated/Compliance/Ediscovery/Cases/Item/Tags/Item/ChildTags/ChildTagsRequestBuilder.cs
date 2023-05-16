@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildT
         public ChildTagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags/{tag%2Did}/childTags{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Returns the tags that are a child of a tag.
+        /// Get a list of child tag objects associated with a tag.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/ediscovery-tag-childtags?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildT
             return await RequestAdapter.SendAsync<TagCollectionResponse>(requestInfo, TagCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Returns the tags that are a child of a tag.
+        /// Get a list of child tag objects associated with a tag.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +86,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildT
             return requestInfo;
         }
         /// <summary>
-        /// Returns the tags that are a child of a tag.
+        /// Get a list of child tag objects associated with a tag.
         /// </summary>
         public class ChildTagsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

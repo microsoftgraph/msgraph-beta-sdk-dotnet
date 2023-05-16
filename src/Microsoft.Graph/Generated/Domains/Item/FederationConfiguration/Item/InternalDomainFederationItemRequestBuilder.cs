@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration.Item {
         public InternalDomainFederationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/domains/{domain%2Did}/federationConfiguration/{internalDomainFederation%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property federationConfiguration for domains
+        /// Deletes an internalDomainFederation object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/internaldomainfederation-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Domain settings configured by customer when federated with Azure AD. Supports $expand.
+        /// Read the properties and relationships of an internalDomainFederation object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/internaldomainfederation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,8 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration.Item {
             return await RequestAdapter.SendAsync<InternalDomainFederation>(requestInfo, InternalDomainFederation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property federationConfiguration in domains
+        /// Update the properties of an internalDomainFederation object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/internaldomainfederation-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +90,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration.Item {
             return await RequestAdapter.SendAsync<InternalDomainFederation>(requestInfo, InternalDomainFederation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property federationConfiguration for domains
+        /// Deletes an internalDomainFederation object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Domain settings configured by customer when federated with Azure AD. Supports $expand.
+        /// Read the properties and relationships of an internalDomainFederation object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +140,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property federationConfiguration in domains
+        /// Update the properties of an internalDomainFederation object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +184,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration.Item {
             }
         }
         /// <summary>
-        /// Domain settings configured by customer when federated with Azure AD. Supports $expand.
+        /// Read the properties and relationships of an internalDomainFederation object.
         /// </summary>
         public class InternalDomainFederationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

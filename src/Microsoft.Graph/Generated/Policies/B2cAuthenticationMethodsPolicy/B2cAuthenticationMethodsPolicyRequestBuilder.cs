@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The Azure AD B2C policies that define how end users register via local accounts.
+        /// Read the properties of a b2cAuthenticationMethodsPolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/b2cauthenticationmethodspolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +67,8 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy>(requestInfo, Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property b2cAuthenticationMethodsPolicy in policies
+        /// Update the properties of a b2cAuthenticationMethodsPolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/b2cauthenticationmethodspolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// The Azure AD B2C policies that define how end users register via local accounts.
+        /// Read the properties of a b2cAuthenticationMethodsPolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +139,7 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property b2cAuthenticationMethodsPolicy in policies
+        /// Update the properties of a b2cAuthenticationMethodsPolicy object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +183,7 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy {
             }
         }
         /// <summary>
-        /// The Azure AD B2C policies that define how end users register via local accounts.
+        /// Read the properties of a b2cAuthenticationMethodsPolicy object.
         /// </summary>
         public class B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

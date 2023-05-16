@@ -45,7 +45,8 @@ namespace Microsoft.Graph.Beta.Print.Printers {
         public PrintersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/printers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The list of printers registered in the tenant.
+        /// Retrieve the list of **printers** that are registered in the tenant.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/print-list-printers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +86,7 @@ namespace Microsoft.Graph.Beta.Print.Printers {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Printer>(requestInfo, Microsoft.Graph.Beta.Models.Printer.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The list of printers registered in the tenant.
+        /// Retrieve the list of **printers** that are registered in the tenant.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,7 +140,7 @@ namespace Microsoft.Graph.Beta.Print.Printers {
             return requestInfo;
         }
         /// <summary>
-        /// The list of printers registered in the tenant.
+        /// Retrieve the list of **printers** that are registered in the tenant.
         /// </summary>
         public class PrintersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

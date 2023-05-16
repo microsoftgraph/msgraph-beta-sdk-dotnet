@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2 {
         public Alerts_v2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/alerts_v2{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// A collection of alerts in Microsoft 365 Defender.
+        /// Get a list of alert resources that have been created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-list-alerts_v2?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2 {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.Alert>(requestInfo, Microsoft.Graph.Beta.Models.Security.Alert.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of alerts in Microsoft 365 Defender.
+        /// Get a list of alert resources that have been created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2 {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of alerts in Microsoft 365 Defender.
+        /// Get a list of alert resources that have been created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.
         /// </summary>
         public class Alerts_v2RequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

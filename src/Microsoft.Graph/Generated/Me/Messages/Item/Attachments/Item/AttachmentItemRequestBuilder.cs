@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.Attachments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The fileAttachment and itemAttachment attachments for the message.
+        /// Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,7 +91,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.Attachments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The fileAttachment and itemAttachment attachments for the message.
+        /// Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,7 +133,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.Attachments.Item {
             }
         }
         /// <summary>
-        /// The fileAttachment and itemAttachment attachments for the message.
+        /// Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post.  An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. 
         /// </summary>
         public class AttachmentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

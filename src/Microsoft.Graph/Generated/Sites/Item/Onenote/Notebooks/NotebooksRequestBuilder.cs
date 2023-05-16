@@ -46,7 +46,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks {
         public NotebooksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/onenote/notebooks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+        /// Retrieve a list of notebook objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/onenote-list-notebooks?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,7 +74,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks {
             return new GetRecentNotebooksWithIncludePersonalNotebooksRequestBuilder(PathParameters, RequestAdapter, includePersonalNotebooks);
         }
         /// <summary>
-        /// Create new navigation property to notebooks for sites
+        /// Create a new OneNote notebook.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/onenote-post-notebooks?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -94,7 +96,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks {
             return await RequestAdapter.SendAsync<Notebook>(requestInfo, Notebook.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+        /// Retrieve a list of notebook objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +122,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to notebooks for sites
+        /// Create a new OneNote notebook.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +150,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+        /// Retrieve a list of notebook objects.
         /// </summary>
         public class NotebooksRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

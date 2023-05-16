@@ -49,7 +49,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibility
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get roleEligibilityScheduleInstances from roleManagement
+        /// Get a list of the unifiedRoleEligibilityScheduleInstance objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/rbacapplication-list-roleeligibilityscheduleinstances?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +90,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibility
             return await RequestAdapter.SendAsync<UnifiedRoleEligibilityScheduleInstance>(requestInfo, UnifiedRoleEligibilityScheduleInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get roleEligibilityScheduleInstances from roleManagement
+        /// Get a list of the unifiedRoleEligibilityScheduleInstance objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,7 +144,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibility
             return requestInfo;
         }
         /// <summary>
-        /// Get roleEligibilityScheduleInstances from roleManagement
+        /// Get a list of the unifiedRoleEligibilityScheduleInstance objects and their properties.
         /// </summary>
         public class RoleEligibilityScheduleInstancesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

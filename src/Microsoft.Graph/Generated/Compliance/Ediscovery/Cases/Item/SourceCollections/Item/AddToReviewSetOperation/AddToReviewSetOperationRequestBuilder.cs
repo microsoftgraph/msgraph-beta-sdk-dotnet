@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
         public AddToReviewSetOperationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/sourceCollections/{sourceCollection%2Did}/addToReviewSetOperation{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Adds the results of the sourceCollection to the specified reviewSet.
+        /// Get the last addToReviewSetOperation object associated with a source collection. 
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/ediscovery-sourcecollection-list-addtoreviewsetoperation?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Ediscovery.AddToReviewSetOperation>(requestInfo, Microsoft.Graph.Beta.Models.Ediscovery.AddToReviewSetOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Adds the results of the sourceCollection to the specified reviewSet.
+        /// Get the last addToReviewSetOperation object associated with a source collection. 
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +74,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return requestInfo;
         }
         /// <summary>
-        /// Adds the results of the sourceCollection to the specified reviewSet.
+        /// Get the last addToReviewSetOperation object associated with a source collection. 
         /// </summary>
         public class AddToReviewSetOperationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices {
         public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/devices{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The Teams devices provisioned for the tenant.
+        /// Get a list of all Microsoft Teams-enabled devices provisioned for a tenant.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/teamworkdevice-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices {
             return await RequestAdapter.SendAsync<TeamworkDevice>(requestInfo, TeamworkDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The Teams devices provisioned for the tenant.
+        /// Get a list of all Microsoft Teams-enabled devices provisioned for a tenant.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices {
             return requestInfo;
         }
         /// <summary>
-        /// The Teams devices provisioned for the tenant.
+        /// Get a list of all Microsoft Teams-enabled devices provisioned for a tenant.
         /// </summary>
         public class DevicesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

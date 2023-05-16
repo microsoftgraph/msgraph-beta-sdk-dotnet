@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps.Item.Chat {
         public ChatRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/teamwork/installedApps/{userScopeTeamsAppInstallation%2Did}/chat{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The chat between the user and Teams app.
+        /// Retrieve the chat of the specified user and Teams app.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/userscopeteamsappinstallation-get-chat?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps.Item.Chat {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Chat>(requestInfo, Microsoft.Graph.Beta.Models.Chat.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The chat between the user and Teams app.
+        /// Retrieve the chat of the specified user and Teams app.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +74,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps.Item.Chat {
             return requestInfo;
         }
         /// <summary>
-        /// The chat between the user and Teams app.
+        /// Retrieve the chat of the specified user and Teams app.
         /// </summary>
         public class ChatRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

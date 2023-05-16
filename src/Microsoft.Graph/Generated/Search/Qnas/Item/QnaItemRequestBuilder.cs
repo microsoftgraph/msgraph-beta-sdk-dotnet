@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Search.Qnas.Item {
         public QnaItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/qnas/{qna%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property qnas for search
+        /// Delete a qna object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/search-qna-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Search.Qnas.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+        /// Read the properties and relationships of a qna object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/search-qna-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +89,7 @@ namespace Microsoft.Graph.Beta.Search.Qnas.Item {
             return await RequestAdapter.SendAsync<Qna>(requestInfo, Qna.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property qnas for search
+        /// Delete a qna object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Beta.Search.Qnas.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+        /// Read the properties and relationships of a qna object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +183,7 @@ namespace Microsoft.Graph.Beta.Search.Qnas.Item {
             }
         }
         /// <summary>
-        /// Administrative answer in Microsoft Search results which provide answers for specific search keywords in an organization.
+        /// Read the properties and relationships of a qna object.
         /// </summary>
         public class QnaItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

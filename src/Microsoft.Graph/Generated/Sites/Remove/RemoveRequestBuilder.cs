@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.Sites.Remove {
         public RemoveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/remove", rawUrl) {
         }
         /// <summary>
-        /// Invoke action remove
+        /// Unfollow a user&apos;s site or multiple sites.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/site-unfollow?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +49,7 @@ namespace Microsoft.Graph.Beta.Sites.Remove {
             return await RequestAdapter.SendAsync<RemoveResponse>(requestInfo, RemoveResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action remove
+        /// Unfollow a user&apos;s site or multiple sites.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

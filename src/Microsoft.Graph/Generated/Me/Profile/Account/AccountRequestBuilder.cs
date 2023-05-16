@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account {
         public AccountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/account{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get account from me
+        /// Retrieves properties related to the user&apos;s accounts from the profile.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/profile-list-accounts?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account {
             return await RequestAdapter.SendAsync<UserAccountInformationCollectionResponse>(requestInfo, UserAccountInformationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to account for me
+        /// Create a new userAccountInformation object in a user&apos;s profile.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/profile-post-accounts?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account {
             return await RequestAdapter.SendAsync<UserAccountInformation>(requestInfo, UserAccountInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get account from me
+        /// Retrieves properties related to the user&apos;s accounts from the profile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to account for me
+        /// Create a new userAccountInformation object in a user&apos;s profile.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account {
             return requestInfo;
         }
         /// <summary>
-        /// Get account from me
+        /// Retrieves properties related to the user&apos;s accounts from the profile.
         /// </summary>
         public class AccountRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

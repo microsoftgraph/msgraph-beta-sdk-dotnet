@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Beta.Policies.AppManagementPolicies.Item {
         public AppManagementPolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/appManagementPolicies/{appManagementPolicy%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property appManagementPolicies for policies
+        /// Delete an appManagementPolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/appManagementPolicy-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -52,7 +53,8 @@ namespace Microsoft.Graph.Beta.Policies.AppManagementPolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+        /// Read the properties of an appManagementPolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/appmanagementpolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -71,7 +73,8 @@ namespace Microsoft.Graph.Beta.Policies.AppManagementPolicies.Item {
             return await RequestAdapter.SendAsync<AppManagementPolicy>(requestInfo, AppManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property appManagementPolicies in policies
+        /// Update an appManagementPolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/appManagementPolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +95,7 @@ namespace Microsoft.Graph.Beta.Policies.AppManagementPolicies.Item {
             return await RequestAdapter.SendAsync<AppManagementPolicy>(requestInfo, AppManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property appManagementPolicies for policies
+        /// Delete an appManagementPolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +119,7 @@ namespace Microsoft.Graph.Beta.Policies.AppManagementPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+        /// Read the properties of an appManagementPolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +145,7 @@ namespace Microsoft.Graph.Beta.Policies.AppManagementPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property appManagementPolicies in policies
+        /// Update an appManagementPolicy object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +189,7 @@ namespace Microsoft.Graph.Beta.Policies.AppManagementPolicies.Item {
             }
         }
         /// <summary>
-        /// The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.
+        /// Read the properties of an appManagementPolicy object.
         /// </summary>
         public class AppManagementPolicyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

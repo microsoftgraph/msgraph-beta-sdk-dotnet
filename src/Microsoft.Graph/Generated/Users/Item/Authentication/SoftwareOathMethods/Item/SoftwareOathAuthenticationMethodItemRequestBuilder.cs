@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.SoftwareOathMethods.Ite
         public SoftwareOathAuthenticationMethodItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/softwareOathMethods/{softwareOathAuthenticationMethod%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property softwareOathMethods for users
+        /// Delete a user&apos;s Software OATH token authentication method object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/softwareoathauthenticationmethod-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.SoftwareOathMethods.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get softwareOathMethods from users
+        /// Retrieve a user&apos;s single Software OATH token authentication method object and its properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/softwareoathauthenticationmethod-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.SoftwareOathMethods.Ite
             return await RequestAdapter.SendAsync<SoftwareOathAuthenticationMethod>(requestInfo, SoftwareOathAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property softwareOathMethods for users
+        /// Delete a user&apos;s Software OATH token authentication method object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +92,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.SoftwareOathMethods.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Get softwareOathMethods from users
+        /// Retrieve a user&apos;s single Software OATH token authentication method object and its properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,7 +134,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.SoftwareOathMethods.Ite
             }
         }
         /// <summary>
-        /// Get softwareOathMethods from users
+        /// Retrieve a user&apos;s single Software OATH token authentication method object and its properties.
         /// </summary>
         public class SoftwareOathAuthenticationMethodItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

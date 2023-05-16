@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Organization.Item.CertificateBasedAuthConfigurati
         public CertificateBasedAuthConfigurationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organization/{organization%2Did}/certificateBasedAuthConfiguration/{certificateBasedAuthConfiguration%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property certificateBasedAuthConfiguration for organization
+        /// Delete a certificateBasedAuthConfiguration object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/certificatebasedauthconfiguration-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Organization.Item.CertificateBasedAuthConfigurati
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+        /// Get the properties of a certificateBasedAuthConfiguration object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/certificatebasedauthconfiguration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.CertificateBasedAuthConfigurati
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration>(requestInfo, Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property certificateBasedAuthConfiguration for organization
+        /// Delete a certificateBasedAuthConfiguration object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +92,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.CertificateBasedAuthConfigurati
             return requestInfo;
         }
         /// <summary>
-        /// Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+        /// Get the properties of a certificateBasedAuthConfiguration object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,7 +134,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.CertificateBasedAuthConfigurati
             }
         }
         /// <summary>
-        /// Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.
+        /// Get the properties of a certificateBasedAuthConfiguration object.
         /// </summary>
         public class CertificateBasedAuthConfigurationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

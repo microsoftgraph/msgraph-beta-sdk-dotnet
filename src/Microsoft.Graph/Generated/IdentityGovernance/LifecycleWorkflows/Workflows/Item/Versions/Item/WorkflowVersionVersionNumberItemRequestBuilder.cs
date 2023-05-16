@@ -43,7 +43,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         public WorkflowVersionVersionNumberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/lifecycleWorkflows/workflows/{workflow%2Did}/versions/{workflowVersion%2DversionNumber}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The workflow versions that are available.
+        /// Read the properties and relationships of a workflowVersion object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identitygovernance-workflowversion-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -62,7 +63,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
             return await RequestAdapter.SendAsync<WorkflowVersion>(requestInfo, WorkflowVersion.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The workflow versions that are available.
+        /// Read the properties and relationships of a workflowVersion object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,7 +89,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
             return requestInfo;
         }
         /// <summary>
-        /// The workflow versions that are available.
+        /// Read the properties and relationships of a workflowVersion object.
         /// </summary>
         public class WorkflowVersionVersionNumberItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

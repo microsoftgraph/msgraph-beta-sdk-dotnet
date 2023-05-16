@@ -43,7 +43,8 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item {
         public AuthenticationStrengthPolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/authenticationStrengthPolicies/{authenticationStrengthPolicy%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property authenticationStrengthPolicies for policies
+        /// Delete a custom authenticationStrengthPolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationstrengthroot-delete-policies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -62,7 +63,8 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+        /// Read the properties and relationships of an authenticationStrengthPolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +83,8 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item {
             return await RequestAdapter.SendAsync<AuthenticationStrengthPolicy>(requestInfo, AuthenticationStrengthPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property authenticationStrengthPolicies in policies
+        /// Update the properties of an authenticationStrengthPolicy object. You cannot update the allowed auth method combinations using this request. To do so, use the Update allowed combinations action.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationstrengthpolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item {
             return await RequestAdapter.SendAsync<AuthenticationStrengthPolicy>(requestInfo, AuthenticationStrengthPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property authenticationStrengthPolicies for policies
+        /// Delete a custom authenticationStrengthPolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -126,7 +129,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+        /// Read the properties and relationships of an authenticationStrengthPolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -152,7 +155,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property authenticationStrengthPolicies in policies
+        /// Update the properties of an authenticationStrengthPolicy object. You cannot update the allowed auth method combinations using this request. To do so, use the Update allowed combinations action.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -196,7 +199,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item {
             }
         }
         /// <summary>
-        /// The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+        /// Read the properties and relationships of an authenticationStrengthPolicy object.
         /// </summary>
         public class AuthenticationStrengthPolicyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

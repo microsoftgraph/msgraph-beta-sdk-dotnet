@@ -66,7 +66,8 @@ namespace Microsoft.Graph.Beta.Applications.Item.ConnectorGroup.Ref {
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the ref of navigation property connectorGroup in applications
+        /// Assign a connectorGroup to an application.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/connectorgroup-post-applications?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -136,7 +137,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.ConnectorGroup.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Update the ref of navigation property connectorGroup in applications
+        /// Assign a connectorGroup to an application.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordMethods.Item {
         public PasswordAuthenticationMethodItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/authentication/passwordMethods/{passwordAuthenticationMethod%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Represents the details of the password authentication method registered to a user for authentication.
+        /// Retrieve the properties and relationships of a password authentication method object. 
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/passwordauthenticationmethod-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordMethods.Item {
             return await RequestAdapter.SendAsync<PasswordAuthenticationMethod>(requestInfo, PasswordAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents the details of the password authentication method registered to a user for authentication.
+        /// Retrieve the properties and relationships of a password authentication method object. 
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +74,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordMethods.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents the details of the password authentication method registered to a user for authentication.
+        /// Retrieve the properties and relationships of a password authentication method object. 
         /// </summary>
         public class PasswordAuthenticationMethodItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

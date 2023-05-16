@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers {
         public DelegatedAdminCustomersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/delegatedAdminCustomers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The customer who has a delegated admin relationship with a Microsoft partner.
+        /// Get a list of the delegatedAdminCustomer objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/tenantrelationship-list-delegatedadmincustomers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers {
             return await RequestAdapter.SendAsync<DelegatedAdminCustomer>(requestInfo, DelegatedAdminCustomer.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The customer who has a delegated admin relationship with a Microsoft partner.
+        /// Get a list of the delegatedAdminCustomer objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers {
             return requestInfo;
         }
         /// <summary>
-        /// The customer who has a delegated admin relationship with a Microsoft partner.
+        /// Get a list of the delegatedAdminCustomer objects and their properties.
         /// </summary>
         public class DelegatedAdminCustomersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

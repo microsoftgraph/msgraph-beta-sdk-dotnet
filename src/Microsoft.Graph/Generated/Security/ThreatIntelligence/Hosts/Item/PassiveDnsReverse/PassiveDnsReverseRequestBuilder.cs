@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDns
         public PassiveDnsReverseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/passiveDnsReverse{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Reverse passive DNS retrieval about this host.
+        /// Get a list of passiveDnsRecord resources.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-host-list-passivednsreverse?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDns
             return await RequestAdapter.SendAsync<PassiveDnsRecordCollectionResponse>(requestInfo, PassiveDnsRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Reverse passive DNS retrieval about this host.
+        /// Get a list of passiveDnsRecord resources.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +86,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDns
             return requestInfo;
         }
         /// <summary>
-        /// Reverse passive DNS retrieval about this host.
+        /// Get a list of passiveDnsRecord resources.
         /// </summary>
         public class PassiveDnsReverseRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

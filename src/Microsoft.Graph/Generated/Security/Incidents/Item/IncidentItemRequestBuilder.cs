@@ -52,7 +52,8 @@ namespace Microsoft.Graph.Beta.Security.Incidents.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.
+        /// Retrieve the properties and relationships of an incident object. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an **incident**. 
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-incident-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -71,7 +72,8 @@ namespace Microsoft.Graph.Beta.Security.Incidents.Item {
             return await RequestAdapter.SendAsync<Incident>(requestInfo, Incident.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property incidents in security
+        /// Update the properties of an incident object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-incident-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -116,7 +118,7 @@ namespace Microsoft.Graph.Beta.Security.Incidents.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.
+        /// Retrieve the properties and relationships of an incident object. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an **incident**. 
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +144,7 @@ namespace Microsoft.Graph.Beta.Security.Incidents.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property incidents in security
+        /// Update the properties of an incident object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +188,7 @@ namespace Microsoft.Graph.Beta.Security.Incidents.Item {
             }
         }
         /// <summary>
-        /// A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.
+        /// Retrieve the properties and relationships of an incident object. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an **incident**. 
         /// </summary>
         public class IncidentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

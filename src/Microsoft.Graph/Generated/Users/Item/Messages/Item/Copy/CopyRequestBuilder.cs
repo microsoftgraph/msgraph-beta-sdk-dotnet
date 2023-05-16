@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item.Copy {
         public CopyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/messages/{message%2Did}/copy", rawUrl) {
         }
         /// <summary>
-        /// Invoke action copy
+        /// Copy a message to a folder within the user&apos;s mailbox.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/message-copy?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item.Copy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Message>(requestInfo, Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action copy
+        /// Copy a message to a folder within the user&apos;s mailbox.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

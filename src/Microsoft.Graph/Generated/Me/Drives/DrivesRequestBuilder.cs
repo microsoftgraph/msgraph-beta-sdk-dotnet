@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Me.Drives {
         public DrivesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/drives{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// A collection of drives available for this user. Read-only.
+        /// Retrieve the list of Drive resources available for a target User, Group, or Site.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/drive-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Beta.Me.Drives {
             return await RequestAdapter.SendAsync<DriveCollectionResponse>(requestInfo, DriveCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of drives available for this user. Read-only.
+        /// Retrieve the list of Drive resources available for a target User, Group, or Site.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +86,7 @@ namespace Microsoft.Graph.Beta.Me.Drives {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of drives available for this user. Read-only.
+        /// Retrieve the list of Drive resources available for a target User, Group, or Site.
         /// </summary>
         public class DrivesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.ExceptionOccurrences.Item
         public SnoozeReminderRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendar/events/{event%2Did}/exceptionOccurrences/{event%2Did1}/instances/{event%2Did2}/snoozeReminder", rawUrl) {
         }
         /// <summary>
-        /// Invoke action snoozeReminder
+        /// Postpone a reminder for an event in a user calendar until a new time.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/event-snoozereminder?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +49,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.ExceptionOccurrences.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action snoozeReminder
+        /// Postpone a reminder for an event in a user calendar until a new time.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

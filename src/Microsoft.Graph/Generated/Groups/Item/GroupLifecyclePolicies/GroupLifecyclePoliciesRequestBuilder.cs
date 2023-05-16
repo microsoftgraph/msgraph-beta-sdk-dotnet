@@ -45,7 +45,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies {
         public GroupLifecyclePoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/groupLifecyclePolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The collection of lifecycle policies for this group. Read-only. Nullable.
+        /// Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/group-list-grouplifecyclepolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +86,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies {
             return await RequestAdapter.SendAsync<GroupLifecyclePolicy>(requestInfo, GroupLifecyclePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of lifecycle policies for this group. Read-only. Nullable.
+        /// Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,7 +140,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of lifecycle policies for this group. Read-only. Nullable.
+        /// Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
         /// </summary>
         public class GroupLifecyclePoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

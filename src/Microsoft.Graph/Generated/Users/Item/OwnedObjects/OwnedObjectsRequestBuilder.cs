@@ -56,6 +56,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OwnedObjects {
         }
         /// <summary>
         /// Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-ownedobjects?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class OnTokenIssuanceStartCustomExtension : CustomAuthenticationExtension, IParsable {
-        /// <summary>The claimsForTokenConfiguration property</summary>
+        /// <summary>Collection of claims to be returned by the API called by this custom authentication extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OnTokenIssuanceStartReturnClaim>? ClaimsForTokenConfiguration {

@@ -72,7 +72,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The schedule requests for operations to create, update, delete, extend, and renew an assignment.
+        /// Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleRequest object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/privilegedaccessgroupassignmentschedulerequest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +137,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
             return requestInfo;
         }
         /// <summary>
-        /// The schedule requests for operations to create, update, delete, extend, and renew an assignment.
+        /// Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleRequest object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -206,7 +207,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
             }
         }
         /// <summary>
-        /// The schedule requests for operations to create, update, delete, extend, and renew an assignment.
+        /// Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleRequest object.
         /// </summary>
         public class PrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

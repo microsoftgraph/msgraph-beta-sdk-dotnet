@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The includeAllApplications property</summary>
+        /// <summary>Whether the custom authentication extension should trigger for all applications with appIds specified in the includeApplications relationship. This property must be set to false for listener of type onTokenIssuanceStartListener.</summary>
         public bool? IncludeAllApplications {
             get { return BackingStore?.Get<bool?>("includeAllApplications"); }
             set { BackingStore?.Set("includeAllApplications", value); }

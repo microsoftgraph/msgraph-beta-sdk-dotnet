@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class HttpRequestEndpoint : CustomExtensionEndpointConfiguration, IParsable {
-        /// <summary>The targetUrl property</summary>
+        /// <summary>The HTTP endpoint that a custom extension calls.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetUrl {

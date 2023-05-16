@@ -78,7 +78,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Item {
         public ContentTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/contentTypes/{contentType%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property contentTypes for groups
+        /// Remove a [content type][contentType] from a [list][] or a [site][].
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contenttype-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -97,7 +98,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of content types defined for this site.
+        /// Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contenttype-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +118,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Item {
             return await RequestAdapter.SendAsync<ContentType>(requestInfo, ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property contentTypes in groups
+        /// Update a [content type][contentType].
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contenttype-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -137,7 +140,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Item {
             return await RequestAdapter.SendAsync<ContentType>(requestInfo, ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property contentTypes for groups
+        /// Remove a [content type][contentType] from a [list][] or a [site][].
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -161,7 +164,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of content types defined for this site.
+        /// Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -187,7 +190,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property contentTypes in groups
+        /// Update a [content type][contentType].
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -231,7 +234,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Item {
             }
         }
         /// <summary>
-        /// The collection of content types defined for this site.
+        /// Retrieve the metadata for a [content type][contentType] in a [site][] or a [list][].
         /// </summary>
         public class ContentTypeItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

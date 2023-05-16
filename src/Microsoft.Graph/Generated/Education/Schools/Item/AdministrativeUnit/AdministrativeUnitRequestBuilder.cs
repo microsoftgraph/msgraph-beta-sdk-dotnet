@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.AdministrativeUnit {
         public AdministrativeUnitRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/schools/{educationSchool%2Did}/administrativeUnit{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get administrativeUnit from education
+        /// Retrieve the simple directory **administrativeUnit** that corresponds to this **educationSchool**.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationschool-get-administrativeUnit?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,7 +69,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.AdministrativeUnit {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AdministrativeUnit>(requestInfo, Microsoft.Graph.Beta.Models.AdministrativeUnit.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get administrativeUnit from education
+        /// Retrieve the simple directory **administrativeUnit** that corresponds to this **educationSchool**.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +123,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.AdministrativeUnit {
             return requestInfo;
         }
         /// <summary>
-        /// Get administrativeUnit from education
+        /// Retrieve the simple directory **administrativeUnit** that corresponds to this **educationSchool**.
         /// </summary>
         public class AdministrativeUnitRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -49,7 +49,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests 
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// A collection of userConsentRequest objects for a specific application.
+        /// Retrieve appConsentRequest objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/appconsentapprovalroute-list-appconsentrequests?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +90,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests 
             return await RequestAdapter.SendAsync<AppConsentRequest>(requestInfo, AppConsentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of userConsentRequest objects for a specific application.
+        /// Retrieve appConsentRequest objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,7 +144,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests 
             return requestInfo;
         }
         /// <summary>
-        /// A collection of userConsentRequest objects for a specific application.
+        /// Retrieve appConsentRequest objects and their properties.
         /// </summary>
         public class AppConsentRequestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

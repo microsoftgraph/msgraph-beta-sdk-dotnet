@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Search.Bookmarks.Item {
         public BookmarkItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/bookmarks/{bookmark%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property bookmarks for search
+        /// Delete a bookmark object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/search-bookmark-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Search.Bookmarks.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Administrative answer in Microsoft Search results for common search queries in an organization.
+        /// Read the properties and relationships of a bookmark object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/search-bookmark-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,8 @@ namespace Microsoft.Graph.Beta.Search.Bookmarks.Item {
             return await RequestAdapter.SendAsync<Bookmark>(requestInfo, Bookmark.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property bookmarks in search
+        /// Update the properties of a bookmark object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/search-bookmark-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +90,7 @@ namespace Microsoft.Graph.Beta.Search.Bookmarks.Item {
             return await RequestAdapter.SendAsync<Bookmark>(requestInfo, Bookmark.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property bookmarks for search
+        /// Delete a bookmark object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.Search.Bookmarks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Administrative answer in Microsoft Search results for common search queries in an organization.
+        /// Read the properties and relationships of a bookmark object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +140,7 @@ namespace Microsoft.Graph.Beta.Search.Bookmarks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property bookmarks in search
+        /// Update the properties of a bookmark object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +184,7 @@ namespace Microsoft.Graph.Beta.Search.Bookmarks.Item {
             }
         }
         /// <summary>
-        /// Administrative answer in Microsoft Search results for common search queries in an organization.
+        /// Read the properties and relationships of a bookmark object.
         /// </summary>
         public class BookmarkItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

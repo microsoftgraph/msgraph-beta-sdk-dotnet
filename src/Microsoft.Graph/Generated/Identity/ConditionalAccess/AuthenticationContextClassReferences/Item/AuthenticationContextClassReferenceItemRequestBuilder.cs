@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read-only. Nullable. Returns a collection of the specified authentication context class references.
+        /// Retrieve the properties and relationships of a authenticationContextClassReference object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationcontextclassreference-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +67,8 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
             return await RequestAdapter.SendAsync<AuthenticationContextClassReference>(requestInfo, AuthenticationContextClassReference.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property authenticationContextClassReferences in identity
+        /// Update the properties of an authenticationContextClassReference object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationcontextclassreference-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Nullable. Returns a collection of the specified authentication context class references.
+        /// Retrieve the properties and relationships of a authenticationContextClassReference object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +139,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property authenticationContextClassReferences in identity
+        /// Update the properties of an authenticationContextClassReference object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +183,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
             }
         }
         /// <summary>
-        /// Read-only. Nullable. Returns a collection of the specified authentication context class references.
+        /// Retrieve the properties and relationships of a authenticationContextClassReference object.
         /// </summary>
         public class AuthenticationContextClassReferenceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

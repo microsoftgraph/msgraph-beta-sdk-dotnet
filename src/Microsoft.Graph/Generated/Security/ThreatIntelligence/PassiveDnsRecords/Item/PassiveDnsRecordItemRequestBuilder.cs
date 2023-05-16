@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.PassiveDnsRecords.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve details about microsoft.graph.security.passiveDnsRecord objects.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a passiveDnsRecord object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-passivednsrecord-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.PassiveDnsRecords.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve details about microsoft.graph.security.passiveDnsRecord objects.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a passiveDnsRecord object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -191,7 +192,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.PassiveDnsRecords.Ite
             }
         }
         /// <summary>
-        /// Retrieve details about microsoft.graph.security.passiveDnsRecord objects.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a passiveDnsRecord object.
         /// </summary>
         public class PassiveDnsRecordItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

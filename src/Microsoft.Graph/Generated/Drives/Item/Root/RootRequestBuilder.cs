@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root {
         public RootRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/root{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The root folder of the drive. Read-only.
+        /// Retrieve the metadata for a driveItem in a drive by file system path or ID.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/driveitem-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -52,7 +53,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DriveItem>(requestInfo, Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The root folder of the drive. Read-only.
+        /// Retrieve the metadata for a driveItem in a drive by file system path or ID.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +79,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root {
             return requestInfo;
         }
         /// <summary>
-        /// The root folder of the drive. Read-only.
+        /// Retrieve the metadata for a driveItem in a drive by file system path or ID.
         /// </summary>
         public class RootRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

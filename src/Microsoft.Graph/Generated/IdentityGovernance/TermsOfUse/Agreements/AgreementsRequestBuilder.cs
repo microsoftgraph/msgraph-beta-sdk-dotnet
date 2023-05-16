@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements {
         public AgreementsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/termsOfUse/agreements{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Represents a tenant&apos;s customizable terms of use agreement that&apos;s created and managed with Azure Active Directory (Azure AD).
+        /// Retrieve a list of agreement objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/termsofusecontainer-list-agreements?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements {
             return await RequestAdapter.SendAsync<AgreementCollectionResponse>(requestInfo, AgreementCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to agreements for identityGovernance
+        /// Create a new agreement object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/termsofusecontainer-post-agreements?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements {
             return await RequestAdapter.SendAsync<Agreement>(requestInfo, Agreement.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents a tenant&apos;s customizable terms of use agreement that&apos;s created and managed with Azure Active Directory (Azure AD).
+        /// Retrieve a list of agreement objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to agreements for identityGovernance
+        /// Create a new agreement object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements {
             return requestInfo;
         }
         /// <summary>
-        /// Represents a tenant&apos;s customizable terms of use agreement that&apos;s created and managed with Azure Active Directory (Azure AD).
+        /// Retrieve a list of agreement objects.
         /// </summary>
         public class AgreementsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

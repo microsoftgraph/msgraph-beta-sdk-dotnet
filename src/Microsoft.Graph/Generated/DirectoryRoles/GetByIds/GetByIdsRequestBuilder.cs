@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.GetByIds {
         public GetByIdsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directoryRoles/getByIds", rawUrl) {
         }
         /// <summary>
-        /// Invoke action getByIds
+        /// Return the directory objects specified in a list of IDs. Some common uses for this function are to:
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +49,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.GetByIds {
             return await RequestAdapter.SendAsync<GetByIdsResponse>(requestInfo, GetByIdsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action getByIds
+        /// Return the directory objects specified in a list of IDs. Some common uses for this function are to:
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

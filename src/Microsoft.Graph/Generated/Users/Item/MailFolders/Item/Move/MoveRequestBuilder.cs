@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Move {
         public MoveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/move", rawUrl) {
         }
         /// <summary>
-        /// Invoke action move
+        /// Move a mailfolder and its contents to another mailfolder.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/mailfolder-move?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Move {
             return await RequestAdapter.SendAsync<MailFolder>(requestInfo, MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action move
+        /// Move a mailfolder and its contents to another mailfolder.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Beta.Policies.TokenLifetimePolicies.Item {
         public TokenLifetimePolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/tokenLifetimePolicies/{tokenLifetimePolicy%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property tokenLifetimePolicies for policies
+        /// Delete a tokenLifetimePolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/tokenlifetimepolicy-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -52,7 +53,8 @@ namespace Microsoft.Graph.Beta.Policies.TokenLifetimePolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
+        /// Retrieve the properties and relationships of a tokenLifetimePolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/tokenlifetimepolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -71,7 +73,8 @@ namespace Microsoft.Graph.Beta.Policies.TokenLifetimePolicies.Item {
             return await RequestAdapter.SendAsync<TokenLifetimePolicy>(requestInfo, TokenLifetimePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property tokenLifetimePolicies in policies
+        /// Update the properties of a tokenLifetimePolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/tokenlifetimepolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +95,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenLifetimePolicies.Item {
             return await RequestAdapter.SendAsync<TokenLifetimePolicy>(requestInfo, TokenLifetimePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property tokenLifetimePolicies for policies
+        /// Delete a tokenLifetimePolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +119,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenLifetimePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
+        /// Retrieve the properties and relationships of a tokenLifetimePolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +145,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenLifetimePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property tokenLifetimePolicies in policies
+        /// Update the properties of a tokenLifetimePolicy object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +189,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenLifetimePolicies.Item {
             }
         }
         /// <summary>
-        /// The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.
+        /// Retrieve the properties and relationships of a tokenLifetimePolicy object.
         /// </summary>
         public class TokenLifetimePolicyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

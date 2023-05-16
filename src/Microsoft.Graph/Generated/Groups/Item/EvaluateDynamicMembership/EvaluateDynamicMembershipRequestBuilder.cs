@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.EvaluateDynamicMembership {
         public EvaluateDynamicMembershipRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/evaluateDynamicMembership", rawUrl) {
         }
         /// <summary>
-        /// Invoke action evaluateDynamicMembership
+        /// Evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways:
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/group-evaluatedynamicmembership?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.EvaluateDynamicMembership {
             return await RequestAdapter.SendAsync<EvaluateDynamicMembershipResult>(requestInfo, EvaluateDynamicMembershipResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action evaluateDynamicMembership
+        /// Evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways:
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

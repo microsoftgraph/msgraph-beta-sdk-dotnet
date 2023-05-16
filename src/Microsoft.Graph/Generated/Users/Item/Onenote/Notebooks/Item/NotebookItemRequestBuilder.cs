@@ -62,7 +62,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Onenote.Notebooks.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+        /// Retrieve the properties and relationships of a notebook object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/notebook-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +127,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Onenote.Notebooks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+        /// Retrieve the properties and relationships of a notebook object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -196,7 +197,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Onenote.Notebooks.Item {
             }
         }
         /// <summary>
-        /// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+        /// Retrieve the properties and relationships of a notebook object.
         /// </summary>
         public class NotebookItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies {
         public TokenIssuancePoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/tokenIssuancePolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
+        /// Get a list of tokenIssuancePolicy objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/tokenissuancepolicy-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies {
             return await RequestAdapter.SendAsync<TokenIssuancePolicyCollectionResponse>(requestInfo, TokenIssuancePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to tokenIssuancePolicies for policies
+        /// Create a new tokenIssuancePolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/tokenissuancepolicy-post-tokenissuancepolicy?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies {
             return await RequestAdapter.SendAsync<TokenIssuancePolicy>(requestInfo, TokenIssuancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
+        /// Get a list of tokenIssuancePolicy objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to tokenIssuancePolicies for policies
+        /// Create a new tokenIssuancePolicy object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies {
             return requestInfo;
         }
         /// <summary>
-        /// The policy that specifies the characteristics of SAML tokens issued by Azure AD.
+        /// Get a list of tokenIssuancePolicy objects.
         /// </summary>
         public class TokenIssuancePoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

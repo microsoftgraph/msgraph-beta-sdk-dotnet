@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item.CanvasLayout.HorizontalSect
         public WebpartsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/pages/{sitePage%2Did}/canvasLayout/horizontalSections/{horizontalSection%2Did}/columns/{horizontalSectionColumn%2Did}/webparts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The collection of WebParts in this column.
+        /// Get the webPart resources from a sitePage. Sort by the order in which they appear on the page.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/webpart-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item.CanvasLayout.HorizontalSect
             return await RequestAdapter.SendAsync<WebPart>(requestInfo, WebPart.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of WebParts in this column.
+        /// Get the webPart resources from a sitePage. Sort by the order in which they appear on the page.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item.CanvasLayout.HorizontalSect
             return requestInfo;
         }
         /// <summary>
-        /// The collection of WebParts in this column.
+        /// Get the webPart resources from a sitePage. Sort by the order in which they appear on the page.
         /// </summary>
         public class WebpartsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

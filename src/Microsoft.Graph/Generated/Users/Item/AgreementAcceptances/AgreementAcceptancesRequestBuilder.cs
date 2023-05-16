@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Users.Item.AgreementAcceptances {
         public AgreementAcceptancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/agreementAcceptances{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The user&apos;s terms of use acceptance statuses. Read-only. Nullable.
+        /// Retrieve the signed-in user&apos;s agreementAcceptance objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-agreementacceptances?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AgreementAcceptances {
             return await RequestAdapter.SendAsync<AgreementAcceptanceCollectionResponse>(requestInfo, AgreementAcceptanceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The user&apos;s terms of use acceptance statuses. Read-only. Nullable.
+        /// Retrieve the signed-in user&apos;s agreementAcceptance objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +86,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AgreementAcceptances {
             return requestInfo;
         }
         /// <summary>
-        /// The user&apos;s terms of use acceptance statuses. Read-only. Nullable.
+        /// Retrieve the signed-in user&apos;s agreementAcceptance objects.
         /// </summary>
         public class AgreementAcceptancesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

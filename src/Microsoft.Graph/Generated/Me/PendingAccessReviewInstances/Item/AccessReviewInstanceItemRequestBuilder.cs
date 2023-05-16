@@ -8,6 +8,7 @@ using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.ResetDecisions;
 using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.SendReminder;
 using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stages;
 using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stop;
+using Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.StopApplyDecisions;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -62,6 +63,10 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item {
         /// <summary>Provides operations to call the stop method.</summary>
         public StopRequestBuilder Stop { get =>
             new StopRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the stopApplyDecisions method.</summary>
+        public StopApplyDecisionsRequestBuilder StopApplyDecisions { get =>
+            new StopApplyDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new AccessReviewInstanceItemRequestBuilder and sets the default values.

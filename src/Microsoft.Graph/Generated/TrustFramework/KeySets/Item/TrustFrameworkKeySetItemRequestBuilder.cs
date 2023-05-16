@@ -53,7 +53,8 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
         public TrustFrameworkKeySetItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/trustFramework/keySets/{trustFrameworkKeySet%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property keySets for trustFramework
+        /// Delete a trustFrameworkKeySet.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/trustframeworkkeyset-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -72,7 +73,8 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get keySets from trustFramework
+        /// Retrieve the properties and associations for a Trustframeworkkeyset.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/trustframeworkkeyset-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +93,8 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
             return await RequestAdapter.SendAsync<TrustFrameworkKeySet>(requestInfo, TrustFrameworkKeySet.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property keySets in trustFramework
+        /// Update the properties of a trustFrameworkKeyset. This operation will replace the content of an existing keyset. Specifying the ID in the request payload is optional.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/trustframeworkkeyset-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -112,7 +115,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
             return await RequestAdapter.SendAsync<TrustFrameworkKeySet>(requestInfo, TrustFrameworkKeySet.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property keySets for trustFramework
+        /// Delete a trustFrameworkKeySet.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -136,7 +139,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get keySets from trustFramework
+        /// Retrieve the properties and associations for a Trustframeworkkeyset.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -162,7 +165,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property keySets in trustFramework
+        /// Update the properties of a trustFrameworkKeyset. This operation will replace the content of an existing keyset. Specifying the ID in the request payload is optional.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -206,7 +209,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
             }
         }
         /// <summary>
-        /// Get keySets from trustFramework
+        /// Retrieve the properties and associations for a Trustframeworkkeyset.
         /// </summary>
         public class TrustFrameworkKeySetItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

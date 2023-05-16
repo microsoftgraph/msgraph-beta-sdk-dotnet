@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Publications.Item {
         public ItemPublicationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/publications/{itemPublication%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property publications for users
+        /// Deletes an itemPublication object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/itempublication-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Publications.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents details of any publications a user has added to their profile.
+        /// Read the properties and relationships of an itemPublication object in a user&apos;s profile.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/itempublication-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Publications.Item {
             return await RequestAdapter.SendAsync<ItemPublication>(requestInfo, ItemPublication.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property publications in users
+        /// Update the properties of an itemPublication object in a user&apos;s profile.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/itempublication-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +90,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Publications.Item {
             return await RequestAdapter.SendAsync<ItemPublication>(requestInfo, ItemPublication.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property publications for users
+        /// Deletes an itemPublication object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Publications.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents details of any publications a user has added to their profile.
+        /// Read the properties and relationships of an itemPublication object in a user&apos;s profile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +140,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Publications.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property publications in users
+        /// Update the properties of an itemPublication object in a user&apos;s profile.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +184,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Publications.Item {
             }
         }
         /// <summary>
-        /// Represents details of any publications a user has added to their profile.
+        /// Read the properties and relationships of an itemPublication object in a user&apos;s profile.
         /// </summary>
         public class ItemPublicationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

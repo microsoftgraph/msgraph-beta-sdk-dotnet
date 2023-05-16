@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Groups.Item {
         public GroupItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/termStore/groups/{group%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property groups for sites
+        /// Delete a group object in a term [store].
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/termstore-group-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -52,7 +53,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Groups.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Collection of all groups available in the term store.
+        /// Read the properties and relationships of a term store group object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/termstore-group-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -92,7 +94,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Groups.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermStore.Group>(requestInfo, Microsoft.Graph.Beta.Models.TermStore.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property groups for sites
+        /// Delete a group object in a term [store].
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +118,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Groups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Collection of all groups available in the term store.
+        /// Read the properties and relationships of a term store group object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +188,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Groups.Item {
             }
         }
         /// <summary>
-        /// Collection of all groups available in the term store.
+        /// Read the properties and relationships of a term store group object.
         /// </summary>
         public class GroupItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

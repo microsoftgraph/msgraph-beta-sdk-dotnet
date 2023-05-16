@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions.Item {
         public BookingCustomQuestionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/customQuestions/{bookingCustomQuestion%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property customQuestions for bookingBusinesses
+        /// Delete the specified bookingCustomQuestion object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bookingcustomquestion-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// All the custom questions of this business. Read-only. Nullable.
+        /// Read the properties and relationships of a bookingCustomQuestion object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bookingcustomquestion-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,8 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions.Item {
             return await RequestAdapter.SendAsync<BookingCustomQuestion>(requestInfo, BookingCustomQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property customQuestions in bookingBusinesses
+        /// Update the properties of a bookingCustomQuestion object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bookingcustomquestion-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +90,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions.Item {
             return await RequestAdapter.SendAsync<BookingCustomQuestion>(requestInfo, BookingCustomQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property customQuestions for bookingBusinesses
+        /// Delete the specified bookingCustomQuestion object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// All the custom questions of this business. Read-only. Nullable.
+        /// Read the properties and relationships of a bookingCustomQuestion object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +140,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property customQuestions in bookingBusinesses
+        /// Update the properties of a bookingCustomQuestion object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +184,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions.Item {
             }
         }
         /// <summary>
-        /// All the custom questions of this business. Read-only. Nullable.
+        /// Read the properties and relationships of a bookingCustomQuestion object.
         /// </summary>
         public class BookingCustomQuestionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

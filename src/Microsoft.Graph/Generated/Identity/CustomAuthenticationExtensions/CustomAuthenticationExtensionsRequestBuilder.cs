@@ -45,7 +45,8 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions {
         public CustomAuthenticationExtensionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/customAuthenticationExtensions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get customAuthenticationExtensions from identity
+        /// Get a list of the customAuthenticationExtension objects and their properties. Currently, only onTokenIssuanceStartCustomExtension objects are returned.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identitycontainer-list-customauthenticationextensions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -64,7 +65,8 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions {
             return await RequestAdapter.SendAsync<CustomAuthenticationExtensionCollectionResponse>(requestInfo, CustomAuthenticationExtensionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to customAuthenticationExtensions for identity
+        /// Create a new customAuthenticationExtension object. Only the **onTokenIssuanceStartCustomExtension** object type is supported.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identitycontainer-post-customauthenticationextensions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +87,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions {
             return await RequestAdapter.SendAsync<CustomAuthenticationExtension>(requestInfo, CustomAuthenticationExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get customAuthenticationExtensions from identity
+        /// Get a list of the customAuthenticationExtension objects and their properties. Currently, only onTokenIssuanceStartCustomExtension objects are returned.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to customAuthenticationExtensions for identity
+        /// Create a new customAuthenticationExtension object. Only the **onTokenIssuanceStartCustomExtension** object type is supported.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +141,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions {
             return requestInfo;
         }
         /// <summary>
-        /// Get customAuthenticationExtensions from identity
+        /// Get a list of the customAuthenticationExtension objects and their properties. Currently, only onTokenIssuanceStartCustomExtension objects are returned.
         /// </summary>
         public class CustomAuthenticationExtensionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

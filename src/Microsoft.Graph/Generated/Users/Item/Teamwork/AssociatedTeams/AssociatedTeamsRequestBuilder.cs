@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams {
         public AssociatedTeamsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/teamwork/associatedTeams{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The list of associatedTeamInfo objects that a user is associated with.
+        /// Get the list of teams in Microsoft Teams that a user is associated with.Currently, a user can be associated with a team in two different ways:* A user can be a direct member of a team.* A user can be a member of a shared channel that is hosted inside a team.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/associatedteaminfo-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams {
             return await RequestAdapter.SendAsync<AssociatedTeamInfo>(requestInfo, AssociatedTeamInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The list of associatedTeamInfo objects that a user is associated with.
+        /// Get the list of teams in Microsoft Teams that a user is associated with.Currently, a user can be associated with a team in two different ways:* A user can be a direct member of a team.* A user can be a member of a shared channel that is hosted inside a team.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams {
             return requestInfo;
         }
         /// <summary>
-        /// The list of associatedTeamInfo objects that a user is associated with.
+        /// Get the list of teams in Microsoft Teams that a user is associated with.Currently, a user can be associated with a team in two different ways:* A user can be a direct member of a team.* A user can be a member of a shared channel that is hosted inside a team.
         /// </summary>
         public class AssociatedTeamsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

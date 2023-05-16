@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Item.History.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get history from identityProtection
+        /// Get a riskyUserHistoryItem object of a riskyUser.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/riskyuserhistoryitem-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Item.History.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get history from identityProtection
+        /// Get a riskyUserHistoryItem object of a riskyUser.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +182,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Item.History.Item {
             }
         }
         /// <summary>
-        /// Get history from identityProtection
+        /// Get a riskyUserHistoryItem object of a riskyUser.
         /// </summary>
         public class RiskyUserHistoryItemItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

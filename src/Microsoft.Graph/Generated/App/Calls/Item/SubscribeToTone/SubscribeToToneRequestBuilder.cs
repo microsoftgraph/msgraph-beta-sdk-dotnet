@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.SubscribeToTone {
         public SubscribeToToneRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/calls/{call%2Did}/subscribeToTone", rawUrl) {
         }
         /// <summary>
-        /// Invoke action subscribeToTone
+        /// Subscribe to DTMF (dual-tone multi-frequency signaling). This allows you to be notified when the user presses keys on a &apos;Dialpad&apos;.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/call-subscribetotone?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.SubscribeToTone {
             return await RequestAdapter.SendAsync<SubscribeToToneOperation>(requestInfo, SubscribeToToneOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action subscribeToTone
+        /// Subscribe to DTMF (dual-tone multi-frequency signaling). This allows you to be notified when the user presses keys on a &apos;Dialpad&apos;.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders {
         public LearningProvidersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/employeeExperience/learningProviders{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// A collection of learning providers.
+        /// Get a list of the learningProvider resources registered in Viva Learning for a tenant.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/employeeexperience-list-learningproviders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders {
             return await RequestAdapter.SendAsync<LearningProviderCollectionResponse>(requestInfo, LearningProviderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to learningProviders for employeeExperience
+        /// Create a new learningProvider object and register it with Viva Learning using the specified display name and logos for different themes.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/employeeexperience-post-learningproviders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders {
             return await RequestAdapter.SendAsync<LearningProvider>(requestInfo, LearningProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of learning providers.
+        /// Get a list of the learningProvider resources registered in Viva Learning for a tenant.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to learningProviders for employeeExperience
+        /// Create a new learningProvider object and register it with Viva Learning using the specified display name and logos for different themes.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of learning providers.
+        /// Get a list of the learningProvider resources registered in Viva Learning for a tenant.
         /// </summary>
         public class LearningProvidersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

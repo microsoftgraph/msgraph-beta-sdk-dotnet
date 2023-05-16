@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.Search.Query {
         public QueryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/query", rawUrl) {
         }
         /// <summary>
-        /// Invoke action query
+        /// Run a specified search query. Search results are provided in the response.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/search-query?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +49,7 @@ namespace Microsoft.Graph.Beta.Search.Query {
             return await RequestAdapter.SendAsync<QueryResponse>(requestInfo, QueryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action query
+        /// Run a specified search query. Search results are provided in the response.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

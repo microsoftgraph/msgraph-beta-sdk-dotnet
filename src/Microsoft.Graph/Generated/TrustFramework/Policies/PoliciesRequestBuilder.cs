@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.TrustFramework.Policies {
         public PoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/trustFramework/policies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get policies from trustFramework
+        /// Retrieve a list of trustFrameworkPolicies in the tenant/directory.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/trustframework-list-trustframeworkpolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.Policies {
             return await RequestAdapter.SendAsync<TrustFrameworkPolicy>(requestInfo, TrustFrameworkPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get policies from trustFramework
+        /// Retrieve a list of trustFrameworkPolicies in the tenant/directory.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.Policies {
             return requestInfo;
         }
         /// <summary>
-        /// Get policies from trustFramework
+        /// Retrieve a list of trustFrameworkPolicies in the tenant/directory.
         /// </summary>
         public class PoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

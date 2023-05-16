@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Awards.Item {
         public PersonAwardItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/awards/{personAward%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property awards for me
+        /// Deletes a personAward object from a user&apos;s profile.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/personaward-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Awards.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents the details of awards or honors associated with a person.
+        /// Read the properties and relationships of a personAward object from a user&apos;s profile.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/personaward-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Awards.Item {
             return await RequestAdapter.SendAsync<PersonAward>(requestInfo, PersonAward.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property awards in me
+        /// Update the properties of a personAward object from a user&apos;s profile.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/personaward-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +90,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Awards.Item {
             return await RequestAdapter.SendAsync<PersonAward>(requestInfo, PersonAward.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property awards for me
+        /// Deletes a personAward object from a user&apos;s profile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Awards.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents the details of awards or honors associated with a person.
+        /// Read the properties and relationships of a personAward object from a user&apos;s profile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +140,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Awards.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property awards in me
+        /// Update the properties of a personAward object from a user&apos;s profile.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +184,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Awards.Item {
             }
         }
         /// <summary>
-        /// Represents the details of awards or honors associated with a person.
+        /// Read the properties and relationships of a personAward object from a user&apos;s profile.
         /// </summary>
         public class PersonAwardItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

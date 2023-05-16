@@ -52,7 +52,8 @@ namespace Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.Item.UserConsent
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A list of pending user consent requests. Supports $filter (eq).
+        /// Read the properties and relationships of a userConsentRequest object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/userconsentrequest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +117,7 @@ namespace Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.Item.UserConsent
             return requestInfo;
         }
         /// <summary>
-        /// A list of pending user consent requests. Supports $filter (eq).
+        /// Read the properties and relationships of a userConsentRequest object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +187,7 @@ namespace Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval.Item.UserConsent
             }
         }
         /// <summary>
-        /// A list of pending user consent requests. Supports $filter (eq).
+        /// Read the properties and relationships of a userConsentRequest object.
         /// </summary>
         public class UserConsentRequestItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

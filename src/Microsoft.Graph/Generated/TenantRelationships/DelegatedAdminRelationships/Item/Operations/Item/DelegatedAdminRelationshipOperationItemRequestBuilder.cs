@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The long running operations associated with the delegated admin relationship.
+        /// Read the properties of a delegatedAdminRelationshipOperation object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/delegatedadminrelationshipoperation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             return requestInfo;
         }
         /// <summary>
-        /// The long running operations associated with the delegated admin relationship.
+        /// Read the properties of a delegatedAdminRelationshipOperation object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +182,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             }
         }
         /// <summary>
-        /// The long running operations associated with the delegated admin relationship.
+        /// Read the properties of a delegatedAdminRelationshipOperation object.
         /// </summary>
         public class DelegatedAdminRelationshipOperationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

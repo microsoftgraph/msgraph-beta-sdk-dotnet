@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
         public PlannerPlanConfigurationLocalizationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/planConfiguration/localizations/{plannerPlanConfigurationLocalization%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property localizations for solutions
+        /// Delete a plannerPlanConfigurationLocalization object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannerplanconfiguration-delete-localizations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Localized names for the plan configuration.
+        /// Read the properties and relationships of a plannerPlanConfigurationLocalization object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannerplanconfigurationlocalization-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,8 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             return await RequestAdapter.SendAsync<PlannerPlanConfigurationLocalization>(requestInfo, PlannerPlanConfigurationLocalization.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property localizations in solutions
+        /// Update the properties of a plannerPlanConfigurationLocalization object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannerplanconfigurationlocalization-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +90,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             return await RequestAdapter.SendAsync<PlannerPlanConfigurationLocalization>(requestInfo, PlannerPlanConfigurationLocalization.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property localizations for solutions
+        /// Delete a plannerPlanConfigurationLocalization object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             return requestInfo;
         }
         /// <summary>
-        /// Localized names for the plan configuration.
+        /// Read the properties and relationships of a plannerPlanConfigurationLocalization object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +140,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property localizations in solutions
+        /// Update the properties of a plannerPlanConfigurationLocalization object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +184,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             }
         }
         /// <summary>
-        /// Localized names for the plan configuration.
+        /// Read the properties and relationships of a plannerPlanConfigurationLocalization object.
         /// </summary>
         public class PlannerPlanConfigurationLocalizationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

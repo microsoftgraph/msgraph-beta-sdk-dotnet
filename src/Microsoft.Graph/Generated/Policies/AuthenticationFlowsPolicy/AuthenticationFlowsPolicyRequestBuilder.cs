@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationFlowsPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The policy configuration of the self-service sign-up experience of external users.
+        /// Read the properties and relationships of an authenticationFlowsPolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationflowspolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +67,8 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationFlowsPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AuthenticationFlowsPolicy>(requestInfo, Microsoft.Graph.Beta.Models.AuthenticationFlowsPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property authenticationFlowsPolicy in policies
+        /// Update the Boolean **selfServiceSignUp** property of an authenticationFlowsPolicy object. The properties **id**, **type**, and **description** cannot be modified.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationflowspolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationFlowsPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// The policy configuration of the self-service sign-up experience of external users.
+        /// Read the properties and relationships of an authenticationFlowsPolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +139,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationFlowsPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property authenticationFlowsPolicy in policies
+        /// Update the Boolean **selfServiceSignUp** property of an authenticationFlowsPolicy object. The properties **id**, **type**, and **description** cannot be modified.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +183,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationFlowsPolicy {
             }
         }
         /// <summary>
-        /// The policy configuration of the self-service sign-up experience of external users.
+        /// Read the properties and relationships of an authenticationFlowsPolicy object.
         /// </summary>
         public class AuthenticationFlowsPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

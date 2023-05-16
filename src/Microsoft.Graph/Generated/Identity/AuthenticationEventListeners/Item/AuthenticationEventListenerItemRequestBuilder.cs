@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item {
         public AuthenticationEventListenerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/authenticationEventListeners/{authenticationEventListener%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property authenticationEventListeners for identity
+        /// Deletes an authenticationEventListener object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationeventlistener-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +67,8 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item {
             return await RequestAdapter.SendAsync<AuthenticationEventListener>(requestInfo, AuthenticationEventListener.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property authenticationEventListeners in identity
+        /// Update the properties of an authenticationEventListener object. You must specify the **@odata.type** property and the value of the authenticationEventListener object type to update.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationeventlistener-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +89,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item {
             return await RequestAdapter.SendAsync<AuthenticationEventListener>(requestInfo, AuthenticationEventListener.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property authenticationEventListeners for identity
+        /// Deletes an authenticationEventListener object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +139,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property authenticationEventListeners in identity
+        /// Update the properties of an authenticationEventListener object. You must specify the **@odata.type** property and the value of the authenticationEventListener object type to update.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -45,7 +45,8 @@ namespace Microsoft.Graph.Beta.Print.Shares.Item.AllowedGroups {
         public AllowedGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/shares/{printerShare%2Did}/allowedGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The groups whose users have access to print using the printer.
+        /// Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -64,7 +65,7 @@ namespace Microsoft.Graph.Beta.Print.Shares.Item.AllowedGroups {
             return await RequestAdapter.SendAsync<GroupCollectionResponse>(requestInfo, GroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The groups whose users have access to print using the printer.
+        /// Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +91,7 @@ namespace Microsoft.Graph.Beta.Print.Shares.Item.AllowedGroups {
             return requestInfo;
         }
         /// <summary>
-        /// The groups whose users have access to print using the printer.
+        /// Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
         /// </summary>
         public class AllowedGroupsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

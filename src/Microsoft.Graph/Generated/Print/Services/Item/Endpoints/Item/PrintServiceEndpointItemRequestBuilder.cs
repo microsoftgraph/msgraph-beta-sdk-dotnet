@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.Print.Services.Item.Endpoints.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Endpoints that can be used to access the service. Read-only. Nullable.
+        /// Retrieve the properties and relationships of a print service endpoint.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/printserviceendpoint-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Beta.Print.Services.Item.Endpoints.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Endpoints that can be used to access the service. Read-only. Nullable.
+        /// Retrieve the properties and relationships of a print service endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +182,7 @@ namespace Microsoft.Graph.Beta.Print.Services.Item.Endpoints.Item {
             }
         }
         /// <summary>
-        /// Endpoints that can be used to access the service. Read-only. Nullable.
+        /// Retrieve the properties and relationships of a print service endpoint.
         /// </summary>
         public class PrintServiceEndpointItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

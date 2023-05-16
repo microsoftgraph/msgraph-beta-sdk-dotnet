@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups.It
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/mobilityManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/{group%2Did}/$ref{?%40id*}", rawUrl) {
         }
         /// <summary>
-        /// Delete ref of navigation property includedGroups for mobilityManagementPolicies
+        /// Delete a group from the list of groups included in a mobile app management policy.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/mobileappmanagementpolicies-delete-includedgroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -46,7 +47,7 @@ namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete ref of navigation property includedGroups for mobilityManagementPolicies
+        /// Delete a group from the list of groups included in a mobile app management policy.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +72,7 @@ namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups.It
             return requestInfo;
         }
         /// <summary>
-        /// Delete ref of navigation property includedGroups for mobilityManagementPolicies
+        /// Delete a group from the list of groups included in a mobile app management policy.
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters {
             /// <summary>Delete Uri</summary>

@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExterna
         public DeleteTiIndicatorsByExternalIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/tiIndicators/deleteTiIndicatorsByExternalId", rawUrl) {
         }
         /// <summary>
-        /// Invoke action deleteTiIndicatorsByExternalId
+        /// Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests, when the request contains external IDs instead of IDs.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/tiindicator-deletetiindicatorsbyexternalid?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +49,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExterna
             return await RequestAdapter.SendAsync<DeleteTiIndicatorsByExternalIdResponse>(requestInfo, DeleteTiIndicatorsByExternalIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action deleteTiIndicatorsByExternalId
+        /// Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests, when the request contains external IDs instead of IDs.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

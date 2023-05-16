@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
         public UnifiedGroupSourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/custodians/{ediscoveryCustodian%2Did}/unifiedGroupSources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Data source entity for groups associated with the custodian.
+        /// Get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-ediscoverycustodian-list-unifiedgroupsources?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
             return await RequestAdapter.SendAsync<UnifiedGroupSourceCollectionResponse>(requestInfo, UnifiedGroupSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to unifiedGroupSources for security
+        /// Create a new unifiedGroupSource object associated with an eDiscovery custodian.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-ediscoverycustodian-post-unifiedgroupsources?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
             return await RequestAdapter.SendAsync<UnifiedGroupSource>(requestInfo, UnifiedGroupSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Data source entity for groups associated with the custodian.
+        /// Get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to unifiedGroupSources for security
+        /// Create a new unifiedGroupSource object associated with an eDiscovery custodian.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
             return requestInfo;
         }
         /// <summary>
-        /// Data source entity for groups associated with the custodian.
+        /// Get a list of the unifiedGroupSource objects associated with an ediscoveryCustodian.
         /// </summary>
         public class UnifiedGroupSourcesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

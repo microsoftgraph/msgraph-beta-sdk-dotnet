@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Special.Item {
         public DriveItemItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/special/{driveItem%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Collection of common folders available in OneDrive. Read-only. Nullable.
+        /// Use the special collection to access a special folder by name. Special folders provide simple aliases to access well-known folders in OneDrive without the need to look up the folder by path (which would require localization), or reference the folder with an ID. If a special folder is renamed or moved to another location within the drive, this syntax will continue to find that folder. Special folders are automatically created the first time an application attempts to write to one, if it doesn&apos;t already exist. If a user deletes one, it is recreated when written to again.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/drive-get-specialfolder?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -52,7 +53,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Special.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DriveItem>(requestInfo, Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Collection of common folders available in OneDrive. Read-only. Nullable.
+        /// Use the special collection to access a special folder by name. Special folders provide simple aliases to access well-known folders in OneDrive without the need to look up the folder by path (which would require localization), or reference the folder with an ID. If a special folder is renamed or moved to another location within the drive, this syntax will continue to find that folder. Special folders are automatically created the first time an application attempts to write to one, if it doesn&apos;t already exist. If a user deletes one, it is recreated when written to again.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +79,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Special.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Collection of common folders available in OneDrive. Read-only. Nullable.
+        /// Use the special collection to access a special folder by name. Special folders provide simple aliases to access well-known folders in OneDrive without the need to look up the folder by path (which would require localization), or reference the folder with an ID. If a special folder is renamed or moved to another location within the drive, this syntax will continue to find that folder. Special folders are automatically created the first time an application attempts to write to one, if it doesn&apos;t already exist. If a user deletes one, it is recreated when written to again.
         /// </summary>
         public class DriveItemItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

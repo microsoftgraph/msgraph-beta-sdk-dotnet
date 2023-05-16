@@ -43,7 +43,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
         public DelegatedAdminRelationshipItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/delegatedAdminRelationships/{delegatedAdminRelationship%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property delegatedAdminRelationships for tenantRelationships
+        /// Delete a delegatedAdminRelationship object. A relationship can only be deleted if it&apos;s in the &apos;created&apos; status. 
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/delegatedadminrelationship-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -62,7 +63,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
+        /// Read the properties of a delegatedAdminRelationship object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/delegatedadminrelationship-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +83,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             return await RequestAdapter.SendAsync<DelegatedAdminRelationship>(requestInfo, DelegatedAdminRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property delegatedAdminRelationships in tenantRelationships
+        /// Update the properties of a delegatedAdminRelationship object. A relationship can only be updated if it&apos;s in the `created` **status**.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/delegatedadminrelationship-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             return await RequestAdapter.SendAsync<DelegatedAdminRelationship>(requestInfo, DelegatedAdminRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property delegatedAdminRelationships for tenantRelationships
+        /// Delete a delegatedAdminRelationship object. A relationship can only be deleted if it&apos;s in the &apos;created&apos; status. 
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -126,7 +129,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             return requestInfo;
         }
         /// <summary>
-        /// The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
+        /// Read the properties of a delegatedAdminRelationship object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -152,7 +155,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property delegatedAdminRelationships in tenantRelationships
+        /// Update the properties of a delegatedAdminRelationship object. A relationship can only be updated if it&apos;s in the `created` **status**.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -196,7 +199,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             }
         }
         /// <summary>
-        /// The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
+        /// Read the properties of a delegatedAdminRelationship object.
         /// </summary>
         public class DelegatedAdminRelationshipItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

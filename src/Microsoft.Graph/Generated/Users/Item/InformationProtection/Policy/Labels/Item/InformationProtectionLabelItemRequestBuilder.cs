@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get labels from users
+        /// Retrieve the properties and relationships of an informationProtectionLabel object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/informationprotectionlabel-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels.It
             return requestInfo;
         }
         /// <summary>
-        /// Get labels from users
+        /// Retrieve the properties and relationships of an informationProtectionLabel object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +182,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels.It
             }
         }
         /// <summary>
-        /// Get labels from users
+        /// Retrieve the properties and relationships of an informationProtectionLabel object.
         /// </summary>
         public class InformationProtectionLabelItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

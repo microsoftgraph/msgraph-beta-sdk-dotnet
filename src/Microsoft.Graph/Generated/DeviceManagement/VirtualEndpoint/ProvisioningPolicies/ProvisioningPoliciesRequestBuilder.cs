@@ -45,7 +45,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         public ProvisioningPoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Cloud PC provisioning policy.
+        /// List properties and relationships of the cloudPcProvisioningPolicy objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/virtualendpoint-list-provisioningpolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -64,7 +65,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             return await RequestAdapter.SendAsync<CloudPcProvisioningPolicyCollectionResponse>(requestInfo, CloudPcProvisioningPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to provisioningPolicies for deviceManagement
+        /// Create a new cloudPcProvisioningPolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/virtualendpoint-post-provisioningpolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +87,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             return await RequestAdapter.SendAsync<CloudPcProvisioningPolicy>(requestInfo, CloudPcProvisioningPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Cloud PC provisioning policy.
+        /// List properties and relationships of the cloudPcProvisioningPolicy objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to provisioningPolicies for deviceManagement
+        /// Create a new cloudPcProvisioningPolicy object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +141,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             return requestInfo;
         }
         /// <summary>
-        /// Cloud PC provisioning policy.
+        /// List properties and relationships of the cloudPcProvisioningPolicy objects.
         /// </summary>
         public class ProvisioningPoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

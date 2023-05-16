@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Settings
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents the settings that control the behavior of Azure AD entitlement management.
+        /// Retrieve the properties of an entitlementManagementSettings object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/entitlementmanagementsettings-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +67,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Settings
             return await RequestAdapter.SendAsync<EntitlementManagementSettings>(requestInfo, EntitlementManagementSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property settings in identityGovernance
+        /// Update an existing entitlementManagementSettings object to change one or more of its properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/entitlementmanagementsettings-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Settings
             return requestInfo;
         }
         /// <summary>
-        /// Represents the settings that control the behavior of Azure AD entitlement management.
+        /// Retrieve the properties of an entitlementManagementSettings object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +139,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Settings
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property settings in identityGovernance
+        /// Update an existing entitlementManagementSettings object to change one or more of its properties.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +183,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Settings
             }
         }
         /// <summary>
-        /// Represents the settings that control the behavior of Azure AD entitlement management.
+        /// Retrieve the properties of an entitlementManagementSettings object.
         /// </summary>
         public class SettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

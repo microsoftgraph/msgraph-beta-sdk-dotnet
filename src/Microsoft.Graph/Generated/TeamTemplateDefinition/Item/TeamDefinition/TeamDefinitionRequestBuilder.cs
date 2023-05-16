@@ -147,7 +147,8 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get teamDefinition from teamTemplateDefinition
+        /// Get the properties of the team associated with a teamTemplateDefinition object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/teamtemplatedefinition-get-teamdefinition?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -211,7 +212,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition {
             return requestInfo;
         }
         /// <summary>
-        /// Get teamDefinition from teamTemplateDefinition
+        /// Get the properties of the team associated with a teamTemplateDefinition object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -281,7 +282,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition {
             }
         }
         /// <summary>
-        /// Get teamDefinition from teamTemplateDefinition
+        /// Get the properties of the team associated with a teamTemplateDefinition object.
         /// </summary>
         public class TeamDefinitionRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

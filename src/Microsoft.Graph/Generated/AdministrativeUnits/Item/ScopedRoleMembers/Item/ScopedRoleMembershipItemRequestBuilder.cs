@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item.ScopedRoleMembers.Item {
         public ScopedRoleMembershipItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/administrativeUnits/{administrativeUnit%2Did}/scopedRoleMembers/{scopedRoleMembership%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property scopedRoleMembers for administrativeUnits
+        /// Remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/administrativeunit-delete-scopedrolemembers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item.ScopedRoleMembers.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Scoped-role members of this administrative unit.
+        /// Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/administrativeunit-get-scopedrolemembers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +89,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item.ScopedRoleMembers.Item {
             return await RequestAdapter.SendAsync<ScopedRoleMembership>(requestInfo, ScopedRoleMembership.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property scopedRoleMembers for administrativeUnits
+        /// Remove an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item.ScopedRoleMembers.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Scoped-role members of this administrative unit.
+        /// Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +183,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item.ScopedRoleMembers.Item {
             }
         }
         /// <summary>
-        /// Scoped-role members of this administrative unit.
+        /// Get an Azure Active Directory (Azure AD) role assignment with administrative unit scope.
         /// </summary>
         public class ScopedRoleMembershipItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

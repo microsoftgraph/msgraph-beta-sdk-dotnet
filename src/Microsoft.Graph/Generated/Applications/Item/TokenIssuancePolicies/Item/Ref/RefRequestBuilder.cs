@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.Applications.Item.TokenIssuancePolicies.Item.Ref 
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/tokenIssuancePolicies/{tokenIssuancePolicy%2Did}/$ref{?%40id*}", rawUrl) {
         }
         /// <summary>
-        /// Delete ref of navigation property tokenIssuancePolicies for applications
+        /// Remove a tokenIssuancePolicy from an application.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/application-delete-tokenissuancepolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -46,7 +47,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.TokenIssuancePolicies.Item.Ref 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete ref of navigation property tokenIssuancePolicies for applications
+        /// Remove a tokenIssuancePolicy from an application.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +72,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.TokenIssuancePolicies.Item.Ref 
             return requestInfo;
         }
         /// <summary>
-        /// Delete ref of navigation property tokenIssuancePolicies for applications
+        /// Remove a tokenIssuancePolicy from an application.
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters {
             /// <summary>Delete Uri</summary>

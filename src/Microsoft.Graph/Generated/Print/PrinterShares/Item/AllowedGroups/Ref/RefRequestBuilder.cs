@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/printerShares/{printerShare%2Did}/allowedGroups/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// The groups whose users have access to print using the printer.
+        /// Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property ref to allowedGroups for print
+        /// Grant the specified group access to submit print jobs to the associated printerShare.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/printershare-post-allowedgroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +70,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The groups whose users have access to print using the printer.
+        /// Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,7 +96,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property ref to allowedGroups for print
+        /// Grant the specified group access to submit print jobs to the associated printerShare.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// The groups whose users have access to print using the printer.
+        /// Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

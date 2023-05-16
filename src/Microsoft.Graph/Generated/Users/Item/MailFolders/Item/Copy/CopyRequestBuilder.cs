@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Copy {
         public CopyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/mailFolders/{mailFolder%2Did}/copy", rawUrl) {
         }
         /// <summary>
-        /// Invoke action copy
+        /// Copy a mailfolder and its contents to another mailfolder.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Copy {
             return await RequestAdapter.SendAsync<MailFolder>(requestInfo, MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action copy
+        /// Copy a mailfolder and its contents to another mailfolder.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

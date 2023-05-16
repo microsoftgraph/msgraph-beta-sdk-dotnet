@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Me.Authentication.Fido2Methods.Item {
         public Fido2AuthenticationMethodItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/authentication/fido2Methods/{fido2AuthenticationMethod%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property fido2Methods for me
+        /// Deletes a user&apos;s FIDO2 Security Key Authentication Method object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/fido2authenticationmethod-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Me.Authentication.Fido2Methods.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents the FIDO2 security keys registered to a user for authentication.
+        /// Retrieve a user&apos;s single FIDO2 Security Key Authentication Method object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/fido2authenticationmethod-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.Fido2Methods.Item {
             return await RequestAdapter.SendAsync<Fido2AuthenticationMethod>(requestInfo, Fido2AuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property fido2Methods for me
+        /// Deletes a user&apos;s FIDO2 Security Key Authentication Method object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +92,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.Fido2Methods.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents the FIDO2 security keys registered to a user for authentication.
+        /// Retrieve a user&apos;s single FIDO2 Security Key Authentication Method object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,7 +134,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.Fido2Methods.Item {
             }
         }
         /// <summary>
-        /// Represents the FIDO2 security keys registered to a user for authentication.
+        /// Retrieve a user&apos;s single FIDO2 Security Key Authentication Method object.
         /// </summary>
         public class Fido2AuthenticationMethodItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

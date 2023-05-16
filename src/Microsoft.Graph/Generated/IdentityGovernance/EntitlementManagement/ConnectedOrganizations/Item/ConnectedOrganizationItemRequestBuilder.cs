@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
         public ConnectedOrganizationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/connectedOrganizations/{connectedOrganization%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property connectedOrganizations for identityGovernance
+        /// Delete a connectedOrganization object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/connectedorganization-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents references to a directory or domain of another organization whose users can request access.
+        /// Retrieve the properties and relationships of a connectedOrganization object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/connectedorganization-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,7 +78,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ConnectedOrganization>(requestInfo, Microsoft.Graph.Beta.Models.ConnectedOrganization.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property connectedOrganizations in identityGovernance
+        /// Update a connectedOrganization object to change one or more of its properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/connectedorganization-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,7 +100,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ConnectedOrganization>(requestInfo, Microsoft.Graph.Beta.Models.ConnectedOrganization.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property connectedOrganizations for identityGovernance
+        /// Delete a connectedOrganization object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
             return requestInfo;
         }
         /// <summary>
-        /// Represents references to a directory or domain of another organization whose users can request access.
+        /// Retrieve the properties and relationships of a connectedOrganization object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -147,7 +150,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property connectedOrganizations in identityGovernance
+        /// Update a connectedOrganization object to change one or more of its properties.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +194,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
             }
         }
         /// <summary>
-        /// Represents references to a directory or domain of another organization whose users can request access.
+        /// Retrieve the properties and relationships of a connectedOrganization object.
         /// </summary>
         public class ConnectedOrganizationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

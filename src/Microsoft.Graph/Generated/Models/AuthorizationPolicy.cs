@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("allowedToSignUpEmailBasedSubscriptions"); }
             set { BackingStore?.Set("allowedToSignUpEmailBasedSubscriptions", value); }
         }
-        /// <summary>Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.</summary>
+        /// <summary>Indicates whether the Admin Self-Serve Password Reset feature is enabled on the tenant.</summary>
         public bool? AllowedToUseSSPR {
             get { return BackingStore?.Get<bool?>("allowedToUseSSPR"); }
             set { BackingStore?.Set("allowedToUseSSPR", value); }
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AllowInvitesFrom?>("allowInvitesFrom"); }
             set { BackingStore?.Set("allowInvitesFrom", value); }
         }
-        /// <summary>Indicates whether user consent for risky apps is allowed. We recommend to keep this as false.</summary>
+        /// <summary>Indicates whether user consent for risky apps is allowed. Default value is false. We recommend that you keep the value set to false.</summary>
         public bool? AllowUserConsentForRiskyApps {
             get { return BackingStore?.Get<bool?>("allowUserConsentForRiskyApps"); }
             set { BackingStore?.Set("allowUserConsentForRiskyApps", value); }

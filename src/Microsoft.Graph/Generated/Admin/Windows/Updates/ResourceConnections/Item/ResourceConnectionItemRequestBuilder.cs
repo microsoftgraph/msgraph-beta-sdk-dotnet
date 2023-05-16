@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item {
         public ResourceConnectionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/windows/updates/resourceConnections/{resourceConnection%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property resourceConnections for admin
+        /// Delete an operationalInsightsConnection object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Service connections to external resources such as analytics workspaces.
+        /// Read the properties and relationships of an operationalInsightsConnection object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +89,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item {
             return await RequestAdapter.SendAsync<ResourceConnection>(requestInfo, ResourceConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property resourceConnections for admin
+        /// Delete an operationalInsightsConnection object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Service connections to external resources such as analytics workspaces.
+        /// Read the properties and relationships of an operationalInsightsConnection object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +183,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item {
             }
         }
         /// <summary>
-        /// Service connections to external resources such as analytics workspaces.
+        /// Read the properties and relationships of an operationalInsightsConnection object.
         /// </summary>
         public class ResourceConnectionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

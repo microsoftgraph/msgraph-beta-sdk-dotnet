@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings {
         public RoleSettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/roleSettings{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// A collection of role settings for the provider.
+        /// Retrieve the properties and relationships of a governanceRoleSetting.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings {
             return await RequestAdapter.SendAsync<GovernanceRoleSetting>(requestInfo, GovernanceRoleSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of role settings for the provider.
+        /// Retrieve the properties and relationships of a governanceRoleSetting.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of role settings for the provider.
+        /// Retrieve the properties and relationships of a governanceRoleSetting.
         /// </summary>
         public class RoleSettingsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

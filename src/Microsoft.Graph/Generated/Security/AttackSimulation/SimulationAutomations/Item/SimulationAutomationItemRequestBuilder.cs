@@ -52,7 +52,8 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.I
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents simulation automation created to run on a tenant.
+        /// Get an attack simulation automation for a tenant.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/simulationautomation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +117,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.I
             return requestInfo;
         }
         /// <summary>
-        /// Represents simulation automation created to run on a tenant.
+        /// Get an attack simulation automation for a tenant.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +187,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.I
             }
         }
         /// <summary>
-        /// Represents simulation automation created to run on a tenant.
+        /// Get an attack simulation automation for a tenant.
         /// </summary>
         public class SimulationAutomationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

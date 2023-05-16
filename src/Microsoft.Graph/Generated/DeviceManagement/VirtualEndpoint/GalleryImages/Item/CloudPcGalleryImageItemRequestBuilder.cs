@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The gallery image resource on Cloud PC.
+        /// Read the properties and relationships of a specific cloudPcGalleryImage object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/cloudpcgalleryimage-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages.It
             return requestInfo;
         }
         /// <summary>
-        /// The gallery image resource on Cloud PC.
+        /// Read the properties and relationships of a specific cloudPcGalleryImage object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +182,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages.It
             }
         }
         /// <summary>
-        /// The gallery image resource on Cloud PC.
+        /// Read the properties and relationships of a specific cloudPcGalleryImage object.
         /// </summary>
         public class CloudPcGalleryImageItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

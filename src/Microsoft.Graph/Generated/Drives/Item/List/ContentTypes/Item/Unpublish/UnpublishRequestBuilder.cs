@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.Unpublish {
         public UnpublishRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/list/contentTypes/{contentType%2Did}/unpublish", rawUrl) {
         }
         /// <summary>
-        /// Invoke action unpublish
+        /// Unpublish a [contentType][] from a content type hub site.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contenttype-unpublish?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -46,7 +47,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.Unpublish {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action unpublish
+        /// Unpublish a [contentType][] from a content type hub site.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

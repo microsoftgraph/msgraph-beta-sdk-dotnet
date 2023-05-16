@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections
         public ServicePrincipalRiskDetectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityProtection/servicePrincipalRiskDetections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Represents information about detected at-risk service principals in an Azure AD tenant.
+        /// Retrieve the properties of a collection of servicePrincipalRiskDetection objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identityprotectionroot-list-serviceprincipalriskdetections?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections
             return await RequestAdapter.SendAsync<ServicePrincipalRiskDetection>(requestInfo, ServicePrincipalRiskDetection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents information about detected at-risk service principals in an Azure AD tenant.
+        /// Retrieve the properties of a collection of servicePrincipalRiskDetection objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections
             return requestInfo;
         }
         /// <summary>
-        /// Represents information about detected at-risk service principals in an Azure AD tenant.
+        /// Retrieve the properties of a collection of servicePrincipalRiskDetection objects.
         /// </summary>
         public class ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

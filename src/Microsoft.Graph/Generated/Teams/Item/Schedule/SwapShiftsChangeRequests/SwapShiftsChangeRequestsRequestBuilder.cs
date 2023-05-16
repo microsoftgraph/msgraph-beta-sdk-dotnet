@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.SwapShiftsChangeRequests {
         public SwapShiftsChangeRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/swapShiftsChangeRequests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The swap requests for shifts in the schedule.
+        /// Retrieve a list of swapShiftsChangeRequest objects in a team.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/swapshiftschangerequest-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.SwapShiftsChangeRequests {
             return await RequestAdapter.SendAsync<SwapShiftsChangeRequestCollectionResponse>(requestInfo, SwapShiftsChangeRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to swapShiftsChangeRequests for teams
+        /// Create an instance of a swapShiftsChangeRequest object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/swapshiftschangerequest-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.SwapShiftsChangeRequests {
             return await RequestAdapter.SendAsync<SwapShiftsChangeRequest>(requestInfo, SwapShiftsChangeRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The swap requests for shifts in the schedule.
+        /// Retrieve a list of swapShiftsChangeRequest objects in a team.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.SwapShiftsChangeRequests {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to swapShiftsChangeRequests for teams
+        /// Create an instance of a swapShiftsChangeRequest object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.SwapShiftsChangeRequests {
             return requestInfo;
         }
         /// <summary>
-        /// The swap requests for shifts in the schedule.
+        /// Retrieve a list of swapShiftsChangeRequest objects in a team.
         /// </summary>
         public class SwapShiftsChangeRequestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

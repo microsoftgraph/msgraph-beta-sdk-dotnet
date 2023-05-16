@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
         public AuthenticationContextClassReferencesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/conditionalAccess/authenticationContextClassReferences{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read-only. Nullable. Returns a collection of the specified authentication context class references.
+        /// Retrieve a list of authenticationContextClassReference objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/conditionalaccessroot-list-authenticationcontextclassreferences?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
             return await RequestAdapter.SendAsync<AuthenticationContextClassReferenceCollectionResponse>(requestInfo, AuthenticationContextClassReferenceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to authenticationContextClassReferences for identity
+        /// Create a new authenticationContextClassReference.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/conditionalaccessroot-post-authenticationcontextclassreferences?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
             return await RequestAdapter.SendAsync<AuthenticationContextClassReference>(requestInfo, AuthenticationContextClassReference.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read-only. Nullable. Returns a collection of the specified authentication context class references.
+        /// Retrieve a list of authenticationContextClassReference objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to authenticationContextClassReferences for identity
+        /// Create a new authenticationContextClassReference.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Nullable. Returns a collection of the specified authentication context class references.
+        /// Retrieve a list of authenticationContextClassReference objects.
         /// </summary>
         public class AuthenticationContextClassReferencesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

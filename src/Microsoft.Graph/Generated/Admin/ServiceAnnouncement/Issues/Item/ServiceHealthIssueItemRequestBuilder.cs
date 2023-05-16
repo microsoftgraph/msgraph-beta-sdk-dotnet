@@ -52,7 +52,8 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Issues.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
+        /// Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/servicehealthissue-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +117,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Issues.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
+        /// Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +187,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Issues.Item {
             }
         }
         /// <summary>
-        /// A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.
+        /// Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
         /// </summary>
         public class ServiceHealthIssueItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CredentialUserRegistrationCount : Entity, IParsable {
-        /// <summary>Provides the total user count in the tenant.</summary>
+        /// <summary>Provides the count of users with accountEnabled set to true in the tenant.</summary>
         public long? TotalUserCount {
             get { return BackingStore?.Get<long?>("totalUserCount"); }
             set { BackingStore?.Set("totalUserCount", value); }

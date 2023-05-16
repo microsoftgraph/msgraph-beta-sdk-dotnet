@@ -55,7 +55,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.</summary>
+        /// <summary>The outOfOfficeDays property</summary>
+        public int? OutOfOfficeDays {
+            get { return BackingStore?.Get<int?>("outOfOfficeDays"); }
+            set { BackingStore?.Set("outOfOfficeDays", value); }
+        }
+        /// <summary>id property value of the user resource that represents the user in the Azure Active Directory tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {
@@ -92,6 +97,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"email", n => { Email = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"outOfOfficeDays", n => { OutOfOfficeDays = n.GetIntValue(); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -104,6 +110,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteIntValue("outOfOfficeDays", OutOfOfficeDays);
             writer.WriteStringValue("userId", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }

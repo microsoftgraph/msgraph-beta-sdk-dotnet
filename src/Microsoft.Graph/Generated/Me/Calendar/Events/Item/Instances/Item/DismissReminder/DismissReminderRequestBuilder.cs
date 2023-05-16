@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.Instances.Item.DismissRem
         public DismissReminderRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendar/events/{event%2Did}/instances/{event%2Did1}/dismissReminder", rawUrl) {
         }
         /// <summary>
-        /// Invoke action dismissReminder
+        /// Dismiss a reminder that has been triggered for an event in a user calendar.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/event-dismissreminder?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -46,7 +47,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.Instances.Item.DismissRem
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action dismissReminder
+        /// Dismiss a reminder that has been triggered for an event in a user calendar.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

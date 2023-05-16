@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Permissions {
         public PermissionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/permissions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The set of permissions for the item. Read-only. Nullable.
+        /// List the effective sharing permissions on a driveItem.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/driveitem-list-permissions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Permissions {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Permission>(requestInfo, Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The set of permissions for the item. Read-only. Nullable.
+        /// List the effective sharing permissions on a driveItem.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Permissions {
             return requestInfo;
         }
         /// <summary>
-        /// The set of permissions for the item. Read-only. Nullable.
+        /// List the effective sharing permissions on a driveItem.
         /// </summary>
         public class PermissionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

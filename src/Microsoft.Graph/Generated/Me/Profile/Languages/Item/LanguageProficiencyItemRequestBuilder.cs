@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Languages.Item {
         public LanguageProficiencyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/languages/{languageProficiency%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property languages for me
+        /// Delete a languageProficiency object from a user&apos;s profile.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/languageproficiency-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Languages.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents detailed information about languages that a user has added to their profile.
+        /// Retrieve the properties and relationships of a languageProficiency object within a user&apos;s profile.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/languageproficiency-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Languages.Item {
             return await RequestAdapter.SendAsync<LanguageProficiency>(requestInfo, LanguageProficiency.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property languages in me
+        /// Update the properties of a languageProficiency object in a user&apos;s profile.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/languageproficiency-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +90,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Languages.Item {
             return await RequestAdapter.SendAsync<LanguageProficiency>(requestInfo, LanguageProficiency.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property languages for me
+        /// Delete a languageProficiency object from a user&apos;s profile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Languages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents detailed information about languages that a user has added to their profile.
+        /// Retrieve the properties and relationships of a languageProficiency object within a user&apos;s profile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +140,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Languages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property languages in me
+        /// Update the properties of a languageProficiency object in a user&apos;s profile.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +184,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Languages.Item {
             }
         }
         /// <summary>
-        /// Represents detailed information about languages that a user has added to their profile.
+        /// Retrieve the properties and relationships of a languageProficiency object within a user&apos;s profile.
         /// </summary>
         public class LanguageProficiencyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

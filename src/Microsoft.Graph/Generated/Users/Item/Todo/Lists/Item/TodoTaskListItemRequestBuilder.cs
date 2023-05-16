@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item {
         public TodoTaskListItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property lists for users
+        /// Deletes a todoTaskList object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/todotasklist-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The task lists in the users mailbox.
+        /// Read the properties and relationships of a todoTaskList object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/todotasklist-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,7 +78,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item {
             return await RequestAdapter.SendAsync<TodoTaskList>(requestInfo, TodoTaskList.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property lists in users
+        /// Update the properties of a todoTaskList object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/todotasklist-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,7 +100,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item {
             return await RequestAdapter.SendAsync<TodoTaskList>(requestInfo, TodoTaskList.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property lists for users
+        /// Deletes a todoTaskList object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The task lists in the users mailbox.
+        /// Read the properties and relationships of a todoTaskList object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -147,7 +150,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property lists in users
+        /// Update the properties of a todoTaskList object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +194,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item {
             }
         }
         /// <summary>
-        /// The task lists in the users mailbox.
+        /// Read the properties and relationships of a todoTaskList object.
         /// </summary>
         public class TodoTaskListItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

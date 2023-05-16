@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.
         public MicrosoftGraphSecurityExtractContentLabelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/informationProtection/sensitivityLabels/microsoft.graph.security.extractContentLabel", rawUrl) {
         }
         /// <summary>
-        /// Invoke action extractContentLabel
+        /// Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-sensitivitylabel-extractcontentlabel?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.
             return await RequestAdapter.SendAsync<ContentLabel>(requestInfo, ContentLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action extractContentLabel
+        /// Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

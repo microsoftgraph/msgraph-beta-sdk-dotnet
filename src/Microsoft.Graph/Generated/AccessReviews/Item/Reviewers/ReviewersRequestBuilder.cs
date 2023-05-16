@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Reviewers {
         public ReviewersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accessReviews/{accessReview%2Did}/reviewers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The collection of reviewers for an access review, if access review reviewerType is of type delegated.
+        /// In the Azure AD access reviews feature, retrieve the reviewers of an accessReview object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/accessreview-listreviewers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Reviewers {
             return await RequestAdapter.SendAsync<AccessReviewReviewerCollectionResponse>(requestInfo, AccessReviewReviewerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to reviewers for accessReviews
+        /// In the Azure AD access reviews feature, update an existing accessReview object to add another user as a reviewer.  This operation is only permitted for an access review that is not yet completed, and only for an access review where the reviewers are explicitly specified. This operation is not permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers. 
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/accessreview-addreviewer?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Reviewers {
             return await RequestAdapter.SendAsync<AccessReviewReviewer>(requestInfo, AccessReviewReviewer.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of reviewers for an access review, if access review reviewerType is of type delegated.
+        /// In the Azure AD access reviews feature, retrieve the reviewers of an accessReview object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Reviewers {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to reviewers for accessReviews
+        /// In the Azure AD access reviews feature, update an existing accessReview object to add another user as a reviewer.  This operation is only permitted for an access review that is not yet completed, and only for an access review where the reviewers are explicitly specified. This operation is not permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers. 
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Reviewers {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of reviewers for an access review, if access review reviewerType is of type delegated.
+        /// In the Azure AD access reviews feature, retrieve the reviewers of an accessReview object.
         /// </summary>
         public class ReviewersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

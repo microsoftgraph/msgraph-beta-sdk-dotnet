@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AuditEvents.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of audit events across managed tenants.
+        /// Read the properties and relationships of an auditEvent object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/managedtenants-auditevent-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AuditEvents.It
             return requestInfo;
         }
         /// <summary>
-        /// The collection of audit events across managed tenants.
+        /// Read the properties and relationships of an auditEvent object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +182,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AuditEvents.It
             }
         }
         /// <summary>
-        /// The collection of audit events across managed tenants.
+        /// Read the properties and relationships of an auditEvent object.
         /// </summary>
         public class AuditEventItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

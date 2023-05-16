@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffRequests.Item {
         public TimeOffRequestItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/timeOffRequests/{timeOffRequest%2Did}{?%24select}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property timeOffRequests for teams
+        /// Delete a timeOffRequest object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timeoffrequest-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffRequests.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The time off requests in the schedule.
+        /// Retrieve the properties and relationships of a timeoffrequest object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timeoffrequest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +89,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffRequests.Item {
             return await RequestAdapter.SendAsync<TimeOffRequest>(requestInfo, TimeOffRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property timeOffRequests for teams
+        /// Delete a timeOffRequest object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffRequests.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The time off requests in the schedule.
+        /// Retrieve the properties and relationships of a timeoffrequest object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +183,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffRequests.Item {
             }
         }
         /// <summary>
-        /// The time off requests in the schedule.
+        /// Retrieve the properties and relationships of a timeoffrequest object.
         /// </summary>
         public class TimeOffRequestItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>

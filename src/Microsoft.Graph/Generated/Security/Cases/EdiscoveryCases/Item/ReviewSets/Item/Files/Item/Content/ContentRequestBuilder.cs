@@ -29,6 +29,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         }
         /// <summary>
         /// Get content for the navigation property files from security
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-ediscoveryreviewset-list-files?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

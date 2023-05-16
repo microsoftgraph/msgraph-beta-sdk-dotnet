@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Print.Services {
         public ServicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/services{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The list of available Universal Print service endpoints.
+        /// Retrieve a list of printService objects that represent the **services** available to your tenant.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/print-list-services?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.Print.Services {
             return await RequestAdapter.SendAsync<PrintService>(requestInfo, PrintService.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The list of available Universal Print service endpoints.
+        /// Retrieve a list of printService objects that represent the **services** available to your tenant.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.Print.Services {
             return requestInfo;
         }
         /// <summary>
-        /// The list of available Universal Print service endpoints.
+        /// Retrieve a list of printService objects that represent the **services** available to your tenant.
         /// </summary>
         public class ServicesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

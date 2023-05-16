@@ -52,7 +52,8 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
+        /// Read the default configuration of a cross-tenant access policy. This default configuration may be the service default assigned by Azure AD (**isServiceDefault** is `true`) or may be customized in your tenant (**isServiceDefault** is `false`).
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -71,7 +72,8 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default {
             return await RequestAdapter.SendAsync<CrossTenantAccessPolicyConfigurationDefault>(requestInfo, CrossTenantAccessPolicyConfigurationDefault.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property default in policies
+        /// Update the default configuration of a cross-tenant access policy.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -116,7 +118,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default {
             return requestInfo;
         }
         /// <summary>
-        /// Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
+        /// Read the default configuration of a cross-tenant access policy. This default configuration may be the service default assigned by Azure AD (**isServiceDefault** is `true`) or may be customized in your tenant (**isServiceDefault** is `false`).
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +144,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property default in policies
+        /// Update the default configuration of a cross-tenant access policy.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +188,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default {
             }
         }
         /// <summary>
-        /// Defines the default configuration for how your organization interacts with external Azure Active Directory organizations.
+        /// Read the default configuration of a cross-tenant access policy. This default configuration may be the service default assigned by Azure AD (**isServiceDefault** is `true`) or may be customized in your tenant (**isServiceDefault** is `false`).
         /// </summary>
         public class DefaultRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

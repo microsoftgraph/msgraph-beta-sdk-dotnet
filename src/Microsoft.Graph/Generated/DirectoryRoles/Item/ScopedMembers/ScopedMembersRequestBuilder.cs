@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item.ScopedMembers {
         public ScopedMembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directoryRoles/{directoryRole%2Did}/scopedMembers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Members of this directory role that are scoped to administrative units. Read-only. Nullable.
+        /// Retrieve a list of scopedRoleMembership objects for a directory role.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/directoryrole-list-scopedmembers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item.ScopedMembers {
             return await RequestAdapter.SendAsync<ScopedRoleMembership>(requestInfo, ScopedRoleMembership.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Members of this directory role that are scoped to administrative units. Read-only. Nullable.
+        /// Retrieve a list of scopedRoleMembership objects for a directory role.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item.ScopedMembers {
             return requestInfo;
         }
         /// <summary>
-        /// Members of this directory role that are scoped to administrative units. Read-only. Nullable.
+        /// Retrieve a list of scopedRoleMembership objects for a directory role.
         /// </summary>
         public class ScopedMembersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

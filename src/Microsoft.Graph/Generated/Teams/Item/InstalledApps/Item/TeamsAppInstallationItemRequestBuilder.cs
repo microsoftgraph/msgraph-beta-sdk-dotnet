@@ -43,7 +43,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.InstalledApps.Item {
         public TeamsAppInstallationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/installedApps/{teamsAppInstallation%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property installedApps for teams
+        /// Uninstalls an app from the specified team.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/team-delete-installedapps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -62,7 +63,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.InstalledApps.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The apps installed in this team.
+        /// Retrieve the app installed in the specified team.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/team-get-installedapps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.InstalledApps.Item {
             return await RequestAdapter.SendAsync<TeamsAppInstallation>(requestInfo, TeamsAppInstallation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property installedApps for teams
+        /// Uninstalls an app from the specified team.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -126,7 +128,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.InstalledApps.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The apps installed in this team.
+        /// Retrieve the app installed in the specified team.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -196,7 +198,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.InstalledApps.Item {
             }
         }
         /// <summary>
-        /// The apps installed in this team.
+        /// Retrieve the app installed in the specified team.
         /// </summary>
         public class TeamsAppInstallationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

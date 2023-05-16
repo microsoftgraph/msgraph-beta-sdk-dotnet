@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Teachers.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/teachers/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// All teachers in the class. Nullable.
+        /// Retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationclass-list-teachers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Teachers.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property ref to teachers for education
+        /// Add a teacher to a class.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationclass-post-teachers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +70,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Teachers.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// All teachers in the class. Nullable.
+        /// Retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,7 +96,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Teachers.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property ref to teachers for education
+        /// Add a teacher to a class.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Teachers.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// All teachers in the class. Nullable.
+        /// Retrieve a list teachers for a class. Delegated tokens must be members of the class to get the teacher list.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

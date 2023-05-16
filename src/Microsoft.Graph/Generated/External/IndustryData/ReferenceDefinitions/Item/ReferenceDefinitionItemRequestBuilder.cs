@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.ReferenceDefinitions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Set of user modifiable system picker types.
+        /// Read the properties and relationships of a referenceDefinition object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-referencedefinition-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.ReferenceDefinitions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Set of user modifiable system picker types.
+        /// Read the properties and relationships of a referenceDefinition object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +182,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.ReferenceDefinitions.Item {
             }
         }
         /// <summary>
-        /// Set of user modifiable system picker types.
+        /// Read the properties and relationships of a referenceDefinition object.
         /// </summary>
         public class ReferenceDefinitionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

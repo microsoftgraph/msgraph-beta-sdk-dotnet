@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows.Item {
         public IdentityUserFlowItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/userFlows/{identityUserFlow%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property userFlows for identity
+        /// Delete an existing userFlow object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identityuserflow-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get userFlows from identity
+        /// Retrieve the properties and associations for an userFlow object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identityuserflow-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +89,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows.Item {
             return await RequestAdapter.SendAsync<IdentityUserFlow>(requestInfo, IdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property userFlows for identity
+        /// Delete an existing userFlow object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get userFlows from identity
+        /// Retrieve the properties and associations for an userFlow object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +183,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows.Item {
             }
         }
         /// <summary>
-        /// Get userFlows from identity
+        /// Retrieve the properties and associations for an userFlow object.
         /// </summary>
         public class IdentityUserFlowItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

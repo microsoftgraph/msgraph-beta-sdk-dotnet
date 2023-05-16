@@ -29,6 +29,7 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item.RegisteredUsers.Ref {
         }
         /// <summary>
         /// Collection of registered users of the device. For cloud joined devices and registered personal devices, registered users are set to the same value as registered owners at the time of registration. Read-only. Nullable. Supports $expand.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/device-list-registeredusers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item.RegisteredUsers.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property ref to registeredUsers for me
+        /// Add a registered user for the device.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/device-post-registeredusers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -94,7 +96,7 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item.RegisteredUsers.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property ref to registeredUsers for me
+        /// Add a registered user for the device.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.MarkChatReadForUser {
         public MarkChatReadForUserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/chats/{chat%2Did}/markChatReadForUser", rawUrl) {
         }
         /// <summary>
-        /// Invoke action markChatReadForUser
+        /// Mark a chat as read for a user.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chat-markchatreadforuser?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +49,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.MarkChatReadForUser {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action markChatReadForUser
+        /// Mark a chat as read for a user.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

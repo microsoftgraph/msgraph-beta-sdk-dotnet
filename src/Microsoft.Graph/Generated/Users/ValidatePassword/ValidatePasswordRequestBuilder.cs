@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Users.ValidatePassword {
         public ValidatePasswordRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/validatePassword", rawUrl) {
         }
         /// <summary>
-        /// Invoke action validatePassword
+        /// Check a user&apos;s password against the organization&apos;s password validation policy and report whether the password is valid. Use this action to provide real-time feedback on password strength while the user types their password.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-validatepassword?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Beta.Users.ValidatePassword {
             return await RequestAdapter.SendAsync<PasswordValidationInformation>(requestInfo, PasswordValidationInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action validatePassword
+        /// Check a user&apos;s password against the organization&apos;s password validation policy and report whether the password is valid. Use this action to provide real-time feedback on password strength while the user types their password.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

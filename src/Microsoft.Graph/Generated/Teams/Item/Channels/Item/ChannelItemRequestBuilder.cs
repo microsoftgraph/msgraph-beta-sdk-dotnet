@@ -73,7 +73,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item {
         public ChannelItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/channels/{channel%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property channels for teams
+        /// Delete the channel.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/channel-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -92,7 +93,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of channels and messages associated with the team.
+        /// Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/channel-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +113,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item {
             return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property channels in teams
+        /// Update the properties of the specified channel.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/channel-patch?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -132,7 +135,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item {
             return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property channels for teams
+        /// Delete the channel.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -156,7 +159,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of channels and messages associated with the team.
+        /// Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -182,7 +185,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property channels in teams
+        /// Update the properties of the specified channel.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -226,7 +229,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item {
             }
         }
         /// <summary>
-        /// The collection of channels and messages associated with the team.
+        /// Retrieve the properties and relationships of a channel. This method supports federation. Only a user who is a member of the shared channel can retrieve channel information.
         /// </summary>
         public class ChannelItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

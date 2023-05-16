@@ -43,7 +43,8 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item {
         public BrowserSiteListItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/edge/internetExplorerMode/siteLists/{browserSiteList%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property siteLists for admin
+        /// Delete a browserSiteList object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/internetexplorermode-delete-sitelists?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -62,7 +63,8 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of site lists to support Internet Explorer mode.
+        /// Get a browserSiteList that contains browserSite and browserSharedCookie resources.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/browsersitelist-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +83,8 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item {
             return await RequestAdapter.SendAsync<BrowserSiteList>(requestInfo, BrowserSiteList.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property siteLists in admin
+        /// Update the properties of a browserSiteList object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/browsersitelist-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item {
             return await RequestAdapter.SendAsync<BrowserSiteList>(requestInfo, BrowserSiteList.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property siteLists for admin
+        /// Delete a browserSiteList object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -126,7 +129,7 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of site lists to support Internet Explorer mode.
+        /// Get a browserSiteList that contains browserSite and browserSharedCookie resources.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -152,7 +155,7 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property siteLists in admin
+        /// Update the properties of a browserSiteList object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -196,7 +199,7 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item {
             }
         }
         /// <summary>
-        /// A collection of site lists to support Internet Explorer mode.
+        /// Get a browserSiteList that contains browserSite and browserSharedCookie resources.
         /// </summary>
         public class BrowserSiteListItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

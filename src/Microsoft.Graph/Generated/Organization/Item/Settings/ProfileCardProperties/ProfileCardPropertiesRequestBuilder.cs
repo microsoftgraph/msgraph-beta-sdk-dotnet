@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties 
         public ProfileCardPropertiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organization/{organization%2Did}/settings/profileCardProperties{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
+        /// Get a collection of profileCardProperty resources of an organization. Each resource is identified by its **directoryPropertyName** property.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/organizationsettings-list-profilecardproperties?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties 
             return await RequestAdapter.SendAsync<ProfileCardPropertyCollectionResponse>(requestInfo, ProfileCardPropertyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to profileCardProperties for organization
+        /// Create a new profileCardProperty for an organization. The new property is identified by its **directoryPropertyName** property. For more information on adding properties to the profile card for an organization, see customize the profile card.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/organizationsettings-post-profilecardproperties?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties 
             return await RequestAdapter.SendAsync<ProfileCardProperty>(requestInfo, ProfileCardProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
+        /// Get a collection of profileCardProperty resources of an organization. Each resource is identified by its **directoryPropertyName** property.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties 
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to profileCardProperties for organization
+        /// Create a new profileCardProperty for an organization. The new property is identified by its **directoryPropertyName** property. For more information on adding properties to the profile card for an organization, see customize the profile card.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties 
             return requestInfo;
         }
         /// <summary>
-        /// Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
+        /// Get a collection of profileCardProperty resources of an organization. Each resource is identified by its **directoryPropertyName** property.
         /// </summary>
         public class ProfileCardPropertiesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

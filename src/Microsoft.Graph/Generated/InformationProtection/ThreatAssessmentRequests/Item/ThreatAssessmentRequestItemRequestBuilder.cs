@@ -52,7 +52,8 @@ namespace Microsoft.Graph.Beta.InformationProtection.ThreatAssessmentRequests.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get threatAssessmentRequests from informationProtection
+        /// Retrieve the properties and relationships of a specified threatAssessmentRequest object. A threat assessment request can be one of the following types:
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/threatassessmentrequest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +117,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.ThreatAssessmentRequests.It
             return requestInfo;
         }
         /// <summary>
-        /// Get threatAssessmentRequests from informationProtection
+        /// Retrieve the properties and relationships of a specified threatAssessmentRequest object. A threat assessment request can be one of the following types:
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +187,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.ThreatAssessmentRequests.It
             }
         }
         /// <summary>
-        /// Get threatAssessmentRequests from informationProtection
+        /// Retrieve the properties and relationships of a specified threatAssessmentRequest object. A threat assessment request can be one of the following types:
         /// </summary>
         public class ThreatAssessmentRequestItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
