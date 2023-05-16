@@ -94,14 +94,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets created by user.
         /// </summary>
-        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("createdByUser")]
         public User CreatedByUser { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by user.
         /// </summary>
-        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("lastModifiedByUser")]
         public User LastModifiedByUser { get; set; }
     

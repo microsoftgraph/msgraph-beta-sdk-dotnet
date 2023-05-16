@@ -87,7 +87,6 @@ namespace Microsoft.Graph
         /// Gets or sets invited user.
         /// The user created as part of the invitation creation. Read-Only
         /// </summary>
-        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("invitedUser")]
         public User InvitedUser { get; set; }
     

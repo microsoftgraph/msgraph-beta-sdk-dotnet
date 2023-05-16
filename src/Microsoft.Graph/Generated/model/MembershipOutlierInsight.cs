@@ -68,7 +68,6 @@ namespace Microsoft.Graph
         /// Gets or sets last modified by.
         /// Navigation link to a member object who modified the record. For example, to a user.
         /// </summary>
-        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("lastModifiedBy")]
         public User LastModifiedBy { get; set; }
     

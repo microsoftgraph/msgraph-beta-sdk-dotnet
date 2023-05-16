@@ -18,7 +18,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserGetLoggedOnManagedDevicesRequest.
     /// </summary>
-    [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
     public partial class UserGetLoggedOnManagedDevicesRequest : BaseRequest, IUserGetLoggedOnManagedDevicesRequest
     {
         /// <summary>

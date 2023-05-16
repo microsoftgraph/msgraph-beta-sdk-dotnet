@@ -30,7 +30,6 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
         /// <summary>
         /// Gets or sets subject.
         /// </summary>
-        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("subject")]
         public Microsoft.Graph.User Subject { get; set; }
     

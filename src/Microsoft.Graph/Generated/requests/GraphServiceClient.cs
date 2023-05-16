@@ -97,7 +97,6 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceUsers request builder.
         /// </summary>
-        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         public virtual IGraphServiceUsersCollectionRequestBuilder Users
         {
             get
@@ -1111,7 +1110,6 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the GraphServiceMe request builder.
         /// </summary>
-        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         public virtual IUserRequestBuilder Me
         {
             get

@@ -710,7 +710,6 @@ namespace Microsoft.Graph
         /// Gets or sets users.
         /// The primary users associated with the managed device.
         /// </summary>
-        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("users")]
         public IManagedDeviceUsersCollectionWithReferencesPage Users { get; set; }
 

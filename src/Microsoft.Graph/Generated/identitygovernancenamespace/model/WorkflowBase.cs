@@ -89,7 +89,6 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
         /// Gets or sets created by.
         /// The user who created the workflow.
         /// </summary>
-        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("createdBy")]
         public Microsoft.Graph.User CreatedBy { get; set; }
     

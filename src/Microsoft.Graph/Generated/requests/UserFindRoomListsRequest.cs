@@ -18,7 +18,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserFindRoomListsRequest.
     /// </summary>
-    [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
     public partial class UserFindRoomListsRequest : BaseRequest, IUserFindRoomListsRequest
     {
         /// <summary>

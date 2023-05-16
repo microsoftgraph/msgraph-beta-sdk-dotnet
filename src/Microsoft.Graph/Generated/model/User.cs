@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User.
     /// </summary>
-    [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
     public partial class User : DirectoryObject
     {
     
