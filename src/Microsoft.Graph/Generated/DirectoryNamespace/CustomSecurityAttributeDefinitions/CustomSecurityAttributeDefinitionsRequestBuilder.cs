@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinit
         public CustomSecurityAttributeDefinitionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/customSecurityAttributeDefinitions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Schema of a custom security attributes (key-value pairs).
+        /// Get a list of the customSecurityAttributeDefinition objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/directory-list-customsecurityattributedefinitions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinit
             return await RequestAdapter.SendAsync<CustomSecurityAttributeDefinitionCollectionResponse>(requestInfo, CustomSecurityAttributeDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to customSecurityAttributeDefinitions for directory
+        /// Create a new customSecurityAttributeDefinition object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/directory-post-customsecurityattributedefinitions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinit
             return await RequestAdapter.SendAsync<CustomSecurityAttributeDefinition>(requestInfo, CustomSecurityAttributeDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Schema of a custom security attributes (key-value pairs).
+        /// Get a list of the customSecurityAttributeDefinition objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinit
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to customSecurityAttributeDefinitions for directory
+        /// Create a new customSecurityAttributeDefinition object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinit
             return requestInfo;
         }
         /// <summary>
-        /// Schema of a custom security attributes (key-value pairs).
+        /// Get a list of the customSecurityAttributeDefinition objects and their properties.
         /// </summary>
         public class CustomSecurityAttributeDefinitionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

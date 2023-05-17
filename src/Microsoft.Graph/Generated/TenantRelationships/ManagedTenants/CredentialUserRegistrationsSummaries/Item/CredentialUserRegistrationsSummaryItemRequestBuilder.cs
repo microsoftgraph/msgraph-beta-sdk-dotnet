@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUser
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
+        /// Read the properties and relationships of a credentialUserRegistrationsSummary object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/managedtenants-credentialuserregistrationssummary-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUser
             return requestInfo;
         }
         /// <summary>
-        /// Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
+        /// Read the properties and relationships of a credentialUserRegistrationsSummary object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +182,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUser
             }
         }
         /// <summary>
-        /// Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
+        /// Read the properties and relationships of a credentialUserRegistrationsSummary object.
         /// </summary>
         public class CredentialUserRegistrationsSummaryItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -74,7 +74,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Items.Item {
         public ListItemItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/list/items/{listItem%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property items for drives
+        /// Removes an item from a [list][].
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/listitem-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +106,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Items.Item {
             return new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(PathParameters, RequestAdapter, endDateTime, interval, startDateTime);
         }
         /// <summary>
-        /// All items contained in the list.
+        /// Returns the metadata for an [item][] in a [list][].
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/listitem-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +147,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Items.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ListItem>(requestInfo, Microsoft.Graph.Beta.Models.ListItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property items for drives
+        /// Removes an item from a [list][].
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -169,7 +171,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Items.Item {
             return requestInfo;
         }
         /// <summary>
-        /// All items contained in the list.
+        /// Returns the metadata for an [item][] in a [list][].
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -239,7 +241,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Items.Item {
             }
         }
         /// <summary>
-        /// All items contained in the list.
+        /// Returns the metadata for an [item][] in a [list][].
         /// </summary>
         public class ListItemItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

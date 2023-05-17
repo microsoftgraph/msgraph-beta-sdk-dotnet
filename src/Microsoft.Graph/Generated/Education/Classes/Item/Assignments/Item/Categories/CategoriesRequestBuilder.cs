@@ -50,7 +50,8 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Categorie
         public CategoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/categories{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
+        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,7 +91,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Categorie
             return await RequestAdapter.SendAsync<EducationCategory>(requestInfo, EducationCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
+        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +145,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Categorie
             return requestInfo;
         }
         /// <summary>
-        /// When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
+        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
         /// </summary>
         public class CategoriesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class OnTokenIssuanceStartListener : AuthenticationEventListener, IParsable {
-        /// <summary>The handler property</summary>
+        /// <summary>The handler to invoke when conditions are met for this onTokenIssuanceStartListener.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public OnTokenIssuanceStartHandler? Handler {

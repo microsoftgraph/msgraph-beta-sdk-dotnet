@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions
         public SupportedRegionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/supportedRegions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Cloud PC supported regions.
+        /// List the supported regions that are available for creating Cloud PC connections.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/virtualendpoint-list-supportedregions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions
             return await RequestAdapter.SendAsync<CloudPcSupportedRegion>(requestInfo, CloudPcSupportedRegion.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Cloud PC supported regions.
+        /// List the supported regions that are available for creating Cloud PC connections.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions
             return requestInfo;
         }
         /// <summary>
-        /// Cloud PC supported regions.
+        /// List the supported regions that are available for creating Cloud PC connections.
         /// </summary>
         public class SupportedRegionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

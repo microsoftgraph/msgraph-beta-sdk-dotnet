@@ -52,7 +52,8 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List of existing publishedResource objects. Read-only. Nullable.
+        /// Retrieve the properties and relationships of publishedResource object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/publishedresource-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -71,7 +72,8 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
             return await RequestAdapter.SendAsync<PublishedResource>(requestInfo, PublishedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property publishedResources in onPremisesPublishingProfiles
+        /// Update the properties of publishedresource  publishedResource object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/publishedresource-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -116,7 +118,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
             return requestInfo;
         }
         /// <summary>
-        /// List of existing publishedResource objects. Read-only. Nullable.
+        /// Retrieve the properties and relationships of publishedResource object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +144,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property publishedResources in onPremisesPublishingProfiles
+        /// Update the properties of publishedresource  publishedResource object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +188,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
             }
         }
         /// <summary>
-        /// List of existing publishedResource objects. Read-only. Nullable.
+        /// Retrieve the properties and relationships of publishedResource object.
         /// </summary>
         public class PublishedResourceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

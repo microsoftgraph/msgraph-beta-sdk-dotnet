@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.Applications.Item.TokenLifetimePolicies.Item.Ref 
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/tokenLifetimePolicies/{tokenLifetimePolicy%2Did}/$ref{?%40id*}", rawUrl) {
         }
         /// <summary>
-        /// Delete ref of navigation property tokenLifetimePolicies for applications
+        /// Remove a tokenLifetimePolicy from an application or servicePrincipal.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -46,7 +47,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.TokenLifetimePolicies.Item.Ref 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete ref of navigation property tokenLifetimePolicies for applications
+        /// Remove a tokenLifetimePolicy from an application or servicePrincipal.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +72,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.TokenLifetimePolicies.Item.Ref 
             return requestInfo;
         }
         /// <summary>
-        /// Delete ref of navigation property tokenLifetimePolicies for applications
+        /// Remove a tokenLifetimePolicy from an application or servicePrincipal.
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters {
             /// <summary>Delete Uri</summary>

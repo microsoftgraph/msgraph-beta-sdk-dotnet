@@ -77,7 +77,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
+        /// Read the properties and relationships of a noncustodialDataSource object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/ediscovery-noncustodialdatasource-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -141,7 +142,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             return requestInfo;
         }
         /// <summary>
-        /// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
+        /// Read the properties and relationships of a noncustodialDataSource object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -211,7 +212,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             }
         }
         /// <summary>
-        /// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
+        /// Read the properties and relationships of a noncustodialDataSource object.
         /// </summary>
         public class NoncustodialDataSourceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

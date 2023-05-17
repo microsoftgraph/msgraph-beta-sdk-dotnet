@@ -166,7 +166,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item {
         public DriveItemItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property items for drives
+        /// Delete a DriveItem by using its ID or path.Note that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/driveitem-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -224,7 +225,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DriveItem>(requestInfo, Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property items in drives
+        /// Update the metadata for a DriveItem by ID or path. You can also use update to move an item to another parent by updating the item&apos;s **parentReference** property.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -253,7 +255,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item {
             return new SearchWithQRequestBuilder(PathParameters, RequestAdapter, q);
         }
         /// <summary>
-        /// Delete navigation property items for drives
+        /// Delete a DriveItem by using its ID or path.Note that deleting items using this method will move the items to the recycle bin instead of permanently deleting the item.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -303,7 +305,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property items in drives
+        /// Update the metadata for a DriveItem by ID or path. You can also use update to move an item to another parent by updating the item&apos;s **parentReference** property.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

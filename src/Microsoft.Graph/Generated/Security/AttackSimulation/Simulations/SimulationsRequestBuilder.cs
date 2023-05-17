@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations {
         public SimulationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/attackSimulation/simulations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Represents an attack simulation training campaign in a tenant.
+        /// Get a list of attack simulation campaigns for a tenant.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/attacksimulationroot-list-simulations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations {
             return await RequestAdapter.SendAsync<SimulationCollectionResponse>(requestInfo, SimulationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to simulations for security
+        /// Create an attack simulation campaign for a tenant.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/attacksimulationroot-post-simulation?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations {
             return await RequestAdapter.SendAsync<Simulation>(requestInfo, Simulation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents an attack simulation training campaign in a tenant.
+        /// Get a list of attack simulation campaigns for a tenant.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to simulations for security
+        /// Create an attack simulation campaign for a tenant.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations {
             return requestInfo;
         }
         /// <summary>
-        /// Represents an attack simulation training campaign in a tenant.
+        /// Get a list of attack simulation campaigns for a tenant.
         /// </summary>
         public class SimulationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

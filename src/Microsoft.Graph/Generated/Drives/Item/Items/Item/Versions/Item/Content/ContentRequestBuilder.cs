@@ -29,6 +29,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Versions.Item.Content {
         }
         /// <summary>
         /// Get content for the navigation property versions from drives
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/driveitem-list-versions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

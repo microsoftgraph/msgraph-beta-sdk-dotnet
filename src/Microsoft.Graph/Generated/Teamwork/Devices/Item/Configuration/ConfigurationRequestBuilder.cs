@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Configuration {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The configuration properties of the device.
+        /// Get the configuration details of a Microsoft Teams-enabled device, including software versions, peripheral device configuration (for example, camera, display, microphone, and speaker), hardware configuration, and Microsoft Teams client configuration.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/teamworkdeviceconfiguration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Configuration {
             return requestInfo;
         }
         /// <summary>
-        /// The configuration properties of the device.
+        /// Get the configuration details of a Microsoft Teams-enabled device, including software versions, peripheral device configuration (for example, camera, display, microphone, and speaker), hardware configuration, and Microsoft Teams client configuration.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +182,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Configuration {
             }
         }
         /// <summary>
-        /// The configuration properties of the device.
+        /// Get the configuration details of a Microsoft Teams-enabled device, including software versions, peripheral device configuration (for example, camera, display, microphone, and speaker), hardware configuration, and Microsoft Teams client configuration.
         /// </summary>
         public class ConfigurationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

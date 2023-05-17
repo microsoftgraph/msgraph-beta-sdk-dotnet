@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.AudioRoutingGroups.Item {
         public AudioRoutingGroupItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/calls/{call%2Did}/audioRoutingGroups/{audioRoutingGroup%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property audioRoutingGroups for app
+        /// Delete the specified audioRoutingGroup.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/audioroutinggroup-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.AudioRoutingGroups.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get audioRoutingGroups from app
+        /// Retrieve the properties and relationships of an audioRoutingGroup object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/audioroutinggroup-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,8 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.AudioRoutingGroups.Item {
             return await RequestAdapter.SendAsync<AudioRoutingGroup>(requestInfo, AudioRoutingGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property audioRoutingGroups in app
+        /// Modify sources and receivers of an audioRoutingGroup.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/audioroutinggroup-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +90,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.AudioRoutingGroups.Item {
             return await RequestAdapter.SendAsync<AudioRoutingGroup>(requestInfo, AudioRoutingGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property audioRoutingGroups for app
+        /// Delete the specified audioRoutingGroup.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.AudioRoutingGroups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get audioRoutingGroups from app
+        /// Retrieve the properties and relationships of an audioRoutingGroup object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +140,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.AudioRoutingGroups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property audioRoutingGroups in app
+        /// Modify sources and receivers of an audioRoutingGroup.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +184,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.AudioRoutingGroups.Item {
             }
         }
         /// <summary>
-        /// Get audioRoutingGroups from app
+        /// Retrieve the properties and relationships of an audioRoutingGroup object.
         /// </summary>
         public class AudioRoutingGroupItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

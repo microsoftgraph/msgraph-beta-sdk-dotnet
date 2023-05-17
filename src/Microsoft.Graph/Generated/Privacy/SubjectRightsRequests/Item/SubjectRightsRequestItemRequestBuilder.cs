@@ -77,7 +77,8 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get subjectRightsRequests from privacy
+        /// Read the properties and relationships of a subjectRightsRequest object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/subjectrightsrequest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -96,7 +97,8 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item {
             return await RequestAdapter.SendAsync<SubjectRightsRequest>(requestInfo, SubjectRightsRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property subjectRightsRequests in privacy
+        /// Update the properties of a subjectRightsRequest object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/subjectrightsrequest-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -141,7 +143,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get subjectRightsRequests from privacy
+        /// Read the properties and relationships of a subjectRightsRequest object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,7 +169,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property subjectRightsRequests in privacy
+        /// Update the properties of a subjectRightsRequest object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -211,7 +213,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item {
             }
         }
         /// <summary>
-        /// Get subjectRightsRequests from privacy
+        /// Read the properties and relationships of a subjectRightsRequest object.
         /// </summary>
         public class SubjectRightsRequestItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

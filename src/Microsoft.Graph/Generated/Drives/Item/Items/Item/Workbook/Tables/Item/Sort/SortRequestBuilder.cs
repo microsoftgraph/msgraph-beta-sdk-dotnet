@@ -62,7 +62,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Sort 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents the sorting for the table. Read-only.
+        /// Retrieve the properties and relationships of tablesort object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/tablesort-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +127,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Sort 
             return requestInfo;
         }
         /// <summary>
-        /// Represents the sorting for the table. Read-only.
+        /// Retrieve the properties and relationships of tablesort object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -196,7 +197,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Sort 
             }
         }
         /// <summary>
-        /// Represents the sorting for the table. Read-only.
+        /// Retrieve the properties and relationships of tablesort object.
         /// </summary>
         public class SortRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

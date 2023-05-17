@@ -52,7 +52,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The customer who has a delegated admin relationship with a Microsoft partner.
+        /// Read the properties of a delegatedAdminCustomer object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/delegatedadmincustomer-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +117,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item 
             return requestInfo;
         }
         /// <summary>
-        /// The customer who has a delegated admin relationship with a Microsoft partner.
+        /// Read the properties of a delegatedAdminCustomer object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +187,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item 
             }
         }
         /// <summary>
-        /// The customer who has a delegated admin relationship with a Microsoft partner.
+        /// Read the properties of a delegatedAdminCustomer object.
         /// </summary>
         public class DelegatedAdminCustomerItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

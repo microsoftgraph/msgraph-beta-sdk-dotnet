@@ -825,6 +825,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("interests", value); }
         }
 #endif
+        /// <summary>Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).</summary>
+        public bool? IsLicenseReconciliationNeeded {
+            get { return BackingStore?.Get<bool?>("isLicenseReconciliationNeeded"); }
+            set { BackingStore?.Set("isLicenseReconciliationNeeded", value); }
+        }
         /// <summary>The isManagementRestricted property</summary>
         public bool? IsManagementRestricted {
             get { return BackingStore?.Get<bool?>("isManagementRestricted"); }
@@ -1681,7 +1686,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("securityIdentifier", value); }
         }
 #endif
-        /// <summary>The serviceProvisioningErrors property</summary>
+        /// <summary>Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a user object .  Supports $filter (eq, not, for isResolved and serviceInstance).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ServiceProvisioningError>? ServiceProvisioningErrors {
@@ -1997,6 +2002,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"informationProtection", n => { InformationProtection = n.GetObjectValue<Microsoft.Graph.Beta.Models.InformationProtection>(Microsoft.Graph.Beta.Models.InformationProtection.CreateFromDiscriminatorValue); } },
                 {"insights", n => { Insights = n.GetObjectValue<ItemInsights>(ItemInsights.CreateFromDiscriminatorValue); } },
                 {"interests", n => { Interests = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"isLicenseReconciliationNeeded", n => { IsLicenseReconciliationNeeded = n.GetBoolValue(); } },
                 {"isManagementRestricted", n => { IsManagementRestricted = n.GetBoolValue(); } },
                 {"isResourceAccount", n => { IsResourceAccount = n.GetBoolValue(); } },
                 {"jobTitle", n => { JobTitle = n.GetStringValue(); } },
@@ -2152,6 +2158,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.InformationProtection>("informationProtection", InformationProtection);
             writer.WriteObjectValue<ItemInsights>("insights", Insights);
             writer.WriteCollectionOfPrimitiveValues<string>("interests", Interests);
+            writer.WriteBoolValue("isLicenseReconciliationNeeded", IsLicenseReconciliationNeeded);
             writer.WriteBoolValue("isManagementRestricted", IsManagementRestricted);
             writer.WriteBoolValue("isResourceAccount", IsResourceAccount);
             writer.WriteStringValue("jobTitle", JobTitle);

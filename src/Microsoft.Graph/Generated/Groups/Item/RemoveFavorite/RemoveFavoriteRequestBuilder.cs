@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.RemoveFavorite {
         public RemoveFavoriteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/removeFavorite", rawUrl) {
         }
         /// <summary>
-        /// Invoke action removeFavorite
+        /// Remove the group from the list of the current user&apos;s favorite groups. Supported for Microsoft 365 groups only.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/group-removefavorite?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -46,7 +47,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.RemoveFavorite {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action removeFavorite
+        /// Remove the group from the list of the current user&apos;s favorite groups. Supported for Microsoft 365 groups only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

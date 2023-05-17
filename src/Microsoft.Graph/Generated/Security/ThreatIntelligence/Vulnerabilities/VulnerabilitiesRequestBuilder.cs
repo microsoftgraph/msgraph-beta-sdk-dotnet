@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Vulnerabilities {
         public VulnerabilitiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/vulnerabilities{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve details about microsoft.graph.security.vulnerabilities.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a vulnerability object.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Vulnerabilities {
             return await RequestAdapter.SendAsync<Vulnerability>(requestInfo, Vulnerability.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve details about microsoft.graph.security.vulnerabilities.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a vulnerability object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Vulnerabilities {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve details about microsoft.graph.security.vulnerabilities.Note: List retrieval is not yet supported.
+        /// Read the properties and relationships of a vulnerability object.
         /// </summary>
         public class VulnerabilitiesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

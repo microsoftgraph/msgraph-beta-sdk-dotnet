@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreatSubmissionPo
         public EmailThreatSubmissionPoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatSubmission/emailThreatSubmissionPolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get emailThreatSubmissionPolicies from security
+        /// Get a list of the emailThreatSubmissionPolicy objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-emailthreatsubmissionpolicy-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreatSubmissionPo
             return await RequestAdapter.SendAsync<EmailThreatSubmissionPolicy>(requestInfo, EmailThreatSubmissionPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get emailThreatSubmissionPolicies from security
+        /// Get a list of the emailThreatSubmissionPolicy objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreatSubmissionPo
             return requestInfo;
         }
         /// <summary>
-        /// Get emailThreatSubmissionPolicies from security
+        /// Get a list of the emailThreatSubmissionPolicy objects and their properties.
         /// </summary>
         public class EmailThreatSubmissionPoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

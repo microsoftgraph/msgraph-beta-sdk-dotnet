@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
         public DeploymentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/windows/updates/deployments/{deployment%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property deployments for admin
+        /// Delete a deployment object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/windowsupdates-deployment-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -52,7 +53,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Deployments created using the deployment service.
+        /// Read the properties and relationships of a deployment object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/windowsupdates-deployment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -71,7 +73,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
             return await RequestAdapter.SendAsync<Deployment>(requestInfo, Deployment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property deployments in admin
+        /// Update the properties of a deployment object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/windowsupdates-deployment-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +95,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
             return await RequestAdapter.SendAsync<Deployment>(requestInfo, Deployment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property deployments for admin
+        /// Delete a deployment object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +119,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Deployments created using the deployment service.
+        /// Read the properties and relationships of a deployment object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +145,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property deployments in admin
+        /// Update the properties of a deployment object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +189,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
             }
         }
         /// <summary>
-        /// Deployments created using the deployment service.
+        /// Read the properties and relationships of a deployment object.
         /// </summary>
         public class DeploymentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

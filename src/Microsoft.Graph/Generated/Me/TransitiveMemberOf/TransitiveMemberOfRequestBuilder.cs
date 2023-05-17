@@ -51,6 +51,7 @@ namespace Microsoft.Graph.Beta.Me.TransitiveMemberOf {
         }
         /// <summary>
         /// The groups, including nested groups, and directory roles that a user is a member of. Nullable.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

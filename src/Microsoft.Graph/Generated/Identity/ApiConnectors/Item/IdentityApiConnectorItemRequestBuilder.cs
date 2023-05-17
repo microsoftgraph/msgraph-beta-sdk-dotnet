@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item {
         public IdentityApiConnectorItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/apiConnectors/{identityApiConnector%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property apiConnectors for identity
+        /// Deletes an identityApiConnector object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identityapiconnector-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -52,7 +53,8 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents entry point for API connectors.
+        /// Read the properties of an identityApiConnector object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identityapiconnector-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -71,7 +73,8 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item {
             return await RequestAdapter.SendAsync<IdentityApiConnector>(requestInfo, IdentityApiConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property apiConnectors in identity
+        /// Update the properties of an identityApiConnector object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identityapiconnector-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +95,7 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item {
             return await RequestAdapter.SendAsync<IdentityApiConnector>(requestInfo, IdentityApiConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property apiConnectors for identity
+        /// Deletes an identityApiConnector object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +119,7 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents entry point for API connectors.
+        /// Read the properties of an identityApiConnector object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +145,7 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property apiConnectors in identity
+        /// Update the properties of an identityApiConnector object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +189,7 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item {
             }
         }
         /// <summary>
-        /// Represents entry point for API connectors.
+        /// Read the properties of an identityApiConnector object.
         /// </summary>
         public class IdentityApiConnectorItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

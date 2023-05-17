@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Analytics;
@@ -39,20 +40,16 @@ public static class DriveItemRequestBuilderExtensions
                 path = string.Format("/{0}", path);
             }
         }
-
+        
         var requestInformation = rootRequestBuilder.ToGetRequestInformation();
-        var requestAdapter = rootRequestBuilder.GetRequestAdapter();
-        var requestUrl = requestInformation.URI.OriginalString;
-        
-        // Encode the path in accordance with the one drive spec 
+        // Encode the path in accordance with the one drive spec
         // https://docs.microsoft.com/en-us/onedrive/developer/rest-api/concepts/addressing-driveitems
-        UriBuilder builder = new UriBuilder(requestUrl);
-        builder.Path += string.Format(":{0}:", path);
-        
-
-        return new CustomDriveItemItemRequestBuilder(builder.Uri.OriginalString, requestAdapter);
+        UriBuilder builder = new UriBuilder(requestInformation.URI.OriginalString);
+        builder.Path += $":{path}:";
+        var parameter = builder.Uri.OriginalString.Split(new []{':'},StringSplitOptions.RemoveEmptyEntries).Last();
+        return new CustomDriveItemItemRequestBuilder(rootRequestBuilder.GetPathParameters(),rootRequestBuilder.GetRequestAdapter(), rootRequestBuilder.GetUrlTemplate().Replace("root",$"root:{parameter}:"));
     }
-    
+
     /// <summary>
     /// Gets drive item request builder for the specified drive item path.
     /// <returns>The drive item request builder.</returns>
@@ -66,119 +63,161 @@ public static class DriveItemRequestBuilderExtensions
                 path = string.Format("/{0}", path);
             }
         }
-
+        
         var requestInformation = rootRequestBuilder.ToGetRequestInformation();
-        var requestAdapter = rootRequestBuilder.GetRequestAdapter();
-        var requestUrl = requestInformation.URI.OriginalString;
-        
-        // Encode the path in accordance with the one drive spec 
+        // Encode the path in accordance with the one drive spec
         // https://docs.microsoft.com/en-us/onedrive/developer/rest-api/concepts/addressing-driveitems
-        UriBuilder builder = new UriBuilder(requestUrl);
-        builder.Path += string.Format(":{0}:", path);
-        
-
-        return new CustomDriveItemItemRequestBuilder(builder.Uri.OriginalString, requestAdapter);
+        UriBuilder builder = new UriBuilder(requestInformation.URI.OriginalString);
+        builder.Path += $":{path}:";
+        var parameter = builder.Uri.OriginalString.Split(new []{':'},StringSplitOptions.RemoveEmptyEntries).Last();
+        return new CustomDriveItemItemRequestBuilder(rootRequestBuilder.GetPathParameters(), rootRequestBuilder.GetRequestAdapter(),rootRequestBuilder.GetUrlTemplate().Replace("{driveItem%2Did}",$"{{driveItem%2Did}}:{parameter}:"));
     }
-    
+
     private static IRequestAdapter GetRequestAdapter(this object obj) {
         var field = obj.GetType()
-                        .BaseType
+                        .BaseType!
                         .GetFields(BindingFlags.NonPublic | BindingFlags.Instance)
-                        .FirstOrDefault( field => field.FieldType.Equals(typeof(IRequestAdapter)));
+                        .FirstOrDefault( field => field.FieldType == typeof(IRequestAdapter));
         return (IRequestAdapter)field?.GetValue(obj);
+    }
+    private static Dictionary<string, object> GetPathParameters(this object obj) {
+        var field = obj.GetType()
+            .BaseType!
+            .GetFields(BindingFlags.NonPublic | BindingFlags.Instance)
+            .FirstOrDefault( field => field.FieldType == typeof(Dictionary<string, object>));
+        return (Dictionary<string, object>)field?.GetValue(obj);
+    }
+    private static string GetUrlTemplate(this object obj) {
+        var field = obj.GetType()
+            .BaseType!
+            .GetFields(BindingFlags.NonPublic | BindingFlags.Instance)
+            .FirstOrDefault( field => field.FieldType == typeof(string));
+        return (string)field?.GetValue(obj);
+    }
+    internal static T UpdateUrlTemplate<T>(this T obj, string baseTemplate) where T : BaseRequestBuilder{
+        var field = obj.GetType()
+            .BaseType!
+            .GetFields(BindingFlags.NonPublic | BindingFlags.Instance)
+            .FirstOrDefault( field => field.FieldType == typeof(string));
+        var currentTemplate = (string)field?.GetValue(obj);
+        var templateSuffix = currentTemplate.Substring(currentTemplate.LastIndexOf('/'));
+        var originalPrefix = baseTemplate.Substring(0,baseTemplate.LastIndexOf(':')+1);
+        var updatedTemplate = originalPrefix +templateSuffix;
+        field?.SetValue(obj,updatedTemplate);
+        return obj;
     }
 }
 
 public class CustomDriveItemItemRequestBuilder : Microsoft.Graph.Beta.Drives.Item.Items.Item.DriveItemItemRequestBuilder
 {
-    private readonly string _rawUrl; 
     /// <summary>
     /// Instantiates a new DriveItemItemRequestBuilder and sets the default values.
     /// </summary>
-    /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+    /// <param name="pathParameters">The path parameters to use for the request builder.</param>
     /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-    public CustomDriveItemItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter): base(rawUrl,requestAdapter)
+    /// <param name="urlTemplate">The UrlTemplate to use to execute the requests.</param>
+    public CustomDriveItemItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string urlTemplate): base(pathParameters,requestAdapter)
     {
-        if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
+        _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
         _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-        this._rawUrl = rawUrl;
+        this.PathParameters = pathParameters;
         this.RequestAdapter = requestAdapter;
+        this.UrlTemplate = urlTemplate;
     }
-    
+
     /// <summary>Provides operations to manage the analytics property of the microsoft.graph.driveItem entity.</summary>
-    public new AnalyticsRequestBuilder Analytics { get =>
-        new AnalyticsRequestBuilder(this._rawUrl + "/analytics", RequestAdapter);
+    public new AnalyticsRequestBuilder Analytics
+    {
+        get => new AnalyticsRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
     /// <summary>Provides operations to call the checkin method.</summary>
-    public new CheckinRequestBuilder Checkin { get =>
-        new CheckinRequestBuilder(this._rawUrl + "/microsoft.graph.checkin", RequestAdapter);
+    public new CheckinRequestBuilder Checkin
+    { 
+        get => new CheckinRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
     /// <summary>Provides operations to call the checkout method.</summary>
-    public new CheckoutRequestBuilder Checkout { get =>
-        new CheckoutRequestBuilder(this._rawUrl + "/microsoft.graph.checkout", RequestAdapter);
+    public new CheckoutRequestBuilder Checkout
+    { 
+        get => new CheckoutRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
+
     /// <summary>Provides operations to manage the children property of the microsoft.graph.driveItem entity.</summary>
-    public new ChildrenRequestBuilder Children { get =>
-        new ChildrenRequestBuilder(this._rawUrl + "/children", RequestAdapter);
+    public new ChildrenRequestBuilder Children 
+    {
+        get => new ChildrenRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
+
     /// <summary>Provides operations to manage the media for the drive entity.</summary>
-    public new ContentRequestBuilder Content { get =>
-        new ContentRequestBuilder(this._rawUrl + "/content", RequestAdapter);
+    public new ContentRequestBuilder Content 
+    { 
+        get => new ContentRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
     /// <summary>Provides operations to call the copy method.</summary>
-    public new CopyRequestBuilder Copy { get =>
-        new CopyRequestBuilder(this._rawUrl + "/microsoft.graph.copy", RequestAdapter);
+    public new CopyRequestBuilder Copy
+    { 
+        get => new CopyRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
     /// <summary>Provides operations to call the createLink method.</summary>
-    public new CreateLinkRequestBuilder CreateLink { get =>
-        new CreateLinkRequestBuilder(this._rawUrl + "/microsoft.graph.createLink", RequestAdapter);
+    public new CreateLinkRequestBuilder CreateLink
+    { 
+        get => new CreateLinkRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
     /// <summary>Provides operations to call the createUploadSession method.</summary>
-    public new CreateUploadSessionRequestBuilder CreateUploadSession { get =>
-        new CreateUploadSessionRequestBuilder(this._rawUrl+"/microsoft.graph.createUploadSession" , RequestAdapter);
+    public new CreateUploadSessionRequestBuilder CreateUploadSession
+    {
+        get => new CreateUploadSessionRequestBuilder(PathParameters , RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
     /// <summary>Provides operations to call the follow method.</summary>
-    public new FollowRequestBuilder Follow { get =>
-        new FollowRequestBuilder(this._rawUrl + "/microsoft.graph.follow", RequestAdapter);
+    public new FollowRequestBuilder Follow
+    { 
+        get => new FollowRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
     /// <summary>Provides operations to call the invite method.</summary>
-    public new InviteRequestBuilder Invite { get =>
-        new InviteRequestBuilder(this._rawUrl + "/microsoft.graph.invite", RequestAdapter);
+    public new InviteRequestBuilder Invite
+    { 
+        get => new InviteRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
     /// <summary>Provides operations to manage the listItem property of the microsoft.graph.driveItem entity.</summary>
-    public new ListItemRequestBuilder ListItem { get =>
-        new ListItemRequestBuilder(this._rawUrl + "/listItem", RequestAdapter);
+    public new ListItemRequestBuilder ListItem { 
+        get => new ListItemRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
     /// <summary>Provides operations to manage the permissions property of the microsoft.graph.driveItem entity.</summary>
-    public new PermissionsRequestBuilder Permissions { get =>
-        new PermissionsRequestBuilder(this._rawUrl+"/permissions", RequestAdapter);
+    public new PermissionsRequestBuilder Permissions { 
+        get => new PermissionsRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
     /// <summary>Provides operations to call the preview method.</summary>
-    public new PreviewRequestBuilder Preview { get =>
-        new PreviewRequestBuilder(this._rawUrl+"/microsoft.graph.preview", RequestAdapter);
+    public new PreviewRequestBuilder Preview
+    { 
+        get => new PreviewRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
     /// <summary>Provides operations to call the restore method.</summary>
-    public new RestoreRequestBuilder Restore { get =>
-        new RestoreRequestBuilder(this._rawUrl+"/microsoft.graph.restore", RequestAdapter);
+    public new RestoreRequestBuilder Restore
+    { 
+        get => new RestoreRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
     /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.driveItem entity.</summary>
-    public new SubscriptionsRequestBuilder Subscriptions { get =>
-        new SubscriptionsRequestBuilder(this._rawUrl+"/subscriptions", RequestAdapter);
+    public new SubscriptionsRequestBuilder Subscriptions 
+    { 
+        get => new SubscriptionsRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
     /// <summary>Provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.</summary>
-    public new ThumbnailsRequestBuilder Thumbnails { get =>
-        new ThumbnailsRequestBuilder(this._rawUrl+"/thumbnails", RequestAdapter);
+    public new ThumbnailsRequestBuilder Thumbnails 
+    { 
+        get => new ThumbnailsRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
     /// <summary>Provides operations to call the unfollow method.</summary>
-    public new UnfollowRequestBuilder Unfollow { get =>
-        new UnfollowRequestBuilder(this._rawUrl+"/microsoft.graph.unfollow", RequestAdapter);
+    public new UnfollowRequestBuilder Unfollow
+    { 
+        get => new UnfollowRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
     /// <summary>Provides operations to call the validatePermission method.</summary>
-    public new ValidatePermissionRequestBuilder ValidatePermission { get =>
-        new ValidatePermissionRequestBuilder(this._rawUrl+"/microsoft.graph.validatePermission", RequestAdapter);
+    public new ValidatePermissionRequestBuilder ValidatePermission
+    { 
+        get => new ValidatePermissionRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
     /// <summary>Provides operations to manage the versions property of the microsoft.graph.driveItem entity.</summary>
-    public new VersionsRequestBuilder Versions { get =>
-        new VersionsRequestBuilder(this._rawUrl+"/versions", RequestAdapter);
+    public new VersionsRequestBuilder Versions 
+    {
+        get => new VersionsRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
 }

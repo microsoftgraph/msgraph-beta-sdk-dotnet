@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationEventListener : Entity, IParsable {
-        /// <summary>The authenticationEventsFlowId property</summary>
+        /// <summary>The identifier of the authenticationEventsFlow object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthenticationEventsFlowId {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationEventsFlowId", value); }
         }
 #endif
-        /// <summary>The conditions property</summary>
+        /// <summary>The conditions on which this authenticationEventListener should trigger.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AuthenticationConditions? Conditions {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("conditions", value); }
         }
 #endif
-        /// <summary>The priority property</summary>
+        /// <summary>The priority of this handler. Between 0 (lower priority) and 1000 (higher priority).</summary>
         public int? Priority {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }

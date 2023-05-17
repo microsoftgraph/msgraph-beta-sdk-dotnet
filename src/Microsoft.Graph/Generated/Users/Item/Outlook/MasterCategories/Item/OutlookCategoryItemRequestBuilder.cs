@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories.Item {
         public OutlookCategoryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/masterCategories/{outlookCategory%2Did}{?%24select}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property masterCategories for users
+        /// Delete the specified outlookCategory object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/outlookcategory-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A list of categories defined for the user.
+        /// Get the properties and relationships of the specified outlookCategory object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/outlookcategory-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories.Item {
             return await RequestAdapter.SendAsync<OutlookCategory>(requestInfo, OutlookCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property masterCategories in users
+        /// Update the writable property, **color**, of the specified outlookCategory object. You cannot modify the **displayName** propertyonce you have created the category.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/outlookcategory-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +90,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories.Item {
             return await RequestAdapter.SendAsync<OutlookCategory>(requestInfo, OutlookCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property masterCategories for users
+        /// Delete the specified outlookCategory object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A list of categories defined for the user.
+        /// Get the properties and relationships of the specified outlookCategory object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +140,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property masterCategories in users
+        /// Update the writable property, **color**, of the specified outlookCategory object. You cannot modify the **displayName** propertyonce you have created the category.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +184,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories.Item {
             }
         }
         /// <summary>
-        /// A list of categories defined for the user.
+        /// Get the properties and relationships of the specified outlookCategory object.
         /// </summary>
         public class OutlookCategoryItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls {
         public CallsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/calls{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get calls from communications
+        /// Retrieve the properties and relationships of a call object.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -64,7 +64,8 @@ namespace Microsoft.Graph.Beta.Communications.Calls {
             return await RequestAdapter.SendAsync<CallCollectionResponse>(requestInfo, CallCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to calls for communications
+        /// Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/application-post-calls?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +86,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls {
             return await RequestAdapter.SendAsync<Call>(requestInfo, Call.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get calls from communications
+        /// Retrieve the properties and relationships of a call object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to calls for communications
+        /// Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +140,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls {
             return requestInfo;
         }
         /// <summary>
-        /// Get calls from communications
+        /// Retrieve the properties and relationships of a call object.
         /// </summary>
         public class CallsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

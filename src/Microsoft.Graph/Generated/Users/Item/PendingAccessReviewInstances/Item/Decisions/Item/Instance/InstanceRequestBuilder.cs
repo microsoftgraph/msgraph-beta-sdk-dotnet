@@ -9,6 +9,7 @@ using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decision
 using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.SendReminder;
 using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stages;
 using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.Stop;
+using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Decisions.Item.Instance.StopApplyDecisions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -57,6 +58,10 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Deci
         /// <summary>Provides operations to call the stop method.</summary>
         public StopRequestBuilder Stop { get =>
             new StopRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the stopApplyDecisions method.</summary>
+        public StopApplyDecisionsRequestBuilder StopApplyDecisions { get =>
+            new StopApplyDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new InstanceRequestBuilder and sets the default values.

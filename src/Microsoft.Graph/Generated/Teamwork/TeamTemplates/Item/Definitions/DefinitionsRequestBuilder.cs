@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions {
         public DefinitionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/teamTemplates/{teamTemplate%2Did}/definitions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get definitions from teamwork
+        /// Read the properties and relationships of a teamTemplateDefinition object.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TeamTemplateDefinition>(requestInfo, Microsoft.Graph.Beta.Models.TeamTemplateDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get definitions from teamwork
+        /// Read the properties and relationships of a teamTemplateDefinition object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions {
             return requestInfo;
         }
         /// <summary>
-        /// Get definitions from teamwork
+        /// Read the properties and relationships of a teamTemplateDefinition object.
         /// </summary>
         public class DefinitionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

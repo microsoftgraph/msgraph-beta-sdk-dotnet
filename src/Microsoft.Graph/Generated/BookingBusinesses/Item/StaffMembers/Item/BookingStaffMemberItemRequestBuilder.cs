@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.StaffMembers.Item {
         public BookingStaffMemberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/staffMembers/{bookingStaffMember%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property staffMembers for bookingBusinesses
+        /// Delete a staff member in the specified bookingbusiness.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bookingstaffmember-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.StaffMembers.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// All the staff members that provide services in this business. Read-only. Nullable.
+        /// Get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bookingstaffmember-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,8 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.StaffMembers.Item {
             return await RequestAdapter.SendAsync<BookingStaffMember>(requestInfo, BookingStaffMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property staffMembers in bookingBusinesses
+        /// Update the properties of a bookingStaffMember in the specified bookingBusiness.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bookingstaffmember-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +90,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.StaffMembers.Item {
             return await RequestAdapter.SendAsync<BookingStaffMember>(requestInfo, BookingStaffMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property staffMembers for bookingBusinesses
+        /// Delete a staff member in the specified bookingbusiness.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.StaffMembers.Item {
             return requestInfo;
         }
         /// <summary>
-        /// All the staff members that provide services in this business. Read-only. Nullable.
+        /// Get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +140,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.StaffMembers.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property staffMembers in bookingBusinesses
+        /// Update the properties of a bookingStaffMember in the specified bookingBusiness.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +184,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.StaffMembers.Item {
             }
         }
         /// <summary>
-        /// All the staff members that provide services in this business. Read-only. Nullable.
+        /// Get the properties and relationships of a bookingStaffMember in the specified bookingBusiness.
         /// </summary>
         public class BookingStaffMemberItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

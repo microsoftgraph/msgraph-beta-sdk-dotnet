@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/owners/{directoryObject%2Did}/$ref{?%40id*}", rawUrl) {
         }
         /// <summary>
-        /// Delete ref of navigation property owners for servicePrincipals
+        /// Remove an owner from a servicePrincipal object. As a recommended best practice, service principals should have at least two owners.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -46,7 +47,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete ref of navigation property owners for servicePrincipals
+        /// Remove an owner from a servicePrincipal object. As a recommended best practice, service principals should have at least two owners.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +72,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Delete ref of navigation property owners for servicePrincipals
+        /// Remove an owner from a servicePrincipal object. As a recommended best practice, service principals should have at least two owners.
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters {
             /// <summary>Delete Uri</summary>

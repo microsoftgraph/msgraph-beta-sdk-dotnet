@@ -48,7 +48,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item {
         public TimeCardItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/schedule/timeCards/{timeCard%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property timeCards for groups
+        /// Delete a timeCard instance in a schedule.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timecard-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,7 +68,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get timeCards from groups
+        /// Get the properties and relationships of a timeCard object by ID.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timecard-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +88,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item {
             return await RequestAdapter.SendAsync<TimeCard>(requestInfo, TimeCard.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property timeCards in groups
+        /// Replace an existing timeCard with updated values.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timecard-replace?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +110,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item {
             return await RequestAdapter.SendAsync<TimeCard>(requestInfo, TimeCard.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property timeCards for groups
+        /// Delete a timeCard instance in a schedule.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -131,7 +134,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get timeCards from groups
+        /// Get the properties and relationships of a timeCard object by ID.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -157,7 +160,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property timeCards in groups
+        /// Replace an existing timeCard with updated values.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -201,7 +204,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item {
             }
         }
         /// <summary>
-        /// Get timeCards from groups
+        /// Get the properties and relationships of a timeCard object by ID.
         /// </summary>
         public class TimeCardItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

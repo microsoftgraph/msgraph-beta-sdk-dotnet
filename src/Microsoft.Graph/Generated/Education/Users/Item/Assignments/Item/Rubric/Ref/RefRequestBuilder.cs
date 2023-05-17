@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Rubric.Ref 
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/rubric/$ref", rawUrl) {
         }
         /// <summary>
-        /// Delete ref of navigation property rubric for education
+        /// Delete an educationRubric from an educationAssignment. This method does not delete the rubric itself and can only be performed by teachers.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignment-delete-rubric?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Rubric.Ref 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// When set, the grading rubric attached to this assignment.
+        /// Get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,8 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Rubric.Ref 
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the ref of navigation property rubric in education
+        /// Attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignment-put-rubric?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +90,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Rubric.Ref 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete ref of navigation property rubric for education
+        /// Delete an educationRubric from an educationAssignment. This method does not delete the rubric itself and can only be performed by teachers.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Rubric.Ref 
             return requestInfo;
         }
         /// <summary>
-        /// When set, the grading rubric attached to this assignment.
+        /// Get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -136,7 +139,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Rubric.Ref 
             return requestInfo;
         }
         /// <summary>
-        /// Update the ref of navigation property rubric in education
+        /// Attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

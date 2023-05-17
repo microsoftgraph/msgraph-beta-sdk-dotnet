@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.PlayPrompt {
         public PlayPromptRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}/playPrompt", rawUrl) {
         }
         /// <summary>
-        /// Invoke action playPrompt
+        /// Play a prompt in the call. For more information about how to handle operations, see commsOperation
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/call-playprompt?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.PlayPrompt {
             return await RequestAdapter.SendAsync<PlayPromptOperation>(requestInfo, PlayPromptOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action playPrompt
+        /// Play a prompt in the call. For more information about how to handle operations, see commsOperation
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

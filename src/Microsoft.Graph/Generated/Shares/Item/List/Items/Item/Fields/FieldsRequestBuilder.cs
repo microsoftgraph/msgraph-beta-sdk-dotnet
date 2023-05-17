@@ -66,7 +66,8 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Items.Item.Fields {
             return await RequestAdapter.SendAsync<FieldValueSet>(requestInfo, FieldValueSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property fields in shares
+        /// Update the properties on a **[listItem][]**.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/listitem-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -137,7 +138,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Items.Item.Fields {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property fields in shares
+        /// Update the properties on a **[listItem][]**.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

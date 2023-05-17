@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads {
         public ThreadsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}/threads{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+        /// Get all the threads in a group conversation.Note: You can also get all the threads of a group. 
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/conversation-list-threads?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads {
             return await RequestAdapter.SendAsync<ConversationThread>(requestInfo, ConversationThread.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+        /// Get all the threads in a group conversation.Note: You can also get all the threads of a group. 
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.
+        /// Get all the threads in a group conversation.Note: You can also get all the threads of a group. 
         /// </summary>
         public class ThreadsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

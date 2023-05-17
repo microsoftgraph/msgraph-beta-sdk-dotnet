@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.CanvasLayout.Ho
         public HorizontalSectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{sitePage%2Did}/canvasLayout/horizontalSections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Collection of horizontal sections on the SharePoint page.
+        /// Get a list of the horizontalSection objects and their properties. Sort by `id` in ascending order.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/horizontalsection-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.CanvasLayout.Ho
             return await RequestAdapter.SendAsync<HorizontalSection>(requestInfo, HorizontalSection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Collection of horizontal sections on the SharePoint page.
+        /// Get a list of the horizontalSection objects and their properties. Sort by `id` in ascending order.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.CanvasLayout.Ho
             return requestInfo;
         }
         /// <summary>
-        /// Collection of horizontal sections on the SharePoint page.
+        /// Get a list of the horizontalSection objects and their properties. Sort by `id` in ascending order.
         /// </summary>
         public class HorizontalSectionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

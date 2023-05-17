@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreatSubmissionPo
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get emailThreatSubmissionPolicies from security
+        /// Read the properties and relationships of an emailThreatSubmissionPolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-emailthreatsubmissionpolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreatSubmissionPo
             return requestInfo;
         }
         /// <summary>
-        /// Get emailThreatSubmissionPolicies from security
+        /// Read the properties and relationships of an emailThreatSubmissionPolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +182,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreatSubmissionPo
             }
         }
         /// <summary>
-        /// Get emailThreatSubmissionPolicies from security
+        /// Read the properties and relationships of an emailThreatSubmissionPolicy object.
         /// </summary>
         public class EmailThreatSubmissionPolicyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

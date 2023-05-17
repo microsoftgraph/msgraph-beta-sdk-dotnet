@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationGradingCategory : Entity, IParsable {
-        /// <summary>The displayName property</summary>
+        /// <summary>The name of the grading category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The percentageWeight property</summary>
+        /// <summary>The weight of the category; an integer between 0 and 100.</summary>
         public int? PercentageWeight {
             get { return BackingStore?.Get<int?>("percentageWeight"); }
             set { BackingStore?.Set("percentageWeight", value); }

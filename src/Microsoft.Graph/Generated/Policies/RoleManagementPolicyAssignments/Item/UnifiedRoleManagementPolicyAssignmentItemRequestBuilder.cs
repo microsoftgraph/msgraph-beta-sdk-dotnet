@@ -52,7 +52,8 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents the role management policy assignments.
+        /// Get the details of a role management policy assignment including the policy and rules associated with the Azure AD role.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicyassignment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +117,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents the role management policy assignments.
+        /// Get the details of a role management policy assignment including the policy and rules associated with the Azure AD role.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +187,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments.Item {
             }
         }
         /// <summary>
-        /// Represents the role management policy assignments.
+        /// Get the details of a role management policy assignment including the policy and rules associated with the Azure AD role.
         /// </summary>
         public class UnifiedRoleManagementPolicyAssignmentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

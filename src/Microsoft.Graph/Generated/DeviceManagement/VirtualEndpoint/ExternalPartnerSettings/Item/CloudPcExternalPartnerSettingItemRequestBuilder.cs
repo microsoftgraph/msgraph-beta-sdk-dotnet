@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The external partner settings on a Cloud PC.
+        /// Read the properties and relationships of a cloudPcExternalPartnerSetting object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/cloudpcexternalpartnersetting-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +67,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             return await RequestAdapter.SendAsync<CloudPcExternalPartnerSetting>(requestInfo, CloudPcExternalPartnerSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property externalPartnerSettings in deviceManagement
+        /// Update the properties of a cloudPcExternalPartnerSetting object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/cloudpcexternalpartnersetting-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             return requestInfo;
         }
         /// <summary>
-        /// The external partner settings on a Cloud PC.
+        /// Read the properties and relationships of a cloudPcExternalPartnerSetting object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +139,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property externalPartnerSettings in deviceManagement
+        /// Update the properties of a cloudPcExternalPartnerSetting object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +183,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             }
         }
         /// <summary>
-        /// The external partner settings on a Cloud PC.
+        /// Read the properties and relationships of a cloudPcExternalPartnerSetting object.
         /// </summary>
         public class CloudPcExternalPartnerSettingItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

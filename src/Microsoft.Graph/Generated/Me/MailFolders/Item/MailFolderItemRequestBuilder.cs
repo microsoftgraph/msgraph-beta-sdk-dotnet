@@ -58,7 +58,8 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
         public MailFolderItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/mailFolders/{mailFolder%2Did}{?includeHiddenFolders*,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property mailFolders for me
+        /// Delete the specified mailFolder. The folder can be a mailSearchFolder. You can specify a mail folder by its folder ID, or by its well-known folder name, if one exists.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/mailfolder-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,6 +79,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
         }
         /// <summary>
         /// The user&apos;s mail folders. Read-only. Nullable.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/mailfolder-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -96,7 +98,8 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
             return await RequestAdapter.SendAsync<MailFolder>(requestInfo, MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property mailFolders in me
+        /// Update the properties of mailFolder object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/mailfolder-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -117,7 +120,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
             return await RequestAdapter.SendAsync<MailFolder>(requestInfo, MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property mailFolders for me
+        /// Delete the specified mailFolder. The folder can be a mailSearchFolder. You can specify a mail folder by its folder ID, or by its well-known folder name, if one exists.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,7 +170,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property mailFolders in me
+        /// Update the properties of mailFolder object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards {
         public AwardsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/awards{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Represents the details of awards or honors associated with a person.
+        /// Retrieve a list of personAward objects from a user&apos;s profile.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/profile-list-awards?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards {
             return await RequestAdapter.SendAsync<PersonAwardCollectionResponse>(requestInfo, PersonAwardCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to awards for users
+        /// Create a new personAward object in a user&apos;s profile.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/profile-post-awards?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards {
             return await RequestAdapter.SendAsync<PersonAward>(requestInfo, PersonAward.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents the details of awards or honors associated with a person.
+        /// Retrieve a list of personAward objects from a user&apos;s profile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to awards for users
+        /// Create a new personAward object in a user&apos;s profile.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards {
             return requestInfo;
         }
         /// <summary>
-        /// Represents the details of awards or honors associated with a person.
+        /// Retrieve a list of personAward objects from a user&apos;s profile.
         /// </summary>
         public class AwardsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates {
         public TeamTemplatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/teamTemplates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The templates associated with a team.
+        /// Get the list of teamTemplate objects that are available for a tenant. 
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/teamwork-list-teamtemplates?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates {
             return await RequestAdapter.SendAsync<TeamTemplate>(requestInfo, TeamTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The templates associated with a team.
+        /// Get the list of teamTemplate objects that are available for a tenant. 
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates {
             return requestInfo;
         }
         /// <summary>
-        /// The templates associated with a team.
+        /// Get the list of teamTemplate objects that are available for a tenant. 
         /// </summary>
         public class TeamTemplatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

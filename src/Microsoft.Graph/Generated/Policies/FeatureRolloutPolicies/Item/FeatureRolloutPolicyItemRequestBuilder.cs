@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item {
         public FeatureRolloutPolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/featureRolloutPolicies/{featureRolloutPolicy%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property featureRolloutPolicies for policies
+        /// Delete a featureRolloutPolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/featurerolloutpolicy-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -52,7 +53,8 @@ namespace Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The feature rollout policy associated with a directory object.
+        /// Retrieve the properties and relationships of a featureRolloutPolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/featurerolloutpolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -71,7 +73,8 @@ namespace Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item {
             return await RequestAdapter.SendAsync<FeatureRolloutPolicy>(requestInfo, FeatureRolloutPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property featureRolloutPolicies in policies
+        /// Update the properties of featureRolloutPolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/featurerolloutpolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +95,7 @@ namespace Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item {
             return await RequestAdapter.SendAsync<FeatureRolloutPolicy>(requestInfo, FeatureRolloutPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property featureRolloutPolicies for policies
+        /// Delete a featureRolloutPolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +119,7 @@ namespace Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The feature rollout policy associated with a directory object.
+        /// Retrieve the properties and relationships of a featureRolloutPolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +145,7 @@ namespace Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property featureRolloutPolicies in policies
+        /// Update the properties of featureRolloutPolicy object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +189,7 @@ namespace Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item {
             }
         }
         /// <summary>
-        /// The feature rollout policy associated with a directory object.
+        /// Retrieve the properties and relationships of a featureRolloutPolicy object.
         /// </summary>
         public class FeatureRolloutPolicyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

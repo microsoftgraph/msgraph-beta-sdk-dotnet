@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies {
         public UpdatePoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// A collection of policies for approving the deployment of different content to an audience over time.
+        /// Get a list of updatePolicy objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/adminwindowsupdates-list-updatepolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies {
             return await RequestAdapter.SendAsync<UpdatePolicyCollectionResponse>(requestInfo, UpdatePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to updatePolicies for admin
+        /// Create a new updatePolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/adminwindowsupdates-post-updatepolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of policies for approving the deployment of different content to an audience over time.
+        /// Get a list of updatePolicy objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to updatePolicies for admin
+        /// Create a new updatePolicy object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of policies for approving the deployment of different content to an audience over time.
+        /// Get a list of updatePolicy objects and their properties.
         /// </summary>
         public class UpdatePoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

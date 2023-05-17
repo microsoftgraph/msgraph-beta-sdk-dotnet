@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
         public IndustryDataConnectorItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property dataConnectors for external
+        /// Delete an azureDataLakeConnector object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Set of connectors for importing data from source systems.
+        /// Read the properties and relationships of an industryDataConnector object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,7 +78,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
             return await RequestAdapter.SendAsync<IndustryDataConnector>(requestInfo, IndustryDataConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property dataConnectors in external
+        /// Update the properties of an industryDataConnector object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,7 +100,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
             return await RequestAdapter.SendAsync<IndustryDataConnector>(requestInfo, IndustryDataConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property dataConnectors for external
+        /// Delete an azureDataLakeConnector object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Set of connectors for importing data from source systems.
+        /// Read the properties and relationships of an industryDataConnector object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -147,7 +150,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property dataConnectors in external
+        /// Update the properties of an industryDataConnector object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +194,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
             }
         }
         /// <summary>
-        /// Set of connectors for importing data from source systems.
+        /// Read the properties and relationships of an industryDataConnector object.
         /// </summary>
         public class IndustryDataConnectorItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

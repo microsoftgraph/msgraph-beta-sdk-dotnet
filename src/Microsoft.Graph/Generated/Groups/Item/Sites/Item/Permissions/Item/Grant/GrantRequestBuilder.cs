@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Permissions.Item.Grant {
         public GrantRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/permissions/{permission%2Did}/grant", rawUrl) {
         }
         /// <summary>
-        /// Invoke action grant
+        /// Grant users access to a link represented by a [permission][].
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +49,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Permissions.Item.Grant {
             return await RequestAdapter.SendAsync<GrantResponse>(requestInfo, GrantResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action grant
+        /// Grant users access to a link represented by a [permission][].
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

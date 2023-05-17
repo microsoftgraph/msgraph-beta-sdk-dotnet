@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Teamwork.WorkforceIntegrations.Item {
         public WorkforceIntegrationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/workforceIntegrations/{workforceIntegration%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property workforceIntegrations for teamwork
+        /// Delete an instance of a workforceIntegration.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/workforceintegration-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Teamwork.WorkforceIntegrations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A workforce integration with shifts.
+        /// Retrieve the properties and relationships of a workforceintegration object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/workforceintegration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,8 @@ namespace Microsoft.Graph.Beta.Teamwork.WorkforceIntegrations.Item {
             return await RequestAdapter.SendAsync<WorkforceIntegration>(requestInfo, WorkforceIntegration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property workforceIntegrations in teamwork
+        /// Update the properties of a workforceintegration object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/workforceintegration-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +90,7 @@ namespace Microsoft.Graph.Beta.Teamwork.WorkforceIntegrations.Item {
             return await RequestAdapter.SendAsync<WorkforceIntegration>(requestInfo, WorkforceIntegration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property workforceIntegrations for teamwork
+        /// Delete an instance of a workforceIntegration.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.Teamwork.WorkforceIntegrations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A workforce integration with shifts.
+        /// Retrieve the properties and relationships of a workforceintegration object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +140,7 @@ namespace Microsoft.Graph.Beta.Teamwork.WorkforceIntegrations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property workforceIntegrations in teamwork
+        /// Update the properties of a workforceintegration object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +184,7 @@ namespace Microsoft.Graph.Beta.Teamwork.WorkforceIntegrations.Item {
             }
         }
         /// <summary>
-        /// A workforce integration with shifts.
+        /// Retrieve the properties and relationships of a workforceintegration object.
         /// </summary>
         public class WorkforceIntegrationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

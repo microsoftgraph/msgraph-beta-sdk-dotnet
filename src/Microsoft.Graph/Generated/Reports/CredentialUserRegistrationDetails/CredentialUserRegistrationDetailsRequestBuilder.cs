@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails {
         public CredentialUserRegistrationDetailsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/credentialUserRegistrationDetails{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+        /// Get a list of credentialUserRegistrationDetails objects for a given tenant.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/reportroot-list-credentialuserregistrationdetails?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>(requestInfo, Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+        /// Get a list of credentialUserRegistrationDetails objects for a given tenant.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails {
             return requestInfo;
         }
         /// <summary>
-        /// Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+        /// Get a list of credentialUserRegistrationDetails objects for a given tenant.
         /// </summary>
         public class CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

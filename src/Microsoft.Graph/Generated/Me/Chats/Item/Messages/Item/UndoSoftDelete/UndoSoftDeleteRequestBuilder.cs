@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.Messages.Item.UndoSoftDelete {
         public UndoSoftDeleteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/chats/{chat%2Did}/messages/{chatMessage%2Did}/undoSoftDelete", rawUrl) {
         }
         /// <summary>
-        /// Invoke action undoSoftDelete
+        /// Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chatmessage-undosoftdelete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -46,7 +47,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.Messages.Item.UndoSoftDelete {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action undoSoftDelete
+        /// Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

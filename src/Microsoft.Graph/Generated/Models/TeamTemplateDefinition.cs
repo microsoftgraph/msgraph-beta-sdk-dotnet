@@ -5,12 +5,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamTemplateDefinition : Entity, IParsable {
-        /// <summary>The audience property</summary>
+        /// <summary>Describes the audience the team template is available to. The possible values are: organization, user, public, unknownFutureValue.</summary>
         public TeamTemplateAudience? Audience {
             get { return BackingStore?.Get<TeamTemplateAudience?>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
-        /// <summary>The categories property</summary>
+        /// <summary>The assigned categories for the team template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Categories {
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("categories", value); }
         }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>A brief description of the team template as it will appear to the users in Microsoft Teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The user defined name of the team template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The iconUrl property</summary>
+        /// <summary>The icon url for the team template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IconUrl {
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("iconUrl", value); }
         }
 #endif
-        /// <summary>The languageTag property</summary>
+        /// <summary>Language the template is available in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LanguageTag {
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("languageTag", value); }
         }
 #endif
-        /// <summary>The lastModifiedBy property</summary>
+        /// <summary>The identity of the user who last modified the team template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public IdentitySet? LastModifiedBy {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The date time of when the team template was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The parentTemplateId property</summary>
+        /// <summary>The templateId for the team template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParentTemplateId {
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("parentTemplateId", value); }
         }
 #endif
-        /// <summary>The publisherName property</summary>
+        /// <summary>The organization which published the team template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PublisherName {
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("publisherName", value); }
         }
 #endif
-        /// <summary>The shortDescription property</summary>
+        /// <summary>A short-description of the team template as it will appear to the users in Microsoft Teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShortDescription {
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("shortDescription", value); }
         }
 #endif
-        /// <summary>The teamDefinition property</summary>
+        /// <summary>Collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Team? TeamDefinition {

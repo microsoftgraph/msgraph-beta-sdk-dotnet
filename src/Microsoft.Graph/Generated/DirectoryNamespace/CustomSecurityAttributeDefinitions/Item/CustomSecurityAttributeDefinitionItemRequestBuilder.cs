@@ -52,7 +52,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinit
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Schema of a custom security attributes (key-value pairs).
+        /// Read the properties and relationships of a customSecurityAttributeDefinition object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/customsecurityattributedefinition-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -71,7 +72,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinit
             return await RequestAdapter.SendAsync<CustomSecurityAttributeDefinition>(requestInfo, CustomSecurityAttributeDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property customSecurityAttributeDefinitions in directory
+        /// Update the properties of a customSecurityAttributeDefinition object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/customsecurityattributedefinition-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -116,7 +118,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinit
             return requestInfo;
         }
         /// <summary>
-        /// Schema of a custom security attributes (key-value pairs).
+        /// Read the properties and relationships of a customSecurityAttributeDefinition object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +144,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinit
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property customSecurityAttributeDefinitions in directory
+        /// Update the properties of a customSecurityAttributeDefinition object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +188,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinit
             }
         }
         /// <summary>
-        /// Schema of a custom security attributes (key-value pairs).
+        /// Read the properties and relationships of a customSecurityAttributeDefinition object.
         /// </summary>
         public class CustomSecurityAttributeDefinitionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

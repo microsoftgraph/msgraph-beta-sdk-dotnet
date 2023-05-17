@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRules.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of alert rules.
+        /// Read the properties and relationships of an alertRule object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/devicemanagement-alertrule-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +67,8 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRules.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property alertRules in monitoring
+        /// Update the properties of an alertRule object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/devicemanagement-alertrule-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRules.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of alert rules.
+        /// Read the properties and relationships of an alertRule object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +139,7 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRules.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property alertRules in monitoring
+        /// Update the properties of an alertRule object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +183,7 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRules.Item {
             }
         }
         /// <summary>
-        /// The collection of alert rules.
+        /// Read the properties and relationships of an alertRule object.
         /// </summary>
         public class AlertRuleItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Contacts.Item {
         public ContactItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/contacts/{contact%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property contacts for users
+        /// Delete contact.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contact-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Contacts.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The user&apos;s contacts. Read-only. Nullable.
+        /// Retrieve the properties and relationships of contact object. There are two scenarios where an app can get a contact in another user&apos;s contact folder:
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contact-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,7 +78,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Contacts.Item {
             return await RequestAdapter.SendAsync<Contact>(requestInfo, Contact.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property contacts in users
+        /// Update the properties of contact object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contact-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,7 +100,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Contacts.Item {
             return await RequestAdapter.SendAsync<Contact>(requestInfo, Contact.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property contacts for users
+        /// Delete contact.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Contacts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The user&apos;s contacts. Read-only. Nullable.
+        /// Retrieve the properties and relationships of contact object. There are two scenarios where an app can get a contact in another user&apos;s contact folder:
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -147,7 +150,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Contacts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property contacts in users
+        /// Update the properties of contact object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +194,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Contacts.Item {
             }
         }
         /// <summary>
-        /// The user&apos;s contacts. Read-only. Nullable.
+        /// Retrieve the properties and relationships of contact object. There are two scenarios where an app can get a contact in another user&apos;s contact folder:
         /// </summary>
         public class ContactItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

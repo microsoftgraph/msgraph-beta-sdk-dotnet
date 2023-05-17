@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases {
         public CasesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get cases from compliance
+        /// Retrieve a list of case objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/ediscovery-case-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases {
             return await RequestAdapter.SendAsync<CaseCollectionResponse>(requestInfo, CaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to cases for compliance
+        /// Create a new case object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/ediscovery-case-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases {
             return await RequestAdapter.SendAsync<Case>(requestInfo, Case.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get cases from compliance
+        /// Retrieve a list of case objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to cases for compliance
+        /// Create a new case object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases {
             return requestInfo;
         }
         /// <summary>
-        /// Get cases from compliance
+        /// Retrieve a list of case objects.
         /// </summary>
         public class CasesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

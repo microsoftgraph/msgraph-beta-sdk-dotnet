@@ -51,6 +51,7 @@ namespace Microsoft.Graph.Beta.Me.OwnedDevices {
         }
         /// <summary>
         /// Devices that are owned by the user. Read-only. Nullable. Supports $expand.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-owneddevices?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

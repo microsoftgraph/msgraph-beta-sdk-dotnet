@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Me.Authentication.EmailMethods.Item {
         public EmailAuthenticationMethodItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/authentication/emailMethods/{emailAuthenticationMethod%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property emailMethods for me
+        /// Deletes a user&apos;s email Authentication Method object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/emailauthenticationmethod-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Me.Authentication.EmailMethods.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents the email addresses registered to a user for authentication.
+        /// Retrieve a user&apos;s single email Authentication Method object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/emailauthenticationmethod-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,8 @@ namespace Microsoft.Graph.Beta.Me.Authentication.EmailMethods.Item {
             return await RequestAdapter.SendAsync<EmailAuthenticationMethod>(requestInfo, EmailAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property emailMethods in me
+        /// Update a user&apos;s email address associated with an email Authentication Method object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/emailauthenticationmethod-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +90,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.EmailMethods.Item {
             return await RequestAdapter.SendAsync<EmailAuthenticationMethod>(requestInfo, EmailAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property emailMethods for me
+        /// Deletes a user&apos;s email Authentication Method object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.EmailMethods.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents the email addresses registered to a user for authentication.
+        /// Retrieve a user&apos;s single email Authentication Method object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +140,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.EmailMethods.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property emailMethods in me
+        /// Update a user&apos;s email address associated with an email Authentication Method object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +184,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.EmailMethods.Item {
             }
         }
         /// <summary>
-        /// Represents the email addresses registered to a user for authentication.
+        /// Retrieve a user&apos;s single email Authentication Method object.
         /// </summary>
         public class EmailAuthenticationMethodItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovern
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
+        /// Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/cloudpccrosscloudgovernmentorganizationmapping-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovern
             return requestInfo;
         }
         /// <summary>
-        /// Cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
+        /// Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +182,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovern
             }
         }
         /// <summary>
-        /// Cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
+        /// Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
         /// </summary>
         public class CrossCloudGovernmentOrganizationMappingRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

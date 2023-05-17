@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Articles {
         public ArticlesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/articles{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// A list of article objects.
+        /// Get a list of article objects, including their properties and relationships.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-article-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Articles {
             return await RequestAdapter.SendAsync<Article>(requestInfo, Article.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A list of article objects.
+        /// Get a list of article objects, including their properties and relationships.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Articles {
             return requestInfo;
         }
         /// <summary>
-        /// A list of article objects.
+        /// Get a list of article objects, including their properties and relationships.
         /// </summary>
         public class ArticlesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -45,7 +45,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
         public TagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Returns a list of tag objects associated to this case.
+        /// Retrieve a list of tag objects from an eDiscovery case.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/ediscovery-case-list-tags?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -64,7 +65,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
             return await RequestAdapter.SendAsync<TagCollectionResponse>(requestInfo, TagCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to tags for compliance
+        /// Create a new tag for the specified case.  The tags are used in review sets while reviewing content.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/ediscovery-case-post-tags?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +87,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
             return await RequestAdapter.SendAsync<Tag>(requestInfo, Tag.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Returns a list of tag objects associated to this case.
+        /// Retrieve a list of tag objects from an eDiscovery case.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to tags for compliance
+        /// Create a new tag for the specified case.  The tags are used in review sets while reviewing content.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +141,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
             return requestInfo;
         }
         /// <summary>
-        /// Returns a list of tag objects associated to this case.
+        /// Retrieve a list of tag objects from an eDiscovery case.
         /// </summary>
         public class TagsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

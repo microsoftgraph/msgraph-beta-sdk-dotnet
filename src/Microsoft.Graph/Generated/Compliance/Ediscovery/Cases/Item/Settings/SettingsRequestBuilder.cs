@@ -52,7 +52,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get settings from compliance
+        /// Read the properties and relationships of an eDiscovery caseSettings object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/ediscovery-casesettings-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -71,7 +72,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings {
             return await RequestAdapter.SendAsync<CaseSettings>(requestInfo, CaseSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property settings in compliance
+        /// Update the properties of a an eDiscovery caseSettings object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/ediscovery-casesettings-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -116,7 +118,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Get settings from compliance
+        /// Read the properties and relationships of an eDiscovery caseSettings object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +144,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property settings in compliance
+        /// Update the properties of a an eDiscovery caseSettings object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +188,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings {
             }
         }
         /// <summary>
-        /// Get settings from compliance
+        /// Read the properties and relationships of an eDiscovery caseSettings object.
         /// </summary>
         public class SettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

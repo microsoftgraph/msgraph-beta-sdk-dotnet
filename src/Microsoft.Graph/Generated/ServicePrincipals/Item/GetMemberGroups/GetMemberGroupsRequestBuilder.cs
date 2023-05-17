@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.GetMemberGroups {
         public GetMemberGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/getMemberGroups", rawUrl) {
         }
         /// <summary>
-        /// Invoke action getMemberGroups
+        /// Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/directoryobject-getmembergroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +49,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.GetMemberGroups {
             return await RequestAdapter.SendAsync<GetMemberGroupsResponse>(requestInfo, GetMemberGroupsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action getMemberGroups
+        /// Return all the group IDs for the groups that the specified user, group, service principal, organizational contact, device, or directory object is a member of. This function is transitive.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

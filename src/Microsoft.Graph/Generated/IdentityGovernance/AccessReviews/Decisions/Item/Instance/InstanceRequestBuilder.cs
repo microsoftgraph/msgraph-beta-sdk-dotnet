@@ -8,6 +8,7 @@ using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Insta
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.SendReminder;
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Stages;
 using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.Stop;
+using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.Instance.StopApplyDecisions;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -62,6 +63,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Decisions.Item.I
         /// <summary>Provides operations to call the stop method.</summary>
         public StopRequestBuilder Stop { get =>
             new StopRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the stopApplyDecisions method.</summary>
+        public StopApplyDecisionsRequestBuilder StopApplyDecisions { get =>
+            new StopApplyDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new InstanceRequestBuilder and sets the default values.

@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// The instances of eligibility schedules to activate a just-in-time access.
+        /// Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleInstance object.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
             return await RequestAdapter.SendAsync<PrivilegedAccessGroupEligibilityScheduleInstance>(requestInfo, PrivilegedAccessGroupEligibilityScheduleInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The instances of eligibility schedules to activate a just-in-time access.
+        /// Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleInstance object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
             return requestInfo;
         }
         /// <summary>
-        /// The instances of eligibility schedules to activate a just-in-time access.
+        /// Read the properties and relationships of a privilegedAccessGroupEligibilityScheduleInstance object.
         /// </summary>
         public class EligibilityScheduleInstancesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

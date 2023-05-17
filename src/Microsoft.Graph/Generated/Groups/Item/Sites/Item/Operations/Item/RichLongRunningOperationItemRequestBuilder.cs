@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Operations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of long running operations for the site.
+        /// Read the properties of a richLongRunningOperation object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/richlongrunningoperation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Operations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of long running operations for the site.
+        /// Read the properties of a richLongRunningOperation object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +182,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Operations.Item {
             }
         }
         /// <summary>
-        /// The collection of long running operations for the site.
+        /// Read the properties of a richLongRunningOperation object.
         /// </summary>
         public class RichLongRunningOperationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

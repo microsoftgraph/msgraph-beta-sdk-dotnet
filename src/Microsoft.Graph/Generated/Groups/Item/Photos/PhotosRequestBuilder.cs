@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Photos {
         public PhotosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/photos{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// The profile photos owned by the group. Read-only. Nullable.
+        /// Retrieve a list of profilePhoto objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/group-list-photos?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Photos {
             return await RequestAdapter.SendAsync<ProfilePhotoCollectionResponse>(requestInfo, ProfilePhotoCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The profile photos owned by the group. Read-only. Nullable.
+        /// Retrieve a list of profilePhoto objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +86,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Photos {
             return requestInfo;
         }
         /// <summary>
-        /// The profile photos owned by the group. Read-only. Nullable.
+        /// Retrieve a list of profilePhoto objects.
         /// </summary>
         public class PhotosRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

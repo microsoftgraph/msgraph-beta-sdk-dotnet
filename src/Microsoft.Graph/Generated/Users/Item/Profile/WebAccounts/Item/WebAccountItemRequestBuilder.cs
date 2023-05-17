@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.WebAccounts.Item {
         public WebAccountItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/webAccounts/{webAccount%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property webAccounts for users
+        /// Delete a webAccount object from a user&apos;s profile.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/webaccount-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.WebAccounts.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents web accounts the user has indicated they use or has added to their user profile.
+        /// Retrieve the properties and relationships of a webAccount object from a user&apos;s profile.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/webaccount-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.WebAccounts.Item {
             return await RequestAdapter.SendAsync<WebAccount>(requestInfo, WebAccount.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property webAccounts in users
+        /// Update the properties of a webAccount object in a user&apos;s profile.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/webaccount-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +90,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.WebAccounts.Item {
             return await RequestAdapter.SendAsync<WebAccount>(requestInfo, WebAccount.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property webAccounts for users
+        /// Delete a webAccount object from a user&apos;s profile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.WebAccounts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents web accounts the user has indicated they use or has added to their user profile.
+        /// Retrieve the properties and relationships of a webAccount object from a user&apos;s profile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +140,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.WebAccounts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property webAccounts in users
+        /// Update the properties of a webAccount object in a user&apos;s profile.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +184,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.WebAccounts.Item {
             }
         }
         /// <summary>
-        /// Represents web accounts the user has indicated they use or has added to their user profile.
+        /// Retrieve the properties and relationships of a webAccount object from a user&apos;s profile.
         /// </summary>
         public class WebAccountItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

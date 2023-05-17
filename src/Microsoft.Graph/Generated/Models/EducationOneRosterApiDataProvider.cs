@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("connectionSettings", value); }
         }
 #endif
-        /// <summary>The connectionUrl property</summary>
+        /// <summary>The connection URL to the OneRoster instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConnectionUrl {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("connectionUrl", value); }
         }
 #endif
-        /// <summary>The customizations property</summary>
+        /// <summary>Optional customization to be applied to the synchronization profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EducationSynchronizationCustomizations? Customizations {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("customizations", value); }
         }
 #endif
-        /// <summary>The providerName property</summary>
+        /// <summary>The OneRoster Service Provider name as defined by the [OneRoster specification][oneroster].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProviderName {
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("providerName", value); }
         }
 #endif
-        /// <summary>The schoolsIds property</summary>
+        /// <summary>The list of [School/Org][orgs] sourcedId to sync.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SchoolsIds {
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("schoolsIds", value); }
         }
 #endif
-        /// <summary>The termIds property</summary>
+        /// <summary>The list of [academic sessions][terms] to sync.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TermIds {

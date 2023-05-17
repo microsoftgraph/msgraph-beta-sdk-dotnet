@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Security.Alerts.Item {
         public AlertItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/alerts/{alert%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Notifications for suspicious or potential security issues in a customer’s tenant.
+        /// Retrieve the properties and relationships of an alert object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/alert-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Security.Alerts.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Alert>(requestInfo, Microsoft.Graph.Beta.Models.Alert.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property alerts in security
+        /// Update an editable **alert** property within any integrated solution to keep alert status and assignments in sync across solutions. This method updates any solution that has a record of the referenced alert ID.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/alert-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +70,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Alert>(requestInfo, Microsoft.Graph.Beta.Models.Alert.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Notifications for suspicious or potential security issues in a customer’s tenant.
+        /// Retrieve the properties and relationships of an alert object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,7 +96,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property alerts in security
+        /// Update an editable **alert** property within any integrated solution to keep alert status and assignments in sync across solutions. This method updates any solution that has a record of the referenced alert ID.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -122,7 +124,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Notifications for suspicious or potential security issues in a customer’s tenant.
+        /// Retrieve the properties and relationships of an alert object.
         /// </summary>
         public class AlertItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

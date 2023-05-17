@@ -77,7 +77,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of pages in the SitePages list in this site.
+        /// Returns the metadata for a [sitePage][] in the site pages [list][] in a [site][].
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/sitepage-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -96,7 +97,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item {
             return await RequestAdapter.SendAsync<SitePage>(requestInfo, SitePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property pages in sites
+        /// Update the properties of a sitePage object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/sitepage-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -141,7 +143,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of pages in the SitePages list in this site.
+        /// Returns the metadata for a [sitePage][] in the site pages [list][] in a [site][].
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,7 +169,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property pages in sites
+        /// Update the properties of a sitePage object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -211,7 +213,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item {
             }
         }
         /// <summary>
-        /// The collection of pages in the SitePages list in this site.
+        /// Returns the metadata for a [sitePage][] in the site pages [list][] in a [site][].
         /// </summary>
         public class SitePageItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

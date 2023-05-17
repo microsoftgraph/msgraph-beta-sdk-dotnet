@@ -45,7 +45,8 @@ namespace Microsoft.Graph.Beta.Applications.Item.TokenLifetimePolicies {
         public TokenLifetimePoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/tokenLifetimePolicies{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The tokenLifetimePolicies assigned to this application. Supports $expand.
+        /// List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/application-list-tokenlifetimepolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -64,7 +65,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.TokenLifetimePolicies {
             return await RequestAdapter.SendAsync<TokenLifetimePolicyCollectionResponse>(requestInfo, TokenLifetimePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The tokenLifetimePolicies assigned to this application. Supports $expand.
+        /// List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +91,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.TokenLifetimePolicies {
             return requestInfo;
         }
         /// <summary>
-        /// The tokenLifetimePolicies assigned to this application. Supports $expand.
+        /// List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal..
         /// </summary>
         public class TokenLifetimePoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

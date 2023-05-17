@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations {
         public ConversationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/conversations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// The group&apos;s conversations.
+        /// Retrieve the list of conversations in this group.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/group-list-conversations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations {
             return await RequestAdapter.SendAsync<ConversationCollectionResponse>(requestInfo, ConversationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to conversations for groups
+        /// Create a new conversation by including a thread and a post. Use reply thread or reply post to further post to that conversation.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations {
             return await RequestAdapter.SendAsync<Conversation>(requestInfo, Conversation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The group&apos;s conversations.
+        /// Retrieve the list of conversations in this group.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to conversations for groups
+        /// Create a new conversation by including a thread and a post. Use reply thread or reply post to further post to that conversation.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations {
             return requestInfo;
         }
         /// <summary>
-        /// The group&apos;s conversations.
+        /// Retrieve the list of conversations in this group.
         /// </summary>
         public class ConversationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.AllChannels {
         public AllChannelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/allChannels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List of channels either hosted in or shared with the team (incoming channels).
+        /// Get the list of channels either in this team or shared with this team (incoming channels).
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/team-list-allchannels?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.AllChannels {
             return await RequestAdapter.SendAsync<ChannelCollectionResponse>(requestInfo, ChannelCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List of channels either hosted in or shared with the team (incoming channels).
+        /// Get the list of channels either in this team or shared with this team (incoming channels).
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +86,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.AllChannels {
             return requestInfo;
         }
         /// <summary>
-        /// List of channels either hosted in or shared with the team (incoming channels).
+        /// Get the list of channels either in this team or shared with this team (incoming channels).
         /// </summary>
         public class AllChannelsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

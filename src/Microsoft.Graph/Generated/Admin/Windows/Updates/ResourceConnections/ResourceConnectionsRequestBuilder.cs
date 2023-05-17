@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
         public ResourceConnectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/windows/updates/resourceConnections{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Service connections to external resources such as analytics workspaces.
+        /// Get a list of the resourceConnection objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/adminwindowsupdates-list-resourceconnections?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
             return await RequestAdapter.SendAsync<ResourceConnectionCollectionResponse>(requestInfo, ResourceConnectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to resourceConnections for admin
+        /// Create a new operationalInsightsConnection object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/adminwindowsupdates-post-resourceconnections-operationalinsightsconnection?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
             return await RequestAdapter.SendAsync<ResourceConnection>(requestInfo, ResourceConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Service connections to external resources such as analytics workspaces.
+        /// Get a list of the resourceConnection objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to resourceConnections for admin
+        /// Create a new operationalInsightsConnection object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
             return requestInfo;
         }
         /// <summary>
-        /// Service connections to external resources such as analytics workspaces.
+        /// Get a list of the resourceConnection objects and their properties.
         /// </summary>
         public class ResourceConnectionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

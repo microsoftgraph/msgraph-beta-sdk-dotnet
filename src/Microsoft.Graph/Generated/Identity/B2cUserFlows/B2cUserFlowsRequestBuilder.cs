@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows {
         public B2cUserFlowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/b2cUserFlows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Represents entry point for B2C identity userflows.
+        /// Retrieve a list of b2cIdentityUserFlow objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identitycontainer-list-b2cuserflows?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows {
             return await RequestAdapter.SendAsync<B2cIdentityUserFlowCollectionResponse>(requestInfo, B2cIdentityUserFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to b2cUserFlows for identity
+        /// Create a new b2cIdentityUserFlow object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identitycontainer-post-b2cuserflows?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows {
             return await RequestAdapter.SendAsync<B2cIdentityUserFlow>(requestInfo, B2cIdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents entry point for B2C identity userflows.
+        /// Retrieve a list of b2cIdentityUserFlow objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to b2cUserFlows for identity
+        /// Create a new b2cIdentityUserFlow object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows {
             return requestInfo;
         }
         /// <summary>
-        /// Represents entry point for B2C identity userflows.
+        /// Retrieve a list of b2cIdentityUserFlow objects.
         /// </summary>
         public class B2cUserFlowsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

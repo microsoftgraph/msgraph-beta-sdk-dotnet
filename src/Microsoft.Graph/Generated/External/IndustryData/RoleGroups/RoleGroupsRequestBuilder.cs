@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.RoleGroups {
         public RoleGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/roleGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Set of groups of individual roles that makes role-based admin simpler.
+        /// Get a list of the roleGroup objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-rolegroup-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.RoleGroups {
             return await RequestAdapter.SendAsync<RoleGroup>(requestInfo, RoleGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Set of groups of individual roles that makes role-based admin simpler.
+        /// Get a list of the roleGroup objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.RoleGroups {
             return requestInfo;
         }
         /// <summary>
-        /// Set of groups of individual roles that makes role-based admin simpler.
+        /// Get a list of the roleGroup objects and their properties.
         /// </summary>
         public class RoleGroupsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

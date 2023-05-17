@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamTemplate : Entity, IParsable {
-        /// <summary>The definitions property</summary>
+        /// <summary>A generic representation of a team template definition for a team with a specific structure and configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<TeamTemplateDefinition>? Definitions {

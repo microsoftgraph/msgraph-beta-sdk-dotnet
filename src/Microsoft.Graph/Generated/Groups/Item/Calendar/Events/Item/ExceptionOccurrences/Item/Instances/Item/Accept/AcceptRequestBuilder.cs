@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.ExceptionOccurre
         public AcceptRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/calendar/events/{event%2Did}/exceptionOccurrences/{event%2Did1}/instances/{event%2Did2}/accept", rawUrl) {
         }
         /// <summary>
-        /// Invoke action accept
+        /// Accept the specified event in a user calendar.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/event-accept?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +49,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.ExceptionOccurre
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action accept
+        /// Accept the specified event in a user calendar.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

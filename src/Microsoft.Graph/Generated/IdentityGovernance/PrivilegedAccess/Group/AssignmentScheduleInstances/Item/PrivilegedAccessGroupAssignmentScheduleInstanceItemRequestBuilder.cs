@@ -62,7 +62,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The instances of assignment schedules to activate a just-in-time access.
+        /// Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleInstance object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/privilegedaccessgroupassignmentscheduleinstance-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +127,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
             return requestInfo;
         }
         /// <summary>
-        /// The instances of assignment schedules to activate a just-in-time access.
+        /// Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleInstance object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -196,7 +197,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
             }
         }
         /// <summary>
-        /// The instances of assignment schedules to activate a just-in-time access.
+        /// Read the properties and relationships of a privilegedAccessGroupAssignmentScheduleInstance object.
         /// </summary>
         public class PrivilegedAccessGroupAssignmentScheduleInstanceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

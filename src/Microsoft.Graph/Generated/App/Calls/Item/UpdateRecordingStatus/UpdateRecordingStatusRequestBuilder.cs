@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.UpdateRecordingStatus {
         public UpdateRecordingStatusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/calls/{call%2Did}/updateRecordingStatus", rawUrl) {
         }
         /// <summary>
-        /// Invoke action updateRecordingStatus
+        /// Update the application&apos;s recording status associated with a call. This requires the use of the Teams policy-based recording solution.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/call-updaterecordingstatus?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.UpdateRecordingStatus {
             return await RequestAdapter.SendAsync<UpdateRecordingStatusOperation>(requestInfo, UpdateRecordingStatusOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action updateRecordingStatus
+        /// Update the application&apos;s recording status associated with a call. This requires the use of the Teams policy-based recording solution.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

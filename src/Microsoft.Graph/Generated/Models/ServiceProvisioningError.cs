@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time at which the error occurred.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The isResolved property</summary>
+        /// <summary>Indicates whether the Error has been attended to.</summary>
         public bool? IsResolved {
             get { return BackingStore?.Get<bool?>("isResolved"); }
             set { BackingStore?.Set("isResolved", value); }
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The serviceInstance property</summary>
+        /// <summary>Qualified service instance (e.g., &apos;SharePoint/Dublin&apos;) that published the service error information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServiceInstance {

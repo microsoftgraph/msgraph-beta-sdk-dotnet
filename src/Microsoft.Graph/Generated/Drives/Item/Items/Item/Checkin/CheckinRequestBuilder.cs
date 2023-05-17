@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Checkin {
         public CheckinRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/checkin", rawUrl) {
         }
         /// <summary>
-        /// Invoke action checkin
+        /// Check in a checked out **driveItem** resource, which makes the version of the document available to others.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +49,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Checkin {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action checkin
+        /// Check in a checked out **driveItem** resource, which makes the version of the document available to others.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Settings.Micr
         public MicrosoftGraphSecurityResetToDefaultRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/cases/ediscoveryCases/{ediscoveryCase%2Did}/settings/microsoft.graph.security.resetToDefault", rawUrl) {
         }
         /// <summary>
-        /// Invoke action resetToDefault
+        /// Reset a caseSettings object to the default values.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-ediscoverycasesettings-resettodefault?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -46,7 +47,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Settings.Micr
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action resetToDefault
+        /// Reset a caseSettings object to the default values.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

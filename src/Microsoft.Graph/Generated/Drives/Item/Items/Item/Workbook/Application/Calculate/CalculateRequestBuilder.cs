@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Application.Calcu
         public CalculateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/application/calculate", rawUrl) {
         }
         /// <summary>
-        /// Invoke action calculate
+        /// Recalculate all currently opened workbooks in Excel.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/workbookapplication-calculate?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +49,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Application.Calcu
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action calculate
+        /// Recalculate all currently opened workbooks in Excel.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

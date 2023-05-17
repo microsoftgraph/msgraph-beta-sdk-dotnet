@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods {
         public MicrosoftAuthenticatorMethodsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/authentication/microsoftAuthenticatorMethods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The details of the Microsoft Authenticator app registered to a user for authentication.
+        /// Get a list of the microsoftAuthenticatorAuthenticationMethod objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/microsoftauthenticatorauthenticationmethod-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods {
             return await RequestAdapter.SendAsync<MicrosoftAuthenticatorAuthenticationMethodCollectionResponse>(requestInfo, MicrosoftAuthenticatorAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The details of the Microsoft Authenticator app registered to a user for authentication.
+        /// Get a list of the microsoftAuthenticatorAuthenticationMethod objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +86,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods {
             return requestInfo;
         }
         /// <summary>
-        /// The details of the Microsoft Authenticator app registered to a user for authentication.
+        /// Get a list of the microsoftAuthenticatorAuthenticationMethod objects and their properties.
         /// </summary>
         public class MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

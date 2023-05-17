@@ -52,7 +52,8 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get securityActions from security
+        /// Retrieve the properties and relationships of a securityAction object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/securityaction-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +117,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get securityActions from security
+        /// Retrieve the properties and relationships of a securityAction object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +187,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
             }
         }
         /// <summary>
-        /// Get securityActions from security
+        /// Retrieve the properties and relationships of a securityAction object.
         /// </summary>
         public class SecurityActionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

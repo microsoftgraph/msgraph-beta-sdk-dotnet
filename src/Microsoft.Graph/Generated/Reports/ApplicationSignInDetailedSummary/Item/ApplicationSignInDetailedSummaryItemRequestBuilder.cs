@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents a detailed summary of an application sign-in.
+        /// Retrieve the properties and relationships of an applicationSignInDetailedSummary object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/applicationsignindetailedsummary-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents a detailed summary of an application sign-in.
+        /// Retrieve the properties and relationships of an applicationSignInDetailedSummary object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +182,7 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary.Item {
             }
         }
         /// <summary>
-        /// Represents a detailed summary of an application sign-in.
+        /// Retrieve the properties and relationships of an applicationSignInDetailedSummary object.
         /// </summary>
         public class ApplicationSignInDetailedSummaryItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

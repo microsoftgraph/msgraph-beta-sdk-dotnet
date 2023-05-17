@@ -38,6 +38,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isCompromised"); }
             set { BackingStore?.Set("isCompromised", value); }
         }
+        /// <summary>Indicates latest user activity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LatestSimulationActivity {
+            get { return BackingStore?.Get<string?>("latestSimulationActivity"); }
+            set { BackingStore?.Set("latestSimulationActivity", value); }
+        }
+#nullable restore
+#else
+        public string LatestSimulationActivity {
+            get { return BackingStore?.Get<string>("latestSimulationActivity"); }
+            set { BackingStore?.Set("latestSimulationActivity", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +138,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"compromisedDateTime", n => { CompromisedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"inProgressTrainingsCount", n => { InProgressTrainingsCount = n.GetIntValue(); } },
                 {"isCompromised", n => { IsCompromised = n.GetBoolValue(); } },
+                {"latestSimulationActivity", n => { LatestSimulationActivity = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"reportedPhishDateTime", n => { ReportedPhishDateTime = n.GetDateTimeOffsetValue(); } },
                 {"simulationEvents", n => { SimulationEvents = n.GetCollectionOfObjectValues<UserSimulationEventInfo>(UserSimulationEventInfo.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -142,6 +157,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("compromisedDateTime", CompromisedDateTime);
             writer.WriteIntValue("inProgressTrainingsCount", InProgressTrainingsCount);
             writer.WriteBoolValue("isCompromised", IsCompromised);
+            writer.WriteStringValue("latestSimulationActivity", LatestSimulationActivity);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("reportedPhishDateTime", ReportedPhishDateTime);
             writer.WriteCollectionOfObjectValues<UserSimulationEventInfo>("simulationEvents", SimulationEvents);

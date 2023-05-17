@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Activities {
         public ActivitiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/activities{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The list of recent activities that took place under this drive.
+        /// List the recent activities that took place on an item or under a hierarchy.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/activities-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Activities {
             return await RequestAdapter.SendAsync<ItemActivityOLD>(requestInfo, ItemActivityOLD.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The list of recent activities that took place under this drive.
+        /// List the recent activities that took place on an item or under a hierarchy.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Activities {
             return requestInfo;
         }
         /// <summary>
-        /// The list of recent activities that took place under this drive.
+        /// List the recent activities that took place on an item or under a hierarchy.
         /// </summary>
         public class ActivitiesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

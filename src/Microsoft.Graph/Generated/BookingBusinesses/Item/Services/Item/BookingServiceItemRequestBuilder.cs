@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Services.Item {
         public BookingServiceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/bookingBusinesses/{bookingBusiness%2Did}/services/{bookingService%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property services for bookingBusinesses
+        /// Delete a bookingService object in the specified bookingBusiness.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bookingservice-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Services.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// All the services offered by this business. Read-only. Nullable.
+        /// Get the properties and relationships of a bookingService object in the specified bookingBusiness.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bookingservice-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,8 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Services.Item {
             return await RequestAdapter.SendAsync<BookingService>(requestInfo, BookingService.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property services in bookingBusinesses
+        /// Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any time buffer to set up before or finish up after the service- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bookingservice-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +90,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Services.Item {
             return await RequestAdapter.SendAsync<BookingService>(requestInfo, BookingService.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property services for bookingBusinesses
+        /// Delete a bookingService object in the specified bookingBusiness.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Services.Item {
             return requestInfo;
         }
         /// <summary>
-        /// All the services offered by this business. Read-only. Nullable.
+        /// Get the properties and relationships of a bookingService object in the specified bookingBusiness.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +140,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Services.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property services in bookingBusinesses
+        /// Update the properties of a bookingService object in the specified bookingBusiness. The following are some examples you can customize for a service:- Price- Typical length of an appointment- Reminders- Any time buffer to set up before or finish up after the service- Scheduling policy parameters such as minimum notice to book or cancel, and whether customers can select specific staff members for an appointment.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +184,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Services.Item {
             }
         }
         /// <summary>
-        /// All the services offered by this business. Read-only. Nullable.
+        /// Get the properties and relationships of a bookingService object in the specified bookingBusiness.
         /// </summary>
         public class BookingServiceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item {
         public PermissionGrantPolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/permissionGrantPolicies/{permissionGrantPolicy%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property permissionGrantPolicies for policies
+        /// Delete a permissionGrantPolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The policy that specifies the conditions under which consent can be granted.
+        /// Retrieve a single permissionGrantPolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,7 +78,8 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item {
             return await RequestAdapter.SendAsync<PermissionGrantPolicy>(requestInfo, PermissionGrantPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property permissionGrantPolicies in policies
+        /// Update properties of a  permissionGrantPolicy.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,7 +100,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item {
             return await RequestAdapter.SendAsync<PermissionGrantPolicy>(requestInfo, PermissionGrantPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property permissionGrantPolicies for policies
+        /// Delete a permissionGrantPolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The policy that specifies the conditions under which consent can be granted.
+        /// Retrieve a single permissionGrantPolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -147,7 +150,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property permissionGrantPolicies in policies
+        /// Update properties of a  permissionGrantPolicy.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +194,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item {
             }
         }
         /// <summary>
-        /// The policy that specifies the conditions under which consent can be granted.
+        /// Retrieve a single permissionGrantPolicy object.
         /// </summary>
         public class PermissionGrantPolicyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

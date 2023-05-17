@@ -25,8 +25,50 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
+        /// <summary>The anchor attribute allows customers to customize the property used to create source anchors for synchronization enabled objects.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AnchorAttribute {
+            get { return BackingStore?.Get<string?>("anchorAttribute"); }
+            set { BackingStore?.Set("anchorAttribute", value); }
+        }
+#nullable restore
+#else
+        public string AnchorAttribute {
+            get { return BackingStore?.Get<string>("anchorAttribute"); }
+            set { BackingStore?.Set("anchorAttribute", value); }
+        }
+#endif
+        /// <summary>The identifier of the on-premises directory synchronization client application that is configured for the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ApplicationId {
+            get { return BackingStore?.Get<string?>("applicationId"); }
+            set { BackingStore?.Set("applicationId", value); }
+        }
+#nullable restore
+#else
+        public string ApplicationId {
+            get { return BackingStore?.Get<string>("applicationId"); }
+            set { BackingStore?.Set("applicationId", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>Data for the current export run.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public OnPremisesCurrentExportData? CurrentExportData {
+            get { return BackingStore?.Get<OnPremisesCurrentExportData?>("currentExportData"); }
+            set { BackingStore?.Set("currentExportData", value); }
+        }
+#nullable restore
+#else
+        public OnPremisesCurrentExportData CurrentExportData {
+            get { return BackingStore?.Get<OnPremisesCurrentExportData>("currentExportData"); }
+            set { BackingStore?.Set("currentExportData", value); }
+        }
+#endif
         /// <summary>Interval of time that the customer requested the sync client waits between sync cycles.</summary>
         public TimeSpan? CustomerRequestedSynchronizationInterval {
             get { return BackingStore?.Get<TimeSpan?>("customerRequestedSynchronizationInterval"); }
@@ -46,11 +88,39 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>Indicates the version of the on-premises directory synchronization application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SynchronizationClientVersion {
+            get { return BackingStore?.Get<string?>("synchronizationClientVersion"); }
+            set { BackingStore?.Set("synchronizationClientVersion", value); }
+        }
+#nullable restore
+#else
+        public string SynchronizationClientVersion {
+            get { return BackingStore?.Get<string>("synchronizationClientVersion"); }
+            set { BackingStore?.Set("synchronizationClientVersion", value); }
+        }
+#endif
         /// <summary>Interval of time the sync client should honor between sync cycles</summary>
         public TimeSpan? SynchronizationInterval {
             get { return BackingStore?.Get<TimeSpan?>("synchronizationInterval"); }
             set { BackingStore?.Set("synchronizationInterval", value); }
         }
+        /// <summary>Configuration to control how cloud created or owned objects are synchronized back to the on-premises directory.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public OnPremisesWritebackConfiguration? WritebackConfiguration {
+            get { return BackingStore?.Get<OnPremisesWritebackConfiguration?>("writebackConfiguration"); }
+            set { BackingStore?.Set("writebackConfiguration", value); }
+        }
+#nullable restore
+#else
+        public OnPremisesWritebackConfiguration WritebackConfiguration {
+            get { return BackingStore?.Get<OnPremisesWritebackConfiguration>("writebackConfiguration"); }
+            set { BackingStore?.Set("writebackConfiguration", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new onPremisesDirectorySynchronizationConfiguration and sets the default values.
         /// </summary>
@@ -72,9 +142,14 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"accidentalDeletionPrevention", n => { AccidentalDeletionPrevention = n.GetObjectValue<OnPremisesAccidentalDeletionPrevention>(OnPremisesAccidentalDeletionPrevention.CreateFromDiscriminatorValue); } },
+                {"anchorAttribute", n => { AnchorAttribute = n.GetStringValue(); } },
+                {"applicationId", n => { ApplicationId = n.GetStringValue(); } },
+                {"currentExportData", n => { CurrentExportData = n.GetObjectValue<OnPremisesCurrentExportData>(OnPremisesCurrentExportData.CreateFromDiscriminatorValue); } },
                 {"customerRequestedSynchronizationInterval", n => { CustomerRequestedSynchronizationInterval = n.GetTimeSpanValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"synchronizationClientVersion", n => { SynchronizationClientVersion = n.GetStringValue(); } },
                 {"synchronizationInterval", n => { SynchronizationInterval = n.GetTimeSpanValue(); } },
+                {"writebackConfiguration", n => { WritebackConfiguration = n.GetObjectValue<OnPremisesWritebackConfiguration>(OnPremisesWritebackConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -84,9 +159,14 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<OnPremisesAccidentalDeletionPrevention>("accidentalDeletionPrevention", AccidentalDeletionPrevention);
+            writer.WriteStringValue("anchorAttribute", AnchorAttribute);
+            writer.WriteStringValue("applicationId", ApplicationId);
+            writer.WriteObjectValue<OnPremisesCurrentExportData>("currentExportData", CurrentExportData);
             writer.WriteTimeSpanValue("customerRequestedSynchronizationInterval", CustomerRequestedSynchronizationInterval);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteStringValue("synchronizationClientVersion", SynchronizationClientVersion);
             writer.WriteTimeSpanValue("synchronizationInterval", SynchronizationInterval);
+            writer.WriteObjectValue<OnPremisesWritebackConfiguration>("writebackConfiguration", WritebackConfiguration);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -29,6 +29,7 @@ namespace Microsoft.Graph.Beta.Me.JoinedGroups.EvaluateDynamicMembership {
         }
         /// <summary>
         /// Invoke action evaluateDynamicMembership
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/group-evaluatedynamicmembership?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

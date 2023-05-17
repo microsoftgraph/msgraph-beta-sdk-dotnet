@@ -52,7 +52,8 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
+        /// Retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/servicehealth-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +117,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
+        /// Retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +187,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews.Item {
             }
         }
         /// <summary>
-        /// A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.
+        /// Retrieve the properties and relationships of a serviceHealth object. This operation provides the health information of a specified service for a tenant.
         /// </summary>
         public class ServiceHealthItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

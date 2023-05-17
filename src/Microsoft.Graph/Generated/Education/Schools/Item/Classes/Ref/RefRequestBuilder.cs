@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.Classes.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/schools/{educationSchool%2Did}/classes/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// Classes taught at the school. Nullable.
+        /// Retrieve a list of classes owned by a school.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationschool-list-classes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.Classes.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property ref to classes for education
+        /// Add a class to a school.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationschool-post-classes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +70,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.Classes.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Classes taught at the school. Nullable.
+        /// Retrieve a list of classes owned by a school.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,7 +96,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.Classes.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property ref to classes for education
+        /// Add a class to a school.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.Classes.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Classes taught at the school. Nullable.
+        /// Retrieve a list of classes owned by a school.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

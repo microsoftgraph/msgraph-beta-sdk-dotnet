@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels {
         public RetentionLabelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/retentionLabels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get retentionLabels from security
+        /// Get a list of the retentionLabel objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-retentionlabel-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels {
             return await RequestAdapter.SendAsync<RetentionLabelCollectionResponse>(requestInfo, RetentionLabelCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to retentionLabels for security
+        /// Create a new retentionLabel object. To create a disposition review stage, include the **actionAfterRetentionPeriod** property in the request body with one of the possible values specified.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-retentionlabel-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.RetentionLabel>(requestInfo, Microsoft.Graph.Beta.Models.Security.RetentionLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get retentionLabels from security
+        /// Get a list of the retentionLabel objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to retentionLabels for security
+        /// Create a new retentionLabel object. To create a disposition review stage, include the **actionAfterRetentionPeriod** property in the request body with one of the possible values specified.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels {
             return requestInfo;
         }
         /// <summary>
-        /// Get retentionLabels from security
+        /// Get a list of the retentionLabel objects and their properties.
         /// </summary>
         public class RetentionLabelsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

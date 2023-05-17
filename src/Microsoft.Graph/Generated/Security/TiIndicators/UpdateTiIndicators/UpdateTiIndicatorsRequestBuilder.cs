@@ -27,7 +27,8 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators {
         public UpdateTiIndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/tiIndicators/updateTiIndicators", rawUrl) {
         }
         /// <summary>
-        /// Invoke action updateTiIndicators
+        /// Update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +49,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators {
             return await RequestAdapter.SendAsync<UpdateTiIndicatorsResponse>(requestInfo, UpdateTiIndicatorsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action updateTiIndicators
+        /// Update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

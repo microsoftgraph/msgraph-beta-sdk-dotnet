@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimesOff.Item {
         public TimeOffItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/schedule/timesOff/{timeOff%2Did}{?%24select}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property timesOff for groups
+        /// Delete a timeOff instance from a schedule.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timeoff-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimesOff.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The instances of times off in the schedule.
+        /// Retrieve the properties and relationships of a timeOff object by ID.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timeoff-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimesOff.Item {
             return await RequestAdapter.SendAsync<TimeOff>(requestInfo, TimeOff.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property timesOff in groups
+        /// Replace an existing timeOff. If the specified timeOff doesn&apos;t exist, this method returns `404 Not found`.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timeoff-put?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +90,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimesOff.Item {
             return await RequestAdapter.SendAsync<TimeOff>(requestInfo, TimeOff.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property timesOff for groups
+        /// Delete a timeOff instance from a schedule.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimesOff.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The instances of times off in the schedule.
+        /// Retrieve the properties and relationships of a timeOff object by ID.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +140,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimesOff.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property timesOff in groups
+        /// Replace an existing timeOff. If the specified timeOff doesn&apos;t exist, this method returns `404 Not found`.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +184,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimesOff.Item {
             }
         }
         /// <summary>
-        /// The instances of times off in the schedule.
+        /// Retrieve the properties and relationships of a timeOff object by ID.
         /// </summary>
         public class TimeOffItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>

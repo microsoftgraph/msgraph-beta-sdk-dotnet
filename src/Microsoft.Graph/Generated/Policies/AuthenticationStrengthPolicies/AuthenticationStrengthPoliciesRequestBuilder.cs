@@ -49,7 +49,8 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
             return new FindByMethodModeWithAuthenticationMethodModesRequestBuilder(PathParameters, RequestAdapter, authenticationMethodModes);
         }
         /// <summary>
-        /// The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+        /// Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationstrengthroot-list-policies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,7 +69,8 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
             return await RequestAdapter.SendAsync<AuthenticationStrengthPolicyCollectionResponse>(requestInfo, AuthenticationStrengthPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to authenticationStrengthPolicies for policies
+        /// Create a new custom authenticationStrengthPolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationstrengthroot-post-policies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +91,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
             return await RequestAdapter.SendAsync<AuthenticationStrengthPolicy>(requestInfo, AuthenticationStrengthPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+        /// Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +117,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to authenticationStrengthPolicies for policies
+        /// Create a new custom authenticationStrengthPolicy object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +145,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
+        /// Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
         /// </summary>
         public class AuthenticationStrengthPoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

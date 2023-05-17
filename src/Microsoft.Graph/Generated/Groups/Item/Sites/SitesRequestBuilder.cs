@@ -1,6 +1,7 @@
 using Microsoft.Graph.Beta.Groups.Item.Sites.Add;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Count;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Delta;
+using Microsoft.Graph.Beta.Groups.Item.Sites.GetAllSites;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Remove;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -29,6 +30,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites {
         /// <summary>Provides operations to call the delta method.</summary>
         public DeltaRequestBuilder Delta { get =>
             new DeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getAllSites method.</summary>
+        public GetAllSitesRequestBuilder GetAllSites { get =>
+            new GetAllSitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the remove method.</summary>
         public RemoveRequestBuilder Remove { get =>

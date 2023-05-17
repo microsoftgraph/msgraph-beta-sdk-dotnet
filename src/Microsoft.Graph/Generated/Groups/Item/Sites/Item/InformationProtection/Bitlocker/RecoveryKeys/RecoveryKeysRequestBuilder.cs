@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Bitl
         public RecoveryKeysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/informationProtection/bitlocker/recoveryKeys{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The recovery keys associated with the bitlocker entity.
+        /// Get a list of the bitlockerRecoveryKey objects and their properties.  This operation does not return the **key** property. For information about how to read the **key** property, see Get bitlockerRecoveryKey.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bitlocker-list-recoverykeys?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Bitl
             return await RequestAdapter.SendAsync<BitlockerRecoveryKeyCollectionResponse>(requestInfo, BitlockerRecoveryKeyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The recovery keys associated with the bitlocker entity.
+        /// Get a list of the bitlockerRecoveryKey objects and their properties.  This operation does not return the **key** property. For information about how to read the **key** property, see Get bitlockerRecoveryKey.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +86,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Bitl
             return requestInfo;
         }
         /// <summary>
-        /// The recovery keys associated with the bitlocker entity.
+        /// Get a list of the bitlockerRecoveryKey objects and their properties.  This operation does not return the **key** property. For information about how to read the **key** property, see Get bitlockerRecoveryKey.
         /// </summary>
         public class RecoveryKeysRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

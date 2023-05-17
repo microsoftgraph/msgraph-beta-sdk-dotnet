@@ -52,7 +52,8 @@ namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Default PDF linked to this agreement.
+        /// Retrieve the details of the default file for an agreement, including the language and version information. The file information is specified through the agreementFile object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/agreementfile-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +117,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace {
             return requestInfo;
         }
         /// <summary>
-        /// Default PDF linked to this agreement.
+        /// Retrieve the details of the default file for an agreement, including the language and version information. The file information is specified through the agreementFile object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +187,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace {
             }
         }
         /// <summary>
-        /// Default PDF linked to this agreement.
+        /// Retrieve the details of the default file for an agreement, including the language and version information. The file information is specified through the agreementFile object.
         /// </summary>
         public class FileRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

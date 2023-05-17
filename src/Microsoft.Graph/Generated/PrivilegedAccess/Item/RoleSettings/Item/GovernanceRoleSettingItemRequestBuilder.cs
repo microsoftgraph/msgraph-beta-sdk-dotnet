@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of role settings for the provider.
+        /// Retrieve the properties and relationships of a governanceRoleSetting.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/governancerolesetting-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,7 +77,8 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item {
             return await RequestAdapter.SendAsync<GovernanceRoleSetting>(requestInfo, GovernanceRoleSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property roleSettings in privilegedAccess
+        /// Update the properties of governanceRoleSetting.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/governancerolesetting-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of role settings for the provider.
+        /// Retrieve the properties and relationships of a governanceRoleSetting.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -147,7 +149,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property roleSettings in privilegedAccess
+        /// Update the properties of governanceRoleSetting.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +193,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item {
             }
         }
         /// <summary>
-        /// A collection of role settings for the provider.
+        /// Retrieve the properties and relationships of a governanceRoleSetting.
         /// </summary>
         public class GovernanceRoleSettingItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

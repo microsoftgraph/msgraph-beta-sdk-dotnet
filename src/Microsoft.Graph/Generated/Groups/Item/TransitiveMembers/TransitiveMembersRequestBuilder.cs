@@ -71,6 +71,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.TransitiveMembers {
         }
         /// <summary>
         /// The direct and transitive members of a group. Nullable.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/group-list-transitivemembers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Schools {
         public SchoolsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/schools{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// All schools that this class is associated with. Nullable.
+        /// Retrieve a list of schools in which the class is taught.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationclass-list-schools?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Schools {
             return await RequestAdapter.SendAsync<EducationSchoolCollectionResponse>(requestInfo, EducationSchoolCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// All schools that this class is associated with. Nullable.
+        /// Retrieve a list of schools in which the class is taught.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +86,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Schools {
             return requestInfo;
         }
         /// <summary>
-        /// All schools that this class is associated with. Nullable.
+        /// Retrieve a list of schools in which the class is taught.
         /// </summary>
         public class SchoolsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

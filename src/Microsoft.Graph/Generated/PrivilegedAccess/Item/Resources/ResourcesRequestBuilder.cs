@@ -45,7 +45,8 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources {
         public ResourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// A collection of resources for the provider.
+        /// Retrieve a collection of governanceResource that the requestor has access to.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/governanceresource-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +86,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources {
             return await RequestAdapter.SendAsync<GovernanceResource>(requestInfo, GovernanceResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of resources for the provider.
+        /// Retrieve a collection of governanceResource that the requestor has access to.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,7 +140,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of resources for the provider.
+        /// Retrieve a collection of governanceResource that the requestor has access to.
         /// </summary>
         public class ResourcesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

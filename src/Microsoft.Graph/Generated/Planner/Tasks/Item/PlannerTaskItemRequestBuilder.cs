@@ -48,7 +48,8 @@ namespace Microsoft.Graph.Beta.Planner.Tasks.Item {
         public PlannerTaskItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/planner/tasks/{plannerTask%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property tasks for planner
+        /// Delete a plannerTask object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannertask-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,7 +68,8 @@ namespace Microsoft.Graph.Beta.Planner.Tasks.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read-only. Nullable. Returns a collection of the specified tasks
+        /// Retrieve the properties and relationships of plannerTask object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannertask-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,6 +89,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks.Item {
         }
         /// <summary>
         /// Update the navigation property tasks in planner
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannertask-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +110,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks.Item {
             return await RequestAdapter.SendAsync<PlannerTask>(requestInfo, PlannerTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property tasks for planner
+        /// Delete a plannerTask object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -131,7 +134,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read-only. Nullable. Returns a collection of the specified tasks
+        /// Retrieve the properties and relationships of plannerTask object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -201,7 +204,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks.Item {
             }
         }
         /// <summary>
-        /// Read-only. Nullable. Returns a collection of the specified tasks
+        /// Retrieve the properties and relationships of plannerTask object.
         /// </summary>
         public class PlannerTaskItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

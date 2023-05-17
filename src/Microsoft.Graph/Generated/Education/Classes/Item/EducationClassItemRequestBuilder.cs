@@ -68,7 +68,8 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
         public EducationClassItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property classes for education
+        /// Delete an educationClass. Because a class is also a universal group, deleting a class deletes the group.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationclass-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +88,8 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get classes from education
+        /// Retrieve a class from the system. A class is a universal group with a special property that indicates to the system that the group is a class. Group members represent the students; group admins represent the teachers in the class. If you&apos;re using the delegated token, the user will only see classes in which they are members.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationclass-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,8 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
             return await RequestAdapter.SendAsync<EducationClass>(requestInfo, EducationClass.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property classes in education
+        /// Update the properties of a class.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationclass-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -127,7 +130,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
             return await RequestAdapter.SendAsync<EducationClass>(requestInfo, EducationClass.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property classes for education
+        /// Delete an educationClass. Because a class is also a universal group, deleting a class deletes the group.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,7 +154,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get classes from education
+        /// Retrieve a class from the system. A class is a universal group with a special property that indicates to the system that the group is a class. Group members represent the students; group admins represent the teachers in the class. If you&apos;re using the delegated token, the user will only see classes in which they are members.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -177,7 +180,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property classes in education
+        /// Update the properties of a class.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -221,7 +224,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
             }
         }
         /// <summary>
-        /// Get classes from education
+        /// Retrieve a class from the system. A class is a universal group with a special property that indicates to the system that the group is a class. Group members represent the students; group admins represent the teachers in the class. If you&apos;re using the delegated token, the user will only see classes in which they are members.
         /// </summary>
         public class EducationClassItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

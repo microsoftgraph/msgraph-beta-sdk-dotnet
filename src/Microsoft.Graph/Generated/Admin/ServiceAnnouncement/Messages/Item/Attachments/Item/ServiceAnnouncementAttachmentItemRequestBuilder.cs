@@ -52,7 +52,8 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Item.Attachmen
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A collection of serviceAnnouncementAttachments.
+        /// Read the properties and relationships of a serviceAnnouncementAttachment object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/serviceannouncementattachment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +117,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Item.Attachmen
             return requestInfo;
         }
         /// <summary>
-        /// A collection of serviceAnnouncementAttachments.
+        /// Read the properties and relationships of a serviceAnnouncementAttachment object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +187,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Item.Attachmen
             }
         }
         /// <summary>
-        /// A collection of serviceAnnouncementAttachments.
+        /// Read the properties and relationships of a serviceAnnouncementAttachment object.
         /// </summary>
         public class ServiceAnnouncementAttachmentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
