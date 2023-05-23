@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dataType", value); }
         }
 #endif
-        /// <summary>The isMultiValued property</summary>
+        /// <summary>Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false. Supports $filter (eq).</summary>
         public bool? IsMultiValued {
             get { return BackingStore?.Get<bool?>("isMultiValued"); }
             set { BackingStore?.Set("isMultiValued", value); }

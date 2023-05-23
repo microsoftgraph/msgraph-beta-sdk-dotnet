@@ -8,5 +8,7 @@ namespace Microsoft.Graph.Beta.Models {
         Disabled,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "strictLocation")]
+        StrictLocation,
     }
 }

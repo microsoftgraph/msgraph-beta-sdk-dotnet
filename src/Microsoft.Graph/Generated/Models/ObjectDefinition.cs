@@ -30,14 +30,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MetadataEntry>? Metadata {
-            get { return BackingStore?.Get<List<MetadataEntry>?>("metadata"); }
+        public List<ObjectDefinitionMetadataEntry>? Metadata {
+            get { return BackingStore?.Get<List<ObjectDefinitionMetadataEntry>?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #nullable restore
 #else
-        public List<MetadataEntry> Metadata {
-            get { return BackingStore?.Get<List<MetadataEntry>>("metadata"); }
+        public List<ObjectDefinitionMetadataEntry> Metadata {
+            get { return BackingStore?.Get<List<ObjectDefinitionMetadataEntry>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"attributes", n => { Attributes = n.GetCollectionOfObjectValues<AttributeDefinition>(AttributeDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<MetadataEntry>(MetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<ObjectDefinitionMetadataEntry>(ObjectDefinitionMetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"supportedApis", n => { SupportedApis = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<AttributeDefinition>("attributes", Attributes);
-            writer.WriteCollectionOfObjectValues<MetadataEntry>("metadata", Metadata);
+            writer.WriteCollectionOfObjectValues<ObjectDefinitionMetadataEntry>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedApis", SupportedApis);

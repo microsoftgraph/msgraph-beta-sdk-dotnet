@@ -3,7 +3,6 @@ using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Provision
 using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Restart;
 using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schema;
 using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Start;
-using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Stop;
 using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.ValidateCredentials;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -39,10 +38,6 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item {
         /// <summary>Provides operations to call the start method.</summary>
         public StartRequestBuilder Start { get =>
             new StartRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the stop method.</summary>
-        public StopRequestBuilder Stop { get =>
-            new StopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the validateCredentials method.</summary>
         public ValidateCredentialsRequestBuilder ValidateCredentials { get =>

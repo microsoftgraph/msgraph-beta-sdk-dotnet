@@ -40,14 +40,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MetadataEntry>? Metadata {
-            get { return BackingStore?.Get<List<MetadataEntry>?>("metadata"); }
+        public List<ObjectMappingMetadataEntry>? Metadata {
+            get { return BackingStore?.Get<List<ObjectMappingMetadataEntry>?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #nullable restore
 #else
-        public List<MetadataEntry> Metadata {
-            get { return BackingStore?.Get<List<MetadataEntry>>("metadata"); }
+        public List<ObjectMappingMetadataEntry> Metadata {
+            get { return BackingStore?.Get<List<ObjectMappingMetadataEntry>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"attributeMappings", n => { AttributeMappings = n.GetCollectionOfObjectValues<AttributeMapping>(AttributeMapping.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"enabled", n => { Enabled = n.GetBoolValue(); } },
                 {"flowTypes", n => { FlowTypes = n.GetEnumValue<ObjectFlowTypes>(); } },
-                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<MetadataEntry>(MetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<ObjectMappingMetadataEntry>(ObjectMappingMetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"scope", n => { Scope = n.GetObjectValue<Filter>(Filter.CreateFromDiscriminatorValue); } },
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<AttributeMapping>("attributeMappings", AttributeMappings);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteEnumValue<ObjectFlowTypes>("flowTypes", FlowTypes);
-            writer.WriteCollectionOfObjectValues<MetadataEntry>("metadata", Metadata);
+            writer.WriteCollectionOfObjectValues<ObjectMappingMetadataEntry>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<Filter>("scope", Scope);

@@ -47,6 +47,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("checkLists", value); }
         }
 #endif
+        /// <summary>The completionRequirements property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? CompletionRequirements {
+            get { return BackingStore?.Get<List<string>?>("completionRequirements"); }
+            set { BackingStore?.Set("completionRequirements", value); }
+        }
+#nullable restore
+#else
+        public List<string> CompletionRequirements {
+            get { return BackingStore?.Get<List<string>>("completionRequirements"); }
+            set { BackingStore?.Set("completionRequirements", value); }
+        }
+#endif
         /// <summary>Rules and restrictions for deleting the task. Accepted values are allow and block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -223,6 +237,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"appliedCategories", n => { AppliedCategories = n.GetObjectValue<PlannerFieldRules>(PlannerFieldRules.CreateFromDiscriminatorValue); } },
                 {"assignments", n => { Assignments = n.GetObjectValue<PlannerFieldRules>(PlannerFieldRules.CreateFromDiscriminatorValue); } },
                 {"checkLists", n => { CheckLists = n.GetObjectValue<PlannerFieldRules>(PlannerFieldRules.CreateFromDiscriminatorValue); } },
+                {"completionRequirements", n => { CompletionRequirements = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"delete", n => { Delete = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"dueDate", n => { DueDate = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"move", n => { Move = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -246,6 +261,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<PlannerFieldRules>("appliedCategories", AppliedCategories);
             writer.WriteObjectValue<PlannerFieldRules>("assignments", Assignments);
             writer.WriteObjectValue<PlannerFieldRules>("checkLists", CheckLists);
+            writer.WriteCollectionOfPrimitiveValues<string>("completionRequirements", CompletionRequirements);
             writer.WriteCollectionOfPrimitiveValues<string>("delete", Delete);
             writer.WriteCollectionOfPrimitiveValues<string>("dueDate", DueDate);
             writer.WriteCollectionOfPrimitiveValues<string>("move", Move);

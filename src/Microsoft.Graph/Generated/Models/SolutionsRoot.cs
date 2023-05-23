@@ -41,6 +41,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The virtualEvents property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public VirtualEventsRoot? VirtualEvents {
+            get { return BackingStore?.Get<VirtualEventsRoot?>("virtualEvents"); }
+            set { BackingStore?.Set("virtualEvents", value); }
+        }
+#nullable restore
+#else
+        public VirtualEventsRoot VirtualEvents {
+            get { return BackingStore?.Get<VirtualEventsRoot>("virtualEvents"); }
+            set { BackingStore?.Set("virtualEvents", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new SolutionsRoot and sets the default values.
         /// </summary>
@@ -63,6 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"businessScenarios", n => { BusinessScenarios = n.GetCollectionOfObjectValues<BusinessScenario>(BusinessScenario.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"virtualEvents", n => { VirtualEvents = n.GetObjectValue<VirtualEventsRoot>(VirtualEventsRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<BusinessScenario>("businessScenarios", BusinessScenarios);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<VirtualEventsRoot>("virtualEvents", VirtualEvents);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

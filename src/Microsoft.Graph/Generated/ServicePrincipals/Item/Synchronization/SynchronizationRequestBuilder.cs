@@ -98,13 +98,13 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Synchronization?> PatchAsync(Microsoft.Graph.Beta.Models.Synchronization body, Action<SynchronizationRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Synchronization?> PutAsync(Microsoft.Graph.Beta.Models.Synchronization body, Action<SynchronizationRequestBuilderPutRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Synchronization> PatchAsync(Microsoft.Graph.Beta.Models.Synchronization body, Action<SynchronizationRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Synchronization> PutAsync(Microsoft.Graph.Beta.Models.Synchronization body, Action<SynchronizationRequestBuilderPutRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
@@ -168,21 +168,21 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Synchronization body, Action<SynchronizationRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(Microsoft.Graph.Beta.Models.Synchronization body, Action<SynchronizationRequestBuilderPutRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Synchronization body, Action<SynchronizationRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(Microsoft.Graph.Beta.Models.Synchronization body, Action<SynchronizationRequestBuilderPutRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
-                HttpMethod = Method.PATCH,
+                HttpMethod = Method.PUT,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
             requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
-                var requestConfig = new SynchronizationRequestBuilderPatchRequestConfiguration();
+                var requestConfig = new SynchronizationRequestBuilderPutRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
@@ -251,15 +251,15 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class SynchronizationRequestBuilderPatchRequestConfiguration {
+        public class SynchronizationRequestBuilderPutRequestConfiguration {
             /// <summary>Request headers</summary>
             public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new synchronizationRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new synchronizationRequestBuilderPutRequestConfiguration and sets the default values.
             /// </summary>
-            public SynchronizationRequestBuilderPatchRequestConfiguration() {
+            public SynchronizationRequestBuilderPutRequestConfiguration() {
                 Options = new List<IRequestOption>();
                 Headers = new RequestHeaders();
             }

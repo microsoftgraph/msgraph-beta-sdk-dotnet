@@ -73,7 +73,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static MeetingParticipantInfo CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MeetingParticipantInfo();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.virtualEventPresenterInfo" => new VirtualEventPresenterInfo(),
+                _ => new MeetingParticipantInfo(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

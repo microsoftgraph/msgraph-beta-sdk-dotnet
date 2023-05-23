@@ -51,14 +51,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MetadataEntry>? Metadata {
-            get { return BackingStore?.Get<List<MetadataEntry>?>("metadata"); }
+        public List<SynchronizationMetadataEntry>? Metadata {
+            get { return BackingStore?.Get<List<SynchronizationMetadataEntry>?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #nullable restore
 #else
-        public List<MetadataEntry> Metadata {
-            get { return BackingStore?.Get<List<MetadataEntry>>("metadata"); }
+        public List<SynchronizationMetadataEntry> Metadata {
+            get { return BackingStore?.Get<List<SynchronizationMetadataEntry>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"discoverable", n => { Discoverable = n.GetBoolValue(); } },
                 {"factoryTag", n => { FactoryTag = n.GetStringValue(); } },
-                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<MetadataEntry>(MetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<SynchronizationMetadataEntry>(SynchronizationMetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"schema", n => { Schema = n.GetObjectValue<SynchronizationSchema>(SynchronizationSchema.CreateFromDiscriminatorValue); } },
             };
         }
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("discoverable", Discoverable);
             writer.WriteStringValue("factoryTag", FactoryTag);
-            writer.WriteCollectionOfObjectValues<MetadataEntry>("metadata", Metadata);
+            writer.WriteCollectionOfObjectValues<SynchronizationMetadataEntry>("metadata", Metadata);
             writer.WriteObjectValue<SynchronizationSchema>("schema", Schema);
         }
     }

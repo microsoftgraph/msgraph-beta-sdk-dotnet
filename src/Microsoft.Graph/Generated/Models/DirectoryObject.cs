@@ -23,6 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.application" => new Application(),
                 "#microsoft.graph.appManagementPolicy" => new AppManagementPolicy(),
                 "#microsoft.graph.authorizationPolicy" => new AuthorizationPolicy(),
+                "#microsoft.graph.certificateBasedApplicationConfiguration" => new CertificateBasedApplicationConfiguration(),
                 "#microsoft.graph.claimsMappingPolicy" => new ClaimsMappingPolicy(),
                 "#microsoft.graph.contract" => new Contract(),
                 "#microsoft.graph.crossTenantAccessPolicy" => new CrossTenantAccessPolicy(),
@@ -49,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.tenantRelationshipAccessPolicyBase" => new TenantRelationshipAccessPolicyBase(),
                 "#microsoft.graph.tokenIssuancePolicy" => new TokenIssuancePolicy(),
                 "#microsoft.graph.tokenLifetimePolicy" => new TokenLifetimePolicy(),
+                "#microsoft.graph.trustedCertificateAuthorityAsEntityBase" => new TrustedCertificateAuthorityAsEntityBase(),
                 "#microsoft.graph.user" => new User(),
                 _ => new DirectoryObject(),
             };

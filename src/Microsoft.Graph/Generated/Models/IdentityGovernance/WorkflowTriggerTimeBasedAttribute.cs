@@ -8,5 +8,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         EmployeeLeaveDateTime,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "createdDateTime")]
+        CreatedDateTime,
     }
 }
