@@ -33,6 +33,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("attributeSets", value); }
         }
 #endif
+        /// <summary>The certificateAuthorities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public CertificateAuthorityPath? CertificateAuthorities {
+            get { return BackingStore?.Get<CertificateAuthorityPath?>("certificateAuthorities"); }
+            set { BackingStore?.Set("certificateAuthorities", value); }
+        }
+#nullable restore
+#else
+        public CertificateAuthorityPath CertificateAuthorities {
+            get { return BackingStore?.Get<CertificateAuthorityPath>("certificateAuthorities"); }
+            set { BackingStore?.Set("certificateAuthorities", value); }
+        }
+#endif
         /// <summary>Schema of a custom security attributes (key-value pairs).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -188,6 +202,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"administrativeUnits", n => { AdministrativeUnits = n.GetCollectionOfObjectValues<AdministrativeUnit>(AdministrativeUnit.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"attributeSets", n => { AttributeSets = n.GetCollectionOfObjectValues<AttributeSet>(AttributeSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"certificateAuthorities", n => { CertificateAuthorities = n.GetObjectValue<CertificateAuthorityPath>(CertificateAuthorityPath.CreateFromDiscriminatorValue); } },
                 {"customSecurityAttributeDefinitions", n => { CustomSecurityAttributeDefinitions = n.GetCollectionOfObjectValues<CustomSecurityAttributeDefinition>(CustomSecurityAttributeDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deletedItems", n => { DeletedItems = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"featureRolloutPolicies", n => { FeatureRolloutPolicies = n.GetCollectionOfObjectValues<FeatureRolloutPolicy>(FeatureRolloutPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -209,6 +224,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<AdministrativeUnit>("administrativeUnits", AdministrativeUnits);
             writer.WriteCollectionOfObjectValues<AttributeSet>("attributeSets", AttributeSets);
+            writer.WriteObjectValue<CertificateAuthorityPath>("certificateAuthorities", CertificateAuthorities);
             writer.WriteCollectionOfObjectValues<CustomSecurityAttributeDefinition>("customSecurityAttributeDefinitions", CustomSecurityAttributeDefinitions);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("deletedItems", DeletedItems);
             writer.WriteCollectionOfObjectValues<FeatureRolloutPolicy>("featureRolloutPolicies", FeatureRolloutPolicies);

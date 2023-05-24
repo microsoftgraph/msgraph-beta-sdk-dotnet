@@ -110,6 +110,10 @@ namespace Microsoft.Graph.Beta.Models {
         PermissionCheckUnknownError,
         [EnumMember(Value = "udpConnectivityCheckStunUrlNotAllowListed")]
         UdpConnectivityCheckStunUrlNotAllowListed,
+        [EnumMember(Value = "udpConnectivityCheckTurnUrlNotAllowListed")]
+        UdpConnectivityCheckTurnUrlNotAllowListed,
+        [EnumMember(Value = "udpConnectivityCheckUrlsNotAllowListed")]
+        UdpConnectivityCheckUrlsNotAllowListed,
         [EnumMember(Value = "udpConnectivityCheckUnknownError")]
         UdpConnectivityCheckUnknownError,
         [EnumMember(Value = "internalServerErrorDeploymentCanceled")]

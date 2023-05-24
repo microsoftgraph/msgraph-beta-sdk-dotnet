@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("owner", value); }
         }
 #endif
-        /// <summary>The sharedWithContainers property</summary>
+        /// <summary>List of containers the plan is shared with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PlannerSharedWithContainer>? SharedWithContainers {

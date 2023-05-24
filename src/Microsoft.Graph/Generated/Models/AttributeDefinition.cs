@@ -59,14 +59,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MetadataEntry>? Metadata {
-            get { return BackingStore?.Get<List<MetadataEntry>?>("metadata"); }
+        public List<AttributeDefinitionMetadataEntry>? Metadata {
+            get { return BackingStore?.Get<List<AttributeDefinitionMetadataEntry>?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #nullable restore
 #else
-        public List<MetadataEntry> Metadata {
-            get { return BackingStore?.Get<List<MetadataEntry>>("metadata"); }
+        public List<AttributeDefinitionMetadataEntry> Metadata {
+            get { return BackingStore?.Get<List<AttributeDefinitionMetadataEntry>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"caseExact", n => { CaseExact = n.GetBoolValue(); } },
                 {"defaultValue", n => { DefaultValue = n.GetStringValue(); } },
                 {"flowNullValues", n => { FlowNullValues = n.GetBoolValue(); } },
-                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<MetadataEntry>(MetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<AttributeDefinitionMetadataEntry>(AttributeDefinitionMetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"multivalued", n => { Multivalued = n.GetBoolValue(); } },
                 {"mutability", n => { Mutability = n.GetEnumValue<Mutability>(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("caseExact", CaseExact);
             writer.WriteStringValue("defaultValue", DefaultValue);
             writer.WriteBoolValue("flowNullValues", FlowNullValues);
-            writer.WriteCollectionOfObjectValues<MetadataEntry>("metadata", Metadata);
+            writer.WriteCollectionOfObjectValues<AttributeDefinitionMetadataEntry>("metadata", Metadata);
             writer.WriteBoolValue("multivalued", Multivalued);
             writer.WriteEnumValue<Mutability>("mutability", Mutability);
             writer.WriteStringValue("name", Name);

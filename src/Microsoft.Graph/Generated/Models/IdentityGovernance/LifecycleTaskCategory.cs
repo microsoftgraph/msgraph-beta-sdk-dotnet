@@ -8,5 +8,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         Leaver,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "mover")]
+        Mover,
     }
 }

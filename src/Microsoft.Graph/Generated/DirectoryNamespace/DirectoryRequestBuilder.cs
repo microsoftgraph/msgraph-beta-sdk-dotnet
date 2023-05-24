@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.DirectoryNamespace.AdministrativeUnits;
 using Microsoft.Graph.Beta.DirectoryNamespace.AttributeSets;
+using Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities;
 using Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinitions;
 using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems;
 using Microsoft.Graph.Beta.DirectoryNamespace.FeatureRolloutPolicies;
@@ -32,6 +33,10 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
         /// <summary>Provides operations to manage the attributeSets property of the microsoft.graph.directory entity.</summary>
         public AttributeSetsRequestBuilder AttributeSets { get =>
             new AttributeSetsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the certificateAuthorities property of the microsoft.graph.directory entity.</summary>
+        public CertificateAuthoritiesRequestBuilder CertificateAuthorities { get =>
+            new CertificateAuthoritiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customSecurityAttributeDefinitions property of the microsoft.graph.directory entity.</summary>
         public CustomSecurityAttributeDefinitionsRequestBuilder CustomSecurityAttributeDefinitions { get =>

@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The type of authentication event that triggered the custom extension request. The possible values are: tokenIssuanceStart, pageRenderStart, unknownFutureValue.</summary>
+        /// <summary>The type of authentication event that triggered the custom authentication extension request. The possible values are: tokenIssuanceStart, pageRenderStart, unknownFutureValue.</summary>
         public AuthenticationEventType? EventType {
             get { return BackingStore?.Get<AuthenticationEventType?>("eventType"); }
             set { BackingStore?.Set("eventType", value); }
         }
-        /// <summary>ID of the Event Listener that was executed.</summary>
+        /// <summary>ID of the authentication event listener that was executed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExecutedListenerId {

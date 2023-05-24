@@ -19,6 +19,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("checklist", value); }
         }
 #endif
+        /// <summary>The completionRequirements property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public PlannerTaskCompletionRequirementDetails? CompletionRequirements {
+            get { return BackingStore?.Get<PlannerTaskCompletionRequirementDetails?>("completionRequirements"); }
+            set { BackingStore?.Set("completionRequirements", value); }
+        }
+#nullable restore
+#else
+        public PlannerTaskCompletionRequirementDetails CompletionRequirements {
+            get { return BackingStore?.Get<PlannerTaskCompletionRequirementDetails>("completionRequirements"); }
+            set { BackingStore?.Set("completionRequirements", value); }
+        }
+#endif
         /// <summary>Description of the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"checklist", n => { Checklist = n.GetObjectValue<PlannerChecklistItems>(PlannerChecklistItems.CreateFromDiscriminatorValue); } },
+                {"completionRequirements", n => { CompletionRequirements = n.GetObjectValue<PlannerTaskCompletionRequirementDetails>(PlannerTaskCompletionRequirementDetails.CreateFromDiscriminatorValue); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"notes", n => { Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
                 {"previewType", n => { PreviewType = n.GetEnumValue<PlannerPreviewType>(); } },
@@ -94,6 +109,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<PlannerChecklistItems>("checklist", Checklist);
+            writer.WriteObjectValue<PlannerTaskCompletionRequirementDetails>("completionRequirements", CompletionRequirements);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<ItemBody>("notes", Notes);
             writer.WriteEnumValue<PlannerPreviewType>("previewType", PreviewType);

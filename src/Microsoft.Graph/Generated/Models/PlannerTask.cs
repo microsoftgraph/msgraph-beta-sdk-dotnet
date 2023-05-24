@@ -265,6 +265,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("referenceCount"); }
             set { BackingStore?.Set("referenceCount", value); }
         }
+        /// <summary>The specifiedCompletionRequirements property</summary>
+        public PlannerTaskCompletionRequirements? SpecifiedCompletionRequirements {
+            get { return BackingStore?.Get<PlannerTaskCompletionRequirements?>("specifiedCompletionRequirements"); }
+            set { BackingStore?.Set("specifiedCompletionRequirements", value); }
+        }
         /// <summary>Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
@@ -326,6 +331,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"progressTaskBoardFormat", n => { ProgressTaskBoardFormat = n.GetObjectValue<PlannerProgressTaskBoardTaskFormat>(PlannerProgressTaskBoardTaskFormat.CreateFromDiscriminatorValue); } },
                 {"recurrence", n => { Recurrence = n.GetObjectValue<PlannerTaskRecurrence>(PlannerTaskRecurrence.CreateFromDiscriminatorValue); } },
                 {"referenceCount", n => { ReferenceCount = n.GetIntValue(); } },
+                {"specifiedCompletionRequirements", n => { SpecifiedCompletionRequirements = n.GetEnumValue<PlannerTaskCompletionRequirements>(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"title", n => { Title = n.GetStringValue(); } },
             };
@@ -362,6 +368,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<PlannerProgressTaskBoardTaskFormat>("progressTaskBoardFormat", ProgressTaskBoardFormat);
             writer.WriteObjectValue<PlannerTaskRecurrence>("recurrence", Recurrence);
             writer.WriteIntValue("referenceCount", ReferenceCount);
+            writer.WriteEnumValue<PlannerTaskCompletionRequirements>("specifiedCompletionRequirements", SpecifiedCompletionRequirements);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteStringValue("title", Title);
         }

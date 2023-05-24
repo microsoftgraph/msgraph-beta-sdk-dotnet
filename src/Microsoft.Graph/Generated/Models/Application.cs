@@ -61,6 +61,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appRoles", value); }
         }
 #endif
+        /// <summary>The authenticationBehaviors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.AuthenticationBehaviors? AuthenticationBehaviors {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationBehaviors?>("authenticationBehaviors"); }
+            set { BackingStore?.Set("authenticationBehaviors", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.AuthenticationBehaviors AuthenticationBehaviors {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationBehaviors>("authenticationBehaviors"); }
+            set { BackingStore?.Set("authenticationBehaviors", value); }
+        }
+#endif
         /// <summary>Specifies the certification status of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -636,6 +650,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"appId", n => { AppId = n.GetStringValue(); } },
                 {"appManagementPolicies", n => { AppManagementPolicies = n.GetCollectionOfObjectValues<AppManagementPolicy>(AppManagementPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"appRoles", n => { AppRoles = n.GetCollectionOfObjectValues<AppRole>(AppRole.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"authenticationBehaviors", n => { AuthenticationBehaviors = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationBehaviors>(Microsoft.Graph.Beta.Models.AuthenticationBehaviors.CreateFromDiscriminatorValue); } },
                 {"certification", n => { Certification = n.GetObjectValue<Microsoft.Graph.Beta.Models.Certification>(Microsoft.Graph.Beta.Models.Certification.CreateFromDiscriminatorValue); } },
                 {"connectorGroup", n => { ConnectorGroup = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConnectorGroup>(Microsoft.Graph.Beta.Models.ConnectorGroup.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -691,6 +706,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("appId", AppId);
             writer.WriteCollectionOfObjectValues<AppManagementPolicy>("appManagementPolicies", AppManagementPolicies);
             writer.WriteCollectionOfObjectValues<AppRole>("appRoles", AppRoles);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthenticationBehaviors>("authenticationBehaviors", AuthenticationBehaviors);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Certification>("certification", Certification);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ConnectorGroup>("connectorGroup", ConnectorGroup);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);

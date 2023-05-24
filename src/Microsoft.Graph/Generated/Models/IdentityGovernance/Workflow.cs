@@ -13,14 +13,14 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// <summary>The unique identifier of the Azure AD identity that last modified the workflow object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.User>? ExecutionScope {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>?>("executionScope"); }
+        public List<UserProcessingResult>? ExecutionScope {
+            get { return BackingStore?.Get<List<UserProcessingResult>?>("executionScope"); }
             set { BackingStore?.Set("executionScope", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.User> ExecutionScope {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>>("executionScope"); }
+        public List<UserProcessingResult> ExecutionScope {
+            get { return BackingStore?.Get<List<UserProcessingResult>>("executionScope"); }
             set { BackingStore?.Set("executionScope", value); }
         }
 #endif
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"executionScope", n => { ExecutionScope = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.User>(Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"executionScope", n => { ExecutionScope = n.GetCollectionOfObjectValues<UserProcessingResult>(UserProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"nextScheduleRunDateTime", n => { NextScheduleRunDateTime = n.GetDateTimeOffsetValue(); } },
                 {"runs", n => { Runs = n.GetCollectionOfObjectValues<Run>(Run.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("deletedDateTime", DeletedDateTime);
-            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.User>("executionScope", ExecutionScope);
+            writer.WriteCollectionOfObjectValues<UserProcessingResult>("executionScope", ExecutionScope);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("nextScheduleRunDateTime", NextScheduleRunDateTime);
             writer.WriteCollectionOfObjectValues<Run>("runs", Runs);

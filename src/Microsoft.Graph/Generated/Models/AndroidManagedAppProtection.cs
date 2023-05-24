@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowedAndroidDeviceModels", value); }
         }
 #endif
+        /// <summary>Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time).</summary>
+        public ManagedAppRemediationAction? AppActionIfAccountIsClockedOut {
+            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfAccountIsClockedOut"); }
+            set { BackingStore?.Set("appActionIfAccountIsClockedOut", value); }
+        }
         /// <summary>An admin initiated action to be applied on a managed app.</summary>
         public ManagedAppRemediationAction? AppActionIfAndroidDeviceManufacturerNotAllowed {
             get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfAndroidDeviceManufacturerNotAllowed"); }
@@ -375,6 +380,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"allowedAndroidDeviceManufacturers", n => { AllowedAndroidDeviceManufacturers = n.GetStringValue(); } },
                 {"allowedAndroidDeviceModels", n => { AllowedAndroidDeviceModels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"appActionIfAccountIsClockedOut", n => { AppActionIfAccountIsClockedOut = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"appActionIfAndroidDeviceManufacturerNotAllowed", n => { AppActionIfAndroidDeviceManufacturerNotAllowed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"appActionIfAndroidDeviceModelNotAllowed", n => { AppActionIfAndroidDeviceModelNotAllowed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"appActionIfAndroidSafetyNetAppsVerificationFailed", n => { AppActionIfAndroidSafetyNetAppsVerificationFailed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
@@ -425,6 +431,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("allowedAndroidDeviceManufacturers", AllowedAndroidDeviceManufacturers);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedAndroidDeviceModels", AllowedAndroidDeviceModels);
+            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfAccountIsClockedOut", AppActionIfAccountIsClockedOut);
             writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfAndroidDeviceManufacturerNotAllowed", AppActionIfAndroidDeviceManufacturerNotAllowed);
             writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfAndroidDeviceModelNotAllowed", AppActionIfAndroidDeviceModelNotAllowed);
             writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfAndroidSafetyNetAppsVerificationFailed", AppActionIfAndroidSafetyNetAppsVerificationFailed);

@@ -55,12 +55,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The outOfOfficeDays property</summary>
+        /// <summary>Number of days the user is OOF during a simulation journey/course of a campaign.</summary>
         public int? OutOfOfficeDays {
             get { return BackingStore?.Get<int?>("outOfOfficeDays"); }
             set { BackingStore?.Set("outOfOfficeDays", value); }
         }
-        /// <summary>id property value of the user resource that represents the user in the Azure Active Directory tenant.</summary>
+        /// <summary>The id property value of the user resource that represents the user in the Azure Active Directory tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {

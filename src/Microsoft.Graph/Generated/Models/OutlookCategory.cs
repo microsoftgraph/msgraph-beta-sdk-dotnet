@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class OutlookCategory : Entity, IParsable {
-        /// <summary>A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. See the note below.</summary>
+        /// <summary>A pre-set color constant that characterizes a category, and that is mapped to one of 25 predefined colors. For more details, see the following note.</summary>
         public CategoryColor? Color {
             get { return BackingStore?.Get<CategoryColor?>("color"); }
             set { BackingStore?.Set("color", value); }
