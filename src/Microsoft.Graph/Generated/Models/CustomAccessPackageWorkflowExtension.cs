@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new CustomAccessPackageWorkflowExtension and sets the default values.
+        /// Instantiates a new customAccessPackageWorkflowExtension and sets the default values.
         /// </summary>
         public CustomAccessPackageWorkflowExtension() : base() {
             OdataType = "#microsoft.graph.customAccessPackageWorkflowExtension";

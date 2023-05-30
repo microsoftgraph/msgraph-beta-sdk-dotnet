@@ -17,7 +17,6 @@ using Microsoft.Graph.Beta.AuthenticationMethodConfigurations;
 using Microsoft.Graph.Beta.AuthenticationMethodsPolicy;
 using Microsoft.Graph.Beta.BookingBusinesses;
 using Microsoft.Graph.Beta.BookingCurrencies;
-using Microsoft.Graph.Beta.Branding;
 using Microsoft.Graph.Beta.BusinessFlowTemplates;
 using Microsoft.Graph.Beta.CertificateBasedAuthConfiguration;
 using Microsoft.Graph.Beta.Chats;
@@ -202,10 +201,6 @@ namespace Microsoft.Graph.Beta {
         /// <summary>Provides operations to manage the collection of bookingCurrency entities.</summary>
         public BookingCurrenciesRequestBuilder BookingCurrencies { get =>
             new BookingCurrenciesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the organizationalBranding singleton.</summary>
-        public BrandingRequestBuilder Branding { get =>
-            new BrandingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of businessFlowTemplate entities.</summary>
         public BusinessFlowTemplatesRequestBuilder BusinessFlowTemplates { get =>

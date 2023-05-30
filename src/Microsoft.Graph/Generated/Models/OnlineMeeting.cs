@@ -115,6 +115,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("audioConferencing", value); }
         }
 #endif
+        /// <summary>The broadcastRecording property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public byte[]? BroadcastRecording {
+            get { return BackingStore?.Get<byte[]?>("broadcastRecording"); }
+            set { BackingStore?.Set("broadcastRecording", value); }
+        }
+#nullable restore
+#else
+        public byte[] BroadcastRecording {
+            get { return BackingStore?.Get<byte[]>("broadcastRecording"); }
+            set { BackingStore?.Set("broadcastRecording", value); }
+        }
+#endif
         /// <summary>Settings related to a live event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -308,6 +322,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recording", value); }
         }
 #endif
+        /// <summary>The recordings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<CallRecording>? Recordings {
+            get { return BackingStore?.Get<List<CallRecording>?>("recordings"); }
+            set { BackingStore?.Set("recordings", value); }
+        }
+#nullable restore
+#else
+        public List<CallRecording> Recordings {
+            get { return BackingStore?.Get<List<CallRecording>>("recordings"); }
+            set { BackingStore?.Set("recordings", value); }
+        }
+#endif
         /// <summary>The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -432,6 +460,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"attendanceReports", n => { AttendanceReports = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>(Microsoft.Graph.Beta.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"attendeeReport", n => { AttendeeReport = n.GetByteArrayValue(); } },
                 {"audioConferencing", n => { AudioConferencing = n.GetObjectValue<Microsoft.Graph.Beta.Models.AudioConferencing>(Microsoft.Graph.Beta.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
+                {"broadcastRecording", n => { BroadcastRecording = n.GetByteArrayValue(); } },
                 {"broadcastSettings", n => { BroadcastSettings = n.GetObjectValue<BroadcastMeetingSettings>(BroadcastMeetingSettings.CreateFromDiscriminatorValue); } },
                 {"capabilities", n => { Capabilities = n.GetCollectionOfEnumValues<MeetingCapabilities>()?.ToList(); } },
                 {"chatInfo", n => { ChatInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ChatInfo>(Microsoft.Graph.Beta.Models.ChatInfo.CreateFromDiscriminatorValue); } },
@@ -449,6 +478,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"participants", n => { Participants = n.GetObjectValue<MeetingParticipants>(MeetingParticipants.CreateFromDiscriminatorValue); } },
                 {"recordAutomatically", n => { RecordAutomatically = n.GetBoolValue(); } },
                 {"recording", n => { Recording = n.GetByteArrayValue(); } },
+                {"recordings", n => { Recordings = n.GetCollectionOfObjectValues<CallRecording>(CallRecording.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"registration", n => { Registration = n.GetObjectValue<MeetingRegistration>(MeetingRegistration.CreateFromDiscriminatorValue); } },
                 {"shareMeetingChatHistoryDefault", n => { ShareMeetingChatHistoryDefault = n.GetEnumValue<MeetingChatHistoryDefaultMode>(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
@@ -479,6 +509,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>("attendanceReports", AttendanceReports);
             writer.WriteByteArrayValue("attendeeReport", AttendeeReport);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AudioConferencing>("audioConferencing", AudioConferencing);
+            writer.WriteByteArrayValue("broadcastRecording", BroadcastRecording);
             writer.WriteObjectValue<BroadcastMeetingSettings>("broadcastSettings", BroadcastSettings);
             writer.WriteCollectionOfEnumValues<MeetingCapabilities>("capabilities", Capabilities);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ChatInfo>("chatInfo", ChatInfo);
@@ -496,6 +527,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<MeetingParticipants>("participants", Participants);
             writer.WriteBoolValue("recordAutomatically", RecordAutomatically);
             writer.WriteByteArrayValue("recording", Recording);
+            writer.WriteCollectionOfObjectValues<CallRecording>("recordings", Recordings);
             writer.WriteObjectValue<MeetingRegistration>("registration", Registration);
             writer.WriteEnumValue<MeetingChatHistoryDefaultMode>("shareMeetingChatHistoryDefault", ShareMeetingChatHistoryDefault);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);

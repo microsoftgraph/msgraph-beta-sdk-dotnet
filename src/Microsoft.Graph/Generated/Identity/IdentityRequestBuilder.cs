@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Identity.ApiConnectors;
 using Microsoft.Graph.Beta.Identity.AuthenticationEventListeners;
+using Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows;
 using Microsoft.Graph.Beta.Identity.B2cUserFlows;
 using Microsoft.Graph.Beta.Identity.B2xUserFlows;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess;
@@ -30,6 +31,10 @@ namespace Microsoft.Graph.Beta.Identity {
         /// <summary>Provides operations to manage the authenticationEventListeners property of the microsoft.graph.identityContainer entity.</summary>
         public AuthenticationEventListenersRequestBuilder AuthenticationEventListeners { get =>
             new AuthenticationEventListenersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the authenticationEventsFlows property of the microsoft.graph.identityContainer entity.</summary>
+        public AuthenticationEventsFlowsRequestBuilder AuthenticationEventsFlows { get =>
+            new AuthenticationEventsFlowsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the b2cUserFlows property of the microsoft.graph.identityContainer entity.</summary>
         public B2cUserFlowsRequestBuilder B2cUserFlows { get =>

@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isServiceDefault"); }
             set { BackingStore?.Set("isServiceDefault", value); }
         }
-        /// <summary>The tenantRestrictions property</summary>
+        /// <summary>Defines the default tenant restrictions configuration for your organization users accessing an external organization on your network or devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CrossTenantAccessPolicyTenantRestrictions? TenantRestrictions {

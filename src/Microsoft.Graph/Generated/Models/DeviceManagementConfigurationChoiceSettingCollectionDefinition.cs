@@ -5,12 +5,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationChoiceSettingCollectionDefinition : DeviceManagementConfigurationChoiceSettingDefinition, IParsable {
-        /// <summary>Maximum number of choices in the collection. Valid values 1 to 100</summary>
+        /// <summary>Maximum number of choices in the collection</summary>
         public int? MaximumCount {
             get { return BackingStore?.Get<int?>("maximumCount"); }
             set { BackingStore?.Set("maximumCount", value); }
         }
-        /// <summary>Minimum number of choices in the collection. Valid values 1 to 100</summary>
+        /// <summary>Minimum number of choices in the collection</summary>
         public int? MinimumCount {
             get { return BackingStore?.Get<int?>("minimumCount"); }
             set { BackingStore?.Set("minimumCount", value); }

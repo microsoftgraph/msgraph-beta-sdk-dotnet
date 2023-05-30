@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
-        /// <summary>The tenantRestrictions property</summary>
+        /// <summary>Defines the partner-specific tenant restrictions configuration for your organization users accessing a partner organization using partner supplied idenities on your network or devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CrossTenantAccessPolicyTenantRestrictions? TenantRestrictions {
