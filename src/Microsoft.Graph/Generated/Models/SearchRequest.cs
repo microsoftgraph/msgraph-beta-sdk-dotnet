@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sharePointOneDriveOptions", value); }
         }
 #endif
-        /// <summary>The size of the page to be retrieved. Optional.</summary>
+        /// <summary>The size of the page to be retrieved. The maximum value is 500. Optional.</summary>
         public int? Size {
             get { return BackingStore?.Get<int?>("size"); }
             set { BackingStore?.Set("size", value); }

@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Windows10 Network Boundary Configuration
-    /// </summary>
     public class Windows10NetworkBoundaryConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Windows Network Isolation Policy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -23,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new windows10NetworkBoundaryConfiguration and sets the default values.
+        /// Instantiates a new Windows10NetworkBoundaryConfiguration and sets the default values.
         /// </summary>
         public Windows10NetworkBoundaryConfiguration() : base() {
             OdataType = "#microsoft.graph.windows10NetworkBoundaryConfiguration";

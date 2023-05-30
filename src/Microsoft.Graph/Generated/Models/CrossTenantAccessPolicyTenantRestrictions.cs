@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CrossTenantAccessPolicyTenantRestrictions : CrossTenantAccessPolicyB2BSetting, IParsable {
-        /// <summary>The devices property</summary>
+        /// <summary>Defines the rule for filtering devices and whether devices satisfying the rule should be allowed or blocked. Not implemented.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DevicesFilter? Devices {

@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new SitePage and sets the default values.
+        /// Instantiates a new sitePage and sets the default values.
         /// </summary>
         public SitePage() : base() {
             OdataType = "#microsoft.graph.sitePage";

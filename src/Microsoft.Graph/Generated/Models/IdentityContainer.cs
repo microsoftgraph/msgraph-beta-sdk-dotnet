@@ -39,6 +39,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationEventListeners", value); }
         }
 #endif
+        /// <summary>Represents the entry point for self-service sign up and sign in user flows in both Azure AD workforce and customer tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<AuthenticationEventsFlow>? AuthenticationEventsFlows {
+            get { return BackingStore?.Get<List<AuthenticationEventsFlow>?>("authenticationEventsFlows"); }
+            set { BackingStore?.Set("authenticationEventsFlows", value); }
+        }
+#nullable restore
+#else
+        public List<AuthenticationEventsFlow> AuthenticationEventsFlows {
+            get { return BackingStore?.Get<List<AuthenticationEventsFlow>>("authenticationEventsFlows"); }
+            set { BackingStore?.Set("authenticationEventsFlows", value); }
+        }
+#endif
         /// <summary>Represents entry point for B2C identity userflows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -189,6 +203,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"apiConnectors", n => { ApiConnectors = n.GetCollectionOfObjectValues<IdentityApiConnector>(IdentityApiConnector.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"authenticationEventListeners", n => { AuthenticationEventListeners = n.GetCollectionOfObjectValues<AuthenticationEventListener>(AuthenticationEventListener.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"authenticationEventsFlows", n => { AuthenticationEventsFlows = n.GetCollectionOfObjectValues<AuthenticationEventsFlow>(AuthenticationEventsFlow.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"b2cUserFlows", n => { B2cUserFlows = n.GetCollectionOfObjectValues<B2cIdentityUserFlow>(B2cIdentityUserFlow.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"b2xUserFlows", n => { B2xUserFlows = n.GetCollectionOfObjectValues<B2xIdentityUserFlow>(B2xIdentityUserFlow.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"conditionalAccess", n => { ConditionalAccess = n.GetObjectValue<ConditionalAccessRoot>(ConditionalAccessRoot.CreateFromDiscriminatorValue); } },
@@ -208,6 +223,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<IdentityApiConnector>("apiConnectors", ApiConnectors);
             writer.WriteCollectionOfObjectValues<AuthenticationEventListener>("authenticationEventListeners", AuthenticationEventListeners);
+            writer.WriteCollectionOfObjectValues<AuthenticationEventsFlow>("authenticationEventsFlows", AuthenticationEventsFlows);
             writer.WriteCollectionOfObjectValues<B2cIdentityUserFlow>("b2cUserFlows", B2cUserFlows);
             writer.WriteCollectionOfObjectValues<B2xIdentityUserFlow>("b2xUserFlows", B2xUserFlows);
             writer.WriteObjectValue<ConditionalAccessRoot>("conditionalAccess", ConditionalAccess);

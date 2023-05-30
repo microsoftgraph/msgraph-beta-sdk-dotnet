@@ -3,8 +3,10 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.AlternativeRecording;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.AttendanceReports;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.AttendeeReport;
+using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.BroadcastRecording;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.MeetingAttendanceReport;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.Recording;
+using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.Recordings;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.Registration;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.Transcripts;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.VirtualAppointment;
@@ -33,6 +35,10 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.It
         public AttendeeReportRequestBuilder AttendeeReport { get =>
             new AttendeeReportRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the media for the solutionsRoot entity.</summary>
+        public BroadcastRecordingRequestBuilder BroadcastRecording { get =>
+            new BroadcastRecordingRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the meetingAttendanceReport property of the microsoft.graph.onlineMeeting entity.</summary>
         public MeetingAttendanceReportRequestBuilder MeetingAttendanceReport { get =>
             new MeetingAttendanceReportRequestBuilder(PathParameters, RequestAdapter);
@@ -40,6 +46,10 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.It
         /// <summary>Provides operations to manage the media for the solutionsRoot entity.</summary>
         public RecordingRequestBuilder Recording { get =>
             new RecordingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.</summary>
+        public RecordingsRequestBuilder Recordings { get =>
+            new RecordingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the registration property of the microsoft.graph.onlineMeeting entity.</summary>
         public RegistrationRequestBuilder Registration { get =>

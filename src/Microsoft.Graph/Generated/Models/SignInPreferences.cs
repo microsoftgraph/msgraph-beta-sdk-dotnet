@@ -32,6 +32,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The userPreferredMethodForSecondaryAuthentication property</summary>
+        public UserDefaultAuthenticationMethodType? UserPreferredMethodForSecondaryAuthentication {
+            get { return BackingStore?.Get<UserDefaultAuthenticationMethodType?>("userPreferredMethodForSecondaryAuthentication"); }
+            set { BackingStore?.Set("userPreferredMethodForSecondaryAuthentication", value); }
+        }
         /// <summary>
         /// Instantiates a new signInPreferences and sets the default values.
         /// </summary>
@@ -54,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"isSystemPreferredAuthenticationMethodEnabled", n => { IsSystemPreferredAuthenticationMethodEnabled = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"userPreferredMethodForSecondaryAuthentication", n => { UserPreferredMethodForSecondaryAuthentication = n.GetEnumValue<UserDefaultAuthenticationMethodType>(); } },
             };
         }
         /// <summary>
@@ -64,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isSystemPreferredAuthenticationMethodEnabled", IsSystemPreferredAuthenticationMethodEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteEnumValue<UserDefaultAuthenticationMethodType>("userPreferredMethodForSecondaryAuthentication", UserPreferredMethodForSecondaryAuthentication);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

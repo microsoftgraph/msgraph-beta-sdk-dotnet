@@ -67,8 +67,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningCourseActivities.Item 
             return await RequestAdapter.SendAsync<LearningCourseActivity>(requestInfo, LearningCourseActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of a learningCourseActivity object. 
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/learningcourseactivity-update?view=graph-rest-1.0" />
+        /// Update the navigation property learningCourseActivities in employeeExperience
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -139,7 +138,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningCourseActivities.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a learningCourseActivity object. 
+        /// Update the navigation property learningCourseActivities in employeeExperience
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
