@@ -62,6 +62,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
+        /// <summary>The preferredDisplayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreferredDisplayName {
+            get { return BackingStore?.Get<string?>("preferredDisplayName"); }
+            set { BackingStore?.Set("preferredDisplayName", value); }
+        }
+#nullable restore
+#else
+        public string PreferredDisplayName {
+            get { return BackingStore?.Get<string>("preferredDisplayName"); }
+            set { BackingStore?.Set("preferredDisplayName", value); }
+        }
+#endif
         /// <summary>Information on whether the participant has recording capability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,6 +142,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isMuted", n => { IsMuted = n.GetBoolValue(); } },
                 {"mediaStreams", n => { MediaStreams = n.GetCollectionOfObjectValues<MediaStream>(MediaStream.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"metadata", n => { Metadata = n.GetStringValue(); } },
+                {"preferredDisplayName", n => { PreferredDisplayName = n.GetStringValue(); } },
                 {"recordingInfo", n => { RecordingInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.RecordingInfo>(Microsoft.Graph.Beta.Models.RecordingInfo.CreateFromDiscriminatorValue); } },
                 {"removedState", n => { RemovedState = n.GetObjectValue<Microsoft.Graph.Beta.Models.RemovedState>(Microsoft.Graph.Beta.Models.RemovedState.CreateFromDiscriminatorValue); } },
                 {"restrictedExperience", n => { RestrictedExperience = n.GetObjectValue<OnlineMeetingRestricted>(OnlineMeetingRestricted.CreateFromDiscriminatorValue); } },
@@ -147,6 +162,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isMuted", IsMuted);
             writer.WriteCollectionOfObjectValues<MediaStream>("mediaStreams", MediaStreams);
             writer.WriteStringValue("metadata", Metadata);
+            writer.WriteStringValue("preferredDisplayName", PreferredDisplayName);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RecordingInfo>("recordingInfo", RecordingInfo);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RemovedState>("removedState", RemovedState);
             writer.WriteObjectValue<OnlineMeetingRestricted>("restrictedExperience", RestrictedExperience);

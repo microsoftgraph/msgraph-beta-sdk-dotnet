@@ -5,12 +5,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class VirtualEventRegistrant : Entity, IParsable {
-        /// <summary>The cancelationDateTime property</summary>
+        /// <summary>Time in UTC when the registrant cancels their registration for the virtual event. Only appears when applicable.</summary>
         public DateTimeOffset? CancelationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("cancelationDateTime"); }
             set { BackingStore?.Set("cancelationDateTime", value); }
         }
-        /// <summary>The email property</summary>
+        /// <summary>Email address of the registrant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email {
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("email", value); }
         }
 #endif
-        /// <summary>The firstName property</summary>
+        /// <summary>First name of the registrant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstName {
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("firstName", value); }
         }
 #endif
-        /// <summary>The lastName property</summary>
+        /// <summary>Last name of the registrant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastName {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastName", value); }
         }
 #endif
-        /// <summary>The registrationDateTime property</summary>
+        /// <summary>Time in UTC when the registrant registers for the virtual event.</summary>
         public DateTimeOffset? RegistrationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("registrationDateTime"); }
             set { BackingStore?.Set("registrationDateTime", value); }
         }
-        /// <summary>The registrationQuestionAnswers property</summary>
+        /// <summary>The registrant&apos;s answer to the registration questions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<VirtualEventRegistrationQuestionAnswer>? RegistrationQuestionAnswers {
@@ -71,12 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("registrationQuestionAnswers", value); }
         }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Registration status of the registrant. Read-only.</summary>
         public VirtualEventAttendeeRegistrationStatus? Status {
             get { return BackingStore?.Get<VirtualEventAttendeeRegistrationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The userId property</summary>
+        /// <summary>The registrant&apos;s AAD user ID. Only appears when the registrant is registered in AAD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {

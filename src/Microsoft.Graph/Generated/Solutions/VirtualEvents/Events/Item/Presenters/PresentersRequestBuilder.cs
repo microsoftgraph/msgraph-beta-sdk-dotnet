@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Presenters {
         public PresentersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/presenters{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get presenters from solutions
+        /// Presenters&apos; information of the virtual event.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Presenters {
             return await RequestAdapter.SendAsync<VirtualEventPresenter>(requestInfo, VirtualEventPresenter.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get presenters from solutions
+        /// Presenters&apos; information of the virtual event.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Presenters {
             return requestInfo;
         }
         /// <summary>
-        /// Get presenters from solutions
+        /// Presenters&apos; information of the virtual event.
         /// </summary>
         public class PresentersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

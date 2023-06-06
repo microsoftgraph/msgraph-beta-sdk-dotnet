@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("flowNullValues"); }
             set { BackingStore?.Set("flowNullValues", value); }
         }
-        /// <summary>Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</summary>
+        /// <summary>Metadata for the given object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AttributeDefinitionMetadataEntry>? Metadata {

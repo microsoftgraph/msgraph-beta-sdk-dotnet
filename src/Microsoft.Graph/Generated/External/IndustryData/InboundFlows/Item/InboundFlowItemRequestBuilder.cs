@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
             return await RequestAdapter.SendAsync<InboundFlow>(requestInfo, InboundFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of an inboundFileFlow object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-1.0" />
+        /// Update the properties of an inboundFlow object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-inboundflow-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an inboundFileFlow object.
+        /// Update the properties of an inboundFlow object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

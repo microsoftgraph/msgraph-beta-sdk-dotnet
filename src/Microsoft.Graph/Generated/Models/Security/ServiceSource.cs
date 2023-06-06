@@ -22,5 +22,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         DataLossPrevention,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "microsoftDefenderForCloud")]
+        MicrosoftDefenderForCloud,
     }
 }

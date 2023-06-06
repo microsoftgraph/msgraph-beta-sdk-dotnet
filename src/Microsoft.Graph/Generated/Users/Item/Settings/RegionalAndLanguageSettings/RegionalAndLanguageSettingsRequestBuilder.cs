@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the properties of a regionalAndLanguageSettings object.
+        /// Retrieve the properties of a user&apos;s regionalAndLanguageSettings.
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/regionalandlanguagesettings-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties of a regionalAndLanguageSettings object.
+        /// Retrieve the properties of a user&apos;s regionalAndLanguageSettings.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -183,7 +183,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings {
             }
         }
         /// <summary>
-        /// Get the properties of a regionalAndLanguageSettings object.
+        /// Retrieve the properties of a user&apos;s regionalAndLanguageSettings.
         /// </summary>
         public class RegionalAndLanguageSettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
         public ReactivateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/recommendations/{recommendation%2Did}/impactedResources/{impactedResource%2Did}/reactivate", rawUrl) {
         }
         /// <summary>
-        /// Invoke action reactivate
+        /// Reactivate an accidentally dismissed, completed, or postponed **impactedResource** object. This action updates the **status** of the resource to `active`. This method is relevant only if the status of the **impactedResource** object is `dismissed`, `postponed`, or `completedByUser`. 
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/impactedresource-reactivate?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
             return await RequestAdapter.SendAsync<ImpactedResource>(requestInfo, ImpactedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action reactivate
+        /// Reactivate an accidentally dismissed, completed, or postponed **impactedResource** object. This action updates the **status** of the resource to `active`. This method is relevant only if the status of the **impactedResource** object is `dismissed`, `postponed`, or `completedByUser`. 
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

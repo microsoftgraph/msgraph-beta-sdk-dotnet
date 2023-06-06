@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Print.Connectors.Item {
         public PrintConnectorItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/connectors/{printConnector%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete (unregister) a **printConnector**.
+        /// Delete (unregister) a printConnector.
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/printconnector-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Print.Connectors.Item {
             return await RequestAdapter.SendAsync<PrintConnector>(requestInfo, PrintConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete (unregister) a **printConnector**.
+        /// Delete (unregister) a printConnector.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

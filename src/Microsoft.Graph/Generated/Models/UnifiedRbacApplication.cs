@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRbacApplication : Entity, IParsable {
-        /// <summary>The customAppScopes property</summary>
+        /// <summary>Workload-specific scope object that represents the resources for which the principal has been granted access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<CustomAppScope>? CustomAppScopes {

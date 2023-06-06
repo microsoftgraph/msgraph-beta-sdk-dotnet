@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// In Azure AD entitlement management, retrieves the properties of an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.
+        /// Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios:
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Approval>(requestInfo, Microsoft.Graph.Beta.Models.Approval.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// In Azure AD entitlement management, retrieves the properties of an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.
+        /// Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios:
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return requestInfo;
         }
         /// <summary>
-        /// In Azure AD entitlement management, retrieves the properties of an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.
+        /// Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios:
         /// </summary>
         public class AccessPackageAssignmentApprovalsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

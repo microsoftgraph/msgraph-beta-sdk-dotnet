@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Approval : Entity, IParsable {
-        /// <summary>The steps property</summary>
+        /// <summary>Used to represent the decision associated with a single step in the approval process configured in approvalStage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ApprovalStep>? Steps {

@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes.Item {
         public CustomAppScopeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/roleManagement/exchange/customAppScopes/{customAppScope%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property customAppScopes for roleManagement
+        /// Delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/customappscope-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get customAppScopes from roleManagement
+        /// Get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/customappscope-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +68,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes.Item {
             return await RequestAdapter.SendAsync<CustomAppScope>(requestInfo, CustomAppScope.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property customAppScopes in roleManagement
+        /// Update an existing customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/customappscope-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +90,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes.Item {
             return await RequestAdapter.SendAsync<CustomAppScope>(requestInfo, CustomAppScope.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property customAppScopes for roleManagement
+        /// Delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get customAppScopes from roleManagement
+        /// Get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +140,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property customAppScopes in roleManagement
+        /// Update an existing customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +184,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes.Item {
             }
         }
         /// <summary>
-        /// Get customAppScopes from roleManagement
+        /// Get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
         /// </summary>
         public class CustomAppScopeItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

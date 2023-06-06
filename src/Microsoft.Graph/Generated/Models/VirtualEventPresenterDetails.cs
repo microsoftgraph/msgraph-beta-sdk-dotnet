@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The bio property</summary>
+        /// <summary>Bio of the presenter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ItemBody? Bio {
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("bio", value); }
         }
 #endif
-        /// <summary>The company property</summary>
+        /// <summary>The presenter&apos;s company name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Company {
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("company", value); }
         }
 #endif
-        /// <summary>The jobTitle property</summary>
+        /// <summary>The presenter&apos;s job title.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JobTitle {
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("jobTitle", value); }
         }
 #endif
-        /// <summary>The linkedInProfileWebUrl property</summary>
+        /// <summary>The presenter&apos;s LinkedIn profile URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LinkedInProfileWebUrl {
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The personalSiteWebUrl property</summary>
+        /// <summary>The presenter&apos;s personal website URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PersonalSiteWebUrl {
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("personalSiteWebUrl", value); }
         }
 #endif
-        /// <summary>The twitterProfileWebUrl property</summary>
+        /// <summary>The presenter&apos;s Twitter profile URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TwitterProfileWebUrl {

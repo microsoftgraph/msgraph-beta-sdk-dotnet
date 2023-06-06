@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Postpone 
         public PostponeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/recommendations/{recommendation%2Did}/postpone", rawUrl) {
         }
         /// <summary>
-        /// Invoke action postpone
+        /// Postpone action on a recommendation object to a specified future date and time by marking its **status** as `postponed`. On the date and time provided, Azure AD will automatically update the **status** of the **recommendation** object to `active` again.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/recommendation-postpone?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Postpone 
             return await RequestAdapter.SendAsync<Recommendation>(requestInfo, Recommendation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action postpone
+        /// Postpone action on a recommendation object to a specified future date and time by marking its **status** as `postponed`. On the date and time provided, Azure AD will automatically update the **status** of the **recommendation** object to `active` again.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

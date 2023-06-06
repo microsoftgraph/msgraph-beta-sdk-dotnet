@@ -88,6 +88,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("internalUrl", value); }
         }
 #endif
+        /// <summary>The isAccessibleViaZTNAClient property</summary>
+        public bool? IsAccessibleViaZTNAClient {
+            get { return BackingStore?.Get<bool?>("isAccessibleViaZTNAClient"); }
+            set { BackingStore?.Set("isAccessibleViaZTNAClient", value); }
+        }
         /// <summary>Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.</summary>
         public bool? IsBackendCertificateValidationEnabled {
             get { return BackingStore?.Get<bool?>("isBackendCertificateValidationEnabled"); }
@@ -257,6 +262,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"externalAuthenticationType", n => { ExternalAuthenticationType = n.GetEnumValue<ExternalAuthenticationType>(); } },
                 {"externalUrl", n => { ExternalUrl = n.GetStringValue(); } },
                 {"internalUrl", n => { InternalUrl = n.GetStringValue(); } },
+                {"isAccessibleViaZTNAClient", n => { IsAccessibleViaZTNAClient = n.GetBoolValue(); } },
                 {"isBackendCertificateValidationEnabled", n => { IsBackendCertificateValidationEnabled = n.GetBoolValue(); } },
                 {"isHttpOnlyCookieEnabled", n => { IsHttpOnlyCookieEnabled = n.GetBoolValue(); } },
                 {"isOnPremPublishingEnabled", n => { IsOnPremPublishingEnabled = n.GetBoolValue(); } },
@@ -287,6 +293,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<ExternalAuthenticationType>("externalAuthenticationType", ExternalAuthenticationType);
             writer.WriteStringValue("externalUrl", ExternalUrl);
             writer.WriteStringValue("internalUrl", InternalUrl);
+            writer.WriteBoolValue("isAccessibleViaZTNAClient", IsAccessibleViaZTNAClient);
             writer.WriteBoolValue("isBackendCertificateValidationEnabled", IsBackendCertificateValidationEnabled);
             writer.WriteBoolValue("isHttpOnlyCookieEnabled", IsHttpOnlyCookieEnabled);
             writer.WriteBoolValue("isOnPremPublishingEnabled", IsOnPremPublishingEnabled);
