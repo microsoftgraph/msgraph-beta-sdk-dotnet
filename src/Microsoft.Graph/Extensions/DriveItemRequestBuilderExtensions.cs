@@ -20,6 +20,7 @@ using Microsoft.Graph.Beta.Drives.Item.Items.Item.ValidatePermission;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Permissions;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Subscriptions;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Thumbnails;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook;
 using Microsoft.Graph.Beta.Drives.Item.List.Items.Item.Versions;
 using Microsoft.Kiota.Abstractions;
 
@@ -219,5 +220,10 @@ public class CustomDriveItemItemRequestBuilder : Microsoft.Graph.Beta.Drives.Ite
     public new VersionsRequestBuilder Versions 
     {
         get => new VersionsRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
+    }
+    /// <summary>Provides operations to manage the workbook property of the microsoft.graph.driveItem entity.</summary>
+    public new WorkbookRequestBuilder Workbook 
+    { 
+        get => new WorkbookRequestBuilder(PathParameters, RequestAdapter).UpdateUrlTemplate(this.UrlTemplate);
     }
 }
