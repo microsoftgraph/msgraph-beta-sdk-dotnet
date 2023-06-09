@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Detection technology or sensor that identified the notable component or activity.</summary>
+        /// <summary>Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud.</summary>
         public Microsoft.Graph.Beta.Models.Security.DetectionSource? DetectionSource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DetectionSource?>("detectionSource"); }
             set { BackingStore?.Set("detectionSource", value); }

@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Manager.Ref {
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Use this API to assign a user&apos;s manager.
+        /// Assign a user&apos;s manager.
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-post-manager?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Manager.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to assign a user&apos;s manager.
+        /// Assign a user&apos;s manager.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

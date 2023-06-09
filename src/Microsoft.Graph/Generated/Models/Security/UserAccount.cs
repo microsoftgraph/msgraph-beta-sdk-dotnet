@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class UserAccount : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>The user account&apos;s displayed name.</summary>
+        /// <summary>The displayed name of the user account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountName {
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The user object identifier in Azure AD.</summary>
+        /// <summary>The user object identifier in Azure Active Directory (Azure AD).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AzureAdUserId {
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The displayName property</summary>
+        /// <summary>The user display name in Azure AD.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {

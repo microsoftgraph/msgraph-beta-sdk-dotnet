@@ -48,6 +48,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<DeviceHealthStatus?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
+        /// <summary>The ipInterfaces property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? IpInterfaces {
+            get { return BackingStore?.Get<List<string>?>("ipInterfaces"); }
+            set { BackingStore?.Set("ipInterfaces", value); }
+        }
+#nullable restore
+#else
+        public List<string> IpInterfaces {
+            get { return BackingStore?.Get<List<string>>("ipInterfaces"); }
+            set { BackingStore?.Set("ipInterfaces", value); }
+        }
+#endif
         /// <summary>Users that were logged on the machine during the time of the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -170,6 +184,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"deviceDnsName", n => { DeviceDnsName = n.GetStringValue(); } },
                 {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 {"healthStatus", n => { HealthStatus = n.GetEnumValue<DeviceHealthStatus>(); } },
+                {"ipInterfaces", n => { IpInterfaces = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"loggedOnUsers", n => { LoggedOnUsers = n.GetCollectionOfObjectValues<LoggedOnUser>(LoggedOnUser.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"mdeDeviceId", n => { MdeDeviceId = n.GetStringValue(); } },
                 {"onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<OnboardingStatus>(); } },
@@ -194,6 +209,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             writer.WriteStringValue("deviceDnsName", DeviceDnsName);
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
             writer.WriteEnumValue<DeviceHealthStatus>("healthStatus", HealthStatus);
+            writer.WriteCollectionOfPrimitiveValues<string>("ipInterfaces", IpInterfaces);
             writer.WriteCollectionOfObjectValues<LoggedOnUser>("loggedOnUsers", LoggedOnUsers);
             writer.WriteStringValue("mdeDeviceId", MdeDeviceId);
             writer.WriteEnumValue<OnboardingStatus>("onboardingStatus", OnboardingStatus);

@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class VirtualEventRegistrationQuestion : Entity, IParsable {
-        /// <summary>The answerChoices property</summary>
+        /// <summary>Answer choices when answerInputType is singleChoice or multiChoice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AnswerChoices {
@@ -19,12 +19,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("answerChoices", value); }
         }
 #endif
-        /// <summary>The answerInputType property</summary>
+        /// <summary>Input type of the registration question answer.</summary>
         public VirtualEventRegistrationQuestionAnswerInputType? AnswerInputType {
             get { return BackingStore?.Get<VirtualEventRegistrationQuestionAnswerInputType?>("answerInputType"); }
             set { BackingStore?.Set("answerInputType", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>Display name of the registration question.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The isRequired property</summary>
+        /// <summary>Indicates whether the question is required to answer. Default value is false.</summary>
         public bool? IsRequired {
             get { return BackingStore?.Get<bool?>("isRequired"); }
             set { BackingStore?.Set("isRequired", value); }

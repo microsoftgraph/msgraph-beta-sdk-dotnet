@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Presenters.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get presenters from solutions
+        /// Presenters&apos; information of the virtual event.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Presenters.It
             return requestInfo;
         }
         /// <summary>
-        /// Get presenters from solutions
+        /// Presenters&apos; information of the virtual event.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Presenters.It
             }
         }
         /// <summary>
-        /// Get presenters from solutions
+        /// Presenters&apos; information of the virtual event.
         /// </summary>
         public class VirtualEventPresenterItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

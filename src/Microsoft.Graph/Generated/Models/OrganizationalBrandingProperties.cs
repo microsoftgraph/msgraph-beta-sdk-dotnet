@@ -89,6 +89,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("cdnList", value); }
         }
 #endif
+        /// <summary>The contentCustomization property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.ContentCustomization? ContentCustomization {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentCustomization?>("contentCustomization"); }
+            set { BackingStore?.Set("contentCustomization", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.ContentCustomization ContentCustomization {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentCustomization>("contentCustomization"); }
+            set { BackingStore?.Set("contentCustomization", value); }
+        }
+#endif
         /// <summary>A custom URL for resetting account credentials. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -449,6 +463,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"bannerLogo", n => { BannerLogo = n.GetByteArrayValue(); } },
                 {"bannerLogoRelativeUrl", n => { BannerLogoRelativeUrl = n.GetStringValue(); } },
                 {"cdnList", n => { CdnList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"contentCustomization", n => { ContentCustomization = n.GetObjectValue<Microsoft.Graph.Beta.Models.ContentCustomization>(Microsoft.Graph.Beta.Models.ContentCustomization.CreateFromDiscriminatorValue); } },
                 {"customAccountResetCredentialsUrl", n => { CustomAccountResetCredentialsUrl = n.GetStringValue(); } },
                 {"customCannotAccessYourAccountText", n => { CustomCannotAccessYourAccountText = n.GetStringValue(); } },
                 {"customCannotAccessYourAccountUrl", n => { CustomCannotAccessYourAccountUrl = n.GetStringValue(); } },
@@ -488,6 +503,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteByteArrayValue("bannerLogo", BannerLogo);
             writer.WriteStringValue("bannerLogoRelativeUrl", BannerLogoRelativeUrl);
             writer.WriteCollectionOfPrimitiveValues<string>("cdnList", CdnList);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ContentCustomization>("contentCustomization", ContentCustomization);
             writer.WriteStringValue("customAccountResetCredentialsUrl", CustomAccountResetCredentialsUrl);
             writer.WriteStringValue("customCannotAccessYourAccountText", CustomCannotAccessYourAccountText);
             writer.WriteStringValue("customCannotAccessYourAccountUrl", CustomCannotAccessYourAccountUrl);

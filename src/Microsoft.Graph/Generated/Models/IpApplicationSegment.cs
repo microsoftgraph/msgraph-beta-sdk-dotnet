@@ -24,6 +24,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("port"); }
             set { BackingStore?.Set("port", value); }
         }
+        /// <summary>The ports property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Ports {
+            get { return BackingStore?.Get<List<string>?>("ports"); }
+            set { BackingStore?.Set("ports", value); }
+        }
+#nullable restore
+#else
+        public List<string> Ports {
+            get { return BackingStore?.Get<List<string>>("ports"); }
+            set { BackingStore?.Set("ports", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new IpApplicationSegment and sets the default values.
         /// </summary>
@@ -45,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"destinationHost", n => { DestinationHost = n.GetStringValue(); } },
                 {"port", n => { Port = n.GetIntValue(); } },
+                {"ports", n => { Ports = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,6 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("destinationHost", DestinationHost);
             writer.WriteIntValue("port", Port);
+            writer.WriteCollectionOfPrimitiveValues<string>("ports", Ports);
         }
     }
 }

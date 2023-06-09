@@ -52,6 +52,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<ConnectorStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+        /// <summary>The version property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Version {
+            get { return BackingStore?.Get<string?>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+#nullable restore
+#else
+        public string Version {
+            get { return BackingStore?.Get<string>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,6 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"machineName", n => { MachineName = n.GetStringValue(); } },
                 {"memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<ConnectorGroup>(ConnectorGroup.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"status", n => { Status = n.GetEnumValue<ConnectorStatus>(); } },
+                {"version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -82,6 +97,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("machineName", MachineName);
             writer.WriteCollectionOfObjectValues<ConnectorGroup>("memberOf", MemberOf);
             writer.WriteEnumValue<ConnectorStatus>("status", Status);
+            writer.WriteStringValue("version", Version);
         }
     }
 }

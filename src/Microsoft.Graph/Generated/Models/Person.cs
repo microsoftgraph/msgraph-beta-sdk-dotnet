@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("givenName", value); }
         }
 #endif
-        /// <summary>true if the user has flagged this person as a favorite.</summary>
+        /// <summary>True if the user has flagged this person as a favorite.</summary>
         public bool? IsFavorite {
             get { return BackingStore?.Get<bool?>("isFavorite"); }
             set { BackingStore?.Set("isFavorite", value); }

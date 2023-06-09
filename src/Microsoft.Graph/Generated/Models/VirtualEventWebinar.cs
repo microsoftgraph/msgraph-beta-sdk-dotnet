@@ -5,12 +5,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class VirtualEventWebinar : VirtualEvent, IParsable {
-        /// <summary>The audience property</summary>
+        /// <summary>To whom the webinar is visible.</summary>
         public MeetingAudience? Audience {
             get { return BackingStore?.Get<MeetingAudience?>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
-        /// <summary>The coOrganizers property</summary>
+        /// <summary>Identity information of co-organizers of the webinar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<CommunicationsUserIdentity>? CoOrganizers {
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("coOrganizers", value); }
         }
 #endif
-        /// <summary>The registration property</summary>
+        /// <summary>Registration configuration of the webinar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public VirtualEventRegistration? Registration {
