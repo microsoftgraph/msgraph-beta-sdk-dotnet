@@ -104,6 +104,10 @@ namespace Microsoft.Graph.Beta.Models {
         PermissionCheckNoVNetContributorRole,
         [EnumMember(Value = "permissionCheckNoResourceGroupNetworkContributorRole")]
         PermissionCheckNoResourceGroupNetworkContributorRole,
+        [EnumMember(Value = "permissionCheckNoWindows365NetworkUserRole")]
+        PermissionCheckNoWindows365NetworkUserRole,
+        [EnumMember(Value = "permissionCheckNoWindows365NetworkInterfaceContributorRole")]
+        PermissionCheckNoWindows365NetworkInterfaceContributorRole,
         [EnumMember(Value = "permissionCheckTransientServiceError")]
         PermissionCheckTransientServiceError,
         [EnumMember(Value = "permissionCheckUnknownError")]

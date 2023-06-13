@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Describes a single artifact for a specific device model.
-    /// </summary>
     public class ZebraFotaArtifact : Entity, IParsable {
         /// <summary>The version of the Board Support Package (BSP. E.g.: 01.18.02.00)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

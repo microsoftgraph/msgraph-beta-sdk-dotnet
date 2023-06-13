@@ -10,6 +10,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Enablement?>("enhancedBiometricsState"); }
             set { BackingStore?.Set("enhancedBiometricsState", value); }
         }
+        /// <summary>Setting to configure Enahcned sign-in security. Default is enabled on one secure modality (face or fingerprint)</summary>
+        public int? EnhancedSignInSecurity {
+            get { return BackingStore?.Get<int?>("enhancedSignInSecurity"); }
+            set { BackingStore?.Set("enhancedSignInSecurity", value); }
+        }
         /// <summary>Controls the period of time (in days) that a PIN can be used before the system requires the user to change it. This must be set between 0 and 730, inclusive. If set to 0, the user&apos;s PIN will never expire</summary>
         public int? PinExpirationInDays {
             get { return BackingStore?.Get<int?>("pinExpirationInDays"); }
@@ -90,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"enhancedBiometricsState", n => { EnhancedBiometricsState = n.GetEnumValue<Enablement>(); } },
+                {"enhancedSignInSecurity", n => { EnhancedSignInSecurity = n.GetIntValue(); } },
                 {"pinExpirationInDays", n => { PinExpirationInDays = n.GetIntValue(); } },
                 {"pinLowercaseCharactersUsage", n => { PinLowercaseCharactersUsage = n.GetEnumValue<WindowsHelloForBusinessPinUsage>(); } },
                 {"pinMaximumLength", n => { PinMaximumLength = n.GetIntValue(); } },
@@ -112,6 +118,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<Enablement>("enhancedBiometricsState", EnhancedBiometricsState);
+            writer.WriteIntValue("enhancedSignInSecurity", EnhancedSignInSecurity);
             writer.WriteIntValue("pinExpirationInDays", PinExpirationInDays);
             writer.WriteEnumValue<WindowsHelloForBusinessPinUsage>("pinLowercaseCharactersUsage", PinLowercaseCharactersUsage);
             writer.WriteIntValue("pinMaximumLength", PinMaximumLength);

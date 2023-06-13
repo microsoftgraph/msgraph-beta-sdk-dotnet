@@ -14,8 +14,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceCount", value); }
         }
         /// <summary>User experience analytics device startup process median impact in milliseconds.</summary>
-        public int? MedianImpactInMs {
-            get { return BackingStore?.Get<int?>("medianImpactInMs"); }
+        public long? MedianImpactInMs {
+            get { return BackingStore?.Get<long?>("medianImpactInMs"); }
             set { BackingStore?.Set("medianImpactInMs", value); }
         }
         /// <summary>User experience analytics device startup process median impact in milliseconds.</summary>
@@ -66,8 +66,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>User experience analytics device startup process total impact in milliseconds.</summary>
-        public int? TotalImpactInMs {
-            get { return BackingStore?.Get<int?>("totalImpactInMs"); }
+        public long? TotalImpactInMs {
+            get { return BackingStore?.Get<long?>("totalImpactInMs"); }
             set { BackingStore?.Set("totalImpactInMs", value); }
         }
         /// <summary>User experience analytics device startup process total impact in milliseconds.</summary>
@@ -89,12 +89,12 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"deviceCount", n => { DeviceCount = n.GetLongValue(); } },
-                {"medianImpactInMs", n => { MedianImpactInMs = n.GetIntValue(); } },
+                {"medianImpactInMs", n => { MedianImpactInMs = n.GetLongValue(); } },
                 {"medianImpactInMs2", n => { MedianImpactInMs2 = n.GetLongValue(); } },
                 {"processName", n => { ProcessName = n.GetStringValue(); } },
                 {"productName", n => { ProductName = n.GetStringValue(); } },
                 {"publisher", n => { Publisher = n.GetStringValue(); } },
-                {"totalImpactInMs", n => { TotalImpactInMs = n.GetIntValue(); } },
+                {"totalImpactInMs", n => { TotalImpactInMs = n.GetLongValue(); } },
                 {"totalImpactInMs2", n => { TotalImpactInMs2 = n.GetLongValue(); } },
             };
         }
@@ -106,12 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteLongValue("deviceCount", DeviceCount);
-            writer.WriteIntValue("medianImpactInMs", MedianImpactInMs);
+            writer.WriteLongValue("medianImpactInMs", MedianImpactInMs);
             writer.WriteLongValue("medianImpactInMs2", MedianImpactInMs2);
             writer.WriteStringValue("processName", ProcessName);
             writer.WriteStringValue("productName", ProductName);
             writer.WriteStringValue("publisher", Publisher);
-            writer.WriteIntValue("totalImpactInMs", TotalImpactInMs);
+            writer.WriteLongValue("totalImpactInMs", TotalImpactInMs);
             writer.WriteLongValue("totalImpactInMs2", TotalImpactInMs2);
         }
     }

@@ -69,6 +69,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("detectionScriptParameters", value); }
         }
 #endif
+        /// <summary>Indicates the type of device script.</summary>
+        public Microsoft.Graph.Beta.Models.DeviceHealthScriptType? DeviceHealthScriptType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceHealthScriptType?>("deviceHealthScriptType"); }
+            set { BackingStore?.Set("deviceHealthScriptType", value); }
+        }
         /// <summary>List of run states for the device health script across all devices</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -238,6 +243,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"detectionScriptContent", n => { DetectionScriptContent = n.GetByteArrayValue(); } },
                 {"detectionScriptParameters", n => { DetectionScriptParameters = n.GetCollectionOfObjectValues<DeviceHealthScriptParameter>(DeviceHealthScriptParameter.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"deviceHealthScriptType", n => { DeviceHealthScriptType = n.GetEnumValue<DeviceHealthScriptType>(); } },
                 {"deviceRunStates", n => { DeviceRunStates = n.GetCollectionOfObjectValues<DeviceHealthScriptDeviceState>(DeviceHealthScriptDeviceState.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"enforceSignatureCheck", n => { EnforceSignatureCheck = n.GetBoolValue(); } },
@@ -265,6 +271,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteByteArrayValue("detectionScriptContent", DetectionScriptContent);
             writer.WriteCollectionOfObjectValues<DeviceHealthScriptParameter>("detectionScriptParameters", DetectionScriptParameters);
+            writer.WriteEnumValue<DeviceHealthScriptType>("deviceHealthScriptType", DeviceHealthScriptType);
             writer.WriteCollectionOfObjectValues<DeviceHealthScriptDeviceState>("deviceRunStates", DeviceRunStates);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("enforceSignatureCheck", EnforceSignatureCheck);

@@ -20,7 +20,6 @@ using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetCloudPcRemoteAction
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetFileVaultKey;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetNonCompliantSettings;
-using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.GetOemWarranty;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.InitiateMobileDeviceManagementKeyRecovery;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.InitiateOnDemandProactiveRemediation;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LocateDevice;
@@ -149,10 +148,6 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item {
         /// <summary>Provides operations to call the getNonCompliantSettings method.</summary>
         public GetNonCompliantSettingsRequestBuilder GetNonCompliantSettings { get =>
             new GetNonCompliantSettingsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getOemWarranty method.</summary>
-        public GetOemWarrantyRequestBuilder GetOemWarranty { get =>
-            new GetOemWarrantyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the initiateMobileDeviceManagementKeyRecovery method.</summary>
         public InitiateMobileDeviceManagementKeyRecoveryRequestBuilder InitiateMobileDeviceManagementKeyRecovery { get =>

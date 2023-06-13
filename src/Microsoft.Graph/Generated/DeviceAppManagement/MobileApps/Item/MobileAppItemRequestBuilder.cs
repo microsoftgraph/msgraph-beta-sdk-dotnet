@@ -1,14 +1,10 @@
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assign;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assignments;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Categories;
-using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.DeviceStatuses;
-using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GetRelatedAppStatesWithUserPrincipalNameWithDeviceId;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedMobileLobApp;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMobileLobApp;
-using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.InstallSummary;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Relationships;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelationships;
-using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UserStatuses;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -36,10 +32,6 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
         public CategoriesRequestBuilder Categories { get =>
             new CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the deviceStatuses property of the microsoft.graph.mobileApp entity.</summary>
-        public DeviceStatusesRequestBuilder DeviceStatuses { get =>
-            new DeviceStatusesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Casts the previous resource to managedMobileLobApp.</summary>
         public GraphManagedMobileLobAppRequestBuilder GraphManagedMobileLobApp { get =>
             new GraphManagedMobileLobAppRequestBuilder(PathParameters, RequestAdapter);
@@ -48,10 +40,6 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
         public GraphMobileLobAppRequestBuilder GraphMobileLobApp { get =>
             new GraphMobileLobAppRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the installSummary property of the microsoft.graph.mobileApp entity.</summary>
-        public InstallSummaryRequestBuilder InstallSummary { get =>
-            new InstallSummaryRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.</summary>
         public RelationshipsRequestBuilder Relationships { get =>
             new RelationshipsRequestBuilder(PathParameters, RequestAdapter);
@@ -59,10 +47,6 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
         /// <summary>Provides operations to call the updateRelationships method.</summary>
         public UpdateRelationshipsRequestBuilder UpdateRelationships { get =>
             new UpdateRelationshipsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the userStatuses property of the microsoft.graph.mobileApp entity.</summary>
-        public UserStatusesRequestBuilder UserStatuses { get =>
-            new UserStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new MobileAppItemRequestBuilder and sets the default values.
@@ -115,16 +99,6 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<MobileApp>(requestInfo, MobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the getRelatedAppStates method.
-        /// </summary>
-        /// <param name="deviceId">Usage: deviceId=&apos;{deviceId}&apos;</param>
-        /// <param name="userPrincipalName">Usage: userPrincipalName=&apos;{userPrincipalName}&apos;</param>
-        public GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder GetRelatedAppStatesWithUserPrincipalNameWithDeviceId(string deviceId, string userPrincipalName) {
-            if(string.IsNullOrEmpty(deviceId)) throw new ArgumentNullException(nameof(deviceId));
-            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
-            return new GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, deviceId, userPrincipalName);
         }
         /// <summary>
         /// Update the navigation property mobileApps in deviceAppManagement

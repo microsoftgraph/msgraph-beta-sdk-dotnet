@@ -830,7 +830,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isLicenseReconciliationNeeded"); }
             set { BackingStore?.Set("isLicenseReconciliationNeeded", value); }
         }
-        /// <summary>The isManagementRestricted property</summary>
+        /// <summary>true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.</summary>
         public bool? IsManagementRestricted {
             get { return BackingStore?.Get<bool?>("isManagementRestricted"); }
             set { BackingStore?.Set("isManagementRestricted", value); }
@@ -1083,7 +1083,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mobileAppTroubleshootingEvents", value); }
         }
 #endif
-        /// <summary>The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MobilePhone {
@@ -1921,7 +1921,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new user and sets the default values.
+        /// Instantiates a new User and sets the default values.
         /// </summary>
         public User() : base() {
             OdataType = "#microsoft.graph.user";

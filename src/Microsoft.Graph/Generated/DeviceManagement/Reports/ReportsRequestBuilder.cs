@@ -63,6 +63,8 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyDefenderAgentsRe
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyFirewallReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetUnhealthyFirewallSummaryReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetUserInstallStatusReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsDriverUpdateAlertSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertSummaryReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetWindowsUpdateAlertSummaryReport;
@@ -342,6 +344,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports {
         /// <summary>Provides operations to call the getUserInstallStatusReport method.</summary>
         public GetUserInstallStatusReportRequestBuilder GetUserInstallStatusReport { get =>
             new GetUserInstallStatusReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getWindowsDriverUpdateAlertsPerPolicyPerDeviceReport method.</summary>
+        public GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportRequestBuilder GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReport { get =>
+            new GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getWindowsDriverUpdateAlertSummaryReport method.</summary>
+        public GetWindowsDriverUpdateAlertSummaryReportRequestBuilder GetWindowsDriverUpdateAlertSummaryReport { get =>
+            new GetWindowsDriverUpdateAlertSummaryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getWindowsQualityUpdateAlertsPerPolicyPerDeviceReport method.</summary>
         public GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder GetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport { get =>

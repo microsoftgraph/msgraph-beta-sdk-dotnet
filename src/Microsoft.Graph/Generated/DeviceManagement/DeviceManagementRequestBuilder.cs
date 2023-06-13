@@ -91,6 +91,7 @@ using Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors;
 using Microsoft.Graph.Beta.DeviceManagement.Monitoring;
 using Microsoft.Graph.Beta.DeviceManagement.NdesConnectors;
 using Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates;
+using Microsoft.Graph.Beta.DeviceManagement.PrivilegeManagementElevations;
 using Microsoft.Graph.Beta.DeviceManagement.RemoteActionAudits;
 using Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners;
 using Microsoft.Graph.Beta.DeviceManagement.RemoteAssistanceSettings;
@@ -115,6 +116,7 @@ using Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC;
 using Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions;
 using Microsoft.Graph.Beta.DeviceManagement.TroubleshootingEvents;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomaly;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomalyCorrelationGroupOverview;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomalyDevice;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformance;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion;
@@ -546,6 +548,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         public NotificationMessageTemplatesRequestBuilder NotificationMessageTemplates { get =>
             new NotificationMessageTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the privilegeManagementElevations property of the microsoft.graph.deviceManagement entity.</summary>
+        public PrivilegeManagementElevationsRequestBuilder PrivilegeManagementElevations { get =>
+            new PrivilegeManagementElevationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the remoteActionAudits property of the microsoft.graph.deviceManagement entity.</summary>
         public RemoteActionAuditsRequestBuilder RemoteActionAudits { get =>
             new RemoteActionAuditsRequestBuilder(PathParameters, RequestAdapter);
@@ -637,6 +643,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>Provides operations to manage the userExperienceAnalyticsAnomaly property of the microsoft.graph.deviceManagement entity.</summary>
         public UserExperienceAnalyticsAnomalyRequestBuilder UserExperienceAnalyticsAnomaly { get =>
             new UserExperienceAnalyticsAnomalyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the userExperienceAnalyticsAnomalyCorrelationGroupOverview property of the microsoft.graph.deviceManagement entity.</summary>
+        public UserExperienceAnalyticsAnomalyCorrelationGroupOverviewRequestBuilder UserExperienceAnalyticsAnomalyCorrelationGroupOverview { get =>
+            new UserExperienceAnalyticsAnomalyCorrelationGroupOverviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsAnomalyDevice property of the microsoft.graph.deviceManagement entity.</summary>
         public UserExperienceAnalyticsAnomalyDeviceRequestBuilder UserExperienceAnalyticsAnomalyDevice { get =>

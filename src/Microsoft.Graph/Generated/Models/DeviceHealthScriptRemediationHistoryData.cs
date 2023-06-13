@@ -22,6 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Date?>("date"); }
             set { BackingStore?.Set("date", value); }
         }
+        /// <summary>The number of devices for which the detection script found an issue.</summary>
+        public int? DetectFailedDeviceCount {
+            get { return BackingStore?.Get<int?>("detectFailedDeviceCount"); }
+            set { BackingStore?.Set("detectFailedDeviceCount", value); }
+        }
         /// <summary>The number of devices that were found to have no issue by the device health script.</summary>
         public int? NoIssueDeviceCount {
             get { return BackingStore?.Get<int?>("noIssueDeviceCount"); }
@@ -67,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"date", n => { Date = n.GetDateValue(); } },
+                {"detectFailedDeviceCount", n => { DetectFailedDeviceCount = n.GetIntValue(); } },
                 {"noIssueDeviceCount", n => { NoIssueDeviceCount = n.GetIntValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"remediatedDeviceCount", n => { RemediatedDeviceCount = n.GetIntValue(); } },
@@ -79,6 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateValue("date", Date);
+            writer.WriteIntValue("detectFailedDeviceCount", DetectFailedDeviceCount);
             writer.WriteIntValue("noIssueDeviceCount", NoIssueDeviceCount);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("remediatedDeviceCount", RemediatedDeviceCount);

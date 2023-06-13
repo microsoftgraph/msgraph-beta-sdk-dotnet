@@ -14,5 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         SharedUseLicenseUsageRealTimeReport,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "noLicenseAvailableConnectivityFailureReport")]
+        NoLicenseAvailableConnectivityFailureReport,
     }
 }

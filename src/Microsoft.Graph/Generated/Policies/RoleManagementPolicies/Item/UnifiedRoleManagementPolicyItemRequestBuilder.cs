@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the details of a role management policy. To read a policy that applies to Azure RBAC, use the Azure REST PIM API for role management policies.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/unifiedrolemanagementpolicy-get?view=graph-rest-1.0" />
+        /// Represents the role management policies.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the details of a role management policy. To read a policy that applies to Azure RBAC, use the Azure REST PIM API for role management policies.
+        /// Represents the role management policies.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -192,7 +191,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item {
             }
         }
         /// <summary>
-        /// Retrieve the details of a role management policy. To read a policy that applies to Azure RBAC, use the Azure REST PIM API for role management policies.
+        /// Represents the role management policies.
         /// </summary>
         public class UnifiedRoleManagementPolicyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

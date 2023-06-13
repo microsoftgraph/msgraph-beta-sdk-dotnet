@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("checkLists", value); }
         }
 #endif
-        /// <summary>The completionRequirements property</summary>
+        /// <summary>Rules and restrictions for completion requirements of the task. Accepted values are allow, add, remove, edit, and block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? CompletionRequirements {
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("order", value); }
         }
 #endif
-        /// <summary>Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, setToNotStarted, setToInProgress, and block.</summary>
+        /// <summary>Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, overrideRequirements, setToNotStarted, setToInProgress, and block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PercentComplete {

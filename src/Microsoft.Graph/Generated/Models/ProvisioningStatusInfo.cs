@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The errorInformation property</summary>
+        /// <summary>If status is not success/ skipped details for the error are contained in this.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ProvisioningErrorInfo? ErrorInformation {
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Possible values are: success, warning, failure, skipped, unknownFutureValue.</summary>
+        /// <summary>Possible values are: success, failure, skipped, warning, unknownFutureValue.</summary>
         public ProvisioningResult? Status {
             get { return BackingStore?.Get<ProvisioningResult?>("status"); }
             set { BackingStore?.Set("status", value); }

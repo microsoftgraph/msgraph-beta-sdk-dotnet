@@ -56,20 +56,6 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<double?>("modelAppHealthScore"); }
             set { BackingStore?.Set("modelAppHealthScore", value); }
         }
-        /// <summary>The overall app health status of the device model.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModelAppHealthStatus {
-            get { return BackingStore?.Get<string?>("modelAppHealthStatus"); }
-            set { BackingStore?.Set("modelAppHealthStatus", value); }
-        }
-#nullable restore
-#else
-        public string ModelAppHealthStatus {
-            get { return BackingStore?.Get<string>("modelAppHealthStatus"); }
-            set { BackingStore?.Set("modelAppHealthStatus", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -89,7 +75,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
                 {"meanTimeToFailureInMinutes", n => { MeanTimeToFailureInMinutes = n.GetIntValue(); } },
                 {"modelAppHealthScore", n => { ModelAppHealthScore = n.GetDoubleValue(); } },
-                {"modelAppHealthStatus", n => { ModelAppHealthStatus = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -105,7 +90,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);
             writer.WriteIntValue("meanTimeToFailureInMinutes", MeanTimeToFailureInMinutes);
             writer.WriteDoubleValue("modelAppHealthScore", ModelAppHealthScore);
-            writer.WriteStringValue("modelAppHealthStatus", ModelAppHealthStatus);
         }
     }
 }

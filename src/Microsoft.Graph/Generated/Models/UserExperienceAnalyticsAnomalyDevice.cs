@@ -32,6 +32,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("anomalyOnDeviceLatestOccurrenceDateTime"); }
             set { BackingStore?.Set("anomalyOnDeviceLatestOccurrenceDateTime", value); }
         }
+        /// <summary>The unique identifier of the correlation group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CorrelationGroupId {
+            get { return BackingStore?.Get<string?>("correlationGroupId"); }
+            set { BackingStore?.Set("correlationGroupId", value); }
+        }
+#nullable restore
+#else
+        public string CorrelationGroupId {
+            get { return BackingStore?.Get<string>("correlationGroupId"); }
+            set { BackingStore?.Set("correlationGroupId", value); }
+        }
+#endif
         /// <summary>The unique identifier of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +102,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceName", value); }
         }
 #endif
+        /// <summary>Indicates the status of the device in the correlation group. Eg: Device status can be anomalous, affected, at risk.</summary>
+        public UserExperienceAnalyticsDeviceStatus? DeviceStatus {
+            get { return BackingStore?.Get<UserExperienceAnalyticsDeviceStatus?>("deviceStatus"); }
+            set { BackingStore?.Set("deviceStatus", value); }
+        }
         /// <summary>The name of the OS installed on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -132,10 +151,12 @@ namespace Microsoft.Graph.Beta.Models {
                 {"anomalyId", n => { AnomalyId = n.GetStringValue(); } },
                 {"anomalyOnDeviceFirstOccurrenceDateTime", n => { AnomalyOnDeviceFirstOccurrenceDateTime = n.GetDateTimeOffsetValue(); } },
                 {"anomalyOnDeviceLatestOccurrenceDateTime", n => { AnomalyOnDeviceLatestOccurrenceDateTime = n.GetDateTimeOffsetValue(); } },
+                {"correlationGroupId", n => { CorrelationGroupId = n.GetStringValue(); } },
                 {"deviceId", n => { DeviceId = n.GetStringValue(); } },
                 {"deviceManufacturer", n => { DeviceManufacturer = n.GetStringValue(); } },
                 {"deviceModel", n => { DeviceModel = n.GetStringValue(); } },
                 {"deviceName", n => { DeviceName = n.GetStringValue(); } },
+                {"deviceStatus", n => { DeviceStatus = n.GetEnumValue<UserExperienceAnalyticsDeviceStatus>(); } },
                 {"osName", n => { OsName = n.GetStringValue(); } },
                 {"osVersion", n => { OsVersion = n.GetStringValue(); } },
             };
@@ -150,10 +171,12 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("anomalyId", AnomalyId);
             writer.WriteDateTimeOffsetValue("anomalyOnDeviceFirstOccurrenceDateTime", AnomalyOnDeviceFirstOccurrenceDateTime);
             writer.WriteDateTimeOffsetValue("anomalyOnDeviceLatestOccurrenceDateTime", AnomalyOnDeviceLatestOccurrenceDateTime);
+            writer.WriteStringValue("correlationGroupId", CorrelationGroupId);
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceManufacturer", DeviceManufacturer);
             writer.WriteStringValue("deviceModel", DeviceModel);
             writer.WriteStringValue("deviceName", DeviceName);
+            writer.WriteEnumValue<UserExperienceAnalyticsDeviceStatus>("deviceStatus", DeviceStatus);
             writer.WriteStringValue("osName", OsName);
             writer.WriteStringValue("osVersion", OsVersion);
         }

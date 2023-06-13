@@ -74,20 +74,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("developer", value); }
         }
 #endif
-        /// <summary>The list of installation states for this mobile app.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<MobileAppInstallStatus>? DeviceStatuses {
-            get { return BackingStore?.Get<List<MobileAppInstallStatus>?>("deviceStatuses"); }
-            set { BackingStore?.Set("deviceStatuses", value); }
-        }
-#nullable restore
-#else
-        public List<MobileAppInstallStatus> DeviceStatuses {
-            get { return BackingStore?.Get<List<MobileAppInstallStatus>>("deviceStatuses"); }
-            set { BackingStore?.Set("deviceStatuses", value); }
-        }
-#endif
         /// <summary>The admin provided or imported title of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,20 +100,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string InformationUrl {
             get { return BackingStore?.Get<string>("informationUrl"); }
             set { BackingStore?.Set("informationUrl", value); }
-        }
-#endif
-        /// <summary>Mobile App Install Summary.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public MobileAppInstallSummary? InstallSummary {
-            get { return BackingStore?.Get<MobileAppInstallSummary?>("installSummary"); }
-            set { BackingStore?.Set("installSummary", value); }
-        }
-#nullable restore
-#else
-        public MobileAppInstallSummary InstallSummary {
-            get { return BackingStore?.Get<MobileAppInstallSummary>("installSummary"); }
-            set { BackingStore?.Set("installSummary", value); }
         }
 #endif
         /// <summary>The value indicating whether the app is assigned to at least one group.</summary>
@@ -263,20 +235,6 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("uploadState"); }
             set { BackingStore?.Set("uploadState", value); }
         }
-        /// <summary>The list of installation states for this mobile app.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<UserAppInstallStatus>? UserStatuses {
-            get { return BackingStore?.Get<List<UserAppInstallStatus>?>("userStatuses"); }
-            set { BackingStore?.Set("userStatuses", value); }
-        }
-#nullable restore
-#else
-        public List<UserAppInstallStatus> UserStatuses {
-            get { return BackingStore?.Get<List<UserAppInstallStatus>>("userStatuses"); }
-            set { BackingStore?.Set("userStatuses", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -300,6 +258,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.macOSMicrosoftDefenderApp" => new MacOSMicrosoftDefenderApp(),
                 "#microsoft.graph.macOSMicrosoftEdgeApp" => new MacOSMicrosoftEdgeApp(),
                 "#microsoft.graph.macOSOfficeSuiteApp" => new MacOSOfficeSuiteApp(),
+                "#microsoft.graph.macOSPkgApp" => new MacOSPkgApp(),
                 "#microsoft.graph.macOsVppApp" => new MacOsVppApp(),
                 "#microsoft.graph.managedAndroidLobApp" => new ManagedAndroidLobApp(),
                 "#microsoft.graph.managedAndroidStoreApp" => new ManagedAndroidStoreApp(),
@@ -337,10 +296,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"dependentAppCount", n => { DependentAppCount = n.GetIntValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"developer", n => { Developer = n.GetStringValue(); } },
-                {"deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<MobileAppInstallStatus>(MobileAppInstallStatus.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"informationUrl", n => { InformationUrl = n.GetStringValue(); } },
-                {"installSummary", n => { InstallSummary = n.GetObjectValue<MobileAppInstallSummary>(MobileAppInstallSummary.CreateFromDiscriminatorValue); } },
                 {"isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
                 {"isFeatured", n => { IsFeatured = n.GetBoolValue(); } },
                 {"largeIcon", n => { LargeIcon = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
@@ -355,7 +312,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"supersededAppCount", n => { SupersededAppCount = n.GetIntValue(); } },
                 {"supersedingAppCount", n => { SupersedingAppCount = n.GetIntValue(); } },
                 {"uploadState", n => { UploadState = n.GetIntValue(); } },
-                {"userStatuses", n => { UserStatuses = n.GetCollectionOfObjectValues<UserAppInstallStatus>(UserAppInstallStatus.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -371,10 +327,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("dependentAppCount", DependentAppCount);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("developer", Developer);
-            writer.WriteCollectionOfObjectValues<MobileAppInstallStatus>("deviceStatuses", DeviceStatuses);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("informationUrl", InformationUrl);
-            writer.WriteObjectValue<MobileAppInstallSummary>("installSummary", InstallSummary);
             writer.WriteBoolValue("isAssigned", IsAssigned);
             writer.WriteBoolValue("isFeatured", IsFeatured);
             writer.WriteObjectValue<MimeContent>("largeIcon", LargeIcon);
@@ -389,7 +343,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("supersededAppCount", SupersededAppCount);
             writer.WriteIntValue("supersedingAppCount", SupersedingAppCount);
             writer.WriteIntValue("uploadState", UploadState);
-            writer.WriteCollectionOfObjectValues<UserAppInstallStatus>("userStatuses", UserStatuses);
         }
     }
 }

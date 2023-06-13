@@ -28,20 +28,6 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<double?>("deviceAppHealthScore"); }
             set { BackingStore?.Set("deviceAppHealthScore", value); }
         }
-        /// <summary>The overall app health status of the device.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DeviceAppHealthStatus {
-            get { return BackingStore?.Get<string?>("deviceAppHealthStatus"); }
-            set { BackingStore?.Set("deviceAppHealthStatus", value); }
-        }
-#nullable restore
-#else
-        public string DeviceAppHealthStatus {
-            get { return BackingStore?.Get<string>("deviceAppHealthStatus"); }
-            set { BackingStore?.Set("deviceAppHealthStatus", value); }
-        }
-#endif
         /// <summary>The name of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,7 +116,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"appHangCount", n => { AppHangCount = n.GetIntValue(); } },
                 {"crashedAppCount", n => { CrashedAppCount = n.GetIntValue(); } },
                 {"deviceAppHealthScore", n => { DeviceAppHealthScore = n.GetDoubleValue(); } },
-                {"deviceAppHealthStatus", n => { DeviceAppHealthStatus = n.GetStringValue(); } },
                 {"deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
                 {"deviceId", n => { DeviceId = n.GetStringValue(); } },
                 {"deviceManufacturer", n => { DeviceManufacturer = n.GetStringValue(); } },
@@ -151,7 +136,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("appHangCount", AppHangCount);
             writer.WriteIntValue("crashedAppCount", CrashedAppCount);
             writer.WriteDoubleValue("deviceAppHealthScore", DeviceAppHealthScore);
-            writer.WriteStringValue("deviceAppHealthStatus", DeviceAppHealthStatus);
             writer.WriteStringValue("deviceDisplayName", DeviceDisplayName);
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceManufacturer", DeviceManufacturer);

@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Represents app protection and configuration status for the organization.
-    /// </summary>
     public class ManagedAppStatus : Entity, IParsable {
         /// <summary>Friendly name of the status report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

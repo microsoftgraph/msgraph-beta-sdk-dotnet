@@ -1,10 +1,16 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class Customer : Entity, IParsable {
+    public class Customer : IAdditionalDataHolder, IBackedModel, IParsable {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
+        }
         /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -19,6 +25,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("address", value); }
         }
 #endif
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The blocked property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,6 +102,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("email", value); }
         }
 #endif
+        /// <summary>The id property</summary>
+        public Guid? Id {
+            get { return BackingStore?.Get<Guid?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -111,6 +124,20 @@ namespace Microsoft.Graph.Beta.Models {
         public string Number {
             get { return BackingStore?.Get<string>("number"); }
             set { BackingStore?.Set("number", value); }
+        }
+#endif
+        /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#nullable restore
+#else
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The paymentMethod property</summary>
@@ -265,18 +292,25 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
+        /// Instantiates a new customer and sets the default values.
+        /// </summary>
+        public Customer() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Customer CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static Customer CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Customer();
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
                 {"address", n => { Address = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"blocked", n => { Blocked = n.GetStringValue(); } },
                 {"currency", n => { Currency = n.GetObjectValue<Microsoft.Graph.Beta.Models.Currency>(Microsoft.Graph.Beta.Models.Currency.CreateFromDiscriminatorValue); } },
@@ -284,8 +318,10 @@ namespace Microsoft.Graph.Beta.Models {
                 {"currencyId", n => { CurrencyId = n.GetGuidValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"email", n => { Email = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetGuidValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"number", n => { Number = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"paymentMethod", n => { PaymentMethod = n.GetObjectValue<Microsoft.Graph.Beta.Models.PaymentMethod>(Microsoft.Graph.Beta.Models.PaymentMethod.CreateFromDiscriminatorValue); } },
                 {"paymentMethodId", n => { PaymentMethodId = n.GetGuidValue(); } },
                 {"paymentTerm", n => { PaymentTerm = n.GetObjectValue<Microsoft.Graph.Beta.Models.PaymentTerm>(Microsoft.Graph.Beta.Models.PaymentTerm.CreateFromDiscriminatorValue); } },
@@ -306,9 +342,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
             writer.WriteObjectValue<PostalAddressType>("address", Address);
             writer.WriteStringValue("blocked", Blocked);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Currency>("currency", Currency);
@@ -316,8 +351,10 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteGuidValue("currencyId", CurrencyId);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("email", Email);
+            writer.WriteGuidValue("id", Id);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("number", Number);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PaymentMethod>("paymentMethod", PaymentMethod);
             writer.WriteGuidValue("paymentMethodId", PaymentMethodId);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PaymentTerm>("paymentTerm", PaymentTerm);
@@ -332,6 +369,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("taxRegistrationNumber", TaxRegistrationNumber);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("website", Website);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("responsiveDesktopTimeInMs"); }
             set { BackingStore?.Set("responsiveDesktopTimeInMs", value); }
         }
-        /// <summary>Operating System restart category</summary>
+        /// <summary>Operating System restart category.</summary>
         public UserExperienceAnalyticsOperatingSystemRestartCategory? RestartCategory {
             get { return BackingStore?.Get<UserExperienceAnalyticsOperatingSystemRestartCategory?>("restartCategory"); }
             set { BackingStore?.Set("restartCategory", value); }

@@ -19,6 +19,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("auditEvents", value); }
         }
 #endif
+        /// <summary>The bulkActions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<CloudPcBulkAction>? BulkActions {
+            get { return BackingStore?.Get<List<CloudPcBulkAction>?>("bulkActions"); }
+            set { BackingStore?.Set("bulkActions", value); }
+        }
+#nullable restore
+#else
+        public List<CloudPcBulkAction> BulkActions {
+            get { return BackingStore?.Get<List<CloudPcBulkAction>>("bulkActions"); }
+            set { BackingStore?.Set("bulkActions", value); }
+        }
+#endif
         /// <summary>Cloud managed virtual desktops.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -229,6 +243,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"auditEvents", n => { AuditEvents = n.GetCollectionOfObjectValues<CloudPcAuditEvent>(CloudPcAuditEvent.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"bulkActions", n => { BulkActions = n.GetCollectionOfObjectValues<CloudPcBulkAction>(CloudPcBulkAction.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"cloudPCs", n => { CloudPCs = n.GetCollectionOfObjectValues<CloudPC>(CloudPC.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"crossCloudGovernmentOrganizationMapping", n => { CrossCloudGovernmentOrganizationMapping = n.GetObjectValue<CloudPcCrossCloudGovernmentOrganizationMapping>(CloudPcCrossCloudGovernmentOrganizationMapping.CreateFromDiscriminatorValue); } },
                 {"deviceImages", n => { DeviceImages = n.GetCollectionOfObjectValues<CloudPcDeviceImage>(CloudPcDeviceImage.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -253,6 +268,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<CloudPcAuditEvent>("auditEvents", AuditEvents);
+            writer.WriteCollectionOfObjectValues<CloudPcBulkAction>("bulkActions", BulkActions);
             writer.WriteCollectionOfObjectValues<CloudPC>("cloudPCs", CloudPCs);
             writer.WriteObjectValue<CloudPcCrossCloudGovernmentOrganizationMapping>("crossCloudGovernmentOrganizationMapping", CrossCloudGovernmentOrganizationMapping);
             writer.WriteCollectionOfObjectValues<CloudPcDeviceImage>("deviceImages", DeviceImages);

@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
-        /// <summary>The isMemberManagementRestricted property</summary>
+        /// <summary>true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don&apos;t inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so cannot be changed later.</summary>
         public bool? IsMemberManagementRestricted {
             get { return BackingStore?.Get<bool?>("isMemberManagementRestricted"); }
             set { BackingStore?.Set("isMemberManagementRestricted", value); }
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AdministrativeUnit and sets the default values.
+        /// Instantiates a new administrativeUnit and sets the default values.
         /// </summary>
         public AdministrativeUnit() : base() {
             OdataType = "#microsoft.graph.administrativeUnit";
