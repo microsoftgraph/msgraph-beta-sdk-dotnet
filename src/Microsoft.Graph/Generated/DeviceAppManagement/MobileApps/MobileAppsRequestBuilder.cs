@@ -1,6 +1,4 @@
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Count;
-using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetMobileAppCountWithStatus;
-using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetTopMobileAppsWithStatusWithCount;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GraphManagedMobileLobApp;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GraphMobileLobApp;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.HasPayloadLinks;
@@ -79,24 +77,6 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<MobileAppCollectionResponse>(requestInfo, MobileAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Provides operations to call the getMobileAppCount method.
-        /// </summary>
-        /// <param name="status">Usage: status=&apos;{status}&apos;</param>
-        public GetMobileAppCountWithStatusRequestBuilder GetMobileAppCountWithStatus(string status) {
-            if(string.IsNullOrEmpty(status)) throw new ArgumentNullException(nameof(status));
-            return new GetMobileAppCountWithStatusRequestBuilder(PathParameters, RequestAdapter, status);
-        }
-        /// <summary>
-        /// Provides operations to call the getTopMobileApps method.
-        /// </summary>
-        /// <param name="count">Usage: count={count}</param>
-        /// <param name="status">Usage: status=&apos;{status}&apos;</param>
-        public GetTopMobileAppsWithStatusWithCountRequestBuilder GetTopMobileAppsWithStatusWithCount(long? count, string status) {
-            _ = count ?? throw new ArgumentNullException(nameof(count));
-            if(string.IsNullOrEmpty(status)) throw new ArgumentNullException(nameof(status));
-            return new GetTopMobileAppsWithStatusWithCountRequestBuilder(PathParameters, RequestAdapter, count, status);
         }
         /// <summary>
         /// Create new navigation property to mobileApps for deviceAppManagement

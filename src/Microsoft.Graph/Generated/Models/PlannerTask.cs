@@ -265,7 +265,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("referenceCount"); }
             set { BackingStore?.Set("referenceCount", value); }
         }
-        /// <summary>The specifiedCompletionRequirements property</summary>
+        /// <summary>Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue. Read-only. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.</summary>
         public PlannerTaskCompletionRequirements? SpecifiedCompletionRequirements {
             get { return BackingStore?.Get<PlannerTaskCompletionRequirements?>("specifiedCompletionRequirements"); }
             set { BackingStore?.Set("specifiedCompletionRequirements", value); }

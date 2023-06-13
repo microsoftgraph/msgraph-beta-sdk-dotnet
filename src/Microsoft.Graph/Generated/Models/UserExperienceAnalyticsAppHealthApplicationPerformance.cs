@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// The user experience analytics application performance entity contains app performance details.
+    /// The user experience analytics application performance entity contains application performance details.
     /// </summary>
     public class UserExperienceAnalyticsAppHealthApplicationPerformance : Entity, IParsable {
         /// <summary>The number of devices where the app has been active. Valid values -2147483648 to 2147483647</summary>
@@ -42,20 +42,6 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<double?>("appHealthScore"); }
             set { BackingStore?.Set("appHealthScore", value); }
         }
-        /// <summary>The overall health status of the app.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AppHealthStatus {
-            get { return BackingStore?.Get<string?>("appHealthStatus"); }
-            set { BackingStore?.Set("appHealthStatus", value); }
-        }
-#nullable restore
-#else
-        public string AppHealthStatus {
-            get { return BackingStore?.Get<string>("appHealthStatus"); }
-            set { BackingStore?.Set("appHealthStatus", value); }
-        }
-#endif
         /// <summary>The name of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,7 +98,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
                 {"appHangCount", n => { AppHangCount = n.GetIntValue(); } },
                 {"appHealthScore", n => { AppHealthScore = n.GetDoubleValue(); } },
-                {"appHealthStatus", n => { AppHealthStatus = n.GetStringValue(); } },
                 {"appName", n => { AppName = n.GetStringValue(); } },
                 {"appPublisher", n => { AppPublisher = n.GetStringValue(); } },
                 {"appUsageDuration", n => { AppUsageDuration = n.GetIntValue(); } },
@@ -131,7 +116,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("appDisplayName", AppDisplayName);
             writer.WriteIntValue("appHangCount", AppHangCount);
             writer.WriteDoubleValue("appHealthScore", AppHealthScore);
-            writer.WriteStringValue("appHealthStatus", AppHealthStatus);
             writer.WriteStringValue("appName", AppName);
             writer.WriteStringValue("appPublisher", AppPublisher);
             writer.WriteIntValue("appUsageDuration", AppUsageDuration);

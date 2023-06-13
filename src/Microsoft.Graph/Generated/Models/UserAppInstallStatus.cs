@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Contains properties for the installation status for a user. This will be deprecated starting May, 2023 (Intune Release 2305).
-    /// </summary>
     public class UserAppInstallStatus : Entity, IParsable {
         /// <summary>The navigation link to the mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

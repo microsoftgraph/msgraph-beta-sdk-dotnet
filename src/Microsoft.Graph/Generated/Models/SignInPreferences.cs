@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The userPreferredMethodForSecondaryAuthentication property</summary>
+        /// <summary>The default second-factor method used by the user when signing in. If a user is enabled for system-preferred authentication, then this value is ignored except for a few scenarios where a user is authenticating via NPS extension or ADFS adapter. Possible values are push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, and unknownFutureValue</summary>
         public UserDefaultAuthenticationMethodType? UserPreferredMethodForSecondaryAuthentication {
             get { return BackingStore?.Get<UserDefaultAuthenticationMethodType?>("userPreferredMethodForSecondaryAuthentication"); }
             set { BackingStore?.Set("userPreferredMethodForSecondaryAuthentication", value); }

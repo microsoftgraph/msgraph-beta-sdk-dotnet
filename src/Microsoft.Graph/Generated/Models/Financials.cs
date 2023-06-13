@@ -27,6 +27,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("companies", value); }
         }
 #endif
+        /// <summary>The id property</summary>
+        public Guid? Id {
+            get { return BackingStore?.Get<Guid?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"companies", n => { Companies = n.GetCollectionOfObjectValues<Company>(Company.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"id", n => { Id = n.GetGuidValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -72,6 +78,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<Company>("companies", Companies);
+            writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

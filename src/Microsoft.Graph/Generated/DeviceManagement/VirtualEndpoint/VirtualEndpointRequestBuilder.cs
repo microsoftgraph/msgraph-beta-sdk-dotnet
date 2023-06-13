@@ -1,4 +1,5 @@
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovernmentOrganizationMapping;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages;
@@ -32,6 +33,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         /// <summary>Provides operations to manage the auditEvents property of the microsoft.graph.virtualEndpoint entity.</summary>
         public AuditEventsRequestBuilder AuditEvents { get =>
             new AuditEventsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the bulkActions property of the microsoft.graph.virtualEndpoint entity.</summary>
+        public BulkActionsRequestBuilder BulkActions { get =>
+            new BulkActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.</summary>
         public CloudPCsRequestBuilder CloudPCs { get =>

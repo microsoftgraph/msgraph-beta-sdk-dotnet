@@ -130,6 +130,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("registrationDisabled"); }
             set { BackingStore?.Set("registrationDisabled", value); }
         }
+        /// <summary>Indicates if the device is network-tethered to run the command</summary>
+        public bool? RequestRequiresNetworkTether {
+            get { return BackingStore?.Get<bool?>("requestRequiresNetworkTether"); }
+            set { BackingStore?.Set("requestRequiresNetworkTether", value); }
+        }
         /// <summary>Indicates whether Setup Assistant will set the account as a regular user</summary>
         public bool? SetPrimarySetupAccountAsRegularUser {
             get { return BackingStore?.Get<bool?>("setPrimarySetupAccountAsRegularUser"); }
@@ -180,6 +185,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"primaryAccountFullName", n => { PrimaryAccountFullName = n.GetStringValue(); } },
                 {"primaryAccountUserName", n => { PrimaryAccountUserName = n.GetStringValue(); } },
                 {"registrationDisabled", n => { RegistrationDisabled = n.GetBoolValue(); } },
+                {"requestRequiresNetworkTether", n => { RequestRequiresNetworkTether = n.GetBoolValue(); } },
                 {"setPrimarySetupAccountAsRegularUser", n => { SetPrimarySetupAccountAsRegularUser = n.GetBoolValue(); } },
                 {"skipPrimarySetupAccountCreation", n => { SkipPrimarySetupAccountCreation = n.GetBoolValue(); } },
                 {"zoomDisabled", n => { ZoomDisabled = n.GetBoolValue(); } },
@@ -208,6 +214,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("primaryAccountFullName", PrimaryAccountFullName);
             writer.WriteStringValue("primaryAccountUserName", PrimaryAccountUserName);
             writer.WriteBoolValue("registrationDisabled", RegistrationDisabled);
+            writer.WriteBoolValue("requestRequiresNetworkTether", RequestRequiresNetworkTether);
             writer.WriteBoolValue("setPrimarySetupAccountAsRegularUser", SetPrimarySetupAccountAsRegularUser);
             writer.WriteBoolValue("skipPrimarySetupAccountCreation", SkipPrimarySetupAccountCreation);
             writer.WriteBoolValue("zoomDisabled", ZoomDisabled);

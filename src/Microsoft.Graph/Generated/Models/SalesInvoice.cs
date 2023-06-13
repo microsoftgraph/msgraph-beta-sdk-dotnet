@@ -1,11 +1,19 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class SalesInvoice : Entity, IParsable {
+    public class SalesInvoice : IAdditionalDataHolder, IBackedModel, IParsable {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The billingPostalAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -190,6 +198,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("externalDocumentNumber", value); }
         }
 #endif
+        /// <summary>The id property</summary>
+        public Guid? Id {
+            get { return BackingStore?.Get<Guid?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
         /// <summary>The invoiceDate property</summary>
         public Date? InvoiceDate {
             get { return BackingStore?.Get<Date?>("invoiceDate"); }
@@ -212,6 +225,20 @@ namespace Microsoft.Graph.Beta.Models {
         public string Number {
             get { return BackingStore?.Get<string>("number"); }
             set { BackingStore?.Set("number", value); }
+        }
+#endif
+        /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#nullable restore
+#else
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The orderId property</summary>
@@ -404,18 +431,25 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("totalTaxAmount", value); }
         }
         /// <summary>
+        /// Instantiates a new salesInvoice and sets the default values.
+        /// </summary>
+        public SalesInvoice() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SalesInvoice CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static SalesInvoice CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new SalesInvoice();
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
                 {"billingPostalAddress", n => { BillingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"billToCustomerId", n => { BillToCustomerId = n.GetGuidValue(); } },
                 {"billToCustomerNumber", n => { BillToCustomerNumber = n.GetStringValue(); } },
@@ -433,9 +467,11 @@ namespace Microsoft.Graph.Beta.Models {
                 {"dueDate", n => { DueDate = n.GetDateValue(); } },
                 {"email", n => { Email = n.GetStringValue(); } },
                 {"externalDocumentNumber", n => { ExternalDocumentNumber = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetGuidValue(); } },
                 {"invoiceDate", n => { InvoiceDate = n.GetDateValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"number", n => { Number = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"orderId", n => { OrderId = n.GetGuidValue(); } },
                 {"orderNumber", n => { OrderNumber = n.GetStringValue(); } },
                 {"paymentTerm", n => { PaymentTerm = n.GetObjectValue<Microsoft.Graph.Beta.Models.PaymentTerm>(Microsoft.Graph.Beta.Models.PaymentTerm.CreateFromDiscriminatorValue); } },
@@ -460,9 +496,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
             writer.WriteObjectValue<PostalAddressType>("billingPostalAddress", BillingPostalAddress);
             writer.WriteGuidValue("billToCustomerId", BillToCustomerId);
             writer.WriteStringValue("billToCustomerNumber", BillToCustomerNumber);
@@ -480,9 +515,11 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateValue("dueDate", DueDate);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("externalDocumentNumber", ExternalDocumentNumber);
+            writer.WriteGuidValue("id", Id);
             writer.WriteDateValue("invoiceDate", InvoiceDate);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("number", Number);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteGuidValue("orderId", OrderId);
             writer.WriteStringValue("orderNumber", OrderNumber);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PaymentTerm>("paymentTerm", PaymentTerm);
@@ -501,6 +538,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDecimalValue("totalAmountExcludingTax", TotalAmountExcludingTax);
             writer.WriteDecimalValue("totalAmountIncludingTax", TotalAmountIncludingTax);
             writer.WriteDecimalValue("totalTaxAmount", TotalTaxAmount);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

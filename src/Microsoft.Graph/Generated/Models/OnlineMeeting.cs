@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("allowParticipantsToChangeName"); }
             set { BackingStore?.Set("allowParticipantsToChangeName", value); }
         }
-        /// <summary>The allowRecording property</summary>
+        /// <summary>Indicates whether recording is enabled for the meeting.</summary>
         public bool? AllowRecording {
             get { return BackingStore?.Get<bool?>("allowRecording"); }
             set { BackingStore?.Set("allowRecording", value); }
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("allowTeamworkReactions"); }
             set { BackingStore?.Set("allowTeamworkReactions", value); }
         }
-        /// <summary>The allowTranscription property</summary>
+        /// <summary>Indicates whether transcription is enabled for the meeting.</summary>
         public bool? AllowTranscription {
             get { return BackingStore?.Get<bool?>("allowTranscription"); }
             set { BackingStore?.Set("allowTranscription", value); }

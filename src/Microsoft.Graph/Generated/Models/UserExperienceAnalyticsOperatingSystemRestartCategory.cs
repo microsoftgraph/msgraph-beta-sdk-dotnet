@@ -1,34 +1,37 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Operating System restart category</summary>
+    /// <summary>Operating System restart category.</summary>
     public enum UserExperienceAnalyticsOperatingSystemRestartCategory {
-        /// <summary>Unknown</summary>
+        /// <summary>Default. Set to unknown if device operating system restart category has not yet been calculated.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,
-        /// <summary>Restart with update</summary>
+        /// <summary>Indicates that the device operating system restart is along with an update.</summary>
         [EnumMember(Value = "restartWithUpdate")]
         RestartWithUpdate,
-        /// <summary>Restart without update</summary>
+        /// <summary>Indicates that the device operating system restart is without update.</summary>
         [EnumMember(Value = "restartWithoutUpdate")]
         RestartWithoutUpdate,
-        /// <summary>Blue screen restart</summary>
+        /// <summary>Indicates that the device operating system restart is due to a specific stop error.</summary>
         [EnumMember(Value = "blueScreen")]
         BlueScreen,
-        /// <summary>Shutdown with update</summary>
+        /// <summary>Indicates that the device operating system restart is due to shutdown with update.</summary>
         [EnumMember(Value = "shutdownWithUpdate")]
         ShutdownWithUpdate,
-        /// <summary>Shutdown without update</summary>
+        /// <summary>Indicates that the device operating system restart is due to shutdown without update.</summary>
         [EnumMember(Value = "shutdownWithoutUpdate")]
         ShutdownWithoutUpdate,
-        /// <summary>Long power button press</summary>
+        /// <summary>Indicates that the device operating system restart is due to update long power-button press.</summary>
         [EnumMember(Value = "longPowerButtonPress")]
         LongPowerButtonPress,
-        /// <summary>Boot error</summary>
+        /// <summary>Indicates that the device operating system restart is due to boot error.</summary>
         [EnumMember(Value = "bootError")]
         BootError,
-        /// <summary>Update</summary>
+        /// <summary>Indicates that the device operating system restarted after an update.</summary>
         [EnumMember(Value = "update")]
         Update,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

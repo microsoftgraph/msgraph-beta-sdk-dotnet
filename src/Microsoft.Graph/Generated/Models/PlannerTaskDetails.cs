@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("checklist", value); }
         }
 #endif
-        /// <summary>The completionRequirements property</summary>
+        /// <summary>Contains detailed information about requirements on the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerTaskCompletionRequirementDetails? CompletionRequirements {

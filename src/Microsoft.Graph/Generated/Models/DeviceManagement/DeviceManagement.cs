@@ -1239,6 +1239,20 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             set { BackingStore?.Set("notificationMessageTemplates", value); }
         }
 #endif
+        /// <summary>The endpoint privilege management elevation event entity contains elevation details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation>? PrivilegeManagementElevations {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation>?>("privilegeManagementElevations"); }
+            set { BackingStore?.Set("privilegeManagementElevations", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation> PrivilegeManagementElevations {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation>>("privilegeManagementElevations"); }
+            set { BackingStore?.Set("privilegeManagementElevations", value); }
+        }
+#endif
         /// <summary>The list of device remote action audits with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1574,6 +1588,20 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly> UserExperienceAnalyticsAnomaly {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly>>("userExperienceAnalyticsAnomaly"); }
             set { BackingStore?.Set("userExperienceAnalyticsAnomaly", value); }
+        }
+#endif
+        /// <summary>The user experience analytics anomaly correlation group overview entity contains the information for each correlation group of an anomaly.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview>? UserExperienceAnalyticsAnomalyCorrelationGroupOverview {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview>?>("userExperienceAnalyticsAnomalyCorrelationGroupOverview"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAnomalyCorrelationGroupOverview", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview> UserExperienceAnalyticsAnomalyCorrelationGroupOverview {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview>>("userExperienceAnalyticsAnomalyCorrelationGroupOverview"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAnomalyCorrelationGroupOverview", value); }
         }
 #endif
         /// <summary>The user experience analytics anomaly entity contains device details.</summary>
@@ -2521,6 +2549,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
                 {"monitoring", n => { Monitoring = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring>(Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring.CreateFromDiscriminatorValue); } },
                 {"ndesConnectors", n => { NdesConnectors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NdesConnector>(Microsoft.Graph.Beta.Models.NdesConnector.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"notificationMessageTemplates", n => { NotificationMessageTemplates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NotificationMessageTemplate>(Microsoft.Graph.Beta.Models.NotificationMessageTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"privilegeManagementElevations", n => { PrivilegeManagementElevations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation>(Microsoft.Graph.Beta.Models.PrivilegeManagementElevation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"remoteActionAudits", n => { RemoteActionAudits = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteActionAudit>(Microsoft.Graph.Beta.Models.RemoteActionAudit.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"remoteAssistancePartners", n => { RemoteAssistancePartners = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteAssistancePartner>(Microsoft.Graph.Beta.Models.RemoteAssistancePartner.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"remoteAssistanceSettings", n => { RemoteAssistanceSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.RemoteAssistanceSettings>(Microsoft.Graph.Beta.Models.RemoteAssistanceSettings.CreateFromDiscriminatorValue); } },
@@ -2547,6 +2576,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
                 {"troubleshootingEvents", n => { TroubleshootingEvents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent>(Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"unlicensedAdminstratorsEnabled", n => { UnlicensedAdminstratorsEnabled = n.GetBoolValue(); } },
                 {"userExperienceAnalyticsAnomaly", n => { UserExperienceAnalyticsAnomaly = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"userExperienceAnalyticsAnomalyCorrelationGroupOverview", n => { UserExperienceAnalyticsAnomalyCorrelationGroupOverview = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"userExperienceAnalyticsAnomalyDevice", n => { UserExperienceAnalyticsAnomalyDevice = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"userExperienceAnalyticsAnomalySeverityOverview", n => { UserExperienceAnalyticsAnomalySeverityOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview.CreateFromDiscriminatorValue); } },
                 {"userExperienceAnalyticsAppHealthApplicationPerformance", n => { UserExperienceAnalyticsAppHealthApplicationPerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -2705,6 +2735,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring>("monitoring", Monitoring);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NdesConnector>("ndesConnectors", NdesConnectors);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NotificationMessageTemplate>("notificationMessageTemplates", NotificationMessageTemplates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation>("privilegeManagementElevations", PrivilegeManagementElevations);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteActionAudit>("remoteActionAudits", RemoteActionAudits);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteAssistancePartner>("remoteAssistancePartners", RemoteAssistancePartners);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RemoteAssistanceSettings>("remoteAssistanceSettings", RemoteAssistanceSettings);
@@ -2730,6 +2761,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TermsAndConditions>("termsAndConditions", TermsAndConditions);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent>("troubleshootingEvents", TroubleshootingEvents);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly>("userExperienceAnalyticsAnomaly", UserExperienceAnalyticsAnomaly);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview>("userExperienceAnalyticsAnomalyCorrelationGroupOverview", UserExperienceAnalyticsAnomalyCorrelationGroupOverview);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice>("userExperienceAnalyticsAnomalyDevice", UserExperienceAnalyticsAnomalyDevice);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview>("userExperienceAnalyticsAnomalySeverityOverview", UserExperienceAnalyticsAnomalySeverityOverview);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>("userExperienceAnalyticsAppHealthApplicationPerformance", UserExperienceAnalyticsAppHealthApplicationPerformance);

@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Contains the properties used to assign an App provisioning configuration to a group.
-    /// </summary>
     public class MobileAppProvisioningConfigGroupAssignment : Entity, IParsable {
         /// <summary>The ID of the AAD group in which the app provisioning configuration is being targeted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

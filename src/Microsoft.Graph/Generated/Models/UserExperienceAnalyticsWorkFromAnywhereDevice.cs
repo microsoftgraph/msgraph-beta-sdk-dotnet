@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// The user experience analytics Device for work from anywhere report
+    /// The user experience analytics device for work from anywhere report.
     /// </summary>
     public class UserExperienceAnalyticsWorkFromAnywhereDevice : Entity, IParsable {
         /// <summary>The user experience analytics work from anywhere intune device&apos;s autopilotProfileAssigned.</summary>
@@ -262,7 +262,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("tpmCheckFailed"); }
             set { BackingStore?.Set("tpmCheckFailed", value); }
         }
-        /// <summary>Work From Anywhere windows device upgrade eligibility status</summary>
+        /// <summary>Work From Anywhere windows device upgrade eligibility status.</summary>
         public OperatingSystemUpgradeEligibility? UpgradeEligibility {
             get { return BackingStore?.Get<OperatingSystemUpgradeEligibility?>("upgradeEligibility"); }
             set { BackingStore?.Set("upgradeEligibility", value); }

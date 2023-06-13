@@ -51,20 +51,6 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<double?>("osVersionAppHealthScore"); }
             set { BackingStore?.Set("osVersionAppHealthScore", value); }
         }
-        /// <summary>The overall app health status of the OS version.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OsVersionAppHealthStatus {
-            get { return BackingStore?.Get<string?>("osVersionAppHealthStatus"); }
-            set { BackingStore?.Set("osVersionAppHealthStatus", value); }
-        }
-#nullable restore
-#else
-        public string OsVersionAppHealthStatus {
-            get { return BackingStore?.Get<string>("osVersionAppHealthStatus"); }
-            set { BackingStore?.Set("osVersionAppHealthStatus", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -83,7 +69,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"osBuildNumber", n => { OsBuildNumber = n.GetStringValue(); } },
                 {"osVersion", n => { OsVersion = n.GetStringValue(); } },
                 {"osVersionAppHealthScore", n => { OsVersionAppHealthScore = n.GetDoubleValue(); } },
-                {"osVersionAppHealthStatus", n => { OsVersionAppHealthStatus = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -98,7 +83,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("osBuildNumber", OsBuildNumber);
             writer.WriteStringValue("osVersion", OsVersion);
             writer.WriteDoubleValue("osVersionAppHealthScore", OsVersionAppHealthScore);
-            writer.WriteStringValue("osVersionAppHealthStatus", OsVersionAppHealthStatus);
         }
     }
 }

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The severity property</summary>
+        /// <summary>Indicates severity of insights. Possible values are: None, Informational, Warning, Error.</summary>
         public UserExperienceAnalyticsInsightSeverity? Severity {
             get { return BackingStore?.Get<UserExperienceAnalyticsInsightSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }

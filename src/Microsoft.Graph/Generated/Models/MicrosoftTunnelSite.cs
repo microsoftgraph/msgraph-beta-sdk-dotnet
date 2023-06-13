@@ -5,9 +5,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Entity that represents a Microsoft Tunnel site
-    /// </summary>
     public class MicrosoftTunnelSite : Entity, IParsable {
         /// <summary>The site&apos;s description (optional)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
