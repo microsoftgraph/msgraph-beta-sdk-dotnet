@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Device Co-Management eligibility state
-    /// </summary>
     public class ComanagementEligibleDevice : Entity, IParsable {
         /// <summary>Device registration status.</summary>
         public DeviceRegistrationState? ClientRegistrationStatus {

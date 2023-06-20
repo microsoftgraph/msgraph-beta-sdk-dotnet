@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MicrosoftTunnelConfigurationCollectionResponse?> GetAsync(Action<MicrosoftTunnelConfigurationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftTunnelConfigurationCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<MicrosoftTunnelConfigurationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<MicrosoftTunnelConfigurationCollectionResponse> GetAsync(Action<MicrosoftTunnelConfigurationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftTunnelConfigurationCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<MicrosoftTunnelConfigurationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration?> PostAsync(Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration body, Action<MicrosoftTunnelConfigurationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration?> PostAsync(Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration body, CancellationToken cancellationToken = default, Action<MicrosoftTunnelConfigurationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration> PostAsync(Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration body, Action<MicrosoftTunnelConfigurationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration> PostAsync(Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration body, CancellationToken cancellationToken = default, Action<MicrosoftTunnelConfigurationsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

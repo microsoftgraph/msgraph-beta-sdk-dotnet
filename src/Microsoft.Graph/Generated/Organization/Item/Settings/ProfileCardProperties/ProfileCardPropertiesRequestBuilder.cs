@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProfileCardPropertyCollectionResponse?> GetAsync(Action<ProfileCardPropertiesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ProfileCardPropertyCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ProfileCardPropertiesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ProfileCardPropertyCollectionResponse> GetAsync(Action<ProfileCardPropertiesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ProfileCardPropertyCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ProfileCardPropertiesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProfileCardProperty?> PostAsync(ProfileCardProperty body, Action<ProfileCardPropertiesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ProfileCardProperty?> PostAsync(ProfileCardProperty body, CancellationToken cancellationToken = default, Action<ProfileCardPropertiesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ProfileCardProperty> PostAsync(ProfileCardProperty body, Action<ProfileCardPropertiesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ProfileCardProperty> PostAsync(ProfileCardProperty body, CancellationToken cancellationToken = default, Action<ProfileCardPropertiesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Windows Information Protection Network learning Summary entity.
-    /// </summary>
     public class WindowsInformationProtectionNetworkLearningSummary : Entity, IParsable {
         /// <summary>Device Count</summary>
         public int? DeviceCount {

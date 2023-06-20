@@ -35,10 +35,10 @@ namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPer
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAzureADApplicationSignInSummaryWithPeriodResponse?> GetAsync(Action<GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAzureADApplicationSignInSummaryWithPeriodResponse?> GetAsync(CancellationToken cancellationToken = default, Action<GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GetAzureADApplicationSignInSummaryWithPeriodResponse> GetAsync(Action<GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAzureADApplicationSignInSummaryWithPeriodResponse> GetAsync(CancellationToken cancellationToken = default, Action<GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

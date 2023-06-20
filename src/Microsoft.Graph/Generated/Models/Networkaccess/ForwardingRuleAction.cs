@@ -1,0 +1,12 @@
+using System.Runtime.Serialization;
+using System;
+namespace Microsoft.Graph.Beta.Models.Networkaccess {
+    public enum ForwardingRuleAction {
+        [EnumMember(Value = "bypass")]
+        Bypass,
+        [EnumMember(Value = "forward")]
+        Forward,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
+    }
+}

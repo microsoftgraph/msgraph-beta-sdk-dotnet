@@ -54,10 +54,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SalesCreditMemo?> GetAsync(Action<SalesCreditMemoItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesCreditMemo?> GetAsync(CancellationToken cancellationToken = default, Action<SalesCreditMemoItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SalesCreditMemo> GetAsync(Action<SalesCreditMemoItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesCreditMemo> GetAsync(CancellationToken cancellationToken = default, Action<SalesCreditMemoItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -74,10 +74,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SalesCreditMemo?> PatchAsync(SalesCreditMemo body, Action<SalesCreditMemoItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesCreditMemo?> PatchAsync(SalesCreditMemo body, CancellationToken cancellationToken = default, Action<SalesCreditMemoItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SalesCreditMemo> PatchAsync(SalesCreditMemo body, Action<SalesCreditMemoItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesCreditMemo> PatchAsync(SalesCreditMemo body, CancellationToken cancellationToken = default, Action<SalesCreditMemoItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

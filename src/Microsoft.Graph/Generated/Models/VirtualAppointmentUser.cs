@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new virtualAppointmentUser and sets the default values.
+        /// Instantiates a new VirtualAppointmentUser and sets the default values.
         /// </summary>
         public VirtualAppointmentUser() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

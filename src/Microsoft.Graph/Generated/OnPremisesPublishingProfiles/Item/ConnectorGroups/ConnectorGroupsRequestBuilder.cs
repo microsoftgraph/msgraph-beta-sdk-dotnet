@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ConnectorGroupCollectionResponse?> GetAsync(Action<ConnectorGroupsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ConnectorGroupCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ConnectorGroupsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ConnectorGroupCollectionResponse> GetAsync(Action<ConnectorGroupsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ConnectorGroupCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ConnectorGroupsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.ConnectorGroup?> PostAsync(Microsoft.Graph.Beta.Models.ConnectorGroup body, Action<ConnectorGroupsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.ConnectorGroup?> PostAsync(Microsoft.Graph.Beta.Models.ConnectorGroup body, CancellationToken cancellationToken = default, Action<ConnectorGroupsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.ConnectorGroup> PostAsync(Microsoft.Graph.Beta.Models.ConnectorGroup body, Action<ConnectorGroupsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.ConnectorGroup> PostAsync(Microsoft.Graph.Beta.Models.ConnectorGroup body, CancellationToken cancellationToken = default, Action<ConnectorGroupsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

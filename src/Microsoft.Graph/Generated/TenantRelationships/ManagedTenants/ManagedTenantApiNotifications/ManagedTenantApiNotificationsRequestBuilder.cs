@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantA
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedTenantApiNotificationCollectionResponse?> GetAsync(Action<ManagedTenantApiNotificationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedTenantApiNotificationCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ManagedTenantApiNotificationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ManagedTenantApiNotificationCollectionResponse> GetAsync(Action<ManagedTenantApiNotificationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedTenantApiNotificationCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ManagedTenantApiNotificationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantA
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedTenantApiNotification?> PostAsync(ManagedTenantApiNotification body, Action<ManagedTenantApiNotificationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedTenantApiNotification?> PostAsync(ManagedTenantApiNotification body, CancellationToken cancellationToken = default, Action<ManagedTenantApiNotificationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ManagedTenantApiNotification> PostAsync(ManagedTenantApiNotification body, Action<ManagedTenantApiNotificationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedTenantApiNotification> PostAsync(ManagedTenantApiNotification body, CancellationToken cancellationToken = default, Action<ManagedTenantApiNotificationsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

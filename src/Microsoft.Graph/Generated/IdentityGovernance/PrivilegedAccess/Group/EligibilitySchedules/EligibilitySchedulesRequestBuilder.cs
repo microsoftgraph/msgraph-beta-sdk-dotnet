@@ -56,10 +56,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrivilegedAccessGroupEligibilityScheduleCollectionResponse?> GetAsync(Action<EligibilitySchedulesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegedAccessGroupEligibilityScheduleCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<EligibilitySchedulesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PrivilegedAccessGroupEligibilityScheduleCollectionResponse> GetAsync(Action<EligibilitySchedulesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegedAccessGroupEligibilityScheduleCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<EligibilitySchedulesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -76,10 +76,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrivilegedAccessGroupEligibilitySchedule?> PostAsync(PrivilegedAccessGroupEligibilitySchedule body, Action<EligibilitySchedulesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegedAccessGroupEligibilitySchedule?> PostAsync(PrivilegedAccessGroupEligibilitySchedule body, CancellationToken cancellationToken = default, Action<EligibilitySchedulesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PrivilegedAccessGroupEligibilitySchedule> PostAsync(PrivilegedAccessGroupEligibilitySchedule body, Action<EligibilitySchedulesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegedAccessGroupEligibilitySchedule> PostAsync(PrivilegedAccessGroupEligibilitySchedule body, CancellationToken cancellationToken = default, Action<EligibilitySchedulesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

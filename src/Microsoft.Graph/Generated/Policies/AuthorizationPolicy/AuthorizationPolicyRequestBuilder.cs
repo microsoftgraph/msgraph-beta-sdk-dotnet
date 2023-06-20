@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthorizationPolicyCollectionResponse?> GetAsync(Action<AuthorizationPolicyRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthorizationPolicyCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<AuthorizationPolicyRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AuthorizationPolicyCollectionResponse> GetAsync(Action<AuthorizationPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthorizationPolicyCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<AuthorizationPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.AuthorizationPolicy?> PostAsync(Microsoft.Graph.Beta.Models.AuthorizationPolicy body, Action<AuthorizationPolicyRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.AuthorizationPolicy?> PostAsync(Microsoft.Graph.Beta.Models.AuthorizationPolicy body, CancellationToken cancellationToken = default, Action<AuthorizationPolicyRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.AuthorizationPolicy> PostAsync(Microsoft.Graph.Beta.Models.AuthorizationPolicy body, Action<AuthorizationPolicyRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.AuthorizationPolicy> PostAsync(Microsoft.Graph.Beta.Models.AuthorizationPolicy body, CancellationToken cancellationToken = default, Action<AuthorizationPolicyRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

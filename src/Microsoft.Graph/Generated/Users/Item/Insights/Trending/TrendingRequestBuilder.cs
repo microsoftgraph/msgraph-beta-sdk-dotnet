@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Insights.Trending {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TrendingCollectionResponse?> GetAsync(Action<TrendingRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TrendingCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<TrendingRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<TrendingCollectionResponse> GetAsync(Action<TrendingRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TrendingCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<TrendingRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Insights.Trending {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Trending?> PostAsync(Microsoft.Graph.Beta.Models.Trending body, Action<TrendingRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Trending?> PostAsync(Microsoft.Graph.Beta.Models.Trending body, CancellationToken cancellationToken = default, Action<TrendingRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Trending> PostAsync(Microsoft.Graph.Beta.Models.Trending body, Action<TrendingRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Trending> PostAsync(Microsoft.Graph.Beta.Models.Trending body, CancellationToken cancellationToken = default, Action<TrendingRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

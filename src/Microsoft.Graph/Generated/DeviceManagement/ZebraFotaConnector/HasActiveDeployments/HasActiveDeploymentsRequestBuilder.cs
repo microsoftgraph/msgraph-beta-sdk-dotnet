@@ -33,10 +33,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.HasActiveDepl
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<HasActiveDeploymentsResponse?> PostAsync(Action<HasActiveDeploymentsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HasActiveDeploymentsResponse?> PostAsync(CancellationToken cancellationToken = default, Action<HasActiveDeploymentsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<HasActiveDeploymentsResponse> PostAsync(Action<HasActiveDeploymentsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HasActiveDeploymentsResponse> PostAsync(CancellationToken cancellationToken = default, Action<HasActiveDeploymentsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

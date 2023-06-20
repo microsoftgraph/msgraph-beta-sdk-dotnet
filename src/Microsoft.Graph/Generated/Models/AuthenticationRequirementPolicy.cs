@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requirementProvider", value); }
         }
         /// <summary>
-        /// Instantiates a new authenticationRequirementPolicy and sets the default values.
+        /// Instantiates a new AuthenticationRequirementPolicy and sets the default values.
         /// </summary>
         public AuthenticationRequirementPolicy() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

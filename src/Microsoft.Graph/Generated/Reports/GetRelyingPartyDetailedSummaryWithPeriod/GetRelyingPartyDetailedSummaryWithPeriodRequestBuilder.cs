@@ -35,10 +35,10 @@ namespace Microsoft.Graph.Beta.Reports.GetRelyingPartyDetailedSummaryWithPeriod 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetRelyingPartyDetailedSummaryWithPeriodResponse?> GetAsync(Action<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetRelyingPartyDetailedSummaryWithPeriodResponse?> GetAsync(CancellationToken cancellationToken = default, Action<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GetRelyingPartyDetailedSummaryWithPeriodResponse> GetAsync(Action<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetRelyingPartyDetailedSummaryWithPeriodResponse> GetAsync(CancellationToken cancellationToken = default, Action<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

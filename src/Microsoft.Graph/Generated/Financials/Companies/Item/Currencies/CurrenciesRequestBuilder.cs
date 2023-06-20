@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Currencies {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CurrencyCollectionResponse?> GetAsync(Action<CurrenciesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CurrencyCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<CurrenciesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CurrencyCollectionResponse> GetAsync(Action<CurrenciesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CurrencyCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<CurrenciesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Currencies {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Currency?> PostAsync(Microsoft.Graph.Beta.Models.Currency body, Action<CurrenciesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Currency?> PostAsync(Microsoft.Graph.Beta.Models.Currency body, CancellationToken cancellationToken = default, Action<CurrenciesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Currency> PostAsync(Microsoft.Graph.Beta.Models.Currency body, Action<CurrenciesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Currency> PostAsync(Microsoft.Graph.Beta.Models.Currency body, CancellationToken cancellationToken = default, Action<CurrenciesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

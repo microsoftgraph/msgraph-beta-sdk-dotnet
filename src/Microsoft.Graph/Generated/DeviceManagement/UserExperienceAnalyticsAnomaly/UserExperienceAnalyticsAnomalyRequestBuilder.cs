@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomaly {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserExperienceAnalyticsAnomalyCollectionResponse?> GetAsync(Action<UserExperienceAnalyticsAnomalyRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserExperienceAnalyticsAnomalyCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<UserExperienceAnalyticsAnomalyRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<UserExperienceAnalyticsAnomalyCollectionResponse> GetAsync(Action<UserExperienceAnalyticsAnomalyRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserExperienceAnalyticsAnomalyCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<UserExperienceAnalyticsAnomalyRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomaly {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly?> PostAsync(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly body, Action<UserExperienceAnalyticsAnomalyRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly?> PostAsync(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly body, CancellationToken cancellationToken = default, Action<UserExperienceAnalyticsAnomalyRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly> PostAsync(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly body, Action<UserExperienceAnalyticsAnomalyRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly> PostAsync(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly body, CancellationToken cancellationToken = default, Action<UserExperienceAnalyticsAnomalyRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

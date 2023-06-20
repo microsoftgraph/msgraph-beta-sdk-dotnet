@@ -187,6 +187,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sharedEmailDomains", value); }
         }
 #endif
+        /// <summary>The subscriptions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<CompanySubscription>? Subscriptions {
+            get { return BackingStore?.Get<List<CompanySubscription>?>("subscriptions"); }
+            set { BackingStore?.Set("subscriptions", value); }
+        }
+#nullable restore
+#else
+        public List<CompanySubscription> Subscriptions {
+            get { return BackingStore?.Get<List<CompanySubscription>>("subscriptions"); }
+            set { BackingStore?.Set("subscriptions", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -213,6 +227,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"outboundSharedUserProfiles", n => { OutboundSharedUserProfiles = n.GetCollectionOfObjectValues<OutboundSharedUserProfile>(OutboundSharedUserProfile.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"recommendations", n => { Recommendations = n.GetCollectionOfObjectValues<Recommendation>(Recommendation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"sharedEmailDomains", n => { SharedEmailDomains = n.GetCollectionOfObjectValues<SharedEmailDomain>(SharedEmailDomain.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<CompanySubscription>(CompanySubscription.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -235,6 +250,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<OutboundSharedUserProfile>("outboundSharedUserProfiles", OutboundSharedUserProfiles);
             writer.WriteCollectionOfObjectValues<Recommendation>("recommendations", Recommendations);
             writer.WriteCollectionOfObjectValues<SharedEmailDomain>("sharedEmailDomains", SharedEmailDomains);
+            writer.WriteCollectionOfObjectValues<CompanySubscription>("subscriptions", Subscriptions);
         }
     }
 }

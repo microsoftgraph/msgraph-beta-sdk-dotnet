@@ -51,10 +51,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IosLobAppProvisioningConfigurationCollectionResponse?> GetAsync(Action<IosLobAppProvisioningConfigurationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IosLobAppProvisioningConfigurationCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<IosLobAppProvisioningConfigurationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<IosLobAppProvisioningConfigurationCollectionResponse> GetAsync(Action<IosLobAppProvisioningConfigurationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IosLobAppProvisioningConfigurationCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<IosLobAppProvisioningConfigurationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -71,10 +71,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IosLobAppProvisioningConfiguration?> PostAsync(IosLobAppProvisioningConfiguration body, Action<IosLobAppProvisioningConfigurationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IosLobAppProvisioningConfiguration?> PostAsync(IosLobAppProvisioningConfiguration body, CancellationToken cancellationToken = default, Action<IosLobAppProvisioningConfigurationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<IosLobAppProvisioningConfiguration> PostAsync(IosLobAppProvisioningConfiguration body, Action<IosLobAppProvisioningConfigurationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IosLobAppProvisioningConfiguration> PostAsync(IosLobAppProvisioningConfiguration body, CancellationToken cancellationToken = default, Action<IosLobAppProvisioningConfigurationsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

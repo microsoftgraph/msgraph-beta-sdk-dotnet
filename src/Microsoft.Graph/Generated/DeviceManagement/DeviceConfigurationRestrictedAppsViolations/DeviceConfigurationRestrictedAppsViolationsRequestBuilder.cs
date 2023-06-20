@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationRestrictedApp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RestrictedAppsViolationCollectionResponse?> GetAsync(Action<DeviceConfigurationRestrictedAppsViolationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RestrictedAppsViolationCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<DeviceConfigurationRestrictedAppsViolationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<RestrictedAppsViolationCollectionResponse> GetAsync(Action<DeviceConfigurationRestrictedAppsViolationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RestrictedAppsViolationCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<DeviceConfigurationRestrictedAppsViolationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationRestrictedApp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RestrictedAppsViolation?> PostAsync(RestrictedAppsViolation body, Action<DeviceConfigurationRestrictedAppsViolationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RestrictedAppsViolation?> PostAsync(RestrictedAppsViolation body, CancellationToken cancellationToken = default, Action<DeviceConfigurationRestrictedAppsViolationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<RestrictedAppsViolation> PostAsync(RestrictedAppsViolation body, Action<DeviceConfigurationRestrictedAppsViolationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RestrictedAppsViolation> PostAsync(RestrictedAppsViolation body, CancellationToken cancellationToken = default, Action<DeviceConfigurationRestrictedAppsViolationsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

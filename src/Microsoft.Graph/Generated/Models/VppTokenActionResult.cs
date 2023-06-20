@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new vppTokenActionResult and sets the default values.
+        /// Instantiates a new VppTokenActionResult and sets the default values.
         /// </summary>
         public VppTokenActionResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

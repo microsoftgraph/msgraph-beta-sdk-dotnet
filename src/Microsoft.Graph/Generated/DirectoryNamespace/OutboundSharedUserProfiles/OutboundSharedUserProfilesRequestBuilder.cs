@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OutboundSharedUserProfileCollectionResponse?> GetAsync(Action<OutboundSharedUserProfilesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OutboundSharedUserProfileCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<OutboundSharedUserProfilesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<OutboundSharedUserProfileCollectionResponse> GetAsync(Action<OutboundSharedUserProfilesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OutboundSharedUserProfileCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<OutboundSharedUserProfilesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OutboundSharedUserProfile?> PostAsync(OutboundSharedUserProfile body, Action<OutboundSharedUserProfilesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OutboundSharedUserProfile?> PostAsync(OutboundSharedUserProfile body, CancellationToken cancellationToken = default, Action<OutboundSharedUserProfilesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<OutboundSharedUserProfile> PostAsync(OutboundSharedUserProfile body, Action<OutboundSharedUserProfilesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OutboundSharedUserProfile> PostAsync(OutboundSharedUserProfile body, CancellationToken cancellationToken = default, Action<OutboundSharedUserProfilesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

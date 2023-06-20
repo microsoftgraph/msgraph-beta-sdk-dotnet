@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.Categories
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedEBookCategory?> GetAsync(Action<ManagedEBookCategoryItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedEBookCategory?> GetAsync(CancellationToken cancellationToken = default, Action<ManagedEBookCategoryItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ManagedEBookCategory> GetAsync(Action<ManagedEBookCategoryItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedEBookCategory> GetAsync(CancellationToken cancellationToken = default, Action<ManagedEBookCategoryItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

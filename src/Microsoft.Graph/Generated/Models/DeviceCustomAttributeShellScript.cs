@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Represents a custom attribute script for macOS.
-    /// </summary>
     public class DeviceCustomAttributeShellScript : Entity, IParsable {
         /// <summary>The list of group assignments for the device management script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

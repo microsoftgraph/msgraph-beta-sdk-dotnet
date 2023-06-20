@@ -38,17 +38,17 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration {
         public RegistrationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/onlineMeetings/{onlineMeeting%2Did}/registration{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0" />
+        /// Disable and delete the externalMeetingRegistration of an onlineMeeting.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RegistrationRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<RegistrationRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RegistrationRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<RegistrationRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -65,10 +65,10 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MeetingRegistration?> GetAsync(Action<RegistrationRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MeetingRegistration?> GetAsync(CancellationToken cancellationToken = default, Action<RegistrationRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<MeetingRegistration> GetAsync(Action<RegistrationRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MeetingRegistration> GetAsync(CancellationToken cancellationToken = default, Action<RegistrationRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -86,10 +86,10 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MeetingRegistration?> PatchAsync(MeetingRegistration body, Action<RegistrationRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MeetingRegistration?> PatchAsync(MeetingRegistration body, CancellationToken cancellationToken = default, Action<RegistrationRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<MeetingRegistration> PatchAsync(MeetingRegistration body, Action<RegistrationRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MeetingRegistration> PatchAsync(MeetingRegistration body, CancellationToken cancellationToken = default, Action<RegistrationRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration {
             return await RequestAdapter.SendAsync<MeetingRegistration>(requestInfo, MeetingRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+        /// Disable and delete the externalMeetingRegistration of an onlineMeeting.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

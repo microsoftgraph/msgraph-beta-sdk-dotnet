@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.SignUp {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.PrivilegedSignupStatus?> PostAsync(Action<SignUpRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.PrivilegedSignupStatus?> PostAsync(CancellationToken cancellationToken = default, Action<SignUpRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.PrivilegedSignupStatus> PostAsync(Action<SignUpRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.PrivilegedSignupStatus> PostAsync(CancellationToken cancellationToken = default, Action<SignUpRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

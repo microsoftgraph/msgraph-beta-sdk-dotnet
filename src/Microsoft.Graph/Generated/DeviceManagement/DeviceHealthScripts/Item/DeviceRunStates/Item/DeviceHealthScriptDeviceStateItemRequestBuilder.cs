@@ -39,10 +39,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.DeviceR
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<DeviceHealthScriptDeviceStateItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DeviceHealthScriptDeviceStateItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<DeviceHealthScriptDeviceStateItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DeviceHealthScriptDeviceStateItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -58,10 +58,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.DeviceR
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceHealthScriptDeviceState?> GetAsync(Action<DeviceHealthScriptDeviceStateItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceHealthScriptDeviceState?> GetAsync(CancellationToken cancellationToken = default, Action<DeviceHealthScriptDeviceStateItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceHealthScriptDeviceState> GetAsync(Action<DeviceHealthScriptDeviceStateItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceHealthScriptDeviceState> GetAsync(CancellationToken cancellationToken = default, Action<DeviceHealthScriptDeviceStateItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -78,10 +78,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.DeviceR
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceHealthScriptDeviceState?> PatchAsync(DeviceHealthScriptDeviceState body, Action<DeviceHealthScriptDeviceStateItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceHealthScriptDeviceState?> PatchAsync(DeviceHealthScriptDeviceState body, CancellationToken cancellationToken = default, Action<DeviceHealthScriptDeviceStateItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceHealthScriptDeviceState> PatchAsync(DeviceHealthScriptDeviceState body, Action<DeviceHealthScriptDeviceStateItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceHealthScriptDeviceState> PatchAsync(DeviceHealthScriptDeviceState body, CancellationToken cancellationToken = default, Action<DeviceHealthScriptDeviceStateItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Reports.AppCredentialSignInActivities;
 using Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary;
 using Microsoft.Graph.Beta.Reports.AuthenticationMethods;
 using Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails;
@@ -138,6 +139,7 @@ using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser;
 using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByPrinter;
 using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByUser;
 using Microsoft.Graph.Beta.Reports.Security;
+using Microsoft.Graph.Beta.Reports.ServicePrincipalSignInActivities;
 using Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -152,6 +154,10 @@ namespace Microsoft.Graph.Beta.Reports {
     /// Provides operations to manage the reportRoot singleton.
     /// </summary>
     public class ReportsRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the appCredentialSignInActivities property of the microsoft.graph.reportRoot entity.</summary>
+        public AppCredentialSignInActivitiesRequestBuilder AppCredentialSignInActivities { get =>
+            new AppCredentialSignInActivitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the applicationSignInDetailedSummary property of the microsoft.graph.reportRoot entity.</summary>
         public ApplicationSignInDetailedSummaryRequestBuilder ApplicationSignInDetailedSummary { get =>
             new ApplicationSignInDetailedSummaryRequestBuilder(PathParameters, RequestAdapter);
@@ -252,6 +258,10 @@ namespace Microsoft.Graph.Beta.Reports {
         public SecurityRequestBuilder Security { get =>
             new SecurityRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the servicePrincipalSignInActivities property of the microsoft.graph.reportRoot entity.</summary>
+        public ServicePrincipalSignInActivitiesRequestBuilder ServicePrincipalSignInActivities { get =>
+            new ServicePrincipalSignInActivitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.</summary>
         public UserCredentialUsageDetailsRequestBuilder UserCredentialUsageDetails { get =>
             new UserCredentialUsageDetailsRequestBuilder(PathParameters, RequestAdapter);
@@ -277,10 +287,10 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ReportRoot?> GetAsync(Action<ReportsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ReportRoot?> GetAsync(CancellationToken cancellationToken = default, Action<ReportsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ReportRoot> GetAsync(Action<ReportsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ReportRoot> GetAsync(CancellationToken cancellationToken = default, Action<ReportsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -1231,10 +1241,10 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ReportRoot?> PatchAsync(ReportRoot body, Action<ReportsRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ReportRoot?> PatchAsync(ReportRoot body, CancellationToken cancellationToken = default, Action<ReportsRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ReportRoot> PatchAsync(ReportRoot body, Action<ReportsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ReportRoot> PatchAsync(ReportRoot body, CancellationToken cancellationToken = default, Action<ReportsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

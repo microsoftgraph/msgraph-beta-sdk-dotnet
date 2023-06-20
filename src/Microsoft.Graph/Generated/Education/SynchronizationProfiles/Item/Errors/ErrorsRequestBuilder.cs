@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationSynchronizationErrorCollectionResponse?> GetAsync(Action<ErrorsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationSynchronizationErrorCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ErrorsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<EducationSynchronizationErrorCollectionResponse> GetAsync(Action<ErrorsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationSynchronizationErrorCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ErrorsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationSynchronizationError?> PostAsync(EducationSynchronizationError body, Action<ErrorsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationSynchronizationError?> PostAsync(EducationSynchronizationError body, CancellationToken cancellationToken = default, Action<ErrorsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<EducationSynchronizationError> PostAsync(EducationSynchronizationError body, Action<ErrorsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationSynchronizationError> PostAsync(EducationSynchronizationError body, CancellationToken cancellationToken = default, Action<ErrorsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

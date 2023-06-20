@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.External.IndustryData.RoleGroups {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RoleGroupCollectionResponse?> GetAsync(Action<RoleGroupsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RoleGroupCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<RoleGroupsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<RoleGroupCollectionResponse> GetAsync(Action<RoleGroupsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RoleGroupCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<RoleGroupsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.Beta.External.IndustryData.RoleGroups {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RoleGroup?> PostAsync(RoleGroup body, Action<RoleGroupsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RoleGroup?> PostAsync(RoleGroup body, CancellationToken cancellationToken = default, Action<RoleGroupsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<RoleGroup> PostAsync(RoleGroup body, Action<RoleGroupsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RoleGroup> PostAsync(RoleGroup body, CancellationToken cancellationToken = default, Action<RoleGroupsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

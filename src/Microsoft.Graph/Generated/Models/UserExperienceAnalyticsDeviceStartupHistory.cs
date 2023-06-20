@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// The user experience analytics device startup history entity contains device boot performance history details.
-    /// </summary>
     public class UserExperienceAnalyticsDeviceStartupHistory : Entity, IParsable {
         /// <summary>The user experience analytics device core boot time in milliseconds.</summary>
         public int? CoreBootTimeInMs {

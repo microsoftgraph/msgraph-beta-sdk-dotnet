@@ -52,10 +52,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPcProvisioningPolicyCollectionResponse?> GetAsync(Action<ProvisioningPoliciesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CloudPcProvisioningPolicyCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ProvisioningPoliciesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CloudPcProvisioningPolicyCollectionResponse> GetAsync(Action<ProvisioningPoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CloudPcProvisioningPolicyCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ProvisioningPoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPcProvisioningPolicy?> PostAsync(CloudPcProvisioningPolicy body, Action<ProvisioningPoliciesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CloudPcProvisioningPolicy?> PostAsync(CloudPcProvisioningPolicy body, CancellationToken cancellationToken = default, Action<ProvisioningPoliciesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CloudPcProvisioningPolicy> PostAsync(CloudPcProvisioningPolicy body, Action<ProvisioningPoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CloudPcProvisioningPolicy> PostAsync(CloudPcProvisioningPolicy body, CancellationToken cancellationToken = default, Action<ProvisioningPoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

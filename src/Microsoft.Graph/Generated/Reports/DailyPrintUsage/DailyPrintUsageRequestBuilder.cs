@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsage {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrintUsageCollectionResponse?> GetAsync(Action<DailyPrintUsageRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrintUsageCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<DailyPrintUsageRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PrintUsageCollectionResponse> GetAsync(Action<DailyPrintUsageRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrintUsageCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<DailyPrintUsageRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsage {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrintUsage?> PostAsync(PrintUsage body, Action<DailyPrintUsageRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrintUsage?> PostAsync(PrintUsage body, CancellationToken cancellationToken = default, Action<DailyPrintUsageRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PrintUsage> PostAsync(PrintUsage body, Action<DailyPrintUsageRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrintUsage> PostAsync(PrintUsage body, CancellationToken cancellationToken = default, Action<DailyPrintUsageRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

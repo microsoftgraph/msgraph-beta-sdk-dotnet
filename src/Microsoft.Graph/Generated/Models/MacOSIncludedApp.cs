@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new macOSIncludedApp and sets the default values.
+        /// Instantiates a new MacOSIncludedApp and sets the default values.
         /// </summary>
         public MacOSIncludedApp() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

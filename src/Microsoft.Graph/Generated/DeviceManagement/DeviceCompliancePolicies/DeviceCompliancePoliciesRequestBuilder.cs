@@ -76,10 +76,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceCompliancePolicyCollectionResponse?> GetAsync(Action<DeviceCompliancePoliciesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceCompliancePolicyCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<DeviceCompliancePoliciesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceCompliancePolicyCollectionResponse> GetAsync(Action<DeviceCompliancePoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceCompliancePolicyCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<DeviceCompliancePoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -96,10 +96,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceCompliancePolicy?> PostAsync(DeviceCompliancePolicy body, Action<DeviceCompliancePoliciesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceCompliancePolicy?> PostAsync(DeviceCompliancePolicy body, CancellationToken cancellationToken = default, Action<DeviceCompliancePoliciesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceCompliancePolicy> PostAsync(DeviceCompliancePolicy body, Action<DeviceCompliancePoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceCompliancePolicy> PostAsync(DeviceCompliancePolicy body, CancellationToken cancellationToken = default, Action<DeviceCompliancePoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

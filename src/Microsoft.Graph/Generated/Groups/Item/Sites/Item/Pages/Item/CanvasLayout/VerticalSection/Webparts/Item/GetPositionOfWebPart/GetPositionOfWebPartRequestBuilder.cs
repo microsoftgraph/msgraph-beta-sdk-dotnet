@@ -35,10 +35,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.CanvasLayout.Ve
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WebPartPosition?> PostAsync(Action<GetPositionOfWebPartRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WebPartPosition?> PostAsync(CancellationToken cancellationToken = default, Action<GetPositionOfWebPartRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<WebPartPosition> PostAsync(Action<GetPositionOfWebPartRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WebPartPosition> PostAsync(CancellationToken cancellationToken = default, Action<GetPositionOfWebPartRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

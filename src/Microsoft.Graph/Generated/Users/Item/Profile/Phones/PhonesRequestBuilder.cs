@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Phones {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ItemPhoneCollectionResponse?> GetAsync(Action<PhonesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ItemPhoneCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<PhonesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ItemPhoneCollectionResponse> GetAsync(Action<PhonesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ItemPhoneCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<PhonesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Phones {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ItemPhone?> PostAsync(ItemPhone body, Action<PhonesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ItemPhone?> PostAsync(ItemPhone body, CancellationToken cancellationToken = default, Action<PhonesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ItemPhone> PostAsync(ItemPhone body, Action<PhonesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ItemPhone> PostAsync(ItemPhone body, CancellationToken cancellationToken = default, Action<PhonesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

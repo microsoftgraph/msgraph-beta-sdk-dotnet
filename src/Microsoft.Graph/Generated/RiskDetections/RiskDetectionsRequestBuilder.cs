@@ -42,10 +42,10 @@ namespace Microsoft.Graph.Beta.RiskDetections {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RiskDetectionCollectionResponse?> GetAsync(Action<RiskDetectionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RiskDetectionCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<RiskDetectionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<RiskDetectionCollectionResponse> GetAsync(Action<RiskDetectionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RiskDetectionCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<RiskDetectionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -62,10 +62,10 @@ namespace Microsoft.Graph.Beta.RiskDetections {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RiskDetection?> PostAsync(RiskDetection body, Action<RiskDetectionsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RiskDetection?> PostAsync(RiskDetection body, CancellationToken cancellationToken = default, Action<RiskDetectionsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<RiskDetection> PostAsync(RiskDetection body, Action<RiskDetectionsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RiskDetection> PostAsync(RiskDetection body, CancellationToken cancellationToken = default, Action<RiskDetectionsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

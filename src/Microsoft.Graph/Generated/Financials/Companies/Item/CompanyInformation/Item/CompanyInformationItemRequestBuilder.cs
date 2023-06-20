@@ -39,10 +39,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.CompanyInformation?> GetAsync(Action<CompanyInformationItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.CompanyInformation?> GetAsync(CancellationToken cancellationToken = default, Action<CompanyInformationItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.CompanyInformation> GetAsync(Action<CompanyInformationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.CompanyInformation> GetAsync(CancellationToken cancellationToken = default, Action<CompanyInformationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -59,10 +59,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.CompanyInformation?> PatchAsync(Microsoft.Graph.Beta.Models.CompanyInformation body, Action<CompanyInformationItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.CompanyInformation?> PatchAsync(Microsoft.Graph.Beta.Models.CompanyInformation body, CancellationToken cancellationToken = default, Action<CompanyInformationItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.CompanyInformation> PatchAsync(Microsoft.Graph.Beta.Models.CompanyInformation body, Action<CompanyInformationItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.CompanyInformation> PatchAsync(Microsoft.Graph.Beta.Models.CompanyInformation body, CancellationToken cancellationToken = default, Action<CompanyInformationItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

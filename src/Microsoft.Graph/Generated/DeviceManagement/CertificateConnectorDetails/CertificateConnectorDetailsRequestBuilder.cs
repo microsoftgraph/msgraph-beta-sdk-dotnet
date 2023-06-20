@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CertificateConnectorDetailsCollectionResponse?> GetAsync(Action<CertificateConnectorDetailsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CertificateConnectorDetailsCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<CertificateConnectorDetailsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CertificateConnectorDetailsCollectionResponse> GetAsync(Action<CertificateConnectorDetailsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CertificateConnectorDetailsCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<CertificateConnectorDetailsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.CertificateConnectorDetails?> PostAsync(Microsoft.Graph.Beta.Models.CertificateConnectorDetails body, Action<CertificateConnectorDetailsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.CertificateConnectorDetails?> PostAsync(Microsoft.Graph.Beta.Models.CertificateConnectorDetails body, CancellationToken cancellationToken = default, Action<CertificateConnectorDetailsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.CertificateConnectorDetails> PostAsync(Microsoft.Graph.Beta.Models.CertificateConnectorDetails body, Action<CertificateConnectorDetailsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.CertificateConnectorDetails> PostAsync(Microsoft.Graph.Beta.Models.CertificateConnectorDetails body, CancellationToken cancellationToken = default, Action<CertificateConnectorDetailsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

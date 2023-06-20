@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CustomerPaymentJournalCollectionResponse?> GetAsync(Action<CustomerPaymentJournalsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CustomerPaymentJournalCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<CustomerPaymentJournalsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CustomerPaymentJournalCollectionResponse> GetAsync(Action<CustomerPaymentJournalsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CustomerPaymentJournalCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<CustomerPaymentJournalsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CustomerPaymentJournal?> PostAsync(CustomerPaymentJournal body, Action<CustomerPaymentJournalsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CustomerPaymentJournal?> PostAsync(CustomerPaymentJournal body, CancellationToken cancellationToken = default, Action<CustomerPaymentJournalsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CustomerPaymentJournal> PostAsync(CustomerPaymentJournal body, Action<CustomerPaymentJournalsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CustomerPaymentJournal> PostAsync(CustomerPaymentJournal body, CancellationToken cancellationToken = default, Action<CustomerPaymentJournalsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

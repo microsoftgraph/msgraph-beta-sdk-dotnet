@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProgramControlCollectionResponse?> GetAsync(Action<ControlsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ProgramControlCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ControlsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ProgramControlCollectionResponse> GetAsync(Action<ControlsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ProgramControlCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ControlsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.Beta.ProgramControls.Item.Program.Controls {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProgramControl?> PostAsync(ProgramControl body, Action<ControlsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ProgramControl?> PostAsync(ProgramControl body, CancellationToken cancellationToken = default, Action<ControlsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ProgramControl> PostAsync(ProgramControl body, Action<ControlsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ProgramControl> PostAsync(ProgramControl body, CancellationToken cancellationToken = default, Action<ControlsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

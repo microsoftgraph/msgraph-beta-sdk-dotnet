@@ -905,10 +905,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement?> GetAsync(Action<DeviceManagementRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement?> GetAsync(CancellationToken cancellationToken = default, Action<DeviceManagementRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement> GetAsync(Action<DeviceManagementRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement> GetAsync(CancellationToken cancellationToken = default, Action<DeviceManagementRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -957,10 +957,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement?> PatchAsync(Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement body, Action<DeviceManagementRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement?> PatchAsync(Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement body, CancellationToken cancellationToken = default, Action<DeviceManagementRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement> PatchAsync(Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement body, Action<DeviceManagementRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement> PatchAsync(Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement body, CancellationToken cancellationToken = default, Action<DeviceManagementRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

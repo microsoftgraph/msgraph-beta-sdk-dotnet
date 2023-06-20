@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new groupPolicyPresentationDropdownListItem and sets the default values.
+        /// Instantiates a new GroupPolicyPresentationDropdownListItem and sets the default values.
         /// </summary>
         public GroupPolicyPresentationDropdownListItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.Item.Consent
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DataSharingConsent?> PostAsync(Action<ConsentToDataSharingRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DataSharingConsent?> PostAsync(CancellationToken cancellationToken = default, Action<ConsentToDataSharingRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DataSharingConsent> PostAsync(Action<ConsentToDataSharingRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DataSharingConsent> PostAsync(CancellationToken cancellationToken = default, Action<ConsentToDataSharingRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

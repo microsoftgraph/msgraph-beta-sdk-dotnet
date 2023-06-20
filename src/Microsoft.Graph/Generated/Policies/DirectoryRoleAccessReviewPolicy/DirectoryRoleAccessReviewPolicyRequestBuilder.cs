@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Beta.Policies.DirectoryRoleAccessReviewPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<DirectoryRoleAccessReviewPolicyRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DirectoryRoleAccessReviewPolicyRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<DirectoryRoleAccessReviewPolicyRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DirectoryRoleAccessReviewPolicyRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -53,10 +53,10 @@ namespace Microsoft.Graph.Beta.Policies.DirectoryRoleAccessReviewPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy?> GetAsync(Action<DirectoryRoleAccessReviewPolicyRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy?> GetAsync(CancellationToken cancellationToken = default, Action<DirectoryRoleAccessReviewPolicyRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy> GetAsync(Action<DirectoryRoleAccessReviewPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy> GetAsync(CancellationToken cancellationToken = default, Action<DirectoryRoleAccessReviewPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.Beta.Policies.DirectoryRoleAccessReviewPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy?> PatchAsync(Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy body, Action<DirectoryRoleAccessReviewPolicyRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy?> PatchAsync(Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy body, CancellationToken cancellationToken = default, Action<DirectoryRoleAccessReviewPolicyRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy> PatchAsync(Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy body, Action<DirectoryRoleAccessReviewPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy> PatchAsync(Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy body, CancellationToken cancellationToken = default, Action<DirectoryRoleAccessReviewPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

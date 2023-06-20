@@ -44,10 +44,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<DeviceManagementResourceAccessProfileBaseItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DeviceManagementResourceAccessProfileBaseItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<DeviceManagementResourceAccessProfileBaseItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DeviceManagementResourceAccessProfileBaseItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -63,10 +63,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementResourceAccessProfileBase?> GetAsync(Action<DeviceManagementResourceAccessProfileBaseItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementResourceAccessProfileBase?> GetAsync(CancellationToken cancellationToken = default, Action<DeviceManagementResourceAccessProfileBaseItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceManagementResourceAccessProfileBase> GetAsync(Action<DeviceManagementResourceAccessProfileBaseItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementResourceAccessProfileBase> GetAsync(CancellationToken cancellationToken = default, Action<DeviceManagementResourceAccessProfileBaseItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -83,10 +83,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementResourceAccessProfileBase?> PatchAsync(DeviceManagementResourceAccessProfileBase body, Action<DeviceManagementResourceAccessProfileBaseItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementResourceAccessProfileBase?> PatchAsync(DeviceManagementResourceAccessProfileBase body, CancellationToken cancellationToken = default, Action<DeviceManagementResourceAccessProfileBaseItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceManagementResourceAccessProfileBase> PatchAsync(DeviceManagementResourceAccessProfileBase body, Action<DeviceManagementResourceAccessProfileBaseItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementResourceAccessProfileBase> PatchAsync(DeviceManagementResourceAccessProfileBase body, CancellationToken cancellationToken = default, Action<DeviceManagementResourceAccessProfileBaseItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new outboundSharedUserProfile and sets the default values.
+        /// Instantiates a new OutboundSharedUserProfile and sets the default values.
         /// </summary>
         public OutboundSharedUserProfile() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

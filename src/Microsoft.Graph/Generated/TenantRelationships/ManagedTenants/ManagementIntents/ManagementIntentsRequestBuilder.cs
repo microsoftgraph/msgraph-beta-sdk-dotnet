@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementInte
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagementIntentCollectionResponse?> GetAsync(Action<ManagementIntentsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagementIntentCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ManagementIntentsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ManagementIntentCollectionResponse> GetAsync(Action<ManagementIntentsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagementIntentCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ManagementIntentsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementInte
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagementIntent?> PostAsync(ManagementIntent body, Action<ManagementIntentsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagementIntent?> PostAsync(ManagementIntent body, CancellationToken cancellationToken = default, Action<ManagementIntentsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ManagementIntent> PostAsync(ManagementIntent body, Action<ManagementIntentsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagementIntent> PostAsync(ManagementIntent body, CancellationToken cancellationToken = default, Action<ManagementIntentsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

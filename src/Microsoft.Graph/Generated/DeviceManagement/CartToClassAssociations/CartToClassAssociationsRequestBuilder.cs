@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CartToClassAssociations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CartToClassAssociationCollectionResponse?> GetAsync(Action<CartToClassAssociationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CartToClassAssociationCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<CartToClassAssociationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CartToClassAssociationCollectionResponse> GetAsync(Action<CartToClassAssociationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CartToClassAssociationCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<CartToClassAssociationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CartToClassAssociations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CartToClassAssociation?> PostAsync(CartToClassAssociation body, Action<CartToClassAssociationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CartToClassAssociation?> PostAsync(CartToClassAssociation body, CancellationToken cancellationToken = default, Action<CartToClassAssociationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CartToClassAssociation> PostAsync(CartToClassAssociation body, Action<CartToClassAssociationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CartToClassAssociation> PostAsync(CartToClassAssociation body, CancellationToken cancellationToken = default, Action<CartToClassAssociationsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

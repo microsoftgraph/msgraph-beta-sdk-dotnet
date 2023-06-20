@@ -39,10 +39,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.Item 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -58,10 +58,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.Item 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementExchangeOnPremisesPolicy?> GetAsync(Action<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementExchangeOnPremisesPolicy?> GetAsync(CancellationToken cancellationToken = default, Action<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceManagementExchangeOnPremisesPolicy> GetAsync(Action<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementExchangeOnPremisesPolicy> GetAsync(CancellationToken cancellationToken = default, Action<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -78,10 +78,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.Item 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementExchangeOnPremisesPolicy?> PatchAsync(DeviceManagementExchangeOnPremisesPolicy body, Action<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementExchangeOnPremisesPolicy?> PatchAsync(DeviceManagementExchangeOnPremisesPolicy body, CancellationToken cancellationToken = default, Action<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceManagementExchangeOnPremisesPolicy> PatchAsync(DeviceManagementExchangeOnPremisesPolicy body, Action<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementExchangeOnPremisesPolicy> PatchAsync(DeviceManagementExchangeOnPremisesPolicy body, CancellationToken cancellationToken = default, Action<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

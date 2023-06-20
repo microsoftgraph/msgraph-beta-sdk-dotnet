@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// This entity contains data which is used in customizing the tenant level appearance of the Company Portal applications as well as the end user web portal.
-    /// </summary>
     public class IntuneBrandingProfile : Entity, IParsable {
         /// <summary>The list of group assignments for the branding profile</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

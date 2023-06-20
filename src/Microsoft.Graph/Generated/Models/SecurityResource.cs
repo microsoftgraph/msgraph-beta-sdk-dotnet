@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resourceType", value); }
         }
         /// <summary>
-        /// Instantiates a new securityResource and sets the default values.
+        /// Instantiates a new SecurityResource and sets the default values.
         /// </summary>
         public SecurityResource() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

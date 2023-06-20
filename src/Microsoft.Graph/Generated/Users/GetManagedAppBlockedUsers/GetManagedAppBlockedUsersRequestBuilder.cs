@@ -33,10 +33,10 @@ namespace Microsoft.Graph.Beta.Users.GetManagedAppBlockedUsers {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetManagedAppBlockedUsersResponse?> GetAsync(Action<GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetManagedAppBlockedUsersResponse?> GetAsync(CancellationToken cancellationToken = default, Action<GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GetManagedAppBlockedUsersResponse> GetAsync(Action<GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetManagedAppBlockedUsersResponse> GetAsync(CancellationToken cancellationToken = default, Action<GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

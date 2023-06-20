@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new loggedOnUser and sets the default values.
+        /// Instantiates a new LoggedOnUser and sets the default values.
         /// </summary>
         public LoggedOnUser() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

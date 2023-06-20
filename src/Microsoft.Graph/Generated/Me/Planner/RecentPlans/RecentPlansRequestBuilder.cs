@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.Me.Planner.RecentPlans {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PlannerPlanCollectionResponse?> GetAsync(Action<RecentPlansRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PlannerPlanCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<RecentPlansRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PlannerPlanCollectionResponse> GetAsync(Action<RecentPlansRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PlannerPlanCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<RecentPlansRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformance
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AppPerformanceCollectionResponse?> GetAsync(Action<AppPerformancesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppPerformanceCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<AppPerformancesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AppPerformanceCollectionResponse> GetAsync(Action<AppPerformancesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppPerformanceCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<AppPerformancesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformance
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AppPerformance?> PostAsync(AppPerformance body, Action<AppPerformancesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppPerformance?> PostAsync(AppPerformance body, CancellationToken cancellationToken = default, Action<AppPerformancesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AppPerformance> PostAsync(AppPerformance body, Action<AppPerformancesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppPerformance> PostAsync(AppPerformance body, CancellationToken cancellationToken = default, Action<AppPerformancesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

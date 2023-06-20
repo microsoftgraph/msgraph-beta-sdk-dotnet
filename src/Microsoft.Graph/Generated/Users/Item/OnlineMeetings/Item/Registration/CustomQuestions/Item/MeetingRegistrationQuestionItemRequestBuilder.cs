@@ -35,10 +35,10 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<MeetingRegistrationQuestionItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<MeetingRegistrationQuestionItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<MeetingRegistrationQuestionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<MeetingRegistrationQuestionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -55,10 +55,10 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MeetingRegistrationQuestion?> GetAsync(Action<MeetingRegistrationQuestionItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MeetingRegistrationQuestion?> GetAsync(CancellationToken cancellationToken = default, Action<MeetingRegistrationQuestionItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<MeetingRegistrationQuestion> GetAsync(Action<MeetingRegistrationQuestionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MeetingRegistrationQuestion> GetAsync(CancellationToken cancellationToken = default, Action<MeetingRegistrationQuestionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -76,10 +76,10 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MeetingRegistrationQuestion?> PatchAsync(MeetingRegistrationQuestion body, Action<MeetingRegistrationQuestionItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MeetingRegistrationQuestion?> PatchAsync(MeetingRegistrationQuestion body, CancellationToken cancellationToken = default, Action<MeetingRegistrationQuestionItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<MeetingRegistrationQuestion> PatchAsync(MeetingRegistrationQuestion body, Action<MeetingRegistrationQuestionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MeetingRegistrationQuestion> PatchAsync(MeetingRegistrationQuestion body, CancellationToken cancellationToken = default, Action<MeetingRegistrationQuestionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

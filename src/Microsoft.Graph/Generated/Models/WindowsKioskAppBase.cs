@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("startLayoutTileSize", value); }
         }
         /// <summary>
-        /// Instantiates a new windowsKioskAppBase and sets the default values.
+        /// Instantiates a new WindowsKioskAppBase and sets the default values.
         /// </summary>
         public WindowsKioskAppBase() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

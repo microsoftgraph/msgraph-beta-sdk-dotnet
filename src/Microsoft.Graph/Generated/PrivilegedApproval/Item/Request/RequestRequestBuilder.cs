@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.Request {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrivilegedRoleAssignmentRequest?> GetAsync(Action<RequestRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegedRoleAssignmentRequest?> GetAsync(CancellationToken cancellationToken = default, Action<RequestRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PrivilegedRoleAssignmentRequest> GetAsync(Action<RequestRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegedRoleAssignmentRequest> GetAsync(CancellationToken cancellationToken = default, Action<RequestRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

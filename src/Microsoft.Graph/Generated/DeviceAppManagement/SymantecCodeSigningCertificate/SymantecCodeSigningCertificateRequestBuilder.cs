@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.SymantecCodeSigningCertificat
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<SymantecCodeSigningCertificateRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<SymantecCodeSigningCertificateRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<SymantecCodeSigningCertificateRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<SymantecCodeSigningCertificateRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -53,10 +53,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.SymantecCodeSigningCertificat
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate?> GetAsync(Action<SymantecCodeSigningCertificateRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate?> GetAsync(CancellationToken cancellationToken = default, Action<SymantecCodeSigningCertificateRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate> GetAsync(Action<SymantecCodeSigningCertificateRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate> GetAsync(CancellationToken cancellationToken = default, Action<SymantecCodeSigningCertificateRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.SymantecCodeSigningCertificat
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate?> PatchAsync(Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate body, Action<SymantecCodeSigningCertificateRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate?> PatchAsync(Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate body, CancellationToken cancellationToken = default, Action<SymantecCodeSigningCertificateRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate> PatchAsync(Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate body, Action<SymantecCodeSigningCertificateRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate> PatchAsync(Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate body, CancellationToken cancellationToken = default, Action<SymantecCodeSigningCertificateRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

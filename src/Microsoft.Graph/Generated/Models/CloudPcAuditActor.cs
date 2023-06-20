@@ -173,7 +173,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new cloudPcAuditActor and sets the default values.
+        /// Instantiates a new CloudPcAuditActor and sets the default values.
         /// </summary>
         public CloudPcAuditActor() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

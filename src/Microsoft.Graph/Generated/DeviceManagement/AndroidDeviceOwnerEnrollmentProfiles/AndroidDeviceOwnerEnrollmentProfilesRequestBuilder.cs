@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProf
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AndroidDeviceOwnerEnrollmentProfileCollectionResponse?> GetAsync(Action<AndroidDeviceOwnerEnrollmentProfilesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AndroidDeviceOwnerEnrollmentProfileCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<AndroidDeviceOwnerEnrollmentProfilesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AndroidDeviceOwnerEnrollmentProfileCollectionResponse> GetAsync(Action<AndroidDeviceOwnerEnrollmentProfilesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AndroidDeviceOwnerEnrollmentProfileCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<AndroidDeviceOwnerEnrollmentProfilesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProf
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AndroidDeviceOwnerEnrollmentProfile?> PostAsync(AndroidDeviceOwnerEnrollmentProfile body, Action<AndroidDeviceOwnerEnrollmentProfilesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AndroidDeviceOwnerEnrollmentProfile?> PostAsync(AndroidDeviceOwnerEnrollmentProfile body, CancellationToken cancellationToken = default, Action<AndroidDeviceOwnerEnrollmentProfilesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AndroidDeviceOwnerEnrollmentProfile> PostAsync(AndroidDeviceOwnerEnrollmentProfile body, Action<AndroidDeviceOwnerEnrollmentProfilesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AndroidDeviceOwnerEnrollmentProfile> PostAsync(AndroidDeviceOwnerEnrollmentProfile body, CancellationToken cancellationToken = default, Action<AndroidDeviceOwnerEnrollmentProfilesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CustomExtensionHandlerCollectionResponse?> GetAsync(Action<CustomExtensionHandlersRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CustomExtensionHandlerCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<CustomExtensionHandlersRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CustomExtensionHandlerCollectionResponse> GetAsync(Action<CustomExtensionHandlersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CustomExtensionHandlerCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<CustomExtensionHandlersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CustomExtensionHandler?> PostAsync(CustomExtensionHandler body, Action<CustomExtensionHandlersRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CustomExtensionHandler?> PostAsync(CustomExtensionHandler body, CancellationToken cancellationToken = default, Action<CustomExtensionHandlersRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CustomExtensionHandler> PostAsync(CustomExtensionHandler body, Action<CustomExtensionHandlersRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CustomExtensionHandler> PostAsync(CustomExtensionHandler body, CancellationToken cancellationToken = default, Action<CustomExtensionHandlersRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceSco
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserExperienceAnalyticsDeviceScoresCollectionResponse?> GetAsync(Action<UserExperienceAnalyticsDeviceScoresRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserExperienceAnalyticsDeviceScoresCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<UserExperienceAnalyticsDeviceScoresRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<UserExperienceAnalyticsDeviceScoresCollectionResponse> GetAsync(Action<UserExperienceAnalyticsDeviceScoresRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserExperienceAnalyticsDeviceScoresCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<UserExperienceAnalyticsDeviceScoresRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceSco
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores?> PostAsync(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores body, Action<UserExperienceAnalyticsDeviceScoresRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores?> PostAsync(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores body, CancellationToken cancellationToken = default, Action<UserExperienceAnalyticsDeviceScoresRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores> PostAsync(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores body, Action<UserExperienceAnalyticsDeviceScoresRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores> PostAsync(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores body, CancellationToken cancellationToken = default, Action<UserExperienceAnalyticsDeviceScoresRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

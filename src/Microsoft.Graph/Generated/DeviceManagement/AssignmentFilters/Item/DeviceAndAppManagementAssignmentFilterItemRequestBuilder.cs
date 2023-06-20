@@ -39,10 +39,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<DeviceAndAppManagementAssignmentFilterItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DeviceAndAppManagementAssignmentFilterItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<DeviceAndAppManagementAssignmentFilterItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DeviceAndAppManagementAssignmentFilterItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -58,10 +58,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceAndAppManagementAssignmentFilter?> GetAsync(Action<DeviceAndAppManagementAssignmentFilterItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceAndAppManagementAssignmentFilter?> GetAsync(CancellationToken cancellationToken = default, Action<DeviceAndAppManagementAssignmentFilterItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceAndAppManagementAssignmentFilter> GetAsync(Action<DeviceAndAppManagementAssignmentFilterItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceAndAppManagementAssignmentFilter> GetAsync(CancellationToken cancellationToken = default, Action<DeviceAndAppManagementAssignmentFilterItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -78,10 +78,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceAndAppManagementAssignmentFilter?> PatchAsync(DeviceAndAppManagementAssignmentFilter body, Action<DeviceAndAppManagementAssignmentFilterItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceAndAppManagementAssignmentFilter?> PatchAsync(DeviceAndAppManagementAssignmentFilter body, CancellationToken cancellationToken = default, Action<DeviceAndAppManagementAssignmentFilterItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceAndAppManagementAssignmentFilter> PatchAsync(DeviceAndAppManagementAssignmentFilter body, Action<DeviceAndAppManagementAssignmentFilterItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceAndAppManagementAssignmentFilter> PatchAsync(DeviceAndAppManagementAssignmentFilter body, CancellationToken cancellationToken = default, Action<DeviceAndAppManagementAssignmentFilterItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

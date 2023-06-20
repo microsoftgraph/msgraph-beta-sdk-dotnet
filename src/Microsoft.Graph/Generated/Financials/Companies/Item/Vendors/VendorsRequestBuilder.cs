@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Vendors {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<VendorCollectionResponse?> GetAsync(Action<VendorsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<VendorCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<VendorsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<VendorCollectionResponse> GetAsync(Action<VendorsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<VendorCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<VendorsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Vendors {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Vendor?> PostAsync(Microsoft.Graph.Beta.Models.Vendor body, Action<VendorsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Vendor?> PostAsync(Microsoft.Graph.Beta.Models.Vendor body, CancellationToken cancellationToken = default, Action<VendorsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Vendor> PostAsync(Microsoft.Graph.Beta.Models.Vendor body, Action<VendorsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Vendor> PostAsync(Microsoft.Graph.Beta.Models.Vendor body, CancellationToken cancellationToken = default, Action<VendorsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

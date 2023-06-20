@@ -11,6 +11,7 @@ using Microsoft.Graph.Beta.DirectoryNamespace.OnPremisesSynchronization;
 using Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles;
 using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations;
 using Microsoft.Graph.Beta.DirectoryNamespace.SharedEmailDomains;
+using Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -78,6 +79,10 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
         public SharedEmailDomainsRequestBuilder SharedEmailDomains { get =>
             new SharedEmailDomainsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.directory entity.</summary>
+        public SubscriptionsRequestBuilder Subscriptions { get =>
+            new SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new DirectoryRequestBuilder and sets the default values.
         /// </summary>
@@ -99,10 +104,10 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectoryObject?> GetAsync(Action<DirectoryRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryObject?> GetAsync(CancellationToken cancellationToken = default, Action<DirectoryRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DirectoryObject> GetAsync(Action<DirectoryRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryObject> GetAsync(CancellationToken cancellationToken = default, Action<DirectoryRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -119,10 +124,10 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectoryObject?> PatchAsync(DirectoryObject body, Action<DirectoryRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryObject?> PatchAsync(DirectoryObject body, CancellationToken cancellationToken = default, Action<DirectoryRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DirectoryObject> PatchAsync(DirectoryObject body, Action<DirectoryRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryObject> PatchAsync(DirectoryObject body, CancellationToken cancellationToken = default, Action<DirectoryRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new educationIdentityDomain and sets the default values.
+        /// Instantiates a new EducationIdentityDomain and sets the default values.
         /// </summary>
         public EducationIdentityDomain() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

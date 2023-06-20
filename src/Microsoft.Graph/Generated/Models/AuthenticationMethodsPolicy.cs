@@ -90,6 +90,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("registrationEnforcement", value); }
         }
 #endif
+        /// <summary>Enable users to report unexpected voice call or phone app notification multi-factor authentication prompts as suspicious.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings? ReportSuspiciousActivitySettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings?>("reportSuspiciousActivitySettings"); }
+            set { BackingStore?.Set("reportSuspiciousActivitySettings", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings ReportSuspiciousActivitySettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings>("reportSuspiciousActivitySettings"); }
+            set { BackingStore?.Set("reportSuspiciousActivitySettings", value); }
+        }
+#endif
         /// <summary>Prompt users with their most-preferred credential for multifactor authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,6 +139,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"policyVersion", n => { PolicyVersion = n.GetStringValue(); } },
                 {"reconfirmationInDays", n => { ReconfirmationInDays = n.GetIntValue(); } },
                 {"registrationEnforcement", n => { RegistrationEnforcement = n.GetObjectValue<Microsoft.Graph.Beta.Models.RegistrationEnforcement>(Microsoft.Graph.Beta.Models.RegistrationEnforcement.CreateFromDiscriminatorValue); } },
+                {"reportSuspiciousActivitySettings", n => { ReportSuspiciousActivitySettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings>(Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings.CreateFromDiscriminatorValue); } },
                 {"systemCredentialPreferences", n => { SystemCredentialPreferences = n.GetObjectValue<Microsoft.Graph.Beta.Models.SystemCredentialPreferences>(Microsoft.Graph.Beta.Models.SystemCredentialPreferences.CreateFromDiscriminatorValue); } },
             };
         }
@@ -143,6 +158,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("policyVersion", PolicyVersion);
             writer.WriteIntValue("reconfirmationInDays", ReconfirmationInDays);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RegistrationEnforcement>("registrationEnforcement", RegistrationEnforcement);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings>("reportSuspiciousActivitySettings", ReportSuspiciousActivitySettings);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SystemCredentialPreferences>("systemCredentialPreferences", SystemCredentialPreferences);
         }
     }

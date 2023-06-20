@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// The user experience analytics anomaly correlation group overview entity contains the information for each correlation group of an anomaly.
-    /// </summary>
     public class UserExperienceAnalyticsAnomalyCorrelationGroupOverview : Entity, IParsable {
         /// <summary>Indicates the number of correlation groups in the anomaly. Valid values -2147483648 to 2147483647</summary>
         public int? AnomalyCorrelationGroupCount {

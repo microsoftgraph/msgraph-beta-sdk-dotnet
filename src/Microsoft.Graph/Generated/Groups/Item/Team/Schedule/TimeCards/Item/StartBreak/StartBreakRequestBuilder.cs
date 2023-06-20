@@ -36,10 +36,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.StartBre
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TimeCard?> PostAsync(StartBreakPostRequestBody body, Action<StartBreakRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TimeCard?> PostAsync(StartBreakPostRequestBody body, CancellationToken cancellationToken = default, Action<StartBreakRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<TimeCard> PostAsync(StartBreakPostRequestBody body, Action<StartBreakRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TimeCard> PostAsync(StartBreakPostRequestBody body, CancellationToken cancellationToken = default, Action<StartBreakRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

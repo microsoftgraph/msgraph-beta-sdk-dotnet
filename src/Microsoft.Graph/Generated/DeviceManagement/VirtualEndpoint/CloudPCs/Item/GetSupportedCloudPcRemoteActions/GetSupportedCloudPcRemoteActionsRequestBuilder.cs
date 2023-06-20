@@ -33,10 +33,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Ge
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetSupportedCloudPcRemoteActionsResponse?> GetAsync(Action<GetSupportedCloudPcRemoteActionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetSupportedCloudPcRemoteActionsResponse?> GetAsync(CancellationToken cancellationToken = default, Action<GetSupportedCloudPcRemoteActionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GetSupportedCloudPcRemoteActionsResponse> GetAsync(Action<GetSupportedCloudPcRemoteActionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetSupportedCloudPcRemoteActionsResponse> GetAsync(CancellationToken cancellationToken = default, Action<GetSupportedCloudPcRemoteActionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

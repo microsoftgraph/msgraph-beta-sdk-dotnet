@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// The user experience analytics device OS version performance entity contains OS version performance details.
-    /// </summary>
     public class UserExperienceAnalyticsAppHealthOSVersionPerformance : Entity, IParsable {
         /// <summary>The number of active devices for the OS version. Valid values -2147483648 to 2147483647</summary>
         public int? ActiveDeviceCount {

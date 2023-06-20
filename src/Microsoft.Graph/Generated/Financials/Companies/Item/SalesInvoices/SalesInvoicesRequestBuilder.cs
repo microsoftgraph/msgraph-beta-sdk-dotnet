@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SalesInvoiceCollectionResponse?> GetAsync(Action<SalesInvoicesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesInvoiceCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<SalesInvoicesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SalesInvoiceCollectionResponse> GetAsync(Action<SalesInvoicesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesInvoiceCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<SalesInvoicesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

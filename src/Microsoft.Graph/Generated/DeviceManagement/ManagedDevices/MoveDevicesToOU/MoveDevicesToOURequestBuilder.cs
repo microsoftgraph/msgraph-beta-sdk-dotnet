@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.MoveDevicesToOU {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(MoveDevicesToOUPostRequestBody body, Action<MoveDevicesToOURequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(MoveDevicesToOUPostRequestBody body, CancellationToken cancellationToken = default, Action<MoveDevicesToOURequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task PostAsync(MoveDevicesToOUPostRequestBody body, Action<MoveDevicesToOURequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(MoveDevicesToOUPostRequestBody body, CancellationToken cancellationToken = default, Action<MoveDevicesToOURequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

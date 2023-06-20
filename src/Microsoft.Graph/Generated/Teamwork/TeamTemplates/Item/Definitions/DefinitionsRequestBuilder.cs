@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TeamTemplateDefinitionCollectionResponse?> GetAsync(Action<DefinitionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TeamTemplateDefinitionCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<DefinitionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<TeamTemplateDefinitionCollectionResponse> GetAsync(Action<DefinitionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TeamTemplateDefinitionCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<DefinitionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.TeamTemplateDefinition?> PostAsync(Microsoft.Graph.Beta.Models.TeamTemplateDefinition body, Action<DefinitionsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.TeamTemplateDefinition?> PostAsync(Microsoft.Graph.Beta.Models.TeamTemplateDefinition body, CancellationToken cancellationToken = default, Action<DefinitionsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.TeamTemplateDefinition> PostAsync(Microsoft.Graph.Beta.Models.TeamTemplateDefinition body, Action<DefinitionsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.TeamTemplateDefinition> PostAsync(Microsoft.Graph.Beta.Models.TeamTemplateDefinition body, CancellationToken cancellationToken = default, Action<DefinitionsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

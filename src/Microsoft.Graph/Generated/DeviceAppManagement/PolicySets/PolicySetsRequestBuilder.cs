@@ -51,10 +51,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PolicySetCollectionResponse?> GetAsync(Action<PolicySetsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PolicySetCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<PolicySetsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PolicySetCollectionResponse> GetAsync(Action<PolicySetsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PolicySetCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<PolicySetsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -71,10 +71,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PolicySet?> PostAsync(PolicySet body, Action<PolicySetsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PolicySet?> PostAsync(PolicySet body, CancellationToken cancellationToken = default, Action<PolicySetsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PolicySet> PostAsync(PolicySet body, Action<PolicySetsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PolicySet> PostAsync(PolicySet body, CancellationToken cancellationToken = default, Action<PolicySetsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

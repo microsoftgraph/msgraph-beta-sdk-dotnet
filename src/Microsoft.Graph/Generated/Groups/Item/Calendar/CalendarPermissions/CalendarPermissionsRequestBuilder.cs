@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.CalendarPermissions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CalendarPermissionCollectionResponse?> GetAsync(Action<CalendarPermissionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CalendarPermissionCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<CalendarPermissionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CalendarPermissionCollectionResponse> GetAsync(Action<CalendarPermissionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CalendarPermissionCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<CalendarPermissionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.CalendarPermissions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CalendarPermission?> PostAsync(CalendarPermission body, Action<CalendarPermissionsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CalendarPermission?> PostAsync(CalendarPermission body, CancellationToken cancellationToken = default, Action<CalendarPermissionsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CalendarPermission> PostAsync(CalendarPermission body, Action<CalendarPermissionsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CalendarPermission> PostAsync(CalendarPermission body, CancellationToken cancellationToken = default, Action<CalendarPermissionsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

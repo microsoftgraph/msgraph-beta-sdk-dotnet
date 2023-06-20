@@ -39,10 +39,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -58,10 +58,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary?> GetAsync(Action<AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary?> GetAsync(CancellationToken cancellationToken = default, Action<AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary> GetAsync(Action<AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary> GetAsync(CancellationToken cancellationToken = default, Action<AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -78,10 +78,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary?> PatchAsync(Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary body, Action<AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary?> PatchAsync(Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary body, CancellationToken cancellationToken = default, Action<AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary> PatchAsync(Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary body, Action<AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary> PatchAsync(Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary body, CancellationToken cancellationToken = default, Action<AdvancedThreatProtectionOnboardingStateSummaryRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

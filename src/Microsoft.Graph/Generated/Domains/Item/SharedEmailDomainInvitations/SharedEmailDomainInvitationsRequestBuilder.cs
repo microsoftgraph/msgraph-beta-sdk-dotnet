@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SharedEmailDomainInvitationCollectionResponse?> GetAsync(Action<SharedEmailDomainInvitationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SharedEmailDomainInvitationCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<SharedEmailDomainInvitationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SharedEmailDomainInvitationCollectionResponse> GetAsync(Action<SharedEmailDomainInvitationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SharedEmailDomainInvitationCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<SharedEmailDomainInvitationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SharedEmailDomainInvitation?> PostAsync(SharedEmailDomainInvitation body, Action<SharedEmailDomainInvitationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SharedEmailDomainInvitation?> PostAsync(SharedEmailDomainInvitation body, CancellationToken cancellationToken = default, Action<SharedEmailDomainInvitationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SharedEmailDomainInvitation> PostAsync(SharedEmailDomainInvitation body, Action<SharedEmailDomainInvitationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SharedEmailDomainInvitation> PostAsync(SharedEmailDomainInvitation body, CancellationToken cancellationToken = default, Action<SharedEmailDomainInvitationsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

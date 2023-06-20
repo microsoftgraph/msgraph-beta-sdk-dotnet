@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.Users.Item.EmployeeExperience.LearningCourseActiv
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LearningCourseActivityCollectionResponse?> GetAsync(Action<LearningCourseActivitiesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<LearningCourseActivityCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<LearningCourseActivitiesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<LearningCourseActivityCollectionResponse> GetAsync(Action<LearningCourseActivitiesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<LearningCourseActivityCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<LearningCourseActivitiesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

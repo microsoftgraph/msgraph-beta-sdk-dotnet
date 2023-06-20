@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new windowsKioskUser and sets the default values.
+        /// Instantiates a new WindowsKioskUser and sets the default values.
         /// </summary>
         public WindowsKioskUser() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

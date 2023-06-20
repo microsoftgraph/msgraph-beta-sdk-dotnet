@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new logonUser and sets the default values.
+        /// Instantiates a new LogonUser and sets the default values.
         /// </summary>
         public LogonUser() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

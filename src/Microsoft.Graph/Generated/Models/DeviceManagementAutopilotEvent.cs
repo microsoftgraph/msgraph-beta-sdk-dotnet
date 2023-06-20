@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Represents an Autopilot flow event.
-    /// </summary>
     public class DeviceManagementAutopilotEvent : Entity, IParsable {
         /// <summary>Time spent in user ESP.</summary>
         public TimeSpan? AccountSetupDuration {

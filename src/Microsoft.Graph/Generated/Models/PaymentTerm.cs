@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new paymentTerm and sets the default values.
+        /// Instantiates a new PaymentTerm and sets the default values.
         /// </summary>
         public PaymentTerm() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

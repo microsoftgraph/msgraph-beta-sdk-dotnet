@@ -35,10 +35,10 @@ namespace Microsoft.Graph.Beta.InformationProtection.SignDigest {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SigningResult?> PostAsync(SignDigestPostRequestBody body, Action<SignDigestRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SigningResult?> PostAsync(SignDigestPostRequestBody body, CancellationToken cancellationToken = default, Action<SignDigestRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SigningResult> PostAsync(SignDigestPostRequestBody body, Action<SignDigestRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SigningResult> PostAsync(SignDigestPostRequestBody body, CancellationToken cancellationToken = default, Action<SignDigestRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

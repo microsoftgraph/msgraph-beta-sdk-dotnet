@@ -52,10 +52,10 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AlertRecordCollectionResponse?> GetAsync(Action<AlertRecordsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AlertRecordCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<AlertRecordsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AlertRecordCollectionResponse> GetAsync(Action<AlertRecordsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AlertRecordCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<AlertRecordsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -72,10 +72,10 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AlertRecord?> PostAsync(AlertRecord body, Action<AlertRecordsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AlertRecord?> PostAsync(AlertRecord body, CancellationToken cancellationToken = default, Action<AlertRecordsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AlertRecord> PostAsync(AlertRecord body, Action<AlertRecordsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AlertRecord> PostAsync(AlertRecord body, CancellationToken cancellationToken = default, Action<AlertRecordsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

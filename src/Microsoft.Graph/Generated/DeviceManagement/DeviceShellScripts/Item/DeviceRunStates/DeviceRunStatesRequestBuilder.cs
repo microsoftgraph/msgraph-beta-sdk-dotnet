@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.DeviceRu
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementScriptDeviceStateCollectionResponse?> GetAsync(Action<DeviceRunStatesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementScriptDeviceStateCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<DeviceRunStatesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceManagementScriptDeviceStateCollectionResponse> GetAsync(Action<DeviceRunStatesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementScriptDeviceStateCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<DeviceRunStatesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.DeviceRu
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementScriptDeviceState?> PostAsync(DeviceManagementScriptDeviceState body, Action<DeviceRunStatesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementScriptDeviceState?> PostAsync(DeviceManagementScriptDeviceState body, CancellationToken cancellationToken = default, Action<DeviceRunStatesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceManagementScriptDeviceState> PostAsync(DeviceManagementScriptDeviceState body, Action<DeviceRunStatesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementScriptDeviceState> PostAsync(DeviceManagementScriptDeviceState body, CancellationToken cancellationToken = default, Action<DeviceRunStatesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

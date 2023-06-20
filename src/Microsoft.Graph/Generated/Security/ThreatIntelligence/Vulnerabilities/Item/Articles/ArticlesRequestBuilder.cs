@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Vulnerabilities.Item.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ArticleCollectionResponse?> GetAsync(Action<ArticlesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ArticleCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ArticlesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ArticleCollectionResponse> GetAsync(Action<ArticlesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ArticleCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ArticlesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

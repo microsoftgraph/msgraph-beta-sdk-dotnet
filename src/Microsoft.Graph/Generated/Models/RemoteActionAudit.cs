@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Report of remote actions initiated on the devices belonging to a certain tenant.
-    /// </summary>
     public class RemoteActionAudit : Entity, IParsable {
         /// <summary>Remote actions Intune supports.</summary>
         public RemoteAction? Action {

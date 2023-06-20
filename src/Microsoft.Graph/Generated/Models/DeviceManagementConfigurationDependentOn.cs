@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new deviceManagementConfigurationDependentOn and sets the default values.
+        /// Instantiates a new DeviceManagementConfigurationDependentOn and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationDependentOn() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

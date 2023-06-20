@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GovernancePolicyTemplateCollectionResponse?> GetAsync(Action<PolicyTemplatesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GovernancePolicyTemplateCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<PolicyTemplatesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GovernancePolicyTemplateCollectionResponse> GetAsync(Action<PolicyTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GovernancePolicyTemplateCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<PolicyTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GovernancePolicyTemplate?> PostAsync(GovernancePolicyTemplate body, Action<PolicyTemplatesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GovernancePolicyTemplate?> PostAsync(GovernancePolicyTemplate body, CancellationToken cancellationToken = default, Action<PolicyTemplatesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GovernancePolicyTemplate> PostAsync(GovernancePolicyTemplate body, Action<PolicyTemplatesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GovernancePolicyTemplate> PostAsync(GovernancePolicyTemplate body, CancellationToken cancellationToken = default, Action<PolicyTemplatesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

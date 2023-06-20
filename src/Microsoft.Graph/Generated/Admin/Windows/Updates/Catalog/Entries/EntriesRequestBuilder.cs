@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CatalogEntryCollectionResponse?> GetAsync(Action<EntriesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CatalogEntryCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<EntriesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CatalogEntryCollectionResponse> GetAsync(Action<EntriesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CatalogEntryCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<EntriesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CatalogEntry?> PostAsync(CatalogEntry body, Action<EntriesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CatalogEntry?> PostAsync(CatalogEntry body, CancellationToken cancellationToken = default, Action<EntriesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CatalogEntry> PostAsync(CatalogEntry body, Action<EntriesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CatalogEntry> PostAsync(CatalogEntry body, CancellationToken cancellationToken = default, Action<EntriesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

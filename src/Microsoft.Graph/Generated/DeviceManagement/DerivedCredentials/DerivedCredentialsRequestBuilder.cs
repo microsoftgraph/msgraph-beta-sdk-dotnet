@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DerivedCredentials {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementDerivedCredentialSettingsCollectionResponse?> GetAsync(Action<DerivedCredentialsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementDerivedCredentialSettingsCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<DerivedCredentialsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceManagementDerivedCredentialSettingsCollectionResponse> GetAsync(Action<DerivedCredentialsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementDerivedCredentialSettingsCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<DerivedCredentialsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DerivedCredentials {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementDerivedCredentialSettings?> PostAsync(DeviceManagementDerivedCredentialSettings body, Action<DerivedCredentialsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementDerivedCredentialSettings?> PostAsync(DeviceManagementDerivedCredentialSettings body, CancellationToken cancellationToken = default, Action<DerivedCredentialsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceManagementDerivedCredentialSettings> PostAsync(DeviceManagementDerivedCredentialSettings body, Action<DerivedCredentialsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementDerivedCredentialSettings> PostAsync(DeviceManagementDerivedCredentialSettings body, CancellationToken cancellationToken = default, Action<DerivedCredentialsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

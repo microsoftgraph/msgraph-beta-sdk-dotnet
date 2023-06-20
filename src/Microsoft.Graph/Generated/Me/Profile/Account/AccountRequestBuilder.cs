@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserAccountInformationCollectionResponse?> GetAsync(Action<AccountRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserAccountInformationCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<AccountRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<UserAccountInformationCollectionResponse> GetAsync(Action<AccountRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserAccountInformationCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<AccountRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserAccountInformation?> PostAsync(UserAccountInformation body, Action<AccountRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserAccountInformation?> PostAsync(UserAccountInformation body, CancellationToken cancellationToken = default, Action<AccountRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<UserAccountInformation> PostAsync(UserAccountInformation body, Action<AccountRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserAccountInformation> PostAsync(UserAccountInformation body, CancellationToken cancellationToken = default, Action<AccountRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

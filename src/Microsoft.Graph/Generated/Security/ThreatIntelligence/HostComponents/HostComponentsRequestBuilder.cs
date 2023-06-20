@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostComponents {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<HostComponentCollectionResponse?> GetAsync(Action<HostComponentsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HostComponentCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<HostComponentsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<HostComponentCollectionResponse> GetAsync(Action<HostComponentsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HostComponentCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<HostComponentsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostComponents {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<HostComponent?> PostAsync(HostComponent body, Action<HostComponentsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HostComponent?> PostAsync(HostComponent body, CancellationToken cancellationToken = default, Action<HostComponentsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<HostComponent> PostAsync(HostComponent body, Action<HostComponentsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HostComponent> PostAsync(HostComponent body, CancellationToken cancellationToken = default, Action<HostComponentsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

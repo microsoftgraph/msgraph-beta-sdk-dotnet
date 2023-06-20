@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagementApp {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.WindowsManagementApp?> GetAsync(Action<WindowsManagementAppRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.WindowsManagementApp?> GetAsync(CancellationToken cancellationToken = default, Action<WindowsManagementAppRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.WindowsManagementApp> GetAsync(Action<WindowsManagementAppRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.WindowsManagementApp> GetAsync(CancellationToken cancellationToken = default, Action<WindowsManagementAppRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Agents {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnPremisesAgentCollectionResponse?> GetAsync(Action<AgentsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnPremisesAgentCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<AgentsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<OnPremisesAgentCollectionResponse> GetAsync(Action<AgentsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnPremisesAgentCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<AgentsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Agents {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnPremisesAgent?> PostAsync(OnPremisesAgent body, Action<AgentsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnPremisesAgent?> PostAsync(OnPremisesAgent body, CancellationToken cancellationToken = default, Action<AgentsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<OnPremisesAgent> PostAsync(OnPremisesAgent body, Action<AgentsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnPremisesAgent> PostAsync(OnPremisesAgent body, CancellationToken cancellationToken = default, Action<AgentsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

@@ -119,10 +119,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<VirtualEndpointRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<VirtualEndpointRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<VirtualEndpointRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<VirtualEndpointRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -138,10 +138,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.VirtualEndpoint?> GetAsync(Action<VirtualEndpointRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.VirtualEndpoint?> GetAsync(CancellationToken cancellationToken = default, Action<VirtualEndpointRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.VirtualEndpoint> GetAsync(Action<VirtualEndpointRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.VirtualEndpoint> GetAsync(CancellationToken cancellationToken = default, Action<VirtualEndpointRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -158,10 +158,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.VirtualEndpoint?> PatchAsync(Microsoft.Graph.Beta.Models.VirtualEndpoint body, Action<VirtualEndpointRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.VirtualEndpoint?> PatchAsync(Microsoft.Graph.Beta.Models.VirtualEndpoint body, CancellationToken cancellationToken = default, Action<VirtualEndpointRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.VirtualEndpoint> PatchAsync(Microsoft.Graph.Beta.Models.VirtualEndpoint body, Action<VirtualEndpointRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.VirtualEndpoint> PatchAsync(Microsoft.Graph.Beta.Models.VirtualEndpoint body, CancellationToken cancellationToken = default, Action<VirtualEndpointRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

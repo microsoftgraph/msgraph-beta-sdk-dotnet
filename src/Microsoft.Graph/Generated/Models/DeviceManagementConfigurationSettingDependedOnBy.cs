@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("required", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceManagementConfigurationSettingDependedOnBy and sets the default values.
+        /// Instantiates a new DeviceManagementConfigurationSettingDependedOnBy and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationSettingDependedOnBy() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

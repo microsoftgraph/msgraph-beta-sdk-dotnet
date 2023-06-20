@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System.Collections.Generic;
@@ -27,6 +28,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             set { BackingStore?.Set("cloudPcIds", value); }
         }
 #endif
+        /// <summary>The policySettings property</summary>
+        public CloudPcPolicySettingType? PolicySettings {
+            get { return BackingStore?.Get<CloudPcPolicySettingType?>("policySettings"); }
+            set { BackingStore?.Set("policySettings", value); }
+        }
         /// <summary>
         /// Instantiates a new applyConfigPostRequestBody and sets the default values.
         /// </summary>
@@ -48,6 +54,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"cloudPcIds", n => { CloudPcIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"policySettings", n => { PolicySettings = n.GetEnumValue<CloudPcPolicySettingType>(); } },
             };
         }
         /// <summary>
@@ -57,6 +64,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("cloudPcIds", CloudPcIds);
+            writer.WriteEnumValue<CloudPcPolicySettingType>("policySettings", PolicySettings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

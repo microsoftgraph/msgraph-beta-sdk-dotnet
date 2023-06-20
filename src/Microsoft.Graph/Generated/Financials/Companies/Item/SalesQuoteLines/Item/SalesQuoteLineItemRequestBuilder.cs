@@ -44,10 +44,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuoteLines.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SalesQuoteLine?> GetAsync(Action<SalesQuoteLineItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesQuoteLine?> GetAsync(CancellationToken cancellationToken = default, Action<SalesQuoteLineItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SalesQuoteLine> GetAsync(Action<SalesQuoteLineItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesQuoteLine> GetAsync(CancellationToken cancellationToken = default, Action<SalesQuoteLineItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -64,10 +64,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuoteLines.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SalesQuoteLine?> PatchAsync(SalesQuoteLine body, Action<SalesQuoteLineItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesQuoteLine?> PatchAsync(SalesQuoteLine body, CancellationToken cancellationToken = default, Action<SalesQuoteLineItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<SalesQuoteLine> PatchAsync(SalesQuoteLine body, Action<SalesQuoteLineItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesQuoteLine> PatchAsync(SalesQuoteLine body, CancellationToken cancellationToken = default, Action<SalesQuoteLineItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

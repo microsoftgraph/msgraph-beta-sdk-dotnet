@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// The user experience analyte connectivity issue entity.
-    /// </summary>
     public class CloudPCConnectivityIssue : Entity, IParsable {
         /// <summary>The Intune DeviceId of the device the connection is associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

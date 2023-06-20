@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new assignmentFilterEvaluationSummary and sets the default values.
+        /// Instantiates a new AssignmentFilterEvaluationSummary and sets the default values.
         /// </summary>
         public AssignmentFilterEvaluationSummary() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

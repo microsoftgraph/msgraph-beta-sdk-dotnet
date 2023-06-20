@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionW
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsInformationProtectionWipeActionCollectionResponse?> GetAsync(Action<WindowsInformationProtectionWipeActionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsInformationProtectionWipeActionCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<WindowsInformationProtectionWipeActionsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<WindowsInformationProtectionWipeActionCollectionResponse> GetAsync(Action<WindowsInformationProtectionWipeActionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsInformationProtectionWipeActionCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<WindowsInformationProtectionWipeActionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionW
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsInformationProtectionWipeAction?> PostAsync(WindowsInformationProtectionWipeAction body, Action<WindowsInformationProtectionWipeActionsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsInformationProtectionWipeAction?> PostAsync(WindowsInformationProtectionWipeAction body, CancellationToken cancellationToken = default, Action<WindowsInformationProtectionWipeActionsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<WindowsInformationProtectionWipeAction> PostAsync(WindowsInformationProtectionWipeAction body, Action<WindowsInformationProtectionWipeActionsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsInformationProtectionWipeAction> PostAsync(WindowsInformationProtectionWipeAction body, CancellationToken cancellationToken = default, Action<WindowsInformationProtectionWipeActionsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

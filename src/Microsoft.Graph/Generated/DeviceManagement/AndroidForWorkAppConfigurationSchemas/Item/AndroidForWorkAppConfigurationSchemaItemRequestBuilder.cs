@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkAppConfigurationSc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<AndroidForWorkAppConfigurationSchemaItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<AndroidForWorkAppConfigurationSchemaItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<AndroidForWorkAppConfigurationSchemaItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<AndroidForWorkAppConfigurationSchemaItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -53,10 +53,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkAppConfigurationSc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AndroidForWorkAppConfigurationSchema?> GetAsync(Action<AndroidForWorkAppConfigurationSchemaItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AndroidForWorkAppConfigurationSchema?> GetAsync(CancellationToken cancellationToken = default, Action<AndroidForWorkAppConfigurationSchemaItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AndroidForWorkAppConfigurationSchema> GetAsync(Action<AndroidForWorkAppConfigurationSchemaItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AndroidForWorkAppConfigurationSchema> GetAsync(CancellationToken cancellationToken = default, Action<AndroidForWorkAppConfigurationSchemaItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkAppConfigurationSc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AndroidForWorkAppConfigurationSchema?> PatchAsync(AndroidForWorkAppConfigurationSchema body, Action<AndroidForWorkAppConfigurationSchemaItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AndroidForWorkAppConfigurationSchema?> PatchAsync(AndroidForWorkAppConfigurationSchema body, CancellationToken cancellationToken = default, Action<AndroidForWorkAppConfigurationSchemaItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AndroidForWorkAppConfigurationSchema> PatchAsync(AndroidForWorkAppConfigurationSchema body, Action<AndroidForWorkAppConfigurationSchemaItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AndroidForWorkAppConfigurationSchema> PatchAsync(AndroidForWorkAppConfigurationSchema body, CancellationToken cancellationToken = default, Action<AndroidForWorkAppConfigurationSchemaItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

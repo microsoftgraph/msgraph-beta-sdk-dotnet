@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.PrivilegedOperationEvents {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrivilegedOperationEventCollectionResponse?> GetAsync(Action<PrivilegedOperationEventsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegedOperationEventCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<PrivilegedOperationEventsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PrivilegedOperationEventCollectionResponse> GetAsync(Action<PrivilegedOperationEventsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegedOperationEventCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<PrivilegedOperationEventsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.PrivilegedOperationEvents {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrivilegedOperationEvent?> PostAsync(PrivilegedOperationEvent body, Action<PrivilegedOperationEventsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegedOperationEvent?> PostAsync(PrivilegedOperationEvent body, CancellationToken cancellationToken = default, Action<PrivilegedOperationEventsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<PrivilegedOperationEvent> PostAsync(PrivilegedOperationEvent body, Action<PrivilegedOperationEventsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegedOperationEvent> PostAsync(PrivilegedOperationEvent body, CancellationToken cancellationToken = default, Action<PrivilegedOperationEventsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

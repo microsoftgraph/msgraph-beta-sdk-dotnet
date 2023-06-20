@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new intelligenceProfileSponsorState and sets the default values.
+        /// Instantiates a new IntelligenceProfileSponsorState and sets the default values.
         /// </summary>
         public IntelligenceProfileSponsorState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

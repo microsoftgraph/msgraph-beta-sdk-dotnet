@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelHealthThresholds 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MicrosoftTunnelHealthThresholdCollectionResponse?> GetAsync(Action<MicrosoftTunnelHealthThresholdsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftTunnelHealthThresholdCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<MicrosoftTunnelHealthThresholdsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<MicrosoftTunnelHealthThresholdCollectionResponse> GetAsync(Action<MicrosoftTunnelHealthThresholdsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftTunnelHealthThresholdCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<MicrosoftTunnelHealthThresholdsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelHealthThresholds 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MicrosoftTunnelHealthThreshold?> PostAsync(MicrosoftTunnelHealthThreshold body, Action<MicrosoftTunnelHealthThresholdsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftTunnelHealthThreshold?> PostAsync(MicrosoftTunnelHealthThreshold body, CancellationToken cancellationToken = default, Action<MicrosoftTunnelHealthThresholdsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<MicrosoftTunnelHealthThreshold> PostAsync(MicrosoftTunnelHealthThreshold body, Action<MicrosoftTunnelHealthThresholdsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftTunnelHealthThreshold> PostAsync(MicrosoftTunnelHealthThreshold body, CancellationToken cancellationToken = default, Action<MicrosoftTunnelHealthThresholdsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

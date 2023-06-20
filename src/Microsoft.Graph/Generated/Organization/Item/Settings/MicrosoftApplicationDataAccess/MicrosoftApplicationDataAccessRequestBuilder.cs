@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.MicrosoftApplicationDa
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<MicrosoftApplicationDataAccessRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<MicrosoftApplicationDataAccessRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<MicrosoftApplicationDataAccessRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<MicrosoftApplicationDataAccessRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -54,10 +54,10 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.MicrosoftApplicationDa
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MicrosoftApplicationDataAccessSettings?> GetAsync(Action<MicrosoftApplicationDataAccessRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftApplicationDataAccessSettings?> GetAsync(CancellationToken cancellationToken = default, Action<MicrosoftApplicationDataAccessRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<MicrosoftApplicationDataAccessSettings> GetAsync(Action<MicrosoftApplicationDataAccessRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftApplicationDataAccessSettings> GetAsync(CancellationToken cancellationToken = default, Action<MicrosoftApplicationDataAccessRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -75,10 +75,10 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.MicrosoftApplicationDa
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MicrosoftApplicationDataAccessSettings?> PatchAsync(MicrosoftApplicationDataAccessSettings body, Action<MicrosoftApplicationDataAccessRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftApplicationDataAccessSettings?> PatchAsync(MicrosoftApplicationDataAccessSettings body, CancellationToken cancellationToken = default, Action<MicrosoftApplicationDataAccessRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<MicrosoftApplicationDataAccessSettings> PatchAsync(MicrosoftApplicationDataAccessSettings body, Action<MicrosoftApplicationDataAccessRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftApplicationDataAccessSettings> PatchAsync(MicrosoftApplicationDataAccessSettings body, CancellationToken cancellationToken = default, Action<MicrosoftApplicationDataAccessRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

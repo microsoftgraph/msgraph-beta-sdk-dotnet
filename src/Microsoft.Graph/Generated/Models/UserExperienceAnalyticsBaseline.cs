@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// The user experience analytics baseline entity contains baseline values against which to compare the user experience analytics scores.
-    /// </summary>
     public class UserExperienceAnalyticsBaseline : Entity, IParsable {
         /// <summary>The user experience analytics app health metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

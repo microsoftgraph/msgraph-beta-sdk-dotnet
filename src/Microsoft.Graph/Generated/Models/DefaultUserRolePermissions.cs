@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new defaultUserRolePermissions and sets the default values.
+        /// Instantiates a new DefaultUserRolePermissions and sets the default values.
         /// </summary>
         public DefaultUserRolePermissions() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

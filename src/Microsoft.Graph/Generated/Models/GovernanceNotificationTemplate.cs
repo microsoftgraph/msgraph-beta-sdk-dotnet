@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new governanceNotificationTemplate and sets the default values.
+        /// Instantiates a new GovernanceNotificationTemplate and sets the default values.
         /// </summary>
         public GovernanceNotificationTemplate() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

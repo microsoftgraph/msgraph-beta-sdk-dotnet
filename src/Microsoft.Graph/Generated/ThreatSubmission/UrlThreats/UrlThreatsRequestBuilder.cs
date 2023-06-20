@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.ThreatSubmission.UrlThreats {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UrlThreatSubmissionCollectionResponse?> GetAsync(Action<UrlThreatsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UrlThreatSubmissionCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<UrlThreatsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<UrlThreatSubmissionCollectionResponse> GetAsync(Action<UrlThreatsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UrlThreatSubmissionCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<UrlThreatsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Beta.ThreatSubmission.UrlThreats {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UrlThreatSubmission?> PostAsync(UrlThreatSubmission body, Action<UrlThreatsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UrlThreatSubmission?> PostAsync(UrlThreatSubmission body, CancellationToken cancellationToken = default, Action<UrlThreatsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<UrlThreatSubmission> PostAsync(UrlThreatSubmission body, Action<UrlThreatsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UrlThreatSubmission> PostAsync(UrlThreatSubmission body, CancellationToken cancellationToken = default, Action<UrlThreatsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

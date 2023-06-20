@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.MessageRecipients {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MessageRecipientCollectionResponse?> GetAsync(Action<MessageRecipientsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MessageRecipientCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<MessageRecipientsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<MessageRecipientCollectionResponse> GetAsync(Action<MessageRecipientsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MessageRecipientCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<MessageRecipientsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.MessageRecipients {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MessageRecipient?> PostAsync(MessageRecipient body, Action<MessageRecipientsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MessageRecipient?> PostAsync(MessageRecipient body, CancellationToken cancellationToken = default, Action<MessageRecipientsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<MessageRecipient> PostAsync(MessageRecipient body, Action<MessageRecipientsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MessageRecipient> PostAsync(MessageRecipient body, CancellationToken cancellationToken = default, Action<MessageRecipientsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

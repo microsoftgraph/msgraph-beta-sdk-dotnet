@@ -39,10 +39,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionD
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<WindowsInformationProtectionDeviceRegistrationItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<WindowsInformationProtectionDeviceRegistrationItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<WindowsInformationProtectionDeviceRegistrationItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<WindowsInformationProtectionDeviceRegistrationItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -58,10 +58,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionD
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsInformationProtectionDeviceRegistration?> GetAsync(Action<WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsInformationProtectionDeviceRegistration?> GetAsync(CancellationToken cancellationToken = default, Action<WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<WindowsInformationProtectionDeviceRegistration> GetAsync(Action<WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsInformationProtectionDeviceRegistration> GetAsync(CancellationToken cancellationToken = default, Action<WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -78,10 +78,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionD
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsInformationProtectionDeviceRegistration?> PatchAsync(WindowsInformationProtectionDeviceRegistration body, Action<WindowsInformationProtectionDeviceRegistrationItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsInformationProtectionDeviceRegistration?> PatchAsync(WindowsInformationProtectionDeviceRegistration body, CancellationToken cancellationToken = default, Action<WindowsInformationProtectionDeviceRegistrationItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<WindowsInformationProtectionDeviceRegistration> PatchAsync(WindowsInformationProtectionDeviceRegistration body, Action<WindowsInformationProtectionDeviceRegistrationItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsInformationProtectionDeviceRegistration> PatchAsync(WindowsInformationProtectionDeviceRegistration body, CancellationToken cancellationToken = default, Action<WindowsInformationProtectionDeviceRegistrationItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Presenters {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<VirtualEventPresenterCollectionResponse?> GetAsync(Action<PresentersRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<VirtualEventPresenterCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<PresentersRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<VirtualEventPresenterCollectionResponse> GetAsync(Action<PresentersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<VirtualEventPresenterCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<PresentersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Presenters {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<VirtualEventPresenter?> PostAsync(VirtualEventPresenter body, Action<PresentersRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<VirtualEventPresenter?> PostAsync(VirtualEventPresenter body, CancellationToken cancellationToken = default, Action<PresentersRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<VirtualEventPresenter> PostAsync(VirtualEventPresenter body, Action<PresentersRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<VirtualEventPresenter> PostAsync(VirtualEventPresenter body, CancellationToken cancellationToken = default, Action<PresentersRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("version", value); }
         }
         /// <summary>
-        /// Instantiates a new managementTemplateDetailedInfo and sets the default values.
+        /// Instantiates a new ManagementTemplateDetailedInfo and sets the default values.
         /// </summary>
         public ManagementTemplateDetailedInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

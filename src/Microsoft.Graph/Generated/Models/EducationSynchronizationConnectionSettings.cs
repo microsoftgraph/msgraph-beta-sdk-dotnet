@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new educationSynchronizationConnectionSettings and sets the default values.
+        /// Instantiates a new EducationSynchronizationConnectionSettings and sets the default values.
         /// </summary>
         public EducationSynchronizationConnectionSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

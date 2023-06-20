@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("translationBehavior", value); }
         }
         /// <summary>
-        /// Instantiates a new translationLanguageOverride and sets the default values.
+        /// Instantiates a new TranslationLanguageOverride and sets the default values.
         /// </summary>
         public TranslationLanguageOverride() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

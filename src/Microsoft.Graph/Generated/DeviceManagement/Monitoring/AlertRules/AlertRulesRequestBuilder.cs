@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRules {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AlertRuleCollectionResponse?> GetAsync(Action<AlertRulesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AlertRuleCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<AlertRulesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<AlertRuleCollectionResponse> GetAsync(Action<AlertRulesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AlertRuleCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<AlertRulesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRules {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule?> PostAsync(Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule body, Action<AlertRulesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule?> PostAsync(Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule body, CancellationToken cancellationToken = default, Action<AlertRulesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule> PostAsync(Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule body, Action<AlertRulesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule> PostAsync(Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule body, CancellationToken cancellationToken = default, Action<AlertRulesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

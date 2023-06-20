@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<VirtualEventWebinarCollectionResponse?> GetAsync(Action<WebinarsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<VirtualEventWebinarCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<WebinarsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<VirtualEventWebinarCollectionResponse> GetAsync(Action<WebinarsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<VirtualEventWebinarCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<WebinarsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<VirtualEventWebinar?> PostAsync(VirtualEventWebinar body, Action<WebinarsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<VirtualEventWebinar?> PostAsync(VirtualEventWebinar body, CancellationToken cancellationToken = default, Action<WebinarsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<VirtualEventWebinar> PostAsync(VirtualEventWebinar body, Action<WebinarsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<VirtualEventWebinar> PostAsync(VirtualEventWebinar body, CancellationToken cancellationToken = default, Action<WebinarsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

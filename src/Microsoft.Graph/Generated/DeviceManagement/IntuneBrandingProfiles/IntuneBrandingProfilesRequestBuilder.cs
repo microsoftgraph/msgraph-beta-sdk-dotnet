@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IntuneBrandingProfileCollectionResponse?> GetAsync(Action<IntuneBrandingProfilesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IntuneBrandingProfileCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<IntuneBrandingProfilesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<IntuneBrandingProfileCollectionResponse> GetAsync(Action<IntuneBrandingProfilesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IntuneBrandingProfileCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<IntuneBrandingProfilesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IntuneBrandingProfile?> PostAsync(IntuneBrandingProfile body, Action<IntuneBrandingProfilesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IntuneBrandingProfile?> PostAsync(IntuneBrandingProfile body, CancellationToken cancellationToken = default, Action<IntuneBrandingProfilesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<IntuneBrandingProfile> PostAsync(IntuneBrandingProfile body, Action<IntuneBrandingProfilesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IntuneBrandingProfile> PostAsync(IntuneBrandingProfile body, CancellationToken cancellationToken = default, Action<IntuneBrandingProfilesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

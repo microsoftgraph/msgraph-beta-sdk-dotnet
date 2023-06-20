@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementAutopilotEventCollectionResponse?> GetAsync(Action<AutopilotEventsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementAutopilotEventCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<AutopilotEventsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceManagementAutopilotEventCollectionResponse> GetAsync(Action<AutopilotEventsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementAutopilotEventCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<AutopilotEventsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementAutopilotEvent?> PostAsync(DeviceManagementAutopilotEvent body, Action<AutopilotEventsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementAutopilotEvent?> PostAsync(DeviceManagementAutopilotEvent body, CancellationToken cancellationToken = default, Action<AutopilotEventsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeviceManagementAutopilotEvent> PostAsync(DeviceManagementAutopilotEvent body, Action<AutopilotEventsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementAutopilotEvent> PostAsync(DeviceManagementAutopilotEvent body, CancellationToken cancellationToken = default, Action<AutopilotEventsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

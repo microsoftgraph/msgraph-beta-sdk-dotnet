@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sourceType", value); }
         }
         /// <summary>
-        /// Instantiates a new securityBaselineContributingPolicy and sets the default values.
+        /// Instantiates a new SecurityBaselineContributingPolicy and sets the default values.
         /// </summary>
         public SecurityBaselineContributingPolicy() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

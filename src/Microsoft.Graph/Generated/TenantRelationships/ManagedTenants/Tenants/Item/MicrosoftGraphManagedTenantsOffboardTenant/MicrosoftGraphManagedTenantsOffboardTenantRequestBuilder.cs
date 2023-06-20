@@ -35,10 +35,10 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants.Item.M
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Tenant?> PostAsync(Action<MicrosoftGraphManagedTenantsOffboardTenantRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Tenant?> PostAsync(CancellationToken cancellationToken = default, Action<MicrosoftGraphManagedTenantsOffboardTenantRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Tenant> PostAsync(Action<MicrosoftGraphManagedTenantsOffboardTenantRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Tenant> PostAsync(CancellationToken cancellationToken = default, Action<MicrosoftGraphManagedTenantsOffboardTenantRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

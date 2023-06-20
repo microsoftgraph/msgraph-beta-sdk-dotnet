@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new networkLocationDetail and sets the default values.
+        /// Instantiates a new NetworkLocationDetail and sets the default values.
         /// </summary>
         public NetworkLocationDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CustomAppScopeCollectionResponse?> GetAsync(Action<CustomAppScopesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CustomAppScopeCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<CustomAppScopesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CustomAppScopeCollectionResponse> GetAsync(Action<CustomAppScopesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CustomAppScopeCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<CustomAppScopesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CustomAppScope?> PostAsync(CustomAppScope body, Action<CustomAppScopesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CustomAppScope?> PostAsync(CustomAppScope body, CancellationToken cancellationToken = default, Action<CustomAppScopesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CustomAppScope> PostAsync(CustomAppScope body, Action<CustomAppScopesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CustomAppScope> PostAsync(CustomAppScope body, CancellationToken cancellationToken = default, Action<CustomAppScopesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

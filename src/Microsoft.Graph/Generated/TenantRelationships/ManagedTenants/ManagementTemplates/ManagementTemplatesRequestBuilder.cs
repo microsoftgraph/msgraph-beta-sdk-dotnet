@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagementTemplateCollectionResponse?> GetAsync(Action<ManagementTemplatesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagementTemplateCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<ManagementTemplatesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<ManagementTemplateCollectionResponse> GetAsync(Action<ManagementTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagementTemplateCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ManagementTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate?> PostAsync(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate body, Action<ManagementTemplatesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate?> PostAsync(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate body, CancellationToken cancellationToken = default, Action<ManagementTemplatesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate> PostAsync(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate body, Action<ManagementTemplatesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate> PostAsync(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate body, CancellationToken cancellationToken = default, Action<ManagementTemplatesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

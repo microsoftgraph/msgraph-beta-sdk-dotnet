@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleAssignmentMultipleCollectionResponse?> GetAsync(Action<RoleAssignmentsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UnifiedRoleAssignmentMultipleCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<RoleAssignmentsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<UnifiedRoleAssignmentMultipleCollectionResponse> GetAsync(Action<RoleAssignmentsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UnifiedRoleAssignmentMultipleCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<RoleAssignmentsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UnifiedRoleAssignmentMultiple?> PostAsync(UnifiedRoleAssignmentMultiple body, Action<RoleAssignmentsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UnifiedRoleAssignmentMultiple?> PostAsync(UnifiedRoleAssignmentMultiple body, CancellationToken cancellationToken = default, Action<RoleAssignmentsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<UnifiedRoleAssignmentMultiple> PostAsync(UnifiedRoleAssignmentMultiple body, Action<RoleAssignmentsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UnifiedRoleAssignmentMultiple> PostAsync(UnifiedRoleAssignmentMultiple body, CancellationToken cancellationToken = default, Action<RoleAssignmentsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

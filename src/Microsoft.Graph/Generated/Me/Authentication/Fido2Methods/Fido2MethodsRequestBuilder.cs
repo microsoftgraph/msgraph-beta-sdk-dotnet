@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.Me.Authentication.Fido2Methods {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Fido2AuthenticationMethodCollectionResponse?> GetAsync(Action<Fido2MethodsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Fido2AuthenticationMethodCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<Fido2MethodsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Fido2AuthenticationMethodCollectionResponse> GetAsync(Action<Fido2MethodsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Fido2AuthenticationMethodCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<Fido2MethodsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

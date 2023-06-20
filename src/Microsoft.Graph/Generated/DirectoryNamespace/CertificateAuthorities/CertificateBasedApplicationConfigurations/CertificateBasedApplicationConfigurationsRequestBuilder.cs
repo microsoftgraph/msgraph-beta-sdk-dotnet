@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CertificateBasedApplicationConfigurationCollectionResponse?> GetAsync(Action<CertificateBasedApplicationConfigurationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CertificateBasedApplicationConfigurationCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<CertificateBasedApplicationConfigurationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CertificateBasedApplicationConfigurationCollectionResponse> GetAsync(Action<CertificateBasedApplicationConfigurationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CertificateBasedApplicationConfigurationCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<CertificateBasedApplicationConfigurationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CertificateBasedApplicationConfiguration?> PostAsync(CertificateBasedApplicationConfiguration body, Action<CertificateBasedApplicationConfigurationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CertificateBasedApplicationConfiguration?> PostAsync(CertificateBasedApplicationConfiguration body, CancellationToken cancellationToken = default, Action<CertificateBasedApplicationConfigurationsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CertificateBasedApplicationConfiguration> PostAsync(CertificateBasedApplicationConfiguration body, Action<CertificateBasedApplicationConfigurationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CertificateBasedApplicationConfiguration> PostAsync(CertificateBasedApplicationConfiguration body, CancellationToken cancellationToken = default, Action<CertificateBasedApplicationConfigurationsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

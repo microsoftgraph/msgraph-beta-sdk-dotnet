@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.GovernanceSubjects {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GovernanceSubjectCollectionResponse?> GetAsync(Action<GovernanceSubjectsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GovernanceSubjectCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<GovernanceSubjectsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GovernanceSubjectCollectionResponse> GetAsync(Action<GovernanceSubjectsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GovernanceSubjectCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<GovernanceSubjectsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.GovernanceSubjects {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GovernanceSubject?> PostAsync(GovernanceSubject body, Action<GovernanceSubjectsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GovernanceSubject?> PostAsync(GovernanceSubject body, CancellationToken cancellationToken = default, Action<GovernanceSubjectsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GovernanceSubject> PostAsync(GovernanceSubject body, Action<GovernanceSubjectsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GovernanceSubject> PostAsync(GovernanceSubject body, CancellationToken cancellationToken = default, Action<GovernanceSubjectsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

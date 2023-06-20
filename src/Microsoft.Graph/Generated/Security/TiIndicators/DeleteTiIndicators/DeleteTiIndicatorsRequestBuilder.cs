@@ -35,10 +35,10 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicators {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeleteTiIndicatorsResponse?> PostAsync(DeleteTiIndicatorsPostRequestBody body, Action<DeleteTiIndicatorsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeleteTiIndicatorsResponse?> PostAsync(DeleteTiIndicatorsPostRequestBody body, CancellationToken cancellationToken = default, Action<DeleteTiIndicatorsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DeleteTiIndicatorsResponse> PostAsync(DeleteTiIndicatorsPostRequestBody body, Action<DeleteTiIndicatorsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeleteTiIndicatorsResponse> PostAsync(DeleteTiIndicatorsPostRequestBody body, CancellationToken cancellationToken = default, Action<DeleteTiIndicatorsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
 #endif
         /// <summary>
-        /// Instantiates a new complianceChangeRule and sets the default values.
+        /// Instantiates a new ComplianceChangeRule and sets the default values.
         /// </summary>
         public ComplianceChangeRule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

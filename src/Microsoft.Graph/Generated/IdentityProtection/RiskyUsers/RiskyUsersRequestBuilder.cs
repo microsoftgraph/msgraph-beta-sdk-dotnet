@@ -50,17 +50,17 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
         public RiskyUsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityProtection/riskyUsers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a **riskyUser** object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/riskyusers-get?view=graph-rest-1.0" />
+        /// Retrieve the properties and relationships of a collection of **riskyUser** objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/riskyusers-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RiskyUserCollectionResponse?> GetAsync(Action<RiskyUsersRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RiskyUserCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<RiskyUsersRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<RiskyUserCollectionResponse> GetAsync(Action<RiskyUsersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RiskyUserCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<RiskyUsersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -77,10 +77,10 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RiskyUser?> PostAsync(RiskyUser body, Action<RiskyUsersRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RiskyUser?> PostAsync(RiskyUser body, CancellationToken cancellationToken = default, Action<RiskyUsersRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<RiskyUser> PostAsync(RiskyUser body, Action<RiskyUsersRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RiskyUser> PostAsync(RiskyUser body, CancellationToken cancellationToken = default, Action<RiskyUsersRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
             return await RequestAdapter.SendAsync<RiskyUser>(requestInfo, RiskyUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a **riskyUser** object.
+        /// Retrieve the properties and relationships of a collection of **riskyUser** objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a **riskyUser** object.
+        /// Retrieve the properties and relationships of a collection of **riskyUser** objects.
         /// </summary>
         public class RiskyUsersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

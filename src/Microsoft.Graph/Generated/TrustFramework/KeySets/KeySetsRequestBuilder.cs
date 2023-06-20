@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TrustFrameworkKeySetCollectionResponse?> GetAsync(Action<KeySetsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TrustFrameworkKeySetCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<KeySetsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<TrustFrameworkKeySetCollectionResponse> GetAsync(Action<KeySetsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TrustFrameworkKeySetCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<KeySetsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TrustFrameworkKeySet?> PostAsync(TrustFrameworkKeySet body, Action<KeySetsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TrustFrameworkKeySet?> PostAsync(TrustFrameworkKeySet body, CancellationToken cancellationToken = default, Action<KeySetsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<TrustFrameworkKeySet> PostAsync(TrustFrameworkKeySet body, Action<KeySetsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TrustFrameworkKeySet> PostAsync(TrustFrameworkKeySet body, CancellationToken cancellationToken = default, Action<KeySetsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

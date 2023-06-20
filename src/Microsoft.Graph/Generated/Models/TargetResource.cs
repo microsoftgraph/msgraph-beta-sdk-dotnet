@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new targetResource and sets the default values.
+        /// Instantiates a new TargetResource and sets the default values.
         /// </summary>
         public TargetResource() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TaxAreaCollectionResponse?> GetAsync(Action<TaxAreasRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TaxAreaCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<TaxAreasRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<TaxAreaCollectionResponse> GetAsync(Action<TaxAreasRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TaxAreaCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<TaxAreasRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TaxArea?> PostAsync(TaxArea body, Action<TaxAreasRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TaxArea?> PostAsync(TaxArea body, CancellationToken cancellationToken = default, Action<TaxAreasRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<TaxArea> PostAsync(TaxArea body, Action<TaxAreasRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TaxArea> PostAsync(TaxArea body, CancellationToken cancellationToken = default, Action<TaxAreasRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

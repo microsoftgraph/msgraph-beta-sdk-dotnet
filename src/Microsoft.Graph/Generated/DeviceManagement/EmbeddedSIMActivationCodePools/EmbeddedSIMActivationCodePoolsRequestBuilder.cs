@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EmbeddedSIMActivationCodePoolCollectionResponse?> GetAsync(Action<EmbeddedSIMActivationCodePoolsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EmbeddedSIMActivationCodePoolCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<EmbeddedSIMActivationCodePoolsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<EmbeddedSIMActivationCodePoolCollectionResponse> GetAsync(Action<EmbeddedSIMActivationCodePoolsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EmbeddedSIMActivationCodePoolCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<EmbeddedSIMActivationCodePoolsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EmbeddedSIMActivationCodePool?> PostAsync(EmbeddedSIMActivationCodePool body, Action<EmbeddedSIMActivationCodePoolsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EmbeddedSIMActivationCodePool?> PostAsync(EmbeddedSIMActivationCodePool body, CancellationToken cancellationToken = default, Action<EmbeddedSIMActivationCodePoolsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<EmbeddedSIMActivationCodePool> PostAsync(EmbeddedSIMActivationCodePool body, Action<EmbeddedSIMActivationCodePoolsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EmbeddedSIMActivationCodePool> PostAsync(EmbeddedSIMActivationCodePool body, CancellationToken cancellationToken = default, Action<EmbeddedSIMActivationCodePoolsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

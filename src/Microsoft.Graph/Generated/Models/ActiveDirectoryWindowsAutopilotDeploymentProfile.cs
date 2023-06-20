@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows Autopilot Deployment Profile
+    /// </summary>
     public class ActiveDirectoryWindowsAutopilotDeploymentProfile : WindowsAutopilotDeploymentProfile, IParsable {
         /// <summary>Configuration to join Active Directory domain</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -25,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("hybridAzureADJoinSkipConnectivityCheck", value); }
         }
         /// <summary>
-        /// Instantiates a new ActiveDirectoryWindowsAutopilotDeploymentProfile and sets the default values.
+        /// Instantiates a new activeDirectoryWindowsAutopilotDeploymentProfile and sets the default values.
         /// </summary>
         public ActiveDirectoryWindowsAutopilotDeploymentProfile() : base() {
             OdataType = "#microsoft.graph.activeDirectoryWindowsAutopilotDeploymentProfile";

@@ -1,0 +1,16 @@
+using System.Runtime.Serialization;
+using System;
+namespace Microsoft.Graph.Beta.Models.Networkaccess {
+    public enum BandwidthCapacityInMbps {
+        [EnumMember(Value = "mbps250")]
+        Mbps250,
+        [EnumMember(Value = "mbps500")]
+        Mbps500,
+        [EnumMember(Value = "mbps750")]
+        Mbps750,
+        [EnumMember(Value = "mbps1000")]
+        Mbps1000,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
+    }
+}

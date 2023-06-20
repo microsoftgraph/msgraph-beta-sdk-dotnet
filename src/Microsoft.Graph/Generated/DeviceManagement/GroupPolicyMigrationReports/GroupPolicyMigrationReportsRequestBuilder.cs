@@ -51,10 +51,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GroupPolicyMigrationReportCollectionResponse?> GetAsync(Action<GroupPolicyMigrationReportsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupPolicyMigrationReportCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<GroupPolicyMigrationReportsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GroupPolicyMigrationReportCollectionResponse> GetAsync(Action<GroupPolicyMigrationReportsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupPolicyMigrationReportCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<GroupPolicyMigrationReportsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -71,10 +71,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GroupPolicyMigrationReport?> PostAsync(GroupPolicyMigrationReport body, Action<GroupPolicyMigrationReportsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupPolicyMigrationReport?> PostAsync(GroupPolicyMigrationReport body, CancellationToken cancellationToken = default, Action<GroupPolicyMigrationReportsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GroupPolicyMigrationReport> PostAsync(GroupPolicyMigrationReport body, Action<GroupPolicyMigrationReportsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupPolicyMigrationReport> PostAsync(GroupPolicyMigrationReport body, CancellationToken cancellationToken = default, Action<GroupPolicyMigrationReportsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

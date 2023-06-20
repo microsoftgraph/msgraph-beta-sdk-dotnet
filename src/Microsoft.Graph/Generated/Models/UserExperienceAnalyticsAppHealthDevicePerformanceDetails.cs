@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// The user experience analytics device performance entity contains device performance details.
-    /// </summary>
     public class UserExperienceAnalyticsAppHealthDevicePerformanceDetails : Entity, IParsable {
         /// <summary>The friendly name of the application for which the event occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

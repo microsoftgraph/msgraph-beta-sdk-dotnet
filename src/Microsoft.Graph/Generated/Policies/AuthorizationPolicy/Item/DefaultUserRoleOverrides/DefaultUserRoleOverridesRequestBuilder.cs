@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item.DefaultUserRole
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DefaultUserRoleOverrideCollectionResponse?> GetAsync(Action<DefaultUserRoleOverridesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DefaultUserRoleOverrideCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<DefaultUserRoleOverridesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DefaultUserRoleOverrideCollectionResponse> GetAsync(Action<DefaultUserRoleOverridesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DefaultUserRoleOverrideCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<DefaultUserRoleOverridesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item.DefaultUserRole
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DefaultUserRoleOverride?> PostAsync(DefaultUserRoleOverride body, Action<DefaultUserRoleOverridesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DefaultUserRoleOverride?> PostAsync(DefaultUserRoleOverride body, CancellationToken cancellationToken = default, Action<DefaultUserRoleOverridesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DefaultUserRoleOverride> PostAsync(DefaultUserRoleOverride body, Action<DefaultUserRoleOverridesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DefaultUserRoleOverride> PostAsync(DefaultUserRoleOverride body, CancellationToken cancellationToken = default, Action<DefaultUserRoleOverridesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

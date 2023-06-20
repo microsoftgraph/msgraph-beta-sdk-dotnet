@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new alertComment and sets the default values.
+        /// Instantiates a new AlertComment and sets the default values.
         /// </summary>
         public AlertComment() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

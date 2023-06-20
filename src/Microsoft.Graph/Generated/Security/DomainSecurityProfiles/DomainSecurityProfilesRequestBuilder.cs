@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.Security.DomainSecurityProfiles {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DomainSecurityProfileCollectionResponse?> GetAsync(Action<DomainSecurityProfilesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DomainSecurityProfileCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<DomainSecurityProfilesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DomainSecurityProfileCollectionResponse> GetAsync(Action<DomainSecurityProfilesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DomainSecurityProfileCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<DomainSecurityProfilesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.Security.DomainSecurityProfiles {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DomainSecurityProfile?> PostAsync(DomainSecurityProfile body, Action<DomainSecurityProfilesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DomainSecurityProfile?> PostAsync(DomainSecurityProfile body, CancellationToken cancellationToken = default, Action<DomainSecurityProfilesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<DomainSecurityProfile> PostAsync(DomainSecurityProfile body, Action<DomainSecurityProfilesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DomainSecurityProfile> PostAsync(DomainSecurityProfile body, CancellationToken cancellationToken = default, Action<DomainSecurityProfilesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

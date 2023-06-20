@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
 #endif
         /// <summary>
-        /// Instantiates a new managementActionDeploymentStatus and sets the default values.
+        /// Instantiates a new ManagementActionDeploymentStatus and sets the default values.
         /// </summary>
         public ManagementActionDeploymentStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

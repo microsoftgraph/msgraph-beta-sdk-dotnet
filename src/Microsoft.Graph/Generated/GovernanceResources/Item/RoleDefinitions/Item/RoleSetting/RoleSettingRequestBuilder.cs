@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleDefinitions.Item.Rol
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GovernanceRoleSetting?> GetAsync(Action<RoleSettingRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GovernanceRoleSetting?> GetAsync(CancellationToken cancellationToken = default, Action<RoleSettingRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<GovernanceRoleSetting> GetAsync(Action<RoleSettingRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GovernanceRoleSetting> GetAsync(CancellationToken cancellationToken = default, Action<RoleSettingRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

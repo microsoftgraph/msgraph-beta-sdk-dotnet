@@ -47,10 +47,10 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MobilityManagementPolicyCollectionResponse?> GetAsync(Action<MobileDeviceManagementPoliciesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MobilityManagementPolicyCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<MobileDeviceManagementPoliciesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<MobilityManagementPolicyCollectionResponse> GetAsync(Action<MobileDeviceManagementPoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MobilityManagementPolicyCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<MobileDeviceManagementPoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -67,10 +67,10 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MobilityManagementPolicy?> PostAsync(MobilityManagementPolicy body, Action<MobileDeviceManagementPoliciesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MobilityManagementPolicy?> PostAsync(MobilityManagementPolicy body, CancellationToken cancellationToken = default, Action<MobileDeviceManagementPoliciesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<MobilityManagementPolicy> PostAsync(MobilityManagementPolicy body, Action<MobileDeviceManagementPoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MobilityManagementPolicy> PostAsync(MobilityManagementPolicy body, CancellationToken cancellationToken = default, Action<MobileDeviceManagementPoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

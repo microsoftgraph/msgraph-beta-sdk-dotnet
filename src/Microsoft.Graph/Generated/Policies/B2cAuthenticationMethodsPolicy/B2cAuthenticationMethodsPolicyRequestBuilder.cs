@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<B2cAuthenticationMethodsPolicyRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<B2cAuthenticationMethodsPolicyRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<B2cAuthenticationMethodsPolicyRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<B2cAuthenticationMethodsPolicyRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -54,10 +54,10 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy?> GetAsync(Action<B2cAuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy?> GetAsync(CancellationToken cancellationToken = default, Action<B2cAuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy> GetAsync(Action<B2cAuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy> GetAsync(CancellationToken cancellationToken = default, Action<B2cAuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -75,10 +75,10 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy?> PatchAsync(Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy body, Action<B2cAuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy?> PatchAsync(Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy body, CancellationToken cancellationToken = default, Action<B2cAuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy> PatchAsync(Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy body, Action<B2cAuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy> PatchAsync(Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy body, CancellationToken cancellationToken = default, Action<B2cAuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);

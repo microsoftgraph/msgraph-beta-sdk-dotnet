@@ -62,6 +62,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
+        /// <summary>The isPrivileged property</summary>
+        public bool? IsPrivileged {
+            get { return BackingStore?.Get<bool?>("isPrivileged"); }
+            set { BackingStore?.Set("isPrivileged", value); }
+        }
         /// <summary>List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,6 +142,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"inheritsPermissionsFrom", n => { InheritsPermissionsFrom = n.GetCollectionOfObjectValues<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"isPrivileged", n => { IsPrivileged = n.GetBoolValue(); } },
                 {"resourceScopes", n => { ResourceScopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"rolePermissions", n => { RolePermissions = n.GetCollectionOfObjectValues<UnifiedRolePermission>(UnifiedRolePermission.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"templateId", n => { TemplateId = n.GetStringValue(); } },
@@ -156,6 +162,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<UnifiedRoleDefinition>("inheritsPermissionsFrom", InheritsPermissionsFrom);
             writer.WriteBoolValue("isBuiltIn", IsBuiltIn);
             writer.WriteBoolValue("isEnabled", IsEnabled);
+            writer.WriteBoolValue("isPrivileged", IsPrivileged);
             writer.WriteCollectionOfPrimitiveValues<string>("resourceScopes", ResourceScopes);
             writer.WriteCollectionOfObjectValues<UnifiedRolePermission>("rolePermissions", RolePermissions);
             writer.WriteStringValue("templateId", TemplateId);

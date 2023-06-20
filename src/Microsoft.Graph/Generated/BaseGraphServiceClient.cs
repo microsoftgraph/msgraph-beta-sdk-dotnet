@@ -66,6 +66,7 @@ using Microsoft.Graph.Beta.MessageRecipients;
 using Microsoft.Graph.Beta.MessageTraces;
 using Microsoft.Graph.Beta.MobilityManagementPolicies;
 using Microsoft.Graph.Beta.Monitoring;
+using Microsoft.Graph.Beta.NetworkAccess;
 using Microsoft.Graph.Beta.Oauth2PermissionGrants;
 using Microsoft.Graph.Beta.OnPremisesPublishingProfiles;
 using Microsoft.Graph.Beta.Organization;
@@ -397,6 +398,10 @@ namespace Microsoft.Graph.Beta {
         /// <summary>Provides operations to manage the monitoring singleton.</summary>
         public MonitoringRequestBuilder Monitoring { get =>
             new MonitoringRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the networkAccessRoot singleton.</summary>
+        public NetworkAccessRequestBuilder NetworkAccess { get =>
+            new NetworkAccessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of oAuth2PermissionGrant entities.</summary>
         public Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants { get =>

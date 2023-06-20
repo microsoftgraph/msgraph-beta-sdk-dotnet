@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// The user experience analytics battery health app impact entity contains battery usage related information at an app level for the tenant.
-    /// </summary>
     public class UserExperienceAnalyticsBatteryHealthAppImpact : Entity, IParsable {
         /// <summary>Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647</summary>
         public int? ActiveDevices {

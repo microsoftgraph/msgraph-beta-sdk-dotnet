@@ -46,10 +46,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CustomExtensionStageSettingCollectionResponse?> GetAsync(Action<CustomExtensionStageSettingsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CustomExtensionStageSettingCollectionResponse?> GetAsync(CancellationToken cancellationToken = default, Action<CustomExtensionStageSettingsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CustomExtensionStageSettingCollectionResponse> GetAsync(Action<CustomExtensionStageSettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CustomExtensionStageSettingCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<CustomExtensionStageSettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CustomExtensionStageSetting?> PostAsync(CustomExtensionStageSetting body, Action<CustomExtensionStageSettingsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CustomExtensionStageSetting?> PostAsync(CustomExtensionStageSetting body, CancellationToken cancellationToken = default, Action<CustomExtensionStageSettingsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public async Task<CustomExtensionStageSetting> PostAsync(CustomExtensionStageSetting body, Action<CustomExtensionStageSettingsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CustomExtensionStageSetting> PostAsync(CustomExtensionStageSetting body, CancellationToken cancellationToken = default, Action<CustomExtensionStageSettingsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);

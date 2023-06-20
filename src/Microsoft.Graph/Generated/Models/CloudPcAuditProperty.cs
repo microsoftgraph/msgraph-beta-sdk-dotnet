@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new cloudPcAuditProperty and sets the default values.
+        /// Instantiates a new CloudPcAuditProperty and sets the default values.
         /// </summary>
         public CloudPcAuditProperty() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
