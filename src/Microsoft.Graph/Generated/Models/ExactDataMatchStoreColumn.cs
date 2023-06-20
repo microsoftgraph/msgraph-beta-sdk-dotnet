@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new exactDataMatchStoreColumn and sets the default values.
+        /// Instantiates a new ExactDataMatchStoreColumn and sets the default values.
         /// </summary>
         public ExactDataMatchStoreColumn() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

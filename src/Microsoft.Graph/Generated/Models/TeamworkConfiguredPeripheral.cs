@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new teamworkConfiguredPeripheral and sets the default values.
+        /// Instantiates a new TeamworkConfiguredPeripheral and sets the default values.
         /// </summary>
         public TeamworkConfiguredPeripheral() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

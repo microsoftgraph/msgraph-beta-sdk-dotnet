@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
 #endif
         /// <summary>
-        /// Instantiates a new roleDefinition and sets the default values.
+        /// Instantiates a new RoleDefinition and sets the default values.
         /// </summary>
         public RoleDefinition() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

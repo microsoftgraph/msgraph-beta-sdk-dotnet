@@ -45,6 +45,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isSsprRegistered"); }
             set { BackingStore?.Set("isSsprRegistered", value); }
         }
+        /// <summary>The isSystemPreferredAuthenticationMethodEnabled property</summary>
+        public bool? IsSystemPreferredAuthenticationMethodEnabled {
+            get { return BackingStore?.Get<bool?>("isSystemPreferredAuthenticationMethodEnabled"); }
+            set { BackingStore?.Set("isSystemPreferredAuthenticationMethodEnabled", value); }
+        }
         /// <summary>The date and time (UTC) when the record was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastUpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
@@ -64,6 +69,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("methodsRegistered", value); }
         }
 #endif
+        /// <summary>The systemPreferredAuthenticationMethods property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SystemPreferredAuthenticationMethods {
+            get { return BackingStore?.Get<List<string>?>("systemPreferredAuthenticationMethods"); }
+            set { BackingStore?.Set("systemPreferredAuthenticationMethods", value); }
+        }
+#nullable restore
+#else
+        public List<string> SystemPreferredAuthenticationMethods {
+            get { return BackingStore?.Get<List<string>>("systemPreferredAuthenticationMethods"); }
+            set { BackingStore?.Set("systemPreferredAuthenticationMethods", value); }
+        }
+#endif
         /// <summary>The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,6 +97,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #endif
+        /// <summary>The userPreferredMethodForSecondaryAuthentication property</summary>
+        public UserDefaultAuthenticationMethod? UserPreferredMethodForSecondaryAuthentication {
+            get { return BackingStore?.Get<UserDefaultAuthenticationMethod?>("userPreferredMethodForSecondaryAuthentication"); }
+            set { BackingStore?.Set("userPreferredMethodForSecondaryAuthentication", value); }
+        }
         /// <summary>The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,9 +142,12 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isSsprCapable", n => { IsSsprCapable = n.GetBoolValue(); } },
                 {"isSsprEnabled", n => { IsSsprEnabled = n.GetBoolValue(); } },
                 {"isSsprRegistered", n => { IsSsprRegistered = n.GetBoolValue(); } },
+                {"isSystemPreferredAuthenticationMethodEnabled", n => { IsSystemPreferredAuthenticationMethodEnabled = n.GetBoolValue(); } },
                 {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"methodsRegistered", n => { MethodsRegistered = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"systemPreferredAuthenticationMethods", n => { SystemPreferredAuthenticationMethods = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
+                {"userPreferredMethodForSecondaryAuthentication", n => { UserPreferredMethodForSecondaryAuthentication = n.GetEnumValue<UserDefaultAuthenticationMethod>(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
                 {"userType", n => { UserType = n.GetEnumValue<SignInUserType>(); } },
             };
@@ -140,9 +167,12 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isSsprCapable", IsSsprCapable);
             writer.WriteBoolValue("isSsprEnabled", IsSsprEnabled);
             writer.WriteBoolValue("isSsprRegistered", IsSsprRegistered);
+            writer.WriteBoolValue("isSystemPreferredAuthenticationMethodEnabled", IsSystemPreferredAuthenticationMethodEnabled);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("methodsRegistered", MethodsRegistered);
+            writer.WriteCollectionOfPrimitiveValues<string>("systemPreferredAuthenticationMethods", SystemPreferredAuthenticationMethods);
             writer.WriteStringValue("userDisplayName", UserDisplayName);
+            writer.WriteEnumValue<UserDefaultAuthenticationMethod>("userPreferredMethodForSecondaryAuthentication", UserPreferredMethodForSecondaryAuthentication);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteEnumValue<SignInUserType>("userType", UserType);
         }

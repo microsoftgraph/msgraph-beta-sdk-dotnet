@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new userExperienceAnalyticsAnomalyCorrelationGroupFeature and sets the default values.
+        /// Instantiates a new UserExperienceAnalyticsAnomalyCorrelationGroupFeature and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsAnomalyCorrelationGroupFeature() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

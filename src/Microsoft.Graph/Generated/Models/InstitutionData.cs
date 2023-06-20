@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new institutionData and sets the default values.
+        /// Instantiates a new InstitutionData and sets the default values.
         /// </summary>
         public InstitutionData() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new workloadActionDeploymentStatus and sets the default values.
+        /// Instantiates a new WorkloadActionDeploymentStatus and sets the default values.
         /// </summary>
         public WorkloadActionDeploymentStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

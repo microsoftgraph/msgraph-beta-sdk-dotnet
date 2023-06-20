@@ -5,6 +5,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ReportRoot : Entity, IParsable {
+        /// <summary>Represents a collection of sign-in activities of application credentials.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<AppCredentialSignInActivity>? AppCredentialSignInActivities {
+            get { return BackingStore?.Get<List<AppCredentialSignInActivity>?>("appCredentialSignInActivities"); }
+            set { BackingStore?.Set("appCredentialSignInActivities", value); }
+        }
+#nullable restore
+#else
+        public List<AppCredentialSignInActivity> AppCredentialSignInActivities {
+            get { return BackingStore?.Get<List<AppCredentialSignInActivity>>("appCredentialSignInActivities"); }
+            set { BackingStore?.Set("appCredentialSignInActivities", value); }
+        }
+#endif
         /// <summary>Represents a detailed summary of an application sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -187,6 +201,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("security", value); }
         }
 #endif
+        /// <summary>Represents a collection of sign-in activities of service principals.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<ServicePrincipalSignInActivity>? ServicePrincipalSignInActivities {
+            get { return BackingStore?.Get<List<ServicePrincipalSignInActivity>?>("servicePrincipalSignInActivities"); }
+            set { BackingStore?.Set("servicePrincipalSignInActivities", value); }
+        }
+#nullable restore
+#else
+        public List<ServicePrincipalSignInActivity> ServicePrincipalSignInActivities {
+            get { return BackingStore?.Get<List<ServicePrincipalSignInActivity>>("servicePrincipalSignInActivities"); }
+            set { BackingStore?.Set("servicePrincipalSignInActivities", value); }
+        }
+#endif
         /// <summary>Represents the self-service password reset (SSPR) usage for a given tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -214,6 +242,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"appCredentialSignInActivities", n => { AppCredentialSignInActivities = n.GetCollectionOfObjectValues<AppCredentialSignInActivity>(AppCredentialSignInActivity.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"applicationSignInDetailedSummary", n => { ApplicationSignInDetailedSummary = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>(Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"authenticationMethods", n => { AuthenticationMethods = n.GetObjectValue<AuthenticationMethodsRoot>(AuthenticationMethodsRoot.CreateFromDiscriminatorValue); } },
                 {"credentialUserRegistrationDetails", n => { CredentialUserRegistrationDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>(Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -227,6 +256,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"monthlyPrintUsageSummariesByPrinter", n => { MonthlyPrintUsageSummariesByPrinter = n.GetCollectionOfObjectValues<PrintUsageByPrinter>(PrintUsageByPrinter.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"monthlyPrintUsageSummariesByUser", n => { MonthlyPrintUsageSummariesByUser = n.GetCollectionOfObjectValues<PrintUsageByUser>(PrintUsageByUser.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"security", n => { Security = n.GetObjectValue<SecurityReportsRoot>(SecurityReportsRoot.CreateFromDiscriminatorValue); } },
+                {"servicePrincipalSignInActivities", n => { ServicePrincipalSignInActivities = n.GetCollectionOfObjectValues<ServicePrincipalSignInActivity>(ServicePrincipalSignInActivity.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"userCredentialUsageDetails", n => { UserCredentialUsageDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>(Microsoft.Graph.Beta.Models.UserCredentialUsageDetails.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -237,6 +267,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<AppCredentialSignInActivity>("appCredentialSignInActivities", AppCredentialSignInActivities);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>("applicationSignInDetailedSummary", ApplicationSignInDetailedSummary);
             writer.WriteObjectValue<AuthenticationMethodsRoot>("authenticationMethods", AuthenticationMethods);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>("credentialUserRegistrationDetails", CredentialUserRegistrationDetails);
@@ -250,6 +281,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<PrintUsageByPrinter>("monthlyPrintUsageSummariesByPrinter", MonthlyPrintUsageSummariesByPrinter);
             writer.WriteCollectionOfObjectValues<PrintUsageByUser>("monthlyPrintUsageSummariesByUser", MonthlyPrintUsageSummariesByUser);
             writer.WriteObjectValue<SecurityReportsRoot>("security", Security);
+            writer.WriteCollectionOfObjectValues<ServicePrincipalSignInActivity>("servicePrincipalSignInActivities", ServicePrincipalSignInActivities);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>("userCredentialUsageDetails", UserCredentialUsageDetails);
         }
     }

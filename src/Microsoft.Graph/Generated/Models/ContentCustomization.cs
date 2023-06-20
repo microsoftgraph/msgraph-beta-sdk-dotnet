@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The attributeCollection property</summary>
+        /// <summary>Represents the content options of External Identities to be customized throughout the authentication flow for a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<KeyValue>? AttributeCollection {
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("attributeCollection", value); }
         }
 #endif
-        /// <summary>The attributeCollectionRelativeUrl property</summary>
+        /// <summary>A relative URL for the content options of External Identities to be customized throughout the authentication flow for a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AttributeCollectionRelativeUrl {

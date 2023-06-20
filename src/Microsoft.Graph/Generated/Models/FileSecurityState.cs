@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new fileSecurityState and sets the default values.
+        /// Instantiates a new FileSecurityState and sets the default values.
         /// </summary>
         public FileSecurityState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

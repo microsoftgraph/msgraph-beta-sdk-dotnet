@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("remediatedDeviceCount", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceHealthScriptRemediationHistoryData and sets the default values.
+        /// Instantiates a new DeviceHealthScriptRemediationHistoryData and sets the default values.
         /// </summary>
         public DeviceHealthScriptRemediationHistoryData() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

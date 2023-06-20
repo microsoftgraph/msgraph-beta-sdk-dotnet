@@ -1,0 +1,14 @@
+using System.Runtime.Serialization;
+using System;
+namespace Microsoft.Graph.Beta.Models.Networkaccess {
+    public enum ForwardingCategory {
+        [EnumMember(Value = "default")]
+        Default,
+        [EnumMember(Value = "optimized")]
+        Optimized,
+        [EnumMember(Value = "allow")]
+        Allow,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
+    }
+}

@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new windowsKioskAppConfiguration and sets the default values.
+        /// Instantiates a new WindowsKioskAppConfiguration and sets the default values.
         /// </summary>
         public WindowsKioskAppConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

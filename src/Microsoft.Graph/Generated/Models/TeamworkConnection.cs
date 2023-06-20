@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new teamworkConnection and sets the default values.
+        /// Instantiates a new TeamworkConnection and sets the default values.
         /// </summary>
         public TeamworkConnection() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

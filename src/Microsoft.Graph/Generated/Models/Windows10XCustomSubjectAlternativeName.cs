@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sanType", value); }
         }
         /// <summary>
-        /// Instantiates a new windows10XCustomSubjectAlternativeName and sets the default values.
+        /// Instantiates a new Windows10XCustomSubjectAlternativeName and sets the default values.
         /// </summary>
         public Windows10XCustomSubjectAlternativeName() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

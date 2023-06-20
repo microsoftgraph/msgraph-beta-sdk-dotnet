@@ -1,0 +1,38 @@
+using System.Runtime.Serialization;
+using System;
+namespace Microsoft.Graph.Beta.Models.Networkaccess {
+    public enum DeviceVendor {
+        [EnumMember(Value = "barracudaNetworks")]
+        BarracudaNetworks,
+        [EnumMember(Value = "checkPoint")]
+        CheckPoint,
+        [EnumMember(Value = "ciscoMeraki")]
+        CiscoMeraki,
+        [EnumMember(Value = "citrix")]
+        Citrix,
+        [EnumMember(Value = "fortinet")]
+        Fortinet,
+        [EnumMember(Value = "hpeAruba")]
+        HpeAruba,
+        [EnumMember(Value = "netFoundry")]
+        NetFoundry,
+        [EnumMember(Value = "nuage")]
+        Nuage,
+        [EnumMember(Value = "openSystems")]
+        OpenSystems,
+        [EnumMember(Value = "paloAltoNetworks")]
+        PaloAltoNetworks,
+        [EnumMember(Value = "riverbedTechnology")]
+        RiverbedTechnology,
+        [EnumMember(Value = "silverPeak")]
+        SilverPeak,
+        [EnumMember(Value = "vmWareSdWan")]
+        VmWareSdWan,
+        [EnumMember(Value = "versa")]
+        Versa,
+        [EnumMember(Value = "other")]
+        Other,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
+    }
+}

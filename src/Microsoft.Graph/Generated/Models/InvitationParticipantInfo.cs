@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new invitationParticipantInfo and sets the default values.
+        /// Instantiates a new InvitationParticipantInfo and sets the default values.
         /// </summary>
         public InvitationParticipantInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -202,6 +202,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<MdmAuthority?>("mobileDeviceManagementAuthority"); }
             set { BackingStore?.Set("mobileDeviceManagementAuthority", value); }
         }
+        /// <summary>The last time a password sync request was received for the tenant.</summary>
+        public DateTimeOffset? OnPremisesLastPasswordSyncDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("onPremisesLastPasswordSyncDateTime"); }
+            set { BackingStore?.Set("onPremisesLastPasswordSyncDateTime", value); }
+        }
         /// <summary>The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? OnPremisesLastSyncDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("onPremisesLastSyncDateTime"); }
@@ -420,6 +425,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isMultipleDataLocationsForServicesEnabled", n => { IsMultipleDataLocationsForServicesEnabled = n.GetBoolValue(); } },
                 {"marketingNotificationEmails", n => { MarketingNotificationEmails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"mobileDeviceManagementAuthority", n => { MobileDeviceManagementAuthority = n.GetEnumValue<MdmAuthority>(); } },
+                {"onPremisesLastPasswordSyncDateTime", n => { OnPremisesLastPasswordSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 {"onPremisesLastSyncDateTime", n => { OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 {"onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
                 {"partnerInformation", n => { PartnerInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.PartnerInformation>(Microsoft.Graph.Beta.Models.PartnerInformation.CreateFromDiscriminatorValue); } },
@@ -460,6 +466,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isMultipleDataLocationsForServicesEnabled", IsMultipleDataLocationsForServicesEnabled);
             writer.WriteCollectionOfPrimitiveValues<string>("marketingNotificationEmails", MarketingNotificationEmails);
             writer.WriteEnumValue<MdmAuthority>("mobileDeviceManagementAuthority", MobileDeviceManagementAuthority);
+            writer.WriteDateTimeOffsetValue("onPremisesLastPasswordSyncDateTime", OnPremisesLastPasswordSyncDateTime);
             writer.WriteDateTimeOffsetValue("onPremisesLastSyncDateTime", OnPremisesLastSyncDateTime);
             writer.WriteBoolValue("onPremisesSyncEnabled", OnPremisesSyncEnabled);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PartnerInformation>("partnerInformation", PartnerInformation);

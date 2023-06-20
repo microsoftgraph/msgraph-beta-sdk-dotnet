@@ -238,7 +238,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new deviceHealthScriptPolicyState and sets the default values.
+        /// Instantiates a new DeviceHealthScriptPolicyState and sets the default values.
         /// </summary>
         public DeviceHealthScriptPolicyState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

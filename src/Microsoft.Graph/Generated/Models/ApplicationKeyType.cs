@@ -1,0 +1,12 @@
+using System.Runtime.Serialization;
+using System;
+namespace Microsoft.Graph.Beta.Models {
+    public enum ApplicationKeyType {
+        [EnumMember(Value = "clientSecret")]
+        ClientSecret,
+        [EnumMember(Value = "certificate")]
+        Certificate,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
+    }
+}

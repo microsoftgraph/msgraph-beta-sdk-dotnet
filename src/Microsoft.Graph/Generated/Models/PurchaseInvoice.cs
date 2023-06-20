@@ -332,7 +332,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new purchaseInvoice and sets the default values.
+        /// Instantiates a new PurchaseInvoice and sets the default values.
         /// </summary>
         public PurchaseInvoice() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

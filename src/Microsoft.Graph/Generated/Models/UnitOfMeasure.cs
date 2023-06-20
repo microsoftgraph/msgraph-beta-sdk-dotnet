@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new unitOfMeasure and sets the default values.
+        /// Instantiates a new UnitOfMeasure and sets the default values.
         /// </summary>
         public UnitOfMeasure() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

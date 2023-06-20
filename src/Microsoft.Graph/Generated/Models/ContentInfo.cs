@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new contentInfo and sets the default values.
+        /// Instantiates a new ContentInfo and sets the default values.
         /// </summary>
         public ContentInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

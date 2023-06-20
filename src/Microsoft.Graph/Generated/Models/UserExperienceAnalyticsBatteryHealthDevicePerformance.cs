@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The user experience analytics battery health device performance entity contains device level battery information.
+    /// </summary>
     public class UserExperienceAnalyticsBatteryHealthDevicePerformance : Entity, IParsable {
         /// <summary>Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647</summary>
         public int? BatteryAgeInDays {

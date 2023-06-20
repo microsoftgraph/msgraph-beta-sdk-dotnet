@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new embeddedSIMActivationCode and sets the default values.
+        /// Instantiates a new EmbeddedSIMActivationCode and sets the default values.
         /// </summary>
         public EmbeddedSIMActivationCode() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

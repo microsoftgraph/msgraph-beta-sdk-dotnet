@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new educationalActivityDetail and sets the default values.
+        /// Instantiates a new EducationalActivityDetail and sets the default values.
         /// </summary>
         public EducationalActivityDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new serviceInformation and sets the default values.
+        /// Instantiates a new ServiceInformation and sets the default values.
         /// </summary>
         public ServiceInformation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

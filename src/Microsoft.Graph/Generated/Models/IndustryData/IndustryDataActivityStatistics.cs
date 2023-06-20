@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new industryDataActivityStatistics and sets the default values.
+        /// Instantiates a new IndustryDataActivityStatistics and sets the default values.
         /// </summary>
         public IndustryDataActivityStatistics() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

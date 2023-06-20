@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
 #endif
         /// <summary>
-        /// Instantiates a new managementActionInfo and sets the default values.
+        /// Instantiates a new ManagementActionInfo and sets the default values.
         /// </summary>
         public ManagementActionInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

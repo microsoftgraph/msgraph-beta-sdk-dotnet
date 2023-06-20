@@ -11,6 +11,7 @@ using Microsoft.Graph.Beta.DirectoryNamespace.OnPremisesSynchronization;
 using Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles;
 using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations;
 using Microsoft.Graph.Beta.DirectoryNamespace.SharedEmailDomains;
+using Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -77,6 +78,10 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
         /// <summary>Provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.</summary>
         public SharedEmailDomainsRequestBuilder SharedEmailDomains { get =>
             new SharedEmailDomainsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.directory entity.</summary>
+        public SubscriptionsRequestBuilder Subscriptions { get =>
+            new SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new DirectoryRequestBuilder and sets the default values.
