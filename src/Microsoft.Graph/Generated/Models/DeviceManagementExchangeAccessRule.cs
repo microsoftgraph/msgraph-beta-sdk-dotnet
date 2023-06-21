@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new deviceManagementExchangeAccessRule and sets the default values.
+        /// Instantiates a new DeviceManagementExchangeAccessRule and sets the default values.
         /// </summary>
         public DeviceManagementExchangeAccessRule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

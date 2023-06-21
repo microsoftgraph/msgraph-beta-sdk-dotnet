@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("width", value); }
         }
         /// <summary>
-        /// Instantiates a new picture and sets the default values.
+        /// Instantiates a new Picture and sets the default values.
         /// </summary>
         public Picture() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

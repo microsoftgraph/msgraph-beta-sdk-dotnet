@@ -1,0 +1,20 @@
+using System.Runtime.Serialization;
+using System;
+namespace Microsoft.Graph.Beta.Models.Networkaccess {
+    public enum NetworkDestinationType {
+        [EnumMember(Value = "url")]
+        Url,
+        [EnumMember(Value = "fqdn")]
+        Fqdn,
+        [EnumMember(Value = "ipAddress")]
+        IpAddress,
+        [EnumMember(Value = "ipRange")]
+        IpRange,
+        [EnumMember(Value = "ipSubnet")]
+        IpSubnet,
+        [EnumMember(Value = "webCategory")]
+        WebCategory,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
+    }
+}

@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new taxArea and sets the default values.
+        /// Instantiates a new TaxArea and sets the default values.
         /// </summary>
         public TaxArea() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

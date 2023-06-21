@@ -1,0 +1,18 @@
+using System.Runtime.Serialization;
+using System;
+namespace Microsoft.Graph.Beta.Models.Networkaccess {
+    public enum DhGroup {
+        [EnumMember(Value = "dhGroup14")]
+        DhGroup14,
+        [EnumMember(Value = "dhGroup24")]
+        DhGroup24,
+        [EnumMember(Value = "dhGroup2048")]
+        DhGroup2048,
+        [EnumMember(Value = "ecp256")]
+        Ecp256,
+        [EnumMember(Value = "ecp384")]
+        Ecp384,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
+    }
+}

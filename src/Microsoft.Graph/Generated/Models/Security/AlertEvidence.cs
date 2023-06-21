@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("verdict", value); }
         }
         /// <summary>
-        /// Instantiates a new alertEvidence and sets the default values.
+        /// Instantiates a new AlertEvidence and sets the default values.
         /// </summary>
         public AlertEvidence() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

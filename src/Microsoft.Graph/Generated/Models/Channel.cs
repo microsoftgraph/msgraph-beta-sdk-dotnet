@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sharedWithTeams", value); }
         }
 #endif
-        /// <summary>The summary property</summary>
+        /// <summary>Contains summary information about the channel, including number of guests, members, owners, and an indicator for members from other tenants. The summary property will only be returned if it is specified in the $select clause of the Get channel method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ChannelSummary? Summary {

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The user experience analytics metric for work from anywhere report.
+    /// </summary>
     public class UserExperienceAnalyticsWorkFromAnywhereMetric : Entity, IParsable {
         /// <summary>The work from anywhere metric devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

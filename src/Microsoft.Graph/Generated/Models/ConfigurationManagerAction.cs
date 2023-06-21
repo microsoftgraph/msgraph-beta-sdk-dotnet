@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new configurationManagerAction and sets the default values.
+        /// Instantiates a new ConfigurationManagerAction and sets the default values.
         /// </summary>
         public ConfigurationManagerAction() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

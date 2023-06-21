@@ -58,8 +58,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read the properties and relationships of an azureDataLakeConnector object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-azuredatalakeconnector-get?view=graph-rest-1.0" />
+        /// Read the properties and relationships of an industryDataConnector object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-industrydataconnector-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an azureDataLakeConnector object.
+        /// Read the properties and relationships of an industryDataConnector object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of an azureDataLakeConnector object.
+        /// Read the properties and relationships of an industryDataConnector object.
         /// </summary>
         public class IndustryDataConnectorItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

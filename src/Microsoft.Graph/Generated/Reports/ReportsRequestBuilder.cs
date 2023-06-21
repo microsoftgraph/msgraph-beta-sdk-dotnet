@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Reports.AppCredentialSignInActivities;
 using Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary;
 using Microsoft.Graph.Beta.Reports.AuthenticationMethods;
 using Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails;
@@ -138,6 +139,7 @@ using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser;
 using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByPrinter;
 using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByUser;
 using Microsoft.Graph.Beta.Reports.Security;
+using Microsoft.Graph.Beta.Reports.ServicePrincipalSignInActivities;
 using Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -152,6 +154,10 @@ namespace Microsoft.Graph.Beta.Reports {
     /// Provides operations to manage the reportRoot singleton.
     /// </summary>
     public class ReportsRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the appCredentialSignInActivities property of the microsoft.graph.reportRoot entity.</summary>
+        public AppCredentialSignInActivitiesRequestBuilder AppCredentialSignInActivities { get =>
+            new AppCredentialSignInActivitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the applicationSignInDetailedSummary property of the microsoft.graph.reportRoot entity.</summary>
         public ApplicationSignInDetailedSummaryRequestBuilder ApplicationSignInDetailedSummary { get =>
             new ApplicationSignInDetailedSummaryRequestBuilder(PathParameters, RequestAdapter);
@@ -251,6 +257,10 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>Provides operations to manage the security property of the microsoft.graph.reportRoot entity.</summary>
         public SecurityRequestBuilder Security { get =>
             new SecurityRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the servicePrincipalSignInActivities property of the microsoft.graph.reportRoot entity.</summary>
+        public ServicePrincipalSignInActivitiesRequestBuilder ServicePrincipalSignInActivities { get =>
+            new ServicePrincipalSignInActivitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.</summary>
         public UserCredentialUsageDetailsRequestBuilder UserCredentialUsageDetails { get =>

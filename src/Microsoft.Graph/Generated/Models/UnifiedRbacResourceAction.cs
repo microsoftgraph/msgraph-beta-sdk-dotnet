@@ -66,6 +66,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isAuthenticationContextSettable"); }
             set { BackingStore?.Set("isAuthenticationContextSettable", value); }
         }
+        /// <summary>The isPrivileged property</summary>
+        public bool? IsPrivileged {
+            get { return BackingStore?.Get<bool?>("isPrivileged"); }
+            set { BackingStore?.Set("isPrivileged", value); }
+        }
         /// <summary>Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -126,6 +131,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"authenticationContextId", n => { AuthenticationContextId = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"isAuthenticationContextSettable", n => { IsAuthenticationContextSettable = n.GetBoolValue(); } },
+                {"isPrivileged", n => { IsPrivileged = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"resourceScope", n => { ResourceScope = n.GetObjectValue<UnifiedRbacResourceScope>(UnifiedRbacResourceScope.CreateFromDiscriminatorValue); } },
                 {"resourceScopeId", n => { ResourceScopeId = n.GetStringValue(); } },
@@ -143,6 +149,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("authenticationContextId", AuthenticationContextId);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("isAuthenticationContextSettable", IsAuthenticationContextSettable);
+            writer.WriteBoolValue("isPrivileged", IsPrivileged);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<UnifiedRbacResourceScope>("resourceScope", ResourceScope);
             writer.WriteStringValue("resourceScopeId", ResourceScopeId);

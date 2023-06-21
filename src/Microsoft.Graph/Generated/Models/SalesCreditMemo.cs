@@ -356,7 +356,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("totalTaxAmount", value); }
         }
         /// <summary>
-        /// Instantiates a new salesCreditMemo and sets the default values.
+        /// Instantiates a new SalesCreditMemo and sets the default values.
         /// </summary>
         public SalesCreditMemo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

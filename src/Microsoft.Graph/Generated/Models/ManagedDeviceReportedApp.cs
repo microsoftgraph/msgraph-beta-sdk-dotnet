@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new managedDeviceReportedApp and sets the default values.
+        /// Instantiates a new ManagedDeviceReportedApp and sets the default values.
         /// </summary>
         public ManagedDeviceReportedApp() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

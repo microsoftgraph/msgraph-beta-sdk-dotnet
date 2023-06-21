@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("valueType", value); }
         }
         /// <summary>
-        /// Instantiates a new setting and sets the default values.
+        /// Instantiates a new Setting and sets the default values.
         /// </summary>
         public Setting() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

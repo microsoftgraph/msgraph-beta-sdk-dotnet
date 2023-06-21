@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Imported windows autopilot devices.
+    /// </summary>
     public class ImportedWindowsAutopilotDeviceIdentity : Entity, IParsable {
         /// <summary>UPN of the user the device will be assigned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

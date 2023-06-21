@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new subjectRightsRequestStageDetail and sets the default values.
+        /// Instantiates a new SubjectRightsRequestStageDetail and sets the default values.
         /// </summary>
         public SubjectRightsRequestStageDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

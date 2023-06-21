@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new securityActionState and sets the default values.
+        /// Instantiates a new SecurityActionState and sets the default values.
         /// </summary>
         public SecurityActionState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

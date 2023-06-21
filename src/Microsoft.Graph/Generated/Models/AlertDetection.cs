@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new alertDetection and sets the default values.
+        /// Instantiates a new AlertDetection and sets the default values.
         /// </summary>
         public AlertDetection() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

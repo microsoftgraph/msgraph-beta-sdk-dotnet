@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new educationIdentityMatchingOptions and sets the default values.
+        /// Instantiates a new EducationIdentityMatchingOptions and sets the default values.
         /// </summary>
         public EducationIdentityMatchingOptions() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

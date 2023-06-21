@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("format", value); }
         }
 #endif
-        /// <summary>The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, or unknownFutureValue.</summary>
+        /// <summary>The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport noLicenseAvailableConnectivityFailureReport, or unknownFutureValue.</summary>
         public CloudPcReportName? ReportName {
             get { return BackingStore?.Get<CloudPcReportName?>("reportName"); }
             set { BackingStore?.Set("reportName", value); }

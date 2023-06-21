@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The user experience analytics metric history.
+    /// </summary>
     public class UserExperienceAnalyticsMetricHistory : Entity, IParsable {
         /// <summary>The user experience analytics device id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

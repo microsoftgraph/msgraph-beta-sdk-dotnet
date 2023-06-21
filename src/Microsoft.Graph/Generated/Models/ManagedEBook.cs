@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// An abstract class containing the base properties for Managed eBook.
+    /// </summary>
     public class ManagedEBook : Entity, IParsable {
         /// <summary>The list of assignments for this eBook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

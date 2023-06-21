@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The removeUnverifiedEmailClaim property</summary>
+        /// <summary>Removes the email claim from tokens sent to an application when the email address&apos;s domain cannot be verified.</summary>
         public bool? RemoveUnverifiedEmailClaim {
             get { return BackingStore?.Get<bool?>("removeUnverifiedEmailClaim"); }
             set { BackingStore?.Set("removeUnverifiedEmailClaim", value); }

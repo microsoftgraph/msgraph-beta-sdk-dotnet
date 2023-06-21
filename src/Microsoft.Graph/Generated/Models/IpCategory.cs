@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ipCategory and sets the default values.
+        /// Instantiates a new IpCategory and sets the default values.
         /// </summary>
         public IpCategory() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

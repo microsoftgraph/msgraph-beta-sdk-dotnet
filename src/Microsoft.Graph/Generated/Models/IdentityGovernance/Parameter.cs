@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("valueType", value); }
         }
         /// <summary>
-        /// Instantiates a new parameter and sets the default values.
+        /// Instantiates a new Parameter and sets the default values.
         /// </summary>
         public Parameter() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

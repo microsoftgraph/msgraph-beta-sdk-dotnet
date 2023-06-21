@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new tenantReference and sets the default values.
+        /// Instantiates a new TenantReference and sets the default values.
         /// </summary>
         public TenantReference() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

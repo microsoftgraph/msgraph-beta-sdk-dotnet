@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new itemCategory and sets the default values.
+        /// Instantiates a new ItemCategory and sets the default values.
         /// </summary>
         public ItemCategory() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("uniqueCount", value); }
         }
         /// <summary>
-        /// Instantiates a new contentClassification and sets the default values.
+        /// Instantiates a new ContentClassification and sets the default values.
         /// </summary>
         public ContentClassification() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

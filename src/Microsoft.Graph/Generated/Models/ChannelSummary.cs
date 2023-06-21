@@ -13,17 +13,17 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The guestsCount property</summary>
+        /// <summary>Count of guests in a channel.</summary>
         public int? GuestsCount {
             get { return BackingStore?.Get<int?>("guestsCount"); }
             set { BackingStore?.Set("guestsCount", value); }
         }
-        /// <summary>The hasMembersFromOtherTenants property</summary>
+        /// <summary>Indicates whether external members are included on the channel.</summary>
         public bool? HasMembersFromOtherTenants {
             get { return BackingStore?.Get<bool?>("hasMembersFromOtherTenants"); }
             set { BackingStore?.Set("hasMembersFromOtherTenants", value); }
         }
-        /// <summary>The membersCount property</summary>
+        /// <summary>Count of members in a channel.</summary>
         public int? MembersCount {
             get { return BackingStore?.Get<int?>("membersCount"); }
             set { BackingStore?.Set("membersCount", value); }
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The ownersCount property</summary>
+        /// <summary>Count of owners in a channel.</summary>
         public int? OwnersCount {
             get { return BackingStore?.Get<int?>("ownersCount"); }
             set { BackingStore?.Set("ownersCount", value); }

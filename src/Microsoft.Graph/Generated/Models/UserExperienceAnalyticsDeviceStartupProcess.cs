@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The user experience analytics device startup process details.
+    /// </summary>
     public class UserExperienceAnalyticsDeviceStartupProcess : Entity, IParsable {
         /// <summary>The user experience analytics device id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

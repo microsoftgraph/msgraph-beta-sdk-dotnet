@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("targetType", value); }
         }
         /// <summary>
-        /// Instantiates a new includeTarget and sets the default values.
+        /// Instantiates a new IncludeTarget and sets the default values.
         /// </summary>
         public IncludeTarget() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("cdnList", value); }
         }
 #endif
-        /// <summary>The contentCustomization property</summary>
+        /// <summary>Represents the various content options to be customized throughout the authentication flow for a tenant. NOTE: Supported by Azure Active Directory for customers tenants only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.ContentCustomization? ContentCustomization {

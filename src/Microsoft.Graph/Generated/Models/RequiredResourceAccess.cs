@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new requiredResourceAccess and sets the default values.
+        /// Instantiates a new RequiredResourceAccess and sets the default values.
         /// </summary>
         public RequiredResourceAccess() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new reputationCategory and sets the default values.
+        /// Instantiates a new ReputationCategory and sets the default values.
         /// </summary>
         public ReputationCategory() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

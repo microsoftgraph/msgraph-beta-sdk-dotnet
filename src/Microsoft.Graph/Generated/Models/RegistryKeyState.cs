@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("valueType", value); }
         }
         /// <summary>
-        /// Instantiates a new registryKeyState and sets the default values.
+        /// Instantiates a new RegistryKeyState and sets the default values.
         /// </summary>
         public RegistryKeyState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

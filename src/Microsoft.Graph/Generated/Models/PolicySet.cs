@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A class containing the properties used for PolicySet.
+    /// </summary>
     public class PolicySet : Entity, IParsable {
         /// <summary>Assignments of the PolicySet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

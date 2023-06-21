@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new classificationResult and sets the default values.
+        /// Instantiates a new ClassificationResult and sets the default values.
         /// </summary>
         public ClassificationResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -403,7 +403,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("validUntilDate", value); }
         }
         /// <summary>
-        /// Instantiates a new salesQuote and sets the default values.
+        /// Instantiates a new SalesQuote and sets the default values.
         /// </summary>
         public SalesQuote() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
