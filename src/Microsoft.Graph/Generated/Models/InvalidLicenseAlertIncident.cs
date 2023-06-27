@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class InvalidLicenseAlertIncident : UnifiedRoleManagementAlertIncident, IParsable {
-        /// <summary>The tenantLicenseStatus property</summary>
+        /// <summary>Status of the tenant&apos;s Azure AD Premium P2 license.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantLicenseStatus {

@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategorie
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The metric values for the user experience analytics category.
+        /// The metric values for the user experience analytics category. Read-only.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategorie
             return requestInfo;
         }
         /// <summary>
-        /// The metric values for the user experience analytics category.
+        /// The metric values for the user experience analytics category. Read-only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategorie
             }
         }
         /// <summary>
-        /// The metric values for the user experience analytics category.
+        /// The metric values for the user experience analytics category. Read-only.
         /// </summary>
         public class UserExperienceAnalyticsMetricItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

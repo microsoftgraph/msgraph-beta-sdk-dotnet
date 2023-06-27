@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class NoMfaOnRoleActivationAlertIncident : UnifiedRoleManagementAlertIncident, IParsable {
-        /// <summary>The roleDisplayName property</summary>
+        /// <summary>The name of the Azure AD directory role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RoleDisplayName {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleDisplayName", value); }
         }
 #endif
-        /// <summary>The roleTemplateId property</summary>
+        /// <summary>The globally unique identifier for a directory role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RoleTemplateId {

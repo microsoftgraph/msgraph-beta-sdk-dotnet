@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleManagementAlert : Entity, IParsable {
-        /// <summary>The alertConfiguration property</summary>
+        /// <summary>The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UnifiedRoleManagementAlertConfiguration? AlertConfiguration {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alertConfiguration", value); }
         }
 #endif
-        /// <summary>The alertDefinition property</summary>
+        /// <summary>Contains the description, impact, and measures to mitigate or prevent the security alert from being triggered in your tenant. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UnifiedRoleManagementAlertDefinition? AlertDefinition {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alertDefinition", value); }
         }
 #endif
-        /// <summary>The alertDefinitionId property</summary>
+        /// <summary>The identifier of an alert definition. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AlertDefinitionId {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alertDefinitionId", value); }
         }
 #endif
-        /// <summary>The alertIncidents property</summary>
+        /// <summary>Represents the incidents of this alert that have been triggered in Privileged Identity Management (PIM) for Azure AD roles in the tenant. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UnifiedRoleManagementAlertIncident>? AlertIncidents {
@@ -61,27 +61,27 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alertIncidents", value); }
         }
 #endif
-        /// <summary>The incidentCount property</summary>
+        /// <summary>The number of incidents triggered in the tenant and relating to the alert. Can only be a positive integer.</summary>
         public int? IncidentCount {
             get { return BackingStore?.Get<int?>("incidentCount"); }
             set { BackingStore?.Set("incidentCount", value); }
         }
-        /// <summary>The isActive property</summary>
+        /// <summary>false by default. true if the alert is active.</summary>
         public bool? IsActive {
             get { return BackingStore?.Get<bool?>("isActive"); }
             set { BackingStore?.Set("isActive", value); }
         }
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The date time when the alert configuration was updated or new incidents generated.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The lastScannedDateTime property</summary>
+        /// <summary>The date time when the tenant was last scanned for incidents that trigger this alert.</summary>
         public DateTimeOffset? LastScannedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastScannedDateTime"); }
             set { BackingStore?.Set("lastScannedDateTime", value); }
         }
-        /// <summary>The scopeId property</summary>
+        /// <summary>The identifier of the scope where the alert is related. / is the only supported one for the tenant. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScopeId {
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("scopeId", value); }
         }
 #endif
-        /// <summary>The scopeType property</summary>
+        /// <summary>The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScopeType {

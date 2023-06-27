@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new rolePermission and sets the default values.
+        /// Instantiates a new RolePermission and sets the default values.
         /// </summary>
         public RolePermission() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

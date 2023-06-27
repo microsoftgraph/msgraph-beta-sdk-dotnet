@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PayloadCoachmark and sets the default values.
+        /// Instantiates a new payloadCoachmark and sets the default values.
         /// </summary>
         public PayloadCoachmark() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

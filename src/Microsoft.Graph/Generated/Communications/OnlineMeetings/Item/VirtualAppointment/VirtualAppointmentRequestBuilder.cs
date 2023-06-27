@@ -28,10 +28,12 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.VirtualAppoint
         public VirtualAppointmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/onlineMeetings/{onlineMeeting%2Did}/virtualAppointment{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property virtualAppointment for communications
+        /// Delete a virtualAppointment object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/virtualappointment-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API. as of 2023-04/VirtualAppointment on 2023-04-04 and will be removed 2023-05-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<VirtualAppointmentRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -47,10 +49,12 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.VirtualAppoint
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get virtualAppointment from communications
+        /// Read the properties and relationships of a virtualAppointment object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/virtualappointment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API. as of 2023-04/VirtualAppointment on 2023-04-04 and will be removed 2023-05-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.VirtualAppointment?> GetAsync(Action<VirtualAppointmentRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -66,11 +70,13 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.VirtualAppoint
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.VirtualAppointment>(requestInfo, Microsoft.Graph.Beta.Models.VirtualAppointment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property virtualAppointment in communications
+        /// Create a new virtualAppointment object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/virtualappointment-put?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API. as of 2023-04/VirtualAppointment on 2023-04-04 and will be removed 2023-05-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.VirtualAppointment?> PatchAsync(Microsoft.Graph.Beta.Models.VirtualAppointment body, Action<VirtualAppointmentRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -87,9 +93,10 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.VirtualAppoint
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.VirtualAppointment>(requestInfo, Microsoft.Graph.Beta.Models.VirtualAppointment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property virtualAppointment for communications
+        /// Delete a virtualAppointment object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API. as of 2023-04/VirtualAppointment on 2023-04-04 and will be removed 2023-05-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<VirtualAppointmentRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
@@ -111,9 +118,10 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.VirtualAppoint
             return requestInfo;
         }
         /// <summary>
-        /// Get virtualAppointment from communications
+        /// Read the properties and relationships of a virtualAppointment object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API. as of 2023-04/VirtualAppointment on 2023-04-04 and will be removed 2023-05-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<VirtualAppointmentRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
@@ -137,10 +145,11 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.VirtualAppoint
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property virtualAppointment in communications
+        /// Create a new virtualAppointment object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API. as of 2023-04/VirtualAppointment on 2023-04-04 and will be removed 2023-05-31")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.VirtualAppointment body, Action<VirtualAppointmentRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
@@ -181,7 +190,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.VirtualAppoint
             }
         }
         /// <summary>
-        /// Get virtualAppointment from communications
+        /// Read the properties and relationships of a virtualAppointment object.
         /// </summary>
         public class VirtualAppointmentRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

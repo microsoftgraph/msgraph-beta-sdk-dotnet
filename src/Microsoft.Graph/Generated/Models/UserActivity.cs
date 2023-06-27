@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class UserActivity : Entity, IParsable {
-        /// <summary>The activationUrl property</summary>
+        /// <summary>Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActivationUrl {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("activationUrl", value); }
         }
 #endif
-        /// <summary>The activitySourceHost property</summary>
+        /// <summary>Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActivitySourceHost {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("activitySourceHost", value); }
         }
 #endif
-        /// <summary>The appActivityId property</summary>
+        /// <summary>Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppActivityId {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appActivityId", value); }
         }
 #endif
-        /// <summary>The appDisplayName property</summary>
+        /// <summary>Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppDisplayName {
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appDisplayName", value); }
         }
 #endif
-        /// <summary>The contentInfo property</summary>
+        /// <summary>Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Json? ContentInfo {
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contentInfo", value); }
         }
 #endif
-        /// <summary>The contentUrl property</summary>
+        /// <summary>Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentUrl {
@@ -89,17 +89,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contentUrl", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Set by the server. DateTime in UTC when the object was created on the server.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The expirationDateTime property</summary>
+        /// <summary>Set by the server. DateTime in UTC when the object expired on the server.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>The fallbackUrl property</summary>
+        /// <summary>Optional. URL used to launch the activity in a web-based app, if available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FallbackUrl {
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("fallbackUrl", value); }
         }
 #endif
-        /// <summary>The historyItems property</summary>
+        /// <summary>Optional. NavigationProperty/Containment; navigation property to the activity&apos;s historyItems.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ActivityHistoryItem>? HistoryItems {
@@ -127,17 +127,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("historyItems", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>Set by the server. DateTime in UTC when the object was modified on the server.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The status property</summary>
+        /// <summary>Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.</summary>
         public Microsoft.Graph.Beta.Models.Status? Status {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Status?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The userTimezone property</summary>
+        /// <summary>Optional. The timezone in which the user&apos;s device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserTimezone {

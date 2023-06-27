@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Whether this is the default Content Type</summary>
+        /// <summary>Indicates whether this is the default content type.</summary>
         public bool? Default {
             get { return BackingStore?.Get<bool?>("default"); }
             set { BackingStore?.Set("default", value); }
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Specifies the position in which the Content Type appears in the selection UI.</summary>
+        /// <summary>Specifies the position in which the content type appears in the selection UI.</summary>
         public int? Position {
             get { return BackingStore?.Get<int?>("position"); }
             set { BackingStore?.Set("position", value); }

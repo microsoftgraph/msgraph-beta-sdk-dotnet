@@ -20,26 +20,32 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item {
     /// </summary>
     public class SubjectRightsRequestItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.</summary>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
         public ApproversRequestBuilder Approvers { get =>
             new ApproversRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.</summary>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
         public CollaboratorsRequestBuilder Collaborators { get =>
             new CollaboratorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getFinalAttachment method.</summary>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
         public GetFinalAttachmentRequestBuilder GetFinalAttachment { get =>
             new GetFinalAttachmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getFinalReport method.</summary>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
         public GetFinalReportRequestBuilder GetFinalReport { get =>
             new GetFinalReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.</summary>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
         public NotesRequestBuilder Notes { get =>
             new NotesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the team property of the microsoft.graph.subjectRightsRequest entity.</summary>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
         public TeamRequestBuilder Team { get =>
             new TeamRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -62,6 +68,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<SubjectRightsRequestItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -82,6 +89,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<SubjectRightsRequest?> GetAsync(Action<SubjectRightsRequestItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -103,6 +111,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item {
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<SubjectRightsRequest?> PatchAsync(SubjectRightsRequest body, Action<SubjectRightsRequestItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -122,6 +131,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item {
         /// Delete navigation property subjectRightsRequests for privacy
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<SubjectRightsRequestItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
@@ -146,6 +156,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item {
         /// Read the properties and relationships of a subjectRightsRequest object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<SubjectRightsRequestItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
@@ -173,6 +184,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item {
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(SubjectRightsRequest body, Action<SubjectRightsRequestItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {

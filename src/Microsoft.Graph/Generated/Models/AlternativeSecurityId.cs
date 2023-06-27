@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>For internal use only</summary>
+        /// <summary>For internal use only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityProvider {
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("identityProvider", value); }
         }
 #endif
-        /// <summary>For internal use only</summary>
+        /// <summary>For internal use only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Key {
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>For internal use only</summary>
+        /// <summary>For internal use only.</summary>
         public int? Type {
             get { return BackingStore?.Get<int?>("type"); }
             set { BackingStore?.Set("type", value); }

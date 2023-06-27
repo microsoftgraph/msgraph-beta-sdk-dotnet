@@ -131,6 +131,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("passiveDnsRecords", value); }
         }
 #endif
+        /// <summary>Retrieve details about the microsoft.graph.security.subdomain.Note: List retrieval is not yet supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Subdomain>? Subdomains {
+            get { return BackingStore?.Get<List<Subdomain>?>("subdomains"); }
+            set { BackingStore?.Set("subdomains", value); }
+        }
+#nullable restore
+#else
+        public List<Subdomain> Subdomains {
+            get { return BackingStore?.Get<List<Subdomain>>("subdomains"); }
+            set { BackingStore?.Set("subdomains", value); }
+        }
+#endif
         /// <summary>Retrieve details about microsoft.graph.security.vulnerabilities.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -167,6 +181,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"intelligenceProfileIndicators", n => { IntelligenceProfileIndicators = n.GetCollectionOfObjectValues<IntelligenceProfileIndicator>(IntelligenceProfileIndicator.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"intelProfiles", n => { IntelProfiles = n.GetCollectionOfObjectValues<IntelligenceProfile>(IntelligenceProfile.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"passiveDnsRecords", n => { PassiveDnsRecords = n.GetCollectionOfObjectValues<PassiveDnsRecord>(PassiveDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"subdomains", n => { Subdomains = n.GetCollectionOfObjectValues<Subdomain>(Subdomain.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfObjectValues<Vulnerability>(Vulnerability.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -186,6 +201,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             writer.WriteCollectionOfObjectValues<IntelligenceProfileIndicator>("intelligenceProfileIndicators", IntelligenceProfileIndicators);
             writer.WriteCollectionOfObjectValues<IntelligenceProfile>("intelProfiles", IntelProfiles);
             writer.WriteCollectionOfObjectValues<PassiveDnsRecord>("passiveDnsRecords", PassiveDnsRecords);
+            writer.WriteCollectionOfObjectValues<Subdomain>("subdomains", Subdomains);
             writer.WriteCollectionOfObjectValues<Vulnerability>("vulnerabilities", Vulnerabilities);
         }
     }

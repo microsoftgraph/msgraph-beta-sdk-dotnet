@@ -8,7 +8,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// The user experience analytics metric history.
     /// </summary>
     public class UserExperienceAnalyticsMetricHistory : Entity, IParsable {
-        /// <summary>The user experience analytics device id.</summary>
+        /// <summary>The Intune device id of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceId {
@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceId", value); }
         }
 #endif
-        /// <summary>The user experience analytics metric date time.</summary>
+        /// <summary>The metric date time. The value cannot be modified and is automatically populated when the metric is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Returned by default.</summary>
         public DateTimeOffset? MetricDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("metricDateTime"); }
             set { BackingStore?.Set("metricDateTime", value); }

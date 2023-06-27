@@ -8,17 +8,17 @@ namespace Microsoft.Graph.Beta.Models {
     /// The user experience analytics device for work from anywhere report.
     /// </summary>
     public class UserExperienceAnalyticsWorkFromAnywhereDevice : Entity, IParsable {
-        /// <summary>The user experience analytics work from anywhere intune device&apos;s autopilotProfileAssigned.</summary>
+        /// <summary>When TRUE, indicates the intune device&apos;s autopilot profile is assigned. When FALSE, indicates it&apos;s not Assigned. Supports: $select, $OrderBy. Read-only.</summary>
         public bool? AutoPilotProfileAssigned {
             get { return BackingStore?.Get<bool?>("autoPilotProfileAssigned"); }
             set { BackingStore?.Set("autoPilotProfileAssigned", value); }
         }
-        /// <summary>The user experience work from anywhere intune device&apos;s autopilotRegistered.</summary>
+        /// <summary>When TRUE, indicates the intune device&apos;s autopilot is registered. When FALSE, indicates it&apos;s not registered. Supports: $select, $OrderBy. Read-only.</summary>
         public bool? AutoPilotRegistered {
             get { return BackingStore?.Get<bool?>("autoPilotRegistered"); }
             set { BackingStore?.Set("autoPilotRegistered", value); }
         }
-        /// <summary>The user experience work from anywhere azure Ad device Id.</summary>
+        /// <summary>The Azure Active Directory (Azure AD) device Id. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AzureAdDeviceId {
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("azureAdDeviceId", value); }
         }
 #endif
-        /// <summary>The user experience work from anywhere device&apos;s azure Ad joinType.</summary>
+        /// <summary>The work from anywhere device&apos;s Azure Active Directory (Azure AD) join type. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AzureAdJoinType {
@@ -46,32 +46,32 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("azureAdJoinType", value); }
         }
 #endif
-        /// <summary>The user experience work from anywhere device&apos;s azureAdRegistered.</summary>
+        /// <summary>When TRUE, indicates the device&apos;s Azure Active Directory (Azure AD) is registered. When False, indicates it&apos;s not registered. Supports: $select, $OrderBy. Read-only.</summary>
         public bool? AzureAdRegistered {
             get { return BackingStore?.Get<bool?>("azureAdRegistered"); }
             set { BackingStore?.Set("azureAdRegistered", value); }
         }
-        /// <summary>The user experience work from anywhere per device cloud identity score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>Indicates per device cloud identity score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudIdentityScore {
             get { return BackingStore?.Get<double?>("cloudIdentityScore"); }
             set { BackingStore?.Set("cloudIdentityScore", value); }
         }
-        /// <summary>The user experience work from anywhere per device cloud management score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>Indicates per device cloud management score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudManagementScore {
             get { return BackingStore?.Get<double?>("cloudManagementScore"); }
             set { BackingStore?.Set("cloudManagementScore", value); }
         }
-        /// <summary>The user experience work from anywhere per device cloud provisioning score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>Indicates per device cloud provisioning score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudProvisioningScore {
             get { return BackingStore?.Get<double?>("cloudProvisioningScore"); }
             set { BackingStore?.Set("cloudProvisioningScore", value); }
         }
-        /// <summary>The user experience work from anywhere device&apos;s compliancePolicySetToIntune.</summary>
+        /// <summary>When TRUE, indicates the device&apos;s compliance policy is set to intune. When FALSE, indicates it&apos;s not set to intune. Supports: $select, $OrderBy. Read-only.</summary>
         public bool? CompliancePolicySetToIntune {
             get { return BackingStore?.Get<bool?>("compliancePolicySetToIntune"); }
             set { BackingStore?.Set("compliancePolicySetToIntune", value); }
         }
-        /// <summary>The user experience work from anywhere device Id.</summary>
+        /// <summary>The Intune device id of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceId {
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceId", value); }
         }
 #endif
-        /// <summary>The work from anywhere device&apos;s name.</summary>
+        /// <summary>The name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceName {
@@ -104,12 +104,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
-        /// <summary>The user experience work from anywhere device&apos;s Cloud Management Gateway for Configuration Manager is enabled.</summary>
+        /// <summary>When TRUE, indicates the device&apos;s Cloud Management Gateway for Configuration Manager is enabled. When FALSE, indicates it&apos;s not enabled. Supports: $select, $OrderBy. Read-only.</summary>
         public bool? IsCloudManagedGatewayEnabled {
             get { return BackingStore?.Get<bool?>("isCloudManagedGatewayEnabled"); }
             set { BackingStore?.Set("isCloudManagedGatewayEnabled", value); }
         }
-        /// <summary>The user experience work from anywhere management agent of the device.</summary>
+        /// <summary>The management agent of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ManagedBy {
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managedBy", value); }
         }
 #endif
-        /// <summary>The user experience work from anywhere device&apos;s manufacturer.</summary>
+        /// <summary>The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Manufacturer {
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("manufacturer", value); }
         }
 #endif
-        /// <summary>The user experience work from anywhere device&apos;s model.</summary>
+        /// <summary>The model name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Model {
@@ -151,12 +151,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("model", value); }
         }
 #endif
-        /// <summary>The user experience work from anywhere device, Is OS check failed for device to upgrade to the latest version of windows.</summary>
+        /// <summary>When TRUE, indicates OS check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.</summary>
         public bool? OsCheckFailed {
             get { return BackingStore?.Get<bool?>("osCheckFailed"); }
             set { BackingStore?.Set("osCheckFailed", value); }
         }
-        /// <summary>The user experience work from anywhere device&apos;s OS Description.</summary>
+        /// <summary>The OS description of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OsDescription {
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("osDescription", value); }
         }
 #endif
-        /// <summary>The user experience work from anywhere device&apos;s OS Version.</summary>
+        /// <summary>The OS version of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OsVersion {
@@ -184,12 +184,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("osVersion", value); }
         }
 #endif
-        /// <summary>The user experience work from anywhere device&apos;s otherWorkloadsSetToIntune.</summary>
+        /// <summary>When TRUE, indicates the device&apos;s other workloads is set to intune. When FALSE, indicates it&apos;s not set to intune. Supports: $select, $OrderBy. Read-only.</summary>
         public bool? OtherWorkloadsSetToIntune {
             get { return BackingStore?.Get<bool?>("otherWorkloadsSetToIntune"); }
             set { BackingStore?.Set("otherWorkloadsSetToIntune", value); }
         }
-        /// <summary>The user experience work from anywhere device&apos;s ownership.</summary>
+        /// <summary>Ownership of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ownership {
@@ -203,37 +203,37 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ownership", value); }
         }
 #endif
-        /// <summary>The user experience work from anywhere device, Is processor hardware 64-bit architecture check failed for device to upgrade to the latest version of windows.</summary>
+        /// <summary>When TRUE, indicates processor hardware 64-bit architecture check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.</summary>
         public bool? Processor64BitCheckFailed {
             get { return BackingStore?.Get<bool?>("processor64BitCheckFailed"); }
             set { BackingStore?.Set("processor64BitCheckFailed", value); }
         }
-        /// <summary>The user experience work from anywhere device, Is processor hardware core count check failed for device to upgrade to the latest version of windows.</summary>
+        /// <summary>When TRUE, indicates processor hardware core count check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.</summary>
         public bool? ProcessorCoreCountCheckFailed {
             get { return BackingStore?.Get<bool?>("processorCoreCountCheckFailed"); }
             set { BackingStore?.Set("processorCoreCountCheckFailed", value); }
         }
-        /// <summary>The user experience work from anywhere device, Is processor hardware family check failed for device to upgrade to the latest version of windows.</summary>
+        /// <summary>When TRUE, indicates processor hardware family check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.</summary>
         public bool? ProcessorFamilyCheckFailed {
             get { return BackingStore?.Get<bool?>("processorFamilyCheckFailed"); }
             set { BackingStore?.Set("processorFamilyCheckFailed", value); }
         }
-        /// <summary>The user experience work from anywhere device, Is processor hardware speed check failed for device to upgrade to the latest version of windows.</summary>
+        /// <summary>When TRUE, indicates processor hardware speed check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.</summary>
         public bool? ProcessorSpeedCheckFailed {
             get { return BackingStore?.Get<bool?>("processorSpeedCheckFailed"); }
             set { BackingStore?.Set("processorSpeedCheckFailed", value); }
         }
-        /// <summary>Is the user experience analytics work from anywhere device RAM hardware check failed for device to upgrade to the latest version of windows</summary>
+        /// <summary>When TRUE, indicates RAM hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.</summary>
         public bool? RamCheckFailed {
             get { return BackingStore?.Get<bool?>("ramCheckFailed"); }
             set { BackingStore?.Set("ramCheckFailed", value); }
         }
-        /// <summary>The user experience work from anywhere device, Is secure boot hardware check failed for device to upgrade to the latest version of windows.</summary>
+        /// <summary>When TRUE, indicates secure boot hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.</summary>
         public bool? SecureBootCheckFailed {
             get { return BackingStore?.Get<bool?>("secureBootCheckFailed"); }
             set { BackingStore?.Set("secureBootCheckFailed", value); }
         }
-        /// <summary>The user experience work from anywhere device&apos;s serial number.</summary>
+        /// <summary>The serial number of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SerialNumber {
@@ -247,17 +247,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("serialNumber", value); }
         }
 #endif
-        /// <summary>The user experience work from anywhere device, Is storage hardware check failed for device to upgrade to the latest version of windows.</summary>
+        /// <summary>When TRUE, indicates storage hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.</summary>
         public bool? StorageCheckFailed {
             get { return BackingStore?.Get<bool?>("storageCheckFailed"); }
             set { BackingStore?.Set("storageCheckFailed", value); }
         }
-        /// <summary>The user experience work from anywhere device&apos;s tenantAttached.</summary>
+        /// <summary>When TRUE, indicates the device is Tenant Attached. When FALSE, indicates it&apos;s not Tenant Attached. Supports: $select, $OrderBy. Read-only.</summary>
         public bool? TenantAttached {
             get { return BackingStore?.Get<bool?>("tenantAttached"); }
             set { BackingStore?.Set("tenantAttached", value); }
         }
-        /// <summary>The user experience work from anywhere device, Is Trusted Platform Module (TPM) hardware check failed for device to the latest version of upgrade to windows.</summary>
+        /// <summary>When TRUE, indicates Trusted Platform Module (TPM) hardware check failed for device to the latest version of upgrade to windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.</summary>
         public bool? TpmCheckFailed {
             get { return BackingStore?.Get<bool?>("tpmCheckFailed"); }
             set { BackingStore?.Set("tpmCheckFailed", value); }
@@ -267,12 +267,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<OperatingSystemUpgradeEligibility?>("upgradeEligibility"); }
             set { BackingStore?.Set("upgradeEligibility", value); }
         }
-        /// <summary>The user experience work from anywhere per device windows score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>Indicates per device windows score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? WindowsScore {
             get { return BackingStore?.Get<double?>("windowsScore"); }
             set { BackingStore?.Set("windowsScore", value); }
         }
-        /// <summary>The user experience work from anywhere per device overall score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>Indicates work from anywhere per device overall score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? WorkFromAnywhereScore {
             get { return BackingStore?.Get<double?>("workFromAnywhereScore"); }
             set { BackingStore?.Set("workFromAnywhereScore", value); }

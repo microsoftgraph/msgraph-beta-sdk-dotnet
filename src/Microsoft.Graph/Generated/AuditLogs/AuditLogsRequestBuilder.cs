@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.AuditLogs.CustomSecurityAttributeAudits;
 using Microsoft.Graph.Beta.AuditLogs.DirectoryAudits;
 using Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning;
 using Microsoft.Graph.Beta.AuditLogs.Provisioning;
@@ -17,6 +18,10 @@ namespace Microsoft.Graph.Beta.AuditLogs {
     /// Provides operations to manage the auditLogRoot singleton.
     /// </summary>
     public class AuditLogsRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the customSecurityAttributeAudits property of the microsoft.graph.auditLogRoot entity.</summary>
+        public CustomSecurityAttributeAuditsRequestBuilder CustomSecurityAttributeAudits { get =>
+            new CustomSecurityAttributeAuditsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the directoryAudits property of the microsoft.graph.auditLogRoot entity.</summary>
         public DirectoryAuditsRequestBuilder DirectoryAudits { get =>
             new DirectoryAuditsRequestBuilder(PathParameters, RequestAdapter);

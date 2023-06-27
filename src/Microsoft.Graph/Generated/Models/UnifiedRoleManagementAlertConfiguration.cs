@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleManagementAlertConfiguration : Entity, IParsable {
-        /// <summary>The alertDefinition property</summary>
+        /// <summary>The definition of the alert that contains its description, impact, and measures to mitigate or prevent it. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UnifiedRoleManagementAlertDefinition? AlertDefinition {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alertDefinition", value); }
         }
 #endif
-        /// <summary>The alertDefinitionId property</summary>
+        /// <summary>The identifier of an alert definition. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AlertDefinitionId {
@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alertDefinitionId", value); }
         }
 #endif
-        /// <summary>The isEnabled property</summary>
+        /// <summary>true if the alert is enabled. Setting it to false disables PIM scanning the tenant to identify instances that trigger the alert.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
-        /// <summary>The scopeId property</summary>
+        /// <summary>The identifier of the scope to which the alert is related. Only / is supported to represent the tenant scope. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScopeId {
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("scopeId", value); }
         }
 #endif
-        /// <summary>The scopeType property</summary>
+        /// <summary>The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScopeType {

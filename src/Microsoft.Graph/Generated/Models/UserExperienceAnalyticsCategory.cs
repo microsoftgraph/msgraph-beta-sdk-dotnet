@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsCategory : Entity, IParsable {
-        /// <summary>The insights for the user experience analytics category.</summary>
+        /// <summary>The insights for the category. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UserExperienceAnalyticsInsight>? Insights {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("insights", value); }
         }
 #endif
-        /// <summary>The metric values for the user experience analytics category.</summary>
+        /// <summary>The metric values for the user experience analytics category. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UserExperienceAnalyticsMetric>? MetricValues {

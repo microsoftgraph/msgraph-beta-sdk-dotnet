@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item.Members.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Use this API to add a member (user, group, or device) to an administrative unit or to create a new group within an administrative unit. All group types can be created within an administrative unit. **Note:** Currently, it&apos;s only possible to add one member at a time to an administrative unit.`
+        /// Create new navigation property ref to members for administrativeUnits
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item.Members.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to add a member (user, group, or device) to an administrative unit or to create a new group within an administrative unit. All group types can be created within an administrative unit. **Note:** Currently, it&apos;s only possible to add one member at a time to an administrative unit.`
+        /// Create new navigation property ref to members for administrativeUnits
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

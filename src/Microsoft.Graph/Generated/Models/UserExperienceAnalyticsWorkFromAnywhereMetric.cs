@@ -8,7 +8,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// The user experience analytics metric for work from anywhere report.
     /// </summary>
     public class UserExperienceAnalyticsWorkFromAnywhereMetric : Entity, IParsable {
-        /// <summary>The work from anywhere metric devices.</summary>
+        /// <summary>The work from anywhere metric devices. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UserExperienceAnalyticsWorkFromAnywhereDevice>? MetricDevices {

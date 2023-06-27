@@ -340,7 +340,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isFavorite"); }
             set { BackingStore?.Set("isFavorite", value); }
         }
-        /// <summary>Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.</summary>
+        /// <summary>Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a group that&apos;s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.</summary>
         public bool? IsManagementRestricted {
             get { return BackingStore?.Get<bool?>("isManagementRestricted"); }
             set { BackingStore?.Set("isManagementRestricted", value); }

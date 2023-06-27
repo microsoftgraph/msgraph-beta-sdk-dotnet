@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidFotaDeploymentAssignment and sets the default values.
+        /// Instantiates a new androidFotaDeploymentAssignment and sets the default values.
         /// </summary>
         public AndroidFotaDeploymentAssignment() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

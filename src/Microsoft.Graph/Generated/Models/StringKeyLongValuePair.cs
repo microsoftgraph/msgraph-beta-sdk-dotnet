@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new stringKeyLongValuePair and sets the default values.
+        /// Instantiates a new StringKeyLongValuePair and sets the default values.
         /// </summary>
         public StringKeyLongValuePair() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Cookies;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDns;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDnsReverse;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Reputation;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Subdomains;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Trackers;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -38,6 +39,10 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item {
         /// <summary>Provides operations to manage the reputation property of the microsoft.graph.security.host entity.</summary>
         public ReputationRequestBuilder Reputation { get =>
             new ReputationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the subdomains property of the microsoft.graph.security.host entity.</summary>
+        public SubdomainsRequestBuilder Subdomains { get =>
+            new SubdomainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the trackers property of the microsoft.graph.security.host entity.</summary>
         public TrackersRequestBuilder Trackers { get =>

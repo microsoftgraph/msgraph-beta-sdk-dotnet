@@ -217,7 +217,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isManaged"); }
             set { BackingStore?.Set("isManaged", value); }
         }
-        /// <summary>true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.</summary>
+        /// <summary>true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that&apos;s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.</summary>
         public bool? IsManagementRestricted {
             get { return BackingStore?.Get<bool?>("isManagementRestricted"); }
             set { BackingStore?.Set("isManagementRestricted", value); }
@@ -509,7 +509,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new device and sets the default values.
+        /// Instantiates a new Device and sets the default values.
         /// </summary>
         public Device() : base() {
             OdataType = "#microsoft.graph.device";

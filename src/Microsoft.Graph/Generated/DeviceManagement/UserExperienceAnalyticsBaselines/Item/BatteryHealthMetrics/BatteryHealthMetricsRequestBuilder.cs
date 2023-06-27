@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines
         public BatteryHealthMetricsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsBaselines/{userExperienceAnalyticsBaseline%2Did}/batteryHealthMetrics{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The user experience analytics battery health metrics.
+        /// The scores and insights for the battery health metrics.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines
             return await RequestAdapter.SendAsync<UserExperienceAnalyticsCategory>(requestInfo, UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The user experience analytics battery health metrics.
+        /// The scores and insights for the battery health metrics.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines
             return requestInfo;
         }
         /// <summary>
-        /// The user experience analytics battery health metrics.
+        /// The scores and insights for the battery health metrics.
         /// </summary>
         public class BatteryHealthMetricsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

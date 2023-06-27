@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new UserAccount and sets the default values.
+        /// Instantiates a new userAccount and sets the default values.
         /// </summary>
         public UserAccount() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

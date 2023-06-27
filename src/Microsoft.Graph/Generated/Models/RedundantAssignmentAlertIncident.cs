@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class RedundantAssignmentAlertIncident : UnifiedRoleManagementAlertIncident, IParsable {
-        /// <summary>The assigneeDisplayName property</summary>
+        /// <summary>Display name of the subject that the incident applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssigneeDisplayName {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assigneeDisplayName", value); }
         }
 #endif
-        /// <summary>The assigneeId property</summary>
+        /// <summary>The identifier of the subject that the incident applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssigneeId {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assigneeId", value); }
         }
 #endif
-        /// <summary>The assigneeUserPrincipalName property</summary>
+        /// <summary>User principal name of the subject that the incident applies to. Applies to user principals only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssigneeUserPrincipalName {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assigneeUserPrincipalName", value); }
         }
 #endif
-        /// <summary>The lastActivationDateTime property</summary>
+        /// <summary>Date and time of the last activation of the eligible assignment.</summary>
         public DateTimeOffset? LastActivationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActivationDateTime"); }
             set { BackingStore?.Set("lastActivationDateTime", value); }
         }
-        /// <summary>The roleDefinitionId property</summary>
+        /// <summary>The identifier for the directory role definition that&apos;s in scope of this incident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RoleDefinitionId {
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleDefinitionId", value); }
         }
 #endif
-        /// <summary>The roleDisplayName property</summary>
+        /// <summary>The display name for the directory role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RoleDisplayName {
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleDisplayName", value); }
         }
 #endif
-        /// <summary>The roleTemplateId property</summary>
+        /// <summary>The globally unique identifier for the directory role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RoleTemplateId {

@@ -8,7 +8,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// The user experience analytics device performance entity contains device performance details.
     /// </summary>
     public class UserExperienceAnalyticsAppHealthDevicePerformanceDetails : Entity, IParsable {
-        /// <summary>The friendly name of the application for which the event occurred.</summary>
+        /// <summary>The friendly name of the application for which the event occurred. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppDisplayName {
@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appDisplayName", value); }
         }
 #endif
-        /// <summary>The publisher of the application.</summary>
+        /// <summary>The publisher of the application. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppPublisher {
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appPublisher", value); }
         }
 #endif
-        /// <summary>The version of the application.</summary>
+        /// <summary>The version of the application. Possible values are: 1.0.0.1, 75.65.23.9. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppVersion {
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appVersion", value); }
         }
 #endif
-        /// <summary>The name of the device.</summary>
+        /// <summary>The name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceDisplayName {
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
 #endif
-        /// <summary>The id of the device.</summary>
+        /// <summary>The Intune device id of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceId {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceId", value); }
         }
 #endif
-        /// <summary>The time the event occurred.</summary>
+        /// <summary>The time the event occurred. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: &apos;2022-01-01T00:00:00Z&apos;. Returned by default. Read-only.</summary>
         public DateTimeOffset? EventDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
-        /// <summary>The type of the event.</summary>
+        /// <summary>The type of the event. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventType {

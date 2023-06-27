@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.AlertConf
         public AlertConfigurationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts/alertConfigurations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get alertConfigurations from identityGovernance
+        /// Get a list of the alert configurations. The alert configurations are a collection of following types that are derived from the unifiedRoleManagementAlertConfiguration object:
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/rolemanagementalert-list-alertconfigurations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.AlertConf
             return await RequestAdapter.SendAsync<UnifiedRoleManagementAlertConfiguration>(requestInfo, UnifiedRoleManagementAlertConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get alertConfigurations from identityGovernance
+        /// Get a list of the alert configurations. The alert configurations are a collection of following types that are derived from the unifiedRoleManagementAlertConfiguration object:
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.AlertConf
             return requestInfo;
         }
         /// <summary>
-        /// Get alertConfigurations from identityGovernance
+        /// Get a list of the alert configurations. The alert configurations are a collection of following types that are derived from the unifiedRoleManagementAlertConfiguration object:
         /// </summary>
         public class AlertConfigurationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

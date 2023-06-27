@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class StaleSignInAlertConfiguration : UnifiedRoleManagementAlertConfiguration, IParsable {
-        /// <summary>The duration property</summary>
+        /// <summary>The number of days to look back from current timestamp within which the account has not signed in.</summary>
         public TimeSpan? Duration {
             get { return BackingStore?.Get<TimeSpan?>("duration"); }
             set { BackingStore?.Set("duration", value); }

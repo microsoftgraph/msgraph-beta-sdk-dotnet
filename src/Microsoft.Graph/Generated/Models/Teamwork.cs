@@ -5,6 +5,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Teamwork : Entity, IParsable {
+        /// <summary>The deletedChats property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<DeletedChat>? DeletedChats {
+            get { return BackingStore?.Get<List<DeletedChat>?>("deletedChats"); }
+            set { BackingStore?.Set("deletedChats", value); }
+        }
+#nullable restore
+#else
+        public List<DeletedChat> DeletedChats {
+            get { return BackingStore?.Get<List<DeletedChat>>("deletedChats"); }
+            set { BackingStore?.Set("deletedChats", value); }
+        }
+#endif
         /// <summary>A collection of deleted teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"deletedChats", n => { DeletedChats = n.GetCollectionOfObjectValues<DeletedChat>(DeletedChat.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deletedTeams", n => { DeletedTeams = n.GetCollectionOfObjectValues<DeletedTeam>(DeletedTeam.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"devices", n => { Devices = n.GetCollectionOfObjectValues<TeamworkDevice>(TeamworkDevice.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"teamsAppSettings", n => { TeamsAppSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamsAppSettings>(Microsoft.Graph.Beta.Models.TeamsAppSettings.CreateFromDiscriminatorValue); } },
@@ -102,6 +117,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<DeletedChat>("deletedChats", DeletedChats);
             writer.WriteCollectionOfObjectValues<DeletedTeam>("deletedTeams", DeletedTeams);
             writer.WriteCollectionOfObjectValues<TeamworkDevice>("devices", Devices);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamsAppSettings>("teamsAppSettings", TeamsAppSettings);

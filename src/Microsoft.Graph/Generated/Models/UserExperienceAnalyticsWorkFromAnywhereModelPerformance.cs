@@ -8,17 +8,17 @@ namespace Microsoft.Graph.Beta.Models {
     /// The user experience analytics work from anywhere model performance.
     /// </summary>
     public class UserExperienceAnalyticsWorkFromAnywhereModelPerformance : Entity, IParsable {
-        /// <summary>The user experience work from anywhere&apos;s cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>The cloud identity score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudIdentityScore {
             get { return BackingStore?.Get<double?>("cloudIdentityScore"); }
             set { BackingStore?.Set("cloudIdentityScore", value); }
         }
-        /// <summary>The user experience work from anywhere&apos;s cloud management score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>The cloud management score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudManagementScore {
             get { return BackingStore?.Get<double?>("cloudManagementScore"); }
             set { BackingStore?.Set("cloudManagementScore", value); }
         }
-        /// <summary>The user experience work from anywhere&apos;s cloud provisioning score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>The cloud provisioning score of the device model.  Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudProvisioningScore {
             get { return BackingStore?.Get<double?>("cloudProvisioningScore"); }
             set { BackingStore?.Set("cloudProvisioningScore", value); }
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
-        /// <summary>The user experience work from anywhere&apos;s manufacturer name of the devices.</summary>
+        /// <summary>The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Manufacturer {
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("manufacturer", value); }
         }
 #endif
-        /// <summary>The user experience work from anywhere&apos;s model name of the devices.</summary>
+        /// <summary>The model name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Model {
@@ -56,17 +56,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("model", value); }
         }
 #endif
-        /// <summary>The user experience work from anywhere&apos;s devices count for the model. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>The devices count for the model. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
         public int? ModelDeviceCount {
             get { return BackingStore?.Get<int?>("modelDeviceCount"); }
             set { BackingStore?.Set("modelDeviceCount", value); }
         }
-        /// <summary>The user experience work from anywhere windows score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>The window score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? WindowsScore {
             get { return BackingStore?.Get<double?>("windowsScore"); }
             set { BackingStore?.Set("windowsScore", value); }
         }
-        /// <summary>The user experience work from anywhere overall score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>The work from anywhere score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? WorkFromAnywhereScore {
             get { return BackingStore?.Get<double?>("workFromAnywhereScore"); }
             set { BackingStore?.Set("workFromAnywhereScore", value); }

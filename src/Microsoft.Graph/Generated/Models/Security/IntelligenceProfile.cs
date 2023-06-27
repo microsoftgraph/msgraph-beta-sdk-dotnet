@@ -19,6 +19,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("aliases", value); }
         }
 #endif
+        /// <summary>The countriesOrRegionsOfOrigin property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<IntelligenceProfileCountryOrRegionOfOrigin>? CountriesOrRegionsOfOrigin {
+            get { return BackingStore?.Get<List<IntelligenceProfileCountryOrRegionOfOrigin>?>("countriesOrRegionsOfOrigin"); }
+            set { BackingStore?.Set("countriesOrRegionsOfOrigin", value); }
+        }
+#nullable restore
+#else
+        public List<IntelligenceProfileCountryOrRegionOfOrigin> CountriesOrRegionsOfOrigin {
+            get { return BackingStore?.Get<List<IntelligenceProfileCountryOrRegionOfOrigin>>("countriesOrRegionsOfOrigin"); }
+            set { BackingStore?.Set("countriesOrRegionsOfOrigin", value); }
+        }
+#endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,20 +71,6 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<IntelligenceProfileKind?>("kind"); }
             set { BackingStore?.Set("kind", value); }
         }
-        /// <summary>Known states (such as a country or government) who have sponsored threat actors associated with this intelligenceProfile. This is also known as the country/region of origin for the given actor or threat.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<IntelligenceProfileSponsorState>? SponsorStates {
-            get { return BackingStore?.Get<List<IntelligenceProfileSponsorState>?>("sponsorStates"); }
-            set { BackingStore?.Set("sponsorStates", value); }
-        }
-#nullable restore
-#else
-        public List<IntelligenceProfileSponsorState> SponsorStates {
-            get { return BackingStore?.Get<List<IntelligenceProfileSponsorState>>("sponsorStates"); }
-            set { BackingStore?.Set("sponsorStates", value); }
-        }
-#endif
         /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -141,11 +141,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"aliases", n => { Aliases = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"countriesOrRegionsOfOrigin", n => { CountriesOrRegionsOfOrigin = n.GetCollectionOfObjectValues<IntelligenceProfileCountryOrRegionOfOrigin>(IntelligenceProfileCountryOrRegionOfOrigin.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"description", n => { Description = n.GetObjectValue<FormattedContent>(FormattedContent.CreateFromDiscriminatorValue); } },
                 {"firstActiveDateTime", n => { FirstActiveDateTime = n.GetDateTimeOffsetValue(); } },
                 {"indicators", n => { Indicators = n.GetCollectionOfObjectValues<IntelligenceProfileIndicator>(IntelligenceProfileIndicator.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"kind", n => { Kind = n.GetEnumValue<IntelligenceProfileKind>(); } },
-                {"sponsorStates", n => { SponsorStates = n.GetCollectionOfObjectValues<IntelligenceProfileSponsorState>(IntelligenceProfileSponsorState.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"summary", n => { Summary = n.GetObjectValue<FormattedContent>(FormattedContent.CreateFromDiscriminatorValue); } },
                 {"targets", n => { Targets = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"title", n => { Title = n.GetStringValue(); } },
@@ -160,11 +160,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("aliases", Aliases);
+            writer.WriteCollectionOfObjectValues<IntelligenceProfileCountryOrRegionOfOrigin>("countriesOrRegionsOfOrigin", CountriesOrRegionsOfOrigin);
             writer.WriteObjectValue<FormattedContent>("description", Description);
             writer.WriteDateTimeOffsetValue("firstActiveDateTime", FirstActiveDateTime);
             writer.WriteCollectionOfObjectValues<IntelligenceProfileIndicator>("indicators", Indicators);
             writer.WriteEnumValue<IntelligenceProfileKind>("kind", Kind);
-            writer.WriteCollectionOfObjectValues<IntelligenceProfileSponsorState>("sponsorStates", SponsorStates);
             writer.WriteObjectValue<FormattedContent>("summary", Summary);
             writer.WriteCollectionOfPrimitiveValues<string>("targets", Targets);
             writer.WriteStringValue("title", Title);

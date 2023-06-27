@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.AlertConf
         public AlertDefinitionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts/alertConfigurations/{unifiedRoleManagementAlertConfiguration%2Did}/alertDefinition{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get alertDefinition from identityGovernance
+        /// The definition of the alert that contains its description, impact, and measures to mitigate or prevent it. Supports $expand.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.AlertConf
             return await RequestAdapter.SendAsync<UnifiedRoleManagementAlertDefinition>(requestInfo, UnifiedRoleManagementAlertDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get alertDefinition from identityGovernance
+        /// The definition of the alert that contains its description, impact, and measures to mitigate or prevent it. Supports $expand.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.AlertConf
             return requestInfo;
         }
         /// <summary>
-        /// Get alertDefinition from identityGovernance
+        /// The definition of the alert that contains its description, impact, and measures to mitigate or prevent it. Supports $expand.
         /// </summary>
         public class AlertDefinitionRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

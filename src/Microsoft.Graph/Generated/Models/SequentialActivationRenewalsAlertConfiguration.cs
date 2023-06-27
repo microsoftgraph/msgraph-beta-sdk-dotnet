@@ -5,12 +5,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class SequentialActivationRenewalsAlertConfiguration : UnifiedRoleManagementAlertConfiguration, IParsable {
-        /// <summary>The sequentialActivationCounterThreshold property</summary>
+        /// <summary>The minimum number of activations within the timeIntervalBetweenActivations period to trigger an alert.</summary>
         public int? SequentialActivationCounterThreshold {
             get { return BackingStore?.Get<int?>("sequentialActivationCounterThreshold"); }
             set { BackingStore?.Set("sequentialActivationCounterThreshold", value); }
         }
-        /// <summary>The timeIntervalBetweenActivations property</summary>
+        /// <summary>Time interval between activations to trigger an alert.</summary>
         public TimeSpan? TimeIntervalBetweenActivations {
             get { return BackingStore?.Get<TimeSpan?>("timeIntervalBetweenActivations"); }
             set { BackingStore?.Set("timeIntervalBetweenActivations", value); }

@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ChatMessageHistoryItem and sets the default values.
+        /// Instantiates a new chatMessageHistoryItem and sets the default values.
         /// </summary>
         public ChatMessageHistoryItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

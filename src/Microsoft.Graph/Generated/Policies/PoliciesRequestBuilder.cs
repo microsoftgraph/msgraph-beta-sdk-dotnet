@@ -17,6 +17,7 @@ using Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy;
 using Microsoft.Graph.Beta.Policies.DirectoryRoleAccessReviewPolicy;
 using Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy;
 using Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies;
+using Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy;
 using Microsoft.Graph.Beta.Policies.HomeRealmDiscoveryPolicies;
 using Microsoft.Graph.Beta.Policies.IdentitySecurityDefaultsEnforcementPolicy;
 using Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies;
@@ -107,6 +108,10 @@ namespace Microsoft.Graph.Beta.Policies {
         /// <summary>Provides operations to manage the featureRolloutPolicies property of the microsoft.graph.policyRoot entity.</summary>
         public FeatureRolloutPoliciesRequestBuilder FeatureRolloutPolicies { get =>
             new FeatureRolloutPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the federatedTokenValidationPolicy property of the microsoft.graph.policyRoot entity.</summary>
+        public FederatedTokenValidationPolicyRequestBuilder FederatedTokenValidationPolicy { get =>
+            new FederatedTokenValidationPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.policyRoot entity.</summary>
         public HomeRealmDiscoveryPoliciesRequestBuilder HomeRealmDiscoveryPolicies { get =>

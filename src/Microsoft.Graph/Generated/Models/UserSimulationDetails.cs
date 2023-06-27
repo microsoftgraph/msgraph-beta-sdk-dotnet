@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new UserSimulationDetails and sets the default values.
+        /// Instantiates a new userSimulationDetails and sets the default values.
         /// </summary>
         public UserSimulationDetails() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

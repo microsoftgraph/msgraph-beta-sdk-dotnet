@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Teamwork.DeletedChats;
 using Microsoft.Graph.Beta.Teamwork.DeletedTeams;
 using Microsoft.Graph.Beta.Teamwork.Devices;
 using Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients;
@@ -19,6 +20,10 @@ namespace Microsoft.Graph.Beta.Teamwork {
     /// Provides operations to manage the teamwork singleton.
     /// </summary>
     public class TeamworkRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the deletedChats property of the microsoft.graph.teamwork entity.</summary>
+        public DeletedChatsRequestBuilder DeletedChats { get =>
+            new DeletedChatsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.</summary>
         public DeletedTeamsRequestBuilder DeletedTeams { get =>
             new DeletedTeamsRequestBuilder(PathParameters, RequestAdapter);

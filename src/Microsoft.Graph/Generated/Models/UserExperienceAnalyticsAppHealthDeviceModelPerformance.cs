@@ -8,12 +8,12 @@ namespace Microsoft.Graph.Beta.Models {
     /// The user experience analytics device model performance entity contains device model performance details.
     /// </summary>
     public class UserExperienceAnalyticsAppHealthDeviceModelPerformance : Entity, IParsable {
-        /// <summary>The number of active devices for the model. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>The number of active devices for the model. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
         public int? ActiveDeviceCount {
             get { return BackingStore?.Get<int?>("activeDeviceCount"); }
             set { BackingStore?.Set("activeDeviceCount", value); }
         }
-        /// <summary>The manufacturer name of the device.</summary>
+        /// <summary>The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceManufacturer {
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceManufacturer", value); }
         }
 #endif
-        /// <summary>The model name of the device.</summary>
+        /// <summary>The model name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceModel {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
-        /// <summary>The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
         public int? MeanTimeToFailureInMinutes {
             get { return BackingStore?.Get<int?>("meanTimeToFailureInMinutes"); }
             set { BackingStore?.Set("meanTimeToFailureInMinutes", value); }
         }
-        /// <summary>The app health score of the device model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>The application health score of the device model. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? ModelAppHealthScore {
             get { return BackingStore?.Get<double?>("modelAppHealthScore"); }
             set { BackingStore?.Set("modelAppHealthScore", value); }

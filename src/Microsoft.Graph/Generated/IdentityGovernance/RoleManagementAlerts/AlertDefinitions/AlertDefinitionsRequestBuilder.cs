@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.AlertDefi
         public AlertDefinitionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts/alertDefinitions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get alertDefinitions from identityGovernance
+        /// Get a list of the unifiedRoleManagementAlertDefinition objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/rolemanagementalert-list-alertdefinitions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.AlertDefi
             return await RequestAdapter.SendAsync<UnifiedRoleManagementAlertDefinition>(requestInfo, UnifiedRoleManagementAlertDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get alertDefinitions from identityGovernance
+        /// Get a list of the unifiedRoleManagementAlertDefinition objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.AlertDefi
             return requestInfo;
         }
         /// <summary>
-        /// Get alertDefinitions from identityGovernance
+        /// Get a list of the unifiedRoleManagementAlertDefinition objects and their properties.
         /// </summary>
         public class AlertDefinitionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

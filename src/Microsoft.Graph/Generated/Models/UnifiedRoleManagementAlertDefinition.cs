@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleManagementAlertDefinition : Entity, IParsable {
-        /// <summary>The description property</summary>
+        /// <summary>The description of the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Azure portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The howToPrevent property</summary>
+        /// <summary>Long-form text that indicates the ways to prevent the alert from being triggered in your tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HowToPrevent {
@@ -47,17 +47,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("howToPrevent", value); }
         }
 #endif
-        /// <summary>The isConfigurable property</summary>
+        /// <summary>true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the &apos;There are too many global administrators&apos; alert can be configured by users, while the &apos;This organization does not have Azure AD Premium P2&apos; cannot be configured, because the criteria is restricted.</summary>
         public bool? IsConfigurable {
             get { return BackingStore?.Get<bool?>("isConfigurable"); }
             set { BackingStore?.Set("isConfigurable", value); }
         }
-        /// <summary>The isRemediatable property</summary>
+        /// <summary>true if the alert can be remediated, and false otherwise.</summary>
         public bool? IsRemediatable {
             get { return BackingStore?.Get<bool?>("isRemediatable"); }
             set { BackingStore?.Set("isRemediatable", value); }
         }
-        /// <summary>The mitigationSteps property</summary>
+        /// <summary>The methods to mitigate the alert when it&apos;s triggered in the tenant. For example, to mitigate the &apos;There are too many global administrators&apos;, you could remove redundant privileged role assignments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MitigationSteps {
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mitigationSteps", value); }
         }
 #endif
-        /// <summary>The scopeId property</summary>
+        /// <summary>The identifier of the scope where the alert is related. / is the only supported one for the tenant. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScopeId {
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("scopeId", value); }
         }
 #endif
-        /// <summary>The scopeType property</summary>
+        /// <summary>The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD Roles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScopeType {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("scopeType", value); }
         }
 #endif
-        /// <summary>The securityImpact property</summary>
+        /// <summary>Security impact of the alert. For example, it could be information leaks or unauthorized access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecurityImpact {
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("securityImpact", value); }
         }
 #endif
-        /// <summary>The severityLevel property</summary>
+        /// <summary>Severity level of the alert. The possible values are: unknown, informational, low, medium, high, unknownFutureValue.</summary>
         public AlertSeverity? SeverityLevel {
             get { return BackingStore?.Get<AlertSeverity?>("severityLevel"); }
             set { BackingStore?.Set("severityLevel", value); }

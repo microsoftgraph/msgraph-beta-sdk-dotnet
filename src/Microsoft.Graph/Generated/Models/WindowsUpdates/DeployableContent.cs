@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeployableContent and sets the default values.
+        /// Instantiates a new deployableContent and sets the default values.
         /// </summary>
         public DeployableContent() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

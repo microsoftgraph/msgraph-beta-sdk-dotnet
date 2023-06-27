@@ -69,17 +69,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appVersion", value); }
         }
 #endif
-        /// <summary>The total number of devices that have reported one or more application crashes for this application and version. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>The total number of devices that have reported one or more application crashes for this application and version. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
         public int? DeviceCountWithCrashes {
             get { return BackingStore?.Get<int?>("deviceCountWithCrashes"); }
             set { BackingStore?.Set("deviceCountWithCrashes", value); }
         }
-        /// <summary>Is the version of application the latest version for that app that is in use.</summary>
+        /// <summary>When TRUE, indicates the version of application is the latest version for that application that is in use. When FALSE, indicates the version is not the latest version. FALSE by default. Supports: $select, $OrderBy.</summary>
         public bool? IsLatestUsedVersion {
             get { return BackingStore?.Get<bool?>("isLatestUsedVersion"); }
             set { BackingStore?.Set("isLatestUsedVersion", value); }
         }
-        /// <summary>Is the version of application the most used version for that app.</summary>
+        /// <summary>When TRUE, indicates the version of application is the most used version for that application. When FALSE, indicates the version is not the most used version. FALSE by default. Supports: $select, $OrderBy. Read-only.</summary>
         public bool? IsMostUsedVersion {
             get { return BackingStore?.Get<bool?>("isMostUsedVersion"); }
             set { BackingStore?.Set("isMostUsedVersion", value); }

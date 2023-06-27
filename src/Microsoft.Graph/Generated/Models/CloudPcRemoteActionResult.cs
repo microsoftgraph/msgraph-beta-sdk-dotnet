@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CloudPcRemoteActionResult and sets the default values.
+        /// Instantiates a new cloudPcRemoteActionResult and sets the default values.
         /// </summary>
         public CloudPcRemoteActionResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

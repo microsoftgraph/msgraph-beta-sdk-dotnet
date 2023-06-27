@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isSsprRegistered"); }
             set { BackingStore?.Set("isSsprRegistered", value); }
         }
-        /// <summary>The isSystemPreferredAuthenticationMethodEnabled property</summary>
+        /// <summary>Indicates whether system preferred authentication method is enabled. If enabled, the system dynamically determines the most secure authentication method among the methods registered by the user. Supports $filter (eq).</summary>
         public bool? IsSystemPreferredAuthenticationMethodEnabled {
             get { return BackingStore?.Get<bool?>("isSystemPreferredAuthenticationMethodEnabled"); }
             set { BackingStore?.Set("isSystemPreferredAuthenticationMethodEnabled", value); }
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("methodsRegistered", value); }
         }
 #endif
-        /// <summary>The systemPreferredAuthenticationMethods property</summary>
+        /// <summary>Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SystemPreferredAuthenticationMethods {
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #endif
-        /// <summary>The userPreferredMethodForSecondaryAuthentication property</summary>
+        /// <summary>The method the user selected as the default second-factor for performing multi-factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.</summary>
         public UserDefaultAuthenticationMethod? UserPreferredMethodForSecondaryAuthentication {
             get { return BackingStore?.Get<UserDefaultAuthenticationMethod?>("userPreferredMethodForSecondaryAuthentication"); }
             set { BackingStore?.Set("userPreferredMethodForSecondaryAuthentication", value); }

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Me.Activities {
         public ActivitiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/activities{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get activities from me
+        /// The user&apos;s activities across devices. Read-only. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Me.Activities {
             return await RequestAdapter.SendAsync<UserActivity>(requestInfo, UserActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get activities from me
+        /// The user&apos;s activities across devices. Read-only. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Me.Activities {
             return requestInfo;
         }
         /// <summary>
-        /// Get activities from me
+        /// The user&apos;s activities across devices. Read-only. Nullable.
         /// </summary>
         public class ActivitiesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

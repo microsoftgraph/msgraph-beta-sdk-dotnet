@@ -15,6 +15,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.
     /// </summary>
     public class UserItemRequestBuilder : BaseRequestBuilder {
         /// <summary>The mailboxSettings property</summary>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
         public MailboxSettingsRequestBuilder MailboxSettings { get =>
             new MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -37,6 +38,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.User?> GetAsync(Action<UserItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -55,6 +57,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Collaborators.
         /// Get collaborators from privacy
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<UserItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {

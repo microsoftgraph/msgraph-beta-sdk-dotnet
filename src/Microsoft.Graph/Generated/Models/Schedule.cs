@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
-        /// <summary>The offerShiftRequests property</summary>
+        /// <summary>The offer requests for shifts in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OfferShiftRequest>? OfferShiftRequests {

@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get authentication from me
+        /// The authentication methods that are supported for the user.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication {
             return requestInfo;
         }
         /// <summary>
-        /// Get authentication from me
+        /// The authentication methods that are supported for the user.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -236,7 +236,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication {
             }
         }
         /// <summary>
-        /// Get authentication from me
+        /// The authentication methods that are supported for the user.
         /// </summary>
         public class AuthenticationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

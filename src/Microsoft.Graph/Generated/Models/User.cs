@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("accountEnabled"); }
             set { BackingStore?.Set("accountEnabled", value); }
         }
-        /// <summary>The activities property</summary>
+        /// <summary>The user&apos;s activities across devices. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UserActivity>? Activities {
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assignedPlans", value); }
         }
 #endif
-        /// <summary>The authentication property</summary>
+        /// <summary>The authentication methods that are supported for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Authentication? Authentication {
@@ -830,7 +830,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isLicenseReconciliationNeeded"); }
             set { BackingStore?.Set("isLicenseReconciliationNeeded", value); }
         }
-        /// <summary>true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.</summary>
+        /// <summary>true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.</summary>
         public bool? IsManagementRestricted {
             get { return BackingStore?.Get<bool?>("isManagementRestricted"); }
             set { BackingStore?.Set("isManagementRestricted", value); }
@@ -1167,7 +1167,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onenote", value); }
         }
 #endif
-        /// <summary>The onlineMeetings property</summary>
+        /// <summary>Information about a meeting, including the URL used to join a meeting, the attendees&apos; list, and the description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OnlineMeeting>? OnlineMeetings {
@@ -1427,6 +1427,20 @@ namespace Microsoft.Graph.Beta.Models {
         public List<Person> People {
             get { return BackingStore?.Get<List<Person>>("people"); }
             set { BackingStore?.Set("people", value); }
+        }
+#endif
+        /// <summary>The permissionGrants property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<ResourceSpecificPermissionGrant>? PermissionGrants {
+            get { return BackingStore?.Get<List<ResourceSpecificPermissionGrant>?>("permissionGrants"); }
+            set { BackingStore?.Set("permissionGrants", value); }
+        }
+#nullable restore
+#else
+        public List<ResourceSpecificPermissionGrant> PermissionGrants {
+            get { return BackingStore?.Get<List<ResourceSpecificPermissionGrant>>("permissionGrants"); }
+            set { BackingStore?.Set("permissionGrants", value); }
         }
 #endif
         /// <summary>The user&apos;s profile photo. Read-only.</summary>
@@ -1752,6 +1766,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("skills", value); }
         }
 #endif
+        /// <summary>The sponsors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<DirectoryObject>? Sponsors {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("sponsors"); }
+            set { BackingStore?.Set("sponsors", value); }
+        }
+#nullable restore
+#else
+        public List<DirectoryObject> Sponsors {
+            get { return BackingStore?.Get<List<DirectoryObject>>("sponsors"); }
+            set { BackingStore?.Set("sponsors", value); }
+        }
+#endif
         /// <summary>The state or province in the user&apos;s address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2049,6 +2077,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"pastProjects", n => { PastProjects = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"pendingAccessReviewInstances", n => { PendingAccessReviewInstances = n.GetCollectionOfObjectValues<AccessReviewInstance>(AccessReviewInstance.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"people", n => { People = n.GetCollectionOfObjectValues<Person>(Person.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"permissionGrants", n => { PermissionGrants = n.GetCollectionOfObjectValues<ResourceSpecificPermissionGrant>(ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"photo", n => { Photo = n.GetObjectValue<ProfilePhoto>(ProfilePhoto.CreateFromDiscriminatorValue); } },
                 {"photos", n => { Photos = n.GetCollectionOfObjectValues<ProfilePhoto>(ProfilePhoto.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"planner", n => { Planner = n.GetObjectValue<PlannerUser>(PlannerUser.CreateFromDiscriminatorValue); } },
@@ -2074,6 +2103,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"signInActivity", n => { SignInActivity = n.GetObjectValue<Microsoft.Graph.Beta.Models.SignInActivity>(Microsoft.Graph.Beta.Models.SignInActivity.CreateFromDiscriminatorValue); } },
                 {"signInSessionsValidFromDateTime", n => { SignInSessionsValidFromDateTime = n.GetDateTimeOffsetValue(); } },
                 {"skills", n => { Skills = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"sponsors", n => { Sponsors = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"state", n => { State = n.GetStringValue(); } },
                 {"streetAddress", n => { StreetAddress = n.GetStringValue(); } },
                 {"surname", n => { Surname = n.GetStringValue(); } },
@@ -2205,6 +2235,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("pastProjects", PastProjects);
             writer.WriteCollectionOfObjectValues<AccessReviewInstance>("pendingAccessReviewInstances", PendingAccessReviewInstances);
             writer.WriteCollectionOfObjectValues<Person>("people", People);
+            writer.WriteCollectionOfObjectValues<ResourceSpecificPermissionGrant>("permissionGrants", PermissionGrants);
             writer.WriteObjectValue<ProfilePhoto>("photo", Photo);
             writer.WriteCollectionOfObjectValues<ProfilePhoto>("photos", Photos);
             writer.WriteObjectValue<PlannerUser>("planner", Planner);
@@ -2230,6 +2261,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SignInActivity>("signInActivity", SignInActivity);
             writer.WriteDateTimeOffsetValue("signInSessionsValidFromDateTime", SignInSessionsValidFromDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("skills", Skills);
+            writer.WriteCollectionOfObjectValues<DirectoryObject>("sponsors", Sponsors);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("streetAddress", StreetAddress);
             writer.WriteStringValue("surname", Surname);

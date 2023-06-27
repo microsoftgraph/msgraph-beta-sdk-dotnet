@@ -35,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.endpoint" => new Endpoint(),
                 "#microsoft.graph.extensionProperty" => new ExtensionProperty(),
                 "#microsoft.graph.externalIdentitiesPolicy" => new ExternalIdentitiesPolicy(),
+                "#microsoft.graph.federatedTokenValidationPolicy" => new FederatedTokenValidationPolicy(),
                 "#microsoft.graph.group" => new Group(),
                 "#microsoft.graph.homeRealmDiscoveryPolicy" => new HomeRealmDiscoveryPolicy(),
                 "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new IdentitySecurityDefaultsEnforcementPolicy(),
