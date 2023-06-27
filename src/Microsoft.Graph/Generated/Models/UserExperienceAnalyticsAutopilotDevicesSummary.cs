@@ -16,12 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The count of intune devices that are not autopilot registerd.</summary>
+        /// <summary>The count of intune devices that are not autopilot registerd. Read-only.</summary>
         public int? DevicesNotAutopilotRegistered {
             get { return BackingStore?.Get<int?>("devicesNotAutopilotRegistered"); }
             set { BackingStore?.Set("devicesNotAutopilotRegistered", value); }
         }
-        /// <summary>The count of intune devices not autopilot profile assigned.</summary>
+        /// <summary>The count of intune devices not autopilot profile assigned. Read-only.</summary>
         public int? DevicesWithoutAutopilotProfileAssigned {
             get { return BackingStore?.Get<int?>("devicesWithoutAutopilotProfileAssigned"); }
             set { BackingStore?.Set("devicesWithoutAutopilotProfileAssigned", value); }
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The count of windows 10 devices that are Intune and Comanaged.</summary>
+        /// <summary>The count of windows 10 devices that are Intune and co-managed. Read-only.</summary>
         public int? TotalWindows10DevicesWithoutTenantAttached {
             get { return BackingStore?.Get<int?>("totalWindows10DevicesWithoutTenantAttached"); }
             set { BackingStore?.Set("totalWindows10DevicesWithoutTenantAttached", value); }

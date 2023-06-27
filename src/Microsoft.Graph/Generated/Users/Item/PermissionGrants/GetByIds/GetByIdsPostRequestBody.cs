@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
-    public class IntelligenceProfileSponsorState : IAdditionalDataHolder, IBackedModel, IParsable {
+namespace Microsoft.Graph.Beta.Users.Item.PermissionGrants.GetByIds {
+    public class GetByIdsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -13,52 +13,38 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>A codified representation for this sponsor state.</summary>
+        /// <summary>The ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code {
-            get { return BackingStore?.Get<string?>("code"); }
-            set { BackingStore?.Set("code", value); }
+        public List<string>? Ids {
+            get { return BackingStore?.Get<List<string>?>("ids"); }
+            set { BackingStore?.Set("ids", value); }
         }
 #nullable restore
 #else
-        public string Code {
-            get { return BackingStore?.Get<string>("code"); }
-            set { BackingStore?.Set("code", value); }
+        public List<string> Ids {
+            get { return BackingStore?.Get<List<string>>("ids"); }
+            set { BackingStore?.Set("ids", value); }
         }
 #endif
-        /// <summary>A display label for this sponsor state.</summary>
+        /// <summary>The types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label {
-            get { return BackingStore?.Get<string?>("label"); }
-            set { BackingStore?.Set("label", value); }
+        public List<string>? Types {
+            get { return BackingStore?.Get<List<string>?>("types"); }
+            set { BackingStore?.Set("types", value); }
         }
 #nullable restore
 #else
-        public string Label {
-            get { return BackingStore?.Get<string>("label"); }
-            set { BackingStore?.Set("label", value); }
-        }
-#endif
-        /// <summary>The OdataType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OdataType {
-            get { return BackingStore?.Get<string?>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
-        }
-#nullable restore
-#else
-        public string OdataType {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
+        public List<string> Types {
+            get { return BackingStore?.Get<List<string>>("types"); }
+            set { BackingStore?.Set("types", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new intelligenceProfileSponsorState and sets the default values.
+        /// Instantiates a new getByIdsPostRequestBody and sets the default values.
         /// </summary>
-        public IntelligenceProfileSponsorState() {
+        public GetByIdsPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -66,18 +52,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IntelligenceProfileSponsorState CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static GetByIdsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IntelligenceProfileSponsorState();
+            return new GetByIdsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"code", n => { Code = n.GetStringValue(); } },
-                {"label", n => { Label = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"types", n => { Types = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -86,9 +71,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("code", Code);
-            writer.WriteStringValue("label", Label);
-            writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteCollectionOfPrimitiveValues<string>("ids", Ids);
+            writer.WriteCollectionOfPrimitiveValues<string>("types", Types);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeviceManagementConstraint and sets the default values.
+        /// Instantiates a new deviceManagementConstraint and sets the default values.
         /// </summary>
         public DeviceManagementConstraint() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

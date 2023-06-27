@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Drive and sets the default values.
+        /// Instantiates a new drive and sets the default values.
         /// </summary>
         public Drive() : base() {
             OdataType = "#microsoft.graph.drive";

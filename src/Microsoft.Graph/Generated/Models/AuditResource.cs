@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AuditResource and sets the default values.
+        /// Instantiates a new auditResource and sets the default values.
         /// </summary>
         public AuditResource() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

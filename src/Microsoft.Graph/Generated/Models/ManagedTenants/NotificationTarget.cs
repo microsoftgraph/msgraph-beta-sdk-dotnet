@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
 #endif
         /// <summary>
-        /// Instantiates a new notificationTarget and sets the default values.
+        /// Instantiates a new NotificationTarget and sets the default values.
         /// </summary>
         public NotificationTarget() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

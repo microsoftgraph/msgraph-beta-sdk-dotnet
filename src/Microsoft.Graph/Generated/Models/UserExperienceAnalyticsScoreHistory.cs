@@ -8,7 +8,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// The user experience analytics device startup score history.
     /// </summary>
     public class UserExperienceAnalyticsScoreHistory : Entity, IParsable {
-        /// <summary>The user experience analytics device startup date time.</summary>
+        /// <summary>The device startup date time. The value cannot be modified and is automatically populated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Returned by default.</summary>
         public DateTimeOffset? StartupDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startupDateTime"); }
             set { BackingStore?.Set("startupDateTime", value); }

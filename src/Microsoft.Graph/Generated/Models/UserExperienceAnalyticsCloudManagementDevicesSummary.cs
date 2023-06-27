@@ -16,12 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Total number of  co-managed devices.</summary>
+        /// <summary>Total number of  co-managed devices. Read-only.</summary>
         public int? CoManagedDeviceCount {
             get { return BackingStore?.Get<int?>("coManagedDeviceCount"); }
             set { BackingStore?.Set("coManagedDeviceCount", value); }
         }
-        /// <summary>The count of intune devices that are not autopilot registerd.</summary>
+        /// <summary>The count of intune devices that are not autopilot registerd. Read-only.</summary>
         public int? IntuneDeviceCount {
             get { return BackingStore?.Get<int?>("intuneDeviceCount"); }
             set { BackingStore?.Set("intuneDeviceCount", value); }
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Total count of tenant attach devices.</summary>
+        /// <summary>Total count of tenant attach devices. Read-only.</summary>
         public int? TenantAttachDeviceCount {
             get { return BackingStore?.Get<int?>("tenantAttachDeviceCount"); }
             set { BackingStore?.Set("tenantAttachDeviceCount", value); }

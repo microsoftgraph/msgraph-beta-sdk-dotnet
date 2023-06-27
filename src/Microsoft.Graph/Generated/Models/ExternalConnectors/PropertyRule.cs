@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             set { BackingStore?.Set("valuesJoinedBy", value); }
         }
         /// <summary>
-        /// Instantiates a new PropertyRule and sets the default values.
+        /// Instantiates a new propertyRule and sets the default values.
         /// </summary>
         public PropertyRule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

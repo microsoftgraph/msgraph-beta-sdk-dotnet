@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class InsightValueDouble : UserExperienceAnalyticsInsightValue, IParsable {
-        /// <summary>Not yet documented</summary>
+        /// <summary>The double value of the user experience analytics insight.</summary>
         public double? Value {
             get { return BackingStore?.Get<double?>("value"); }
             set { BackingStore?.Set("value", value); }

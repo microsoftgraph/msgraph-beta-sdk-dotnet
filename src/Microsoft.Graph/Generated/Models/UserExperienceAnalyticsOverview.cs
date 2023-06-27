@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class UserExperienceAnalyticsOverview : Entity, IParsable {
-        /// <summary>The user experience analytics insights.</summary>
+        /// <summary>The user experience analytics insights. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UserExperienceAnalyticsInsight>? Insights {

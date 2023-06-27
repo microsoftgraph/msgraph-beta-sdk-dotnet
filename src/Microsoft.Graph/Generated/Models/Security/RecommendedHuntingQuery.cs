@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new RecommendedHuntingQuery and sets the default values.
+        /// Instantiates a new recommendedHuntingQuery and sets the default values.
         /// </summary>
         public RecommendedHuntingQuery() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

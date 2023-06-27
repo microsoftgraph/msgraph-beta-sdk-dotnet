@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AccessPackageAnswer and sets the default values.
+        /// Instantiates a new accessPackageAnswer and sets the default values.
         /// </summary>
         public AccessPackageAnswer() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

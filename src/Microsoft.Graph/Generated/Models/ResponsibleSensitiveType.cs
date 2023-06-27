@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new responsibleSensitiveType and sets the default values.
+        /// Instantiates a new ResponsibleSensitiveType and sets the default values.
         /// </summary>
         public ResponsibleSensitiveType() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

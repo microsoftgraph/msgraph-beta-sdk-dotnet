@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<UserExperienceAnalyticsInsightSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
-        /// <summary>The unique identifier of the user experience analytics insight.</summary>
+        /// <summary>The unique identifier of the user experience analytics metric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserExperienceAnalyticsMetricId {

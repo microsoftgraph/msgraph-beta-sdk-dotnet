@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class RoleManagementAlert : Entity, IParsable {
-        /// <summary>The alertConfigurations property</summary>
+        /// <summary>The various configurations of an alert for Azure AD roles. The configurations are pre-defined and cannot be created or deleted, but some of the configurations can be modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UnifiedRoleManagementAlertConfiguration>? AlertConfigurations {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alertConfigurations", value); }
         }
 #endif
-        /// <summary>The alertDefinitions property</summary>
+        /// <summary>Defines an alert, its impact, and measures to mitigate or prevent it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UnifiedRoleManagementAlertDefinition>? AlertDefinitions {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alertDefinitions", value); }
         }
 #endif
-        /// <summary>The alerts property</summary>
+        /// <summary>Represents the alert entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UnifiedRoleManagementAlert>? Alerts {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alerts", value); }
         }
 #endif
-        /// <summary>The operations property</summary>
+        /// <summary>Represents operations on resources that take a long time to complete and can run in the background until completion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<LongRunningOperation>? Operations {

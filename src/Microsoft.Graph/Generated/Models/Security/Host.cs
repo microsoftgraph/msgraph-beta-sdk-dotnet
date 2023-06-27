@@ -85,6 +85,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("reputation", value); }
         }
 #endif
+        /// <summary>The subdomains that are associated with this host.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Subdomain>? Subdomains {
+            get { return BackingStore?.Get<List<Subdomain>?>("subdomains"); }
+            set { BackingStore?.Set("subdomains", value); }
+        }
+#nullable restore
+#else
+        public List<Subdomain> Subdomains {
+            get { return BackingStore?.Get<List<Subdomain>>("subdomains"); }
+            set { BackingStore?.Set("subdomains", value); }
+        }
+#endif
         /// <summary>The hostTrackers that are associated with this host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,6 +144,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"passiveDns", n => { PassiveDns = n.GetCollectionOfObjectValues<PassiveDnsRecord>(PassiveDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"passiveDnsReverse", n => { PassiveDnsReverse = n.GetCollectionOfObjectValues<PassiveDnsRecord>(PassiveDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"reputation", n => { Reputation = n.GetObjectValue<HostReputation>(HostReputation.CreateFromDiscriminatorValue); } },
+                {"subdomains", n => { Subdomains = n.GetCollectionOfObjectValues<Subdomain>(Subdomain.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"trackers", n => { Trackers = n.GetCollectionOfObjectValues<HostTracker>(HostTracker.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -147,6 +162,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             writer.WriteCollectionOfObjectValues<PassiveDnsRecord>("passiveDns", PassiveDns);
             writer.WriteCollectionOfObjectValues<PassiveDnsRecord>("passiveDnsReverse", PassiveDnsReverse);
             writer.WriteObjectValue<HostReputation>("reputation", Reputation);
+            writer.WriteCollectionOfObjectValues<Subdomain>("subdomains", Subdomains);
             writer.WriteCollectionOfObjectValues<HostTracker>("trackers", Trackers);
         }
     }

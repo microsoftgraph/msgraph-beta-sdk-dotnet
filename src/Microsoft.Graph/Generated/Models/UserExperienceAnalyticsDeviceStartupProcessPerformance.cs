@@ -8,22 +8,22 @@ namespace Microsoft.Graph.Beta.Models {
     /// The user experience analytics device startup process performance.
     /// </summary>
     public class UserExperienceAnalyticsDeviceStartupProcessPerformance : Entity, IParsable {
-        /// <summary>User experience analytics device startup process summarized count.</summary>
+        /// <summary>The count of devices which initiated this process on startup. Supports: $filter, $select, $OrderBy. Read-only.</summary>
         public long? DeviceCount {
             get { return BackingStore?.Get<long?>("deviceCount"); }
             set { BackingStore?.Set("deviceCount", value); }
         }
-        /// <summary>User experience analytics device startup process median impact in milliseconds.</summary>
+        /// <summary>The median impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.</summary>
         public long? MedianImpactInMs {
             get { return BackingStore?.Get<long?>("medianImpactInMs"); }
             set { BackingStore?.Set("medianImpactInMs", value); }
         }
-        /// <summary>User experience analytics device startup process median impact in milliseconds.</summary>
+        /// <summary>The median impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.</summary>
         public long? MedianImpactInMs2 {
             get { return BackingStore?.Get<long?>("medianImpactInMs2"); }
             set { BackingStore?.Set("medianImpactInMs2", value); }
         }
-        /// <summary>User experience analytics device startup process name.</summary>
+        /// <summary>The name of the startup process. Examples: outlook, excel. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProcessName {
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("processName", value); }
         }
 #endif
-        /// <summary>The user experience analytics device startup process product name.</summary>
+        /// <summary>The product name of the startup process. Examples: Microsoft Outlook, Microsoft Excel. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProductName {
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("productName", value); }
         }
 #endif
-        /// <summary>The User experience analytics device startup process publisher.</summary>
+        /// <summary>The publisher of the startup process. Examples: Microsoft Corporation, Contoso Corp. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Publisher {
@@ -65,12 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("publisher", value); }
         }
 #endif
-        /// <summary>User experience analytics device startup process total impact in milliseconds.</summary>
+        /// <summary>The total impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.</summary>
         public long? TotalImpactInMs {
             get { return BackingStore?.Get<long?>("totalImpactInMs"); }
             set { BackingStore?.Set("totalImpactInMs", value); }
         }
-        /// <summary>User experience analytics device startup process total impact in milliseconds.</summary>
+        /// <summary>The total impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.</summary>
         public long? TotalImpactInMs2 {
             get { return BackingStore?.Get<long?>("totalImpactInMs2"); }
             set { BackingStore?.Set("totalImpactInMs2", value); }

@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("valueType", value); }
         }
         /// <summary>
-        /// Instantiates a new TemplateParameter and sets the default values.
+        /// Instantiates a new templateParameter and sets the default values.
         /// </summary>
         public TemplateParameter() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

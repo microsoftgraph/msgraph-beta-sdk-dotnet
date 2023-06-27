@@ -8,7 +8,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// The user experience analytics baseline entity contains baseline values against which to compare the user experience analytics scores.
     /// </summary>
     public class UserExperienceAnalyticsBaseline : Entity, IParsable {
-        /// <summary>The user experience analytics app health metrics.</summary>
+        /// <summary>The scores and insights for the application health metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UserExperienceAnalyticsCategory? AppHealthMetrics {
@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appHealthMetrics", value); }
         }
 #endif
-        /// <summary>The user experience analytics battery health metrics.</summary>
+        /// <summary>The scores and insights for the battery health metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UserExperienceAnalyticsCategory? BatteryHealthMetrics {
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("batteryHealthMetrics", value); }
         }
 #endif
-        /// <summary>The user experience analytics best practices metrics.</summary>
+        /// <summary>The scores and insights for the best practices metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UserExperienceAnalyticsCategory? BestPracticesMetrics {
@@ -50,12 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("bestPracticesMetrics", value); }
         }
 #endif
-        /// <summary>The date the custom baseline was created.</summary>
+        /// <summary>The date the custom baseline was created. The value cannot be modified and is automatically populated when the baseline is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Returned by default.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The user experience analytics device boot performance metrics.</summary>
+        /// <summary>The scores and insights for the device boot performance metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UserExperienceAnalyticsCategory? DeviceBootPerformanceMetrics {
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceBootPerformanceMetrics", value); }
         }
 #endif
-        /// <summary>The name of the user experience analytics baseline.</summary>
+        /// <summary>The name of the baseline.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -83,12 +83,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Signifies if the current baseline is the commercial median baseline or a custom baseline.</summary>
+        /// <summary>When TRUE, indicates the current baseline is the commercial median baseline. When FALSE, indicates it is a custom baseline. FALSE by default.</summary>
         public bool? IsBuiltIn {
             get { return BackingStore?.Get<bool?>("isBuiltIn"); }
             set { BackingStore?.Set("isBuiltIn", value); }
         }
-        /// <summary>The user experience analytics reboot analytics metrics.</summary>
+        /// <summary>The scores and insights for the reboot analytics metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UserExperienceAnalyticsCategory? RebootAnalyticsMetrics {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("rebootAnalyticsMetrics", value); }
         }
 #endif
-        /// <summary>The user experience analytics resource performance metrics.</summary>
+        /// <summary>The scores and insights for the resource performance metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UserExperienceAnalyticsCategory? ResourcePerformanceMetrics {
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resourcePerformanceMetrics", value); }
         }
 #endif
-        /// <summary>The user experience analytics work from anywhere metrics.</summary>
+        /// <summary>The scores and insights for the work from anywhere metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UserExperienceAnalyticsCategory? WorkFromAnywhereMetrics {

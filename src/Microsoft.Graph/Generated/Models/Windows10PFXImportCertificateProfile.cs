@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Deprecated
-    /// </summary>
     public class Windows10PFXImportCertificateProfile : DeviceConfiguration, IParsable {
         /// <summary>Key Storage Provider (KSP) Import Options.</summary>
         public KeyStorageProviderOption? KeyStorageProvider {
@@ -14,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("keyStorageProvider", value); }
         }
         /// <summary>
-        /// Instantiates a new windows10PFXImportCertificateProfile and sets the default values.
+        /// Instantiates a new Windows10PFXImportCertificateProfile and sets the default values.
         /// </summary>
         public Windows10PFXImportCertificateProfile() : base() {
             OdataType = "#microsoft.graph.windows10PFXImportCertificateProfile";

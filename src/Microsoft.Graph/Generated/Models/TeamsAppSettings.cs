@@ -15,6 +15,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isChatResourceSpecificConsentEnabled"); }
             set { BackingStore?.Set("isChatResourceSpecificConsentEnabled", value); }
         }
+        /// <summary>The isUserPersonalScopeResourceSpecificConsentEnabled property</summary>
+        public bool? IsUserPersonalScopeResourceSpecificConsentEnabled {
+            get { return BackingStore?.Get<bool?>("isUserPersonalScopeResourceSpecificConsentEnabled"); }
+            set { BackingStore?.Set("isUserPersonalScopeResourceSpecificConsentEnabled", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"allowUserRequestsForAppAccess", n => { AllowUserRequestsForAppAccess = n.GetBoolValue(); } },
                 {"isChatResourceSpecificConsentEnabled", n => { IsChatResourceSpecificConsentEnabled = n.GetBoolValue(); } },
+                {"isUserPersonalScopeResourceSpecificConsentEnabled", n => { IsUserPersonalScopeResourceSpecificConsentEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -41,6 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteBoolValue("allowUserRequestsForAppAccess", AllowUserRequestsForAppAccess);
             writer.WriteBoolValue("isChatResourceSpecificConsentEnabled", IsChatResourceSpecificConsentEnabled);
+            writer.WriteBoolValue("isUserPersonalScopeResourceSpecificConsentEnabled", IsUserPersonalScopeResourceSpecificConsentEnabled);
         }
     }
 }

@@ -9,6 +9,7 @@ using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelProfiles;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelligenceProfileIndicators;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.PassiveDnsRecords;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.Subdomains;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Vulnerabilities;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -58,6 +59,10 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence {
         /// <summary>Provides operations to manage the passiveDnsRecords property of the microsoft.graph.security.threatIntelligence entity.</summary>
         public PassiveDnsRecordsRequestBuilder PassiveDnsRecords { get =>
             new PassiveDnsRecordsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the subdomains property of the microsoft.graph.security.threatIntelligence entity.</summary>
+        public SubdomainsRequestBuilder Subdomains { get =>
+            new SubdomainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the vulnerabilities property of the microsoft.graph.security.threatIntelligence entity.</summary>
         public VulnerabilitiesRequestBuilder Vulnerabilities { get =>

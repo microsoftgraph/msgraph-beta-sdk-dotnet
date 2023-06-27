@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AlertHistoryState and sets the default values.
+        /// Instantiates a new alertHistoryState and sets the default values.
         /// </summary>
         public AlertHistoryState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

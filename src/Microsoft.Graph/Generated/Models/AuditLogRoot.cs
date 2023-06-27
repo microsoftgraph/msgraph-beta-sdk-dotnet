@@ -13,6 +13,20 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The customSecurityAttributeAudits property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<CustomSecurityAttributeAudit>? CustomSecurityAttributeAudits {
+            get { return BackingStore?.Get<List<CustomSecurityAttributeAudit>?>("customSecurityAttributeAudits"); }
+            set { BackingStore?.Set("customSecurityAttributeAudits", value); }
+        }
+#nullable restore
+#else
+        public List<CustomSecurityAttributeAudit> CustomSecurityAttributeAudits {
+            get { return BackingStore?.Get<List<CustomSecurityAttributeAudit>>("customSecurityAttributeAudits"); }
+            set { BackingStore?.Set("customSecurityAttributeAudits", value); }
+        }
+#endif
         /// <summary>The directoryAudits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,6 +117,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"customSecurityAttributeAudits", n => { CustomSecurityAttributeAudits = n.GetCollectionOfObjectValues<CustomSecurityAttributeAudit>(CustomSecurityAttributeAudit.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"directoryAudits", n => { DirectoryAudits = n.GetCollectionOfObjectValues<DirectoryAudit>(DirectoryAudit.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"directoryProvisioning", n => { DirectoryProvisioning = n.GetCollectionOfObjectValues<ProvisioningObjectSummary>(ProvisioningObjectSummary.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -116,6 +131,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<CustomSecurityAttributeAudit>("customSecurityAttributeAudits", CustomSecurityAttributeAudits);
             writer.WriteCollectionOfObjectValues<DirectoryAudit>("directoryAudits", DirectoryAudits);
             writer.WriteCollectionOfObjectValues<ProvisioningObjectSummary>("directoryProvisioning", DirectoryProvisioning);
             writer.WriteStringValue("@odata.type", OdataType);

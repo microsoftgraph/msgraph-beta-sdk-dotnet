@@ -8,17 +8,17 @@ namespace Microsoft.Graph.Beta.Models {
     /// The user experience analytics device scores entity consolidates the various Endpoint Analytics scores.
     /// </summary>
     public class UserExperienceAnalyticsDeviceScores : Entity, IParsable {
-        /// <summary>The user experience analytics device app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>Indicates a score calculated from application health data to indicate when a device is having problems running one or more applications. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? AppReliabilityScore {
             get { return BackingStore?.Get<double?>("appReliabilityScore"); }
             set { BackingStore?.Set("appReliabilityScore", value); }
         }
-        /// <summary>The user experience analytics device battery health score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>Indicates a calulated score indicating the health of the device&apos;s battery. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? BatteryHealthScore {
             get { return BackingStore?.Get<double?>("batteryHealthScore"); }
             set { BackingStore?.Set("batteryHealthScore", value); }
         }
-        /// <summary>The user experience analytics device name.</summary>
+        /// <summary>The name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceName {
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceName", value); }
         }
 #endif
-        /// <summary>The user experience analytics device score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>Indicates a weighted average of the various scores. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? EndpointAnalyticsScore {
             get { return BackingStore?.Get<double?>("endpointAnalyticsScore"); }
             set { BackingStore?.Set("endpointAnalyticsScore", value); }
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
-        /// <summary>The user experience analytics device manufacturer.</summary>
+        /// <summary>The manufacturer name of the device. Examples: Microsoft Corporation, HP, Lenovo. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Manufacturer {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("manufacturer", value); }
         }
 #endif
-        /// <summary>The user experience analytics device model.</summary>
+        /// <summary>The model name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Model {
@@ -70,12 +70,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("model", value); }
         }
 #endif
-        /// <summary>The user experience analytics device startup performance score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>Indicates a weighted average of boot score and logon score used for measuring startup performance. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? StartupPerformanceScore {
             get { return BackingStore?.Get<double?>("startupPerformanceScore"); }
             set { BackingStore?.Set("startupPerformanceScore", value); }
         }
-        /// <summary>The user experience analytics device work From anywhere score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>Indicates a weighted score of the work from anywhere on a device level. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? WorkFromAnywhereScore {
             get { return BackingStore?.Get<double?>("workFromAnywhereScore"); }
             set { BackingStore?.Set("workFromAnywhereScore", value); }

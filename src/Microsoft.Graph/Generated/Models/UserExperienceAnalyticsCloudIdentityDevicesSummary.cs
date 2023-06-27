@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The count of devices that are not cloud identity.</summary>
+        /// <summary>The count of devices that are not cloud identity. Read-only.</summary>
         public int? DeviceWithoutCloudIdentityCount {
             get { return BackingStore?.Get<int?>("deviceWithoutCloudIdentityCount"); }
             set { BackingStore?.Set("deviceWithoutCloudIdentityCount", value); }

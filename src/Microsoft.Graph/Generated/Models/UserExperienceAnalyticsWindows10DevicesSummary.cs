@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The count of Windows 10 devices that have unsupported OS versions.</summary>
+        /// <summary>The count of Windows 10 devices that have unsupported OS versions. Read-only.</summary>
         public int? UnsupportedOSversionDeviceCount {
             get { return BackingStore?.Get<int?>("unsupportedOSversionDeviceCount"); }
             set { BackingStore?.Set("unsupportedOSversionDeviceCount", value); }

@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get alerts from identityGovernance
+        /// Represents the alert entity.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.It
             return requestInfo;
         }
         /// <summary>
-        /// Get alerts from identityGovernance
+        /// Represents the alert entity.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -201,7 +201,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.It
             }
         }
         /// <summary>
-        /// Get alerts from identityGovernance
+        /// Represents the alert entity.
         /// </summary>
         public class UnifiedRoleManagementAlertItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

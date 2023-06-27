@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>True if Tenant attach is configured. If configured then SCCM tenant attached devices will show up in UXA reporting.</summary>
+        /// <summary>When TRUE, indicates Tenant attach is configured properly and System Center Configuration Manager (SCCM) tenant attached devices will show up in endpoint analytics reporting. When FALSE, indicates Tenant attach is not configured. FALSE by default.</summary>
         public bool? ConfigurationManagerDataConnectorConfigured {
             get { return BackingStore?.Get<bool?>("configurationManagerDataConnectorConfigured"); }
             set { BackingStore?.Set("configurationManagerDataConnectorConfigured", value); }

@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class TooManyGlobalAdminsAssignedToTenantAlertIncident : UnifiedRoleManagementAlertIncident, IParsable {
-        /// <summary>The assigneeDisplayName property</summary>
+        /// <summary>Display name of the subject that the incident applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssigneeDisplayName {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assigneeDisplayName", value); }
         }
 #endif
-        /// <summary>The assigneeId property</summary>
+        /// <summary>The identifier of the subject that the incident applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssigneeId {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assigneeId", value); }
         }
 #endif
-        /// <summary>The assigneeUserPrincipalName property</summary>
+        /// <summary>User principal name of the subject that the incident applies to. Applies to user principals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssigneeUserPrincipalName {

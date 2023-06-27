@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("_id", value); }
         }
 #endif
-        /// <summary>Indicates whether the current result is collapses when the collapseProperties property is used.</summary>
+        /// <summary>Indicates whether the current result is collapses when the collapseProperties property in the searchRequest is used.</summary>
         public bool? IsCollapsed {
             get { return BackingStore?.Get<bool?>("isCollapsed"); }
             set { BackingStore?.Set("isCollapsed", value); }

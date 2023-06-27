@@ -8,7 +8,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// The user experience analytics device startup process details.
     /// </summary>
     public class UserExperienceAnalyticsDeviceStartupProcess : Entity, IParsable {
-        /// <summary>The user experience analytics device id.</summary>
+        /// <summary>The Intune device id of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ManagedDeviceId {
@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managedDeviceId", value); }
         }
 #endif
-        /// <summary>User experience analytics device startup process name.</summary>
+        /// <summary>The name of the process. Examples: outlook, excel. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProcessName {
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("processName", value); }
         }
 #endif
-        /// <summary>The user experience analytics device startup process product name.</summary>
+        /// <summary>The product name of the process. Examples: Microsoft Outlook, Microsoft Excel. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProductName {
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("productName", value); }
         }
 #endif
-        /// <summary>The User experience analytics device startup process publisher.</summary>
+        /// <summary>The publisher of the process. Examples: Microsoft Corporation, Contoso Corp. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Publisher {
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("publisher", value); }
         }
 #endif
-        /// <summary>User experience analytics device startup process impact in milliseconds.</summary>
+        /// <summary>The impact of startup process on device boot time in milliseconds. Supports: $select, $OrderBy. Read-only.</summary>
         public int? StartupImpactInMs {
             get { return BackingStore?.Get<int?>("startupImpactInMs"); }
             set { BackingStore?.Set("startupImpactInMs", value); }

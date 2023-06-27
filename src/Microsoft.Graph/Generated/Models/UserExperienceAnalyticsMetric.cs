@@ -8,7 +8,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// The user experience analytics metric contains the score and units of a metric of a user experience anlaytics category.
     /// </summary>
     public class UserExperienceAnalyticsMetric : Entity, IParsable {
-        /// <summary>The unit of the user experience analytics metric.</summary>
+        /// <summary>The unit of the user experience analytics metric. Examples: none, percentage, count, seconds, score.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Unit {

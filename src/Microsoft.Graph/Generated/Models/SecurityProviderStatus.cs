@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new SecurityProviderStatus and sets the default values.
+        /// Instantiates a new securityProviderStatus and sets the default values.
         /// </summary>
         public SecurityProviderStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

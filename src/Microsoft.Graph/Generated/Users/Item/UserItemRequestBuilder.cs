@@ -73,6 +73,7 @@ using Microsoft.Graph.Beta.Users.Item.OwnedDevices;
 using Microsoft.Graph.Beta.Users.Item.OwnedObjects;
 using Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances;
 using Microsoft.Graph.Beta.Users.Item.People;
+using Microsoft.Graph.Beta.Users.Item.PermissionGrants;
 using Microsoft.Graph.Beta.Users.Item.Photo;
 using Microsoft.Graph.Beta.Users.Item.Photos;
 using Microsoft.Graph.Beta.Users.Item.Planner;
@@ -89,6 +90,7 @@ using Microsoft.Graph.Beta.Users.Item.ScopedRoleMemberOf;
 using Microsoft.Graph.Beta.Users.Item.Security;
 using Microsoft.Graph.Beta.Users.Item.SendMail;
 using Microsoft.Graph.Beta.Users.Item.Settings;
+using Microsoft.Graph.Beta.Users.Item.Sponsors;
 using Microsoft.Graph.Beta.Users.Item.Teamwork;
 using Microsoft.Graph.Beta.Users.Item.Todo;
 using Microsoft.Graph.Beta.Users.Item.TransitiveMemberOf;
@@ -398,6 +400,10 @@ namespace Microsoft.Graph.Beta.Users.Item {
         public PeopleRequestBuilder People { get =>
             new PeopleRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the permissionGrants property of the microsoft.graph.user entity.</summary>
+        public PermissionGrantsRequestBuilder PermissionGrants { get =>
+            new PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the photo property of the microsoft.graph.user entity.</summary>
         public PhotoRequestBuilder Photo { get =>
             new PhotoRequestBuilder(PathParameters, RequestAdapter);
@@ -457,6 +463,10 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.user entity.</summary>
         public SettingsRequestBuilder Settings { get =>
             new SettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sponsors property of the microsoft.graph.user entity.</summary>
+        public SponsorsRequestBuilder Sponsors { get =>
+            new SponsorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the teamwork property of the microsoft.graph.user entity.</summary>
         public TeamworkRequestBuilder Teamwork { get =>

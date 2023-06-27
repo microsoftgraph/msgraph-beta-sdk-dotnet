@@ -4,9 +4,6 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// A MobileApp that is based on a referenced application in a WinGet repository.
-    /// </summary>
     public class WinGetApp : MobileApp, IParsable {
         /// <summary>The install experience settings associated with this application, which are used to ensure the desired install experiences on the target device are taken into account. This includes the account type (System or User) that actions should be run as on target devices. Required at creation time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new winGetApp and sets the default values.
+        /// Instantiates a new WinGetApp and sets the default values.
         /// </summary>
         public WinGetApp() : base() {
             OdataType = "#microsoft.graph.winGetApp";

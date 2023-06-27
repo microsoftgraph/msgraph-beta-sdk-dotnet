@@ -272,7 +272,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new NetworkConnection and sets the default values.
+        /// Instantiates a new networkConnection and sets the default values.
         /// </summary>
         public NetworkConnection() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

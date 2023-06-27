@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class RedundantAssignmentAlertConfiguration : UnifiedRoleManagementAlertConfiguration, IParsable {
-        /// <summary>The duration property</summary>
+        /// <summary>The number of days without activation to look back on from current timestamp.</summary>
         public TimeSpan? Duration {
             get { return BackingStore?.Get<TimeSpan?>("duration"); }
             set { BackingStore?.Set("duration", value); }

@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Operation
         public OperationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts/operations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get operations from identityGovernance
+        /// Represents operations on resources that take a long time to complete and can run in the background until completion.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Operation
             return await RequestAdapter.SendAsync<LongRunningOperation>(requestInfo, LongRunningOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get operations from identityGovernance
+        /// Represents operations on resources that take a long time to complete and can run in the background until completion.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Operation
             return requestInfo;
         }
         /// <summary>
-        /// Get operations from identityGovernance
+        /// Represents operations on resources that take a long time to complete and can run in the background until completion.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

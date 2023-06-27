@@ -8,17 +8,17 @@ namespace Microsoft.Graph.Beta.Models {
     /// The user experience analytics device OS version performance entity contains OS version performance details.
     /// </summary>
     public class UserExperienceAnalyticsAppHealthOSVersionPerformance : Entity, IParsable {
-        /// <summary>The number of active devices for the OS version. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>The number of active devices for the OS version. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
         public int? ActiveDeviceCount {
             get { return BackingStore?.Get<int?>("activeDeviceCount"); }
             set { BackingStore?.Set("activeDeviceCount", value); }
         }
-        /// <summary>The mean time to failure for the OS version in minutes. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
         public int? MeanTimeToFailureInMinutes {
             get { return BackingStore?.Get<int?>("meanTimeToFailureInMinutes"); }
             set { BackingStore?.Set("meanTimeToFailureInMinutes", value); }
         }
-        /// <summary>The OS build number installed on the device.</summary>
+        /// <summary>The OS build number installed on the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OsBuildNumber {
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("osBuildNumber", value); }
         }
 #endif
-        /// <summary>The OS version installed on the device.</summary>
+        /// <summary>The OS version installed on the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OsVersion {
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("osVersion", value); }
         }
 #endif
-        /// <summary>The app health score of the OS version. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>The application health score of the OS version. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? OsVersionAppHealthScore {
             get { return BackingStore?.Get<double?>("osVersionAppHealthScore"); }
             set { BackingStore?.Set("osVersionAppHealthScore", value); }

@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowedIosDeviceModels", value); }
         }
 #endif
-        /// <summary>Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time).</summary>
+        /// <summary>Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.</summary>
         public ManagedAppRemediationAction? AppActionIfAccountIsClockedOut {
             get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfAccountIsClockedOut"); }
             set { BackingStore?.Set("appActionIfAccountIsClockedOut", value); }

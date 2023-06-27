@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("payloadType", value); }
         }
         /// <summary>
-        /// Instantiates a new payloadByFilter and sets the default values.
+        /// Instantiates a new PayloadByFilter and sets the default values.
         /// </summary>
         public PayloadByFilter() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

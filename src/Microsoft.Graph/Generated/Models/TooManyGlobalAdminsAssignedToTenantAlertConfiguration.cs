@@ -5,12 +5,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class TooManyGlobalAdminsAssignedToTenantAlertConfiguration : UnifiedRoleManagementAlertConfiguration, IParsable {
-        /// <summary>The globalAdminCountThreshold property</summary>
+        /// <summary>The threshold for the number of accounts assigned the Global Administrator role in the tenant. Triggers an alert if the number of global administrators in the tenant reaches or crosses this threshold value.</summary>
         public int? GlobalAdminCountThreshold {
             get { return BackingStore?.Get<int?>("globalAdminCountThreshold"); }
             set { BackingStore?.Set("globalAdminCountThreshold", value); }
         }
-        /// <summary>The percentageOfGlobalAdminsOutOfRolesThreshold property</summary>
+        /// <summary>Threshold of the percentage of global administrators out of all the role assignments in the tenant. Triggers an alert if the percentage in the tenant reaches or crosses this threshold value.</summary>
         public int? PercentageOfGlobalAdminsOutOfRolesThreshold {
             get { return BackingStore?.Get<int?>("percentageOfGlobalAdminsOutOfRolesThreshold"); }
             set { BackingStore?.Set("percentageOfGlobalAdminsOutOfRolesThreshold", value); }

@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidForWorkAppConfigurationSchemaItem and sets the default values.
+        /// Instantiates a new androidForWorkAppConfigurationSchemaItem and sets the default values.
         /// </summary>
         public AndroidForWorkAppConfigurationSchemaItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
