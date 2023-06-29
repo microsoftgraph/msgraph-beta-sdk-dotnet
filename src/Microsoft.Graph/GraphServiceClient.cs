@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta
         public GraphServiceClient(
             IAuthenticationProvider authenticationProvider,
             string baseUrl = null
-            ): this(new BaseGraphRequestAdapter(authenticationProvider, graphClientOptions),baseUrl)
+            ): this(new BaseGraphRequestAdapter(authenticationProvider, graphClientOptions, httpClient: GraphClientFactory.Create(graphClientOptions,"beta")),baseUrl)
         {
         }
 
