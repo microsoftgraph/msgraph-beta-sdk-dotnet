@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class ProcessEvidence : AlertEvidence, IParsable {
-        /// <summary>The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.</summary>
+        /// <summary>The status of the detection. The possible values are: detected, blocked, prevented, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Security.DetectionStatus? DetectionStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DetectionStatus?>("detectionStatus"); }
             set { BackingStore?.Set("detectionStatus", value); }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("mdeDeviceId", value); }
         }
 #endif
-        /// <summary>Date and time when the parent of the process was created.</summary>
+        /// <summary>Date and time when the parent of the process was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ParentProcessCreationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("parentProcessCreationDateTime"); }
             set { BackingStore?.Set("parentProcessCreationDateTime", value); }
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("processCommandLine", value); }
         }
 #endif
-        /// <summary>Date and time the process was created.</summary>
+        /// <summary>Date and time when the process was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ProcessCreationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("processCreationDateTime"); }
             set { BackingStore?.Set("processCreationDateTime", value); }

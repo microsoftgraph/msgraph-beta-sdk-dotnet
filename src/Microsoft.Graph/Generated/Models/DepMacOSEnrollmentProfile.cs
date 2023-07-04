@@ -52,6 +52,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("adminAccountUserName", value); }
         }
 #endif
+        /// <summary>Indicates if Setup Assistant will automatically advance through its screen</summary>
+        public bool? AutoAdvanceSetupEnabled {
+            get { return BackingStore?.Get<bool?>("autoAdvanceSetupEnabled"); }
+            set { BackingStore?.Set("autoAdvanceSetupEnabled", value); }
+        }
         /// <summary>Indicates if UnlockWithWatch screen is disabled</summary>
         public bool? AutoUnlockWithWatchDisabled {
             get { return BackingStore?.Get<bool?>("autoUnlockWithWatchDisabled"); }
@@ -173,6 +178,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"adminAccountFullName", n => { AdminAccountFullName = n.GetStringValue(); } },
                 {"adminAccountPassword", n => { AdminAccountPassword = n.GetStringValue(); } },
                 {"adminAccountUserName", n => { AdminAccountUserName = n.GetStringValue(); } },
+                {"autoAdvanceSetupEnabled", n => { AutoAdvanceSetupEnabled = n.GetBoolValue(); } },
                 {"autoUnlockWithWatchDisabled", n => { AutoUnlockWithWatchDisabled = n.GetBoolValue(); } },
                 {"chooseYourLockScreenDisabled", n => { ChooseYourLockScreenDisabled = n.GetBoolValue(); } },
                 {"dontAutoPopulatePrimaryAccountInfo", n => { DontAutoPopulatePrimaryAccountInfo = n.GetBoolValue(); } },
@@ -202,6 +208,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("adminAccountFullName", AdminAccountFullName);
             writer.WriteStringValue("adminAccountPassword", AdminAccountPassword);
             writer.WriteStringValue("adminAccountUserName", AdminAccountUserName);
+            writer.WriteBoolValue("autoAdvanceSetupEnabled", AutoAdvanceSetupEnabled);
             writer.WriteBoolValue("autoUnlockWithWatchDisabled", AutoUnlockWithWatchDisabled);
             writer.WriteBoolValue("chooseYourLockScreenDisabled", ChooseYourLockScreenDisabled);
             writer.WriteBoolValue("dontAutoPopulatePrimaryAccountInfo", DontAutoPopulatePrimaryAccountInfo);

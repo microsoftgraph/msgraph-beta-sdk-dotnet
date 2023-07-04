@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
 #endif
         /// <summary>
-        /// Instantiates a new RoleAssignment and sets the default values.
+        /// Instantiates a new roleAssignment and sets the default values.
         /// </summary>
         public RoleAssignment() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -18,5 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
         CounterclockwiseFromBottomRight,
         [EnumMember(Value = "clockwiseFromBottomRight")]
         ClockwiseFromBottomRight,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

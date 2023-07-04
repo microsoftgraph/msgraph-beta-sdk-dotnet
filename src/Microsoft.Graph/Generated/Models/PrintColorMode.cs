@@ -10,5 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
         Color,
         [EnumMember(Value = "auto")]
         Auto,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

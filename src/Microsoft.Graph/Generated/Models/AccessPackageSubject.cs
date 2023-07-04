@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageSubject : Entity, IParsable {
-        /// <summary>The altSecId property</summary>
+        /// <summary>Not Supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AltSecId {
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("email", value); }
         }
 #endif
-        /// <summary>The object identifier of the subject. null if the subject is not yet a user in the tenant.</summary>
+        /// <summary>The object identifier of the subject. null if the subject is not yet a user in the tenant. Alternate key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectId {
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("principalName", value); }
         }
 #endif
-        /// <summary>The subjectLifecycle property</summary>
+        /// <summary>The lifecycle of the subject user, if a guest. The possible values are: notDefined, notGoverned, governed, unknownFutureValue.</summary>
         public AccessPackageSubjectLifecycle? SubjectLifecycle {
             get { return BackingStore?.Get<AccessPackageSubjectLifecycle?>("subjectLifecycle"); }
             set { BackingStore?.Set("subjectLifecycle", value); }

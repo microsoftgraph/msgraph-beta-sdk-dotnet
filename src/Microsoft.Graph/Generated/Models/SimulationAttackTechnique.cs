@@ -16,5 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
         LinkToMalwareFile,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "oAuthConsentGrant")]
+        OAuthConsentGrant,
     }
 }

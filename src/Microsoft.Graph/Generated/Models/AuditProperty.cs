@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AuditProperty and sets the default values.
+        /// Instantiates a new auditProperty and sets the default values.
         /// </summary>
         public AuditProperty() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

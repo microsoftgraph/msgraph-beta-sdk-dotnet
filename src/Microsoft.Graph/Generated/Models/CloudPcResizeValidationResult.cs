@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The cloudPcId property</summary>
+        /// <summary>The cloudPC id that corresponds to its unique identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CloudPcId {
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The validationResult property</summary>
+        /// <summary>Describes a list of the validation result for the Cloud PC resize action. The possible values are: success, cloudPcNotFound, operationCnflict, operationNotSupported, targetLicenseHasAssigned, internalServerError, and unknownFutureValue.</summary>
         public CloudPcResizeValidationCode? ValidationResult {
             get { return BackingStore?.Get<CloudPcResizeValidationCode?>("validationResult"); }
             set { BackingStore?.Set("validationResult", value); }

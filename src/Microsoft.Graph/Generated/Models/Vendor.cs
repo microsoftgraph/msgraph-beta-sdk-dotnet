@@ -245,7 +245,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new vendor and sets the default values.
+        /// Instantiates a new Vendor and sets the default values.
         /// </summary>
         public Vendor() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

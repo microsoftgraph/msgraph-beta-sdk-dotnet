@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new deviceComplianceScriptError and sets the default values.
+        /// Instantiates a new DeviceComplianceScriptError and sets the default values.
         /// </summary>
         public DeviceComplianceScriptError() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

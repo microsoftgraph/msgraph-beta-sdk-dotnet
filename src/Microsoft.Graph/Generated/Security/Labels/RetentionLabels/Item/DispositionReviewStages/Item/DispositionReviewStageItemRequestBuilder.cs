@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.DispositionR
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
+        /// When action at the end of retention is chosen as &apos;dispositionReview&apos;, dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.DispositionR
             return requestInfo;
         }
         /// <summary>
-        /// Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
+        /// When action at the end of retention is chosen as &apos;dispositionReview&apos;, dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.DispositionR
             }
         }
         /// <summary>
-        /// Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
+        /// When action at the end of retention is chosen as &apos;dispositionReview&apos;, dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
         /// </summary>
         public class DispositionReviewStageItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

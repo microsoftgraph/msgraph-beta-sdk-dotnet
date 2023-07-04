@@ -79,6 +79,62 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             get { return BackingStore?.Get<decimal?>("charge"); }
             set { BackingStore?.Set("charge", value); }
         }
+        /// <summary>Local IPv4 of the client that is retrieved from the operating system of the client.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientLocalIpV4Address {
+            get { return BackingStore?.Get<string?>("clientLocalIpV4Address"); }
+            set { BackingStore?.Set("clientLocalIpV4Address", value); }
+        }
+#nullable restore
+#else
+        public string ClientLocalIpV4Address {
+            get { return BackingStore?.Get<string>("clientLocalIpV4Address"); }
+            set { BackingStore?.Set("clientLocalIpV4Address", value); }
+        }
+#endif
+        /// <summary>Local IPv6 of the client that is retrieved from the operating system of the client.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientLocalIpV6Address {
+            get { return BackingStore?.Get<string?>("clientLocalIpV6Address"); }
+            set { BackingStore?.Set("clientLocalIpV6Address", value); }
+        }
+#nullable restore
+#else
+        public string ClientLocalIpV6Address {
+            get { return BackingStore?.Get<string>("clientLocalIpV6Address"); }
+            set { BackingStore?.Set("clientLocalIpV6Address", value); }
+        }
+#endif
+        /// <summary>Public IPv4 of the client that can be used to determine the location of the client.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientPublicIpV4Address {
+            get { return BackingStore?.Get<string?>("clientPublicIpV4Address"); }
+            set { BackingStore?.Set("clientPublicIpV4Address", value); }
+        }
+#nullable restore
+#else
+        public string ClientPublicIpV4Address {
+            get { return BackingStore?.Get<string>("clientPublicIpV4Address"); }
+            set { BackingStore?.Set("clientPublicIpV4Address", value); }
+        }
+#endif
+        /// <summary>Public IPv6 of the client that can be used to determine the location of the client.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientPublicIpV6Address {
+            get { return BackingStore?.Get<string?>("clientPublicIpV6Address"); }
+            set { BackingStore?.Set("clientPublicIpV6Address", value); }
+        }
+#nullable restore
+#else
+        public string ClientPublicIpV6Address {
+            get { return BackingStore?.Get<string>("clientPublicIpV6Address"); }
+            set { BackingStore?.Set("clientPublicIpV6Address", value); }
+        }
+#endif
         /// <summary>ID of the audio conference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -335,6 +391,10 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
                 {"callId", n => { CallId = n.GetStringValue(); } },
                 {"callType", n => { CallType = n.GetStringValue(); } },
                 {"charge", n => { Charge = n.GetDecimalValue(); } },
+                {"clientLocalIpV4Address", n => { ClientLocalIpV4Address = n.GetStringValue(); } },
+                {"clientLocalIpV6Address", n => { ClientLocalIpV6Address = n.GetStringValue(); } },
+                {"clientPublicIpV4Address", n => { ClientPublicIpV4Address = n.GetStringValue(); } },
+                {"clientPublicIpV6Address", n => { ClientPublicIpV6Address = n.GetStringValue(); } },
                 {"conferenceId", n => { ConferenceId = n.GetStringValue(); } },
                 {"connectionCharge", n => { ConnectionCharge = n.GetDecimalValue(); } },
                 {"currency", n => { Currency = n.GetStringValue(); } },
@@ -368,6 +428,10 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             writer.WriteStringValue("callId", CallId);
             writer.WriteStringValue("callType", CallType);
             writer.WriteDecimalValue("charge", Charge);
+            writer.WriteStringValue("clientLocalIpV4Address", ClientLocalIpV4Address);
+            writer.WriteStringValue("clientLocalIpV6Address", ClientLocalIpV6Address);
+            writer.WriteStringValue("clientPublicIpV4Address", ClientPublicIpV4Address);
+            writer.WriteStringValue("clientPublicIpV6Address", ClientPublicIpV6Address);
             writer.WriteStringValue("conferenceId", ConferenceId);
             writer.WriteDecimalValue("connectionCharge", ConnectionCharge);
             writer.WriteStringValue("currency", Currency);

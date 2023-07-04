@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.RetentionEve
         public RetentionEventTypeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/retentionEventType{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get retentionEventType from security
+        /// Represents the type associated with a retention event.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.RetentionEve
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.RetentionEventType>(requestInfo, Microsoft.Graph.Beta.Models.Security.RetentionEventType.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get retentionEventType from security
+        /// Represents the type associated with a retention event.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.RetentionEve
             return requestInfo;
         }
         /// <summary>
-        /// Get retentionEventType from security
+        /// Represents the type associated with a retention event.
         /// </summary>
         public class RetentionEventTypeRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

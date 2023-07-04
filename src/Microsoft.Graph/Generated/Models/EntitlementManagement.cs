@@ -187,7 +187,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("settings", value); }
         }
 #endif
-        /// <summary>The subjects property</summary>
+        /// <summary>Represents the subjects within entitlement management.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AccessPackageSubject>? Subjects {

@@ -16,5 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
         DeviceCode,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "authenticationTransfer")]
+        AuthenticationTransfer,
     }
 }

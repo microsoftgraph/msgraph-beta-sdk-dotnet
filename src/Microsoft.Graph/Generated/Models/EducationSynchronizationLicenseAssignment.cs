@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EducationSynchronizationLicenseAssignment and sets the default values.
+        /// Instantiates a new educationSynchronizationLicenseAssignment and sets the default values.
         /// </summary>
         public EducationSynchronizationLicenseAssignment() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

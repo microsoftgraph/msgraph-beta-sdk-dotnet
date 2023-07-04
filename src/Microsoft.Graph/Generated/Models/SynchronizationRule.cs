@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new SynchronizationRule and sets the default values.
+        /// Instantiates a new synchronizationRule and sets the default values.
         /// </summary>
         public SynchronizationRule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

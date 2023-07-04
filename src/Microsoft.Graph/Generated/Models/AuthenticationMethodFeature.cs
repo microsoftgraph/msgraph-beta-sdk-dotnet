@@ -12,5 +12,7 @@ namespace Microsoft.Graph.Beta.Models {
         PasswordlessCapable,
         [EnumMember(Value = "mfaCapable")]
         MfaCapable,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AssignmentFilterTypeAndEvaluationResult and sets the default values.
+        /// Instantiates a new assignmentFilterTypeAndEvaluationResult and sets the default values.
         /// </summary>
         public AssignmentFilterTypeAndEvaluationResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alternativeRecording", value); }
         }
 #endif
-        /// <summary>The anonymizeIdentityForRoles property</summary>
+        /// <summary>Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OnlineMeetingRole?>? AnonymizeIdentityForRoles {
