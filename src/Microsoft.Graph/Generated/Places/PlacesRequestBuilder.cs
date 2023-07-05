@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Places.Count;
 using Microsoft.Graph.Beta.Places.GraphRoom;
+using Microsoft.Graph.Beta.Places.GraphRoomList;
 using Microsoft.Graph.Beta.Places.Item;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -19,6 +20,10 @@ namespace Microsoft.Graph.Beta.Places {
         /// <summary>Casts the previous resource to room.</summary>
         public GraphRoomRequestBuilder GraphRoom { get =>
             new GraphRoomRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to roomList.</summary>
+        public GraphRoomListRequestBuilder GraphRoomList { get =>
+            new GraphRoomListRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of place entities.</summary>
         public PlaceItemRequestBuilder this[string position] { get {

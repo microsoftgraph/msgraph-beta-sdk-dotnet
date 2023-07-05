@@ -58,6 +58,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("enabledSkipKeys", value); }
         }
 #endif
+        /// <summary>EnrollmentTimeAzureAdGroupIds contains list of enrollment time Azure Group Ids to be associated with profile</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Guid?>? EnrollmentTimeAzureAdGroupIds {
+            get { return BackingStore?.Get<List<Guid?>?>("enrollmentTimeAzureAdGroupIds"); }
+            set { BackingStore?.Set("enrollmentTimeAzureAdGroupIds", value); }
+        }
+#nullable restore
+#else
+        public List<Guid?> EnrollmentTimeAzureAdGroupIds {
+            get { return BackingStore?.Get<List<Guid?>>("enrollmentTimeAzureAdGroupIds"); }
+            set { BackingStore?.Set("enrollmentTimeAzureAdGroupIds", value); }
+        }
+#endif
         /// <summary>Indicates if this is the default profile</summary>
         public bool? IsDefault {
             get { return BackingStore?.Get<bool?>("isDefault"); }
@@ -172,6 +186,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"diagnosticsDisabled", n => { DiagnosticsDisabled = n.GetBoolValue(); } },
                 {"displayToneSetupDisabled", n => { DisplayToneSetupDisabled = n.GetBoolValue(); } },
                 {"enabledSkipKeys", n => { EnabledSkipKeys = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"enrollmentTimeAzureAdGroupIds", n => { EnrollmentTimeAzureAdGroupIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
                 {"isDefault", n => { IsDefault = n.GetBoolValue(); } },
                 {"isMandatory", n => { IsMandatory = n.GetBoolValue(); } },
                 {"locationDisabled", n => { LocationDisabled = n.GetBoolValue(); } },
@@ -201,6 +216,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("diagnosticsDisabled", DiagnosticsDisabled);
             writer.WriteBoolValue("displayToneSetupDisabled", DisplayToneSetupDisabled);
             writer.WriteCollectionOfPrimitiveValues<string>("enabledSkipKeys", EnabledSkipKeys);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("enrollmentTimeAzureAdGroupIds", EnrollmentTimeAzureAdGroupIds);
             writer.WriteBoolValue("isDefault", IsDefault);
             writer.WriteBoolValue("isMandatory", IsMandatory);
             writer.WriteBoolValue("locationDisabled", LocationDisabled);

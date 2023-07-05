@@ -8,5 +8,7 @@ namespace Microsoft.Graph.Beta.Models {
         FlipOnShortEdge,
         [EnumMember(Value = "oneSided")]
         OneSided,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

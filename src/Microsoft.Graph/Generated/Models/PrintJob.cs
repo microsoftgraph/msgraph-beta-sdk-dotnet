@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
-        /// <summary>A group of settings that a printer should use to print a job.</summary>
+        /// <summary>The configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PrintJobConfiguration? Configuration {
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("redirectedTo", value); }
         }
 #endif
-        /// <summary>The status of the print job. Read-only.</summary>
+        /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PrintJobStatus? Status {

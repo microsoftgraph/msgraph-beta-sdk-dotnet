@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("partnerAgentInstallResults", value); }
         }
 #endif
-        /// <summary>The powerState property</summary>
+        /// <summary>The power state of a Cloud PC. The possible values are: running, poweredOff and unknown. This property only supports shift work Cloud PCs.</summary>
         public CloudPcPowerState? PowerState {
             get { return BackingStore?.Get<CloudPcPowerState?>("powerState"); }
             set { BackingStore?.Set("powerState", value); }

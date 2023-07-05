@@ -19,6 +19,35 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appUrl", value); }
         }
 #endif
+        /// <summary>Whether or not to open the web clip as a full-screen web app. Defaults to false. If TRUE, opens the web clip as a full-screen web app. If FALSE, the web clip opens inside of another app, such as Safari or the app specified with targetApplicationBundleIdentifier.</summary>
+        public bool? FullScreenEnabled {
+            get { return BackingStore?.Get<bool?>("fullScreenEnabled"); }
+            set { BackingStore?.Set("fullScreenEnabled", value); }
+        }
+        /// <summary>Whether or not a full screen web clip can navigate to an external web site without showing the Safari UI. Defaults to false. If FALSE, the Safari UI appears when navigating away. If TRUE, the Safari UI will not be shown.</summary>
+        public bool? IgnoreManifestScope {
+            get { return BackingStore?.Get<bool?>("ignoreManifestScope"); }
+            set { BackingStore?.Set("ignoreManifestScope", value); }
+        }
+        /// <summary>Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding &quot;shine&quot; to the icon. If FALSE, SpringBoard can add &quot;shine&quot;.</summary>
+        public bool? PreComposedIconEnabled {
+            get { return BackingStore?.Get<bool?>("preComposedIconEnabled"); }
+            set { BackingStore?.Set("preComposedIconEnabled", value); }
+        }
+        /// <summary>Specifies the application bundle identifier which opens the URL. Available in iOS 14 and later.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TargetApplicationBundleIdentifier {
+            get { return BackingStore?.Get<string?>("targetApplicationBundleIdentifier"); }
+            set { BackingStore?.Set("targetApplicationBundleIdentifier", value); }
+        }
+#nullable restore
+#else
+        public string TargetApplicationBundleIdentifier {
+            get { return BackingStore?.Get<string>("targetApplicationBundleIdentifier"); }
+            set { BackingStore?.Set("targetApplicationBundleIdentifier", value); }
+        }
+#endif
         /// <summary>Whether or not to use managed browser. When TRUE, the app will be required to be opened in Microsoft Edge. When FALSE, the app will not be required to be opened in Microsoft Edge. By default, this property is set to FALSE.</summary>
         public bool? UseManagedBrowser {
             get { return BackingStore?.Get<bool?>("useManagedBrowser"); }
@@ -44,6 +73,10 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"appUrl", n => { AppUrl = n.GetStringValue(); } },
+                {"fullScreenEnabled", n => { FullScreenEnabled = n.GetBoolValue(); } },
+                {"ignoreManifestScope", n => { IgnoreManifestScope = n.GetBoolValue(); } },
+                {"preComposedIconEnabled", n => { PreComposedIconEnabled = n.GetBoolValue(); } },
+                {"targetApplicationBundleIdentifier", n => { TargetApplicationBundleIdentifier = n.GetStringValue(); } },
                 {"useManagedBrowser", n => { UseManagedBrowser = n.GetBoolValue(); } },
             };
         }
@@ -55,6 +88,10 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("appUrl", AppUrl);
+            writer.WriteBoolValue("fullScreenEnabled", FullScreenEnabled);
+            writer.WriteBoolValue("ignoreManifestScope", IgnoreManifestScope);
+            writer.WriteBoolValue("preComposedIconEnabled", PreComposedIconEnabled);
+            writer.WriteStringValue("targetApplicationBundleIdentifier", TargetApplicationBundleIdentifier);
             writer.WriteBoolValue("useManagedBrowser", UseManagedBrowser);
         }
     }

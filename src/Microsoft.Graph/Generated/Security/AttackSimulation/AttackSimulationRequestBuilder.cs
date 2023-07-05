@@ -1,9 +1,13 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Security.AttackSimulation.EndUserNotifications;
+using Microsoft.Graph.Beta.Security.AttackSimulation.LandingPages;
+using Microsoft.Graph.Beta.Security.AttackSimulation.LoginPages;
 using Microsoft.Graph.Beta.Security.AttackSimulation.Operations;
 using Microsoft.Graph.Beta.Security.AttackSimulation.Payloads;
 using Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations;
 using Microsoft.Graph.Beta.Security.AttackSimulation.Simulations;
+using Microsoft.Graph.Beta.Security.AttackSimulation.Trainings;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -17,6 +21,18 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation {
     /// Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
     /// </summary>
     public class AttackSimulationRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the endUserNotifications property of the microsoft.graph.attackSimulationRoot entity.</summary>
+        public EndUserNotificationsRequestBuilder EndUserNotifications { get =>
+            new EndUserNotificationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the landingPages property of the microsoft.graph.attackSimulationRoot entity.</summary>
+        public LandingPagesRequestBuilder LandingPages { get =>
+            new LandingPagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the loginPages property of the microsoft.graph.attackSimulationRoot entity.</summary>
+        public LoginPagesRequestBuilder LoginPages { get =>
+            new LoginPagesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.attackSimulationRoot entity.</summary>
         public OperationsRequestBuilder Operations { get =>
             new OperationsRequestBuilder(PathParameters, RequestAdapter);
@@ -32,6 +48,10 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation {
         /// <summary>Provides operations to manage the simulations property of the microsoft.graph.attackSimulationRoot entity.</summary>
         public SimulationsRequestBuilder Simulations { get =>
             new SimulationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the trainings property of the microsoft.graph.attackSimulationRoot entity.</summary>
+        public TrainingsRequestBuilder Trainings { get =>
+            new TrainingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new AttackSimulationRequestBuilder and sets the default values.

@@ -78,6 +78,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfDevicePasscodeComplexityLessThanMedium"); }
             set { BackingStore?.Set("appActionIfDevicePasscodeComplexityLessThanMedium", value); }
         }
+        /// <summary>Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block &amp; wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured.</summary>
+        public ManagedAppRemediationAction? AppActionIfSamsungKnoxAttestationRequired {
+            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfSamsungKnoxAttestationRequired"); }
+            set { BackingStore?.Set("appActionIfSamsungKnoxAttestationRequired", value); }
+        }
         /// <summary>If Keyboard Restriction is enabled, only keyboards in this approved list will be allowed. A key should be Android package id for a keyboard and value should be a friendly name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -389,6 +394,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"appActionIfDevicePasscodeComplexityLessThanHigh", n => { AppActionIfDevicePasscodeComplexityLessThanHigh = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"appActionIfDevicePasscodeComplexityLessThanLow", n => { AppActionIfDevicePasscodeComplexityLessThanLow = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"appActionIfDevicePasscodeComplexityLessThanMedium", n => { AppActionIfDevicePasscodeComplexityLessThanMedium = n.GetEnumValue<ManagedAppRemediationAction>(); } },
+                {"appActionIfSamsungKnoxAttestationRequired", n => { AppActionIfSamsungKnoxAttestationRequired = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"approvedKeyboards", n => { ApprovedKeyboards = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"biometricAuthenticationBlocked", n => { BiometricAuthenticationBlocked = n.GetBoolValue(); } },
@@ -440,6 +446,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfDevicePasscodeComplexityLessThanHigh", AppActionIfDevicePasscodeComplexityLessThanHigh);
             writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfDevicePasscodeComplexityLessThanLow", AppActionIfDevicePasscodeComplexityLessThanLow);
             writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfDevicePasscodeComplexityLessThanMedium", AppActionIfDevicePasscodeComplexityLessThanMedium);
+            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfSamsungKnoxAttestationRequired", AppActionIfSamsungKnoxAttestationRequired);
             writer.WriteCollectionOfObjectValues<KeyValuePair>("approvedKeyboards", ApprovedKeyboards);
             writer.WriteCollectionOfObjectValues<ManagedMobileApp>("apps", Apps);
             writer.WriteBoolValue("biometricAuthenticationBlocked", BiometricAuthenticationBlocked);

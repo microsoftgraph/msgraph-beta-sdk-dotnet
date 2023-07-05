@@ -18,5 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
         Canceled,
         [EnumMember(Value = "aborted")]
         Aborted,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

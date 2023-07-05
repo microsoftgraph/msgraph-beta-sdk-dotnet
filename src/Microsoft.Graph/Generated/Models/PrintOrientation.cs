@@ -10,5 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
         ReverseLandscape,
         [EnumMember(Value = "reversePortrait")]
         ReversePortrait,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.GetActiveMalwareSummaryRepor
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetAllCertificatesReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetAppStatusOverviewReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetAppsInstallSummaryReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetAutopilotDeploymentStatus;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetCachedReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetCertificatesReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePoliciesReportForDevice;
@@ -112,6 +113,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports {
         /// <summary>Provides operations to call the getAppStatusOverviewReport method.</summary>
         public GetAppStatusOverviewReportRequestBuilder GetAppStatusOverviewReport { get =>
             new GetAppStatusOverviewReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getAutopilotDeploymentStatus method.</summary>
+        public GetAutopilotDeploymentStatusRequestBuilder GetAutopilotDeploymentStatus { get =>
+            new GetAutopilotDeploymentStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCachedReport method.</summary>
         public GetCachedReportRequestBuilder GetCachedReport { get =>

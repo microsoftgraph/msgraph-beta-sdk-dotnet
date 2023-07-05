@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
+using Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.Descriptors;
 using Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.DispositionReviewStages;
 using Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.RetentionEventType;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -15,6 +16,10 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item {
     /// Provides operations to manage the retentionLabels property of the microsoft.graph.security.labelsRoot entity.
     /// </summary>
     public class RetentionLabelItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the descriptors property of the microsoft.graph.security.retentionLabel entity.</summary>
+        public DescriptorsRequestBuilder Descriptors { get =>
+            new DescriptorsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the dispositionReviewStages property of the microsoft.graph.security.retentionLabel entity.</summary>
         public DispositionReviewStagesRequestBuilder DispositionReviewStages { get =>
             new DispositionReviewStagesRequestBuilder(PathParameters, RequestAdapter);
@@ -58,7 +63,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get retentionLabels from security
+        /// Represents how customers can manage their data, whether and for how long to retain or delete it.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +128,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get retentionLabels from security
+        /// Represents how customers can manage their data, whether and for how long to retain or delete it.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -193,7 +198,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item {
             }
         }
         /// <summary>
-        /// Get retentionLabels from security
+        /// Represents how customers can manage their data, whether and for how long to retain or delete it.
         /// </summary>
         public class RetentionLabelItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

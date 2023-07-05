@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("offset", value); }
         }
         /// <summary>
-        /// Instantiates a new MatchLocation and sets the default values.
+        /// Instantiates a new matchLocation and sets the default values.
         /// </summary>
         public MatchLocation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

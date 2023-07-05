@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("onboardingStatus", value); }
         }
         /// <summary>
-        /// Instantiates a new WorkloadStatus and sets the default values.
+        /// Instantiates a new workloadStatus and sets the default values.
         /// </summary>
         public WorkloadStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

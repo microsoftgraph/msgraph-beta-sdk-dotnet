@@ -1,7 +1,11 @@
+using Microsoft.Graph.Beta.Admin.AppsAndServices;
+using Microsoft.Graph.Beta.Admin.Dynamics;
 using Microsoft.Graph.Beta.Admin.Edge;
+using Microsoft.Graph.Beta.Admin.Forms;
 using Microsoft.Graph.Beta.Admin.ReportSettings;
 using Microsoft.Graph.Beta.Admin.ServiceAnnouncement;
 using Microsoft.Graph.Beta.Admin.Sharepoint;
+using Microsoft.Graph.Beta.Admin.Todo;
 using Microsoft.Graph.Beta.Admin.Windows;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -18,9 +22,21 @@ namespace Microsoft.Graph.Beta.Admin {
     /// Provides operations to manage the admin singleton.
     /// </summary>
     public class AdminRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the appsAndServices property of the microsoft.graph.admin entity.</summary>
+        public AppsAndServicesRequestBuilder AppsAndServices { get =>
+            new AppsAndServicesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the dynamics property of the microsoft.graph.admin entity.</summary>
+        public DynamicsRequestBuilder Dynamics { get =>
+            new DynamicsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the edge property of the microsoft.graph.admin entity.</summary>
         public EdgeRequestBuilder Edge { get =>
             new EdgeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the forms property of the microsoft.graph.admin entity.</summary>
+        public FormsRequestBuilder Forms { get =>
+            new FormsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the reportSettings property of the microsoft.graph.admin entity.</summary>
         public ReportSettingsRequestBuilder ReportSettings { get =>
@@ -33,6 +49,10 @@ namespace Microsoft.Graph.Beta.Admin {
         /// <summary>Provides operations to manage the sharepoint property of the microsoft.graph.admin entity.</summary>
         public SharepointRequestBuilder Sharepoint { get =>
             new SharepointRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the todo property of the microsoft.graph.admin entity.</summary>
+        public TodoRequestBuilder Todo { get =>
+            new TodoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windows property of the microsoft.graph.admin entity.</summary>
         public WindowsRequestBuilder Windows { get =>

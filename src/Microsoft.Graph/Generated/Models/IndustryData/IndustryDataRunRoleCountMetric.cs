@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IndustryDataRunRoleCountMetric and sets the default values.
+        /// Instantiates a new industryDataRunRoleCountMetric and sets the default values.
         /// </summary>
         public IndustryDataRunRoleCountMetric() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

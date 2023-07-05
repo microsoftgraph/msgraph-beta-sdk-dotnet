@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DlpActionInfo and sets the default values.
+        /// Instantiates a new dlpActionInfo and sets the default values.
         /// </summary>
         public DlpActionInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

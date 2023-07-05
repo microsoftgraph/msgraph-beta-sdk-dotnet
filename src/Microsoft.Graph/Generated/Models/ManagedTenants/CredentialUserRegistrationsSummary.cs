@@ -82,6 +82,20 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
+        /// <summary>The tenantLicenseType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TenantLicenseType {
+            get { return BackingStore?.Get<string?>("tenantLicenseType"); }
+            set { BackingStore?.Set("tenantLicenseType", value); }
+        }
+#nullable restore
+#else
+        public string TenantLicenseType {
+            get { return BackingStore?.Get<string>("tenantLicenseType"); }
+            set { BackingStore?.Set("tenantLicenseType", value); }
+        }
+#endif
         /// <summary>The total number of users in the given managed tenant. Optional. Read-only.</summary>
         public int? TotalUserCount {
             get { return BackingStore?.Get<int?>("totalUserCount"); }
@@ -110,6 +124,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"ssprRegisteredUserCount", n => { SsprRegisteredUserCount = n.GetIntValue(); } },
                 {"tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"tenantLicenseType", n => { TenantLicenseType = n.GetStringValue(); } },
                 {"totalUserCount", n => { TotalUserCount = n.GetIntValue(); } },
             };
         }
@@ -130,6 +145,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             writer.WriteIntValue("ssprRegisteredUserCount", SsprRegisteredUserCount);
             writer.WriteStringValue("tenantDisplayName", TenantDisplayName);
             writer.WriteStringValue("tenantId", TenantId);
+            writer.WriteStringValue("tenantLicenseType", TenantLicenseType);
             writer.WriteIntValue("totalUserCount", TotalUserCount);
         }
     }

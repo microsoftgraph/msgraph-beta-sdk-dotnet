@@ -1,5 +1,10 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
+using Microsoft.Graph.Beta.Security.Labels.Authorities;
+using Microsoft.Graph.Beta.Security.Labels.Categories;
+using Microsoft.Graph.Beta.Security.Labels.Citations;
+using Microsoft.Graph.Beta.Security.Labels.Departments;
+using Microsoft.Graph.Beta.Security.Labels.FilePlanReferences;
 using Microsoft.Graph.Beta.Security.Labels.RetentionLabels;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -14,6 +19,26 @@ namespace Microsoft.Graph.Beta.Security.Labels {
     /// Provides operations to manage the labels property of the microsoft.graph.security entity.
     /// </summary>
     public class LabelsRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the authorities property of the microsoft.graph.security.labelsRoot entity.</summary>
+        public AuthoritiesRequestBuilder Authorities { get =>
+            new AuthoritiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the categories property of the microsoft.graph.security.labelsRoot entity.</summary>
+        public CategoriesRequestBuilder Categories { get =>
+            new CategoriesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the citations property of the microsoft.graph.security.labelsRoot entity.</summary>
+        public CitationsRequestBuilder Citations { get =>
+            new CitationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the departments property of the microsoft.graph.security.labelsRoot entity.</summary>
+        public DepartmentsRequestBuilder Departments { get =>
+            new DepartmentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the filePlanReferences property of the microsoft.graph.security.labelsRoot entity.</summary>
+        public FilePlanReferencesRequestBuilder FilePlanReferences { get =>
+            new FilePlanReferencesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the retentionLabels property of the microsoft.graph.security.labelsRoot entity.</summary>
         public RetentionLabelsRequestBuilder RetentionLabels { get =>
             new RetentionLabelsRequestBuilder(PathParameters, RequestAdapter);

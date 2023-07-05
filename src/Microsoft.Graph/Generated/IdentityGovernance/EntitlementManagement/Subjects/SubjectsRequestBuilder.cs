@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects
         public SubjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/subjects{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get subjects from identityGovernance
+        /// Represents the subjects within entitlement management.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessPackageSubject>(requestInfo, Microsoft.Graph.Beta.Models.AccessPackageSubject.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get subjects from identityGovernance
+        /// Represents the subjects within entitlement management.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects
             return requestInfo;
         }
         /// <summary>
-        /// Get subjects from identityGovernance
+        /// Represents the subjects within entitlement management.
         /// </summary>
         public class SubjectsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

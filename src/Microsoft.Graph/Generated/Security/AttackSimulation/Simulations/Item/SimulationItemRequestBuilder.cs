@@ -1,5 +1,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Security.AttackSimulation.Simulations.Item.LandingPage;
+using Microsoft.Graph.Beta.Security.AttackSimulation.Simulations.Item.LoginPage;
 using Microsoft.Graph.Beta.Security.AttackSimulation.Simulations.Item.Payload;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -14,6 +16,14 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations.Item {
     /// Provides operations to manage the simulations property of the microsoft.graph.attackSimulationRoot entity.
     /// </summary>
     public class SimulationItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the landingPage property of the microsoft.graph.simulation entity.</summary>
+        public LandingPageRequestBuilder LandingPage { get =>
+            new LandingPageRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the loginPage property of the microsoft.graph.simulation entity.</summary>
+        public LoginPageRequestBuilder LoginPage { get =>
+            new LoginPageRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the payload property of the microsoft.graph.simulation entity.</summary>
         public PayloadRequestBuilder Payload { get =>
             new PayloadRequestBuilder(PathParameters, RequestAdapter);

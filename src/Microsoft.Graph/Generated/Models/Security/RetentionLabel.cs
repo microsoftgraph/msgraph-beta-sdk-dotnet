@@ -67,6 +67,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("descriptionForUsers", value); }
         }
 #endif
+        /// <summary>Represents out-of-the-box values that provide more options to improve the manageability and organization of the content you need to label.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public FilePlanDescriptor? Descriptors {
+            get { return BackingStore?.Get<FilePlanDescriptor?>("descriptors"); }
+            set { BackingStore?.Set("descriptors", value); }
+        }
+#nullable restore
+#else
+        public FilePlanDescriptor Descriptors {
+            get { return BackingStore?.Get<FilePlanDescriptor>("descriptors"); }
+            set { BackingStore?.Set("descriptors", value); }
+        }
+#endif
         /// <summary>Unique string that defines a label name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Review stages during which reviewers are notified to determine whether a document must be deleted or retained.</summary>
+        /// <summary>When action at the end of retention is chosen as &apos;dispositionReview&apos;, dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DispositionReviewStage>? DispositionReviewStages {
@@ -147,7 +161,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("retentionDuration", value); }
         }
 #endif
-        /// <summary>The retentionEventType property</summary>
+        /// <summary>Represents the type associated with a retention event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Security.RetentionEventType? RetentionEventType {
@@ -186,6 +200,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"defaultRecordBehavior", n => { DefaultRecordBehavior = n.GetEnumValue<DefaultRecordBehavior>(); } },
                 {"descriptionForAdmins", n => { DescriptionForAdmins = n.GetStringValue(); } },
                 {"descriptionForUsers", n => { DescriptionForUsers = n.GetStringValue(); } },
+                {"descriptors", n => { Descriptors = n.GetObjectValue<FilePlanDescriptor>(FilePlanDescriptor.CreateFromDiscriminatorValue); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"dispositionReviewStages", n => { DispositionReviewStages = n.GetCollectionOfObjectValues<DispositionReviewStage>(DispositionReviewStage.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"isInUse", n => { IsInUse = n.GetBoolValue(); } },
@@ -211,6 +226,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             writer.WriteEnumValue<DefaultRecordBehavior>("defaultRecordBehavior", DefaultRecordBehavior);
             writer.WriteStringValue("descriptionForAdmins", DescriptionForAdmins);
             writer.WriteStringValue("descriptionForUsers", DescriptionForUsers);
+            writer.WriteObjectValue<FilePlanDescriptor>("descriptors", Descriptors);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<DispositionReviewStage>("dispositionReviewStages", DispositionReviewStages);
             writer.WriteBoolValue("isInUse", IsInUse);
