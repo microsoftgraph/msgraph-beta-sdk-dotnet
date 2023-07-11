@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TimeCard and sets the default values.
+        /// Instantiates a new timeCard and sets the default values.
         /// </summary>
         public TimeCard() : base() {
             OdataType = "#microsoft.graph.timeCard";

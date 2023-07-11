@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties for the health summary of the Windows management app.
+    /// </summary>
     public class WindowsManagementAppHealthSummary : Entity, IParsable {
         /// <summary>Healthy device count.</summary>
         public int? HealthyDeviceCount {

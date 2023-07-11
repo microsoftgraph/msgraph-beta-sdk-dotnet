@@ -5,6 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the Windows10EndpointProtectionConfiguration resource.
+    /// </summary>
     public class Windows10EndpointProtectionConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Gets or sets whether applications inside Microsoft Defender Application Guard can access the device’s camera and microphone.</summary>
         public bool? ApplicationGuardAllowCameraMicrophoneRedirection {
@@ -1632,7 +1635,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("xboxServicesLiveNetworkingServiceStartupMode", value); }
         }
         /// <summary>
-        /// Instantiates a new Windows10EndpointProtectionConfiguration and sets the default values.
+        /// Instantiates a new windows10EndpointProtectionConfiguration and sets the default values.
         /// </summary>
         public Windows10EndpointProtectionConfiguration() : base() {
             OdataType = "#microsoft.graph.windows10EndpointProtectionConfiguration";

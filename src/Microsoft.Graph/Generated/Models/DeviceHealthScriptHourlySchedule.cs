@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Type of Device health script hourly schedule.
+    /// </summary>
     public class DeviceHealthScriptHourlySchedule : DeviceHealthScriptRunSchedule, IParsable {
         /// <summary>
-        /// Instantiates a new DeviceHealthScriptHourlySchedule and sets the default values.
+        /// Instantiates a new deviceHealthScriptHourlySchedule and sets the default values.
         /// </summary>
         public DeviceHealthScriptHourlySchedule() : base() {
             OdataType = "#microsoft.graph.deviceHealthScriptHourlySchedule";

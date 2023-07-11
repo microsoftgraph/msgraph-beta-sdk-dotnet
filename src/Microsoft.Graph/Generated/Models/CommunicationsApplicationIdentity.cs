@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("hidden", value); }
         }
         /// <summary>
-        /// Instantiates a new CommunicationsApplicationIdentity and sets the default values.
+        /// Instantiates a new communicationsApplicationIdentity and sets the default values.
         /// </summary>
         public CommunicationsApplicationIdentity() : base() {
             OdataType = "#microsoft.graph.communicationsApplicationIdentity";

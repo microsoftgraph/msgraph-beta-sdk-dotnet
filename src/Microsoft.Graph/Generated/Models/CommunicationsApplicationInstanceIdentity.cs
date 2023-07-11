@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CommunicationsApplicationInstanceIdentity and sets the default values.
+        /// Instantiates a new communicationsApplicationInstanceIdentity and sets the default values.
         /// </summary>
         public CommunicationsApplicationInstanceIdentity() : base() {
             OdataType = "#microsoft.graph.communicationsApplicationInstanceIdentity";

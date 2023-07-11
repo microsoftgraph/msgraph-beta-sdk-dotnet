@@ -13,17 +13,17 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isInOrgFormsPhishingScanEnabled property</summary>
+        /// <summary>Controls whether phishing protection is run on forms created by users, blocking the creation of forms if common phishing questions are detected.</summary>
         public bool? IsInOrgFormsPhishingScanEnabled {
             get { return BackingStore?.Get<bool?>("isInOrgFormsPhishingScanEnabled"); }
             set { BackingStore?.Set("isInOrgFormsPhishingScanEnabled", value); }
         }
-        /// <summary>The isRecordIdentityByDefaultEnabled property</summary>
+        /// <summary>Controls whether the names of users who fill out forms are recorded.</summary>
         public bool? IsRecordIdentityByDefaultEnabled {
             get { return BackingStore?.Get<bool?>("isRecordIdentityByDefaultEnabled"); }
             set { BackingStore?.Set("isRecordIdentityByDefaultEnabled", value); }
         }
-        /// <summary>The isRestrictedSurveyAccessEnabled property</summary>
+        /// <summary>Controls whether only users inside your organization can submit a response.</summary>
         public bool? IsRestrictedSurveyAccessEnabled {
             get { return BackingStore?.Get<bool?>("isRestrictedSurveyAccessEnabled"); }
             set { BackingStore?.Set("isRestrictedSurveyAccessEnabled", value); }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CustomerVoiceSettings and sets the default values.
+        /// Instantiates a new customerVoiceSettings and sets the default values.
         /// </summary>
         public CustomerVoiceSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

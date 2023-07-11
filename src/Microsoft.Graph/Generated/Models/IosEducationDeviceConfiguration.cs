@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// iOS Education configuration profile
+    /// </summary>
     public class IosEducationDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>
-        /// Instantiates a new IosEducationDeviceConfiguration and sets the default values.
+        /// Instantiates a new iosEducationDeviceConfiguration and sets the default values.
         /// </summary>
         public IosEducationDeviceConfiguration() : base() {
             OdataType = "#microsoft.graph.iosEducationDeviceConfiguration";

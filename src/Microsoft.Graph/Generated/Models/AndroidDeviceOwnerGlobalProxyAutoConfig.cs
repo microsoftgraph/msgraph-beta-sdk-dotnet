@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Android Device Owner Global Proxy Auto Config.
+    /// </summary>
     public class AndroidDeviceOwnerGlobalProxyAutoConfig : AndroidDeviceOwnerGlobalProxy, IParsable {
         /// <summary>The proxy auto-config URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidDeviceOwnerGlobalProxyAutoConfig and sets the default values.
+        /// Instantiates a new androidDeviceOwnerGlobalProxyAutoConfig and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerGlobalProxyAutoConfig() : base() {
             OdataType = "#microsoft.graph.androidDeviceOwnerGlobalProxyAutoConfig";

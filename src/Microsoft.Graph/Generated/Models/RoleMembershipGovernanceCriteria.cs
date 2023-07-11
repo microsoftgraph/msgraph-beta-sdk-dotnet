@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new RoleMembershipGovernanceCriteria and sets the default values.
+        /// Instantiates a new roleMembershipGovernanceCriteria and sets the default values.
         /// </summary>
         public RoleMembershipGovernanceCriteria() : base() {
             OdataType = "#microsoft.graph.roleMembershipGovernanceCriteria";

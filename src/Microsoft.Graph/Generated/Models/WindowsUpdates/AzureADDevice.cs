@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AzureADDevice and sets the default values.
+        /// Instantiates a new azureADDevice and sets the default values.
         /// </summary>
         public AzureADDevice() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.azureADDevice";

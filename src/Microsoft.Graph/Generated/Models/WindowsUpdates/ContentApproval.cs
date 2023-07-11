@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ContentApproval and sets the default values.
+        /// Instantiates a new contentApproval and sets the default values.
         /// </summary>
         public ContentApproval() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.contentApproval";

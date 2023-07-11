@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new FileThreatSubmission and sets the default values.
+        /// Instantiates a new fileThreatSubmission and sets the default values.
         /// </summary>
         public FileThreatSubmission() : base() {
             OdataType = "#microsoft.graph.security.fileThreatSubmission";

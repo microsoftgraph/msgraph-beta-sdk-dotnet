@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows Domain Join device configuration.
+    /// </summary>
     public class WindowsDomainJoinConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Active Directory domain name to join.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

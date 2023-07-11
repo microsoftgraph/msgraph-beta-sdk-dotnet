@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents an iOS Web Content Filter setting type, which installs URL bookmarks into iOS built-in browser. An example scenario is in the classroom where teachers would like the students to navigate websites through browser bookmarks configured on their iOS devices, and no access to other sites.
+    /// </summary>
     public class IosWebContentFilterSpecificWebsitesAccess : IosWebContentFilterBase, IParsable {
         /// <summary>URL bookmarks which will be installed into built-in browser and user is only allowed to access websites through bookmarks. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosWebContentFilterSpecificWebsitesAccess and sets the default values.
+        /// Instantiates a new iosWebContentFilterSpecificWebsitesAccess and sets the default values.
         /// </summary>
         public IosWebContentFilterSpecificWebsitesAccess() : base() {
             OdataType = "#microsoft.graph.iosWebContentFilterSpecificWebsitesAccess";

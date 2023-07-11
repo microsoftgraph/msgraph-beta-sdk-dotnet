@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("role", value); }
         }
         /// <summary>
-        /// Instantiates a new PlannerRelationshipBasedUserType and sets the default values.
+        /// Instantiates a new plannerRelationshipBasedUserType and sets the default values.
         /// </summary>
         public PlannerRelationshipBasedUserType() : base() {
             OdataType = "#microsoft.graph.plannerRelationshipBasedUserType";

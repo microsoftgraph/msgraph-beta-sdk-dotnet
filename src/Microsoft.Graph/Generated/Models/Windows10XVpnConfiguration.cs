@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows X VPN configuration profile
+    /// </summary>
     public class Windows10XVpnConfiguration : DeviceManagementResourceAccessProfileBase, IParsable {
         /// <summary>ID to the Authentication Certificate</summary>
         public Guid? AuthenticationCertificateId {
@@ -39,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Windows10XVpnConfiguration and sets the default values.
+        /// Instantiates a new windows10XVpnConfiguration and sets the default values.
         /// </summary>
         public Windows10XVpnConfiguration() : base() {
             OdataType = "#microsoft.graph.windows10XVpnConfiguration";

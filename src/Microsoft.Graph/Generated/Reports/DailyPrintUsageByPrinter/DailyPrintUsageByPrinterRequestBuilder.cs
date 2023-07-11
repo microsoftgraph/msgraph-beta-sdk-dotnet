@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsageByPrinter {
         public DailyPrintUsageByPrinterRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/dailyPrintUsageByPrinter{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get dailyPrintUsageByPrinter from reports
+        /// Retrieve a list of daily print usage summaries, grouped by printer.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsageByPrinter {
             return await RequestAdapter.SendAsync<PrintUsageByPrinter>(requestInfo, PrintUsageByPrinter.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get dailyPrintUsageByPrinter from reports
+        /// Retrieve a list of daily print usage summaries, grouped by printer.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsageByPrinter {
             return requestInfo;
         }
         /// <summary>
-        /// Get dailyPrintUsageByPrinter from reports
+        /// Retrieve a list of daily print usage summaries, grouped by printer.
         /// </summary>
         public class DailyPrintUsageByPrinterRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

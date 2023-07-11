@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("durationBeforeDeploymentStart", value); }
         }
         /// <summary>
-        /// Instantiates a new ContentApprovalRule and sets the default values.
+        /// Instantiates a new contentApprovalRule and sets the default values.
         /// </summary>
         public ContentApprovalRule() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.contentApprovalRule";

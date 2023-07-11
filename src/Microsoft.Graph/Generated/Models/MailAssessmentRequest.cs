@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MailAssessmentRequest and sets the default values.
+        /// Instantiates a new mailAssessmentRequest and sets the default values.
         /// </summary>
         public MailAssessmentRequest() : base() {
             OdataType = "#microsoft.graph.mailAssessmentRequest";

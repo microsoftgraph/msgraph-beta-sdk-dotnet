@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsDefenderApplicationControlSupplementalPolicy : Entity, IParsable {
-        /// <summary>The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.</summary>
+        /// <summary>The associated group assignments for the Windows Defender Application Control Supplemental Policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment>? Assignments {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
-        /// <summary>The WindowsDefenderApplicationControl supplemental policy content in byte array format.</summary>
+        /// <summary>Indicates the content of the Windows Defender Application Control Supplemental Policy in byte array format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Content {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("content", value); }
         }
 #endif
-        /// <summary>The WindowsDefenderApplicationControl supplemental policy content&apos;s file name.</summary>
+        /// <summary>Indicates the file name associated with the content of the Windows Defender Application Control Supplemental Policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentFileName {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contentFileName", value); }
         }
 #endif
-        /// <summary>The date and time when the WindowsDefenderApplicationControl supplemental policy was uploaded.</summary>
+        /// <summary>Indicates the created date and time when the Windows Defender Application Control Supplemental Policy was uploaded.</summary>
         public DateTimeOffset? CreationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
             set { BackingStore?.Set("creationDateTime", value); }
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deploySummary", value); }
         }
 #endif
-        /// <summary>The description of WindowsDefenderApplicationControl supplemental policy.</summary>
+        /// <summary>The description of the Windows Defender Application Control Supplemental Policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceStatuses", value); }
         }
 #endif
-        /// <summary>The display name of WindowsDefenderApplicationControl supplemental policy.</summary>
+        /// <summary>The display name of the Windows Defender Application Control Supplemental Policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -108,12 +108,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The date and time when the WindowsDefenderApplicationControl supplemental policy was last modified.</summary>
+        /// <summary>Indicates the last modified date and time of the Windows Defender Application Control Supplemental Policy.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>List of Scope Tags for this WindowsDefenderApplicationControl supplemental policy entity.</summary>
+        /// <summary>List of Scope Tags for the Windows Defender Application Control Supplemental Policy entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RoleScopeTagIds {
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #endif
-        /// <summary>The WindowsDefenderApplicationControl supplemental policy&apos;s version.</summary>
+        /// <summary>Indicates the Windows Defender Application Control Supplemental Policy&apos;s version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Version {

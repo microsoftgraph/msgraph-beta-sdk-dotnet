@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class NetworkAccessRoot : Entity, IParsable {
-        /// <summary>The connectivity property</summary>
+        /// <summary>Connectivity represents all the connectivity components in Global Secure Access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Networkaccess.Connectivity? Connectivity {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("connectivity", value); }
         }
 #endif
-        /// <summary>The forwardingPolicies property</summary>
+        /// <summary>A forwarding policy defines the specific traffic that is routed through the Gloval Secure Access Service. It is then added to a forwarding profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ForwardingPolicy>? ForwardingPolicies {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("forwardingPolicies", value); }
         }
 #endif
-        /// <summary>The forwardingProfiles property</summary>
+        /// <summary>A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ForwardingProfile>? ForwardingProfiles {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("forwardingProfiles", value); }
         }
 #endif
-        /// <summary>The logs property</summary>
+        /// <summary>Represnts network connections that are routed through Global Secure Access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Networkaccess.Logs? Logs {
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("logs", value); }
         }
 #endif
-        /// <summary>The reports property</summary>
+        /// <summary>Represents the status of the Global Secure Access services for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Networkaccess.Reports? Reports {
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("reports", value); }
         }
 #endif
-        /// <summary>The settings property</summary>
+        /// <summary>Global Secure Access settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Networkaccess.Settings? Settings {
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("settings", value); }
         }
 #endif
-        /// <summary>The tenantStatus property</summary>
+        /// <summary>Represents the status of the Global Secure Access services for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus? TenantStatus {

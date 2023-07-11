@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AuditUserIdentity and sets the default values.
+        /// Instantiates a new auditUserIdentity and sets the default values.
         /// </summary>
         public AuditUserIdentity() : base() {
             OdataType = "#microsoft.graph.auditUserIdentity";

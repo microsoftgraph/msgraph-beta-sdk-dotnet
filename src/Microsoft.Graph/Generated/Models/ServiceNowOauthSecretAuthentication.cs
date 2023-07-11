@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// App id for the ServiceNow client app.
+    /// </summary>
     public class ServiceNowOauthSecretAuthentication : ServiceNowAuthenticationMethod, IParsable {
         /// <summary>Tenant appId registered with Azure AD</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ServiceNowOauthSecretAuthentication and sets the default values.
+        /// Instantiates a new serviceNowOauthSecretAuthentication and sets the default values.
         /// </summary>
         public ServiceNowOauthSecretAuthentication() : base() {
             OdataType = "#microsoft.graph.serviceNowOauthSecretAuthentication";

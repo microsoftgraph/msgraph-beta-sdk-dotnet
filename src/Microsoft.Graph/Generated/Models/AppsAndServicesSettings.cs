@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isAppAndServicesTrialEnabled property</summary>
+        /// <summary>Controls whether users can start trial subscriptions for apps and services in your organization.</summary>
         public bool? IsAppAndServicesTrialEnabled {
             get { return BackingStore?.Get<bool?>("isAppAndServicesTrialEnabled"); }
             set { BackingStore?.Set("isAppAndServicesTrialEnabled", value); }
         }
-        /// <summary>The isOfficeStoreEnabled property</summary>
+        /// <summary>Controls whether users can access the Microsoft Store.</summary>
         public bool? IsOfficeStoreEnabled {
             get { return BackingStore?.Get<bool?>("isOfficeStoreEnabled"); }
             set { BackingStore?.Set("isOfficeStoreEnabled", value); }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AppsAndServicesSettings and sets the default values.
+        /// Instantiates a new appsAndServicesSettings and sets the default values.
         /// </summary>
         public AppsAndServicesSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

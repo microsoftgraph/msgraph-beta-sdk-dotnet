@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new OnInteractiveAuthFlowStartListener and sets the default values.
+        /// Instantiates a new onInteractiveAuthFlowStartListener and sets the default values.
         /// </summary>
         public OnInteractiveAuthFlowStartListener() : base() {
             OdataType = "#microsoft.graph.onInteractiveAuthFlowStartListener";

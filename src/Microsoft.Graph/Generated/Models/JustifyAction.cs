@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class JustifyAction : InformationProtectionAction, IParsable {
         /// <summary>
-        /// Instantiates a new JustifyAction and sets the default values.
+        /// Instantiates a new justifyAction and sets the default values.
         /// </summary>
         public JustifyAction() : base() {
             OdataType = "#microsoft.graph.justifyAction";

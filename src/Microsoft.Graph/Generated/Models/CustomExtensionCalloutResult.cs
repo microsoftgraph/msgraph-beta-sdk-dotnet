@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("numberOfAttempts", value); }
         }
         /// <summary>
-        /// Instantiates a new CustomExtensionCalloutResult and sets the default values.
+        /// Instantiates a new customExtensionCalloutResult and sets the default values.
         /// </summary>
         public CustomExtensionCalloutResult() : base() {
             OdataType = "#microsoft.graph.customExtensionCalloutResult";

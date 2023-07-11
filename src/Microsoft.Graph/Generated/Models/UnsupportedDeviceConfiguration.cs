@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// UnsupportedDeviceConfiguration is used when an entity cannot be mapped to another model-compliant subtype of deviceConfiguration.
+    /// </summary>
     public class UnsupportedDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Details describing why the entity is unsupported. This collection can contain a maximum of 1000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new UnsupportedDeviceConfiguration and sets the default values.
+        /// Instantiates a new unsupportedDeviceConfiguration and sets the default values.
         /// </summary>
         public UnsupportedDeviceConfiguration() : base() {
             OdataType = "#microsoft.graph.unsupportedDeviceConfiguration";

@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MicrosoftAuthenticatorAuthenticationMethod and sets the default values.
+        /// Instantiates a new microsoftAuthenticatorAuthenticationMethod and sets the default values.
         /// </summary>
         public MicrosoftAuthenticatorAuthenticationMethod() : base() {
             OdataType = "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod";

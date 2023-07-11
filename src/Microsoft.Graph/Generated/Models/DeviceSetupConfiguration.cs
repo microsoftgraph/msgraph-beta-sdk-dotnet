@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// This is the base class for Setup Configuration. Setup configurations are platform specific and individual per-platform setup configurations inherit from here.
+    /// </summary>
     public class DeviceSetupConfiguration : Entity, IParsable {
         /// <summary>DateTime the object was created.</summary>
         public DateTimeOffset? CreatedDateTime {

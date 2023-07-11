@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Entity representing the defintion for an abstract complex setting
+    /// </summary>
     public class DeviceManagementAbstractComplexSettingDefinition : DeviceManagementSettingDefinition, IParsable {
         /// <summary>List of definition IDs for all possible implementations of this abstract complex setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic {
         public TrafficRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/logs/traffic{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get traffic from networkAccess
+        /// Get a list of log events for traffic routed through the Global Secure Access services.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/networkaccess-logs-list-traffic?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic {
             return await RequestAdapter.SendAsync<NetworkAccessTraffic>(requestInfo, NetworkAccessTraffic.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get traffic from networkAccess
+        /// Get a list of log events for traffic routed through the Global Secure Access services.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic {
             return requestInfo;
         }
         /// <summary>
-        /// Get traffic from networkAccess
+        /// Get a list of log events for traffic routed through the Global Secure Access services.
         /// </summary>
         public class TrafficRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

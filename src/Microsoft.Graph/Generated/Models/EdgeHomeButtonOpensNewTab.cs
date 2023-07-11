@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Show the home button; clicking the home button loads the New tab page.
+    /// </summary>
     public class EdgeHomeButtonOpensNewTab : EdgeHomeButtonConfiguration, IParsable {
         /// <summary>
-        /// Instantiates a new EdgeHomeButtonOpensNewTab and sets the default values.
+        /// Instantiates a new edgeHomeButtonOpensNewTab and sets the default values.
         /// </summary>
         public EdgeHomeButtonOpensNewTab() : base() {
             OdataType = "#microsoft.graph.edgeHomeButtonOpensNewTab";

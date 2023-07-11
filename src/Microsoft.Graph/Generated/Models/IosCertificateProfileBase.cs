@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// iOS certificate profile base.
+    /// </summary>
     public class IosCertificateProfileBase : IosCertificateProfile, IParsable {
         /// <summary>Certificate Validity Period Options.</summary>
         public Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodScale {
@@ -31,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("subjectNameFormat", value); }
         }
         /// <summary>
-        /// Instantiates a new IosCertificateProfileBase and sets the default values.
+        /// Instantiates a new iosCertificateProfileBase and sets the default values.
         /// </summary>
         public IosCertificateProfileBase() : base() {
             OdataType = "#microsoft.graph.iosCertificateProfileBase";

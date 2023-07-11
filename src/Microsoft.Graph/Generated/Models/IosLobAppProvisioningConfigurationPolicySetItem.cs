@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A class containing the properties used for iOS lob app provisioning configuration PolicySetItem.
+    /// </summary>
     public class IosLobAppProvisioningConfigurationPolicySetItem : PolicySetItem, IParsable {
         /// <summary>
-        /// Instantiates a new IosLobAppProvisioningConfigurationPolicySetItem and sets the default values.
+        /// Instantiates a new iosLobAppProvisioningConfigurationPolicySetItem and sets the default values.
         /// </summary>
         public IosLobAppProvisioningConfigurationPolicySetItem() : base() {
             OdataType = "#microsoft.graph.iosLobAppProvisioningConfigurationPolicySetItem";

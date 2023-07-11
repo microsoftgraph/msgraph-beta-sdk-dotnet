@@ -292,7 +292,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Customer and sets the default values.
+        /// Instantiates a new customer and sets the default values.
         /// </summary>
         public Customer() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

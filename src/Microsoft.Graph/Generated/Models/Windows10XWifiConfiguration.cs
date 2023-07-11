@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows X WifiXml configuration profile
+    /// </summary>
     public class Windows10XWifiConfiguration : DeviceManagementResourceAccessProfileBase, IParsable {
         /// <summary>ID to the Authentication Certificate</summary>
         public Guid? AuthenticationCertificateId {
@@ -39,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Windows10XWifiConfiguration and sets the default values.
+        /// Instantiates a new windows10XWifiConfiguration and sets the default values.
         /// </summary>
         public Windows10XWifiConfiguration() : base() {
             OdataType = "#microsoft.graph.windows10XWifiConfiguration";

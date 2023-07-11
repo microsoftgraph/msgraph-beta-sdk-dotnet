@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new VpnServer and sets the default values.
+        /// Instantiates a new vpnServer and sets the default values.
         /// </summary>
         public VpnServer() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

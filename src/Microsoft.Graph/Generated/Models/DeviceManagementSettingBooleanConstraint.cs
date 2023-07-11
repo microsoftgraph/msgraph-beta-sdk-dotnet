@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Constraint the enforces a particular boolean value
+    /// </summary>
     public class DeviceManagementSettingBooleanConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>The boolean value to compare against</summary>
         public bool? Value {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementSettingBooleanConstraint and sets the default values.
+        /// Instantiates a new deviceManagementSettingBooleanConstraint and sets the default values.
         /// </summary>
         public DeviceManagementSettingBooleanConstraint() : base() {
             OdataType = "#microsoft.graph.deviceManagementSettingBooleanConstraint";

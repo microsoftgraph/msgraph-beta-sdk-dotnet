@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Me.MemberOf.Count;
 using Microsoft.Graph.Beta.Me.MemberOf.GraphAdministrativeUnit;
+using Microsoft.Graph.Beta.Me.MemberOf.GraphDirectoryRole;
 using Microsoft.Graph.Beta.Me.MemberOf.GraphGroup;
 using Microsoft.Graph.Beta.Me.MemberOf.Item;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -24,6 +25,10 @@ namespace Microsoft.Graph.Beta.Me.MemberOf {
         /// <summary>Casts the previous resource to administrativeUnit.</summary>
         public GraphAdministrativeUnitRequestBuilder GraphAdministrativeUnit { get =>
             new GraphAdministrativeUnitRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to directoryRole.</summary>
+        public GraphDirectoryRoleRequestBuilder GraphDirectoryRole { get =>
+            new GraphDirectoryRoleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
         public GraphGroupRequestBuilder GraphGroup { get =>

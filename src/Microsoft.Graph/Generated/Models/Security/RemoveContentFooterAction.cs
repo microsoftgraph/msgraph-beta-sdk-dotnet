@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new RemoveContentFooterAction and sets the default values.
+        /// Instantiates a new removeContentFooterAction and sets the default values.
         /// </summary>
         public RemoveContentFooterAction() : base() {
             OdataType = "#microsoft.graph.security.removeContentFooterAction";

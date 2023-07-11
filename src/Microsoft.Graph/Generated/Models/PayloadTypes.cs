@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PayloadTypes and sets the default values.
+        /// Instantiates a new payloadTypes and sets the default values.
         /// </summary>
         public PayloadTypes() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

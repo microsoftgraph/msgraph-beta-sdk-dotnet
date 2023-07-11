@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Properties of the  Integer script parameter.
+    /// </summary>
     public class DeviceHealthScriptIntegerParameter : DeviceHealthScriptParameter, IParsable {
         /// <summary>The default value of Integer param. Valid values -2147483648 to 2147483647</summary>
         public int? DefaultValue {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defaultValue", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceHealthScriptIntegerParameter and sets the default values.
+        /// Instantiates a new deviceHealthScriptIntegerParameter and sets the default values.
         /// </summary>
         public DeviceHealthScriptIntegerParameter() : base() {
             OdataType = "#microsoft.graph.deviceHealthScriptIntegerParameter";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// By providing configurations in this profile you can instruct the native email client on KNOX devices to communicate with an Exchange server and get email, contacts, calendar, tasks, and notes. Furthermore, you can also specify how much email to sync and how often the device should sync.
+    /// </summary>
     public class AndroidEasEmailProfileConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Exchange ActiveSync account name, displayed to users as name of EAS (this) profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -136,7 +139,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("usernameSource", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidEasEmailProfileConfiguration and sets the default values.
+        /// Instantiates a new androidEasEmailProfileConfiguration and sets the default values.
         /// </summary>
         public AndroidEasEmailProfileConfiguration() : base() {
             OdataType = "#microsoft.graph.androidEasEmailProfileConfiguration";

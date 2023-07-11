@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class TenantStatus : Entity, IParsable {
-        /// <summary>The onboardingErrorMessage property</summary>
+        /// <summary>Reflects a message to the user in case of an error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OnboardingErrorMessage {

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Device Configuration.
+    /// </summary>
     public class IosCertificateProfile : DeviceConfiguration, IParsable {
         /// <summary>
         /// Instantiates a new iosCertificateProfile and sets the default values.

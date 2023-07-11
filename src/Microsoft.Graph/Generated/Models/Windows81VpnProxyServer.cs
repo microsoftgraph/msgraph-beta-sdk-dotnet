@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// VPN Proxy Server.
+    /// </summary>
     public class Windows81VpnProxyServer : VpnProxyServer, IParsable {
         /// <summary>Automatically detect proxy settings.</summary>
         public bool? AutomaticallyDetectProxySettings {
@@ -16,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("bypassProxyServerForLocalAddress", value); }
         }
         /// <summary>
-        /// Instantiates a new Windows81VpnProxyServer and sets the default values.
+        /// Instantiates a new windows81VpnProxyServer and sets the default values.
         /// </summary>
         public Windows81VpnProxyServer() : base() {
             OdataType = "#microsoft.graph.windows81VpnProxyServer";

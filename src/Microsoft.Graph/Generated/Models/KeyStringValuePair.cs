@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A key-value pair with a string key and a string value.
+    /// </summary>
     public class KeyStringValuePair : KeyTypedValuePair, IParsable {
         /// <summary>The string value of the key-value pair.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new KeyStringValuePair and sets the default values.
+        /// Instantiates a new keyStringValuePair and sets the default values.
         /// </summary>
         public KeyStringValuePair() : base() {
             OdataType = "#microsoft.graph.keyStringValuePair";

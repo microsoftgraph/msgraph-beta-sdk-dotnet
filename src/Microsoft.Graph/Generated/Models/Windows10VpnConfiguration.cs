@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// By providing the configurations in this profile you can instruct the Windows 10 device (desktop or mobile) to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
+    /// </summary>
     public class Windows10VpnConfiguration : WindowsVpnConfiguration, IParsable {
         /// <summary>Associated Apps. This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -257,7 +260,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Windows10VpnConfiguration and sets the default values.
+        /// Instantiates a new windows10VpnConfiguration and sets the default values.
         /// </summary>
         public Windows10VpnConfiguration() : base() {
             OdataType = "#microsoft.graph.windows10VpnConfiguration";

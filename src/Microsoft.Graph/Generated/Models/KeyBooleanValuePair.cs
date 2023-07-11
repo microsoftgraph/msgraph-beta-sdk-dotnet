@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A key-value pair with a string key and a Boolean value.
+    /// </summary>
     public class KeyBooleanValuePair : KeyTypedValuePair, IParsable {
         /// <summary>The Boolean value of the key-value pair.</summary>
         public bool? Value {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new KeyBooleanValuePair and sets the default values.
+        /// Instantiates a new keyBooleanValuePair and sets the default values.
         /// </summary>
         public KeyBooleanValuePair() : base() {
             OdataType = "#microsoft.graph.keyBooleanValuePair";

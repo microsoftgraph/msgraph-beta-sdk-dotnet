@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("minimumValue", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementConfigurationIntegerSettingValueDefinition and sets the default values.
+        /// Instantiates a new deviceManagementConfigurationIntegerSettingValueDefinition and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationIntegerSettingValueDefinition() : base() {
             OdataType = "#microsoft.graph.deviceManagementConfigurationIntegerSettingValueDefinition";

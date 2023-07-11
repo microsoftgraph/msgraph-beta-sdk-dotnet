@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The entity represents a string value of a multi-line text box presentation on a policy definition.
+    /// </summary>
     public class GroupPolicyPresentationValueMultiText : GroupPolicyPresentationValue, IParsable {
         /// <summary>A collection of non-empty strings for the associated presentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

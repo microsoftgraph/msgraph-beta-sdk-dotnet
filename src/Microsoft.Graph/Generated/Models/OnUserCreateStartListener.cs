@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new OnUserCreateStartListener and sets the default values.
+        /// Instantiates a new onUserCreateStartListener and sets the default values.
         /// </summary>
         public OnUserCreateStartListener() : base() {
             OdataType = "#microsoft.graph.onUserCreateStartListener";

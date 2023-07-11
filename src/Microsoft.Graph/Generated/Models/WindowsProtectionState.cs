@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Device protection status entity.
+    /// </summary>
     public class WindowsProtectionState : Entity, IParsable {
         /// <summary>Current anti malware version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

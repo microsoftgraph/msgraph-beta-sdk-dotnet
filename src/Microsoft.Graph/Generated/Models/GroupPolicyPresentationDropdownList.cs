@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents an ADMX dropdownList element and an ADMX enum element.
+    /// </summary>
     public class GroupPolicyPresentationDropdownList : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>Localized string value identifying the default choice of the list of items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("required", value); }
         }
         /// <summary>
-        /// Instantiates a new GroupPolicyPresentationDropdownList and sets the default values.
+        /// Instantiates a new groupPolicyPresentationDropdownList and sets the default values.
         /// </summary>
         public GroupPolicyPresentationDropdownList() : base() {
             OdataType = "#microsoft.graph.groupPolicyPresentationDropdownList";

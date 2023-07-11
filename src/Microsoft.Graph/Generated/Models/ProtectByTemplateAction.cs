@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ProtectByTemplateAction and sets the default values.
+        /// Instantiates a new protectByTemplateAction and sets the default values.
         /// </summary>
         public ProtectByTemplateAction() : base() {
             OdataType = "#microsoft.graph.protectByTemplateAction";

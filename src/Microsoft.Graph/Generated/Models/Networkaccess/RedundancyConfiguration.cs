@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.RedundancyTier?>("redundancyTier"); }
             set { BackingStore?.Set("redundancyTier", value); }
         }
-        /// <summary>The zoneLocalIpAddress property</summary>
+        /// <summary>Indicate the specific IP address used for establishing the Border Gateway Protocol (BGP) connection with Microsoft&apos;s network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ZoneLocalIpAddress {

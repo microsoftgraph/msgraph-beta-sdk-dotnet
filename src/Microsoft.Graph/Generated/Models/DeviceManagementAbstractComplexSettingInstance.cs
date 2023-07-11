@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A setting instance representing a complex value for an abstract setting
+    /// </summary>
     public class DeviceManagementAbstractComplexSettingInstance : DeviceManagementSettingInstance, IParsable {
         /// <summary>The definition ID for the chosen implementation of this complex setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeviceManagementAbstractComplexSettingInstance and sets the default values.
+        /// Instantiates a new deviceManagementAbstractComplexSettingInstance and sets the default values.
         /// </summary>
         public DeviceManagementAbstractComplexSettingInstance() : base() {
             OdataType = "#microsoft.graph.deviceManagementAbstractComplexSettingInstance";

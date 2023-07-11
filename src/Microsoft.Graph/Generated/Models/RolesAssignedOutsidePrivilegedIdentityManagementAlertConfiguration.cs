@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class RolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration : UnifiedRoleManagementAlertConfiguration, IParsable {
         /// <summary>
-        /// Instantiates a new RolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration and sets the default values.
+        /// Instantiates a new rolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration and sets the default values.
         /// </summary>
         public RolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration() : base() {
             OdataType = "#microsoft.graph.rolesAssignedOutsidePrivilegedIdentityManagementAlertConfiguration";

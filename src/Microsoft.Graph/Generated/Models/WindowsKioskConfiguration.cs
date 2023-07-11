@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// This entity provides descriptions of the declared methods, properties and relationships exposed by the kiosk resource.
+    /// </summary>
     public class WindowsKioskConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Enable public browsing kiosk mode for the Microsoft Edge browser. The Default is false.</summary>
         public bool? EdgeKioskEnablePublicBrowsing {
@@ -101,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsKioskConfiguration and sets the default values.
+        /// Instantiates a new windowsKioskConfiguration and sets the default values.
         /// </summary>
         public WindowsKioskConfiguration() : base() {
             OdataType = "#microsoft.graph.windowsKioskConfiguration";

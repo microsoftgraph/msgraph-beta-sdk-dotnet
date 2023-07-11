@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new OnAttributeCollectionListener and sets the default values.
+        /// Instantiates a new onAttributeCollectionListener and sets the default values.
         /// </summary>
         public OnAttributeCollectionListener() : base() {
             OdataType = "#microsoft.graph.onAttributeCollectionListener";

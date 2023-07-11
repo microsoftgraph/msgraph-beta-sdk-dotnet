@@ -250,7 +250,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("terminationDate", value); }
         }
         /// <summary>
-        /// Instantiates a new Employee and sets the default values.
+        /// Instantiates a new employee and sets the default values.
         /// </summary>
         public Employee() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

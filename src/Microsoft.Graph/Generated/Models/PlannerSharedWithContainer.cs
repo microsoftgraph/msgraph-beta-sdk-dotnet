@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("accessLevel", value); }
         }
         /// <summary>
-        /// Instantiates a new PlannerSharedWithContainer and sets the default values.
+        /// Instantiates a new plannerSharedWithContainer and sets the default values.
         /// </summary>
         public PlannerSharedWithContainer() : base() {
             OdataType = "#microsoft.graph.plannerSharedWithContainer";

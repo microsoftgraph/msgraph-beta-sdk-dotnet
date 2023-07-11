@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastSignInDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new UserSignInInsight and sets the default values.
+        /// Instantiates a new userSignInInsight and sets the default values.
         /// </summary>
         public UserSignInInsight() : base() {
             OdataType = "#microsoft.graph.userSignInInsight";

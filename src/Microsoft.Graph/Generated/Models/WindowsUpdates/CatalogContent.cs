@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CatalogContent and sets the default values.
+        /// Instantiates a new catalogContent and sets the default values.
         /// </summary>
         public CatalogContent() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.catalogContent";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Setting value
+    /// </summary>
     public class DeviceManagementConfigurationChoiceSettingValue : DeviceManagementConfigurationSettingValue, IParsable {
         /// <summary>Child settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeviceManagementConfigurationChoiceSettingValue and sets the default values.
+        /// Instantiates a new deviceManagementConfigurationChoiceSettingValue and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationChoiceSettingValue() : base() {
             OdataType = "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue";

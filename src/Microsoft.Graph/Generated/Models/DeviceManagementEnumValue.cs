@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeviceManagementEnumValue and sets the default values.
+        /// Instantiates a new deviceManagementEnumValue and sets the default values.
         /// </summary>
         public DeviceManagementEnumValue() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

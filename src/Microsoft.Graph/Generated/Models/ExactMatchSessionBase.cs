@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("uploadCompletionDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new ExactMatchSessionBase and sets the default values.
+        /// Instantiates a new exactMatchSessionBase and sets the default values.
         /// </summary>
         public ExactMatchSessionBase() : base() {
             OdataType = "#microsoft.graph.exactMatchSessionBase";

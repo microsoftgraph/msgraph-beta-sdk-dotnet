@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties for the deployment summary of a WindowsDefenderApplicationControl supplemental policy.
+    /// </summary>
     public class WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary : Entity, IParsable {
         /// <summary>Number of Devices that have successfully deployed this WindowsDefenderApplicationControl supplemental policy.</summary>
         public int? DeployedDeviceCount {

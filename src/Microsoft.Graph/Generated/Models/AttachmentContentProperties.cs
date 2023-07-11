@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AttachmentContentProperties and sets the default values.
+        /// Instantiates a new attachmentContentProperties and sets the default values.
         /// </summary>
         public AttachmentContentProperties() : base() {
             OdataType = "#microsoft.graph.attachmentContentProperties";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Conflict summary for a set of device configuration policies.
+    /// </summary>
     public class DeviceConfigurationConflictSummary : Entity, IParsable {
         /// <summary>The set of policies in conflict with the given setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

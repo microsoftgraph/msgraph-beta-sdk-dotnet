@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The identifier for a Mac app.
+    /// </summary>
     public class MacAppIdentifier : MobileAppIdentifier, IParsable {
         /// <summary>The identifier for an app, as specified in the app store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MacAppIdentifier and sets the default values.
+        /// Instantiates a new macAppIdentifier and sets the default values.
         /// </summary>
         public MacAppIdentifier() : base() {
             OdataType = "#microsoft.graph.macAppIdentifier";

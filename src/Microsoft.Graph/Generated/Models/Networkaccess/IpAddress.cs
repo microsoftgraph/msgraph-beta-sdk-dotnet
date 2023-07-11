@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class IpAddress : RuleDestination, IParsable {
-        /// <summary>The value property</summary>
+        /// <summary>Defines the IP address used in a destination for a rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IpAddress and sets the default values.
+        /// Instantiates a new ipAddress and sets the default values.
         /// </summary>
         public IpAddress() : base() {
             OdataType = "#microsoft.graph.networkaccess.ipAddress";

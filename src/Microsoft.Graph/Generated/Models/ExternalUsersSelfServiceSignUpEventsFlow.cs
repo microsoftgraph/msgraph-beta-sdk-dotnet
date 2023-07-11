@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ExternalUsersSelfServiceSignUpEventsFlow and sets the default values.
+        /// Instantiates a new externalUsersSelfServiceSignUpEventsFlow and sets the default values.
         /// </summary>
         public ExternalUsersSelfServiceSignUpEventsFlow() : base() {
             OdataType = "#microsoft.graph.externalUsersSelfServiceSignUpEventsFlow";

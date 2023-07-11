@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class InvalidLicenseAlertConfiguration : UnifiedRoleManagementAlertConfiguration, IParsable {
         /// <summary>
-        /// Instantiates a new InvalidLicenseAlertConfiguration and sets the default values.
+        /// Instantiates a new invalidLicenseAlertConfiguration and sets the default values.
         /// </summary>
         public InvalidLicenseAlertConfiguration() : base() {
             OdataType = "#microsoft.graph.invalidLicenseAlertConfiguration";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Describes a dependency type between two mobile apps.
+    /// </summary>
     public class MobileAppDependency : MobileAppRelationship, IParsable {
         /// <summary>Indicates the dependency type associated with a relationship between two mobile apps.</summary>
         public MobileAppDependencyType? DependencyType {
@@ -21,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dependsOnAppCount", value); }
         }
         /// <summary>
-        /// Instantiates a new MobileAppDependency and sets the default values.
+        /// Instantiates a new mobileAppDependency and sets the default values.
         /// </summary>
         public MobileAppDependency() : base() {
             OdataType = "#microsoft.graph.mobileAppDependency";

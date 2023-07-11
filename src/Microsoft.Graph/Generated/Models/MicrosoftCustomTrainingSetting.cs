@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("trainingCompletionDuration", value); }
         }
         /// <summary>
-        /// Instantiates a new MicrosoftCustomTrainingSetting and sets the default values.
+        /// Instantiates a new microsoftCustomTrainingSetting and sets the default values.
         /// </summary>
         public MicrosoftCustomTrainingSetting() : base() {
             OdataType = "#microsoft.graph.microsoftCustomTrainingSetting";

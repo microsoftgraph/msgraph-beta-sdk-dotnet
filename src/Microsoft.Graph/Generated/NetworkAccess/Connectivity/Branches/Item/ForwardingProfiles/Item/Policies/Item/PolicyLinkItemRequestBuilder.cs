@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.Forwardi
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get policies from networkAccess
+        /// Traffic forwarding policies associated with this profile.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.Forwardi
             return requestInfo;
         }
         /// <summary>
-        /// Get policies from networkAccess
+        /// Traffic forwarding policies associated with this profile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +186,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.Forwardi
             }
         }
         /// <summary>
-        /// Get policies from networkAccess
+        /// Traffic forwarding policies associated with this profile.
         /// </summary>
         public class PolicyLinkItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

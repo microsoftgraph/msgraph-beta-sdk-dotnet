@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recurring", value); }
         }
         /// <summary>
-        /// Instantiates a new MeetingActivityStatistics and sets the default values.
+        /// Instantiates a new meetingActivityStatistics and sets the default values.
         /// </summary>
         public MeetingActivityStatistics() : base() {
             OdataType = "#microsoft.graph.meetingActivityStatistics";

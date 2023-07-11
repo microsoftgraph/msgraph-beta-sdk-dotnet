@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for Windows Phone 8.1 AppX Line Of Business apps. Inherits from graph.mobileLobApp. Will be deprecated in February 2023.
+    /// </summary>
     public class WindowsPhone81AppX : MobileLobApp, IParsable {
         /// <summary>Contains properties for Windows architecture.</summary>
         public WindowsArchitecture? ApplicableArchitectures {
@@ -109,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsPhone81AppX and sets the default values.
+        /// Instantiates a new windowsPhone81AppX and sets the default values.
         /// </summary>
         public WindowsPhone81AppX() : base() {
             OdataType = "#microsoft.graph.windowsPhone81AppX";

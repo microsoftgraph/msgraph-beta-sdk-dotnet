@@ -13,17 +13,17 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isExternalJoinEnabled property</summary>
+        /// <summary>Controls whether users can join lists from users external to your organization.</summary>
         public bool? IsExternalJoinEnabled {
             get { return BackingStore?.Get<bool?>("isExternalJoinEnabled"); }
             set { BackingStore?.Set("isExternalJoinEnabled", value); }
         }
-        /// <summary>The isExternalShareEnabled property</summary>
+        /// <summary>Controls whether users can share lists with external users.</summary>
         public bool? IsExternalShareEnabled {
             get { return BackingStore?.Get<bool?>("isExternalShareEnabled"); }
             set { BackingStore?.Set("isExternalShareEnabled", value); }
         }
-        /// <summary>The isPushNotificationEnabled property</summary>
+        /// <summary>Controls whether push notifications are enabled for your users.</summary>
         public bool? IsPushNotificationEnabled {
             get { return BackingStore?.Get<bool?>("isPushNotificationEnabled"); }
             set { BackingStore?.Set("isPushNotificationEnabled", value); }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TodoSettings and sets the default values.
+        /// Instantiates a new todoSettings and sets the default values.
         /// </summary>
         public TodoSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

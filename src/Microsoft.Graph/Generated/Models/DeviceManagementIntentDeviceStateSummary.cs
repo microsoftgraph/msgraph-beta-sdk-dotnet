@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Entity that represents device state summary for an intent
+    /// </summary>
     public class DeviceManagementIntentDeviceStateSummary : Entity, IParsable {
         /// <summary>Number of devices in conflict</summary>
         public int? ConflictCount {

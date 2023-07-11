@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// String Setting Value Constant Default Template
+    /// </summary>
     public class DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate : DeviceManagementConfigurationStringSettingValueDefaultTemplate, IParsable {
         /// <summary>Default Constant Value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate and sets the default values.
+        /// Instantiates a new deviceManagementConfigurationStringSettingValueConstantDefaultTemplate and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate() : base() {
             OdataType = "#microsoft.graph.deviceManagementConfigurationStringSettingValueConstantDefaultTemplate";

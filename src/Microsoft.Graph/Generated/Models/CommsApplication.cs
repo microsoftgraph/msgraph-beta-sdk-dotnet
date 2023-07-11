@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CommsApplication and sets the default values.
+        /// Instantiates a new commsApplication and sets the default values.
         /// </summary>
         public CommsApplication() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

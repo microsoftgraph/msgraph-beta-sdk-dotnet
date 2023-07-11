@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EmailPayloadDetail and sets the default values.
+        /// Instantiates a new emailPayloadDetail and sets the default values.
         /// </summary>
         public EmailPayloadDetail() : base() {
             OdataType = "#microsoft.graph.emailPayloadDetail";

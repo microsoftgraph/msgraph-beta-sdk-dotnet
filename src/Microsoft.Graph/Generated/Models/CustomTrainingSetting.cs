@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CustomTrainingSetting and sets the default values.
+        /// Instantiates a new customTrainingSetting and sets the default values.
         /// </summary>
         public CustomTrainingSetting() : base() {
             OdataType = "#microsoft.graph.customTrainingSetting";

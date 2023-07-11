@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties, inherited properties and actions for Android Enterprise mobile app configurations.
+    /// </summary>
     public class AndroidManagedStoreAppConfiguration : ManagedDeviceMobileAppConfiguration, IParsable {
         /// <summary>Whether or not this AppConfig is an OEMConfig policy.</summary>
         public bool? AppSupportsOemConfig {
@@ -63,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("profileApplicability", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidManagedStoreAppConfiguration and sets the default values.
+        /// Instantiates a new androidManagedStoreAppConfiguration and sets the default values.
         /// </summary>
         public AndroidManagedStoreAppConfiguration() : base() {
             OdataType = "#microsoft.graph.androidManagedStoreAppConfiguration";

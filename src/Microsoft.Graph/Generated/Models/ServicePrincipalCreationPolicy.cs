@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isBuiltIn", value); }
         }
         /// <summary>
-        /// Instantiates a new ServicePrincipalCreationPolicy and sets the default values.
+        /// Instantiates a new servicePrincipalCreationPolicy and sets the default values.
         /// </summary>
         public ServicePrincipalCreationPolicy() : base() {
             OdataType = "#microsoft.graph.servicePrincipalCreationPolicy";

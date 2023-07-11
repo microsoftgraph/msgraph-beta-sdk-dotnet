@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MarkContent and sets the default values.
+        /// Instantiates a new markContent and sets the default values.
         /// </summary>
         public MarkContent() : base() {
             OdataType = "#microsoft.graph.markContent";

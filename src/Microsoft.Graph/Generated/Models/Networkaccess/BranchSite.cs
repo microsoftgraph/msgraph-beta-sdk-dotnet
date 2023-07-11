@@ -5,17 +5,17 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class BranchSite : Entity, IParsable {
-        /// <summary>The bandwidthCapacity property</summary>
+        /// <summary>Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.</summary>
         public long? BandwidthCapacity {
             get { return BackingStore?.Get<long?>("bandwidthCapacity"); }
             set { BackingStore?.Set("bandwidthCapacity", value); }
         }
-        /// <summary>The connectivityState property</summary>
+        /// <summary>Determines the branch site status. The possible values are: pending, connected, inactive, error.</summary>
         public Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityState? ConnectivityState {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityState?>("connectivityState"); }
             set { BackingStore?.Set("connectivityState", value); }
         }
-        /// <summary>The country property</summary>
+        /// <summary>The branch site is created in the specified country.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Country {
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("country", value); }
         }
 #endif
-        /// <summary>The deviceLinks property</summary>
+        /// <summary>Each unique CPE device associated with a branch is specified. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DeviceLink>? DeviceLinks {
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("deviceLinks", value); }
         }
 #endif
-        /// <summary>The forwardingProfiles property</summary>
+        /// <summary>Each forwarding profile associated with a branch site is specified. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ForwardingProfile>? ForwardingProfiles {
@@ -57,12 +57,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("forwardingProfiles", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>last modified time.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The name property</summary>
+        /// <summary>Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name {
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Region?>("region"); }
             set { BackingStore?.Set("region", value); }
         }
-        /// <summary>The version property</summary>
+        /// <summary>The branch version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Version {

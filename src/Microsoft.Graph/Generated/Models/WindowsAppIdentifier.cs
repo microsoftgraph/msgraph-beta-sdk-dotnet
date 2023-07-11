@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The identifier for a Windows app.
+    /// </summary>
     public class WindowsAppIdentifier : MobileAppIdentifier, IParsable {
         /// <summary>The identifier for an app, as specified in the app store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsAppIdentifier and sets the default values.
+        /// Instantiates a new windowsAppIdentifier and sets the default values.
         /// </summary>
         public WindowsAppIdentifier() : base() {
             OdataType = "#microsoft.graph.windowsAppIdentifier";

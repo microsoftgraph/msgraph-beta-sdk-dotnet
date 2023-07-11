@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class SecureSignInSessionControl : ConditionalAccessSessionControl, IParsable {
         /// <summary>
-        /// Instantiates a new SecureSignInSessionControl and sets the default values.
+        /// Instantiates a new secureSignInSessionControl and sets the default values.
         /// </summary>
         public SecureSignInSessionControl() : base() {
             OdataType = "#microsoft.graph.secureSignInSessionControl";

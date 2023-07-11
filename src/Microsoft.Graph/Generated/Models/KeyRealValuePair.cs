@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A key-value pair with a string key and a real (floating-point) value.
+    /// </summary>
     public class KeyRealValuePair : KeyTypedValuePair, IParsable {
         /// <summary>The real (floating-point) value of the key-value pair.</summary>
         public double? Value {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new KeyRealValuePair and sets the default values.
+        /// Instantiates a new keyRealValuePair and sets the default values.
         /// </summary>
         public KeyRealValuePair() : base() {
             OdataType = "#microsoft.graph.keyRealValuePair";

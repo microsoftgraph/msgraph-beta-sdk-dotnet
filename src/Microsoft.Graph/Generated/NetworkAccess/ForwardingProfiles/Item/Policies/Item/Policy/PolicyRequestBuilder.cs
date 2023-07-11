@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item.Policies.It
         public PolicyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/forwardingProfiles/{forwardingProfile%2Did}/policies/{policyLink%2Did}/policy{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get policy from networkAccess
+        /// Policy.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item.Policies.It
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.Policy>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.Policy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get policy from networkAccess
+        /// Policy.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item.Policies.It
             return requestInfo;
         }
         /// <summary>
-        /// Get policy from networkAccess
+        /// Policy.
         /// </summary>
         public class PolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The security baseline per category compliance state summary for the security baseline of the account.
+    /// </summary>
     public class SecurityBaselineCategoryStateSummary : SecurityBaselineStateSummary, IParsable {
         /// <summary>The category name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new SecurityBaselineCategoryStateSummary and sets the default values.
+        /// Instantiates a new securityBaselineCategoryStateSummary and sets the default values.
         /// </summary>
         public SecurityBaselineCategoryStateSummary() : base() {
             OdataType = "#microsoft.graph.securityBaselineCategoryStateSummary";

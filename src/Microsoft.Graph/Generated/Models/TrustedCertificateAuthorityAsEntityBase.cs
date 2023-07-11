@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TrustedCertificateAuthorityAsEntityBase and sets the default values.
+        /// Instantiates a new trustedCertificateAuthorityAsEntityBase and sets the default values.
         /// </summary>
         public TrustedCertificateAuthorityAsEntityBase() : base() {
             OdataType = "#microsoft.graph.trustedCertificateAuthorityAsEntityBase";

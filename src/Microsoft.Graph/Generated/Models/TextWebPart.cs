@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TextWebPart and sets the default values.
+        /// Instantiates a new textWebPart and sets the default values.
         /// </summary>
         public TextWebPart() : base() {
             OdataType = "#microsoft.graph.textWebPart";

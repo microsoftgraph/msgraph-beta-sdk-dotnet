@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Settings for Android For Work.
+    /// </summary>
     public class AndroidForWorkSettings : Entity, IParsable {
         /// <summary>Bind status of the tenant with the Google EMM API</summary>
         public AndroidForWorkBindStatus? BindStatus {

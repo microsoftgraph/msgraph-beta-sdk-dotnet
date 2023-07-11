@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// By providing the configurations in this profile you can instruct the Android Work Profile device to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
+    /// </summary>
     public class AndroidWorkProfileVpnConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Whether or not to enable always-on VPN connection.</summary>
         public bool? AlwaysOn {
@@ -194,7 +197,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidWorkProfileVpnConfiguration and sets the default values.
+        /// Instantiates a new androidWorkProfileVpnConfiguration and sets the default values.
         /// </summary>
         public AndroidWorkProfileVpnConfiguration() : base() {
             OdataType = "#microsoft.graph.androidWorkProfileVpnConfiguration";

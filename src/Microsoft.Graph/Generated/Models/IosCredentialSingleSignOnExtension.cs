@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents a Credential-type Single Sign-On extension profile for iOS devices.
+    /// </summary>
     public class IosCredentialSingleSignOnExtension : IosSingleSignOnExtension, IParsable {
         /// <summary>Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosCredentialSingleSignOnExtension and sets the default values.
+        /// Instantiates a new iosCredentialSingleSignOnExtension and sets the default values.
         /// </summary>
         public IosCredentialSingleSignOnExtension() : base() {
             OdataType = "#microsoft.graph.iosCredentialSingleSignOnExtension";

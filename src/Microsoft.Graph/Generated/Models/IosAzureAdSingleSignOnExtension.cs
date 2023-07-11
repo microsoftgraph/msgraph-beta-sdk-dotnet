@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents an Azure AD-type Single Sign-On extension profile for iOS devices.
+    /// </summary>
     public class IosAzureAdSingleSignOnExtension : IosSingleSignOnExtension, IParsable {
         /// <summary>An optional list of additional bundle IDs allowed to use the AAD extension for single sign-on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("enableSharedDeviceMode", value); }
         }
         /// <summary>
-        /// Instantiates a new IosAzureAdSingleSignOnExtension and sets the default values.
+        /// Instantiates a new iosAzureAdSingleSignOnExtension and sets the default values.
         /// </summary>
         public IosAzureAdSingleSignOnExtension() : base() {
             OdataType = "#microsoft.graph.iosAzureAdSingleSignOnExtension";

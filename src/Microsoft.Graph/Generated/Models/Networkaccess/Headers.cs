@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The origin property</summary>
+        /// <summary>Represents the origin or source from which the request is being made.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Origin {
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("origin", value); }
         }
 #endif
-        /// <summary>The referrer property</summary>
+        /// <summary>Represents the referring URL or the URL of the web page that the current request originates from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Referrer {
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("referrer", value); }
         }
 #endif
-        /// <summary>The xForwardedFor property</summary>
+        /// <summary>Represents the information about the client original IP address when the request passes through one or more proxy servers or load balancers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? XForwardedFor {

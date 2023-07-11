@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Apple device features configuration profile.
+    /// </summary>
     public class EasEmailProfileConfigurationBase : DeviceConfiguration, IParsable {
         /// <summary>Custom domain name value used while generating an email profile before installing on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("usernameSource", value); }
         }
         /// <summary>
-        /// Instantiates a new EasEmailProfileConfigurationBase and sets the default values.
+        /// Instantiates a new easEmailProfileConfigurationBase and sets the default values.
         /// </summary>
         public EasEmailProfileConfigurationBase() : base() {
             OdataType = "#microsoft.graph.easEmailProfileConfigurationBase";

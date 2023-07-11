@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ChatMessageMentionedIdentitySet and sets the default values.
+        /// Instantiates a new chatMessageMentionedIdentitySet and sets the default values.
         /// </summary>
         public ChatMessageMentionedIdentitySet() : base() {
             OdataType = "#microsoft.graph.chatMessageMentionedIdentitySet";

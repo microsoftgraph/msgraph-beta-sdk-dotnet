@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents an app in the list of managed Apple applications
+    /// </summary>
     public class AppleAppListItem : AppListItem, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

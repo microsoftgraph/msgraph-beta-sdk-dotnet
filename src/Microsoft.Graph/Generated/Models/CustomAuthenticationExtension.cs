@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CustomAuthenticationExtension : CustomCalloutExtension, IParsable {
         /// <summary>
-        /// Instantiates a new CustomAuthenticationExtension and sets the default values.
+        /// Instantiates a new customAuthenticationExtension and sets the default values.
         /// </summary>
         public CustomAuthenticationExtension() : base() {
             OdataType = "#microsoft.graph.customAuthenticationExtension";

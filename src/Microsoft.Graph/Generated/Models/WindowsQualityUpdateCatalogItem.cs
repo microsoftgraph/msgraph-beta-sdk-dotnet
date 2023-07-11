@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows update catalog item entity
+    /// </summary>
     public class WindowsQualityUpdateCatalogItem : WindowsUpdateCatalogItem, IParsable {
         /// <summary>Windows quality update classification</summary>
         public WindowsQualityUpdateClassification? Classification {
@@ -30,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsQualityUpdateCatalogItem and sets the default values.
+        /// Instantiates a new windowsQualityUpdateCatalogItem and sets the default values.
         /// </summary>
         public WindowsQualityUpdateCatalogItem() : base() {
             OdataType = "#microsoft.graph.windowsQualityUpdateCatalogItem";

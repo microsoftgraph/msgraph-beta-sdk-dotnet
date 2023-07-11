@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// iOS Derived Credential profile.
+    /// </summary>
     public class IosDerivedCredentialAuthenticationConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosDerivedCredentialAuthenticationConfiguration and sets the default values.
+        /// Instantiates a new iosDerivedCredentialAuthenticationConfiguration and sets the default values.
         /// </summary>
         public IosDerivedCredentialAuthenticationConfiguration() : base() {
             OdataType = "#microsoft.graph.iosDerivedCredentialAuthenticationConfiguration";

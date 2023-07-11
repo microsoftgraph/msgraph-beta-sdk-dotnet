@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// AOSP Device Owner PKCS certificate profile
+    /// </summary>
     public class AospDeviceOwnerPkcsCertificateProfile : AospDeviceOwnerCertificateProfileBase, IParsable {
         /// <summary>CertificateStore types</summary>
         public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore {
@@ -114,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AospDeviceOwnerPkcsCertificateProfile and sets the default values.
+        /// Instantiates a new aospDeviceOwnerPkcsCertificateProfile and sets the default values.
         /// </summary>
         public AospDeviceOwnerPkcsCertificateProfile() : base() {
             OdataType = "#microsoft.graph.aospDeviceOwnerPkcsCertificateProfile";

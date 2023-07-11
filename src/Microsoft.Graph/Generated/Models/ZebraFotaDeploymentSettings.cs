@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("updateType", value); }
         }
         /// <summary>
-        /// Instantiates a new ZebraFotaDeploymentSettings and sets the default values.
+        /// Instantiates a new zebraFotaDeploymentSettings and sets the default values.
         /// </summary>
         public ZebraFotaDeploymentSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

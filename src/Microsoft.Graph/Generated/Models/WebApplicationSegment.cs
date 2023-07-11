@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WebApplicationSegment and sets the default values.
+        /// Instantiates a new webApplicationSegment and sets the default values.
         /// </summary>
         public WebApplicationSegment() : base() {
             OdataType = "#microsoft.graph.webApplicationSegment";

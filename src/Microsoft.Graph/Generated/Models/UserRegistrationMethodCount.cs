@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Name of authentication method.</summary>
+        /// <summary>Name of the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthenticationMethod {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userCount", value); }
         }
         /// <summary>
-        /// Instantiates a new UserRegistrationMethodCount and sets the default values.
+        /// Instantiates a new userRegistrationMethodCount and sets the default values.
         /// </summary>
         public UserRegistrationMethodCount() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

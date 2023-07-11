@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AzureCommunicationServicesUserIdentity and sets the default values.
+        /// Instantiates a new azureCommunicationServicesUserIdentity and sets the default values.
         /// </summary>
         public AzureCommunicationServicesUserIdentity() : base() {
             OdataType = "#microsoft.graph.azureCommunicationServicesUserIdentity";

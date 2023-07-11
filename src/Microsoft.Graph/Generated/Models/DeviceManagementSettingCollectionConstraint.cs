@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Constraint that enforces the maximum number of elements a collection
+    /// </summary>
     public class DeviceManagementSettingCollectionConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>The maximum number of elements in the collection</summary>
         public int? MaximumLength {
@@ -16,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("minimumLength", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementSettingCollectionConstraint and sets the default values.
+        /// Instantiates a new deviceManagementSettingCollectionConstraint and sets the default values.
         /// </summary>
         public DeviceManagementSettingCollectionConstraint() : base() {
             OdataType = "#microsoft.graph.deviceManagementSettingCollectionConstraint";

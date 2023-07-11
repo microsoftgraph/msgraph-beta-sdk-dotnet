@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ReferenceAttachment and sets the default values.
+        /// Instantiates a new referenceAttachment and sets the default values.
         /// </summary>
         public ReferenceAttachment() : base() {
             OdataType = "#microsoft.graph.referenceAttachment";

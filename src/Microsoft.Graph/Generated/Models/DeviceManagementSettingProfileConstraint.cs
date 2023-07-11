@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Constraint enforcing a given profile metadata
+    /// </summary>
     public class DeviceManagementSettingProfileConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>The source of the entity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeviceManagementSettingProfileConstraint and sets the default values.
+        /// Instantiates a new deviceManagementSettingProfileConstraint and sets the default values.
         /// </summary>
         public DeviceManagementSettingProfileConstraint() : base() {
             OdataType = "#microsoft.graph.deviceManagementSettingProfileConstraint";

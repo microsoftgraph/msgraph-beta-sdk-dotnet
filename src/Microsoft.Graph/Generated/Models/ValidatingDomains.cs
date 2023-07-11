@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("rootDomains", value); }
         }
         /// <summary>
-        /// Instantiates a new ValidatingDomains and sets the default values.
+        /// Instantiates a new validatingDomains and sets the default values.
         /// </summary>
         public ValidatingDomains() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

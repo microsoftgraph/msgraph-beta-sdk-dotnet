@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageUserDirectoryAttributeStore : AccessPackageResourceAttributeDestination, IParsable {
         /// <summary>
-        /// Instantiates a new AccessPackageUserDirectoryAttributeStore and sets the default values.
+        /// Instantiates a new accessPackageUserDirectoryAttributeStore and sets the default values.
         /// </summary>
         public AccessPackageUserDirectoryAttributeStore() : base() {
             OdataType = "#microsoft.graph.accessPackageUserDirectoryAttributeStore";

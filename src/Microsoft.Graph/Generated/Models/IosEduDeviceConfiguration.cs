@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// iOS Education device configuration
+    /// </summary>
     public class IosEduDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>The Trusted Root and PFX certificates for Device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosEduDeviceConfiguration and sets the default values.
+        /// Instantiates a new iosEduDeviceConfiguration and sets the default values.
         /// </summary>
         public IosEduDeviceConfiguration() : base() {
             OdataType = "#microsoft.graph.iosEduDeviceConfiguration";

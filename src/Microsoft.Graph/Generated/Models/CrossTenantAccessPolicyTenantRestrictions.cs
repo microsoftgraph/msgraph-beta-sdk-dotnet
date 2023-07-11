@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CrossTenantAccessPolicyTenantRestrictions and sets the default values.
+        /// Instantiates a new crossTenantAccessPolicyTenantRestrictions and sets the default values.
         /// </summary>
         public CrossTenantAccessPolicyTenantRestrictions() : base() {
             OdataType = "#microsoft.graph.crossTenantAccessPolicyTenantRestrictions";

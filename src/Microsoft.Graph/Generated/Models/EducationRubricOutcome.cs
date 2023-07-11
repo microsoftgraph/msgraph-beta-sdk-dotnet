@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EducationRubricOutcome and sets the default values.
+        /// Instantiates a new educationRubricOutcome and sets the default values.
         /// </summary>
         public EducationRubricOutcome() : base() {
             OdataType = "#microsoft.graph.educationRubricOutcome";

@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TooManyGlobalAdminsAssignedToTenantAlertIncident and sets the default values.
+        /// Instantiates a new tooManyGlobalAdminsAssignedToTenantAlertIncident and sets the default values.
         /// </summary>
         public TooManyGlobalAdminsAssignedToTenantAlertIncident() : base() {
             OdataType = "#microsoft.graph.tooManyGlobalAdminsAssignedToTenantAlertIncident";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Model for ReferenceSettingValue
+    /// </summary>
     public class DeviceManagementConfigurationReferenceSettingValue : DeviceManagementConfigurationStringSettingValue, IParsable {
         /// <summary>A note that admin can use to put some contextual information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeviceManagementConfigurationReferenceSettingValue and sets the default values.
+        /// Instantiates a new deviceManagementConfigurationReferenceSettingValue and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationReferenceSettingValue() : base() {
             OdataType = "#microsoft.graph.deviceManagementConfigurationReferenceSettingValue";

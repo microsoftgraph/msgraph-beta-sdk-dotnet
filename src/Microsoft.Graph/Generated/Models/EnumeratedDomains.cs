@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EnumeratedDomains and sets the default values.
+        /// Instantiates a new enumeratedDomains and sets the default values.
         /// </summary>
         public EnumeratedDomains() : base() {
             OdataType = "#microsoft.graph.enumeratedDomains";

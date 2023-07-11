@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DlpEvaluationWindowsDevicesInput and sets the default values.
+        /// Instantiates a new dlpEvaluationWindowsDevicesInput and sets the default values.
         /// </summary>
         public DlpEvaluationWindowsDevicesInput() : base() {
             OdataType = "#microsoft.graph.dlpEvaluationWindowsDevicesInput";

@@ -216,7 +216,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PlannerTaskPropertyRule and sets the default values.
+        /// Instantiates a new plannerTaskPropertyRule and sets the default values.
         /// </summary>
         public PlannerTaskPropertyRule() : base() {
             OdataType = "#microsoft.graph.plannerTaskPropertyRule";

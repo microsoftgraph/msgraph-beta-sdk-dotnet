@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Note and sets the default values.
+        /// Instantiates a new note and sets the default values.
         /// </summary>
         public Note() : base() {
             OdataType = "#microsoft.graph.note";

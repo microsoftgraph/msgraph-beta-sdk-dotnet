@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// By providing the configurations in this profile you can instruct the Android device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user.
+    /// </summary>
     public class AndroidEnterpriseWiFiConfiguration : AndroidWiFiConfiguration, IParsable {
         /// <summary>Indicates the Authentication Method the client (device) needs to use when the EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.</summary>
         public WiFiAuthenticationMethod? AuthenticationMethod {
@@ -124,7 +127,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidEnterpriseWiFiConfiguration and sets the default values.
+        /// Instantiates a new androidEnterpriseWiFiConfiguration and sets the default values.
         /// </summary>
         public AndroidEnterpriseWiFiConfiguration() : base() {
             OdataType = "#microsoft.graph.androidEnterpriseWiFiConfiguration";

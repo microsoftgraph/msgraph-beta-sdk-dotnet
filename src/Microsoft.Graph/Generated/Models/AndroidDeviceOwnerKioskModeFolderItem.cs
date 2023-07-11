@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents an item that can be added to Android Device Owner folder (application or weblink)
+    /// </summary>
     public class AndroidDeviceOwnerKioskModeFolderItem : AndroidDeviceOwnerKioskModeHomeScreenItem, IParsable {
         /// <summary>
-        /// Instantiates a new AndroidDeviceOwnerKioskModeFolderItem and sets the default values.
+        /// Instantiates a new androidDeviceOwnerKioskModeFolderItem and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerKioskModeFolderItem() : base() {
             OdataType = "#microsoft.graph.androidDeviceOwnerKioskModeFolderItem";

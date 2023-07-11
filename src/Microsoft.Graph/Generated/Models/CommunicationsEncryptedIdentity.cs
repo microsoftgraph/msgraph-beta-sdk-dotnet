@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CommunicationsEncryptedIdentity : Identity, IParsable {
         /// <summary>
-        /// Instantiates a new CommunicationsEncryptedIdentity and sets the default values.
+        /// Instantiates a new communicationsEncryptedIdentity and sets the default values.
         /// </summary>
         public CommunicationsEncryptedIdentity() : base() {
             OdataType = "#microsoft.graph.communicationsEncryptedIdentity";

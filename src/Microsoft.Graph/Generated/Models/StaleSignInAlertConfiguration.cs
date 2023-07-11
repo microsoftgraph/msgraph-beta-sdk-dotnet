@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("duration", value); }
         }
         /// <summary>
-        /// Instantiates a new StaleSignInAlertConfiguration and sets the default values.
+        /// Instantiates a new staleSignInAlertConfiguration and sets the default values.
         /// </summary>
         public StaleSignInAlertConfiguration() : base() {
             OdataType = "#microsoft.graph.staleSignInAlertConfiguration";

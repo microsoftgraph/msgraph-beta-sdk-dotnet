@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class FocusActivityStatistics : ActivityStatistics, IParsable {
         /// <summary>
-        /// Instantiates a new FocusActivityStatistics and sets the default values.
+        /// Instantiates a new focusActivityStatistics and sets the default values.
         /// </summary>
         public FocusActivityStatistics() : base() {
             OdataType = "#microsoft.graph.focusActivityStatistics";

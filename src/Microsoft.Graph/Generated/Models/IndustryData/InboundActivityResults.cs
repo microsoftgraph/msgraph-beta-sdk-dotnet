@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
             set { BackingStore?.Set("warnings", value); }
         }
         /// <summary>
-        /// Instantiates a new InboundActivityResults and sets the default values.
+        /// Instantiates a new inboundActivityResults and sets the default values.
         /// </summary>
         public InboundActivityResults() : base() {
             OdataType = "#microsoft.graph.industryData.inboundActivityResults";

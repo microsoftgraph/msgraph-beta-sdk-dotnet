@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new OnTokenIssuanceStartCustomExtension and sets the default values.
+        /// Instantiates a new onTokenIssuanceStartCustomExtension and sets the default values.
         /// </summary>
         public OnTokenIssuanceStartCustomExtension() : base() {
             OdataType = "#microsoft.graph.onTokenIssuanceStartCustomExtension";

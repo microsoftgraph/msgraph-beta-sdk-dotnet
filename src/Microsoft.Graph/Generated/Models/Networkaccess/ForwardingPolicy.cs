@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("trafficForwardingType", value); }
         }
         /// <summary>
-        /// Instantiates a new ForwardingPolicy and sets the default values.
+        /// Instantiates a new forwardingPolicy and sets the default values.
         /// </summary>
         public ForwardingPolicy() : base() {
             OdataType = "#microsoft.graph.networkaccess.forwardingPolicy";

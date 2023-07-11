@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Entity that describes tenant level settings for derived credentials
+    /// </summary>
     public class DeviceManagementDerivedCredentialSettings : Entity, IParsable {
         /// <summary>The display name for the profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

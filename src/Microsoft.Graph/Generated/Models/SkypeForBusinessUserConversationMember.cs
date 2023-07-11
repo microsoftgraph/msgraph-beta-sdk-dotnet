@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new SkypeForBusinessUserConversationMember and sets the default values.
+        /// Instantiates a new skypeForBusinessUserConversationMember and sets the default values.
         /// </summary>
         public SkypeForBusinessUserConversationMember() : base() {
             OdataType = "#microsoft.graph.skypeForBusinessUserConversationMember";

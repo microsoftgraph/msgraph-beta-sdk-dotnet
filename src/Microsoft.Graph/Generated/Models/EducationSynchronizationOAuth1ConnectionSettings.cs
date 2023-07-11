@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationSynchronizationOAuth1ConnectionSettings : EducationSynchronizationConnectionSettings, IParsable {
         /// <summary>
-        /// Instantiates a new EducationSynchronizationOAuth1ConnectionSettings and sets the default values.
+        /// Instantiates a new educationSynchronizationOAuth1ConnectionSettings and sets the default values.
         /// </summary>
         public EducationSynchronizationOAuth1ConnectionSettings() : base() {
             OdataType = "#microsoft.graph.educationSynchronizationOAuth1ConnectionSettings";

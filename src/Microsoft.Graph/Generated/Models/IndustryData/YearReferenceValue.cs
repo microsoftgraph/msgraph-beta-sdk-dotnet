@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
     public class YearReferenceValue : ReferenceValue, IParsable {
         /// <summary>
-        /// Instantiates a new YearReferenceValue and sets the default values.
+        /// Instantiates a new yearReferenceValue and sets the default values.
         /// </summary>
         public YearReferenceValue() : base() {
             OdataType = "#microsoft.graph.industryData.yearReferenceValue";

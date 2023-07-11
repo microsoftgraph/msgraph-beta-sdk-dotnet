@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Android COBO Derived Credential profile.
+    /// </summary>
     public class AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.</summary>
         public AndroidDeviceOwnerCertificateAccessType? CertificateAccessType {
@@ -39,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration and sets the default values.
+        /// Instantiates a new androidDeviceOwnerDerivedCredentialAuthenticationConfiguration and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration() : base() {
             OdataType = "#microsoft.graph.androidDeviceOwnerDerivedCredentialAuthenticationConfiguration";

@@ -5,6 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the sharedPCConfiguration resource.
+    /// </summary>
     public class SharedPCConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Specifies how accounts are managed on a shared PC. Only applies when disableAccountManager is false.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -124,7 +127,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("signInOnResume", value); }
         }
         /// <summary>
-        /// Instantiates a new SharedPCConfiguration and sets the default values.
+        /// Instantiates a new sharedPCConfiguration and sets the default values.
         /// </summary>
         public SharedPCConfiguration() : base() {
             OdataType = "#microsoft.graph.sharedPCConfiguration";

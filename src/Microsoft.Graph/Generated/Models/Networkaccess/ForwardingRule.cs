@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<ForwardingRuleAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
-        /// <summary>The destinations property</summary>
+        /// <summary>Destinations maintain a list of potential destinations and destination types that the user may access within the context of a network filtering policy. This includes IP addresses and fully qualified domain names (FQDNs)/URLs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<RuleDestination>? Destinations {
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("ruleType", value); }
         }
         /// <summary>
-        /// Instantiates a new ForwardingRule and sets the default values.
+        /// Instantiates a new forwardingRule and sets the default values.
         /// </summary>
         public ForwardingRule() : base() {
             OdataType = "#microsoft.graph.networkaccess.forwardingRule";

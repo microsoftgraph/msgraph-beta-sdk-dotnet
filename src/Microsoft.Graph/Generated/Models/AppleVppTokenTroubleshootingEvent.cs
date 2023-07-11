@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Event representing an Apple Vpp Token Troubleshooting Event.
+    /// </summary>
     public class AppleVppTokenTroubleshootingEvent : DeviceManagementTroubleshootingEvent, IParsable {
         /// <summary>Apple Volume Purchase Program Token Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

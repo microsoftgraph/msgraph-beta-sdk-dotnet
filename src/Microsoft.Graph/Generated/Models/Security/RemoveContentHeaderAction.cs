@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new RemoveContentHeaderAction and sets the default values.
+        /// Instantiates a new removeContentHeaderAction and sets the default values.
         /// </summary>
         public RemoveContentHeaderAction() : base() {
             OdataType = "#microsoft.graph.security.removeContentHeaderAction";

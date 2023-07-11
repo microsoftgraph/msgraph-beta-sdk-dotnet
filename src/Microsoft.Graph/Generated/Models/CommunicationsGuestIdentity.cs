@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CommunicationsGuestIdentity : Identity, IParsable {
         /// <summary>
-        /// Instantiates a new CommunicationsGuestIdentity and sets the default values.
+        /// Instantiates a new communicationsGuestIdentity and sets the default values.
         /// </summary>
         public CommunicationsGuestIdentity() : base() {
             OdataType = "#microsoft.graph.communicationsGuestIdentity";

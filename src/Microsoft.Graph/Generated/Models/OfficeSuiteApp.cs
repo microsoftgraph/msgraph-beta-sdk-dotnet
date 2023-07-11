@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for the Office365 Suite App.
+    /// </summary>
     public class OfficeSuiteApp : MobileApp, IParsable {
         /// <summary>The value to accept the EULA automatically on the enduser&apos;s device.</summary>
         public bool? AutoAcceptEula {
@@ -125,7 +128,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("useSharedComputerActivation", value); }
         }
         /// <summary>
-        /// Instantiates a new OfficeSuiteApp and sets the default values.
+        /// Instantiates a new officeSuiteApp and sets the default values.
         /// </summary>
         public OfficeSuiteApp() : base() {
             OdataType = "#microsoft.graph.officeSuiteApp";

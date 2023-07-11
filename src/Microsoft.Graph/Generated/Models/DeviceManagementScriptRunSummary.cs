@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties for the run summary of a device management script.
+    /// </summary>
     public class DeviceManagementScriptRunSummary : Entity, IParsable {
         /// <summary>Error device count.</summary>
         public int? ErrorDeviceCount {

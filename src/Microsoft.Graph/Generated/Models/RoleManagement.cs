@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new RoleManagement and sets the default values.
+        /// Instantiates a new roleManagement and sets the default values.
         /// </summary>
         public RoleManagement() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

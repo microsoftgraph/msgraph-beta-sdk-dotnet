@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// By providing configurations in this profile you can instruct the native email client (Outlook) on Windows 10 devices to communicate with an Exchange server and get email, contacts, calendar, and tasks. Furthermore, you can also specify how much email to sync and how often the device should sync.
+    /// </summary>
     public class Windows10EasEmailProfileConfiguration : EasEmailProfileConfigurationBase, IParsable {
         /// <summary>Account name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("syncTasks", value); }
         }
         /// <summary>
-        /// Instantiates a new Windows10EasEmailProfileConfiguration and sets the default values.
+        /// Instantiates a new windows10EasEmailProfileConfiguration and sets the default values.
         /// </summary>
         public Windows10EasEmailProfileConfiguration() : base() {
             OdataType = "#microsoft.graph.windows10EasEmailProfileConfiguration";

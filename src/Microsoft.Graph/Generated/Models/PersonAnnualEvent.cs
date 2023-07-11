@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new PersonAnnualEvent and sets the default values.
+        /// Instantiates a new personAnnualEvent and sets the default values.
         /// </summary>
         public PersonAnnualEvent() : base() {
             OdataType = "#microsoft.graph.personAnnualEvent";

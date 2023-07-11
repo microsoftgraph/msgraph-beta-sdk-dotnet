@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new BuiltInIdentityProvider and sets the default values.
+        /// Instantiates a new builtInIdentityProvider and sets the default values.
         /// </summary>
         public BuiltInIdentityProvider() : base() {
             OdataType = "#microsoft.graph.builtInIdentityProvider";

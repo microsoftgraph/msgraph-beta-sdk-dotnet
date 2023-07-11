@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EncryptWithTemplate and sets the default values.
+        /// Instantiates a new encryptWithTemplate and sets the default values.
         /// </summary>
         public EncryptWithTemplate() : base() {
             OdataType = "#microsoft.graph.encryptWithTemplate";

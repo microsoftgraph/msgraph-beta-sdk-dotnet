@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("targettedUserType", value); }
         }
         /// <summary>
-        /// Instantiates a new SimulationNotification and sets the default values.
+        /// Instantiates a new simulationNotification and sets the default values.
         /// </summary>
         public SimulationNotification() : base() {
             OdataType = "#microsoft.graph.simulationNotification";

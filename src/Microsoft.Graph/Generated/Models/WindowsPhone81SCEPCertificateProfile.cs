@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows Phone 8.1+ SCEP certificate profile
+    /// </summary>
     public class WindowsPhone81SCEPCertificateProfile : WindowsPhone81CertificateProfileBase, IParsable {
         /// <summary>Hash Algorithm Options.</summary>
         public HashAlgorithms? HashAlgorithm {
@@ -91,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsPhone81SCEPCertificateProfile and sets the default values.
+        /// Instantiates a new windowsPhone81SCEPCertificateProfile and sets the default values.
         /// </summary>
         public WindowsPhone81SCEPCertificateProfile() : base() {
             OdataType = "#microsoft.graph.windowsPhone81SCEPCertificateProfile";

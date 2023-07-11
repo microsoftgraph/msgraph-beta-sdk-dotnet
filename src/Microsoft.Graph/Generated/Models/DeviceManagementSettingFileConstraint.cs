@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Constraint enforcing the file extension is acceptable for a given setting
+    /// </summary>
     public class DeviceManagementSettingFileConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>Acceptable file extensions to upload for this setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeviceManagementSettingFileConstraint and sets the default values.
+        /// Instantiates a new deviceManagementSettingFileConstraint and sets the default values.
         /// </summary>
         public DeviceManagementSettingFileConstraint() : base() {
             OdataType = "#microsoft.graph.deviceManagementSettingFileConstraint";

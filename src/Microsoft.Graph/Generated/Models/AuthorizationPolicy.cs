@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AuthorizationPolicy and sets the default values.
+        /// Instantiates a new authorizationPolicy and sets the default values.
         /// </summary>
         public AuthorizationPolicy() : base() {
             OdataType = "#microsoft.graph.authorizationPolicy";

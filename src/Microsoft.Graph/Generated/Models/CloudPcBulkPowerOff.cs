@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcBulkPowerOff : CloudPcBulkAction, IParsable {
         /// <summary>
-        /// Instantiates a new CloudPcBulkPowerOff and sets the default values.
+        /// Instantiates a new cloudPcBulkPowerOff and sets the default values.
         /// </summary>
         public CloudPcBulkPowerOff() : base() {
             OdataType = "#microsoft.graph.cloudPcBulkPowerOff";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// MacOS wired network configuration profile.
+    /// </summary>
     public class MacOSWiredNetworkConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.</summary>
         public WiFiAuthenticationMethod? AuthenticationMethod {
@@ -101,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MacOSWiredNetworkConfiguration and sets the default values.
+        /// Instantiates a new macOSWiredNetworkConfiguration and sets the default values.
         /// </summary>
         public MacOSWiredNetworkConfiguration() : base() {
             OdataType = "#microsoft.graph.macOSWiredNetworkConfiguration";

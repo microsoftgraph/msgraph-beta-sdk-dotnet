@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Allows IT admins to set a predefined default search engine for MDM-Controlled devices.
+    /// </summary>
     public class EdgeSearchEngine : EdgeSearchEngineBase, IParsable {
         /// <summary>Allows IT admind to set a predefined default search engine for MDM-Controlled devices</summary>
         public Microsoft.Graph.Beta.Models.EdgeSearchEngineType? EdgeSearchEngineType {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("edgeSearchEngineType", value); }
         }
         /// <summary>
-        /// Instantiates a new EdgeSearchEngine and sets the default values.
+        /// Instantiates a new edgeSearchEngine and sets the default values.
         /// </summary>
         public EdgeSearchEngine() : base() {
             OdataType = "#microsoft.graph.edgeSearchEngine";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The security baseline template of the account
+    /// </summary>
     public class SecurityBaselineTemplate : DeviceManagementTemplate, IParsable {
         /// <summary>The security baseline per category device state summary</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new SecurityBaselineTemplate and sets the default values.
+        /// Instantiates a new securityBaselineTemplate and sets the default values.
         /// </summary>
         public SecurityBaselineTemplate() : base() {
             OdataType = "#microsoft.graph.securityBaselineTemplate";

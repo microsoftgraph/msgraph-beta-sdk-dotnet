@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
 #endif
         /// <summary>
-        /// Instantiates a new FeatureUpdateCatalogEntry and sets the default values.
+        /// Instantiates a new featureUpdateCatalogEntry and sets the default values.
         /// </summary>
         public FeatureUpdateCatalogEntry() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry";

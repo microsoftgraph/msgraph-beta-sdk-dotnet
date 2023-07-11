@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows update catalog item entity
+    /// </summary>
     public class WindowsFeatureUpdateCatalogItem : WindowsUpdateCatalogItem, IParsable {
         /// <summary>The feature update version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsFeatureUpdateCatalogItem and sets the default values.
+        /// Instantiates a new windowsFeatureUpdateCatalogItem and sets the default values.
         /// </summary>
         public WindowsFeatureUpdateCatalogItem() : base() {
             OdataType = "#microsoft.graph.windowsFeatureUpdateCatalogItem";

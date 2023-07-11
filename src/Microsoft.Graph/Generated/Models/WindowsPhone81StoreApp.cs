@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for Windows Phone 8.1 Store apps. Inherits from graph.mobileApp. Will be deprecated in February 2023.
+    /// </summary>
     public class WindowsPhone81StoreApp : MobileApp, IParsable {
         /// <summary>The Windows Phone 8.1 app store URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsPhone81StoreApp and sets the default values.
+        /// Instantiates a new windowsPhone81StoreApp and sets the default values.
         /// </summary>
         public WindowsPhone81StoreApp() : base() {
             OdataType = "#microsoft.graph.windowsPhone81StoreApp";

@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeviceManagementConfigurationWindowsSettingApplicability and sets the default values.
+        /// Instantiates a new deviceManagementConfigurationWindowsSettingApplicability and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationWindowsSettingApplicability() : base() {
             OdataType = "#microsoft.graph.deviceManagementConfigurationWindowsSettingApplicability";

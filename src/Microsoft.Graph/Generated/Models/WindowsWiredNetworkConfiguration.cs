@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// This entity provides descriptions of the declared methods, properties and relationships exposed by the Wired Network CSP.
+    /// </summary>
     public class WindowsWiredNetworkConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Specify the duration for which automatic authentication attempts will be blocked from occuring after a failed authentication attempt.</summary>
         public int? AuthenticationBlockPeriodInMinutes {
@@ -189,7 +192,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsWiredNetworkConfiguration and sets the default values.
+        /// Instantiates a new windowsWiredNetworkConfiguration and sets the default values.
         /// </summary>
         public WindowsWiredNetworkConfiguration() : base() {
             OdataType = "#microsoft.graph.windowsWiredNetworkConfiguration";

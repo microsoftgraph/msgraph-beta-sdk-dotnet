@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.BulkUpload;
 using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Pause;
 using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.ProvisionOnDemand;
 using Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Restart;
@@ -19,6 +20,10 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item {
     /// Provides operations to manage the jobs property of the microsoft.graph.synchronization entity.
     /// </summary>
     public class SynchronizationJobItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the bulkUpload property of the microsoft.graph.synchronizationJob entity.</summary>
+        public BulkUploadRequestBuilder BulkUpload { get =>
+            new BulkUploadRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the pause method.</summary>
         public PauseRequestBuilder Pause { get =>
             new PauseRequestBuilder(PathParameters, RequestAdapter);

@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Applicability for a setting that can be targeted on managed Applications by Intune
+    /// </summary>
     public class DeviceManagementConfigurationApplicationSettingApplicability : DeviceManagementConfigurationSettingApplicability, IParsable {
         /// <summary>
-        /// Instantiates a new DeviceManagementConfigurationApplicationSettingApplicability and sets the default values.
+        /// Instantiates a new deviceManagementConfigurationApplicationSettingApplicability and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationApplicationSettingApplicability() : base() {
             OdataType = "#microsoft.graph.deviceManagementConfigurationApplicationSettingApplicability";

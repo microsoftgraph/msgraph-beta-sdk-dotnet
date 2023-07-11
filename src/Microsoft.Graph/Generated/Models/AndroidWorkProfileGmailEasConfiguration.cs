@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// By providing configurations in this profile you can instruct the Gmail email client on Android Work Profile devices to communicate with an Exchange server and get email, contacts, calendar, tasks, and notes. Furthermore, you can also specify how much email to sync and how often the device should sync.
+    /// </summary>
     public class AndroidWorkProfileGmailEasConfiguration : AndroidWorkProfileEasEmailProfileBase, IParsable {
         /// <summary>
-        /// Instantiates a new AndroidWorkProfileGmailEasConfiguration and sets the default values.
+        /// Instantiates a new androidWorkProfileGmailEasConfiguration and sets the default values.
         /// </summary>
         public AndroidWorkProfileGmailEasConfiguration() : base() {
             OdataType = "#microsoft.graph.androidWorkProfileGmailEasConfiguration";

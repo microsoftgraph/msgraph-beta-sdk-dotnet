@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("durationUntilDeploymentEnd", value); }
         }
         /// <summary>
-        /// Instantiates a new DurationDrivenRolloutSettings and sets the default values.
+        /// Instantiates a new durationDrivenRolloutSettings and sets the default values.
         /// </summary>
         public DurationDrivenRolloutSettings() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.durationDrivenRolloutSettings";

@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeviceKey and sets the default values.
+        /// Instantiates a new deviceKey and sets the default values.
         /// </summary>
         public DeviceKey() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

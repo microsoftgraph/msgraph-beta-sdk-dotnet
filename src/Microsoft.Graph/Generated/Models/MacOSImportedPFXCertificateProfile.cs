@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// MacOS PFX Import certificate profile
+    /// </summary>
     public class MacOSImportedPFXCertificateProfile : MacOSCertificateProfileBase, IParsable {
         /// <summary>PFX Import Options.</summary>
         public Microsoft.Graph.Beta.Models.IntendedPurpose? IntendedPurpose {
@@ -25,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MacOSImportedPFXCertificateProfile and sets the default values.
+        /// Instantiates a new macOSImportedPFXCertificateProfile and sets the default values.
         /// </summary>
         public MacOSImportedPFXCertificateProfile() : base() {
             OdataType = "#microsoft.graph.macOSImportedPFXCertificateProfile";

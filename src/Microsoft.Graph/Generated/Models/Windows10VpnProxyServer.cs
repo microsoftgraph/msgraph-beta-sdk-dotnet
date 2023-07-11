@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// VPN Proxy Server.
+    /// </summary>
     public class Windows10VpnProxyServer : VpnProxyServer, IParsable {
         /// <summary>Bypass proxy server for local address.</summary>
         public bool? BypassProxyServerForLocalAddress {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("bypassProxyServerForLocalAddress", value); }
         }
         /// <summary>
-        /// Instantiates a new Windows10VpnProxyServer and sets the default values.
+        /// Instantiates a new windows10VpnProxyServer and sets the default values.
         /// </summary>
         public Windows10VpnProxyServer() : base() {
             OdataType = "#microsoft.graph.windows10VpnProxyServer";

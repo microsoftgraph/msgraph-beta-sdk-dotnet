@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
     public class IdentifierTypeReferenceValue : ReferenceValue, IParsable {
         /// <summary>
-        /// Instantiates a new IdentifierTypeReferenceValue and sets the default values.
+        /// Instantiates a new identifierTypeReferenceValue and sets the default values.
         /// </summary>
         public IdentifierTypeReferenceValue() : base() {
             OdataType = "#microsoft.graph.industryData.identifierTypeReferenceValue";

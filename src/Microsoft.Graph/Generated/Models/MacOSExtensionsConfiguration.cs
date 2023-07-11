@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// MacOS extensions configuration profile.
+    /// </summary>
     public class MacOSExtensionsConfiguration : DeviceConfiguration, IParsable {
         /// <summary>All kernel extensions validly signed by the team identifiers in this list will be allowed to load.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("systemExtensionsBlockOverride", value); }
         }
         /// <summary>
-        /// Instantiates a new MacOSExtensionsConfiguration and sets the default values.
+        /// Instantiates a new macOSExtensionsConfiguration and sets the default values.
         /// </summary>
         public MacOSExtensionsConfiguration() : base() {
             OdataType = "#microsoft.graph.macOSExtensionsConfiguration";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The class used to identify an AzureAD group for the kiosk configuration
+    /// </summary>
     public class WindowsKioskAzureADGroup : WindowsKioskUser, IParsable {
         /// <summary>The display name of the AzureAD group that will be locked to this kiosk configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsKioskAzureADGroup and sets the default values.
+        /// Instantiates a new windowsKioskAzureADGroup and sets the default values.
         /// </summary>
         public WindowsKioskAzureADGroup() : base() {
             OdataType = "#microsoft.graph.windowsKioskAzureADGroup";

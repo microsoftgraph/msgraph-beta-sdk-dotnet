@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class ForwardingProfile : Profile, IParsable {
-        /// <summary>The associations property</summary>
+        /// <summary>Specifies the users, groups, devices, and branch locations whose traffic is associated with the given traffic forwarding profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Association>? Associations {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("associations", value); }
         }
 #endif
-        /// <summary>The priority property</summary>
+        /// <summary>Profile priority.</summary>
         public int? Priority {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("trafficForwardingType", value); }
         }
         /// <summary>
-        /// Instantiates a new ForwardingProfile and sets the default values.
+        /// Instantiates a new forwardingProfile and sets the default values.
         /// </summary>
         public ForwardingProfile() : base() {
             OdataType = "#microsoft.graph.networkaccess.forwardingProfile";

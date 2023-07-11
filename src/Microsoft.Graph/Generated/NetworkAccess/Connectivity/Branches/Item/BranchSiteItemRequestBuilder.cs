@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item {
         public BranchSiteItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property branches for networkAccess
+        /// Delete a specific branch.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/networkaccess-branchsite-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get branches from networkAccess
+        /// Retrieve information about a specific branch.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/networkaccess-branchsite-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,7 +78,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item {
             return await RequestAdapter.SendAsync<BranchSite>(requestInfo, BranchSite.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property branches in networkAccess
+        /// Update the configuration or properties of a specific branch.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/networkaccess-branchsite-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,7 +100,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item {
             return await RequestAdapter.SendAsync<BranchSite>(requestInfo, BranchSite.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property branches for networkAccess
+        /// Delete a specific branch.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get branches from networkAccess
+        /// Retrieve information about a specific branch.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -147,7 +150,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property branches in networkAccess
+        /// Update the configuration or properties of a specific branch.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +194,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item {
             }
         }
         /// <summary>
-        /// Get branches from networkAccess
+        /// Retrieve information about a specific branch.
         /// </summary>
         public class BranchSiteItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

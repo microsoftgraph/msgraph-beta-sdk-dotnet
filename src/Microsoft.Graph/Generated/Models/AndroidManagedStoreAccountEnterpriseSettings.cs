@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Enterprise settings for an Android managed store account.
+    /// </summary>
     public class AndroidManagedStoreAccountEnterpriseSettings : Entity, IParsable {
         /// <summary>Company codes for AndroidManagedStoreAccountEnterpriseSettings</summary>
         public bool? AndroidDeviceOwnerFullyManagedEnrollmentEnabled {

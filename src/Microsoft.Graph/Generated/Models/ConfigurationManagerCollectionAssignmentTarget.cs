@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents an assignment to a Configuration Manager Collection.
+    /// </summary>
     public class ConfigurationManagerCollectionAssignmentTarget : DeviceAndAppManagementAssignmentTarget, IParsable {
         /// <summary>The collection Id that is the target of the assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ConfigurationManagerCollectionAssignmentTarget and sets the default values.
+        /// Instantiates a new configurationManagerCollectionAssignmentTarget and sets the default values.
         /// </summary>
         public ConfigurationManagerCollectionAssignmentTarget() : base() {
             OdataType = "#microsoft.graph.configurationManagerCollectionAssignmentTarget";

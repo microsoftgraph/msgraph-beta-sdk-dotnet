@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<Status?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
-        /// <summary>The version property</summary>
+        /// <summary>Version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Version {

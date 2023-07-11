@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Constraint that enforces the setting value is from a permitted set of strings
+    /// </summary>
     public class DeviceManagementEnumConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>List of valid values for this string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeviceManagementEnumConstraint and sets the default values.
+        /// Instantiates a new deviceManagementEnumConstraint and sets the default values.
         /// </summary>
         public DeviceManagementEnumConstraint() : base() {
             OdataType = "#microsoft.graph.deviceManagementEnumConstraint";

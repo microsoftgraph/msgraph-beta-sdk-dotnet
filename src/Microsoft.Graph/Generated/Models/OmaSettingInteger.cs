@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// OMA Settings Integer definition.
+    /// </summary>
     public class OmaSettingInteger : OmaSetting, IParsable {
         /// <summary>By setting to true, the CSP (configuration service provider) specified in the OMA-URI will perform a get, instead of set</summary>
         public bool? IsReadOnly {
@@ -16,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new OmaSettingInteger and sets the default values.
+        /// Instantiates a new omaSettingInteger and sets the default values.
         /// </summary>
         public OmaSettingInteger() : base() {
             OdataType = "#microsoft.graph.omaSettingInteger";

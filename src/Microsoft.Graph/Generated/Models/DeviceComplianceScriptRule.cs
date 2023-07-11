@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeviceComplianceScriptRule and sets the default values.
+        /// Instantiates a new deviceComplianceScriptRule and sets the default values.
         /// </summary>
         public DeviceComplianceScriptRule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

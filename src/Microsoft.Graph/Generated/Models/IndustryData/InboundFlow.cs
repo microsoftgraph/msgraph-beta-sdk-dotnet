@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         }
 #endif
         /// <summary>
-        /// Instantiates a new InboundFlow and sets the default values.
+        /// Instantiates a new inboundFlow and sets the default values.
         /// </summary>
         public InboundFlow() : base() {
             OdataType = "#microsoft.graph.industryData.inboundFlow";

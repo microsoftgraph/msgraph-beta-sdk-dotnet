@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PersonResponsibility and sets the default values.
+        /// Instantiates a new personResponsibility and sets the default values.
         /// </summary>
         public PersonResponsibility() : base() {
             OdataType = "#microsoft.graph.personResponsibility";

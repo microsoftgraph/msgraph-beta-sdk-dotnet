@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new InvalidLicenseAlertIncident and sets the default values.
+        /// Instantiates a new invalidLicenseAlertIncident and sets the default values.
         /// </summary>
         public InvalidLicenseAlertIncident() : base() {
             OdataType = "#microsoft.graph.invalidLicenseAlertIncident";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The entity represents a collection of name/value pairs of a list box presentation on a policy definition.
+    /// </summary>
     public class GroupPolicyPresentationValueList : GroupPolicyPresentationValue, IParsable {
         /// <summary>A list of pairs for the associated presentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

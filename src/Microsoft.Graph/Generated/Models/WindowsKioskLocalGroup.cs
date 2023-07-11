@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The class used to identify a local group for the kiosk configuration
+    /// </summary>
     public class WindowsKioskLocalGroup : WindowsKioskUser, IParsable {
         /// <summary>The name of the local group that will be locked to this kiosk configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsKioskLocalGroup and sets the default values.
+        /// Instantiates a new windowsKioskLocalGroup and sets the default values.
         /// </summary>
         public WindowsKioskLocalGroup() : base() {
             OdataType = "#microsoft.graph.windowsKioskLocalGroup";

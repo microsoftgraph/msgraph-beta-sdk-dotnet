@@ -46,18 +46,18 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userRegistrationMethodCounts", value); }
         }
 #endif
-        /// <summary>User role type. Possible values are: all, privilegedAdmin, admin, user.</summary>
+        /// <summary>The role type of the user. Possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.</summary>
         public IncludedUserRoles? UserRoles {
             get { return BackingStore?.Get<IncludedUserRoles?>("userRoles"); }
             set { BackingStore?.Set("userRoles", value); }
         }
-        /// <summary>User type. Possible values are: all, member, guest.</summary>
+        /// <summary>User type. Possible values are: all, member, guest, unknownFutureValue.</summary>
         public IncludedUserTypes? UserTypes {
             get { return BackingStore?.Get<IncludedUserTypes?>("userTypes"); }
             set { BackingStore?.Set("userTypes", value); }
         }
         /// <summary>
-        /// Instantiates a new UserRegistrationMethodSummary and sets the default values.
+        /// Instantiates a new userRegistrationMethodSummary and sets the default values.
         /// </summary>
         public UserRegistrationMethodSummary() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

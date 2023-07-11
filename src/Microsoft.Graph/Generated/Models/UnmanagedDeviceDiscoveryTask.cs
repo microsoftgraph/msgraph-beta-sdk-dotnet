@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// This task derived type represents a list of unmanaged devices discovered in the network.
+    /// </summary>
     public class UnmanagedDeviceDiscoveryTask : DeviceAppManagementTask, IParsable {
         /// <summary>Unmanaged devices discovered in the network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new UnmanagedDeviceDiscoveryTask and sets the default values.
+        /// Instantiates a new unmanagedDeviceDiscoveryTask and sets the default values.
         /// </summary>
         public UnmanagedDeviceDiscoveryTask() : base() {
             OdataType = "#microsoft.graph.unmanagedDeviceDiscoveryTask";

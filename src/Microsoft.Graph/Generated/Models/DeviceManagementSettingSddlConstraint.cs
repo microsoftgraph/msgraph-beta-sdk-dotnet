@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Constraint enforcing the setting is well formed SDDL
+    /// </summary>
     public class DeviceManagementSettingSddlConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>
-        /// Instantiates a new DeviceManagementSettingSddlConstraint and sets the default values.
+        /// Instantiates a new deviceManagementSettingSddlConstraint and sets the default values.
         /// </summary>
         public DeviceManagementSettingSddlConstraint() : base() {
             OdataType = "#microsoft.graph.deviceManagementSettingSddlConstraint";

@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Credential and sets the default values.
+        /// Instantiates a new credential and sets the default values.
         /// </summary>
         public Credential() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

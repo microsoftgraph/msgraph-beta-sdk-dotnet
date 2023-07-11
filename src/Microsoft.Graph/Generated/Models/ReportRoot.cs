@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dailyPrintUsage", value); }
         }
 #endif
-        /// <summary>The dailyPrintUsageByPrinter property</summary>
+        /// <summary>Retrieve a list of daily print usage summaries, grouped by printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PrintUsageByPrinter>? DailyPrintUsageByPrinter {
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dailyPrintUsageByPrinter", value); }
         }
 #endif
-        /// <summary>The dailyPrintUsageByUser property</summary>
+        /// <summary>Retrieve a list of daily print usage summaries, grouped by user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PrintUsageByUser>? DailyPrintUsageByUser {
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dailyPrintUsageSummariesByUser", value); }
         }
 #endif
-        /// <summary>The monthlyPrintUsageByPrinter property</summary>
+        /// <summary>Retrieve a list of monthly print usage summaries, grouped by printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PrintUsageByPrinter>? MonthlyPrintUsageByPrinter {
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("monthlyPrintUsageByPrinter", value); }
         }
 #endif
-        /// <summary>The monthlyPrintUsageByUser property</summary>
+        /// <summary>Retrieve a list of monthly print usage summaries, grouped by user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PrintUsageByUser>? MonthlyPrintUsageByUser {
@@ -215,6 +215,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("servicePrincipalSignInActivities", value); }
         }
 #endif
+        /// <summary>A placeholder to allow for the desired URL path for SLA.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public ServiceLevelAgreementRoot? Sla {
+            get { return BackingStore?.Get<ServiceLevelAgreementRoot?>("sla"); }
+            set { BackingStore?.Set("sla", value); }
+        }
+#nullable restore
+#else
+        public ServiceLevelAgreementRoot Sla {
+            get { return BackingStore?.Get<ServiceLevelAgreementRoot>("sla"); }
+            set { BackingStore?.Set("sla", value); }
+        }
+#endif
         /// <summary>Represents the self-service password reset (SSPR) usage for a given tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -257,6 +271,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"monthlyPrintUsageSummariesByUser", n => { MonthlyPrintUsageSummariesByUser = n.GetCollectionOfObjectValues<PrintUsageByUser>(PrintUsageByUser.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"security", n => { Security = n.GetObjectValue<SecurityReportsRoot>(SecurityReportsRoot.CreateFromDiscriminatorValue); } },
                 {"servicePrincipalSignInActivities", n => { ServicePrincipalSignInActivities = n.GetCollectionOfObjectValues<ServicePrincipalSignInActivity>(ServicePrincipalSignInActivity.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"sla", n => { Sla = n.GetObjectValue<ServiceLevelAgreementRoot>(ServiceLevelAgreementRoot.CreateFromDiscriminatorValue); } },
                 {"userCredentialUsageDetails", n => { UserCredentialUsageDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>(Microsoft.Graph.Beta.Models.UserCredentialUsageDetails.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -282,6 +297,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<PrintUsageByUser>("monthlyPrintUsageSummariesByUser", MonthlyPrintUsageSummariesByUser);
             writer.WriteObjectValue<SecurityReportsRoot>("security", Security);
             writer.WriteCollectionOfObjectValues<ServicePrincipalSignInActivity>("servicePrincipalSignInActivities", ServicePrincipalSignInActivities);
+            writer.WriteObjectValue<ServiceLevelAgreementRoot>("sla", Sla);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>("userCredentialUsageDetails", UserCredentialUsageDetails);
         }
     }

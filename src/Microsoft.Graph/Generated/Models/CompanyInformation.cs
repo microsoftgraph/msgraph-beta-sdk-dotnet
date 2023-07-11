@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CompanyInformation and sets the default values.
+        /// Instantiates a new companyInformation and sets the default values.
         /// </summary>
         public CompanyInformation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

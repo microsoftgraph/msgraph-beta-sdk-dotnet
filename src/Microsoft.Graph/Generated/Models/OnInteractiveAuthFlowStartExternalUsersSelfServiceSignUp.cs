@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isSignUpAllowed", value); }
         }
         /// <summary>
-        /// Instantiates a new OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp and sets the default values.
+        /// Instantiates a new onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp and sets the default values.
         /// </summary>
         public OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp() : base() {
             OdataType = "#microsoft.graph.onInteractiveAuthFlowStartExternalUsersSelfServiceSignUp";

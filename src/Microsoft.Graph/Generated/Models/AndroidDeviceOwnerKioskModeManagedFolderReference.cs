@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A reference to folder containing apps and weblinks on the Managed Home Screen
+    /// </summary>
     public class AndroidDeviceOwnerKioskModeManagedFolderReference : AndroidDeviceOwnerKioskModeHomeScreenItem, IParsable {
         /// <summary>Unique identifier for the folder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidDeviceOwnerKioskModeManagedFolderReference and sets the default values.
+        /// Instantiates a new androidDeviceOwnerKioskModeManagedFolderReference and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerKioskModeManagedFolderReference() : base() {
             OdataType = "#microsoft.graph.androidDeviceOwnerKioskModeManagedFolderReference";

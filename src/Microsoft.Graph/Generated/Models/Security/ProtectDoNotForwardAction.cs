@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class ProtectDoNotForwardAction : InformationProtectionAction, IParsable {
         /// <summary>
-        /// Instantiates a new ProtectDoNotForwardAction and sets the default values.
+        /// Instantiates a new protectDoNotForwardAction and sets the default values.
         /// </summary>
         public ProtectDoNotForwardAction() : base() {
             OdataType = "#microsoft.graph.security.protectDoNotForwardAction";

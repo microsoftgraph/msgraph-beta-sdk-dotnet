@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new VirtualEventPresenterInfo and sets the default values.
+        /// Instantiates a new virtualEventPresenterInfo and sets the default values.
         /// </summary>
         public VirtualEventPresenterInfo() : base() {
             OdataType = "#microsoft.graph.virtualEventPresenterInfo";
