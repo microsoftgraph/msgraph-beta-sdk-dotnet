@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ApplicableContentDeviceMatch and sets the default values.
+        /// Instantiates a new applicableContentDeviceMatch and sets the default values.
         /// </summary>
         public ApplicableContentDeviceMatch() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

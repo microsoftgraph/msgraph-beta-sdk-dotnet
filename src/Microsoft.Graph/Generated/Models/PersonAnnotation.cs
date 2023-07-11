@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PersonAnnotation and sets the default values.
+        /// Instantiates a new personAnnotation and sets the default values.
         /// </summary>
         public PersonAnnotation() : base() {
             OdataType = "#microsoft.graph.personAnnotation";

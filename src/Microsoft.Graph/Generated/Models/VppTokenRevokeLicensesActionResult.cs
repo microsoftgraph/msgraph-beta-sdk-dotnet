@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The status of the action performed with an Apple Volume Purchase Program token.
+    /// </summary>
     public class VppTokenRevokeLicensesActionResult : VppTokenActionResult, IParsable {
         /// <summary>Possible types of reasons for an Apple Volume Purchase Program token action failure.</summary>
         public VppTokenActionFailureReason? ActionFailureReason {

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The app base class used to identify the application info for the kiosk configuration
+    /// </summary>
     public class WindowsKioskMultipleApps : WindowsKioskAppConfiguration, IParsable {
         /// <summary>This setting allows access to Downloads folder in file explorer.</summary>
         public bool? AllowAccessToDownloadsFolder {
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsKioskMultipleApps and sets the default values.
+        /// Instantiates a new windowsKioskMultipleApps and sets the default values.
         /// </summary>
         public WindowsKioskMultipleApps() : base() {
             OdataType = "#microsoft.graph.windowsKioskMultipleApps";

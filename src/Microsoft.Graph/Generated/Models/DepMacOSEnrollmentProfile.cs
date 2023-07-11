@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The DepMacOSEnrollmentProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile specific to macOS configuration. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.
+    /// </summary>
     public class DepMacOSEnrollmentProfile : DepEnrollmentBaseProfile, IParsable {
         /// <summary>Indicates if Accessibility screen is disabled</summary>
         public bool? AccessibilityScreenDisabled {
@@ -156,7 +159,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("zoomDisabled", value); }
         }
         /// <summary>
-        /// Instantiates a new DepMacOSEnrollmentProfile and sets the default values.
+        /// Instantiates a new depMacOSEnrollmentProfile and sets the default values.
         /// </summary>
         public DepMacOSEnrollmentProfile() : base() {
             OdataType = "#microsoft.graph.depMacOSEnrollmentProfile";

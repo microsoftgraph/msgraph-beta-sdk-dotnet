@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The windowsAutopilotSettings resource represents a Windows Autopilot Account to sync data with Windows device data sync service.
+    /// </summary>
     public class WindowsAutopilotSettings : Entity, IParsable {
         /// <summary>Last data sync date time with DDS service.</summary>
         public DateTimeOffset? LastManualSyncTriggerDateTime {

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A setting instance representing an integer value
+    /// </summary>
     public class DeviceManagementIntegerSettingInstance : DeviceManagementSettingInstance, IParsable {
         /// <summary>The integer value</summary>
         public int? Value {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementIntegerSettingInstance and sets the default values.
+        /// Instantiates a new deviceManagementIntegerSettingInstance and sets the default values.
         /// </summary>
         public DeviceManagementIntegerSettingInstance() : base() {
             OdataType = "#microsoft.graph.deviceManagementIntegerSettingInstance";

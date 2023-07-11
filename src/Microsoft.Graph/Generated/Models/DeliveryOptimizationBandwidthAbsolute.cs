@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Bandwidth restriction types
+    /// </summary>
     public class DeliveryOptimizationBandwidthAbsolute : DeliveryOptimizationBandwidth, IParsable {
         /// <summary>Specifies the maximum download bandwidth in KiloBytes/second that the device can use across all concurrent download activities using Delivery Optimization. Valid values 0 to 4294967295</summary>
         public long? MaximumDownloadBandwidthInKilobytesPerSecond {
@@ -16,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("maximumUploadBandwidthInKilobytesPerSecond", value); }
         }
         /// <summary>
-        /// Instantiates a new DeliveryOptimizationBandwidthAbsolute and sets the default values.
+        /// Instantiates a new deliveryOptimizationBandwidthAbsolute and sets the default values.
         /// </summary>
         public DeliveryOptimizationBandwidthAbsolute() : base() {
             OdataType = "#microsoft.graph.deliveryOptimizationBandwidthAbsolute";

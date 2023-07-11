@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Base entity for a constraint
+    /// </summary>
     public class DeviceManagementSettingRequiredConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>List of value which means not configured for the setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeviceManagementSettingRequiredConstraint and sets the default values.
+        /// Instantiates a new deviceManagementSettingRequiredConstraint and sets the default values.
         /// </summary>
         public DeviceManagementSettingRequiredConstraint() : base() {
             OdataType = "#microsoft.graph.deviceManagementSettingRequiredConstraint";

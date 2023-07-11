@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class LabelDetails : ParentLabelDetails, IParsable {
         /// <summary>
-        /// Instantiates a new LabelDetails and sets the default values.
+        /// Instantiates a new labelDetails and sets the default values.
         /// </summary>
         public LabelDetails() : base() {
             OdataType = "#microsoft.graph.labelDetails";

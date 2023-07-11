@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the macOSCustomConfiguration resource.
+    /// </summary>
     public class MacOSCustomConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel</summary>
         public AppleDeploymentChannel? DeploymentChannel {
@@ -53,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MacOSCustomConfiguration and sets the default values.
+        /// Instantiates a new macOSCustomConfiguration and sets the default values.
         /// </summary>
         public MacOSCustomConfiguration() : base() {
             OdataType = "#microsoft.graph.macOSCustomConfiguration";

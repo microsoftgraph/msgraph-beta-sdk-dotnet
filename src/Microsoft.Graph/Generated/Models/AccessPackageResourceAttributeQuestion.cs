@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AccessPackageResourceAttributeQuestion and sets the default values.
+        /// Instantiates a new accessPackageResourceAttributeQuestion and sets the default values.
         /// </summary>
         public AccessPackageResourceAttributeQuestion() : base() {
             OdataType = "#microsoft.graph.accessPackageResourceAttributeQuestion";

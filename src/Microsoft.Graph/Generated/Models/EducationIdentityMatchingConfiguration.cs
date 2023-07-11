@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EducationIdentityMatchingConfiguration and sets the default values.
+        /// Instantiates a new educationIdentityMatchingConfiguration and sets the default values.
         /// </summary>
         public EducationIdentityMatchingConfiguration() : base() {
             OdataType = "#microsoft.graph.educationIdentityMatchingConfiguration";

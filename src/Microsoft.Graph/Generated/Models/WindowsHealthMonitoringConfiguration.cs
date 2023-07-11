@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows device health monitoring configuration
+    /// </summary>
     public class WindowsHealthMonitoringConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Possible values of a property</summary>
         public Enablement? AllowDeviceHealthMonitoring {
@@ -30,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("configDeviceHealthMonitoringScope", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsHealthMonitoringConfiguration and sets the default values.
+        /// Instantiates a new windowsHealthMonitoringConfiguration and sets the default values.
         /// </summary>
         public WindowsHealthMonitoringConfiguration() : base() {
             OdataType = "#microsoft.graph.windowsHealthMonitoringConfiguration";

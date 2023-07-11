@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
     public class AzureDataLakeConnector : FileDataConnector, IParsable {
         /// <summary>
-        /// Instantiates a new AzureDataLakeConnector and sets the default values.
+        /// Instantiates a new azureDataLakeConnector and sets the default values.
         /// </summary>
         public AzureDataLakeConnector() : base() {
             OdataType = "#microsoft.graph.industryData.azureDataLakeConnector";

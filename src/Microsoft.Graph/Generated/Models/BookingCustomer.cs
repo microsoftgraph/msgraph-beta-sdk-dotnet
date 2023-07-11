@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents a customer of the business.
+    /// </summary>
     public class BookingCustomer : BookingPerson, IParsable {
         /// <summary>Addresses associated with the customer, including home, business and other addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

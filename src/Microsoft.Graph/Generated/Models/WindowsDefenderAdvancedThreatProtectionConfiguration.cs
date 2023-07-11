@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows Defender AdvancedThreatProtection Configuration.
+    /// </summary>
     public class WindowsDefenderAdvancedThreatProtectionConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Auto populate onboarding blob programmatically from Advanced Threat protection service</summary>
         public bool? AdvancedThreatProtectionAutoPopulateOnboardingBlob {
@@ -77,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("enableExpeditedTelemetryReporting", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsDefenderAdvancedThreatProtectionConfiguration and sets the default values.
+        /// Instantiates a new windowsDefenderAdvancedThreatProtectionConfiguration and sets the default values.
         /// </summary>
         public WindowsDefenderAdvancedThreatProtectionConfiguration() : base() {
             OdataType = "#microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration";

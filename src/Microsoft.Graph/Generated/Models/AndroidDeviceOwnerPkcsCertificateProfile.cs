@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Android Device Owner PKCS certificate profile
+    /// </summary>
     public class AndroidDeviceOwnerPkcsCertificateProfile : AndroidDeviceOwnerCertificateProfileBase, IParsable {
         /// <summary>Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.</summary>
         public AndroidDeviceOwnerCertificateAccessType? CertificateAccessType {
@@ -133,7 +136,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidDeviceOwnerPkcsCertificateProfile and sets the default values.
+        /// Instantiates a new androidDeviceOwnerPkcsCertificateProfile and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerPkcsCertificateProfile() : base() {
             OdataType = "#microsoft.graph.androidDeviceOwnerPkcsCertificateProfile";

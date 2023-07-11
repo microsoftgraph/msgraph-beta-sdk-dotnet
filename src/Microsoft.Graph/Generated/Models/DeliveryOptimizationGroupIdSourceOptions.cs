@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// GroupId Support Types
+    /// </summary>
     public class DeliveryOptimizationGroupIdSourceOptions : DeliveryOptimizationGroupIdSource, IParsable {
         /// <summary>Possible values for the DeliveryOptimizationGroupIdOptionsType setting.</summary>
         public DeliveryOptimizationGroupIdOptionsType? GroupIdSourceOption {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("groupIdSourceOption", value); }
         }
         /// <summary>
-        /// Instantiates a new DeliveryOptimizationGroupIdSourceOptions and sets the default values.
+        /// Instantiates a new deliveryOptimizationGroupIdSourceOptions and sets the default values.
         /// </summary>
         public DeliveryOptimizationGroupIdSourceOptions() : base() {
             OdataType = "#microsoft.graph.deliveryOptimizationGroupIdSourceOptions";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents a Kerberos-type Single Sign-On extension profile for macOS devices.
+    /// </summary>
     public class MacOSKerberosSingleSignOnExtension : MacOSSingleSignOnExtension, IParsable {
         /// <summary>Gets or sets the Active Directory site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -273,7 +276,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userSetupDelayed", value); }
         }
         /// <summary>
-        /// Instantiates a new MacOSKerberosSingleSignOnExtension and sets the default values.
+        /// Instantiates a new macOSKerberosSingleSignOnExtension and sets the default values.
         /// </summary>
         public MacOSKerberosSingleSignOnExtension() : base() {
             OdataType = "#microsoft.graph.macOSKerberosSingleSignOnExtension";

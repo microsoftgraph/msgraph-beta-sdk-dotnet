@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Local Action Configuration
+    /// </summary>
     public class AndroidDeviceComplianceLocalActionBase : Entity, IParsable {
         /// <summary>Number of minutes to wait till a local action is enforced. Valid values 0 to 2147483647</summary>
         public int? GracePeriodInMinutes {

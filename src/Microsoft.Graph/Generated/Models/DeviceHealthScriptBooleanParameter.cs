@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Base properties of the script parameter.
+    /// </summary>
     public class DeviceHealthScriptBooleanParameter : DeviceHealthScriptParameter, IParsable {
         /// <summary>The default value of boolean param</summary>
         public bool? DefaultValue {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defaultValue", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceHealthScriptBooleanParameter and sets the default values.
+        /// Instantiates a new deviceHealthScriptBooleanParameter and sets the default values.
         /// </summary>
         public DeviceHealthScriptBooleanParameter() : base() {
             OdataType = "#microsoft.graph.deviceHealthScriptBooleanParameter";

@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class TunnelConfigurationIKEv2Default : TunnelConfiguration, IParsable {
         /// <summary>
-        /// Instantiates a new TunnelConfigurationIKEv2Default and sets the default values.
+        /// Instantiates a new tunnelConfigurationIKEv2Default and sets the default values.
         /// </summary>
         public TunnelConfigurationIKEv2Default() : base() {
             OdataType = "#microsoft.graph.networkaccess.tunnelConfigurationIKEv2Default";

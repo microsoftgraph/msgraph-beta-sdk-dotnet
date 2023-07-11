@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AgedAccountsPayable and sets the default values.
+        /// Instantiates a new agedAccountsPayable and sets the default values.
         /// </summary>
         public AgedAccountsPayable() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

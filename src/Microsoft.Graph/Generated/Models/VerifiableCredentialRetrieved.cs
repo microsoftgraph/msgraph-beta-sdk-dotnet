@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("expiryDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new VerifiableCredentialRetrieved and sets the default values.
+        /// Instantiates a new verifiableCredentialRetrieved and sets the default values.
         /// </summary>
         public VerifiableCredentialRetrieved() : base() {
             OdataType = "#microsoft.graph.verifiableCredentialRetrieved";

@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new HttpRequestEndpoint and sets the default values.
+        /// Instantiates a new httpRequestEndpoint and sets the default values.
         /// </summary>
         public HttpRequestEndpoint() : base() {
             OdataType = "#microsoft.graph.httpRequestEndpoint";

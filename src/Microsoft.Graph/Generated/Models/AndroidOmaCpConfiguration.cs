@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// By providing a configuration in this profile you can configure Android devices that support OMA-CP.
+    /// </summary>
     public class AndroidOmaCpConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Configuration XML that will be applied to the device. When it is read, it only provides a placeholder string since the original data is encrypted and stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidOmaCpConfiguration and sets the default values.
+        /// Instantiates a new androidOmaCpConfiguration and sets the default values.
         /// </summary>
         public AndroidOmaCpConfiguration() : base() {
             OdataType = "#microsoft.graph.androidOmaCpConfiguration";

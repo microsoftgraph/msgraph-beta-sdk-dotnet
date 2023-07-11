@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class RemoveProtectionAction : InformationProtectionAction, IParsable {
         /// <summary>
-        /// Instantiates a new RemoveProtectionAction and sets the default values.
+        /// Instantiates a new removeProtectionAction and sets the default values.
         /// </summary>
         public RemoveProtectionAction() : base() {
             OdataType = "#microsoft.graph.removeProtectionAction";

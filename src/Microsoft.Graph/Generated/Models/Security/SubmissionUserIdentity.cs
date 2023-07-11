@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new SubmissionUserIdentity and sets the default values.
+        /// Instantiates a new submissionUserIdentity and sets the default values.
         /// </summary>
         public SubmissionUserIdentity() : base() {
             OdataType = "#microsoft.graph.security.submissionUserIdentity";

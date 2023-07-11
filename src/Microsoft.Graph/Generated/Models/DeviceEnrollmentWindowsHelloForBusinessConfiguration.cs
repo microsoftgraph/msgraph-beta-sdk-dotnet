@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows Hello for Business settings lets users access their devices using a gesture, such as biometric authentication, or a PIN. Configure settings for enrolled Windows 10, Windows 10 Mobile and later.
+    /// </summary>
     public class DeviceEnrollmentWindowsHelloForBusinessConfiguration : DeviceEnrollmentConfiguration, IParsable {
         /// <summary>Possible values of a property</summary>
         public Enablement? EnhancedBiometricsState {
@@ -76,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("unlockWithBiometricsEnabled", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceEnrollmentWindowsHelloForBusinessConfiguration and sets the default values.
+        /// Instantiates a new deviceEnrollmentWindowsHelloForBusinessConfiguration and sets the default values.
         /// </summary>
         public DeviceEnrollmentWindowsHelloForBusinessConfiguration() : base() {
             OdataType = "#microsoft.graph.deviceEnrollmentWindowsHelloForBusinessConfiguration";

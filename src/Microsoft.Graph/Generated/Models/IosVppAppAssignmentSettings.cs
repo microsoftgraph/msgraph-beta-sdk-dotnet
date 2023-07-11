@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Abstract class to contain properties used to assign a mobile app to a group.
+    /// </summary>
     public class IosVppAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
         /// <summary>Whether or not the app can be removed by the user.</summary>
         public bool? IsRemovable {
@@ -45,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosVppAppAssignmentSettings and sets the default values.
+        /// Instantiates a new iosVppAppAssignmentSettings and sets the default values.
         /// </summary>
         public IosVppAppAssignmentSettings() : base() {
             OdataType = "#microsoft.graph.iosVppAppAssignmentSettings";

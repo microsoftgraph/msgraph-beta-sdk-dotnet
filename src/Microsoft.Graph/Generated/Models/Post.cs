@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Post and sets the default values.
+        /// Instantiates a new post and sets the default values.
         /// </summary>
         public Post() : base() {
             OdataType = "#microsoft.graph.post";

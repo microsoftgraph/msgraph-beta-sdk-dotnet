@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowExternalIdentitiesToLeave", value); }
         }
         /// <summary>
-        /// Instantiates a new ExternalIdentitiesPolicy and sets the default values.
+        /// Instantiates a new externalIdentitiesPolicy and sets the default values.
         /// </summary>
         public ExternalIdentitiesPolicy() : base() {
             OdataType = "#microsoft.graph.externalIdentitiesPolicy";

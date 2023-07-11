@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PersonAward and sets the default values.
+        /// Instantiates a new personAward and sets the default values.
         /// </summary>
         public PersonAward() : base() {
             OdataType = "#microsoft.graph.personAward";

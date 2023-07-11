@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class VerifiableCredentialVerified : VerifiableCredentialRequirementStatus, IParsable {
         /// <summary>
-        /// Instantiates a new VerifiableCredentialVerified and sets the default values.
+        /// Instantiates a new verifiableCredentialVerified and sets the default values.
         /// </summary>
         public VerifiableCredentialVerified() : base() {
             OdataType = "#microsoft.graph.verifiableCredentialVerified";

@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The ruleId property</summary>
+        /// <summary>The identifier of the policy rule to update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RuleId {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PolicyRuleDelta and sets the default values.
+        /// Instantiates a new policyRuleDelta and sets the default values.
         /// </summary>
         public PolicyRuleDelta() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

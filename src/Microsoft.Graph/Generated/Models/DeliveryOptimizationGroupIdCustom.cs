@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// GroupId Support Types
+    /// </summary>
     public class DeliveryOptimizationGroupIdCustom : DeliveryOptimizationGroupIdSource, IParsable {
         /// <summary>Specifies an arbitrary group ID that the device belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeliveryOptimizationGroupIdCustom and sets the default values.
+        /// Instantiates a new deliveryOptimizationGroupIdCustom and sets the default values.
         /// </summary>
         public DeliveryOptimizationGroupIdCustom() : base() {
             OdataType = "#microsoft.graph.deliveryOptimizationGroupIdCustom";

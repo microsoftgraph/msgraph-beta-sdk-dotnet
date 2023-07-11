@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The home button configuration base class used to identify the available options
+    /// </summary>
     public class EdgeHomeButtonLoadsStartPage : EdgeHomeButtonConfiguration, IParsable {
         /// <summary>
-        /// Instantiates a new EdgeHomeButtonLoadsStartPage and sets the default values.
+        /// Instantiates a new edgeHomeButtonLoadsStartPage and sets the default values.
         /// </summary>
         public EdgeHomeButtonLoadsStartPage() : base() {
             OdataType = "#microsoft.graph.edgeHomeButtonLoadsStartPage";

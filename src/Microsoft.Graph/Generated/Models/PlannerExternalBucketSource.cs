@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PlannerExternalBucketSource and sets the default values.
+        /// Instantiates a new plannerExternalBucketSource and sets the default values.
         /// </summary>
         public PlannerExternalBucketSource() : base() {
             OdataType = "#microsoft.graph.plannerExternalBucketSource";

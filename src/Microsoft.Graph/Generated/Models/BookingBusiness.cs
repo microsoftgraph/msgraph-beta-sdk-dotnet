@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents a Microsot Bookings Business.
+    /// </summary>
     public class BookingBusiness : BookingNamedEntity, IParsable {
         /// <summary>The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -235,7 +238,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new BookingBusiness and sets the default values.
+        /// Instantiates a new bookingBusiness and sets the default values.
         /// </summary>
         public BookingBusiness() : base() {
             OdataType = "#microsoft.graph.bookingBusiness";

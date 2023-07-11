@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeviceManagementConfigurationChoiceSettingValueTemplate and sets the default values.
+        /// Instantiates a new deviceManagementConfigurationChoiceSettingValueTemplate and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationChoiceSettingValueTemplate() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the macOSGeneralDeviceConfiguration resource.
+    /// </summary>
     public class MacOSGeneralDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>When TRUE, activation lock is allowed when the devices is in the supervised mode. When FALSE, activation lock is not allowed. Default is false.</summary>
         public bool? ActivationLockWhenSupervisedAllowed {
@@ -333,7 +336,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("wallpaperModificationBlocked", value); }
         }
         /// <summary>
-        /// Instantiates a new MacOSGeneralDeviceConfiguration and sets the default values.
+        /// Instantiates a new macOSGeneralDeviceConfiguration and sets the default values.
         /// </summary>
         public MacOSGeneralDeviceConfiguration() : base() {
             OdataType = "#microsoft.graph.macOSGeneralDeviceConfiguration";

@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles {
         public ForwardingProfilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/forwardingProfiles{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get forwardingProfiles from networkAccess
+        /// Retrieve a list of forwarding profiles.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/networkaccess-networkaccessroot-list-forwardingprofiles?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles {
             return await RequestAdapter.SendAsync<ForwardingProfile>(requestInfo, ForwardingProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get forwardingProfiles from networkAccess
+        /// Retrieve a list of forwarding profiles.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +135,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles {
             return requestInfo;
         }
         /// <summary>
-        /// Get forwardingProfiles from networkAccess
+        /// Retrieve a list of forwarding profiles.
         /// </summary>
         public class ForwardingProfilesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

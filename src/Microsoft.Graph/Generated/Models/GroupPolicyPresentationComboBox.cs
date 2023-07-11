@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents an ADMX comboBox element and an ADMX text element.
+    /// </summary>
     public class GroupPolicyPresentationComboBox : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>Localized default string displayed in the combo box. The default value is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new GroupPolicyPresentationComboBox and sets the default values.
+        /// Instantiates a new groupPolicyPresentationComboBox and sets the default values.
         /// </summary>
         public GroupPolicyPresentationComboBox() : base() {
             OdataType = "#microsoft.graph.groupPolicyPresentationComboBox";

@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("validationPassed", value); }
         }
         /// <summary>
-        /// Instantiates a new ValidationResult and sets the default values.
+        /// Instantiates a new validationResult and sets the default values.
         /// </summary>
         public ValidationResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

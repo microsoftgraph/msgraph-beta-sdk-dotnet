@@ -498,7 +498,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Contact and sets the default values.
+        /// Instantiates a new contact and sets the default values.
         /// </summary>
         public Contact() : base() {
             OdataType = "#microsoft.graph.contact";

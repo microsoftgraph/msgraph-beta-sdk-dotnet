@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for the MacOS DMG App.
+    /// </summary>
     public class MacOSDmgApp : MobileLobApp, IParsable {
         /// <summary>A value indicating whether the app&apos;s version will be used to detect the app after it is installed on a device. Set this to true for apps that use a self-update feature. Set this to false to install the app when it is not already installed on the device, or if the deploying app&apos;s version number does not match the version that&apos;s already installed on the device.</summary>
         public bool? IgnoreVersionDetection {
@@ -67,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MacOSDmgApp and sets the default values.
+        /// Instantiates a new macOSDmgApp and sets the default values.
         /// </summary>
         public MacOSDmgApp() : base() {
             OdataType = "#microsoft.graph.macOSDmgApp";

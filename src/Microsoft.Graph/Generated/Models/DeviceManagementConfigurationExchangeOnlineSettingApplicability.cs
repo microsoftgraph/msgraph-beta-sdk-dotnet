@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Applicability for an Exchange Online Setting
+    /// </summary>
     public class DeviceManagementConfigurationExchangeOnlineSettingApplicability : DeviceManagementConfigurationSettingApplicability, IParsable {
         /// <summary>
-        /// Instantiates a new DeviceManagementConfigurationExchangeOnlineSettingApplicability and sets the default values.
+        /// Instantiates a new deviceManagementConfigurationExchangeOnlineSettingApplicability and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationExchangeOnlineSettingApplicability() : base() {
             OdataType = "#microsoft.graph.deviceManagementConfigurationExchangeOnlineSettingApplicability";

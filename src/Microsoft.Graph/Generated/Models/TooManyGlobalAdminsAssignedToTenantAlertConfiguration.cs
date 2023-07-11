@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("percentageOfGlobalAdminsOutOfRolesThreshold", value); }
         }
         /// <summary>
-        /// Instantiates a new TooManyGlobalAdminsAssignedToTenantAlertConfiguration and sets the default values.
+        /// Instantiates a new tooManyGlobalAdminsAssignedToTenantAlertConfiguration and sets the default values.
         /// </summary>
         public TooManyGlobalAdminsAssignedToTenantAlertConfiguration() : base() {
             OdataType = "#microsoft.graph.tooManyGlobalAdminsAssignedToTenantAlertConfiguration";

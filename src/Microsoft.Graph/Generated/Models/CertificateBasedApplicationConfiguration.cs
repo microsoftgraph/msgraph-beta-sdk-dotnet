@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CertificateBasedApplicationConfiguration and sets the default values.
+        /// Instantiates a new certificateBasedApplicationConfiguration and sets the default values.
         /// </summary>
         public CertificateBasedApplicationConfiguration() : base() {
             OdataType = "#microsoft.graph.certificateBasedApplicationConfiguration";

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ExtendedKeyUsage and sets the default values.
+        /// Instantiates a new extendedKeyUsage and sets the default values.
         /// </summary>
         public ExtendedKeyUsage() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

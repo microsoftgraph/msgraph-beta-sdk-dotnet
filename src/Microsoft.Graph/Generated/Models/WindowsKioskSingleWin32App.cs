@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The app base class used to identify the application info for the kiosk configuration
+    /// </summary>
     public class WindowsKioskSingleWin32App : WindowsKioskAppConfiguration, IParsable {
         /// <summary>The win32App property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsKioskSingleWin32App and sets the default values.
+        /// Instantiates a new windowsKioskSingleWin32App and sets the default values.
         /// </summary>
         public WindowsKioskSingleWin32App() : base() {
             OdataType = "#microsoft.graph.windowsKioskSingleWin32App";

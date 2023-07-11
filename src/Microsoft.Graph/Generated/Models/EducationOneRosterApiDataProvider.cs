@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EducationOneRosterApiDataProvider and sets the default values.
+        /// Instantiates a new educationOneRosterApiDataProvider and sets the default values.
         /// </summary>
         public EducationOneRosterApiDataProvider() : base() {
             OdataType = "#microsoft.graph.educationOneRosterApiDataProvider";

@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new OpenIdConnectIdentityProvider and sets the default values.
+        /// Instantiates a new openIdConnectIdentityProvider and sets the default values.
         /// </summary>
         public OpenIdConnectIdentityProvider() : base() {
             OdataType = "#microsoft.graph.openIdConnectIdentityProvider";

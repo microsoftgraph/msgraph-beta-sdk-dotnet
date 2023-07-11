@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class RetentionDurationForever : RetentionDuration, IParsable {
         /// <summary>
-        /// Instantiates a new RetentionDurationForever and sets the default values.
+        /// Instantiates a new retentionDurationForever and sets the default values.
         /// </summary>
         public RetentionDurationForever() : base() {
             OdataType = "#microsoft.graph.security.retentionDurationForever";

@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ProtectAdhocAction : InformationProtectionAction, IParsable {
         /// <summary>
-        /// Instantiates a new ProtectAdhocAction and sets the default values.
+        /// Instantiates a new protectAdhocAction and sets the default values.
         /// </summary>
         public ProtectAdhocAction() : base() {
             OdataType = "#microsoft.graph.protectAdhocAction";

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new DateDrivenRolloutSettings and sets the default values.
+        /// Instantiates a new dateDrivenRolloutSettings and sets the default values.
         /// </summary>
         public DateDrivenRolloutSettings() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.dateDrivenRolloutSettings";

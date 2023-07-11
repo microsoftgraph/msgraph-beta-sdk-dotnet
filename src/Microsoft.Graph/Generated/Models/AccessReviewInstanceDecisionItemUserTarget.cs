@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AccessReviewInstanceDecisionItemUserTarget and sets the default values.
+        /// Instantiates a new accessReviewInstanceDecisionItemUserTarget and sets the default values.
         /// </summary>
         public AccessReviewInstanceDecisionItemUserTarget() : base() {
             OdataType = "#microsoft.graph.accessReviewInstanceDecisionItemUserTarget";

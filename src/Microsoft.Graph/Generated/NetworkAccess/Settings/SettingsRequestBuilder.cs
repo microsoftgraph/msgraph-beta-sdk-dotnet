@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get settings from networkAccess
+        /// Global Secure Access settings.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Get settings from networkAccess
+        /// Global Secure Access settings.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -201,7 +201,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings {
             }
         }
         /// <summary>
-        /// Get settings from networkAccess
+        /// Global Secure Access settings.
         /// </summary>
         public class SettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

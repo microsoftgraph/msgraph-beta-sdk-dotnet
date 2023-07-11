@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// By providing configurations in this profile you can instruct the native email client on iOS devices to communicate with an Exchange server and get email, contacts, calendar, reminders, and notes. Furthermore, you can also specify how much email to sync and how often the device should sync.
+    /// </summary>
     public class IosEasEmailProfileConfiguration : EasEmailProfileConfigurationBase, IParsable {
         /// <summary>Account name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -204,7 +207,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("useOAuth", value); }
         }
         /// <summary>
-        /// Instantiates a new IosEasEmailProfileConfiguration and sets the default values.
+        /// Instantiates a new iosEasEmailProfileConfiguration and sets the default values.
         /// </summary>
         public IosEasEmailProfileConfiguration() : base() {
             OdataType = "#microsoft.graph.iosEasEmailProfileConfiguration";

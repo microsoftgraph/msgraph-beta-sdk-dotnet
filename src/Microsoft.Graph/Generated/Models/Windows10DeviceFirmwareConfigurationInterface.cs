@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Graph properties for Device Firmware Configuration Interface 
+    /// </summary>
     public class Windows10DeviceFirmwareConfigurationInterface : DeviceConfiguration, IParsable {
         /// <summary>Possible values of a property</summary>
         public Enablement? Bluetooth {
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("wirelessWideAreaNetwork", value); }
         }
         /// <summary>
-        /// Instantiates a new Windows10DeviceFirmwareConfigurationInterface and sets the default values.
+        /// Instantiates a new windows10DeviceFirmwareConfigurationInterface and sets the default values.
         /// </summary>
         public Windows10DeviceFirmwareConfigurationInterface() : base() {
             OdataType = "#microsoft.graph.windows10DeviceFirmwareConfigurationInterface";

@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new StaleSignInAlertIncident and sets the default values.
+        /// Instantiates a new staleSignInAlertIncident and sets the default values.
         /// </summary>
         public StaleSignInAlertIncident() : base() {
             OdataType = "#microsoft.graph.staleSignInAlertIncident";

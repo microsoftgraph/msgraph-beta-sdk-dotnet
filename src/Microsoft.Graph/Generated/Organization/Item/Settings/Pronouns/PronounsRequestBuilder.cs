@@ -47,8 +47,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.Pronouns {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the properties of the pronounsSettings resource for an organization.  For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/organizationsettings-list-pronounssettings?view=graph-rest-1.0" />
+        /// Get pronouns from organization
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.Pronouns {
             return await RequestAdapter.SendAsync<PronounsSettings>(requestInfo, PronounsSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of a pronounsSettings in an organization. For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/pronounssettings-update?view=graph-rest-1.0" />
+        /// Update the navigation property pronouns in organization
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.Pronouns {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties of the pronounsSettings resource for an organization.  For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
+        /// Get pronouns from organization
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,7 +137,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.Pronouns {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a pronounsSettings in an organization. For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
+        /// Update the navigation property pronouns in organization
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -183,7 +181,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.Pronouns {
             }
         }
         /// <summary>
-        /// Get the properties of the pronounsSettings resource for an organization.  For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API.
+        /// Get pronouns from organization
         /// </summary>
         public class PronounsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

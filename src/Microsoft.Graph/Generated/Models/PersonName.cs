@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PersonName and sets the default values.
+        /// Instantiates a new personName and sets the default values.
         /// </summary>
         public PersonName() : base() {
             OdataType = "#microsoft.graph.personName";

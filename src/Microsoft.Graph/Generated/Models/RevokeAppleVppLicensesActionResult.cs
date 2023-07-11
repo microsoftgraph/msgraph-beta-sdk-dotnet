@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Device action result
+    /// </summary>
     public class RevokeAppleVppLicensesActionResult : DeviceActionResult, IParsable {
         /// <summary>Total number of Apple Vpp licenses that failed to revoke</summary>
         public int? FailedLicensesCount {

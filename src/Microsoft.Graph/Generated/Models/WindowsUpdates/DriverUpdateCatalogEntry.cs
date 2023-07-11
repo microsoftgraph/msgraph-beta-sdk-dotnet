@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("versionDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new DriverUpdateCatalogEntry and sets the default values.
+        /// Instantiates a new driverUpdateCatalogEntry and sets the default values.
         /// </summary>
         public DriverUpdateCatalogEntry() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.driverUpdateCatalogEntry";

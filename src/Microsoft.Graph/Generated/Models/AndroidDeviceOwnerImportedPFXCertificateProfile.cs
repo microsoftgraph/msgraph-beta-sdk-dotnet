@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Android Device Owner PFX Import certificate profile
+    /// </summary>
     public class AndroidDeviceOwnerImportedPFXCertificateProfile : AndroidDeviceOwnerCertificateProfileBase, IParsable {
         /// <summary>Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.</summary>
         public AndroidDeviceOwnerCertificateAccessType? CertificateAccessType {
@@ -44,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidDeviceOwnerImportedPFXCertificateProfile and sets the default values.
+        /// Instantiates a new androidDeviceOwnerImportedPFXCertificateProfile and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerImportedPFXCertificateProfile() : base() {
             OdataType = "#microsoft.graph.androidDeviceOwnerImportedPFXCertificateProfile";

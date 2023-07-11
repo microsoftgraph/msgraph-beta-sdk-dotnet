@@ -11,19 +11,19 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The authTransactionCount property</summary>
+        /// <summary>Total numbers of authentication sessions in the time frame between startDateTime and endDateTime.</summary>
         public int? AuthTransactionCount {
             get { return BackingStore?.Get<int?>("authTransactionCount"); }
             set { BackingStore?.Set("authTransactionCount", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The deviceCount property</summary>
+        /// <summary>Count of unique devices that performed cross-tenant access, in the time frame between startDateTime and endDateTime.</summary>
         public int? DeviceCount {
             get { return BackingStore?.Get<int?>("deviceCount"); }
             set { BackingStore?.Set("deviceCount", value); }
         }
-        /// <summary>The newTenantCount property</summary>
+        /// <summary>Count of unique tenants that were accessed in the time frame between endDateTime to discoveryPivotDateTime, but haven&apos;t been accessed in the time frame between discoveryPivotDateTime to startDateTime.</summary>
         public int? NewTenantCount {
             get { return BackingStore?.Get<int?>("newTenantCount"); }
             set { BackingStore?.Set("newTenantCount", value); }
@@ -42,12 +42,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The tenantCount property</summary>
+        /// <summary>Count of unique tenants that were accessed, that are different from the device&apos;s home tenant, in the time frame between startDateTime and endDateTime.</summary>
         public int? TenantCount {
             get { return BackingStore?.Get<int?>("tenantCount"); }
             set { BackingStore?.Set("tenantCount", value); }
         }
-        /// <summary>The userCount property</summary>
+        /// <summary>Count of unique users that performed cross-tenant access, in the time frame between startDateTime and endDateTime.</summary>
         public int? UserCount {
             get { return BackingStore?.Get<int?>("userCount"); }
             set { BackingStore?.Set("userCount", value); }

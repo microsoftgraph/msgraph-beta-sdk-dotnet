@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The user base class used to identify the account info for the kiosk configuration
+    /// </summary>
     public class WindowsKioskAutologon : WindowsKioskUser, IParsable {
         /// <summary>
-        /// Instantiates a new WindowsKioskAutologon and sets the default values.
+        /// Instantiates a new windowsKioskAutologon and sets the default values.
         /// </summary>
         public WindowsKioskAutologon() : base() {
             OdataType = "#microsoft.graph.windowsKioskAutologon";

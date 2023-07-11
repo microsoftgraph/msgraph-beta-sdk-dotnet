@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties, inherited properties and actions for AFW mobile app configurations.
+    /// </summary>
     public class AndroidForWorkMobileAppConfiguration : ManagedDeviceMobileAppConfiguration, IParsable {
         /// <summary>Setting to specify whether to allow ConnectedApps experience for this app.</summary>
         public bool? ConnectedAppsEnabled {
@@ -58,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("profileApplicability", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidForWorkMobileAppConfiguration and sets the default values.
+        /// Instantiates a new androidForWorkMobileAppConfiguration and sets the default values.
         /// </summary>
         public AndroidForWorkMobileAppConfiguration() : base() {
             OdataType = "#microsoft.graph.androidForWorkMobileAppConfiguration";

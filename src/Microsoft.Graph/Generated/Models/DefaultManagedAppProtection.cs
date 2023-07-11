@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Policy used to configure detailed management settings for a specified set of apps for all users not targeted by a TargetedManagedAppProtection Policy
+    /// </summary>
     public class DefaultManagedAppProtection : ManagedAppProtection, IParsable {
         /// <summary>Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work. (Android only)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -488,7 +491,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("wipeAfterCompanyPortalUpdateDeferralInDays", value); }
         }
         /// <summary>
-        /// Instantiates a new DefaultManagedAppProtection and sets the default values.
+        /// Instantiates a new defaultManagedAppProtection and sets the default values.
         /// </summary>
         public DefaultManagedAppProtection() : base() {
             OdataType = "#microsoft.graph.defaultManagedAppProtection";

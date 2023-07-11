@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for Win32 apps.
+    /// </summary>
     public class Win32LobApp : MobileLobApp, IParsable {
         /// <summary>When TRUE, indicates that uninstall is supported from the company portal for the Windows app (Win32) with an Available assignment. When FALSE, indicates that uninstall is not supported for the Windows app (Win32) with an Available assignment. Default value is FALSE.</summary>
         public bool? AllowAvailableUninstall {
@@ -204,7 +207,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Win32LobApp and sets the default values.
+        /// Instantiates a new win32LobApp and sets the default values.
         /// </summary>
         public Win32LobApp() : base() {
             OdataType = "#microsoft.graph.win32LobApp";

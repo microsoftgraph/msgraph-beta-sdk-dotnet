@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches {
         public BranchesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/connectivity/branches{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get branches from networkAccess
+        /// Retrieve a list of branches within a tenant connected to the Global Secure Access services.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/networkaccess-connectivity-list-branches?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches {
             return await RequestAdapter.SendAsync<BranchSiteCollectionResponse>(requestInfo, BranchSiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to branches for networkAccess
+        /// Create a new branch.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/networkaccess-connectivity-post-branches?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches {
             return await RequestAdapter.SendAsync<BranchSite>(requestInfo, BranchSite.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get branches from networkAccess
+        /// Retrieve a list of branches within a tenant connected to the Global Secure Access services.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to branches for networkAccess
+        /// Create a new branch.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +136,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches {
             return requestInfo;
         }
         /// <summary>
-        /// Get branches from networkAccess
+        /// Retrieve a list of branches within a tenant connected to the Global Secure Access services.
         /// </summary>
         public class BranchesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

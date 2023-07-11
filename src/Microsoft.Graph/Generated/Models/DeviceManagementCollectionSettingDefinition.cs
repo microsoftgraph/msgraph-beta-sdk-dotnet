@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Entity representing the defintion for a collection setting
+    /// </summary>
     public class DeviceManagementCollectionSettingDefinition : DeviceManagementSettingDefinition, IParsable {
         /// <summary>The Setting Definition ID that describes what each element of the collection looks like</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

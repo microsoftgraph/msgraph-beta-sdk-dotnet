@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Abstract class to contain properties used to assign a mobile app to a group.
+    /// </summary>
     public class MacOsVppAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
         /// <summary>When TRUE, indicates that the app should not be automatically updated with the latest version from Apple app store. When FALSE, indicates that the app may be auto updated. By default, this property is set to null which internally is treated as FALSE.</summary>
         public bool? PreventAutoAppUpdate {
@@ -26,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("useDeviceLicensing", value); }
         }
         /// <summary>
-        /// Instantiates a new MacOsVppAppAssignmentSettings and sets the default values.
+        /// Instantiates a new macOsVppAppAssignmentSettings and sets the default values.
         /// </summary>
         public MacOsVppAppAssignmentSettings() : base() {
             OdataType = "#microsoft.graph.macOsVppAppAssignmentSettings";

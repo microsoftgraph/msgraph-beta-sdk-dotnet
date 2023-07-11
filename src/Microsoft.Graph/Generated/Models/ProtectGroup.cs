@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("privacy", value); }
         }
         /// <summary>
-        /// Instantiates a new ProtectGroup and sets the default values.
+        /// Instantiates a new protectGroup and sets the default values.
         /// </summary>
         public ProtectGroup() : base() {
             OdataType = "#microsoft.graph.protectGroup";

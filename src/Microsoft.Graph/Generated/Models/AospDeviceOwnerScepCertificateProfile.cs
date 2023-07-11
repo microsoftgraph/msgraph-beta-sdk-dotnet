@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// AOSP Device Owner SCEP certificate profile
+    /// </summary>
     public class AospDeviceOwnerScepCertificateProfile : AospDeviceOwnerCertificateProfileBase, IParsable {
         /// <summary>Target store certificate. This collection can contain a maximum of 500 elements. Possible values are: user, machine.</summary>
         public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore {
@@ -96,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AospDeviceOwnerScepCertificateProfile and sets the default values.
+        /// Instantiates a new aospDeviceOwnerScepCertificateProfile and sets the default values.
         /// </summary>
         public AospDeviceOwnerScepCertificateProfile() : base() {
             OdataType = "#microsoft.graph.aospDeviceOwnerScepCertificateProfile";

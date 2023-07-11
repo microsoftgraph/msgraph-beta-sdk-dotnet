@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PersonInterest and sets the default values.
+        /// Instantiates a new personInterest and sets the default values.
         /// </summary>
         public PersonInterest() : base() {
             OdataType = "#microsoft.graph.personInterest";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for Windows Phone 8.1 AppX Bundle Line Of Business apps. Inherits from graph.windowsPhone81AppX (which is also to be deprecated at the same time). Will be deprecated in February 2023.
+    /// </summary>
     public class WindowsPhone81AppXBundle : WindowsPhone81AppX, IParsable {
         /// <summary>The list of AppX Package Information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsPhone81AppXBundle and sets the default values.
+        /// Instantiates a new windowsPhone81AppXBundle and sets the default values.
         /// </summary>
         public WindowsPhone81AppXBundle() : base() {
             OdataType = "#microsoft.graph.windowsPhone81AppXBundle";

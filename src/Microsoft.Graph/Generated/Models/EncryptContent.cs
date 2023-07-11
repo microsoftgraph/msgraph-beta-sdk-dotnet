@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("encryptWith", value); }
         }
         /// <summary>
-        /// Instantiates a new EncryptContent and sets the default values.
+        /// Instantiates a new encryptContent and sets the default values.
         /// </summary>
         public EncryptContent() : base() {
             OdataType = "#microsoft.graph.encryptContent";

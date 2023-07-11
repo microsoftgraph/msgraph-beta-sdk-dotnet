@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Enrollment Notification Configuration which is used to send notification
+    /// </summary>
     public class DeviceEnrollmentNotificationConfiguration : DeviceEnrollmentConfiguration, IParsable {
         /// <summary>Branding Options for the Message Template. Branding is defined in the Intune Admin Console.</summary>
         public EnrollmentNotificationBrandingOptions? BrandingOptions {
@@ -54,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("templateType", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceEnrollmentNotificationConfiguration and sets the default values.
+        /// Instantiates a new deviceEnrollmentNotificationConfiguration and sets the default values.
         /// </summary>
         public DeviceEnrollmentNotificationConfiguration() : base() {
             OdataType = "#microsoft.graph.deviceEnrollmentNotificationConfiguration";

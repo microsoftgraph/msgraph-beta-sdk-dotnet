@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident and sets the default values.
+        /// Instantiates a new rolesAssignedOutsidePrivilegedIdentityManagementAlertIncident and sets the default values.
         /// </summary>
         public RolesAssignedOutsidePrivilegedIdentityManagementAlertIncident() : base() {
             OdataType = "#microsoft.graph.rolesAssignedOutsidePrivilegedIdentityManagementAlertIncident";

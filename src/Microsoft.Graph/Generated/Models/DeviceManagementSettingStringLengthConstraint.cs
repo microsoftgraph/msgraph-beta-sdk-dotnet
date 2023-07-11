@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Base entity for a constraint
+    /// </summary>
     public class DeviceManagementSettingStringLengthConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>The maximum permitted string length</summary>
         public int? MaximumLength {
@@ -16,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("minimumLength", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementSettingStringLengthConstraint and sets the default values.
+        /// Instantiates a new deviceManagementSettingStringLengthConstraint and sets the default values.
         /// </summary>
         public DeviceManagementSettingStringLengthConstraint() : base() {
             OdataType = "#microsoft.graph.deviceManagementSettingStringLengthConstraint";

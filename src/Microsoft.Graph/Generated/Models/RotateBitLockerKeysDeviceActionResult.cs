@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Device action result
+    /// </summary>
     public class RotateBitLockerKeysDeviceActionResult : DeviceActionResult, IParsable {
         /// <summary>RotateBitLockerKeys action error code</summary>
         public int? ErrorCode {

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Base type for assignment targets.
+    /// </summary>
     public class AndroidFotaDeploymentAssignmentTarget : DeviceAndAppManagementAssignmentTarget, IParsable {
         /// <summary>AAD Group Id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidFotaDeploymentAssignmentTarget and sets the default values.
+        /// Instantiates a new androidFotaDeploymentAssignmentTarget and sets the default values.
         /// </summary>
         public AndroidFotaDeploymentAssignmentTarget() : base() {
             OdataType = "#microsoft.graph.androidFotaDeploymentAssignmentTarget";

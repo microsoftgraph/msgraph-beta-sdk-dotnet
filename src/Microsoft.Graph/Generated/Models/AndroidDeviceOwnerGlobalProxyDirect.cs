@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Android Device Owner Global Proxy.
+    /// </summary>
     public class AndroidDeviceOwnerGlobalProxyDirect : AndroidDeviceOwnerGlobalProxy, IParsable {
         /// <summary>The excluded hosts</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("port", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidDeviceOwnerGlobalProxyDirect and sets the default values.
+        /// Instantiates a new androidDeviceOwnerGlobalProxyDirect and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerGlobalProxyDirect() : base() {
             OdataType = "#microsoft.graph.androidDeviceOwnerGlobalProxyDirect";

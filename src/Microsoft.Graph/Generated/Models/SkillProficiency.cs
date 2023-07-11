@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new SkillProficiency and sets the default values.
+        /// Instantiates a new skillProficiency and sets the default values.
         /// </summary>
         public SkillProficiency() : base() {
             OdataType = "#microsoft.graph.skillProficiency";

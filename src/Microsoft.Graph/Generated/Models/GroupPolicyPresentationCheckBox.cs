@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents an ADMX checkBox element and an ADMX boolean element.
+    /// </summary>
     public class GroupPolicyPresentationCheckBox : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>Default value for the check box. The default value is false.</summary>
         public bool? DefaultChecked {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defaultChecked", value); }
         }
         /// <summary>
-        /// Instantiates a new GroupPolicyPresentationCheckBox and sets the default values.
+        /// Instantiates a new groupPolicyPresentationCheckBox and sets the default values.
         /// </summary>
         public GroupPolicyPresentationCheckBox() : base() {
             OdataType = "#microsoft.graph.groupPolicyPresentationCheckBox";

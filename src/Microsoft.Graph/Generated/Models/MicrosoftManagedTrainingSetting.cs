@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("trainingCompletionDuration", value); }
         }
         /// <summary>
-        /// Instantiates a new MicrosoftManagedTrainingSetting and sets the default values.
+        /// Instantiates a new microsoftManagedTrainingSetting and sets the default values.
         /// </summary>
         public MicrosoftManagedTrainingSetting() : base() {
             OdataType = "#microsoft.graph.microsoftManagedTrainingSetting";

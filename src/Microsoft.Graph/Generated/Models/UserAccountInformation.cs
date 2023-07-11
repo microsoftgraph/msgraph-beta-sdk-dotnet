@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new UserAccountInformation and sets the default values.
+        /// Instantiates a new userAccountInformation and sets the default values.
         /// </summary>
         public UserAccountInformation() : base() {
             OdataType = "#microsoft.graph.userAccountInformation";

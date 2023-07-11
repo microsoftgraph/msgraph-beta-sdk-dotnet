@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AddContentFooterAction and sets the default values.
+        /// Instantiates a new addContentFooterAction and sets the default values.
         /// </summary>
         public AddContentFooterAction() : base() {
             OdataType = "#microsoft.graph.addContentFooterAction";

@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new RedundantAssignmentAlertIncident and sets the default values.
+        /// Instantiates a new redundantAssignmentAlertIncident and sets the default values.
         /// </summary>
         public RedundantAssignmentAlertIncident() : base() {
             OdataType = "#microsoft.graph.redundantAssignmentAlertIncident";

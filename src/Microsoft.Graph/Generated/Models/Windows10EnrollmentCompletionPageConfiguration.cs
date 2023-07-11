@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows 10 Enrollment Status Page Configuration
+    /// </summary>
     public class Windows10EnrollmentCompletionPageConfiguration : DeviceEnrollmentConfiguration, IParsable {
         /// <summary>Allow or block device reset on installation failure</summary>
         public bool? AllowDeviceResetOnInstallFailure {
@@ -84,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("trackInstallProgressForAutopilotOnly", value); }
         }
         /// <summary>
-        /// Instantiates a new Windows10EnrollmentCompletionPageConfiguration and sets the default values.
+        /// Instantiates a new windows10EnrollmentCompletionPageConfiguration and sets the default values.
         /// </summary>
         public Windows10EnrollmentCompletionPageConfiguration() : base() {
             OdataType = "#microsoft.graph.windows10EnrollmentCompletionPageConfiguration";

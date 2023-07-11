@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PersonCertification and sets the default values.
+        /// Instantiates a new personCertification and sets the default values.
         /// </summary>
         public PersonCertification() : base() {
             OdataType = "#microsoft.graph.personCertification";

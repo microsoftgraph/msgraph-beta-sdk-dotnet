@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The entity represents a Boolean value of a checkbox presentation on a policy definition.
+    /// </summary>
     public class GroupPolicyPresentationValueBoolean : GroupPolicyPresentationValue, IParsable {
         /// <summary>An boolean value for the associated presentation.</summary>
         public bool? Value {

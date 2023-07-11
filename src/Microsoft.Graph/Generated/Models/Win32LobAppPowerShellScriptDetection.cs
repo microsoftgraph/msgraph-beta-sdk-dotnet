@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Base class to detect a Win32 App
+    /// </summary>
     public class Win32LobAppPowerShellScriptDetection : Win32LobAppDetection, IParsable {
         /// <summary>A value indicating whether signature check is enforced</summary>
         public bool? EnforceSignatureCheck {
@@ -30,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Win32LobAppPowerShellScriptDetection and sets the default values.
+        /// Instantiates a new win32LobAppPowerShellScriptDetection and sets the default values.
         /// </summary>
         public Win32LobAppPowerShellScriptDetection() : base() {
             OdataType = "#microsoft.graph.win32LobAppPowerShellScriptDetection";

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("reason", value); }
         }
         /// <summary>
-        /// Instantiates a new AzureADDeviceRegistrationError and sets the default values.
+        /// Instantiates a new azureADDeviceRegistrationError and sets the default values.
         /// </summary>
         public AzureADDeviceRegistrationError() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.azureADDeviceRegistrationError";

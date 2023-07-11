@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The user base class used to identify the account info for the kiosk configuration
+    /// </summary>
     public class WindowsKioskActiveDirectoryGroup : WindowsKioskUser, IParsable {
         /// <summary>The name of the AD group that will be locked to this kiosk configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsKioskActiveDirectoryGroup and sets the default values.
+        /// Instantiates a new windowsKioskActiveDirectoryGroup and sets the default values.
         /// </summary>
         public WindowsKioskActiveDirectoryGroup() : base() {
             OdataType = "#microsoft.graph.windowsKioskActiveDirectoryGroup";

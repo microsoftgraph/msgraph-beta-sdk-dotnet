@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PositionDetail and sets the default values.
+        /// Instantiates a new positionDetail and sets the default values.
         /// </summary>
         public PositionDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

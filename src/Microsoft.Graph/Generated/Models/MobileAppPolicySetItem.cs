@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A class containing the properties used for mobile app PolicySetItem.
+    /// </summary>
     public class MobileAppPolicySetItem : PolicySetItem, IParsable {
         /// <summary>Possible values for the install intent chosen by the admin.</summary>
         public InstallIntent? Intent {
@@ -25,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MobileAppPolicySetItem and sets the default values.
+        /// Instantiates a new mobileAppPolicySetItem and sets the default values.
         /// </summary>
         public MobileAppPolicySetItem() : base() {
             OdataType = "#microsoft.graph.mobileAppPolicySetItem";

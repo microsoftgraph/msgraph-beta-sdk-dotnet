@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EducationRoot and sets the default values.
+        /// Instantiates a new educationRoot and sets the default values.
         /// </summary>
         public EducationRoot() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

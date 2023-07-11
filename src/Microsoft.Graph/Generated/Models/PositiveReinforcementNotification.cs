@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deliveryPreference", value); }
         }
         /// <summary>
-        /// Instantiates a new PositiveReinforcementNotification and sets the default values.
+        /// Instantiates a new positiveReinforcementNotification and sets the default values.
         /// </summary>
         public PositiveReinforcementNotification() : base() {
             OdataType = "#microsoft.graph.positiveReinforcementNotification";

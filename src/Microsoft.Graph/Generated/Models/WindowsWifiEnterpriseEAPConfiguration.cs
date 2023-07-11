@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// This entity provides descriptions of the declared methods, properties and relationships exposed by the Wifi CSP.
+    /// </summary>
     public class WindowsWifiEnterpriseEAPConfiguration : WindowsWifiConfiguration, IParsable {
         /// <summary>Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential.</summary>
         public WiFiAuthenticationMethod? AuthenticationMethod {
@@ -186,7 +189,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userBasedVirtualLan", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsWifiEnterpriseEAPConfiguration and sets the default values.
+        /// Instantiates a new windowsWifiEnterpriseEAPConfiguration and sets the default values.
         /// </summary>
         public WindowsWifiEnterpriseEAPConfiguration() : base() {
             OdataType = "#microsoft.graph.windowsWifiEnterpriseEAPConfiguration";

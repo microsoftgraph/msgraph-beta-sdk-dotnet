@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class SubjectRightsRequestAllMailboxLocation : SubjectRightsRequestMailboxLocation, IParsable {
         /// <summary>
-        /// Instantiates a new SubjectRightsRequestAllMailboxLocation and sets the default values.
+        /// Instantiates a new subjectRightsRequestAllMailboxLocation and sets the default values.
         /// </summary>
         public SubjectRightsRequestAllMailboxLocation() : base() {
             OdataType = "#microsoft.graph.subjectRightsRequestAllMailboxLocation";

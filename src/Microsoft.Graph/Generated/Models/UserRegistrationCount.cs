@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("registrationStatus", value); }
         }
         /// <summary>
-        /// Instantiates a new UserRegistrationCount and sets the default values.
+        /// Instantiates a new userRegistrationCount and sets the default values.
         /// </summary>
         public UserRegistrationCount() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

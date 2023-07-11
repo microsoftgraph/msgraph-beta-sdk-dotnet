@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Device action result
+    /// </summary>
     public class ConfigurationManagerActionResult : DeviceActionResult, IParsable {
         /// <summary>Delivery state of Configuration Manager device action</summary>
         public ConfigurationManagerActionDeliveryStatus? ActionDeliveryStatus {

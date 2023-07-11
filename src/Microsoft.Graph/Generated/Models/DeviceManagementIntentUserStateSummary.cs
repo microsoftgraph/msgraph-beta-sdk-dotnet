@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Entity that represents user state summary for an intent
+    /// </summary>
     public class DeviceManagementIntentUserStateSummary : Entity, IParsable {
         /// <summary>Number of users in conflict</summary>
         public int? ConflictCount {

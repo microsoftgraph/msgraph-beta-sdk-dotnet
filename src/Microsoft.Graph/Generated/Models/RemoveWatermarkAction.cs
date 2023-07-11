@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new RemoveWatermarkAction and sets the default values.
+        /// Instantiates a new removeWatermarkAction and sets the default values.
         /// </summary>
         public RemoveWatermarkAction() : base() {
             OdataType = "#microsoft.graph.removeWatermarkAction";

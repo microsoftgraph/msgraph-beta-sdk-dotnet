@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("qualityUpdateClassification", value); }
         }
         /// <summary>
-        /// Instantiates a new QualityUpdateCatalogEntry and sets the default values.
+        /// Instantiates a new qualityUpdateCatalogEntry and sets the default values.
         /// </summary>
         public QualityUpdateCatalogEntry() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry";

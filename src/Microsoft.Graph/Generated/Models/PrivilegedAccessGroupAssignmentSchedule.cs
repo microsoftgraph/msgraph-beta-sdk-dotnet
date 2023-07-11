@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PrivilegedAccessGroupAssignmentSchedule and sets the default values.
+        /// Instantiates a new privilegedAccessGroupAssignmentSchedule and sets the default values.
         /// </summary>
         public PrivilegedAccessGroupAssignmentSchedule() : base() {
             OdataType = "#microsoft.graph.privilegedAccessGroupAssignmentSchedule";

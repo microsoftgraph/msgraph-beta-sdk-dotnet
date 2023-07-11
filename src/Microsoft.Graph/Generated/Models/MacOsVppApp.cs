@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for MacOS Volume-Purchased Program (VPP) Apps.
+    /// </summary>
     public class MacOsVppApp : MobileApp, IParsable {
         /// <summary>The store URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -138,7 +141,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MacOsVppApp and sets the default values.
+        /// Instantiates a new macOsVppApp and sets the default values.
         /// </summary>
         public MacOsVppApp() : base() {
             OdataType = "#microsoft.graph.macOsVppApp";

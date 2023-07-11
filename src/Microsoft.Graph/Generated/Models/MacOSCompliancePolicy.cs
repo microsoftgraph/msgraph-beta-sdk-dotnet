@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// This class contains compliance settings for Mac OS.
+    /// </summary>
     public class MacOSCompliancePolicy : DeviceCompliancePolicy, IParsable {
         /// <summary>Device threat protection levels for the Device Threat Protection API.</summary>
         public DeviceThreatProtectionLevel? AdvancedThreatProtectionRequiredSecurityLevel {
@@ -147,7 +150,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("systemIntegrityProtectionEnabled", value); }
         }
         /// <summary>
-        /// Instantiates a new MacOSCompliancePolicy and sets the default values.
+        /// Instantiates a new macOSCompliancePolicy and sets the default values.
         /// </summary>
         public MacOSCompliancePolicy() : base() {
             OdataType = "#microsoft.graph.macOSCompliancePolicy";

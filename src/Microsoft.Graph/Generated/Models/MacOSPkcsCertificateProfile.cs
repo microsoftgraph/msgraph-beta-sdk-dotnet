@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// MacOS PKCS certificate profile.
+    /// </summary>
     public class MacOSPkcsCertificateProfile : MacOSCertificateProfileBase, IParsable {
         /// <summary>AllowAllAppsAccess setting</summary>
         public bool? AllowAllAppsAccess {
@@ -114,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MacOSPkcsCertificateProfile and sets the default values.
+        /// Instantiates a new macOSPkcsCertificateProfile and sets the default values.
         /// </summary>
         public MacOSPkcsCertificateProfile() : base() {
             OdataType = "#microsoft.graph.macOSPkcsCertificateProfile";

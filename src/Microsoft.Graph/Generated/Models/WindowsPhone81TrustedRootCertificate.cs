@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows Phone 8.1+ Trusted Root Certificate configuration profile
+    /// </summary>
     public class WindowsPhone81TrustedRootCertificate : DeviceConfiguration, IParsable {
         /// <summary>File name to display in UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

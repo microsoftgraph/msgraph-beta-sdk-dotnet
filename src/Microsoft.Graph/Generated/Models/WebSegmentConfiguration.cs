@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WebSegmentConfiguration and sets the default values.
+        /// Instantiates a new webSegmentConfiguration and sets the default values.
         /// </summary>
         public WebSegmentConfiguration() : base() {
             OdataType = "#microsoft.graph.webSegmentConfiguration";

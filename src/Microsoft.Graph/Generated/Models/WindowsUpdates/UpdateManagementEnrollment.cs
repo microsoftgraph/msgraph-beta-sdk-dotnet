@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("updateCategory", value); }
         }
         /// <summary>
-        /// Instantiates a new UpdateManagementEnrollment and sets the default values.
+        /// Instantiates a new updateManagementEnrollment and sets the default values.
         /// </summary>
         public UpdateManagementEnrollment() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.updateManagementEnrollment";

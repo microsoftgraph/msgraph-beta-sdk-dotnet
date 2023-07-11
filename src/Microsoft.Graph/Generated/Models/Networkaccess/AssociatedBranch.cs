@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class AssociatedBranch : Association, IParsable {
-        /// <summary>The branchId property</summary>
+        /// <summary>Identifier for the branch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BranchId {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AssociatedBranch and sets the default values.
+        /// Instantiates a new associatedBranch and sets the default values.
         /// </summary>
         public AssociatedBranch() : base() {
             OdataType = "#microsoft.graph.networkaccess.associatedBranch";

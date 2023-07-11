@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("written", value); }
         }
         /// <summary>
-        /// Instantiates a new LanguageProficiency and sets the default values.
+        /// Instantiates a new languageProficiency and sets the default values.
         /// </summary>
         public LanguageProficiency() : base() {
             OdataType = "#microsoft.graph.languageProficiency";

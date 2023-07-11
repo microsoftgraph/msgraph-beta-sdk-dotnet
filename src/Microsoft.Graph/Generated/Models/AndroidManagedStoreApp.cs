@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for Android Managed Store Apps.
+    /// </summary>
     public class AndroidManagedStoreApp : MobileApp, IParsable {
         /// <summary>The Identity Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("usedLicenseCount", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidManagedStoreApp and sets the default values.
+        /// Instantiates a new androidManagedStoreApp and sets the default values.
         /// </summary>
         public AndroidManagedStoreApp() : base() {
             OdataType = "#microsoft.graph.androidManagedStoreApp";

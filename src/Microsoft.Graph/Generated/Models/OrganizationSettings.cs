@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("profileCardProperties", value); }
         }
 #endif
-        /// <summary>Represents administrator settings that manage the support of pronouns in an organization.</summary>
+        /// <summary>The pronouns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PronounsSettings? Pronouns {

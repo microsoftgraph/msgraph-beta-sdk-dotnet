@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewError : GenericError, IParsable {
         /// <summary>
-        /// Instantiates a new AccessReviewError and sets the default values.
+        /// Instantiates a new accessReviewError and sets the default values.
         /// </summary>
         public AccessReviewError() : base() {
             OdataType = "#microsoft.graph.accessReviewError";

@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class IpSubnet : RuleDestination, IParsable {
-        /// <summary>The value property</summary>
+        /// <summary>Defines the IP address of the subset used in a destination for a rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IpSubnet and sets the default values.
+        /// Instantiates a new ipSubnet and sets the default values.
         /// </summary>
         public IpSubnet() : base() {
             OdataType = "#microsoft.graph.networkaccess.ipSubnet";

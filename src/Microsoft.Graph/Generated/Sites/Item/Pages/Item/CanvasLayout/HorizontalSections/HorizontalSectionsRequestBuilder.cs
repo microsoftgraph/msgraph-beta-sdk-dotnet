@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item.CanvasLayout.HorizontalSect
             return await RequestAdapter.SendAsync<HorizontalSectionCollectionResponse>(requestInfo, HorizontalSectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to horizontalSections for sites
+        /// Create a horizontalSection object in a given sitePage.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/sitepage-post-horizontalsection?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +108,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item.CanvasLayout.HorizontalSect
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to horizontalSections for sites
+        /// Create a horizontalSection object in a given sitePage.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TrustFramework and sets the default values.
+        /// Instantiates a new trustFramework and sets the default values.
         /// </summary>
         public TrustFramework() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

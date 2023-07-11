@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AddContentHeaderAction and sets the default values.
+        /// Instantiates a new addContentHeaderAction and sets the default values.
         /// </summary>
         public AddContentHeaderAction() : base() {
             OdataType = "#microsoft.graph.addContentHeaderAction";

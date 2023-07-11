@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Setting instance within policy
+    /// </summary>
     public class DeviceManagementConfigurationSettingGroupInstance : DeviceManagementConfigurationSettingInstance, IParsable {
         /// <summary>
-        /// Instantiates a new DeviceManagementConfigurationSettingGroupInstance and sets the default values.
+        /// Instantiates a new deviceManagementConfigurationSettingGroupInstance and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationSettingGroupInstance() : base() {
             OdataType = "#microsoft.graph.deviceManagementConfigurationSettingGroupInstance";

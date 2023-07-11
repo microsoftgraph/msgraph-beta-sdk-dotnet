@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("maxPoints", value); }
         }
         /// <summary>
-        /// Instantiates a new EducationAssignmentPointsGradeType and sets the default values.
+        /// Instantiates a new educationAssignmentPointsGradeType and sets the default values.
         /// </summary>
         public EducationAssignmentPointsGradeType() : base() {
             OdataType = "#microsoft.graph.educationAssignmentPointsGradeType";

@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationDet
         public UserRegistrationDetailsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/authenticationMethods/userRegistrationDetails{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the authentication methods registered for the user as defined in the userRegistrationDetails object.
+        /// Get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object.
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationmethodsroot-list-userregistrationdetails?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationDet
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserRegistrationDetails>(requestInfo, Microsoft.Graph.Beta.Models.UserRegistrationDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the authentication methods registered for the user as defined in the userRegistrationDetails object.
+        /// Get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationDet
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the authentication methods registered for the user as defined in the userRegistrationDetails object.
+        /// Get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object.
         /// </summary>
         public class UserRegistrationDetailsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

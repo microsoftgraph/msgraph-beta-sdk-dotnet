@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new FederatedTokenValidationPolicy and sets the default values.
+        /// Instantiates a new federatedTokenValidationPolicy and sets the default values.
         /// </summary>
         public FederatedTokenValidationPolicy() : base() {
             OdataType = "#microsoft.graph.federatedTokenValidationPolicy";

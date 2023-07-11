@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<ForwardingCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
-        /// <summary>The ports property</summary>
+        /// <summary>The port(s) used by a forwarding rule for M365 traffic are specified to determine the specific network port(s) through which the Microsoft 365 traffic is directed and forwarded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Ports {
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("protocol", value); }
         }
         /// <summary>
-        /// Instantiates a new M365ForwardingRule and sets the default values.
+        /// Instantiates a new m365ForwardingRule and sets the default values.
         /// </summary>
         public M365ForwardingRule() : base() {
             OdataType = "#microsoft.graph.networkaccess.m365ForwardingRule";

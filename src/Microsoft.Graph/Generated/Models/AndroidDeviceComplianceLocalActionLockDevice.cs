@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Local Action Lock Device Only Configuration
+    /// </summary>
     public class AndroidDeviceComplianceLocalActionLockDevice : AndroidDeviceComplianceLocalActionBase, IParsable {
         /// <summary>
-        /// Instantiates a new AndroidDeviceComplianceLocalActionLockDevice and sets the default values.
+        /// Instantiates a new androidDeviceComplianceLocalActionLockDevice and sets the default values.
         /// </summary>
         public AndroidDeviceComplianceLocalActionLockDevice() : base() {
             OdataType = "#microsoft.graph.androidDeviceComplianceLocalActionLockDevice";

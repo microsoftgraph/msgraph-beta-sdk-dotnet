@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Setting Instance Template
+    /// </summary>
     public class DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate : DeviceManagementConfigurationSettingInstanceTemplate, IParsable {
         /// <summary>Linked policy may append values which are not present in the template.</summary>
         public bool? AllowUnmanagedValues {
@@ -25,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate and sets the default values.
+        /// Instantiates a new deviceManagementConfigurationGroupSettingCollectionInstanceTemplate and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationGroupSettingCollectionInstanceTemplate() : base() {
             OdataType = "#microsoft.graph.deviceManagementConfigurationGroupSettingCollectionInstanceTemplate";

@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CustomTaskExtensionCalloutData and sets the default values.
+        /// Instantiates a new customTaskExtensionCalloutData and sets the default values.
         /// </summary>
         public CustomTaskExtensionCalloutData() : base() {
             OdataType = "#microsoft.graph.identityGovernance.customTaskExtensionCalloutData";

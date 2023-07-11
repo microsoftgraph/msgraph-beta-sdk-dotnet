@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Bandwidth restriction types
+    /// </summary>
     public class DeliveryOptimizationBandwidthPercentage : DeliveryOptimizationBandwidth, IParsable {
         /// <summary>Specifies the maximum background download bandwidth that Delivery Optimization uses across all concurrent download activities as a percentage of available download bandwidth (0-100). Valid values 0 to 100</summary>
         public int? MaximumBackgroundBandwidthPercentage {
@@ -16,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("maximumForegroundBandwidthPercentage", value); }
         }
         /// <summary>
-        /// Instantiates a new DeliveryOptimizationBandwidthPercentage and sets the default values.
+        /// Instantiates a new deliveryOptimizationBandwidthPercentage and sets the default values.
         /// </summary>
         public DeliveryOptimizationBandwidthPercentage() : base() {
             OdataType = "#microsoft.graph.deliveryOptimizationBandwidthPercentage";

@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
     public class InboundFlowActivity : IndustryDataRunActivity, IParsable {
         /// <summary>
-        /// Instantiates a new InboundFlowActivity and sets the default values.
+        /// Instantiates a new inboundFlowActivity and sets the default values.
         /// </summary>
         public InboundFlowActivity() : base() {
             OdataType = "#microsoft.graph.industryData.inboundFlowActivity";

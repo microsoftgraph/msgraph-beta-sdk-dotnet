@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ItemPatent and sets the default values.
+        /// Instantiates a new itemPatent and sets the default values.
         /// </summary>
         public ItemPatent() : base() {
             OdataType = "#microsoft.graph.itemPatent";

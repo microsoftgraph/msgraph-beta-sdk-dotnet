@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("days", value); }
         }
         /// <summary>
-        /// Instantiates a new RetentionDurationInDays and sets the default values.
+        /// Instantiates a new retentionDurationInDays and sets the default values.
         /// </summary>
         public RetentionDurationInDays() : base() {
             OdataType = "#microsoft.graph.security.retentionDurationInDays";

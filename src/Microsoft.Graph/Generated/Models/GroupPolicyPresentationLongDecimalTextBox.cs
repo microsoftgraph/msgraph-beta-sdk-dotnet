@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents an ADMX longDecimalTextBox element and an ADMX longDecimal element.
+    /// </summary>
     public class GroupPolicyPresentationLongDecimalTextBox : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>An unsigned integer that specifies the initial value for the decimal text box. The default value is 1.</summary>
         public long? DefaultValue {
@@ -36,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("spinStep", value); }
         }
         /// <summary>
-        /// Instantiates a new GroupPolicyPresentationLongDecimalTextBox and sets the default values.
+        /// Instantiates a new groupPolicyPresentationLongDecimalTextBox and sets the default values.
         /// </summary>
         public GroupPolicyPresentationLongDecimalTextBox() : base() {
             OdataType = "#microsoft.graph.groupPolicyPresentationLongDecimalTextBox";

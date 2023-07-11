@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get reports from networkAccess
+        /// Represents the status of the Global Secure Access services for the tenant.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports {
             return requestInfo;
         }
         /// <summary>
-        /// Get reports from networkAccess
+        /// Represents the status of the Global Secure Access services for the tenant.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -242,7 +242,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports {
             }
         }
         /// <summary>
-        /// Get reports from networkAccess
+        /// Represents the status of the Global Secure Access services for the tenant.
         /// </summary>
         public class ReportsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

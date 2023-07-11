@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Base for Android For Work EAS Email profiles
+    /// </summary>
     public class AndroidForWorkEasEmailProfileBase : DeviceConfiguration, IParsable {
         /// <summary>Exchange Active Sync authentication method.</summary>
         public EasAuthenticationMethod? AuthenticationMethod {
@@ -59,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("usernameSource", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidForWorkEasEmailProfileBase and sets the default values.
+        /// Instantiates a new androidForWorkEasEmailProfileBase and sets the default values.
         /// </summary>
         public AndroidForWorkEasEmailProfileBase() : base() {
             OdataType = "#microsoft.graph.androidForWorkEasEmailProfileBase";

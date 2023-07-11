@@ -207,7 +207,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new UnifiedRoleEligibilityScheduleRequest and sets the default values.
+        /// Instantiates a new unifiedRoleEligibilityScheduleRequest and sets the default values.
         /// </summary>
         public UnifiedRoleEligibilityScheduleRequest() : base() {
             OdataType = "#microsoft.graph.unifiedRoleEligibilityScheduleRequest";

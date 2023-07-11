@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// By providing the configurations in this profile you can instruct the Android Fully Managed device to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
+    /// </summary>
     public class AndroidDeviceOwnerVpnConfiguration : VpnConfiguration, IParsable {
         /// <summary>Whether or not to enable always-on VPN connection.</summary>
         public bool? AlwaysOn {
@@ -133,7 +136,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidDeviceOwnerVpnConfiguration and sets the default values.
+        /// Instantiates a new androidDeviceOwnerVpnConfiguration and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerVpnConfiguration() : base() {
             OdataType = "#microsoft.graph.androidDeviceOwnerVpnConfiguration";

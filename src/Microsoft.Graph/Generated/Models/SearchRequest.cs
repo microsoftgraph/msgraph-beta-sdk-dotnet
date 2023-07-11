@@ -230,7 +230,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("trimDuplicates", value); }
         }
         /// <summary>
-        /// Instantiates a new SearchRequest and sets the default values.
+        /// Instantiates a new searchRequest and sets the default values.
         /// </summary>
         public SearchRequest() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

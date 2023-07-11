@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The base class for a type of apps
+    /// </summary>
     public class WindowsKioskWin32App : WindowsKioskAppBase, IParsable {
         /// <summary>This is the classicapppath to be used by v4 Win32 app while in Kiosk Mode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("edgeNoFirstRun", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsKioskWin32App and sets the default values.
+        /// Instantiates a new windowsKioskWin32App and sets the default values.
         /// </summary>
         public WindowsKioskWin32App() : base() {
             OdataType = "#microsoft.graph.windowsKioskWin32App";

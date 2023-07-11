@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DlpWindowsDevicesNotification and sets the default values.
+        /// Instantiates a new dlpWindowsDevicesNotification and sets the default values.
         /// </summary>
         public DlpWindowsDevicesNotification() : base() {
             OdataType = "#microsoft.graph.dlpWindowsDevicesNotification";

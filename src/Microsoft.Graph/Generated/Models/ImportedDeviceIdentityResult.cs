@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The importedDeviceIdentityResult resource represents the result of attempting to import a device identity.
+    /// </summary>
     public class ImportedDeviceIdentityResult : ImportedDeviceIdentity, IParsable {
         /// <summary>Status of imported device identity</summary>
         public bool? Status {

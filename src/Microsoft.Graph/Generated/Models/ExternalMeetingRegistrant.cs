@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ExternalMeetingRegistrant and sets the default values.
+        /// Instantiates a new externalMeetingRegistrant and sets the default values.
         /// </summary>
         public ExternalMeetingRegistrant() : base() {
             OdataType = "#microsoft.graph.externalMeetingRegistrant";

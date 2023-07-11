@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A setting instance representing a boolean value
+    /// </summary>
     public class DeviceManagementBooleanSettingInstance : DeviceManagementSettingInstance, IParsable {
         /// <summary>The boolean value</summary>
         public bool? Value {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementBooleanSettingInstance and sets the default values.
+        /// Instantiates a new deviceManagementBooleanSettingInstance and sets the default values.
         /// </summary>
         public DeviceManagementBooleanSettingInstance() : base() {
             OdataType = "#microsoft.graph.deviceManagementBooleanSettingInstance";

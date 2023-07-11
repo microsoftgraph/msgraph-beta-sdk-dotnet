@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for the macOS Microsoft Defender Advanced Threat Protection (MDATP) App. This is deprecated for MacOSMicrosoftDefenderApp in 2305 (May 2023).
+    /// </summary>
     public class MacOSMdatpApp : MobileApp, IParsable {
         /// <summary>
-        /// Instantiates a new MacOSMdatpApp and sets the default values.
+        /// Instantiates a new macOSMdatpApp and sets the default values.
         /// </summary>
         public MacOSMdatpApp() : base() {
             OdataType = "#microsoft.graph.macOSMdatpApp";

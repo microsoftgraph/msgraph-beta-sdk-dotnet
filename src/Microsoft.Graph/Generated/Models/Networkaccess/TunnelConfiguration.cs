@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The preSharedKey property</summary>
+        /// <summary>A key to establish secure connection between the link and VPN tunnel on the edge.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PreSharedKey {
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TunnelConfiguration and sets the default values.
+        /// Instantiates a new tunnelConfiguration and sets the default values.
         /// </summary>
         public TunnelConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

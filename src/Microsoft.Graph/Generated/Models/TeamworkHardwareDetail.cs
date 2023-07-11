@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TeamworkHardwareDetail and sets the default values.
+        /// Instantiates a new teamworkHardwareDetail and sets the default values.
         /// </summary>
         public TeamworkHardwareDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

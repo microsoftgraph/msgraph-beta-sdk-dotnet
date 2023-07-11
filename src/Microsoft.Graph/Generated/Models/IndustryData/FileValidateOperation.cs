@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         }
 #endif
         /// <summary>
-        /// Instantiates a new FileValidateOperation and sets the default values.
+        /// Instantiates a new fileValidateOperation and sets the default values.
         /// </summary>
         public FileValidateOperation() : base() {
             OdataType = "#microsoft.graph.industryData.fileValidateOperation";

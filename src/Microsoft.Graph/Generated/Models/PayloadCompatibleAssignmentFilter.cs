@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A class containing the properties used for Payload Compatible Assignment Filter.
+    /// </summary>
     public class PayloadCompatibleAssignmentFilter : DeviceAndAppManagementAssignmentFilter, IParsable {
         /// <summary>Represents the payload type AssignmentFilter is being assigned to.</summary>
         public AssignmentFilterPayloadType? PayloadType {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("payloadType", value); }
         }
         /// <summary>
-        /// Instantiates a new PayloadCompatibleAssignmentFilter and sets the default values.
+        /// Instantiates a new payloadCompatibleAssignmentFilter and sets the default values.
         /// </summary>
         public PayloadCompatibleAssignmentFilter() : base() {
             OdataType = "#microsoft.graph.payloadCompatibleAssignmentFilter";

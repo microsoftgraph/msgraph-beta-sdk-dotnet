@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents a Redirect-type Single Sign-On extension profile for iOS devices.
+    /// </summary>
     public class IosRedirectSingleSignOnExtension : IosSingleSignOnExtension, IParsable {
         /// <summary>Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosRedirectSingleSignOnExtension and sets the default values.
+        /// Instantiates a new iosRedirectSingleSignOnExtension and sets the default values.
         /// </summary>
         public IosRedirectSingleSignOnExtension() : base() {
             OdataType = "#microsoft.graph.iosRedirectSingleSignOnExtension";

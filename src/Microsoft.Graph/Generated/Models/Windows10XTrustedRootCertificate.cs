@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows X Trusted Root Certificate configuration profile
+    /// </summary>
     public class Windows10XTrustedRootCertificate : DeviceManagementResourceAccessProfileBase, IParsable {
         /// <summary>File name to display in UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Windows10XTrustedRootCertificate and sets the default values.
+        /// Instantiates a new windows10XTrustedRootCertificate and sets the default values.
         /// </summary>
         public Windows10XTrustedRootCertificate() : base() {
             OdataType = "#microsoft.graph.windows10XTrustedRootCertificate";

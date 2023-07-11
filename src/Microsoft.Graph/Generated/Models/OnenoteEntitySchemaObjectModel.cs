@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new OnenoteEntitySchemaObjectModel and sets the default values.
+        /// Instantiates a new onenoteEntitySchemaObjectModel and sets the default values.
         /// </summary>
         public OnenoteEntitySchemaObjectModel() : base() {
             OdataType = "#microsoft.graph.onenoteEntitySchemaObjectModel";

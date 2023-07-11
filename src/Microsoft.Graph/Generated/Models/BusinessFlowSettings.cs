@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("durationInDays", value); }
         }
         /// <summary>
-        /// Instantiates a new BusinessFlowSettings and sets the default values.
+        /// Instantiates a new businessFlowSettings and sets the default values.
         /// </summary>
         public BusinessFlowSettings() : base() {
             OdataType = "#microsoft.graph.businessFlowSettings";

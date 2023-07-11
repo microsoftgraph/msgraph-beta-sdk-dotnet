@@ -66,7 +66,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.EnrichedAuditLogs {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property enrichedAuditLogs in networkAccess
+        /// Update the settings for the enriched audit logs workloads to control the enrichment feature for each partner workload, such as SharePoint, Teams, and Exchange.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/networkaccess-enrichedauditlogs-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -137,7 +138,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.EnrichedAuditLogs {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property enrichedAuditLogs in networkAccess
+        /// Update the settings for the enriched audit logs workloads to control the enrichment feature for each partner workload, such as SharePoint, Teams, and Exchange.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

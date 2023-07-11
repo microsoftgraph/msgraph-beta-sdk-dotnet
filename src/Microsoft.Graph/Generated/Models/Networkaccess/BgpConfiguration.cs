@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The asn property</summary>
+        /// <summary>Specifies the ASN of the BGP.</summary>
         public int? Asn {
             get { return BackingStore?.Get<int?>("asn"); }
             set { BackingStore?.Set("asn", value); }
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("ipAddress", value); }
         }
 #endif
-        /// <summary>The localIpAddress property</summary>
+        /// <summary>Specifies the BGP IP address of peer (Microsoft, in this case).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LocalIpAddress {
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The peerIpAddress property</summary>
+        /// <summary>Specifies the BGP IP address of customer&apos;s on-premise VPN router configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PeerIpAddress {
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
 #endif
         /// <summary>
-        /// Instantiates a new BgpConfiguration and sets the default values.
+        /// Instantiates a new bgpConfiguration and sets the default values.
         /// </summary>
         public BgpConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

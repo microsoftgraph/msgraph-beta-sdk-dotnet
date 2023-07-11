@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Beta.Admin.Dynamics {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get dynamics from admin
+        /// Read the properties and relationships of a adminDynamics object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/admindynamics-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +67,8 @@ namespace Microsoft.Graph.Beta.Admin.Dynamics {
             return await RequestAdapter.SendAsync<AdminDynamics>(requestInfo, AdminDynamics.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property dynamics in admin
+        /// Update the properties of a adminDynamics object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/admindynamics-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Beta.Admin.Dynamics {
             return requestInfo;
         }
         /// <summary>
-        /// Get dynamics from admin
+        /// Read the properties and relationships of a adminDynamics object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +139,7 @@ namespace Microsoft.Graph.Beta.Admin.Dynamics {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property dynamics in admin
+        /// Update the properties of a adminDynamics object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +183,7 @@ namespace Microsoft.Graph.Beta.Admin.Dynamics {
             }
         }
         /// <summary>
-        /// Get dynamics from admin
+        /// Read the properties and relationships of a adminDynamics object.
         /// </summary>
         public class DynamicsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

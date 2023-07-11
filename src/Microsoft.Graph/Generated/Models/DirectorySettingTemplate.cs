@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DirectorySettingTemplate and sets the default values.
+        /// Instantiates a new directorySettingTemplate and sets the default values.
         /// </summary>
         public DirectorySettingTemplate() : base() {
             OdataType = "#microsoft.graph.directorySettingTemplate";

@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class SubjectRightsRequestAllSiteLocation : SubjectRightsRequestSiteLocation, IParsable {
         /// <summary>
-        /// Instantiates a new SubjectRightsRequestAllSiteLocation and sets the default values.
+        /// Instantiates a new subjectRightsRequestAllSiteLocation and sets the default values.
         /// </summary>
         public SubjectRightsRequestAllSiteLocation() : base() {
             OdataType = "#microsoft.graph.subjectRightsRequestAllSiteLocation";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows 10 Desktop and Mobile PFX Import certificate profile
+    /// </summary>
     public class Windows10ImportedPFXCertificateProfile : WindowsCertificateProfileBase, IParsable {
         /// <summary>PFX Import Options.</summary>
         public Microsoft.Graph.Beta.Models.IntendedPurpose? IntendedPurpose {
@@ -25,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Windows10ImportedPFXCertificateProfile and sets the default values.
+        /// Instantiates a new windows10ImportedPFXCertificateProfile and sets the default values.
         /// </summary>
         public Windows10ImportedPFXCertificateProfile() : base() {
             OdataType = "#microsoft.graph.windows10ImportedPFXCertificateProfile";

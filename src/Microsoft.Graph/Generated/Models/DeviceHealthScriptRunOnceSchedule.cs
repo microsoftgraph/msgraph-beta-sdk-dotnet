@@ -5,6 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Device health script run once schedule.
+    /// </summary>
     public class DeviceHealthScriptRunOnceSchedule : DeviceHealthScriptTimeSchedule, IParsable {
         /// <summary>The date the script is scheduled to run. This collection can contain a maximum of 20 elements.</summary>
         public Date? Date {
@@ -12,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("date", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceHealthScriptRunOnceSchedule and sets the default values.
+        /// Instantiates a new deviceHealthScriptRunOnceSchedule and sets the default values.
         /// </summary>
         public DeviceHealthScriptRunOnceSchedule() : base() {
             OdataType = "#microsoft.graph.deviceHealthScriptRunOnceSchedule";

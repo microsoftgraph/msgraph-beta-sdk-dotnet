@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Base class to detect a Win32 App
+    /// </summary>
     public class Win32LobAppRegistryDetection : Win32LobAppDetection, IParsable {
         /// <summary>A value indicating whether this registry path is for checking 32-bit app on 64-bit system</summary>
         public bool? Check32BitOn64System {
@@ -63,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Win32LobAppRegistryDetection and sets the default values.
+        /// Instantiates a new win32LobAppRegistryDetection and sets the default values.
         /// </summary>
         public Win32LobAppRegistryDetection() : base() {
             OdataType = "#microsoft.graph.win32LobAppRegistryDetection";

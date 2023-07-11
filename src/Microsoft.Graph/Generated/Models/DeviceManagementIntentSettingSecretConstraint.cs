@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Base entity for a constraint
+    /// </summary>
     public class DeviceManagementIntentSettingSecretConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>
-        /// Instantiates a new DeviceManagementIntentSettingSecretConstraint and sets the default values.
+        /// Instantiates a new deviceManagementIntentSettingSecretConstraint and sets the default values.
         /// </summary>
         public DeviceManagementIntentSettingSecretConstraint() : base() {
             OdataType = "#microsoft.graph.deviceManagementIntentSettingSecretConstraint";

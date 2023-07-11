@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// iOS PKCS certificate profile.
+    /// </summary>
     public class IosPkcsCertificateProfile : IosCertificateProfileBase, IParsable {
         /// <summary>Target store certificate. Possible values are: user, machine.</summary>
         public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore {
@@ -109,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosPkcsCertificateProfile and sets the default values.
+        /// Instantiates a new iosPkcsCertificateProfile and sets the default values.
         /// </summary>
         public IosPkcsCertificateProfile() : base() {
             OdataType = "#microsoft.graph.iosPkcsCertificateProfile";

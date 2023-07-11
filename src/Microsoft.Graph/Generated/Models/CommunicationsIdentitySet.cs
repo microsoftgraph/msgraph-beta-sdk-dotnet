@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CommunicationsIdentitySet and sets the default values.
+        /// Instantiates a new communicationsIdentitySet and sets the default values.
         /// </summary>
         public CommunicationsIdentitySet() : base() {
             OdataType = "#microsoft.graph.communicationsIdentitySet";

@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new TypedEmailAddress and sets the default values.
+        /// Instantiates a new typedEmailAddress and sets the default values.
         /// </summary>
         public TypedEmailAddress() : base() {
             OdataType = "#microsoft.graph.typedEmailAddress";

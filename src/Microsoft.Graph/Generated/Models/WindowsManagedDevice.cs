@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows devices that are managed or pre-enrolled through Intune
+    /// </summary>
     public class WindowsManagedDevice : ManagedDevice, IParsable {
         /// <summary>
-        /// Instantiates a new WindowsManagedDevice and sets the default values.
+        /// Instantiates a new windowsManagedDevice and sets the default values.
         /// </summary>
         public WindowsManagedDevice() : base() {
             OdataType = "#microsoft.graph.windowsManagedDevice";

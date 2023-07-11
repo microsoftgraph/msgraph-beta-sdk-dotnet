@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an iOS device
+    /// </summary>
     public class IosManagedAppProtection : TargetedManagedAppProtection, IParsable {
         /// <summary>Semicolon seperated list of device models allowed, as a string, for the managed app to work.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -200,7 +203,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("thirdPartyKeyboardsBlocked", value); }
         }
         /// <summary>
-        /// Instantiates a new IosManagedAppProtection and sets the default values.
+        /// Instantiates a new iosManagedAppProtection and sets the default values.
         /// </summary>
         public IosManagedAppProtection() : base() {
             OdataType = "#microsoft.graph.iosManagedAppProtection";

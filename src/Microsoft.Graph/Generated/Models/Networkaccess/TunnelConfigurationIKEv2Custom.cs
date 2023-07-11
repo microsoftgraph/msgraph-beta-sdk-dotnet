@@ -35,13 +35,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.PfsGroup?>("pfsGroup"); }
             set { BackingStore?.Set("pfsGroup", value); }
         }
-        /// <summary>The saLifeTimeSeconds property</summary>
+        /// <summary>a standard specifiying Security Association lifetime with recommended values from an RFC standard.</summary>
         public long? SaLifeTimeSeconds {
             get { return BackingStore?.Get<long?>("saLifeTimeSeconds"); }
             set { BackingStore?.Set("saLifeTimeSeconds", value); }
         }
         /// <summary>
-        /// Instantiates a new TunnelConfigurationIKEv2Custom and sets the default values.
+        /// Instantiates a new tunnelConfigurationIKEv2Custom and sets the default values.
         /// </summary>
         public TunnelConfigurationIKEv2Custom() : base() {
             OdataType = "#microsoft.graph.networkaccess.tunnelConfigurationIKEv2Custom";

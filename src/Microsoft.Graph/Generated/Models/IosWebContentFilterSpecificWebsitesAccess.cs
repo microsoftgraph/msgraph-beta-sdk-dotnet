@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents an iOS Web Content Filter setting base type. An empty and abstract base. Caller should use one of derived types for configurations.
+    /// </summary>
     public class IosWebContentFilterSpecificWebsitesAccess : IosWebContentFilterBase, IParsable {
         /// <summary>URL bookmarks which will be installed into built-in browser and user is only allowed to access websites through bookmarks. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosWebContentFilterSpecificWebsitesAccess and sets the default values.
+        /// Instantiates a new iosWebContentFilterSpecificWebsitesAccess and sets the default values.
         /// </summary>
         public IosWebContentFilterSpecificWebsitesAccess() : base() {
             OdataType = "#microsoft.graph.iosWebContentFilterSpecificWebsitesAccess";

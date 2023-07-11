@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ProgramResource and sets the default values.
+        /// Instantiates a new programResource and sets the default values.
         /// </summary>
         public ProgramResource() : base() {
             OdataType = "#microsoft.graph.programResource";

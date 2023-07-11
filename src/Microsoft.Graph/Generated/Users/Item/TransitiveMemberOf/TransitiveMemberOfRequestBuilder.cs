@@ -2,6 +2,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.TransitiveMemberOf.Count;
 using Microsoft.Graph.Beta.Users.Item.TransitiveMemberOf.GraphAdministrativeUnit;
+using Microsoft.Graph.Beta.Users.Item.TransitiveMemberOf.GraphDirectoryRole;
 using Microsoft.Graph.Beta.Users.Item.TransitiveMemberOf.GraphGroup;
 using Microsoft.Graph.Beta.Users.Item.TransitiveMemberOf.Item;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,6 +25,10 @@ namespace Microsoft.Graph.Beta.Users.Item.TransitiveMemberOf {
         /// <summary>Casts the previous resource to administrativeUnit.</summary>
         public GraphAdministrativeUnitRequestBuilder GraphAdministrativeUnit { get =>
             new GraphAdministrativeUnitRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to directoryRole.</summary>
+        public GraphDirectoryRoleRequestBuilder GraphDirectoryRole { get =>
+            new GraphDirectoryRoleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
         public GraphGroupRequestBuilder GraphGroup { get =>

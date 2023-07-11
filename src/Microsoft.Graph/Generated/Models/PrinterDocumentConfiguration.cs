@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("scaling", value); }
         }
         /// <summary>
-        /// Instantiates a new PrinterDocumentConfiguration and sets the default values.
+        /// Instantiates a new printerDocumentConfiguration and sets the default values.
         /// </summary>
         public PrinterDocumentConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

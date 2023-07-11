@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The home button configuration base class used to identify the available options
+    /// </summary>
     public class EdgeHomeButtonOpensCustomURL : EdgeHomeButtonConfiguration, IParsable {
         /// <summary>The specific URL to load.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EdgeHomeButtonOpensCustomURL and sets the default values.
+        /// Instantiates a new edgeHomeButtonOpensCustomURL and sets the default values.
         /// </summary>
         public EdgeHomeButtonOpensCustomURL() : base() {
             OdataType = "#microsoft.graph.edgeHomeButtonOpensCustomURL";

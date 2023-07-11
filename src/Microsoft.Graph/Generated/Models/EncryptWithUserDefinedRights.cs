@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EncryptWithUserDefinedRights and sets the default values.
+        /// Instantiates a new encryptWithUserDefinedRights and sets the default values.
         /// </summary>
         public EncryptWithUserDefinedRights() : base() {
             OdataType = "#microsoft.graph.encryptWithUserDefinedRights";

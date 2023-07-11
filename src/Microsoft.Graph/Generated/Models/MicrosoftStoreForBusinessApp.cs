@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Microsoft Store for Business Apps. This class does not support Create, Delete, or Update.
+    /// </summary>
     public class MicrosoftStoreForBusinessApp : MobileApp, IParsable {
         /// <summary>The collection of contained apps in a mobileApp acting as a package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("usedLicenseCount", value); }
         }
         /// <summary>
-        /// Instantiates a new MicrosoftStoreForBusinessApp and sets the default values.
+        /// Instantiates a new microsoftStoreForBusinessApp and sets the default values.
         /// </summary>
         public MicrosoftStoreForBusinessApp() : base() {
             OdataType = "#microsoft.graph.microsoftStoreForBusinessApp";

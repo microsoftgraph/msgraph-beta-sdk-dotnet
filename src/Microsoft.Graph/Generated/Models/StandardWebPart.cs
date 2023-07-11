@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("data", value); }
         }
 #endif
-        /// <summary>A Guid which indicates the type of the webParts</summary>
+        /// <summary>A Guid that indicates the webPart type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebPartType {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new StandardWebPart and sets the default values.
+        /// Instantiates a new standardWebPart and sets the default values.
         /// </summary>
         public StandardWebPart() : base() {
             OdataType = "#microsoft.graph.standardWebPart";

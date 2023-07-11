@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class Url : RuleDestination, IParsable {
-        /// <summary>The value property</summary>
+        /// <summary>URL Address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Url and sets the default values.
+        /// Instantiates a new url and sets the default values.
         /// </summary>
         public Url() : base() {
             OdataType = "#microsoft.graph.networkaccess.url";

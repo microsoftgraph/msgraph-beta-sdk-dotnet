@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Android For Work custom configuration
+    /// </summary>
     public class AndroidForWorkCustomConfiguration : DeviceConfiguration, IParsable {
         /// <summary>OMA settings. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidForWorkCustomConfiguration and sets the default values.
+        /// Instantiates a new androidForWorkCustomConfiguration and sets the default values.
         /// </summary>
         public AndroidForWorkCustomConfiguration() : base() {
             OdataType = "#microsoft.graph.androidForWorkCustomConfiguration";

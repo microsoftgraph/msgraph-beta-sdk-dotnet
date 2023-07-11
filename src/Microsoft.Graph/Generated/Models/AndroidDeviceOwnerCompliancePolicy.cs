@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the AndroidDeviceOwnerCompliancePolicy resource.
+    /// </summary>
     public class AndroidDeviceOwnerCompliancePolicy : DeviceCompliancePolicy, IParsable {
         /// <summary>MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.</summary>
         public DeviceThreatProtectionLevel? AdvancedThreatProtectionRequiredSecurityLevel {
@@ -143,7 +146,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidDeviceOwnerCompliancePolicy and sets the default values.
+        /// Instantiates a new androidDeviceOwnerCompliancePolicy and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerCompliancePolicy() : base() {
             OdataType = "#microsoft.graph.androidDeviceOwnerCompliancePolicy";
