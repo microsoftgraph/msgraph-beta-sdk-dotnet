@@ -7,6 +7,12 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.39.0-preview] - 2023-07-12
+
+- Fixes missing odata cast paths for `Directory Role` in `memberOf` and `transitiveMemberOf`(https://github.com/microsoftgraph/msgraph-metadata/issues/372).
+- Fixes enum member naming in `Microsoft.Graph.Models.IdentityGovernance.ValueObject` type after fix in https://github.com/microsoft/kiota/pull/2874
+- Latest metadata updates from 11th July 2023.
+
 ## [5.38.0-preview] - 2023-07-05
 
 - Fixes missing odata cast path for `roomList` in places API.
