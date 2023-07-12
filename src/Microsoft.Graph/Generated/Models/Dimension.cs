@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Dimension and sets the default values.
+        /// Instantiates a new dimension and sets the default values.
         /// </summary>
         public Dimension() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

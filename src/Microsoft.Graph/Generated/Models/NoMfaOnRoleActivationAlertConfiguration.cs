@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class NoMfaOnRoleActivationAlertConfiguration : UnifiedRoleManagementAlertConfiguration, IParsable {
         /// <summary>
-        /// Instantiates a new NoMfaOnRoleActivationAlertConfiguration and sets the default values.
+        /// Instantiates a new noMfaOnRoleActivationAlertConfiguration and sets the default values.
         /// </summary>
         public NoMfaOnRoleActivationAlertConfiguration() : base() {
             OdataType = "#microsoft.graph.noMfaOnRoleActivationAlertConfiguration";

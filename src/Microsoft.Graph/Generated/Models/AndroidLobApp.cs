@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for Android Line Of Business apps.
+    /// </summary>
     public class AndroidLobApp : MobileLobApp, IParsable {
         /// <summary>The Identity Name. This property is being deprecated in 2302(February 2023).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidLobApp and sets the default values.
+        /// Instantiates a new androidLobApp and sets the default values.
         /// </summary>
         public AndroidLobApp() : base() {
             OdataType = "#microsoft.graph.androidLobApp";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for Windows Store apps.
+    /// </summary>
     public class WindowsStoreApp : MobileApp, IParsable {
         /// <summary>The Windows app store URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsStoreApp and sets the default values.
+        /// Instantiates a new windowsStoreApp and sets the default values.
         /// </summary>
         public WindowsStoreApp() : base() {
             OdataType = "#microsoft.graph.windowsStoreApp";

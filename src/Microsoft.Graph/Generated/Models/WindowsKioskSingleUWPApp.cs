@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The class used to identify the UWP app info for the kiosk configuration
+    /// </summary>
     public class WindowsKioskSingleUWPApp : WindowsKioskAppConfiguration, IParsable {
         /// <summary>The uwpApp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsKioskSingleUWPApp and sets the default values.
+        /// Instantiates a new windowsKioskSingleUWPApp and sets the default values.
         /// </summary>
         public WindowsKioskSingleUWPApp() : base() {
             OdataType = "#microsoft.graph.windowsKioskSingleUWPApp";

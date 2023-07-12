@@ -4,14 +4,17 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties used to assign a macOS LOB app to a group.
+    /// </summary>
     public class MacOsLobAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
-        /// <summary>Whether or not to uninstall the app when device is removed from Intune.</summary>
+        /// <summary>When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune.</summary>
         public bool? UninstallOnDeviceRemoval {
             get { return BackingStore?.Get<bool?>("uninstallOnDeviceRemoval"); }
             set { BackingStore?.Set("uninstallOnDeviceRemoval", value); }
         }
         /// <summary>
-        /// Instantiates a new MacOsLobAppAssignmentSettings and sets the default values.
+        /// Instantiates a new macOsLobAppAssignmentSettings and sets the default values.
         /// </summary>
         public MacOsLobAppAssignmentSettings() : base() {
             OdataType = "#microsoft.graph.macOsLobAppAssignmentSettings";

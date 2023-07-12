@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WebAccount and sets the default values.
+        /// Instantiates a new webAccount and sets the default values.
         /// </summary>
         public WebAccount() : base() {
             OdataType = "#microsoft.graph.webAccount";

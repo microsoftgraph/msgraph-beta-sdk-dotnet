@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new GroupMembershipGovernanceCriteria and sets the default values.
+        /// Instantiates a new groupMembershipGovernanceCriteria and sets the default values.
         /// </summary>
         public GroupMembershipGovernanceCriteria() : base() {
             OdataType = "#microsoft.graph.groupMembershipGovernanceCriteria";

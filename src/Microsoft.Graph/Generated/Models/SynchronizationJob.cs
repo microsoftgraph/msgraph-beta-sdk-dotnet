@@ -5,6 +5,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class SynchronizationJob : Entity, IParsable {
+        /// <summary>The bulk upload operation for the job.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.BulkUpload? BulkUpload {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BulkUpload?>("bulkUpload"); }
+            set { BackingStore?.Set("bulkUpload", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.BulkUpload BulkUpload {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BulkUpload>("bulkUpload"); }
+            set { BackingStore?.Set("bulkUpload", value); }
+        }
+#endif
         /// <summary>Schedule used to run the job. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"bulkUpload", n => { BulkUpload = n.GetObjectValue<Microsoft.Graph.Beta.Models.BulkUpload>(Microsoft.Graph.Beta.Models.BulkUpload.CreateFromDiscriminatorValue); } },
                 {"schedule", n => { Schedule = n.GetObjectValue<SynchronizationSchedule>(SynchronizationSchedule.CreateFromDiscriminatorValue); } },
                 {"schema", n => { Schema = n.GetObjectValue<SynchronizationSchema>(SynchronizationSchema.CreateFromDiscriminatorValue); } },
                 {"status", n => { Status = n.GetObjectValue<SynchronizationStatus>(SynchronizationStatus.CreateFromDiscriminatorValue); } },
@@ -102,6 +117,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.BulkUpload>("bulkUpload", BulkUpload);
             writer.WriteObjectValue<SynchronizationSchedule>("schedule", Schedule);
             writer.WriteObjectValue<SynchronizationSchema>("schema", Schema);
             writer.WriteObjectValue<SynchronizationStatus>("status", Status);

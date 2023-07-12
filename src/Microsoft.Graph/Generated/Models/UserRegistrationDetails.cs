@@ -10,37 +10,37 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DefaultMfaMethodType?>("defaultMfaMethod"); }
             set { BackingStore?.Set("defaultMfaMethod", value); }
         }
-        /// <summary>Whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.</summary>
+        /// <summary>Indicates whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.</summary>
         public bool? IsAdmin {
             get { return BackingStore?.Get<bool?>("isAdmin"); }
             set { BackingStore?.Set("isAdmin", value); }
         }
-        /// <summary>Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).</summary>
+        /// <summary>Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).</summary>
         public bool? IsMfaCapable {
             get { return BackingStore?.Get<bool?>("isMfaCapable"); }
             set { BackingStore?.Set("isMfaCapable", value); }
         }
-        /// <summary>Whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy.  Supports $filter (eq).</summary>
+        /// <summary>Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).</summary>
         public bool? IsMfaRegistered {
             get { return BackingStore?.Get<bool?>("isMfaRegistered"); }
             set { BackingStore?.Set("isMfaRegistered", value); }
         }
-        /// <summary>Whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).</summary>
+        /// <summary>Indicates whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).</summary>
         public bool? IsPasswordlessCapable {
             get { return BackingStore?.Get<bool?>("isPasswordlessCapable"); }
             set { BackingStore?.Set("isPasswordlessCapable", value); }
         }
-        /// <summary>Whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports $filter (eq).</summary>
+        /// <summary>Indicates whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports $filter (eq).</summary>
         public bool? IsSsprCapable {
             get { return BackingStore?.Get<bool?>("isSsprCapable"); }
             set { BackingStore?.Set("isSsprCapable", value); }
         }
-        /// <summary>Whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports $filter (eq).</summary>
+        /// <summary>Indicates whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports $filter (eq).</summary>
         public bool? IsSsprEnabled {
             get { return BackingStore?.Get<bool?>("isSsprEnabled"); }
             set { BackingStore?.Set("isSsprEnabled", value); }
         }
-        /// <summary>Whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports $filter (eq).</summary>
+        /// <summary>Indicates whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports $filter (eq).</summary>
         public bool? IsSsprRegistered {
             get { return BackingStore?.Get<bool?>("isSsprRegistered"); }
             set { BackingStore?.Set("isSsprRegistered", value); }

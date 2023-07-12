@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows 10 Co-Management Authority Page Configuration
+    /// </summary>
     public class DeviceComanagementAuthorityConfiguration : DeviceEnrollmentConfiguration, IParsable {
         /// <summary>CoManagement Authority configuration ConfigurationManagerAgentCommandLineArgument</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managedDeviceAuthority", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceComanagementAuthorityConfiguration and sets the default values.
+        /// Instantiates a new deviceComanagementAuthorityConfiguration and sets the default values.
         /// </summary>
         public DeviceComanagementAuthorityConfiguration() : base() {
             OdataType = "#microsoft.graph.deviceComanagementAuthorityConfiguration";

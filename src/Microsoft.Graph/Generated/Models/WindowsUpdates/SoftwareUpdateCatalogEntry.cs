@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class SoftwareUpdateCatalogEntry : CatalogEntry, IParsable {
         /// <summary>
-        /// Instantiates a new SoftwareUpdateCatalogEntry and sets the default values.
+        /// Instantiates a new softwareUpdateCatalogEntry and sets the default values.
         /// </summary>
         public SoftwareUpdateCatalogEntry() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.softwareUpdateCatalogEntry";

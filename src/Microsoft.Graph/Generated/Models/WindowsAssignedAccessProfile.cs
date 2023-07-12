@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Assigned Access profile for Windows.
+    /// </summary>
     public class WindowsAssignedAccessProfile : Entity, IParsable {
         /// <summary>These are the only Windows Store Apps that will be available to launch from the Start menu.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AllDomains : ValidatingDomains, IParsable {
         /// <summary>
-        /// Instantiates a new AllDomains and sets the default values.
+        /// Instantiates a new allDomains and sets the default values.
         /// </summary>
         public AllDomains() : base() {
             OdataType = "#microsoft.graph.allDomains";

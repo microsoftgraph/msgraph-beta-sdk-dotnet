@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new TrainingNotificationSetting and sets the default values.
+        /// Instantiates a new trainingNotificationSetting and sets the default values.
         /// </summary>
         public TrainingNotificationSetting() : base() {
             OdataType = "#microsoft.graph.trainingNotificationSetting";

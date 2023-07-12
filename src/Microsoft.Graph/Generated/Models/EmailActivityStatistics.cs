@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sentEmail", value); }
         }
         /// <summary>
-        /// Instantiates a new EmailActivityStatistics and sets the default values.
+        /// Instantiates a new emailActivityStatistics and sets the default values.
         /// </summary>
         public EmailActivityStatistics() : base() {
             OdataType = "#microsoft.graph.emailActivityStatistics";

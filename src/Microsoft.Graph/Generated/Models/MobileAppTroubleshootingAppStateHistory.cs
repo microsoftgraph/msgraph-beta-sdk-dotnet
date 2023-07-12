@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// History Item contained in the Mobile App Troubleshooting Event.
+    /// </summary>
     public class MobileAppTroubleshootingAppStateHistory : MobileAppTroubleshootingHistoryItem, IParsable {
         /// <summary>Defines the Action Types for an Intune Application.</summary>
         public MobileAppActionType? ActionType {

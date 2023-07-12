@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Android Work Profile SCEP certificate profile
+    /// </summary>
     public class AndroidWorkProfileScepCertificateProfile : AndroidWorkProfileCertificateProfileBase, IParsable {
         /// <summary>Target store certificate. Possible values are: user, machine.</summary>
         public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore {
@@ -96,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidWorkProfileScepCertificateProfile and sets the default values.
+        /// Instantiates a new androidWorkProfileScepCertificateProfile and sets the default values.
         /// </summary>
         public AndroidWorkProfileScepCertificateProfile() : base() {
             OdataType = "#microsoft.graph.androidWorkProfileScepCertificateProfile";

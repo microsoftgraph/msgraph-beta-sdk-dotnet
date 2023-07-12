@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
     public class RoleReferenceValue : ReferenceValue, IParsable {
         /// <summary>
-        /// Instantiates a new RoleReferenceValue and sets the default values.
+        /// Instantiates a new roleReferenceValue and sets the default values.
         /// </summary>
         public RoleReferenceValue() : base() {
             OdataType = "#microsoft.graph.industryData.roleReferenceValue";

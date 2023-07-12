@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains product code and version properties to detect a Win32 App
+    /// </summary>
     public class Win32LobAppProductCodeDetection : Win32LobAppDetection, IParsable {
         /// <summary>The product code of Win32 Line of Business (LoB) app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("productVersionOperator", value); }
         }
         /// <summary>
-        /// Instantiates a new Win32LobAppProductCodeDetection and sets the default values.
+        /// Instantiates a new win32LobAppProductCodeDetection and sets the default values.
         /// </summary>
         public Win32LobAppProductCodeDetection() : base() {
             OdataType = "#microsoft.graph.win32LobAppProductCodeDetection";

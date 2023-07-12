@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class WindowsUpdateFilter : SoftwareUpdateFilter, IParsable {
         /// <summary>
-        /// Instantiates a new WindowsUpdateFilter and sets the default values.
+        /// Instantiates a new windowsUpdateFilter and sets the default values.
         /// </summary>
         public WindowsUpdateFilter() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.windowsUpdateFilter";

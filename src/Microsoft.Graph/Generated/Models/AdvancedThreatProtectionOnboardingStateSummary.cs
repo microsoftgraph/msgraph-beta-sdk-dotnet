@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows defender advanced threat protection onboarding state summary across the account.
+    /// </summary>
     public class AdvancedThreatProtectionOnboardingStateSummary : Entity, IParsable {
         /// <summary>Not yet documented</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

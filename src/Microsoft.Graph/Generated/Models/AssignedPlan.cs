@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("servicePlanId", value); }
         }
         /// <summary>
-        /// Instantiates a new AssignedPlan and sets the default values.
+        /// Instantiates a new assignedPlan and sets the default values.
         /// </summary>
         public AssignedPlan() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

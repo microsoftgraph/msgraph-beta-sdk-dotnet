@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new SubjectRightsRequestEnumeratedMailboxLocation and sets the default values.
+        /// Instantiates a new subjectRightsRequestEnumeratedMailboxLocation and sets the default values.
         /// </summary>
         public SubjectRightsRequestEnumeratedMailboxLocation() : base() {
             OdataType = "#microsoft.graph.subjectRightsRequestEnumeratedMailboxLocation";

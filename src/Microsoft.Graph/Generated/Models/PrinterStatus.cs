@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new PrinterStatus and sets the default values.
+        /// Instantiates a new printerStatus and sets the default values.
         /// </summary>
         public PrinterStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

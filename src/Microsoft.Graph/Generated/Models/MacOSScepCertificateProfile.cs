@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Mac OS SCEP certificate profile.
+    /// </summary>
     public class MacOSScepCertificateProfile : MacOSCertificateProfileBase, IParsable {
         /// <summary>AllowAllAppsAccess setting</summary>
         public bool? AllowAllAppsAccess {
@@ -129,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MacOSScepCertificateProfile and sets the default values.
+        /// Instantiates a new macOSScepCertificateProfile and sets the default values.
         /// </summary>
         public MacOSScepCertificateProfile() : base() {
             OdataType = "#microsoft.graph.macOSScepCertificateProfile";

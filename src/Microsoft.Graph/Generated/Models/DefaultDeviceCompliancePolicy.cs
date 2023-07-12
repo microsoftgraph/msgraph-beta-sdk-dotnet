@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Default device compliance policy rules that are enforced account wide.
+    /// </summary>
     public class DefaultDeviceCompliancePolicy : DeviceCompliancePolicy, IParsable {
         /// <summary>
-        /// Instantiates a new DefaultDeviceCompliancePolicy and sets the default values.
+        /// Instantiates a new defaultDeviceCompliancePolicy and sets the default values.
         /// </summary>
         public DefaultDeviceCompliancePolicy() : base() {
             OdataType = "#microsoft.graph.defaultDeviceCompliancePolicy";

@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ProjectParticipation and sets the default values.
+        /// Instantiates a new projectParticipation and sets the default values.
         /// </summary>
         public ProjectParticipation() : base() {
             OdataType = "#microsoft.graph.projectParticipation";

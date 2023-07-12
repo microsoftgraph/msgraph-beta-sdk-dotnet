@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EducationSynchronizationOAuth2ClientCredentialsConnectionSettings and sets the default values.
+        /// Instantiates a new educationSynchronizationOAuth2ClientCredentialsConnectionSettings and sets the default values.
         /// </summary>
         public EducationSynchronizationOAuth2ClientCredentialsConnectionSettings() : base() {
             OdataType = "#microsoft.graph.educationSynchronizationOAuth2ClientCredentialsConnectionSettings";

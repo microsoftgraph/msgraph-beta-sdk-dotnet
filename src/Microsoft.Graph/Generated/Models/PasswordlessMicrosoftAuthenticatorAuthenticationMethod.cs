@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PasswordlessMicrosoftAuthenticatorAuthenticationMethod and sets the default values.
+        /// Instantiates a new passwordlessMicrosoftAuthenticatorAuthenticationMethod and sets the default values.
         /// </summary>
         public PasswordlessMicrosoftAuthenticatorAuthenticationMethod() : base() {
             OdataType = "#microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod";

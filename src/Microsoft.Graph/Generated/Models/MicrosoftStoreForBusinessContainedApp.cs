@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A class that represents a contained app of a MicrosoftStoreForBusinessApp.
+    /// </summary>
     public class MicrosoftStoreForBusinessContainedApp : MobileContainedApp, IParsable {
         /// <summary>The app user model ID of the contained app of a MicrosoftStoreForBusinessApp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MicrosoftStoreForBusinessContainedApp and sets the default values.
+        /// Instantiates a new microsoftStoreForBusinessContainedApp and sets the default values.
         /// </summary>
         public MicrosoftStoreForBusinessContainedApp() : base() {
             OdataType = "#microsoft.graph.microsoftStoreForBusinessContainedApp";

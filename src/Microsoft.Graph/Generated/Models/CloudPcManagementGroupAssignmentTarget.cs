@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CloudPcManagementGroupAssignmentTarget and sets the default values.
+        /// Instantiates a new cloudPcManagementGroupAssignmentTarget and sets the default values.
         /// </summary>
         public CloudPcManagementGroupAssignmentTarget() : base() {
             OdataType = "#microsoft.graph.cloudPcManagementGroupAssignmentTarget";

@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
     public class UserMatchTargetReferenceValue : ReferenceValue, IParsable {
         /// <summary>
-        /// Instantiates a new UserMatchTargetReferenceValue and sets the default values.
+        /// Instantiates a new userMatchTargetReferenceValue and sets the default values.
         /// </summary>
         public UserMatchTargetReferenceValue() : base() {
             OdataType = "#microsoft.graph.industryData.userMatchTargetReferenceValue";

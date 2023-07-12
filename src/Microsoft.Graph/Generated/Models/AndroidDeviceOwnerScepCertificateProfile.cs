@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Android Device Owner SCEP certificate profile
+    /// </summary>
     public class AndroidDeviceOwnerScepCertificateProfile : AndroidDeviceOwnerCertificateProfileBase, IParsable {
         /// <summary>Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.</summary>
         public AndroidDeviceOwnerCertificateAccessType? CertificateAccessType {
@@ -115,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidDeviceOwnerScepCertificateProfile and sets the default values.
+        /// Instantiates a new androidDeviceOwnerScepCertificateProfile and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerScepCertificateProfile() : base() {
             OdataType = "#microsoft.graph.androidDeviceOwnerScepCertificateProfile";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Constraint enforcing the permitted value range for an integer setting
+    /// </summary>
     public class DeviceManagementSettingIntegerConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>The maximum permitted value</summary>
         public int? MaximumValue {
@@ -16,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("minimumValue", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementSettingIntegerConstraint and sets the default values.
+        /// Instantiates a new deviceManagementSettingIntegerConstraint and sets the default values.
         /// </summary>
         public DeviceManagementSettingIntegerConstraint() : base() {
             OdataType = "#microsoft.graph.deviceManagementSettingIntegerConstraint";

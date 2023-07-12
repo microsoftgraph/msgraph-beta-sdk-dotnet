@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A class containing the properties used for device management script PolicySetItem.
+    /// </summary>
     public class DeviceManagementScriptPolicySetItem : PolicySetItem, IParsable {
         /// <summary>
-        /// Instantiates a new DeviceManagementScriptPolicySetItem and sets the default values.
+        /// Instantiates a new deviceManagementScriptPolicySetItem and sets the default values.
         /// </summary>
         public DeviceManagementScriptPolicySetItem() : base() {
             OdataType = "#microsoft.graph.deviceManagementScriptPolicySetItem";

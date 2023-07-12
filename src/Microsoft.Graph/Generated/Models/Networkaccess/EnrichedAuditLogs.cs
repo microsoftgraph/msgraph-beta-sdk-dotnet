@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class EnrichedAuditLogs : Entity, IParsable {
-        /// <summary>The exchange property</summary>
+        /// <summary>Exchange Online enriched audit logs settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EnrichedAuditLogsSettings? Exchange {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("exchange", value); }
         }
 #endif
-        /// <summary>The sharepoint property</summary>
+        /// <summary>SharePoint Online enriched audit logs settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EnrichedAuditLogsSettings? Sharepoint {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("sharepoint", value); }
         }
 #endif
-        /// <summary>The teams property</summary>
+        /// <summary>Teams enriched audit logs settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EnrichedAuditLogsSettings? Teams {

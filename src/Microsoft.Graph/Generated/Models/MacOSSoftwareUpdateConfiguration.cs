@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// MacOS Software Update Configuration
+    /// </summary>
     public class MacOSSoftwareUpdateConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Update behavior options for macOS software updates.</summary>
         public MacOSSoftwareUpdateBehavior? AllOtherUpdateBehavior {
@@ -60,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("updateTimeWindowUtcOffsetInMinutes", value); }
         }
         /// <summary>
-        /// Instantiates a new MacOSSoftwareUpdateConfiguration and sets the default values.
+        /// Instantiates a new macOSSoftwareUpdateConfiguration and sets the default values.
         /// </summary>
         public MacOSSoftwareUpdateConfiguration() : base() {
             OdataType = "#microsoft.graph.macOSSoftwareUpdateConfiguration";

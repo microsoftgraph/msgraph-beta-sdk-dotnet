@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ExternalMeetingRegistration : MeetingRegistrationBase, IParsable {
         /// <summary>
-        /// Instantiates a new ExternalMeetingRegistration and sets the default values.
+        /// Instantiates a new externalMeetingRegistration and sets the default values.
         /// </summary>
         public ExternalMeetingRegistration() : base() {
             OdataType = "#microsoft.graph.externalMeetingRegistration";

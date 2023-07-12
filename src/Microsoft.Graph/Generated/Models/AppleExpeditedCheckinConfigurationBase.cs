@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Experimental profile to increase the rate of device check-ins per day of iOS/macOS devices. This profile type is deprecated.
+    /// </summary>
     public class AppleExpeditedCheckinConfigurationBase : DeviceConfiguration, IParsable {
         /// <summary>Gets or sets whether to enable expedited device check-ins.</summary>
         public bool? EnableExpeditedCheckin {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("enableExpeditedCheckin", value); }
         }
         /// <summary>
-        /// Instantiates a new AppleExpeditedCheckinConfigurationBase and sets the default values.
+        /// Instantiates a new appleExpeditedCheckinConfigurationBase and sets the default values.
         /// </summary>
         public AppleExpeditedCheckinConfigurationBase() : base() {
             OdataType = "#microsoft.graph.appleExpeditedCheckinConfigurationBase";

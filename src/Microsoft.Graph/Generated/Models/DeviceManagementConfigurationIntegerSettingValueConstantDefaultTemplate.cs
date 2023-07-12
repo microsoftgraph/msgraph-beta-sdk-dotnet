@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Integer Setting Value Constant Default Template
+    /// </summary>
     public class DeviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate : DeviceManagementConfigurationIntegerSettingValueDefaultTemplate, IParsable {
         /// <summary>Default Constant Value. Valid values -2147483648 to 2147483647</summary>
         public int? ConstantValue {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("constantValue", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate and sets the default values.
+        /// Instantiates a new deviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate() : base() {
             OdataType = "#microsoft.graph.deviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate";

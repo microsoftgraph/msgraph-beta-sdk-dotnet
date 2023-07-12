@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new StatusDetails and sets the default values.
+        /// Instantiates a new statusDetails and sets the default values.
         /// </summary>
         public StatusDetails() : base() {
             OdataType = "#microsoft.graph.statusDetails";

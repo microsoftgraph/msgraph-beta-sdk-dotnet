@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The depEnrollmentProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.
+    /// </summary>
     public class DepEnrollmentProfile : EnrollmentProfile, IParsable {
         /// <summary>Indicates if Apple id setup pane is disabled</summary>
         public bool? AppleIdDisabled {
@@ -153,7 +156,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("zoomDisabled", value); }
         }
         /// <summary>
-        /// Instantiates a new DepEnrollmentProfile and sets the default values.
+        /// Instantiates a new depEnrollmentProfile and sets the default values.
         /// </summary>
         public DepEnrollmentProfile() : base() {
             OdataType = "#microsoft.graph.depEnrollmentProfile";

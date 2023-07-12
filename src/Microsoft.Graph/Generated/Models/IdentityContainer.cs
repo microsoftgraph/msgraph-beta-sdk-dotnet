@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IdentityContainer and sets the default values.
+        /// Instantiates a new identityContainer and sets the default values.
         /// </summary>
         public IdentityContainer() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

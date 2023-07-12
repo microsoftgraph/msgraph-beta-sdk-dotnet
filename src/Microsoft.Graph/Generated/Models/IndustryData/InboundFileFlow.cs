@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
     public class InboundFileFlow : InboundFlow, IParsable {
         /// <summary>
-        /// Instantiates a new InboundFileFlow and sets the default values.
+        /// Instantiates a new inboundFileFlow and sets the default values.
         /// </summary>
         public InboundFileFlow() : base() {
             OdataType = "#microsoft.graph.industryData.inboundFileFlow";

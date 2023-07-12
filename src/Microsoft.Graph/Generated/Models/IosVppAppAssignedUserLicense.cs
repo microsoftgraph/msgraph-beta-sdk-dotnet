@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// iOS Volume Purchase Program user license assignment. This class does not support Create, Delete, or Update.
+    /// </summary>
     public class IosVppAppAssignedUserLicense : IosVppAppAssignedLicense, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

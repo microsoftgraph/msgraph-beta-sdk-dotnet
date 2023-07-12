@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents an ADMX listBox element and an ADMX list element.
+    /// </summary>
     public class GroupPolicyPresentationListBox : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>If this option is specified true the user must specify the registry subkey value and the registry subkey name. The list box shows two columns, one for the name and one for the data. The default value is false.</summary>
         public bool? ExplicitValue {
@@ -25,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new GroupPolicyPresentationListBox and sets the default values.
+        /// Instantiates a new groupPolicyPresentationListBox and sets the default values.
         /// </summary>
         public GroupPolicyPresentationListBox() : base() {
             OdataType = "#microsoft.graph.groupPolicyPresentationListBox";

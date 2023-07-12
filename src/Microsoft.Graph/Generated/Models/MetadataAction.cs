@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MetadataAction and sets the default values.
+        /// Instantiates a new metadataAction and sets the default values.
         /// </summary>
         public MetadataAction() : base() {
             OdataType = "#microsoft.graph.metadataAction";

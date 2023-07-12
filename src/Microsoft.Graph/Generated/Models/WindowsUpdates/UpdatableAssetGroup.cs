@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
 #endif
         /// <summary>
-        /// Instantiates a new UpdatableAssetGroup and sets the default values.
+        /// Instantiates a new updatableAssetGroup and sets the default values.
         /// </summary>
         public UpdatableAssetGroup() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.updatableAssetGroup";

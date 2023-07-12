@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("margin", value); }
         }
         /// <summary>
-        /// Instantiates a new AddFooter and sets the default values.
+        /// Instantiates a new addFooter and sets the default values.
         /// </summary>
         public AddFooter() : base() {
             OdataType = "#microsoft.graph.addFooter";

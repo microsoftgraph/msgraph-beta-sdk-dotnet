@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Base VPN Configuration profile.
+    /// </summary>
     public class VpnConfiguration : DeviceConfiguration, IParsable {
         /// <summary>VPN Authentication Method.</summary>
         public VpnAuthenticationMethod? AuthenticationMethod {
@@ -67,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new VpnConfiguration and sets the default values.
+        /// Instantiates a new vpnConfiguration and sets the default values.
         /// </summary>
         public VpnConfiguration() : base() {
             OdataType = "#microsoft.graph.vpnConfiguration";

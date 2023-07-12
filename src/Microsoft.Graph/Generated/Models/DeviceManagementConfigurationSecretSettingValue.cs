@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Graph model for a secret setting value
+    /// </summary>
     public class DeviceManagementConfigurationSecretSettingValue : DeviceManagementConfigurationSimpleSettingValue, IParsable {
         /// <summary>Value of the secret setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -25,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("valueState", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementConfigurationSecretSettingValue and sets the default values.
+        /// Instantiates a new deviceManagementConfigurationSecretSettingValue and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationSecretSettingValue() : base() {
             OdataType = "#microsoft.graph.deviceManagementConfigurationSecretSettingValue";

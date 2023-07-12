@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// By providing the configurations in this profile you can instruct the Android device to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
+    /// </summary>
     public class AndroidVpnConfiguration : DeviceConfiguration, IParsable {
         /// <summary>VPN Authentication Method.</summary>
         public VpnAuthenticationMethod? AuthenticationMethod {
@@ -128,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidVpnConfiguration and sets the default values.
+        /// Instantiates a new androidVpnConfiguration and sets the default values.
         /// </summary>
         public AndroidVpnConfiguration() : base() {
             OdataType = "#microsoft.graph.androidVpnConfiguration";

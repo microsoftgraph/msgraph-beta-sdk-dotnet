@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Android certificate profile base.
+    /// </summary>
     public class AndroidCertificateProfileBase : DeviceConfiguration, IParsable {
         /// <summary>Certificate Validity Period Options.</summary>
         public Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodScale {
@@ -59,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("subjectNameFormat", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidCertificateProfileBase and sets the default values.
+        /// Instantiates a new androidCertificateProfileBase and sets the default values.
         /// </summary>
         public AndroidCertificateProfileBase() : base() {
             OdataType = "#microsoft.graph.androidCertificateProfileBase";

@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("postingDate", value); }
         }
         /// <summary>
-        /// Instantiates a new CustomerPayment and sets the default values.
+        /// Instantiates a new customerPayment and sets the default values.
         /// </summary>
         public CustomerPayment() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

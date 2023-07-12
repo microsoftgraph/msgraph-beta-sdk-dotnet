@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class IncludeAllAccountTargetContent : AccountTargetContent, IParsable {
         /// <summary>
-        /// Instantiates a new IncludeAllAccountTargetContent and sets the default values.
+        /// Instantiates a new includeAllAccountTargetContent and sets the default values.
         /// </summary>
         public IncludeAllAccountTargetContent() : base() {
             OdataType = "#microsoft.graph.includeAllAccountTargetContent";

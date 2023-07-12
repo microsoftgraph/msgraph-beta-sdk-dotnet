@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EdiscoveryHoldPolicy and sets the default values.
+        /// Instantiates a new ediscoveryHoldPolicy and sets the default values.
         /// </summary>
         public EdiscoveryHoldPolicy() : base() {
             OdataType = "#microsoft.graph.security.ediscoveryHoldPolicy";

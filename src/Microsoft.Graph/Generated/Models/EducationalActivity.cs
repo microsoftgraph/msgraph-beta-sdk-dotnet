@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("startMonthYear", value); }
         }
         /// <summary>
-        /// Instantiates a new EducationalActivity and sets the default values.
+        /// Instantiates a new educationalActivity and sets the default values.
         /// </summary>
         public EducationalActivity() : base() {
             OdataType = "#microsoft.graph.educationalActivity";

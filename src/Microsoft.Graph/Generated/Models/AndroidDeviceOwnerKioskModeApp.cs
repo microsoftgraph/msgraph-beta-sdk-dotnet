@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// An application on the Android Device Owner Managed Home Screen
+    /// </summary>
     public class AndroidDeviceOwnerKioskModeApp : AndroidDeviceOwnerKioskModeFolderItem, IParsable {
         /// <summary>Class name of application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidDeviceOwnerKioskModeApp and sets the default values.
+        /// Instantiates a new androidDeviceOwnerKioskModeApp and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerKioskModeApp() : base() {
             OdataType = "#microsoft.graph.androidDeviceOwnerKioskModeApp";

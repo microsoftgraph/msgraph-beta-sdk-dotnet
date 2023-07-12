@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties used to assign an iOS Store mobile app to a group.
+    /// </summary>
     public class IosStoreAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
         /// <summary>When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.</summary>
         public bool? IsRemovable {
@@ -35,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosStoreAppAssignmentSettings and sets the default values.
+        /// Instantiates a new iosStoreAppAssignmentSettings and sets the default values.
         /// </summary>
         public IosStoreAppAssignmentSettings() : base() {
             OdataType = "#microsoft.graph.iosStoreAppAssignmentSettings";

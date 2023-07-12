@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// This class contains compliance settings for Windows 10 Mobile.
+    /// </summary>
     public class Windows10MobileCompliancePolicy : DeviceCompliancePolicy, IParsable {
         /// <summary>Require active firewall on Windows devices.</summary>
         public bool? ActiveFirewallRequired {
@@ -123,7 +126,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Windows10MobileCompliancePolicy and sets the default values.
+        /// Instantiates a new windows10MobileCompliancePolicy and sets the default values.
         /// </summary>
         public Windows10MobileCompliancePolicy() : base() {
             OdataType = "#microsoft.graph.windows10MobileCompliancePolicy";

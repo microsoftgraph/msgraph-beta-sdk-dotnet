@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
     public class FileDataConnector : IndustryDataConnector, IParsable {
         /// <summary>
-        /// Instantiates a new FileDataConnector and sets the default values.
+        /// Instantiates a new fileDataConnector and sets the default values.
         /// </summary>
         public FileDataConnector() : base() {
             OdataType = "#microsoft.graph.industryData.fileDataConnector";

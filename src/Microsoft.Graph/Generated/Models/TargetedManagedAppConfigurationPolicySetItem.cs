@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A class containing the properties used for Targeted managed app configuration PolicySetItem.
+    /// </summary>
     public class TargetedManagedAppConfigurationPolicySetItem : PolicySetItem, IParsable {
         /// <summary>
-        /// Instantiates a new TargetedManagedAppConfigurationPolicySetItem and sets the default values.
+        /// Instantiates a new targetedManagedAppConfigurationPolicySetItem and sets the default values.
         /// </summary>
         public TargetedManagedAppConfigurationPolicySetItem() : base() {
             OdataType = "#microsoft.graph.targetedManagedAppConfigurationPolicySetItem";

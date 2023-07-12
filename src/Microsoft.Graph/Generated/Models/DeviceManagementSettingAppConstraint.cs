@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Constraint enforcing the setting contains only vaild app types.
+    /// </summary>
     public class DeviceManagementSettingAppConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>Acceptable app types to allow for this setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeviceManagementSettingAppConstraint and sets the default values.
+        /// Instantiates a new deviceManagementSettingAppConstraint and sets the default values.
         /// </summary>
         public DeviceManagementSettingAppConstraint() : base() {
             OdataType = "#microsoft.graph.deviceManagementSettingAppConstraint";

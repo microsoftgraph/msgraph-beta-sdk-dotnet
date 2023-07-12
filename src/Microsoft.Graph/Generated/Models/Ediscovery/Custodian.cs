@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Custodian and sets the default values.
+        /// Instantiates a new custodian and sets the default values.
         /// </summary>
         public Custodian() : base() {
             OdataType = "#microsoft.graph.ediscovery.custodian";

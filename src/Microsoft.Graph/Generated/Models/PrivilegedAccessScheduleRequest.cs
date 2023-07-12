@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PrivilegedAccessScheduleRequest and sets the default values.
+        /// Instantiates a new privilegedAccessScheduleRequest and sets the default values.
         /// </summary>
         public PrivilegedAccessScheduleRequest() : base() {
             OdataType = "#microsoft.graph.privilegedAccessScheduleRequest";

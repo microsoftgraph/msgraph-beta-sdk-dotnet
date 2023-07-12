@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class NoTrainingSetting : TrainingSetting, IParsable {
         /// <summary>
-        /// Instantiates a new NoTrainingSetting and sets the default values.
+        /// Instantiates a new noTrainingSetting and sets the default values.
         /// </summary>
         public NoTrainingSetting() : base() {
             OdataType = "#microsoft.graph.noTrainingSetting";

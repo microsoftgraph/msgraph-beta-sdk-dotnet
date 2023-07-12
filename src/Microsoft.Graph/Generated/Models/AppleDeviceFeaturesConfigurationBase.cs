@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Apple device features configuration profile.
+    /// </summary>
     public class AppleDeviceFeaturesConfigurationBase : DeviceConfiguration, IParsable {
         /// <summary>An array of AirPrint printers that should always be shown. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AppleDeviceFeaturesConfigurationBase and sets the default values.
+        /// Instantiates a new appleDeviceFeaturesConfigurationBase and sets the default values.
         /// </summary>
         public AppleDeviceFeaturesConfigurationBase() : base() {
             OdataType = "#microsoft.graph.appleDeviceFeaturesConfigurationBase";

@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CommunicationsPhoneIdentity : Identity, IParsable {
         /// <summary>
-        /// Instantiates a new CommunicationsPhoneIdentity and sets the default values.
+        /// Instantiates a new communicationsPhoneIdentity and sets the default values.
         /// </summary>
         public CommunicationsPhoneIdentity() : base() {
             OdataType = "#microsoft.graph.communicationsPhoneIdentity";

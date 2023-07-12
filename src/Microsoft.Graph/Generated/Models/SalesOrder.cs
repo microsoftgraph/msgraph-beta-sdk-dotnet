@@ -389,7 +389,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("totalTaxAmount", value); }
         }
         /// <summary>
-        /// Instantiates a new SalesOrder and sets the default values.
+        /// Instantiates a new salesOrder and sets the default values.
         /// </summary>
         public SalesOrder() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

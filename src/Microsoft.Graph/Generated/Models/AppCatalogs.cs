@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AppCatalogs and sets the default values.
+        /// Instantiates a new appCatalogs and sets the default values.
         /// </summary>
         public AppCatalogs() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

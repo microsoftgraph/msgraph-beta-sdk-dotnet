@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows 10 Desktop and Mobile PKCS certificate profile
+    /// </summary>
     public class Windows10PkcsCertificateProfile : Windows10CertificateProfileBase, IParsable {
         /// <summary>Target store certificate. Possible values are: user, machine.</summary>
         public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore {
@@ -123,7 +126,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Windows10PkcsCertificateProfile and sets the default values.
+        /// Instantiates a new windows10PkcsCertificateProfile and sets the default values.
         /// </summary>
         public Windows10PkcsCertificateProfile() : base() {
             OdataType = "#microsoft.graph.windows10PkcsCertificateProfile";

@@ -13,37 +13,37 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isBingImageSearchEnabled property</summary>
+        /// <summary>Controls whether users can add images from Bing to forms.</summary>
         public bool? IsBingImageSearchEnabled {
             get { return BackingStore?.Get<bool?>("isBingImageSearchEnabled"); }
             set { BackingStore?.Set("isBingImageSearchEnabled", value); }
         }
-        /// <summary>The isExternalSendFormEnabled property</summary>
+        /// <summary>Controls whether users can send a link to a form to an external user.</summary>
         public bool? IsExternalSendFormEnabled {
             get { return BackingStore?.Get<bool?>("isExternalSendFormEnabled"); }
             set { BackingStore?.Set("isExternalSendFormEnabled", value); }
         }
-        /// <summary>The isExternalShareCollaborationEnabled property</summary>
+        /// <summary>Controls whether users can collaborate on a form layout and structure with an external user.</summary>
         public bool? IsExternalShareCollaborationEnabled {
             get { return BackingStore?.Get<bool?>("isExternalShareCollaborationEnabled"); }
             set { BackingStore?.Set("isExternalShareCollaborationEnabled", value); }
         }
-        /// <summary>The isExternalShareResultEnabled property</summary>
+        /// <summary>Controls whether users can share form results with external users.</summary>
         public bool? IsExternalShareResultEnabled {
             get { return BackingStore?.Get<bool?>("isExternalShareResultEnabled"); }
             set { BackingStore?.Set("isExternalShareResultEnabled", value); }
         }
-        /// <summary>The isExternalShareTemplateEnabled property</summary>
+        /// <summary>Controls whether users can share form templates with external users.</summary>
         public bool? IsExternalShareTemplateEnabled {
             get { return BackingStore?.Get<bool?>("isExternalShareTemplateEnabled"); }
             set { BackingStore?.Set("isExternalShareTemplateEnabled", value); }
         }
-        /// <summary>The isInOrgFormsPhishingScanEnabled property</summary>
+        /// <summary>Controls whether phishing protection is run on forms created by users, blocking the creation of forms if common phishing questions are detected.</summary>
         public bool? IsInOrgFormsPhishingScanEnabled {
             get { return BackingStore?.Get<bool?>("isInOrgFormsPhishingScanEnabled"); }
             set { BackingStore?.Set("isInOrgFormsPhishingScanEnabled", value); }
         }
-        /// <summary>The isRecordIdentityByDefaultEnabled property</summary>
+        /// <summary>Controls whether the names of users who fill out forms are recorded.</summary>
         public bool? IsRecordIdentityByDefaultEnabled {
             get { return BackingStore?.Get<bool?>("isRecordIdentityByDefaultEnabled"); }
             set { BackingStore?.Set("isRecordIdentityByDefaultEnabled", value); }
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new FormsSettings and sets the default values.
+        /// Instantiates a new formsSettings and sets the default values.
         /// </summary>
         public FormsSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CustomAppScope and sets the default values.
+        /// Instantiates a new customAppScope and sets the default values.
         /// </summary>
         public CustomAppScope() : base() {
             OdataType = "#microsoft.graph.customAppScope";

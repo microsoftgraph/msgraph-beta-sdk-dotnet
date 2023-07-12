@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EducationSynchronizationCustomizations and sets the default values.
+        /// Instantiates a new educationSynchronizationCustomizations and sets the default values.
         /// </summary>
         public EducationSynchronizationCustomizations() : base() {
             OdataType = "#microsoft.graph.educationSynchronizationCustomizations";

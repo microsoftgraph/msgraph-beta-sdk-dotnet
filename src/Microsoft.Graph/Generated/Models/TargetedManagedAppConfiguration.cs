@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Configuration used to deliver a set of custom settings as-is to all users in the targeted security group
+    /// </summary>
     public class TargetedManagedAppConfiguration : ManagedAppConfiguration, IParsable {
         /// <summary>Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps</summary>
         public TargetedManagedAppGroupType? AppGroupType {
@@ -68,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("targetedAppManagementLevels", value); }
         }
         /// <summary>
-        /// Instantiates a new TargetedManagedAppConfiguration and sets the default values.
+        /// Instantiates a new targetedManagedAppConfiguration and sets the default values.
         /// </summary>
         public TargetedManagedAppConfiguration() : base() {
             OdataType = "#microsoft.graph.targetedManagedAppConfiguration";

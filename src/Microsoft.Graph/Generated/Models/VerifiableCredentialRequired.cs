@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new VerifiableCredentialRequired and sets the default values.
+        /// Instantiates a new verifiableCredentialRequired and sets the default values.
         /// </summary>
         public VerifiableCredentialRequired() : base() {
             OdataType = "#microsoft.graph.verifiableCredentialRequired";

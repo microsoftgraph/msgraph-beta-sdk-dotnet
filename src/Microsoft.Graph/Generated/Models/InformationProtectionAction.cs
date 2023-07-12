@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new InformationProtectionAction and sets the default values.
+        /// Instantiates a new informationProtectionAction and sets the default values.
         /// </summary>
         public InformationProtectionAction() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

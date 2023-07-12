@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Android SCEP certificate profile
+    /// </summary>
     public class AndroidScepCertificateProfile : AndroidCertificateProfileBase, IParsable {
         /// <summary>Hash Algorithm Options.</summary>
         public HashAlgorithms? HashAlgorithm {
@@ -77,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidScepCertificateProfile and sets the default values.
+        /// Instantiates a new androidScepCertificateProfile and sets the default values.
         /// </summary>
         public AndroidScepCertificateProfile() : base() {
             OdataType = "#microsoft.graph.androidScepCertificateProfile";

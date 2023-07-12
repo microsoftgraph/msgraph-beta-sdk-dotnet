@@ -431,7 +431,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("totalTaxAmount", value); }
         }
         /// <summary>
-        /// Instantiates a new SalesInvoice and sets the default values.
+        /// Instantiates a new salesInvoice and sets the default values.
         /// </summary>
         public SalesInvoice() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

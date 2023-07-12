@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Financials and sets the default values.
+        /// Instantiates a new financials and sets the default values.
         /// </summary>
         public Financials() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class InternalSponsors : UserSet, IParsable {
         /// <summary>
-        /// Instantiates a new InternalSponsors and sets the default values.
+        /// Instantiates a new internalSponsors and sets the default values.
         /// </summary>
         public InternalSponsors() : base() {
             OdataType = "#microsoft.graph.internalSponsors";

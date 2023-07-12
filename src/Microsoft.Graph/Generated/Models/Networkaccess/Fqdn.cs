@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class Fqdn : RuleDestination, IParsable {
-        /// <summary>The value property</summary>
+        /// <summary>Defines the FQDN used in a destination for a rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Fqdn and sets the default values.
+        /// Instantiates a new fqdn and sets the default values.
         /// </summary>
         public Fqdn() : base() {
             OdataType = "#microsoft.graph.networkaccess.fqdn";

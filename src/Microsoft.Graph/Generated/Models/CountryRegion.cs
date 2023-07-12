@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CountryRegion and sets the default values.
+        /// Instantiates a new countryRegion and sets the default values.
         /// </summary>
         public CountryRegion() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

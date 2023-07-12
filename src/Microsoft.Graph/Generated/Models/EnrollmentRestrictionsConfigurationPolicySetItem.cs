@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A class containing the properties used for enrollment restriction PolicySetItem.
+    /// </summary>
     public class EnrollmentRestrictionsConfigurationPolicySetItem : PolicySetItem, IParsable {
         /// <summary>Limit of the EnrollmentRestrictionsConfigurationPolicySetItem.</summary>
         public int? Limit {
@@ -16,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>
-        /// Instantiates a new EnrollmentRestrictionsConfigurationPolicySetItem and sets the default values.
+        /// Instantiates a new enrollmentRestrictionsConfigurationPolicySetItem and sets the default values.
         /// </summary>
         public EnrollmentRestrictionsConfigurationPolicySetItem() : base() {
             OdataType = "#microsoft.graph.enrollmentRestrictionsConfigurationPolicySetItem";

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new UserConsentRequest and sets the default values.
+        /// Instantiates a new userConsentRequest and sets the default values.
         /// </summary>
         public UserConsentRequest() : base() {
             OdataType = "#microsoft.graph.userConsentRequest";

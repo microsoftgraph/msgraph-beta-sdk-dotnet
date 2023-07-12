@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new MeetingRegistrant and sets the default values.
+        /// Instantiates a new meetingRegistrant and sets the default values.
         /// </summary>
         public MeetingRegistrant() : base() {
             OdataType = "#microsoft.graph.meetingRegistrant";

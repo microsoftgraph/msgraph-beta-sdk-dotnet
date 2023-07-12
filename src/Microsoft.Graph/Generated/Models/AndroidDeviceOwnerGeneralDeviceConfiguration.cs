@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the androidDeviceOwnerGeneralDeviceConfiguration resource.
+    /// </summary>
     public class AndroidDeviceOwnerGeneralDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Indicates whether or not adding or removing accounts is disabled.</summary>
         public bool? AccountsBlockModification {
@@ -875,7 +878,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("workProfilePasswordSignInFailureCountBeforeFactoryReset", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidDeviceOwnerGeneralDeviceConfiguration and sets the default values.
+        /// Instantiates a new androidDeviceOwnerGeneralDeviceConfiguration and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerGeneralDeviceConfiguration() : base() {
             OdataType = "#microsoft.graph.androidDeviceOwnerGeneralDeviceConfiguration";

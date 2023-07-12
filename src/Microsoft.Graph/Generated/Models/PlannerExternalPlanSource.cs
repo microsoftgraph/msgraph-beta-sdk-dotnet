@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PlannerExternalPlanSource and sets the default values.
+        /// Instantiates a new plannerExternalPlanSource and sets the default values.
         /// </summary>
         public PlannerExternalPlanSource() : base() {
             OdataType = "#microsoft.graph.plannerExternalPlanSource";

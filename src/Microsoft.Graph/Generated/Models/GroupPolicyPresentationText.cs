@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents an ADMX text element.
+    /// </summary>
     public class GroupPolicyPresentationText : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>
-        /// Instantiates a new GroupPolicyPresentationText and sets the default values.
+        /// Instantiates a new groupPolicyPresentationText and sets the default values.
         /// </summary>
         public GroupPolicyPresentationText() : base() {
             OdataType = "#microsoft.graph.groupPolicyPresentationText";

@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class Connectivity : Entity, IParsable {
-        /// <summary>The branches property</summary>
+        /// <summary>Branch represent locations for connectivity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<BranchSite>? Branches {

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// By providing the configurations in this profile you can instruct the iOS device to connect to desired IKEv2 VPN endpoint.
+    /// </summary>
     public class IosikEv2VpnConfiguration : IosVpnConfiguration, IParsable {
         /// <summary>Allows the use of child security association parameters by setting all parameters to the device&apos;s default unless explicitly specified.</summary>
         public bool? AllowDefaultChildSecurityAssociationParameters {
@@ -202,7 +205,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosikEv2VpnConfiguration and sets the default values.
+        /// Instantiates a new iosikEv2VpnConfiguration and sets the default values.
         /// </summary>
         public IosikEv2VpnConfiguration() : base() {
             OdataType = "#microsoft.graph.iosikEv2VpnConfiguration";

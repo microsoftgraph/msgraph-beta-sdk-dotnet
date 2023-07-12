@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("timeIntervalBetweenActivations", value); }
         }
         /// <summary>
-        /// Instantiates a new SequentialActivationRenewalsAlertConfiguration and sets the default values.
+        /// Instantiates a new sequentialActivationRenewalsAlertConfiguration and sets the default values.
         /// </summary>
         public SequentialActivationRenewalsAlertConfiguration() : base() {
             OdataType = "#microsoft.graph.sequentialActivationRenewalsAlertConfiguration";

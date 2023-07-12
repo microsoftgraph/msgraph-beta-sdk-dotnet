@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         }
 #endif
         /// <summary>
-        /// Instantiates a new External and sets the default values.
+        /// Instantiates a new external and sets the default values.
         /// </summary>
         public External() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

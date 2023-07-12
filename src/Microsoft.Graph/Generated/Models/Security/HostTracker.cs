@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new HostTracker and sets the default values.
+        /// Instantiates a new hostTracker and sets the default values.
         /// </summary>
         public HostTracker() : base() {
             OdataType = "#microsoft.graph.security.hostTracker";

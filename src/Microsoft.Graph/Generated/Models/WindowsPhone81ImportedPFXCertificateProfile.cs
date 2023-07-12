@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows 8.1 Phone and Mobile PFX Import certificate profile
+    /// </summary>
     public class WindowsPhone81ImportedPFXCertificateProfile : WindowsCertificateProfileBase, IParsable {
         /// <summary>PFX Import Options.</summary>
         public Microsoft.Graph.Beta.Models.IntendedPurpose? IntendedPurpose {
@@ -25,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new WindowsPhone81ImportedPFXCertificateProfile and sets the default values.
+        /// Instantiates a new windowsPhone81ImportedPFXCertificateProfile and sets the default values.
         /// </summary>
         public WindowsPhone81ImportedPFXCertificateProfile() : base() {
             OdataType = "#microsoft.graph.windowsPhone81ImportedPFXCertificateProfile";

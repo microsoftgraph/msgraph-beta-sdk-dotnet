@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("afterHours", value); }
         }
         /// <summary>
-        /// Instantiates a new ChatActivityStatistics and sets the default values.
+        /// Instantiates a new chatActivityStatistics and sets the default values.
         /// </summary>
         public ChatActivityStatistics() : base() {
             OdataType = "#microsoft.graph.chatActivityStatistics";

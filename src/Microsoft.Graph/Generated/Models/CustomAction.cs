@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CustomAction and sets the default values.
+        /// Instantiates a new customAction and sets the default values.
         /// </summary>
         public CustomAction() : base() {
             OdataType = "#microsoft.graph.customAction";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// iOS Volume Purchase Program device license assignment. This class does not support Create, Delete, or Update.
+    /// </summary>
     public class IosVppAppAssignedDeviceLicense : IosVppAppAssignedLicense, IParsable {
         /// <summary>The device name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

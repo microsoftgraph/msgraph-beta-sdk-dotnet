@@ -140,6 +140,7 @@ using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByPrinter;
 using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByUser;
 using Microsoft.Graph.Beta.Reports.Security;
 using Microsoft.Graph.Beta.Reports.ServicePrincipalSignInActivities;
+using Microsoft.Graph.Beta.Reports.Sla;
 using Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -261,6 +262,10 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>Provides operations to manage the servicePrincipalSignInActivities property of the microsoft.graph.reportRoot entity.</summary>
         public ServicePrincipalSignInActivitiesRequestBuilder ServicePrincipalSignInActivities { get =>
             new ServicePrincipalSignInActivitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sla property of the microsoft.graph.reportRoot entity.</summary>
+        public SlaRequestBuilder Sla { get =>
+            new SlaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.</summary>
         public UserCredentialUsageDetailsRequestBuilder UserCredentialUsageDetails { get =>

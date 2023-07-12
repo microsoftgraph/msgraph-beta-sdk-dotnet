@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EducationSynchronizationDataProvider and sets the default values.
+        /// Instantiates a new educationSynchronizationDataProvider and sets the default values.
         /// </summary>
         public EducationSynchronizationDataProvider() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.internalSponsors" => new InternalSponsors(),
                 "#microsoft.graph.requestorManager" => new RequestorManager(),
                 "#microsoft.graph.singleUser" => new SingleUser(),
+                "#microsoft.graph.targetUserSponsors" => new TargetUserSponsors(),
                 _ => new UserSet(),
             };
         }

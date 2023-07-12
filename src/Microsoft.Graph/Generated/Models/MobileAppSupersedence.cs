@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Describes a supersedence relationship between two mobile apps.
+    /// </summary>
     public class MobileAppSupersedence : MobileAppRelationship, IParsable {
         /// <summary>The total number of apps directly or indirectly superseded by the child app.</summary>
         public int? SupersededAppCount {
@@ -21,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("supersedingAppCount", value); }
         }
         /// <summary>
-        /// Instantiates a new MobileAppSupersedence and sets the default values.
+        /// Instantiates a new mobileAppSupersedence and sets the default values.
         /// </summary>
         public MobileAppSupersedence() : base() {
             OdataType = "#microsoft.graph.mobileAppSupersedence";

@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new BusinessScenarioGroupTarget and sets the default values.
+        /// Instantiates a new businessScenarioGroupTarget and sets the default values.
         /// </summary>
         public BusinessScenarioGroupTarget() : base() {
             OdataType = "#microsoft.graph.businessScenarioGroupTarget";

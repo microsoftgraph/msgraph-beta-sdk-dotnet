@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents an ADMX textBox element and an ADMX text element.
+    /// </summary>
     public class GroupPolicyPresentationTextBox : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>Localized default string displayed in the text box. The default value is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("required", value); }
         }
         /// <summary>
-        /// Instantiates a new GroupPolicyPresentationTextBox and sets the default values.
+        /// Instantiates a new groupPolicyPresentationTextBox and sets the default values.
         /// </summary>
         public GroupPolicyPresentationTextBox() : base() {
             OdataType = "#microsoft.graph.groupPolicyPresentationTextBox";

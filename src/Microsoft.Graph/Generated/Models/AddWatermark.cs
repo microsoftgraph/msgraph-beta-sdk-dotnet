@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("orientation", value); }
         }
         /// <summary>
-        /// Instantiates a new AddWatermark and sets the default values.
+        /// Instantiates a new addWatermark and sets the default values.
         /// </summary>
         public AddWatermark() : base() {
             OdataType = "#microsoft.graph.addWatermark";

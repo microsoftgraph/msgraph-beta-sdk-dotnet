@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// MacOS Wi-Fi WPA-Enterprise/WPA2-Enterprise configuration profile.
+    /// </summary>
     public class MacOSEnterpriseWiFiConfiguration : MacOSWiFiConfiguration, IParsable {
         /// <summary>Authentication Method when EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.</summary>
         public WiFiAuthenticationMethod? AuthenticationMethod {
@@ -96,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MacOSEnterpriseWiFiConfiguration and sets the default values.
+        /// Instantiates a new macOSEnterpriseWiFiConfiguration and sets the default values.
         /// </summary>
         public MacOSEnterpriseWiFiConfiguration() : base() {
             OdataType = "#microsoft.graph.macOSEnterpriseWiFiConfiguration";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The entity represents an unsigned integer value of a decimal text box presentation on a policy definition.
+    /// </summary>
     public class GroupPolicyPresentationValueDecimal : GroupPolicyPresentationValue, IParsable {
         /// <summary>An unsigned integer value for the associated presentation.</summary>
         public long? Value {

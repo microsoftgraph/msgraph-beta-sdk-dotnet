@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A class containing the properties for iOS Vpp eBook.
+    /// </summary>
     public class IosVppEBook : ManagedEBook, IParsable {
         /// <summary>The Apple ID associated with Vpp token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -105,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vppTokenId", value); }
         }
         /// <summary>
-        /// Instantiates a new IosVppEBook and sets the default values.
+        /// Instantiates a new iosVppEBook and sets the default values.
         /// </summary>
         public IosVppEBook() : base() {
             OdataType = "#microsoft.graph.iosVppEBook";

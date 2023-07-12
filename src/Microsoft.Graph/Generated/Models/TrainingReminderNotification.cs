@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deliveryFrequency", value); }
         }
         /// <summary>
-        /// Instantiates a new TrainingReminderNotification and sets the default values.
+        /// Instantiates a new trainingReminderNotification and sets the default values.
         /// </summary>
         public TrainingReminderNotification() : base() {
             OdataType = "#microsoft.graph.trainingReminderNotification";

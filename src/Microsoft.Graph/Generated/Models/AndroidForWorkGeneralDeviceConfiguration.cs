@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Android For Work general device configuration.
+    /// </summary>
     public class AndroidForWorkGeneralDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Determine domains allow-list for accounts that can be added to work profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -254,7 +257,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("workProfileRequirePassword", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidForWorkGeneralDeviceConfiguration and sets the default values.
+        /// Instantiates a new androidForWorkGeneralDeviceConfiguration and sets the default values.
         /// </summary>
         public AndroidForWorkGeneralDeviceConfiguration() : base() {
             OdataType = "#microsoft.graph.androidForWorkGeneralDeviceConfiguration";

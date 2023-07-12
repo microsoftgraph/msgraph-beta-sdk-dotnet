@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ChatMessageHostedContent : TeamworkHostedContent, IParsable {
         /// <summary>
-        /// Instantiates a new ChatMessageHostedContent and sets the default values.
+        /// Instantiates a new chatMessageHostedContent and sets the default values.
         /// </summary>
         public ChatMessageHostedContent() : base() {
             OdataType = "#microsoft.graph.chatMessageHostedContent";

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new OnAttributeCollectionExternalUsersSelfServiceSignUp and sets the default values.
+        /// Instantiates a new onAttributeCollectionExternalUsersSelfServiceSignUp and sets the default values.
         /// </summary>
         public OnAttributeCollectionExternalUsersSelfServiceSignUp() : base() {
             OdataType = "#microsoft.graph.onAttributeCollectionExternalUsersSelfServiceSignUp";

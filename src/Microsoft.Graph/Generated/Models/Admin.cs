@@ -83,6 +83,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The people property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public PeopleAdminSettings? People {
+            get { return BackingStore?.Get<PeopleAdminSettings?>("people"); }
+            set { BackingStore?.Set("people", value); }
+        }
+#nullable restore
+#else
+        public PeopleAdminSettings People {
+            get { return BackingStore?.Get<PeopleAdminSettings>("people"); }
+            set { BackingStore?.Set("people", value); }
+        }
+#endif
         /// <summary>A container for administrative resources to manage reports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,7 +168,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Admin and sets the default values.
+        /// Instantiates a new admin and sets the default values.
         /// </summary>
         public Admin() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -178,6 +192,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"edge", n => { Edge = n.GetObjectValue<Microsoft.Graph.Beta.Models.Edge>(Microsoft.Graph.Beta.Models.Edge.CreateFromDiscriminatorValue); } },
                 {"forms", n => { Forms = n.GetObjectValue<AdminForms>(AdminForms.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"people", n => { People = n.GetObjectValue<PeopleAdminSettings>(PeopleAdminSettings.CreateFromDiscriminatorValue); } },
                 {"reportSettings", n => { ReportSettings = n.GetObjectValue<AdminReportSettings>(AdminReportSettings.CreateFromDiscriminatorValue); } },
                 {"serviceAnnouncement", n => { ServiceAnnouncement = n.GetObjectValue<Microsoft.Graph.Beta.Models.ServiceAnnouncement>(Microsoft.Graph.Beta.Models.ServiceAnnouncement.CreateFromDiscriminatorValue); } },
                 {"sharepoint", n => { Sharepoint = n.GetObjectValue<Microsoft.Graph.Beta.Models.Sharepoint>(Microsoft.Graph.Beta.Models.Sharepoint.CreateFromDiscriminatorValue); } },
@@ -196,6 +211,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Edge>("edge", Edge);
             writer.WriteObjectValue<AdminForms>("forms", Forms);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<PeopleAdminSettings>("people", People);
             writer.WriteObjectValue<AdminReportSettings>("reportSettings", ReportSettings);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ServiceAnnouncement>("serviceAnnouncement", ServiceAnnouncement);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Sharepoint>("sharepoint", Sharepoint);

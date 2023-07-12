@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class IpRange : RuleDestination, IParsable {
-        /// <summary>The beginAddress property</summary>
+        /// <summary>Specifies the starting IP address of the IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BeginAddress {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("beginAddress", value); }
         }
 #endif
-        /// <summary>The endAddress property</summary>
+        /// <summary>Specifies the ending IP address of the IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EndAddress {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IpRange and sets the default values.
+        /// Instantiates a new ipRange and sets the default values.
         /// </summary>
         public IpRange() : base() {
             OdataType = "#microsoft.graph.networkaccess.ipRange";

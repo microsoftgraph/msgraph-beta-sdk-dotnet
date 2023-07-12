@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A key-value pair with a string key and an integer value.
+    /// </summary>
     public class KeyIntegerValuePair : KeyTypedValuePair, IParsable {
         /// <summary>The integer value of the key-value pair.</summary>
         public int? Value {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new KeyIntegerValuePair and sets the default values.
+        /// Instantiates a new keyIntegerValuePair and sets the default values.
         /// </summary>
         public KeyIntegerValuePair() : base() {
             OdataType = "#microsoft.graph.keyIntegerValuePair";

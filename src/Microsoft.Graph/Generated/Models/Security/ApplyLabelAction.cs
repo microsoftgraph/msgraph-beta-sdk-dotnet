@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ApplyLabelAction and sets the default values.
+        /// Instantiates a new applyLabelAction and sets the default values.
         /// </summary>
         public ApplyLabelAction() : base() {
             OdataType = "#microsoft.graph.security.applyLabelAction";

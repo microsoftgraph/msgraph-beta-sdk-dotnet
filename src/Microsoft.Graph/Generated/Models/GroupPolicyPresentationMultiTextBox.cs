@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents an ADMX multiTextBox element and an ADMX multiText element.
+    /// </summary>
     public class GroupPolicyPresentationMultiTextBox : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>An unsigned integer that specifies the maximum number of text characters. Default value is 1023.</summary>
         public long? MaxLength {
@@ -21,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("required", value); }
         }
         /// <summary>
-        /// Instantiates a new GroupPolicyPresentationMultiTextBox and sets the default values.
+        /// Instantiates a new groupPolicyPresentationMultiTextBox and sets the default values.
         /// </summary>
         public GroupPolicyPresentationMultiTextBox() : base() {
             OdataType = "#microsoft.graph.groupPolicyPresentationMultiTextBox";

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mode", value); }
         }
         /// <summary>
-        /// Instantiates a new PersistentBrowserSessionControl and sets the default values.
+        /// Instantiates a new persistentBrowserSessionControl and sets the default values.
         /// </summary>
         public PersistentBrowserSessionControl() : base() {
             OdataType = "#microsoft.graph.persistentBrowserSessionControl";

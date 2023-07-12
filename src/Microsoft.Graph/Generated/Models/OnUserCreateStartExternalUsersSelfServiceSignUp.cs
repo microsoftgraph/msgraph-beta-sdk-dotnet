@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userTypeToCreate", value); }
         }
         /// <summary>
-        /// Instantiates a new OnUserCreateStartExternalUsersSelfServiceSignUp and sets the default values.
+        /// Instantiates a new onUserCreateStartExternalUsersSelfServiceSignUp and sets the default values.
         /// </summary>
         public OnUserCreateStartExternalUsersSelfServiceSignUp() : base() {
             OdataType = "#microsoft.graph.onUserCreateStartExternalUsersSelfServiceSignUp";

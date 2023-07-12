@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IpApplicationSegment and sets the default values.
+        /// Instantiates a new ipApplicationSegment and sets the default values.
         /// </summary>
         public IpApplicationSegment() : base() {
             OdataType = "#microsoft.graph.ipApplicationSegment";

@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows 8.1+ SCEP certificate profile
+    /// </summary>
     public class Windows81SCEPCertificateProfile : Windows81CertificateProfileBase, IParsable {
         /// <summary>Target store certificate. Possible values are: user, machine.</summary>
         public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore {
@@ -96,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Windows81SCEPCertificateProfile and sets the default values.
+        /// Instantiates a new windows81SCEPCertificateProfile and sets the default values.
         /// </summary>
         public Windows81SCEPCertificateProfile() : base() {
             OdataType = "#microsoft.graph.windows81SCEPCertificateProfile";

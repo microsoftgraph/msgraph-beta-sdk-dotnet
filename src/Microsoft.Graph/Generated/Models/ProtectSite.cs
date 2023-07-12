@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ProtectSite and sets the default values.
+        /// Instantiates a new protectSite and sets the default values.
         /// </summary>
         public ProtectSite() : base() {
             OdataType = "#microsoft.graph.protectSite";

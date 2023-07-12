@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new OnTokenIssuanceStartListener and sets the default values.
+        /// Instantiates a new onTokenIssuanceStartListener and sets the default values.
         /// </summary>
         public OnTokenIssuanceStartListener() : base() {
             OdataType = "#microsoft.graph.onTokenIssuanceStartListener";

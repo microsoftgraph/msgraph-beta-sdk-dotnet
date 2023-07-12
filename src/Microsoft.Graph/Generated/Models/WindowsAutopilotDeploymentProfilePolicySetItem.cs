@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A class containing the properties used for windows autopilot deployment profile PolicySetItem.
+    /// </summary>
     public class WindowsAutopilotDeploymentProfilePolicySetItem : PolicySetItem, IParsable {
         /// <summary>
-        /// Instantiates a new WindowsAutopilotDeploymentProfilePolicySetItem and sets the default values.
+        /// Instantiates a new windowsAutopilotDeploymentProfilePolicySetItem and sets the default values.
         /// </summary>
         public WindowsAutopilotDeploymentProfilePolicySetItem() : base() {
             OdataType = "#microsoft.graph.windowsAutopilotDeploymentProfilePolicySetItem";

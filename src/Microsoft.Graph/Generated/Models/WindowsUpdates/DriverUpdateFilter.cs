@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class DriverUpdateFilter : WindowsUpdateFilter, IParsable {
         /// <summary>
-        /// Instantiates a new DriverUpdateFilter and sets the default values.
+        /// Instantiates a new driverUpdateFilter and sets the default values.
         /// </summary>
         public DriverUpdateFilter() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.driverUpdateFilter";

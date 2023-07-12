@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Device Configuration.
+    /// </summary>
     public class WindowsWifiConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Specify whether the wifi connection should connect automatically when in range.</summary>
         public bool? ConnectAutomatically {
@@ -116,7 +119,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("wifiSecurityType", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsWifiConfiguration and sets the default values.
+        /// Instantiates a new windowsWifiConfiguration and sets the default values.
         /// </summary>
         public WindowsWifiConfiguration() : base() {
             OdataType = "#microsoft.graph.windowsWifiConfiguration";

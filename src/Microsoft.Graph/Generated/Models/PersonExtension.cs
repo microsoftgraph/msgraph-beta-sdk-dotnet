@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PersonExtension : Extension, IParsable {
         /// <summary>
-        /// Instantiates a new PersonExtension and sets the default values.
+        /// Instantiates a new personExtension and sets the default values.
         /// </summary>
         public PersonExtension() : base() {
             OdataType = "#microsoft.graph.personExtension";

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new NoMfaOnRoleActivationAlertIncident and sets the default values.
+        /// Instantiates a new noMfaOnRoleActivationAlertIncident and sets the default values.
         /// </summary>
         public NoMfaOnRoleActivationAlertIncident() : base() {
             OdataType = "#microsoft.graph.noMfaOnRoleActivationAlertIncident";

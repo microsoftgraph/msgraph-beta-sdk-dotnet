@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for web apps configured to be distributed via the managed Android app store.
+    /// </summary>
     public class AndroidManagedStoreWebApp : AndroidManagedStoreApp, IParsable {
         /// <summary>
-        /// Instantiates a new AndroidManagedStoreWebApp and sets the default values.
+        /// Instantiates a new androidManagedStoreWebApp and sets the default values.
         /// </summary>
         public AndroidManagedStoreWebApp() : base() {
             OdataType = "#microsoft.graph.androidManagedStoreWebApp";

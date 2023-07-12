@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Hide the home button.
+    /// </summary>
     public class EdgeHomeButtonHidden : EdgeHomeButtonConfiguration, IParsable {
         /// <summary>
-        /// Instantiates a new EdgeHomeButtonHidden and sets the default values.
+        /// Instantiates a new edgeHomeButtonHidden and sets the default values.
         /// </summary>
         public EdgeHomeButtonHidden() : base() {
             OdataType = "#microsoft.graph.edgeHomeButtonHidden";

@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MeetingRegistration and sets the default values.
+        /// Instantiates a new meetingRegistration and sets the default values.
         /// </summary>
         public MeetingRegistration() : base() {
             OdataType = "#microsoft.graph.meetingRegistration";

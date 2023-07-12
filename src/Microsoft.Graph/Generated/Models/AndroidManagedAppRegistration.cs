@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents the synchronization details of an android app, with management capabilities, for a specific user.
+    /// </summary>
     public class AndroidManagedAppRegistration : ManagedAppRegistration, IParsable {
         /// <summary>The patch version for the current android app registration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidManagedAppRegistration and sets the default values.
+        /// Instantiates a new androidManagedAppRegistration and sets the default values.
         /// </summary>
         public AndroidManagedAppRegistration() : base() {
             OdataType = "#microsoft.graph.androidManagedAppRegistration";

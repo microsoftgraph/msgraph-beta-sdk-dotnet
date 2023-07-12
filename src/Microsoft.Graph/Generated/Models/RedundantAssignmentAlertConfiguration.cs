@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("duration", value); }
         }
         /// <summary>
-        /// Instantiates a new RedundantAssignmentAlertConfiguration and sets the default values.
+        /// Instantiates a new redundantAssignmentAlertConfiguration and sets the default values.
         /// </summary>
         public RedundantAssignmentAlertConfiguration() : base() {
             OdataType = "#microsoft.graph.redundantAssignmentAlertConfiguration";

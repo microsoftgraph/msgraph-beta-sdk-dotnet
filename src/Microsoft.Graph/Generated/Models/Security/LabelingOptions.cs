@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new LabelingOptions and sets the default values.
+        /// Instantiates a new labelingOptions and sets the default values.
         /// </summary>
         public LabelingOptions() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

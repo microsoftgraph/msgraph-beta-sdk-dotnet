@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// This entity provides descriptions of the declared methods, properties and relationships exposed by Windows Hello for Business.
+    /// </summary>
     public class WindowsIdentityProtectionConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Boolean value used to enable enhanced anti-spoofing for facial feature recognition on Windows Hello face authentication.</summary>
         public bool? EnhancedAntiSpoofingForFacialFeaturesEnabled {
@@ -76,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("windowsHelloForBusinessBlocked", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsIdentityProtectionConfiguration and sets the default values.
+        /// Instantiates a new windowsIdentityProtectionConfiguration and sets the default values.
         /// </summary>
         public WindowsIdentityProtectionConfiguration() : base() {
             OdataType = "#microsoft.graph.windowsIdentityProtectionConfiguration";

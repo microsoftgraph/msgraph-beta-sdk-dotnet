@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on a Windows device
+    /// </summary>
     public class WindowsManagedAppProtection : ManagedAppPolicy, IParsable {
         /// <summary>Data can be transferred from/to these classes of apps</summary>
         public WindowsManagedAppDataTransferLevel? AllowedInboundDataTransferSources {
@@ -243,7 +246,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("printBlocked", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsManagedAppProtection and sets the default values.
+        /// Instantiates a new windowsManagedAppProtection and sets the default values.
         /// </summary>
         public WindowsManagedAppProtection() : base() {
             OdataType = "#microsoft.graph.windowsManagedAppProtection";

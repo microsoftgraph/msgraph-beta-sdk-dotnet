@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class PrivateAccessForwardingRule : ForwardingRule, IParsable {
         /// <summary>
-        /// Instantiates a new PrivateAccessForwardingRule and sets the default values.
+        /// Instantiates a new privateAccessForwardingRule and sets the default values.
         /// </summary>
         public PrivateAccessForwardingRule() : base() {
             OdataType = "#microsoft.graph.networkaccess.privateAccessForwardingRule";

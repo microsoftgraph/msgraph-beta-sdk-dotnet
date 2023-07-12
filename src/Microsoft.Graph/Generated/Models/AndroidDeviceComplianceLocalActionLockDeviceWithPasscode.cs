@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Local Action Lock Device with Passcode Configuration
+    /// </summary>
     public class AndroidDeviceComplianceLocalActionLockDeviceWithPasscode : AndroidDeviceComplianceLocalActionBase, IParsable {
         /// <summary>Passcode to reset to Android device. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -25,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("passcodeSignInFailureCountBeforeWipe", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidDeviceComplianceLocalActionLockDeviceWithPasscode and sets the default values.
+        /// Instantiates a new androidDeviceComplianceLocalActionLockDeviceWithPasscode and sets the default values.
         /// </summary>
         public AndroidDeviceComplianceLocalActionLockDeviceWithPasscode() : base() {
             OdataType = "#microsoft.graph.androidDeviceComplianceLocalActionLockDeviceWithPasscode";

@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new UserGovernanceCriteria and sets the default values.
+        /// Instantiates a new userGovernanceCriteria and sets the default values.
         /// </summary>
         public UserGovernanceCriteria() : base() {
             OdataType = "#microsoft.graph.userGovernanceCriteria";

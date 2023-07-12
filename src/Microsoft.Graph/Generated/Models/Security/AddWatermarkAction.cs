@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AddWatermarkAction and sets the default values.
+        /// Instantiates a new addWatermarkAction and sets the default values.
         /// </summary>
         public AddWatermarkAction() : base() {
             OdataType = "#microsoft.graph.security.addWatermarkAction";

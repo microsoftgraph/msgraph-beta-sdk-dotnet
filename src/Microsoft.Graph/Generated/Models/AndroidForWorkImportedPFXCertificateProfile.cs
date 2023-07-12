@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Android For Work PFX Import certificate profile
+    /// </summary>
     public class AndroidForWorkImportedPFXCertificateProfile : AndroidCertificateProfileBase, IParsable {
         /// <summary>PFX Import Options.</summary>
         public Microsoft.Graph.Beta.Models.IntendedPurpose? IntendedPurpose {
@@ -25,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AndroidForWorkImportedPFXCertificateProfile and sets the default values.
+        /// Instantiates a new androidForWorkImportedPFXCertificateProfile and sets the default values.
         /// </summary>
         public AndroidForWorkImportedPFXCertificateProfile() : base() {
             OdataType = "#microsoft.graph.androidForWorkImportedPFXCertificateProfile";

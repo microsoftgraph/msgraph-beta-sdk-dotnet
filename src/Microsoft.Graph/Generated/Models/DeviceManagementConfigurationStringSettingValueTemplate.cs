@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// String Setting Value Template
+    /// </summary>
     public class DeviceManagementConfigurationStringSettingValueTemplate : DeviceManagementConfigurationSimpleSettingValueTemplate, IParsable {
         /// <summary>String Setting Value Default Template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeviceManagementConfigurationStringSettingValueTemplate and sets the default values.
+        /// Instantiates a new deviceManagementConfigurationStringSettingValueTemplate and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationStringSettingValueTemplate() : base() {
             OdataType = "#microsoft.graph.deviceManagementConfigurationStringSettingValueTemplate";

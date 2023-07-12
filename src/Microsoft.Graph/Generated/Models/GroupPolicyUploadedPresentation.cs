@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents an ADMX checkBox element and an ADMX boolean element.
+    /// </summary>
     public class GroupPolicyUploadedPresentation : GroupPolicyPresentation, IParsable {
         /// <summary>
-        /// Instantiates a new GroupPolicyUploadedPresentation and sets the default values.
+        /// Instantiates a new groupPolicyUploadedPresentation and sets the default values.
         /// </summary>
         public GroupPolicyUploadedPresentation() : base() {
             OdataType = "#microsoft.graph.groupPolicyUploadedPresentation";

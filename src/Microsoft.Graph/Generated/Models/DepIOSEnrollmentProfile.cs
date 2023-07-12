@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The DepIOSEnrollmentProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile specific to iOS configuration. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.
+    /// </summary>
     public class DepIOSEnrollmentProfile : DepEnrollmentBaseProfile, IParsable {
         /// <summary>Indicates if Apperance screen is disabled</summary>
         public bool? AppearanceScreenDisabled {
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("zoomDisabled", value); }
         }
         /// <summary>
-        /// Instantiates a new DepIOSEnrollmentProfile and sets the default values.
+        /// Instantiates a new depIOSEnrollmentProfile and sets the default values.
         /// </summary>
         public DepIOSEnrollmentProfile() : base() {
             OdataType = "#microsoft.graph.depIOSEnrollmentProfile";

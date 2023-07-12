@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A class containing the properties used for Windows10EnrollmentCompletionPageConfiguration PolicySetItem.
+    /// </summary>
     public class Windows10EnrollmentCompletionPageConfigurationPolicySetItem : PolicySetItem, IParsable {
         /// <summary>Priority of the Windows10EnrollmentCompletionPageConfigurationPolicySetItem.</summary>
         public int? Priority {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>
-        /// Instantiates a new Windows10EnrollmentCompletionPageConfigurationPolicySetItem and sets the default values.
+        /// Instantiates a new windows10EnrollmentCompletionPageConfigurationPolicySetItem and sets the default values.
         /// </summary>
         public Windows10EnrollmentCompletionPageConfigurationPolicySetItem() : base() {
             OdataType = "#microsoft.graph.windows10EnrollmentCompletionPageConfigurationPolicySetItem";

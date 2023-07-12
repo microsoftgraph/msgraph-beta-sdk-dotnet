@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// An abstract base class for all iOS-specific single sign-on extension types.
+    /// </summary>
     public class IosSingleSignOnExtension : SingleSignOnExtension, IParsable {
         /// <summary>
-        /// Instantiates a new IosSingleSignOnExtension and sets the default values.
+        /// Instantiates a new iosSingleSignOnExtension and sets the default values.
         /// </summary>
         public IosSingleSignOnExtension() : base() {
             OdataType = "#microsoft.graph.iosSingleSignOnExtension";

@@ -5,6 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Base type of Device health script time schedule.
+    /// </summary>
     public class DeviceHealthScriptTimeSchedule : DeviceHealthScriptRunSchedule, IParsable {
         /// <summary>At what time the script is scheduled to run. This collection can contain a maximum of 20 elements.</summary>
         public Time? Time {
@@ -17,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("useUtc", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceHealthScriptTimeSchedule and sets the default values.
+        /// Instantiates a new deviceHealthScriptTimeSchedule and sets the default values.
         /// </summary>
         public DeviceHealthScriptTimeSchedule() : base() {
             OdataType = "#microsoft.graph.deviceHealthScriptTimeSchedule";

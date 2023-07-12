@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Show the home button; clicking the home button loads the Start page - this is also the default value.
+    /// </summary>
     public class EdgeHomeButtonLoadsStartPage : EdgeHomeButtonConfiguration, IParsable {
         /// <summary>
-        /// Instantiates a new EdgeHomeButtonLoadsStartPage and sets the default values.
+        /// Instantiates a new edgeHomeButtonLoadsStartPage and sets the default values.
         /// </summary>
         public EdgeHomeButtonLoadsStartPage() : base() {
             OdataType = "#microsoft.graph.edgeHomeButtonLoadsStartPage";

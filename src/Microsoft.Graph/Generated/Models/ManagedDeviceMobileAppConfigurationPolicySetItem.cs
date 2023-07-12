@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A class containing the properties used for managed device mobile app configuration PolicySetItem.
+    /// </summary>
     public class ManagedDeviceMobileAppConfigurationPolicySetItem : PolicySetItem, IParsable {
         /// <summary>
-        /// Instantiates a new ManagedDeviceMobileAppConfigurationPolicySetItem and sets the default values.
+        /// Instantiates a new managedDeviceMobileAppConfigurationPolicySetItem and sets the default values.
         /// </summary>
         public ManagedDeviceMobileAppConfigurationPolicySetItem() : base() {
             OdataType = "#microsoft.graph.managedDeviceMobileAppConfigurationPolicySetItem";

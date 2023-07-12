@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the AndroidDeviceOwnerAOSPCompliancePolicy resource.
+    /// </summary>
     public class AospDeviceOwnerCompliancePolicy : DeviceCompliancePolicy, IParsable {
         /// <summary>Minimum Android security patch level.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
         /// <summary>
-        /// Instantiates a new AospDeviceOwnerCompliancePolicy and sets the default values.
+        /// Instantiates a new aospDeviceOwnerCompliancePolicy and sets the default values.
         /// </summary>
         public AospDeviceOwnerCompliancePolicy() : base() {
             OdataType = "#microsoft.graph.aospDeviceOwnerCompliancePolicy";

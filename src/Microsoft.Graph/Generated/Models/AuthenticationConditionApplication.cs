@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AuthenticationConditionApplication and sets the default values.
+        /// Instantiates a new authenticationConditionApplication and sets the default values.
         /// </summary>
         public AuthenticationConditionApplication() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

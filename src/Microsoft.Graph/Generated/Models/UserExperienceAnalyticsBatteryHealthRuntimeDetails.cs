@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The user experience analytics battery health runtime entity contains count of devices broken down into 3 categories - devices with runtime &gt; 5 hours, devices with runtime 3-5 hours and devices with runtime &lt; 3 hours.This API provides the count of devices in these 3 categories.
+    /// </summary>
     public class UserExperienceAnalyticsBatteryHealthRuntimeDetails : Entity, IParsable {
         /// <summary>Number of active devices within the tenant. Valid values -2147483648 to 2147483647</summary>
         public int? ActiveDevices {

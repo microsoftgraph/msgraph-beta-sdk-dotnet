@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Device Configuration.
+    /// </summary>
     public class Windows81CertificateProfileBase : WindowsCertificateProfileBase, IParsable {
         /// <summary>Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Windows81CertificateProfileBase and sets the default values.
+        /// Instantiates a new windows81CertificateProfileBase and sets the default values.
         /// </summary>
         public Windows81CertificateProfileBase() : base() {
             OdataType = "#microsoft.graph.windows81CertificateProfileBase";

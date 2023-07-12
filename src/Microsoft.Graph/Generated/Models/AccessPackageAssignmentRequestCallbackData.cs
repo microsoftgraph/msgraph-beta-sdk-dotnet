@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AccessPackageAssignmentRequestCallbackData and sets the default values.
+        /// Instantiates a new accessPackageAssignmentRequestCallbackData and sets the default values.
         /// </summary>
         public AccessPackageAssignmentRequestCallbackData() : base() {
             OdataType = "#microsoft.graph.accessPackageAssignmentRequestCallbackData";

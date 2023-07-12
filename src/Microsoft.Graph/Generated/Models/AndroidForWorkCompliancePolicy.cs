@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// This class contains compliance settings for Android for Work.
+    /// </summary>
     public class AndroidForWorkCompliancePolicy : DeviceCompliancePolicy, IParsable {
         /// <summary>Require that devices have enabled device threat protection.</summary>
         public bool? DeviceThreatProtectionEnabled {
@@ -153,7 +156,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidForWorkCompliancePolicy and sets the default values.
+        /// Instantiates a new androidForWorkCompliancePolicy and sets the default values.
         /// </summary>
         public AndroidForWorkCompliancePolicy() : base() {
             OdataType = "#microsoft.graph.androidForWorkCompliancePolicy";

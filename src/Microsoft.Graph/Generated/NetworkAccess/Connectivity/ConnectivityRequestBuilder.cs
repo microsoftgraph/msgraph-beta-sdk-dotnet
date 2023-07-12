@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get connectivity from networkAccess
+        /// Connectivity represents all the connectivity components in Global Secure Access.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity {
             return requestInfo;
         }
         /// <summary>
-        /// Get connectivity from networkAccess
+        /// Connectivity represents all the connectivity components in Global Secure Access.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +186,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity {
             }
         }
         /// <summary>
-        /// Get connectivity from networkAccess
+        /// Connectivity represents all the connectivity components in Global Secure Access.
         /// </summary>
         public class ConnectivityRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

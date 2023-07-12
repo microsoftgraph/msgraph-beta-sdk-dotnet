@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("margin", value); }
         }
         /// <summary>
-        /// Instantiates a new AddHeader and sets the default values.
+        /// Instantiates a new addHeader and sets the default values.
         /// </summary>
         public AddHeader() : base() {
             OdataType = "#microsoft.graph.addHeader";

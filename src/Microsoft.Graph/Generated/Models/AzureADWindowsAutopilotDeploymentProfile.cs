@@ -4,9 +4,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows Autopilot Deployment Profile
+    /// </summary>
     public class AzureADWindowsAutopilotDeploymentProfile : WindowsAutopilotDeploymentProfile, IParsable {
         /// <summary>
-        /// Instantiates a new AzureADWindowsAutopilotDeploymentProfile and sets the default values.
+        /// Instantiates a new azureADWindowsAutopilotDeploymentProfile and sets the default values.
         /// </summary>
         public AzureADWindowsAutopilotDeploymentProfile() : base() {
             OdataType = "#microsoft.graph.azureADWindowsAutopilotDeploymentProfile";

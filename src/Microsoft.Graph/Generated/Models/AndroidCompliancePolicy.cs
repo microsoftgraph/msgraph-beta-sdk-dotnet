@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// This class contains compliance settings for Android.
+    /// </summary>
     public class AndroidCompliancePolicy : DeviceCompliancePolicy, IParsable {
         /// <summary>Device threat protection levels for the Device Threat Protection API.</summary>
         public DeviceThreatProtectionLevel? AdvancedThreatProtectionRequiredSecurityLevel {
@@ -186,7 +189,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidCompliancePolicy and sets the default values.
+        /// Instantiates a new androidCompliancePolicy and sets the default values.
         /// </summary>
         public AndroidCompliancePolicy() : base() {
             OdataType = "#microsoft.graph.androidCompliancePolicy";

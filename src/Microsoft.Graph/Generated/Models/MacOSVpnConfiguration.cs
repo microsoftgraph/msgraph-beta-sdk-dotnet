@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// By providing the configurations in this profile you can instruct the Mac device to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
+    /// </summary>
     public class MacOSVpnConfiguration : AppleVpnConfiguration, IParsable {
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new MacOSVpnConfiguration and sets the default values.
+        /// Instantiates a new macOSVpnConfiguration and sets the default values.
         /// </summary>
         public MacOSVpnConfiguration() : base() {
             OdataType = "#microsoft.graph.macOSVpnConfiguration";

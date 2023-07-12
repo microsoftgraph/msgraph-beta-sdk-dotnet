@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
 #endif
         /// <summary>
-        /// Instantiates a new OperationalInsightsConnection and sets the default values.
+        /// Instantiates a new operationalInsightsConnection and sets the default values.
         /// </summary>
         public OperationalInsightsConnection() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.operationalInsightsConnection";

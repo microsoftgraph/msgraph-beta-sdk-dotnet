@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new ItemPhone and sets the default values.
+        /// Instantiates a new itemPhone and sets the default values.
         /// </summary>
         public ItemPhone() : base() {
             OdataType = "#microsoft.graph.itemPhone";

@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ItemPublication and sets the default values.
+        /// Instantiates a new itemPublication and sets the default values.
         /// </summary>
         public ItemPublication() : base() {
             OdataType = "#microsoft.graph.itemPublication";

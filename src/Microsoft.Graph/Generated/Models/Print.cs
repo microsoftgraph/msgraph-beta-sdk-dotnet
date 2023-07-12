@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new Print and sets the default values.
+        /// Instantiates a new print and sets the default values.
         /// </summary>
         public Print() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new OpenShift and sets the default values.
+        /// Instantiates a new openShift and sets the default values.
         /// </summary>
         public OpenShift() : base() {
             OdataType = "#microsoft.graph.openShift";

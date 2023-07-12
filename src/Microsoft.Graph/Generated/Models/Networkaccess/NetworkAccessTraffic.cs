@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The agentVersion property</summary>
+        /// <summary>Represents the version of the Global Secure Access client agent software. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AgentVersion {
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The connectionId property</summary>
+        /// <summary>Represents a unique identifier assigned to a connection. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConnectionId {
@@ -41,12 +41,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("connectionId", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Represents the date and time when a network access traffic log entry was created. Supports $filter (eq) and $orderby.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The destinationFQDN property</summary>
+        /// <summary>Represents the Fully Qualified Domain Name (FQDN) of the destination host or server in a network communication. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationFQDN {
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("destinationFQDN", value); }
         }
 #endif
-        /// <summary>The destinationIp property</summary>
+        /// <summary>Represents the IP address of the destination host or server in a network communication. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationIp {
@@ -74,17 +74,17 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("destinationIp", value); }
         }
 #endif
-        /// <summary>The destinationPort property</summary>
+        /// <summary>Represents the network port number on the destination host or server in a network communication. Supports $filter (eq) and $orderby.</summary>
         public int? DestinationPort {
             get { return BackingStore?.Get<int?>("destinationPort"); }
             set { BackingStore?.Set("destinationPort", value); }
         }
-        /// <summary>The deviceCategory property</summary>
+        /// <summary>Represents the category classification of a device within a network infrastructure. The possible values are: client, branch, unknownFutureValue. Supports $filter (eq) and $orderby.</summary>
         public Microsoft.Graph.Beta.Models.Networkaccess.DeviceCategory? DeviceCategory {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.DeviceCategory?>("deviceCategory"); }
             set { BackingStore?.Set("deviceCategory", value); }
         }
-        /// <summary>The deviceId property</summary>
+        /// <summary>Represents a unique identifier assigned to a device within a network infrastructure. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceId {
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("deviceId", value); }
         }
 #endif
-        /// <summary>The deviceOperatingSystem property</summary>
+        /// <summary>Represents the operating system installed on a device within a network infrastructure. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceOperatingSystem {
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("deviceOperatingSystem", value); }
         }
 #endif
-        /// <summary>The deviceOperatingSystemVersion property</summary>
+        /// <summary>Represents the version or release number of the operating system installed on a device within a network infrastructure. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceOperatingSystemVersion {
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("deviceOperatingSystemVersion", value); }
         }
 #endif
-        /// <summary>The headers property</summary>
+        /// <summary>Represents the headers included in a network request or response. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Networkaccess.Headers? Headers {
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("headers", value); }
         }
 #endif
-        /// <summary>The networkProtocol property</summary>
+        /// <summary>Represents the networking protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.</summary>
         public NetworkingProtocol? NetworkProtocol {
             get { return BackingStore?.Get<NetworkingProtocol?>("networkProtocol"); }
             set { BackingStore?.Set("networkProtocol", value); }
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The policyId property</summary>
+        /// <summary>Represents a unique identifier assigned to a policy. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyId {
@@ -173,7 +173,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("policyId", value); }
         }
 #endif
-        /// <summary>The policyRuleId property</summary>
+        /// <summary>Represents a unique identifier assigned to a policy rule. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyRuleId {
@@ -187,17 +187,17 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("policyRuleId", value); }
         }
 #endif
-        /// <summary>The receivedBytes property</summary>
+        /// <summary>Represents the total number of bytes received in a network communication or data transfer. Supports $filter (eq) and $orderby.</summary>
         public long? ReceivedBytes {
             get { return BackingStore?.Get<long?>("receivedBytes"); }
             set { BackingStore?.Set("receivedBytes", value); }
         }
-        /// <summary>The sentBytes property</summary>
+        /// <summary>Represents the total number of bytes sent in a network communication or data transfer. Supports $filter (eq) and $orderby.</summary>
         public long? SentBytes {
             get { return BackingStore?.Get<long?>("sentBytes"); }
             set { BackingStore?.Set("sentBytes", value); }
         }
-        /// <summary>The sessionId property</summary>
+        /// <summary>Represents a unique identifier assigned to a session or connection within a network infrastructure. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionId {
@@ -211,7 +211,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("sessionId", value); }
         }
 #endif
-        /// <summary>The sourceIp property</summary>
+        /// <summary>Represents the source IP address in a network communication. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceIp {
@@ -225,12 +225,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("sourceIp", value); }
         }
 #endif
-        /// <summary>The sourcePort property</summary>
+        /// <summary>Represents the network port number on the source host or device in a network communication. Supports $filter (eq) and $orderby.</summary>
         public int? SourcePort {
             get { return BackingStore?.Get<int?>("sourcePort"); }
             set { BackingStore?.Set("sourcePort", value); }
         }
-        /// <summary>The tenantId property</summary>
+        /// <summary>Represents a unique identifier assigned to a tenant within a network infrastructure. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId {
@@ -249,7 +249,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
             set { BackingStore?.Set("trafficType", value); }
         }
-        /// <summary>The transactionId property</summary>
+        /// <summary>Represents a unique identifier assigned to a specific transaction or operation. Key. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TransactionId {
@@ -263,12 +263,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("transactionId", value); }
         }
 #endif
-        /// <summary>The transportProtocol property</summary>
+        /// <summary>Represents the transport protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.</summary>
         public NetworkingProtocol? TransportProtocol {
             get { return BackingStore?.Get<NetworkingProtocol?>("transportProtocol"); }
             set { BackingStore?.Set("transportProtocol", value); }
         }
-        /// <summary>The userId property</summary>
+        /// <summary>Represents a unique identifier assigned to a user. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {
@@ -282,7 +282,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("userId", value); }
         }
 #endif
-        /// <summary>The userPrincipalName property</summary>
+        /// <summary>Represents the user principal name (UPN) associated with a user. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalName {
@@ -297,7 +297,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
 #endif
         /// <summary>
-        /// Instantiates a new NetworkAccessTraffic and sets the default values.
+        /// Instantiates a new networkAccessTraffic and sets the default values.
         /// </summary>
         public NetworkAccessTraffic() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

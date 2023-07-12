@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new CustomerPaymentJournal and sets the default values.
+        /// Instantiates a new customerPaymentJournal and sets the default values.
         /// </summary>
         public CustomerPaymentJournal() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

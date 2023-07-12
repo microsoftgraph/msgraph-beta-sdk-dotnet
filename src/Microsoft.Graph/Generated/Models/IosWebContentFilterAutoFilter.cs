@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents an iOS Web Content Filter setting type, which enables iOS automatic filter feature and allows for additional URL access control. When constructed with no property values, the iOS device will enable the automatic filter regardless.
+    /// </summary>
     public class IosWebContentFilterAutoFilter : IosWebContentFilterBase, IParsable {
         /// <summary>Additional URLs allowed for access</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new IosWebContentFilterAutoFilter and sets the default values.
+        /// Instantiates a new iosWebContentFilterAutoFilter and sets the default values.
         /// </summary>
         public IosWebContentFilterAutoFilter() : base() {
             OdataType = "#microsoft.graph.iosWebContentFilterAutoFilter";

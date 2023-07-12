@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ProtectOnlineMeetingAction and sets the default values.
+        /// Instantiates a new protectOnlineMeetingAction and sets the default values.
         /// </summary>
         public ProtectOnlineMeetingAction() : base() {
             OdataType = "#microsoft.graph.protectOnlineMeetingAction";

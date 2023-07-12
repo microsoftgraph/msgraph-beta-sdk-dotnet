@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Delivery Optimization Max cache size percentage types.
+    /// </summary>
     public class DeliveryOptimizationMaxCacheSizePercentage : DeliveryOptimizationMaxCacheSize, IParsable {
         /// <summary>Specifies the maximum cache size that Delivery Optimization can utilize, as a percentage of disk size (1-100). Valid values 1 to 100</summary>
         public int? MaximumCacheSizePercentage {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("maximumCacheSizePercentage", value); }
         }
         /// <summary>
-        /// Instantiates a new DeliveryOptimizationMaxCacheSizePercentage and sets the default values.
+        /// Instantiates a new deliveryOptimizationMaxCacheSizePercentage and sets the default values.
         /// </summary>
         public DeliveryOptimizationMaxCacheSizePercentage() : base() {
             OdataType = "#microsoft.graph.deliveryOptimizationMaxCacheSizePercentage";

@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ConditionalAccessConditionSet and sets the default values.
+        /// Instantiates a new conditionalAccessConditionSet and sets the default values.
         /// </summary>
         public ConditionalAccessConditionSet() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();

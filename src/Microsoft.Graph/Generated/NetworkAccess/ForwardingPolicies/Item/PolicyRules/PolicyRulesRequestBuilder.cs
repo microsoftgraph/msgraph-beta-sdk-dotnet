@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.PolicyRules
         public PolicyRulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/forwardingPolicies/{forwardingPolicy%2Did}/policyRules{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get policyRules from networkAccess
+        /// Represents the definition of the policy ruleset that makes up the core definition of a policy.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.PolicyRules
             return await RequestAdapter.SendAsync<PolicyRule>(requestInfo, PolicyRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get policyRules from networkAccess
+        /// Represents the definition of the policy ruleset that makes up the core definition of a policy.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.PolicyRules
             return requestInfo;
         }
         /// <summary>
-        /// Get policyRules from networkAccess
+        /// Represents the definition of the policy ruleset that makes up the core definition of a policy.
         /// </summary>
         public class PolicyRulesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

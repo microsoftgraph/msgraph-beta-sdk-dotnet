@@ -6,7 +6,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class ForwardingPolicyLink : PolicyLink, IParsable {
         /// <summary>
-        /// Instantiates a new ForwardingPolicyLink and sets the default values.
+        /// Instantiates a new forwardingPolicyLink and sets the default values.
         /// </summary>
         public ForwardingPolicyLink() : base() {
             OdataType = "#microsoft.graph.networkaccess.forwardingPolicyLink";

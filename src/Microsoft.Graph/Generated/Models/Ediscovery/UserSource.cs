@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         }
 #endif
         /// <summary>
-        /// Instantiates a new UserSource and sets the default values.
+        /// Instantiates a new userSource and sets the default values.
         /// </summary>
         public UserSource() : base() {
             OdataType = "#microsoft.graph.ediscovery.userSource";

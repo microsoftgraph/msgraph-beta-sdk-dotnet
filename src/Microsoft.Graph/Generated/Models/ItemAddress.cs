@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ItemAddress and sets the default values.
+        /// Instantiates a new itemAddress and sets the default values.
         /// </summary>
         public ItemAddress() : base() {
             OdataType = "#microsoft.graph.itemAddress";

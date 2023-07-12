@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ServiceProvisioningResourceError and sets the default values.
+        /// Instantiates a new serviceProvisioningResourceError and sets the default values.
         /// </summary>
         public ServiceProvisioningResourceError() : base() {
             OdataType = "#microsoft.graph.serviceProvisioningResourceError";

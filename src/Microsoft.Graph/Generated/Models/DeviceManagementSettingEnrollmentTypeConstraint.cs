@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Constraint that enforces the enrollment types applied to a setting
+    /// </summary>
     public class DeviceManagementSettingEnrollmentTypeConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>List of enrollment types</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -20,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new DeviceManagementSettingEnrollmentTypeConstraint and sets the default values.
+        /// Instantiates a new deviceManagementSettingEnrollmentTypeConstraint and sets the default values.
         /// </summary>
         public DeviceManagementSettingEnrollmentTypeConstraint() : base() {
             OdataType = "#microsoft.graph.deviceManagementSettingEnrollmentTypeConstraint";

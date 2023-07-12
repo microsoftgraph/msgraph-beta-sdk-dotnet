@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sequenceStartDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new SequentialActivationRenewalsAlertIncident and sets the default values.
+        /// Instantiates a new sequentialActivationRenewalsAlertIncident and sets the default values.
         /// </summary>
         public SequentialActivationRenewalsAlertIncident() : base() {
             OdataType = "#microsoft.graph.sequentialActivationRenewalsAlertIncident";

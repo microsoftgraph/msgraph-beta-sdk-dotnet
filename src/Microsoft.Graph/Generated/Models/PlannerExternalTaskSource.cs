@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new PlannerExternalTaskSource and sets the default values.
+        /// Instantiates a new plannerExternalTaskSource and sets the default values.
         /// </summary>
         public PlannerExternalTaskSource() : base() {
             OdataType = "#microsoft.graph.plannerExternalTaskSource";

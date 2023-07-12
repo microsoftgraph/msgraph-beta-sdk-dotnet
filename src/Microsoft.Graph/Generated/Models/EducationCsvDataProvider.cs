@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new EducationCsvDataProvider and sets the default values.
+        /// Instantiates a new educationCsvDataProvider and sets the default values.
         /// </summary>
         public EducationCsvDataProvider() : base() {
             OdataType = "#microsoft.graph.educationCsvDataProvider";

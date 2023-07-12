@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new ItemEmail and sets the default values.
+        /// Instantiates a new itemEmail and sets the default values.
         /// </summary>
         public ItemEmail() : base() {
             OdataType = "#microsoft.graph.itemEmail";

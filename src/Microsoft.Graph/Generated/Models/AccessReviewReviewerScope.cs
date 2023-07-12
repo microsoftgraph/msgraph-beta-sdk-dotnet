@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new AccessReviewReviewerScope and sets the default values.
+        /// Instantiates a new accessReviewReviewerScope and sets the default values.
         /// </summary>
         public AccessReviewReviewerScope() : base() {
             OdataType = "#microsoft.graph.accessReviewReviewerScope";

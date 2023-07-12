@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Contains properties and inherited properties for iOS web apps.
+    /// </summary>
     public class IosiPadOSWebClip : MobileApp, IParsable {
         /// <summary>Indicates iOS/iPadOS web clip app URL. Example: &apos;https://www.contoso.com&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("ignoreManifestScope"); }
             set { BackingStore?.Set("ignoreManifestScope", value); }
         }
-        /// <summary>Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding &quot;shine&quot; to the icon. If FALSE, SpringBoard can add &quot;shine&quot;.</summary>
+        /// <summary>Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding &apos;shine&apos; to the icon. If FALSE, SpringBoard can add &apos;shine&apos;.</summary>
         public bool? PreComposedIconEnabled {
             get { return BackingStore?.Get<bool?>("preComposedIconEnabled"); }
             set { BackingStore?.Set("preComposedIconEnabled", value); }
@@ -54,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("useManagedBrowser", value); }
         }
         /// <summary>
-        /// Instantiates a new IosiPadOSWebClip and sets the default values.
+        /// Instantiates a new iosiPadOSWebClip and sets the default values.
         /// </summary>
         public IosiPadOSWebClip() : base() {
             OdataType = "#microsoft.graph.iosiPadOSWebClip";
