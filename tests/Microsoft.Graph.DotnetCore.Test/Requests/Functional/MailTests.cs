@@ -68,7 +68,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ApiException e)
             {
-                Assert.True(false, "Something happened, check out a trace. Error code: " + e.Message);
+                Assert.Fail("Something happened, check out a trace. Error code: " + e.Message);
             }
         }
 
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ApiException e)
             {
-                Assert.True(false, "Something happened, check out a trace. Error code: " + e.Message);
+                Assert.Fail("Something happened, check out a trace. Error code: " + e.Message);
             }
         }
 
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ApiException e)
             {
-                Assert.True(false, "Something happened, check out a trace. Error code: " + e.Message);
+                Assert.Fail("Something happened, check out a trace. Error code: " + e.Message);
             }
         }
 
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ApiException e)
             {
-                Assert.True(false, "Something happened, check out a trace. Error code: " + e.Message);
+                Assert.Fail("Something happened, check out a trace. Error code: " + e.Message);
             }
         }
     }

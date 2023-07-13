@@ -70,12 +70,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                 if (getResponse.Value.First().Id != createResponse.Id)
                 {
-                    Assert.True(false, "Ids not equal in create and get responses");
+                    Assert.Fail("Ids not equal in create and get responses");
                 }
             }
             catch (ODataError e)
             {
-                Assert.True(false, $"Something happened, check out a trace. Error code: {e.Error.Code}");
+                Assert.Fail($"Something happened, check out a trace. Error code: {e.Error.Code}");
             }
         }
 
@@ -107,18 +107,18 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                 if (getResponse.Value.First().Id != createActivityResponse.Id)
                 {
-                    Assert.False(true, "Activity ids not equal in create and get responses");
+                    Assert.Fail("Activity ids not equal in create and get responses");
                 }
 
                 if (getResponse.Value.First().HistoryItems.FirstOrDefault() == null ||
                     !getResponse.Value.First().HistoryItems.Any(x => x.Id == createHistoryResponse.Id))
                 {
-                    Assert.False(true, "History ids not equal in create and get responses");
+                    Assert.Fail("History ids not equal in create and get responses");
                 }
             }
             catch (ODataError e)
             {
-                Assert.False(true, $"Something happened, check out a trace. Error code: {e.Error.Code}");
+                Assert.Fail($"Something happened, check out a trace. Error code: {e.Error.Code}");
             }
         }
 
@@ -151,18 +151,18 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                 if (getRecentResponse.Value.First().Id != createActivityResponse.Id)
                 {
-                    Assert.False(true, "Activity ids not equal in create and get responses");
+                    Assert.Fail("Activity ids not equal in create and get responses");
                 }
 
                 if (getRecentResponse.Value.First().HistoryItems.FirstOrDefault() == null ||
                     !getRecentResponse.Value.First().HistoryItems.Any(x => x.Id == createHistoryResponse.Id))
                 {
-                    Assert.False(true, "History ids not equal in create and get responses");
+                    Assert.Fail("History ids not equal in create and get responses");
                 }
             }
             catch (ODataError e)
             {
-                Assert.False(true, $"Something happened, check out a trace. Error code: {e.Error.Code}");
+                Assert.Fail($"Something happened, check out a trace. Error code: {e.Error.Code}");
             }
         }
 
@@ -190,12 +190,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                 if (getResponse.Value.Any(x => x.Id == createResponse.Id))
                 {
-                    Assert.False(true, "Activity has not been deleted");
+                    Assert.Fail("Activity has not been deleted");
                 }
             }
             catch (ODataError e)
             {
-                Assert.False(true, $"Something happened, check out a trace. Error code: {e.Error.Code}");
+                Assert.Fail($"Something happened, check out a trace. Error code: {e.Error.Code}");
             }
         }
 
@@ -231,18 +231,18 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                 if (getResponse.Value.First().Id != createActivityResponse.Id)
                 {
-                    Assert.True(false, "Activity ids not equal in create and get responses");
+                    Assert.Fail("Activity ids not equal in create and get responses");
                 }
 
                 if (getResponse.Value.First().HistoryItems?.FirstOrDefault() != null &&
                     getResponse.Value.First().HistoryItems.Any(x => x.Id == createHistoryResponse.Id))
                 {
-                    Assert.True(false, "History ids not equal in create and get responses");
+                    Assert.Fail("History ids not equal in create and get responses");
                 }
             }
             catch (ODataError e)
             {
-                Assert.True(false, $"Something happened, check out a trace. Error code: {e.Error.Code}");
+                Assert.Fail($"Something happened, check out a trace. Error code: {e.Error.Code}");
             }
         }
     }

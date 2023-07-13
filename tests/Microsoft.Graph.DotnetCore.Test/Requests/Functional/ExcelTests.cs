@@ -42,7 +42,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     continue;
                 else
                 {
-                    Assert.True(false, "Test cleanup is not removing the test Excel file from the test tenant. Please check the cleanup code.");
+                    Assert.Fail("Test cleanup is not removing the test Excel file from the test tenant. Please check the cleanup code.");
                 }
             }
         }
@@ -98,9 +98,9 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             catch (ODataError e)
             {
                 if (e.Error.Code == "resourceModified")
-                    Assert.True(false, "Error code: " + e.Error.Code + ", message: " + e.Error.Message);
+                    Assert.Fail("Error code: " + e.Error.Code + ", message: " + e.Error.Message);
                 else
-                    Assert.True(false, "Something happened. Error code: " + e.Error.Code);
+                    Assert.Fail("Something happened. Error code: " + e.Error.Code);
             }
         }
     }

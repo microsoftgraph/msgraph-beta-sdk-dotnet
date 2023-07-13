@@ -25,7 +25,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ODataError e)
             {
-                Assert.False(true, $"Something happened, check out a trace. Error code: {e.Error.Code}");
+                Assert.Fail($"Something happened, check out a trace. Error code: {e.Error.Code}");
             }
         }
 
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ODataError e)
             {
-                Assert.False(true, $"Something happened, check out a trace. Error code: {e.Error.Code}");
+                Assert.Fail($"Something happened, check out a trace. Error code: {e.Error.Code}");
             }
         }
 
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ODataError e)
             {
-                Assert.False(true, $"Something happened, check out a trace. Error code: {e.Error.Code}");
+                Assert.Fail($"Something happened, check out a trace. Error code: {e.Error.Code}");
             }
         }
 
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ODataError e)
             {
-                Assert.False(true, $"Something happened, check out a trace. Error code: {e.Error.Code}");
+                Assert.Fail($"Something happened, check out a trace. Error code: {e.Error.Code}");
             }
         }
 
