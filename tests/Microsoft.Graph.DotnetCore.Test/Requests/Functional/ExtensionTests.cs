@@ -31,7 +31,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             {
                 if (e.Error.Message == "An extension already exists with given id.")
                 {
-                    Assert.True(false, "The extension already exists. Delete the extension step missing." );
+                    Assert.Fail("The extension already exists. Delete the extension step missing.");
                 }
             }
         }

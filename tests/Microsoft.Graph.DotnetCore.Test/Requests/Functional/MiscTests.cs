@@ -36,7 +36,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ODataError e)
             {
-                Assert.True(false, e.Error.ToString());
+                Assert.Fail(e.Error.ToString());
             }
         }
     }

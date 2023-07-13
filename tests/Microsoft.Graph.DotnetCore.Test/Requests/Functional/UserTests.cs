@@ -46,7 +46,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (Exception e)
             {
-                Assert.True(false, "Something happened, check out a trace. Error code: " + e.Message);
+                Assert.Fail("Something happened, check out a trace. Error code: " + e.Message);
             }
         }
 
@@ -186,7 +186,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ODataError e)
             {
-                Assert.True(false, $"Something happened, check out a trace. Error code: {e.Error.Code}");
+                Assert.Fail($"Something happened, check out a trace. Error code: {e.Error.Code}");
             }
         }
 
@@ -207,11 +207,11 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             {
                 if (e.Error.Code == "ErrorItemNotFound")
                 {
-                    Assert.True(false, "We didn't get a photo back from the service. Check that the target account has a photo.");
+                    Assert.Fail("We didn't get a photo back from the service. Check that the target account has a photo.");
                 }
                 else
                 {
-                    Assert.True(false, "Something happened. Catch the HTTP traffic and find out what happened.");
+                    Assert.Fail("Something happened. Catch the HTTP traffic and find out what happened.");
                 }
             }
         }
@@ -232,7 +232,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ODataError e)
             {
-                Assert.True(false, $"Something happened, check out a trace. Error code: {e.Error.Code}");
+                Assert.Fail($"Something happened, check out a trace. Error code: {e.Error.Code}");
             }
         }
 
@@ -247,7 +247,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ODataError e)
             {
-                Assert.True(false, $"Something happened. Error code: {e.Error.Code}");
+                Assert.Fail($"Something happened. Error code: {e.Error.Code}");
             }
         }
 
@@ -263,7 +263,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ODataError e)
             {
-                Assert.True(false, $"Something happened. Error code: {e.Error.Code}");
+                Assert.Fail($"Something happened. Error code: {e.Error.Code}");
             }
         }
 
@@ -288,7 +288,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ODataError e)
             {
-                Assert.True(false, $"Something happened. Error code: {e.Error.Code}");
+                Assert.Fail($"Something happened. Error code: {e.Error.Code}");
             }
         }
 
@@ -335,7 +335,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ODataError e)
             {
-                Assert.True(false, $"Something happened. Error code: {e.Error.Code}");
+                Assert.Fail($"Something happened. Error code: {e.Error.Code}");
             }
         }
 
@@ -385,7 +385,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ODataError e)
             {
-                Assert.True(false, $"Something happened. Error code: {e.Error.Code}");
+                Assert.Fail($"Something happened. Error code: {e.Error.Code}");
             }
         }
     }

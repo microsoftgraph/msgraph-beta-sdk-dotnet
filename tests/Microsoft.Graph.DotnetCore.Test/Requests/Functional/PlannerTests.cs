@@ -9,7 +9,7 @@
 
     public class PlannerTests : GraphTestBase
     {
-        private Group testGroup;
+        private readonly Group testGroup = new ();
 
         private async void TestCleanUp()
         {
@@ -74,7 +74,7 @@
             }
             catch (ApiException e)
             {
-                Assert.True(false, "Something happened, check out a trace. Error code: " + e.Message);
+                Assert.Fail("Something happened, check out a trace. Error code: " + e.Message);
             }
         }
 
@@ -91,7 +91,7 @@
             }
             catch (ApiException e)
             {
-                Assert.True(false, $"Tried to get a PlannerPlan and failed. Error: {e.Message}");
+                Assert.Fail($"Tried to get a PlannerPlan and failed. Error: {e.Message}");
             }
             return null;
         }
@@ -112,7 +112,7 @@
             }
             catch (ApiException e)
             {
-                Assert.True(false, $"Something happened, check out a trace. Error: {e.Message}");
+                Assert.Fail($"Something happened, check out a trace. Error: {e.Message}");
             }
         }
 /*

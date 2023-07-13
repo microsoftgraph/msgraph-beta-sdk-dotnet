@@ -57,12 +57,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ApiException e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
 
             catch (Exception e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
         }
 
@@ -85,12 +85,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ApiException e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
 
             catch (Exception e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
         }
 
@@ -113,12 +113,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ApiException e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
 
             catch (Exception e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
         }
 
@@ -141,12 +141,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ApiException e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
 
             catch (Exception e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
         }
 
@@ -170,12 +170,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ApiException e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
 
             catch (Exception e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
         }
 
@@ -198,12 +198,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ApiException e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
 
             catch (Exception e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
         }
 
@@ -236,12 +236,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ApiException e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
 
             catch (Exception e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
         }
 
@@ -265,12 +265,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ApiException e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
 
             catch (Exception e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
         }
 
@@ -296,7 +296,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
             catch (Exception e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
         }
 
@@ -324,7 +324,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
             catch (Exception e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
         }
 
@@ -372,12 +372,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ApiException e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
 
             catch (Exception e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
         }
         
@@ -425,12 +425,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ODataError e)
             {
-                Assert.True(false, $"Error code: {e.Error.Code}");
+                Assert.Fail($"Error code: {e.Error.Code}");
             }
 
             catch (Exception e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
         }
 
@@ -491,12 +491,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ODataError e)
             {
-                Assert.True(false, $"Error code: {e.Error.Code}");
+                Assert.Fail($"Error code: {e.Error.Code}");
             }
 
             catch (Exception e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
         }
 
@@ -555,12 +555,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ODataError e)
             {
-                Assert.True(false, $"Error code: {e.Error.Code}");
+                Assert.Fail($"Error code: {e.Error.Code}");
             }
 
             catch (Exception e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
         }
 
@@ -677,12 +677,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ODataError e)
             {
-                Assert.True(false, $"Error code: {e.Error.Code}");
+                Assert.Fail($"Error code: {e.Error.Code}");
             }
 
             catch (Exception e)
             {
-                Assert.True(false, $"Error code: {e.Message}");
+                Assert.Fail($"Error code: {e.Message}");
             }
         }
 
@@ -703,7 +703,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (Exception)
             {
-                Assert.True(false, "An unexpected exception was thrown. This test case failed.");
+                Assert.Fail("An unexpected exception was thrown. This test case failed.");
             }
         }
     }

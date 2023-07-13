@@ -100,7 +100,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             try
             {
                 var deletedSchemaExtension = await graphClient.SchemaExtensions[extensionFromGet.Id].GetAsync();
-                Assert.False(true, "Expected: ServiceException since the schema extension ws deleted; Actual: the GET on the supposedly deleted schema extension returned successfully.");
+                Assert.Fail("Expected: ServiceException since the schema extension ws deleted; Actual: the GET on the supposedly deleted schema extension returned successfully.");
             }
             catch (ODataError e)
             {
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
             catch (ODataError e)
             {
-                Assert.False(true, ($"Error: {e.Error.ToString()}"));
+                Assert.Fail(($"Error: {e.Error.ToString()}"));
             }
         }
     }
