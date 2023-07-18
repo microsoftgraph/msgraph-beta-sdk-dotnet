@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovernmentOrganizationMapping;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerSettings;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.FrontLineServicePlans;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePermissions;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections;
@@ -53,6 +54,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         /// <summary>Provides operations to manage the externalPartnerSettings property of the microsoft.graph.virtualEndpoint entity.</summary>
         public ExternalPartnerSettingsRequestBuilder ExternalPartnerSettings { get =>
             new ExternalPartnerSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the frontLineServicePlans property of the microsoft.graph.virtualEndpoint entity.</summary>
+        public FrontLineServicePlansRequestBuilder FrontLineServicePlans { get =>
+            new FrontLineServicePlansRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the galleryImages property of the microsoft.graph.virtualEndpoint entity.</summary>
         public GalleryImagesRequestBuilder GalleryImages { get =>

@@ -89,6 +89,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("externalPartnerSettings", value); }
         }
 #endif
+        /// <summary>The frontLineServicePlans property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<CloudPcFrontLineServicePlan>? FrontLineServicePlans {
+            get { return BackingStore?.Get<List<CloudPcFrontLineServicePlan>?>("frontLineServicePlans"); }
+            set { BackingStore?.Set("frontLineServicePlans", value); }
+        }
+#nullable restore
+#else
+        public List<CloudPcFrontLineServicePlan> FrontLineServicePlans {
+            get { return BackingStore?.Get<List<CloudPcFrontLineServicePlan>>("frontLineServicePlans"); }
+            set { BackingStore?.Set("frontLineServicePlans", value); }
+        }
+#endif
         /// <summary>The gallery image resource on Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -248,6 +262,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"crossCloudGovernmentOrganizationMapping", n => { CrossCloudGovernmentOrganizationMapping = n.GetObjectValue<CloudPcCrossCloudGovernmentOrganizationMapping>(CloudPcCrossCloudGovernmentOrganizationMapping.CreateFromDiscriminatorValue); } },
                 {"deviceImages", n => { DeviceImages = n.GetCollectionOfObjectValues<CloudPcDeviceImage>(CloudPcDeviceImage.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"externalPartnerSettings", n => { ExternalPartnerSettings = n.GetCollectionOfObjectValues<CloudPcExternalPartnerSetting>(CloudPcExternalPartnerSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"frontLineServicePlans", n => { FrontLineServicePlans = n.GetCollectionOfObjectValues<CloudPcFrontLineServicePlan>(CloudPcFrontLineServicePlan.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"galleryImages", n => { GalleryImages = n.GetCollectionOfObjectValues<CloudPcGalleryImage>(CloudPcGalleryImage.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"onPremisesConnections", n => { OnPremisesConnections = n.GetCollectionOfObjectValues<CloudPcOnPremisesConnection>(CloudPcOnPremisesConnection.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"organizationSettings", n => { OrganizationSettings = n.GetObjectValue<CloudPcOrganizationSettings>(CloudPcOrganizationSettings.CreateFromDiscriminatorValue); } },
@@ -273,6 +288,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<CloudPcCrossCloudGovernmentOrganizationMapping>("crossCloudGovernmentOrganizationMapping", CrossCloudGovernmentOrganizationMapping);
             writer.WriteCollectionOfObjectValues<CloudPcDeviceImage>("deviceImages", DeviceImages);
             writer.WriteCollectionOfObjectValues<CloudPcExternalPartnerSetting>("externalPartnerSettings", ExternalPartnerSettings);
+            writer.WriteCollectionOfObjectValues<CloudPcFrontLineServicePlan>("frontLineServicePlans", FrontLineServicePlans);
             writer.WriteCollectionOfObjectValues<CloudPcGalleryImage>("galleryImages", GalleryImages);
             writer.WriteCollectionOfObjectValues<CloudPcOnPremisesConnection>("onPremisesConnections", OnPremisesConnections);
             writer.WriteObjectValue<CloudPcOrganizationSettings>("organizationSettings", OrganizationSettings);

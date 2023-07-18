@@ -12,6 +12,8 @@ namespace Microsoft.Graph.Beta.Models {
         Failed,
         [EnumMember(Value = "warning")]
         Warning,
+        [EnumMember(Value = "informational")]
+        Informational,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

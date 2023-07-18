@@ -28,6 +28,25 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.EndUserNotifications.It
         public EndUserNotificationDetailItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/attackSimulation/endUserNotifications/{endUserNotification%2Did}/details/{endUserNotificationDetail%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
+        /// Delete navigation property details for security
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task DeleteAsync(Action<EndUserNotificationDetailItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task DeleteAsync(Action<EndUserNotificationDetailItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+        }
+        /// <summary>
         /// Get details from security
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -45,6 +64,51 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.EndUserNotifications.It
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<EndUserNotificationDetail>(requestInfo, EndUserNotificationDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Update the navigation property details in security
+        /// </summary>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<EndUserNotificationDetail?> PatchAsync(EndUserNotificationDetail body, Action<EndUserNotificationDetailItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task<EndUserNotificationDetail> PatchAsync(EndUserNotificationDetail body, Action<EndUserNotificationDetailItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<EndUserNotificationDetail>(requestInfo, EndUserNotificationDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Delete navigation property details for security
+        /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToDeleteRequestInformation(Action<EndUserNotificationDetailItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
+#else
+        public RequestInformation ToDeleteRequestInformation(Action<EndUserNotificationDetailItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
+#endif
+            var requestInfo = new RequestInformation {
+                HttpMethod = Method.DELETE,
+                UrlTemplate = UrlTemplate,
+                PathParameters = PathParameters,
+            };
+            if (requestConfiguration != null) {
+                var requestConfig = new EndUserNotificationDetailItemRequestBuilderDeleteRequestConfiguration();
+                requestConfiguration.Invoke(requestConfig);
+                requestInfo.AddRequestOptions(requestConfig.Options);
+                requestInfo.AddHeaders(requestConfig.Headers);
+            }
+            return requestInfo;
         }
         /// <summary>
         /// Get details from security
@@ -71,6 +135,50 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.EndUserNotifications.It
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
+        }
+        /// <summary>
+        /// Update the navigation property details in security
+        /// </summary>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPatchRequestInformation(EndUserNotificationDetail body, Action<EndUserNotificationDetailItemRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
+#nullable restore
+#else
+        public RequestInformation ToPatchRequestInformation(EndUserNotificationDetail body, Action<EndUserNotificationDetailItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
+#endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation {
+                HttpMethod = Method.PATCH,
+                UrlTemplate = UrlTemplate,
+                PathParameters = PathParameters,
+            };
+            requestInfo.Headers.Add("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            if (requestConfiguration != null) {
+                var requestConfig = new EndUserNotificationDetailItemRequestBuilderPatchRequestConfiguration();
+                requestConfiguration.Invoke(requestConfig);
+                requestInfo.AddRequestOptions(requestConfig.Options);
+                requestInfo.AddHeaders(requestConfig.Headers);
+            }
+            return requestInfo;
+        }
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
+        public class EndUserNotificationDetailItemRequestBuilderDeleteRequestConfiguration {
+            /// <summary>Request headers</summary>
+            public RequestHeaders Headers { get; set; }
+            /// <summary>Request options</summary>
+            public IList<IRequestOption> Options { get; set; }
+            /// <summary>
+            /// Instantiates a new EndUserNotificationDetailItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// </summary>
+            public EndUserNotificationDetailItemRequestBuilderDeleteRequestConfiguration() {
+                Options = new List<IRequestOption>();
+                Headers = new RequestHeaders();
+            }
         }
         /// <summary>
         /// Get details from security
@@ -111,6 +219,22 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.EndUserNotifications.It
             /// Instantiates a new EndUserNotificationDetailItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EndUserNotificationDetailItemRequestBuilderGetRequestConfiguration() {
+                Options = new List<IRequestOption>();
+                Headers = new RequestHeaders();
+            }
+        }
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
+        public class EndUserNotificationDetailItemRequestBuilderPatchRequestConfiguration {
+            /// <summary>Request headers</summary>
+            public RequestHeaders Headers { get; set; }
+            /// <summary>Request options</summary>
+            public IList<IRequestOption> Options { get; set; }
+            /// <summary>
+            /// Instantiates a new EndUserNotificationDetailItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// </summary>
+            public EndUserNotificationDetailItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
                 Headers = new RequestHeaders();
             }

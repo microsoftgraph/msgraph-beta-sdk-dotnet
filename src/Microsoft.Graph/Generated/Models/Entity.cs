@@ -325,6 +325,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.cloudPcDeviceImage" => new CloudPcDeviceImage(),
                 "#microsoft.graph.cloudPcExportJob" => new CloudPcExportJob(),
                 "#microsoft.graph.cloudPcExternalPartnerSetting" => new CloudPcExternalPartnerSetting(),
+                "#microsoft.graph.cloudPcFrontLineServicePlan" => new CloudPcFrontLineServicePlan(),
                 "#microsoft.graph.cloudPcGalleryImage" => new CloudPcGalleryImage(),
                 "#microsoft.graph.cloudPcOnPremisesConnection" => new CloudPcOnPremisesConnection(),
                 "#microsoft.graph.cloudPcOrganizationSettings" => new CloudPcOrganizationSettings(),

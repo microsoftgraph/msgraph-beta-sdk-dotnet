@@ -48,6 +48,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("localAdminEnabled"); }
             set { BackingStore?.Set("localAdminEnabled", value); }
         }
+        /// <summary>The resetEnabled property</summary>
+        public bool? ResetEnabled {
+            get { return BackingStore?.Get<bool?>("resetEnabled"); }
+            set { BackingStore?.Set("resetEnabled", value); }
+        }
         /// <summary>Defines how frequently a restore point is created that is, a snapshot is taken) for users&apos; provisioned Cloud PCs (default is 12 hours), and whether the user is allowed to restore their own Cloud PCs to a backup made at a specific point in time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"localAdminEnabled", n => { LocalAdminEnabled = n.GetBoolValue(); } },
+                {"resetEnabled", n => { ResetEnabled = n.GetBoolValue(); } },
                 {"restorePointSetting", n => { RestorePointSetting = n.GetObjectValue<CloudPcRestorePointSetting>(CloudPcRestorePointSetting.CreateFromDiscriminatorValue); } },
                 {"selfServiceEnabled", n => { SelfServiceEnabled = n.GetBoolValue(); } },
             };
@@ -101,6 +107,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteBoolValue("localAdminEnabled", LocalAdminEnabled);
+            writer.WriteBoolValue("resetEnabled", ResetEnabled);
             writer.WriteObjectValue<CloudPcRestorePointSetting>("restorePointSetting", RestorePointSetting);
             writer.WriteBoolValue("selfServiceEnabled", SelfServiceEnabled);
         }

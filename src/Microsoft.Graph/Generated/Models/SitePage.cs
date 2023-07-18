@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class SitePage : BaseItem, IParsable {
-        /// <summary>Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical section</summary>
+        /// <summary>Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical sections.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.CanvasLayout? CanvasLayout {
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("canvasLayout", value); }
         }
 #endif
-        /// <summary>Inherited from baseItem.</summary>
+        /// <summary>The contentType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ContentTypeInfo? ContentType {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contentType", value); }
         }
 #endif
-        /// <summary>The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.</summary>
+        /// <summary>The pageLayout property</summary>
         public PageLayoutType? PageLayout {
             get { return BackingStore?.Get<PageLayoutType?>("pageLayout"); }
             set { BackingStore?.Set("pageLayout", value); }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<PagePromotionType?>("promotionKind"); }
             set { BackingStore?.Set("promotionKind", value); }
         }
-        /// <summary>The publishing status and the MM.mm version of the page.</summary>
+        /// <summary>The publishingState property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PublicationFacet? PublishingState {
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("thumbnailWebUrl", value); }
         }
 #endif
-        /// <summary>Title of the sitePage.</summary>
+        /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title {
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("titleArea", value); }
         }
 #endif
-        /// <summary>Collection of webparts on the SharePoint page</summary>
+        /// <summary>Collection of webparts on the SharePoint page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<WebPart>? WebParts {

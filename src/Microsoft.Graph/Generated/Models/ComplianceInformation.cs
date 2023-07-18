@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The certificationControls property</summary>
+        /// <summary>Collection of the certification controls associated with the certification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<CertificationControl>? CertificationControls {
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("certificationControls", value); }
         }
 #endif
-        /// <summary>The certificationName property</summary>
+        /// <summary>The name of the compliance certification, for example, ISO 27018:2014, GDPR, FedRAMP, and NIST 800-171.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CertificationName {

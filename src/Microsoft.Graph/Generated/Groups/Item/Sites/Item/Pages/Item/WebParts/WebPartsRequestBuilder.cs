@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.WebParts {
         public WebPartsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{sitePage%2Did}/webParts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read the properties and relationships of a webPart object.
+        /// Collection of webparts on the SharePoint page.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.WebParts {
             return await RequestAdapter.SendAsync<WebPart>(requestInfo, WebPart.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read the properties and relationships of a webPart object.
+        /// Collection of webparts on the SharePoint page.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.WebParts {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a webPart object.
+        /// Collection of webparts on the SharePoint page.
         /// </summary>
         public class WebPartsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

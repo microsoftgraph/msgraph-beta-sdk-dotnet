@@ -19,6 +19,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("aadDeviceId", value); }
         }
 #endif
+        /// <summary>The connectionSettings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public CloudPcConnectionSettings? ConnectionSettings {
+            get { return BackingStore?.Get<CloudPcConnectionSettings?>("connectionSettings"); }
+            set { BackingStore?.Set("connectionSettings", value); }
+        }
+#nullable restore
+#else
+        public CloudPcConnectionSettings ConnectionSettings {
+            get { return BackingStore?.Get<CloudPcConnectionSettings>("connectionSettings"); }
+            set { BackingStore?.Set("connectionSettings", value); }
+        }
+#endif
         /// <summary>The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC can be connected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -288,6 +302,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"aadDeviceId", n => { AadDeviceId = n.GetStringValue(); } },
+                {"connectionSettings", n => { ConnectionSettings = n.GetObjectValue<CloudPcConnectionSettings>(CloudPcConnectionSettings.CreateFromDiscriminatorValue); } },
                 {"connectivityResult", n => { ConnectivityResult = n.GetObjectValue<CloudPcConnectivityResult>(CloudPcConnectivityResult.CreateFromDiscriminatorValue); } },
                 {"diskEncryptionState", n => { DiskEncryptionState = n.GetEnumValue<CloudPcDiskEncryptionState>(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -322,6 +337,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("aadDeviceId", AadDeviceId);
+            writer.WriteObjectValue<CloudPcConnectionSettings>("connectionSettings", ConnectionSettings);
             writer.WriteObjectValue<CloudPcConnectivityResult>("connectivityResult", ConnectivityResult);
             writer.WriteEnumValue<CloudPcDiskEncryptionState>("diskEncryptionState", DiskEncryptionState);
             writer.WriteStringValue("displayName", DisplayName);

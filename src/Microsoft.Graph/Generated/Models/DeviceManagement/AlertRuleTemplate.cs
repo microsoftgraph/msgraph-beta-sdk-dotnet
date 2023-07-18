@@ -10,5 +10,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         CloudPcOnPremiseNetworkConnectionCheckScenario,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "cloudPcInGracePeriodScenario")]
+        CloudPcInGracePeriodScenario,
     }
 }
