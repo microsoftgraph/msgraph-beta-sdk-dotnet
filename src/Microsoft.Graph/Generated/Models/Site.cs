@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("operations", value); }
         }
 #endif
-        /// <summary>The collection of pages in the SitePages list in this site.</summary>
+        /// <summary>The collection of pages in the baseSitePages list in this site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<SitePage>? Pages {

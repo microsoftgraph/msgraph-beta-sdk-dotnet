@@ -19,6 +19,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("printerId", value); }
         }
 #endif
+        /// <summary>The name of the printer represented by these statistics.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrinterName {
+            get { return BackingStore?.Get<string?>("printerName"); }
+            set { BackingStore?.Set("printerName", value); }
+        }
+#nullable restore
+#else
+        public string PrinterName {
+            get { return BackingStore?.Get<string>("printerName"); }
+            set { BackingStore?.Set("printerName", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -33,6 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"printerId", n => { PrinterId = n.GetStringValue(); } },
+                {"printerName", n => { PrinterName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -43,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("printerId", PrinterId);
+            writer.WriteStringValue("printerName", PrinterName);
         }
     }
 }

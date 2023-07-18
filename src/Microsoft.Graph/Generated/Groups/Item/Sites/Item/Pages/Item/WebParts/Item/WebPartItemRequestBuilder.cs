@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.WebParts.Item {
         public WebPartItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{sitePage%2Did}/webParts/{webPart%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property webParts for groups
+        /// Delete a webPart object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/webpart-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -52,8 +53,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.WebParts.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read the properties and relationships of a webPart object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/webpart-get?view=graph-rest-1.0" />
+        /// Collection of webparts on the SharePoint page.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.WebParts.Item {
             return await RequestAdapter.SendAsync<WebPart>(requestInfo, WebPart.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property webParts for groups
+        /// Delete a webPart object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.WebParts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a webPart object.
+        /// Collection of webparts on the SharePoint page.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -187,7 +187,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.WebParts.Item {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of a webPart object.
+        /// Collection of webparts on the SharePoint page.
         /// </summary>
         public class WebPartItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

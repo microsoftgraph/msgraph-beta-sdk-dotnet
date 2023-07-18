@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads {
             return await RequestAdapter.SendAsync<ConversationThreadCollectionResponse>(requestInfo, ConversationThreadCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to threads for groups
+        /// Create a new thread in the specified conversation. A thread and post are created as specified. Use reply thread to further postto that thread. Or, if you get the post ID, you can also reply to that post in that thread. Note: You can also start a new conversation by first creating a thread.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/conversation-post-threads?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +108,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to threads for groups
+        /// Create a new thread in the specified conversation. A thread and post are created as specified. Use reply thread to further postto that thread. Or, if you get the post ID, you can also reply to that post in that thread. Note: You can also start a new conversation by first creating a thread.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

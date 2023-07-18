@@ -16,5 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
         UnknownFutureValue,
         [EnumMember(Value = "noLicenseAvailableConnectivityFailureReport")]
         NoLicenseAvailableConnectivityFailureReport,
+        [EnumMember(Value = "remoteConnectionQualityReports")]
+        RemoteConnectionQualityReports,
     }
 }

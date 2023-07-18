@@ -1,5 +1,7 @@
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ExportJobs;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetConnectionQualityReports;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetDailyAggregatedRemoteConnectionReports;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetInaccessibleCloudPcReports;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealTimeRemoteConnectionLatencyWithCloudPcId;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealTimeRemoteConnectionStatusWithCloudPcId;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRemoteConnectionHistoricalReports;
@@ -24,9 +26,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         public ExportJobsRequestBuilder ExportJobs { get =>
             new ExportJobsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getConnectionQualityReports method.</summary>
+        public GetConnectionQualityReportsRequestBuilder GetConnectionQualityReports { get =>
+            new GetConnectionQualityReportsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the getDailyAggregatedRemoteConnectionReports method.</summary>
         public GetDailyAggregatedRemoteConnectionReportsRequestBuilder GetDailyAggregatedRemoteConnectionReports { get =>
             new GetDailyAggregatedRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getInaccessibleCloudPcReports method.</summary>
+        public GetInaccessibleCloudPcReportsRequestBuilder GetInaccessibleCloudPcReports { get =>
+            new GetInaccessibleCloudPcReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getRemoteConnectionHistoricalReports method.</summary>
         public GetRemoteConnectionHistoricalReportsRequestBuilder GetRemoteConnectionHistoricalReports { get =>

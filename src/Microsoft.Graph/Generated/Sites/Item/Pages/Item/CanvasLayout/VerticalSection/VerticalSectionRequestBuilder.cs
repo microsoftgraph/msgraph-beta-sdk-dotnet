@@ -52,8 +52,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item.CanvasLayout.VerticalSectio
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read the properties and relationships of a verticalSection object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/verticalsection-get?view=graph-rest-1.0" />
+        /// Vertical section on the SharePoint page.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -72,8 +71,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item.CanvasLayout.VerticalSectio
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.VerticalSection>(requestInfo, Microsoft.Graph.Beta.Models.VerticalSection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a verticalSection object in a given sitePage.  A sitePage can only have one vertical section. If a vertical section already exists, this method returns a `409 Conflict` response code.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/sitepage-post-verticalsection?view=graph-rest-1.0" />
+        /// Update the navigation property verticalSection in sites
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -118,7 +116,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item.CanvasLayout.VerticalSectio
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a verticalSection object.
+        /// Vertical section on the SharePoint page.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +142,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item.CanvasLayout.VerticalSectio
             return requestInfo;
         }
         /// <summary>
-        /// Create a verticalSection object in a given sitePage.  A sitePage can only have one vertical section. If a vertical section already exists, this method returns a `409 Conflict` response code.
+        /// Update the navigation property verticalSection in sites
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +186,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item.CanvasLayout.VerticalSectio
             }
         }
         /// <summary>
-        /// Read the properties and relationships of a verticalSection object.
+        /// Vertical section on the SharePoint page.
         /// </summary>
         public class VerticalSectionRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -40,8 +40,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.CanvasLayout.Ho
         public ColumnsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{sitePage%2Did}/canvasLayout/horizontalSections/{horizontalSection%2Did}/columns{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the horizontalSectionColumn objects and their properties. Sort by `id` in ascending order.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/horizontalsectioncolumn-list?view=graph-rest-1.0" />
+        /// The set of vertical columns in this section.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.CanvasLayout.Ho
             return await RequestAdapter.SendAsync<HorizontalSectionColumn>(requestInfo, HorizontalSectionColumn.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the horizontalSectionColumn objects and their properties. Sort by `id` in ascending order.
+        /// The set of vertical columns in this section.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +134,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.CanvasLayout.Ho
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the horizontalSectionColumn objects and their properties. Sort by `id` in ascending order.
+        /// The set of vertical columns in this section.
         /// </summary>
         public class ColumnsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

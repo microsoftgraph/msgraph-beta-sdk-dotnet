@@ -114,6 +114,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("printerId", value); }
         }
 #endif
+        /// <summary>The printer name that the job was queued for. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrinterName {
+            get { return BackingStore?.Get<string?>("printerName"); }
+            set { BackingStore?.Set("printerName", value); }
+        }
+#nullable restore
+#else
+        public string PrinterName {
+            get { return BackingStore?.Get<string>("printerName"); }
+            set { BackingStore?.Set("printerName", value); }
+        }
+#endif
         /// <summary>The processingState property</summary>
         public PrintJobProcessingState? ProcessingState {
             get { return BackingStore?.Get<PrintJobProcessingState?>("processingState"); }
@@ -157,6 +171,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"pageCount", n => { PageCount = n.GetIntValue(); } },
                 {"printerId", n => { PrinterId = n.GetStringValue(); } },
+                {"printerName", n => { PrinterName = n.GetStringValue(); } },
                 {"processingState", n => { ProcessingState = n.GetEnumValue<PrintJobProcessingState>(); } },
                 {"simplexPageCount", n => { SimplexPageCount = n.GetIntValue(); } },
             };
@@ -180,6 +195,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("pageCount", PageCount);
             writer.WriteStringValue("printerId", PrinterId);
+            writer.WriteStringValue("printerName", PrinterName);
             writer.WriteEnumValue<PrintJobProcessingState>("processingState", ProcessingState);
             writer.WriteIntValue("simplexPageCount", SimplexPageCount);
             writer.WriteAdditionalData(AdditionalData);
