@@ -11,6 +11,7 @@ using Microsoft.Graph.Beta.AppCatalogs;
 using Microsoft.Graph.Beta.AppRoleAssignments;
 using Microsoft.Graph.Beta.ApplicationTemplates;
 using Microsoft.Graph.Beta.Applications;
+using Microsoft.Graph.Beta.ApplicationsWithAppId;
 using Microsoft.Graph.Beta.ApprovalWorkflowProviders;
 using Microsoft.Graph.Beta.AuditLogs;
 using Microsoft.Graph.Beta.AuthenticationMethodConfigurations;
@@ -32,10 +33,12 @@ using Microsoft.Graph.Beta.DeviceAppManagement;
 using Microsoft.Graph.Beta.DeviceLocalCredentials;
 using Microsoft.Graph.Beta.DeviceManagement;
 using Microsoft.Graph.Beta.Devices;
+using Microsoft.Graph.Beta.DevicesWithDeviceId;
 using Microsoft.Graph.Beta.DirectoryNamespace;
 using Microsoft.Graph.Beta.DirectoryObjects;
 using Microsoft.Graph.Beta.DirectoryRoleTemplates;
 using Microsoft.Graph.Beta.DirectoryRoles;
+using Microsoft.Graph.Beta.DirectoryRolesWithRoleTemplateId;
 using Microsoft.Graph.Beta.DirectorySettingTemplates;
 using Microsoft.Graph.Beta.DomainDnsRecords;
 using Microsoft.Graph.Beta.Domains;
@@ -96,6 +99,7 @@ using Microsoft.Graph.Beta.ScopedRoleMemberships;
 using Microsoft.Graph.Beta.Search;
 using Microsoft.Graph.Beta.Security;
 using Microsoft.Graph.Beta.ServicePrincipals;
+using Microsoft.Graph.Beta.ServicePrincipalsWithAppId;
 using Microsoft.Graph.Beta.Settings;
 using Microsoft.Graph.Beta.Shares;
 using Microsoft.Graph.Beta.Sites;
@@ -580,6 +584,14 @@ namespace Microsoft.Graph.Beta {
             new UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
+        /// Provides operations to manage the collection of application entities.
+        /// </summary>
+        /// <param name="appId">Alternate key of application</param>
+        public ApplicationsWithAppIdRequestBuilder ApplicationsWithAppId(string appId) {
+            if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
+            return new ApplicationsWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
+        }
+        /// <summary>
         /// Instantiates a new BaseGraphServiceClient and sets the default values.
         /// </summary>
         /// <param name="backingStore">The backing store to use for the models.</param>
@@ -596,6 +608,30 @@ namespace Microsoft.Graph.Beta {
             }
             PathParameters.TryAdd("baseurl", RequestAdapter.BaseUrl);
             RequestAdapter.EnableBackingStore(backingStore);
+        }
+        /// <summary>
+        /// Provides operations to manage the collection of device entities.
+        /// </summary>
+        /// <param name="deviceId">Alternate key of device</param>
+        public DevicesWithDeviceIdRequestBuilder DevicesWithDeviceId(string deviceId) {
+            if(string.IsNullOrEmpty(deviceId)) throw new ArgumentNullException(nameof(deviceId));
+            return new DevicesWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, deviceId);
+        }
+        /// <summary>
+        /// Provides operations to manage the collection of directoryRole entities.
+        /// </summary>
+        /// <param name="roleTemplateId">Alternate key of directoryRole</param>
+        public DirectoryRolesWithRoleTemplateIdRequestBuilder DirectoryRolesWithRoleTemplateId(string roleTemplateId) {
+            if(string.IsNullOrEmpty(roleTemplateId)) throw new ArgumentNullException(nameof(roleTemplateId));
+            return new DirectoryRolesWithRoleTemplateIdRequestBuilder(PathParameters, RequestAdapter, roleTemplateId);
+        }
+        /// <summary>
+        /// Provides operations to manage the collection of servicePrincipal entities.
+        /// </summary>
+        /// <param name="appId">Alternate key of servicePrincipal</param>
+        public ServicePrincipalsWithAppIdRequestBuilder ServicePrincipalsWithAppId(string appId) {
+            if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
+            return new ServicePrincipalsWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
         }
     }
 }

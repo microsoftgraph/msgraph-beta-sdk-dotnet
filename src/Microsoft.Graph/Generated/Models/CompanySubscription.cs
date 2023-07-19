@@ -5,6 +5,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CompanySubscription : Entity, IParsable {
+        /// <summary>The commerceSubscriptionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CommerceSubscriptionId {
+            get { return BackingStore?.Get<string?>("commerceSubscriptionId"); }
+            set { BackingStore?.Set("commerceSubscriptionId", value); }
+        }
+#nullable restore
+#else
+        public string CommerceSubscriptionId {
+            get { return BackingStore?.Get<string>("commerceSubscriptionId"); }
+            set { BackingStore?.Set("commerceSubscriptionId", value); }
+        }
+#endif
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -32,6 +46,48 @@ namespace Microsoft.Graph.Beta.Models {
         public string OcpSubscriptionId {
             get { return BackingStore?.Get<string>("ocpSubscriptionId"); }
             set { BackingStore?.Set("ocpSubscriptionId", value); }
+        }
+#endif
+        /// <summary>The ownerId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OwnerId {
+            get { return BackingStore?.Get<string?>("ownerId"); }
+            set { BackingStore?.Set("ownerId", value); }
+        }
+#nullable restore
+#else
+        public string OwnerId {
+            get { return BackingStore?.Get<string>("ownerId"); }
+            set { BackingStore?.Set("ownerId", value); }
+        }
+#endif
+        /// <summary>The ownerTenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OwnerTenantId {
+            get { return BackingStore?.Get<string?>("ownerTenantId"); }
+            set { BackingStore?.Set("ownerTenantId", value); }
+        }
+#nullable restore
+#else
+        public string OwnerTenantId {
+            get { return BackingStore?.Get<string>("ownerTenantId"); }
+            set { BackingStore?.Set("ownerTenantId", value); }
+        }
+#endif
+        /// <summary>The ownerType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OwnerType {
+            get { return BackingStore?.Get<string?>("ownerType"); }
+            set { BackingStore?.Set("ownerType", value); }
+        }
+#nullable restore
+#else
+        public string OwnerType {
+            get { return BackingStore?.Get<string>("ownerType"); }
+            set { BackingStore?.Set("ownerType", value); }
         }
 #endif
         /// <summary>The serviceStatus property</summary>
@@ -108,10 +164,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"commerceSubscriptionId", n => { CommerceSubscriptionId = n.GetStringValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"isTrial", n => { IsTrial = n.GetBoolValue(); } },
                 {"nextLifecycleDateTime", n => { NextLifecycleDateTime = n.GetDateTimeOffsetValue(); } },
                 {"ocpSubscriptionId", n => { OcpSubscriptionId = n.GetStringValue(); } },
+                {"ownerId", n => { OwnerId = n.GetStringValue(); } },
+                {"ownerTenantId", n => { OwnerTenantId = n.GetStringValue(); } },
+                {"ownerType", n => { OwnerType = n.GetStringValue(); } },
                 {"serviceStatus", n => { ServiceStatus = n.GetCollectionOfObjectValues<ServicePlanInfo>(ServicePlanInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"skuId", n => { SkuId = n.GetStringValue(); } },
                 {"skuPartNumber", n => { SkuPartNumber = n.GetStringValue(); } },
@@ -126,10 +186,14 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("commerceSubscriptionId", CommerceSubscriptionId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteBoolValue("isTrial", IsTrial);
             writer.WriteDateTimeOffsetValue("nextLifecycleDateTime", NextLifecycleDateTime);
             writer.WriteStringValue("ocpSubscriptionId", OcpSubscriptionId);
+            writer.WriteStringValue("ownerId", OwnerId);
+            writer.WriteStringValue("ownerTenantId", OwnerTenantId);
+            writer.WriteStringValue("ownerType", OwnerType);
             writer.WriteCollectionOfObjectValues<ServicePlanInfo>("serviceStatus", ServiceStatus);
             writer.WriteStringValue("skuId", SkuId);
             writer.WriteStringValue("skuPartNumber", SkuPartNumber);

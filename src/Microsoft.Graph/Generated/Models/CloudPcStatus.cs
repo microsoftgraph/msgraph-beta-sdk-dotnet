@@ -28,5 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
         MovingRegion,
         [EnumMember(Value = "resizePendingLicense")]
         ResizePendingLicense,
+        [EnumMember(Value = "updatingSingleSignOn")]
+        UpdatingSingleSignOn,
     }
 }

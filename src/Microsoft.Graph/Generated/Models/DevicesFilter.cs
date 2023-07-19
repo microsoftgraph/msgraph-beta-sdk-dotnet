@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Determines whether devices satisfying the rule should be allowed or blocked.The possible values are: allowed, blocked, unknownFutureValue.Not implemented yet</summary>
+        /// <summary>Determines whether devices satisfying the rule should be allowed or blocked.The possible values are: allowed, blocked, unknownFutureValue.</summary>
         public CrossTenantAccessPolicyTargetConfigurationAccessType? Mode {
             get { return BackingStore?.Get<CrossTenantAccessPolicyTargetConfigurationAccessType?>("mode"); }
             set { BackingStore?.Set("mode", value); }
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Defines the rule to filter the devices. An example would be device.deviceAttribute2 -eq &apos;PrivilegedAccessWorkstation&apos; Not implemented yet</summary>
+        /// <summary>Defines the rule to filter the devices. For example, device.deviceAttribute2 -eq &apos;PrivilegedAccessWorkstation&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Rule {

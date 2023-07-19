@@ -17,6 +17,7 @@ using Microsoft.Graph.Beta.Drives.Item.Items.Item.GetActivitiesByIntervalWithSta
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Invite;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.LastModifiedByUser;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.PermanentDelete;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Permissions;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Preview;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Restore;
@@ -110,6 +111,10 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item {
         /// <summary>Provides operations to manage the listItem property of the microsoft.graph.driveItem entity.</summary>
         public ListItemRequestBuilder ListItem { get =>
             new ListItemRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the permanentDelete method.</summary>
+        public PermanentDeleteRequestBuilder PermanentDelete { get =>
+            new PermanentDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissions property of the microsoft.graph.driveItem entity.</summary>
         public PermissionsRequestBuilder Permissions { get =>
