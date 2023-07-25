@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Sponsors {
         public SponsorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/sponsors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get sponsors from users
+        /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest user&apos;s privileges in the tenant and for keeping the guest user&apos;s information and access up to date.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-sponsors?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +60,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Sponsors {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get sponsors from users
+        /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest user&apos;s privileges in the tenant and for keeping the guest user&apos;s information and access up to date.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +86,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Sponsors {
             return requestInfo;
         }
         /// <summary>
-        /// Get sponsors from users
+        /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest user&apos;s privileges in the tenant and for keeping the guest user&apos;s information and access up to date.
         /// </summary>
         public class SponsorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class SitePage : BaseItem, IParsable {
+    public class SitePage : BaseSitePage, IParsable {
         /// <summary>Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical sections.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -19,44 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("canvasLayout", value); }
         }
 #endif
-        /// <summary>The contentType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public ContentTypeInfo? ContentType {
-            get { return BackingStore?.Get<ContentTypeInfo?>("contentType"); }
-            set { BackingStore?.Set("contentType", value); }
-        }
-#nullable restore
-#else
-        public ContentTypeInfo ContentType {
-            get { return BackingStore?.Get<ContentTypeInfo>("contentType"); }
-            set { BackingStore?.Set("contentType", value); }
-        }
-#endif
-        /// <summary>The pageLayout property</summary>
-        public PageLayoutType? PageLayout {
-            get { return BackingStore?.Get<PageLayoutType?>("pageLayout"); }
-            set { BackingStore?.Set("pageLayout", value); }
-        }
         /// <summary>Indicates the promotion kind of the sitePage. The possible values are: microsoftReserved, page, newsPost, unknownFutureValue.</summary>
         public PagePromotionType? PromotionKind {
             get { return BackingStore?.Get<PagePromotionType?>("promotionKind"); }
             set { BackingStore?.Set("promotionKind", value); }
         }
-        /// <summary>The publishingState property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public PublicationFacet? PublishingState {
-            get { return BackingStore?.Get<PublicationFacet?>("publishingState"); }
-            set { BackingStore?.Set("publishingState", value); }
-        }
-#nullable restore
-#else
-        public PublicationFacet PublishingState {
-            get { return BackingStore?.Get<PublicationFacet>("publishingState"); }
-            set { BackingStore?.Set("publishingState", value); }
-        }
-#endif
         /// <summary>Reactions information for the page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,20 +62,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("thumbnailWebUrl", value); }
         }
 #endif
-        /// <summary>The title property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Title {
-            get { return BackingStore?.Get<string?>("title"); }
-            set { BackingStore?.Set("title", value); }
-        }
-#nullable restore
-#else
-        public string Title {
-            get { return BackingStore?.Get<string>("title"); }
-            set { BackingStore?.Set("title", value); }
-        }
-#endif
         /// <summary>Title area on the SharePoint page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,12 +91,6 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new sitePage and sets the default values.
-        /// </summary>
-        public SitePage() : base() {
-            OdataType = "#microsoft.graph.sitePage";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -157,15 +104,11 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"canvasLayout", n => { CanvasLayout = n.GetObjectValue<Microsoft.Graph.Beta.Models.CanvasLayout>(Microsoft.Graph.Beta.Models.CanvasLayout.CreateFromDiscriminatorValue); } },
-                {"contentType", n => { ContentType = n.GetObjectValue<ContentTypeInfo>(ContentTypeInfo.CreateFromDiscriminatorValue); } },
-                {"pageLayout", n => { PageLayout = n.GetEnumValue<PageLayoutType>(); } },
                 {"promotionKind", n => { PromotionKind = n.GetEnumValue<PagePromotionType>(); } },
-                {"publishingState", n => { PublishingState = n.GetObjectValue<PublicationFacet>(PublicationFacet.CreateFromDiscriminatorValue); } },
                 {"reactions", n => { Reactions = n.GetObjectValue<ReactionsFacet>(ReactionsFacet.CreateFromDiscriminatorValue); } },
                 {"showComments", n => { ShowComments = n.GetBoolValue(); } },
                 {"showRecommendedPages", n => { ShowRecommendedPages = n.GetBoolValue(); } },
                 {"thumbnailWebUrl", n => { ThumbnailWebUrl = n.GetStringValue(); } },
-                {"title", n => { Title = n.GetStringValue(); } },
                 {"titleArea", n => { TitleArea = n.GetObjectValue<Microsoft.Graph.Beta.Models.TitleArea>(Microsoft.Graph.Beta.Models.TitleArea.CreateFromDiscriminatorValue); } },
                 {"webParts", n => { WebParts = n.GetCollectionOfObjectValues<WebPart>(WebPart.CreateFromDiscriminatorValue)?.ToList(); } },
             };
@@ -178,15 +121,11 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CanvasLayout>("canvasLayout", CanvasLayout);
-            writer.WriteObjectValue<ContentTypeInfo>("contentType", ContentType);
-            writer.WriteEnumValue<PageLayoutType>("pageLayout", PageLayout);
             writer.WriteEnumValue<PagePromotionType>("promotionKind", PromotionKind);
-            writer.WriteObjectValue<PublicationFacet>("publishingState", PublishingState);
             writer.WriteObjectValue<ReactionsFacet>("reactions", Reactions);
             writer.WriteBoolValue("showComments", ShowComments);
             writer.WriteBoolValue("showRecommendedPages", ShowRecommendedPages);
             writer.WriteStringValue("thumbnailWebUrl", ThumbnailWebUrl);
-            writer.WriteStringValue("title", Title);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TitleArea>("titleArea", TitleArea);
             writer.WriteCollectionOfObjectValues<WebPart>("webParts", WebParts);
         }

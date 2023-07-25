@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.LastModifiedByUser.MailboxSettings {
     /// <summary>
-    /// Builds and executes requests for operations under \groups\{group-id}\sites\{site-id}\pages\{sitePage-id}\lastModifiedByUser\mailboxSettings
+    /// Builds and executes requests for operations under \groups\{group-id}\sites\{site-id}\pages\{baseSitePage-id}\lastModifiedByUser\mailboxSettings
     /// </summary>
     public class MailboxSettingsRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.LastModifiedByU
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MailboxSettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{sitePage%2Did}/lastModifiedByUser/mailboxSettings{?%24select,%24expand}", pathParameters) {
+        public MailboxSettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{baseSitePage%2Did}/lastModifiedByUser/mailboxSettings{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new MailboxSettingsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MailboxSettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{sitePage%2Did}/lastModifiedByUser/mailboxSettings{?%24select,%24expand}", rawUrl) {
+        public MailboxSettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/pages/{baseSitePage%2Did}/lastModifiedByUser/mailboxSettings{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.

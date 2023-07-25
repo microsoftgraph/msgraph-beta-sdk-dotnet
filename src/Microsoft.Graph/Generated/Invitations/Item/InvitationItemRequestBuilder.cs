@@ -1,4 +1,5 @@
 using Microsoft.Graph.Beta.Invitations.Item.InvitedUser;
+using Microsoft.Graph.Beta.Invitations.Item.InvitedUserSponsors;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -17,6 +18,10 @@ namespace Microsoft.Graph.Beta.Invitations.Item {
         /// <summary>Provides operations to manage the invitedUser property of the microsoft.graph.invitation entity.</summary>
         public InvitedUserRequestBuilder InvitedUser { get =>
             new InvitedUserRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the invitedUserSponsors property of the microsoft.graph.invitation entity.</summary>
+        public InvitedUserSponsorsRequestBuilder InvitedUserSponsors { get =>
+            new InvitedUserSponsorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new InvitationItemRequestBuilder and sets the default values.
