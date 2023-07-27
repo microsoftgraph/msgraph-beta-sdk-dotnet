@@ -191,14 +191,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The collection of pages in the baseSitePages list in this site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SitePage>? Pages {
-            get { return BackingStore?.Get<List<SitePage>?>("pages"); }
+        public List<BaseSitePage>? Pages {
+            get { return BackingStore?.Get<List<BaseSitePage>?>("pages"); }
             set { BackingStore?.Set("pages", value); }
         }
 #nullable restore
 #else
-        public List<SitePage> Pages {
-            get { return BackingStore?.Get<List<SitePage>>("pages"); }
+        public List<BaseSitePage> Pages {
+            get { return BackingStore?.Get<List<BaseSitePage>>("pages"); }
             set { BackingStore?.Set("pages", value); }
         }
 #endif
@@ -332,7 +332,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"lists", n => { Lists = n.GetCollectionOfObjectValues<List>(List.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"onenote", n => { Onenote = n.GetObjectValue<Microsoft.Graph.Beta.Models.Onenote>(Microsoft.Graph.Beta.Models.Onenote.CreateFromDiscriminatorValue); } },
                 {"operations", n => { Operations = n.GetCollectionOfObjectValues<RichLongRunningOperation>(RichLongRunningOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"pages", n => { Pages = n.GetCollectionOfObjectValues<SitePage>(SitePage.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"pages", n => { Pages = n.GetCollectionOfObjectValues<BaseSitePage>(BaseSitePage.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"permissions", n => { Permissions = n.GetCollectionOfObjectValues<Permission>(Permission.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"root", n => { Root = n.GetObjectValue<Microsoft.Graph.Beta.Models.Root>(Microsoft.Graph.Beta.Models.Root.CreateFromDiscriminatorValue); } },
                 {"settings", n => { Settings = n.GetObjectValue<SiteSettings>(SiteSettings.CreateFromDiscriminatorValue); } },
@@ -362,7 +362,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<List>("lists", Lists);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Onenote>("onenote", Onenote);
             writer.WriteCollectionOfObjectValues<RichLongRunningOperation>("operations", Operations);
-            writer.WriteCollectionOfObjectValues<SitePage>("pages", Pages);
+            writer.WriteCollectionOfObjectValues<BaseSitePage>("pages", Pages);
             writer.WriteCollectionOfObjectValues<Permission>("permissions", Permissions);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Root>("root", Root);
             writer.WriteObjectValue<SiteSettings>("settings", Settings);

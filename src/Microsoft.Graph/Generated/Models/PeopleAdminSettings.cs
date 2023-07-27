@@ -5,6 +5,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PeopleAdminSettings : Entity, IParsable {
+        /// <summary>The profileCardProperties property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<ProfileCardProperty>? ProfileCardProperties {
+            get { return BackingStore?.Get<List<ProfileCardProperty>?>("profileCardProperties"); }
+            set { BackingStore?.Set("profileCardProperties", value); }
+        }
+#nullable restore
+#else
+        public List<ProfileCardProperty> ProfileCardProperties {
+            get { return BackingStore?.Get<List<ProfileCardProperty>>("profileCardProperties"); }
+            set { BackingStore?.Set("profileCardProperties", value); }
+        }
+#endif
         /// <summary>Represents administrator settings that manage the support of pronouns in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"profileCardProperties", n => { ProfileCardProperties = n.GetCollectionOfObjectValues<ProfileCardProperty>(ProfileCardProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"pronouns", n => { Pronouns = n.GetObjectValue<PronounsSettings>(PronounsSettings.CreateFromDiscriminatorValue); } },
             };
         }
@@ -42,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<ProfileCardProperty>("profileCardProperties", ProfileCardProperties);
             writer.WriteObjectValue<PronounsSettings>("pronouns", Pronouns);
         }
     }

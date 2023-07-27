@@ -5,6 +5,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class StandardWebPart : WebPart, IParsable {
+        /// <summary>The instance identifier of the container text webPart. It only works for inline standard webPart in rich text webParts.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ContainerTextWebPartId {
+            get { return BackingStore?.Get<string?>("containerTextWebPartId"); }
+            set { BackingStore?.Set("containerTextWebPartId", value); }
+        }
+#nullable restore
+#else
+        public string ContainerTextWebPartId {
+            get { return BackingStore?.Get<string>("containerTextWebPartId"); }
+            set { BackingStore?.Set("containerTextWebPartId", value); }
+        }
+#endif
         /// <summary>Data of the webPart.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"containerTextWebPartId", n => { ContainerTextWebPartId = n.GetStringValue(); } },
                 {"data", n => { Data = n.GetObjectValue<WebPartData>(WebPartData.CreateFromDiscriminatorValue); } },
                 {"webPartType", n => { WebPartType = n.GetStringValue(); } },
             };
@@ -63,6 +78,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("containerTextWebPartId", ContainerTextWebPartId);
             writer.WriteObjectValue<WebPartData>("data", Data);
             writer.WriteStringValue("webPartType", WebPartType);
         }

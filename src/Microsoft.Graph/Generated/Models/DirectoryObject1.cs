@@ -187,7 +187,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sharedEmailDomains", value); }
         }
 #endif
-        /// <summary>The subscriptions property</summary>
+        /// <summary>List of commercial subscriptions that an organization has acquired.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<CompanySubscription>? Subscriptions {

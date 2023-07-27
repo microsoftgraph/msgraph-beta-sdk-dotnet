@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CompanySubscription : Entity, IParsable {
-        /// <summary>The commerceSubscriptionId property</summary>
+        /// <summary>The ID of this subscription in the commerce system. Alternate key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CommerceSubscriptionId {
@@ -19,17 +19,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("commerceSubscriptionId", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when this subscription was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The isTrial property</summary>
+        /// <summary>Whether the subscription is a free trial or purchased.</summary>
         public bool? IsTrial {
             get { return BackingStore?.Get<bool?>("isTrial"); }
             set { BackingStore?.Set("isTrial", value); }
         }
-        /// <summary>The nextLifecycleDateTime property</summary>
+        /// <summary>The date and time when the subscription will move to the next state (as defined by the status property) if not renewed by the tenant. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? NextLifecycleDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("nextLifecycleDateTime"); }
             set { BackingStore?.Set("nextLifecycleDateTime", value); }
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ocpSubscriptionId", value); }
         }
 #endif
-        /// <summary>The ownerId property</summary>
+        /// <summary>The object ID of the account admin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnerId {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ownerId", value); }
         }
 #endif
-        /// <summary>The ownerTenantId property</summary>
+        /// <summary>The unique identifier for the Microsoft partner tenant that created the subscription on a customer tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnerTenantId {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ownerTenantId", value); }
         }
 #endif
-        /// <summary>The ownerType property</summary>
+        /// <summary>Indicates the entity that ownerId belongs to, for example, &apos;User&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnerType {
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ownerType", value); }
         }
 #endif
-        /// <summary>The serviceStatus property</summary>
+        /// <summary>The provisioning status of each service that&apos;s included in this subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ServicePlanInfo>? ServiceStatus {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("serviceStatus", value); }
         }
 #endif
-        /// <summary>The skuId property</summary>
+        /// <summary>The object ID of the SKU associated with this subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SkuId {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("skuId", value); }
         }
 #endif
-        /// <summary>The skuPartNumber property</summary>
+        /// <summary>The SKU associated with this subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SkuPartNumber {
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("skuPartNumber", value); }
         }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>The status of this subscription. Possible values are: Enabled, Expired, Suspended, Warning, LockedOut.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status {
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
 #endif
-        /// <summary>The totalLicenses property</summary>
+        /// <summary>The number of seats included in this subscription.</summary>
         public int? TotalLicenses {
             get { return BackingStore?.Get<int?>("totalLicenses"); }
             set { BackingStore?.Set("totalLicenses", value); }

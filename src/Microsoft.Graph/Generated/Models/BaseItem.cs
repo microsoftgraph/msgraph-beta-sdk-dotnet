@@ -149,6 +149,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.baseSitePage" => new BaseSitePage(),
                 "#microsoft.graph.drive" => new Drive(),
                 "#microsoft.graph.driveItem" => new DriveItem(),
                 "#microsoft.graph.list" => new List(),

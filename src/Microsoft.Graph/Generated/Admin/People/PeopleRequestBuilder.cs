@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Admin.People.ProfileCardProperties;
 using Microsoft.Graph.Beta.Admin.People.Pronouns;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -14,6 +15,10 @@ namespace Microsoft.Graph.Beta.Admin.People {
     /// Provides operations to manage the people property of the microsoft.graph.admin entity.
     /// </summary>
     public class PeopleRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the profileCardProperties property of the microsoft.graph.peopleAdminSettings entity.</summary>
+        public ProfileCardPropertiesRequestBuilder ProfileCardProperties { get =>
+            new ProfileCardPropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the pronouns property of the microsoft.graph.peopleAdminSettings entity.</summary>
         public PronounsRequestBuilder Pronouns { get =>
             new PronounsRequestBuilder(PathParameters, RequestAdapter);

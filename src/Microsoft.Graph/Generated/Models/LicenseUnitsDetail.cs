@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
-        /// <summary>The lockedOut property</summary>
+        /// <summary>The number of units that are locked out because the customer cancelled their subscription of the service SKU.</summary>
         public int? LockedOut {
             get { return BackingStore?.Get<int?>("lockedOut"); }
             set { BackingStore?.Set("lockedOut", value); }

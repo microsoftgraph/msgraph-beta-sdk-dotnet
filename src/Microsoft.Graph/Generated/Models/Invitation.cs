@@ -61,6 +61,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("invitedUserMessageInfo", value); }
         }
 #endif
+        /// <summary>The users or groups who are sponsors of the invited user. Sponsors are users and groups that are responsible for guest users&apos; privileges in the tenant and for keeping the guest users&apos; information and access up to date.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<DirectoryObject>? InvitedUserSponsors {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("invitedUserSponsors"); }
+            set { BackingStore?.Set("invitedUserSponsors", value); }
+        }
+#nullable restore
+#else
+        public List<DirectoryObject> InvitedUserSponsors {
+            get { return BackingStore?.Get<List<DirectoryObject>>("invitedUserSponsors"); }
+            set { BackingStore?.Set("invitedUserSponsors", value); }
+        }
+#endif
         /// <summary>The userType of the user being invited. By default, this is Guest. You can invite as Member if you&apos;re are company administrator. The default is false.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -144,6 +158,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"invitedUserDisplayName", n => { InvitedUserDisplayName = n.GetStringValue(); } },
                 {"invitedUserEmailAddress", n => { InvitedUserEmailAddress = n.GetStringValue(); } },
                 {"invitedUserMessageInfo", n => { InvitedUserMessageInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.InvitedUserMessageInfo>(Microsoft.Graph.Beta.Models.InvitedUserMessageInfo.CreateFromDiscriminatorValue); } },
+                {"invitedUserSponsors", n => { InvitedUserSponsors = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"invitedUserType", n => { InvitedUserType = n.GetStringValue(); } },
                 {"inviteRedeemUrl", n => { InviteRedeemUrl = n.GetStringValue(); } },
                 {"inviteRedirectUrl", n => { InviteRedirectUrl = n.GetStringValue(); } },
@@ -163,6 +178,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("invitedUserDisplayName", InvitedUserDisplayName);
             writer.WriteStringValue("invitedUserEmailAddress", InvitedUserEmailAddress);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.InvitedUserMessageInfo>("invitedUserMessageInfo", InvitedUserMessageInfo);
+            writer.WriteCollectionOfObjectValues<DirectoryObject>("invitedUserSponsors", InvitedUserSponsors);
             writer.WriteStringValue("invitedUserType", InvitedUserType);
             writer.WriteStringValue("inviteRedeemUrl", InviteRedeemUrl);
             writer.WriteStringValue("inviteRedirectUrl", InviteRedirectUrl);
