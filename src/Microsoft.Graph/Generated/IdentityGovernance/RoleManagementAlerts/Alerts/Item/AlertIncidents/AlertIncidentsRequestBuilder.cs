@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.It
         }
         /// <summary>
         /// Get a list of the alert incidents. The alert incidents are a collection of any following type that is derived from the unifiedRoleManagementAlertIncident object:
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/unifiedrolemanagementalert-list-alertincidents?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedrolemanagementalert-list-alertincidents?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

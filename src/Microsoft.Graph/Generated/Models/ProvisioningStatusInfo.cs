@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Possible values are: success, failure, skipped, warning, unknownFutureValue.</summary>
+        /// <summary>Possible values are: success, failure, skipped, warning, unknownFutureValue. Supports $filter (eq, contains).</summary>
         public ProvisioningResult? Status {
             get { return BackingStore?.Get<ProvisioningResult?>("status"); }
             set { BackingStore?.Set("status", value); }

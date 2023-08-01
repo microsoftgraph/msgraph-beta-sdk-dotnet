@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Copy {
         }
         /// <summary>
         /// Copy a mailfolder and its contents to another mailfolder.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

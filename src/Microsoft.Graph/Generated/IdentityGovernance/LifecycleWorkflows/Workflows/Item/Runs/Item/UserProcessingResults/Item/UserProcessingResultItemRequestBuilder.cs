@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         }
         /// <summary>
         /// Get the user processing result of a user processing result of a run.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identitygovernance-userprocessingresult-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-userprocessingresult-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

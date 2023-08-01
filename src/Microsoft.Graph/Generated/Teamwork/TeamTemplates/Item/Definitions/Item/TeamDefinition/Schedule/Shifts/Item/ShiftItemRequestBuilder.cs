@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         }
         /// <summary>
         /// Delete a shift from the schedule.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/shift-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/shift-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         }
         /// <summary>
         /// Retrieve the properties and relationships of a shift object by ID.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/shift-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/shift-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             return await RequestAdapter.SendAsync<Shift>(requestInfo, Shift.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Replace an existing shift. If the specified shift doesn&apos;t exist, this method returns `404 Not found`. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/shift-put?view=graph-rest-1.0" />
+        /// Replace an existing shift. If the specified shift doesn&apos;t exist, this method returns 404 Not found. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/shift-put?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             return requestInfo;
         }
         /// <summary>
-        /// Replace an existing shift. If the specified shift doesn&apos;t exist, this method returns `404 Not found`. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
+        /// Replace an existing shift. If the specified shift doesn&apos;t exist, this method returns 404 Not found. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

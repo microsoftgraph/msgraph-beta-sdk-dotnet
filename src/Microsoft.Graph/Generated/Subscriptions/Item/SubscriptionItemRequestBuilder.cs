@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Subscriptions.Item {
         }
         /// <summary>
         /// Delete a subscription. For the list of resources that support subscribing to change notifications, see the table in the Permissions section.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/subscription-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subscription-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Subscriptions.Item {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a subscription. See the table in the Permissions section for the list of resources that support subscribing to change notifications.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/subscription-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subscription-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Subscriptions.Item {
         }
         /// <summary>
         /// Renew a subscription by extending its expiry time. The table in the Permissions section lists the resources that support subscribing to change notifications. Subscriptions expire after a length of time that varies by resource type. In order to avoid missing change notifications, an app should renew its subscriptions well in advance of their expiry date. See subscription for maximum length of a subscription for each resource type.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/subscription-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subscription-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

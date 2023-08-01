@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Owners.Ref {
         }
         /// <summary>
         /// Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-list-owners?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Owners.Ref {
         }
         /// <summary>
         /// Use this API to add an owner to an application by posting to the owners collection.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/application-post-owners?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-post-owners?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

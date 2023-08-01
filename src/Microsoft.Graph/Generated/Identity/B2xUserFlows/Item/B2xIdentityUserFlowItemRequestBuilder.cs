@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.ApiConnectorConfiguration;
 using Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.IdentityProviders;
 using Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.Languages;
 using Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.UserAttributeAssignments;
@@ -17,6 +18,10 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item {
     /// Provides operations to manage the b2xUserFlows property of the microsoft.graph.identityContainer entity.
     /// </summary>
     public class B2xIdentityUserFlowItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>The apiConnectorConfiguration property</summary>
+        public ApiConnectorConfigurationRequestBuilder ApiConnectorConfiguration { get =>
+            new ApiConnectorConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the identityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.</summary>
         public IdentityProvidersRequestBuilder IdentityProviders { get =>
             new IdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
@@ -49,7 +54,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item {
         }
         /// <summary>
         /// Delete a b2xIdentityUserFlow object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/b2xidentityuserflow-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2xidentityuserflow-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +74,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a b2xIdentityUserFlow object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/b2xidentityuserflow-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2xidentityuserflow-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

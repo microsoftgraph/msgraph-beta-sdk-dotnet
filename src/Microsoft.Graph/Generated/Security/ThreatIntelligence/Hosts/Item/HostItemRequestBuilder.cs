@@ -1,12 +1,17 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.ChildHostPairs;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Components;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Cookies;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.HostPairs;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.ParentHostPairs;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDns;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDnsReverse;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Reputation;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.SslCertificates;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Subdomains;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Trackers;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Whois;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -20,6 +25,10 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item {
     /// Provides operations to manage the hosts property of the microsoft.graph.security.threatIntelligence entity.
     /// </summary>
     public class HostItemRequestBuilder : BaseRequestBuilder {
+        /// <summary>Provides operations to manage the childHostPairs property of the microsoft.graph.security.host entity.</summary>
+        public ChildHostPairsRequestBuilder ChildHostPairs { get =>
+            new ChildHostPairsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the components property of the microsoft.graph.security.host entity.</summary>
         public ComponentsRequestBuilder Components { get =>
             new ComponentsRequestBuilder(PathParameters, RequestAdapter);
@@ -27,6 +36,14 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item {
         /// <summary>Provides operations to manage the cookies property of the microsoft.graph.security.host entity.</summary>
         public CookiesRequestBuilder Cookies { get =>
             new CookiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the hostPairs property of the microsoft.graph.security.host entity.</summary>
+        public HostPairsRequestBuilder HostPairs { get =>
+            new HostPairsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the parentHostPairs property of the microsoft.graph.security.host entity.</summary>
+        public ParentHostPairsRequestBuilder ParentHostPairs { get =>
+            new ParentHostPairsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the passiveDns property of the microsoft.graph.security.host entity.</summary>
         public PassiveDnsRequestBuilder PassiveDns { get =>
@@ -40,6 +57,10 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item {
         public ReputationRequestBuilder Reputation { get =>
             new ReputationRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the sslCertificates property of the microsoft.graph.security.host entity.</summary>
+        public SslCertificatesRequestBuilder SslCertificates { get =>
+            new SslCertificatesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the subdomains property of the microsoft.graph.security.host entity.</summary>
         public SubdomainsRequestBuilder Subdomains { get =>
             new SubdomainsRequestBuilder(PathParameters, RequestAdapter);
@@ -47,6 +68,10 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item {
         /// <summary>Provides operations to manage the trackers property of the microsoft.graph.security.host entity.</summary>
         public TrackersRequestBuilder Trackers { get =>
             new TrackersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the whois property of the microsoft.graph.security.host entity.</summary>
+        public WhoisRequestBuilder Whois { get =>
+            new WhoisRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new HostItemRequestBuilder and sets the default values.
@@ -83,7 +108,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item {
         }
         /// <summary>
         /// Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-host-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

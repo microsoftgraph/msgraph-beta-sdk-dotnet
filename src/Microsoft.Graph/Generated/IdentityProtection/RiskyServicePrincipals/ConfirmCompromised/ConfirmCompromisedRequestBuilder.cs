@@ -27,8 +27,8 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Confirm
         public ConfirmCompromisedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityProtection/riskyServicePrincipals/confirmCompromised", rawUrl) {
         }
         /// <summary>
-        /// Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account&apos;s risk level to `high`.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/riskyserviceprincipal-confirmcompromised?view=graph-rest-1.0" />
+        /// Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account&apos;s risk level to high.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskyserviceprincipal-confirmcompromised?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Confirm
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account&apos;s risk level to `high`.
+        /// Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account&apos;s risk level to high.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

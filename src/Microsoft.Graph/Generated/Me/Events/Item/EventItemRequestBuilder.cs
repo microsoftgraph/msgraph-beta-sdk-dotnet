@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item {
         }
         /// <summary>
         /// Removes the specified event from the containing calendar.  If the event is a meeting, deleting the event on the organizer&apos;s calendar sends a cancellation message to the meeting attendees.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/event-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,8 +108,8 @@ namespace Microsoft.Graph.Beta.Me.Events.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the properties and relationships of the specified event object. An app can get an event in another user&apos;s calendar if: Because the **event** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **event** instance.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/event-get?view=graph-rest-1.0" />
+        /// Get the properties and relationships of the specified event object. An app can get an event in another user&apos;s calendar if: Because the event resource supports extensions, you can also use the GET operation to get custom properties and extension data in an event instance.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item {
         }
         /// <summary>
         /// Update the properties of the event object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/event-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of the specified event object. An app can get an event in another user&apos;s calendar if: Because the **event** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **event** instance.
+        /// Get the properties and relationships of the specified event object. An app can get an event in another user&apos;s calendar if: Because the event resource supports extensions, you can also use the GET operation to get custom properties and extension data in an event instance.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -244,7 +244,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item {
             }
         }
         /// <summary>
-        /// Get the properties and relationships of the specified event object. An app can get an event in another user&apos;s calendar if: Because the **event** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **event** instance.
+        /// Get the properties and relationships of the specified event object. An app can get an event in another user&apos;s calendar if: Because the event resource supports extensions, you can also use the GET operation to get custom properties and extension data in an event instance.
         /// </summary>
         public class EventItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

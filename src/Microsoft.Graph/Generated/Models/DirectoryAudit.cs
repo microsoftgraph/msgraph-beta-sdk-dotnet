@@ -5,12 +5,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DirectoryAudit : Entity, IParsable {
-        /// <summary>Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Supports $filter (eq, ge, le) and $orderby.</summary>
         public DateTimeOffset? ActivityDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
             set { BackingStore?.Set("activityDateTime", value); }
         }
-        /// <summary>Indicates the activity name or the operation name (E.g. &apos;Create User&apos;, &apos;Add member to group&apos;). For a list of activities logged, refer to Azure AD audit log categories and activities.</summary>
+        /// <summary>Indicates the activity name or the operation name (E.g. &apos;Create User&apos;, &apos;Add member to group&apos;). For a list of activities logged, refer to Azure AD audit log categories and activities. Supports $filter (eq, startswith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActivityDisplayName {
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("category", value); }
         }
 #endif
-        /// <summary>Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.</summary>
+        /// <summary>Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CorrelationId {
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("initiatedBy", value); }
         }
 #endif
-        /// <summary>Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.</summary>
+        /// <summary>Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LoggedByService {
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resultReason", value); }
         }
 #endif
-        /// <summary>Information about the resource that changed due to the activity.</summary>
+        /// <summary>Information about the resource that changed due to the activity. Supports $filter (eq) for id and displayName; and $filter (startswith) for displayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<TargetResource>? TargetResources {

@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item.ScopedRoleMembers {
         }
         /// <summary>
         /// List Azure Active Directory (Azure AD) role assignments with administrative unit scope.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/administrativeunit-list-scopedrolemembers?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-list-scopedrolemembers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item.ScopedRoleMembers {
         }
         /// <summary>
         /// Assign an Azure Active Directory (Azure AD) role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/administrativeunit-post-scopedrolemembers?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-post-scopedrolemembers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

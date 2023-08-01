@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item {
         }
         /// <summary>
         /// Delete a browserSiteList object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/internetexplorermode-delete-sitelists?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/internetexplorermode-delete-sitelists?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item {
         }
         /// <summary>
         /// Get a browserSiteList that contains browserSite and browserSharedCookie resources.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/browsersitelist-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/browsersitelist-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item {
         }
         /// <summary>
         /// Update the properties of a browserSiteList object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/browsersitelist-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/browsersitelist-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

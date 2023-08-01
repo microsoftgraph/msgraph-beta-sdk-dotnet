@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         }
         /// <summary>
         /// Retrieve the list of tabs in the specified channel within a team. 
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-list-tabs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

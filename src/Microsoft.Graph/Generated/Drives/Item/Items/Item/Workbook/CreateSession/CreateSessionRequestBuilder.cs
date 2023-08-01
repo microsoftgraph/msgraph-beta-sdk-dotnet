@@ -28,8 +28,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.CreateSession {
         public CreateSessionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/createSession", rawUrl) {
         }
         /// <summary>
-        /// Create a new workbook session.  Excel APIs can be called in one of two modes:  To represent the session in the API, use the `workbook-session-id: {session-id}` header.  In some cases, creating a new session requires an indeterminate time to complete. Microsoft Graph also provides a long running operations pattern. This pattern provides a way to poll for creation status updates, without waiting for the creation to complete. The following are the steps:
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/workbook-createsession?view=graph-rest-1.0" />
+        /// Create a new workbook session.  Excel APIs can be called in one of two modes:  To represent the session in the API, use the workbook-session-id: {session-id} header.  In some cases, creating a new session requires an indeterminate time to complete. Microsoft Graph also provides a long running operations pattern. This pattern provides a way to poll for creation status updates, without waiting for the creation to complete. The following are the steps:
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workbook-createsession?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.CreateSession {
             return await RequestAdapter.SendAsync<WorkbookSessionInfo>(requestInfo, WorkbookSessionInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new workbook session.  Excel APIs can be called in one of two modes:  To represent the session in the API, use the `workbook-session-id: {session-id}` header.  In some cases, creating a new session requires an indeterminate time to complete. Microsoft Graph also provides a long running operations pattern. This pattern provides a way to poll for creation status updates, without waiting for the creation to complete. The following are the steps:
+        /// Create a new workbook session.  Excel APIs can be called in one of two modes:  To represent the session in the API, use the workbook-session-id: {session-id} header.  In some cases, creating a new session requires an indeterminate time to complete. Microsoft Graph also provides a long running operations pattern. This pattern provides a way to poll for creation status updates, without waiting for the creation to complete. The following are the steps:
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

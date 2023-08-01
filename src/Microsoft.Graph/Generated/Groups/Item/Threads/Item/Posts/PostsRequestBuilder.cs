@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Posts {
         }
         /// <summary>
         /// Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationthread-list-posts?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

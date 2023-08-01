@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Authentication Transform Constants. Possible values are: md5_96, sha1_96, sha_256_128, aes128Gcm, aes192Gcm, aes256Gcm.</summary>
+        /// <summary>Authentication Transform Constants. Possible values are: md596, sha196, sha256128, aes128Gcm, aes192Gcm, aes256Gcm.</summary>
         public AuthenticationTransformConstant? AuthenticationTransformConstants {
             get { return BackingStore?.Get<AuthenticationTransformConstant?>("authenticationTransformConstants"); }
             set { BackingStore?.Set("authenticationTransformConstants", value); }
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<VpnEncryptionAlgorithmType?>("encryptionMethod"); }
             set { BackingStore?.Set("encryptionMethod", value); }
         }
-        /// <summary>Integrity Check Method. Possible values are: sha2_256, sha1_96, sha1_160, sha2_384, sha2_512, md5.</summary>
+        /// <summary>Integrity Check Method. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.</summary>
         public VpnIntegrityAlgorithmType? IntegrityCheckMethod {
             get { return BackingStore?.Get<VpnIntegrityAlgorithmType?>("integrityCheckMethod"); }
             set { BackingStore?.Set("integrityCheckMethod", value); }

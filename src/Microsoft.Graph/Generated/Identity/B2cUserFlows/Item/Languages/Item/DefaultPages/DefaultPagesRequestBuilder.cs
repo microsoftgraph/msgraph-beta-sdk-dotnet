@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item.Default
         }
         /// <summary>
         /// Get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/userflowlanguageconfiguration-list-defaultpages?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userflowlanguageconfiguration-list-defaultpages?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

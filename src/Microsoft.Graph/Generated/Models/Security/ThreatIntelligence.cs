@@ -61,6 +61,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("hostCookies", value); }
         }
 #endif
+        /// <summary>The hostPairs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<HostPair>? HostPairs {
+            get { return BackingStore?.Get<List<HostPair>?>("hostPairs"); }
+            set { BackingStore?.Set("hostPairs", value); }
+        }
+#nullable restore
+#else
+        public List<HostPair> HostPairs {
+            get { return BackingStore?.Get<List<HostPair>>("hostPairs"); }
+            set { BackingStore?.Set("hostPairs", value); }
+        }
+#endif
         /// <summary>Refers to microsoft.graph.security.host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,6 +87,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public List<Host> Hosts {
             get { return BackingStore?.Get<List<Host>>("hosts"); }
             set { BackingStore?.Set("hosts", value); }
+        }
+#endif
+        /// <summary>The hostSslCertificates property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<HostSslCertificate>? HostSslCertificates {
+            get { return BackingStore?.Get<List<HostSslCertificate>?>("hostSslCertificates"); }
+            set { BackingStore?.Set("hostSslCertificates", value); }
+        }
+#nullable restore
+#else
+        public List<HostSslCertificate> HostSslCertificates {
+            get { return BackingStore?.Get<List<HostSslCertificate>>("hostSslCertificates"); }
+            set { BackingStore?.Set("hostSslCertificates", value); }
         }
 #endif
         /// <summary>Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.</summary>
@@ -131,6 +159,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("passiveDnsRecords", value); }
         }
 #endif
+        /// <summary>The sslCertificates property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<SslCertificate>? SslCertificates {
+            get { return BackingStore?.Get<List<SslCertificate>?>("sslCertificates"); }
+            set { BackingStore?.Set("sslCertificates", value); }
+        }
+#nullable restore
+#else
+        public List<SslCertificate> SslCertificates {
+            get { return BackingStore?.Get<List<SslCertificate>>("sslCertificates"); }
+            set { BackingStore?.Set("sslCertificates", value); }
+        }
+#endif
         /// <summary>Retrieve details about the microsoft.graph.security.subdomain.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -159,6 +201,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("vulnerabilities", value); }
         }
 #endif
+        /// <summary>The whoisRecords property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<WhoisRecord>? WhoisRecords {
+            get { return BackingStore?.Get<List<WhoisRecord>?>("whoisRecords"); }
+            set { BackingStore?.Set("whoisRecords", value); }
+        }
+#nullable restore
+#else
+        public List<WhoisRecord> WhoisRecords {
+            get { return BackingStore?.Get<List<WhoisRecord>>("whoisRecords"); }
+            set { BackingStore?.Set("whoisRecords", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -176,13 +232,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"articles", n => { Articles = n.GetCollectionOfObjectValues<Article>(Article.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"hostComponents", n => { HostComponents = n.GetCollectionOfObjectValues<HostComponent>(HostComponent.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"hostCookies", n => { HostCookies = n.GetCollectionOfObjectValues<HostCookie>(HostCookie.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"hostPairs", n => { HostPairs = n.GetCollectionOfObjectValues<HostPair>(HostPair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"hosts", n => { Hosts = n.GetCollectionOfObjectValues<Host>(Host.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"hostSslCertificates", n => { HostSslCertificates = n.GetCollectionOfObjectValues<HostSslCertificate>(HostSslCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"hostTrackers", n => { HostTrackers = n.GetCollectionOfObjectValues<HostTracker>(HostTracker.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"intelligenceProfileIndicators", n => { IntelligenceProfileIndicators = n.GetCollectionOfObjectValues<IntelligenceProfileIndicator>(IntelligenceProfileIndicator.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"intelProfiles", n => { IntelProfiles = n.GetCollectionOfObjectValues<IntelligenceProfile>(IntelligenceProfile.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"passiveDnsRecords", n => { PassiveDnsRecords = n.GetCollectionOfObjectValues<PassiveDnsRecord>(PassiveDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"sslCertificates", n => { SslCertificates = n.GetCollectionOfObjectValues<SslCertificate>(SslCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"subdomains", n => { Subdomains = n.GetCollectionOfObjectValues<Subdomain>(Subdomain.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfObjectValues<Vulnerability>(Vulnerability.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"whoisRecords", n => { WhoisRecords = n.GetCollectionOfObjectValues<WhoisRecord>(WhoisRecord.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -196,13 +256,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
             writer.WriteCollectionOfObjectValues<Article>("articles", Articles);
             writer.WriteCollectionOfObjectValues<HostComponent>("hostComponents", HostComponents);
             writer.WriteCollectionOfObjectValues<HostCookie>("hostCookies", HostCookies);
+            writer.WriteCollectionOfObjectValues<HostPair>("hostPairs", HostPairs);
             writer.WriteCollectionOfObjectValues<Host>("hosts", Hosts);
+            writer.WriteCollectionOfObjectValues<HostSslCertificate>("hostSslCertificates", HostSslCertificates);
             writer.WriteCollectionOfObjectValues<HostTracker>("hostTrackers", HostTrackers);
             writer.WriteCollectionOfObjectValues<IntelligenceProfileIndicator>("intelligenceProfileIndicators", IntelligenceProfileIndicators);
             writer.WriteCollectionOfObjectValues<IntelligenceProfile>("intelProfiles", IntelProfiles);
             writer.WriteCollectionOfObjectValues<PassiveDnsRecord>("passiveDnsRecords", PassiveDnsRecords);
+            writer.WriteCollectionOfObjectValues<SslCertificate>("sslCertificates", SslCertificates);
             writer.WriteCollectionOfObjectValues<Subdomain>("subdomains", Subdomains);
             writer.WriteCollectionOfObjectValues<Vulnerability>("vulnerabilities", Vulnerabilities);
+            writer.WriteCollectionOfObjectValues<WhoisRecord>("whoisRecords", WhoisRecords);
         }
     }
 }

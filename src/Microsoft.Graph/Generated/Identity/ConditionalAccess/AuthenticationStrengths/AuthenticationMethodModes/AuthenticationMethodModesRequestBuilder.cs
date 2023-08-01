@@ -42,8 +42,8 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         public AuthenticationMethodModesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/conditionalAccess/authenticationStrengths/authenticationMethodModes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of all supported authentication methods, or all supported authentication method combinations as a list of **authenticationMethodModes** objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationstrengthroot-list-authenticationmethodmodes?view=graph-rest-1.0" />
+        /// Get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthroot-list-authenticationmethodmodes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             return await RequestAdapter.SendAsync<AuthenticationMethodModeDetail>(requestInfo, AuthenticationMethodModeDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of all supported authentication methods, or all supported authentication method combinations as a list of **authenticationMethodModes** objects and their properties.
+        /// Get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove on 2023-02-01 and will be removed 2023-03-31")]
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of all supported authentication methods, or all supported authentication method combinations as a list of **authenticationMethodModes** objects and their properties.
+        /// Get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties.
         /// </summary>
         public class AuthenticationMethodModesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

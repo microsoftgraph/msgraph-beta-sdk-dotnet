@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups.It
         }
         /// <summary>
         /// Delete a group from the list of groups included in a mobile app management policy.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/mobileappmanagementpolicies-delete-includedgroups?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-delete-includedgroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

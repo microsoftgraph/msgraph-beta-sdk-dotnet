@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Reply {
         }
         /// <summary>
         /// Reply to a thread in a group conversation and add a new post to it. You can specify the parent conversation in the request, or, you can specify just the thread without the parent conversation.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationthread-reply?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

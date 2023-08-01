@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.FeatureRolloutPolicies.Item.Ap
         }
         /// <summary>
         /// Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/featurerolloutpolicy-delete-appliesto?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/featurerolloutpolicy-delete-appliesto?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

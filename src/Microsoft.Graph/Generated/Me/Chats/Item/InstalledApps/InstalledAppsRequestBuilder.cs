@@ -40,8 +40,8 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps {
         public InstalledAppsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/chats/{chat%2Did}/installedApps{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List all app installations within a chat. If the chat is associated with an onlineMeeting instance, then, effectively, the **teamsApp**s installed in the meeting will be listed.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chat-list-installedapps?view=graph-rest-1.0" />
+        /// List all app installations within a chat. If the chat is associated with an onlineMeeting instance, then, effectively, the teamsApps installed in the meeting will be listed.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-list-installedapps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps {
         }
         /// <summary>
         /// Install a teamsApp to the specified chat.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chat-post-installedapps?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-post-installedapps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps {
             return await RequestAdapter.SendAsync<TeamsAppInstallation>(requestInfo, TeamsAppInstallation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List all app installations within a chat. If the chat is associated with an onlineMeeting instance, then, effectively, the **teamsApp**s installed in the meeting will be listed.
+        /// List all app installations within a chat. If the chat is associated with an onlineMeeting instance, then, effectively, the teamsApps installed in the meeting will be listed.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps {
             return requestInfo;
         }
         /// <summary>
-        /// List all app installations within a chat. If the chat is associated with an onlineMeeting instance, then, effectively, the **teamsApp**s installed in the meeting will be listed.
+        /// List all app installations within a chat. If the chat is associated with an onlineMeeting instance, then, effectively, the teamsApps installed in the meeting will be listed.
         /// </summary>
         public class InstalledAppsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

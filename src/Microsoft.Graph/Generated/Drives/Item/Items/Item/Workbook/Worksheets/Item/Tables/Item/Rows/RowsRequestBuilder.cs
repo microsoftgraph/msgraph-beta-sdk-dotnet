@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.T
         }
         /// <summary>
         /// Retrieve a list of tablerow objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/table-list-rows?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablerow-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.T
             return new ItemAtWithIndexRequestBuilder(PathParameters, RequestAdapter, index);
         }
         /// <summary>
-        /// Add rows to the end of a table.  Note that the API can accept multiple rows data using this API. Adding one row at a time can lead to performance degradation. The recommended approach is to batch the rows together in a single call rather than doing single row insertion. For best results, collect the rows to be inserted on the application side and perform a single row add operation. Experiment with the number of rows to determine the ideal number of rows to use in a single API call.  This request might occasionally result in a `504 HTTP` error. The appropriate response to this error is to repeat the request.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/table-post-rows?view=graph-rest-1.0" />
+        /// Add rows to the end of a table.  Note that the API can accept multiple rows data using this API. Adding one row at a time can lead to performance degradation. The recommended approach is to batch the rows together in a single call rather than doing single row insertion. For best results, collect the rows to be inserted on the application side and perform a single row add operation. Experiment with the number of rows to determine the ideal number of rows to use in a single API call.  This request might occasionally result in a 504 HTTP error. The appropriate response to this error is to repeat the request.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/table-post-rows?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.T
             return requestInfo;
         }
         /// <summary>
-        /// Add rows to the end of a table.  Note that the API can accept multiple rows data using this API. Adding one row at a time can lead to performance degradation. The recommended approach is to batch the rows together in a single call rather than doing single row insertion. For best results, collect the rows to be inserted on the application side and perform a single row add operation. Experiment with the number of rows to determine the ideal number of rows to use in a single API call.  This request might occasionally result in a `504 HTTP` error. The appropriate response to this error is to repeat the request.
+        /// Add rows to the end of a table.  Note that the API can accept multiple rows data using this API. Adding one row at a time can lead to performance degradation. The recommended approach is to batch the rows together in a single call rather than doing single row insertion. For best results, collect the rows to be inserted on the application side and perform a single row add operation. Experiment with the number of rows to determine the ideal number of rows to use in a single API call.  This request might occasionally result in a 504 HTTP error. The appropriate response to this error is to repeat the request.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

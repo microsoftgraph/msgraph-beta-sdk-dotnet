@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Names.Item {
         }
         /// <summary>
         /// Delete a personName object from a user&apos;s profile.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/personname-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personname-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Names.Item {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a personName object in a user&apos;s profile.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/personname-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personname-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Names.Item {
         }
         /// <summary>
         /// Update the properties of a personName object in a user&apos;s profile.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/personname-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personname-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

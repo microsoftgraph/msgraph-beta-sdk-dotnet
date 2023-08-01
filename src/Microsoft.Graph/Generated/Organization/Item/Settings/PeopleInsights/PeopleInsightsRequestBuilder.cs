@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
         }
         /// <summary>
         /// Get the properties of an insightsSettings object for displaying or returning people insights in an organization. To learn how to customize privacy for people insights in an organization, see Customize people insights privacy.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/organizationsettings-list-peopleinsights?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationsettings-list-peopleinsights?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
         }
         /// <summary>
         /// Update the privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.Events {
         }
         /// <summary>
         /// Retrieve a list of events in a calendar.  The calendar can be one for a user, or the default calendar of a Microsoft 365 group. The list of events contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, orget the instances of an event.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/calendar-list-events?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-list-events?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.Events {
         }
         /// <summary>
         /// Use this API to create a new event in a calendar. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. 
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/calendar-post-events?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-post-events?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

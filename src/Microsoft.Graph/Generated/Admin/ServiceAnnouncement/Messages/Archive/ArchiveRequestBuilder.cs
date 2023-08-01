@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Archive {
         }
         /// <summary>
         /// Archive a list of serviceUpdateMessages for the signed in user.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

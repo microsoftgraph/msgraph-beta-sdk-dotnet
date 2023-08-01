@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.EnrichedAuditLogs {
         }
         /// <summary>
         /// Update the settings for the enriched audit logs workloads to control the enrichment feature for each partner workload, such as SharePoint, Teams, and Exchange.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/networkaccess-enrichedauditlogs-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-enrichedauditlogs-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

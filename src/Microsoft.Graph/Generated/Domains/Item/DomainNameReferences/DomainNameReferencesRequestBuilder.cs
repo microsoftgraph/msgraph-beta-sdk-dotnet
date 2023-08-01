@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.DomainNameReferences {
         }
         /// <summary>
         /// Retrieve a list of directoryObject with a reference to the domain. The returned list will contain all directory objects that have a dependency on the domain.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/domain-list-domainnamereferences?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-list-domainnamereferences?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Devices.Item {
         }
         /// <summary>
         /// Delete a registered device.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/device-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/device-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,8 +108,8 @@ namespace Microsoft.Graph.Beta.Devices.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the properties and relationships of a device object. Since the **device** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **device** instance.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/device-get?view=graph-rest-1.0" />
+        /// Get the properties and relationships of a device object. Since the device resource supports extensions, you can also use the GET operation to get custom properties and extension data in a device instance.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/device-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Beta.Devices.Item {
         }
         /// <summary>
         /// Update the properties of a device. Only certain properties of a device can be updated through approved Mobile Device Management (MDM) apps.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/device-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/device-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Devices.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of a device object. Since the **device** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **device** instance.
+        /// Get the properties and relationships of a device object. Since the device resource supports extensions, you can also use the GET operation to get custom properties and extension data in a device instance.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -244,7 +244,7 @@ namespace Microsoft.Graph.Beta.Devices.Item {
             }
         }
         /// <summary>
-        /// Get the properties and relationships of a device object. Since the **device** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in a **device** instance.
+        /// Get the properties and relationships of a device object. Since the device resource supports extensions, you can also use the GET operation to get custom properties and extension data in a device instance.
         /// </summary>
         public class DeviceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Education.Schools {
         }
         /// <summary>
         /// Retrieve a list of all school objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationroot-list-schools?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationroot-list-schools?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Education.Schools {
         }
         /// <summary>
         /// Create a school.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationroot-post-schools?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationroot-post-schools?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

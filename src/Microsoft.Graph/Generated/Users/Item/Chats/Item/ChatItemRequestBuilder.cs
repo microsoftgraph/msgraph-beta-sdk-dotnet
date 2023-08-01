@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item {
         }
         /// <summary>
         /// Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chat-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item {
         }
         /// <summary>
         /// Delete contactFolder other than the default contactFolder.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contactfolder-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactfolder-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item {
         }
         /// <summary>
         /// Get a contact folder by using the contact folder ID. There are two scenarios where an app can get another user&apos;s contact folder:
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contactfolder-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactfolder-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item {
         }
         /// <summary>
         /// Update the properties of contactfolder object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contactfolder-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactfolder-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

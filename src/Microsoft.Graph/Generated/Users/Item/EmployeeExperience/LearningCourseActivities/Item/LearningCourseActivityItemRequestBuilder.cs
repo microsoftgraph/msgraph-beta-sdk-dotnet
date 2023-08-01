@@ -28,8 +28,8 @@ namespace Microsoft.Graph.Beta.Users.Item.EmployeeExperience.LearningCourseActiv
         public LearningCourseActivityItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/employeeExperience/learningCourseActivities/{learningCourseActivity%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the specified learningCourseActivity object using either an ID or an **externalCourseActivityId** of the learning provider, or a **courseActivityId** of a user.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/learningcourseactivity-get?view=graph-rest-1.0" />
+        /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningcourseactivity-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.EmployeeExperience.LearningCourseActiv
             return await RequestAdapter.SendAsync<LearningCourseActivity>(requestInfo, LearningCourseActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the specified learningCourseActivity object using either an ID or an **externalCourseActivityId** of the learning provider, or a **courseActivityId** of a user.
+        /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Users.Item.EmployeeExperience.LearningCourseActiv
             return requestInfo;
         }
         /// <summary>
-        /// Get the specified learningCourseActivity object using either an ID or an **externalCourseActivityId** of the learning provider, or a **courseActivityId** of a user.
+        /// Get the specified learningCourseActivity object using either an ID or an externalCourseActivityId of the learning provider, or a courseActivityId of a user.
         /// </summary>
         public class LearningCourseActivityItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

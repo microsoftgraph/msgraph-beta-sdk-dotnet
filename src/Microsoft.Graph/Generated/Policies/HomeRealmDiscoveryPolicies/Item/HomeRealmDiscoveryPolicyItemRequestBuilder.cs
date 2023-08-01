@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Policies.HomeRealmDiscoveryPolicies.Item {
         }
         /// <summary>
         /// Delete a homeRealmDiscoveryPolicy object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/homerealmdiscoverypolicy-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Policies.HomeRealmDiscoveryPolicies.Item {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a homeRealmDiscoveryPolicy object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/homerealmdiscoverypolicy-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Policies.HomeRealmDiscoveryPolicies.Item {
         }
         /// <summary>
         /// Update the properties of a homeRealmDiscoveryPolicy object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/homerealmdiscoverypolicy-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

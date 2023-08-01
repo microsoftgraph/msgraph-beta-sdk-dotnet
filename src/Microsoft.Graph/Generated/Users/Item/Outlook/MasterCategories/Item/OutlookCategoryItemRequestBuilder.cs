@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories.Item {
         }
         /// <summary>
         /// Delete the specified outlookCategory object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/outlookcategory-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookcategory-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories.Item {
         }
         /// <summary>
         /// Get the properties and relationships of the specified outlookCategory object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/outlookcategory-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookcategory-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories.Item {
             return await RequestAdapter.SendAsync<OutlookCategory>(requestInfo, OutlookCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the writable property, **color**, of the specified outlookCategory object. You cannot modify the **displayName** propertyonce you have created the category.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/outlookcategory-update?view=graph-rest-1.0" />
+        /// Update the writable property, color, of the specified outlookCategory object. You cannot modify the displayName propertyonce you have created the category.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookcategory-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the writable property, **color**, of the specified outlookCategory object. You cannot modify the **displayName** propertyonce you have created the category.
+        /// Update the writable property, color, of the specified outlookCategory object. You cannot modify the displayName propertyonce you have created the category.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

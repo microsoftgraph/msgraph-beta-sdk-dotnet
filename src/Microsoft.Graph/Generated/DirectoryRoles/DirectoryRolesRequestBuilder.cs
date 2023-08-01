@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles {
         }
         /// <summary>
         /// List the directory roles that are activated in the tenant. This operation only returns roles that have been activated. A role becomes activated when an admin activates the role using the Activate directoryRole API. Not all built-in roles are initially activated.  When assigning a role using the Azure portal, the role activation step is implicitly done on the admin&apos;s behalf. To get the full list of roles that are available in Azure AD, use List directoryRoleTemplates.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/directoryrole-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryrole-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,8 +80,8 @@ namespace Microsoft.Graph.Beta.DirectoryRoles {
             return await RequestAdapter.SendAsync<DirectoryRoleCollectionResponse>(requestInfo, DirectoryRoleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. The Company Administrators and the implicit user directory roles (**User**, **Guest User**, and **Restricted Guest User** roles) are activated by default. To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/directoryrole-post-directoryroles?view=graph-rest-1.0" />
+        /// Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. The Company Administrators and the implicit user directory roles (User, Guest User, and Restricted Guest User roles) are activated by default. To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryrole-post-directoryroles?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles {
             return requestInfo;
         }
         /// <summary>
-        /// Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. The Company Administrators and the implicit user directory roles (**User**, **Guest User**, and **Restricted Guest User** roles) are activated by default. To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.
+        /// Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. The Company Administrators and the implicit user directory roles (User, Guest User, and Restricted Guest User roles) are activated by default. To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

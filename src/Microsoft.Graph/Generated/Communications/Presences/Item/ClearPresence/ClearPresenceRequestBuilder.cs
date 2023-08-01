@@ -27,8 +27,8 @@ namespace Microsoft.Graph.Beta.Communications.Presences.Item.ClearPresence {
         public ClearPresenceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/presences/{presence%2Did}/clearPresence", rawUrl) {
         }
         /// <summary>
-        /// Clear a presence session of an application for a user. If it is the user&apos;s only presence session, a successful **clearPresence** changes the user&apos;s presence to `Offline/Offline`. Read more about presence sessions and their time-out and expiration. 
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-1.0" />
+        /// Clear a presence session of an application for a user. If it is the user&apos;s only presence session, a successful clearPresence changes the user&apos;s presence to Offline/Offline. Read more about presence sessions and their time-out and expiration. 
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Communications.Presences.Item.ClearPresence {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Clear a presence session of an application for a user. If it is the user&apos;s only presence session, a successful **clearPresence** changes the user&apos;s presence to `Offline/Offline`. Read more about presence sessions and their time-out and expiration. 
+        /// Clear a presence session of an application for a user. If it is the user&apos;s only presence session, a successful clearPresence changes the user&apos;s presence to Offline/Offline. Read more about presence sessions and their time-out and expiration. 
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

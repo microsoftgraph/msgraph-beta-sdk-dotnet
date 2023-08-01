@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadPkcs12 {
         }
         /// <summary>
         /// Upload a PKCS12 format key (PFX) to a trustFrameworkKeyset. The input is a base-64 encoded value of the Pfx certificate contents. This method returns trustFrameworkKey.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/trustframeworkkeyset-uploadpkcs12?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframeworkkeyset-uploadpkcs12?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

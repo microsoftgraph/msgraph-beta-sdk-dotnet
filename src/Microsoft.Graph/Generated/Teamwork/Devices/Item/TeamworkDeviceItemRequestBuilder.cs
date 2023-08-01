@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
         }
         /// <summary>
         /// Get the properties of a Microsoft Teams-enabled device. For example, you can use this method to get the device type, hardware detail, activity state, and health status information for a device that&apos;s enabled for Teams.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/teamworkdevice-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworkdevice-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

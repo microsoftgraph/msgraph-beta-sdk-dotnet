@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes {
         }
         /// <summary>
         /// Get the list of authored notes associated with a subject rights request. 
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/subjectrightsrequest-list-notes?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-list-notes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Notes {
         }
         /// <summary>
         /// Create a new authoredNote object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/subjectrightsrequest-post-notes?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-post-notes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

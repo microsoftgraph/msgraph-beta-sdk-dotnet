@@ -5,6 +5,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class OnTokenIssuanceStartCustomExtensionHandler : OnTokenIssuanceStartHandler, IParsable {
+        /// <summary>The configuration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public CustomExtensionOverwriteConfiguration? Configuration {
+            get { return BackingStore?.Get<CustomExtensionOverwriteConfiguration?>("configuration"); }
+            set { BackingStore?.Set("configuration", value); }
+        }
+#nullable restore
+#else
+        public CustomExtensionOverwriteConfiguration Configuration {
+            get { return BackingStore?.Get<CustomExtensionOverwriteConfiguration>("configuration"); }
+            set { BackingStore?.Set("configuration", value); }
+        }
+#endif
         /// <summary>The customExtension property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"configuration", n => { Configuration = n.GetObjectValue<CustomExtensionOverwriteConfiguration>(CustomExtensionOverwriteConfiguration.CreateFromDiscriminatorValue); } },
                 {"customExtension", n => { CustomExtension = n.GetObjectValue<OnTokenIssuanceStartCustomExtension>(OnTokenIssuanceStartCustomExtension.CreateFromDiscriminatorValue); } },
             };
         }
@@ -48,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<CustomExtensionOverwriteConfiguration>("configuration", Configuration);
             writer.WriteObjectValue<OnTokenIssuanceStartCustomExtension>("customExtension", CustomExtension);
         }
     }

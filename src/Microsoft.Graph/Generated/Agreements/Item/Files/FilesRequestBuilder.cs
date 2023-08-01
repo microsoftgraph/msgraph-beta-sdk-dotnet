@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item.Files {
         }
         /// <summary>
         /// Create a new localized agreement file.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/agreement-post-files?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreement-post-files?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

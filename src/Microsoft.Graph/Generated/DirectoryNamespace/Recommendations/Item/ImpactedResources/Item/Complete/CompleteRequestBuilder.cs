@@ -28,8 +28,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
         public CompleteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/recommendations/{recommendation%2Did}/impactedResources/{impactedResource%2Did}/complete", rawUrl) {
         }
         /// <summary>
-        /// Complete an impactedResource object and update its **status** to `completedByUser`.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/impactedresource-complete?view=graph-rest-1.0" />
+        /// Complete an impactedResource object and update its status to completedByUser.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/impactedresource-complete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
             return await RequestAdapter.SendAsync<ImpactedResource>(requestInfo, ImpactedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Complete an impactedResource object and update its **status** to `completedByUser`.
+        /// Complete an impactedResource object and update its status to completedByUser.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeOffRequests.Item {
         }
         /// <summary>
         /// Delete a timeOffRequest object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timeoffrequest-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timeoffrequest-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeOffRequests.Item {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a timeoffrequest object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timeoffrequest-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timeoffrequest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

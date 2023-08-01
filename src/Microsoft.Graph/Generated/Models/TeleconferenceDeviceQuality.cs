@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("cloudServiceDeploymentId", value); }
         }
 #endif
-        /// <summary>The Azure deployed cloud service instance name, such as FrontEnd_IN_3.</summary>
+        /// <summary>The Azure deployed cloud service instance name, such as FrontEndIN3.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CloudServiceInstanceName {

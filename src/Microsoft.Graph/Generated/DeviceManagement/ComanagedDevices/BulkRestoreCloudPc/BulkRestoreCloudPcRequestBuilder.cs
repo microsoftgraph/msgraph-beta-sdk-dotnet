@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.BulkRestoreClou
         }
         /// <summary>
         /// Restore multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices and a restore point date and time.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/manageddevice-bulkrestorecloudpc?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/manageddevice-bulkrestorecloudpc?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders {
         }
         /// <summary>
         /// Get all the Outlook task folders in the user&apos;s mailbox.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/outlookuser-list-taskfolders?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookuser-list-taskfolders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,8 +63,8 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders {
             return await RequestAdapter.SendAsync<OutlookTaskFolderCollectionResponse>(requestInfo, OutlookTaskFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a task folder in the default task group (`My Tasks`) of the user&apos;s mailbox.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/outlookuser-post-taskfolders?view=graph-rest-1.0" />
+        /// Create a task folder in the default task group (My Tasks) of the user&apos;s mailbox.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookuser-post-taskfolders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders {
             return requestInfo;
         }
         /// <summary>
-        /// Create a task folder in the default task group (`My Tasks`) of the user&apos;s mailbox.
+        /// Create a task folder in the default task group (My Tasks) of the user&apos;s mailbox.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

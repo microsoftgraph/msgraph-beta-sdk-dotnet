@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.AppRoleAssignments.Item {
         }
         /// <summary>
         /// Deletes an appRoleAssignment that a service principal has been granted. App roles which are assigned to service principals are also known as application permissions. Deleting an app role assignment for a service principal is equivalent to revoking the app-only permission grant.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-approleassignments?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delete-approleassignments?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

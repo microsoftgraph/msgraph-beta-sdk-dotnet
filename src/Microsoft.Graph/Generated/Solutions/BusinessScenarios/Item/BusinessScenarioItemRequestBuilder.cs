@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item {
         }
         /// <summary>
         /// Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/businessscenario-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessscenario-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item {
         }
         /// <summary>
         /// Read the properties and relationships of a businessScenario object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/businessscenario-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessscenario-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item {
         }
         /// <summary>
         /// Update the properties of a businessScenario object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/businessscenario-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessscenario-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

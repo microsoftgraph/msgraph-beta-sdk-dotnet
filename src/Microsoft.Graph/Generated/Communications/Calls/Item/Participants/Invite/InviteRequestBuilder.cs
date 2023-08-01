@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Invite {
         }
         /// <summary>
         /// Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

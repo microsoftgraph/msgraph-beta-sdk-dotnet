@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.RoleDefinitions {
         }
         /// <summary>
         /// Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- directory (Azure AD) - entitlement management (Azure AD)- Exchange Online
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

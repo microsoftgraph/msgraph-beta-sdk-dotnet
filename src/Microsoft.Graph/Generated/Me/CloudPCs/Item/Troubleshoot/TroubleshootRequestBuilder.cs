@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.Troubleshoot {
         }
         /// <summary>
         /// Troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

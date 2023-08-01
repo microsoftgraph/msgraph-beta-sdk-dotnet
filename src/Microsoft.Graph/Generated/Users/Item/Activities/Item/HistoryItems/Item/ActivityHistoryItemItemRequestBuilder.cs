@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Activities.Item.HistoryItems.Item {
         }
         /// <summary>
         /// Delete an existing history item for an existing user activity.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/projectrome-delete-historyitem?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/projectrome-delete-historyitem?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -38,8 +38,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Permissions.Item {
         public PermissionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/permissions/{permission%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Remove access to a DriveItem. Only sharing permissions that are **not** inherited can be deleted.The **inheritedFrom** property must be `null`.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/permission-delete?view=graph-rest-1.0" />
+        /// Remove access to a DriveItem. Only sharing permissions that are not inherited can be deleted.The inheritedFrom property must be null.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permission-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -58,8 +58,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Permissions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Return the effective sharing permission for a particular permission resource. Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item&apos;s ancestors. Callers can differentiate if the permission is inherited or not by checking the `inheritedFrom` property.This property is an ItemReference resource referencing the ancestor that the permission is inherited from.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/permission-get?view=graph-rest-1.0" />
+        /// Return the effective sharing permission for a particular permission resource. Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item&apos;s ancestors. Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.This property is an ItemReference resource referencing the ancestor that the permission is inherited from.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permission-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Permissions.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Permission>(requestInfo, Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of a sharing permission by patching the permission resource. Only the **roles** property can be modified this way.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/permission-update?view=graph-rest-1.0" />
+        /// Update the properties of a sharing permission by patching the permission resource. Only the roles property can be modified this way.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permission-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Permissions.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Permission>(requestInfo, Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Remove access to a DriveItem. Only sharing permissions that are **not** inherited can be deleted.The **inheritedFrom** property must be `null`.
+        /// Remove access to a DriveItem. Only sharing permissions that are not inherited can be deleted.The inheritedFrom property must be null.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Permissions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Return the effective sharing permission for a particular permission resource. Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item&apos;s ancestors. Callers can differentiate if the permission is inherited or not by checking the `inheritedFrom` property.This property is an ItemReference resource referencing the ancestor that the permission is inherited from.
+        /// Return the effective sharing permission for a particular permission resource. Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item&apos;s ancestors. Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.This property is an ItemReference resource referencing the ancestor that the permission is inherited from.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Permissions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a sharing permission by patching the permission resource. Only the **roles** property can be modified this way.
+        /// Update the properties of a sharing permission by patching the permission resource. Only the roles property can be modified this way.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Permissions.Item {
             }
         }
         /// <summary>
-        /// Return the effective sharing permission for a particular permission resource. Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item&apos;s ancestors. Callers can differentiate if the permission is inherited or not by checking the `inheritedFrom` property.This property is an ItemReference resource referencing the ancestor that the permission is inherited from.
+        /// Return the effective sharing permission for a particular permission resource. Effective permissions of an item can come from two sources: permissions set directly on the item itself or permissions that are inherited from the item&apos;s ancestors. Callers can differentiate if the permission is inherited or not by checking the inheritedFrom property.This property is an ItemReference resource referencing the ancestor that the permission is inherited from.
         /// </summary>
         public class PermissionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

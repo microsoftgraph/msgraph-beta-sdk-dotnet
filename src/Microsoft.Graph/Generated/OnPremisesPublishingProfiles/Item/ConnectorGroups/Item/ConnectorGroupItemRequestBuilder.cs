@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
         }
         /// <summary>
         /// Delete a connectorGroup. All connectors and applications must be removed from the connector group before a connector group can be deleted.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/connectorgroup-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectorgroup-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
         }
         /// <summary>
         /// Retrieve the properties of a connectorGroup.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/connectorgroup-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectorgroup-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
         }
         /// <summary>
         /// Update the properties of a connectorGroup object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/connectorgroup-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectorgroup-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

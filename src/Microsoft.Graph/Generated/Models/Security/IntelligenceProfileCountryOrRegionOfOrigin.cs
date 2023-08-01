@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The code property</summary>
+        /// <summary>A codified representation for this country/region of origin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Code {
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("code", value); }
         }
 #endif
-        /// <summary>The label property</summary>
+        /// <summary>A display label for this ountry/region of origin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label {

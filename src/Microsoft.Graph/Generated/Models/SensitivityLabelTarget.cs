@@ -8,9 +8,9 @@ namespace Microsoft.Graph.Beta.Models {
         Site,
         [EnumMember(Value = "unifiedGroup")]
         UnifiedGroup,
-        [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
         [EnumMember(Value = "teamwork")]
         Teamwork,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

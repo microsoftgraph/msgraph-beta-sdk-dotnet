@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
         }
         /// <summary>
         /// List properties and relationships of the cloudPcOnPremisesConnection objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/virtualendpoint-list-onpremisesconnections?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-onpremisesconnections?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
         }
         /// <summary>
         /// Create a new cloudPcOnPremisesConnection object for provisioning Cloud PCs.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/virtualendpoint-post-onpremisesconnections?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-post-onpremisesconnections?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

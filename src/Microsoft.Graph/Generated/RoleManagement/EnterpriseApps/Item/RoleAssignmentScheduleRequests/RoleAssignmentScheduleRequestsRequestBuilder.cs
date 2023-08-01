@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignment
         }
         /// <summary>
         /// Retrieve the requests for active role assignments to principals. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. The role assignments can be permanently active with or without an expiry date, or temporarily active after user activation of eligible assignments.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedulerequests?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedulerequests?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignment
         }
         /// <summary>
         /// Create a new unifiedRoleAssignmentScheduleRequest object. This operation allows both admins and users to add, remove, extend, or renew assignments. To run this request, the calling user must have multi-factor authentication (MFA) enforced, and running the query in a session in which they were challenged for MFA. See Enable per-user Azure AD Multi-Factor Authentication to secure sign-in events.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/rbacapplication-post-roleassignmentschedulerequests?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-post-roleassignmentschedulerequests?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

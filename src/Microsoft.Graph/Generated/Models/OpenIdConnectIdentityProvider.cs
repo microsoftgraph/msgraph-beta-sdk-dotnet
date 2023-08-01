@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("clientId", value); }
         }
 #endif
-        /// <summary>The client secret for the application obtained when registering the application with the identity provider. The clientSecret has a dependency on responseType. When responseType is code, a secret is required for the auth code exchange.When responseType is id_token the secret is not required because there is no code exchange. The id_token is returned directly from the authorization response. This is write-only. A read operation returns ****.</summary>
+        /// <summary>The client secret for the application obtained when registering the application with the identity provider. The clientSecret has a dependency on responseType. When responseType is code, a secret is required for the auth code exchange.When responseType is idtoken the secret is not required because there is no code exchange. The idtoken is returned directly from the authorization response. This is write-only. A read operation returns .</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientSecret {

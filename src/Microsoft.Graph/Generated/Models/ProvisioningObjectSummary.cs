@@ -19,12 +19,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("action", value); }
         }
 #endif
-        /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $filter (eq, gt, lt) and orderby.</summary>
         public DateTimeOffset? ActivityDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
             set { BackingStore?.Set("activityDateTime", value); }
         }
-        /// <summary>Unique ID of this change in this cycle.</summary>
+        /// <summary>Unique ID of this change in this cycle. Supports $filter (eq, contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChangeId {
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("changeId", value); }
         }
 #endif
-        /// <summary>Unique ID per job iteration.</summary>
+        /// <summary>Unique ID per job iteration. Supports $filter (eq, contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CycleId {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("cycleId", value); }
         }
 #endif
-        /// <summary>Indicates how long this provisioning action took to finish. Measured in milliseconds.</summary>
+        /// <summary>Indicates how long this provisioning action took to finish. Measured in milliseconds. Supports $filter (eq, gt, lt).</summary>
         public int? DurationInMilliseconds {
             get { return BackingStore?.Get<int?>("durationInMilliseconds"); }
             set { BackingStore?.Set("durationInMilliseconds", value); }
         }
-        /// <summary>Details of who initiated this provisioning.</summary>
+        /// <summary>Details of who initiated this provisioning. Supports $filter (eq, contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Initiator? InitiatedBy {
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("initiatedBy", value); }
         }
 #endif
-        /// <summary>The unique ID for the whole provisioning job.</summary>
+        /// <summary>The unique ID for the whole provisioning job. Supports $filter (eq, contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JobId {
@@ -99,12 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("modifiedProperties", value); }
         }
 #endif
-        /// <summary>Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.</summary>
+        /// <summary>Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list. Supports $filter (eq, contains).</summary>
         public Microsoft.Graph.Beta.Models.ProvisioningAction? ProvisioningAction {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProvisioningAction?>("provisioningAction"); }
             set { BackingStore?.Set("provisioningAction", value); }
         }
-        /// <summary>Details of provisioning status.</summary>
+        /// <summary>Details of provisioning status. Supports $filter (eq, contains) for status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.ProvisioningStatusInfo? ProvisioningStatusInfo {
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("provisioningSteps", value); }
         }
 #endif
-        /// <summary>Represents the service principal used for provisioning.</summary>
+        /// <summary>Represents the service principal used for provisioning. Supports $filter (eq) for id and name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ProvisioningServicePrincipal? ServicePrincipal {
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("servicePrincipal", value); }
         }
 #endif
-        /// <summary>Details of source object being provisioned.</summary>
+        /// <summary>Details of source object being provisioned. Supports $filter (eq, contains) for identityType, id, and displayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ProvisionedIdentity? SourceIdentity {
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sourceIdentity", value); }
         }
 #endif
-        /// <summary>Details of source system of the object being provisioned.</summary>
+        /// <summary>Details of source system of the object being provisioned. Supports $filter (eq, contains) for displayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ProvisioningSystem? SourceSystem {
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("statusInfo", value); }
         }
 #endif
-        /// <summary>Details of target object being provisioned.</summary>
+        /// <summary>Details of target object being provisioned. Supports $filter (eq, contains) for identityType, id, and displayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ProvisionedIdentity? TargetIdentity {
@@ -202,7 +202,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("targetIdentity", value); }
         }
 #endif
-        /// <summary>Details of target system of the object being provisioned.</summary>
+        /// <summary>Details of target system of the object being provisioned. Supports $filter (eq, contains) for displayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ProvisioningSystem? TargetSystem {
@@ -216,7 +216,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("targetSystem", value); }
         }
 #endif
-        /// <summary>Unique Azure AD tenant ID.</summary>
+        /// <summary>Unique Azure AD tenant ID. Supports $filter (eq, contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId {

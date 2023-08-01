@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Sponsors {
         }
         /// <summary>
         /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest user&apos;s privileges in the tenant and for keeping the guest user&apos;s information and access up to date.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-sponsors?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-sponsors?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

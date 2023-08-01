@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Programs.Item.Controls {
         }
         /// <summary>
         /// In the Azure AD access reviews feature, list all the programControl objects, linked to a particular program.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/program-listcontrols?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/program-listcontrols?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

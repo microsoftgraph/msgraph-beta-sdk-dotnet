@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods {
         }
         /// <summary>
         /// Retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the authenticationMethod resource type, and only the methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authentication-list-methods?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-list-methods?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

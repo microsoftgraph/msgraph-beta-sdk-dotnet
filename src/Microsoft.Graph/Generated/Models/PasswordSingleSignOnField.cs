@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defaultLabel", value); }
         }
 #endif
-        /// <summary>Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.</summary>
+        /// <summary>Id used to identity the field type. This is an internal id and possible values are param1, param2, paramuserName, parampassword.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FieldId {

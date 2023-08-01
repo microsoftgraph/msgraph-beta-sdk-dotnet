@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions {
         }
         /// <summary>
         /// Retrieve the accessReviewScheduleDefinition objects. A list of zero or more accessReviewScheduleDefinition objects are returned, including all of their nested properties, for each access review series created. This does not include the associated accessReviewInstance objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/accessreviewset-list-definitions?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewset-list-definitions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions {
         }
         /// <summary>
         /// Create a new accessReviewScheduleDefinition object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/accessreviewset-post-definitions?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewset-post-definitions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -4,13 +4,17 @@ using Microsoft.Graph.Beta.Security.ThreatIntelligence.ArticleIndicators;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Articles;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.HostComponents;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.HostCookies;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.HostPairs;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.HostSslCertificates;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.HostTrackers;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelProfiles;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelligenceProfileIndicators;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.PassiveDnsRecords;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.SslCertificates;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Subdomains;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Vulnerabilities;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisRecords;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -40,9 +44,17 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence {
         public HostCookiesRequestBuilder HostCookies { get =>
             new HostCookiesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the hostPairs property of the microsoft.graph.security.threatIntelligence entity.</summary>
+        public HostPairsRequestBuilder HostPairs { get =>
+            new HostPairsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the hosts property of the microsoft.graph.security.threatIntelligence entity.</summary>
         public HostsRequestBuilder Hosts { get =>
             new HostsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the hostSslCertificates property of the microsoft.graph.security.threatIntelligence entity.</summary>
+        public HostSslCertificatesRequestBuilder HostSslCertificates { get =>
+            new HostSslCertificatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hostTrackers property of the microsoft.graph.security.threatIntelligence entity.</summary>
         public HostTrackersRequestBuilder HostTrackers { get =>
@@ -60,6 +72,10 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence {
         public PassiveDnsRecordsRequestBuilder PassiveDnsRecords { get =>
             new PassiveDnsRecordsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the sslCertificates property of the microsoft.graph.security.threatIntelligence entity.</summary>
+        public SslCertificatesRequestBuilder SslCertificates { get =>
+            new SslCertificatesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the subdomains property of the microsoft.graph.security.threatIntelligence entity.</summary>
         public SubdomainsRequestBuilder Subdomains { get =>
             new SubdomainsRequestBuilder(PathParameters, RequestAdapter);
@@ -67,6 +83,10 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence {
         /// <summary>Provides operations to manage the vulnerabilities property of the microsoft.graph.security.threatIntelligence entity.</summary>
         public VulnerabilitiesRequestBuilder Vulnerabilities { get =>
             new VulnerabilitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the whoisRecords property of the microsoft.graph.security.threatIntelligence entity.</summary>
+        public WhoisRecordsRequestBuilder WhoisRecords { get =>
+            new WhoisRecordsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new ThreatIntelligenceRequestBuilder and sets the default values.

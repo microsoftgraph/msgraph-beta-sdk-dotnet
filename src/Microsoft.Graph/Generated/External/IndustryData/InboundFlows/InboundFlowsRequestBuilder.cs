@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
         }
         /// <summary>
         /// Get a list of the inboundFileFlow objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
             return await RequestAdapter.SendAsync<InboundFlowCollectionResponse>(requestInfo, InboundFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new inboundFlow object. The following prerequisite resources are required when you create an **inboundFlow**:
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-1.0" />
+        /// Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new inboundFlow object. The following prerequisite resources are required when you create an **inboundFlow**:
+        /// Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

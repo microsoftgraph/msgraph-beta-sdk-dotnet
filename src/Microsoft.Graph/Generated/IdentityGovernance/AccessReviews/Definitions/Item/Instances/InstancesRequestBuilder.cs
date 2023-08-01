@@ -49,8 +49,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Retrieve the accessReviewInstance objects for a specific accessReviewScheduleDefinition. A list of zero or more **accessReviewInstance** objects are returned, including all of their nested properties. Returned objects do not include associated accessReviewInstanceDecisionItems. To retrieve the decisions on the instance, use List accessReviewInstanceDecisionItem.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/accessreviewscheduledefinition-list-instances?view=graph-rest-1.0" />
+        /// Retrieve the accessReviewInstance objects for a specific accessReviewScheduleDefinition. A list of zero or more accessReviewInstance objects are returned, including all of their nested properties. Returned objects do not include associated accessReviewInstanceDecisionItems. To retrieve the decisions on the instance, use List accessReviewInstanceDecisionItem.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewscheduledefinition-list-instances?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item
             return await RequestAdapter.SendAsync<AccessReviewInstance>(requestInfo, AccessReviewInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the accessReviewInstance objects for a specific accessReviewScheduleDefinition. A list of zero or more **accessReviewInstance** objects are returned, including all of their nested properties. Returned objects do not include associated accessReviewInstanceDecisionItems. To retrieve the decisions on the instance, use List accessReviewInstanceDecisionItem.
+        /// Retrieve the accessReviewInstance objects for a specific accessReviewScheduleDefinition. A list of zero or more accessReviewInstance objects are returned, including all of their nested properties. Returned objects do not include associated accessReviewInstanceDecisionItems. To retrieve the decisions on the instance, use List accessReviewInstanceDecisionItem.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the accessReviewInstance objects for a specific accessReviewScheduleDefinition. A list of zero or more **accessReviewInstance** objects are returned, including all of their nested properties. Returned objects do not include associated accessReviewInstanceDecisionItems. To retrieve the decisions on the instance, use List accessReviewInstanceDecisionItem.
+        /// Retrieve the accessReviewInstance objects for a specific accessReviewScheduleDefinition. A list of zero or more accessReviewInstance objects are returned, including all of their nested properties. Returned objects do not include associated accessReviewInstanceDecisionItems. To retrieve the decisions on the instance, use List accessReviewInstanceDecisionItem.
         /// </summary>
         public class InstancesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

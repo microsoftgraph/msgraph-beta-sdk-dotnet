@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios {
         }
         /// <summary>
         /// Get a list of all businessScenario objects in an organization.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/solutionsroot-list-businessscenarios?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/solutionsroot-list-businessscenarios?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios {
         }
         /// <summary>
         /// Create a new businessScenario object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/solutionsroot-post-businessscenarios?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/solutionsroot-post-businessscenarios?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

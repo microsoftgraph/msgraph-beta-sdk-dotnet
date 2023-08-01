@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         }
         /// <summary>
         /// Delete a school data synchronization profile in the tenant based on the identifier.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationsynchronizationprofile-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         }
         /// <summary>
         /// Retrieve a school data synchronization profile in the tenant based on the identifier.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationsynchronizationprofile-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

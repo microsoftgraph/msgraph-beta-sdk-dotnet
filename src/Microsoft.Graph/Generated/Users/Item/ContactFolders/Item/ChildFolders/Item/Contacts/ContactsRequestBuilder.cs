@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item.
         }
         /// <summary>
         /// Get all the contacts in the signed-in user&apos;s mailbox (.../me/contacts), or from the specified contact folder.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -65,8 +65,8 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item.
             return await RequestAdapter.SendAsync<ContactCollectionResponse>(requestInfo, ContactCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0" />
+        /// Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item.
             return requestInfo;
         }
         /// <summary>
-        /// Add a contact to the root Contacts folder or to the `contacts` endpoint of another contact folder.
+        /// Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

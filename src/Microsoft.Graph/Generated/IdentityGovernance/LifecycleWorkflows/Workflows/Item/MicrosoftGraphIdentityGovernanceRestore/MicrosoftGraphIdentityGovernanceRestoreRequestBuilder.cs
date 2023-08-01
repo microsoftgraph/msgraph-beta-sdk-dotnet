@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         }
         /// <summary>
         /// Restore a workflow that has been deleted. You can only restore a workflow that was deleted within the last 30 days before Azure AD automatically permanently deletes it.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identitygovernance-workflow-restore?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-workflow-restore?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

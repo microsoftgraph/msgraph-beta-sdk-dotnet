@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A directory setting template represents a template of settings from which settings may be created within a tenant. This operation allows retrieval of the properties of the **directorySettingTemplate** object, including the available settings and their defaults.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/directorysettingtemplate-get?view=graph-rest-1.0" />
+        /// A directory setting template represents a template of settings from which settings may be created within a tenant. This operation allows retrieval of the properties of the directorySettingTemplate object, including the available settings and their defaults.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directorysettingtemplate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A directory setting template represents a template of settings from which settings may be created within a tenant. This operation allows retrieval of the properties of the **directorySettingTemplate** object, including the available settings and their defaults.
+        /// A directory setting template represents a template of settings from which settings may be created within a tenant. This operation allows retrieval of the properties of the directorySettingTemplate object, including the available settings and their defaults.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -207,7 +207,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates.Item {
             }
         }
         /// <summary>
-        /// A directory setting template represents a template of settings from which settings may be created within a tenant. This operation allows retrieval of the properties of the **directorySettingTemplate** object, including the available settings and their defaults.
+        /// A directory setting template represents a template of settings from which settings may be created within a tenant. This operation allows retrieval of the properties of the directorySettingTemplate object, including the available settings and their defaults.
         /// </summary>
         public class DirectorySettingTemplateItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

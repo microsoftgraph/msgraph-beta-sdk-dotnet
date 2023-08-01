@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("port"); }
             set { BackingStore?.Set("port", value); }
         }
-        /// <summary>The Resource Path associated with the printer. This corresponds to the rp parameter of the ipps.tcp Bonjour record. For example: printers/Canon_MG5300_series, printers/Xerox_Phaser_7600, ipp/print, Epson_IPP_Printer.</summary>
+        /// <summary>The Resource Path associated with the printer. This corresponds to the rp parameter of the ipps.tcp Bonjour record. For example: printers/CanonMG5300series, printers/XeroxPhaser7600, ipp/print, EpsonIPPPrinter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourcePath {

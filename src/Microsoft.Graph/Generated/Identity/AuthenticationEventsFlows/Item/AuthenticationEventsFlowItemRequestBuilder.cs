@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item {
         }
         /// <summary>
         /// Delete a specific authenticationEventsFlow resource by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationeventsflow-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventsflow-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a specific authenticationEventsFlow object by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationeventsflow-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventsflow-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item {
         }
         /// <summary>
         /// Update the properties of an authenticationEventsFlow object. Only the externalUsersSelfServiceSignupEventsFlow object type is supported.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationeventsflow-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventsflow-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

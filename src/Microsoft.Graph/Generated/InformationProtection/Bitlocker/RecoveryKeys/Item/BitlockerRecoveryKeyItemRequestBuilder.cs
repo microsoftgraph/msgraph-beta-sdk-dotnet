@@ -28,8 +28,8 @@ namespace Microsoft.Graph.Beta.InformationProtection.Bitlocker.RecoveryKeys.Item
         public BitlockerRecoveryKeyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/informationProtection/bitlocker/recoveryKeys/{bitlockerRecoveryKey%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a bitlockerRecoveryKey object.  By default, this operation does not return the **key** property that represents the actual recovery key. To include the **key** property in the response, use the `$select` OData query parameter. Including the `$select` query parameter triggers an Azure AD audit of the operation and generates an audit log. You can find the log in Azure AD audit logs under the KeyManagement category.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bitlockerrecoverykey-get?view=graph-rest-1.0" />
+        /// Retrieve the properties and relationships of a bitlockerRecoveryKey object.  By default, this operation does not return the key property that represents the actual recovery key. To include the key property in the response, use the $select OData query parameter. Including the $select query parameter triggers an Azure AD audit of the operation and generates an audit log. You can find the log in Azure AD audit logs under the KeyManagement category.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bitlockerrecoverykey-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.Bitlocker.RecoveryKeys.Item
             return await RequestAdapter.SendAsync<BitlockerRecoveryKey>(requestInfo, BitlockerRecoveryKey.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a bitlockerRecoveryKey object.  By default, this operation does not return the **key** property that represents the actual recovery key. To include the **key** property in the response, use the `$select` OData query parameter. Including the `$select` query parameter triggers an Azure AD audit of the operation and generates an audit log. You can find the log in Azure AD audit logs under the KeyManagement category.
+        /// Retrieve the properties and relationships of a bitlockerRecoveryKey object.  By default, this operation does not return the key property that represents the actual recovery key. To include the key property in the response, use the $select OData query parameter. Including the $select query parameter triggers an Azure AD audit of the operation and generates an audit log. You can find the log in Azure AD audit logs under the KeyManagement category.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.Bitlocker.RecoveryKeys.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a bitlockerRecoveryKey object.  By default, this operation does not return the **key** property that represents the actual recovery key. To include the **key** property in the response, use the `$select` OData query parameter. Including the `$select` query parameter triggers an Azure AD audit of the operation and generates an audit log. You can find the log in Azure AD audit logs under the KeyManagement category.
+        /// Retrieve the properties and relationships of a bitlockerRecoveryKey object.  By default, this operation does not return the key property that represents the actual recovery key. To include the key property in the response, use the $select OData query parameter. Including the $select query parameter triggers an Azure AD audit of the operation and generates an audit log. You can find the log in Azure AD audit logs under the KeyManagement category.
         /// </summary>
         public class BitlockerRecoveryKeyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

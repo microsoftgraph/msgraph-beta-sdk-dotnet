@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.TaskTriggers.Item {
         }
         /// <summary>
         /// Delete a printer&apos;s task trigger to prevent related print events from triggering tasks on the specified printer.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/printer-delete-tasktrigger?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printer-delete-tasktrigger?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.TaskTriggers.Item {
         }
         /// <summary>
         /// Get a task trigger from a printer. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/printtasktrigger-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printtasktrigger-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

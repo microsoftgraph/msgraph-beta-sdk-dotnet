@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InferenceClassification.Overrides {
         }
         /// <summary>
         /// Get the Focused Inbox overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/inferenceclassification-list-overrides?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/inferenceclassification-list-overrides?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InferenceClassification.Overrides {
         }
         /// <summary>
         /// Create a focused Inbox override for a sender identified by an SMTP address. Future messages from that SMTP address will be consistently classifiedas specified in the override.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/inferenceclassification-post-overrides?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/inferenceclassification-post-overrides?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

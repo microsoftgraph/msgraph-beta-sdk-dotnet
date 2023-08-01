@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails {
         }
         /// <summary>
         /// Get a list of userCredentialUsageDetails objects for a given tenant. Details include user information, status of the reset, and the reason for failure.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/reportroot-list-usercredentialusagedetails?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-list-usercredentialusagedetails?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

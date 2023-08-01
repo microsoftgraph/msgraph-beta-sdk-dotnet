@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Transcripts.It
         }
         /// <summary>
         /// Retrieve a callTranscript object associated with an onlineMeeting. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

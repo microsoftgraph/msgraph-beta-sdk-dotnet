@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item
         }
         /// <summary>
         /// Retrieve an accessReviewInstance object using the identifier of an accessReviewInstance and its parent accessReviewScheduleDefinition. This returns all properties of the instance except for the associated accessReviewInstanceDecisionItems. To retrieve the decisions on the instance, use List accessReviewInstanceDecisionItem.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/accessreviewinstance-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstance-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -122,8 +122,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item
             return await RequestAdapter.SendAsync<AccessReviewInstance>(requestInfo, AccessReviewInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of an accessReviewInstance object. Only the **reviewers** and **fallbackReviewers** properties can be updated but the **scope** property is also required in the request body. You can only add reviewers to the **fallbackReviewers** property but can&apos;t remove existing **fallbackReviewers**. To update an **accessReviewInstance**, it&apos;s **status** must be `InProgress`.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/accessreviewinstance-update?view=graph-rest-1.0" />
+        /// Update the properties of an accessReviewInstance object. Only the reviewers and fallbackReviewers properties can be updated but the scope property is also required in the request body. You can only add reviewers to the fallbackReviewers property but can&apos;t remove existing fallbackReviewers. To update an accessReviewInstance, its status must be InProgress.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstance-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an accessReviewInstance object. Only the **reviewers** and **fallbackReviewers** properties can be updated but the **scope** property is also required in the request body. You can only add reviewers to the **fallbackReviewers** property but can&apos;t remove existing **fallbackReviewers**. To update an **accessReviewInstance**, it&apos;s **status** must be `InProgress`.
+        /// Update the properties of an accessReviewInstance object. Only the reviewers and fallbackReviewers properties can be updated but the scope property is also required in the request body. You can only add reviewers to the fallbackReviewers property but can&apos;t remove existing fallbackReviewers. To update an accessReviewInstance, its status must be InProgress.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

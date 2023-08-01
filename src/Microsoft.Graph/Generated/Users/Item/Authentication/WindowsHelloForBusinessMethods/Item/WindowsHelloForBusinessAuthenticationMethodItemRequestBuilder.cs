@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.WindowsHelloForBusiness
         }
         /// <summary>
         /// Deletes a windowsHelloForBusinessAuthenticationMethod object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/windowshelloforbusinessauthenticationmethod-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowshelloforbusinessauthenticationmethod-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.WindowsHelloForBusiness
         }
         /// <summary>
         /// Read the properties and relationships of a windowsHelloForBusinessAuthenticationMethod object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/windowshelloforbusinessauthenticationmethod-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowshelloforbusinessauthenticationmethod-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

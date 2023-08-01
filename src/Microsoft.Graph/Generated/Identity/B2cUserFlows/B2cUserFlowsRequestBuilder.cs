@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows {
         }
         /// <summary>
         /// Retrieve a list of b2cIdentityUserFlow objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identitycontainer-list-b2cuserflows?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitycontainer-list-b2cuserflows?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows {
         }
         /// <summary>
         /// Create a new b2cIdentityUserFlow object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identitycontainer-post-b2cuserflows?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitycontainer-post-b2cuserflows?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

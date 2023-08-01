@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
         }
         /// <summary>
         /// Start a break in a specific timeCard.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timecard-startbreak?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-startbreak?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("aliases", value); }
         }
 #endif
-        /// <summary>The countriesOrRegionsOfOrigin property</summary>
+        /// <summary>The country/region of origin for the given actor or threat associated with this intelligenceProfile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<IntelligenceProfileCountryOrRegionOfOrigin>? CountriesOrRegionsOfOrigin {

@@ -28,8 +28,8 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.CancelMediaProcessing {
         public CancelMediaProcessingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}/cancelMediaProcessing", rawUrl) {
         }
         /// <summary>
-        /// Cancels processing for any in-progress media operations. Media operations refer to the IVR operations playPrompt and recordResponse, which are by default queued to process in order. The **cancelMediaProcessing** method cancels any operation that is in-process as well as operations that are queued. For example, this API can be used to clean up the IVR operation queue for a new media operation. However, it will not cancel a **ubscribeToTone** operation because it operates independent of any operation queue.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/call-cancelmediaprocessing?view=graph-rest-1.0" />
+        /// Cancels processing for any in-progress media operations. Media operations refer to the IVR operations playPrompt and recordResponse, which are by default queued to process in order. The cancelMediaProcessing method cancels any operation that is in-process as well as operations that are queued. For example, this API can be used to clean up the IVR operation queue for a new media operation. However, it will not cancel a ubscribeToTone operation because it operates independent of any operation queue.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-cancelmediaprocessing?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.CancelMediaProcessing {
             return await RequestAdapter.SendAsync<CancelMediaProcessingOperation>(requestInfo, CancelMediaProcessingOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Cancels processing for any in-progress media operations. Media operations refer to the IVR operations playPrompt and recordResponse, which are by default queued to process in order. The **cancelMediaProcessing** method cancels any operation that is in-process as well as operations that are queued. For example, this API can be used to clean up the IVR operation queue for a new media operation. However, it will not cancel a **ubscribeToTone** operation because it operates independent of any operation queue.
+        /// Cancels processing for any in-progress media operations. Media operations refer to the IVR operations playPrompt and recordResponse, which are by default queued to process in order. The cancelMediaProcessing method cancels any operation that is in-process as well as operations that are queued. For example, this API can be used to clean up the IVR operation queue for a new media operation. However, it will not cancel a ubscribeToTone operation because it operates independent of any operation queue.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

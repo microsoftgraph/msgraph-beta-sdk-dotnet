@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.TokenLifetimePolicies.Item.Ref 
         }
         /// <summary>
         /// Remove a tokenLifetimePolicy from an application or servicePrincipal.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-delete-tokenlifetimepolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

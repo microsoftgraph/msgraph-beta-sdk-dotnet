@@ -28,8 +28,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Dismiss {
         public DismissRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/recommendations/{recommendation%2Did}/dismiss", rawUrl) {
         }
         /// <summary>
-        /// Dismiss a recommendation object that you consider to be inapplicable to your tenant and update its **status** to `dismissed` .
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/recommendation-dismiss?view=graph-rest-1.0" />
+        /// Dismiss a recommendation object that you consider to be inapplicable to your tenant and update its status to dismissed .
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/recommendation-dismiss?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Dismiss {
             return await RequestAdapter.SendAsync<Recommendation>(requestInfo, Recommendation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Dismiss a recommendation object that you consider to be inapplicable to your tenant and update its **status** to `dismissed` .
+        /// Dismiss a recommendation object that you consider to be inapplicable to your tenant and update its status to dismissed .
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

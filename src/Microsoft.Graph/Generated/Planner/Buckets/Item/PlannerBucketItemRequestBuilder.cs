@@ -33,8 +33,8 @@ namespace Microsoft.Graph.Beta.Planner.Buckets.Item {
         public PlannerBucketItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/planner/buckets/{plannerBucket%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete **plannerBucket**.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannerbucket-delete?view=graph-rest-1.0" />
+        /// Delete plannerBucket.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerbucket-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Planner.Buckets.Item {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a plannerBucket object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannerbucket-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerbucket-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Planner.Buckets.Item {
         }
         /// <summary>
         /// Update the navigation property buckets in planner
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannerbucket-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerbucket-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Planner.Buckets.Item {
             return await RequestAdapter.SendAsync<PlannerBucket>(requestInfo, PlannerBucket.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete **plannerBucket**.
+        /// Delete plannerBucket.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

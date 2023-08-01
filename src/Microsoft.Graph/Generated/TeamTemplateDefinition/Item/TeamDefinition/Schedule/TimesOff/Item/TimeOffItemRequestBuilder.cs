@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
         }
         /// <summary>
         /// Delete a timeOff instance from a schedule.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timeoff-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timeoff-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
         }
         /// <summary>
         /// Retrieve the properties and relationships of a timeOff object by ID.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timeoff-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timeoff-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
             return await RequestAdapter.SendAsync<TimeOff>(requestInfo, TimeOff.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Replace an existing timeOff. If the specified timeOff doesn&apos;t exist, this method returns `404 Not found`.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timeoff-put?view=graph-rest-1.0" />
+        /// Replace an existing timeOff. If the specified timeOff doesn&apos;t exist, this method returns 404 Not found.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timeoff-put?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
             return requestInfo;
         }
         /// <summary>
-        /// Replace an existing timeOff. If the specified timeOff doesn&apos;t exist, this method returns `404 Not found`.
+        /// Replace an existing timeOff. If the specified timeOff doesn&apos;t exist, this method returns 404 Not found.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -40,8 +40,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Children {
         public ChildrenRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/children{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Return a collection of DriveItems in the **children** relationship of a DriveItem. DriveItems with a non-null **folder** or **package** facet can have one or more child DriveItems.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/driveitem-list-children?view=graph-rest-1.0" />
+        /// Return a collection of DriveItems in the children relationship of a DriveItem. DriveItems with a non-null folder or package facet can have one or more child DriveItems.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-list-children?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Children {
         }
         /// <summary>
         /// Create new navigation property to children for drives
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/driveitem-post-children?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-post-children?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Children {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DriveItem>(requestInfo, Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Return a collection of DriveItems in the **children** relationship of a DriveItem. DriveItems with a non-null **folder** or **package** facet can have one or more child DriveItems.
+        /// Return a collection of DriveItems in the children relationship of a DriveItem. DriveItems with a non-null folder or package facet can have one or more child DriveItems.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Children {
             return requestInfo;
         }
         /// <summary>
-        /// Return a collection of DriveItems in the **children** relationship of a DriveItem. DriveItems with a non-null **folder** or **package** facet can have one or more child DriveItems.
+        /// Return a collection of DriveItems in the children relationship of a DriveItem. DriveItems with a non-null folder or package facet can have one or more child DriveItems.
         /// </summary>
         public class ChildrenRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

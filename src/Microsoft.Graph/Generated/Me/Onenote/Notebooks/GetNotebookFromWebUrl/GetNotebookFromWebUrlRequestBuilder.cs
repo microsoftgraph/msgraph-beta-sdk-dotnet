@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Me.Onenote.Notebooks.GetNotebookFromWebUrl {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a notebook object by using its URL path. The location can be user notebooks on Microsoft 365, group notebooks, or SharePoint site-hosted team notebooks on Microsoft 365.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/notebook-getnotebookfromweburl?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

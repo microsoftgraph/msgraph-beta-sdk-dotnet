@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.ForwardingOptions {
         }
         /// <summary>
         /// Retrieve the forwarding options for the tenant, with a specific focus on the &apos;skipDnsLookupState&apos; flag. This flag determines whether DNS lookup will be skipped, allowing Microsoft 365 traffic to be forwarded directly to the Front Door using the client-resolved destination.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/networkaccess-forwardingoptions-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-forwardingoptions-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.ForwardingOptions {
         }
         /// <summary>
         /// the forwarding options for the tenant, with a specific focus on the skipDnsLookupState flag. This flag determines whether DNS lookup will be skipped, allowing Microsoft 365 traffic to be forwarded directly to the Front Door using the client-resolved destination.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/networkaccess-forwardingoptions-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-forwardingoptions-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

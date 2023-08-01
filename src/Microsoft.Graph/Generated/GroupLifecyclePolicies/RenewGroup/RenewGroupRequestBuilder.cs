@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.RenewGroup {
         }
         /// <summary>
         /// Renew a group&apos;s expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-renewgroup?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-renewgroup?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

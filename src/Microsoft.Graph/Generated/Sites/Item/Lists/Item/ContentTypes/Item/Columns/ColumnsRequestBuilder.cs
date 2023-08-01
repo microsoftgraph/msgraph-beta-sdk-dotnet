@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.ContentTypes.Item.Columns {
         }
         /// <summary>
         /// Get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [content type][contentType].
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.ContentTypes.Item.Columns {
         }
         /// <summary>
         /// Add a column to a [content type][contentType] in a site or list by specifying a [columnDefinition][columnDefinition].
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contenttype-post-columns?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-post-columns?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

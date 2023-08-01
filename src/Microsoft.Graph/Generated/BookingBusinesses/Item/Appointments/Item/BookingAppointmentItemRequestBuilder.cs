@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Appointments.Item {
         }
         /// <summary>
         /// Delete a bookingAppointment in the specified bookingBusiness.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bookingappointment-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingappointment-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,8 +53,8 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Appointments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The **start** and **end** properties are always returned in UTC.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bookingappointment-get?view=graph-rest-1.0" />
+        /// Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingappointment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Appointments.Item {
         }
         /// <summary>
         /// Update the properties of a bookingAppointment object in the specified bookingBusiness.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bookingappointment-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingappointment-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Appointments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The **start** and **end** properties are always returned in UTC.
+        /// Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Appointments.Item {
             }
         }
         /// <summary>
-        /// Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The **start** and **end** properties are always returned in UTC.
+        /// Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC.
         /// </summary>
         public class BookingAppointmentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

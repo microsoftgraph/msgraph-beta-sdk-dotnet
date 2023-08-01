@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AppRoleAssignments {
         }
         /// <summary>
         /// Represents the app roles a user has been granted for an application. Supports $expand.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-approleassignments?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-approleassignments?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AppRoleAssignments {
         }
         /// <summary>
         /// Use this API to assign an app role to a user. To grant an app role assignment to a user, you need three identifiers:
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-post-approleassignments?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-approleassignments?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

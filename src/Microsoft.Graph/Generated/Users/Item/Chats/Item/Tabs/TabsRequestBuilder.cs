@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.Tabs {
         }
         /// <summary>
         /// Retrieve the list of tabs in the specified chat.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chat-list-tabs?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-list-tabs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.Tabs {
         }
         /// <summary>
         /// Add (pin) a tab to the specified chat. The corresponding app must already be installed in the chat.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chat-post-tabs?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-post-tabs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

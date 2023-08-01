@@ -28,8 +28,8 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Members.
         public ConversationMemberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/deletedTeams/{deletedTeam%2Did}/channels/{channel%2Did}/members/{conversationMember%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0" />
+        /// Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Members.
         }
         /// <summary>
         /// Get a conversationMember from a channel.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/channel-get-members?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-get-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Members.
             return await RequestAdapter.SendAsync<ConversationMember>(requestInfo, ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the role of a conversationMember in a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0" />
+        /// Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Members.
             return await RequestAdapter.SendAsync<ConversationMember>(requestInfo, ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete a conversationMember from a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+        /// Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Members.
             return requestInfo;
         }
         /// <summary>
-        /// Update the role of a conversationMember in a channel. This operation is allowed only for channels with a **membershipType** value of `private` or `shared`.
+        /// Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

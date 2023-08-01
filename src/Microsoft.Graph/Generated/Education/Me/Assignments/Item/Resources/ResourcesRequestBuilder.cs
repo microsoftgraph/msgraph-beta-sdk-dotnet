@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Resources {
         }
         /// <summary>
         /// Get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignment-list-resources?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-list-resources?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Resources {
             return await RequestAdapter.SendAsync<EducationAssignmentResourceCollectionResponse>(requestInfo, EducationAssignmentResourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create an assignment resource. Only teachers can perform this operation. You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created. 
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignment-post-resources?view=graph-rest-1.0" />
+        /// Create an assignment resource. Only teachers can perform this operation. You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created. 
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-post-resources?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Resources {
             return requestInfo;
         }
         /// <summary>
-        /// Create an assignment resource. Only teachers can perform this operation. You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created. 
+        /// Create an assignment resource. Only teachers can perform this operation. You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created. 
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

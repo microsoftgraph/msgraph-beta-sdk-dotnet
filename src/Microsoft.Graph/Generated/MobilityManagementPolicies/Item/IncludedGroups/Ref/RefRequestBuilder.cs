@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups.Re
         }
         /// <summary>
         /// Get the list of groups that are included in a mobile app management policy.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/mobileappmanagementpolicies-list-includedgroups?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-list-includedgroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups.Re
         }
         /// <summary>
         /// Add groups to be included in a mobile app management policy.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/mobileappmanagementpolicies-post-includedgroups?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-post-includedgroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels {
         }
         /// <summary>
         /// Retrieve the list of channels in this team.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/channel-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -70,8 +70,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels {
             return await RequestAdapter.SendAsync<ChannelCollectionResponse>(requestInfo, ChannelCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new channel in a team, as specified in the request body. When you create a channel, the maximum length of the channel&apos;s `displayName` is 50 characters. This is the name that appears to the user in Microsoft Teams. You can add a maximum of 200 members when you create a private channel.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/channel-post?view=graph-rest-1.0" />
+        /// Create a new channel in a team, as specified in the request body. When you create a channel, the maximum length of the channel&apos;s displayName is 50 characters. This is the name that appears to the user in Microsoft Teams. You can add a maximum of 200 members when you create a private channel.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new channel in a team, as specified in the request body. When you create a channel, the maximum length of the channel&apos;s `displayName` is 50 characters. This is the name that appears to the user in Microsoft Teams. You can add a maximum of 200 members when you create a private channel.
+        /// Create a new channel in a team, as specified in the request body. When you create a channel, the maximum length of the channel&apos;s displayName is 50 characters. This is the name that appears to the user in Microsoft Teams. You can add a maximum of 200 members when you create a private channel.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

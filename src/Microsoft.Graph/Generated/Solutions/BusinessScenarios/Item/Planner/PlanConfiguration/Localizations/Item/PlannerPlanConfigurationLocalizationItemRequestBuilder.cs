@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
         }
         /// <summary>
         /// Delete a plannerPlanConfigurationLocalization object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannerplanconfiguration-delete-localizations?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplanconfiguration-delete-localizations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
         }
         /// <summary>
         /// Read the properties and relationships of a plannerPlanConfigurationLocalization object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannerplanconfigurationlocalization-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplanconfigurationlocalization-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
         }
         /// <summary>
         /// Update the properties of a plannerPlanConfigurationLocalization object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannerplanconfigurationlocalization-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplanconfigurationlocalization-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

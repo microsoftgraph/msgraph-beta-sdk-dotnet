@@ -28,8 +28,8 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Activate 
         public ActivateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/assignments/{educationAssignment%2Did}/activate", rawUrl) {
         }
         /// <summary>
-        /// Activate an `inactive` educationAssignment to signal that the assignment has further action items for teachers and students. This action can only be performed by a teacher on currently inactive assignments.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignment-activate?view=graph-rest-1.0" />
+        /// Activate an inactive educationAssignment to signal that the assignment has further action items for teachers and students. This action can only be performed by a teacher on currently inactive assignments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-activate?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Activate 
             return await RequestAdapter.SendAsync<EducationAssignment>(requestInfo, EducationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Activate an `inactive` educationAssignment to signal that the assignment has further action items for teachers and students. This action can only be performed by a teacher on currently inactive assignments.
+        /// Activate an inactive educationAssignment to signal that the assignment has further action items for teachers and students. This action can only be performed by a teacher on currently inactive assignments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

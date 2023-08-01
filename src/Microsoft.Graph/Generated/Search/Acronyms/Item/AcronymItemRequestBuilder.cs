@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Search.Acronyms.Item {
         }
         /// <summary>
         /// Deletes an acronym object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/search-acronym-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-acronym-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Search.Acronyms.Item {
         }
         /// <summary>
         /// Read the properties and relationships of an acronym object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/search-acronym-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-acronym-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Search.Acronyms.Item {
         }
         /// <summary>
         /// Update the properties of an acronym object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/search-acronym-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-acronym-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

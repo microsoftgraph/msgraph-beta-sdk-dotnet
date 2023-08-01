@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns.Item {
         }
         /// <summary>
         /// Remove a [column][columndefinition] from a [site][], [list][] or [content type][contentType].
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns.Item {
         }
         /// <summary>
         /// Retrieve the metadata for a [site][], [list][] or [contentType][] [column][columnDefinition].
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/columndefinition-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/columndefinition-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns.Item {
         }
         /// <summary>
         /// Update a [site][], [list][] or [content type][contentType] [column][columnDefinition].
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/columndefinition-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/columndefinition-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

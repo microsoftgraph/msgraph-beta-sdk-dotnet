@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item {
         }
         /// <summary>
         /// Stop the synchronization job, and permanently delete all the state associated with it. Synchronized accounts are left as-is.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item {
         }
         /// <summary>
         /// Retrieve the existing synchronization job and its properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

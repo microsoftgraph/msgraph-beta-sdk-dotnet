@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("localAdminEnabled"); }
             set { BackingStore?.Set("localAdminEnabled", value); }
         }
-        /// <summary>The resetEnabled property</summary>
+        /// <summary>Indicates whether an end user is allowed to reset their Cloud PC. When true, the user is allowed to reset their Cloud PC. When false, end-user initiated reset is not allowed. The default value is false.</summary>
         public bool? ResetEnabled {
             get { return BackingStore?.Get<bool?>("resetEnabled"); }
             set { BackingStore?.Set("resetEnabled", value); }

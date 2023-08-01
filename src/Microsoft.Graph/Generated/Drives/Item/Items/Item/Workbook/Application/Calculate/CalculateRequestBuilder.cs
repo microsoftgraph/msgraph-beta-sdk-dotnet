@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Application.Calcu
         }
         /// <summary>
         /// Recalculate all currently opened workbooks in Excel.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/workbookapplication-calculate?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workbookapplication-calculate?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

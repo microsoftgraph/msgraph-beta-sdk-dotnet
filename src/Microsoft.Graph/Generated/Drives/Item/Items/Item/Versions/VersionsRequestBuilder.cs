@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Versions {
         }
         /// <summary>
         /// OneDrive and SharePoint can be configured to retain the history for files.Depending on the service and configuration, a new version can be created for each edit, each time the file is saved, manually, or never. Previous versions of a document may be retained for a finite period of time depending on admin settings which may be unique per user or location.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/driveitem-list-versions?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-list-versions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

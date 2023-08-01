@@ -52,8 +52,8 @@ namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the **Accept-Language** header.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/agreementfile-get?view=graph-rest-1.0" />
+        /// Retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreementfile-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the **Accept-Language** header.
+        /// Retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -187,7 +187,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace {
             }
         }
         /// <summary>
-        /// Retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the **Accept-Language** header.
+        /// Retrieve the details of an agreement file, including the language and version information. The default file can have multiple versions, each with its own language, that can be retrieved by specifying the Accept-Language header.
         /// </summary>
         public class FileRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

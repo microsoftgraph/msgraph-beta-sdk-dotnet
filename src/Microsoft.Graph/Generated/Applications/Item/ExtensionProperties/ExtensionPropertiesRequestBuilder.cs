@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.ExtensionProperties {
         }
         /// <summary>
         /// Retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-list-extensionproperty?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.ExtensionProperties {
         }
         /// <summary>
         /// Create a new directory extension definition, represented by an extensionProperty object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-post-extensionproperty?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

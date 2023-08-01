@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration.C
         }
         /// <summary>
         /// Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration.C
         }
         /// <summary>
         /// Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

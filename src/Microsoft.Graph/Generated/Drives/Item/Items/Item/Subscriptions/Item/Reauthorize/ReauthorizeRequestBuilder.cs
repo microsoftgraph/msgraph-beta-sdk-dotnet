@@ -27,8 +27,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Subscriptions.Item.Reautho
         public ReauthorizeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/subscriptions/{subscription%2Did}/reauthorize", rawUrl) {
         }
         /// <summary>
-        /// Reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0" />
+        /// Reauthorize a subscription when you receive a reauthorizationRequired challenge.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subscription-reauthorize?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Subscriptions.Item.Reautho
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Reauthorize a subscription when you receive a **reauthorizationRequired** challenge.
+        /// Reauthorize a subscription when you receive a reauthorizationRequired challenge.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

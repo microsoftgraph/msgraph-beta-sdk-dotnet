@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
         }
         /// <summary>
         /// Delete a trustFrameworkKeySet.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/trustframeworkkeyset-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframeworkkeyset-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
         }
         /// <summary>
         /// Retrieve the properties and associations for a Trustframeworkkeyset.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/trustframeworkkeyset-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframeworkkeyset-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
         }
         /// <summary>
         /// Update the properties of a trustFrameworkKeyset. This operation will replace the content of an existing keyset. Specifying the ID in the request payload is optional.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/trustframeworkkeyset-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframeworkkeyset-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

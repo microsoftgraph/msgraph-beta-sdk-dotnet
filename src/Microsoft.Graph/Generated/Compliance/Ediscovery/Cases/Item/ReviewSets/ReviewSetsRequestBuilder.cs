@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets {
         }
         /// <summary>
         /// Create a new reviewSet object. The request body contains the display name of the review set, which is the only writable property.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/ediscovery-case-post-reviewsets?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-post-reviewsets?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

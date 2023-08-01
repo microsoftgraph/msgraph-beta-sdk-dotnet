@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders {
         }
         /// <summary>
         /// Get all the contact folders in the signed-in user&apos;s mailbox.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders {
         }
         /// <summary>
         /// Create a new contactFolder under the user&apos;s default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

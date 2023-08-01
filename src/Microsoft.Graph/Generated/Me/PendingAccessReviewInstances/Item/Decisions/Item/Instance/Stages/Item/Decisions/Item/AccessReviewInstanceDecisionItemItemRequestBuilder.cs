@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.It
         }
         /// <summary>
         /// Read the properties and relationships of an accessReviewInstanceDecisionItem object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/accessreviewinstancedecisionitem-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.It
         }
         /// <summary>
         /// Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/accessreviewinstancedecisionitem-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

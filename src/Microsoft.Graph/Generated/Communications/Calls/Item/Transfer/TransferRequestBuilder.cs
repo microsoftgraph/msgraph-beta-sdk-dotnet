@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Transfer {
         }
         /// <summary>
         /// Transfer an active peer-to-peer call or group call. A consultative transfer means that the transferor can inform the person they want to transfer the call to (the transferee), before the transfer is made. This is opposed to transfering the call directly.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/call-transfer?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-transfer?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

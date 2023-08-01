@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser {
         }
         /// <summary>
         /// Retrieve a list of monthly print usage summaries, grouped by user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-list-monthlyprintusagebyuser?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

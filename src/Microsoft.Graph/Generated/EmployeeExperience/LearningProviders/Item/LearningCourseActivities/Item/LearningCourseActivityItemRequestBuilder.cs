@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders.Item.Learnin
         }
         /// <summary>
         /// Delete a learningCourseActivity object by using the course activity ID of either an assignment or a self-initiated activity.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/learningcourseactivity-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningcourseactivity-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders.Item.Learnin
         }
         /// <summary>
         /// Update the properties of a learningCourseActivity object. 
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/learningcourseactivity-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/learningcourseactivity-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

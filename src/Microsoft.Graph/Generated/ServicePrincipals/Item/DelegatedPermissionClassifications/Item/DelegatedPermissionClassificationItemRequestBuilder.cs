@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DelegatedPermissionClassif
         }
         /// <summary>
         /// Deletes a delegatedPermissionClassification which had previously been set for a delegated permission.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-delegatedpermissionclassifications?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delete-delegatedpermissionclassifications?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

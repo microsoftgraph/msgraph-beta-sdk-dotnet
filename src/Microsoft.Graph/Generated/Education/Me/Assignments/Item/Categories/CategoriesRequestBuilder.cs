@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Categories {
         }
         /// <summary>
         /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

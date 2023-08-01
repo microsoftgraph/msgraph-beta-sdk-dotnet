@@ -35,8 +35,8 @@ namespace Microsoft.Graph.Beta.SubscribedSkus {
         public SubscribedSkusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/subscribedSkus{?%24search,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Azure portal or the Microsoft 365 admin center against their Microsoft Graph **skuId** and **skuPartNumber** properties, see Product names and service plan identifiers for licensing.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/subscribedsku-list?view=graph-rest-1.0" />
+        /// Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Azure portal or the Microsoft 365 admin center against their Microsoft Graph skuId and skuPartNumber properties, see Product names and service plan identifiers for licensing.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subscribedsku-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.SubscribedSkus {
             return await RequestAdapter.SendAsync<SubscribedSku>(requestInfo, SubscribedSku.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Azure portal or the Microsoft 365 admin center against their Microsoft Graph **skuId** and **skuPartNumber** properties, see Product names and service plan identifiers for licensing.
+        /// Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Azure portal or the Microsoft 365 admin center against their Microsoft Graph skuId and skuPartNumber properties, see Product names and service plan identifiers for licensing.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.SubscribedSkus {
             return requestInfo;
         }
         /// <summary>
-        /// Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Azure portal or the Microsoft 365 admin center against their Microsoft Graph **skuId** and **skuPartNumber** properties, see Product names and service plan identifiers for licensing.
+        /// Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Azure portal or the Microsoft 365 admin center against their Microsoft Graph skuId and skuPartNumber properties, see Product names and service plan identifiers for licensing.
         /// </summary>
         public class SubscribedSkusRequestBuilderGetQueryParameters {
             /// <summary>Order items by property values</summary>

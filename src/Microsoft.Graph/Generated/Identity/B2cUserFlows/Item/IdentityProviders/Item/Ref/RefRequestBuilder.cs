@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Item
         }
         /// <summary>
         /// Delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/b2cidentityuserflow-delete-identityproviders?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2cidentityuserflow-delete-identityproviders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

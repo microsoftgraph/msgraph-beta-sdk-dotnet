@@ -45,8 +45,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments
         public AttachmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/attachments{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the taskFileAttachment objects and their properties. The **contentBytes** property will not be returned in the response. Use the Get attachment API to view the **contentBytes**.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0" />
+        /// Get a list of the taskFileAttachment objects and their properties. The contentBytes property will not be returned in the response. Use the Get attachment API to view the contentBytes.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-list-attachments?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments
         }
         /// <summary>
         /// Add a new taskFileAttachment object to a todoTask. This operation limits the size of the attachment you can add to under 3 MB. If the size of the file attachments is more than 3 MB, create an upload session to upload the attachments.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/todotask-post-attachments?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-post-attachments?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments
             return await RequestAdapter.SendAsync<AttachmentBase>(requestInfo, AttachmentBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the taskFileAttachment objects and their properties. The **contentBytes** property will not be returned in the response. Use the Get attachment API to view the **contentBytes**.
+        /// Get a list of the taskFileAttachment objects and their properties. The contentBytes property will not be returned in the response. Use the Get attachment API to view the contentBytes.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item.Attachments
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the taskFileAttachment objects and their properties. The **contentBytes** property will not be returned in the response. Use the Get attachment API to view the **contentBytes**.
+        /// Get a list of the taskFileAttachment objects and their properties. The contentBytes property will not be returned in the response. Use the Get attachment API to view the contentBytes.
         /// </summary>
         public class AttachmentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

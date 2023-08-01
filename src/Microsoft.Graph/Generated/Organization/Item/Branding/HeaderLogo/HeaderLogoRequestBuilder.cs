@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding.HeaderLogo {
         }
         /// <summary>
         /// A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationalbranding-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
