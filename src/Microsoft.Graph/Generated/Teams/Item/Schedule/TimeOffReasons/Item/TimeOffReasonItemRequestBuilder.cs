@@ -28,8 +28,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffReasons.Item {
         public TimeOffReasonItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/timeOffReasons/{timeOffReason%2Did}{?%24select}", rawUrl) {
         }
         /// <summary>
-        /// Mark a timeOffReason as inactive by setting the **isActive** property. Every team must include at least one **timeOffReason**. This method does not remove the specified **timeOffReason** instance. timeOffItem instances that have been assigned this reason remain assigned to this reason.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timeoffreason-delete?view=graph-rest-1.0" />
+        /// Mark a timeOffReason as inactive by setting the isActive property. Every team must include at least one timeOffReason. This method does not remove the specified timeOffReason instance. timeOffItem instances that have been assigned this reason remain assigned to this reason.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timeoffreason-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffReasons.Item {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a timeOffReason object by ID.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timeoffreason-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timeoffreason-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffReasons.Item {
             return await RequestAdapter.SendAsync<TimeOffReason>(requestInfo, TimeOffReason.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Replace an existing timeOffReason. If the specified timeOffReason doesn&apos;t exist, this method returns `404 Not found`.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timeoffreason-put?view=graph-rest-1.0" />
+        /// Replace an existing timeOffReason. If the specified timeOffReason doesn&apos;t exist, this method returns 404 Not found.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timeoffreason-put?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffReasons.Item {
             return await RequestAdapter.SendAsync<TimeOffReason>(requestInfo, TimeOffReason.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Mark a timeOffReason as inactive by setting the **isActive** property. Every team must include at least one **timeOffReason**. This method does not remove the specified **timeOffReason** instance. timeOffItem instances that have been assigned this reason remain assigned to this reason.
+        /// Mark a timeOffReason as inactive by setting the isActive property. Every team must include at least one timeOffReason. This method does not remove the specified timeOffReason instance. timeOffItem instances that have been assigned this reason remain assigned to this reason.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffReasons.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Replace an existing timeOffReason. If the specified timeOffReason doesn&apos;t exist, this method returns `404 Not found`.
+        /// Replace an existing timeOffReason. If the specified timeOffReason doesn&apos;t exist, this method returns 404 Not found.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

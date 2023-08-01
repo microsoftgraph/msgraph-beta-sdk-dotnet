@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item {
         }
         /// <summary>
         /// Delete a calendar group other than the default calendar group.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/calendargroup-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendargroup-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a calendar group object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/calendargroup-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendargroup-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item {
         }
         /// <summary>
         /// Update the properties of calendargroup object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/calendargroup-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendargroup-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.I
         }
         /// <summary>
         /// Get a list of the attack simulation automation runs for a tenant.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/simulationautomation-list-runs?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/simulationautomation-list-runs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

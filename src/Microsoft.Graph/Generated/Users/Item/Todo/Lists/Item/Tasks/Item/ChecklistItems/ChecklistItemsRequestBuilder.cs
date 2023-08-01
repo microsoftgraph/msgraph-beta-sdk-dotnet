@@ -40,8 +40,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item.ChecklistIt
         public ChecklistItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/checklistItems{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the checklistItem resources associated to the **checklistItems** navigation property of a todoTask.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/todotask-list-checklistitems?view=graph-rest-1.0" />
+        /// Get the checklistItem resources associated to the checklistItems navigation property of a todoTask.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-list-checklistitems?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item.ChecklistIt
         }
         /// <summary>
         /// Create a new checklistItem object as a subtask in a bigger todoTask.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/todotask-post-checklistitems?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-post-checklistitems?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item.ChecklistIt
             return await RequestAdapter.SendAsync<ChecklistItem>(requestInfo, ChecklistItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the checklistItem resources associated to the **checklistItems** navigation property of a todoTask.
+        /// Get the checklistItem resources associated to the checklistItems navigation property of a todoTask.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item.ChecklistIt
             return requestInfo;
         }
         /// <summary>
-        /// Get the checklistItem resources associated to the **checklistItems** navigation property of a todoTask.
+        /// Get the checklistItem resources associated to the checklistItems navigation property of a todoTask.
         /// </summary>
         public class ChecklistItemsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -5,7 +5,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CallTranscript : Entity, IParsable {
-        /// <summary>A field that represents the content of the transcript. Read-only.</summary>
+        /// <summary>The content of the transcript. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Content {
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.</summary>
+        /// <summary>The time-aligned metadata of the utterances in the transcript. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? MetadataContent {

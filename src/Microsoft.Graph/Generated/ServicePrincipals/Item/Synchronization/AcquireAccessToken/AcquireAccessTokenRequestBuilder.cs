@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.AcquireAcc
         }
         /// <summary>
         /// Acquire an OAuth Access token to authorize the Azure AD provisioning service to provision users into an application.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

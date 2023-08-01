@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.ExtensionProperties.Item {
         }
         /// <summary>
         /// Delete a directory extension definition represented by an extensionProperty object. You can delete only directory extensions that aren&apos;t synced from on-premises active directory (AD).
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/extensionproperty-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.ExtensionProperties.Item {
         }
         /// <summary>
         /// Read a directory extension definition represented by an extensionProperty object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/extensionproperty-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/extensionproperty-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

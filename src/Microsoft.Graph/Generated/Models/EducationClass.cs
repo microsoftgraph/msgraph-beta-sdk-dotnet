@@ -234,6 +234,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("members", value); }
         }
 #endif
+        /// <summary>The modules property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<EducationModule>? Modules {
+            get { return BackingStore?.Get<List<EducationModule>?>("modules"); }
+            set { BackingStore?.Set("modules", value); }
+        }
+#nullable restore
+#else
+        public List<EducationModule> Modules {
+            get { return BackingStore?.Get<List<EducationModule>>("modules"); }
+            set { BackingStore?.Set("modules", value); }
+        }
+#endif
         /// <summary>All schools that this class is associated with. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -306,6 +320,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"group", n => { Group = n.GetObjectValue<Microsoft.Graph.Beta.Models.Group>(Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue); } },
                 {"mailNickname", n => { MailNickname = n.GetStringValue(); } },
                 {"members", n => { Members = n.GetCollectionOfObjectValues<EducationUser>(EducationUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"modules", n => { Modules = n.GetCollectionOfObjectValues<EducationModule>(EducationModule.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"schools", n => { Schools = n.GetCollectionOfObjectValues<EducationSchool>(EducationSchool.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"teachers", n => { Teachers = n.GetCollectionOfObjectValues<EducationUser>(EducationUser.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"term", n => { Term = n.GetObjectValue<EducationTerm>(EducationTerm.CreateFromDiscriminatorValue); } },
@@ -335,6 +350,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Group>("group", Group);
             writer.WriteStringValue("mailNickname", MailNickname);
             writer.WriteCollectionOfObjectValues<EducationUser>("members", Members);
+            writer.WriteCollectionOfObjectValues<EducationModule>("modules", Modules);
             writer.WriteCollectionOfObjectValues<EducationSchool>("schools", Schools);
             writer.WriteCollectionOfObjectValues<EducationUser>("teachers", Teachers);
             writer.WriteObjectValue<EducationTerm>("term", Term);

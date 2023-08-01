@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.ThreatAssessmentRequests
         }
         /// <summary>
         /// Retrieve a list of threatAssessmentRequest objects. A threat assessment request can be one of the following types:
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/informationprotection-list-threatassessmentrequests?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/informationprotection-list-threatassessmentrequests?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.ThreatAssessmentRequests
         }
         /// <summary>
         /// Create a new threat assessment request. A threat assessment request can be one of the following types:
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/informationprotection-post-threatassessmentrequests?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/informationprotection-post-threatassessmentrequests?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.Operations {
         }
         /// <summary>
         /// List all Teams async operations that ran or are running on the specified chat.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/chat-list-operations?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-list-operations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

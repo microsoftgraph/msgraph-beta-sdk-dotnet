@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.ValidateBulkResize {
         }
         /// <summary>
         /// Validate that a set of cloudPC devices meet the requirements to be bulk resized.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

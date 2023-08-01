@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("reviewers", value); }
         }
 #endif
-        /// <summary>Who should be asked to do the review, either Self or Reviewers.</summary>
+        /// <summary>Who should be asked to do the review, either Self, Reviewers or Manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReviewerType {

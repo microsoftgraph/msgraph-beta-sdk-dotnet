@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Me.Teamwork.InstalledApps.Item {
         }
         /// <summary>
         /// Uninstall an app from the personal scope of the specified user.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/userteamwork-delete-installedapps?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userteamwork-delete-installedapps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Me.Teamwork.InstalledApps.Item {
         }
         /// <summary>
         /// Retrieve the app installed in the personal scope of the specified user.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/userteamwork-get-installedapps?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userteamwork-get-installedapps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

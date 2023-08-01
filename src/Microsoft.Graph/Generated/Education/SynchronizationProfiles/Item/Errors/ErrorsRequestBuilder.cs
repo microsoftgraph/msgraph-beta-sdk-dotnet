@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors {
         }
         /// <summary>
         /// Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationsynchronizationerrors-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationerrors-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

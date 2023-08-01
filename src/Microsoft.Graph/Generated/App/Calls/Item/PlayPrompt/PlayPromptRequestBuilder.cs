@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.PlayPrompt {
         }
         /// <summary>
         /// Play a prompt in the call. For more information about how to handle operations, see commsOperation
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/call-playprompt?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-playprompt?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

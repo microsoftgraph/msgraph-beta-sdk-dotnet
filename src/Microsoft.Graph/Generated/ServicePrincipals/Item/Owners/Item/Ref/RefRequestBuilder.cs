@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Item.Ref {
         }
         /// <summary>
         /// Remove an owner from a servicePrincipal object. As a recommended best practice, service principals should have at least two owners.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delete-owners?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

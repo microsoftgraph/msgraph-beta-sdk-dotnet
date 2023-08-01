@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
         }
         /// <summary>
         /// Read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/externalidentitiespolicy-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalidentitiespolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
         }
         /// <summary>
         /// Update the settings of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/externalidentitiespolicy-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalidentitiespolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

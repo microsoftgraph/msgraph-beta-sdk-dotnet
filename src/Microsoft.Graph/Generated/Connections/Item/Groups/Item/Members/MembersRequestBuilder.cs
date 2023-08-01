@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Groups.Item.Members {
         }
         /// <summary>
         /// Create a new externalGroupMember object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

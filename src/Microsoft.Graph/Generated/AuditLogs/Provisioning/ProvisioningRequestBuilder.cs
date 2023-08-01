@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.Provisioning {
         }
         /// <summary>
         /// Get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/provisioningobjectsummary-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/provisioningobjectsummary-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

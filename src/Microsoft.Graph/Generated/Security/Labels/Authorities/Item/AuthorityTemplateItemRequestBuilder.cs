@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities.Item {
         }
         /// <summary>
         /// Delete a authorityTemplate object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-labelsroot-delete-authorities?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-delete-authorities?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities.Item {
         }
         /// <summary>
         /// Read the properties and relationships of a authorityTemplate object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-authoritytemplate-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-authoritytemplate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

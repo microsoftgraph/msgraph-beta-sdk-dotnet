@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Me.Onenote.SectionGroups.Item.Sections {
         }
         /// <summary>
         /// Retrieve a list of onenoteSection objects from the specified section group.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sectiongroup-list-sections?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Me.Onenote.SectionGroups.Item.Sections {
         }
         /// <summary>
         /// Create a new section in the specified section group.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sectiongroup-post-sections?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

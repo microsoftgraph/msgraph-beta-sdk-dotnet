@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts.Item {
         }
         /// <summary>
         /// Retrieve the properties and relationships of an alert object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/alert-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/alert-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,8 +48,8 @@ namespace Microsoft.Graph.Beta.Security.Alerts.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Alert>(requestInfo, Microsoft.Graph.Beta.Models.Alert.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update an editable **alert** property within any integrated solution to keep alert status and assignments in sync across solutions. This method updates any solution that has a record of the referenced alert ID.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/alert-update?view=graph-rest-1.0" />
+        /// Update an editable alert property within any integrated solution to keep alert status and assignments in sync across solutions. This method updates any solution that has a record of the referenced alert ID.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/alert-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update an editable **alert** property within any integrated solution to keep alert status and assignments in sync across solutions. This method updates any solution that has a record of the referenced alert ID.
+        /// Update an editable alert property within any integrated solution to keep alert status and assignments in sync across solutions. This method updates any solution that has a record of the referenced alert ID.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

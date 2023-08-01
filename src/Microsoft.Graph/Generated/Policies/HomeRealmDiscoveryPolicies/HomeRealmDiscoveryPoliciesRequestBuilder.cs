@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Policies.HomeRealmDiscoveryPolicies {
         }
         /// <summary>
         /// Get a list of homeRealmDiscoveryPolicy objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/homerealmdiscoverypolicy-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Policies.HomeRealmDiscoveryPolicies {
         }
         /// <summary>
         /// Create a new homeRealmDiscoveryPolicy object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/homerealmdiscoverypolicy-post-homerealmdiscoverypolicies?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-post-homerealmdiscoverypolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

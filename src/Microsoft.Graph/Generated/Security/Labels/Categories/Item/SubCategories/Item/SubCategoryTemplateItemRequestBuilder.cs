@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.SubCategories.Ite
         }
         /// <summary>
         /// Delete a subCategoryTemplate object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-categorytemplate-delete-subcategories?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-categorytemplate-delete-subcategories?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.SubCategories.Ite
         }
         /// <summary>
         /// Read the properties and relationships of a subCategoryTemplate object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-subcategorytemplate-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-subcategorytemplate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

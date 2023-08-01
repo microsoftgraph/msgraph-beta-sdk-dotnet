@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.Attachments.Item {
         }
         /// <summary>
         /// Delete a taskFileAttachment object from a todoTask resource.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/taskfileattachment-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/taskfileattachment-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.Attachments.Item {
         }
         /// <summary>
         /// Read the properties and relationships of a taskFileAttachment object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/taskfileattachment-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/taskfileattachment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<VpnEncryptionAlgorithmType?>("securityEncryptionAlgorithm"); }
             set { BackingStore?.Set("securityEncryptionAlgorithm", value); }
         }
-        /// <summary>Integrity algorithm. Possible values are: sha2_256, sha1_96, sha1_160, sha2_384, sha2_512, md5.</summary>
+        /// <summary>Integrity algorithm. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.</summary>
         public VpnIntegrityAlgorithmType? SecurityIntegrityAlgorithm {
             get { return BackingStore?.Get<VpnIntegrityAlgorithmType?>("securityIntegrityAlgorithm"); }
             set { BackingStore?.Set("securityIntegrityAlgorithm", value); }

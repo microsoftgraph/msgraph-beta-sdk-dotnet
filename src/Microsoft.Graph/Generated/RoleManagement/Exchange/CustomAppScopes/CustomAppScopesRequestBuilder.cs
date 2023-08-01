@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes {
         }
         /// <summary>
         /// Get a list of customAppScope objects for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/unifiedrbacapplication-list-customappscopes?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedrbacapplication-list-customappscopes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes {
         }
         /// <summary>
         /// Create a new customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/unifiedrbacapplication-post-customappscope?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedrbacapplication-post-customappscope?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

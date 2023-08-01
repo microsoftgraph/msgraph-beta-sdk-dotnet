@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Rubric {
         }
         /// <summary>
         /// Delete an educationRubric from an educationAssignment. This method does not delete the rubric itself and can only be performed by teachers.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignment-delete-rubric?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-delete-rubric?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Rubric {
         }
         /// <summary>
         /// Get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Rubric {
         }
         /// <summary>
         /// Attach an existing educationRubric object to an educationAssignment. Only teachers can perform this operation.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignment-put-rubric?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-put-rubric?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

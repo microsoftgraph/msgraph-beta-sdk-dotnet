@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.ResourceNamespaces.Item.Re
         }
         /// <summary>
         /// Read the properties and relationships of an unifiedRbacResourceAction object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/unifiedrbacresourceaction-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedrbacresourceaction-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.TermStore.Groups.Item.Sets.Item.Children {
         }
         /// <summary>
         /// Get the first level children of a [set] or [term] resource using the children navigation property.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.TermStore.Groups.Item.Sets.Item.Children {
         }
         /// <summary>
         /// Create a new term object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/termstore-term-post?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-term-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

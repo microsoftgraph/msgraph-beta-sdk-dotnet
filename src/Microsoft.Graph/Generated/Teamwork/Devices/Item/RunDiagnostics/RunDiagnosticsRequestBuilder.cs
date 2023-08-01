@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.RunDiagnostics {
         }
         /// <summary>
         /// Run and generate diagnostic logs for the specified Microsoft Teams-enabled device. This API triggers a long-running operation used to generate logs for a device.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/teamworkdevice-rundiagnostics?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworkdevice-rundiagnostics?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

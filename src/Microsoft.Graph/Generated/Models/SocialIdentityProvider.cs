@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("clientId", value); }
         }
 #endif
-        /// <summary>The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns ****. Required.</summary>
+        /// <summary>The client secret for the application that is obtained when the application is registered with the identity provider. This is write-only. A read operation returns . Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientSecret {

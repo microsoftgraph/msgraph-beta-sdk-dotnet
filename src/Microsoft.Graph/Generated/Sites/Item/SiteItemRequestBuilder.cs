@@ -136,8 +136,8 @@ namespace Microsoft.Graph.Beta.Sites.Item {
             return new GetApplicableContentTypesForListWithListIdRequestBuilder(PathParameters, RequestAdapter, listId);
         }
         /// <summary>
-        /// Retrieve properties and relationships for a [site][] resource.A **site** resource represents a team site in SharePoint.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/site-get?view=graph-rest-1.0" />
+        /// Retrieve properties and relationships for a [site][] resource.A site resource represents a team site in SharePoint.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Beta.Sites.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Site>(requestInfo, Microsoft.Graph.Beta.Models.Site.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve properties and relationships for a [site][] resource.A **site** resource represents a team site in SharePoint.
+        /// Retrieve properties and relationships for a [site][] resource.A site resource represents a team site in SharePoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -239,7 +239,7 @@ namespace Microsoft.Graph.Beta.Sites.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve properties and relationships for a [site][] resource.A **site** resource represents a team site in SharePoint.
+        /// Retrieve properties and relationships for a [site][] resource.A site resource represents a team site in SharePoint.
         /// </summary>
         public class SiteItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

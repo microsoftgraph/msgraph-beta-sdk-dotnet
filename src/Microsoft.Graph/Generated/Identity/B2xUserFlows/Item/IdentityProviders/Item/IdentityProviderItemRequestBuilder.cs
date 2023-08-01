@@ -28,8 +28,8 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.IdentityProviders.Item
         public IdentityProviderItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/identityProviders/{identityProvider%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an identity provider from a b2xIdentityUserFlow object. For self-service sign up user flows, the values can be `Google-OAUTH` or `Facebook-OAUTH`.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/b2xidentityuserflow-delete-identityproviders?view=graph-rest-1.0" />
+        /// Delete an identity provider from a b2xIdentityUserFlow object. For self-service sign up user flows, the values can be Google-OAUTH or Facebook-OAUTH.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2xidentityuserflow-delete-identityproviders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.IdentityProviders.Item
             return await RequestAdapter.SendAsync<IdentityProvider>(requestInfo, IdentityProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete an identity provider from a b2xIdentityUserFlow object. For self-service sign up user flows, the values can be `Google-OAUTH` or `Facebook-OAUTH`.
+        /// Delete an identity provider from a b2xIdentityUserFlow object. For self-service sign up user flows, the values can be Google-OAUTH or Facebook-OAUTH.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15")]

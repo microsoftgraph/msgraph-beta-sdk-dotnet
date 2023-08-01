@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes {
         }
         /// <summary>
         /// Get the collection of [contentType][contentType] resources in a [site][].
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes {
         }
         /// <summary>
         /// Create a new [contentType][] for a [site][].
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

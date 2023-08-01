@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators {
         }
         /// <summary>
         /// Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/tiindicator-submittiindicators?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicator-submittiindicators?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

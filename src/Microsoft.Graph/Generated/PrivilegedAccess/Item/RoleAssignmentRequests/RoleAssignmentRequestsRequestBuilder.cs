@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests {
         }
         /// <summary>
         /// Create a role assignment request to represent the operation you want on a role assignment. The following table lists the operations.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/governanceroleassignmentrequest-post?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/governanceroleassignmentrequest-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

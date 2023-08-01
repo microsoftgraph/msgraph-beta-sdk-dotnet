@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments;
 using Microsoft.Graph.Beta.Education.Classes.Item.Group;
 using Microsoft.Graph.Beta.Education.Classes.Item.Members;
+using Microsoft.Graph.Beta.Education.Classes.Item.Modules;
 using Microsoft.Graph.Beta.Education.Classes.Item.Schools;
 using Microsoft.Graph.Beta.Education.Classes.Item.Teachers;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -45,6 +46,10 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
         public MembersRequestBuilder Members { get =>
             new MembersRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the modules property of the microsoft.graph.educationClass entity.</summary>
+        public ModulesRequestBuilder Modules { get =>
+            new ModulesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the schools property of the microsoft.graph.educationClass entity.</summary>
         public SchoolsRequestBuilder Schools { get =>
             new SchoolsRequestBuilder(PathParameters, RequestAdapter);
@@ -69,7 +74,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
         }
         /// <summary>
         /// Delete an educationClass. Because a class is also a universal group, deleting a class deletes the group.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationclass-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +94,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
         }
         /// <summary>
         /// Retrieve a class from the system. A class is a universal group with a special property that indicates to the system that the group is a class. Group members represent the students; group admins represent the teachers in the class. If you&apos;re using the delegated token, the user will only see classes in which they are members.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationclass-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +114,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
         }
         /// <summary>
         /// Update the properties of a class.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationclass-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

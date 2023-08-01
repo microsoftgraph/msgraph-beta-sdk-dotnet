@@ -13,6 +13,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The maximumRetries property</summary>
+        public int? MaximumRetries {
+            get { return BackingStore?.Get<int?>("maximumRetries"); }
+            set { BackingStore?.Set("maximumRetries", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"maximumRetries", n => { MaximumRetries = n.GetIntValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"timeoutInMilliseconds", n => { TimeoutInMilliseconds = n.GetIntValue(); } },
             };
@@ -62,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("maximumRetries", MaximumRetries);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("timeoutInMilliseconds", TimeoutInMilliseconds);
             writer.WriteAdditionalData(AdditionalData);

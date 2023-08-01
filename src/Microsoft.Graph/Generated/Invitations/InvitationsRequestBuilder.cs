@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Invitations {
         }
         /// <summary>
         /// Use this API to create a new invitation. Invitation adds an external user to the organization. When creating a new invitation you have several options available:
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/invitation-post?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/invitation-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

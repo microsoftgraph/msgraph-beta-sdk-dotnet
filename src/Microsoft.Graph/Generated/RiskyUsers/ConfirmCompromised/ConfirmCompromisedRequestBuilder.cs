@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers.ConfirmCompromised {
         }
         /// <summary>
         /// Confirm one or more riskyUser objects as compromised. This action sets the targeted user&apos;s risk level to high.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/riskyusers-confirmcompromised?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskyusers-confirmcompromised?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

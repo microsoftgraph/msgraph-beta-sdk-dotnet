@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             set { BackingStore?.Set("activitySettings", value); }
         }
 #endif
-        /// <summary>The settings required for the connection to participate in eDiscovery, such as the display templates for eDiscovery results.</summary>
+        /// <summary>The complianceSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings? ComplianceSettings {
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The list of content experiences the connection will participate in. Possible values are search and compliance.</summary>
+        /// <summary>The list of content experiences the connection will participate in. Possible values are search.</summary>
         public ContentExperienceType? EnabledContentExperiences {
             get { return BackingStore?.Get<ContentExperienceType?>("enabledContentExperiences"); }
             set { BackingStore?.Set("enabledContentExperiences", value); }

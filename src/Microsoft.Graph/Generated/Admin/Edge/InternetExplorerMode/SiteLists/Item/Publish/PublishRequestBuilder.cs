@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Pu
         }
         /// <summary>
         /// Publish the specified browserSiteList for devices to download.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/browsersitelist-publish?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/browsersitelist-publish?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

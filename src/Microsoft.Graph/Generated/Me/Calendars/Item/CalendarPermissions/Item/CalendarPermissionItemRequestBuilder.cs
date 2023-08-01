@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.CalendarPermissions.Item {
         }
         /// <summary>
         /// Delete calendarPermission.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/calendarpermission-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendarpermission-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.CalendarPermissions.Item {
         }
         /// <summary>
         /// Get the specified permissions object of a user or group calendar that has been shared.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/calendarpermission-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendarpermission-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.CalendarPermissions.Item {
         }
         /// <summary>
         /// Update the permissions assigned to an existing sharee or delegate, through the corresponding calendarPermission object for a calendar.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/calendarpermission-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendarpermission-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

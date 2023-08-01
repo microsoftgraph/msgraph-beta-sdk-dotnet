@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CreatedObjects {
         }
         /// <summary>
         /// Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn&apos;t in any administrator role; otherwise, it returns an empty object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-createdobjects?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

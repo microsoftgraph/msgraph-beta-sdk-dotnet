@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.ItemInsights {
         }
         /// <summary>
         /// Get the user-customizable privacy settings for itemInsights and meeting hours insights.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/userinsightssettings-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userinsightssettings-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.ItemInsights {
         }
         /// <summary>
         /// Update the privacy settings for itemInsights and meeting hours insights of a user.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/userinsightssettings-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userinsightssettings-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

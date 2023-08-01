@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Print.Connectors.Item {
         }
         /// <summary>
         /// Delete (unregister) a printConnector.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/printconnector-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printconnector-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,8 +48,8 @@ namespace Microsoft.Graph.Beta.Print.Connectors.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a **printConnector** object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/printconnector-get?view=graph-rest-1.0" />
+        /// Retrieve the properties and relationships of a printConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printconnector-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Beta.Print.Connectors.Item {
             return await RequestAdapter.SendAsync<PrintConnector>(requestInfo, PrintConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of a **printConnector** object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/printconnector-update?view=graph-rest-1.0" />
+        /// Update the properties of a printConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printconnector-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Print.Connectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a **printConnector** object.
+        /// Retrieve the properties and relationships of a printConnector object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Print.Connectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a **printConnector** object.
+        /// Update the properties of a printConnector object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Print.Connectors.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a **printConnector** object.
+        /// Retrieve the properties and relationships of a printConnector object.
         /// </summary>
         public class PrintConnectorItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

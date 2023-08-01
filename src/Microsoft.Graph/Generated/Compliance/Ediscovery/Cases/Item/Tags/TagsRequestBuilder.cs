@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
         }
         /// <summary>
         /// Retrieve a list of tag objects from an eDiscovery case.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/ediscovery-case-list-tags?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-list-tags?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
         }
         /// <summary>
         /// Create a new tag for the specified case.  The tags are used in review sets while reviewing content.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/ediscovery-case-post-tags?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-post-tags?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

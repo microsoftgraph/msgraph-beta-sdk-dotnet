@@ -40,8 +40,8 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.AudioRoutingGroups {
         public AudioRoutingGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}/audioRoutingGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of **audioRoutingGroup** objects.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/call-list-audioroutinggroups?view=graph-rest-1.0" />
+        /// Retrieve a list of audioRoutingGroup objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-list-audioroutinggroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.AudioRoutingGroups {
             return await RequestAdapter.SendAsync<AudioRoutingGroupCollectionResponse>(requestInfo, AudioRoutingGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new **audioRoutingGroup**.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/call-post-audioroutinggroups?view=graph-rest-1.0" />
+        /// Create a new audioRoutingGroup.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-post-audioroutinggroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.AudioRoutingGroups {
             return await RequestAdapter.SendAsync<AudioRoutingGroup>(requestInfo, AudioRoutingGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of **audioRoutingGroup** objects.
+        /// Retrieve a list of audioRoutingGroup objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.AudioRoutingGroups {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new **audioRoutingGroup**.
+        /// Create a new audioRoutingGroup.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.AudioRoutingGroups {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of **audioRoutingGroup** objects.
+        /// Retrieve a list of audioRoutingGroup objects.
         /// </summary>
         public class AudioRoutingGroupsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

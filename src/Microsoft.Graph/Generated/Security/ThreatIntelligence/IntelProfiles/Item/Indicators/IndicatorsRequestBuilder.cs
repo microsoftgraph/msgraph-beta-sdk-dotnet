@@ -40,8 +40,8 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelProfiles.Item.In
         public IndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/intelProfiles/{intelligenceProfile%2Did}/indicators{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the intelligenceProfileIndicator resources from the **indicators** navigation property of an intelligenceProfile.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-intelligenceprofile-list-indicators?view=graph-rest-1.0" />
+        /// Get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-intelligenceprofile-list-indicators?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelProfiles.Item.In
             return await RequestAdapter.SendAsync<IntelligenceProfileIndicatorCollectionResponse>(requestInfo, IntelligenceProfileIndicatorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the intelligenceProfileIndicator resources from the **indicators** navigation property of an intelligenceProfile.
+        /// Get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelProfiles.Item.In
             return requestInfo;
         }
         /// <summary>
-        /// Get the intelligenceProfileIndicator resources from the **indicators** navigation property of an intelligenceProfile.
+        /// Get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile.
         /// </summary>
         public class IndicatorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

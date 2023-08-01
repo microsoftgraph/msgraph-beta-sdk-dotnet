@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item {
         }
         /// <summary>
         /// Deletes an authenticationEventListener object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationeventlistener-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventlistener-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +67,8 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item {
             return await RequestAdapter.SendAsync<AuthenticationEventListener>(requestInfo, AuthenticationEventListener.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of an authenticationEventListener object. You must specify the **@odata.type** property and the value of the authenticationEventListener object type to update.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/authenticationeventlistener-update?view=graph-rest-1.0" />
+        /// Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventlistener-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an authenticationEventListener object. You must specify the **@odata.type** property and the value of the authenticationEventListener object type to update.
+        /// Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

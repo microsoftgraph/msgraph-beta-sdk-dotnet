@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.Fido2Methods.Item {
         }
         /// <summary>
         /// Deletes a user&apos;s FIDO2 Security Key Authentication Method object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/fido2authenticationmethod-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/fido2authenticationmethod-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.Fido2Methods.Item {
         }
         /// <summary>
         /// Retrieve a user&apos;s single FIDO2 Security Key Authentication Method object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/fido2authenticationmethod-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/fido2authenticationmethod-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

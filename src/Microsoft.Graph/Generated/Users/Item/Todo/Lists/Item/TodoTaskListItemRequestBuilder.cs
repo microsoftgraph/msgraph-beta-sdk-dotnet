@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item {
         }
         /// <summary>
         /// Deletes a todoTaskList object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/todotasklist-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotasklist-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item {
         }
         /// <summary>
         /// Read the properties and relationships of a todoTaskList object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/todotasklist-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotasklist-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item {
         }
         /// <summary>
         /// Update the properties of a todoTaskList object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/todotasklist-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotasklist-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

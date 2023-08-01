@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists {
         }
         /// <summary>
         /// Get a list of the todoTaskList objects and their properties.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/todo-list-lists?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todo-list-lists?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists {
         }
         /// <summary>
         /// Create a new lists object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/todo-post-lists?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todo-post-lists?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

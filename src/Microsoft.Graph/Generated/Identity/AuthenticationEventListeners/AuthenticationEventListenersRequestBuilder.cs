@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners {
         }
         /// <summary>
         /// Get a list of the authenticationEventListener objects and their properties. The following derived types are supported:
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identitycontainer-list-authenticationeventlisteners?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitycontainer-list-authenticationeventlisteners?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners {
             return await RequestAdapter.SendAsync<AuthenticationEventListenerCollectionResponse>(requestInfo, AuthenticationEventListenerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new authenticationEventListener object. You can create one of the following subtypes that are derived from **authenticationEventListener**.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identitycontainer-post-authenticationeventlisteners?view=graph-rest-1.0" />
+        /// Create a new authenticationEventListener object. You can create one of the following subtypes that are derived from authenticationEventListener.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitycontainer-post-authenticationeventlisteners?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new authenticationEventListener object. You can create one of the following subtypes that are derived from **authenticationEventListener**.
+        /// Create a new authenticationEventListener object. You can create one of the following subtypes that are derived from authenticationEventListener.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
