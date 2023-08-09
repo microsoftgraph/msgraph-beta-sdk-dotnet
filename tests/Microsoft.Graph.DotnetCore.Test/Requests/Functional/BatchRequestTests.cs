@@ -44,7 +44,6 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             BatchResponseContent batchResponseContent = new BatchResponseContent(response);
             Dictionary<string, HttpResponseMessage> responses = await batchResponseContent.GetResponsesAsync();
             HttpResponseMessage httpResponse = await batchResponseContent.GetResponseByIdAsync("1");
-            string nextLink = await batchResponseContent.GetNextLinkAsync();
 
             Assert.True(responses.Count.Equals(2));
         }
