@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DerivedCredentials {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the derivedCredentials property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementDerivedCredentialSettings</param>
         public DeviceManagementDerivedCredentialSettingsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementDerivedCredentialSettings%2Did", position);

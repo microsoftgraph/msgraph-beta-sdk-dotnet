@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace.Localizations.Item.
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the versions property of the microsoft.graph.agreementFileLocalization entity.</summary>
+        /// <param name="position">The unique identifier of agreementFileVersion</param>
         public AgreementFileVersionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreementFileVersion%2Did", position);

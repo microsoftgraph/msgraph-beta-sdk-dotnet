@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents.Item.AppLogColl
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appLogCollectionRequests property of the microsoft.graph.mobileAppTroubleshootingEvent entity.</summary>
+        /// <param name="position">The unique identifier of appLogCollectionRequest</param>
         public AppLogCollectionRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appLogCollectionRequest%2Did", position);

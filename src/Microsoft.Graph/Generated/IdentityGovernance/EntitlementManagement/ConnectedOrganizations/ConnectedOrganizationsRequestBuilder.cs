@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.</summary>
+        /// <param name="position">The unique identifier of connectedOrganization</param>
         public ConnectedOrganizationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("connectedOrganization%2Did", position);

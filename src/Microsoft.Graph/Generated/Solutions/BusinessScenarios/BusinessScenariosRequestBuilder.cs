@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.</summary>
+        /// <param name="position">The unique identifier of businessScenario</param>
         public BusinessScenarioItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("businessScenario%2Did", position);

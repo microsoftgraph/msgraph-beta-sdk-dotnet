@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item.UsageRights {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the usageRights property of the microsoft.graph.device entity.</summary>
+        /// <param name="position">The unique identifier of usageRight</param>
         public UsageRightItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("usageRight%2Did", position);

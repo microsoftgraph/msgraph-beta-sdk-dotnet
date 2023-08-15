@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedRole entities.</summary>
+        /// <param name="position">The unique identifier of privilegedRole</param>
         public PrivilegedRoleItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("privilegedRole%2Did", position);

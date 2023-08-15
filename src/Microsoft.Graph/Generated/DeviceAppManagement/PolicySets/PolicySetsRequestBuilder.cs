@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets {
             new GetPolicySetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the policySets property of the microsoft.graph.deviceAppManagement entity.</summary>
+        /// <param name="position">The unique identifier of policySet</param>
         public PolicySetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("policySet%2Did", position);

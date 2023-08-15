@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Rubrics {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the rubrics property of the microsoft.graph.educationUser entity.</summary>
+        /// <param name="position">The unique identifier of educationRubric</param>
         public EducationRubricItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationRubric%2Did", position);

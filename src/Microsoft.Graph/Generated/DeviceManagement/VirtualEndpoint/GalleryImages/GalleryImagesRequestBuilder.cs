@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the galleryImages property of the microsoft.graph.virtualEndpoint entity.</summary>
+        /// <param name="position">The unique identifier of cloudPcGalleryImage</param>
         public CloudPcGalleryImageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcGalleryImage%2Did", position);

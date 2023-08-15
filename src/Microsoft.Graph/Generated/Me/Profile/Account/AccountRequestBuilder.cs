@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the account property of the microsoft.graph.profile entity.</summary>
+        /// <param name="position">The unique identifier of userAccountInformation</param>
         public UserAccountInformationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userAccountInformation%2Did", position);

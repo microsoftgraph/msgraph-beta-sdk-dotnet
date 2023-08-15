@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Complia
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the complianceChanges property of the microsoft.graph.windowsUpdates.updatePolicy entity.</summary>
+        /// <param name="position">The unique identifier of complianceChange</param>
         public ComplianceChangeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("complianceChange%2Did", position);

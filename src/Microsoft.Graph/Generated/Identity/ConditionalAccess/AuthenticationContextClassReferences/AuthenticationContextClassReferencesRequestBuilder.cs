@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.</summary>
+        /// <param name="position">The unique identifier of authenticationContextClassReference</param>
         public AuthenticationContextClassReferenceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("authenticationContextClassReference%2Did", position);

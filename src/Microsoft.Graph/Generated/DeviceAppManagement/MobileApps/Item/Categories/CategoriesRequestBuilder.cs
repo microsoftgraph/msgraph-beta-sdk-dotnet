@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Categories {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.mobileApp entity.</summary>
+        /// <param name="position">The unique identifier of mobileAppCategory</param>
         public MobileAppCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileAppCategory%2Did", position);

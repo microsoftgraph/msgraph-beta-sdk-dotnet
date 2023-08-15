@@ -21,12 +21,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesInvoices property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of salesInvoice</param>
         public SalesInvoiceItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("salesInvoice%2Did", position);
             return new SalesInvoiceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>Provides operations to manage the salesInvoices property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of salesInvoice</param>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public SalesInvoiceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

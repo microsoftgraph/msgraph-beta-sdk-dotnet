@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.GovernanceResources {
             new RegisterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of governanceResource entities.</summary>
+        /// <param name="position">The unique identifier of governanceResource</param>
         public GovernanceResourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceResource%2Did", position);

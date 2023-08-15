@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUser
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the credentialUserRegistrationsSummaries property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
+        /// <param name="position">The unique identifier of credentialUserRegistrationsSummary</param>
         public CredentialUserRegistrationsSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("credentialUserRegistrationsSummary%2Did", position);

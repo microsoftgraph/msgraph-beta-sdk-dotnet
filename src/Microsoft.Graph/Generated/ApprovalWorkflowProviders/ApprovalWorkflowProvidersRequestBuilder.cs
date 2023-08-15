@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
+        /// <param name="position">The unique identifier of approvalWorkflowProvider</param>
         public ApprovalWorkflowProviderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("approvalWorkflowProvider%2Did", position);

@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels 
             new MicrosoftGraphSecurityExtractContentLabelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.</summary>
+        /// <param name="position">The unique identifier of sensitivityLabel</param>
         public SensitivityLabelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sensitivityLabel%2Did", position);

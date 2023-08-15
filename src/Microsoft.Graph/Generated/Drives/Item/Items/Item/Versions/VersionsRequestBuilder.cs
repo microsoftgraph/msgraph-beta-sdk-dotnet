@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Versions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the versions property of the microsoft.graph.driveItem entity.</summary>
+        /// <param name="position">The unique identifier of driveItemVersion</param>
         public DriveItemVersionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("driveItemVersion%2Did", position);

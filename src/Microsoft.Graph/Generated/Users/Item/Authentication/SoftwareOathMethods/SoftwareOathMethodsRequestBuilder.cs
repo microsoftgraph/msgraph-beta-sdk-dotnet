@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.SoftwareOathMethods {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.</summary>
+        /// <param name="position">The unique identifier of softwareOathAuthenticationMethod</param>
         public SoftwareOathAuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("softwareOathAuthenticationMethod%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHe
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsBatteryHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of userExperienceAnalyticsBatteryHealthDevicePerformance</param>
         public UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsBatteryHealthDevicePerformance%2Did", position);

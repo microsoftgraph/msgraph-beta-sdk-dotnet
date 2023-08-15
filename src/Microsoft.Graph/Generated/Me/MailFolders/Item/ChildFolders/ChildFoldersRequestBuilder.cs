@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders {
             new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the childFolders property of the microsoft.graph.mailFolder entity.</summary>
+        /// <param name="position">The unique identifier of mailFolder</param>
         public Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.MailFolderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mailFolder%2Did1", position);
@@ -66,8 +67,8 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders {
             return await RequestAdapter.SendAsync<MailFolderCollectionResponse>(requestInfo, MailFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0" />
+        /// Create a new mailSearchFolder in the specified user&apos;s mailbox.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailsearchfolder-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -114,7 +115,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
+        /// Create a new mailSearchFolder in the specified user&apos;s mailbox.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

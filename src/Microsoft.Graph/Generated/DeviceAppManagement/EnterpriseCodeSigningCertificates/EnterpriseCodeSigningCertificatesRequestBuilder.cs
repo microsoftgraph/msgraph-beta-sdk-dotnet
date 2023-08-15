@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.EnterpriseCodeSigningCertific
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the enterpriseCodeSigningCertificates property of the microsoft.graph.deviceAppManagement entity.</summary>
+        /// <param name="position">The unique identifier of enterpriseCodeSigningCertificate</param>
         public EnterpriseCodeSigningCertificateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("enterpriseCodeSigningCertificate%2Did", position);

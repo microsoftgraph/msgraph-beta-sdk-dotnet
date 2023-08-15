@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the pendingAccessReviewInstances property of the microsoft.graph.user entity.</summary>
+        /// <param name="position">The unique identifier of accessReviewInstance</param>
         public AccessReviewInstanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewInstance%2Did", position);

@@ -16,6 +16,7 @@ namespace Microsoft.Graph.Beta.Subscriptions {
     /// </summary>
     public class SubscriptionsRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the collection of subscription entities.</summary>
+        /// <param name="position">The unique identifier of subscription</param>
         public SubscriptionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("subscription%2Did", position);

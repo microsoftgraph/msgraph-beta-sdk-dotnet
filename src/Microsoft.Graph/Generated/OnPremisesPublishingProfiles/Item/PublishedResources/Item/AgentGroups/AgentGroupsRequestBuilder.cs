@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.onPremisesPublishingProfiles.item.publishedResources.item.agentGroups.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
         public OnPremisesAgentGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onPremisesAgentGroup%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileAppConfigurations property of the microsoft.graph.deviceAppManagement entity.</summary>
+        /// <param name="position">The unique identifier of managedDeviceMobileAppConfiguration</param>
         public ManagedDeviceMobileAppConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDeviceMobileAppConfiguration%2Did", position);

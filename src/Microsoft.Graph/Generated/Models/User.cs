@@ -311,7 +311,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("cloudPCs", value); }
         }
 #endif
-        /// <summary>The cloudRealtimeCommunicationInfo property</summary>
+        /// <summary>Microsoft realtime communication information related to the user.  Supports $filter (eq, ne,not).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.CloudRealtimeCommunicationInfo? CloudRealtimeCommunicationInfo {
@@ -1299,7 +1299,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }
         }
 #endif
-        /// <summary>The onPremisesSipInfo property</summary>
+        /// <summary>Contains all on-premises Session Initiation Protocol (SIP) information related to the user. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.OnPremisesSipInfo? OnPremisesSipInfo {
@@ -1458,7 +1458,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("people", value); }
         }
 #endif
-        /// <summary>The permissionGrants property</summary>
+        /// <summary>List all resource-specific permission grants of a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ResourceSpecificPermissionGrant>? PermissionGrants {

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Print.Operations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.print entity.</summary>
+        /// <param name="position">The unique identifier of printOperation</param>
         public PrintOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printOperation%2Did", position);

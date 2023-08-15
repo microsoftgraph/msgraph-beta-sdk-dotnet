@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.MessageRecipients {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of messageRecipient entities.</summary>
+        /// <param name="position">The unique identifier of messageRecipient</param>
         public MessageRecipientItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("messageRecipient%2Did", position);

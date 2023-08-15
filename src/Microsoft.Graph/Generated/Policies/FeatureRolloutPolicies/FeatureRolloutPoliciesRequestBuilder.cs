@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the featureRolloutPolicies property of the microsoft.graph.policyRoot entity.</summary>
+        /// <param name="position">The unique identifier of featureRolloutPolicy</param>
         public FeatureRolloutPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("featureRolloutPolicy%2Did", position);

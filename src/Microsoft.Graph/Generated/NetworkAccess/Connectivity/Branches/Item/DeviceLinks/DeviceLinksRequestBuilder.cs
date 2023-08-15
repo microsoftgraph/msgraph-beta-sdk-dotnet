@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceLinks property of the microsoft.graph.networkaccess.branchSite entity.</summary>
+        /// <param name="position">The unique identifier of deviceLink</param>
         public DeviceLinkItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceLink%2Did", position);

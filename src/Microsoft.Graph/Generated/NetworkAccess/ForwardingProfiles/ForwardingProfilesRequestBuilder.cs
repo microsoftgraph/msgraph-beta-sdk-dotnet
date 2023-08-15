@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the forwardingProfiles property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
+        /// <param name="position">The unique identifier of forwardingProfile</param>
         public ForwardingProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("forwardingProfile%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlows {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the businessFlows property of the microsoft.graph.approvalWorkflowProvider entity.</summary>
+        /// <param name="position">The unique identifier of businessFlow</param>
         public BusinessFlowItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("businessFlow%2Did", position);

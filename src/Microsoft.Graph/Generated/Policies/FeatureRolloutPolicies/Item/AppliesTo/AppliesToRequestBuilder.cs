@@ -46,6 +46,7 @@ namespace Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.policies.featureRolloutPolicies.item.appliesTo.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject%2Did", position);

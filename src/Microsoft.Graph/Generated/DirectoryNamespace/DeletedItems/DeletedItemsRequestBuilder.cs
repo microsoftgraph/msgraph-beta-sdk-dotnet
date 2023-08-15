@@ -71,6 +71,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deletedItems property of the microsoft.graph.directory entity.</summary>
+        /// <param name="position">The unique identifier of directoryObject</param>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject%2Did", position);

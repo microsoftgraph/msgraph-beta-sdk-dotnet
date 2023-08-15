@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.</summary>
+        /// <param name="position">The unique identifier of outlookCategory</param>
         public OutlookCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("outlookCategory%2Did", position);

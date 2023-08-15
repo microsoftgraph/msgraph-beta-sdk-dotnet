@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleSettings property of the microsoft.graph.privilegedAccess entity.</summary>
+        /// <param name="position">The unique identifier of governanceRoleSetting</param>
         public GovernanceRoleSettingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceRoleSetting%2Did", position);

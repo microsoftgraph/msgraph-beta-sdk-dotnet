@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileThreatDefenseConnectors property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of mobileThreatDefenseConnector</param>
         public MobileThreatDefenseConnectorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileThreatDefenseConnector%2Did", position);

@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps {
             new ValidateXmlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.</summary>
+        /// <param name="position">The unique identifier of mobileApp</param>
         public MobileAppItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileApp%2Did", position);

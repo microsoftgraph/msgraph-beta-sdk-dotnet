@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RemoteActionAudits {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the remoteActionAudits property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of remoteActionAudit</param>
         public RemoteActionAuditItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("remoteActionAudit%2Did", position);

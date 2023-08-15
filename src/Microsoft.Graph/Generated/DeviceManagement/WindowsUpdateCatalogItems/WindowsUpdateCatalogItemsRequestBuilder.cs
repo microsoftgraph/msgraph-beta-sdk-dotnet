@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsUpdateCatalogItems {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsUpdateCatalogItems property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of windowsUpdateCatalogItem</param>
         public WindowsUpdateCatalogItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsUpdateCatalogItem%2Did", position);

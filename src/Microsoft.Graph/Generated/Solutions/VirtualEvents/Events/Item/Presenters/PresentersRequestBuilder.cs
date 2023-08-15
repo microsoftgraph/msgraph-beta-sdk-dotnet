@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Presenters {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the presenters property of the microsoft.graph.virtualEvent entity.</summary>
+        /// <param name="position">The unique identifier of virtualEventPresenter</param>
         public VirtualEventPresenterItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("virtualEventPresenter%2Did", position);

@@ -16,6 +16,7 @@ namespace Microsoft.Graph.Beta.Agreements {
     /// </summary>
     public class AgreementsRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the collection of agreement entities.</summary>
+        /// <param name="position">The unique identifier of agreement</param>
         public AgreementItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreement%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleAssignments.Item.AppSc
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appScopes property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.</summary>
+        /// <param name="position">The unique identifier of appScope</param>
         public AppScopeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appScope%2Did", position);

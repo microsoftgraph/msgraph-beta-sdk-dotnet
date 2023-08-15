@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.TaskTriggers {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskTriggers property of the microsoft.graph.printer entity.</summary>
+        /// <param name="position">The unique identifier of printTaskTrigger</param>
         public PrintTaskTriggerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printTaskTrigger%2Did", position);

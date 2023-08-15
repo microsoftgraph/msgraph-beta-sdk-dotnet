@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authorizationPolicy property of the microsoft.graph.policyRoot entity.</summary>
+        /// <param name="position">The unique identifier of authorizationPolicy</param>
         public AuthorizationPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("authorizationPolicy%2Did", position);

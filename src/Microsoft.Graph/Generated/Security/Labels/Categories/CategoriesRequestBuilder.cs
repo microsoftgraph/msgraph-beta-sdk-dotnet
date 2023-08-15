@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.security.labelsRoot entity.</summary>
+        /// <param name="position">The unique identifier of categoryTemplate</param>
         public CategoryTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("categoryTemplate%2Did", position);

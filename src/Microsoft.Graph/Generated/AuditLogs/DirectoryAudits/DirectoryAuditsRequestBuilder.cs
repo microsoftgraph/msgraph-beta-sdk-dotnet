@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.DirectoryAudits {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directoryAudits property of the microsoft.graph.auditLogRoot entity.</summary>
+        /// <param name="position">The unique identifier of directoryAudit</param>
         public DirectoryAuditItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryAudit%2Did", position);

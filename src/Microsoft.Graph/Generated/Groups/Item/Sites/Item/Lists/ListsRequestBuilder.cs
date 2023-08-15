@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the lists property of the microsoft.graph.site entity.</summary>
+        /// <param name="position">The unique identifier of list</param>
         public ListItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("list%2Did", position);

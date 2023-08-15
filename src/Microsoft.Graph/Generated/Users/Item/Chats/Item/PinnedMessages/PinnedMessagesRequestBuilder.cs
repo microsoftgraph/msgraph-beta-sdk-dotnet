@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.PinnedMessages {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.</summary>
+        /// <param name="position">The unique identifier of pinnedChatMessageInfo</param>
         public PinnedChatMessageInfoItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("pinnedChatMessageInfo%2Did", position);

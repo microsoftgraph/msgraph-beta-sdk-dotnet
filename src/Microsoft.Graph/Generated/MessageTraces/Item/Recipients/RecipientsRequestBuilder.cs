@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the recipients property of the microsoft.graph.messageTrace entity.</summary>
+        /// <param name="position">The unique identifier of messageRecipient</param>
         public MessageRecipientItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("messageRecipient%2Did", position);

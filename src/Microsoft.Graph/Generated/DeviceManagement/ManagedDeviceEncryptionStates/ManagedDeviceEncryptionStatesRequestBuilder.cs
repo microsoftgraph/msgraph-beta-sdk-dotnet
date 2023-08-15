@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceEncryptionStates {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedDeviceEncryptionStates property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of managedDeviceEncryptionState</param>
         public ManagedDeviceEncryptionStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDeviceEncryptionState%2Did", position);

@@ -16,6 +16,7 @@ namespace Microsoft.Graph.Beta.SubscribedSkus {
     /// </summary>
     public class SubscribedSkusRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the collection of subscribedSku entities.</summary>
+        /// <param name="position">The unique identifier of subscribedSku</param>
         public SubscribedSkuItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("subscribedSku%2Did", position);

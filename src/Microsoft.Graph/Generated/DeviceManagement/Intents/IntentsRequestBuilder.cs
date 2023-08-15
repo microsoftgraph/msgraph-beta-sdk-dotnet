@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the intents property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementIntent</param>
         public DeviceManagementIntentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementIntent%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.deviceManagementTemplate entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementTemplateSettingCategory</param>
         public DeviceManagementTemplateSettingCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementTemplateSettingCategory%2Did", position);

@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Cal
             new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the instances property of the microsoft.graph.event entity.</summary>
+        /// <param name="position">The unique identifier of event</param>
         public Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.EventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("event%2Did1", position);

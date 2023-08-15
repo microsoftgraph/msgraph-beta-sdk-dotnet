@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.AssignmentFilterEv
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignmentFilterEvaluationStatusDetails property of the microsoft.graph.managedDevice entity.</summary>
+        /// <param name="position">The unique identifier of assignmentFilterEvaluationStatusDetails</param>
         public AssignmentFilterEvaluationStatusDetailsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("assignmentFilterEvaluationStatusDetails%2Did", position);

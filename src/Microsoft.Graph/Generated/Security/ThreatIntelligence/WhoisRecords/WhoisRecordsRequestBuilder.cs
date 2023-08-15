@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisRecords {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the whoisRecords property of the microsoft.graph.security.threatIntelligence entity.</summary>
+        /// <param name="position">The unique identifier of whoisRecord</param>
         public WhoisRecordItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("whoisRecord%2Did", position);

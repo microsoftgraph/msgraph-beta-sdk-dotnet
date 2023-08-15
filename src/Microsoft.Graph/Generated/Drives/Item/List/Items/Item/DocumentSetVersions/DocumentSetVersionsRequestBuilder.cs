@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Items.Item.DocumentSetVersions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.</summary>
+        /// <param name="position">The unique identifier of documentSetVersion</param>
         public DocumentSetVersionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("documentSetVersion%2Did", position);

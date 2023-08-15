@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Regis
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the registrants property of the microsoft.graph.meetingRegistrationBase entity.</summary>
+        /// <param name="position">The unique identifier of meetingRegistrantBase</param>
         public MeetingRegistrantBaseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("meetingRegistrantBase%2Did", position);

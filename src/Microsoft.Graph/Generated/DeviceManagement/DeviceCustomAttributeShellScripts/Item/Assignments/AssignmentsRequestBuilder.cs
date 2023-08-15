@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceCustomAttributeShellScript entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementScriptAssignment</param>
         public DeviceManagementScriptAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementScriptAssignment%2Did", position);

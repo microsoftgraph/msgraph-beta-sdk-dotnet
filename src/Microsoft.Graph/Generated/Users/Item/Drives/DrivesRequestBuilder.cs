@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drives property of the microsoft.graph.user entity.</summary>
+        /// <param name="position">The unique identifier of drive</param>
         public DriveItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("drive%2Did", position);

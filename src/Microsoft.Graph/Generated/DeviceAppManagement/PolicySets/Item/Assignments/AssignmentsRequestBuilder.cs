@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Assignments {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.policySet entity.</summary>
+        /// <param name="position">The unique identifier of policySetAssignment</param>
         public PolicySetAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("policySetAssignment%2Did", position);

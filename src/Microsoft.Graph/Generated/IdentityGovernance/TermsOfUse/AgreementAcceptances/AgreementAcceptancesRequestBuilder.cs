@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.AgreementAcceptance
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the agreementAcceptances property of the microsoft.graph.termsOfUseContainer entity.</summary>
+        /// <param name="position">The unique identifier of agreementAcceptance</param>
         public AgreementAcceptanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreementAcceptance%2Did", position);

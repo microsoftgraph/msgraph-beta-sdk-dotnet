@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.FollowedSites {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the followedSites property of the microsoft.graph.user entity.</summary>
+        /// <param name="position">The unique identifier of site</param>
         public SiteItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("site%2Did", position);

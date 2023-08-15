@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsProtect
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsProtectionStates property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
+        /// <param name="position">The unique identifier of windowsProtectionState</param>
         public WindowsProtectionStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsProtectionState%2Did", position);

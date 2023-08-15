@@ -28,6 +28,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the charts property of the microsoft.graph.workbookWorksheet entity.</summary>
+        /// <param name="position">The unique identifier of workbookChart</param>
         public WorkbookChartItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookChart%2Did", position);

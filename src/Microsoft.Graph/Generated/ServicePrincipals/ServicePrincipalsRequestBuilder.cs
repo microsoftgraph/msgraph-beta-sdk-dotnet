@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of servicePrincipal entities.</summary>
+        /// <param name="position">The unique identifier of servicePrincipal</param>
         public ServicePrincipalItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("servicePrincipal%2Did", position);

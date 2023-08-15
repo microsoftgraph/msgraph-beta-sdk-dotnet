@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SharedEmailDomains {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.</summary>
+        /// <param name="position">The unique identifier of sharedEmailDomain</param>
         public SharedEmailDomainItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sharedEmailDomain%2Did", position);

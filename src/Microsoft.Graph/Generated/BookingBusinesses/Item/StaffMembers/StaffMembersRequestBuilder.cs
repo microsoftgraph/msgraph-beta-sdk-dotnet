@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.StaffMembers {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.</summary>
+        /// <param name="position">The unique identifier of bookingStaffMember</param>
         public BookingStaffMemberItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bookingStaffMember%2Did", position);

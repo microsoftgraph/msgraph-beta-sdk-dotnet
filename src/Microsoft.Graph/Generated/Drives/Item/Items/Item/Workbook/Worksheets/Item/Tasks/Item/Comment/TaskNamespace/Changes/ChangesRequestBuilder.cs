@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.T
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the changes property of the microsoft.graph.workbookDocumentTask entity.</summary>
+        /// <param name="position">The unique identifier of workbookDocumentTaskChange</param>
         public WorkbookDocumentTaskChangeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookDocumentTaskChange%2Did", position);

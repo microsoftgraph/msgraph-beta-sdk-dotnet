@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkEnrollmentProfiles
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the androidForWorkEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of androidForWorkEnrollmentProfile</param>
         public AndroidForWorkEnrollmentProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("androidForWorkEnrollmentProfile%2Did", position);

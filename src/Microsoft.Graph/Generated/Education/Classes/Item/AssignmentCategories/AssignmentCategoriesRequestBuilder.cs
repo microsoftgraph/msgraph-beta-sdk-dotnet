@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentCategories {
             new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignmentCategories property of the microsoft.graph.educationClass entity.</summary>
+        /// <param name="position">The unique identifier of educationCategory</param>
         public EducationCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationCategory%2Did", position);

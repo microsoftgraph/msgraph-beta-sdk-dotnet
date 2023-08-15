@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Operations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.call entity.</summary>
+        /// <param name="position">The unique identifier of commsOperation</param>
         public CommsOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("commsOperation%2Did", position);

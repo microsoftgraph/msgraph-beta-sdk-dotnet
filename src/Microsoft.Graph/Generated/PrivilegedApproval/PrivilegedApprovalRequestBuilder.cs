@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval {
             new MyRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedApproval entities.</summary>
+        /// <param name="position">The unique identifier of privilegedApproval</param>
         public PrivilegedApprovalItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("privilegedApproval%2Did", position);

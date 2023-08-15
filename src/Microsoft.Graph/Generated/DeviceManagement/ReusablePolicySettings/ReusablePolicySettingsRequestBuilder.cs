@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the reusablePolicySettings property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementReusablePolicySetting</param>
         public DeviceManagementReusablePolicySettingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementReusablePolicySetting%2Did", position);

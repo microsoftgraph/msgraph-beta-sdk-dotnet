@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceSta
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsDeviceStartupProcessPerformance property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of userExperienceAnalyticsDeviceStartupProcessPerformance</param>
         public UserExperienceAnalyticsDeviceStartupProcessPerformanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsDeviceStartupProcessPerformance%2Did", position);

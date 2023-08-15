@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsFeatureUpdateProfiles {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsFeatureUpdateProfiles property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of windowsFeatureUpdateProfile</param>
         public WindowsFeatureUpdateProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsFeatureUpdateProfile%2Did", position);

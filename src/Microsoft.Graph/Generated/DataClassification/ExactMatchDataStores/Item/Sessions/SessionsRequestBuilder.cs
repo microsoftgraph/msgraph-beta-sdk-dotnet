@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sess
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sessions property of the microsoft.graph.exactMatchDataStore entity.</summary>
+        /// <param name="position">The unique identifier of exactMatchSession</param>
         public ExactMatchSessionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("exactMatchSession%2Did", position);

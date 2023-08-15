@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.ProgramControls {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of programControl entities.</summary>
+        /// <param name="position">The unique identifier of programControl</param>
         public ProgramControlItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("programControl%2Did", position);

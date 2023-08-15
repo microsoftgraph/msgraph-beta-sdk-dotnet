@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appDefinitions property of the microsoft.graph.teamsApp entity.</summary>
+        /// <param name="position">The unique identifier of teamsAppDefinition</param>
         public TeamsAppDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamsAppDefinition%2Did", position);

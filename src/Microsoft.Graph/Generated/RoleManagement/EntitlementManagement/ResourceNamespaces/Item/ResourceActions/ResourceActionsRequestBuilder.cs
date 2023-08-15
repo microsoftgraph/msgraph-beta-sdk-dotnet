@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resourceActions property of the microsoft.graph.unifiedRbacResourceNamespace entity.</summary>
+        /// <param name="position">The unique identifier of unifiedRbacResourceAction</param>
         public UnifiedRbacResourceActionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRbacResourceAction%2Did", position);

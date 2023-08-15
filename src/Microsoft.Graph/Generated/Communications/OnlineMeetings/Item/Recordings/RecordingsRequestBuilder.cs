@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Recordings {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.</summary>
+        /// <param name="position">The unique identifier of callRecording</param>
         public CallRecordingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("callRecording%2Did", position);

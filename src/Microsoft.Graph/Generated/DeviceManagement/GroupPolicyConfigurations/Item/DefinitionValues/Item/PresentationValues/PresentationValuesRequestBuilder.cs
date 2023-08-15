@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.D
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the presentationValues property of the microsoft.graph.groupPolicyDefinitionValue entity.</summary>
+        /// <param name="position">The unique identifier of groupPolicyPresentationValue</param>
         public GroupPolicyPresentationValueItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupPolicyPresentationValue%2Did", position);

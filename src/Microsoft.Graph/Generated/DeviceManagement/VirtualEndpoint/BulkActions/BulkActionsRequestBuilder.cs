@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the bulkActions property of the microsoft.graph.virtualEndpoint entity.</summary>
+        /// <param name="position">The unique identifier of cloudPcBulkAction</param>
         public CloudPcBulkActionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcBulkAction%2Did", position);

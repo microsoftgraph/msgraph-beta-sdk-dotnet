@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the policyTemplates property of the microsoft.graph.approvalWorkflowProvider entity.</summary>
+        /// <param name="position">The unique identifier of governancePolicyTemplate</param>
         public GovernancePolicyTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governancePolicyTemplate%2Did", position);

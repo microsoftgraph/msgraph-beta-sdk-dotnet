@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userSettings property of the microsoft.graph.virtualEndpoint entity.</summary>
+        /// <param name="position">The unique identifier of cloudPcUserSetting</param>
         public CloudPcUserSettingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcUserSetting%2Did", position);

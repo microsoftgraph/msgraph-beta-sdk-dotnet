@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the accessAssignments property of the microsoft.graph.delegatedAdminRelationship entity.</summary>
+        /// <param name="position">The unique identifier of delegatedAdminAccessAssignment</param>
         public DelegatedAdminAccessAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("delegatedAdminAccessAssignment%2Did", position);

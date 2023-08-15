@@ -36,14 +36,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates that the remote item is a file. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.FileObject? FileObject {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileObject?>("file"); }
+        public FileObject? File {
+            get { return BackingStore?.Get<FileObject?>("file"); }
             set { BackingStore?.Set("file", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.FileObject FileObject {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileObject>("file"); }
+        public FileObject File {
+            get { return BackingStore?.Get<FileObject>("file"); }
             set { BackingStore?.Set("file", value); }
         }
 #endif
@@ -289,7 +289,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"file", n => { FileObject = n.GetObjectValue<Microsoft.Graph.Beta.Models.FileObject>(Microsoft.Graph.Beta.Models.FileObject.CreateFromDiscriminatorValue); } },
+                {"file", n => { File = n.GetObjectValue<FileObject>(FileObject.CreateFromDiscriminatorValue); } },
                 {"fileSystemInfo", n => { FileSystemInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.FileSystemInfo>(Microsoft.Graph.Beta.Models.FileSystemInfo.CreateFromDiscriminatorValue); } },
                 {"folder", n => { Folder = n.GetObjectValue<Microsoft.Graph.Beta.Models.Folder>(Microsoft.Graph.Beta.Models.Folder.CreateFromDiscriminatorValue); } },
                 {"id", n => { Id = n.GetStringValue(); } },
@@ -317,7 +317,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.FileObject>("file", FileObject);
+            writer.WriteObjectValue<FileObject>("file", File);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.FileSystemInfo>("fileSystemInfo", FileSystemInfo);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Folder>("folder", Folder);
             writer.WriteStringValue("id", Id);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the publishedResources property of the microsoft.graph.onPremisesPublishingProfile entity.</summary>
+        /// <param name="position">The unique identifier of publishedResource</param>
         public PublishedResourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("publishedResource%2Did", position);

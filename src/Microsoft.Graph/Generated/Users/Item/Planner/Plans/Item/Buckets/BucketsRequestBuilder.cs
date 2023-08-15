@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Buckets {
             new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the buckets property of the microsoft.graph.plannerPlan entity.</summary>
+        /// <param name="position">The unique identifier of plannerBucket</param>
         public PlannerBucketItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("plannerBucket%2Did", position);

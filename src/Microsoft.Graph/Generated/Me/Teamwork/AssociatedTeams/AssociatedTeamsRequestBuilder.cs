@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.Teamwork.AssociatedTeams {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.</summary>
+        /// <param name="position">The unique identifier of associatedTeamInfo</param>
         public AssociatedTeamInfoItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("associatedTeamInfo%2Did", position);

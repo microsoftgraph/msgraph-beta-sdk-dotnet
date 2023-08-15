@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the recommendations property of the microsoft.graph.directory entity.</summary>
+        /// <param name="position">The unique identifier of recommendation</param>
         public RecommendationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("recommendation%2Did", position);

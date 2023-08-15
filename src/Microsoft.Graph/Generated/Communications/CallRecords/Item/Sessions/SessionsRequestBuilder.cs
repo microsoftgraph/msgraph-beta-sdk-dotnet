@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sessions property of the microsoft.graph.callRecords.callRecord entity.</summary>
+        /// <param name="position">The unique identifier of session</param>
         public SessionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("session%2Did", position);

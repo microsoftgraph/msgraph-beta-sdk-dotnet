@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinit
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customSecurityAttributeDefinitions property of the microsoft.graph.directory entity.</summary>
+        /// <param name="position">The unique identifier of customSecurityAttributeDefinition</param>
         public CustomSecurityAttributeDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("customSecurityAttributeDefinition%2Did", position);

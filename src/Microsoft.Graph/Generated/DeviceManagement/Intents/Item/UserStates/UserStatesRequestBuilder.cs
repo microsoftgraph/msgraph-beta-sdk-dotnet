@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UserStates {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userStates property of the microsoft.graph.deviceManagementIntent entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementIntentUserState</param>
         public DeviceManagementIntentUserStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementIntentUserState%2Did", position);

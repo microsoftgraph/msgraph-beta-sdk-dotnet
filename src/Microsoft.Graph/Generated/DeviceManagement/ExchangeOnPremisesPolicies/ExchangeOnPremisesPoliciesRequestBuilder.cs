@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the exchangeOnPremisesPolicies property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementExchangeOnPremisesPolicy</param>
         public DeviceManagementExchangeOnPremisesPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementExchangeOnPremisesPolicy%2Did", position);

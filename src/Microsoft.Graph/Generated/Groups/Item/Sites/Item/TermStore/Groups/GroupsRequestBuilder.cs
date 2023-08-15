@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Groups {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groups property of the microsoft.graph.termStore.store entity.</summary>
+        /// <param name="position">The unique identifier of group</param>
         public Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Groups.Item.GroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("group%2Did1", position);

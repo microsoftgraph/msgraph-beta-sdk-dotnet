@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the microsoftTunnelServerLogCollectionResponses property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of microsoftTunnelServerLogCollectionResponse</param>
         public MicrosoftTunnelServerLogCollectionResponseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("microsoftTunnelServerLogCollectionResponse%2Did", position);

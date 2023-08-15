@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.PayloadResponse {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of payloadResponse entities.</summary>
+        /// <param name="position">The unique identifier of payloadResponse</param>
         public PayloadResponseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("payloadResponse%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskDefinitions property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
+        /// <param name="position">The unique identifier of taskDefinition</param>
         public TaskDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("taskDefinition%2Did", position);

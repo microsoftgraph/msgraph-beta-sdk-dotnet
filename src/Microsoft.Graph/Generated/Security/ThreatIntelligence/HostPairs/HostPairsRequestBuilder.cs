@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostPairs {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hostPairs property of the microsoft.graph.security.threatIntelligence entity.</summary>
+        /// <param name="position">The unique identifier of hostPair</param>
         public HostPairItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("hostPair%2Did", position);

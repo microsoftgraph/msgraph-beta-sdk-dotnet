@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Item.Attachmen
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the attachments property of the microsoft.graph.serviceUpdateMessage entity.</summary>
+        /// <param name="position">The unique identifier of serviceAnnouncementAttachment</param>
         public ServiceAnnouncementAttachmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("serviceAnnouncementAttachment%2Did", position);

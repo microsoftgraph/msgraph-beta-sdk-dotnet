@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistration
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.</summary>
+        /// <param name="position">The unique identifier of windowsInformationProtectionDeviceRegistration</param>
         public WindowsInformationProtectionDeviceRegistrationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsInformationProtectionDeviceRegistration%2Did", position);

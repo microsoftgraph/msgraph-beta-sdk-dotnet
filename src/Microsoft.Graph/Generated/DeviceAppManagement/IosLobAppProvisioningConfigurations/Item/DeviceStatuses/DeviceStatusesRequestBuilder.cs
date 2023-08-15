@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceStatuses property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.</summary>
+        /// <param name="position">The unique identifier of managedDeviceMobileAppConfigurationDeviceStatus</param>
         public ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDeviceMobileAppConfigurationDeviceStatus%2Did", position);

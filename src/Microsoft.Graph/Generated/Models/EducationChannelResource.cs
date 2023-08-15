@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationChannelResource : EducationResource, IParsable {
-        /// <summary>The url property</summary>
+        /// <summary>URL of the channel resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url {

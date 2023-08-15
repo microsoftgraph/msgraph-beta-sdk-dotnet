@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Positions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the positions property of the microsoft.graph.profile entity.</summary>
+        /// <param name="position">The unique identifier of workPosition</param>
         public WorkPositionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workPosition%2Did", position);

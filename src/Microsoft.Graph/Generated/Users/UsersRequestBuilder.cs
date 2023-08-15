@@ -51,6 +51,7 @@ namespace Microsoft.Graph.Beta.Users {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of user entities.</summary>
+        /// <param name="position">The unique identifier of user</param>
         public UserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("user%2Did", position);

@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Education.Schools {
             new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the schools property of the microsoft.graph.educationRoot entity.</summary>
+        /// <param name="position">The unique identifier of educationSchool</param>
         public EducationSchoolItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationSchool%2Did", position);

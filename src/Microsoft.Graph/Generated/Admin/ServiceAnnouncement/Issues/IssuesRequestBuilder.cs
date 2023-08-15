@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Issues {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the issues property of the microsoft.graph.serviceAnnouncement entity.</summary>
+        /// <param name="position">The unique identifier of serviceHealthIssue</param>
         public ServiceHealthIssueItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("serviceHealthIssue%2Did", position);

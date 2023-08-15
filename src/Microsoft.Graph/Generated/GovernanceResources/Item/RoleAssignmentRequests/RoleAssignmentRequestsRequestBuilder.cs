@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignmentRequests {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignmentRequests property of the microsoft.graph.governanceResource entity.</summary>
+        /// <param name="position">The unique identifier of governanceRoleAssignmentRequest</param>
         public GovernanceRoleAssignmentRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceRoleAssignmentRequest%2Did", position);

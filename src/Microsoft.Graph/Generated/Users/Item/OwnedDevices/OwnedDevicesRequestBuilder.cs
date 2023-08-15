@@ -31,6 +31,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OwnedDevices {
             new GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the ownedDevices property of the microsoft.graph.user entity.</summary>
+        /// <param name="position">The unique identifier of directoryObject</param>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceStates property of the microsoft.graph.embeddedSIMActivationCodePool entity.</summary>
+        /// <param name="position">The unique identifier of embeddedSIMDeviceState</param>
         public EmbeddedSIMDeviceStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("embeddedSIMDeviceState%2Did", position);

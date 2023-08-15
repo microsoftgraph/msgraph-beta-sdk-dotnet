@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IosUpdateStatuses {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the iosUpdateStatuses property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of iosUpdateDeviceStatus</param>
         public IosUpdateDeviceStatusItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("iosUpdateDeviceStatus%2Did", position);

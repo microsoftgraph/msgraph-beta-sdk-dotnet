@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.CachedReportConfiguratio
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cachedReportConfigurations property of the microsoft.graph.deviceManagementReports entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementCachedReportConfiguration</param>
         public DeviceManagementCachedReportConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementCachedReportConfiguration%2Did", position);

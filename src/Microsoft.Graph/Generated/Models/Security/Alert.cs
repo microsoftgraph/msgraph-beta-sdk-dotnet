@@ -20,6 +20,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("actorDisplayName", value); }
         }
 #endif
+        /// <summary>The alertPolicyId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AlertPolicyId {
+            get { return BackingStore?.Get<string?>("alertPolicyId"); }
+            set { BackingStore?.Set("alertPolicyId", value); }
+        }
+#nullable restore
+#else
+        public string AlertPolicyId {
+            get { return BackingStore?.Get<string>("alertPolicyId"); }
+            set { BackingStore?.Set("alertPolicyId", value); }
+        }
+#endif
         /// <summary>URL for the alert page in the Microsoft 365 Defender portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -327,6 +341,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"actorDisplayName", n => { ActorDisplayName = n.GetStringValue(); } },
+                {"alertPolicyId", n => { AlertPolicyId = n.GetStringValue(); } },
                 {"alertWebUrl", n => { AlertWebUrl = n.GetStringValue(); } },
                 {"assignedTo", n => { AssignedTo = n.GetStringValue(); } },
                 {"category", n => { Category = n.GetStringValue(); } },
@@ -365,6 +380,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("actorDisplayName", ActorDisplayName);
+            writer.WriteStringValue("alertPolicyId", AlertPolicyId);
             writer.WriteStringValue("alertWebUrl", AlertWebUrl);
             writer.WriteStringValue("assignedTo", AssignedTo);
             writer.WriteStringValue("category", Category);

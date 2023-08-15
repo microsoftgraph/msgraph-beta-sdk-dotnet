@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.ReferenceDefinitions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the referenceDefinitions property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
+        /// <param name="position">The unique identifier of referenceDefinition</param>
         public ReferenceDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("referenceDefinition%2Did", position);

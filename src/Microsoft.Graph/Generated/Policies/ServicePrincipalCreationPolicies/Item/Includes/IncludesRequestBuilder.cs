@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.In
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the includes property of the microsoft.graph.servicePrincipalCreationPolicy entity.</summary>
+        /// <param name="position">The unique identifier of servicePrincipalCreationConditionSet</param>
         public ServicePrincipalCreationConditionSetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("servicePrincipalCreationConditionSet%2Did", position);

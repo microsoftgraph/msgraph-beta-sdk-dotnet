@@ -9,22 +9,22 @@ namespace Microsoft.Graph.Beta.Models {
     /// The user experience analytics battery health model performance entity contains battery related information for all unique device models in their organization.
     /// </summary>
     public class UserExperienceAnalyticsBatteryHealthModelPerformance : Entity, IParsable {
-        /// <summary>Number of active devices for that model. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>Number of active devices for that model. Valid values 0 to 2147483647</summary>
         public int? ActiveDevices {
             get { return BackingStore?.Get<int?>("activeDevices"); }
             set { BackingStore?.Set("activeDevices", value); }
         }
-        /// <summary>The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values 0 to 2147483647</summary>
         public int? AverageBatteryAgeInDays {
             get { return BackingStore?.Get<int?>("averageBatteryAgeInDays"); }
             set { BackingStore?.Set("averageBatteryAgeInDays", value); }
         }
-        /// <summary>The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647</summary>
         public int? AverageEstimatedRuntimeInMinutes {
             get { return BackingStore?.Get<int?>("averageEstimatedRuntimeInMinutes"); }
             set { BackingStore?.Set("averageEstimatedRuntimeInMinutes", value); }
         }
-        /// <summary>The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647</summary>
         public int? AverageMaxCapacityPercentage {
             get { return BackingStore?.Get<int?>("averageMaxCapacityPercentage"); }
             set { BackingStore?.Set("averageMaxCapacityPercentage", value); }
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("model", value); }
         }
 #endif
-        /// <summary>A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647</summary>
         public int? ModelBatteryHealthScore {
             get { return BackingStore?.Get<int?>("modelBatteryHealthScore"); }
             set { BackingStore?.Set("modelBatteryHealthScore", value); }

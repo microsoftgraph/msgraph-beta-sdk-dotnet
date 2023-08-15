@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.Instances.Item.ExceptionO
             new CreateUploadSessionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the attachments property of the microsoft.graph.event entity.</summary>
+        /// <param name="position">The unique identifier of attachment</param>
         public AttachmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("attachment%2Did", position);
@@ -66,8 +67,8 @@ namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.Instances.Item.ExceptionO
             return await RequestAdapter.SendAsync<AttachmentCollectionResponse>(requestInfo, AttachmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0" />
+        /// Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -114,7 +115,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.Instances.Item.ExceptionO
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. 
+        /// Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

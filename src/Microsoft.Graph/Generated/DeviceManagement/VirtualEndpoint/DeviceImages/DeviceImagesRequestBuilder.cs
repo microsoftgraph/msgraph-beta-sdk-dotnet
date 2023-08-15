@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages {
             new GetSourceImagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceImages property of the microsoft.graph.virtualEndpoint entity.</summary>
+        /// <param name="position">The unique identifier of cloudPcDeviceImage</param>
         public CloudPcDeviceImageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcDeviceImage%2Did", position);

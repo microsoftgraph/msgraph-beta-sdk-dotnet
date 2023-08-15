@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the servicePrincipalRiskDetections property of the microsoft.graph.identityProtectionRoot entity.</summary>
+        /// <param name="position">The unique identifier of servicePrincipalRiskDetection</param>
         public ServicePrincipalRiskDetectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("servicePrincipalRiskDetection%2Did", position);

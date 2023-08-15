@@ -21,12 +21,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions.Item.Dimensi
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dimensionValues property of the microsoft.graph.dimension entity.</summary>
+        /// <param name="position">The unique identifier of dimensionValue</param>
         public DimensionValueItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("dimensionValue%2Did", position);
             return new DimensionValueItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>Provides operations to manage the dimensionValues property of the microsoft.graph.dimension entity.</summary>
+        /// <param name="position">The unique identifier of dimensionValue</param>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public DimensionValueItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

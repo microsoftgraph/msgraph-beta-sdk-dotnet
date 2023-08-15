@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.TeamsTemplates {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of teamsTemplate entities.</summary>
+        /// <param name="position">The unique identifier of teamsTemplate</param>
         public TeamsTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamsTemplate%2Did", position);

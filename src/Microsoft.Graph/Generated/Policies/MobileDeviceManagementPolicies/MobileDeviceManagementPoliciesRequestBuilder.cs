@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileDeviceManagementPolicies property of the microsoft.graph.policyRoot entity.</summary>
+        /// <param name="position">The unique identifier of mobilityManagementPolicy</param>
         public MobilityManagementPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobilityManagementPolicy%2Did", position);

@@ -37,6 +37,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters {
             new ValidateFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignmentFilters property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of deviceAndAppManagementAssignmentFilter</param>
         public DeviceAndAppManagementAssignmentFilterItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceAndAppManagementAssignmentFilter%2Did", position);

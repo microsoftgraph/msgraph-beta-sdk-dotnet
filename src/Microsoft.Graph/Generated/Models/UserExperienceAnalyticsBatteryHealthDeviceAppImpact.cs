@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appPublisher", value); }
         }
 #endif
-        /// <summary>The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days. Unit in percentage. Valid values 0 to 1.79769313486232E+308</summary>
         public double? BatteryUsagePercentage {
             get { return BackingStore?.Get<double?>("batteryUsagePercentage"); }
             set { BackingStore?.Set("batteryUsagePercentage", value); }

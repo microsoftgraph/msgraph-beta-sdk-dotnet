@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles {
             new QueryByPlatformTypeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resourceAccessProfiles property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementResourceAccessProfileBase</param>
         public DeviceManagementResourceAccessProfileBaseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementResourceAccessProfileBase%2Did", position);

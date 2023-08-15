@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuoteLines {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesQuoteLines property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of salesQuoteLine</param>
         public SalesQuoteLineItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("salesQuoteLine%2Did", position);

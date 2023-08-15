@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the credentialUserRegistrationDetails property of the microsoft.graph.reportRoot entity.</summary>
+        /// <param name="position">The unique identifier of credentialUserRegistrationDetails</param>
         [Obsolete("The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30")]
         public CredentialUserRegistrationDetailsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

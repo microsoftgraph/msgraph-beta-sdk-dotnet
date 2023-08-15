@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates {
             new ImportOffice365DeviceConfigurationPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the templates property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementTemplate</param>
         public DeviceManagementTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementTemplate%2Did", position);

@@ -27,6 +27,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.T
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tables property of the microsoft.graph.workbookWorksheet entity.</summary>
+        /// <param name="position">The unique identifier of workbookTable</param>
         public WorkbookTableItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookTable%2Did", position);

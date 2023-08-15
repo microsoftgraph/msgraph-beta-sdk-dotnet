@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteCon
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsRemoteConnection property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of userExperienceAnalyticsRemoteConnection</param>
         public UserExperienceAnalyticsRemoteConnectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsRemoteConnection%2Did", position);

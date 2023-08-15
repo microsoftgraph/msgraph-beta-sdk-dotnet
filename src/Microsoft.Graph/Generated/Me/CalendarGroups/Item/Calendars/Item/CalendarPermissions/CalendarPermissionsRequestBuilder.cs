@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.CalendarPer
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendarPermissions property of the microsoft.graph.calendar entity.</summary>
+        /// <param name="position">The unique identifier of calendarPermission</param>
         public CalendarPermissionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("calendarPermission%2Did", position);

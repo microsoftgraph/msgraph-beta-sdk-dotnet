@@ -27,6 +27,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents {
             new GetAuditCategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the auditEvents property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of auditEvent</param>
         public AuditEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("auditEvent%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.ThreatSubmission.FileThreats {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the fileThreats property of the microsoft.graph.security.threatSubmissionRoot entity.</summary>
+        /// <param name="position">The unique identifier of fileThreatSubmission</param>
         public FileThreatSubmissionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("fileThreatSubmission%2Did", position);

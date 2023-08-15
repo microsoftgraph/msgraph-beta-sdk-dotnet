@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDe
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceConfigurationsAllManagedDeviceCertificateStates property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of managedAllDeviceCertificateState</param>
         public ManagedAllDeviceCertificateStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedAllDeviceCertificateState%2Did", position);

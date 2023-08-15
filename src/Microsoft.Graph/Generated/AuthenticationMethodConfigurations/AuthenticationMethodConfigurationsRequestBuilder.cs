@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.AuthenticationMethodConfigurations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of authenticationMethodConfiguration entities.</summary>
+        /// <param name="position">The unique identifier of authenticationMethodConfiguration</param>
         public AuthenticationMethodConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("authenticationMethodConfiguration%2Did", position);

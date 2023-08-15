@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupPolicyDefinitionFiles property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of groupPolicyDefinitionFile</param>
         public GroupPolicyDefinitionFileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupPolicyDefinitionFile%2Did", position);

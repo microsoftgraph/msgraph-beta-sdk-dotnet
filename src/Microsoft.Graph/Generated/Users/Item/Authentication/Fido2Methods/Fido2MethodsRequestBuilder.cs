@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Fido2Methods {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.</summary>
+        /// <param name="position">The unique identifier of fido2AuthenticationMethod</param>
         public Fido2AuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("fido2AuthenticationMethod%2Did", position);

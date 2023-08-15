@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicySettingSta
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceComplianceSettingStates property of the microsoft.graph.deviceCompliancePolicySettingStateSummary entity.</summary>
+        /// <param name="position">The unique identifier of deviceComplianceSettingState</param>
         public DeviceComplianceSettingStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceComplianceSettingState%2Did", position);
@@ -41,7 +42,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicySettingSta
         public DeviceComplianceSettingStatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceCompliancePolicySettingStateSummaries/{deviceCompliancePolicySettingStateSummary%2Did}/deviceComplianceSettingStates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Not yet documented
+        /// Get deviceComplianceSettingStates from deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +82,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicySettingSta
             return await RequestAdapter.SendAsync<DeviceComplianceSettingState>(requestInfo, DeviceComplianceSettingState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Not yet documented
+        /// Get deviceComplianceSettingStates from deviceManagement
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +136,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicySettingSta
             return requestInfo;
         }
         /// <summary>
-        /// Not yet documented
+        /// Get deviceComplianceSettingStates from deviceManagement
         /// </summary>
         public class DeviceComplianceSettingStatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

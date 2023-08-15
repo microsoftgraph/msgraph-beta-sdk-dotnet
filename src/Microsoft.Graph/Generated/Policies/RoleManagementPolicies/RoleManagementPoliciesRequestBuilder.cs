@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicies {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleManagementPolicies property of the microsoft.graph.policyRoot entity.</summary>
+        /// <param name="position">The unique identifier of unifiedRoleManagementPolicy</param>
         public UnifiedRoleManagementPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleManagementPolicy%2Did", position);

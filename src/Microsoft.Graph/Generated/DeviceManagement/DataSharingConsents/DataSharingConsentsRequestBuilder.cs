@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dataSharingConsents property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of dataSharingConsent</param>
         public DataSharingConsentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("dataSharingConsent%2Did", position);

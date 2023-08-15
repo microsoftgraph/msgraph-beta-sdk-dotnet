@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the externalPartnerSettings property of the microsoft.graph.virtualEndpoint entity.</summary>
+        /// <param name="position">The unique identifier of cloudPcExternalPartnerSetting</param>
         public CloudPcExternalPartnerSettingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcExternalPartnerSetting%2Did", position);

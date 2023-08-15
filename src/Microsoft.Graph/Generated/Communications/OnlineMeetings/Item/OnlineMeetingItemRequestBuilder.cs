@@ -9,7 +9,6 @@ using Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Recording;
 using Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Recordings;
 using Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration;
 using Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Transcripts;
-using Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.VirtualAppointment;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -64,10 +63,6 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item {
         /// <summary>Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.</summary>
         public TranscriptsRequestBuilder Transcripts { get =>
             new TranscriptsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the virtualAppointment property of the microsoft.graph.onlineMeeting entity.</summary>
-        public VirtualAppointmentRequestBuilder VirtualAppointment { get =>
-            new VirtualAppointmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new OnlineMeetingItemRequestBuilder and sets the default values.

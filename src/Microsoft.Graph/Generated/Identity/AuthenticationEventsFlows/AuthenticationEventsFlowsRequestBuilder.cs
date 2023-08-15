@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authenticationEventsFlows property of the microsoft.graph.identityContainer entity.</summary>
+        /// <param name="position">The unique identifier of authenticationEventsFlow</param>
         public AuthenticationEventsFlowItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("authenticationEventsFlow%2Did", position);

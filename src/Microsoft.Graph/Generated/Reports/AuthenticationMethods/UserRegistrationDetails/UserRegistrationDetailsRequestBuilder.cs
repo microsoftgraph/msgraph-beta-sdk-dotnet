@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationDet
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userRegistrationDetails property of the microsoft.graph.authenticationMethodsRoot entity.</summary>
+        /// <param name="position">The unique identifier of userRegistrationDetails</param>
         public UserRegistrationDetailsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userRegistrationDetails%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.SharedWithTeams.It
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the allowedMembers property of the microsoft.graph.sharedWithChannelTeamInfo entity.</summary>
+        /// <param name="position">The unique identifier of conversationMember</param>
         public ConversationMemberItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("conversationMember%2Did", position);

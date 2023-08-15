@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleDefiniti
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.</summary>
+        /// <param name="position">The unique identifier of unifiedRoleDefinition</param>
         public Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleDefinitions.Item.InheritsPermissionsFrom.Item.UnifiedRoleDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleDefinition%2Did1", position);

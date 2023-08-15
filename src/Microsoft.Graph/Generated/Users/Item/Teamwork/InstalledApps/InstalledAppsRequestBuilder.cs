@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.</summary>
+        /// <param name="position">The unique identifier of userScopeTeamsAppInstallation</param>
         public UserScopeTeamsAppInstallationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userScopeTeamsAppInstallation%2Did", position);

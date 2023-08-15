@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.teamworkDevice entity.</summary>
+        /// <param name="position">The unique identifier of teamworkDeviceOperation</param>
         public TeamworkDeviceOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamworkDeviceOperation%2Did", position);

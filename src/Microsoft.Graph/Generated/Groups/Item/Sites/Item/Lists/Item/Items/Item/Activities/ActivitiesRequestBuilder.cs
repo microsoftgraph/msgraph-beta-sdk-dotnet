@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item.Acti
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the activities property of the microsoft.graph.listItem entity.</summary>
+        /// <param name="position">The unique identifier of itemActivityOLD</param>
         public ItemActivityOLDItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("itemActivityOLD%2Did", position);

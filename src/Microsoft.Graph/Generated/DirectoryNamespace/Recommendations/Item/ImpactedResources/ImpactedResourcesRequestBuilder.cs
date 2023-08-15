@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the impactedResources property of the microsoft.graph.recommendationBase entity.</summary>
+        /// <param name="position">The unique identifier of impactedResource</param>
         public ImpactedResourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("impactedResource%2Did", position);

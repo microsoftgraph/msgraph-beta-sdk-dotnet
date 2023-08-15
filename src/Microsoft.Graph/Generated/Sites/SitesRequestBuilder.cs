@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.Sites {
             new RemoveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of site entities.</summary>
+        /// <param name="position">The unique identifier of site</param>
         public SiteItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("site%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Settings {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.group entity.</summary>
+        /// <param name="position">The unique identifier of directorySetting</param>
         public DirectorySettingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directorySetting%2Did", position);

@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo {
             new ImportOffice365DeviceConfigurationPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the migratableTo property of the microsoft.graph.deviceManagementTemplate entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementTemplate</param>
         public Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.DeviceManagementTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementTemplate%2Did1", position);

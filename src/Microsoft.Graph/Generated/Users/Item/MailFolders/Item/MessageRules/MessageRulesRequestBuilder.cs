@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.MessageRules {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messageRules property of the microsoft.graph.mailFolder entity.</summary>
+        /// <param name="position">The unique identifier of messageRule</param>
         public MessageRuleItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("messageRule%2Did", position);

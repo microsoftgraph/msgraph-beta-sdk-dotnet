@@ -63,6 +63,11 @@ namespace Microsoft.Graph.Beta.Models {
             return mappingValue switch {
                 "#microsoft.graph.cloudPcBulkPowerOff" => new CloudPcBulkPowerOff(),
                 "#microsoft.graph.cloudPcBulkPowerOn" => new CloudPcBulkPowerOn(),
+                "#microsoft.graph.cloudPcBulkReprovision" => new CloudPcBulkReprovision(),
+                "#microsoft.graph.cloudPcBulkResize" => new CloudPcBulkResize(),
+                "#microsoft.graph.cloudPcBulkRestart" => new CloudPcBulkRestart(),
+                "#microsoft.graph.cloudPcBulkRestore" => new CloudPcBulkRestore(),
+                "#microsoft.graph.cloudPcBulkTroubleshoot" => new CloudPcBulkTroubleshoot(),
                 _ => new CloudPcBulkAction(),
             };
         }

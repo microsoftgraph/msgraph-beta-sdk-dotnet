@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the depOnboardingSettings property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of depOnboardingSetting</param>
         public DepOnboardingSettingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("depOnboardingSetting%2Did", position);

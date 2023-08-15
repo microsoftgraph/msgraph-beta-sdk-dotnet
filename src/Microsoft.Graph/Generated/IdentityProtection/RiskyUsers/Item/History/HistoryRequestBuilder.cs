@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Item.History {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the history property of the microsoft.graph.riskyUser entity.</summary>
+        /// <param name="position">The unique identifier of riskyUserHistoryItem</param>
         public RiskyUserHistoryItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("riskyUserHistoryItem%2Did", position);

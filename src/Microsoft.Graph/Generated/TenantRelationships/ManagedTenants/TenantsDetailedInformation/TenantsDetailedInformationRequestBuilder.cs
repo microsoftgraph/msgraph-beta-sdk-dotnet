@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsDetaile
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tenantsDetailedInformation property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
+        /// <param name="position">The unique identifier of tenantDetailedInformation</param>
         public TenantDetailedInformationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tenantDetailedInformation%2Did", position);

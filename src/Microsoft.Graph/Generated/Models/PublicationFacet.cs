@@ -14,6 +14,20 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The checkedOutBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public IdentitySet? CheckedOutBy {
+            get { return BackingStore?.Get<IdentitySet?>("checkedOutBy"); }
+            set { BackingStore?.Set("checkedOutBy", value); }
+        }
+#nullable restore
+#else
+        public IdentitySet CheckedOutBy {
+            get { return BackingStore?.Get<IdentitySet>("checkedOutBy"); }
+            set { BackingStore?.Set("checkedOutBy", value); }
+        }
+#endif
         /// <summary>The state of publication for this document. Either published or checkout. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"checkedOutBy", n => { CheckedOutBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"level", n => { Level = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"versionId", n => { VersionId = n.GetStringValue(); } },
@@ -87,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<IdentitySet>("checkedOutBy", CheckedOutBy);
             writer.WriteStringValue("level", Level);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("versionId", VersionId);

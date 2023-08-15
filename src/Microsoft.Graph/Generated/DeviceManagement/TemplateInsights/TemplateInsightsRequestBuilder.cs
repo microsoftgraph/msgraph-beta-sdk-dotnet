@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TemplateInsights {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the templateInsights property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementTemplateInsightsDefinition</param>
         public DeviceManagementTemplateInsightsDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementTemplateInsightsDefinition%2Did", position);

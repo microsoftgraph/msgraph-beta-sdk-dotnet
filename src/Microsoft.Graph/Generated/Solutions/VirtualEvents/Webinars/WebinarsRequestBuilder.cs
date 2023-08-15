@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the webinars property of the microsoft.graph.virtualEventsRoot entity.</summary>
+        /// <param name="position">The unique identifier of virtualEventWebinar</param>
         public VirtualEventWebinarItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("virtualEventWebinar%2Did", position);

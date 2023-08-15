@@ -21,12 +21,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the agedAccountsPayable property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of agedAccountsPayable</param>
         public AgedAccountsPayableItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agedAccountsPayable%2Did", position);
             return new AgedAccountsPayableItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>Provides operations to manage the agedAccountsPayable property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of agedAccountsPayable</param>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public AgedAccountsPayableItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

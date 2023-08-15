@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets.Item.Terms.
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the relations property of the microsoft.graph.termStore.term entity.</summary>
+        /// <param name="position">The unique identifier of relation</param>
         public RelationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("relation%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Policies.HomeRealmDiscoveryPolicies {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.policyRoot entity.</summary>
+        /// <param name="position">The unique identifier of homeRealmDiscoveryPolicy</param>
         public HomeRealmDiscoveryPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("homeRealmDiscoveryPolicy%2Did", position);

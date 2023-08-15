@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.Item.Sec
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.</summary>
+        /// <param name="position">The unique identifier of sectionGroup</param>
         public Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroups.Item.SectionGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sectionGroup%2Did1", position);

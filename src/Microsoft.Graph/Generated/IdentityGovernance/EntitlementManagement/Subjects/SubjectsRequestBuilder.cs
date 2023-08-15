@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.</summary>
+        /// <param name="position">The unique identifier of accessPackageSubject</param>
         public AccessPackageSubjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessPackageSubject%2Did", position);

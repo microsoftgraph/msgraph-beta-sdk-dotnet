@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item.ChecklistIt
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the checklistItems property of the microsoft.graph.todoTask entity.</summary>
+        /// <param name="position">The unique identifier of checklistItem</param>
         public ChecklistItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("checklistItem%2Did", position);

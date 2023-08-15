@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.GovernanceSubjects {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of governanceSubject entities.</summary>
+        /// <param name="position">The unique identifier of governanceSubject</param>
         public GovernanceSubjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceSubject%2Did", position);

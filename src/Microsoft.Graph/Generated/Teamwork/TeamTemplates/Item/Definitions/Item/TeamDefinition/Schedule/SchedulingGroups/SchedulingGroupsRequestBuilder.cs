@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.</summary>
+        /// <param name="position">The unique identifier of schedulingGroup</param>
         public SchedulingGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("schedulingGroup%2Did", position);

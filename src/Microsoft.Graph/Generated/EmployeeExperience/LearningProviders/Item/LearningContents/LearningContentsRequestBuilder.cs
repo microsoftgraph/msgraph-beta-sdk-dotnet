@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders.Item.Learnin
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the learningContents property of the microsoft.graph.learningProvider entity.</summary>
+        /// <param name="position">The unique identifier of learningContent</param>
         public LearningContentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("learningContent%2Did", position);

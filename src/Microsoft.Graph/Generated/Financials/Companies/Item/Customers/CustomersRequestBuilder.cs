@@ -21,12 +21,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Customers {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customers property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of customer</param>
         public CustomerItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("customer%2Did", position);
             return new CustomerItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>Provides operations to manage the customers property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of customer</param>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public CustomerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

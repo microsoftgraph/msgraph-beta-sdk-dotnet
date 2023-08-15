@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenLifetimePolicies {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.policyRoot entity.</summary>
+        /// <param name="position">The unique identifier of tokenLifetimePolicy</param>
         public TokenLifetimePolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tokenLifetimePolicy%2Did", position);

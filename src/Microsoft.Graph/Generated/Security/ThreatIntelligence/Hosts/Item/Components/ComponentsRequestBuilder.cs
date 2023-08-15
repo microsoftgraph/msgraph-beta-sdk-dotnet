@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Components
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the components property of the microsoft.graph.security.host entity.</summary>
+        /// <param name="position">The unique identifier of hostComponent</param>
         public HostComponentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("hostComponent%2Did", position);

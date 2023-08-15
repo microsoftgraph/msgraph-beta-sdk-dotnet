@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.</summary>
+        /// <param name="position">The unique identifier of federatedIdentityCredential</param>
         public FederatedIdentityCredentialItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("federatedIdentityCredential%2Did", position);

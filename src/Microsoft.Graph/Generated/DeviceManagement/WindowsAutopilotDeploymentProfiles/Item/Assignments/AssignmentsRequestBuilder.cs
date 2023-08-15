@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.windowsAutopilotDeploymentProfile entity.</summary>
+        /// <param name="position">The unique identifier of windowsAutopilotDeploymentProfileAssignment</param>
         public WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsAutopilotDeploymentProfileAssignment%2Did", position);

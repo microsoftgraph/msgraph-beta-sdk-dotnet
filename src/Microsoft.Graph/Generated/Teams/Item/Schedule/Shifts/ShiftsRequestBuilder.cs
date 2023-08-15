@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.Shifts {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the shifts property of the microsoft.graph.schedule entity.</summary>
+        /// <param name="position">The unique identifier of shift</param>
         public ShiftItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("shift%2Did", position);

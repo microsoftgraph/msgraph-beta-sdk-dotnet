@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.NdesConnectors {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the ndesConnectors property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of ndesConnector</param>
         public NdesConnectorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("ndesConnector%2Did", position);

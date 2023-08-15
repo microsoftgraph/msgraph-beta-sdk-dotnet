@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Endpoints {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the endpoints property of the microsoft.graph.group entity.</summary>
+        /// <param name="position">The unique identifier of endpoint</param>
         public EndpointItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("endpoint%2Did", position);

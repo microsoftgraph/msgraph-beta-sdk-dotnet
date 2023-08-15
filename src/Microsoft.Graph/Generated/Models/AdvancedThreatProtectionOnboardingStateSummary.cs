@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// Windows defender advanced threat protection onboarding state summary across the account.
     /// </summary>
     public class AdvancedThreatProtectionOnboardingStateSummary : Entity, IParsable {
-        /// <summary>Not yet documented</summary>
+        /// <summary>The advancedThreatProtectionOnboardingDeviceSettingStates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AdvancedThreatProtectionOnboardingDeviceSettingState>? AdvancedThreatProtectionOnboardingDeviceSettingStates {

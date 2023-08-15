@@ -36,6 +36,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations {
             new HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceConfigurations property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of deviceConfiguration</param>
         public DeviceConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceConfiguration%2Did", position);

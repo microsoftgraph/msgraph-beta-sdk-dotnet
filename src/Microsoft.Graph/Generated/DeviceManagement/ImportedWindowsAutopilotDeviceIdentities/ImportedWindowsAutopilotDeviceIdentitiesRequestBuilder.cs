@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedWindowsAutopilotDeviceId
             new ImportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the importedWindowsAutopilotDeviceIdentities property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of importedWindowsAutopilotDeviceIdentity</param>
         public ImportedWindowsAutopilotDeviceIdentityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("importedWindowsAutopilotDeviceIdentity%2Did", position);

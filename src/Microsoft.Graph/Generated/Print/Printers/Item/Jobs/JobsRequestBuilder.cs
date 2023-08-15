@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.Jobs {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the jobs property of the microsoft.graph.printerBase entity.</summary>
+        /// <param name="position">The unique identifier of printJob</param>
         public PrintJobItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printJob%2Did", position);

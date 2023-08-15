@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.Item.Use
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userConsentRequests property of the microsoft.graph.appConsentRequest entity.</summary>
+        /// <param name="position">The unique identifier of userConsentRequest</param>
         public UserConsentRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userConsentRequest%2Did", position);

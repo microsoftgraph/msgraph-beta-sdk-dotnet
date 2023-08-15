@@ -21,12 +21,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customerPayments property of the microsoft.graph.customerPaymentJournal entity.</summary>
+        /// <param name="position">The unique identifier of customerPayment</param>
         public CustomerPaymentItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("customerPayment%2Did", position);
             return new CustomerPaymentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>Provides operations to manage the customerPayments property of the microsoft.graph.customerPaymentJournal entity.</summary>
+        /// <param name="position">The unique identifier of customerPayment</param>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public CustomerPaymentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

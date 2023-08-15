@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.DeviceStat
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceStates property of the microsoft.graph.managedEBook entity.</summary>
+        /// <param name="position">The unique identifier of deviceInstallState</param>
         public DeviceInstallStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceInstallState%2Did", position);

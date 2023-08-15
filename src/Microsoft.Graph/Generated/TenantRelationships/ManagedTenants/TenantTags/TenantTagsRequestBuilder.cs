@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tenantTags property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
+        /// <param name="position">The unique identifier of tenantTag</param>
         public TenantTagItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tenantTag%2Did", position);

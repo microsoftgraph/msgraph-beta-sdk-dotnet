@@ -27,6 +27,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.Item.Colum
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the columns property of the microsoft.graph.workbookTable entity.</summary>
+        /// <param name="position">The unique identifier of workbookTableColumn</param>
         public WorkbookTableColumnItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookTableColumn%2Did", position);

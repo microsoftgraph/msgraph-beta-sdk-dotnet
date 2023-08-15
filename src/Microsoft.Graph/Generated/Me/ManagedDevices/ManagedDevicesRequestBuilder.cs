@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices {
             new MoveDevicesToOURequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedDevices property of the microsoft.graph.user entity.</summary>
+        /// <param name="position">The unique identifier of managedDevice</param>
         public ManagedDeviceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDevice%2Did", position);

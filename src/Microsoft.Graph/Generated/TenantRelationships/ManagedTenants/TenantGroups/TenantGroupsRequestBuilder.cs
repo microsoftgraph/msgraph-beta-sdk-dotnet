@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups {
             new MicrosoftGraphManagedTenantsTenantSearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tenantGroups property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
+        /// <param name="position">The unique identifier of tenantGroup</param>
         public TenantGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tenantGroup%2Did", position);

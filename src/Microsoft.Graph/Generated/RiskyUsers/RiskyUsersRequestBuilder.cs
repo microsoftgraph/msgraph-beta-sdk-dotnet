@@ -31,6 +31,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers {
             new DismissRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of riskyUser entities.</summary>
+        /// <param name="position">The unique identifier of riskyUser</param>
         public RiskyUserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("riskyUser%2Did", position);

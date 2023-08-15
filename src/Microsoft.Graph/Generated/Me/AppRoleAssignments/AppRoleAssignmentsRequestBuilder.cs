@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.AppRoleAssignments {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appRoleAssignments property of the microsoft.graph.user entity.</summary>
+        /// <param name="position">The unique identifier of appRoleAssignment</param>
         public AppRoleAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appRoleAssignment%2Did", position);

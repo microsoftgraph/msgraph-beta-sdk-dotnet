@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Awards {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the awards property of the microsoft.graph.profile entity.</summary>
+        /// <param name="position">The unique identifier of personAward</param>
         public PersonAwardItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("personAward%2Did", position);

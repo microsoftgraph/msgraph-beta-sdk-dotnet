@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRules {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the alertRules property of the microsoft.graph.deviceManagement.monitoring entity.</summary>
+        /// <param name="position">The unique identifier of alertRule</param>
         public AlertRuleItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("alertRule%2Did", position);

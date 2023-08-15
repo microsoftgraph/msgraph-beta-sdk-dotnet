@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions.Item.Seg
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the segments property of the microsoft.graph.callRecords.session entity.</summary>
+        /// <param name="position">The unique identifier of segment</param>
         public SegmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("segment%2Did", position);

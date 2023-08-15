@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item.RoleScopeTa
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleScopeTags property of the microsoft.graph.deviceAndAppManagementRoleAssignment entity.</summary>
+        /// <param name="position">The unique identifier of roleScopeTag</param>
         public RoleScopeTagItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("roleScopeTag%2Did", position);

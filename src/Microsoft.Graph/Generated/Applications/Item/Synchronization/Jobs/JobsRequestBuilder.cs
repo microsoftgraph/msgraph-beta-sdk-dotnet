@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs {
             new ValidateCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the jobs property of the microsoft.graph.synchronization entity.</summary>
+        /// <param name="position">The unique identifier of synchronizationJob</param>
         public SynchronizationJobItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("synchronizationJob%2Did", position);

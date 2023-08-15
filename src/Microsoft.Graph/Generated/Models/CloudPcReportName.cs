@@ -19,5 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
         NoLicenseAvailableConnectivityFailureReport,
         [EnumMember(Value = "remoteConnectionQualityReports")]
         RemoteConnectionQualityReports,
+        [EnumMember(Value = "inaccessibleCloudPcReports")]
+        InaccessibleCloudPcReports,
     }
 }

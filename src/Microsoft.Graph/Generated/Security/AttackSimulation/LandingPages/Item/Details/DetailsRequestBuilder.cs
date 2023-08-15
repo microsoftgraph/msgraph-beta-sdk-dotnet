@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.LandingPages.Item.Detai
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the details property of the microsoft.graph.landingPage entity.</summary>
+        /// <param name="position">The unique identifier of landingPageDetail</param>
         public LandingPageDetailItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("landingPageDetail%2Did", position);

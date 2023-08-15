@@ -21,12 +21,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxAreas {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taxAreas property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of taxArea</param>
         public TaxAreaItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("taxArea%2Did", position);
             return new TaxAreaItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>Provides operations to manage the taxAreas property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of taxArea</param>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public TaxAreaItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

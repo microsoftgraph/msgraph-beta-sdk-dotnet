@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsInformationProtectionNetw
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsInformationProtectionNetworkLearningSummaries property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of windowsInformationProtectionNetworkLearningSummary</param>
         public WindowsInformationProtectionNetworkLearningSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsInformationProtectionNetworkLearningSummary%2Did", position);

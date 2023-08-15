@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.UserStateS
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userStateSummary property of the microsoft.graph.managedEBook entity.</summary>
+        /// <param name="position">The unique identifier of userInstallStateSummary</param>
         public UserInstallStateSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userInstallStateSummary%2Did", position);

@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
+        /// <param name="position">The unique identifier of administrativeUnit</param>
         public AdministrativeUnitItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("administrativeUnit%2Did", position);

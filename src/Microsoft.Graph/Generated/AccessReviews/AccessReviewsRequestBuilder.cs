@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.AccessReviews {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+        /// <param name="position">The unique identifier of accessReview</param>
         public AccessReviewItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReview%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DataClassification.SensitiveTypes {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sensitiveTypes property of the microsoft.graph.dataClassificationService entity.</summary>
+        /// <param name="position">The unique identifier of sensitiveType</param>
         public SensitiveTypeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sensitiveType%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupPolicyCategories property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of groupPolicyCategory</param>
         public GroupPolicyCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupPolicyCategory%2Did", position);

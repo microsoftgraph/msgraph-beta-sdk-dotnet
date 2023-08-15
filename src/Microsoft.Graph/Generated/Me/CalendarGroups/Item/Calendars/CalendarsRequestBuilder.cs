@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.</summary>
+        /// <param name="position">The unique identifier of calendar</param>
         public CalendarItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("calendar%2Did", position);

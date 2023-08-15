@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.Item.Assi
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.intuneBrandingProfile entity.</summary>
+        /// <param name="position">The unique identifier of intuneBrandingProfileAssignment</param>
         public IntuneBrandingProfileAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("intuneBrandingProfileAssignment%2Did", position);

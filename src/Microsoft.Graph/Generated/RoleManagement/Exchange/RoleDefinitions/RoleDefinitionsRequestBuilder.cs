@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.RoleDefinitions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleDefinitions property of the microsoft.graph.unifiedRbacApplication entity.</summary>
+        /// <param name="position">The unique identifier of unifiedRoleDefinition</param>
         public UnifiedRoleDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleDefinition%2Did", position);

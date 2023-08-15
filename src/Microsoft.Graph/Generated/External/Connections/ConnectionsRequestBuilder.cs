@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.External.Connections {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the connections property of the microsoft.graph.externalConnectors.external entity.</summary>
+        /// <param name="position">The unique identifier of externalConnection</param>
         public ExternalConnectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("externalConnection%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Search.Bookmarks {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the bookmarks property of the microsoft.graph.searchEntity entity.</summary>
+        /// <param name="position">The unique identifier of bookmark</param>
         public BookmarkItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bookmark%2Did", position);

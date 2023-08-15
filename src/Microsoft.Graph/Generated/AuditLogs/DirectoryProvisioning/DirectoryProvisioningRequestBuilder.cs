@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directoryProvisioning property of the microsoft.graph.auditLogRoot entity.</summary>
+        /// <param name="position">The unique identifier of provisioningObjectSummary</param>
         public ProvisioningObjectSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("provisioningObjectSummary%2Did", position);

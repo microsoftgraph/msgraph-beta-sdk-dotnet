@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.GroupAss
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupAssignments property of the microsoft.graph.termsAndConditions entity.</summary>
+        /// <param name="position">The unique identifier of termsAndConditionsGroupAssignment</param>
         public TermsAndConditionsGroupAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("termsAndConditionsGroupAssignment%2Did", position);

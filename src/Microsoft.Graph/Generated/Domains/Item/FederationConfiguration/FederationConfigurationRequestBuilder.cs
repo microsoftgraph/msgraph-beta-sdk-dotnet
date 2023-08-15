@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the federationConfiguration property of the microsoft.graph.domain entity.</summary>
+        /// <param name="position">The unique identifier of internalDomainFederation</param>
         public InternalDomainFederationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("internalDomainFederation%2Did", position);

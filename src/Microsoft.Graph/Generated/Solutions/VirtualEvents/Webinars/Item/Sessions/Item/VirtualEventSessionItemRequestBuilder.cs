@@ -9,8 +9,8 @@ using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.M
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.Recording;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.Recordings;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.Registration;
+using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.Registrations;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.Transcripts;
-using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.VirtualAppointment;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -56,13 +56,13 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.It
         public RegistrationRequestBuilder Registration { get =>
             new RegistrationRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the registrations property of the microsoft.graph.virtualEventSession entity.</summary>
+        public RegistrationsRequestBuilder Registrations { get =>
+            new RegistrationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.</summary>
         public TranscriptsRequestBuilder Transcripts { get =>
             new TranscriptsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the virtualAppointment property of the microsoft.graph.onlineMeeting entity.</summary>
-        public VirtualAppointmentRequestBuilder VirtualAppointment { get =>
-            new VirtualAppointmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new VirtualEventSessionItemRequestBuilder and sets the default values.
@@ -98,8 +98,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read the properties and relationships of a virtualEventSession object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventsession-get?view=graph-rest-1.0" />
+        /// Sessions of the virtual event.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -163,7 +162,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.It
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a virtualEventSession object.
+        /// Sessions of the virtual event.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -233,7 +232,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions.It
             }
         }
         /// <summary>
-        /// Read the properties and relationships of a virtualEventSession object.
+        /// Sessions of the virtual event.
         /// </summary>
         public class VirtualEventSessionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserFlowIdentityProvid
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userFlowIdentityProviders property of the microsoft.graph.b2cIdentityUserFlow entity.</summary>
+        /// <param name="position">The unique identifier of identityProviderBase</param>
         public IdentityProviderBaseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityProviderBase%2Did", position);

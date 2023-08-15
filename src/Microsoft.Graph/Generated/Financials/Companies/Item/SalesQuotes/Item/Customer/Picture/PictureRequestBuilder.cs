@@ -21,12 +21,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.Custom
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the picture property of the microsoft.graph.customer entity.</summary>
+        /// <param name="position">The unique identifier of picture</param>
         public PictureItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("picture%2Did", position);
             return new PictureItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>Provides operations to manage the picture property of the microsoft.graph.customer entity.</summary>
+        /// <param name="position">The unique identifier of picture</param>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public PictureItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

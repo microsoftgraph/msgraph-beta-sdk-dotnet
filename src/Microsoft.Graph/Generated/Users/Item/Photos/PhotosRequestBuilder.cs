@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Photos {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the photos property of the microsoft.graph.user entity.</summary>
+        /// <param name="position">The unique identifier of profilePhoto</param>
         public ProfilePhotoItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("profilePhoto%2Did", position);

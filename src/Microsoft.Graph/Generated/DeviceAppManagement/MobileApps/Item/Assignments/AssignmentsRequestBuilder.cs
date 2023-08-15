@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assignments {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.</summary>
+        /// <param name="position">The unique identifier of mobileAppAssignment</param>
         public MobileAppAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileAppAssignment%2Did", position);

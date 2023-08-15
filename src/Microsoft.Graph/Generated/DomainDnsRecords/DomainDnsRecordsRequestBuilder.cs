@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DomainDnsRecords {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of domainDnsRecord entities.</summary>
+        /// <param name="position">The unique identifier of domainDnsRecord</param>
         public DomainDnsRecordItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("domainDnsRecord%2Did", position);

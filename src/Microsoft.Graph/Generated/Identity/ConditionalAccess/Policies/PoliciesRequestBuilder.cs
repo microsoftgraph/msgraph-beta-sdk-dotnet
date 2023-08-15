@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Policies {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.</summary>
+        /// <param name="position">The unique identifier of conditionalAccessPolicy</param>
         public ConditionalAccessPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("conditionalAccessPolicy%2Did", position);

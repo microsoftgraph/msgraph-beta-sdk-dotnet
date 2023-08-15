@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Children {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the children property of the microsoft.graph.driveItem entity.</summary>
+        /// <param name="position">The unique identifier of driveItem</param>
         public Microsoft.Graph.Beta.Drives.Item.Items.Item.Children.Item.DriveItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("driveItem%2Did1", position);

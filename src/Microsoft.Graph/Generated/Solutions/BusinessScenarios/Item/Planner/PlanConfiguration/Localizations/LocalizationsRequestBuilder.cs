@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the localizations property of the microsoft.graph.plannerPlanConfiguration entity.</summary>
+        /// <param name="position">The unique identifier of plannerPlanConfigurationLocalization</param>
         public PlannerPlanConfigurationLocalizationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("plannerPlanConfigurationLocalization%2Did", position);

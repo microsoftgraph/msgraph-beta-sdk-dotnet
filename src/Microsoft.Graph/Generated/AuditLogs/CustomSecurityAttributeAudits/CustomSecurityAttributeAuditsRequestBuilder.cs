@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.CustomSecurityAttributeAudits {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customSecurityAttributeAudits property of the microsoft.graph.auditLogRoot entity.</summary>
+        /// <param name="position">The unique identifier of customSecurityAttributeAudit</param>
         public CustomSecurityAttributeAuditItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("customSecurityAttributeAudit%2Did", position);

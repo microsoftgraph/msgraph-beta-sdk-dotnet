@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Item
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy entity.</summary>
+        /// <param name="position">The unique identifier of windowsDefenderApplicationControlSupplementalPolicyAssignment</param>
         public WindowsDefenderApplicationControlSupplementalPolicyAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsDefenderApplicationControlSupplementalPolicyAssignment%2Did", position);

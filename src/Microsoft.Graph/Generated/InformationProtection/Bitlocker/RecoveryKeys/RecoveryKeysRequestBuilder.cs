@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.Bitlocker.RecoveryKeys {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the recoveryKeys property of the microsoft.graph.bitlocker entity.</summary>
+        /// <param name="position">The unique identifier of bitlockerRecoveryKey</param>
         public BitlockerRecoveryKeyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bitlockerRecoveryKey%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the years property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
+        /// <param name="position">The unique identifier of yearTimePeriodDefinition</param>
         public YearTimePeriodDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("yearTimePeriodDefinition%2Did", position);

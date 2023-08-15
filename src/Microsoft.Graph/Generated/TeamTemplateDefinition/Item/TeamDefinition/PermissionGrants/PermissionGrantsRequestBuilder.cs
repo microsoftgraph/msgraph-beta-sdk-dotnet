@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Permis
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionGrants property of the microsoft.graph.team entity.</summary>
+        /// <param name="position">The unique identifier of resourceSpecificPermissionGrant</param>
         public ResourceSpecificPermissionGrantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("resourceSpecificPermissionGrant%2Did", position);

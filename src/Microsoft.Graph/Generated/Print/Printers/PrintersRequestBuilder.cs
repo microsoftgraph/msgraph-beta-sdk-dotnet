@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Print.Printers {
             new CreateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the printers property of the microsoft.graph.print entity.</summary>
+        /// <param name="position">The unique identifier of printer</param>
         public PrinterItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printer%2Did", position);

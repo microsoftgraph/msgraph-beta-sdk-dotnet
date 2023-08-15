@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of teamTemplateDefinition entities.</summary>
+        /// <param name="position">The unique identifier of teamTemplateDefinition</param>
         public TeamTemplateDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamTemplateDefinition%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the events property of the microsoft.graph.virtualEventsRoot entity.</summary>
+        /// <param name="position">The unique identifier of virtualEvent</param>
         public VirtualEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("virtualEvent%2Did", position);

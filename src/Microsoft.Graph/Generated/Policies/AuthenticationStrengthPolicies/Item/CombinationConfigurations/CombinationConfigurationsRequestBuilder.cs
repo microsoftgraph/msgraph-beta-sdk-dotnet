@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item.Comb
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the combinationConfigurations property of the microsoft.graph.authenticationStrengthPolicy entity.</summary>
+        /// <param name="position">The unique identifier of authenticationCombinationConfiguration</param>
         public AuthenticationCombinationConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("authenticationCombinationConfiguration%2Did", position);

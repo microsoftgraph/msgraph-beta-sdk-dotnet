@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DetectedApps {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the detectedApps property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of detectedApp</param>
         public DetectedAppItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("detectedApp%2Did", position);

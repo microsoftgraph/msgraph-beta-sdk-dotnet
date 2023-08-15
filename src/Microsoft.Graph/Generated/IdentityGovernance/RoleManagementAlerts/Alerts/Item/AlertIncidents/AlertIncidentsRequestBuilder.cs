@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.It
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the alertIncidents property of the microsoft.graph.unifiedRoleManagementAlert entity.</summary>
+        /// <param name="position">The unique identifier of unifiedRoleManagementAlertIncident</param>
         public UnifiedRoleManagementAlertIncidentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleManagementAlertIncident%2Did", position);

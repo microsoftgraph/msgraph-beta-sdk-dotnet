@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Versions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the versions property of the microsoft.graph.listItem entity.</summary>
+        /// <param name="position">The unique identifier of listItemVersion</param>
         public ListItemVersionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("listItemVersion%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Subscriptions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.list entity.</summary>
+        /// <param name="position">The unique identifier of subscription</param>
         public SubscriptionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("subscription%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Following {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the following property of the microsoft.graph.drive entity.</summary>
+        /// <param name="position">The unique identifier of driveItem</param>
         public DriveItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("driveItem%2Did", position);

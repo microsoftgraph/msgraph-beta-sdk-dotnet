@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Members {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.plannerRoster entity.</summary>
+        /// <param name="position">The unique identifier of plannerRosterMember</param>
         public PlannerRosterMemberItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("plannerRosterMember%2Did", position);

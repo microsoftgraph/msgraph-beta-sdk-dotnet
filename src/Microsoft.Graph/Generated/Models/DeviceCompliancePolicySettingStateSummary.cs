@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("conflictDeviceCount"); }
             set { BackingStore?.Set("conflictDeviceCount", value); }
         }
-        /// <summary>Not yet documented</summary>
+        /// <summary>The deviceComplianceSettingStates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DeviceComplianceSettingState>? DeviceComplianceSettingStates {

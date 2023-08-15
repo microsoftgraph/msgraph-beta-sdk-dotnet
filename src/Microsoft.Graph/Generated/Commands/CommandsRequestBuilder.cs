@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Commands {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of command entities.</summary>
+        /// <param name="position">The unique identifier of command</param>
         public CommandItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("command%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tasks property of the microsoft.graph.businessScenarioPlanner entity.</summary>
+        /// <param name="position">The unique identifier of businessScenarioTask</param>
         public BusinessScenarioTaskItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("businessScenarioTask%2Did", position);

@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Users.Item.PermissionGrants.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get permissionGrants from users
+        /// List all resource-specific permission grants of a user.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Users.Item.PermissionGrants.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get permissionGrants from users
+        /// List all resource-specific permission grants of a user.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -207,7 +207,7 @@ namespace Microsoft.Graph.Beta.Users.Item.PermissionGrants.Item {
             }
         }
         /// <summary>
-        /// Get permissionGrants from users
+        /// List all resource-specific permission grants of a user.
         /// </summary>
         public class ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.MessageTraces {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of messageTrace entities.</summary>
+        /// <param name="position">The unique identifier of messageTrace</param>
         public MessageTraceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("messageTrace%2Did", position);

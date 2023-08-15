@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.CertificateBasedAuthConfiguration {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of certificateBasedAuthConfiguration entities.</summary>
+        /// <param name="position">The unique identifier of certificateBasedAuthConfiguration</param>
         public CertificateBasedAuthConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("certificateBasedAuthConfiguration%2Did", position);

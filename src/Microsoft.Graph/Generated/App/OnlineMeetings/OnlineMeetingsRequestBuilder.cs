@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings {
             new CreateOrGetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onlineMeetings property of the microsoft.graph.commsApplication entity.</summary>
+        /// <param name="position">The unique identifier of onlineMeeting</param>
         public OnlineMeetingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onlineMeeting%2Did", position);

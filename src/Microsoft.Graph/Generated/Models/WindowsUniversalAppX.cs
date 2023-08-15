@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("committedContainedApps", value); }
         }
 #endif
-        /// <summary>The Identity Name.</summary>
+        /// <summary>The Identity Name of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: &apos;Contoso.DemoApp&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityName {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("identityName", value); }
         }
 #endif
-        /// <summary>The Identity Publisher Hash.</summary>
+        /// <summary>The Identity Publisher Hash of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: &apos;AB82CD0XYZ&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityPublisherHash {
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("identityPublisherHash", value); }
         }
 #endif
-        /// <summary>The Identity Resource Identifier.</summary>
+        /// <summary>The Identity Resource Identifier of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: &apos;TestResourceId&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityResourceIdentifier {
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("identityResourceIdentifier", value); }
         }
 #endif
-        /// <summary>The identity version.</summary>
+        /// <summary>The Identity Version of the app, parsed from the appx file when it is uploaded through the Intune MEM console.  For example: &apos;1.0.0.0&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityVersion {
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("identityVersion", value); }
         }
 #endif
-        /// <summary>Whether or not the app is a bundle.</summary>
+        /// <summary>Whether or not the app is a bundle. If TRUE, app is a bundle; if FALSE, app is not a bundle.</summary>
         public bool? IsBundle {
             get { return BackingStore?.Get<bool?>("isBundle"); }
             set { BackingStore?.Set("isBundle", value); }

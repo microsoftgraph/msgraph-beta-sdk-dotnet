@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AdministrativeUnits.Item.Exten
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.administrativeUnit entity.</summary>
+        /// <param name="position">The unique identifier of extension</param>
         public ExtensionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("extension%2Did", position);

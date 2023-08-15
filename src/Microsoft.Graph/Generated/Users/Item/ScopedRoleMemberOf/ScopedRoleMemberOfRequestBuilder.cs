@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ScopedRoleMemberOf {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the scopedRoleMemberOf property of the microsoft.graph.user entity.</summary>
+        /// <param name="position">The unique identifier of scopedRoleMembership</param>
         public ScopedRoleMembershipItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("scopedRoleMembership%2Did", position);

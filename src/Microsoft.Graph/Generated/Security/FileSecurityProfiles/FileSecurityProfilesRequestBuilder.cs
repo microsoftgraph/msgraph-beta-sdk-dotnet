@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.FileSecurityProfiles {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the fileSecurityProfiles property of the microsoft.graph.security entity.</summary>
+        /// <param name="position">The unique identifier of fileSecurityProfile</param>
         public FileSecurityProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("fileSecurityProfile%2Did", position);

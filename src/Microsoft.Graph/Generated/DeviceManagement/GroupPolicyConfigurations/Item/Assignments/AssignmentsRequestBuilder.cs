@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.A
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.groupPolicyConfiguration entity.</summary>
+        /// <param name="position">The unique identifier of groupPolicyConfigurationAssignment</param>
         public GroupPolicyConfigurationAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupPolicyConfigurationAssignment%2Did", position);

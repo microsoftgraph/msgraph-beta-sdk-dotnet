@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OnPremisesSynchronization {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.</summary>
+        /// <param name="position">The unique identifier of onPremisesDirectorySynchronization</param>
         public OnPremisesDirectorySynchronizationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onPremisesDirectorySynchronization%2Did", position);

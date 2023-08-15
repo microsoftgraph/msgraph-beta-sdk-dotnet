@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the entries property of the microsoft.graph.windowsUpdates.catalog entity.</summary>
+        /// <param name="position">The unique identifier of catalogEntry</param>
         public CatalogEntryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("catalogEntry%2Did", position);

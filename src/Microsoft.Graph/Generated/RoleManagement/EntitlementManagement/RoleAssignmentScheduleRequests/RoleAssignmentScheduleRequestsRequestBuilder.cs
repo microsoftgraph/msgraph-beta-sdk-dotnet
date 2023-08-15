@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignme
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignmentScheduleRequests property of the microsoft.graph.rbacApplication entity.</summary>
+        /// <param name="position">The unique identifier of unifiedRoleAssignmentScheduleRequest</param>
         public UnifiedRoleAssignmentScheduleRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleAssignmentScheduleRequest%2Did", position);

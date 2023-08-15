@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.WebAccounts {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the webAccounts property of the microsoft.graph.profile entity.</summary>
+        /// <param name="position">The unique identifier of webAccount</param>
         public WebAccountItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("webAccount%2Did", position);

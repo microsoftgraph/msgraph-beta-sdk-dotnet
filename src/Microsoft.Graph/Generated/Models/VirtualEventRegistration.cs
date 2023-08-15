@@ -6,51 +6,103 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class VirtualEventRegistration : Entity, IParsable {
-        /// <summary>Total capacity of the virtual event.</summary>
-        public int? Capacity {
-            get { return BackingStore?.Get<int?>("capacity"); }
-            set { BackingStore?.Set("capacity", value); }
+        /// <summary>The cancelationDateTime property</summary>
+        public DateTimeOffset? CancelationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("cancelationDateTime"); }
+            set { BackingStore?.Set("cancelationDateTime", value); }
         }
-        /// <summary>Registration questions.</summary>
+        /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventRegistrationQuestion>? Questions {
-            get { return BackingStore?.Get<List<VirtualEventRegistrationQuestion>?>("questions"); }
-            set { BackingStore?.Set("questions", value); }
+        public string? Email {
+            get { return BackingStore?.Get<string?>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventRegistrationQuestion> Questions {
-            get { return BackingStore?.Get<List<VirtualEventRegistrationQuestion>>("questions"); }
-            set { BackingStore?.Set("questions", value); }
+        public string Email {
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
         }
 #endif
-        /// <summary>Information of attendees who have registered for the virtual event.</summary>
+        /// <summary>The firstName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventRegistrant>? Registrants {
-            get { return BackingStore?.Get<List<VirtualEventRegistrant>?>("registrants"); }
-            set { BackingStore?.Set("registrants", value); }
+        public string? FirstName {
+            get { return BackingStore?.Get<string?>("firstName"); }
+            set { BackingStore?.Set("firstName", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventRegistrant> Registrants {
-            get { return BackingStore?.Get<List<VirtualEventRegistrant>>("registrants"); }
-            set { BackingStore?.Set("registrants", value); }
+        public string FirstName {
+            get { return BackingStore?.Get<string>("firstName"); }
+            set { BackingStore?.Set("firstName", value); }
         }
 #endif
-        /// <summary>Registration URL of the virtual event.</summary>
+        /// <summary>The lastName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegistrationWebUrl {
-            get { return BackingStore?.Get<string?>("registrationWebUrl"); }
-            set { BackingStore?.Set("registrationWebUrl", value); }
+        public string? LastName {
+            get { return BackingStore?.Get<string?>("lastName"); }
+            set { BackingStore?.Set("lastName", value); }
         }
 #nullable restore
 #else
-        public string RegistrationWebUrl {
-            get { return BackingStore?.Get<string>("registrationWebUrl"); }
-            set { BackingStore?.Set("registrationWebUrl", value); }
+        public string LastName {
+            get { return BackingStore?.Get<string>("lastName"); }
+            set { BackingStore?.Set("lastName", value); }
+        }
+#endif
+        /// <summary>The registrationDateTime property</summary>
+        public DateTimeOffset? RegistrationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("registrationDateTime"); }
+            set { BackingStore?.Set("registrationDateTime", value); }
+        }
+        /// <summary>The registrationQuestionAnswers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<VirtualEventRegistrationQuestionAnswer>? RegistrationQuestionAnswers {
+            get { return BackingStore?.Get<List<VirtualEventRegistrationQuestionAnswer>?>("registrationQuestionAnswers"); }
+            set { BackingStore?.Set("registrationQuestionAnswers", value); }
+        }
+#nullable restore
+#else
+        public List<VirtualEventRegistrationQuestionAnswer> RegistrationQuestionAnswers {
+            get { return BackingStore?.Get<List<VirtualEventRegistrationQuestionAnswer>>("registrationQuestionAnswers"); }
+            set { BackingStore?.Set("registrationQuestionAnswers", value); }
+        }
+#endif
+        /// <summary>The sessions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<VirtualEventSession>? Sessions {
+            get { return BackingStore?.Get<List<VirtualEventSession>?>("sessions"); }
+            set { BackingStore?.Set("sessions", value); }
+        }
+#nullable restore
+#else
+        public List<VirtualEventSession> Sessions {
+            get { return BackingStore?.Get<List<VirtualEventSession>>("sessions"); }
+            set { BackingStore?.Set("sessions", value); }
+        }
+#endif
+        /// <summary>The status property</summary>
+        public VirtualEventAttendeeRegistrationStatus? Status {
+            get { return BackingStore?.Get<VirtualEventAttendeeRegistrationStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>The userId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#nullable restore
+#else
+        public string UserId {
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
         }
 #endif
         /// <summary>
@@ -66,10 +118,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"capacity", n => { Capacity = n.GetIntValue(); } },
-                {"questions", n => { Questions = n.GetCollectionOfObjectValues<VirtualEventRegistrationQuestion>(VirtualEventRegistrationQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"registrants", n => { Registrants = n.GetCollectionOfObjectValues<VirtualEventRegistrant>(VirtualEventRegistrant.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"registrationWebUrl", n => { RegistrationWebUrl = n.GetStringValue(); } },
+                {"cancelationDateTime", n => { CancelationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"firstName", n => { FirstName = n.GetStringValue(); } },
+                {"lastName", n => { LastName = n.GetStringValue(); } },
+                {"registrationDateTime", n => { RegistrationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"registrationQuestionAnswers", n => { RegistrationQuestionAnswers = n.GetCollectionOfObjectValues<VirtualEventRegistrationQuestionAnswer>(VirtualEventRegistrationQuestionAnswer.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"sessions", n => { Sessions = n.GetCollectionOfObjectValues<VirtualEventSession>(VirtualEventSession.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"status", n => { Status = n.GetEnumValue<VirtualEventAttendeeRegistrationStatus>(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -79,10 +136,15 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteIntValue("capacity", Capacity);
-            writer.WriteCollectionOfObjectValues<VirtualEventRegistrationQuestion>("questions", Questions);
-            writer.WriteCollectionOfObjectValues<VirtualEventRegistrant>("registrants", Registrants);
-            writer.WriteStringValue("registrationWebUrl", RegistrationWebUrl);
+            writer.WriteDateTimeOffsetValue("cancelationDateTime", CancelationDateTime);
+            writer.WriteStringValue("email", Email);
+            writer.WriteStringValue("firstName", FirstName);
+            writer.WriteStringValue("lastName", LastName);
+            writer.WriteDateTimeOffsetValue("registrationDateTime", RegistrationDateTime);
+            writer.WriteCollectionOfObjectValues<VirtualEventRegistrationQuestionAnswer>("registrationQuestionAnswers", RegistrationQuestionAnswers);
+            writer.WriteCollectionOfObjectValues<VirtualEventSession>("sessions", Sessions);
+            writer.WriteEnumValue<VirtualEventAttendeeRegistrationStatus>("status", Status);
+            writer.WriteStringValue("userId", UserId);
         }
     }
 }

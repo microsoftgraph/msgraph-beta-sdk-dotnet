@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.DataLossPreventionPolicies 
             new EvaluateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.</summary>
+        /// <param name="position">The unique identifier of dataLossPreventionPolicy</param>
         public DataLossPreventionPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("dataLossPreventionPolicy%2Did", position);

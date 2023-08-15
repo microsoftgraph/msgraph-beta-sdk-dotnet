@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.Assignm
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceHealthScript entity.</summary>
+        /// <param name="position">The unique identifier of deviceHealthScriptAssignment</param>
         public DeviceHealthScriptAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceHealthScriptAssignment%2Did", position);

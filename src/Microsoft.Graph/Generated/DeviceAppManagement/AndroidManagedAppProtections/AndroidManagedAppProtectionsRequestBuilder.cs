@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections 
             new HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the androidManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.</summary>
+        /// <param name="position">The unique identifier of androidManagedAppProtection</param>
         public AndroidManagedAppProtectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("androidManagedAppProtection%2Did", position);

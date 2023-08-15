@@ -880,6 +880,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("transitiveMembers", value); }
         }
 #endif
+        /// <summary>The uniqueName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UniqueName {
+            get { return BackingStore?.Get<string?>("uniqueName"); }
+            set { BackingStore?.Set("uniqueName", value); }
+        }
+#nullable restore
+#else
+        public string UniqueName {
+            get { return BackingStore?.Get<string>("uniqueName"); }
+            set { BackingStore?.Set("uniqueName", value); }
+        }
+#endif
         /// <summary>Count of conversations that have been delivered one or more new posts since the signed-in user&apos;s last visit to the group. This property is the same as unseenCount. Returned only on $select.</summary>
         public int? UnseenConversationsCount {
             get { return BackingStore?.Get<int?>("unseenConversationsCount"); }
@@ -1016,6 +1030,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"threads", n => { Threads = n.GetCollectionOfObjectValues<ConversationThread>(ConversationThread.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"transitiveMemberOf", n => { TransitiveMemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"transitiveMembers", n => { TransitiveMembers = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"uniqueName", n => { UniqueName = n.GetStringValue(); } },
                 {"unseenConversationsCount", n => { UnseenConversationsCount = n.GetIntValue(); } },
                 {"unseenCount", n => { UnseenCount = n.GetIntValue(); } },
                 {"unseenMessagesCount", n => { UnseenMessagesCount = n.GetIntValue(); } },
@@ -1104,6 +1119,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<ConversationThread>("threads", Threads);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("transitiveMemberOf", TransitiveMemberOf);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("transitiveMembers", TransitiveMembers);
+            writer.WriteStringValue("uniqueName", UniqueName);
             writer.WriteIntValue("unseenConversationsCount", UnseenConversationsCount);
             writer.WriteIntValue("unseenCount", UnseenCount);
             writer.WriteIntValue("unseenMessagesCount", UnseenMessagesCount);

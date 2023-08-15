@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Policies.ActivityBasedTimeoutPolicies {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the activityBasedTimeoutPolicies property of the microsoft.graph.policyRoot entity.</summary>
+        /// <param name="position">The unique identifier of activityBasedTimeoutPolicy</param>
         public ActivityBasedTimeoutPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("activityBasedTimeoutPolicy%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaArtifacts {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the zebraFotaArtifacts property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of zebraFotaArtifact</param>
         public ZebraFotaArtifactItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("zebraFotaArtifact%2Did", position);

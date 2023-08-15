@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Item.Hi
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the history property of the microsoft.graph.riskyServicePrincipal entity.</summary>
+        /// <param name="position">The unique identifier of riskyServicePrincipalHistoryItem</param>
         public RiskyServicePrincipalHistoryItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("riskyServicePrincipalHistoryItem%2Did", position);

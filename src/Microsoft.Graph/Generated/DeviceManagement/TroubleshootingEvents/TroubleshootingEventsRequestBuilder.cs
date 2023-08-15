@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TroubleshootingEvents {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the troubleshootingEvents property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementTroubleshootingEvent</param>
         public DeviceManagementTroubleshootingEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementTroubleshootingEvent%2Did", position);

@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags {
             new MicrosoftGraphSecurityAsHierarchyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tags property of the microsoft.graph.security.ediscoveryCase entity.</summary>
+        /// <param name="position">The unique identifier of ediscoveryReviewTag</param>
         public EdiscoveryReviewTagItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("ediscoveryReviewTag%2Did", position);

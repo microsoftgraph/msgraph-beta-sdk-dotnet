@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Search.Qnas {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the qnas property of the microsoft.graph.searchEntity entity.</summary>
+        /// <param name="position">The unique identifier of qna</param>
         public QnaItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("qna%2Did", position);

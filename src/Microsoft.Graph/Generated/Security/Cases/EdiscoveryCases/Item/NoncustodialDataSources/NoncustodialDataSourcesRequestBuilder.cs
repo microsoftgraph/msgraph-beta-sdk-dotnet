@@ -31,6 +31,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialD
             new MicrosoftGraphSecurityRemoveHoldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the noncustodialDataSources property of the microsoft.graph.security.ediscoveryCase entity.</summary>
+        /// <param name="position">The unique identifier of ediscoveryNoncustodialDataSource</param>
         public EdiscoveryNoncustodialDataSourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("ediscoveryNoncustodialDataSource%2Did", position);

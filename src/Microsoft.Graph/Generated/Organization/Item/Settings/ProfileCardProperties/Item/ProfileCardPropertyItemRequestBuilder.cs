@@ -48,8 +48,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a profileCardProperty entity, which contains the profile card customizations that exist in your Microsoft 365 organization for a given field. The profileCardProperty is identified by its directoryPropertyName property.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profilecardproperty-get?view=graph-rest-1.0" />
+        /// Get profileCardProperties from organization
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +112,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties.
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a profileCardProperty entity, which contains the profile card customizations that exist in your Microsoft 365 organization for a given field. The profileCardProperty is identified by its directoryPropertyName property.
+        /// Get profileCardProperties from organization
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -183,7 +182,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties.
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a profileCardProperty entity, which contains the profile card customizations that exist in your Microsoft 365 organization for a given field. The profileCardProperty is identified by its directoryPropertyName property.
+        /// Get profileCardProperties from organization
         /// </summary>
         public class ProfileCardPropertyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

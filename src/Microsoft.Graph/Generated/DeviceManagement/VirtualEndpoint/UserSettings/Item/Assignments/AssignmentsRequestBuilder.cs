@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.cloudPcUserSetting entity.</summary>
+        /// <param name="position">The unique identifier of cloudPcUserSettingAssignment</param>
         public CloudPcUserSettingAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcUserSettingAssignment%2Did", position);

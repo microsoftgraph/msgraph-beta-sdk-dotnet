@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Certifications {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the certifications property of the microsoft.graph.profile entity.</summary>
+        /// <param name="position">The unique identifier of personCertification</param>
         public PersonCertificationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("personCertification%2Did", position);

@@ -27,6 +27,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.T
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the rows property of the microsoft.graph.workbookTable entity.</summary>
+        /// <param name="position">The unique identifier of workbookTableRow</param>
         public WorkbookTableRowItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookTableRow%2Did", position);
@@ -48,7 +49,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.T
         }
         /// <summary>
         /// Retrieve a list of tablerow objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/table-list-rows?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablerow-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

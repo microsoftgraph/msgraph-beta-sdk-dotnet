@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets.Item.Parent
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the children property of the microsoft.graph.termStore.term entity.</summary>
+        /// <param name="position">The unique identifier of term</param>
         public Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.Item.Terms.Item.Children.Item.TermItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("term%2Did1", position);

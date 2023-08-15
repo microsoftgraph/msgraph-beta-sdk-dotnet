@@ -9,22 +9,22 @@ namespace Microsoft.Graph.Beta.Models {
     /// The user experience analytics battery health os performance entity contains battery related information for all operating system versions in their organization.
     /// </summary>
     public class UserExperienceAnalyticsBatteryHealthOsPerformance : Entity, IParsable {
-        /// <summary>Number of active devices for that os version. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>Number of active devices for that os version. Valid values 0 to 2147483647</summary>
         public int? ActiveDevices {
             get { return BackingStore?.Get<int?>("activeDevices"); }
             set { BackingStore?.Set("activeDevices", value); }
         }
-        /// <summary>The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>The mean of the battery age for all devices running a particular operating system version in a tenant. Unit in days. Valid values 0 to 2147483647</summary>
         public int? AverageBatteryAgeInDays {
             get { return BackingStore?.Get<int?>("averageBatteryAgeInDays"); }
             set { BackingStore?.Set("averageBatteryAgeInDays", value); }
         }
-        /// <summary>The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>The mean of the estimated runtimes on full charge for all devices running a particular operating system version. Unit in minutes. Valid values 0 to 2147483647</summary>
         public int? AverageEstimatedRuntimeInMinutes {
             get { return BackingStore?.Get<int?>("averageEstimatedRuntimeInMinutes"); }
             set { BackingStore?.Set("averageEstimatedRuntimeInMinutes", value); }
         }
-        /// <summary>The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>The mean of the maximum capacity for all devices running a particular operating system version. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647</summary>
         public int? AverageMaxCapacityPercentage {
             get { return BackingStore?.Get<int?>("averageMaxCapacityPercentage"); }
             set { BackingStore?.Set("averageMaxCapacityPercentage", value); }

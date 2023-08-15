@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchUploadAgents {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the exactMatchUploadAgents property of the microsoft.graph.dataClassificationService entity.</summary>
+        /// <param name="position">The unique identifier of exactMatchUploadAgent</param>
         public ExactMatchUploadAgentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("exactMatchUploadAgent%2Did", position);

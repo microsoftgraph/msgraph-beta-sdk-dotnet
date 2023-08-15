@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isSipEnabled property</summary>
+        /// <summary>Indicates whether the user is currently enabled for on-premises Skype for Business.</summary>
         public bool? IsSipEnabled {
             get { return BackingStore?.Get<bool?>("isSipEnabled"); }
             set { BackingStore?.Set("isSipEnabled", value); }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The sipDeploymentLocation property</summary>
+        /// <summary>Indicates a fully qualified DNS name of the Microsoft Online Communications Server deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SipDeploymentLocation {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sipDeploymentLocation", value); }
         }
 #endif
-        /// <summary>The sipPrimaryAddress property</summary>
+        /// <summary>Serves as a unique identifier for each user on the on-premises Skype for Business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SipPrimaryAddress {

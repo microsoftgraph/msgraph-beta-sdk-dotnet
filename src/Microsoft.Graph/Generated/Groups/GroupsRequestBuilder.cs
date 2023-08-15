@@ -46,6 +46,7 @@ namespace Microsoft.Graph.Beta.Groups {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of group entities.</summary>
+        /// <param name="position">The unique identifier of group</param>
         public GroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("group%2Did", position);

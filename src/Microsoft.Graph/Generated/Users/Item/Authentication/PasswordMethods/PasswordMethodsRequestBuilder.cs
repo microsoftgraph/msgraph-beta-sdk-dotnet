@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordMethods {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the passwordMethods property of the microsoft.graph.authentication entity.</summary>
+        /// <param name="position">The unique identifier of passwordAuthenticationMethod</param>
         public PasswordAuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("passwordAuthenticationMethod%2Did", position);

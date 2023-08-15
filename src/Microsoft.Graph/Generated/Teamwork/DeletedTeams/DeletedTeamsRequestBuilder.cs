@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams {
             new GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.</summary>
+        /// <param name="position">The unique identifier of deletedTeam</param>
         public DeletedTeamItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deletedTeam%2Did", position);

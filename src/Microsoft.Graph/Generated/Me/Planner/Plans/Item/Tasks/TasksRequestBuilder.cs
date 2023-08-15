@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans.Item.Tasks {
             new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.</summary>
+        /// <param name="position">The unique identifier of plannerTask</param>
         public PlannerTaskItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("plannerTask%2Did", position);

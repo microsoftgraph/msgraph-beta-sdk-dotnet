@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.All {
             new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the all property of the microsoft.graph.plannerUser entity.</summary>
+        /// <param name="position">The unique identifier of plannerDelta</param>
         public PlannerDeltaItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("plannerDelta%2Did", position);

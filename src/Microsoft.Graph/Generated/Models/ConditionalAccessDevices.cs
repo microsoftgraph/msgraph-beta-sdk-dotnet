@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("excludeDeviceStates", value); }
         }
 #endif
-        /// <summary>States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.</summary>
+        /// <summary>States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFilter is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? IncludeDevices {

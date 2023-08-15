@@ -51,6 +51,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies {
             new ValidateComplianceScriptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of deviceCompliancePolicy</param>
         public DeviceCompliancePolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceCompliancePolicy%2Did", position);

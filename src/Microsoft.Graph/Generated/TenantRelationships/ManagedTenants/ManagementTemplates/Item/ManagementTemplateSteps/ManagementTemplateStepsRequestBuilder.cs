@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managementTemplateSteps property of the microsoft.graph.managedTenants.managementTemplate entity.</summary>
+        /// <param name="position">The unique identifier of managementTemplateStep</param>
         public ManagementTemplateStepItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managementTemplateStep%2Did", position);

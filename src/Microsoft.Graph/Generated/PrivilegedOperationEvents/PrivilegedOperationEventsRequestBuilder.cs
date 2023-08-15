@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.PrivilegedOperationEvents {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedOperationEvent entities.</summary>
+        /// <param name="position">The unique identifier of privilegedOperationEvent</param>
         public PrivilegedOperationEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("privilegedOperationEvent%2Did", position);

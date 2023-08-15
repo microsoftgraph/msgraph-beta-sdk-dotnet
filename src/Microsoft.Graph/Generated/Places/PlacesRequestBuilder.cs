@@ -27,6 +27,7 @@ namespace Microsoft.Graph.Beta.Places {
             new GraphRoomListRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of place entities.</summary>
+        /// <param name="position">The unique identifier of place</param>
         public PlaceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("place%2Did", position);

@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignmentScheduleRequests property of the microsoft.graph.privilegedAccessGroup entity.</summary>
+        /// <param name="position">The unique identifier of privilegedAccessGroupAssignmentScheduleRequest</param>
         public PrivilegedAccessGroupAssignmentScheduleRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("privilegedAccessGroupAssignmentScheduleRequest%2Did", position);

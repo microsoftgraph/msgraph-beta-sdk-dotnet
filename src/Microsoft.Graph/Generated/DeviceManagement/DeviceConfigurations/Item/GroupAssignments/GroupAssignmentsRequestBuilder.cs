@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.GroupA
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupAssignments property of the microsoft.graph.deviceConfiguration entity.</summary>
+        /// <param name="position">The unique identifier of deviceConfigurationGroupAssignment</param>
         public DeviceConfigurationGroupAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceConfigurationGroupAssignment%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummar
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categorySummaries property of the microsoft.graph.macOSSoftwareUpdateAccountSummary entity.</summary>
+        /// <param name="position">The unique identifier of macOSSoftwareUpdateCategorySummary</param>
         public MacOSSoftwareUpdateCategorySummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("macOSSoftwareUpdateCategorySummary%2Did", position);

@@ -16,6 +16,7 @@ namespace Microsoft.Graph.Beta.Drives {
     /// </summary>
     public class DrivesRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the collection of drive entities.</summary>
+        /// <param name="position">The unique identifier of drive</param>
         public DriveItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("drive%2Did", position);

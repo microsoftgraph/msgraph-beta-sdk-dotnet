@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the b2cUserFlows property of the microsoft.graph.identityContainer entity.</summary>
+        /// <param name="position">The unique identifier of b2cIdentityUserFlow</param>
         public B2cIdentityUserFlowItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("b2cIdentityUserFlow%2Did", position);

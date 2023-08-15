@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Posts.Item.Attachments {
             new CreateUploadSessionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the attachments property of the microsoft.graph.post entity.</summary>
+        /// <param name="position">The unique identifier of attachment</param>
         public AttachmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("attachment%2Did", position);

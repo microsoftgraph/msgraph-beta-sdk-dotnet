@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Members {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.chat entity.</summary>
+        /// <param name="position">The unique identifier of conversationMember</param>
         public ConversationMemberItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("conversationMember%2Did", position);

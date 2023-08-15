@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// The user experience analytics battery health app impact entity contains battery usage related information at an app level for the tenant.
     /// </summary>
     public class UserExperienceAnalyticsBatteryHealthAppImpact : Entity, IParsable {
-        /// <summary>Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>Number of active devices for using that app over a 14-day period. Valid values 0 to 2147483647</summary>
         public int? ActiveDevices {
             get { return BackingStore?.Get<int?>("activeDevices"); }
             set { BackingStore?.Set("activeDevices", value); }
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appPublisher", value); }
         }
 #endif
-        /// <summary>The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        /// <summary>The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values 0 to 1.79769313486232E+308</summary>
         public double? BatteryUsagePercentage {
             get { return BackingStore?.Get<double?>("batteryUsagePercentage"); }
             set { BackingStore?.Set("batteryUsagePercentage", value); }

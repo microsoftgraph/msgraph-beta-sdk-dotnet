@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.Applications {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of application entities.</summary>
+        /// <param name="position">The unique identifier of application</param>
         public ApplicationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("application%2Did", position);

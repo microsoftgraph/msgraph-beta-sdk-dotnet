@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.Messages
             new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messages property of the microsoft.graph.channel entity.</summary>
+        /// <param name="position">The unique identifier of chatMessage</param>
         public ChatMessageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("chatMessage%2Did", position);

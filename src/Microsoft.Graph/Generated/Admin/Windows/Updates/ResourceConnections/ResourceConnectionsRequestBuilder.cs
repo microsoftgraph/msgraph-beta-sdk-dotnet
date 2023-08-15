@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resourceConnections property of the microsoft.graph.adminWindowsUpdates entity.</summary>
+        /// <param name="position">The unique identifier of resourceConnection</param>
         public ResourceConnectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("resourceConnection%2Did", position);

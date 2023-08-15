@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.DeviceConfig
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceConfigurationStates property of the microsoft.graph.managedDevice entity.</summary>
+        /// <param name="position">The unique identifier of deviceConfigurationState</param>
         public DeviceConfigurationStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceConfigurationState%2Did", position);

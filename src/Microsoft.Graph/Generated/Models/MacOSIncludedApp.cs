@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The CFBundleIdentifier.</summary>
+        /// <summary>The bundleId of the app. This maps to the CFBundleIdentifier in the app&apos;s bundle configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BundleId {
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("bundleId", value); }
         }
 #endif
-        /// <summary>The CFBundleVersion.</summary>
+        /// <summary>The version of the app. This maps to the CFBundleShortVersion in the app&apos;s bundle configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BundleVersion {

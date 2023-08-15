@@ -51,6 +51,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages {
             new UnfavoriteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messages property of the microsoft.graph.serviceAnnouncement entity.</summary>
+        /// <param name="position">The unique identifier of serviceUpdateMessage</param>
         public ServiceUpdateMessageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("serviceUpdateMessage%2Did", position);

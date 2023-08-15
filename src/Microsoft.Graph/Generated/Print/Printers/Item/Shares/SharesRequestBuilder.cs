@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.Shares {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the shares property of the microsoft.graph.printer entity.</summary>
+        /// <param name="position">The unique identifier of printerShare</param>
         public PrinterShareItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printerShare%2Did", position);

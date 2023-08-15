@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserPfxCertificates {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userPfxCertificates property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of userPFXCertificate</param>
         public UserPFXCertificateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userPFXCertificate%2Did", position);

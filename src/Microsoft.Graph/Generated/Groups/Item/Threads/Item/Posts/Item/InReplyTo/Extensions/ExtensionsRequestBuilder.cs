@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Ext
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.post entity.</summary>
+        /// <param name="position">The unique identifier of extension</param>
         public ExtensionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("extension%2Did", position);

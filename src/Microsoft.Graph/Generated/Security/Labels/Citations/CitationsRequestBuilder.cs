@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Citations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the citations property of the microsoft.graph.security.labelsRoot entity.</summary>
+        /// <param name="position">The unique identifier of citationTemplate</param>
         public CitationTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("citationTemplate%2Did", position);

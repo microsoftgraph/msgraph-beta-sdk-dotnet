@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Schools {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the schools property of the microsoft.graph.educationClass entity.</summary>
+        /// <param name="position">The unique identifier of educationSchool</param>
         public EducationSchoolItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationSchool%2Did", position);

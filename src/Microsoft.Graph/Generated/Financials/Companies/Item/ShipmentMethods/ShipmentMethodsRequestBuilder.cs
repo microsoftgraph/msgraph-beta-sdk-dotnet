@@ -21,12 +21,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.ShipmentMethods {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the shipmentMethods property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of shipmentMethod</param>
         public ShipmentMethodItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("shipmentMethod%2Did", position);
             return new ShipmentMethodItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>Provides operations to manage the shipmentMethods property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of shipmentMethod</param>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public ShipmentMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

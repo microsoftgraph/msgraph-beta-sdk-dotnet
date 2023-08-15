@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleDefinitions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleDefinitions property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of roleDefinition</param>
         public RoleDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("roleDefinition%2Did", position);

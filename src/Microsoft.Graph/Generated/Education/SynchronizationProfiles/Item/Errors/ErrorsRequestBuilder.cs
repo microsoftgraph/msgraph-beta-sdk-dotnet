@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the errors property of the microsoft.graph.educationSynchronizationProfile entity.</summary>
+        /// <param name="position">The unique identifier of educationSynchronizationError</param>
         public EducationSynchronizationErrorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationSynchronizationError%2Did", position);

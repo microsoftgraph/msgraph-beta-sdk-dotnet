@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Thumbnails {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.</summary>
+        /// <param name="position">The unique identifier of thumbnailSet</param>
         public ThumbnailSetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("thumbnailSet%2Did", position);

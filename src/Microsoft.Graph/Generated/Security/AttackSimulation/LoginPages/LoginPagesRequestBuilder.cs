@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.LoginPages {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the loginPages property of the microsoft.graph.attackSimulationRoot entity.</summary>
+        /// <param name="position">The unique identifier of loginPage</param>
         public LoginPageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("loginPage%2Did", position);

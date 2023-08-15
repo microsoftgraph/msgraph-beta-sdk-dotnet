@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.policies.mobileAppManagementPolicies.item.includedGroups.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
         public GroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("group%2Did", position);

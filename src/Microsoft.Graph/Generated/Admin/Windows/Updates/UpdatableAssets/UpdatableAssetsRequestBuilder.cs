@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
             new MicrosoftGraphWindowsUpdatesUnenrollAssetsByIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.</summary>
+        /// <param name="position">The unique identifier of updatableAsset</param>
         public UpdatableAssetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("updatableAsset%2Did", position);

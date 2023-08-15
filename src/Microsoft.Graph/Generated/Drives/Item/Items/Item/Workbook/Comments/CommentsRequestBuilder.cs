@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Comments {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the comments property of the microsoft.graph.workbook entity.</summary>
+        /// <param name="position">The unique identifier of workbookComment</param>
         public WorkbookCommentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookComment%2Did", position);

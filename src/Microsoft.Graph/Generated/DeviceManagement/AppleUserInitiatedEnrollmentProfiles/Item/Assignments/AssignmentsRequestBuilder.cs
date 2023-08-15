@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProf
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.appleUserInitiatedEnrollmentProfile entity.</summary>
+        /// <param name="position">The unique identifier of appleEnrollmentProfileAssignment</param>
         public AppleEnrollmentProfileAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appleEnrollmentProfileAssignment%2Did", position);

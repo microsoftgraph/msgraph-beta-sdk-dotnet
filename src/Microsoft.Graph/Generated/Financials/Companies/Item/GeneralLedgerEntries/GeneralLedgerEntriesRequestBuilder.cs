@@ -21,12 +21,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the generalLedgerEntries property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of generalLedgerEntry</param>
         public GeneralLedgerEntryItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("generalLedgerEntry%2Did", position);
             return new GeneralLedgerEntryItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>Provides operations to manage the generalLedgerEntries property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of generalLedgerEntry</param>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public GeneralLedgerEntryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

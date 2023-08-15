@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item.Fil
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the localizations property of the microsoft.graph.agreementFile entity.</summary>
+        /// <param name="position">The unique identifier of agreementFileLocalization</param>
         public AgreementFileLocalizationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreementFileLocalization%2Did", position);

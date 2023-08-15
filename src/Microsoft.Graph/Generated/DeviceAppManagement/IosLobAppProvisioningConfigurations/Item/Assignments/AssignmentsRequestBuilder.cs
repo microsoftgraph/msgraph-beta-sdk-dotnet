@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.</summary>
+        /// <param name="position">The unique identifier of iosLobAppProvisioningConfigurationAssignment</param>
         public IosLobAppProvisioningConfigurationAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("iosLobAppProvisioningConfigurationAssignment%2Did", position);

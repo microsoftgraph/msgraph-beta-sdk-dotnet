@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.AppRoleAssignedResources {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.</summary>
+        /// <param name="position">The unique identifier of servicePrincipal</param>
         public ServicePrincipalItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("servicePrincipal%2Did", position);

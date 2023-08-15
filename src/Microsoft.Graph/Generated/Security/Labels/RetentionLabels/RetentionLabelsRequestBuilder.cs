@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the retentionLabels property of the microsoft.graph.security.labelsRoot entity.</summary>
+        /// <param name="position">The unique identifier of retentionLabel</param>
         public RetentionLabelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("retentionLabel%2Did", position);

@@ -21,12 +21,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesQuotes property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of salesQuote</param>
         public SalesQuoteItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("salesQuote%2Did", position);
             return new SalesQuoteItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>Provides operations to manage the salesQuotes property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of salesQuote</param>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public SalesQuoteItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

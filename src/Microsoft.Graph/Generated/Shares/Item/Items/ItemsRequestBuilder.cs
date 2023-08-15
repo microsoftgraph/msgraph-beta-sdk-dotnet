@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.Items {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the items property of the microsoft.graph.sharedDriveItem entity.</summary>
+        /// <param name="position">The unique identifier of driveItem</param>
         public DriveItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("driveItem%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.I
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceEnrollmentConfiguration entity.</summary>
+        /// <param name="position">The unique identifier of enrollmentConfigurationAssignment</param>
         public EnrollmentConfigurationAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("enrollmentConfigurationAssignment%2Did", position);

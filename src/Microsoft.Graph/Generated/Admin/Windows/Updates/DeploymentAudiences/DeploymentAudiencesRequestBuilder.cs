@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deploymentAudiences property of the microsoft.graph.adminWindowsUpdates entity.</summary>
+        /// <param name="position">The unique identifier of deploymentAudience</param>
         public DeploymentAudienceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deploymentAudience%2Did", position);

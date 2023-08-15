@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.Policies {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the policies property of the microsoft.graph.trustFramework entity.</summary>
+        /// <param name="position">The unique identifier of trustFrameworkPolicy</param>
         public TrustFrameworkPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("trustFrameworkPolicy%2Did", position);

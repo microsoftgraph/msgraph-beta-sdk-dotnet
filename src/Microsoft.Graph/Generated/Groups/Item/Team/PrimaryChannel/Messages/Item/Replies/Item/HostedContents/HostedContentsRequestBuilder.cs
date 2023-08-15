@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages.Item.Rep
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.</summary>
+        /// <param name="position">The unique identifier of chatMessageHostedContent</param>
         public ChatMessageHostedContentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("chatMessageHostedContent%2Did", position);

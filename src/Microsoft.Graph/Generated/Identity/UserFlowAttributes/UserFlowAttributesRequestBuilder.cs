@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlowAttributes {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.</summary>
+        /// <param name="position">The unique identifier of identityUserFlowAttribute</param>
         public IdentityUserFlowAttributeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityUserFlowAttribute%2Did", position);

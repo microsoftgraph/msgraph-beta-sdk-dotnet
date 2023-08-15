@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of directoryRoleTemplate entities.</summary>
+        /// <param name="position">The unique identifier of directoryRoleTemplate</param>
         public DirectoryRoleTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryRoleTemplate%2Did", position);

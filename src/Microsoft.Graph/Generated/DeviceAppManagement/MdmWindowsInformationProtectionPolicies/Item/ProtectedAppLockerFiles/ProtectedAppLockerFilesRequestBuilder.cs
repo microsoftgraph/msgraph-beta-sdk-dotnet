@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MdmWindowsInformationProtecti
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the protectedAppLockerFiles property of the microsoft.graph.windowsInformationProtection entity.</summary>
+        /// <param name="position">The unique identifier of windowsInformationProtectionAppLockerFile</param>
         public WindowsInformationProtectionAppLockerFileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsInformationProtectionAppLockerFile%2Did", position);

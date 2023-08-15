@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.Commands {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the commands property of the microsoft.graph.device entity.</summary>
+        /// <param name="position">The unique identifier of command</param>
         public CommandItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("command%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the applicationSignInDetailedSummary property of the microsoft.graph.reportRoot entity.</summary>
+        /// <param name="position">The unique identifier of applicationSignInDetailedSummary</param>
         public ApplicationSignInDetailedSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("applicationSignInDetailedSummary%2Did", position);

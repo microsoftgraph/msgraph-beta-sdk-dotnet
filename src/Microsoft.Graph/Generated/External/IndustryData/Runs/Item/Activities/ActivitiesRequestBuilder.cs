@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the activities property of the microsoft.graph.industryData.industryDataRun entity.</summary>
+        /// <param name="position">The unique identifier of industryDataRunActivity</param>
         public IndustryDataRunActivityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("industryDataRunActivity%2Did", position);

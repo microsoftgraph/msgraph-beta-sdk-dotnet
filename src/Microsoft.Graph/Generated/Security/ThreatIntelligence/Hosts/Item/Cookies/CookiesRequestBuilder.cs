@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Cookies {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cookies property of the microsoft.graph.security.host entity.</summary>
+        /// <param name="position">The unique identifier of hostCookie</param>
         public HostCookieItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("hostCookie%2Did", position);

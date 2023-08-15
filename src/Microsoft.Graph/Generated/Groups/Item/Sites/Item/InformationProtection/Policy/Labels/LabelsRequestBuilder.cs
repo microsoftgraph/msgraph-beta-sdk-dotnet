@@ -46,6 +46,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Poli
             new ExtractLabelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.</summary>
+        /// <param name="position">The unique identifier of informationProtectionLabel</param>
         [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15")]
         public InformationProtectionLabelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
