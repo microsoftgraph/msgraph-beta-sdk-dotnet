@@ -7,6 +7,11 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.44.0-preview] - 2023-08-16
+
+- Fix for incorrect property names when the reserved names matched the type name (https://github.com/microsoft/kiota/pull/3107).
+- Latest metadata updates from 15th August 2023.
+
 ## [5.43.0-preview] - 2023-08-09
 
 - Latest metadata updates from 8th August 2023.
