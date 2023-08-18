@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.</summary>
+        /// <param name="position">The unique identifier of accessReviewStage</param>
         public AccessReviewStageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewStage%2Did", position);

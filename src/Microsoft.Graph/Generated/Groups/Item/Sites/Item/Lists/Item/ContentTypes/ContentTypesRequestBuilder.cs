@@ -36,6 +36,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.ContentTypes {
             new GetCompatibleHubContentTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contentTypes property of the microsoft.graph.list entity.</summary>
+        /// <param name="position">The unique identifier of contentType</param>
         public ContentTypeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contentType%2Did", position);

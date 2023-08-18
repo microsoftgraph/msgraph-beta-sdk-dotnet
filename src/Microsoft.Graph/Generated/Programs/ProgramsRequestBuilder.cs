@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Programs {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of program entities.</summary>
+        /// <param name="position">The unique identifier of program</param>
         public ProgramItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("program%2Did", position);

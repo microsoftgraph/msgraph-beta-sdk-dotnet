@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the comanagementEligibleDevices property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of comanagementEligibleDevice</param>
         public ComanagementEligibleDeviceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("comanagementEligibleDevice%2Did", position);

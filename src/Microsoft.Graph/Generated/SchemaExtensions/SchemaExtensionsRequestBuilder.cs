@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.SchemaExtensions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of schemaExtension entities.</summary>
+        /// <param name="position">The unique identifier of schemaExtension</param>
         public SchemaExtensionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("schemaExtension%2Did", position);

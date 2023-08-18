@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the securityActions property of the microsoft.graph.security entity.</summary>
+        /// <param name="position">The unique identifier of securityAction</param>
         public SecurityActionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("securityAction%2Did", position);

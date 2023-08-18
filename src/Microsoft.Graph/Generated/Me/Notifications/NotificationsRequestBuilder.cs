@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.Me.Notifications {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the notifications property of the microsoft.graph.user entity.</summary>
+        /// <param name="position">The unique identifier of notification</param>
         [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation on 2023-03-09 and will be removed 2023-03-20")]
         public NotificationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

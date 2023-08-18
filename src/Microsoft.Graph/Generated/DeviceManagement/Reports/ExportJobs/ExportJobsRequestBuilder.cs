@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.ExportJobs {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the exportJobs property of the microsoft.graph.deviceManagementReports entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementExportJob</param>
         public DeviceManagementExportJobItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementExportJob%2Did", position);

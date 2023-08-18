@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CartToClassAssociations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cartToClassAssociations property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of cartToClassAssociation</param>
         public CartToClassAssociationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cartToClassAssociation%2Did", position);

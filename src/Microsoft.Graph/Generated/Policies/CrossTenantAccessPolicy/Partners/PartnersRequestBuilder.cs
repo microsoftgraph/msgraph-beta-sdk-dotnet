@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the partners property of the microsoft.graph.crossTenantAccessPolicy entity.</summary>
+        /// <param name="position">The unique identifier of crossTenantAccessPolicyConfigurationPartner</param>
         public CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("crossTenantAccessPolicyConfigurationPartner%2DtenantId", position);

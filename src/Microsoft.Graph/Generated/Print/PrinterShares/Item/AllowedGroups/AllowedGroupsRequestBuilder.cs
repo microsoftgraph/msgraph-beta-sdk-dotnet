@@ -28,6 +28,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups {
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.print.printerShares.item.allowedGroups.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
         public GroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("group%2Did", position);

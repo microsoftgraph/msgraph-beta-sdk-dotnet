@@ -31,6 +31,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Names {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the names property of the microsoft.graph.workbook entity.</summary>
+        /// <param name="position">The unique identifier of workbookNamedItem</param>
         public WorkbookNamedItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookNamedItem%2Did", position);
@@ -52,7 +53,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Names {
         }
         /// <summary>
         /// Retrieve a list of nameditem objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/nameditem-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workbook-list-names?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

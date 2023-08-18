@@ -16,6 +16,7 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials {
     /// </summary>
     public class DeviceLocalCredentialsRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the collection of deviceLocalCredentialInfo entities.</summary>
+        /// <param name="position">The unique identifier of deviceLocalCredentialInfo</param>
         public DeviceLocalCredentialInfoItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceLocalCredentialInfo%2Did", position);

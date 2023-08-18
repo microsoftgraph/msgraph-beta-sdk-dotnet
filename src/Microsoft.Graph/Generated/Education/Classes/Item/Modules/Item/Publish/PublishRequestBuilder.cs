@@ -29,7 +29,8 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Modules.Item.Publish {
         public PublishRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/modules/{educationModule%2Did}/publish", rawUrl) {
         }
         /// <summary>
-        /// Invoke action publish
+        /// Change the state of an educationModule from its original draft status to the published status. Only teachers in the class can perform this operation. When a module is in draft status, students will not see the module. When you call this API, the module appears in the student&apos;s classwork list.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationmodule-publish?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +49,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Modules.Item.Publish {
             return await RequestAdapter.SendAsync<EducationModule>(requestInfo, EducationModule.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action publish
+        /// Change the state of an educationModule from its original draft status to the published status. Only teachers in the class can perform this operation. When a module is in draft status, students will not see the module. When you call this API, the module appears in the student&apos;s classwork list.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

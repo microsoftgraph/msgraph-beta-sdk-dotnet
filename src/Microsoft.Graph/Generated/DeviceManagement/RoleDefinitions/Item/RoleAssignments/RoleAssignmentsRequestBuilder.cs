@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleDefinitions.Item.RoleAssignm
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.roleDefinition entity.</summary>
+        /// <param name="position">The unique identifier of roleAssignment</param>
         public RoleAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("roleAssignment%2Did", position);

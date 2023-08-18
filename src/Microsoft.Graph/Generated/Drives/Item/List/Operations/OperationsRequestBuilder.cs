@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Operations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.list entity.</summary>
+        /// <param name="position">The unique identifier of richLongRunningOperation</param>
         public RichLongRunningOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("richLongRunningOperation%2Did", position);

@@ -31,6 +31,7 @@ namespace Microsoft.Graph.Beta.Devices.Item.MemberOf {
             new GraphGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the memberOf property of the microsoft.graph.device entity.</summary>
+        /// <param name="position">The unique identifier of directoryObject</param>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject%2Did", position);

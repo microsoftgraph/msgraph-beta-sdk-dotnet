@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxGroups {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taxGroups property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of taxGroup</param>
         public TaxGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("taxGroup%2Did", position);

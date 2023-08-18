@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the languages property of the microsoft.graph.b2cIdentityUserFlow entity.</summary>
+        /// <param name="position">The unique identifier of userFlowLanguageConfiguration</param>
         public UserFlowLanguageConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userFlowLanguageConfiguration%2Did", position);

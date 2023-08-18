@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceSettingStateS
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceSettingStateSummaries property of the microsoft.graph.deviceManagementIntent entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementIntentDeviceSettingStateSummary</param>
         public DeviceManagementIntentDeviceSettingStateSummaryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementIntentDeviceSettingStateSummary%2Did", position);

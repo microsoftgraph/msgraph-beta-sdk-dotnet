@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoiceLines {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of purchaseInvoiceLine</param>
         public PurchaseInvoiceLineItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("purchaseInvoiceLine%2Did", position);

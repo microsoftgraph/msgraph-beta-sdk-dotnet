@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.Insights.Used {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the used property of the microsoft.graph.officeGraphInsights entity.</summary>
+        /// <param name="position">The unique identifier of usedInsight</param>
         public UsedInsightItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("usedInsight%2Did", position);

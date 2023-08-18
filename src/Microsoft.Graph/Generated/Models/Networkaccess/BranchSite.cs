@@ -11,6 +11,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<long?>("bandwidthCapacity"); }
             set { BackingStore?.Set("bandwidthCapacity", value); }
         }
+        /// <summary>The connectivityConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public BranchConnectivityConfiguration? ConnectivityConfiguration {
+            get { return BackingStore?.Get<BranchConnectivityConfiguration?>("connectivityConfiguration"); }
+            set { BackingStore?.Set("connectivityConfiguration", value); }
+        }
+#nullable restore
+#else
+        public BranchConnectivityConfiguration ConnectivityConfiguration {
+            get { return BackingStore?.Get<BranchConnectivityConfiguration>("connectivityConfiguration"); }
+            set { BackingStore?.Set("connectivityConfiguration", value); }
+        }
+#endif
         /// <summary>Determines the branch site status. The possible values are: pending, connected, inactive, error.</summary>
         public Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityState? ConnectivityState {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.ConnectivityState?>("connectivityState"); }
@@ -110,6 +124,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"bandwidthCapacity", n => { BandwidthCapacity = n.GetLongValue(); } },
+                {"connectivityConfiguration", n => { ConnectivityConfiguration = n.GetObjectValue<BranchConnectivityConfiguration>(BranchConnectivityConfiguration.CreateFromDiscriminatorValue); } },
                 {"connectivityState", n => { ConnectivityState = n.GetEnumValue<ConnectivityState>(); } },
                 {"country", n => { Country = n.GetStringValue(); } },
                 {"deviceLinks", n => { DeviceLinks = n.GetCollectionOfObjectValues<DeviceLink>(DeviceLink.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -128,6 +143,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteLongValue("bandwidthCapacity", BandwidthCapacity);
+            writer.WriteObjectValue<BranchConnectivityConfiguration>("connectivityConfiguration", ConnectivityConfiguration);
             writer.WriteEnumValue<ConnectivityState>("connectivityState", ConnectivityState);
             writer.WriteStringValue("country", Country);
             writer.WriteCollectionOfObjectValues<DeviceLink>("deviceLinks", DeviceLinks);

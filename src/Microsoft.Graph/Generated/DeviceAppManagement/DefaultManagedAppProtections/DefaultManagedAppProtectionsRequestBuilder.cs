@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DefaultManagedAppProtections 
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the defaultManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.</summary>
+        /// <param name="position">The unique identifier of defaultManagedAppProtection</param>
         public DefaultManagedAppProtectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("defaultManagedAppProtection%2Did", position);

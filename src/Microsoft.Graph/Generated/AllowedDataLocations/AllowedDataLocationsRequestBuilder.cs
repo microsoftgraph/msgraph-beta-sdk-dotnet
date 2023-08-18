@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.AllowedDataLocations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of allowedDataLocation entities.</summary>
+        /// <param name="position">The unique identifier of allowedDataLocation</param>
         public AllowedDataLocationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("allowedDataLocation%2Did", position);

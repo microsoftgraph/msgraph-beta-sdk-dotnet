@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComplianceCategories {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the complianceCategories property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementConfigurationCategory</param>
         public DeviceManagementConfigurationCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementConfigurationCategory%2Did", position);

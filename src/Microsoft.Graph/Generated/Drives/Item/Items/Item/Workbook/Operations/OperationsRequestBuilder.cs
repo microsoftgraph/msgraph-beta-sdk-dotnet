@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Operations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.workbook entity.</summary>
+        /// <param name="position">The unique identifier of workbookOperation</param>
         public WorkbookOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookOperation%2Did", position);

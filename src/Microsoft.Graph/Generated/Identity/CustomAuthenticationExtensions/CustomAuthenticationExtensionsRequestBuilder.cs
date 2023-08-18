@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions {
             new ValidateAuthenticationConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customAuthenticationExtensions property of the microsoft.graph.identityContainer entity.</summary>
+        /// <param name="position">The unique identifier of customAuthenticationExtension</param>
         public CustomAuthenticationExtensionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("customAuthenticationExtension%2Did", position);

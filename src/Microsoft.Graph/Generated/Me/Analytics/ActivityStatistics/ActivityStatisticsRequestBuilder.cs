@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.Analytics.ActivityStatistics {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the activityStatistics property of the microsoft.graph.userAnalytics entity.</summary>
+        /// <param name="position">The unique identifier of activityStatistics</param>
         public ActivityStatisticsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("activityStatistics%2Did", position);

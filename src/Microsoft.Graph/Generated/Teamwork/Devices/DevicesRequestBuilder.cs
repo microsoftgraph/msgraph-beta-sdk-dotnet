@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the devices property of the microsoft.graph.teamwork entity.</summary>
+        /// <param name="position">The unique identifier of teamworkDevice</param>
         public TeamworkDeviceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamworkDevice%2Did", position);

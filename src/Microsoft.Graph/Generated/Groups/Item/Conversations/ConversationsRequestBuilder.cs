@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the conversations property of the microsoft.graph.group entity.</summary>
+        /// <param name="position">The unique identifier of conversation</param>
         public ConversationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("conversation%2Did", position);

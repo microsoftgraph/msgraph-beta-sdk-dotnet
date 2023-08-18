@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tenants property of the microsoft.graph.multiTenantOrganization entity.</summary>
+        /// <param name="position">The unique identifier of multiTenantOrganizationMember</param>
         public MultiTenantOrganizationMemberItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("multiTenantOrganizationMember%2Did", position);

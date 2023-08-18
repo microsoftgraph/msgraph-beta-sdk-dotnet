@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the termsAndConditions property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of termsAndConditions</param>
         public TermsAndConditionsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("termsAndConditions%2Did", position);

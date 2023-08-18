@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the exactMatchDataStores property of the microsoft.graph.dataClassificationService entity.</summary>
+        /// <param name="position">The unique identifier of exactMatchDataStore</param>
         public ExactMatchDataStoreItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("exactMatchDataStore%2Did", position);

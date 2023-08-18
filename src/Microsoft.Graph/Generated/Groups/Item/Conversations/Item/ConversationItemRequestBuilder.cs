@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of conversation object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0" />
+        /// Get a conversation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of conversation object.
+        /// Get a conversation object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of conversation object.
+        /// Get a conversation object.
         /// </summary>
         public class ConversationItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>

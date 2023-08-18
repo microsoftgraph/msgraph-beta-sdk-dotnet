@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isSipEnabled property</summary>
+        /// <summary>Indicates whether the user has a SIP-enabled client registered for them. Read-only.</summary>
         public bool? IsSipEnabled {
             get { return BackingStore?.Get<bool?>("isSipEnabled"); }
             set { BackingStore?.Set("isSipEnabled", value); }

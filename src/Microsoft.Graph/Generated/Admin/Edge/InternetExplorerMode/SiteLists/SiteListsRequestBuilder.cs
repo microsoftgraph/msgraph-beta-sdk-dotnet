@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the siteLists property of the microsoft.graph.internetExplorerMode entity.</summary>
+        /// <param name="position">The unique identifier of browserSiteList</param>
         public BrowserSiteListItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("browserSiteList%2Did", position);

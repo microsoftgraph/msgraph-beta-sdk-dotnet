@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeConnectors {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the exchangeConnectors property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementExchangeConnector</param>
         public DeviceManagementExchangeConnectorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementExchangeConnector%2Did", position);

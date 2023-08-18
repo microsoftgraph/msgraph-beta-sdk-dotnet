@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Trackers {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the trackers property of the microsoft.graph.security.host entity.</summary>
+        /// <param name="position">The unique identifier of hostTracker</param>
         public HostTrackerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("hostTracker%2Did", position);

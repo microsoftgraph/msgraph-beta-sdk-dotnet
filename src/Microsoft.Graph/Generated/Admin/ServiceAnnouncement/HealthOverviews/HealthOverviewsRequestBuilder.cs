@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the healthOverviews property of the microsoft.graph.serviceAnnouncement entity.</summary>
+        /// <param name="position">The unique identifier of serviceHealth</param>
         public ServiceHealthItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("serviceHealth%2Did", position);

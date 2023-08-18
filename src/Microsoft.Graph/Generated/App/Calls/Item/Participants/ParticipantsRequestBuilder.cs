@@ -31,6 +31,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants {
             new MuteAllRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the participants property of the microsoft.graph.call entity.</summary>
+        /// <param name="position">The unique identifier of participant</param>
         public ParticipantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("participant%2Did", position);

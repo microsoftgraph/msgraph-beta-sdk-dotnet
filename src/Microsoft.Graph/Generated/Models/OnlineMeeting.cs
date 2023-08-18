@@ -172,6 +172,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("chatInfo", value); }
         }
 #endif
+        /// <summary>The chatRestrictions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.ChatRestrictions? ChatRestrictions {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChatRestrictions?>("chatRestrictions"); }
+            set { BackingStore?.Set("chatRestrictions", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.ChatRestrictions ChatRestrictions {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChatRestrictions>("chatRestrictions"); }
+            set { BackingStore?.Set("chatRestrictions", value); }
+        }
+#endif
         /// <summary>The meeting creation time in UTC. Read-only.</summary>
         public DateTimeOffset? CreationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
@@ -403,20 +417,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("videoTeleconferenceId", value); }
         }
 #endif
-        /// <summary>The virtualAppointment property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public Microsoft.Graph.Beta.Models.VirtualAppointment? VirtualAppointment {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualAppointment?>("virtualAppointment"); }
-            set { BackingStore?.Set("virtualAppointment", value); }
-        }
-#nullable restore
-#else
-        public Microsoft.Graph.Beta.Models.VirtualAppointment VirtualAppointment {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualAppointment>("virtualAppointment"); }
-            set { BackingStore?.Set("virtualAppointment", value); }
-        }
-#endif
         /// <summary>Specifies whether a watermark should be applied to a content type by the client application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -465,6 +465,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"broadcastSettings", n => { BroadcastSettings = n.GetObjectValue<BroadcastMeetingSettings>(BroadcastMeetingSettings.CreateFromDiscriminatorValue); } },
                 {"capabilities", n => { Capabilities = n.GetCollectionOfEnumValues<MeetingCapabilities>()?.ToList(); } },
                 {"chatInfo", n => { ChatInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ChatInfo>(Microsoft.Graph.Beta.Models.ChatInfo.CreateFromDiscriminatorValue); } },
+                {"chatRestrictions", n => { ChatRestrictions = n.GetObjectValue<Microsoft.Graph.Beta.Models.ChatRestrictions>(Microsoft.Graph.Beta.Models.ChatRestrictions.CreateFromDiscriminatorValue); } },
                 {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 {"externalId", n => { ExternalId = n.GetStringValue(); } },
@@ -486,7 +487,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"subject", n => { Subject = n.GetStringValue(); } },
                 {"transcripts", n => { Transcripts = n.GetCollectionOfObjectValues<CallTranscript>(CallTranscript.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"videoTeleconferenceId", n => { VideoTeleconferenceId = n.GetStringValue(); } },
-                {"virtualAppointment", n => { VirtualAppointment = n.GetObjectValue<Microsoft.Graph.Beta.Models.VirtualAppointment>(Microsoft.Graph.Beta.Models.VirtualAppointment.CreateFromDiscriminatorValue); } },
                 {"watermarkProtection", n => { WatermarkProtection = n.GetObjectValue<WatermarkProtectionValues>(WatermarkProtectionValues.CreateFromDiscriminatorValue); } },
             };
         }
@@ -514,6 +514,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<BroadcastMeetingSettings>("broadcastSettings", BroadcastSettings);
             writer.WriteCollectionOfEnumValues<MeetingCapabilities>("capabilities", Capabilities);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ChatInfo>("chatInfo", ChatInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ChatRestrictions>("chatRestrictions", ChatRestrictions);
             writer.WriteDateTimeOffsetValue("creationDateTime", CreationDateTime);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteStringValue("externalId", ExternalId);
@@ -535,7 +536,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("subject", Subject);
             writer.WriteCollectionOfObjectValues<CallTranscript>("transcripts", Transcripts);
             writer.WriteStringValue("videoTeleconferenceId", VideoTeleconferenceId);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VirtualAppointment>("virtualAppointment", VirtualAppointment);
             writer.WriteObjectValue<WatermarkProtectionValues>("watermarkProtection", WatermarkProtection);
         }
     }

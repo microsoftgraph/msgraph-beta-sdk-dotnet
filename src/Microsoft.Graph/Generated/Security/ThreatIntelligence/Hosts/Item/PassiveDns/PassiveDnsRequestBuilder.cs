@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDns
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the passiveDns property of the microsoft.graph.security.host entity.</summary>
+        /// <param name="position">The unique identifier of passiveDnsRecord</param>
         public PassiveDnsRecordItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("passiveDnsRecord%2Did", position);

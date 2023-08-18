@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the steps property of the microsoft.graph.approval entity.</summary>
+        /// <param name="position">The unique identifier of approvalStep</param>
         public ApprovalStepItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("approvalStep%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customQuestions property of the microsoft.graph.bookingBusiness entity.</summary>
+        /// <param name="position">The unique identifier of bookingCustomQuestion</param>
         public BookingCustomQuestionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bookingCustomQuestion%2Did", position);

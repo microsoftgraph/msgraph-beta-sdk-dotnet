@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the intendedPolicies property of the microsoft.graph.managedAppRegistration entity.</summary>
+        /// <param name="position">The unique identifier of managedAppPolicy</param>
         public ManagedAppPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedAppPolicy%2Did", position);

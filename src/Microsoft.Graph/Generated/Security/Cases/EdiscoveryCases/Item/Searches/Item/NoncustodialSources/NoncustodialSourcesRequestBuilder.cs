@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the noncustodialSources property of the microsoft.graph.security.ediscoverySearch entity.</summary>
+        /// <param name="position">The unique identifier of ediscoveryNoncustodialDataSource</param>
         public EdiscoveryNoncustodialDataSourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("ediscoveryNoncustodialDataSource%2Did", position);

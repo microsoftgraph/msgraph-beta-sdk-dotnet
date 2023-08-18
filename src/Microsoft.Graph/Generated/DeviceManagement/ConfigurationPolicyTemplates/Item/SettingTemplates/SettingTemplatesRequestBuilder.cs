@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.Ite
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settingTemplates property of the microsoft.graph.deviceManagementConfigurationPolicyTemplate entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementConfigurationSettingTemplate</param>
         public DeviceManagementConfigurationSettingTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementConfigurationSettingTemplate%2Did", position);

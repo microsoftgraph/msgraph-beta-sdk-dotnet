@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DomainJoinConnectors {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the domainJoinConnectors property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementDomainJoinConnector</param>
         public DeviceManagementDomainJoinConnectorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementDomainJoinConnector%2Did", position);

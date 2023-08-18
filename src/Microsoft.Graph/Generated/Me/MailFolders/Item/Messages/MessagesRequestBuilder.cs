@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages {
             new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messages property of the microsoft.graph.mailFolder entity.</summary>
+        /// <param name="position">The unique identifier of message</param>
         public MessageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("message%2Did", position);

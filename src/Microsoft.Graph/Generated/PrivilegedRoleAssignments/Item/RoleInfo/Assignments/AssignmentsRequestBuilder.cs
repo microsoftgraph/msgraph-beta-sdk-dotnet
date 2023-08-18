@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignmen
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.privilegedRole entity.</summary>
+        /// <param name="position">The unique identifier of privilegedRoleAssignment</param>
         public Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignments.Item.PrivilegedRoleAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("privilegedRoleAssignment%2Did1", position);

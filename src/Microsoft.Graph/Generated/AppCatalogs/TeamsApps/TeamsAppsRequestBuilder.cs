@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the teamsApps property of the microsoft.graph.appCatalogs entity.</summary>
+        /// <param name="position">The unique identifier of teamsApp</param>
         public TeamsAppItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamsApp%2Did", position);

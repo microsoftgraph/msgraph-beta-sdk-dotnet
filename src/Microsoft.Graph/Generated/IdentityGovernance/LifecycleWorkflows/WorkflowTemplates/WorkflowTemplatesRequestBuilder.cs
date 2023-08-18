@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.WorkflowTem
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the workflowTemplates property of the microsoft.graph.identityGovernance.lifecycleWorkflowsContainer entity.</summary>
+        /// <param name="position">The unique identifier of workflowTemplate</param>
         public WorkflowTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workflowTemplate%2Did", position);

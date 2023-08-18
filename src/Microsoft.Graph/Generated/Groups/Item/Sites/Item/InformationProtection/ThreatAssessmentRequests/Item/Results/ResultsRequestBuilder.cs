@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Thre
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the results property of the microsoft.graph.threatAssessmentRequest entity.</summary>
+        /// <param name="position">The unique identifier of threatAssessmentResult</param>
         public ThreatAssessmentResultItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("threatAssessmentResult%2Did", position);

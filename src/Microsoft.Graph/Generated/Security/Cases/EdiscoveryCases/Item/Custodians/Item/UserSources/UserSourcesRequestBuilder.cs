@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userSources property of the microsoft.graph.security.ediscoveryCustodian entity.</summary>
+        /// <param name="position">The unique identifier of userSource</param>
         public UserSourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userSource%2Did", position);

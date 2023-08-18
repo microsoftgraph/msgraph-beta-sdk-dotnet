@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.Classes {
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.education.schools.item.classes.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
         public EducationClassItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationClass%2Did", position);

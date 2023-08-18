@@ -31,6 +31,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels {
             new GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the channels property of the microsoft.graph.deletedTeam entity.</summary>
+        /// <param name="position">The unique identifier of channel</param>
         public ChannelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("channel%2Did", position);

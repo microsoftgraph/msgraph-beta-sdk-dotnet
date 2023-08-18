@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords {
             new MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.</summary>
+        /// <param name="position">The unique identifier of alertRecord</param>
         public AlertRecordItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("alertRecord%2Did", position);

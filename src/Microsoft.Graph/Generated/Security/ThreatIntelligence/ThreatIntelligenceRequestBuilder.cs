@@ -15,6 +15,7 @@ using Microsoft.Graph.Beta.Security.ThreatIntelligence.PassiveDnsRecords;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.SslCertificates;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Subdomains;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Vulnerabilities;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisHistoryRecords;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisRecords;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -84,6 +85,10 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence {
         /// <summary>Provides operations to manage the vulnerabilities property of the microsoft.graph.security.threatIntelligence entity.</summary>
         public VulnerabilitiesRequestBuilder Vulnerabilities { get =>
             new VulnerabilitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the whoisHistoryRecords property of the microsoft.graph.security.threatIntelligence entity.</summary>
+        public WhoisHistoryRecordsRequestBuilder WhoisHistoryRecords { get =>
+            new WhoisHistoryRecordsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the whoisRecords property of the microsoft.graph.security.threatIntelligence entity.</summary>
         public WhoisRecordsRequestBuilder WhoisRecords { get =>

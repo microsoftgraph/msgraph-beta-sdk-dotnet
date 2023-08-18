@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.</summary>
+        /// <param name="position">The unique identifier of virtualEventSession</param>
         public VirtualEventSessionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("virtualEventSession%2Did", position);
@@ -41,7 +42,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions {
         public SessionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/sessions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read the properties and relationships of a virtualEventSession object.
+        /// Sessions of the virtual event.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +82,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions {
             return await RequestAdapter.SendAsync<VirtualEventSession>(requestInfo, VirtualEventSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read the properties and relationships of a virtualEventSession object.
+        /// Sessions of the virtual event.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +136,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a virtualEventSession object.
+        /// Sessions of the virtual event.
         /// </summary>
         public class SessionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

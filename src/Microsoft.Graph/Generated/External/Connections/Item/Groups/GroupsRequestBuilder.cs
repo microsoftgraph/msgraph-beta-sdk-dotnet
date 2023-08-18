@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Groups {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groups property of the microsoft.graph.externalConnectors.externalConnection entity.</summary>
+        /// <param name="position">The unique identifier of externalGroup</param>
         public ExternalGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("externalGroup%2Did", position);

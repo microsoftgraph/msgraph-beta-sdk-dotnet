@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurati
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.managedAppConfiguration entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementConfigurationSetting</param>
         public DeviceManagementConfigurationSettingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementConfigurationSetting%2Did", position);

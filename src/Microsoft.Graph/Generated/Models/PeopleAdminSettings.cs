@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PeopleAdminSettings : Entity, IParsable {
-        /// <summary>The profileCardProperties property</summary>
+        /// <summary>Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ProfileCardProperty>? ProfileCardProperties {

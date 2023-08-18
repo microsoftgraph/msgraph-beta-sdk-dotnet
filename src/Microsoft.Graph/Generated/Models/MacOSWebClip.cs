@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// Contains properties and inherited properties for macOS web apps.
     /// </summary>
     public class MacOSWebClip : MobileApp, IParsable {
-        /// <summary>The web app URL starting with http:// or https://, such as https://learn.microsoft.com/en-us/mem/.</summary>
+        /// <summary>The web app URL starting with http:// or https://, such as https://learn.microsoft.com/mem/.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppUrl {
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("fullScreenEnabled"); }
             set { BackingStore?.Set("fullScreenEnabled", value); }
         }
-        /// <summary>Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding &quot;shine&quot; to the icon. If FALSE, SpringBoard can add &quot;shine&quot;.</summary>
+        /// <summary>Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding &apos;shine&apos; to the icon. If FALSE, SpringBoard can add &apos;shine&apos;.</summary>
         public bool? PreComposedIconEnabled {
             get { return BackingStore?.Get<bool?>("preComposedIconEnabled"); }
             set { BackingStore?.Set("preComposedIconEnabled", value); }

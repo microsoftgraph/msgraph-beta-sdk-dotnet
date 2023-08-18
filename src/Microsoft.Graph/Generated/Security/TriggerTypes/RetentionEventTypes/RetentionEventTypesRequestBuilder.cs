@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.TriggerTypes.RetentionEventTypes {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the retentionEventTypes property of the microsoft.graph.security.triggerTypesRoot entity.</summary>
+        /// <param name="position">The unique identifier of retentionEventType</param>
         public RetentionEventTypeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("retentionEventType%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Operations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.externalConnectors.externalConnection entity.</summary>
+        /// <param name="position">The unique identifier of connectionOperation</param>
         public ConnectionOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("connectionOperation%2Did", position);

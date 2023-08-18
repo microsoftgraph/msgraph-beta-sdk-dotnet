@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildT
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the childTags property of the microsoft.graph.ediscovery.tag entity.</summary>
+        /// <param name="position">The unique identifier of tag</param>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01")]
         public Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.Item.TagItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

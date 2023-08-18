@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the files property of the microsoft.graph.security.ediscoveryReviewSet entity.</summary>
+        /// <param name="position">The unique identifier of ediscoveryFile</param>
         public EdiscoveryFileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("ediscoveryFile%2Did", position);

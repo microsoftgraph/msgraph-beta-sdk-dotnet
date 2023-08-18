@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resourceOperations property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of resourceOperation</param>
         public ResourceOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("resourceOperation%2Did", position);

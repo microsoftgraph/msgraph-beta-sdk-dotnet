@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.I
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the runs property of the microsoft.graph.simulationAutomation entity.</summary>
+        /// <param name="position">The unique identifier of simulationAutomationRun</param>
         public SimulationAutomationRunItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("simulationAutomationRun%2Did", position);

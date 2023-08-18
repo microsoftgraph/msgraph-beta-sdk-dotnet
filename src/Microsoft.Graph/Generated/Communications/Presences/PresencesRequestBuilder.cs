@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Communications.Presences {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the presences property of the microsoft.graph.cloudCommunications entity.</summary>
+        /// <param name="position">The unique identifier of presence</param>
         public PresenceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("presence%2Did", position);

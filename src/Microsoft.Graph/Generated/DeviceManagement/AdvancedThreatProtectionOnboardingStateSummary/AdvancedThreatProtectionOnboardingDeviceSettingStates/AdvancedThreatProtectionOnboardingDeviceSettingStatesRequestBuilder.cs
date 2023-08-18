@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardi
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the advancedThreatProtectionOnboardingDeviceSettingStates property of the microsoft.graph.advancedThreatProtectionOnboardingStateSummary entity.</summary>
+        /// <param name="position">The unique identifier of advancedThreatProtectionOnboardingDeviceSettingState</param>
         public AdvancedThreatProtectionOnboardingDeviceSettingStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("advancedThreatProtectionOnboardingDeviceSettingState%2Did", position);
@@ -41,7 +42,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardi
         public AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/advancedThreatProtectionOnboardingStateSummary/advancedThreatProtectionOnboardingDeviceSettingStates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Not yet documented
+        /// Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +82,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardi
             return await RequestAdapter.SendAsync<AdvancedThreatProtectionOnboardingDeviceSettingState>(requestInfo, AdvancedThreatProtectionOnboardingDeviceSettingState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Not yet documented
+        /// Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +136,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardi
             return requestInfo;
         }
         /// <summary>
-        /// Not yet documented
+        /// Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
         /// </summary>
         public class AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

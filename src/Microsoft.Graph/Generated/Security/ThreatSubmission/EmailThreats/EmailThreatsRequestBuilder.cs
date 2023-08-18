@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreats {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the emailThreats property of the microsoft.graph.security.threatSubmissionRoot entity.</summary>
+        /// <param name="position">The unique identifier of emailThreatSubmission</param>
         public EmailThreatSubmissionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("emailThreatSubmission%2Did", position);

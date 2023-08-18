@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.Ite
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.windowsQualityUpdateProfile entity.</summary>
+        /// <param name="position">The unique identifier of windowsQualityUpdateProfileAssignment</param>
         public WindowsQualityUpdateProfileAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsQualityUpdateProfileAssignment%2Did", position);

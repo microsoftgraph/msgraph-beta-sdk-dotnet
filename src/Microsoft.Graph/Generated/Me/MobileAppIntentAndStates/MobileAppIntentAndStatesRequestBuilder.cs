@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.MobileAppIntentAndStates {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileAppIntentAndStates property of the microsoft.graph.user entity.</summary>
+        /// <param name="position">The unique identifier of mobileAppIntentAndState</param>
         public MobileAppIntentAndStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileAppIntentAndState%2Did", position);

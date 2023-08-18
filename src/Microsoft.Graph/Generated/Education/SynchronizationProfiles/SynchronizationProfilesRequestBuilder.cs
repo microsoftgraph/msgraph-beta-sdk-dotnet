@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the synchronizationProfiles property of the microsoft.graph.educationRoot entity.</summary>
+        /// <param name="position">The unique identifier of educationSynchronizationProfile</param>
         public EducationSynchronizationProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationSynchronizationProfile%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.ExtensionProperties {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensionProperties property of the microsoft.graph.application entity.</summary>
+        /// <param name="position">The unique identifier of extensionProperty</param>
         public ExtensionPropertyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("extensionProperty%2Did", position);

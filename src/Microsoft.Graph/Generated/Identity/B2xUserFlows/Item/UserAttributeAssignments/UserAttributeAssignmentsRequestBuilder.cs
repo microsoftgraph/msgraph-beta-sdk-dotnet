@@ -31,6 +31,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.UserAttributeAssignmen
             new SetOrderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2xIdentityUserFlow entity.</summary>
+        /// <param name="position">The unique identifier of identityUserFlowAttributeAssignment</param>
         public IdentityUserFlowAttributeAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityUserFlowAttributeAssignment%2Did", position);

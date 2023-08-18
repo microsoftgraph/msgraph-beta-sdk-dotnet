@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.onPremisesPublishingProfiles.item.connectors.item.memberOf.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
         public ConnectorGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("connectorGroup%2Did", position);

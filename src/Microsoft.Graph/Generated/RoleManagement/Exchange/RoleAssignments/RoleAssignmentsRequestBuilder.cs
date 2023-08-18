@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.RoleAssignments {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.unifiedRbacApplication entity.</summary>
+        /// <param name="position">The unique identifier of unifiedRoleAssignment</param>
         public UnifiedRoleAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleAssignment%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Columns {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the columns property of the microsoft.graph.list entity.</summary>
+        /// <param name="position">The unique identifier of columnDefinition</param>
         public ColumnDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("columnDefinition%2Did", position);

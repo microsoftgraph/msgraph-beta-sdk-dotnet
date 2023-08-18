@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.LicenseDetails {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the licenseDetails property of the microsoft.graph.user entity.</summary>
+        /// <param name="position">The unique identifier of licenseDetails</param>
         public LicenseDetailsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("licenseDetails%2Did", position);

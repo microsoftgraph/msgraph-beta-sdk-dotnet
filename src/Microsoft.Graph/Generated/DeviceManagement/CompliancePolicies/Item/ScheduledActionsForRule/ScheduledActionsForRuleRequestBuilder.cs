@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.Schedule
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the scheduledActionsForRule property of the microsoft.graph.deviceManagementCompliancePolicy entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementComplianceScheduledActionForRule</param>
         public DeviceManagementComplianceScheduledActionForRuleItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementComplianceScheduledActionForRule%2Did", position);

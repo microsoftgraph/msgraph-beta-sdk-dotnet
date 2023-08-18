@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.ColumnPositions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the columnPositions property of the microsoft.graph.contentType entity.</summary>
+        /// <param name="position">The unique identifier of columnDefinition</param>
         public ColumnDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("columnDefinition%2Did", position);

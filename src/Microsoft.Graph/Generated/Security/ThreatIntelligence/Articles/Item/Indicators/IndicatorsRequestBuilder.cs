@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Articles.Item.Indicat
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the indicators property of the microsoft.graph.security.article entity.</summary>
+        /// <param name="position">The unique identifier of articleIndicator</param>
         public ArticleIndicatorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("articleIndicator%2Did", position);

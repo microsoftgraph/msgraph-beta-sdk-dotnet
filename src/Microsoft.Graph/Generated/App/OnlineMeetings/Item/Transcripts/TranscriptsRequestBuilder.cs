@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Transcripts {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.</summary>
+        /// <param name="position">The unique identifier of callTranscript</param>
         public CallTranscriptItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("callTranscript%2Did", position);

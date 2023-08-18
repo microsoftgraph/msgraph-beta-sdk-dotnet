@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Services {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.</summary>
+        /// <param name="position">The unique identifier of bookingService</param>
         public BookingServiceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("bookingService%2Did", position);

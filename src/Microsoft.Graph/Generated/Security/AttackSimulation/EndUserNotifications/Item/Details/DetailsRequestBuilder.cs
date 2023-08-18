@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.EndUserNotifications.It
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the details property of the microsoft.graph.endUserNotification entity.</summary>
+        /// <param name="position">The unique identifier of endUserNotificationDetail</param>
         public EndUserNotificationDetailItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("endUserNotificationDetail%2Did", position);

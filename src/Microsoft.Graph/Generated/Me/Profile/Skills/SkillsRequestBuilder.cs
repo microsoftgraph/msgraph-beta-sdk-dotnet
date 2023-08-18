@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Skills {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the skills property of the microsoft.graph.profile entity.</summary>
+        /// <param name="position">The unique identifier of skillProficiency</param>
         public SkillProficiencyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("skillProficiency%2Did", position);

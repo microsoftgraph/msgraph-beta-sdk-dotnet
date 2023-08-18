@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Categories {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.deviceManagementIntent entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementIntentSettingCategory</param>
         public DeviceManagementIntentSettingCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementIntentSettingCategory%2Did", position);

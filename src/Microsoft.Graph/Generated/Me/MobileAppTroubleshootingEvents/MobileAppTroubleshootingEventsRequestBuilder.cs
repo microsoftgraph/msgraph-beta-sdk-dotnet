@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileAppTroubleshootingEvents property of the microsoft.graph.user entity.</summary>
+        /// <param name="position">The unique identifier of mobileAppTroubleshootingEvent</param>
         public MobileAppTroubleshootingEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileAppTroubleshootingEvent%2Did", position);

@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections {
             new HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the iosManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.</summary>
+        /// <param name="position">The unique identifier of iosManagedAppProtection</param>
         public IosManagedAppProtectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("iosManagedAppProtection%2Did", position);

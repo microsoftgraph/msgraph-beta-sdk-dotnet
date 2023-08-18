@@ -13,6 +13,7 @@ using Microsoft.Graph.Beta.AppRoleAssignments;
 using Microsoft.Graph.Beta.ApplicationTemplates;
 using Microsoft.Graph.Beta.Applications;
 using Microsoft.Graph.Beta.ApplicationsWithAppId;
+using Microsoft.Graph.Beta.ApplicationsWithUniqueName;
 using Microsoft.Graph.Beta.ApprovalWorkflowProviders;
 using Microsoft.Graph.Beta.AuditLogs;
 using Microsoft.Graph.Beta.AuthenticationMethodConfigurations;
@@ -58,6 +59,7 @@ using Microsoft.Graph.Beta.GovernanceRoleSettings;
 using Microsoft.Graph.Beta.GovernanceSubjects;
 using Microsoft.Graph.Beta.GroupLifecyclePolicies;
 using Microsoft.Graph.Beta.Groups;
+using Microsoft.Graph.Beta.GroupsWithUniqueName;
 using Microsoft.Graph.Beta.Identity;
 using Microsoft.Graph.Beta.IdentityGovernance;
 using Microsoft.Graph.Beta.IdentityProtection;
@@ -594,6 +596,14 @@ namespace Microsoft.Graph.Beta {
             return new ApplicationsWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
         }
         /// <summary>
+        /// Provides operations to manage the collection of application entities.
+        /// </summary>
+        /// <param name="uniqueName">Alternate key of application</param>
+        public ApplicationsWithUniqueNameRequestBuilder ApplicationsWithUniqueName(string uniqueName) {
+            if(string.IsNullOrEmpty(uniqueName)) throw new ArgumentNullException(nameof(uniqueName));
+            return new ApplicationsWithUniqueNameRequestBuilder(PathParameters, RequestAdapter, uniqueName);
+        }
+        /// <summary>
         /// Instantiates a new BaseGraphServiceClient and sets the default values.
         /// </summary>
         /// <param name="backingStore">The backing store to use for the models.</param>
@@ -627,6 +637,14 @@ namespace Microsoft.Graph.Beta {
         public DirectoryRolesWithRoleTemplateIdRequestBuilder DirectoryRolesWithRoleTemplateId(string roleTemplateId) {
             if(string.IsNullOrEmpty(roleTemplateId)) throw new ArgumentNullException(nameof(roleTemplateId));
             return new DirectoryRolesWithRoleTemplateIdRequestBuilder(PathParameters, RequestAdapter, roleTemplateId);
+        }
+        /// <summary>
+        /// Provides operations to manage the collection of group entities.
+        /// </summary>
+        /// <param name="uniqueName">Alternate key of group</param>
+        public GroupsWithUniqueNameRequestBuilder GroupsWithUniqueName(string uniqueName) {
+            if(string.IsNullOrEmpty(uniqueName)) throw new ArgumentNullException(nameof(uniqueName));
+            return new GroupsWithUniqueNameRequestBuilder(PathParameters, RequestAdapter, uniqueName);
         }
         /// <summary>
         /// Provides operations to manage the collection of servicePrincipal entities.

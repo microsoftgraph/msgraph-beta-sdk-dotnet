@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the certificateBasedApplicationConfigurations property of the microsoft.graph.certificateAuthorityPath entity.</summary>
+        /// <param name="position">The unique identifier of certificateBasedApplicationConfiguration</param>
         public CertificateBasedApplicationConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("certificateBasedApplicationConfiguration%2Did", position);

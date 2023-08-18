@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Analytics.ItemActivityStat
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the itemActivityStats property of the microsoft.graph.itemAnalytics entity.</summary>
+        /// <param name="position">The unique identifier of itemActivityStat</param>
         public ItemActivityStatItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("itemActivityStat%2Did", position);

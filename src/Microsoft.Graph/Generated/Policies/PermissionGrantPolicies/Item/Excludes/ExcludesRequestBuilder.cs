@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item.Excludes {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the excludes property of the microsoft.graph.permissionGrantPolicy entity.</summary>
+        /// <param name="position">The unique identifier of permissionGrantConditionSet</param>
         public PermissionGrantConditionSetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("permissionGrantConditionSet%2Did", position);

@@ -15,5 +15,13 @@ namespace Microsoft.Graph.Beta.Models {
         SourceImageNotGeneralized,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "vmAlreadyAzureAdjoined")]
+        VmAlreadyAzureAdjoined,
+        [EnumMember(Value = "paidSourceImageNotSupport")]
+        PaidSourceImageNotSupport,
+        [EnumMember(Value = "sourceImageNotSupportCustomizeVMName")]
+        SourceImageNotSupportCustomizeVMName,
+        [EnumMember(Value = "sourceImageSizeExceedsLimitation")]
+        SourceImageSizeExceedsLimitation,
     }
 }

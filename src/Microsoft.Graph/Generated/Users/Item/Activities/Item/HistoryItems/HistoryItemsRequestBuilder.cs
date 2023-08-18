@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Activities.Item.HistoryItems {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the historyItems property of the microsoft.graph.userActivity entity.</summary>
+        /// <param name="position">The unique identifier of activityHistoryItem</param>
         public ActivityHistoryItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("activityHistoryItem%2Did", position);

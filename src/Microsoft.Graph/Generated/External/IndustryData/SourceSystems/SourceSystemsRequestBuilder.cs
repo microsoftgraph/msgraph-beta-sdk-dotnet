@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sourceSystems property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
+        /// <param name="position">The unique identifier of sourceSystemDefinition</param>
         public SourceSystemDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sourceSystemDefinition%2Did", position);

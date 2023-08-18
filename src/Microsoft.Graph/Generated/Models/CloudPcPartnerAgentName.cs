@@ -7,5 +7,7 @@ namespace Microsoft.Graph.Beta.Models {
         Citrix,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "vMware")]
+        VMware,
     }
 }

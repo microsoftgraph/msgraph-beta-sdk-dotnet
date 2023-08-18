@@ -31,6 +31,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians {
             new MicrosoftGraphSecurityRemoveHoldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the custodians property of the microsoft.graph.security.ediscoveryCase entity.</summary>
+        /// <param name="position">The unique identifier of ediscoveryCustodian</param>
         public EdiscoveryCustodianItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("ediscoveryCustodian%2Did", position);

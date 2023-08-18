@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Payloads {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the payloads property of the microsoft.graph.attackSimulationRoot entity.</summary>
+        /// <param name="position">The unique identifier of payload</param>
         public PayloadItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("payload%2Did", position);

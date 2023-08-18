@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders {
             new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mailFolders property of the microsoft.graph.user entity.</summary>
+        /// <param name="position">The unique identifier of mailFolder</param>
         public MailFolderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mailFolder%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Submissions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.</summary>
+        /// <param name="position">The unique identifier of educationSubmission</param>
         public EducationSubmissionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationSubmission%2Did", position);

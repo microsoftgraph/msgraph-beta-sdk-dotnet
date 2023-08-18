@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// Entity representing the configuration of a cached report
     /// </summary>
     public class DeviceManagementCachedReportConfiguration : Entity, IParsable {
-        /// <summary>Time that the cached report expires</summary>
+        /// <summary>Time that the cached report expires. This property is read-only.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("filter", value); }
         }
 #endif
-        /// <summary>Time that the cached report was last refreshed</summary>
+        /// <summary>Time that the cached report was last refreshed. This property is read-only.</summary>
         public DateTimeOffset? LastRefreshDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshDateTime"); }
             set { BackingStore?.Set("lastRefreshDateTime", value); }
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("orderBy", value); }
         }
 #endif
-        /// <summary>Name of the report</summary>
+        /// <summary>Name of the report. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReportName {

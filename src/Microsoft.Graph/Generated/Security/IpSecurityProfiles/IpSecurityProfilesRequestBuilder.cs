@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.IpSecurityProfiles {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the ipSecurityProfiles property of the microsoft.graph.security entity.</summary>
+        /// <param name="position">The unique identifier of ipSecurityProfile</param>
         public IpSecurityProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("ipSecurityProfile%2Did", position);

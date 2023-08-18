@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentA
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignmentApprovals property of the microsoft.graph.rbacApplication entity.</summary>
+        /// <param name="position">The unique identifier of approval</param>
         public ApprovalItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("approval%2Did", position);

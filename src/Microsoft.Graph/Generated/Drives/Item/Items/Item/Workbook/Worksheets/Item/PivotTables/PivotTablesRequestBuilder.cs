@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.P
             new RefreshAllRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the pivotTables property of the microsoft.graph.workbookWorksheet entity.</summary>
+        /// <param name="position">The unique identifier of workbookPivotTable</param>
         public WorkbookPivotTableItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workbookPivotTable%2Did", position);

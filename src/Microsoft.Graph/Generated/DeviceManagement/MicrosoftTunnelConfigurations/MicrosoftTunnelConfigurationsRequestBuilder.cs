@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the microsoftTunnelConfigurations property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of microsoftTunnelConfiguration</param>
         public MicrosoftTunnelConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("microsoftTunnelConfiguration%2Did", position);

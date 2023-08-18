@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceId", value); }
         }
 #endif
-        /// <summary>The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647</summary>
         public int? EstimatedRuntimeInMinutes {
             get { return BackingStore?.Get<int?>("estimatedRuntimeInMinutes"); }
             set { BackingStore?.Set("estimatedRuntimeInMinutes", value); }

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Teamwork.WorkforceIntegrations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.</summary>
+        /// <param name="position">The unique identifier of workforceIntegration</param>
         public WorkforceIntegrationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("workforceIntegration%2Did", position);

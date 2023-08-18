@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dayOccurrence", value); }
         }
         /// <summary>Represents the day of the week when the transition from daylight saving time to standard time.</summary>
-        public Microsoft.Graph.Beta.Models.DayOfWeekObject? DayOfWeekObject {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DayOfWeekObject?>("dayOfWeek"); }
+        public DayOfWeekObject? DayOfWeek {
+            get { return BackingStore?.Get<DayOfWeekObject?>("dayOfWeek"); }
             set { BackingStore?.Set("dayOfWeek", value); }
         }
         /// <summary>Represents the month of the year when the transition from daylight saving time to standard time occurs.</summary>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"dayOccurrence", n => { DayOccurrence = n.GetIntValue(); } },
-                {"dayOfWeek", n => { DayOfWeekObject = n.GetEnumValue<DayOfWeekObject>(); } },
+                {"dayOfWeek", n => { DayOfWeek = n.GetEnumValue<DayOfWeekObject>(); } },
                 {"month", n => { Month = n.GetIntValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"time", n => { Time = n.GetTimeValue(); } },
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("dayOccurrence", DayOccurrence);
-            writer.WriteEnumValue<DayOfWeekObject>("dayOfWeek", DayOfWeekObject);
+            writer.WriteEnumValue<DayOfWeekObject>("dayOfWeek", DayOfWeek);
             writer.WriteIntValue("month", Month);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteTimeValue("time", Time);

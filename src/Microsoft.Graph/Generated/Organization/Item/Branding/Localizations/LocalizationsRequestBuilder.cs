@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding.Localizations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.</summary>
+        /// <param name="position">The unique identifier of organizationalBrandingLocalization</param>
         public OrganizationalBrandingLocalizationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("organizationalBrandingLocalization%2Did", position);

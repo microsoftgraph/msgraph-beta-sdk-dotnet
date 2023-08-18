@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.Contracts {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of contract entities.</summary>
+        /// <param name="position">The unique identifier of contract</param>
         public ContractItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contract%2Did", position);

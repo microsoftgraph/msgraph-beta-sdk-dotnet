@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the eligibilityScheduleInstances property of the microsoft.graph.privilegedAccessGroup entity.</summary>
+        /// <param name="position">The unique identifier of privilegedAccessGroupEligibilityScheduleInstance</param>
         public PrivilegedAccessGroupEligibilityScheduleInstanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("privilegedAccessGroupEligibilityScheduleInstance%2Did", position);

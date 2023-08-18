@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationModuleResource : Entity, IParsable {
-        /// <summary>The resource property</summary>
+        /// <summary>Resource object that has been associated with this module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EducationResource? Resource {

@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationModule : Entity, IParsable {
-        /// <summary>The createdBy property</summary>
+        /// <summary>The display name of the user that created the module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public IdentitySet? CreatedBy {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Date time the module was created.  The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>Description of the module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>Name of the module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The isPinned property</summary>
+        /// <summary>Indicates whether the module is pinned or not.</summary>
         public bool? IsPinned {
             get { return BackingStore?.Get<bool?>("isPinned"); }
             set { BackingStore?.Set("isPinned", value); }
         }
-        /// <summary>The lastModifiedBy property</summary>
+        /// <summary>The last user that modified the module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public IdentitySet? LastModifiedBy {
@@ -72,12 +72,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>Date time the module was last modified.  The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The resources property</summary>
+        /// <summary>Learning objects that are associated with this module.  Only teachers can modify this list. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<EducationModuleResource>? Resources {
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resources", value); }
         }
 #endif
-        /// <summary>The resourcesFolderUrl property</summary>
+        /// <summary>Folder URL where all the file resources for this module are stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourcesFolderUrl {
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resourcesFolderUrl", value); }
         }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Status of the module.  You can&apos;t use a PATCH operation to update this value. Possible values are: draft and published.</summary>
         public EducationModuleStatus? Status {
             get { return BackingStore?.Get<EducationModuleStatus?>("status"); }
             set { BackingStore?.Set("status", value); }

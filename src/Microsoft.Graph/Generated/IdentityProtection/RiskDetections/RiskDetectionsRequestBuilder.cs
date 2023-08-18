@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskDetections {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the riskDetections property of the microsoft.graph.identityProtectionRoot entity.</summary>
+        /// <param name="position">The unique identifier of riskDetection</param>
         public RiskDetectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("riskDetection%2Did", position);

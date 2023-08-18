@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the telecomExpenseManagementPartners property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of telecomExpenseManagementPartner</param>
         public TelecomExpenseManagementPartnerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("telecomExpenseManagementPartner%2Did", position);

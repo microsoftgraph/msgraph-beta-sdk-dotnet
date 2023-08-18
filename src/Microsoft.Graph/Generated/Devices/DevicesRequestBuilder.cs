@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.Devices {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of device entities.</summary>
+        /// <param name="position">The unique identifier of device</param>
         public DeviceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("device%2Did", position);

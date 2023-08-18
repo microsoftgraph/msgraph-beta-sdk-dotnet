@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.Micros
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the microsoftTunnelServers property of the microsoft.graph.microsoftTunnelSite entity.</summary>
+        /// <param name="position">The unique identifier of microsoftTunnelServer</param>
         public MicrosoftTunnelServerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("microsoftTunnelServer%2Did", position);

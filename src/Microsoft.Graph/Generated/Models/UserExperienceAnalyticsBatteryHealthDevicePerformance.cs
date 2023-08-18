@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// The user experience analytics battery health device performance entity contains device level battery information.
     /// </summary>
     public class UserExperienceAnalyticsBatteryHealthDevicePerformance : Entity, IParsable {
-        /// <summary>Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>Estimated battery age. Unit in days. Valid values 0 to 2147483647</summary>
         public int? BatteryAgeInDays {
             get { return BackingStore?.Get<int?>("batteryAgeInDays"); }
             set { BackingStore?.Set("batteryAgeInDays", value); }
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("deviceBatteryCount"); }
             set { BackingStore?.Set("deviceBatteryCount", value); }
         }
-        /// <summary>A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647</summary>
         public int? DeviceBatteryHealthScore {
             get { return BackingStore?.Get<int?>("deviceBatteryHealthScore"); }
             set { BackingStore?.Set("deviceBatteryHealthScore", value); }
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceName", value); }
         }
 #endif
-        /// <summary>The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647</summary>
         public int? EstimatedRuntimeInMinutes {
             get { return BackingStore?.Get<int?>("estimatedRuntimeInMinutes"); }
             set { BackingStore?.Set("estimatedRuntimeInMinutes", value); }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("manufacturer", value); }
         }
 #endif
-        /// <summary>Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values 0 to 2147483647</summary>
         public int? MaxCapacityPercentage {
             get { return BackingStore?.Get<int?>("maxCapacityPercentage"); }
             set { BackingStore?.Set("maxCapacityPercentage", value); }

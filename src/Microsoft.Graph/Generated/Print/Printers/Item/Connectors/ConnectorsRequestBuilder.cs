@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.Connectors {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the connectors property of the microsoft.graph.printer entity.</summary>
+        /// <param name="position">The unique identifier of printConnector</param>
         public PrintConnectorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printConnector%2Did", position);

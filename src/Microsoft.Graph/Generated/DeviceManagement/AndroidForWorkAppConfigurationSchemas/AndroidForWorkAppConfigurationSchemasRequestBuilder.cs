@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkAppConfigurationSc
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the androidForWorkAppConfigurationSchemas property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of androidForWorkAppConfigurationSchema</param>
         public AndroidForWorkAppConfigurationSchemaItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("androidForWorkAppConfigurationSchema%2Did", position);

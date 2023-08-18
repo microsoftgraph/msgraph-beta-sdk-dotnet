@@ -21,12 +21,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsReceivable 
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the agedAccountsReceivable property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of agedAccountsReceivable</param>
         public AgedAccountsReceivableItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agedAccountsReceivable%2Did", position);
             return new AgedAccountsReceivableItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>Provides operations to manage the agedAccountsReceivable property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of agedAccountsReceivable</param>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public AgedAccountsReceivableItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

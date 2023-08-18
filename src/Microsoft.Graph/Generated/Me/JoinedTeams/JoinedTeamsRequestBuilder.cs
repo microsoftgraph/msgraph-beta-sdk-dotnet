@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.JoinedTeams {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the joinedTeams property of the microsoft.graph.user entity.</summary>
+        /// <param name="position">The unique identifier of team</param>
         public TeamItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("team%2Did", position);

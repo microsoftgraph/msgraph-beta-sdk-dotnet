@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.DeviceCompli
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceCompliancePolicyStates property of the microsoft.graph.managedDevice entity.</summary>
+        /// <param name="position">The unique identifier of deviceCompliancePolicyState</param>
         public DeviceCompliancePolicyStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceCompliancePolicyState%2Did", position);

@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups.Item.TaskFolders {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskFolders property of the microsoft.graph.outlookTaskGroup entity.</summary>
+        /// <param name="position">The unique identifier of outlookTaskFolder</param>
         [Obsolete("The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20")]
         public OutlookTaskFolderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

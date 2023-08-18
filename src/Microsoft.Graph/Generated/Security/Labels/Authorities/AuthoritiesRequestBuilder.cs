@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authorities property of the microsoft.graph.security.labelsRoot entity.</summary>
+        /// <param name="position">The unique identifier of authorityTemplate</param>
         public AuthorityTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("authorityTemplate%2Did", position);

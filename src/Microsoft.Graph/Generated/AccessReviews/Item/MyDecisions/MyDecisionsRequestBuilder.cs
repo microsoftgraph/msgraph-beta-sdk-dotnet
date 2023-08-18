@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.MyDecisions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the myDecisions property of the microsoft.graph.accessReview entity.</summary>
+        /// <param name="position">The unique identifier of accessReviewDecision</param>
         public AccessReviewDecisionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewDecision%2Did", position);

@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.FederationConfigurations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.</summary>
+        /// <param name="position">The unique identifier of identityProviderBase</param>
         public IdentityProviderBaseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityProviderBase%2Did", position);

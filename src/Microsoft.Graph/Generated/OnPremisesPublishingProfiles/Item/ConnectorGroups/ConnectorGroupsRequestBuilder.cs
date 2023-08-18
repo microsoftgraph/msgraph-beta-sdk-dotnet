@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the connectorGroups property of the microsoft.graph.onPremisesPublishingProfile entity.</summary>
+        /// <param name="position">The unique identifier of connectorGroup</param>
         public ConnectorGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("connectorGroup%2Did", position);

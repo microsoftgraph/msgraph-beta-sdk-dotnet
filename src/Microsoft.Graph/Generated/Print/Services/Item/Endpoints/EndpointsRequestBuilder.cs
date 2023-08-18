@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Print.Services.Item.Endpoints {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the endpoints property of the microsoft.graph.printService entity.</summary>
+        /// <param name="position">The unique identifier of printServiceEndpoint</param>
         public PrintServiceEndpointItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printServiceEndpoint%2Did", position);

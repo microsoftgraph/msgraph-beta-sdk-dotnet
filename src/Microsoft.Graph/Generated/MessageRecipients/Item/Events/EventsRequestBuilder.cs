@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.MessageRecipients.Item.Events {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the events property of the microsoft.graph.messageRecipient entity.</summary>
+        /// <param name="position">The unique identifier of messageEvent</param>
         public MessageEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("messageEvent%2Did", position);

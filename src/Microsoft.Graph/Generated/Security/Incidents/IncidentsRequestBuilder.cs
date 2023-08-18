@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.Incidents {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the incidents property of the microsoft.graph.security entity.</summary>
+        /// <param name="position">The unique identifier of incident</param>
         public IncidentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("incident%2Did", position);

@@ -9,22 +9,22 @@ namespace Microsoft.Graph.Beta.Models {
     /// The user experience analytics battery health runtime entity contains count of devices broken down into 3 categories - devices with runtime &gt; 5 hours, devices with runtime 3-5 hours and devices with runtime &lt; 3 hours.This API provides the count of devices in these 3 categories.
     /// </summary>
     public class UserExperienceAnalyticsBatteryHealthRuntimeDetails : Entity, IParsable {
-        /// <summary>Number of active devices within the tenant. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>Number of active devices within the tenant. Valid values 0 to 2147483647</summary>
         public int? ActiveDevices {
             get { return BackingStore?.Get<int?>("activeDevices"); }
             set { BackingStore?.Set("activeDevices", value); }
         }
-        /// <summary>Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values 0 to 2147483647</summary>
         public int? BatteryRuntimeFair {
             get { return BackingStore?.Get<int?>("batteryRuntimeFair"); }
             set { BackingStore?.Set("batteryRuntimeFair", value); }
         }
-        /// <summary>Number of devices  whose active runtime is greater than 5 hours. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>Number of devices  whose active runtime is greater than 5 hours. Valid values 0 to 2147483647</summary>
         public int? BatteryRuntimeGood {
             get { return BackingStore?.Get<int?>("batteryRuntimeGood"); }
             set { BackingStore?.Set("batteryRuntimeGood", value); }
         }
-        /// <summary>Number of devices whose active runtime is lesser than 3 hours. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>Number of devices whose active runtime is lesser than 3 hours. Valid values 0 to 2147483647</summary>
         public int? BatteryRuntimePoor {
             get { return BackingStore?.Get<int?>("batteryRuntimePoor"); }
             set { BackingStore?.Set("batteryRuntimePoor", value); }

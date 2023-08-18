@@ -6,6 +6,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class VirtualEventSession : OnlineMeeting, IParsable {
+        /// <summary>The registrations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<VirtualEventRegistration>? Registrations {
+            get { return BackingStore?.Get<List<VirtualEventRegistration>?>("registrations"); }
+            set { BackingStore?.Set("registrations", value); }
+        }
+#nullable restore
+#else
+        public List<VirtualEventRegistration> Registrations {
+            get { return BackingStore?.Get<List<VirtualEventRegistration>>("registrations"); }
+            set { BackingStore?.Set("registrations", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -19,6 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"registrations", n => { Registrations = n.GetCollectionOfObjectValues<VirtualEventRegistration>(VirtualEventRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -28,6 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<VirtualEventRegistration>("registrations", Registrations);
         }
     }
 }

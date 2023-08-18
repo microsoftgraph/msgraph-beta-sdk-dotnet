@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item.Files {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the files property of the microsoft.graph.agreement entity.</summary>
+        /// <param name="position">The unique identifier of agreementFileLocalization</param>
         public AgreementFileLocalizationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreementFileLocalization%2Did", position);

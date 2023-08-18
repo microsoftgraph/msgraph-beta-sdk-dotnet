@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Vulnerabilities.Item.
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the components property of the microsoft.graph.security.vulnerability entity.</summary>
+        /// <param name="position">The unique identifier of vulnerabilityComponent</param>
         public VulnerabilityComponentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("vulnerabilityComponent%2Did", position);

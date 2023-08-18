@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Search.Acronyms {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the acronyms property of the microsoft.graph.searchEntity entity.</summary>
+        /// <param name="position">The unique identifier of acronym</param>
         public AcronymItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("acronym%2Did", position);

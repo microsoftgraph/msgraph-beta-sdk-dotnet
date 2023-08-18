@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of directorySettingTemplate entities.</summary>
+        /// <param name="position">The unique identifier of directorySettingTemplate</param>
         public DirectorySettingTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directorySettingTemplate%2Did", position);

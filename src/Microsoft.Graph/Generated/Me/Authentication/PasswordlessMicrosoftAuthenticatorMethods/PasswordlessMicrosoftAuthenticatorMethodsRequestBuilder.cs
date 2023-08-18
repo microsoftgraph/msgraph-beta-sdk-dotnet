@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PasswordlessMicrosoftAuthentica
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the passwordlessMicrosoftAuthenticatorMethods property of the microsoft.graph.authentication entity.</summary>
+        /// <param name="position">The unique identifier of passwordlessMicrosoftAuthenticatorAuthenticationMethod</param>
         public PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("passwordlessMicrosoftAuthenticatorAuthenticationMethod%2Did", position);

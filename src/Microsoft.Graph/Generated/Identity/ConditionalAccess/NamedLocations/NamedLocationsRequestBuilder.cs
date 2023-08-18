@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.</summary>
+        /// <param name="position">The unique identifier of namedLocation</param>
         public NamedLocationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("namedLocation%2Did", position);

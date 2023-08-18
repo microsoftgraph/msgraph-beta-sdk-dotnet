@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoiceLines {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesInvoiceLines property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of salesInvoiceLine</param>
         public SalesInvoiceLineItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("salesInvoiceLine%2Did", position);

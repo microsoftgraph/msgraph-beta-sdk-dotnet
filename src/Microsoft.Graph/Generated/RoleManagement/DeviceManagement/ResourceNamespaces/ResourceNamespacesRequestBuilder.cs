@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.ResourceNamespace
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplicationMultiple entity.</summary>
+        /// <param name="position">The unique identifier of unifiedRbacResourceNamespace</param>
         public UnifiedRbacResourceNamespaceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRbacResourceNamespace%2Did", position);

@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.Organization {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of organization entities.</summary>
+        /// <param name="position">The unique identifier of organization</param>
         public OrganizationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("organization%2Did", position);

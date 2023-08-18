@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignme
             new ExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.governanceResource entity.</summary>
+        /// <param name="position">The unique identifier of governanceRoleAssignment</param>
         public GovernanceRoleAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceRoleAssignment%2Did", position);

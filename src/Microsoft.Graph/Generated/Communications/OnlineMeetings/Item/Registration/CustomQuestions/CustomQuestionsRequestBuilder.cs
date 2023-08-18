@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration.C
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customQuestions property of the microsoft.graph.meetingRegistration entity.</summary>
+        /// <param name="position">The unique identifier of meetingRegistrationQuestion</param>
         public MeetingRegistrationQuestionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("meetingRegistrationQuestion%2Did", position);

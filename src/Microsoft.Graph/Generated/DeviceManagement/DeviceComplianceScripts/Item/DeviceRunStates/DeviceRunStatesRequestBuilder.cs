@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item.Dev
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceRunStates property of the microsoft.graph.deviceComplianceScript entity.</summary>
+        /// <param name="position">The unique identifier of deviceComplianceScriptDeviceState</param>
         public DeviceComplianceScriptDeviceStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceComplianceScriptDeviceState%2Did", position);

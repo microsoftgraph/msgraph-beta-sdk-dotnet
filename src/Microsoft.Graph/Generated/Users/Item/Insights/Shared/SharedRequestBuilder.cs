@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Insights.Shared {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the shared property of the microsoft.graph.officeGraphInsights entity.</summary>
+        /// <param name="position">The unique identifier of sharedInsight</param>
         public SharedInsightItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sharedInsight%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.</summary>
+        /// <param name="position">The unique identifier of directoryDefinition</param>
         public DirectoryDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryDefinition%2Did", position);

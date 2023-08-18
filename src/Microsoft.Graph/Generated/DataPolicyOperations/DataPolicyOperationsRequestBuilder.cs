@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DataPolicyOperations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of dataPolicyOperation entities.</summary>
+        /// <param name="position">The unique identifier of dataPolicyOperation</param>
         public DataPolicyOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("dataPolicyOperation%2Did", position);

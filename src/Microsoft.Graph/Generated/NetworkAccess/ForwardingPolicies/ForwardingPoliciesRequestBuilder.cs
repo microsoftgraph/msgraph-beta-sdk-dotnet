@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the forwardingPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
+        /// <param name="position">The unique identifier of forwardingPolicy</param>
         public ForwardingPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("forwardingPolicy%2Did", position);

@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs {
             new MicrosoftGraphIndustryDataGetStatisticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the runs property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
+        /// <param name="position">The unique identifier of industryDataRun</param>
         public IndustryDataRunItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("industryDataRun%2Did", position);

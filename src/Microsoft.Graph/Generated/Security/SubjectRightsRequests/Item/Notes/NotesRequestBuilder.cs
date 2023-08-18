@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Notes {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the notes property of the microsoft.graph.subjectRightsRequest entity.</summary>
+        /// <param name="position">The unique identifier of authoredNote</param>
         public AuthoredNoteItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("authoredNote%2Did", position);

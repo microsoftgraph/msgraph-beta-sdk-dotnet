@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.ProviderTenantSettings {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the providerTenantSettings property of the microsoft.graph.security entity.</summary>
+        /// <param name="position">The unique identifier of providerTenantSetting</param>
         public ProviderTenantSettingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("providerTenantSetting%2Did", position);

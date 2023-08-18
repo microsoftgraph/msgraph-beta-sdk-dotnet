@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.Forwardi
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the policies property of the microsoft.graph.networkaccess.profile entity.</summary>
+        /// <param name="position">The unique identifier of policyLink</param>
         public PolicyLinkItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("policyLink%2Did", position);

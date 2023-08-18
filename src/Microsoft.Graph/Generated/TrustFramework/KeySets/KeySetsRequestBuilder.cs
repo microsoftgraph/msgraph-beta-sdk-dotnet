@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the keySets property of the microsoft.graph.trustFramework entity.</summary>
+        /// <param name="position">The unique identifier of trustFrameworkKeySet</param>
         public TrustFrameworkKeySetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("trustFrameworkKeySet%2Did", position);

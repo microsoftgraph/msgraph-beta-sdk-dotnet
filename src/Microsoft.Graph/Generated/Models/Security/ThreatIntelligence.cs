@@ -202,6 +202,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("vulnerabilities", value); }
         }
 #endif
+        /// <summary>The whoisHistoryRecords property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<WhoisHistoryRecord>? WhoisHistoryRecords {
+            get { return BackingStore?.Get<List<WhoisHistoryRecord>?>("whoisHistoryRecords"); }
+            set { BackingStore?.Set("whoisHistoryRecords", value); }
+        }
+#nullable restore
+#else
+        public List<WhoisHistoryRecord> WhoisHistoryRecords {
+            get { return BackingStore?.Get<List<WhoisHistoryRecord>>("whoisHistoryRecords"); }
+            set { BackingStore?.Set("whoisHistoryRecords", value); }
+        }
+#endif
         /// <summary>The whoisRecords property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -243,6 +257,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"sslCertificates", n => { SslCertificates = n.GetCollectionOfObjectValues<SslCertificate>(SslCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"subdomains", n => { Subdomains = n.GetCollectionOfObjectValues<Subdomain>(Subdomain.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfObjectValues<Vulnerability>(Vulnerability.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"whoisHistoryRecords", n => { WhoisHistoryRecords = n.GetCollectionOfObjectValues<WhoisHistoryRecord>(WhoisHistoryRecord.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"whoisRecords", n => { WhoisRecords = n.GetCollectionOfObjectValues<WhoisRecord>(WhoisRecord.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -267,6 +282,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             writer.WriteCollectionOfObjectValues<SslCertificate>("sslCertificates", SslCertificates);
             writer.WriteCollectionOfObjectValues<Subdomain>("subdomains", Subdomains);
             writer.WriteCollectionOfObjectValues<Vulnerability>("vulnerabilities", Vulnerabilities);
+            writer.WriteCollectionOfObjectValues<WhoisHistoryRecord>("whoisHistoryRecords", WhoisHistoryRecords);
             writer.WriteCollectionOfObjectValues<WhoisRecord>("whoisRecords", WhoisRecords);
         }
     }

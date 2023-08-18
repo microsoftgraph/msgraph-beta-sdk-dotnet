@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelProfiles.Item.In
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the indicators property of the microsoft.graph.security.intelligenceProfile entity.</summary>
+        /// <param name="position">The unique identifier of intelligenceProfileIndicator</param>
         public IntelligenceProfileIndicatorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("intelligenceProfileIndicator%2Did", position);

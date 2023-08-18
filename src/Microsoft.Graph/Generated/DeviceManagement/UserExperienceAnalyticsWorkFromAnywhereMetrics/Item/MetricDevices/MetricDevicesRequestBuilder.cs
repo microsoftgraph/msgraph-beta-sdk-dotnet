@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsWorkFromA
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the metricDevices property of the microsoft.graph.userExperienceAnalyticsWorkFromAnywhereMetric entity.</summary>
+        /// <param name="position">The unique identifier of userExperienceAnalyticsWorkFromAnywhereDevice</param>
         public UserExperienceAnalyticsWorkFromAnywhereDeviceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsWorkFromAnywhereDevice%2Did", position);

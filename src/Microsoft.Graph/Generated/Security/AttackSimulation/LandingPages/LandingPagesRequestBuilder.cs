@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.LandingPages {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the landingPages property of the microsoft.graph.attackSimulationRoot entity.</summary>
+        /// <param name="position">The unique identifier of landingPage</param>
         public LandingPageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("landingPage%2Did", position);

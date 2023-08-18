@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.</summary>
+        /// <param name="position">The unique identifier of callRecord</param>
         public CallRecordItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("callRecord%2Did", position);

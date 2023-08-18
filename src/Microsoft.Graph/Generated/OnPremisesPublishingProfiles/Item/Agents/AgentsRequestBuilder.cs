@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Agents {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the agents property of the microsoft.graph.onPremisesPublishingProfile entity.</summary>
+        /// <param name="position">The unique identifier of onPremisesAgent</param>
         public OnPremisesAgentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onPremisesAgent%2Did", position);

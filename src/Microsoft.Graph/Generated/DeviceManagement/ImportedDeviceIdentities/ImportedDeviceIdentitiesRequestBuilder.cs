@@ -31,6 +31,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities {
             new SearchExistingIdentitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the importedDeviceIdentities property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of importedDeviceIdentity</param>
         public ImportedDeviceIdentityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("importedDeviceIdentity%2Did", position);

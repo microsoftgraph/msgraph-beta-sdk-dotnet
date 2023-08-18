@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the intuneBrandingProfiles property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of intuneBrandingProfile</param>
         public IntuneBrandingProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("intuneBrandingProfile%2Did", position);

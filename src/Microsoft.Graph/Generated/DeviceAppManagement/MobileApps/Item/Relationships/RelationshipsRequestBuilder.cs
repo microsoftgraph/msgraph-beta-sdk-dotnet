@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Relationships
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.</summary>
+        /// <param name="position">The unique identifier of mobileAppRelationship</param>
         public MobileAppRelationshipItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileAppRelationship%2Did", position);

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// Entity representing a job to export a report
     /// </summary>
     public class DeviceManagementExportJob : Entity, IParsable {
-        /// <summary>Time that the exported report expires</summary>
+        /// <summary>Time that the exported report expires. This property is read-only.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("reportName", value); }
         }
 #endif
-        /// <summary>Time that the exported report was requested</summary>
+        /// <summary>Time that the exported report was requested. This property is read-only.</summary>
         public DateTimeOffset? RequestDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("requestDateTime"); }
             set { BackingStore?.Set("requestDateTime", value); }
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DeviceManagementReportStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>Temporary location of the exported report</summary>
+        /// <summary>Temporary location of the exported report. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url {

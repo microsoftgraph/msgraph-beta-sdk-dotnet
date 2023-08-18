@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the patents property of the microsoft.graph.profile entity.</summary>
+        /// <param name="position">The unique identifier of itemPatent</param>
         public ItemPatentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("itemPatent%2Did", position);

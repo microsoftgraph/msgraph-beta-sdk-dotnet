@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the outboundSharedUserProfiles property of the microsoft.graph.directory entity.</summary>
+        /// <param name="position">The unique identifier of outboundSharedUserProfile</param>
         public OutboundSharedUserProfileUserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("outboundSharedUserProfile%2DuserId", position);

@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls {
             new LogTeleconferenceDeviceQualityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.</summary>
+        /// <param name="position">The unique identifier of call</param>
         public CallItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("call%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.UserConfigurations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userConfigurations property of the microsoft.graph.mailFolder entity.</summary>
+        /// <param name="position">The unique identifier of userConfiguration</param>
         public UserConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userConfiguration%2Did", position);

@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models {
     /// Contains properties and inherited properties for the MacOS DMG (Apple Disk Image) App.
     /// </summary>
     public class MacOSDmgApp : MobileLobApp, IParsable {
-        /// <summary>A value indicating whether the app&apos;s version will be used to detect the app after it is installed on a device. Set this to true for apps that use a self-update feature. Set this to false to install the app when it is not already installed on the device, or if the deploying app&apos;s version number does not match the version that&apos;s already installed on the device.</summary>
+        /// <summary>When TRUE, indicates that the app&apos;s version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app&apos;s version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.</summary>
         public bool? IgnoreVersionDetection {
             get { return BackingStore?.Get<bool?>("ignoreVersionDetection"); }
             set { BackingStore?.Set("ignoreVersionDetection", value); }
         }
-        /// <summary>The list of apps expected to be installed by the DMG.</summary>
+        /// <summary>The list of .apps expected to be installed by the DMG (Apple Disk Image)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<MacOSIncludedApp>? IncludedApps {
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("includedApps", value); }
         }
 #endif
-        /// <summary>The value for the minimum applicable operating system.</summary>
+        /// <summary>ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public MacOSMinimumOperatingSystem? MinimumSupportedOperatingSystem {
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #endif
-        /// <summary>The primary CFBundleIdentifier of the DMG.</summary>
+        /// <summary>The bundleId of the primary .app in the DMG (Apple Disk Image). This maps to the CFBundleIdentifier in the app&apos;s bundle configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimaryBundleId {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("primaryBundleId", value); }
         }
 #endif
-        /// <summary>The primary CFBundleVersion of the DMG.</summary>
+        /// <summary>The version of the primary .app in the DMG (Apple Disk Image). This maps to the CFBundleShortVersion in the app&apos;s bundle configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimaryBundleVersion {

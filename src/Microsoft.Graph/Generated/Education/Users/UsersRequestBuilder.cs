@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Education.Users {
             new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the users property of the microsoft.graph.educationRoot entity.</summary>
+        /// <param name="position">The unique identifier of educationUser</param>
         public EducationUserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationUser%2Did", position);

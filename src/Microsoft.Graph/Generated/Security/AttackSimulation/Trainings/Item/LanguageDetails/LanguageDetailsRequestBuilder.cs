@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Trainings.Item.Language
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the languageDetails property of the microsoft.graph.training entity.</summary>
+        /// <param name="position">The unique identifier of trainingLanguageDetail</param>
         public TrainingLanguageDetailItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("trainingLanguageDetail%2Did", position);

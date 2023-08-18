@@ -27,6 +27,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks {
             new GetNotebookFromWebUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the notebooks property of the microsoft.graph.onenote entity.</summary>
+        /// <param name="position">The unique identifier of notebook</param>
         public NotebookItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("notebook%2Did", position);

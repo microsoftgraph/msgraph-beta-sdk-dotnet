@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.</summary>
+        /// <param name="position">The unique identifier of cloudAppSecurityProfile</param>
         public CloudAppSecurityProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudAppSecurityProfile%2Did", position);

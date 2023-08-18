@@ -31,6 +31,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations {
             new HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of deviceEnrollmentConfiguration</param>
         public DeviceEnrollmentConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceEnrollmentConfiguration%2Did", position);

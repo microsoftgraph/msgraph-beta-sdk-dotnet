@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the interests property of the microsoft.graph.profile entity.</summary>
+        /// <param name="position">The unique identifier of personInterest</param>
         public PersonInterestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("personInterest%2Did", position);

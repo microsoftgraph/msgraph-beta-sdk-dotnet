@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Reports.ServicePrincipalSignInActivities {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the servicePrincipalSignInActivities property of the microsoft.graph.reportRoot entity.</summary>
+        /// <param name="position">The unique identifier of servicePrincipalSignInActivity</param>
         public ServicePrincipalSignInActivityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("servicePrincipalSignInActivity%2Did", position);

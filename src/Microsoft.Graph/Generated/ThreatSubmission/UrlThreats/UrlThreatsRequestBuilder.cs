@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.ThreatSubmission.UrlThreats {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the urlThreats property of the microsoft.graph.security.threatSubmissionRoot entity.</summary>
+        /// <param name="position">The unique identifier of urlThreatSubmission</param>
         public UrlThreatSubmissionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("urlThreatSubmission%2Did", position);

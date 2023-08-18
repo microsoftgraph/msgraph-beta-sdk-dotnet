@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item.DefaultUserRole
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the defaultUserRoleOverrides property of the microsoft.graph.authorizationPolicy entity.</summary>
+        /// <param name="position">The unique identifier of defaultUserRoleOverride</param>
         public DefaultUserRoleOverrideItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("defaultUserRoleOverride%2Did", position);

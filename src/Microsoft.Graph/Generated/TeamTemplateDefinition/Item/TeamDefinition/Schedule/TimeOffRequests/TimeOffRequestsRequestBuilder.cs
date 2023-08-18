@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the timeOffRequests property of the microsoft.graph.schedule entity.</summary>
+        /// <param name="position">The unique identifier of timeOffRequest</param>
         public TimeOffRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("timeOffRequest%2Did", position);

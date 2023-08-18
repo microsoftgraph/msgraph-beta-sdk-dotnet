@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.TokenIssuancePolicies {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.servicePrincipal entity.</summary>
+        /// <param name="position">The unique identifier of tokenIssuancePolicy</param>
         public TokenIssuancePolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tokenIssuancePolicy%2Did", position);

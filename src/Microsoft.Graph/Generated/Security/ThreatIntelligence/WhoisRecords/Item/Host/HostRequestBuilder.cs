@@ -11,7 +11,7 @@ using System.Threading;
 using System;
 namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisRecords.Item.Host {
     /// <summary>
-    /// Provides operations to manage the host property of the microsoft.graph.security.whoisRecord entity.
+    /// Provides operations to manage the host property of the microsoft.graph.security.whoisBaseRecord entity.
     /// </summary>
     public class HostRequestBuilder : BaseRequestBuilder {
         /// <summary>

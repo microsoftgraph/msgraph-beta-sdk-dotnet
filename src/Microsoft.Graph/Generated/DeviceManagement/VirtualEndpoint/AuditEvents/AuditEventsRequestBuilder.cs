@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents {
             new GetAuditActivityTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the auditEvents property of the microsoft.graph.virtualEndpoint entity.</summary>
+        /// <param name="position">The unique identifier of cloudPcAuditEvent</param>
         public CloudPcAuditEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcAuditEvent%2Did", position);

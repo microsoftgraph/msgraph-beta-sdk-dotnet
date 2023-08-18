@@ -23,14 +23,14 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// <summary>The task property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject? TaskObject {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject?>("task"); }
+        public TaskObject? Task {
+            get { return BackingStore?.Get<TaskObject?>("task"); }
             set { BackingStore?.Set("task", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject TaskObject {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject>("task"); }
+        public TaskObject Task {
+            get { return BackingStore?.Get<TaskObject>("task"); }
             set { BackingStore?.Set("task", value); }
         }
 #endif
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"subject", n => { Subject = n.GetObjectValue<Microsoft.Graph.Beta.Models.User>(Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue); } },
-                {"task", n => { TaskObject = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject>(Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject.CreateFromDiscriminatorValue); } },
+                {"task", n => { Task = n.GetObjectValue<TaskObject>(TaskObject.CreateFromDiscriminatorValue); } },
                 {"taskProcessingresult", n => { TaskProcessingresult = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult>(Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult.CreateFromDiscriminatorValue); } },
                 {"workflow", n => { Workflow = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow>(Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow.CreateFromDiscriminatorValue); } },
             };
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.User>("subject", Subject);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject>("task", TaskObject);
+            writer.WriteObjectValue<TaskObject>("task", Task);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult>("taskProcessingresult", TaskProcessingresult);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow>("workflow", Workflow);
         }

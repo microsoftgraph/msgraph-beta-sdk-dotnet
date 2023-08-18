@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Tags.I
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.teamworkTag entity.</summary>
+        /// <param name="position">The unique identifier of teamworkTagMember</param>
         public TeamworkTagMemberItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamworkTagMember%2Did", position);

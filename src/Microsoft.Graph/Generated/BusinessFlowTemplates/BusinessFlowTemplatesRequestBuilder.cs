@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of businessFlowTemplate entities.</summary>
+        /// <param name="position">The unique identifier of businessFlowTemplate</param>
         public BusinessFlowTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("businessFlowTemplate%2Did", position);

@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.Attachments {
             new CreateUploadSessionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the attachments property of the microsoft.graph.todoTask entity.</summary>
+        /// <param name="position">The unique identifier of attachmentBase</param>
         public AttachmentBaseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("attachmentBase%2Did", position);

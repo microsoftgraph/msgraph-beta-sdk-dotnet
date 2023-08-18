@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts {
             new HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceManagementScripts property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementScript</param>
         public DeviceManagementScriptItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementScript%2Did", position);

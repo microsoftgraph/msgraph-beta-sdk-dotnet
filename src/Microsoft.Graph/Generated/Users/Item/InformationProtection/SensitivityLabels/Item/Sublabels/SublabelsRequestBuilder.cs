@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
             new EvaluateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.</summary>
+        /// <param name="position">The unique identifier of sensitivityLabel</param>
         public Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabels.Item.Sublabels.Item.SensitivityLabelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sensitivityLabel%2Did1", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Invitations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of invitation entities.</summary>
+        /// <param name="position">The unique identifier of invitation</param>
         public InvitationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("invitation%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedAccess entities.</summary>
+        /// <param name="position">The unique identifier of privilegedAccess</param>
         public PrivilegedAccessItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("privilegedAccess%2Did", position);

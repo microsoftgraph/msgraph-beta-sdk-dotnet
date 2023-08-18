@@ -21,12 +21,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesCreditMemos property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of salesCreditMemo</param>
         public SalesCreditMemoItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("salesCreditMemo%2Did", position);
             return new SalesCreditMemoItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>Provides operations to manage the salesCreditMemos property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of salesCreditMemo</param>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public SalesCreditMemoItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

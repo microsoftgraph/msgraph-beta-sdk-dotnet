@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the threads property of the microsoft.graph.conversation entity.</summary>
+        /// <param name="position">The unique identifier of conversationThread</param>
         public ConversationThreadItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("conversationThread%2Did", position);

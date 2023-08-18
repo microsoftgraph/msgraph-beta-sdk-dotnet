@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementAutopilotEvent</param>
         public DeviceManagementAutopilotEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementAutopilotEvent%2Did", position);

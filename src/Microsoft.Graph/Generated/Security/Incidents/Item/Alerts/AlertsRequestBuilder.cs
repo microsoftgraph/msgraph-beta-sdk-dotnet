@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.Incidents.Item.Alerts {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the alerts property of the microsoft.graph.security.incident entity.</summary>
+        /// <param name="position">The unique identifier of alert</param>
         public AlertItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("alert%2Did", position);

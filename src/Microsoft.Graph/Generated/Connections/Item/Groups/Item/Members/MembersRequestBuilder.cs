@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Groups.Item.Members {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.externalConnectors.externalGroup entity.</summary>
+        /// <param name="position">The unique identifier of identity</param>
         public IdentityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identity%2Did", position);

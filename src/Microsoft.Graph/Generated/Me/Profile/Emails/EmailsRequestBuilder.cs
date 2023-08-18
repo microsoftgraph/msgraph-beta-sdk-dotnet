@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Emails {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the emails property of the microsoft.graph.profile entity.</summary>
+        /// <param name="position">The unique identifier of itemEmail</param>
         public ItemEmailItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("itemEmail%2Did", position);

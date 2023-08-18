@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.UserSecurityProfiles {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userSecurityProfiles property of the microsoft.graph.security entity.</summary>
+        /// <param name="position">The unique identifier of userSecurityProfile</param>
         public UserSecurityProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userSecurityProfile%2Did", position);

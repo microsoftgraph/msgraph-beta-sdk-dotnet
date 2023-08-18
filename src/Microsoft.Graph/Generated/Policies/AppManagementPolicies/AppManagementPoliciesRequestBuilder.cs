@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Policies.AppManagementPolicies {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appManagementPolicies property of the microsoft.graph.policyRoot entity.</summary>
+        /// <param name="position">The unique identifier of appManagementPolicy</param>
         public AppManagementPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appManagementPolicy%2Did", position);

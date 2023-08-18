@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.TemporaryAccessPassMeth
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the temporaryAccessPassMethods property of the microsoft.graph.authentication entity.</summary>
+        /// <param name="position">The unique identifier of temporaryAccessPassAuthenticationMethod</param>
         public TemporaryAccessPassAuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("temporaryAccessPassAuthenticationMethod%2Did", position);

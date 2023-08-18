@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Posts {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the posts property of the microsoft.graph.conversationThread entity.</summary>
+        /// <param name="position">The unique identifier of post</param>
         public PostItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("post%2Did", position);

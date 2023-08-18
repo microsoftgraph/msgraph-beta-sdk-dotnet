@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.Contacts {
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of orgContact entities.</summary>
+        /// <param name="position">The unique identifier of orgContact</param>
         public OrgContactItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("orgContact%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.SecureScoreControlProfiles {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.</summary>
+        /// <param name="position">The unique identifier of secureScoreControlProfile</param>
         public SecureScoreControlProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("secureScoreControlProfile%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dataConnectors property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
+        /// <param name="position">The unique identifier of industryDataConnector</param>
         public IndustryDataConnectorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("industryDataConnector%2Did", position);
@@ -41,8 +42,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
         public DataConnectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/dataConnectors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the azureDataLakeConnector objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-list?view=graph-rest-1.0" />
+        /// Get the industryDataConnector resources from the dataConnector navigation property.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,7 +84,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
             return await RequestAdapter.SendAsync<IndustryDataConnector>(requestInfo, IndustryDataConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a list of the azureDataLakeConnector objects and their properties.
+        /// Get the industryDataConnector resources from the dataConnector navigation property.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +138,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of the azureDataLakeConnector objects and their properties.
+        /// Get the industryDataConnector resources from the dataConnector navigation property.
         /// </summary>
         public class DataConnectorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

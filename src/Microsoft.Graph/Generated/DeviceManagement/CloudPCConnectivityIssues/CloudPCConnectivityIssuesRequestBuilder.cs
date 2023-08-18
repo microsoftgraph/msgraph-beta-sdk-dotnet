@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CloudPCConnectivityIssues {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudPCConnectivityIssues property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of cloudPCConnectivityIssue</param>
         public CloudPCConnectivityIssueItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPCConnectivityIssue%2Did", position);

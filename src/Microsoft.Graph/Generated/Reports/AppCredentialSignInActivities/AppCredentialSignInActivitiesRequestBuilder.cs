@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Reports.AppCredentialSignInActivities {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appCredentialSignInActivities property of the microsoft.graph.reportRoot entity.</summary>
+        /// <param name="position">The unique identifier of appCredentialSignInActivity</param>
         public AppCredentialSignInActivityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appCredentialSignInActivity%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.DispositionR
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dispositionReviewStages property of the microsoft.graph.security.retentionLabel entity.</summary>
+        /// <param name="position">The unique identifier of dispositionReviewStage</param>
         public DispositionReviewStageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("dispositionReviewStage%2Did", position);

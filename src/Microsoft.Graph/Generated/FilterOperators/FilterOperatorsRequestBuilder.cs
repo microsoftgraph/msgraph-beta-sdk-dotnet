@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.FilterOperators {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of filterOperatorSchema entities.</summary>
+        /// <param name="position">The unique identifier of filterOperatorSchema</param>
         public FilterOperatorSchemaItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("filterOperatorSchema%2Did", position);

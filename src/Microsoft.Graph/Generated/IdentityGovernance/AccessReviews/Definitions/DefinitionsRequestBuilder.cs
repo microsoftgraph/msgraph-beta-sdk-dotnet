@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the definitions property of the microsoft.graph.accessReviewSet entity.</summary>
+        /// <param name="position">The unique identifier of accessReviewScheduleDefinition</param>
         public AccessReviewScheduleDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewScheduleDefinition%2Did", position);

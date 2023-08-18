@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Settings {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of directorySetting entities.</summary>
+        /// <param name="position">The unique identifier of directorySetting</param>
         public DirectorySettingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directorySetting%2Did", position);

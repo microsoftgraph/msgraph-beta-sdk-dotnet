@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.SslCertificates.Item.
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the relatedHosts property of the microsoft.graph.security.sslCertificate entity.</summary>
+        /// <param name="position">The unique identifier of host</param>
         public HostItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("host%2Did", position);

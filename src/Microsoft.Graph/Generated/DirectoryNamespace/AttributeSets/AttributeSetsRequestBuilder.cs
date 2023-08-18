@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AttributeSets {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the attributeSets property of the microsoft.graph.directory entity.</summary>
+        /// <param name="position">The unique identifier of attributeSet</param>
         public AttributeSetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("attributeSet%2Did", position);

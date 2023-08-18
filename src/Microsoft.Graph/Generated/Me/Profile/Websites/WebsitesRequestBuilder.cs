@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the websites property of the microsoft.graph.profile entity.</summary>
+        /// <param name="position">The unique identifier of personWebsite</param>
         public PersonWebsiteItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("personWebsite%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the certificateConnectorDetails property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of certificateConnectorDetails</param>
         public CertificateConnectorDetailsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("certificateConnectorDetails%2Did", position);

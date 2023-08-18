@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deployments property of the microsoft.graph.adminWindowsUpdates entity.</summary>
+        /// <param name="position">The unique identifier of deployment</param>
         public DeploymentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deployment%2Did", position);

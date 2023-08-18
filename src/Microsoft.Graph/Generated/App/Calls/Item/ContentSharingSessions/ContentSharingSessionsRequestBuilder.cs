@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.ContentSharingSessions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contentSharingSessions property of the microsoft.graph.call entity.</summary>
+        /// <param name="position">The unique identifier of contentSharingSession</param>
         public ContentSharingSessionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contentSharingSession%2Did", position);

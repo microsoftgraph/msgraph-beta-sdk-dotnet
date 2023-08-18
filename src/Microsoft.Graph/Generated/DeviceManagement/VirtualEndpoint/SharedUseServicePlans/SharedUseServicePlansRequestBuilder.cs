@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SharedUseService
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sharedUseServicePlans property of the microsoft.graph.virtualEndpoint entity.</summary>
+        /// <param name="position">The unique identifier of cloudPcSharedUseServicePlan</param>
         [Obsolete("The sharedUseServicePlans property is deprecated and will not be supported starting Oct 8, 2023. This property will not be included as part of the API response. as of 2023-03/sharedUseServicePlans on 2023-06-08 and will be removed 2023-10-08")]
         public CloudPcSharedUseServicePlanItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

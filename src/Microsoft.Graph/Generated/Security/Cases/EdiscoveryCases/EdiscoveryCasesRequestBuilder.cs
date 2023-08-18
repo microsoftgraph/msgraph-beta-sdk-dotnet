@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the ediscoveryCases property of the microsoft.graph.security.casesRoot entity.</summary>
+        /// <param name="position">The unique identifier of ediscoveryCase</param>
         public EdiscoveryCaseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("ediscoveryCase%2Did", position);

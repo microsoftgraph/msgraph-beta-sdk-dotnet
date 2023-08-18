@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the monthlyPrintUsageByUser property of the microsoft.graph.reportRoot entity.</summary>
+        /// <param name="position">The unique identifier of printUsageByUser</param>
         public PrintUsageByUserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printUsageByUser%2Did", position);

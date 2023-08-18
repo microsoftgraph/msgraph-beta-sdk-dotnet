@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
-        /// <summary>The tenantLicenseType property</summary>
+        /// <summary>The license type associated with the tenant; for example, AADFree, AADPremium1, AADPremium2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantLicenseType {

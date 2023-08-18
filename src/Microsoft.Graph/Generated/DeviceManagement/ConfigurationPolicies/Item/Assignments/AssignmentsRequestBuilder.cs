@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Assig
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceManagementConfigurationPolicy entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementConfigurationPolicyAssignment</param>
         public DeviceManagementConfigurationPolicyAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementConfigurationPolicyAssignment%2Did", position);

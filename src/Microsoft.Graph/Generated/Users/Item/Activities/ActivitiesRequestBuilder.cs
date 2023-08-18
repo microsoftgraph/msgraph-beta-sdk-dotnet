@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Activities {
             new RecentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the activities property of the microsoft.graph.user entity.</summary>
+        /// <param name="position">The unique identifier of userActivity</param>
         public UserActivityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userActivity%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DelegatedPermissionClassif
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the delegatedPermissionClassifications property of the microsoft.graph.servicePrincipal entity.</summary>
+        /// <param name="position">The unique identifier of delegatedPermissionClassification</param>
         public DelegatedPermissionClassificationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("delegatedPermissionClassification%2Did", position);

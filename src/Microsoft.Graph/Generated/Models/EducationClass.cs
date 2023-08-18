@@ -235,7 +235,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("members", value); }
         }
 #endif
-        /// <summary>The modules property</summary>
+        /// <summary>All modules in the class. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<EducationModule>? Modules {

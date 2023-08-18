@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
             new MicrosoftGraphManagedTenantsChangeDeploymentStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managementActionTenantDeploymentStatuses property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
+        /// <param name="position">The unique identifier of managementActionTenantDeploymentStatus</param>
         public ManagementActionTenantDeploymentStatusItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managementActionTenantDeploymentStatus%2Did", position);

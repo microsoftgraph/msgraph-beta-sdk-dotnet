@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Anniversaries {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the anniversaries property of the microsoft.graph.profile entity.</summary>
+        /// <param name="position">The unique identifier of personAnnualEvent</param>
         public PersonAnnualEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("personAnnualEvent%2Did", position);

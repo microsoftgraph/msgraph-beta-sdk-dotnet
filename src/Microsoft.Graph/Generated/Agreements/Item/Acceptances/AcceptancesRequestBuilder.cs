@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item.Acceptances {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the acceptances property of the microsoft.graph.agreement entity.</summary>
+        /// <param name="position">The unique identifier of agreementAcceptance</param>
         public AgreementAcceptanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agreementAcceptance%2Did", position);

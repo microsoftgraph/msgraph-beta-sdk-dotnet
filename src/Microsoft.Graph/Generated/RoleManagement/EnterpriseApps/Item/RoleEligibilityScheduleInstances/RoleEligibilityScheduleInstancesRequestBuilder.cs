@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilit
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleEligibilityScheduleInstances property of the microsoft.graph.rbacApplication entity.</summary>
+        /// <param name="position">The unique identifier of unifiedRoleEligibilityScheduleInstance</param>
         public UnifiedRoleEligibilityScheduleInstanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleEligibilityScheduleInstance%2Did", position);

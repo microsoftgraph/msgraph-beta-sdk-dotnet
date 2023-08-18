@@ -2,7 +2,8 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Presenters;
-using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registration;
+using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.RegistrationConfiguration;
+using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registrations;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Sessions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -21,9 +22,13 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item {
         public PresentersRequestBuilder Presenters { get =>
             new PresentersRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the registration property of the microsoft.graph.virtualEventWebinar entity.</summary>
-        public RegistrationRequestBuilder Registration { get =>
-            new RegistrationRequestBuilder(PathParameters, RequestAdapter);
+        /// <summary>Provides operations to manage the registrationConfiguration property of the microsoft.graph.virtualEventWebinar entity.</summary>
+        public RegistrationConfigurationRequestBuilder RegistrationConfiguration { get =>
+            new RegistrationConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the registrations property of the microsoft.graph.virtualEventWebinar entity.</summary>
+        public RegistrationsRequestBuilder Registrations { get =>
+            new RegistrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sessions property of the microsoft.graph.virtualEvent entity.</summary>
         public SessionsRequestBuilder Sessions { get =>

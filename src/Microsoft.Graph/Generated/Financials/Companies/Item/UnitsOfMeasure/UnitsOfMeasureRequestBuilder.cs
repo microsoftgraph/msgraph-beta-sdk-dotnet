@@ -21,12 +21,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the unitsOfMeasure property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of unitOfMeasure</param>
         public UnitOfMeasureItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unitOfMeasure%2Did", position);
             return new UnitOfMeasureItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>Provides operations to manage the unitsOfMeasure property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of unitOfMeasure</param>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public UnitOfMeasureItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

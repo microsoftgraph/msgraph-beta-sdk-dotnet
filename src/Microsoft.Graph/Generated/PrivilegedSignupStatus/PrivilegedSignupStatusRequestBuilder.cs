@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus {
             new SignUpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedSignupStatus entities.</summary>
+        /// <param name="position">The unique identifier of privilegedSignupStatus</param>
         public PrivilegedSignupStatusItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("privilegedSignupStatus%2Did", position);

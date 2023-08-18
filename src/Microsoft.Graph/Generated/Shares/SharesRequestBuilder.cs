@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Shares {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of sharedDriveItem entities.</summary>
+        /// <param name="position">The unique identifier of sharedDriveItem</param>
         public SharedDriveItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sharedDriveItem%2Did", position);

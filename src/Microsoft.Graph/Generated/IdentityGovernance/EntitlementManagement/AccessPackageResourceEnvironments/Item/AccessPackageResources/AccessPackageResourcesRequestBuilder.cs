@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the accessPackageResources property of the microsoft.graph.accessPackageResourceEnvironment entity.</summary>
+        /// <param name="position">The unique identifier of accessPackageResource</param>
         public AccessPackageResourceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessPackageResource%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings.Grading
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the gradingCategories property of the microsoft.graph.educationAssignmentSettings entity.</summary>
+        /// <param name="position">The unique identifier of educationGradingCategory</param>
         public EducationGradingCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationGradingCategory%2Did", position);

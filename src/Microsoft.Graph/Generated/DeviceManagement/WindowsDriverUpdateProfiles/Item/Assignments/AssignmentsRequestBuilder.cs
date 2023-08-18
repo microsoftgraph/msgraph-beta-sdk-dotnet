@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.windowsDriverUpdateProfile entity.</summary>
+        /// <param name="position">The unique identifier of windowsDriverUpdateProfileAssignment</param>
         public WindowsDriverUpdateProfileAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsDriverUpdateProfileAssignment%2Did", position);

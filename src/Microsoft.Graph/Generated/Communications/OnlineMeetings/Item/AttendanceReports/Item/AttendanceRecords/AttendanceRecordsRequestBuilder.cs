@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.AttendanceRepo
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the attendanceRecords property of the microsoft.graph.meetingAttendanceReport entity.</summary>
+        /// <param name="position">The unique identifier of attendanceRecord</param>
         public AttendanceRecordItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("attendanceRecord%2Did", position);

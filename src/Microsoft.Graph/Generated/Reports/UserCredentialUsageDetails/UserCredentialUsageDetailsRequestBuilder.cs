@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.</summary>
+        /// <param name="position">The unique identifier of userCredentialUsageDetails</param>
         public UserCredentialUsageDetailsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userCredentialUsageDetails%2Did", position);

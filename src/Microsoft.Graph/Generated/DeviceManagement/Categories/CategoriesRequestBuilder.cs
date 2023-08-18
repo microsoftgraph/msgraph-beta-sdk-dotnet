@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Categories {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementSettingCategory</param>
         public DeviceManagementSettingCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementSettingCategory%2Did", position);

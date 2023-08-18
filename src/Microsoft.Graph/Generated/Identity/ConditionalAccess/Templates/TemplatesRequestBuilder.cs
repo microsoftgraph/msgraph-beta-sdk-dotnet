@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.</summary>
+        /// <param name="position">The unique identifier of conditionalAccessTemplate</param>
         public ConditionalAccessTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("conditionalAccessTemplate%2Did", position);

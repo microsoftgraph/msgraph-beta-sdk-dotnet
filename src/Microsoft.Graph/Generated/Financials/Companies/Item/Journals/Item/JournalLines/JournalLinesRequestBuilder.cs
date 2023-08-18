@@ -21,12 +21,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item.JournalLi
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the journalLines property of the microsoft.graph.journal entity.</summary>
+        /// <param name="position">The unique identifier of journalLine</param>
         public JournalLineItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("journalLine%2Did", position);
             return new JournalLineItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>Provides operations to manage the journalLines property of the microsoft.graph.journal entity.</summary>
+        /// <param name="position">The unique identifier of journalLine</param>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public JournalLineItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

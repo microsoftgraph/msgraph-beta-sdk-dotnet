@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DataClassification.Jobs {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the jobs property of the microsoft.graph.dataClassificationService entity.</summary>
+        /// <param name="position">The unique identifier of jobResponseBase</param>
         public JobResponseBaseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("jobResponseBase%2Did", position);

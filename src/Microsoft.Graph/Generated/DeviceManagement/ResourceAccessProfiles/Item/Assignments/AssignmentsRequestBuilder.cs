@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.Item.Assi
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceManagementResourceAccessProfileBase entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementResourceAccessProfileAssignment</param>
         public DeviceManagementResourceAccessProfileAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementResourceAccessProfileAssignment%2Did", position);

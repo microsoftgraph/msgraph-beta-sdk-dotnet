@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.embeddedSIMActivationCodePool entity.</summary>
+        /// <param name="position">The unique identifier of embeddedSIMActivationCodePoolAssignment</param>
         public EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("embeddedSIMActivationCodePoolAssignment%2Did", position);

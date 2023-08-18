@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Languages {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the languages property of the microsoft.graph.profile entity.</summary>
+        /// <param name="position">The unique identifier of languageProficiency</param>
         public LanguageProficiencyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("languageProficiency%2Did", position);

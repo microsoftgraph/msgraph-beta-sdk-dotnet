@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedChats {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deletedChats property of the microsoft.graph.teamwork entity.</summary>
+        /// <param name="position">The unique identifier of deletedChat</param>
         public DeletedChatItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deletedChat%2Did", position);

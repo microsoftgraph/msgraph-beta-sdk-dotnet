@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.DomainSecurityProfiles {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.</summary>
+        /// <param name="position">The unique identifier of domainSecurityProfile</param>
         public DomainSecurityProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("domainSecurityProfile%2Did", position);

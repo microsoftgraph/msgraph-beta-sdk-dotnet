@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Publications {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the publications property of the microsoft.graph.profile entity.</summary>
+        /// <param name="position">The unique identifier of itemPublication</param>
         public ItemPublicationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("itemPublication%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of onPremisesPublishingProfile entities.</summary>
+        /// <param name="position">The unique identifier of onPremisesPublishingProfile</param>
         public OnPremisesPublishingProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onPremisesPublishingProfile%2Did", position);

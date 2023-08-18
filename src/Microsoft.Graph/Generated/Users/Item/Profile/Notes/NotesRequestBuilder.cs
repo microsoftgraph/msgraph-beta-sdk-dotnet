@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Notes {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the notes property of the microsoft.graph.profile entity.</summary>
+        /// <param name="position">The unique identifier of personAnnotation</param>
         public PersonAnnotationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("personAnnotation%2Did", position);

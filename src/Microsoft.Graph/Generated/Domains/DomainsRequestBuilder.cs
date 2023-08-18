@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Domains {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of domain entities.</summary>
+        /// <param name="position">The unique identifier of domain</param>
         public DomainItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("domain%2Did", position);

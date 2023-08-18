@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Policies.ClaimsMappingPolicies {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the claimsMappingPolicies property of the microsoft.graph.policyRoot entity.</summary>
+        /// <param name="position">The unique identifier of claimsMappingPolicy</param>
         public ClaimsMappingPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("claimsMappingPolicy%2Did", position);

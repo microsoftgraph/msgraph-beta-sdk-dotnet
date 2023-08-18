@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.FilePlanReferences {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the filePlanReferences property of the microsoft.graph.security.labelsRoot entity.</summary>
+        /// <param name="position">The unique identifier of filePlanReferenceTemplate</param>
         public FilePlanReferenceTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("filePlanReferenceTemplate%2Did", position);

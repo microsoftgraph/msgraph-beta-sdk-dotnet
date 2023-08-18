@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsDevicePerformance property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of userExperienceAnalyticsDevicePerformance</param>
         public UserExperienceAnalyticsDevicePerformanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsDevicePerformance%2Did", position);

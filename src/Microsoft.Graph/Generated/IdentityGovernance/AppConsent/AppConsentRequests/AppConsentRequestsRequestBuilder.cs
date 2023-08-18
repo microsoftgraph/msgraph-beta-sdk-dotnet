@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests 
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appConsentRequests property of the microsoft.graph.appConsentApprovalRoute entity.</summary>
+        /// <param name="position">The unique identifier of appConsentRequest</param>
         public AppConsentRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appConsentRequest%2Did", position);

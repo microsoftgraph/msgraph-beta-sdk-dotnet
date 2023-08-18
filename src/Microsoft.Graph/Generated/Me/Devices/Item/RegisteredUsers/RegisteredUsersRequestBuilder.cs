@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item.RegisteredUsers {
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.me.devices.item.registeredUsers.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject%2Did", position);

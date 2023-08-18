@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.Assignment
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.managedEBook entity.</summary>
+        /// <param name="position">The unique identifier of managedEBookAssignment</param>
         public ManagedEBookAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedEBookAssignment%2Did", position);

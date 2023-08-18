@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.It
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the insights property of the microsoft.graph.accessReviewInstanceDecisionItem entity.</summary>
+        /// <param name="position">The unique identifier of governanceInsight</param>
         public GovernanceInsightItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("governanceInsight%2Did", position);

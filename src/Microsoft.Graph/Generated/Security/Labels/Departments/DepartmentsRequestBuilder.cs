@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Departments {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the departments property of the microsoft.graph.security.labelsRoot entity.</summary>
+        /// <param name="position">The unique identifier of departmentTemplate</param>
         public DepartmentTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("departmentTemplate%2Did", position);

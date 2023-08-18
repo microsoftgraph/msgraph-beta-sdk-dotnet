@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProf
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the androidDeviceOwnerEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of androidDeviceOwnerEnrollmentProfile</param>
         public AndroidDeviceOwnerEnrollmentProfileItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("androidDeviceOwnerEnrollmentProfile%2Did", position);

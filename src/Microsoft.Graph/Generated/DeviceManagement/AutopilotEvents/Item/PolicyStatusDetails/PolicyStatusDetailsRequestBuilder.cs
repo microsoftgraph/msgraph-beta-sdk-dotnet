@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatu
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the policyStatusDetails property of the microsoft.graph.deviceManagementAutopilotEvent entity.</summary>
+        /// <param name="position">The unique identifier of deviceManagementAutopilotPolicyStatusDetail</param>
         public DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementAutopilotPolicyStatusDetail%2Did", position);

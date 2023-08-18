@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods 
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsHelloForBusinessMethods property of the microsoft.graph.authentication entity.</summary>
+        /// <param name="position">The unique identifier of windowsHelloForBusinessAuthenticationMethod</param>
         public WindowsHelloForBusinessAuthenticationMethodItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsHelloForBusinessAuthenticationMethod%2Did", position);

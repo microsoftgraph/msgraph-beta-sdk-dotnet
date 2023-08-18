@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Print.Shares.Item.Jobs.Item.Tasks {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tasks property of the microsoft.graph.printJob entity.</summary>
+        /// <param name="position">The unique identifier of printTask</param>
         public PrintTaskItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printTask%2Did", position);

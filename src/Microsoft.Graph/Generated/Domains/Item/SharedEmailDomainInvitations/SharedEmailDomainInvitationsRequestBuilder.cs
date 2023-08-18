@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sharedEmailDomainInvitations property of the microsoft.graph.domain entity.</summary>
+        /// <param name="position">The unique identifier of sharedEmailDomainInvitation</param>
         public SharedEmailDomainInvitationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("sharedEmailDomainInvitation%2Did", position);

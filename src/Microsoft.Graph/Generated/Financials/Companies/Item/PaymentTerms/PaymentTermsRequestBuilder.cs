@@ -21,12 +21,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PaymentTerms {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the paymentTerms property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of paymentTerm</param>
         public PaymentTermItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("paymentTerm%2Did", position);
             return new PaymentTermItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>Provides operations to manage the paymentTerms property of the microsoft.graph.company entity.</summary>
+        /// <param name="position">The unique identifier of paymentTerm</param>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public PaymentTermItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.directory entity.</summary>
+        /// <param name="position">The unique identifier of companySubscription</param>
         public CompanySubscriptionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("companySubscription%2Did", position);

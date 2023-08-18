@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskDefinitions property of the microsoft.graph.print entity.</summary>
+        /// <param name="position">The unique identifier of printTaskDefinition</param>
         public PrintTaskDefinitionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printTaskDefinition%2Did", position);

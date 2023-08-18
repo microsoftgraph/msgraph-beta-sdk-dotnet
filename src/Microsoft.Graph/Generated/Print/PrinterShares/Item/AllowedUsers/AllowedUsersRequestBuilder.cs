@@ -28,6 +28,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers {
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.print.printerShares.item.allowedUsers.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
         public UserItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("user%2Did", position);

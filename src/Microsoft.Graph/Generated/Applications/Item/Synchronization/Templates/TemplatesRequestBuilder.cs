@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Templates {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the templates property of the microsoft.graph.synchronization entity.</summary>
+        /// <param name="position">The unique identifier of synchronizationTemplate</param>
         public SynchronizationTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("synchronizationTemplate%2Did", position);

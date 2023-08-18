@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SecurityBaselineSt
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the securityBaselineStates property of the microsoft.graph.managedDevice entity.</summary>
+        /// <param name="position">The unique identifier of securityBaselineState</param>
         public SecurityBaselineStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("securityBaselineState%2Did", position);

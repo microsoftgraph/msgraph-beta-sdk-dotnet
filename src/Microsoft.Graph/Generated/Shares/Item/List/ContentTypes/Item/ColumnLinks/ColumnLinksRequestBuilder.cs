@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.ColumnLinks {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the columnLinks property of the microsoft.graph.contentType entity.</summary>
+        /// <param name="position">The unique identifier of columnLink</param>
         public ColumnLinkItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("columnLink%2Did", position);

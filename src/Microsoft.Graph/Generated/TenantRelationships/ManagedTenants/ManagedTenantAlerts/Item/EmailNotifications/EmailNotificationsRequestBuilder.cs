@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantA
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the emailNotifications property of the microsoft.graph.managedTenants.managedTenantAlert entity.</summary>
+        /// <param name="position">The unique identifier of managedTenantEmailNotification</param>
         public ManagedTenantEmailNotificationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedTenantEmailNotification%2Did", position);

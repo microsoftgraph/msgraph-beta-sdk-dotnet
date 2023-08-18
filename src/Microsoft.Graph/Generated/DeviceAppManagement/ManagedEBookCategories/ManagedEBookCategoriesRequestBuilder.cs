@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBookCategories {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedEBookCategories property of the microsoft.graph.deviceAppManagement entity.</summary>
+        /// <param name="position">The unique identifier of managedEBookCategory</param>
         public ManagedEBookCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedEBookCategory%2Did", position);

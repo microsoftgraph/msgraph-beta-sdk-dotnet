@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Print.Shares.Item.Jobs.Item.Documents {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the documents property of the microsoft.graph.printJob entity.</summary>
+        /// <param name="position">The unique identifier of printDocument</param>
         public PrintDocumentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("printDocument%2Did", position);

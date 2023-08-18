@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.EducationalActivities {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the educationalActivities property of the microsoft.graph.profile entity.</summary>
+        /// <param name="position">The unique identifier of educationalActivity</param>
         public EducationalActivityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationalActivity%2Did", position);

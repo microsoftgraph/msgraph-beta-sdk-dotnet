@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Functions {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of attributeMappingFunctionSchema entities.</summary>
+        /// <param name="position">The unique identifier of attributeMappingFunctionSchema</param>
         public AttributeMappingFunctionSchemaItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("attributeMappingFunctionSchema%2Did", position);

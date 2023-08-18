@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Operations {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.onenote entity.</summary>
+        /// <param name="position">The unique identifier of onenoteOperation</param>
         public OnenoteOperationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onenoteOperation%2Did", position);

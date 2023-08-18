@@ -31,6 +31,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.</summary>
+        /// <param name="position">The unique identifier of signIn</param>
         public SignInItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("signIn%2Did", position);

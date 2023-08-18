@@ -31,6 +31,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
             new DismissRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.</summary>
+        /// <param name="position">The unique identifier of riskyServicePrincipal</param>
         public RiskyServicePrincipalItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("riskyServicePrincipal%2Did", position);

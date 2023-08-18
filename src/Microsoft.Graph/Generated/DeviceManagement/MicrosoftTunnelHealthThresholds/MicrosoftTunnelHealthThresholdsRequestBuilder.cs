@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelHealthThresholds 
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the microsoftTunnelHealthThresholds property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of microsoftTunnelHealthThreshold</param>
         public MicrosoftTunnelHealthThresholdItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("microsoftTunnelHealthThreshold%2Did", position);

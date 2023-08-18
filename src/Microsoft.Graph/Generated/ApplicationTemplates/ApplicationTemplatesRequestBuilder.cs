@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.ApplicationTemplates {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of applicationTemplate entities.</summary>
+        /// <param name="position">The unique identifier of applicationTemplate</param>
         public ApplicationTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("applicationTemplate%2Did", position);

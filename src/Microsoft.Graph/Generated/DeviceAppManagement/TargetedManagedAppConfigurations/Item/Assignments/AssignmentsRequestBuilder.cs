@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurati
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.targetedManagedAppConfiguration entity.</summary>
+        /// <param name="position">The unique identifier of targetedManagedAppPolicyAssignment</param>
         public TargetedManagedAppPolicyAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("targetedManagedAppPolicyAssignment%2Did", position);

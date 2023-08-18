@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Ite
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tenants property of the microsoft.graph.outboundSharedUserProfile entity.</summary>
+        /// <param name="position">The unique identifier of tenantReference</param>
         public TenantReferenceTenantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tenantReference%2DtenantId", position);

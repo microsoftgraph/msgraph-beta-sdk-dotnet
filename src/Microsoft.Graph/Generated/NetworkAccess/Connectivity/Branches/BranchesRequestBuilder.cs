@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the branches property of the microsoft.graph.networkaccess.connectivity entity.</summary>
+        /// <param name="position">The unique identifier of branchSite</param>
         public BranchSiteItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("branchSite%2Did", position);

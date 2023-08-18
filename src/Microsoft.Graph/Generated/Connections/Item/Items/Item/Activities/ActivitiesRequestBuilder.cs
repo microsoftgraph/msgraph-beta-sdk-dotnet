@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Items.Item.Activities {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the activities property of the microsoft.graph.externalConnectors.externalItem entity.</summary>
+        /// <param name="position">The unique identifier of externalActivity</param>
         public ExternalActivityItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("externalActivity%2Did", position);

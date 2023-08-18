@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.InstalledApps {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the installedApps property of the microsoft.graph.team entity.</summary>
+        /// <param name="position">The unique identifier of teamsAppInstallation</param>
         public TeamsAppInstallationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("teamsAppInstallation%2Did", position);

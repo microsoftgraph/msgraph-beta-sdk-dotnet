@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authenticationMethodModes property of the microsoft.graph.authenticationStrengthRoot entity.</summary>
+        /// <param name="position">The unique identifier of authenticationMethodModeDetail</param>
         public AuthenticationMethodModeDetailItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("authenticationMethodModeDetail%2Did", position);

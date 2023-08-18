@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Me.ContactFolders {
             new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contactFolders property of the microsoft.graph.user entity.</summary>
+        /// <param name="position">The unique identifier of contactFolder</param>
         public ContactFolderItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contactFolder%2Did", position);

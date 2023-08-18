@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.S
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesCreditMemoLines property of the microsoft.graph.salesCreditMemo entity.</summary>
+        /// <param name="position">The unique identifier of salesCreditMemoLine</param>
         public SalesCreditMemoLineItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("salesCreditMemoLine%2Did", position);

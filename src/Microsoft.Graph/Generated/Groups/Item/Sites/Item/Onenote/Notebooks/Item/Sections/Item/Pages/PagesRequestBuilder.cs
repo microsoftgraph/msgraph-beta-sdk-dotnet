@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.Item.Sec
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the pages property of the microsoft.graph.onenoteSection entity.</summary>
+        /// <param name="position">The unique identifier of onenotePage</param>
         public OnenotePageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("onenotePage%2Did", position);

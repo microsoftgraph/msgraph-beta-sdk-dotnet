@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the remoteAssistancePartners property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of remoteAssistancePartner</param>
         public RemoteAssistancePartnerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("remoteAssistancePartner%2Did", position);

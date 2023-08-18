@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.AllChannels {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the allChannels property of the microsoft.graph.team entity.</summary>
+        /// <param name="position">The unique identifier of channel</param>
         public ChannelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("channel%2Did", position);

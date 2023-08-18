@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Projects {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the projects property of the microsoft.graph.profile entity.</summary>
+        /// <param name="position">The unique identifier of projectParticipation</param>
         public ProjectParticipationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("projectParticipation%2Did", position);

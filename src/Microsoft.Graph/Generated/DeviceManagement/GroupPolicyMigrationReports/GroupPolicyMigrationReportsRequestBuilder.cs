@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports {
             new CreateMigrationReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupPolicyMigrationReports property of the microsoft.graph.deviceManagement entity.</summary>
+        /// <param name="position">The unique identifier of groupPolicyMigrationReport</param>
         public GroupPolicyMigrationReportItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("groupPolicyMigrationReport%2Did", position);

@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.BaseTypes {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.</summary>
+        /// <param name="position">The unique identifier of contentType</param>
         public Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.BaseTypes.Item.ContentTypeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contentType%2Did1", position);

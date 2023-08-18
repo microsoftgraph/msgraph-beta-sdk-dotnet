@@ -26,6 +26,7 @@ namespace Microsoft.Graph.Beta.Oauth2PermissionGrants {
             new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of oAuth2PermissionGrant entities.</summary>
+        /// <param name="position">The unique identifier of oAuth2PermissionGrant</param>
         public OAuth2PermissionGrantItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("oAuth2PermissionGrant%2Did", position);

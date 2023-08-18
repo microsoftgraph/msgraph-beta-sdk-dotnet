@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes {
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customAppScopes property of the microsoft.graph.unifiedRbacApplication entity.</summary>
+        /// <param name="position">The unique identifier of customAppScope</param>
         public CustomAppScopeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("customAppScope%2Did", position);

@@ -27,6 +27,7 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Deci
             new RecordAllDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the decisions property of the microsoft.graph.accessReviewInstance entity.</summary>
+        /// <param name="position">The unique identifier of accessReviewInstanceDecisionItem</param>
         public AccessReviewInstanceDecisionItemItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("accessReviewInstanceDecisionItem%2Did", position);
