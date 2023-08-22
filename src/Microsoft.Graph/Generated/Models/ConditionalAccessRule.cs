@@ -71,5 +71,11 @@ namespace Microsoft.Graph.Beta.Models {
         ServiceProvider,
         [EnumMember(Value = "microsoftAdminPortals")]
         MicrosoftAdminPortals,
+        [EnumMember(Value = "deviceCodeFlow")]
+        DeviceCodeFlow,
+        [EnumMember(Value = "authenticationTransfer")]
+        AuthenticationTransfer,
+        [EnumMember(Value = "insiderRisk")]
+        InsiderRisk,
     }
 }

@@ -142,7 +142,6 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 "#microsoft.graph.security.registryValueEvidence" => new RegistryValueEvidence(),
                 "#microsoft.graph.security.securityGroupEvidence" => new SecurityGroupEvidence(),
                 "#microsoft.graph.security.urlEvidence" => new UrlEvidence(),
-                "#microsoft.graph.security.userEvidence" => new UserEvidence(),
                 _ => new AlertEvidence(),
             };
         }

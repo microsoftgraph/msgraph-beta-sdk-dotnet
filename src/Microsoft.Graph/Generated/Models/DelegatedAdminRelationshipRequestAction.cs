@@ -11,5 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
         Terminate,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "reject")]
+        Reject,
     }
 }

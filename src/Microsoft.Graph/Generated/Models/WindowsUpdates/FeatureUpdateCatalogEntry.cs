@@ -6,6 +6,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class FeatureUpdateCatalogEntry : SoftwareUpdateCatalogEntry, IParsable {
+        /// <summary>The buildNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BuildNumber {
+            get { return BackingStore?.Get<string?>("buildNumber"); }
+            set { BackingStore?.Set("buildNumber", value); }
+        }
+#nullable restore
+#else
+        public string BuildNumber {
+            get { return BackingStore?.Get<string>("buildNumber"); }
+            set { BackingStore?.Set("buildNumber", value); }
+        }
+#endif
         /// <summary>The version of the feature update. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +53,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"buildNumber", n => { BuildNumber = n.GetStringValue(); } },
                 {"version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -49,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("buildNumber", BuildNumber);
             writer.WriteStringValue("version", Version);
         }
     }
