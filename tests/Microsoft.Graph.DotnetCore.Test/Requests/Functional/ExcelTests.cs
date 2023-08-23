@@ -52,7 +52,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             var excelWorkbook = new DriveItem()
             {
                 Name = fileName,
-                FileObject = new FileObject()
+                File = new FileObject()
             };
 
             // Create the Excel file.
