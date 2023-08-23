@@ -35,5 +35,9 @@ namespace Microsoft.Graph.Beta.Models {
         ServicePrincipals,
         [EnumMember(Value = "servicePrincipalRisk")]
         ServicePrincipalRisk,
+        [EnumMember(Value = "authenticationFlows")]
+        AuthenticationFlows,
+        [EnumMember(Value = "insiderRisk")]
+        InsiderRisk,
     }
 }

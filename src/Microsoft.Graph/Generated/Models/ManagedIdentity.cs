@@ -28,6 +28,34 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The unique ID of the federated token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FederatedTokenId {
+            get { return BackingStore?.Get<string?>("federatedTokenId"); }
+            set { BackingStore?.Set("federatedTokenId", value); }
+        }
+#nullable restore
+#else
+        public string FederatedTokenId {
+            get { return BackingStore?.Get<string>("federatedTokenId"); }
+            set { BackingStore?.Set("federatedTokenId", value); }
+        }
+#endif
+        /// <summary>The issuer of the federated token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FederatedTokenIssuer {
+            get { return BackingStore?.Get<string?>("federatedTokenIssuer"); }
+            set { BackingStore?.Set("federatedTokenIssuer", value); }
+        }
+#nullable restore
+#else
+        public string FederatedTokenIssuer {
+            get { return BackingStore?.Get<string>("federatedTokenIssuer"); }
+            set { BackingStore?.Set("federatedTokenIssuer", value); }
+        }
+#endif
         /// <summary>The possible values are: none, userAssigned, systemAssigned, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.MsiType? MsiType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MsiType?>("msiType"); }
@@ -68,6 +96,8 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"associatedResourceId", n => { AssociatedResourceId = n.GetStringValue(); } },
+                {"federatedTokenId", n => { FederatedTokenId = n.GetStringValue(); } },
+                {"federatedTokenIssuer", n => { FederatedTokenIssuer = n.GetStringValue(); } },
                 {"msiType", n => { MsiType = n.GetEnumValue<MsiType>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -79,6 +109,8 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("associatedResourceId", AssociatedResourceId);
+            writer.WriteStringValue("federatedTokenId", FederatedTokenId);
+            writer.WriteStringValue("federatedTokenIssuer", FederatedTokenIssuer);
             writer.WriteEnumValue<MsiType>("msiType", MsiType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

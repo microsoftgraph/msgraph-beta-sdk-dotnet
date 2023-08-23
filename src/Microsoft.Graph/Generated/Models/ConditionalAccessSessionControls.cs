@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("persistentBrowser", value); }
         }
 #endif
-        /// <summary>The secureSignInSession property</summary>
+        /// <summary>Session control to require sign in sessions to be bound to a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SecureSignInSessionControl? SecureSignInSession {

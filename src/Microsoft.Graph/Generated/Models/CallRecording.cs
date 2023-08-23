@@ -25,6 +25,48 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>The unique identifier of the onlineMeeting related to this recording. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MeetingId {
+            get { return BackingStore?.Get<string?>("meetingId"); }
+            set { BackingStore?.Set("meetingId", value); }
+        }
+#nullable restore
+#else
+        public string MeetingId {
+            get { return BackingStore?.Get<string>("meetingId"); }
+            set { BackingStore?.Set("meetingId", value); }
+        }
+#endif
+        /// <summary>The unique identifier of the organizer of the onlineMeeting related to this recording. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MeetingOrganizerId {
+            get { return BackingStore?.Get<string?>("meetingOrganizerId"); }
+            set { BackingStore?.Set("meetingOrganizerId", value); }
+        }
+#nullable restore
+#else
+        public string MeetingOrganizerId {
+            get { return BackingStore?.Get<string>("meetingOrganizerId"); }
+            set { BackingStore?.Set("meetingOrganizerId", value); }
+        }
+#endif
+        /// <summary>The URL which can be used to access the content of the recording. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RecordingContentUrl {
+            get { return BackingStore?.Get<string?>("recordingContentUrl"); }
+            set { BackingStore?.Set("recordingContentUrl", value); }
+        }
+#nullable restore
+#else
+        public string RecordingContentUrl {
+            get { return BackingStore?.Get<string>("recordingContentUrl"); }
+            set { BackingStore?.Set("recordingContentUrl", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -40,6 +82,9 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"content", n => { Content = n.GetByteArrayValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"meetingId", n => { MeetingId = n.GetStringValue(); } },
+                {"meetingOrganizerId", n => { MeetingOrganizerId = n.GetStringValue(); } },
+                {"recordingContentUrl", n => { RecordingContentUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -51,6 +96,9 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteByteArrayValue("content", Content);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteStringValue("meetingId", MeetingId);
+            writer.WriteStringValue("meetingOrganizerId", MeetingOrganizerId);
+            writer.WriteStringValue("recordingContentUrl", RecordingContentUrl);
         }
     }
 }

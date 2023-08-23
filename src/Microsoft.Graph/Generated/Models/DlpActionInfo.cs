@@ -7,11 +7,6 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DlpActionInfo : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>The action property</summary>
-        public DlpAction? Action {
-            get { return BackingStore?.Get<DlpAction?>("action"); }
-            set { BackingStore?.Set("action", value); }
-        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -49,7 +44,6 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.blockAccessAction" => new BlockAccessAction(),
-                "#microsoft.graph.deviceRestrictionAction" => new DeviceRestrictionAction(),
                 "#microsoft.graph.notifyUserAction" => new NotifyUserAction(),
                 _ => new DlpActionInfo(),
             };
@@ -59,7 +53,6 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"action", n => { Action = n.GetEnumValue<DlpAction>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -69,7 +62,6 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<DlpAction>("action", Action);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

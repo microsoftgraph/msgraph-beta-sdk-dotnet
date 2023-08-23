@@ -6,16 +6,77 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class QualityUpdateCatalogEntry : SoftwareUpdateCatalogEntry, IParsable {
+        /// <summary>The catalogName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CatalogName {
+            get { return BackingStore?.Get<string?>("catalogName"); }
+            set { BackingStore?.Set("catalogName", value); }
+        }
+#nullable restore
+#else
+        public string CatalogName {
+            get { return BackingStore?.Get<string>("catalogName"); }
+            set { BackingStore?.Set("catalogName", value); }
+        }
+#endif
+        /// <summary>The cveSeverityInformation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public QualityUpdateCveSeverityInformation? CveSeverityInformation {
+            get { return BackingStore?.Get<QualityUpdateCveSeverityInformation?>("cveSeverityInformation"); }
+            set { BackingStore?.Set("cveSeverityInformation", value); }
+        }
+#nullable restore
+#else
+        public QualityUpdateCveSeverityInformation CveSeverityInformation {
+            get { return BackingStore?.Get<QualityUpdateCveSeverityInformation>("cveSeverityInformation"); }
+            set { BackingStore?.Set("cveSeverityInformation", value); }
+        }
+#endif
         /// <summary>Indicates whether the content can be deployed as an expedited quality update. Read-only.</summary>
         public bool? IsExpeditable {
             get { return BackingStore?.Get<bool?>("isExpeditable"); }
             set { BackingStore?.Set("isExpeditable", value); }
+        }
+        /// <summary>The productRevisions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<ProductRevision>? ProductRevisions {
+            get { return BackingStore?.Get<List<ProductRevision>?>("productRevisions"); }
+            set { BackingStore?.Set("productRevisions", value); }
+        }
+#nullable restore
+#else
+        public List<ProductRevision> ProductRevisions {
+            get { return BackingStore?.Get<List<ProductRevision>>("productRevisions"); }
+            set { BackingStore?.Set("productRevisions", value); }
+        }
+#endif
+        /// <summary>The qualityUpdateCadence property</summary>
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence? QualityUpdateCadence {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence?>("qualityUpdateCadence"); }
+            set { BackingStore?.Set("qualityUpdateCadence", value); }
         }
         /// <summary>The qualityUpdateClassification property</summary>
         public Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification? QualityUpdateClassification {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification?>("qualityUpdateClassification"); }
             set { BackingStore?.Set("qualityUpdateClassification", value); }
         }
+        /// <summary>The shortName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ShortName {
+            get { return BackingStore?.Get<string?>("shortName"); }
+            set { BackingStore?.Set("shortName", value); }
+        }
+#nullable restore
+#else
+        public string ShortName {
+            get { return BackingStore?.Get<string>("shortName"); }
+            set { BackingStore?.Set("shortName", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new qualityUpdateCatalogEntry and sets the default values.
         /// </summary>
@@ -35,8 +96,13 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"catalogName", n => { CatalogName = n.GetStringValue(); } },
+                {"cveSeverityInformation", n => { CveSeverityInformation = n.GetObjectValue<QualityUpdateCveSeverityInformation>(QualityUpdateCveSeverityInformation.CreateFromDiscriminatorValue); } },
                 {"isExpeditable", n => { IsExpeditable = n.GetBoolValue(); } },
+                {"productRevisions", n => { ProductRevisions = n.GetCollectionOfObjectValues<ProductRevision>(ProductRevision.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"qualityUpdateCadence", n => { QualityUpdateCadence = n.GetEnumValue<QualityUpdateCadence>(); } },
                 {"qualityUpdateClassification", n => { QualityUpdateClassification = n.GetEnumValue<QualityUpdateClassification>(); } },
+                {"shortName", n => { ShortName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -46,8 +112,13 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("catalogName", CatalogName);
+            writer.WriteObjectValue<QualityUpdateCveSeverityInformation>("cveSeverityInformation", CveSeverityInformation);
             writer.WriteBoolValue("isExpeditable", IsExpeditable);
+            writer.WriteCollectionOfObjectValues<ProductRevision>("productRevisions", ProductRevisions);
+            writer.WriteEnumValue<QualityUpdateCadence>("qualityUpdateCadence", QualityUpdateCadence);
             writer.WriteEnumValue<QualityUpdateClassification>("qualityUpdateClassification", QualityUpdateClassification);
+            writer.WriteStringValue("shortName", ShortName);
         }
     }
 }

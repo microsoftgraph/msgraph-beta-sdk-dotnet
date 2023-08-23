@@ -28,12 +28,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Removes the email claim from tokens sent to an application when the email address&apos;s domain cannot be verified.</summary>
+        /// <summary>Removes the email claim from tokens sent to an application when the email address&apos;s domain can&apos;t be verified.</summary>
         public bool? RemoveUnverifiedEmailClaim {
             get { return BackingStore?.Get<bool?>("removeUnverifiedEmailClaim"); }
             set { BackingStore?.Set("removeUnverifiedEmailClaim", value); }
         }
-        /// <summary>The requireClientServicePrincipal property</summary>
+        /// <summary>Requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they&apos;re granted access tokens. This property is only modifiable for multi-tenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.</summary>
         public bool? RequireClientServicePrincipal {
             get { return BackingStore?.Get<bool?>("requireClientServicePrincipal"); }
             set { BackingStore?.Set("requireClientServicePrincipal", value); }
