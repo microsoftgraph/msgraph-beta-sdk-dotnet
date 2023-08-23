@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace Microsoft.Graph.Beta.Models;
 
-public class PlannerAssignment: IAdditionalDataHolder, IBackedModel, IParsable
+public class PlannerCheckListItem: IAdditionalDataHolder, IBackedModel, IParsable
 {
     /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
     public IDictionary<string, object> AdditionalData {
@@ -32,7 +32,31 @@ public class PlannerAssignment: IAdditionalDataHolder, IBackedModel, IParsable
         set { BackingStore?.Set("@odata.type", value); }
     }
 #endif
-    /// <summary>The OdataType property</summary>
+    /// <summary>Value is true if the item is checked and false otherwise.</summary>
+    public bool? IsChecked {
+        get { return BackingStore?.Get<bool>("isChecked"); }
+        set { BackingStore?.Set("isChecked", value); }
+    }
+    /// <summary>Read-only. User ID by which this is last modified.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public IdentitySet? LastModifiedBy {
+        get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+        set { BackingStore?.Set("lastModifiedBy", value); }
+    }
+#nullable restore
+#else
+    public IdentitySet LastModifiedBy {
+        get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+        set { BackingStore?.Set("lastModifiedBy", value); }
+    }
+#endif
+    /// <summary>Read-only. Date and time at which this is last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+    public DateTimeOffset? LastModifiedDateTime {
+        get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+        set { BackingStore?.Set("lastModifiedDateTime", value); }
+    }
+    /// <summary>Used to set the relative order of items in the checklist. The format is defined as outlined here..</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
     public string? OrderHint {
@@ -46,41 +70,35 @@ public class PlannerAssignment: IAdditionalDataHolder, IBackedModel, IParsable
         set { BackingStore?.Set("orderHint", value); }
     }
 #endif
-    /// <summary>Read-only. User ID by which this is last modified.</summary>
+    /// <summary>Title of the checklist item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-    public IdentitySet? AssignedBy {
-        get { return BackingStore?.Get<IdentitySet>("assignedBy"); }
-        set { BackingStore?.Set("assignedBy", value); }
+    public string? Title {
+        get { return BackingStore?.Get<string?>("title"); }
+        set { BackingStore?.Set("title", value); }
     }
 #nullable restore
 #else
-    public IdentitySet AssignedBy {
-        get { return BackingStore?.Get<IdentitySet>("assignedBy"); }
-        set { BackingStore?.Set("assignedBy", value); }
+    public string Title {
+        get { return BackingStore?.Get<string>("title"); }
+        set { BackingStore?.Set("title", value); }
     }
 #endif
-
-    public DateTimeOffset? AssignedDateTime {
-        get { return BackingStore?.Get<DateTimeOffset?>("assignedDateTime"); }
-        set { BackingStore?.Set("assignedDateTime", value); }
-    }
     /// <summary>
     /// Instantiates a new auditActivityInitiator and sets the default values.
     /// </summary>
-    public PlannerAssignment() {
+    public PlannerCheckListItem() {
         BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
         AdditionalData = new Dictionary<string, object>();
-        OdataType = "#microsoft.graph.plannerAssignment";
-        OrderHint = "!";
+        OdataType = "#microsoft.graph.plannerChecklistItem";
     }
     /// <summary>
     /// Creates a new instance of the appropriate class based on discriminator value
     /// </summary>
     /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-    public static PlannerAssignment CreateFromDiscriminatorValue(IParseNode parseNode) {
+    public static PlannerCheckListItem CreateFromDiscriminatorValue(IParseNode parseNode) {
         _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-        return new PlannerAssignment();
+        return new PlannerCheckListItem();
     }
     /// <summary>
     /// The deserialization information for the current model
@@ -88,9 +106,11 @@ public class PlannerAssignment: IAdditionalDataHolder, IBackedModel, IParsable
     public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
         return new Dictionary<string, Action<IParseNode>> {
             {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+            {"isChecked", n => { IsChecked = n.GetBoolValue(); } },
+            {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue(IdentitySet.CreateFromDiscriminatorValue); } },
+            {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             {"orderHint", n => { OrderHint = n.GetStringValue(); } },
-            {"assignedBy", n => { AssignedBy = n.GetObjectValue(IdentitySet.CreateFromDiscriminatorValue); } },
-            {"assignedDateTime", n => { AssignedDateTime = n.GetDateTimeOffsetValue(); } },
+            {"title", n => { Title = n.GetStringValue(); } },
         };
     }
     /// <summary>
@@ -100,9 +120,11 @@ public class PlannerAssignment: IAdditionalDataHolder, IBackedModel, IParsable
     public void Serialize(ISerializationWriter writer) {
         _ = writer ?? throw new ArgumentNullException(nameof(writer));
         writer.WriteStringValue("@odata.type", OdataType);
+        writer.WriteBoolValue("isChecked", IsChecked);
+        writer.WriteObjectValue("lastModifiedBy", LastModifiedBy);
+        writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
         writer.WriteStringValue("orderHint", OrderHint);
-        writer.WriteObjectValue("assignedBy", AssignedBy);
-        writer.WriteDateTimeOffsetValue("assignedDateTime", AssignedDateTime);
+        writer.WriteStringValue("title", Title);
         writer.WriteAdditionalData(AdditionalData);
     }
 }
