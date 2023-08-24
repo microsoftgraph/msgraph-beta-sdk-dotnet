@@ -46,6 +46,25 @@ public class PlannerAssignment: IAdditionalDataHolder, IBackedModel, IParsable
         set { BackingStore?.Set("orderHint", value); }
     }
 #endif
+    /// <summary>Read-only. User ID by which this is last modified.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+    public IdentitySet? AssignedBy {
+        get { return BackingStore?.Get<IdentitySet>("assignedBy"); }
+        set { BackingStore?.Set("assignedBy", value); }
+    }
+#nullable restore
+#else
+    public IdentitySet AssignedBy {
+        get { return BackingStore?.Get<IdentitySet>("assignedBy"); }
+        set { BackingStore?.Set("assignedBy", value); }
+    }
+#endif
+
+    public DateTimeOffset? AssignedDateTime {
+        get { return BackingStore?.Get<DateTimeOffset?>("assignedDateTime"); }
+        set { BackingStore?.Set("assignedDateTime", value); }
+    }
     /// <summary>
     /// Instantiates a new auditActivityInitiator and sets the default values.
     /// </summary>
@@ -70,6 +89,8 @@ public class PlannerAssignment: IAdditionalDataHolder, IBackedModel, IParsable
         return new Dictionary<string, Action<IParseNode>> {
             {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             {"orderHint", n => { OrderHint = n.GetStringValue(); } },
+            {"assignedBy", n => { AssignedBy = n.GetObjectValue(IdentitySet.CreateFromDiscriminatorValue); } },
+            {"assignedDateTime", n => { AssignedDateTime = n.GetDateTimeOffsetValue(); } },
         };
     }
     /// <summary>
@@ -80,6 +101,8 @@ public class PlannerAssignment: IAdditionalDataHolder, IBackedModel, IParsable
         _ = writer ?? throw new ArgumentNullException(nameof(writer));
         writer.WriteStringValue("@odata.type", OdataType);
         writer.WriteStringValue("orderHint", OrderHint);
+        writer.WriteObjectValue("assignedBy", AssignedBy);
+        writer.WriteDateTimeOffsetValue("assignedDateTime", AssignedDateTime);
         writer.WriteAdditionalData(AdditionalData);
     }
 }

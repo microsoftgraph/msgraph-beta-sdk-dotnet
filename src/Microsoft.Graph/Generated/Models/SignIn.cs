@@ -62,6 +62,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appliedEventListeners", value); }
         }
 #endif
+        /// <summary>The appTokenProtectionStatus property</summary>
+        public TokenProtectionStatus? AppTokenProtectionStatus {
+            get { return BackingStore?.Get<TokenProtectionStatus?>("appTokenProtectionStatus"); }
+            set { BackingStore?.Set("appTokenProtectionStatus", value); }
+        }
         /// <summary>Provides details about the app and device used during an Azure AD authentication step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -364,7 +369,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("location", value); }
         }
 #endif
-        /// <summary>Contains information about the managed identity used for the sign in, including its type and associated Azure Resource Manager (ARM) resource ID.</summary>
+        /// <summary>Contains information about the managed identity used for the sign in, including its type, associated Azure Resource Manager (ARM) resource ID, and federated token information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ManagedIdentity? ManagedServiceIdentity {
@@ -420,6 +425,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("originalRequestId", value); }
         }
 #endif
+        /// <summary>The originalTransferMethod property</summary>
+        public OriginalTransferMethods? OriginalTransferMethod {
+            get { return BackingStore?.Get<OriginalTransferMethods?>("originalTransferMethod"); }
+            set { BackingStore?.Set("originalTransferMethod", value); }
+        }
         /// <summary>Contains information about the Azure AD Private Link policy that is associated with the sign in event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -632,6 +642,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInIdentifierType?>("signInIdentifierType"); }
             set { BackingStore?.Set("signInIdentifierType", value); }
         }
+        /// <summary>The signInTokenProtectionStatus property</summary>
+        public TokenProtectionStatus? SignInTokenProtectionStatus {
+            get { return BackingStore?.Get<TokenProtectionStatus?>("signInTokenProtectionStatus"); }
+            set { BackingStore?.Set("signInTokenProtectionStatus", value); }
+        }
         /// <summary>The sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -757,6 +772,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"appId", n => { AppId = n.GetStringValue(); } },
                 {"appliedConditionalAccessPolicies", n => { AppliedConditionalAccessPolicies = n.GetCollectionOfObjectValues<AppliedConditionalAccessPolicy>(AppliedConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"appliedEventListeners", n => { AppliedEventListeners = n.GetCollectionOfObjectValues<AppliedAuthenticationEventListener>(AppliedAuthenticationEventListener.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"appTokenProtectionStatus", n => { AppTokenProtectionStatus = n.GetEnumValue<TokenProtectionStatus>(); } },
                 {"authenticationAppDeviceDetails", n => { AuthenticationAppDeviceDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails>(Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails.CreateFromDiscriminatorValue); } },
                 {"authenticationAppPolicyEvaluationDetails", n => { AuthenticationAppPolicyEvaluationDetails = n.GetCollectionOfObjectValues<AuthenticationAppPolicyDetails>(AuthenticationAppPolicyDetails.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"authenticationContextClassReferences", n => { AuthenticationContextClassReferences = n.GetCollectionOfObjectValues<AuthenticationContext>(AuthenticationContext.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -789,6 +805,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"mfaDetail", n => { MfaDetail = n.GetObjectValue<Microsoft.Graph.Beta.Models.MfaDetail>(Microsoft.Graph.Beta.Models.MfaDetail.CreateFromDiscriminatorValue); } },
                 {"networkLocationDetails", n => { NetworkLocationDetails = n.GetCollectionOfObjectValues<NetworkLocationDetail>(NetworkLocationDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"originalRequestId", n => { OriginalRequestId = n.GetStringValue(); } },
+                {"originalTransferMethod", n => { OriginalTransferMethod = n.GetEnumValue<OriginalTransferMethods>(); } },
                 {"privateLinkDetails", n => { PrivateLinkDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrivateLinkDetails>(Microsoft.Graph.Beta.Models.PrivateLinkDetails.CreateFromDiscriminatorValue); } },
                 {"processingTimeInMilliseconds", n => { ProcessingTimeInMilliseconds = n.GetIntValue(); } },
                 {"resourceDisplayName", n => { ResourceDisplayName = n.GetStringValue(); } },
@@ -808,6 +825,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"signInEventTypes", n => { SignInEventTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"signInIdentifier", n => { SignInIdentifier = n.GetStringValue(); } },
                 {"signInIdentifierType", n => { SignInIdentifierType = n.GetEnumValue<SignInIdentifierType>(); } },
+                {"signInTokenProtectionStatus", n => { SignInTokenProtectionStatus = n.GetEnumValue<TokenProtectionStatus>(); } },
                 {"status", n => { Status = n.GetObjectValue<SignInStatus>(SignInStatus.CreateFromDiscriminatorValue); } },
                 {"tokenIssuerName", n => { TokenIssuerName = n.GetStringValue(); } },
                 {"tokenIssuerType", n => { TokenIssuerType = n.GetEnumValue<TokenIssuerType>(); } },
@@ -830,6 +848,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("appId", AppId);
             writer.WriteCollectionOfObjectValues<AppliedConditionalAccessPolicy>("appliedConditionalAccessPolicies", AppliedConditionalAccessPolicies);
             writer.WriteCollectionOfObjectValues<AppliedAuthenticationEventListener>("appliedEventListeners", AppliedEventListeners);
+            writer.WriteEnumValue<TokenProtectionStatus>("appTokenProtectionStatus", AppTokenProtectionStatus);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails>("authenticationAppDeviceDetails", AuthenticationAppDeviceDetails);
             writer.WriteCollectionOfObjectValues<AuthenticationAppPolicyDetails>("authenticationAppPolicyEvaluationDetails", AuthenticationAppPolicyEvaluationDetails);
             writer.WriteCollectionOfObjectValues<AuthenticationContext>("authenticationContextClassReferences", AuthenticationContextClassReferences);
@@ -862,6 +881,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MfaDetail>("mfaDetail", MfaDetail);
             writer.WriteCollectionOfObjectValues<NetworkLocationDetail>("networkLocationDetails", NetworkLocationDetails);
             writer.WriteStringValue("originalRequestId", OriginalRequestId);
+            writer.WriteEnumValue<OriginalTransferMethods>("originalTransferMethod", OriginalTransferMethod);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrivateLinkDetails>("privateLinkDetails", PrivateLinkDetails);
             writer.WriteIntValue("processingTimeInMilliseconds", ProcessingTimeInMilliseconds);
             writer.WriteStringValue("resourceDisplayName", ResourceDisplayName);
@@ -881,6 +901,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("signInEventTypes", SignInEventTypes);
             writer.WriteStringValue("signInIdentifier", SignInIdentifier);
             writer.WriteEnumValue<SignInIdentifierType>("signInIdentifierType", SignInIdentifierType);
+            writer.WriteEnumValue<TokenProtectionStatus>("signInTokenProtectionStatus", SignInTokenProtectionStatus);
             writer.WriteObjectValue<SignInStatus>("status", Status);
             writer.WriteStringValue("tokenIssuerName", TokenIssuerName);
             writer.WriteEnumValue<TokenIssuerType>("tokenIssuerType", TokenIssuerType);

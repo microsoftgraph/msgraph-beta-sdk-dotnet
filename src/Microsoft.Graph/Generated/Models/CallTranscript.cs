@@ -25,6 +25,34 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>The unique identifier of the online meeting related to this transcript. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MeetingId {
+            get { return BackingStore?.Get<string?>("meetingId"); }
+            set { BackingStore?.Set("meetingId", value); }
+        }
+#nullable restore
+#else
+        public string MeetingId {
+            get { return BackingStore?.Get<string>("meetingId"); }
+            set { BackingStore?.Set("meetingId", value); }
+        }
+#endif
+        /// <summary>The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MeetingOrganizerId {
+            get { return BackingStore?.Get<string?>("meetingOrganizerId"); }
+            set { BackingStore?.Set("meetingOrganizerId", value); }
+        }
+#nullable restore
+#else
+        public string MeetingOrganizerId {
+            get { return BackingStore?.Get<string>("meetingOrganizerId"); }
+            set { BackingStore?.Set("meetingOrganizerId", value); }
+        }
+#endif
         /// <summary>The time-aligned metadata of the utterances in the transcript. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +65,20 @@ namespace Microsoft.Graph.Beta.Models {
         public byte[] MetadataContent {
             get { return BackingStore?.Get<byte[]>("metadataContent"); }
             set { BackingStore?.Set("metadataContent", value); }
+        }
+#endif
+        /// <summary>The URL which can be used to access the content of the transcript. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TranscriptContentUrl {
+            get { return BackingStore?.Get<string?>("transcriptContentUrl"); }
+            set { BackingStore?.Set("transcriptContentUrl", value); }
+        }
+#nullable restore
+#else
+        public string TranscriptContentUrl {
+            get { return BackingStore?.Get<string>("transcriptContentUrl"); }
+            set { BackingStore?.Set("transcriptContentUrl", value); }
         }
 #endif
         /// <summary>
@@ -54,7 +96,10 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"content", n => { Content = n.GetByteArrayValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"meetingId", n => { MeetingId = n.GetStringValue(); } },
+                {"meetingOrganizerId", n => { MeetingOrganizerId = n.GetStringValue(); } },
                 {"metadataContent", n => { MetadataContent = n.GetByteArrayValue(); } },
+                {"transcriptContentUrl", n => { TranscriptContentUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,7 +111,10 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteByteArrayValue("content", Content);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteStringValue("meetingId", MeetingId);
+            writer.WriteStringValue("meetingOrganizerId", MeetingOrganizerId);
             writer.WriteByteArrayValue("metadataContent", MetadataContent);
+            writer.WriteStringValue("transcriptContentUrl", TranscriptContentUrl);
         }
     }
 }

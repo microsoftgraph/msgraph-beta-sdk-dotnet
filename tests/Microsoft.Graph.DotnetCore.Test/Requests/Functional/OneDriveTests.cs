@@ -65,7 +65,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 foreach (var item in driveItems.Value)
                 {
                     // Let's download the first file we get in the response.
-                    if (item.FileObject != null)
+                    if (item.File != null)
                     {
                         // We'll use the file metadata to determine size and the name of the downloaded file
                         // and to get the download URL.
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 foreach (var item in driveItems.Value)
                 {
                     // Let's download the first file we get in the response.
-                    if (item.FileObject != null)
+                    if (item.File != null)
                     {
                         var driveItemContent = await graphClient.Drives["driveId"].Items[item.Id].Content.GetAsync();
                         Assert.NotNull(driveItemContent);
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 foreach (var item in driveItems.Value)
                 {
                     // Let's get the first file in the response and expand the permissions set on it.
-                    if (item.FileObject != null)
+                    if (item.File != null)
                     {
                         // Get the permissions on the first file in the response.
                         var driveItem = await graphClient.Drives["driveId"]
