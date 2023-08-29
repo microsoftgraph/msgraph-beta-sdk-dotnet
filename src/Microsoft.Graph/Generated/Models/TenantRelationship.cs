@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managedTenants", value); }
         }
 #endif
-        /// <summary>The multiTenantOrganization property</summary>
+        /// <summary>Defines an organization with more than one instance of Azure Active Directory (Azure AD).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.MultiTenantOrganization? MultiTenantOrganization {

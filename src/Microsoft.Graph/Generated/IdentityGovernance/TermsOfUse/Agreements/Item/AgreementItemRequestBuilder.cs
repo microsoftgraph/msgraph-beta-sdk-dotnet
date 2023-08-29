@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve all files related to an agreement. This includes the default file and all localized files.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreement-list-files?view=graph-rest-1.0" />
+        /// Retrieve the properties and relationships of an agreement object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreement-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve all files related to an agreement. This includes the default file and all localized files.
+        /// Retrieve the properties and relationships of an agreement object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -200,7 +200,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
             }
         }
         /// <summary>
-        /// Retrieve all files related to an agreement. This includes the default file and all localized files.
+        /// Retrieve the properties and relationships of an agreement object.
         /// </summary>
         public class AgreementItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

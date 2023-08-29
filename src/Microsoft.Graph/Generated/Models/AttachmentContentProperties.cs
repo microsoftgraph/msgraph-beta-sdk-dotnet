@@ -20,6 +20,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("currentLabel", value); }
         }
 #endif
+        /// <summary>The discoveredSensitiveTypes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<DiscoveredSensitiveType>? DiscoveredSensitiveTypes {
+            get { return BackingStore?.Get<List<DiscoveredSensitiveType>?>("discoveredSensitiveTypes"); }
+            set { BackingStore?.Set("discoveredSensitiveTypes", value); }
+        }
+#nullable restore
+#else
+        public List<DiscoveredSensitiveType> DiscoveredSensitiveTypes {
+            get { return BackingStore?.Get<List<DiscoveredSensitiveType>>("discoveredSensitiveTypes"); }
+            set { BackingStore?.Set("discoveredSensitiveTypes", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new attachmentContentProperties and sets the default values.
         /// </summary>
@@ -40,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"currentLabel", n => { CurrentLabel = n.GetObjectValue<Microsoft.Graph.Beta.Models.CurrentLabel>(Microsoft.Graph.Beta.Models.CurrentLabel.CreateFromDiscriminatorValue); } },
+                {"discoveredSensitiveTypes", n => { DiscoveredSensitiveTypes = n.GetCollectionOfObjectValues<DiscoveredSensitiveType>(DiscoveredSensitiveType.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -50,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CurrentLabel>("currentLabel", CurrentLabel);
+            writer.WriteCollectionOfObjectValues<DiscoveredSensitiveType>("discoveredSensitiveTypes", DiscoveredSensitiveTypes);
         }
     }
 }

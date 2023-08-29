@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The desiredMemberState property</summary>
+        /// <summary>State of the tenant in the multi-tenant organization currently being processed. The possible values are: pending, active, removed, unknownFutureValue. Read-only.</summary>
         public MultiTenantOrganizationMemberState? DesiredMemberState {
             get { return BackingStore?.Get<MultiTenantOrganizationMemberState?>("desiredMemberState"); }
             set { BackingStore?.Set("desiredMemberState", value); }
         }
-        /// <summary>The details property</summary>
+        /// <summary>Details that explain the processing status if any. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Details {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Processing state of the asynchronous job. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only.</summary>
         public MultiTenantOrganizationMemberProcessingStatus? Status {
             get { return BackingStore?.Get<MultiTenantOrganizationMemberProcessingStatus?>("status"); }
             set { BackingStore?.Set("status", value); }

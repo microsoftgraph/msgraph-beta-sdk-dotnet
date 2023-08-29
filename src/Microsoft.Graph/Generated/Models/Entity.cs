@@ -708,6 +708,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.groupPolicySettingMapping" => new GroupPolicySettingMapping(),
                 "#microsoft.graph.groupPolicyUploadedDefinitionFile" => new GroupPolicyUploadedDefinitionFile(),
                 "#microsoft.graph.groupPolicyUploadedPresentation" => new GroupPolicyUploadedPresentation(),
+                "#microsoft.graph.hardwareOathAuthenticationMethodConfiguration" => new HardwareOathAuthenticationMethodConfiguration(),
                 "#microsoft.graph.homeRealmDiscoveryPolicy" => new HomeRealmDiscoveryPolicy(),
                 "#microsoft.graph.horizontalSection" => new HorizontalSection(),
                 "#microsoft.graph.horizontalSectionColumn" => new HorizontalSectionColumn(),

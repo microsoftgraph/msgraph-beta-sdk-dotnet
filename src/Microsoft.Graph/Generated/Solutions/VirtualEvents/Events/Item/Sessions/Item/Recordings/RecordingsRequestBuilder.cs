@@ -2,6 +2,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.Recordings.Count;
+using Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.Recordings.Delta;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item.Recordings.Item;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -19,6 +20,10 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the delta method.</summary>
+        public DeltaRequestBuilder Delta { get =>
+            new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.</summary>
         /// <param name="position">The unique identifier of callRecording</param>

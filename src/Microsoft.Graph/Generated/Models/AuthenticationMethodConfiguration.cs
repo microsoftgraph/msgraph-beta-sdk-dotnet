@@ -35,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
             return mappingValue switch {
                 "#microsoft.graph.emailAuthenticationMethodConfiguration" => new EmailAuthenticationMethodConfiguration(),
                 "#microsoft.graph.fido2AuthenticationMethodConfiguration" => new Fido2AuthenticationMethodConfiguration(),
+                "#microsoft.graph.hardwareOathAuthenticationMethodConfiguration" => new HardwareOathAuthenticationMethodConfiguration(),
                 "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration" => new MicrosoftAuthenticatorAuthenticationMethodConfiguration(),
                 "#microsoft.graph.smsAuthenticationMethodConfiguration" => new SmsAuthenticationMethodConfiguration(),
                 "#microsoft.graph.softwareOathAuthenticationMethodConfiguration" => new SoftwareOathAuthenticationMethodConfiguration(),
