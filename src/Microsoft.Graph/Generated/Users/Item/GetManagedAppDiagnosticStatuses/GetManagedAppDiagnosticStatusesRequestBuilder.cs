@@ -73,6 +73,13 @@ namespace Microsoft.Graph.Beta.Users.Item.GetManagedAppDiagnosticStatuses {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GetManagedAppDiagnosticStatusesRequestBuilder WithUrl(string rawUrl) {
+            return new GetManagedAppDiagnosticStatusesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Gets diagnostics validation status for a given user.
         /// </summary>
         public class GetManagedAppDiagnosticStatusesRequestBuilderGetQueryParameters {

@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantA
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RuleDefinitionRequestBuilder WithUrl(string rawUrl) {
+            return new RuleDefinitionRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get ruleDefinition from tenantRelationships
         /// </summary>
         public class RuleDefinitionRequestBuilderGetQueryParameters {

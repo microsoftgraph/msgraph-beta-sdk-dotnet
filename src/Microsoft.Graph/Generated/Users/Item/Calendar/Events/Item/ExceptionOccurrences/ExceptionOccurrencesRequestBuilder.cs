@@ -92,6 +92,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.ExceptionOccurren
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ExceptionOccurrencesRequestBuilder WithUrl(string rawUrl) {
+            return new ExceptionOccurrencesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get exceptionOccurrences from users
         /// </summary>
         public class ExceptionOccurrencesRequestBuilderGetQueryParameters {

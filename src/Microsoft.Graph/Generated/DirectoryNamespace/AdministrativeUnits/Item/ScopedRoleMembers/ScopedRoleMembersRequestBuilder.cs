@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AdministrativeUnits.Item.Scope
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ScopedRoleMembersRequestBuilder WithUrl(string rawUrl) {
+            return new ScopedRoleMembersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List Azure Active Directory (Azure AD) role assignments with administrative unit scope.
         /// </summary>
         public class ScopedRoleMembersRequestBuilderGetQueryParameters {

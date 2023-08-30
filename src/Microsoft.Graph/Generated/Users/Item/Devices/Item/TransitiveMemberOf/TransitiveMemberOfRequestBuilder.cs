@@ -98,6 +98,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.TransitiveMemberOf {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TransitiveMemberOfRequestBuilder WithUrl(string rawUrl) {
+            return new TransitiveMemberOfRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
         /// </summary>
         public class TransitiveMemberOfRequestBuilderGetQueryParameters {

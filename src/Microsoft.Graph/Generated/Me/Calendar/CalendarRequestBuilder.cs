@@ -154,6 +154,13 @@ namespace Microsoft.Graph.Beta.Me.Calendar {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CalendarRequestBuilder WithUrl(string rawUrl) {
+            return new CalendarRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the properties and relationships of a calendar object. The calendar can be one for a user, or the default calendar of a Microsoft 365 group. There are two scenarios where an app can get another user&apos;s calendar:
         /// </summary>
         public class CalendarRequestBuilderGetQueryParameters {

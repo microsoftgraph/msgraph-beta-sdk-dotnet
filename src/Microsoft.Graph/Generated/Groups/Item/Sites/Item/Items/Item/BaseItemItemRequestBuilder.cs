@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Items.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public BaseItemItemRequestBuilder WithUrl(string rawUrl) {
+            return new BaseItemItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Used to address any item contained in this site. This collection cannot be enumerated.
         /// </summary>
         public class BaseItemItemRequestBuilderGetQueryParameters {

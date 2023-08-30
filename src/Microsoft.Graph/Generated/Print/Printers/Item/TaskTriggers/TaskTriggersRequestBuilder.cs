@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.TaskTriggers {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TaskTriggersRequestBuilder WithUrl(string rawUrl) {
+            return new TaskTriggersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of task triggers associated with the printer. The list of task triggers defines which tasks will be triggered as a result of events that occur during printing. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
         /// </summary>
         public class TaskTriggersRequestBuilderGetQueryParameters {

@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace.Localizations.Item.
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public VersionsRequestBuilder WithUrl(string rawUrl) {
+            return new VersionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.
         /// </summary>
         public class VersionsRequestBuilderGetQueryParameters {

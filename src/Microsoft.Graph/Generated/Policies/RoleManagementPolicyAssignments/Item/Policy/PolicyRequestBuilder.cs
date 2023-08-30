@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments.Item.Pol
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PolicyRequestBuilder WithUrl(string rawUrl) {
+            return new PolicyRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The policy that&apos;s associated with a policy assignment. Supports $expand and a nested $expand of the rules and effectiveRules relationships for the policy.
         /// </summary>
         public class PolicyRequestBuilderGetQueryParameters {

@@ -92,6 +92,13 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MemberOfRequestBuilder WithUrl(string rawUrl) {
+            return new MemberOfRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The connectorGroup that the connector is a member of. Read-only.
         /// </summary>
         public class MemberOfRequestBuilderGetQueryParameters {

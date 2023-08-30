@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.Languages.Item.Overrid
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public OverridesPagesRequestBuilder WithUrl(string rawUrl) {
+            return new OverridesPagesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the userFlowLanguagePage resources from the overridesPages navigation property. These pages are used to customize the values shown to the user during a user journey in a user flow.
         /// </summary>
         public class OverridesPagesRequestBuilderGetQueryParameters {

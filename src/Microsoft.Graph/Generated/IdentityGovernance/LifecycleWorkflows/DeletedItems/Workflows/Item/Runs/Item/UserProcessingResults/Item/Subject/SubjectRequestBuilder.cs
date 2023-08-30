@@ -79,6 +79,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItem
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SubjectRequestBuilder WithUrl(string rawUrl) {
+            return new SubjectRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The unique identifier of the AAD user targeted for the taskProcessingResult.Supports $filter(eq, ne) and $expand.
         /// </summary>
         public class SubjectRequestBuilderGetQueryParameters {

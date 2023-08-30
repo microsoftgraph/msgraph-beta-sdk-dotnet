@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Education.Me.Schools {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SchoolsRequestBuilder WithUrl(string rawUrl) {
+            return new SchoolsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of schools for a user.
         /// </summary>
         public class SchoolsRequestBuilderGetQueryParameters {

@@ -114,6 +114,13 @@ namespace Microsoft.Graph.Beta.External.IndustryData {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public IndustryDataRequestBuilder WithUrl(string rawUrl) {
+            return new IndustryDataRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get industryData from external
         /// </summary>
         public class IndustryDataRequestBuilderGetQueryParameters {

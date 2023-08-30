@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ImpactedResourcesRequestBuilder WithUrl(string rawUrl) {
+            return new ImpactedResourcesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The list of directory objects associated with the recommendation.
         /// </summary>
         public class ImpactedResourcesRequestBuilderGetQueryParameters {

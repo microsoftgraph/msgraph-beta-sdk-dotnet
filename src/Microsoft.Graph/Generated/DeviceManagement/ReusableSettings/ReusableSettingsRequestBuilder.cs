@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusableSettings {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ReusableSettingsRequestBuilder WithUrl(string rawUrl) {
+            return new ReusableSettingsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List of all reusable settings
         /// </summary>
         public class ReusableSettingsRequestBuilderGetQueryParameters {

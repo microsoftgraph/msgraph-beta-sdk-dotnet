@@ -77,6 +77,14 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01")]
+        public LastEstimateStatisticsOperationRequestBuilder WithUrl(string rawUrl) {
+            return new LastEstimateStatisticsOperationRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the last estimateStatisticsOperation object associated with a source collection. 
         /// </summary>
         public class LastEstimateStatisticsOperationRequestBuilderGetQueryParameters {

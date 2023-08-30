@@ -79,6 +79,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Children.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DriveItemItemRequestBuilder WithUrl(string rawUrl) {
+            return new DriveItemItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
         /// </summary>
         public class DriveItemItemRequestBuilderGetQueryParameters {

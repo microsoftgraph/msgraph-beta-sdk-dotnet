@@ -75,6 +75,13 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityCountsWithPerio
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GetOffice365GroupsActivityCountsWithPeriodRequestBuilder WithUrl(string rawUrl) {
+            return new GetOffice365GroupsActivityCountsWithPeriodRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Invoke function getOffice365GroupsActivityCounts
         /// </summary>
         public class GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetQueryParameters {

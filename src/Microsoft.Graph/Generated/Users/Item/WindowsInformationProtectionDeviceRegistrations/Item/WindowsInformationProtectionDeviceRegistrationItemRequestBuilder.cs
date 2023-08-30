@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Users.Item.WindowsInformationProtectionDeviceRegi
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public WindowsInformationProtectionDeviceRegistrationItemRequestBuilder WithUrl(string rawUrl) {
+            return new WindowsInformationProtectionDeviceRegistrationItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Zero or more WIP device registrations that belong to the user.
         /// </summary>
         public class WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetQueryParameters {

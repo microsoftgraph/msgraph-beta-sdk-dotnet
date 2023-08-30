@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.Connectors.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PrintConnectorItemRequestBuilder WithUrl(string rawUrl) {
+            return new PrintConnectorItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The connectors that are associated with the printer.
         /// </summary>
         public class PrintConnectorItemRequestBuilderGetQueryParameters {

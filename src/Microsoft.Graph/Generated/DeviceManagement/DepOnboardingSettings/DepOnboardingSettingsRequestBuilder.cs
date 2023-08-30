@@ -145,6 +145,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DepOnboardingSettingsRequestBuilder WithUrl(string rawUrl) {
+            return new DepOnboardingSettingsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// This collections of multiple DEP tokens per-tenant.
         /// </summary>
         public class DepOnboardingSettingsRequestBuilderGetQueryParameters {

@@ -80,6 +80,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.WorkflowTem
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public WorkflowTemplateItemRequestBuilder WithUrl(string rawUrl) {
+            return new WorkflowTemplateItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Read the properties and relationships of a workflowTemplate object.
         /// </summary>
         public class WorkflowTemplateItemRequestBuilderGetQueryParameters {

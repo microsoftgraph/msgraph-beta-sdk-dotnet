@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Reports.ServicePrincipalSignInActivities {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ServicePrincipalSignInActivitiesRequestBuilder WithUrl(string rawUrl) {
+            return new ServicePrincipalSignInActivitiesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of servicePrincipalSignInActivity objects that contains sign-in activity information for service principals in an Azure Active Directory tenant. You can use a service principal as a client or resource. A service principal supports delegated or app-only authentication context.
         /// </summary>
         public class ServicePrincipalSignInActivitiesRequestBuilderGetQueryParameters {

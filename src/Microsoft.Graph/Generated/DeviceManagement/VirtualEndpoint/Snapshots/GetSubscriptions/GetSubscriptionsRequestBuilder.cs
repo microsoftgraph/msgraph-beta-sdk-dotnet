@@ -73,6 +73,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSub
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GetSubscriptionsRequestBuilder WithUrl(string rawUrl) {
+            return new GetSubscriptionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Invoke function getSubscriptions
         /// </summary>
         public class GetSubscriptionsRequestBuilderGetQueryParameters {

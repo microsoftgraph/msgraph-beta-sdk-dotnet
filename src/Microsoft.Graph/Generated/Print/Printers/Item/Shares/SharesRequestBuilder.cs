@@ -87,6 +87,13 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.Shares {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SharesRequestBuilder WithUrl(string rawUrl) {
+            return new SharesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The list of printerShares that are associated with the printer. Currently, only one printerShare can be associated with the printer. Read-only. Nullable.
         /// </summary>
         public class SharesRequestBuilderGetQueryParameters {

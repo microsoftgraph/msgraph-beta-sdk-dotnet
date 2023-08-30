@@ -157,6 +157,13 @@ namespace Microsoft.Graph.Beta.Users.Item.PermissionGrants {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PermissionGrantsRequestBuilder WithUrl(string rawUrl) {
+            return new PermissionGrantsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List all resource-specific permission grants of a user. This list specifies the Azure Active Directory apps that have access to the user, along with the corresponding kind of resource-specific access that each app has.
         /// </summary>
         public class PermissionGrantsRequestBuilderGetQueryParameters {

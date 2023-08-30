@@ -132,6 +132,13 @@ namespace Microsoft.Graph.Beta.SubscribedSkus {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SubscribedSkusRequestBuilder WithUrl(string rawUrl) {
+            return new SubscribedSkusRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Azure portal or the Microsoft 365 admin center against their Microsoft Graph skuId and skuPartNumber properties, see Product names and service plan identifiers for licensing.
         /// </summary>
         public class SubscribedSkusRequestBuilderGetQueryParameters {

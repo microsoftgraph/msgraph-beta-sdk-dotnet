@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.LandingPages {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public LandingPagesRequestBuilder WithUrl(string rawUrl) {
+            return new LandingPagesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get landingPages from security
         /// </summary>
         public class LandingPagesRequestBuilderGetQueryParameters {

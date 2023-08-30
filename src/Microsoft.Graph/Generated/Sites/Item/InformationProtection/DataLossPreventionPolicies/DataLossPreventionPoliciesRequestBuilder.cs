@@ -141,6 +141,13 @@ namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.DataLossPreventi
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DataLossPreventionPoliciesRequestBuilder WithUrl(string rawUrl) {
+            return new DataLossPreventionPoliciesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get dataLossPreventionPolicies from sites
         /// </summary>
         public class DataLossPreventionPoliciesRequestBuilderGetQueryParameters {

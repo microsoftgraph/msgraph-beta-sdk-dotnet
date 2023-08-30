@@ -92,6 +92,13 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.UserFlowIdentityProvid
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public UserFlowIdentityProvidersRequestBuilder WithUrl(string rawUrl) {
+            return new UserFlowIdentityProvidersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get userFlowIdentityProviders from identity
         /// </summary>
         public class UserFlowIdentityProvidersRequestBuilderGetQueryParameters {

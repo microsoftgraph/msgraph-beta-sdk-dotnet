@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItem
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TaskDefinitionRequestBuilder WithUrl(string rawUrl) {
+            return new TaskDefinitionRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The taskDefinition associated with the related lifecycle workflow task.Supports $filter(eq, ne) and $expand.
         /// </summary>
         public class TaskDefinitionRequestBuilderGetQueryParameters {

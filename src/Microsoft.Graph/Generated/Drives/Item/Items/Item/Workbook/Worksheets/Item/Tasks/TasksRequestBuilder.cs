@@ -145,6 +145,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.T
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TasksRequestBuilder WithUrl(string rawUrl) {
+            return new TasksRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get tasks from drives
         /// </summary>
         public class TasksRequestBuilderGetQueryParameters {

@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TimeOffReasonsRequestBuilder WithUrl(string rawUrl) {
+            return new TimeOffReasonsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the list of timeOffReasons in a schedule.
         /// </summary>
         public class TimeOffReasonsRequestBuilderGetQueryParameters {

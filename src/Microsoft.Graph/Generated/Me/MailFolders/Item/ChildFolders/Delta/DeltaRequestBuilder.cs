@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Delta {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DeltaRequestBuilder WithUrl(string rawUrl) {
+            return new DeltaRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a set of mail folders that have been added, deleted, or removed from the user&apos;s mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the mail folders. This allows you to maintain and synchronize a local store of a user&apos;s mail folders without having to fetch all the mail folders of that mailbox from the server every time.
         /// </summary>
         public class DeltaRequestBuilderGetQueryParameters {

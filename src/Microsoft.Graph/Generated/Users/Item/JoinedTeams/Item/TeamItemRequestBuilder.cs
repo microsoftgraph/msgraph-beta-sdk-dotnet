@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedTeams.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TeamItemRequestBuilder WithUrl(string rawUrl) {
+            return new TeamItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
         /// </summary>
         public class TeamItemRequestBuilderGetQueryParameters {

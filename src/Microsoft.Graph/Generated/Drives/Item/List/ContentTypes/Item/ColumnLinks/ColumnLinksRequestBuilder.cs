@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.ColumnLinks {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ColumnLinksRequestBuilder WithUrl(string rawUrl) {
+            return new ColumnLinksRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The collection of columns that are required by this content type
         /// </summary>
         public class ColumnLinksRequestBuilderGetQueryParameters {

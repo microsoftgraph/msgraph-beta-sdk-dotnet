@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Items.Item.Versions {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public VersionsRequestBuilder WithUrl(string rawUrl) {
+            return new VersionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The list of previous versions of the list item.
         /// </summary>
         public class VersionsRequestBuilderGetQueryParameters {

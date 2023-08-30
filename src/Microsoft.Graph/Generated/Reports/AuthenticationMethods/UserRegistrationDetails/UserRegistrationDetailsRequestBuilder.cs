@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationDet
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public UserRegistrationDetailsRequestBuilder WithUrl(string rawUrl) {
+            return new UserRegistrationDetailsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the authentication methods registered for a user as defined in the userRegistrationDetails object.
         /// </summary>
         public class UserRegistrationDetailsRequestBuilderGetQueryParameters {

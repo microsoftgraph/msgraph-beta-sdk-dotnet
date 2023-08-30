@@ -79,6 +79,13 @@ namespace Microsoft.Graph.Beta.Invitations.Item.InvitedUser {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public InvitedUserRequestBuilder WithUrl(string rawUrl) {
+            return new InvitedUserRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The user created as part of the invitation creation. Read-Only
         /// </summary>
         public class InvitedUserRequestBuilderGetQueryParameters {

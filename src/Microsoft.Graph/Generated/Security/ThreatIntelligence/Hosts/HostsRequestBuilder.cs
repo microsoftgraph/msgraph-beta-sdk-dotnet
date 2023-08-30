@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public HostsRequestBuilder WithUrl(string rawUrl) {
+            return new HostsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:
         /// </summary>
         public class HostsRequestBuilderGetQueryParameters {

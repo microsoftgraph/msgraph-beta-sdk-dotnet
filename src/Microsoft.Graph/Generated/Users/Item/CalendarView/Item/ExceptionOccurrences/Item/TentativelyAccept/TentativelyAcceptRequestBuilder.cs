@@ -77,6 +77,13 @@ namespace Microsoft.Graph.Beta.Users.Item.CalendarView.Item.ExceptionOccurrences
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TentativelyAcceptRequestBuilder WithUrl(string rawUrl) {
+            return new TentativelyAcceptRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class TentativelyAcceptRequestBuilderPostRequestConfiguration {

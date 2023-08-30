@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Subdomains {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SubdomainsRequestBuilder WithUrl(string rawUrl) {
+            return new SubdomainsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Read the properties and relationships of a subdomain object.
         /// </summary>
         public class SubdomainsRequestBuilderGetQueryParameters {

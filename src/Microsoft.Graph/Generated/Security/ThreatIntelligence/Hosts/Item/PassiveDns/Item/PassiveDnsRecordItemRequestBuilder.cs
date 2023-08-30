@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDns
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PassiveDnsRecordItemRequestBuilder WithUrl(string rawUrl) {
+            return new PassiveDnsRecordItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Passive DNS retrieval about this host.
         /// </summary>
         public class PassiveDnsRecordItemRequestBuilderGetQueryParameters {

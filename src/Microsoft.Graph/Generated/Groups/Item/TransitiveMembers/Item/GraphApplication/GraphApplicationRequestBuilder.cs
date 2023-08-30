@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.TransitiveMembers.Item.GraphApplicati
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GraphApplicationRequestBuilder WithUrl(string rawUrl) {
+            return new GraphApplicationRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the item of type microsoft.graph.directoryObject as microsoft.graph.application
         /// </summary>
         public class GraphApplicationRequestBuilderGetQueryParameters {

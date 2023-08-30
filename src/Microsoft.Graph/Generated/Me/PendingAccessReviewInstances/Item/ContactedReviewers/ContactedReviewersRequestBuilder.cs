@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.ContactedRev
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ContactedReviewersRequestBuilder WithUrl(string rawUrl) {
+            return new ContactedReviewersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the reviewers for an access review instance, irrespective of whether or not they have received a notification. The reviewers are represented by an accessReviewReviewer object. A list of zero or more objects are returned, including all of their nested properties.
         /// </summary>
         public class ContactedReviewersRequestBuilderGetQueryParameters {

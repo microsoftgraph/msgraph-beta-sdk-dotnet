@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Analytics.AllTime {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AllTimeRequestBuilder WithUrl(string rawUrl) {
+            return new AllTimeRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get allTime from groups
         /// </summary>
         public class AllTimeRequestBuilderGetQueryParameters {

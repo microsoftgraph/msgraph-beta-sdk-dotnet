@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Item.Hi
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public HistoryRequestBuilder WithUrl(string rawUrl) {
+            return new HistoryRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the risk history of a riskyServicePrincipal object.
         /// </summary>
         public class HistoryRequestBuilderGetQueryParameters {

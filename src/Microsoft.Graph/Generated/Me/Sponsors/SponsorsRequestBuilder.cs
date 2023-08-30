@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Me.Sponsors {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SponsorsRequestBuilder WithUrl(string rawUrl) {
+            return new SponsorsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest user&apos;s privileges in the tenant and for keeping the guest user&apos;s information and access up to date.
         /// </summary>
         public class SponsorsRequestBuilderGetQueryParameters {

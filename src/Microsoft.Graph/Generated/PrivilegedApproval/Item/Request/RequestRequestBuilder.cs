@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.Request {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RequestRequestBuilder WithUrl(string rawUrl) {
+            return new RequestRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get request from privilegedApproval
         /// </summary>
         public class RequestRequestBuilderGetQueryParameters {

@@ -425,7 +425,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("originalRequestId", value); }
         }
 #endif
-        /// <summary>The originalTransferMethod property</summary>
+        /// <summary>Transfer method used to initiate a session throughout all subsequent request. The possible values are: none, deviceCodeFlow, authenticationTransfer, unknownFutureValue.</summary>
         public OriginalTransferMethods? OriginalTransferMethod {
             get { return BackingStore?.Get<OriginalTransferMethods?>("originalTransferMethod"); }
             set { BackingStore?.Set("originalTransferMethod", value); }
@@ -642,7 +642,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInIdentifierType?>("signInIdentifierType"); }
             set { BackingStore?.Set("signInIdentifierType", value); }
         }
-        /// <summary>The signInTokenProtectionStatus property</summary>
+        /// <summary>Token protection creates a cryptographically secure tie between the token and the device it&apos;s issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.</summary>
         public TokenProtectionStatus? SignInTokenProtectionStatus {
             get { return BackingStore?.Get<TokenProtectionStatus?>("signInTokenProtectionStatus"); }
             set { BackingStore?.Set("signInTokenProtectionStatus", value); }

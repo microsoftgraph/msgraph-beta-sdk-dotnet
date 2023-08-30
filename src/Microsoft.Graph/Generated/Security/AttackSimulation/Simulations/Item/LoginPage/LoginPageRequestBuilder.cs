@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations.Item.LoginP
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public LoginPageRequestBuilder WithUrl(string rawUrl) {
+            return new LoginPageRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get loginPage from security
         /// </summary>
         public class LoginPageRequestBuilderGetQueryParameters {

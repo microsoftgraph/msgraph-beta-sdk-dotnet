@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item.Year {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public YearRequestBuilder WithUrl(string rawUrl) {
+            return new YearRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The year that the data brought in via this flow applies to.
         /// </summary>
         public class YearRequestBuilderGetQueryParameters {

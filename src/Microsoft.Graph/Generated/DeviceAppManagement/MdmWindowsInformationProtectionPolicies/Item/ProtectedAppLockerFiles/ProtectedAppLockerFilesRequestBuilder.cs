@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MdmWindowsInformationProtecti
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ProtectedAppLockerFilesRequestBuilder WithUrl(string rawUrl) {
+            return new ProtectedAppLockerFilesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Another way to input protected apps through xml files
         /// </summary>
         public class ProtectedAppLockerFilesRequestBuilderGetQueryParameters {

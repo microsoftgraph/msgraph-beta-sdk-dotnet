@@ -157,6 +157,13 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DirectorySettingTemplatesRequestBuilder WithUrl(string rawUrl) {
+            return new DirectorySettingTemplatesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available directorySettingTemplates objects.
         /// </summary>
         public class DirectorySettingTemplatesRequestBuilderGetQueryParameters {

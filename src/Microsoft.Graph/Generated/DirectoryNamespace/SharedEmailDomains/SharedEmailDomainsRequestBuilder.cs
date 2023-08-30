@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SharedEmailDomains {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SharedEmailDomainsRequestBuilder WithUrl(string rawUrl) {
+            return new SharedEmailDomainsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get sharedEmailDomains from directory
         /// </summary>
         public class SharedEmailDomainsRequestBuilderGetQueryParameters {

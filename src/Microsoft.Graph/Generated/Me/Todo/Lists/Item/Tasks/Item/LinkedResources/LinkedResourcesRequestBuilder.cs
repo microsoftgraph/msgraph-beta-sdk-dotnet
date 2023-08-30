@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.LinkedResources {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public LinkedResourcesRequestBuilder WithUrl(string rawUrl) {
+            return new LinkedResourcesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get information of one or more items in a partner application, based on which a specified task was created. The information is represented in a linkedResource object for each item. It includes an external ID for the item in the partner application, and if applicable, a deep link to that item in the application.
         /// </summary>
         public class LinkedResourcesRequestBuilderGetQueryParameters {

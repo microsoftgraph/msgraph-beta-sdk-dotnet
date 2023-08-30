@@ -163,6 +163,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public InternalSponsorsRequestBuilder WithUrl(string rawUrl) {
+            return new InternalSponsorsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of a connectedOrganization&apos;s internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
         /// </summary>
         public class InternalSponsorsRequestBuilderGetQueryParameters {

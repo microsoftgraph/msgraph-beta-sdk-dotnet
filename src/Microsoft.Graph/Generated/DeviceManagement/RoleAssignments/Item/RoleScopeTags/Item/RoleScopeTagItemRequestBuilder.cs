@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item.RoleScopeTa
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RoleScopeTagItemRequestBuilder WithUrl(string rawUrl) {
+            return new RoleScopeTagItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The set of Role Scope Tags defined on the Role Assignment.
         /// </summary>
         public class RoleScopeTagItemRequestBuilderGetQueryParameters {

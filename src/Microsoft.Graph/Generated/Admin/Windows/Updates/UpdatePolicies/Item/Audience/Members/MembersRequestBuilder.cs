@@ -157,6 +157,13 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audienc
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MembersRequestBuilder WithUrl(string rawUrl) {
+            return new MembersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List the updatableAsset resources that are members of a deploymentAudience.
         /// </summary>
         public class MembersRequestBuilderGetQueryParameters {

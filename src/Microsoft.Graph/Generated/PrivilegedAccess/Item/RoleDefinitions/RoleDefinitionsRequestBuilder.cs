@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleDefinitions {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RoleDefinitionsRequestBuilder WithUrl(string rawUrl) {
+            return new RoleDefinitionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// A collection of role defintions for the provider.
         /// </summary>
         public class RoleDefinitionsRequestBuilderGetQueryParameters {

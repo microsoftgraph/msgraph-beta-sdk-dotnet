@@ -78,6 +78,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.StDev_S
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public StDev_SRequestBuilder WithUrl(string rawUrl) {
+            return new StDev_SRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class StDev_SRequestBuilderPostRequestConfiguration {

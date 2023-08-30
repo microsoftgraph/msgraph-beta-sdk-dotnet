@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.ResourceNamespaces {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ResourceNamespacesRequestBuilder WithUrl(string rawUrl) {
+            return new ResourceNamespacesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Resource that represents a collection of related actions.
         /// </summary>
         public class ResourceNamespacesRequestBuilderGetQueryParameters {

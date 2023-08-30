@@ -188,6 +188,13 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schem
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SchemaRequestBuilder WithUrl(string rawUrl) {
+            return new SchemaRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class SchemaRequestBuilderDeleteRequestConfiguration {

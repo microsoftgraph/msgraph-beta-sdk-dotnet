@@ -143,6 +143,13 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AssignmentsRequestBuilder WithUrl(string rawUrl) {
+            return new AssignmentsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of assignment objects. Only teachers, students, and applications with application permissions can perform this operation. A teacher or an application executing with application permissions can see all assignment objects for the class. Students can only see assignments that are assigned to them.
         /// </summary>
         public class AssignmentsRequestBuilderGetQueryParameters {

@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.Jobs.Item.Tasks.Item.Trigger 
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TriggerRequestBuilder WithUrl(string rawUrl) {
+            return new TriggerRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The printTaskTrigger that triggered this task&apos;s execution. Read-only.
         /// </summary>
         public class TriggerRequestBuilderGetQueryParameters {

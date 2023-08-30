@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RecommendationsRequestBuilder WithUrl(string rawUrl) {
+            return new RecommendationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the recommendation objects and their properties.
         /// </summary>
         public class RecommendationsRequestBuilderGetQueryParameters {

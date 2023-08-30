@@ -73,6 +73,13 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MicrosoftGraphSecurityRunRequestBuilder WithUrl(string rawUrl) {
+            return new MicrosoftGraphSecurityRunRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Invoke function run
         /// </summary>
         public class MicrosoftGraphSecurityRunRequestBuilderGetQueryParameters {

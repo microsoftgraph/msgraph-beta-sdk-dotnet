@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item.DataConne
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DataConnectorRequestBuilder WithUrl(string rawUrl) {
+            return new DataConnectorRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The data connector in the context of which this flow pulls in data from a source system.
         /// </summary>
         public class DataConnectorRequestBuilderGetQueryParameters {

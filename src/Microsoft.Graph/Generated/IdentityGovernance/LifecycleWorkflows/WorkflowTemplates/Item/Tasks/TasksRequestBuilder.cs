@@ -87,6 +87,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.WorkflowTem
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TasksRequestBuilder WithUrl(string rawUrl) {
+            return new TasksRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.
         /// </summary>
         public class TasksRequestBuilderGetQueryParameters {

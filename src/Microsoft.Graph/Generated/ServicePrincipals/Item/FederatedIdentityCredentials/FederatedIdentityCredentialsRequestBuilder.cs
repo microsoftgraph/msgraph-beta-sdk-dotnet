@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.FederatedIdentityCredentia
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public FederatedIdentityCredentialsRequestBuilder WithUrl(string rawUrl) {
+            return new FederatedIdentityCredentialsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get federatedIdentityCredentials from servicePrincipals
         /// </summary>
         public class FederatedIdentityCredentialsRequestBuilderGetQueryParameters {

@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAppConfigurat
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AndroidManagedStoreAppConfigurationSchemasRequestBuilder WithUrl(string rawUrl) {
+            return new AndroidManagedStoreAppConfigurationSchemasRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Android Enterprise app configuration schema entities.
         /// </summary>
         public class AndroidManagedStoreAppConfigurationSchemasRequestBuilderGetQueryParameters {

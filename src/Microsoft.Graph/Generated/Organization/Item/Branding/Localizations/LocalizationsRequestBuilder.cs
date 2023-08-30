@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding.Localizations {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public LocalizationsRequestBuilder WithUrl(string rawUrl) {
+            return new LocalizationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve all localization branding objects, including the default branding.
         /// </summary>
         public class LocalizationsRequestBuilderGetQueryParameters {

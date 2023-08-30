@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DerivedCredentials {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DerivedCredentialsRequestBuilder WithUrl(string rawUrl) {
+            return new DerivedCredentialsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Collection of Derived credential settings associated with account.
         /// </summary>
         public class DerivedCredentialsRequestBuilderGetQueryParameters {

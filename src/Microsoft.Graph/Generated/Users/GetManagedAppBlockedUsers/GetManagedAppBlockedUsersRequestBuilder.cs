@@ -73,6 +73,13 @@ namespace Microsoft.Graph.Beta.Users.GetManagedAppBlockedUsers {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GetManagedAppBlockedUsersRequestBuilder WithUrl(string rawUrl) {
+            return new GetManagedAppBlockedUsersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Invoke function getManagedAppBlockedUsers
         /// </summary>
         public class GetManagedAppBlockedUsersRequestBuilderGetQueryParameters {

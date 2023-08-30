@@ -143,6 +143,13 @@ namespace Microsoft.Graph.Beta.Chats.Item.Messages {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MessagesRequestBuilder WithUrl(string rawUrl) {
+            return new MessagesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the list of messages in a chat. This method supports federation. To list chat messages in application context, the request must be made from the tenant that the channel owner belongs to (represented by the tenantId property on the channel).
         /// </summary>
         public class MessagesRequestBuilderGetQueryParameters {

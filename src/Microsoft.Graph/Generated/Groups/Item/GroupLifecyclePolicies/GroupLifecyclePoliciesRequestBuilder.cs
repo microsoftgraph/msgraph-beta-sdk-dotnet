@@ -142,6 +142,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GroupLifecyclePoliciesRequestBuilder WithUrl(string rawUrl) {
+            return new GroupLifecyclePoliciesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieves a list of groupLifecyclePolicy objects to which a group belongs.
         /// </summary>
         public class GroupLifecyclePoliciesRequestBuilderGetQueryParameters {

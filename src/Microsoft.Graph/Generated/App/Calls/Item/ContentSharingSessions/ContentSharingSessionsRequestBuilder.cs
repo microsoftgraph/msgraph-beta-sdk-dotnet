@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.ContentSharingSessions {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ContentSharingSessionsRequestBuilder WithUrl(string rawUrl) {
+            return new ContentSharingSessionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of contentSharingSession objects in a call.
         /// </summary>
         public class ContentSharingSessionsRequestBuilderGetQueryParameters {

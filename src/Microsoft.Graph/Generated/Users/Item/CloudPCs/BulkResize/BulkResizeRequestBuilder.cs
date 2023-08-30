@@ -80,6 +80,14 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.BulkResize {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The bulkResize action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkResize on 2023-05-24 and will be removed 2023-09-24")]
+        public BulkResizeRequestBuilder WithUrl(string rawUrl) {
+            return new BulkResizeRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class BulkResizeRequestBuilderPostRequestConfiguration {

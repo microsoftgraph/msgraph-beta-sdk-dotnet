@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.AllChannels.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ChannelItemRequestBuilder WithUrl(string rawUrl) {
+            return new ChannelItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List of channels either hosted in or shared with the team (incoming channels).
         /// </summary>
         public class ChannelItemRequestBuilderGetQueryParameters {

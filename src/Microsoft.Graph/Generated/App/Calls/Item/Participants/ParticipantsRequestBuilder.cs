@@ -147,6 +147,13 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ParticipantsRequestBuilder WithUrl(string rawUrl) {
+            return new ParticipantsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of participant objects in the call.
         /// </summary>
         public class ParticipantsRequestBuilderGetQueryParameters {

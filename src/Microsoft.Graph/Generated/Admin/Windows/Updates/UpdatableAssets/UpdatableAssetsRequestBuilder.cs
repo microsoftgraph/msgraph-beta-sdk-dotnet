@@ -158,6 +158,13 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public UpdatableAssetsRequestBuilder WithUrl(string rawUrl) {
+            return new UpdatableAssetsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of updatableAsset objects and their properties. Listing updatable assets returns updatableAsset resources of the following derived types: azureADDevice and updatableAssetGroup. Use list azureADDevice resources or list updatableAssetGroup resources to filter and get resources of only one of the derived types.
         /// </summary>
         public class UpdatableAssetsRequestBuilderGetQueryParameters {

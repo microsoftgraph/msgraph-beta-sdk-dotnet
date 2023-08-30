@@ -178,6 +178,13 @@ namespace Microsoft.Graph.Beta.DataClassification {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DataClassificationRequestBuilder WithUrl(string rawUrl) {
+            return new DataClassificationRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get dataClassification
         /// </summary>
         public class DataClassificationRequestBuilderGetQueryParameters {

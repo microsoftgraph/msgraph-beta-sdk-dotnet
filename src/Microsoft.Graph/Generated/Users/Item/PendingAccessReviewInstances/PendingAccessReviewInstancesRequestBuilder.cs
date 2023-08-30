@@ -146,6 +146,13 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PendingAccessReviewInstancesRequestBuilder WithUrl(string rawUrl) {
+            return new PendingAccessReviewInstancesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the accessReviewInstance objects pending approval by the calling user. A list of zero or more accessReviewInstance objects are returned, of which the calling user is an assigned reviewer.
         /// </summary>
         public class PendingAccessReviewInstancesRequestBuilderGetQueryParameters {

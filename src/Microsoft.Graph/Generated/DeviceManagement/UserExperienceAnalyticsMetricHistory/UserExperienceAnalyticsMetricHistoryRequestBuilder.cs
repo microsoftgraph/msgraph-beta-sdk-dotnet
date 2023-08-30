@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsMetricHis
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public UserExperienceAnalyticsMetricHistoryRequestBuilder WithUrl(string rawUrl) {
+            return new UserExperienceAnalyticsMetricHistoryRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// User experience analytics metric history
         /// </summary>
         public class UserExperienceAnalyticsMetricHistoryRequestBuilderGetQueryParameters {

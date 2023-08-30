@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Columns {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ColumnsRequestBuilder WithUrl(string rawUrl) {
+            return new ColumnsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the collection of columns, represented as [columnDefinition][columnDefinition] resources, in a [list][list].
         /// </summary>
         public class ColumnsRequestBuilderGetQueryParameters {

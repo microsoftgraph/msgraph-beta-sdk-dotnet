@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TemplateApplicationLevel?>("templateApplicationLevel"); }
             set { BackingStore?.Set("templateApplicationLevel", value); }
         }
-        /// <summary>The userSyncInbound property</summary>
+        /// <summary>Defines whether users can be synchronized from the partner tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CrossTenantUserSyncInbound? UserSyncInbound {

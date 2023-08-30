@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Chats.Item.InstalledApps {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public InstalledAppsRequestBuilder WithUrl(string rawUrl) {
+            return new InstalledAppsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List all app installations within a chat. If the chat is associated with an onlineMeeting instance, then, effectively, the teamsApps installed in the meeting will be listed.
         /// </summary>
         public class InstalledAppsRequestBuilderGetQueryParameters {

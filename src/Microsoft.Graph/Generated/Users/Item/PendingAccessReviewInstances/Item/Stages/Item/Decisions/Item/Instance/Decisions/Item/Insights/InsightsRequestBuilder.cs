@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stag
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public InsightsRequestBuilder WithUrl(string rawUrl) {
+            return new InsightsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Insights are recommendations to reviewers on whether to approve or deny a decision. There can be multiple insights associated with an accessReviewInstanceDecisionItem.
         /// </summary>
         public class InsightsRequestBuilderGetQueryParameters {

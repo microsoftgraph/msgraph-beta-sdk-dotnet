@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationConflictSumma
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DeviceConfigurationConflictSummaryRequestBuilder WithUrl(string rawUrl) {
+            return new DeviceConfigurationConflictSummaryRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Summary of policies in conflict state for this account.
         /// </summary>
         public class DeviceConfigurationConflictSummaryRequestBuilderGetQueryParameters {

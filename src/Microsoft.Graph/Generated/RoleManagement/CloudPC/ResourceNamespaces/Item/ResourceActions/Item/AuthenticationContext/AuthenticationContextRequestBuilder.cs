@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.ResourceNamespaces.Item.Re
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AuthenticationContextRequestBuilder WithUrl(string rawUrl) {
+            return new AuthenticationContextRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get authenticationContext from roleManagement
         /// </summary>
         public class AuthenticationContextRequestBuilderGetQueryParameters {

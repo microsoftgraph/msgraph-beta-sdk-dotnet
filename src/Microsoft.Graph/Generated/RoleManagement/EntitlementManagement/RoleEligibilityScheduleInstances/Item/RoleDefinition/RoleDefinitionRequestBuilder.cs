@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleEligibil
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RoleDefinitionRequestBuilder WithUrl(string rawUrl) {
+            return new RoleDefinitionRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Detailed information for the roleDefinition object that is referenced through the roleDefinitionId property.
         /// </summary>
         public class RoleDefinitionRequestBuilderGetQueryParameters {

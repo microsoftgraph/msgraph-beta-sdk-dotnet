@@ -20,6 +20,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("altSecId", value); }
         }
 #endif
+        /// <summary>The cleanupScheduledDateTime property</summary>
+        public DateTimeOffset? CleanupScheduledDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("cleanupScheduledDateTime"); }
+            set { BackingStore?.Set("cleanupScheduledDateTime", value); }
+        }
         /// <summary>The connected organization of the subject. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -151,6 +156,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"altSecId", n => { AltSecId = n.GetStringValue(); } },
+                {"cleanupScheduledDateTime", n => { CleanupScheduledDateTime = n.GetDateTimeOffsetValue(); } },
                 {"connectedOrganization", n => { ConnectedOrganization = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConnectedOrganization>(Microsoft.Graph.Beta.Models.ConnectedOrganization.CreateFromDiscriminatorValue); } },
                 {"connectedOrganizationId", n => { ConnectedOrganizationId = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -170,6 +176,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("altSecId", AltSecId);
+            writer.WriteDateTimeOffsetValue("cleanupScheduledDateTime", CleanupScheduledDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ConnectedOrganization>("connectedOrganization", ConnectedOrganization);
             writer.WriteStringValue("connectedOrganizationId", ConnectedOrganizationId);
             writer.WriteStringValue("displayName", DisplayName);

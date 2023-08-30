@@ -151,6 +151,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SnapshotsRequestBuilder WithUrl(string rawUrl) {
+            return new SnapshotsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of cloudPcSnapshot objects and their properties.
         /// </summary>
         public class SnapshotsRequestBuilderGetQueryParameters {

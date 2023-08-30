@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public LocalizationsRequestBuilder WithUrl(string rawUrl) {
+            return new LocalizationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the plannerPlanConfigurationLocalization objects and their properties.
         /// </summary>
         public class LocalizationsRequestBuilderGetQueryParameters {

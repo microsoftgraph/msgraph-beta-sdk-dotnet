@@ -169,6 +169,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.CalendarPermissions.Ite
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CalendarPermissionItemRequestBuilder WithUrl(string rawUrl) {
+            return new CalendarPermissionItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class CalendarPermissionItemRequestBuilderDeleteRequestConfiguration {

@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignments.Item.Resour
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ResourceRequestBuilder WithUrl(string rawUrl) {
+            return new ResourceRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Read-only. The resource associated with the role assignment.
         /// </summary>
         public class ResourceRequestBuilderGetQueryParameters {

@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AssignedDevicesRequestBuilder WithUrl(string rawUrl) {
+            return new AssignedDevicesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The list of assigned devices for the profile.
         /// </summary>
         public class AssignedDevicesRequestBuilderGetQueryParameters {

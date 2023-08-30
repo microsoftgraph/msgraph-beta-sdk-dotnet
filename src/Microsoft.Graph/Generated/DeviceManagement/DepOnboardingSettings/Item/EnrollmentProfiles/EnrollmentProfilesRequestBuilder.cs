@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Enrol
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public EnrollmentProfilesRequestBuilder WithUrl(string rawUrl) {
+            return new EnrollmentProfilesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The enrollment profiles.
         /// </summary>
         public class EnrollmentProfilesRequestBuilderGetQueryParameters {

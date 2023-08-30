@@ -62,8 +62,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
             return await RequestAdapter.SendAsync<InboundFlowCollectionResponse>(requestInfo, InboundFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-1.0" />
+        /// Create a new inboundFileFlow object. The following prerequisite resources are required when you create an inboundFileFlow:
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
+        /// Create a new inboundFileFlow object. The following prerequisite resources are required when you create an inboundFileFlow:
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
+        }
+        /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public InboundFlowsRequestBuilder WithUrl(string rawUrl) {
+            return new InboundFlowsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the inboundFlow objects and their properties.

@@ -80,6 +80,13 @@ namespace Microsoft.Graph.Beta.Shares.Item.DriveItem {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DriveItemRequestBuilder WithUrl(string rawUrl) {
+            return new DriveItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Access a shared DriveItem or a collection of shared items by using a shareId or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
         /// </summary>
         public class DriveItemRequestBuilderGetQueryParameters {

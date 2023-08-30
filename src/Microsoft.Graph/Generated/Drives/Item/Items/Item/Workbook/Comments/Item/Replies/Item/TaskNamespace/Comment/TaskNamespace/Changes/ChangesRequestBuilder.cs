@@ -145,6 +145,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Comments.Item.Rep
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ChangesRequestBuilder WithUrl(string rawUrl) {
+            return new ChangesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get changes from drives
         /// </summary>
         public class ChangesRequestBuilderGetQueryParameters {

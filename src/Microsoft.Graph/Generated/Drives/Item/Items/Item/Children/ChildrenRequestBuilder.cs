@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Children {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ChildrenRequestBuilder WithUrl(string rawUrl) {
+            return new ChildrenRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Return a collection of DriveItems in the children relationship of a DriveItem. DriveItems with a non-null folder or package facet can have one or more child DriveItems.
         /// </summary>
         public class ChildrenRequestBuilderGetQueryParameters {

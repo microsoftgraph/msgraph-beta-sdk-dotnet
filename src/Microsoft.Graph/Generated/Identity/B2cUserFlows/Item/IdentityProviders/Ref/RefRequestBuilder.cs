@@ -128,6 +128,14 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Ref 
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15")]
+        public RefRequestBuilder WithUrl(string rawUrl) {
+            return new RefRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the identity providers in a b2cIdentityUserFlow object.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {

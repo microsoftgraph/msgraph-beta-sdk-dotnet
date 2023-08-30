@@ -75,6 +75,13 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithPeriod {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GetOffice365ActiveUserDetailWithPeriodRequestBuilder WithUrl(string rawUrl) {
+            return new GetOffice365ActiveUserDetailWithPeriodRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Invoke function getOffice365ActiveUserDetail
         /// </summary>
         public class GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryParameters {

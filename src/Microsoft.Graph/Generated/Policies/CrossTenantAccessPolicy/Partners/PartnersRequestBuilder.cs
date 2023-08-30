@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PartnersRequestBuilder WithUrl(string rawUrl) {
+            return new PartnersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of all partner configurations within a cross-tenant access policy. You can also use the $expand parameter to list the user synchronization policy for all partner configurations.
         /// </summary>
         public class PartnersRequestBuilderGetQueryParameters {

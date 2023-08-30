@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Me.CalendarGroups {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CalendarGroupsRequestBuilder WithUrl(string rawUrl) {
+            return new CalendarGroupsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the user&apos;s calendar groups.
         /// </summary>
         public class CalendarGroupsRequestBuilderGetQueryParameters {

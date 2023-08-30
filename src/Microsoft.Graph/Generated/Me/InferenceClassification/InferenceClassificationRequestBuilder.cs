@@ -128,6 +128,13 @@ namespace Microsoft.Graph.Beta.Me.InferenceClassification {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public InferenceClassificationRequestBuilder WithUrl(string rawUrl) {
+            return new InferenceClassificationRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Relevance classification of the user&apos;s messages based on explicit designations which override inferred relevance or importance.
         /// </summary>
         public class InferenceClassificationRequestBuilderGetQueryParameters {

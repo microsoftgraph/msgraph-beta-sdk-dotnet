@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public IntentsRequestBuilder WithUrl(string rawUrl) {
+            return new IntentsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The device management intents
         /// </summary>
         public class IntentsRequestBuilderGetQueryParameters {

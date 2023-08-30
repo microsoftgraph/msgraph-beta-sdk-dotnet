@@ -167,6 +167,13 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MessagesRequestBuilder WithUrl(string rawUrl) {
+            return new MessagesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the serviceUpdateMessage resources from the messages navigation property. This operation retrieves all service update messages that exist for the tenant.
         /// </summary>
         public class MessagesRequestBuilderGetQueryParameters {

@@ -142,6 +142,13 @@ namespace Microsoft.Graph.Beta.Security.Alerts {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AlertsRequestBuilder WithUrl(string rawUrl) {
+            return new AlertsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of alert objects.
         /// </summary>
         public class AlertsRequestBuilderGetQueryParameters {

@@ -146,6 +146,13 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ChannelsRequestBuilder WithUrl(string rawUrl) {
+            return new ChannelsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The channels those are either shared with this deleted team or created in this deleted team.
         /// </summary>
         public class ChannelsRequestBuilderGetQueryParameters {

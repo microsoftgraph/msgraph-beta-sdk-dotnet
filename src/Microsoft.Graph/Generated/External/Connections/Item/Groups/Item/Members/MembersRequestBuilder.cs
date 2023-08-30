@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Groups.Item.Members {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MembersRequestBuilder WithUrl(string rawUrl) {
+            return new MembersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// A member added to an externalGroup. You can add Azure Active Directory users, Azure Active Directory groups, or other externalGroups as members.
         /// </summary>
         public class MembersRequestBuilderGetQueryParameters {

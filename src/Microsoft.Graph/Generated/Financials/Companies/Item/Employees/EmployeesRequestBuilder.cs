@@ -144,6 +144,13 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Employees {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public EmployeesRequestBuilder WithUrl(string rawUrl) {
+            return new EmployeesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get employees from financials
         /// </summary>
         public class EmployeesRequestBuilderGetQueryParameters {

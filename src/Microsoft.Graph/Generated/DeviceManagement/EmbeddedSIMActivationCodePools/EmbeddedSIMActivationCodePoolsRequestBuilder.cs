@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public EmbeddedSIMActivationCodePoolsRequestBuilder WithUrl(string rawUrl) {
+            return new EmbeddedSIMActivationCodePoolsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The embedded SIM activation code pools created by this account.
         /// </summary>
         public class EmbeddedSIMActivationCodePoolsRequestBuilderGetQueryParameters {

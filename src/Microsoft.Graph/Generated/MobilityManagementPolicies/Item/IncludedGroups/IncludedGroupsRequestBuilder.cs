@@ -93,6 +93,13 @@ namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public IncludedGroupsRequestBuilder WithUrl(string rawUrl) {
+            return new IncludedGroupsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the list of groups that are included in a mobile app management policy.
         /// </summary>
         public class IncludedGroupsRequestBuilderGetQueryParameters {

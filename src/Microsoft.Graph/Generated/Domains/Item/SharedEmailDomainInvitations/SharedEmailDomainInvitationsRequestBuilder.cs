@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SharedEmailDomainInvitationsRequestBuilder WithUrl(string rawUrl) {
+            return new SharedEmailDomainInvitationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get sharedEmailDomainInvitations from domains
         /// </summary>
         public class SharedEmailDomainInvitationsRequestBuilderGetQueryParameters {

@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Subscriptions {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SubscriptionsRequestBuilder WithUrl(string rawUrl) {
+            return new SubscriptionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The set of subscriptions on the list.
         /// </summary>
         public class SubscriptionsRequestBuilderGetQueryParameters {

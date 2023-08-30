@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SessionsRequestBuilder WithUrl(string rawUrl) {
+            return new SessionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the list of sessions associated with a callRecord object. If the sessions list is truncated, a sessions@odata.nextLink value will be provided to retrieve the next page of sessions. The maximum page size for sessions is 60 entries.
         /// </summary>
         public class SessionsRequestBuilderGetQueryParameters {

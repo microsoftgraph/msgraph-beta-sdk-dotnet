@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFileJobs {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ClassifyFileJobsRequestBuilder WithUrl(string rawUrl) {
+            return new ClassifyFileJobsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get classifyFileJobs from dataClassification
         /// </summary>
         public class ClassifyFileJobsRequestBuilderGetQueryParameters {

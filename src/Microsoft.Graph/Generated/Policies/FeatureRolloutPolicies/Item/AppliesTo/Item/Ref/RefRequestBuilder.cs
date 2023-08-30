@@ -73,6 +73,13 @@ namespace Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo.It
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RefRequestBuilder WithUrl(string rawUrl) {
+            return new RefRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters {

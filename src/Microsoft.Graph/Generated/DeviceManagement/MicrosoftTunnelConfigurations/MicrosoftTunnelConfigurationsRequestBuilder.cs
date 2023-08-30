@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MicrosoftTunnelConfigurationsRequestBuilder WithUrl(string rawUrl) {
+            return new MicrosoftTunnelConfigurationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Collection of MicrosoftTunnelConfiguration settings associated with account.
         /// </summary>
         public class MicrosoftTunnelConfigurationsRequestBuilderGetQueryParameters {

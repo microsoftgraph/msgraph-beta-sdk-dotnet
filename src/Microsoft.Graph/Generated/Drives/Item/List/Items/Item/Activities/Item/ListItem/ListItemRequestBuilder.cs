@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Items.Item.Activities.Item.ListI
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ListItemRequestBuilder WithUrl(string rawUrl) {
+            return new ListItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get listItem from drives
         /// </summary>
         public class ListItemRequestBuilderGetQueryParameters {

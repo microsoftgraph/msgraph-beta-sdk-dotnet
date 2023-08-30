@@ -128,6 +128,13 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Photo 
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PhotoRequestBuilder WithUrl(string rawUrl) {
+            return new PhotoRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The team photo.
         /// </summary>
         public class PhotoRequestBuilderGetQueryParameters {

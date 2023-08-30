@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item.Terms.Item.Children.Item.Rela
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SetRequestBuilder WithUrl(string rawUrl) {
+            return new SetRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The [set] in which the relation is relevant.
         /// </summary>
         public class SetRequestBuilderGetQueryParameters {

@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.SectionGroups.Item.Sections {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SectionsRequestBuilder WithUrl(string rawUrl) {
+            return new SectionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of onenoteSection objects from the specified section group.
         /// </summary>
         public class SectionsRequestBuilderGetQueryParameters {

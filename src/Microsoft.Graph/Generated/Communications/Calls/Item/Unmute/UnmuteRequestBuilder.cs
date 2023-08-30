@@ -79,6 +79,13 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Unmute {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public UnmuteRequestBuilder WithUrl(string rawUrl) {
+            return new UnmuteRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class UnmuteRequestBuilderPostRequestConfiguration {

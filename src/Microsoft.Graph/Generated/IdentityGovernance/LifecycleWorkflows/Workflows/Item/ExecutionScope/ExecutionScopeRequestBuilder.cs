@@ -87,6 +87,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ExecutionScopeRequestBuilder WithUrl(string rawUrl) {
+            return new ExecutionScopeRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The unique identifier of the Azure AD identity that last modified the workflow object.
         /// </summary>
         public class ExecutionScopeRequestBuilderGetQueryParameters {

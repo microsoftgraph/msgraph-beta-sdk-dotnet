@@ -87,6 +87,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item.Defin
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DefinitionsRequestBuilder WithUrl(string rawUrl) {
+            return new DefinitionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The immediate GroupPolicyDefinition children of the category
         /// </summary>
         public class DefinitionsRequestBuilderGetQueryParameters {

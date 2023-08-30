@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PagesRequestBuilder WithUrl(string rawUrl) {
+            return new PagesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the collection of [baseSitePage][] objects from the site pages [list][] in a [site][]. All pages in the site are returned (with pagination). Sort alphabetically by name in ascending order. The following table lists the available subtypes.
         /// </summary>
         public class PagesRequestBuilderGetQueryParameters {

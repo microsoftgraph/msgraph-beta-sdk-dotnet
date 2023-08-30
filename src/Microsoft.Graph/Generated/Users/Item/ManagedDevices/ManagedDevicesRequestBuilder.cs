@@ -175,6 +175,13 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ManagedDevicesRequestBuilder WithUrl(string rawUrl) {
+            return new ManagedDevicesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The managed devices associated with the user.
         /// </summary>
         public class ManagedDevicesRequestBuilderGetQueryParameters {

@@ -98,6 +98,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.MemberOf {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MemberOfRequestBuilder WithUrl(string rawUrl) {
+            return new MemberOfRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.
         /// </summary>
         public class MemberOfRequestBuilderGetQueryParameters {

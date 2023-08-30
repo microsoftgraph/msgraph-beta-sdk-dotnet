@@ -142,6 +142,13 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AssignmentsRequestBuilder WithUrl(string rawUrl) {
+            return new AssignmentsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Returns a list of assignments assigned to a user for all classes. Only teachers, students, and applications with application permissions can perform this operation. This utility namespace allows a caller to find all the assignments belonging to a student or a teacher in a single call rather than having to request assignments from each class. The assignment list contains what is needed to get the detailed information for the assignment from within the class namespace. All other operations on the assignment should use the class namespace.
         /// </summary>
         public class AssignmentsRequestBuilderGetQueryParameters {

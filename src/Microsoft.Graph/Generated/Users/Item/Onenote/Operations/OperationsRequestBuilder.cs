@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Onenote.Operations {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public OperationsRequestBuilder WithUrl(string rawUrl) {
+            return new OperationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the status of a long-running OneNote operation. This applies to operations that return the Operation-Location header in the response, such as CopyNotebook, CopyToNotebook, CopyToSectionGroup, and CopyToSection.    You can poll the Operation-Location endpoint until the status property returns completed or failed.  If the status is completed, the resourceLocation property contains the resource endpoint URI.  If the status is failed, the error and @api.diagnostics properties provide error information.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters {

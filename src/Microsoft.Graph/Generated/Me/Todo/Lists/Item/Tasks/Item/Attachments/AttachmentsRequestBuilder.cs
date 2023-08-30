@@ -143,6 +143,13 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.Attachments {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AttachmentsRequestBuilder WithUrl(string rawUrl) {
+            return new AttachmentsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the taskFileAttachment objects and their properties. The contentBytes property will not be returned in the response. Use the Get attachment API to view the contentBytes.
         /// </summary>
         public class AttachmentsRequestBuilderGetQueryParameters {

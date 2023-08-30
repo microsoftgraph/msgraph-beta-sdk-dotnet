@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Connections.Item.Items.Item.Activities.Item.Perfo
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PerformedByRequestBuilder WithUrl(string rawUrl) {
+            return new PerformedByRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Represents an identity used to identify who is responsible for the activity.
         /// </summary>
         public class PerformedByRequestBuilderGetQueryParameters {

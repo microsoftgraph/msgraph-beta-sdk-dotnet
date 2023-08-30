@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Me.People.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PersonItemRequestBuilder WithUrl(string rawUrl) {
+            return new PersonItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user&apos;s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.
         /// </summary>
         public class PersonItemRequestBuilderGetQueryParameters {

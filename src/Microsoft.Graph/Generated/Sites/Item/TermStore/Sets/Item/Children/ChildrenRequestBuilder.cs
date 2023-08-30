@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.Children {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ChildrenRequestBuilder WithUrl(string rawUrl) {
+            return new ChildrenRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the first level children of a [set] or [term] resource using the children navigation property.
         /// </summary>
         public class ChildrenRequestBuilderGetQueryParameters {

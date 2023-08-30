@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkEnrollmentProfiles
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AndroidForWorkEnrollmentProfilesRequestBuilder WithUrl(string rawUrl) {
+            return new AndroidForWorkEnrollmentProfilesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Android for Work enrollment profile entities.
         /// </summary>
         public class AndroidForWorkEnrollmentProfilesRequestBuilderGetQueryParameters {

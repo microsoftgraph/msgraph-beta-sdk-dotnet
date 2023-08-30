@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.I
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RoleDefinitionRequestBuilder WithUrl(string rawUrl) {
+            return new RoleDefinitionRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.
         /// </summary>
         public class RoleDefinitionRequestBuilderGetQueryParameters {

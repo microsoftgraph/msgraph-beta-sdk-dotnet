@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ApiConnectorsRequestBuilder WithUrl(string rawUrl) {
+            return new ApiConnectorsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Read the properties of an identityApiConnector object.
         /// </summary>
         public class ApiConnectorsRequestBuilderGetQueryParameters {

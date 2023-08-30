@@ -154,6 +154,14 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31")]
+        public AccessPackageAssignmentRequestsRequestBuilder WithUrl(string rawUrl) {
+            return new AccessPackageAssignmentRequestsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// In Azure AD entitlement management, retrieve a list of accessPackageAssignmentRequest objects.  The resulting list includes all the assignment requests, current and well as expired, that the caller has access to read, across all catalogs and access packages.
         /// </summary>
         public class AccessPackageAssignmentRequestsRequestBuilderGetQueryParameters {

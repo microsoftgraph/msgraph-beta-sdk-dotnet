@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.Bundles {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public BundlesRequestBuilder WithUrl(string rawUrl) {
+            return new BundlesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
         /// </summary>
         public class BundlesRequestBuilderGetQueryParameters {

@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Assignments.Item
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PrivilegedRoleAssignmentItemRequestBuilder WithUrl(string rawUrl) {
+            return new PrivilegedRoleAssignmentItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get assignments from privilegedApproval
         /// </summary>
         public class PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters {

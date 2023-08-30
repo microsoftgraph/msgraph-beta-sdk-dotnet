@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.Settings {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SettingsRequestBuilder WithUrl(string rawUrl) {
+            return new SettingsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Collection of all settings this template has
         /// </summary>
         public class SettingsRequestBuilderGetQueryParameters {

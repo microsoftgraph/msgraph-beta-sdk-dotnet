@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GroupPolicyDefinitionFilesRequestBuilder WithUrl(string rawUrl) {
+            return new GroupPolicyDefinitionFilesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The available group policy definition files for this account.
         /// </summary>
         public class GroupPolicyDefinitionFilesRequestBuilderGetQueryParameters {

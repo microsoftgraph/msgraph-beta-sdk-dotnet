@@ -146,6 +146,13 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignment
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RoleAssignmentSchedulesRequestBuilder WithUrl(string rawUrl) {
+            return new RoleAssignmentSchedulesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the schedules for active role assignment operations.
         /// </summary>
         public class RoleAssignmentSchedulesRequestBuilderGetQueryParameters {

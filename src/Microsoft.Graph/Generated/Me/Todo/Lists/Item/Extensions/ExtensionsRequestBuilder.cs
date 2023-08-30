@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Extensions {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ExtensionsRequestBuilder WithUrl(string rawUrl) {
+            return new ExtensionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The collection of open extensions defined for the task list. Nullable.
         /// </summary>
         public class ExtensionsRequestBuilderGetQueryParameters {

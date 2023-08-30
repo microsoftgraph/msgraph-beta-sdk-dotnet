@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.AllowedDataLocations {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AllowedDataLocationsRequestBuilder WithUrl(string rawUrl) {
+            return new AllowedDataLocationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get entities from allowedDataLocations
         /// </summary>
         public class AllowedDataLocationsRequestBuilderGetQueryParameters {

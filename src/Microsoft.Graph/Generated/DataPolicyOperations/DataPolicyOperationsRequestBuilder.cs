@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DataPolicyOperations {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DataPolicyOperationsRequestBuilder WithUrl(string rawUrl) {
+            return new DataPolicyOperationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the properties of the dataPolicyOperation object.
         /// </summary>
         public class DataPolicyOperationsRequestBuilderGetQueryParameters {

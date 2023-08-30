@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.SupportedLanguages {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SupportedLanguagesRequestBuilder WithUrl(string rawUrl) {
+            return new SupportedLanguagesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the list of locales and languages that are supported for the user, as configured on the user&apos;s mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language by getting the user&apos;s mailbox settings.
         /// </summary>
         public class SupportedLanguagesRequestBuilderGetQueryParameters {

@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ListsRequestBuilder WithUrl(string rawUrl) {
+            return new ListsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the collection of [lists][] for a [site][]. Lists with the [system][] facet are hidden by default.To list them, include system in your $select statement.
         /// </summary>
         public class ListsRequestBuilderGetQueryParameters {

@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SupportedRegionsRequestBuilder WithUrl(string rawUrl) {
+            return new SupportedRegionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List the supported regions that are available for creating Cloud PC connections.
         /// </summary>
         public class SupportedRegionsRequestBuilderGetQueryParameters {

@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Skills {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SkillsRequestBuilder WithUrl(string rawUrl) {
+            return new SkillsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of skillProficiency objects in a user&apos;s profile.
         /// </summary>
         public class SkillsRequestBuilderGetQueryParameters {

@@ -73,6 +73,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevi
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GetDevicesScheduledToRetireRequestBuilder WithUrl(string rawUrl) {
+            return new GetDevicesScheduledToRetireRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Invoke function getDevicesScheduledToRetire
         /// </summary>
         public class GetDevicesScheduledToRetireRequestBuilderGetQueryParameters {

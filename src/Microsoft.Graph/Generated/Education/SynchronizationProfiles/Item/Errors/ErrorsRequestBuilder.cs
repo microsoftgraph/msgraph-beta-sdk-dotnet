@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ErrorsRequestBuilder WithUrl(string rawUrl) {
+            return new ErrorsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
         /// </summary>
         public class ErrorsRequestBuilderGetQueryParameters {

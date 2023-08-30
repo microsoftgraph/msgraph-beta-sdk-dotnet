@@ -148,6 +148,13 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AuthenticationStrengthPoliciesRequestBuilder WithUrl(string rawUrl) {
+            return new AuthenticationStrengthPoliciesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
         /// </summary>
         public class AuthenticationStrengthPoliciesRequestBuilderGetQueryParameters {

@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.UserRunS
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ManagedDeviceRequestBuilder WithUrl(string rawUrl) {
+            return new ManagedDeviceRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The managed devices that executes the device management script.
         /// </summary>
         public class ManagedDeviceRequestBuilderGetQueryParameters {

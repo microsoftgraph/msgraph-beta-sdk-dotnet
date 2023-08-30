@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.Shifts {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ShiftsRequestBuilder WithUrl(string rawUrl) {
+            return new ShiftsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the list of shift instances in a schedule.
         /// </summary>
         public class ShiftsRequestBuilderGetQueryParameters {

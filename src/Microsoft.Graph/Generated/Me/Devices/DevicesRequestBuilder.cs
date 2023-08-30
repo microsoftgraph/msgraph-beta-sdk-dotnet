@@ -156,6 +156,13 @@ namespace Microsoft.Graph.Beta.Me.Devices {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DevicesRequestBuilder WithUrl(string rawUrl) {
+            return new DevicesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get devices from me
         /// </summary>
         public class DevicesRequestBuilderGetQueryParameters {

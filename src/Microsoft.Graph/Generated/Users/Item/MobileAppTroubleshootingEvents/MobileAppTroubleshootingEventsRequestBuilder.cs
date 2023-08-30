@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MobileAppTroubleshootingEventsRequestBuilder WithUrl(string rawUrl) {
+            return new MobileAppTroubleshootingEventsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The list of mobile app troubleshooting events for this user.
         /// </summary>
         public class MobileAppTroubleshootingEventsRequestBuilderGetQueryParameters {

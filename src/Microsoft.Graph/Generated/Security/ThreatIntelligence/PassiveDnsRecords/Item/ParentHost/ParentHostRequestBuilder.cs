@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.PassiveDnsRecords.Ite
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ParentHostRequestBuilder WithUrl(string rawUrl) {
+            return new ParentHostRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The parent host related to this passiveDnsRecord entry. Generally, this is the value that you can search to discover this passiveDnsRecord value.
         /// </summary>
         public class ParentHostRequestBuilderGetQueryParameters {

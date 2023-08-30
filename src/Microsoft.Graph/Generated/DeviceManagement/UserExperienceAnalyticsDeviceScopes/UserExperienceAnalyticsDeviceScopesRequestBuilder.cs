@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceSco
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public UserExperienceAnalyticsDeviceScopesRequestBuilder WithUrl(string rawUrl) {
+            return new UserExperienceAnalyticsDeviceScopesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The user experience analytics device scope entity contains device scope configuration use to apply filtering on the endpoint analytics reports.
         /// </summary>
         public class UserExperienceAnalyticsDeviceScopesRequestBuilderGetQueryParameters {

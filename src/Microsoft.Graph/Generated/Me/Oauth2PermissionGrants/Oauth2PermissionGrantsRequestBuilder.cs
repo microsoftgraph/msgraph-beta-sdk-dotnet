@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Me.Oauth2PermissionGrants {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public Oauth2PermissionGrantsRequestBuilder WithUrl(string rawUrl) {
+            return new Oauth2PermissionGrantsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of oAuth2PermissionGrant entities, which represent delegated permissions granted to enable a client application to access an API on behalf of the user.
         /// </summary>
         public class Oauth2PermissionGrantsRequestBuilderGetQueryParameters {

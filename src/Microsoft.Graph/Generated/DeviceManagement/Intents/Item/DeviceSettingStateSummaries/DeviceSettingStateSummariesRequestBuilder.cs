@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceSettingStateS
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DeviceSettingStateSummariesRequestBuilder WithUrl(string rawUrl) {
+            return new DeviceSettingStateSummariesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent
         /// </summary>
         public class DeviceSettingStateSummariesRequestBuilderGetQueryParameters {

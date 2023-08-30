@@ -143,6 +143,13 @@ namespace Microsoft.Graph.Beta.Me.Messages {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MessagesRequestBuilder WithUrl(string rawUrl) {
+            return new MessagesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The messages in a mailbox or folder. Read-only. Nullable.
         /// </summary>
         public class MessagesRequestBuilderGetQueryParameters {

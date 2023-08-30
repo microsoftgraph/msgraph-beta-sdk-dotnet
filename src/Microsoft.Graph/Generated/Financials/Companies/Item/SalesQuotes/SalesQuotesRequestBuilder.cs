@@ -95,6 +95,13 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SalesQuotesRequestBuilder WithUrl(string rawUrl) {
+            return new SalesQuotesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get salesQuotes from financials
         /// </summary>
         public class SalesQuotesRequestBuilderGetQueryParameters {

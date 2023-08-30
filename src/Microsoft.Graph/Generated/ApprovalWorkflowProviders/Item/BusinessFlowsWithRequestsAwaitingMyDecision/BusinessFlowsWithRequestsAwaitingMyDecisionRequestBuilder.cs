@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlowsWithR
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder WithUrl(string rawUrl) {
+            return new BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get businessFlowsWithRequestsAwaitingMyDecision from approvalWorkflowProviders
         /// </summary>
         public class BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQueryParameters {

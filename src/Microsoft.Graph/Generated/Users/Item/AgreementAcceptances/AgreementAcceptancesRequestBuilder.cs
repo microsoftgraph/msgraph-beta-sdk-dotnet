@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Users.Item.AgreementAcceptances {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AgreementAcceptancesRequestBuilder WithUrl(string rawUrl) {
+            return new AgreementAcceptancesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the signed-in user&apos;s agreementAcceptance objects.
         /// </summary>
         public class AgreementAcceptancesRequestBuilderGetQueryParameters {

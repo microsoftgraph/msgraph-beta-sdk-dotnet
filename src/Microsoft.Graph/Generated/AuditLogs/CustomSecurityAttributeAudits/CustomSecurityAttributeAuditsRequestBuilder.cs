@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.AuditLogs.CustomSecurityAttributeAudits {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CustomSecurityAttributeAuditsRequestBuilder WithUrl(string rawUrl) {
+            return new CustomSecurityAttributeAuditsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get customSecurityAttributeAudits from auditLogs
         /// </summary>
         public class CustomSecurityAttributeAuditsRequestBuilderGetQueryParameters {

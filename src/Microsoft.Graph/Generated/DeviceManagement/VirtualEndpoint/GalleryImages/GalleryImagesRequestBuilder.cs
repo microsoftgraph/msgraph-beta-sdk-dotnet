@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GalleryImagesRequestBuilder WithUrl(string rawUrl) {
+            return new GalleryImagesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List the properties and relationships of the cloudPcGalleryImage objects.
         /// </summary>
         public class GalleryImagesRequestBuilderGetQueryParameters {

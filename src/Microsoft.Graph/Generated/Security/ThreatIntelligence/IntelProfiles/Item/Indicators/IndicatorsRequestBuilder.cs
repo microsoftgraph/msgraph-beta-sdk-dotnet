@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelProfiles.Item.In
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public IndicatorsRequestBuilder WithUrl(string rawUrl) {
+            return new IndicatorsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the intelligenceProfileIndicator resources from the indicators navigation property of an intelligenceProfile.
         /// </summary>
         public class IndicatorsRequestBuilderGetQueryParameters {

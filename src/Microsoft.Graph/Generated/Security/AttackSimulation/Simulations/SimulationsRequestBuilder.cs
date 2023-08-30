@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SimulationsRequestBuilder WithUrl(string rawUrl) {
+            return new SimulationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of attack simulation campaigns for a tenant.
         /// </summary>
         public class SimulationsRequestBuilderGetQueryParameters {

@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.AlertConf
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AlertDefinitionRequestBuilder WithUrl(string rawUrl) {
+            return new AlertDefinitionRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The definition of the alert that contains its description, impact, and measures to mitigate or prevent it. Supports $expand.
         /// </summary>
         public class AlertDefinitionRequestBuilderGetQueryParameters {

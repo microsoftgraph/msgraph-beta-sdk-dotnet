@@ -29,7 +29,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
         public MultiTenantOrganizationMemberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/multiTenantOrganization/tenants/{multiTenantOrganizationMember%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property tenants for tenantRelationships
+        /// Remove a tenant from a multi-tenant organization. A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganization-delete-tenants?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +49,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get tenants from tenantRelationships
+        /// Get a tenant and its properties in the multi-tenant organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganizationmember-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -88,7 +90,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
             return await RequestAdapter.SendAsync<MultiTenantOrganizationMember>(requestInfo, MultiTenantOrganizationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete navigation property tenants for tenantRelationships
+        /// Remove a tenant from a multi-tenant organization. A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +114,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
             return requestInfo;
         }
         /// <summary>
-        /// Get tenants from tenantRelationships
+        /// Get a tenant and its properties in the multi-tenant organization.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -166,6 +168,13 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MultiTenantOrganizationMemberItemRequestBuilder WithUrl(string rawUrl) {
+            return new MultiTenantOrganizationMemberItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class MultiTenantOrganizationMemberItemRequestBuilderDeleteRequestConfiguration {
@@ -182,7 +191,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
             }
         }
         /// <summary>
-        /// Get tenants from tenantRelationships
+        /// Get a tenant and its properties in the multi-tenant organization.
         /// </summary>
         public class MultiTenantOrganizationMemberItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

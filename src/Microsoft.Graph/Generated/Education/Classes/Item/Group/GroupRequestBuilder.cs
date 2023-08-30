@@ -75,6 +75,13 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Group {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GroupRequestBuilder WithUrl(string rawUrl) {
+            return new GroupRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the Microsoft 365 group that corresponds to this educationClass.
         /// </summary>
         public class GroupRequestBuilderGetQueryParameters {

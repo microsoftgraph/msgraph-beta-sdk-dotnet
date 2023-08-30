@@ -75,6 +75,14 @@ namespace Microsoft.Graph.Beta.Me.Notifications.Count {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation on 2023-03-09 and will be removed 2023-03-20")]
+        public CountRequestBuilder WithUrl(string rawUrl) {
+            return new CountRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the number of the resource
         /// </summary>
         public class CountRequestBuilderGetQueryParameters {

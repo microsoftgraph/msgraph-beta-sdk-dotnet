@@ -143,6 +143,13 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Mes
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MessagesRequestBuilder WithUrl(string rawUrl) {
+            return new MessagesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List all the messages in the specified user&apos;s mailbox, or those messages in a specified folder in the mailbox.
         /// </summary>
         public class MessagesRequestBuilderGetQueryParameters {

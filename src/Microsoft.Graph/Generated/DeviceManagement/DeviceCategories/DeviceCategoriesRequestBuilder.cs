@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCategories {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DeviceCategoriesRequestBuilder WithUrl(string rawUrl) {
+            return new DeviceCategoriesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The list of device categories with the tenant.
         /// </summary>
         public class DeviceCategoriesRequestBuilderGetQueryParameters {

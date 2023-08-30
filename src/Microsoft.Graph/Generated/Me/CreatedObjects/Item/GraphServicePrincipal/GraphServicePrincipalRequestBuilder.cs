@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Me.CreatedObjects.Item.GraphServicePrincipal {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GraphServicePrincipalRequestBuilder WithUrl(string rawUrl) {
+            return new GraphServicePrincipalRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the item of type microsoft.graph.directoryObject as microsoft.graph.servicePrincipal
         /// </summary>
         public class GraphServicePrincipalRequestBuilderGetQueryParameters {

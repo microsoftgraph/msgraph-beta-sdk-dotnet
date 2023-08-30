@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisRecords {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public WhoisRecordsRequestBuilder WithUrl(string rawUrl) {
+            return new WhoisRecordsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get whoisRecords from security
         /// </summary>
         public class WhoisRecordsRequestBuilderGetQueryParameters {

@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicesWi
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder WithUrl(string rawUrl) {
+            return new UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// User experience analytics devices without cloud identity.
         /// </summary>
         public class UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilderGetQueryParameters {

@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public HealthOverviewsRequestBuilder WithUrl(string rawUrl) {
+            return new HealthOverviewsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the serviceHealth resources from the healthOverviews navigation property. This operation provides the health report of all subscribed services for a tenant.
         /// </summary>
         public class HealthOverviewsRequestBuilderGetQueryParameters {

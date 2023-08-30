@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignme
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AppScopeRequestBuilder WithUrl(string rawUrl) {
+            return new AppScopeRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Read-only property with details of the app-specific scope when the role eligibility or assignment is scoped to an app. Nullable.
         /// </summary>
         public class AppScopeRequestBuilderGetQueryParameters {

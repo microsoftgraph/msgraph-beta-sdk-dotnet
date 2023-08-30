@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SynchronizationProfilesRequestBuilder WithUrl(string rawUrl) {
+            return new SynchronizationProfilesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the collection of school data synchronization profiles in the tenant.
         /// </summary>
         public class SynchronizationProfilesRequestBuilderGetQueryParameters {

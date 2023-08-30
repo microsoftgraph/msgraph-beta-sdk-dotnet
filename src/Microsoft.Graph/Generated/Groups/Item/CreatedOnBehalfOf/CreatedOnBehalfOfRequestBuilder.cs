@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.CreatedOnBehalfOf {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CreatedOnBehalfOfRequestBuilder WithUrl(string rawUrl) {
+            return new CreatedOnBehalfOfRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
         /// </summary>
         public class CreatedOnBehalfOfRequestBuilderGetQueryParameters {

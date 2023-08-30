@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Operations {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public OperationsRequestBuilder WithUrl(string rawUrl) {
+            return new OperationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Meaningless if this url is called independently. This request is part of all async requests for excel. This is used to retrieve the status of a workbookOperation object. Currently not all requests support async. Take Create session request as an example. Issue an async Create session request, follow the documentation and you may get status code 202 Accepted, async operation starts from here and you can find the url this document required from the response header, from the location part.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters {

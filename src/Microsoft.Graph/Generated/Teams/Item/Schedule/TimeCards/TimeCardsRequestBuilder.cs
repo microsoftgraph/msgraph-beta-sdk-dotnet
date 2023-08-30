@@ -143,6 +143,13 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TimeCardsRequestBuilder WithUrl(string rawUrl) {
+            return new TimeCardsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of timeCard entries in a schedule.
         /// </summary>
         public class TimeCardsRequestBuilderGetQueryParameters {

@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Items.Item.Analytics {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AnalyticsRequestBuilder WithUrl(string rawUrl) {
+            return new AnalyticsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Analytics about the view activities that took place on this item.
         /// </summary>
         public class AnalyticsRequestBuilderGetQueryParameters {

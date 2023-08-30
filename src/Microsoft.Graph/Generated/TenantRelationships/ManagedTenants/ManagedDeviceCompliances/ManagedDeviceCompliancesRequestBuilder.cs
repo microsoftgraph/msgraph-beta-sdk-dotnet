@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceC
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ManagedDeviceCompliancesRequestBuilder WithUrl(string rawUrl) {
+            return new ManagedDeviceCompliancesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the managedDeviceCompliance objects and their properties.
         /// </summary>
         public class ManagedDeviceCompliancesRequestBuilderGetQueryParameters {

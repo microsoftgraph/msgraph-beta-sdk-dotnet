@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AppPerformance
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AppPerformancesRequestBuilder WithUrl(string rawUrl) {
+            return new AppPerformancesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get appPerformances from tenantRelationships
         /// </summary>
         public class AppPerformancesRequestBuilderGetQueryParameters {

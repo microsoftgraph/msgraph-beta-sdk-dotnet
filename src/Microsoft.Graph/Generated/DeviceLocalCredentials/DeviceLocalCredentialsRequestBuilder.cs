@@ -132,6 +132,13 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DeviceLocalCredentialsRequestBuilder WithUrl(string rawUrl) {
+            return new DeviceLocalCredentialsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the deviceLocalCredentialInfo objects and their properties excluding the credentials. 
         /// </summary>
         public class DeviceLocalCredentialsRequestBuilderGetQueryParameters {

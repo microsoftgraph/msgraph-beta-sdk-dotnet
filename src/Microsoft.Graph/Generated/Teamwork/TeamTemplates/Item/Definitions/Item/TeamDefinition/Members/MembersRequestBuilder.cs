@@ -143,6 +143,13 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MembersRequestBuilder WithUrl(string rawUrl) {
+            return new MembersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the conversationMember collection of a team.
         /// </summary>
         public class MembersRequestBuilderGetQueryParameters {

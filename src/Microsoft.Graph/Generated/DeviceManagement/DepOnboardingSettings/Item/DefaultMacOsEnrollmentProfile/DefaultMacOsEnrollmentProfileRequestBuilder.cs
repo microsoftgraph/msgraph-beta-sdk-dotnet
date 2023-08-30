@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Defau
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DefaultMacOsEnrollmentProfileRequestBuilder WithUrl(string rawUrl) {
+            return new DefaultMacOsEnrollmentProfileRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Default MacOs Enrollment Profile
         /// </summary>
         public class DefaultMacOsEnrollmentProfileRequestBuilderGetQueryParameters {

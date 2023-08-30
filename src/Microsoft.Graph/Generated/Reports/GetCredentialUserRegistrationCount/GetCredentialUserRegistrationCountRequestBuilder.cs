@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GetCredentialUserRegistrationCountRequestBuilder WithUrl(string rawUrl) {
+            return new GetCredentialUserRegistrationCountRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
         /// </summary>
         public class GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters {

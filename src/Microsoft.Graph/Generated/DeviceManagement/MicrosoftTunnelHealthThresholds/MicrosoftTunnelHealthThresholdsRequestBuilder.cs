@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelHealthThresholds 
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MicrosoftTunnelHealthThresholdsRequestBuilder WithUrl(string rawUrl) {
+            return new MicrosoftTunnelHealthThresholdsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Collection of MicrosoftTunnelHealthThreshold settings associated with account.
         /// </summary>
         public class MicrosoftTunnelHealthThresholdsRequestBuilderGetQueryParameters {

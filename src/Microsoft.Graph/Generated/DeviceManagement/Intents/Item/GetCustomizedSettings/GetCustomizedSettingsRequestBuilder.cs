@@ -73,6 +73,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettin
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GetCustomizedSettingsRequestBuilder WithUrl(string rawUrl) {
+            return new GetCustomizedSettingsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Invoke function getCustomizedSettings
         /// </summary>
         public class GetCustomizedSettingsRequestBuilderGetQueryParameters {

@@ -163,6 +163,13 @@ namespace Microsoft.Graph.Beta.Groups {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GroupsRequestBuilder WithUrl(string rawUrl) {
+            return new GroupsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List all the groups available in an organization, excluding dynamic distribution groups. To retrieve dynamic distribution groups, use the Exchange admin center. This operation returns by default only a subset of the more commonly used properties for each group. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the group and specify the properties in a $select OData query option. The hasMembersWithLicenseErrors and isArchived properties are an exception and are not returned in the $select query.
         /// </summary>
         public class GroupsRequestBuilderGetQueryParameters {

@@ -98,6 +98,13 @@ namespace Microsoft.Graph.Beta.Me.RegisteredDevices {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RegisteredDevicesRequestBuilder WithUrl(string rawUrl) {
+            return new RegisteredDevicesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Devices that are registered for the user. Read-only. Nullable. Supports $expand.
         /// </summary>
         public class RegisteredDevicesRequestBuilderGetQueryParameters {

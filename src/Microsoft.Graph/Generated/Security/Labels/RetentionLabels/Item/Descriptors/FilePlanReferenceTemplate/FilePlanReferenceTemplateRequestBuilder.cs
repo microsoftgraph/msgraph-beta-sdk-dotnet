@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.Descriptors.
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public FilePlanReferenceTemplateRequestBuilder WithUrl(string rawUrl) {
+            return new FilePlanReferenceTemplateRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Specifies a unique alpha-numeric identifier for an organization’s retention schedule.
         /// </summary>
         public class FilePlanReferenceTemplateRequestBuilderGetQueryParameters {

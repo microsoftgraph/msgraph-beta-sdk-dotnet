@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CustomAppScopesRequestBuilder WithUrl(string rawUrl) {
+            return new CustomAppScopesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of customAppScope objects for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
         /// </summary>
         public class CustomAppScopesRequestBuilderGetQueryParameters {

@@ -95,6 +95,13 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PurchaseInvoicesRequestBuilder WithUrl(string rawUrl) {
+            return new PurchaseInvoicesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get purchaseInvoices from financials
         /// </summary>
         public class PurchaseInvoicesRequestBuilderGetQueryParameters {

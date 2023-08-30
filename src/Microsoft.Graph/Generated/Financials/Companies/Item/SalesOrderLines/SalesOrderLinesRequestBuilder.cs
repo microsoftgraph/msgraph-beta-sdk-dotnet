@@ -87,6 +87,13 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrderLines {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SalesOrderLinesRequestBuilder WithUrl(string rawUrl) {
+            return new SalesOrderLinesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get salesOrderLines from financials
         /// </summary>
         public class SalesOrderLinesRequestBuilderGetQueryParameters {

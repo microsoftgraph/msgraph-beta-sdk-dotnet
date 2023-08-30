@@ -143,6 +143,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Events {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public EventsRequestBuilder WithUrl(string rawUrl) {
+            return new EventsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of event objects from the user&apos;s default calendar orfrom a specified calendar. The list contains single instance meetings and series masters. To get expanded event instances, you can get the calendar view, orget the instances of an event. There are two scenarios where an app can get events in another user&apos;s calendar:
         /// </summary>
         public class EventsRequestBuilderGetQueryParameters {

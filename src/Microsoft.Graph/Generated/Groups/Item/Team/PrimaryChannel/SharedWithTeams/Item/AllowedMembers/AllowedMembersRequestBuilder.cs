@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.SharedWithTeams.I
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AllowedMembersRequestBuilder WithUrl(string rawUrl) {
+            return new AllowedMembersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:- Users with Guest role- Users who are externally authenticated in the tenant
         /// </summary>
         public class AllowedMembersRequestBuilderGetQueryParameters {

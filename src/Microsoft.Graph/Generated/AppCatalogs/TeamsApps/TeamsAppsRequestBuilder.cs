@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TeamsAppsRequestBuilder WithUrl(string rawUrl) {
+            return new TeamsAppsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List apps from the Microsoft Teams app catalog.This includes apps from the Microsoft Teams store, as well as apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
         /// </summary>
         public class TeamsAppsRequestBuilderGetQueryParameters {

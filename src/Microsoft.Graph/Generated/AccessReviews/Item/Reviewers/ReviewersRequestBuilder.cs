@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Reviewers {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ReviewersRequestBuilder WithUrl(string rawUrl) {
+            return new ReviewersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// In the Azure AD access reviews feature, retrieve the reviewers of an accessReview object.
         /// </summary>
         public class ReviewersRequestBuilderGetQueryParameters {

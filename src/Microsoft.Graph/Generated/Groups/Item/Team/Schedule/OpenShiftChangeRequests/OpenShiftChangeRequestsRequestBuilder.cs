@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.OpenShiftChangeRequests
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public OpenShiftChangeRequestsRequestBuilder WithUrl(string rawUrl) {
+            return new OpenShiftChangeRequestsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of openShiftChangeRequest objects in a team.
         /// </summary>
         public class OpenShiftChangeRequestsRequestBuilderGetQueryParameters {

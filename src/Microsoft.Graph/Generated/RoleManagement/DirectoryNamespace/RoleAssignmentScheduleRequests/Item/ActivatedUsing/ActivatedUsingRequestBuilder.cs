@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentS
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ActivatedUsingRequestBuilder WithUrl(string rawUrl) {
+            return new ActivatedUsingRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// If the request is from an eligible administrator to activate a role, this parameter will show the related eligible assignment for that activation. Otherwise, it&apos;s null. Supports $expand.
         /// </summary>
         public class ActivatedUsingRequestBuilderGetQueryParameters {

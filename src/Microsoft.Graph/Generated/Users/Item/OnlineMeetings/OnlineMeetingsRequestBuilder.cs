@@ -153,6 +153,13 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public OnlineMeetingsRequestBuilder WithUrl(string rawUrl) {
+            return new OnlineMeetingsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the properties and relationships of an onlineMeeting object. For example, you can: Teams live event attendee report and Teams live event recordings are online meeting artifacts. For details, see Online meeting artifacts and permissions.
         /// </summary>
         public class OnlineMeetingsRequestBuilderGetQueryParameters {

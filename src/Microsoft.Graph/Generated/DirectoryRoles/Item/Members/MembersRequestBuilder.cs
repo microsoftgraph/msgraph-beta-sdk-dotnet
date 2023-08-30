@@ -123,6 +123,13 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item.Members {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MembersRequestBuilder WithUrl(string rawUrl) {
+            return new MembersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable. Supports $expand.
         /// </summary>
         public class MembersRequestBuilderGetQueryParameters {

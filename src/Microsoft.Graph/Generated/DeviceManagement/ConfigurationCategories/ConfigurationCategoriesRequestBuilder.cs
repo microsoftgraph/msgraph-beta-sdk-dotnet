@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationCategories {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ConfigurationCategoriesRequestBuilder WithUrl(string rawUrl) {
+            return new ConfigurationCategoriesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List of all Configuration Categories
         /// </summary>
         public class ConfigurationCategoriesRequestBuilderGetQueryParameters {

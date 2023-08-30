@@ -124,6 +124,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.ExceptionOc
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public EventItemRequestBuilder WithUrl(string rawUrl) {
+            return new EventItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
         /// </summary>
         public class EventItemRequestBuilderGetQueryParameters {

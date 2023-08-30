@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Addresses {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AddressesRequestBuilder WithUrl(string rawUrl) {
+            return new AddressesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the itemAddress resources from the addresses navigation property.
         /// </summary>
         public class AddressesRequestBuilderGetQueryParameters {

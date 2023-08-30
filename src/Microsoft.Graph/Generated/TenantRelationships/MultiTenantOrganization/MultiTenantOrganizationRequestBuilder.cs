@@ -58,7 +58,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get multiTenantOrganization from tenantRelationships
+        /// Get properties of the multi-tenant organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganization-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,20 +78,21 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MultiTenantOrganization>(requestInfo, Microsoft.Graph.Beta.Models.MultiTenantOrganization.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property multiTenantOrganization in tenantRelationships
+        /// Update the properties of a multi-tenant organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganization-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.MultiTenantOrganization?> PutAsync(Microsoft.Graph.Beta.Models.MultiTenantOrganization body, Action<MultiTenantOrganizationRequestBuilderPutRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.MultiTenantOrganization?> PatchAsync(Microsoft.Graph.Beta.Models.MultiTenantOrganization body, Action<MultiTenantOrganizationRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.MultiTenantOrganization> PutAsync(Microsoft.Graph.Beta.Models.MultiTenantOrganization body, Action<MultiTenantOrganizationRequestBuilderPutRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.MultiTenantOrganization> PatchAsync(Microsoft.Graph.Beta.Models.MultiTenantOrganization body, Action<MultiTenantOrganizationRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
@@ -122,7 +124,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
             return requestInfo;
         }
         /// <summary>
-        /// Get multiTenantOrganization from tenantRelationships
+        /// Get properties of the multi-tenant organization.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -148,32 +150,39 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property multiTenantOrganization in tenantRelationships
+        /// Update the properties of a multi-tenant organization.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(Microsoft.Graph.Beta.Models.MultiTenantOrganization body, Action<MultiTenantOrganizationRequestBuilderPutRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.MultiTenantOrganization body, Action<MultiTenantOrganizationRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(Microsoft.Graph.Beta.Models.MultiTenantOrganization body, Action<MultiTenantOrganizationRequestBuilderPutRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.MultiTenantOrganization body, Action<MultiTenantOrganizationRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
-                HttpMethod = Method.PUT,
+                HttpMethod = Method.PATCH,
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
             requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
-                var requestConfig = new MultiTenantOrganizationRequestBuilderPutRequestConfiguration();
+                var requestConfig = new MultiTenantOrganizationRequestBuilderPatchRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
+        }
+        /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MultiTenantOrganizationRequestBuilder WithUrl(string rawUrl) {
+            return new MultiTenantOrganizationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -192,7 +201,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
             }
         }
         /// <summary>
-        /// Get multiTenantOrganization from tenantRelationships
+        /// Get properties of the multi-tenant organization.
         /// </summary>
         public class MultiTenantOrganizationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
@@ -237,15 +246,15 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class MultiTenantOrganizationRequestBuilderPutRequestConfiguration {
+        public class MultiTenantOrganizationRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
             public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new multiTenantOrganizationRequestBuilderPutRequestConfiguration and sets the default values.
+            /// Instantiates a new multiTenantOrganizationRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
-            public MultiTenantOrganizationRequestBuilderPutRequestConfiguration() {
+            public MultiTenantOrganizationRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
                 Headers = new RequestHeaders();
             }

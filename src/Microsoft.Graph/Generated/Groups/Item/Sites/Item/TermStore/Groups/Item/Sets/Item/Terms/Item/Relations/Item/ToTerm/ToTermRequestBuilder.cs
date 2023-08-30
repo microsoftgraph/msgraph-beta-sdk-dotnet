@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Groups.Item.Sets
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ToTermRequestBuilder WithUrl(string rawUrl) {
+            return new ToTermRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The to [term] of the relation. The term to which the relationship is defined.
         /// </summary>
         public class ToTermRequestBuilderGetQueryParameters {

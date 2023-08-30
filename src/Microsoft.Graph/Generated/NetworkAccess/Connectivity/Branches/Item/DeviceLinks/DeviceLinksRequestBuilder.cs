@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DeviceLinksRequestBuilder WithUrl(string rawUrl) {
+            return new DeviceLinksRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of device links associated with a specific branch.
         /// </summary>
         public class DeviceLinksRequestBuilderGetQueryParameters {

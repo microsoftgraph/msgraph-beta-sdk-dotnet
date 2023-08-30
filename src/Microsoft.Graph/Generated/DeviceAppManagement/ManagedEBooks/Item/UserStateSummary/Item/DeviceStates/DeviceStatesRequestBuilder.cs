@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.UserStateS
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DeviceStatesRequestBuilder WithUrl(string rawUrl) {
+            return new DeviceStatesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The install state of the eBook.
         /// </summary>
         public class DeviceStatesRequestBuilderGetQueryParameters {

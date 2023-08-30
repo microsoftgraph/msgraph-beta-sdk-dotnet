@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AppDefinitionsRequestBuilder WithUrl(string rawUrl) {
+            return new AppDefinitionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The details for each version of the app.
         /// </summary>
         public class AppDefinitionsRequestBuilderGetQueryParameters {

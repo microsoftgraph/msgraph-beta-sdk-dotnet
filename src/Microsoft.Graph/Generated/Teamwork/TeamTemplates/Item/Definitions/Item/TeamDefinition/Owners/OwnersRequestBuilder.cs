@@ -87,6 +87,13 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public OwnersRequestBuilder WithUrl(string rawUrl) {
+            return new OwnersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The list of this team&apos;s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.
         /// </summary>
         public class OwnersRequestBuilderGetQueryParameters {

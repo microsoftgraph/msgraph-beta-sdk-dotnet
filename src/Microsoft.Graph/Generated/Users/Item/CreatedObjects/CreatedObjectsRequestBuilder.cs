@@ -93,6 +93,13 @@ namespace Microsoft.Graph.Beta.Users.Item.CreatedObjects {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CreatedObjectsRequestBuilder WithUrl(string rawUrl) {
+            return new CreatedObjectsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of directory objects that were created by the user. This API returns only those directory objects that were created by a user who isn&apos;t in any administrator role; otherwise, it returns an empty object.
         /// </summary>
         public class CreatedObjectsRequestBuilderGetQueryParameters {

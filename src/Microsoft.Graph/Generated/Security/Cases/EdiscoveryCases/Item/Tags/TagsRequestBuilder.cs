@@ -143,6 +143,13 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TagsRequestBuilder WithUrl(string rawUrl) {
+            return new TagsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of eDiscoveryReviewTag objects and their properties.
         /// </summary>
         public class TagsRequestBuilderGetQueryParameters {

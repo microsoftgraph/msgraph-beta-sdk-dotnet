@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Endpoints {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public EndpointsRequestBuilder WithUrl(string rawUrl) {
+            return new EndpointsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
         /// </summary>
         public class EndpointsRequestBuilderGetQueryParameters {

@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts.It
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AlertConfigurationRequestBuilder WithUrl(string rawUrl) {
+            return new AlertConfigurationRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
         /// </summary>
         public class AlertConfigurationRequestBuilderGetQueryParameters {

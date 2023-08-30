@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.BookingBusinesses {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public BookingBusinessesRequestBuilder WithUrl(string rawUrl) {
+            return new BookingBusinessesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation. You can also query for Bookings businesses by specifying a string in a query parameter to do substring matching among the businesses of a tenant. For details, see Example 2.
         /// </summary>
         public class BookingBusinessesRequestBuilderGetQueryParameters {

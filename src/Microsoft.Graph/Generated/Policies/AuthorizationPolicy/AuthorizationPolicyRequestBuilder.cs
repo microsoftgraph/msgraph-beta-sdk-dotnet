@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AuthorizationPolicyRequestBuilder WithUrl(string rawUrl) {
+            return new AuthorizationPolicyRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The policy that controls Azure AD authorization settings.
         /// </summary>
         public class AuthorizationPolicyRequestBuilderGetQueryParameters {

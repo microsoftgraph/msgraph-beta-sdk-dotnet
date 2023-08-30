@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.WindowsHelloForBusiness
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DeviceRequestBuilder WithUrl(string rawUrl) {
+            return new DeviceRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user&apos;s Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.
         /// </summary>
         public class DeviceRequestBuilderGetQueryParameters {

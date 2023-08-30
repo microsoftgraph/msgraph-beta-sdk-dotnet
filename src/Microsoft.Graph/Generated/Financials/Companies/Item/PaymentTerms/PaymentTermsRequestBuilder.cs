@@ -144,6 +144,13 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PaymentTerms {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PaymentTermsRequestBuilder WithUrl(string rawUrl) {
+            return new PaymentTermsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get paymentTerms from financials
         /// </summary>
         public class PaymentTermsRequestBuilderGetQueryParameters {

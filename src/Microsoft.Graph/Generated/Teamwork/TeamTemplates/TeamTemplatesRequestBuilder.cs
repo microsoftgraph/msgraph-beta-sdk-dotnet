@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TeamTemplatesRequestBuilder WithUrl(string rawUrl) {
+            return new TeamTemplatesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the list of teamTemplate objects that are available for a tenant. 
         /// </summary>
         public class TeamTemplatesRequestBuilderGetQueryParameters {

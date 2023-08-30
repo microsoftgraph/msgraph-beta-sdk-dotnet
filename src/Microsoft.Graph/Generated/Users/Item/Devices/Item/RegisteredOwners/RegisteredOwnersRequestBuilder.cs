@@ -108,6 +108,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RegisteredOwnersRequestBuilder WithUrl(string rawUrl) {
+            return new RegisteredOwnersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Read-only. Nullable. Supports $expand.
         /// </summary>
         public class RegisteredOwnersRequestBuilderGetQueryParameters {

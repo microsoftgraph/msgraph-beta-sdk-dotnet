@@ -157,6 +157,13 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Ex
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ExclusionsRequestBuilder WithUrl(string rawUrl) {
+            return new ExclusionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List the updatableAsset resources that are excluded from a deploymentAudience.
         /// </summary>
         public class ExclusionsRequestBuilderGetQueryParameters {

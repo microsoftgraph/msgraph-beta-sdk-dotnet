@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Me.Authentication.Methods {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MethodsRequestBuilder WithUrl(string rawUrl) {
+            return new MethodsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the authenticationMethod resource type, and only the methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
         /// </summary>
         public class MethodsRequestBuilderGetQueryParameters {

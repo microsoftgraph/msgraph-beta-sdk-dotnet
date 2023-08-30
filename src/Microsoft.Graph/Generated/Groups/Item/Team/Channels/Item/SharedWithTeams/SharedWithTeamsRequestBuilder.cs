@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item.SharedWithTeams {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SharedWithTeamsRequestBuilder WithUrl(string rawUrl) {
+            return new SharedWithTeamsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a membershipType value of shared.
         /// </summary>
         public class SharedWithTeamsRequestBuilderGetQueryParameters {

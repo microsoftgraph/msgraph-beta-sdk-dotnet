@@ -73,6 +73,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.Recent {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RecentRequestBuilder WithUrl(string rawUrl) {
+            return new RecentRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Invoke function recent
         /// </summary>
         public class RecentRequestBuilderGetQueryParameters {

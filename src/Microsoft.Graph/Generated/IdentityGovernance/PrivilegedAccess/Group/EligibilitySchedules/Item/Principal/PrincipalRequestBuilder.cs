@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Eligibi
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PrincipalRequestBuilder WithUrl(string rawUrl) {
+            return new PrincipalRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// References the principal that&apos;s in the scope of this membership or ownership eligibility request to the group that&apos;s governed by PIM. Supports $expand.
         /// </summary>
         public class PrincipalRequestBuilderGetQueryParameters {

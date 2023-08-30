@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders.Item.Learnin
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public LearningContentsRequestBuilder WithUrl(string rawUrl) {
+            return new LearningContentsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the learningContent resources and their properties. This list represents the metadata of the specified provider&apos;s content in Viva Learning.
         /// </summary>
         public class LearningContentsRequestBuilderGetQueryParameters {

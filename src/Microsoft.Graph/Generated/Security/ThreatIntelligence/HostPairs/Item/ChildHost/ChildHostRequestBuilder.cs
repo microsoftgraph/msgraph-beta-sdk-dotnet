@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostPairs.Item.ChildH
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ChildHostRequestBuilder WithUrl(string rawUrl) {
+            return new ChildHostRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Host reached via the parentHost.
         /// </summary>
         public class ChildHostRequestBuilderGetQueryParameters {

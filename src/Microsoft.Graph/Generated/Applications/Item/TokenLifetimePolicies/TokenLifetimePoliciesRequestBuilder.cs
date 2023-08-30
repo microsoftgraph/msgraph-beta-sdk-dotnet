@@ -93,6 +93,13 @@ namespace Microsoft.Graph.Beta.Applications.Item.TokenLifetimePolicies {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TokenLifetimePoliciesRequestBuilder WithUrl(string rawUrl) {
+            return new TokenLifetimePoliciesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List the tokenLifetimePolicy objects that are assigned to an application or servicePrincipal. Only one object is returned in the collection because only one tokenLifetimePolicy can be assigned to an application.
         /// </summary>
         public class TokenLifetimePoliciesRequestBuilderGetQueryParameters {

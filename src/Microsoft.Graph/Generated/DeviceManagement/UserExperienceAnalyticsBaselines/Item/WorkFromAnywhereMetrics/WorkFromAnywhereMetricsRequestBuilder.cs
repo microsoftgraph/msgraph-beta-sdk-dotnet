@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public WorkFromAnywhereMetricsRequestBuilder WithUrl(string rawUrl) {
+            return new WorkFromAnywhereMetricsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The scores and insights for the work from anywhere metrics.
         /// </summary>
         public class WorkFromAnywhereMetricsRequestBuilderGetQueryParameters {

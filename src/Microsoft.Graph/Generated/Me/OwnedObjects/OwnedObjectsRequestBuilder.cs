@@ -103,6 +103,13 @@ namespace Microsoft.Graph.Beta.Me.OwnedObjects {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public OwnedObjectsRequestBuilder WithUrl(string rawUrl) {
+            return new OwnedObjectsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
         public class OwnedObjectsRequestBuilderGetQueryParameters {

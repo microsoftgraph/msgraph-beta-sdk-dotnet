@@ -172,6 +172,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Notifications.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023. as of 2023-03/Notification_Deprecation on 2023-03-09 and will be removed 2023-03-20")]
+        public NotificationItemRequestBuilder WithUrl(string rawUrl) {
+            return new NotificationItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class NotificationItemRequestBuilderDeleteRequestConfiguration {

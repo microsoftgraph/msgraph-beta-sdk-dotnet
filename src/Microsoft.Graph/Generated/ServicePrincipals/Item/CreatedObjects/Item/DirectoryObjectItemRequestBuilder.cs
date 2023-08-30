@@ -79,6 +79,13 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DirectoryObjectItemRequestBuilder WithUrl(string rawUrl) {
+            return new DirectoryObjectItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Directory objects created by this service principal. Read-only. Nullable.
         /// </summary>
         public class DirectoryObjectItemRequestBuilderGetQueryParameters {

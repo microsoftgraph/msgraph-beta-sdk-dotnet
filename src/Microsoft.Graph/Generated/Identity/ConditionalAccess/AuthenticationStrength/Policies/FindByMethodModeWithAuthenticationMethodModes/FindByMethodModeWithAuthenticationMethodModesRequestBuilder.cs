@@ -77,6 +77,14 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The findByMethodMode function is deprecated. Please use OData filter query instead. as of 2023-02/FindByMethodModeRemove on 2023-02-01 and will be removed 2023-03-31")]
+        public FindByMethodModeWithAuthenticationMethodModesRequestBuilder WithUrl(string rawUrl) {
+            return new FindByMethodModeWithAuthenticationMethodModesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Invoke function findByMethodMode
         /// </summary>
         public class FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters {
