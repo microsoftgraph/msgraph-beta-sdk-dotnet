@@ -171,6 +171,13 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item.Activities.I
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ExternalActivityItemRequestBuilder WithUrl(string rawUrl) {
+            return new ExternalActivityItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class ExternalActivityItemRequestBuilderDeleteRequestConfiguration {

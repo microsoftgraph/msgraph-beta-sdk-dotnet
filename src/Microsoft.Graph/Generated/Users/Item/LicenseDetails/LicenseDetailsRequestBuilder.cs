@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Users.Item.LicenseDetails {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public LicenseDetailsRequestBuilder WithUrl(string rawUrl) {
+            return new LicenseDetailsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of licenseDetails objects for enterprise users. This API returns details for licenses that are directly assigned and those transitively assigned through memberships in licensed groups.
         /// </summary>
         public class LicenseDetailsRequestBuilderGetQueryParameters {

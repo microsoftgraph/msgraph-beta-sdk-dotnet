@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public BulkActionsRequestBuilder WithUrl(string rawUrl) {
+            return new BulkActionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get bulkActions from deviceManagement
         /// </summary>
         public class BulkActionsRequestBuilderGetQueryParameters {

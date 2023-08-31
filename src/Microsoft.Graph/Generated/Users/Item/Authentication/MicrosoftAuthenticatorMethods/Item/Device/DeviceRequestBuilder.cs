@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.MicrosoftAuthenticatorM
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DeviceRequestBuilder WithUrl(string rawUrl) {
+            return new DeviceRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.
         /// </summary>
         public class DeviceRequestBuilderGetQueryParameters {

@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AgreementsRequestBuilder WithUrl(string rawUrl) {
+            return new AgreementsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of agreement objects.
         /// </summary>
         public class AgreementsRequestBuilderGetQueryParameters {

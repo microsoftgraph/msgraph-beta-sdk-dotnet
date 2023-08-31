@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Groups {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GroupsRequestBuilder WithUrl(string rawUrl) {
+            return new GroupsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get groups from external
         /// </summary>
         public class GroupsRequestBuilderGetQueryParameters {

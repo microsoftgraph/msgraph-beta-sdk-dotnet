@@ -79,6 +79,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RestoreClo
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The restoreCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use restore instead as of 2023-07/restoreCloudPc on 2023-07-17 and will be removed 2023-09-30")]
+        public RestoreCloudPcRequestBuilder WithUrl(string rawUrl) {
+            return new RestoreCloudPcRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class RestoreCloudPcRequestBuilderPostRequestConfiguration {

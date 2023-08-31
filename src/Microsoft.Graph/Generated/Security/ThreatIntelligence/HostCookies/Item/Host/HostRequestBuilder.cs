@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostCookies.Item.Host
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public HostRequestBuilder WithUrl(string rawUrl) {
+            return new HostRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Indicates that a cookie of this name and domain was found related to this host.
         /// </summary>
         public class HostRequestBuilderGetQueryParameters {

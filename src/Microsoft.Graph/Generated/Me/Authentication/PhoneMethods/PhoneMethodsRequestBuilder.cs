@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PhoneMethods {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PhoneMethodsRequestBuilder WithUrl(string rawUrl) {
+            return new PhoneMethodsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of phone authentication method objects. This will return up to three objects, as a user can have up to three phones usable for authentication. This method is available only for standard Azure AD and B2B users, but not B2C users.
         /// </summary>
         public class PhoneMethodsRequestBuilderGetQueryParameters {

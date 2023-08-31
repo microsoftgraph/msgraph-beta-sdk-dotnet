@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TasksRequestBuilder WithUrl(string rawUrl) {
+            return new TasksRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of tasks associated with a task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
         /// </summary>
         public class TasksRequestBuilderGetQueryParameters {

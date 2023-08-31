@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMobileLo
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GraphMobileLobAppRequestBuilder WithUrl(string rawUrl) {
+            return new GraphMobileLobAppRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.mobileLobApp
         /// </summary>
         public class GraphMobileLobAppRequestBuilderGetQueryParameters {

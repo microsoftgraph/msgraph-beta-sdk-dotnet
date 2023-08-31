@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class MultiTenantOrganizationJoinRequestRecord : Entity, IParsable {
-        /// <summary>The addedByTenantId property</summary>
+        /// <summary>Tenant ID of the Azure Active Directory tenant that added a tenant to the multi-tenant organization. To reset a failed join request, set addedByTenantId to 00000000-0000-0000-0000-000000000000. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AddedByTenantId {
@@ -20,17 +20,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("addedByTenantId", value); }
         }
 #endif
-        /// <summary>The memberState property</summary>
+        /// <summary>State of the tenant in the multi-tenant organization. The possible values are: pending, active, removed, unknownFutureValue. Tenants in the pending state must join the multi-tenant organization to participate in the multi-tenant organization. Tenants in the active state can participate in the multi-tenant organization. Tenants in the removed state are in the process of being removed from the multi-tenant organization. Read-only.</summary>
         public MultiTenantOrganizationMemberState? MemberState {
             get { return BackingStore?.Get<MultiTenantOrganizationMemberState?>("memberState"); }
             set { BackingStore?.Set("memberState", value); }
         }
-        /// <summary>The role property</summary>
+        /// <summary>Role of the tenant in the multi-tenant organization. The possible values are: owner, member (default), unknownFutureValue. Tenants with the owner role can manage the multi-tenant organization. There can be multiple tenants with the owner role in a multi-tenant organization. Tenants with the member role can participate in a multi-tenant organization.</summary>
         public MultiTenantOrganizationMemberRole? Role {
             get { return BackingStore?.Get<MultiTenantOrganizationMemberRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
-        /// <summary>The transitionDetails property</summary>
+        /// <summary>Details of the processing status for a tenant joining a multi-tenant organization. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public MultiTenantOrganizationJoinRequestTransitionDetails? TransitionDetails {

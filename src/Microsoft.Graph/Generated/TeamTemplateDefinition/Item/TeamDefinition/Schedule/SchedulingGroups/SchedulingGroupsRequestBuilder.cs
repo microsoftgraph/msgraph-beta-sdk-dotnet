@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SchedulingGroupsRequestBuilder WithUrl(string rawUrl) {
+            return new SchedulingGroupsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the list of schedulingGroups in this schedule.
         /// </summary>
         public class SchedulingGroupsRequestBuilderGetQueryParameters {

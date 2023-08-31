@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item.Refe
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ReferencingConfigurationPoliciesRequestBuilder WithUrl(string rawUrl) {
+            return new ReferencingConfigurationPoliciesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// configuration policies referencing the current reusable setting. This property is read-only.
         /// </summary>
         public class ReferencingConfigurationPoliciesRequestBuilderGetQueryParameters {

@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostSslCertificates.I
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SslCertificateRequestBuilder WithUrl(string rawUrl) {
+            return new SslCertificateRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get sslCertificate from security
         /// </summary>
         public class SslCertificateRequestBuilderGetQueryParameters {

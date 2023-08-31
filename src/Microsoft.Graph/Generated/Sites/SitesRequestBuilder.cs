@@ -108,6 +108,13 @@ namespace Microsoft.Graph.Beta.Sites {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SitesRequestBuilder WithUrl(string rawUrl) {
+            return new SitesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List all available [sites][] in an organization. Specific filter criteria and query options are also supported and described below: In addition, you can use a [$search][] query against the /sites collection to find sites matching given keywords.If you want to list all sites across all geographies, refer to getAllSites][]. For more guidance about building applications that use site discovery for scanning purposes, see [Best practices for discovering files and detecting changes at scale.
         /// </summary>
         public class SitesRequestBuilderGetQueryParameters {

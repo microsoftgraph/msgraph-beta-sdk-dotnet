@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Me.JoinedTeams {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public JoinedTeamsRequestBuilder WithUrl(string rawUrl) {
+            return new JoinedTeamsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the teams in Microsoft Teams that the user is a direct member of.
         /// </summary>
         public class JoinedTeamsRequestBuilderGetQueryParameters {

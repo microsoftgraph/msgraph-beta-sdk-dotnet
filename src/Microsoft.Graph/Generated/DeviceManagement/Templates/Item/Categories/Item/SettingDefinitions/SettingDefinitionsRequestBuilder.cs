@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.Categories.Item.S
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SettingDefinitionsRequestBuilder WithUrl(string rawUrl) {
+            return new SettingDefinitionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The setting definitions this category contains
         /// </summary>
         public class SettingDefinitionsRequestBuilderGetQueryParameters {

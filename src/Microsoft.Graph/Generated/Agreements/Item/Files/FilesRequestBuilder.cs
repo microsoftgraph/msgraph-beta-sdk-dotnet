@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Agreements.Item.Files {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public FilesRequestBuilder WithUrl(string rawUrl) {
+            return new FilesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.
         /// </summary>
         public class FilesRequestBuilderGetQueryParameters {

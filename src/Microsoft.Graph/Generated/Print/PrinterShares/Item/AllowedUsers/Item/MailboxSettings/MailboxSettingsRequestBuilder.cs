@@ -127,6 +127,14 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.Mailbo
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
+        public MailboxSettingsRequestBuilder WithUrl(string rawUrl) {
+            return new MailboxSettingsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.
         /// </summary>
         public class MailboxSettingsRequestBuilderGetQueryParameters {

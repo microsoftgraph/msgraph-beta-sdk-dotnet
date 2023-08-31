@@ -79,6 +79,13 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public IndustryDataRunActivityItemRequestBuilder WithUrl(string rawUrl) {
+            return new IndustryDataRunActivityItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The set of activities performed during the run.
         /// </summary>
         public class IndustryDataRunActivityItemRequestBuilderGetQueryParameters {

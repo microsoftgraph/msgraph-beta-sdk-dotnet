@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Sites.Item.Sites.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SiteItemRequestBuilder WithUrl(string rawUrl) {
+            return new SiteItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The collection of the sub-sites under this site.
         /// </summary>
         public class SiteItemRequestBuilderGetQueryParameters {

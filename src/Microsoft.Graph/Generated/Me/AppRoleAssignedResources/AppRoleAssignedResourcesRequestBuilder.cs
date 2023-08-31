@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Me.AppRoleAssignedResources {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AppRoleAssignedResourcesRequestBuilder WithUrl(string rawUrl) {
+            return new AppRoleAssignedResourcesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the service principals to which the user has an app role assignment either directly or through group membership.
         /// </summary>
         public class AppRoleAssignedResourcesRequestBuilderGetQueryParameters {

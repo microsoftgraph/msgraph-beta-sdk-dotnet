@@ -94,6 +94,13 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public VirtualEventSessionItemRequestBuilder WithUrl(string rawUrl) {
+            return new VirtualEventSessionItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get sessions from solutions
         /// </summary>
         public class VirtualEventSessionItemRequestBuilderGetQueryParameters {

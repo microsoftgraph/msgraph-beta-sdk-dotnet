@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.Columns.Item.S
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SourceColumnRequestBuilder WithUrl(string rawUrl) {
+            return new SourceColumnRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The source column for content type column.
         /// </summary>
         public class SourceColumnRequestBuilderGetQueryParameters {

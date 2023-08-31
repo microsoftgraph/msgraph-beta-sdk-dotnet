@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.MyDecisions {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MyDecisionsRequestBuilder WithUrl(string rawUrl) {
+            return new MyDecisionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// In the Azure AD access reviews feature, retrieve the decisions of an accessReview object for the calling user as reviewer.
         /// </summary>
         public class MyDecisionsRequestBuilderGetQueryParameters {

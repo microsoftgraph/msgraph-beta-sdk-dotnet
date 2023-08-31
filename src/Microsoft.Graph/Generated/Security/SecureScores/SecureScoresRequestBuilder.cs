@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Security.SecureScores {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SecureScoresRequestBuilder WithUrl(string rawUrl) {
+            return new SecureScoresRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the properties and relationships of a secureScores object.
         /// </summary>
         public class SecureScoresRequestBuilderGetQueryParameters {

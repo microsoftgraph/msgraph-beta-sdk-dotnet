@@ -93,6 +93,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.CalendarView {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CalendarViewRequestBuilder WithUrl(string rawUrl) {
+            return new CalendarViewRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The calendar view for the calendar. Read-only.
         /// </summary>
         public class CalendarViewRequestBuilderGetQueryParameters {

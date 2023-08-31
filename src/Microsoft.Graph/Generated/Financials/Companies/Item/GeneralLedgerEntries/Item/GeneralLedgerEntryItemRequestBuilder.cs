@@ -79,6 +79,13 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.It
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GeneralLedgerEntryItemRequestBuilder WithUrl(string rawUrl) {
+            return new GeneralLedgerEntryItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get generalLedgerEntries from financials
         /// </summary>
         public class GeneralLedgerEntryItemRequestBuilderGetQueryParameters {

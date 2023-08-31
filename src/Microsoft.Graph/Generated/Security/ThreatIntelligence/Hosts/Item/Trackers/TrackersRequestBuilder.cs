@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Trackers {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TrackersRequestBuilder WithUrl(string rawUrl) {
+            return new TrackersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of hostTracker resources.
         /// </summary>
         public class TrackersRequestBuilderGetQueryParameters {

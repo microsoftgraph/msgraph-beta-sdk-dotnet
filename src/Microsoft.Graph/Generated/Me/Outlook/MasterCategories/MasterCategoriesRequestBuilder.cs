@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Me.Outlook.MasterCategories {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MasterCategoriesRequestBuilder WithUrl(string rawUrl) {
+            return new MasterCategoriesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get all the categories that have been defined for the user.
         /// </summary>
         public class MasterCategoriesRequestBuilderGetQueryParameters {

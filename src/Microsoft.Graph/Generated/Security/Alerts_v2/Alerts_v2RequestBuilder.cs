@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2 {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public Alerts_v2RequestBuilder WithUrl(string rawUrl) {
+            return new Alerts_v2RequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of alert resources that have been created to track suspicious activities in an organization. This operation lets you filter and sort through alerts to create an informed cyber security response. It exposes a collection of alerts that were flagged in your network, within the time range you specified in your environment retention policy. The most recent alerts are displayed at the top of the list.
         /// </summary>
         public class Alerts_v2RequestBuilderGetQueryParameters {

@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.AssociatedTeams {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AssociatedTeamsRequestBuilder WithUrl(string rawUrl) {
+            return new AssociatedTeamsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the list of teams in Microsoft Teams that a user is associated with.Currently, a user can be associated with a team in two different ways:* A user can be a direct member of a team.* A user can be a member of a shared channel that is hosted inside a team.
         /// </summary>
         public class AssociatedTeamsRequestBuilderGetQueryParameters {

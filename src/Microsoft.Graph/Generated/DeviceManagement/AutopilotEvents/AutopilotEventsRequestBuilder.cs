@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AutopilotEventsRequestBuilder WithUrl(string rawUrl) {
+            return new AutopilotEventsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The list of autopilot events for the tenant.
         /// </summary>
         public class AutopilotEventsRequestBuilderGetQueryParameters {

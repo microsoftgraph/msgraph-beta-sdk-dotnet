@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DirectoriesRequestBuilder WithUrl(string rawUrl) {
+            return new DirectoriesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Contains the collection of directories and all of their objects.
         /// </summary>
         public class DirectoriesRequestBuilderGetQueryParameters {

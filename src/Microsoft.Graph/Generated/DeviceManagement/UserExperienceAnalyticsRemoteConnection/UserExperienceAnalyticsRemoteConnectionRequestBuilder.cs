@@ -145,6 +145,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteCon
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public UserExperienceAnalyticsRemoteConnectionRequestBuilder WithUrl(string rawUrl) {
+            return new UserExperienceAnalyticsRemoteConnectionRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// User experience analytics remote connection
         /// </summary>
         public class UserExperienceAnalyticsRemoteConnectionRequestBuilderGetQueryParameters {

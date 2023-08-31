@@ -95,6 +95,13 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AgedAccountsPayableRequestBuilder WithUrl(string rawUrl) {
+            return new AgedAccountsPayableRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get agedAccountsPayable from financials
         /// </summary>
         public class AgedAccountsPayableRequestBuilderGetQueryParameters {

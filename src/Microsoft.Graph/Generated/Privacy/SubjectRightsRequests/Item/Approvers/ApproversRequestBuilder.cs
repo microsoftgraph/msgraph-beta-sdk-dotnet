@@ -91,6 +91,14 @@ namespace Microsoft.Graph.Beta.Privacy.SubjectRightsRequests.Item.Approvers {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
+        public ApproversRequestBuilder WithUrl(string rawUrl) {
+            return new ApproversRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get approvers from privacy
         /// </summary>
         public class ApproversRequestBuilderGetQueryParameters {

@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ExchangeOnPremisesPoliciesRequestBuilder WithUrl(string rawUrl) {
+            return new ExchangeOnPremisesPoliciesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The list of Exchange On Premisis policies configured by the tenant.
         /// </summary>
         public class ExchangeOnPremisesPoliciesRequestBuilderGetQueryParameters {

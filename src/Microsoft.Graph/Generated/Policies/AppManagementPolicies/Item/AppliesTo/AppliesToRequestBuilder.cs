@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Policies.AppManagementPolicies.Item.AppliesTo {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AppliesToRequestBuilder WithUrl(string rawUrl) {
+            return new AppliesToRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List application and service principal objects assigned an appManagementPolicy policy object.
         /// </summary>
         public class AppliesToRequestBuilderGetQueryParameters {

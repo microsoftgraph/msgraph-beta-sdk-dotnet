@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.Activities {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ActivitiesRequestBuilder WithUrl(string rawUrl) {
+            return new ActivitiesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List the recent activities that took place on an item or under a hierarchy.
         /// </summary>
         public class ActivitiesRequestBuilderGetQueryParameters {

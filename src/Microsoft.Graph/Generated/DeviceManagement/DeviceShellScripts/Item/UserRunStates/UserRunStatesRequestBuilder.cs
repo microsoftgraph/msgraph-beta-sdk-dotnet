@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.UserRunS
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public UserRunStatesRequestBuilder WithUrl(string rawUrl) {
+            return new UserRunStatesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List of run states for this script across all users.
         /// </summary>
         public class UserRunStatesRequestBuilderGetQueryParameters {

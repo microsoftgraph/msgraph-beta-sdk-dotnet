@@ -146,6 +146,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public InstancesRequestBuilder WithUrl(string rawUrl) {
+            return new InstancesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the accessReviewInstance objects for a specific accessReviewScheduleDefinition. A list of zero or more accessReviewInstance objects are returned, including all of their nested properties. Returned objects do not include associated accessReviewInstanceDecisionItems. To retrieve the decisions on the instance, use List accessReviewInstanceDecisionItem.
         /// </summary>
         public class InstancesRequestBuilderGetQueryParameters {

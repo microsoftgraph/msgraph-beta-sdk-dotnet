@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleAssignments.Item.Princ
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DirectoryObjectItemRequestBuilder WithUrl(string rawUrl) {
+            return new DirectoryObjectItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.
         /// </summary>
         public class DirectoryObjectItemRequestBuilderGetQueryParameters {

@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedAppRegistrations.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ManagedAppRegistrationItemRequestBuilder WithUrl(string rawUrl) {
+            return new ManagedAppRegistrationItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Zero or more managed app registrations that belong to the user.
         /// </summary>
         public class ManagedAppRegistrationItemRequestBuilderGetQueryParameters {

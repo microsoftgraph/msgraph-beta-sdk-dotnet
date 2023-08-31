@@ -2,6 +2,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Transcripts.Count;
+using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Transcripts.Delta;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Transcripts.Item;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -19,6 +20,10 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Transcripts {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the delta method.</summary>
+        public DeltaRequestBuilder Delta { get =>
+            new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transcripts property of the microsoft.graph.onlineMeeting entity.</summary>
         /// <param name="position">The unique identifier of callTranscript</param>
@@ -135,6 +140,13 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Transcripts {
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
+        }
+        /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TranscriptsRequestBuilder WithUrl(string rawUrl) {
+            return new TranscriptsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve the list of callTranscript objects associated with an onlineMeeting.

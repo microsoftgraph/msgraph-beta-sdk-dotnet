@@ -128,6 +128,13 @@ namespace Microsoft.Graph.Beta.AuthenticationMethodsPolicy {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AuthenticationMethodsPolicyRequestBuilder WithUrl(string rawUrl) {
+            return new AuthenticationMethodsPolicyRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get authenticationMethodsPolicy
         /// </summary>
         public class AuthenticationMethodsPolicyRequestBuilderGetQueryParameters {

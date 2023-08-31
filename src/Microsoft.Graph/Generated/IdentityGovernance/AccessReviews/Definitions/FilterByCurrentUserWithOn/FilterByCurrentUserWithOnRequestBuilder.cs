@@ -75,6 +75,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Filt
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public FilterByCurrentUserWithOnRequestBuilder WithUrl(string rawUrl) {
+            return new FilterByCurrentUserWithOnRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Invoke function filterByCurrentUser
         /// </summary>
         public class FilterByCurrentUserWithOnRequestBuilderGetQueryParameters {

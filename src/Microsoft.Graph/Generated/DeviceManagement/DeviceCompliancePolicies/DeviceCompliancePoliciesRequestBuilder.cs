@@ -166,6 +166,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DeviceCompliancePoliciesRequestBuilder WithUrl(string rawUrl) {
+            return new DeviceCompliancePoliciesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The device compliance policies.
         /// </summary>
         public class DeviceCompliancePoliciesRequestBuilderGetQueryParameters {

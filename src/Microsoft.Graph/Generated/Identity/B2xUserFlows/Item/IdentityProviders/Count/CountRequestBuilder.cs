@@ -75,6 +75,14 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.IdentityProviders.Coun
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15")]
+        public CountRequestBuilder WithUrl(string rawUrl) {
+            return new CountRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the number of the resource
         /// </summary>
         public class CountRequestBuilderGetQueryParameters {

@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealth
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder WithUrl(string rawUrl) {
+            return new UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// User experience analytics appHealth Model Performance
         /// </summary>
         public class UserExperienceAnalyticsAppHealthDeviceModelPerformanceRequestBuilderGetQueryParameters {

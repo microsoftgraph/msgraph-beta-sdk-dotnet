@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Versions {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public VersionsRequestBuilder WithUrl(string rawUrl) {
+            return new VersionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// OneDrive and SharePoint can be configured to retain the history for files.Depending on the service and configuration, a new version can be created for each edit, each time the file is saved, manually, or never. Previous versions of a document may be retained for a finite period of time depending on admin settings which may be unique per user or location.
         /// </summary>
         public class VersionsRequestBuilderGetQueryParameters {

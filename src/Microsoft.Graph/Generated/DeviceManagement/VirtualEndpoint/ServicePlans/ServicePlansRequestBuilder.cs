@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ServicePlans {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ServicePlansRequestBuilder WithUrl(string rawUrl) {
+            return new ServicePlansRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List the currently available service plans that an organization can purchase for their Cloud PCs. For examples of currently available service plans, see Windows 365 compare plans and pricing. Currently, Microsoft Graph API is available for Windows 365 Enterprise.
         /// </summary>
         public class ServicePlansRequestBuilderGetQueryParameters {

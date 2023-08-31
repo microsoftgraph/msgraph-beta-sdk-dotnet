@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantA
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ManagedTenantApiNotificationsRequestBuilder WithUrl(string rawUrl) {
+            return new ManagedTenantApiNotificationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get managedTenantApiNotifications from tenantRelationships
         /// </summary>
         public class ManagedTenantApiNotificationsRequestBuilderGetQueryParameters {

@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ExportJo
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ExportJobsRequestBuilder WithUrl(string rawUrl) {
+            return new ExportJobsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. When the property becomes completed, the report has finished downloading in the location specified by the exportUrl property. 
         /// </summary>
         public class ExportJobsRequestBuilderGetQueryParameters {

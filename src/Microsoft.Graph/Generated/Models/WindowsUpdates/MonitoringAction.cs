@@ -5,6 +5,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public enum MonitoringAction {
         [EnumMember(Value = "alertError")]
         AlertError,
+        [EnumMember(Value = "offerFallback")]
+        OfferFallback,
         [EnumMember(Value = "pauseDeployment")]
         PauseDeployment,
         [EnumMember(Value = "unknownFutureValue")]

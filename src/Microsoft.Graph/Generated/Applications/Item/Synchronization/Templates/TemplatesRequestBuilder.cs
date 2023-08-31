@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Templates {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TemplatesRequestBuilder WithUrl(string rawUrl) {
+            return new TemplatesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List the synchronization templates associated with a given application or service principal.
         /// </summary>
         public class TemplatesRequestBuilderGetQueryParameters {

@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ConditionalAcc
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ConditionalAccessPolicyCoveragesRequestBuilder WithUrl(string rawUrl) {
+            return new ConditionalAccessPolicyCoveragesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list of Azure Active Directory conditional access policy coverage across all tenants that are being managed by the multi-tenant management platform.
         /// </summary>
         public class ConditionalAccessPolicyCoveragesRequestBuilderGetQueryParameters {

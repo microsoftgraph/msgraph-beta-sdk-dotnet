@@ -97,6 +97,13 @@ namespace Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TransitiveMemberOfRequestBuilder WithUrl(string rawUrl) {
+            return new TransitiveMemberOfRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get transitiveMemberOf from contacts
         /// </summary>
         public class TransitiveMemberOfRequestBuilderGetQueryParameters {

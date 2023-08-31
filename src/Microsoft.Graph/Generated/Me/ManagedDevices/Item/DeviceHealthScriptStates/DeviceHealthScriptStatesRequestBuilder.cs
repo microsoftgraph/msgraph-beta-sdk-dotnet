@@ -141,6 +141,13 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceHealthScriptStates {
             return new WithIdWithPolicyIdWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, deviceId, id, policyId);
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DeviceHealthScriptStatesRequestBuilder WithUrl(string rawUrl) {
+            return new DeviceHealthScriptStatesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
         /// </summary>
         public class DeviceHealthScriptStatesRequestBuilderGetQueryParameters {

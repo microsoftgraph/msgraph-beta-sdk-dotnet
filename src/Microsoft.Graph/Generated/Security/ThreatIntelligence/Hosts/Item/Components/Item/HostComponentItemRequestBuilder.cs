@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Components
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public HostComponentItemRequestBuilder WithUrl(string rawUrl) {
+            return new HostComponentItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The hostComponents that are associated with this host.
         /// </summary>
         public class HostComponentItemRequestBuilderGetQueryParameters {

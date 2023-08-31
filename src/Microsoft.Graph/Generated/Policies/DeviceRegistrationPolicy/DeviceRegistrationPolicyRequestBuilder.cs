@@ -125,6 +125,13 @@ namespace Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DeviceRegistrationPolicyRequestBuilder WithUrl(string rawUrl) {
+            return new DeviceRegistrationPolicyRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
         /// </summary>
         public class DeviceRegistrationPolicyRequestBuilderGetQueryParameters {

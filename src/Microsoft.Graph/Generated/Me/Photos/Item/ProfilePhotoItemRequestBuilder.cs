@@ -79,6 +79,13 @@ namespace Microsoft.Graph.Beta.Me.Photos.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ProfilePhotoItemRequestBuilder WithUrl(string rawUrl) {
+            return new ProfilePhotoItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get photos from me
         /// </summary>
         public class ProfilePhotoItemRequestBuilderGetQueryParameters {

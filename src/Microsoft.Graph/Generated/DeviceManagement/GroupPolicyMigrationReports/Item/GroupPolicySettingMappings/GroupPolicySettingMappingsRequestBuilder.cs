@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GroupPolicySettingMappingsRequestBuilder WithUrl(string rawUrl) {
+            return new GroupPolicySettingMappingsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// A list of group policy settings to MDM/Intune mappings.
         /// </summary>
         public class GroupPolicySettingMappingsRequestBuilderGetQueryParameters {

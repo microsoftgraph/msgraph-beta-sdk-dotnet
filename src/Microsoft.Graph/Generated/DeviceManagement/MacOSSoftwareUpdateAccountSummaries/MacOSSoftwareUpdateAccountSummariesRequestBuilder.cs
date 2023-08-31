@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummar
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MacOSSoftwareUpdateAccountSummariesRequestBuilder WithUrl(string rawUrl) {
+            return new MacOSSoftwareUpdateAccountSummariesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The MacOS software update account summaries for this account.
         /// </summary>
         public class MacOSSoftwareUpdateAccountSummariesRequestBuilderGetQueryParameters {

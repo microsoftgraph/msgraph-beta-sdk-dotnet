@@ -143,6 +143,13 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MailFoldersRequestBuilder WithUrl(string rawUrl) {
+            return new MailFoldersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The user&apos;s mail folders. Read-only. Nullable.
         /// </summary>
         public class MailFoldersRequestBuilderGetQueryParameters {

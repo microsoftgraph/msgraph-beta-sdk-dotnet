@@ -79,6 +79,13 @@ namespace Microsoft.Graph.Beta.Shares.Item.Root {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RootRequestBuilder WithUrl(string rawUrl) {
+            return new RootRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get root from shares
         /// </summary>
         public class RootRequestBuilderGetQueryParameters {

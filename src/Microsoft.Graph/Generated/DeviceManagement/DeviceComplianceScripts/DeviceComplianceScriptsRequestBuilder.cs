@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DeviceComplianceScriptsRequestBuilder WithUrl(string rawUrl) {
+            return new DeviceComplianceScriptsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The list of device compliance scripts associated with the tenant.
         /// </summary>
         public class DeviceComplianceScriptsRequestBuilderGetQueryParameters {

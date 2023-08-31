@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item.EffectiveRul
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public EffectiveRulesRequestBuilder WithUrl(string rawUrl) {
+            return new EffectiveRulesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the unifiedRoleManagementPolicyRule resources from the effectiveRules navigation property. To retrieve rules for a policy that applies to Azure RBAC, use the Azure REST PIM API for role management policies.
         /// </summary>
         public class EffectiveRulesRequestBuilderGetQueryParameters {

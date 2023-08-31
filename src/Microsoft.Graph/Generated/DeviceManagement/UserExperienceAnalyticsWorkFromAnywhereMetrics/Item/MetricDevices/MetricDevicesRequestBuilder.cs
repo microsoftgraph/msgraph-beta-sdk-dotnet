@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsWorkFromA
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MetricDevicesRequestBuilder WithUrl(string rawUrl) {
+            return new MetricDevicesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The work from anywhere metric devices. Read-only.
         /// </summary>
         public class MetricDevicesRequestBuilderGetQueryParameters {

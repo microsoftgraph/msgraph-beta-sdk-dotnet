@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Activities.Item.HistoryItems.Item.Acti
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ActivityRequestBuilder WithUrl(string rawUrl) {
+            return new ActivityRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get activity from users
         /// </summary>
         public class ActivityRequestBuilderGetQueryParameters {

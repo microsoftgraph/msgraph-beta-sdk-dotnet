@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CertificateBasedApplicationConfigurationsRequestBuilder WithUrl(string rawUrl) {
+            return new CertificateBasedApplicationConfigurationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get certificateBasedApplicationConfigurations from directory
         /// </summary>
         public class CertificateBasedApplicationConfigurationsRequestBuilderGetQueryParameters {

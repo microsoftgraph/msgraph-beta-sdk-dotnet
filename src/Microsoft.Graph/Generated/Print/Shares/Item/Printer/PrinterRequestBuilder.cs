@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Print.Shares.Item.Printer {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PrinterRequestBuilder WithUrl(string rawUrl) {
+            return new PrinterRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The printer that this printer share is related to.
         /// </summary>
         public class PrinterRequestBuilderGetQueryParameters {

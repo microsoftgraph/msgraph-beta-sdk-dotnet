@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.UserConfigu
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public UserConfigurationItemRequestBuilder WithUrl(string rawUrl) {
+            return new UserConfigurationItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get userConfigurations from me
         /// </summary>
         public class UserConfigurationItemRequestBuilderGetQueryParameters {

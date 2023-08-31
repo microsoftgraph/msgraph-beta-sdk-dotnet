@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Search.Qnas {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public QnasRequestBuilder WithUrl(string rawUrl) {
+            return new QnasRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the qna objects and their properties.
         /// </summary>
         public class QnasRequestBuilderGetQueryParameters {

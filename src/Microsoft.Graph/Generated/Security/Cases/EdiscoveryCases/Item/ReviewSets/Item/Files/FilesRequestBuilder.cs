@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public FilesRequestBuilder WithUrl(string rawUrl) {
+            return new FilesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the ediscoveryFile objects and their properties.
         /// </summary>
         public class FilesRequestBuilderGetQueryParameters {

@@ -143,6 +143,13 @@ namespace Microsoft.Graph.Beta.Planner.Buckets {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public BucketsRequestBuilder WithUrl(string rawUrl) {
+            return new BucketsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of plannerbucket objects.
         /// </summary>
         public class BucketsRequestBuilderGetQueryParameters {

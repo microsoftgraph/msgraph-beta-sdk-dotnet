@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages.Item.HostedCont
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public HostedContentsRequestBuilder WithUrl(string rawUrl) {
+            return new HostedContentsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the list of chatMessageHostedContent objects from a message. This API only lists the hosted content objects. To get the content bytes, see get chatmessage hosted content
         /// </summary>
         public class HostedContentsRequestBuilderGetQueryParameters {

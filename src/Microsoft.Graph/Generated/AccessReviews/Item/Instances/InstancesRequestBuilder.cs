@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public InstancesRequestBuilder WithUrl(string rawUrl) {
+            return new InstancesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The collection of access reviews instances past, present and future, if this object is a recurring access review.
         /// </summary>
         public class InstancesRequestBuilderGetQueryParameters {

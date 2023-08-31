@@ -91,6 +91,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30")]
+        public AssignedUsersRequestBuilder WithUrl(string rawUrl) {
+            return new AssignedUsersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The assignment targeted users for the provisioning policy. This list of users is computed based on assignments, licenses, group memberships, and policies. This property is read-only. Supports$expand.
         /// </summary>
         public class AssignedUsersRequestBuilderGetQueryParameters {

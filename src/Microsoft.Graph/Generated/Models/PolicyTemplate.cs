@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PolicyTemplate : Entity, IParsable {
-        /// <summary>The multiTenantOrganizationIdentitySynchronization property</summary>
+        /// <summary>Defines an optional cross-tenant access policy template with user synchronization settings for a multi-tenant organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public MultiTenantOrganizationIdentitySyncPolicyTemplate? MultiTenantOrganizationIdentitySynchronization {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("multiTenantOrganizationIdentitySynchronization", value); }
         }
 #endif
-        /// <summary>The multiTenantOrganizationPartnerConfiguration property</summary>
+        /// <summary>Defines an optional cross-tenant access policy template with inbound and outbound partner configuration settings for a multi-tenant organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public MultiTenantOrganizationPartnerConfigurationTemplate? MultiTenantOrganizationPartnerConfiguration {

@@ -148,6 +148,13 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CustodiansRequestBuilder WithUrl(string rawUrl) {
+            return new CustodiansRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the custodian objects and their properties.
         /// </summary>
         public class CustodiansRequestBuilderGetQueryParameters {

@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Mes
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MentionsRequestBuilder WithUrl(string rawUrl) {
+            return new MentionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// A collection of mentions in the message, ordered by the createdDateTime from the newest to the oldest. By default, a GET /messages does not return this property unless you apply $expand on the property.
         /// </summary>
         public class MentionsRequestBuilderGetQueryParameters {

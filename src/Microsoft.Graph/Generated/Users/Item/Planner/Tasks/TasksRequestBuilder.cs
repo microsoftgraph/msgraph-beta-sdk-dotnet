@@ -142,6 +142,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Tasks {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TasksRequestBuilder WithUrl(string rawUrl) {
+            return new TasksRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of plannertask objects assigned to a User.
         /// </summary>
         public class TasksRequestBuilderGetQueryParameters {

@@ -99,6 +99,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RunsRequestBuilder WithUrl(string rawUrl) {
+            return new RunsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the run objects and their properties for a lifecycle workflow.
         /// </summary>
         public class RunsRequestBuilderGetQueryParameters {

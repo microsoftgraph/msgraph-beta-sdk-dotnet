@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicies {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RoleManagementPoliciesRequestBuilder WithUrl(string rawUrl) {
+            return new RoleManagementPoliciesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the details of the policies in PIM that can be applied to Azure AD roles or group membership or ownership. To retrieve policies that apply to Azure RBAC, use the Azure REST PIM API for role management policies.
         /// </summary>
         public class RoleManagementPoliciesRequestBuilderGetQueryParameters {

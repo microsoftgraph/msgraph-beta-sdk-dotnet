@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.TermStore.Groups.Item.Sets.Item.Terms.Item.Set {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SetRequestBuilder WithUrl(string rawUrl) {
+            return new SetRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The [set] in which the term is created.
         /// </summary>
         public class SetRequestBuilderGetQueryParameters {

@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleDefinitions {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RoleDefinitionsRequestBuilder WithUrl(string rawUrl) {
+            return new RoleDefinitionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- directory (Azure AD) - entitlement management (Azure AD)- Exchange Online
         /// </summary>
         public class RoleDefinitionsRequestBuilderGetQueryParameters {

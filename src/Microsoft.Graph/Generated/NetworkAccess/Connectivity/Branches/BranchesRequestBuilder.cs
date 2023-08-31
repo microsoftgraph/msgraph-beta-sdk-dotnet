@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public BranchesRequestBuilder WithUrl(string rawUrl) {
+            return new BranchesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of branches within a tenant connected to the Global Secure Access services.
         /// </summary>
         public class BranchesRequestBuilderGetQueryParameters {

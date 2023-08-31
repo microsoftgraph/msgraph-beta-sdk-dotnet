@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Classes.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public EducationClassItemRequestBuilder WithUrl(string rawUrl) {
+            return new EducationClassItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Classes to which the user belongs. Nullable.
         /// </summary>
         public class EducationClassItemRequestBuilderGetQueryParameters {

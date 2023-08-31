@@ -77,6 +77,13 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallReco
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilder WithUrl(string rawUrl) {
+            return new MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Invoke function getSmsLog
         /// </summary>
         public class MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParameters {

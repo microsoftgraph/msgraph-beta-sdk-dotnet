@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public FederationConfigurationRequestBuilder WithUrl(string rawUrl) {
+            return new FederationConfigurationRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Read the properties and relationships of an internalDomainFederation object.
         /// </summary>
         public class FederationConfigurationRequestBuilderGetQueryParameters {

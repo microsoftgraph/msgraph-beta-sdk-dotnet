@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SearchesRequestBuilder WithUrl(string rawUrl) {
+            return new SearchesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the list of ediscoverySearch resources from an eDiscoveryCase object.
         /// </summary>
         public class SearchesRequestBuilderGetQueryParameters {

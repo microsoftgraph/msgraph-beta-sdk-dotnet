@@ -124,6 +124,13 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.AdministrativeUnit {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AdministrativeUnitRequestBuilder WithUrl(string rawUrl) {
+            return new AdministrativeUnitRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the simple directory administrativeUnit that corresponds to this educationSchool.
         /// </summary>
         public class AdministrativeUnitRequestBuilderGetQueryParameters {

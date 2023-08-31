@@ -80,6 +80,13 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Primar
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public FilesFolderRequestBuilder WithUrl(string rawUrl) {
+            return new FilesFolderRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the metadata for the location where the files of a channel are stored.
         /// </summary>
         public class FilesFolderRequestBuilderGetQueryParameters {

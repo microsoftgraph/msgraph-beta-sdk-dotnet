@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DefinitionRequestBuilder WithUrl(string rawUrl) {
+            return new DefinitionRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// There is exactly one accessReviewScheduleDefinition associated with each instance. It is the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
         /// </summary>
         public class DefinitionRequestBuilderGetQueryParameters {

@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PermissionsRequestBuilder WithUrl(string rawUrl) {
+            return new PermissionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the permission resources from the permissions navigation property on a site.
         /// </summary>
         public class PermissionsRequestBuilderGetQueryParameters {

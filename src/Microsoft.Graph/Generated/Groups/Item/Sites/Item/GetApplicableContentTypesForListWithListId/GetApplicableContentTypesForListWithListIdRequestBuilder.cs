@@ -75,6 +75,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetApplicableContentTypesF
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GetApplicableContentTypesForListWithListIdRequestBuilder WithUrl(string rawUrl) {
+            return new GetApplicableContentTypesForListWithListIdRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Invoke function getApplicableContentTypesForList
         /// </summary>
         public class GetApplicableContentTypesForListWithListIdRequestBuilderGetQueryParameters {

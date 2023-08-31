@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.ThreatSubmission.EmailThreatSubmissionPolicies {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public EmailThreatSubmissionPoliciesRequestBuilder WithUrl(string rawUrl) {
+            return new EmailThreatSubmissionPoliciesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the emailThreatSubmissionPolicy objects and their properties.
         /// </summary>
         public class EmailThreatSubmissionPoliciesRequestBuilderGetQueryParameters {

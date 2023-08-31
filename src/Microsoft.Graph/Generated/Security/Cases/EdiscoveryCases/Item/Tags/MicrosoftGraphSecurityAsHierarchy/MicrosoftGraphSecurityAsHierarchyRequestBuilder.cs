@@ -73,6 +73,13 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Microsof
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MicrosoftGraphSecurityAsHierarchyRequestBuilder WithUrl(string rawUrl) {
+            return new MicrosoftGraphSecurityAsHierarchyRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Invoke function asHierarchy
         /// </summary>
         public class MicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters {

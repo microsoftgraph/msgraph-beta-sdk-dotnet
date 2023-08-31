@@ -80,6 +80,14 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.Policy.Labels.EvaluateAp
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15")]
+        public EvaluateApplicationRequestBuilder WithUrl(string rawUrl) {
+            return new EvaluateApplicationRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class EvaluateApplicationRequestBuilderPostRequestConfiguration {

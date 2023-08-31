@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.BookingCurrencies {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public BookingCurrenciesRequestBuilder WithUrl(string rawUrl) {
+            return new BookingCurrenciesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of bookingCurrency objects available to a Microsoft Bookings business.
         /// </summary>
         public class BookingCurrenciesRequestBuilderGetQueryParameters {

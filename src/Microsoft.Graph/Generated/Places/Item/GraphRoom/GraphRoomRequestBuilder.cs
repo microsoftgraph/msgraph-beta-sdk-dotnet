@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoom {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GraphRoomRequestBuilder WithUrl(string rawUrl) {
+            return new GraphRoomRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the item of type microsoft.graph.place as microsoft.graph.room
         /// </summary>
         public class GraphRoomRequestBuilderGetQueryParameters {

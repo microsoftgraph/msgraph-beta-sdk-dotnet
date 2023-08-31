@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Print.Shares.Item.Jobs.Item.Documents {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DocumentsRequestBuilder WithUrl(string rawUrl) {
+            return new DocumentsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get documents from print
         /// </summary>
         public class DocumentsRequestBuilderGetQueryParameters {

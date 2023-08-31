@@ -75,6 +75,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents.GetAuditActivityType
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GetAuditActivityTypesWithCategoryRequestBuilder WithUrl(string rawUrl) {
+            return new GetAuditActivityTypesWithCategoryRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Invoke function getAuditActivityTypes
         /// </summary>
         public class GetAuditActivityTypesWithCategoryRequestBuilderGetQueryParameters {

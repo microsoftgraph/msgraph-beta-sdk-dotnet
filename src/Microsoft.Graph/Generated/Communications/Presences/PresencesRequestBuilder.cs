@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Communications.Presences {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PresencesRequestBuilder WithUrl(string rawUrl) {
+            return new PresencesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a user&apos;s presence information.
         /// </summary>
         public class PresencesRequestBuilderGetQueryParameters {

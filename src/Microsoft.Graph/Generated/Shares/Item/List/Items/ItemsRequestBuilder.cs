@@ -147,6 +147,13 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Items {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ItemsRequestBuilder WithUrl(string rawUrl) {
+            return new ItemsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the collection of [items][item] in a [list][].
         /// </summary>
         public class ItemsRequestBuilderGetQueryParameters {

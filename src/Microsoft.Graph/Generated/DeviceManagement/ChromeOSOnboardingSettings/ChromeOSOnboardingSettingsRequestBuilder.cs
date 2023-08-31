@@ -146,6 +146,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ChromeOSOnboardingSettingsRequestBuilder WithUrl(string rawUrl) {
+            return new ChromeOSOnboardingSettingsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Collection of ChromeOSOnboardingSettings settings associated with account.
         /// </summary>
         public class ChromeOSOnboardingSettingsRequestBuilderGetQueryParameters {

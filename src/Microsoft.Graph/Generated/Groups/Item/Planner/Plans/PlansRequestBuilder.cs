@@ -142,6 +142,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Planner.Plans {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PlansRequestBuilder WithUrl(string rawUrl) {
+            return new PlansRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of plannerPlan objects owned by a group object.
         /// </summary>
         public class PlansRequestBuilderGetQueryParameters {

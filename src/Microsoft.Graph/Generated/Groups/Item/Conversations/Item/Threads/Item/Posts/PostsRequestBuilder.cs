@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PostsRequestBuilder WithUrl(string rawUrl) {
+            return new PostsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the posts of the specified thread. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation.
         /// </summary>
         public class PostsRequestBuilderGetQueryParameters {

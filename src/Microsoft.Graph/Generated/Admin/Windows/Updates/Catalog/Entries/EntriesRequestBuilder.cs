@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public EntriesRequestBuilder WithUrl(string rawUrl) {
+            return new EntriesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of catalogEntry resources from the catalog. Currently, this operation returns entries of the featureUpdateCatalogEntry or qualityUpdateCatalog types, inherited from catalogEntry. 
         /// </summary>
         public class EntriesRequestBuilderGetQueryParameters {

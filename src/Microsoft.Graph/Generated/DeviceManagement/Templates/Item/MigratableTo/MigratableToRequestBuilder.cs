@@ -141,6 +141,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MigratableToRequestBuilder WithUrl(string rawUrl) {
+            return new MigratableToRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Collection of templates this template can migrate to
         /// </summary>
         public class MigratableToRequestBuilderGetQueryParameters {

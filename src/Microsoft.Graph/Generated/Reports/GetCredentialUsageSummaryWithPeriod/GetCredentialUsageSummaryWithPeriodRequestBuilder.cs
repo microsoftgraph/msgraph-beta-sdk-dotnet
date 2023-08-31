@@ -75,6 +75,13 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUsageSummaryWithPeriod {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GetCredentialUsageSummaryWithPeriodRequestBuilder WithUrl(string rawUrl) {
+            return new GetCredentialUsageSummaryWithPeriodRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Invoke function getCredentialUsageSummary
         /// </summary>
         public class GetCredentialUsageSummaryWithPeriodRequestBuilderGetQueryParameters {

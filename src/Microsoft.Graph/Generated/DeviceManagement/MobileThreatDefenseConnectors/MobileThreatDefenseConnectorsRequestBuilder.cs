@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MobileThreatDefenseConnectorsRequestBuilder WithUrl(string rawUrl) {
+            return new MobileThreatDefenseConnectorsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The list of Mobile threat Defense connectors configured by the tenant.
         /// </summary>
         public class MobileThreatDefenseConnectorsRequestBuilderGetQueryParameters {

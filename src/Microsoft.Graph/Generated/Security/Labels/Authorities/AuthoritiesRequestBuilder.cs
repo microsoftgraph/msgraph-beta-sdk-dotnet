@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AuthoritiesRequestBuilder WithUrl(string rawUrl) {
+            return new AuthoritiesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the authorityTemplate objects and their properties.
         /// </summary>
         public class AuthoritiesRequestBuilderGetQueryParameters {

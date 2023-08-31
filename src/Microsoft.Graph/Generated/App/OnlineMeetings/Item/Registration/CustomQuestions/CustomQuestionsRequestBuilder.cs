@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration.CustomQuesti
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CustomQuestionsRequestBuilder WithUrl(string rawUrl) {
+            return new CustomQuestionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
         /// </summary>
         public class CustomQuestionsRequestBuilderGetQueryParameters {

@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.SwapShiftsChangeRequest
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SwapShiftsChangeRequestsRequestBuilder WithUrl(string rawUrl) {
+            return new SwapShiftsChangeRequestsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of swapShiftsChangeRequest objects in a team.
         /// </summary>
         public class SwapShiftsChangeRequestsRequestBuilderGetQueryParameters {

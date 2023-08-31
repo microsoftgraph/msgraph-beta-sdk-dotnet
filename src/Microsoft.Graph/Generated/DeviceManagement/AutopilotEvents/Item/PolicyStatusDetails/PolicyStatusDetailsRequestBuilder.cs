@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatu
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PolicyStatusDetailsRequestBuilder WithUrl(string rawUrl) {
+            return new PolicyStatusDetailsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Policy and application status details for this device.
         /// </summary>
         public class PolicyStatusDetailsRequestBuilderGetQueryParameters {

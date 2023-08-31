@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.Descriptors.
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CategoryTemplateRequestBuilder WithUrl(string rawUrl) {
+            return new CategoryTemplateRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Specifies a group of similar types of content in a particular department.
         /// </summary>
         public class CategoryTemplateRequestBuilderGetQueryParameters {

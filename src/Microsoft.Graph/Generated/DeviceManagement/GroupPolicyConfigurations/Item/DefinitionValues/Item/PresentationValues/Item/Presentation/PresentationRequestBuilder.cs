@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.D
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PresentationRequestBuilder WithUrl(string rawUrl) {
+            return new PresentationRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The group policy presentation associated with the presentation value.
         /// </summary>
         public class PresentationRequestBuilderGetQueryParameters {

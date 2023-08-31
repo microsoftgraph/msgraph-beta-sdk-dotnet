@@ -173,6 +173,13 @@ namespace Microsoft.Graph.Beta.Admin {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AdminRequestBuilder WithUrl(string rawUrl) {
+            return new AdminRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get admin
         /// </summary>
         public class AdminRequestBuilderGetQueryParameters {

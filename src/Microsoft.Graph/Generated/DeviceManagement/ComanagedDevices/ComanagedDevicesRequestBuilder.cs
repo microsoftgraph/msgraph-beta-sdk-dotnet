@@ -175,6 +175,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ComanagedDevicesRequestBuilder WithUrl(string rawUrl) {
+            return new ComanagedDevicesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The list of co-managed devices report
         /// </summary>
         public class ComanagedDevicesRequestBuilderGetQueryParameters {

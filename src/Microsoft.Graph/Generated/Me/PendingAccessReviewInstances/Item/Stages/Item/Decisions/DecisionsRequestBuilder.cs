@@ -151,6 +151,13 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stages.Item.
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DecisionsRequestBuilder WithUrl(string rawUrl) {
+            return new DecisionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object.
         /// </summary>
         public class DecisionsRequestBuilderGetQueryParameters {

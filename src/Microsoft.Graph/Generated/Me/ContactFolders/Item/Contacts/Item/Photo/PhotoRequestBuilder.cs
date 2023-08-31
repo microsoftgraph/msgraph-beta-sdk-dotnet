@@ -128,6 +128,13 @@ namespace Microsoft.Graph.Beta.Me.ContactFolders.Item.Contacts.Item.Photo {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PhotoRequestBuilder WithUrl(string rawUrl) {
+            return new PhotoRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Optional contact picture. You can get or set a photo for a contact.
         /// </summary>
         public class PhotoRequestBuilderGetQueryParameters {

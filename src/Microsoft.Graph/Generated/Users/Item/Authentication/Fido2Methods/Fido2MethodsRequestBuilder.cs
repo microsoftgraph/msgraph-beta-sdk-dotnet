@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Fido2Methods {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public Fido2MethodsRequestBuilder WithUrl(string rawUrl) {
+            return new Fido2MethodsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of a user&apos;s FIDO2 Security Key Authentication Method objects and their properties.
         /// </summary>
         public class Fido2MethodsRequestBuilderGetQueryParameters {

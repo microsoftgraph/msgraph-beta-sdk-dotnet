@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MicrosoftTunnelServerLogCollectionResponsesRequestBuilder WithUrl(string rawUrl) {
+            return new MicrosoftTunnelServerLogCollectionResponsesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.
         /// </summary>
         public class MicrosoftTunnelServerLogCollectionResponsesRequestBuilderGetQueryParameters {

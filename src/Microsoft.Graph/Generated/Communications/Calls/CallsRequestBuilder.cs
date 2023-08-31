@@ -142,6 +142,13 @@ namespace Microsoft.Graph.Beta.Communications.Calls {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CallsRequestBuilder WithUrl(string rawUrl) {
+            return new CallsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the properties and relationships of a call object.
         /// </summary>
         public class CallsRequestBuilderGetQueryParameters {

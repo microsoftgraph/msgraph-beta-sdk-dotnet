@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.Micros
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MicrosoftTunnelServersRequestBuilder WithUrl(string rawUrl) {
+            return new MicrosoftTunnelServersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite
         /// </summary>
         public class MicrosoftTunnelServersRequestBuilderGetQueryParameters {

@@ -145,6 +145,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public UserExperienceAnalyticsResourcePerformanceRequestBuilder WithUrl(string rawUrl) {
+            return new UserExperienceAnalyticsResourcePerformanceRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// User experience analytics resource performance
         /// </summary>
         public class UserExperienceAnalyticsResourcePerformanceRequestBuilderGetQueryParameters {

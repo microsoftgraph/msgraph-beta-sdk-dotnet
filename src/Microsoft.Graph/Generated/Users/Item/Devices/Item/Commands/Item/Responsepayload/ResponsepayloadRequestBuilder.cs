@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.Commands.Item.Responsepay
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ResponsepayloadRequestBuilder WithUrl(string rawUrl) {
+            return new ResponsepayloadRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get responsepayload from users
         /// </summary>
         public class ResponsepayloadRequestBuilderGetQueryParameters {

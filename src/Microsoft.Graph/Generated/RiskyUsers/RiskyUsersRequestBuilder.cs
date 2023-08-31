@@ -147,6 +147,13 @@ namespace Microsoft.Graph.Beta.RiskyUsers {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RiskyUsersRequestBuilder WithUrl(string rawUrl) {
+            return new RiskyUsersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the properties and relationships of a collection of riskyUser objects.
         /// </summary>
         public class RiskyUsersRequestBuilderGetQueryParameters {

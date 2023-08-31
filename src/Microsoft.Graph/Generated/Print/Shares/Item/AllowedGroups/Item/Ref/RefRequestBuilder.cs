@@ -73,6 +73,13 @@ namespace Microsoft.Graph.Beta.Print.Shares.Item.AllowedGroups.Item.Ref {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RefRequestBuilder WithUrl(string rawUrl) {
+            return new RefRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Revoke the specified group&apos;s access to submit print jobs to the associated printerShare.
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters {

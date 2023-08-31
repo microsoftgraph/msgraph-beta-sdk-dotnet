@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.DispositionR
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DispositionReviewStagesRequestBuilder WithUrl(string rawUrl) {
+            return new DispositionReviewStagesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// When action at the end of retention is chosen as &apos;dispositionReview&apos;, dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
         /// </summary>
         public class DispositionReviewStagesRequestBuilderGetQueryParameters {

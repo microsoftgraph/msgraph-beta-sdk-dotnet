@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.HistoryDefinitio
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public InstancesRequestBuilder WithUrl(string rawUrl) {
+            return new InstancesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the instances of an access review history definition created in the last 30 days.
         /// </summary>
         public class InstancesRequestBuilderGetQueryParameters {

@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Domains.Item.ServiceConfigurationRecords {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ServiceConfigurationRecordsRequestBuilder WithUrl(string rawUrl) {
+            return new ServiceConfigurationRecordsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieves a list of domainDnsRecord objects needed to enable services for the domain. Use the returned list to add records to the zone file of the domain. This can be done through the domain registrar or DNS server configuration.
         /// </summary>
         public class ServiceConfigurationRecordsRequestBuilderGetQueryParameters {

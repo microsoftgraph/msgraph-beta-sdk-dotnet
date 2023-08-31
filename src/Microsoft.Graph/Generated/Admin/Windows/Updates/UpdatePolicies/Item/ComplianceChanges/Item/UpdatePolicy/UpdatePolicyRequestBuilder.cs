@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Complia
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public UpdatePolicyRequestBuilder WithUrl(string rawUrl) {
+            return new UpdatePolicyRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The policy this compliance change is a member of.
         /// </summary>
         public class UpdatePolicyRequestBuilderGetQueryParameters {

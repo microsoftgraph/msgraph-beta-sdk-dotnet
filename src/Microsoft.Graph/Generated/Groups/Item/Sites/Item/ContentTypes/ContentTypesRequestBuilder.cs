@@ -153,6 +153,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ContentTypesRequestBuilder WithUrl(string rawUrl) {
+            return new ContentTypesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the collection of [contentType][contentType] resources in a [site][].
         /// </summary>
         public class ContentTypesRequestBuilderGetQueryParameters {

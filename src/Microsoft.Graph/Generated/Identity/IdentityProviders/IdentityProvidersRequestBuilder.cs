@@ -143,6 +143,13 @@ namespace Microsoft.Graph.Beta.Identity.IdentityProviders {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public IdentityProvidersRequestBuilder WithUrl(string rawUrl) {
+            return new IdentityProvidersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a collection of identity provider resources that are configured for a tenant, and that are derived from identityProviderBase. For an Azure AD tenant, the providers can be socialIdentityProviders or builtinIdentityProviders objects. For an Azure AD B2C, the providers can be socialIdentityProvider, openIdConnectIdentityProvider, or appleManagedIdentityProvider objects.
         /// </summary>
         public class IdentityProvidersRequestBuilderGetQueryParameters {

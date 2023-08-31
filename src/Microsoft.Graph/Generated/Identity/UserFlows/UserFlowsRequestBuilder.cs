@@ -144,6 +144,14 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15")]
+        public UserFlowsRequestBuilder WithUrl(string rawUrl) {
+            return new UserFlowsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of userflows.
         /// </summary>
         public class UserFlowsRequestBuilderGetQueryParameters {

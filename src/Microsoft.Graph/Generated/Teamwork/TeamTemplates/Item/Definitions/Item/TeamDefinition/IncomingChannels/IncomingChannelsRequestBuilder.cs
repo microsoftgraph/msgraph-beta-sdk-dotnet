@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public IncomingChannelsRequestBuilder WithUrl(string rawUrl) {
+            return new IncomingChannelsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the list of incoming channels (channels shared with a team).
         /// </summary>
         public class IncomingChannelsRequestBuilderGetQueryParameters {

@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RoleManagementPolicyAssignmentsRequestBuilder WithUrl(string rawUrl) {
+            return new RoleManagementPolicyAssignmentsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the details of all role management policy assignments made in PIM for Azure AD roles and PIM for groups.
         /// </summary>
         public class RoleManagementPolicyAssignmentsRequestBuilderGetQueryParameters {

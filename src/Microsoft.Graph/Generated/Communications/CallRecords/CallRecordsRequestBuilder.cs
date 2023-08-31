@@ -191,6 +191,13 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CallRecordsRequestBuilder WithUrl(string rawUrl) {
+            return new CallRecordsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord: You can use the $expand query parameter to optionally include session and segment details, as shown in the Get full details example. When you expand session details, the maximum page size is 60 sessions.
         /// </summary>
         public class CallRecordsRequestBuilderGetQueryParameters {

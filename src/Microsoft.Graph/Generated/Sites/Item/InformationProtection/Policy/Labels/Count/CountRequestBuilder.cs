@@ -75,6 +75,14 @@ namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.Co
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15")]
+        public CountRequestBuilder WithUrl(string rawUrl) {
+            return new CountRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the number of the resource
         /// </summary>
         public class CountRequestBuilderGetQueryParameters {

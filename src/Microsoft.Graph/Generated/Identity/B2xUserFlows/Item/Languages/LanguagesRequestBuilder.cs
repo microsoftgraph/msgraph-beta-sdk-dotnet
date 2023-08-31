@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.Languages {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public LanguagesRequestBuilder WithUrl(string rawUrl) {
+            return new LanguagesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of languages supported for customization in a B2X user flow.
         /// </summary>
         public class LanguagesRequestBuilderGetQueryParameters {

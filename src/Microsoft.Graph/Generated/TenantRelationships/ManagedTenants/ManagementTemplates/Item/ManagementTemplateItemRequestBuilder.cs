@@ -177,6 +177,13 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ManagementTemplateItemRequestBuilder WithUrl(string rawUrl) {
+            return new ManagementTemplateItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class ManagementTemplateItemRequestBuilderDeleteRequestConfiguration {

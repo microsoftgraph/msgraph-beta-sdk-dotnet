@@ -124,6 +124,13 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners.Ref {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RefRequestBuilder WithUrl(string rawUrl) {
+            return new RefRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {

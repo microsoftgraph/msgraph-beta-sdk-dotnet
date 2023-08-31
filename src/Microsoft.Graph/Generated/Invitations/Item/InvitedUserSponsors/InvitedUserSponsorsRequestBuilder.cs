@@ -87,6 +87,13 @@ namespace Microsoft.Graph.Beta.Invitations.Item.InvitedUserSponsors {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public InvitedUserSponsorsRequestBuilder WithUrl(string rawUrl) {
+            return new InvitedUserSponsorsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The users or groups who are sponsors of the invited user. Sponsors are users and groups that are responsible for guest users&apos; privileges in the tenant and for keeping the guest users&apos; information and access up to date.
         /// </summary>
         public class InvitedUserSponsorsRequestBuilderGetQueryParameters {

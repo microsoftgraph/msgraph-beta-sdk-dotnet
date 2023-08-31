@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Print.Services {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ServicesRequestBuilder WithUrl(string rawUrl) {
+            return new ServicesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of printService objects that represent the services available to your tenant.
         /// </summary>
         public class ServicesRequestBuilderGetQueryParameters {

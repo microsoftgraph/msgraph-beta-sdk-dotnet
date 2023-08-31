@@ -81,6 +81,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCl
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api. as of 2023-05/bulkReprovisionCloudPc on 2023-05-24 and will be removed 2023-09-24")]
+        public BulkReprovisionCloudPcRequestBuilder WithUrl(string rawUrl) {
+            return new BulkReprovisionCloudPcRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration {

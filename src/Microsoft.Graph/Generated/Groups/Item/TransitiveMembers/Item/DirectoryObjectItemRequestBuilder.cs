@@ -104,6 +104,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.TransitiveMembers.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DirectoryObjectItemRequestBuilder WithUrl(string rawUrl) {
+            return new DirectoryObjectItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The direct and transitive members of a group. Nullable.
         /// </summary>
         public class DirectoryObjectItemRequestBuilderGetQueryParameters {

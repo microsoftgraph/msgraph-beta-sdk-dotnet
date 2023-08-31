@@ -73,6 +73,13 @@ namespace Microsoft.Graph.Beta.Applications.Item.AppManagementPolicies.Item.Ref 
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RefRequestBuilder WithUrl(string rawUrl) {
+            return new RefRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Remove an appManagementPolicy policy object from an application or service principal object. When you remove the appManagementPolicy, the application or service principal adopts the tenant-wide tenantAppManagementPolicy setting. 
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters {

@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DeploymentsRequestBuilder WithUrl(string rawUrl) {
+            return new DeploymentsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of deployment objects and their properties.
         /// </summary>
         public class DeploymentsRequestBuilderGetQueryParameters {

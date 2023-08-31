@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceConfigurationStates 
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DeviceConfigurationStatesRequestBuilder WithUrl(string rawUrl) {
+            return new DeviceConfigurationStatesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Device configuration states for this device.
         /// </summary>
         public class DeviceConfigurationStatesRequestBuilderGetQueryParameters {

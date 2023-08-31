@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.ProgramControls {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ProgramControlsRequestBuilder WithUrl(string rawUrl) {
+            return new ProgramControlsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// In the Azure AD access reviews feature, list all the programControl objects, across all programs in the tenant.
         /// </summary>
         public class ProgramControlsRequestBuilderGetQueryParameters {

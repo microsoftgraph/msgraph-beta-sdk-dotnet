@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAu
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder WithUrl(string rawUrl) {
+            return new PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of a user&apos;s Microsoft Authenticator Passwordless Phone Sign-in method objects and their properties.
         /// </summary>
         public class PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters {

@@ -93,6 +93,13 @@ namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Cal
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CalendarViewRequestBuilder WithUrl(string rawUrl) {
+            return new CalendarViewRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,from a user&apos;s default calendar (../me/calendarView) or some other calendar of the user&apos;s.
         /// </summary>
         public class CalendarViewRequestBuilderGetQueryParameters {

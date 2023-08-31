@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Domains.Item.DomainNameReferences {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DomainNameReferencesRequestBuilder WithUrl(string rawUrl) {
+            return new DomainNameReferencesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of directoryObject with a reference to the domain. The returned list will contain all directory objects that have a dependency on the domain.
         /// </summary>
         public class DomainNameReferencesRequestBuilderGetQueryParameters {

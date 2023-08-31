@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Me.Activities.Item.HistoryItems {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public HistoryItemsRequestBuilder WithUrl(string rawUrl) {
+            return new HistoryItemsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Optional. NavigationProperty/Containment; navigation property to the activity&apos;s historyItems.
         /// </summary>
         public class HistoryItemsRequestBuilderGetQueryParameters {

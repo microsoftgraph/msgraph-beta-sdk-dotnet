@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Operations {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public OperationsRequestBuilder WithUrl(string rawUrl) {
+            return new OperationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of long-running file validation operations and their statuses.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters {

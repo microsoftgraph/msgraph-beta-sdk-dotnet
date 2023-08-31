@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AccessPackageResourceEnvironmentRequestBuilder WithUrl(string rawUrl) {
+            return new AccessPackageResourceEnvironmentRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment&apos;s originId.Supports $expand.
         /// </summary>
         public class AccessPackageResourceEnvironmentRequestBuilderGetQueryParameters {

@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Security.Triggers.RetentionEvents.Item.RetentionE
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RetentionEventTypeRequestBuilder WithUrl(string rawUrl) {
+            return new RetentionEventTypeRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Specifies the event that will start the retention period for labels that use this event type when an event is created.
         /// </summary>
         public class RetentionEventTypeRequestBuilderGetQueryParameters {

@@ -143,6 +143,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DeviceImagesRequestBuilder WithUrl(string rawUrl) {
+            return new DeviceImagesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC.
         /// </summary>
         public class DeviceImagesRequestBuilderGetQueryParameters {

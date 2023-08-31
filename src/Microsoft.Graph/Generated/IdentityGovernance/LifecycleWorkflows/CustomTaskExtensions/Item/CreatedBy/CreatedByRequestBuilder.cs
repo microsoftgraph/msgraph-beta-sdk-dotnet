@@ -79,6 +79,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskE
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CreatedByRequestBuilder WithUrl(string rawUrl) {
+            return new CreatedByRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The unique identifier of the Azure AD user that created the custom task extension.Supports $filter(eq, ne) and $expand.
         /// </summary>
         public class CreatedByRequestBuilderGetQueryParameters {

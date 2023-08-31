@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Notebooks.Item.Sec
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PagesRequestBuilder WithUrl(string rawUrl) {
+            return new PagesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The collection of pages in the section.  Read-only. Nullable.
         /// </summary>
         public class PagesRequestBuilderGetQueryParameters {

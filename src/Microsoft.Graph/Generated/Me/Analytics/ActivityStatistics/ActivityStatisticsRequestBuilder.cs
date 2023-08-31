@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Me.Analytics.ActivityStatistics {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ActivityStatisticsRequestBuilder WithUrl(string rawUrl) {
+            return new ActivityStatisticsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
         /// </summary>
         public class ActivityStatisticsRequestBuilderGetQueryParameters {

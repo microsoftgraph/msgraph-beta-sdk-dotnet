@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Teams.Item.Template {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TemplateRequestBuilder WithUrl(string rawUrl) {
+            return new TemplateRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The template this team was created from. See available templates.
         /// </summary>
         public class TemplateRequestBuilderGetQueryParameters {

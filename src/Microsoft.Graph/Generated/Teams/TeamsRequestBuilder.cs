@@ -148,6 +148,13 @@ namespace Microsoft.Graph.Beta.Teams {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TeamsRequestBuilder WithUrl(string rawUrl) {
+            return new TeamsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List all teams in an organization.
         /// </summary>
         public class TeamsRequestBuilderGetQueryParameters {

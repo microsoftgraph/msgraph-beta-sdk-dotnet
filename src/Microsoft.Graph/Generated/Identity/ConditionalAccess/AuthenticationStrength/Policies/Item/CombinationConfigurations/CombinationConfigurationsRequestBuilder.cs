@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CombinationConfigurationsRequestBuilder WithUrl(string rawUrl) {
+            return new CombinationConfigurationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the authenticationCombinationConfiguration objects for an authentication strength policy. authenticationCombinationConfiguration represents requirements placed on specific authentication method combinations that require specified variants of those authentication methods to be used when authenticating. Currently, only fido2combinationConfigurations objects are supported. authenticationCombinationConfiguration objects are supported only for custom authentication strengths.
         /// </summary>
         public class CombinationConfigurationsRequestBuilderGetQueryParameters {

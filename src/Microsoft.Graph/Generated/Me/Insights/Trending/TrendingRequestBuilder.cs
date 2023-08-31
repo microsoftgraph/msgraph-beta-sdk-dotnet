@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Me.Insights.Trending {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TrendingRequestBuilder WithUrl(string rawUrl) {
+            return new TrendingRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Access this property from the derived type itemInsights.
         /// </summary>
         public class TrendingRequestBuilderGetQueryParameters {

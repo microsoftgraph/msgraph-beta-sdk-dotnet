@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Permissions {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PermissionsRequestBuilder WithUrl(string rawUrl) {
+            return new PermissionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List the effective sharing permissions on a driveItem.
         /// </summary>
         public class PermissionsRequestBuilderGetQueryParameters {

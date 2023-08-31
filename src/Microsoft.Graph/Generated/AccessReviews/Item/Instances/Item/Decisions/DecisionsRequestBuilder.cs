@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.Decisions {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DecisionsRequestBuilder WithUrl(string rawUrl) {
+            return new DecisionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// In the Azure AD access reviews feature, retrieve the decisions of an accessReview object. Note that a recurring access review will not have a decisions relationship.  Instead, the caller must navigate the instance relationship to find an accessReview object for a current or past instance of the access review.
         /// </summary>
         public class DecisionsRequestBuilderGetQueryParameters {

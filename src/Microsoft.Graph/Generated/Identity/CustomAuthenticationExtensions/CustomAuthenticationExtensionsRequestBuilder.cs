@@ -143,6 +143,13 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CustomAuthenticationExtensionsRequestBuilder WithUrl(string rawUrl) {
+            return new CustomAuthenticationExtensionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the customAuthenticationExtension objects and their properties. Currently, only onTokenIssuanceStartCustomExtension objects are returned.
         /// </summary>
         public class CustomAuthenticationExtensionsRequestBuilderGetQueryParameters {

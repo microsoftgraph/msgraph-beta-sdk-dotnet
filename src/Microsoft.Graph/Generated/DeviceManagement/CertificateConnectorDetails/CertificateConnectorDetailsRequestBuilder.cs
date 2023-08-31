@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CertificateConnectorDetailsRequestBuilder WithUrl(string rawUrl) {
+            return new CertificateConnectorDetailsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.
         /// </summary>
         public class CertificateConnectorDetailsRequestBuilderGetQueryParameters {

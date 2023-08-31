@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class MultiTenantOrganization : Entity, IParsable {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Date when multi-tenant organization was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>Description of the multi-tenant organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>Display name of the multi-tenant organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The joinRequest property</summary>
+        /// <summary>Defines the status of a tenant joining a multi-tenant organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public MultiTenantOrganizationJoinRequestRecord? JoinRequest {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("joinRequest", value); }
         }
 #endif
-        /// <summary>The state property</summary>
+        /// <summary>State of the multi-tenant organization. The possible values are: active, inactive, unknownFutureValue. active indicates the multi-tenant organization is created. inactive indicates the multi-tenant organization is not created. Read-only.</summary>
         public MultiTenantOrganizationState? State {
             get { return BackingStore?.Get<MultiTenantOrganizationState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
-        /// <summary>The tenants property</summary>
+        /// <summary>Defines tenants added to a multi-tenant organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<MultiTenantOrganizationMember>? Tenants {

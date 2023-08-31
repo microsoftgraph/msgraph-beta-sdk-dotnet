@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.External.Connections {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ConnectionsRequestBuilder WithUrl(string rawUrl) {
+            return new ConnectionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of externalConnections.
         /// </summary>
         public class ConnectionsRequestBuilderGetQueryParameters {

@@ -84,6 +84,13 @@ namespace Microsoft.Graph.Beta.Contacts.Item.DirectReports.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DirectoryObjectItemRequestBuilder WithUrl(string rawUrl) {
+            return new DirectoryObjectItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The contact&apos;s direct reports. (The users and contacts that have their manager property set to this contact.) Read-only. Nullable. Supports $expand.
         /// </summary>
         public class DirectoryObjectItemRequestBuilderGetQueryParameters {

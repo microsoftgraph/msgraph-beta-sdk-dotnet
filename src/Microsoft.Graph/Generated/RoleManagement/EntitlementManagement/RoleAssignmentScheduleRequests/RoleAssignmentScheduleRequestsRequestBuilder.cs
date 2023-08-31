@@ -147,6 +147,13 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignme
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RoleAssignmentScheduleRequestsRequestBuilder WithUrl(string rawUrl) {
+            return new RoleAssignmentScheduleRequestsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the requests for active role assignments to principals. The active assignments include those made through assignments and activation requests, and directly through the role assignments API. The role assignments can be permanently active with or without an expiry date, or temporarily active after user activation of eligible assignments.
         /// </summary>
         public class RoleAssignmentScheduleRequestsRequestBuilderGetQueryParameters {

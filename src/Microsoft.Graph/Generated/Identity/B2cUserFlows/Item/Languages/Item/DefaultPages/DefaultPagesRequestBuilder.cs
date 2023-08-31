@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item.Default
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DefaultPagesRequestBuilder WithUrl(string rawUrl) {
+            return new DefaultPagesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow.
         /// </summary>
         public class DefaultPagesRequestBuilderGetQueryParameters {

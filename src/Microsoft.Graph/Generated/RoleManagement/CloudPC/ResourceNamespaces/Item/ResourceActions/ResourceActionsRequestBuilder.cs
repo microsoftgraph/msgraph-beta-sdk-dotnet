@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.ResourceNamespaces.Item.Re
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ResourceActionsRequestBuilder WithUrl(string rawUrl) {
+            return new ResourceActionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the unifiedRbacResourceAction objects and their properties.
         /// </summary>
         public class ResourceActionsRequestBuilderGetQueryParameters {

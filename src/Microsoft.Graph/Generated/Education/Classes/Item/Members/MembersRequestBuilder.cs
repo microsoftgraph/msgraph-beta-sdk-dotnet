@@ -93,6 +93,13 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MembersRequestBuilder WithUrl(string rawUrl) {
+            return new MembersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieves the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
         /// </summary>
         public class MembersRequestBuilderGetQueryParameters {

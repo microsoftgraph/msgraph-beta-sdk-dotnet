@@ -74,6 +74,14 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ReprovisionCloudPc
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The reprovisionCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use reprovision instead as of 2023-07/reprovisionCloudPc on 2023-07-17 and will be removed 2023-09-30")]
+        public ReprovisionCloudPcRequestBuilder WithUrl(string rawUrl) {
+            return new ReprovisionCloudPcRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class ReprovisionCloudPcRequestBuilderPostRequestConfiguration {

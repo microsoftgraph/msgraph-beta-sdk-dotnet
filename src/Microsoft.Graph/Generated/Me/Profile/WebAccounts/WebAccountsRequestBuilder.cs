@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Me.Profile.WebAccounts {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public WebAccountsRequestBuilder WithUrl(string rawUrl) {
+            return new WebAccountsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of webAccounts objects from the user&apos;s profile.
         /// </summary>
         public class WebAccountsRequestBuilderGetQueryParameters {

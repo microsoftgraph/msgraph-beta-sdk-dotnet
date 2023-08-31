@@ -186,6 +186,13 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sess
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ExactMatchSessionItemRequestBuilder WithUrl(string rawUrl) {
+            return new ExactMatchSessionItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class ExactMatchSessionItemRequestBuilderDeleteRequestConfiguration {

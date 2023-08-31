@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item.SharedWi
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ConversationMemberItemRequestBuilder WithUrl(string rawUrl) {
+            return new ConversationMemberItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// A collection of team members who have access to the shared channel.
         /// </summary>
         public class ConversationMemberItemRequestBuilderGetQueryParameters {

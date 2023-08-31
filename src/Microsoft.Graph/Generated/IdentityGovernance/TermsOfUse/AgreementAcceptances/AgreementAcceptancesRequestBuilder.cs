@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.AgreementAcceptance
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AgreementAcceptancesRequestBuilder WithUrl(string rawUrl) {
+            return new AgreementAcceptancesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Represents the current status of a user&apos;s response to a company&apos;s customizable terms of use agreement.
         /// </summary>
         public class AgreementAcceptancesRequestBuilderGetQueryParameters {

@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Security.ProviderTenantSettings {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ProviderTenantSettingsRequestBuilder WithUrl(string rawUrl) {
+            return new ProviderTenantSettingsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get providerTenantSettings from security
         /// </summary>
         public class ProviderTenantSettingsRequestBuilderGetQueryParameters {

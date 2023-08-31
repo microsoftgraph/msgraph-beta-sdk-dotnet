@@ -143,6 +143,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Contacts {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ContactsRequestBuilder WithUrl(string rawUrl) {
+            return new ContactsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get contacts in the user&apos;s mailbox. There are two scenarios where an app can get contacts in another user&apos;s contact folder:
         /// </summary>
         public class ContactsRequestBuilderGetQueryParameters {

@@ -72,6 +72,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.CompleteMigration {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CompleteMigrationRequestBuilder WithUrl(string rawUrl) {
+            return new CompleteMigrationRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class CompleteMigrationRequestBuilderPostRequestConfiguration {

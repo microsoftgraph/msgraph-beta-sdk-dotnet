@@ -124,6 +124,13 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.Users.Ref {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RefRequestBuilder WithUrl(string rawUrl) {
+            return new RefRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of users at a school.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {

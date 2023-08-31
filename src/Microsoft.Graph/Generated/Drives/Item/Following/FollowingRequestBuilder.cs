@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Drives.Item.Following {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public FollowingRequestBuilder WithUrl(string rawUrl) {
+            return new FollowingRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List the items that have been followed by the signed in user.This collection includes items that are in the user&apos;s drive as well as items they have access to from other drives.
         /// </summary>
         public class FollowingRequestBuilderGetQueryParameters {

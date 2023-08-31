@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardi
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder WithUrl(string rawUrl) {
+            return new AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement
         /// </summary>
         public class AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetQueryParameters {

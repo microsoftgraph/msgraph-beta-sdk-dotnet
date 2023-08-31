@@ -73,6 +73,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Microsof
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder WithUrl(string rawUrl) {
+            return new MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Invoke function getPortalNotifications
         /// </summary>
         public class MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters {

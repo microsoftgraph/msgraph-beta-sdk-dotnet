@@ -75,6 +75,14 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove on 2023-02-01 and will be removed 2023-03-31")]
+        public CountRequestBuilder WithUrl(string rawUrl) {
+            return new CountRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the number of the resource
         /// </summary>
         public class CountRequestBuilderGetQueryParameters {

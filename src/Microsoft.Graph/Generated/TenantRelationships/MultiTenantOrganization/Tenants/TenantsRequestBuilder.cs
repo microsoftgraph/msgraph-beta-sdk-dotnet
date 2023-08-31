@@ -42,7 +42,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
         public TenantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/multiTenantOrganization/tenants{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get tenants from tenantRelationships
+        /// List the tenants and their properties in the multi-tenant organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganization-list-tenants?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +62,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
             return await RequestAdapter.SendAsync<MultiTenantOrganizationMemberCollectionResponse>(requestInfo, MultiTenantOrganizationMemberCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to tenants for tenantRelationships
+        /// Add a tenant to a multi-tenant organization. The administrator of an owner tenant has the permissions to add tenants to the multi-tenant organization. The added tenant is in the pending state until the administrator of the added tenant joins the multi-tenant organization by submitting a join request. Note that a tenant can be part of only one multi-tenant organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganization-post-tenants?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +84,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
             return await RequestAdapter.SendAsync<MultiTenantOrganizationMember>(requestInfo, MultiTenantOrganizationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get tenants from tenantRelationships
+        /// List the tenants and their properties in the multi-tenant organization.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +110,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to tenants for tenantRelationships
+        /// Add a tenant to a multi-tenant organization. The administrator of an owner tenant has the permissions to add tenants to the multi-tenant organization. The added tenant is in the pending state until the administrator of the added tenant joins the multi-tenant organization by submitting a join request. Note that a tenant can be part of only one multi-tenant organization.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +138,14 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
             return requestInfo;
         }
         /// <summary>
-        /// Get tenants from tenantRelationships
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TenantsRequestBuilder WithUrl(string rawUrl) {
+            return new TenantsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// List the tenants and their properties in the multi-tenant organization.
         /// </summary>
         public class TenantsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

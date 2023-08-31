@@ -141,6 +141,13 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.FederationConfigurations {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public FederationConfigurationsRequestBuilder WithUrl(string rawUrl) {
+            return new FederationConfigurationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.
         /// </summary>
         public class FederationConfigurationsRequestBuilderGetQueryParameters {

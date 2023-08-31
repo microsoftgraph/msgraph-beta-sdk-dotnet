@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TimesOffRequestBuilder WithUrl(string rawUrl) {
+            return new TimesOffRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the list of timeOff instances in a schedule.
         /// </summary>
         public class TimesOffRequestBuilderGetQueryParameters {

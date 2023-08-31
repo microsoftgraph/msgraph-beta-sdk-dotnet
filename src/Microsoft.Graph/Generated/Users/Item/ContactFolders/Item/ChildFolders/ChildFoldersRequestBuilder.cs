@@ -143,6 +143,13 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ChildFoldersRequestBuilder WithUrl(string rawUrl) {
+            return new ChildFoldersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a collection of child folders under the specified contact folder.
         /// </summary>
         public class ChildFoldersRequestBuilderGetQueryParameters {

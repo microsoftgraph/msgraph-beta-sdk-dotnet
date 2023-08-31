@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AppliedPoliciesRequestBuilder WithUrl(string rawUrl) {
+            return new AppliedPoliciesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Zero or more policys already applied on the registered app when it last synchronized with managment service.
         /// </summary>
         public class AppliedPoliciesRequestBuilderGetQueryParameters {

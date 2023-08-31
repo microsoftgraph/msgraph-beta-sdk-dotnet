@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Oauth2PermissionGrants.Ite
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public OAuth2PermissionGrantItemRequestBuilder WithUrl(string rawUrl) {
+            return new OAuth2PermissionGrantItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Delegated permission grants authorizing this service principal to access an API on behalf of a signed-in user. Read-only. Nullable.
         /// </summary>
         public class OAuth2PermissionGrantItemRequestBuilderGetQueryParameters {

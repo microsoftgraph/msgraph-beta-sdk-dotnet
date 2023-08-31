@@ -87,6 +87,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DrivesRequestBuilder WithUrl(string rawUrl) {
+            return new DrivesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The group&apos;s drives. Read-only.
         /// </summary>
         public class DrivesRequestBuilderGetQueryParameters {

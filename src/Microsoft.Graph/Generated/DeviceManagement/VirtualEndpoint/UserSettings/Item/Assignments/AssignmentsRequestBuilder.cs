@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AssignmentsRequestBuilder WithUrl(string rawUrl) {
+            return new AssignmentsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
         /// </summary>
         public class AssignmentsRequestBuilderGetQueryParameters {

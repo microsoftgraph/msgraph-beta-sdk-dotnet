@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.PinnedMessages {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PinnedMessagesRequestBuilder WithUrl(string rawUrl) {
+            return new PinnedMessagesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of pinnedChatMessages in a chat.
         /// </summary>
         public class PinnedMessagesRequestBuilderGetQueryParameters {

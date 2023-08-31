@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.FavoritePlans {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public FavoritePlansRequestBuilder WithUrl(string rawUrl) {
+            return new FavoritePlansRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of plannerPlans that are marked as favorite by a user. You can mark a plan as favorite by updating the plannerUser resource.
         /// </summary>
         public class FavoritePlansRequestBuilderGetQueryParameters {

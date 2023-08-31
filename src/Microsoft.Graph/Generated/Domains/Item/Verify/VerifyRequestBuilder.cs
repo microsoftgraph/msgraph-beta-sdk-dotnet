@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Domains.Item.Verify {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public VerifyRequestBuilder WithUrl(string rawUrl) {
+            return new VerifyRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class VerifyRequestBuilderPostRequestConfiguration {

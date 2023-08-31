@@ -79,6 +79,13 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.LastModifiedByUser {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public LastModifiedByUserRequestBuilder WithUrl(string rawUrl) {
+            return new LastModifiedByUserRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get lastModifiedByUser from sites
         /// </summary>
         public class LastModifiedByUserRequestBuilderGetQueryParameters {

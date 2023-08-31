@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.ThreatAssessment
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ResultsRequestBuilder WithUrl(string rawUrl) {
+            return new ResultsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.
         /// </summary>
         public class ResultsRequestBuilderGetQueryParameters {

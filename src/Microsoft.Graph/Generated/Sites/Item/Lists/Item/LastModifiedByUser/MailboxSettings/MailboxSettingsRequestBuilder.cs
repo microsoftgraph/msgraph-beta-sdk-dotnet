@@ -123,6 +123,13 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.LastModifiedByUser.MailboxS
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public MailboxSettingsRequestBuilder WithUrl(string rawUrl) {
+            return new MailboxSettingsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.
         /// </summary>
         public class MailboxSettingsRequestBuilderGetQueryParameters {

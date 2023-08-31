@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Me.People {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PeopleRequestBuilder WithUrl(string rawUrl) {
+            return new PeopleRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of person objects ordered by their relevance to the user, which is determined by the user&apos;s communication and collaboration patterns, and business relationships.
         /// </summary>
         public class PeopleRequestBuilderGetQueryParameters {

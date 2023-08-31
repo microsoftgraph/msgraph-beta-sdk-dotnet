@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DetectedApps.Item.ManagedDevices
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ManagedDeviceItemRequestBuilder WithUrl(string rawUrl) {
+            return new ManagedDeviceItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The devices that have the discovered application installed
         /// </summary>
         public class ManagedDeviceItemRequestBuilderGetQueryParameters {

@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SiteRequestBuilder WithUrl(string rawUrl) {
+            return new SiteRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The SharePoint site associated with the siteSource.
         /// </summary>
         public class SiteRequestBuilderGetQueryParameters {

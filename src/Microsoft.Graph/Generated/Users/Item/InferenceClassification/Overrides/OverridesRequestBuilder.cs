@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Users.Item.InferenceClassification.Overrides {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public OverridesRequestBuilder WithUrl(string rawUrl) {
+            return new OverridesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the Focused Inbox overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.
         /// </summary>
         public class OverridesRequestBuilderGetQueryParameters {

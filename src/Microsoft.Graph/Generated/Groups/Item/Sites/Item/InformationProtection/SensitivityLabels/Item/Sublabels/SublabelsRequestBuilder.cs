@@ -141,6 +141,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Sens
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SublabelsRequestBuilder WithUrl(string rawUrl) {
+            return new SublabelsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get sublabels from groups
         /// </summary>
         public class SublabelsRequestBuilderGetQueryParameters {

@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item.Paren
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ParentRequestBuilder WithUrl(string rawUrl) {
+            return new ParentRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The parent category
         /// </summary>
         public class ParentRequestBuilderGetQueryParameters {

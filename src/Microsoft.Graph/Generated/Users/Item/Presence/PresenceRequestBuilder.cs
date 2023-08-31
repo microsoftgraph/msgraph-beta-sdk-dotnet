@@ -73,8 +73,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a user&apos;s presence information.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0" />
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence {
             return requestInfo;
         }
         /// <summary>
-        /// Get a user&apos;s presence information.
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -192,6 +192,13 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PresenceRequestBuilder WithUrl(string rawUrl) {
+            return new PresenceRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class PresenceRequestBuilderDeleteRequestConfiguration {
@@ -208,7 +215,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence {
             }
         }
         /// <summary>
-        /// Get a user&apos;s presence information.
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
         /// </summary>
         public class PresenceRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

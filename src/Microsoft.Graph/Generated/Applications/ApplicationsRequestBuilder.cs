@@ -158,6 +158,13 @@ namespace Microsoft.Graph.Beta.Applications {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ApplicationsRequestBuilder WithUrl(string rawUrl) {
+            return new ApplicationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the list of applications in this organization.
         /// </summary>
         public class ApplicationsRequestBuilderGetQueryParameters {

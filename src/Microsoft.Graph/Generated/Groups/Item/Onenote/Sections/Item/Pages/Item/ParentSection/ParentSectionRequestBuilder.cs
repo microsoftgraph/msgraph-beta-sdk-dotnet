@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Sections.Item.Pages.Item.Pare
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ParentSectionRequestBuilder WithUrl(string rawUrl) {
+            return new ParentSectionRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The section that contains the page. Read-only.
         /// </summary>
         public class ParentSectionRequestBuilderGetQueryParameters {

@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AuthenticationMethodModesRequestBuilder WithUrl(string rawUrl) {
+            return new AuthenticationMethodModesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of all supported authentication methods, or all supported authentication method combinations as a list of authenticationMethodModes objects and their properties.
         /// </summary>
         public class AuthenticationMethodModesRequestBuilderGetQueryParameters {

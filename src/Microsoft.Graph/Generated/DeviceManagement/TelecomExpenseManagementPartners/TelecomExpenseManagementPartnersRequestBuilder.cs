@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TelecomExpenseManagementPartners
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TelecomExpenseManagementPartnersRequestBuilder WithUrl(string rawUrl) {
+            return new TelecomExpenseManagementPartnersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The telecom expense management partners.
         /// </summary>
         public class TelecomExpenseManagementPartnersRequestBuilderGetQueryParameters {

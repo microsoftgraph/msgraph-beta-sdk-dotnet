@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.InformationProtection.ThreatAssessmentRequests {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ThreatAssessmentRequestsRequestBuilder WithUrl(string rawUrl) {
+            return new ThreatAssessmentRequestsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of threatAssessmentRequest objects. A threat assessment request can be one of the following types:
         /// </summary>
         public class ThreatAssessmentRequestsRequestBuilderGetQueryParameters {

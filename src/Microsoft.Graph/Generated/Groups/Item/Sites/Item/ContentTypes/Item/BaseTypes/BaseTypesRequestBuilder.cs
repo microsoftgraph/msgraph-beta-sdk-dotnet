@@ -87,6 +87,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.ContentTypes.Item.BaseType
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public BaseTypesRequestBuilder WithUrl(string rawUrl) {
+            return new BaseTypesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The collection of content types that are ancestors of this content type.
         /// </summary>
         public class BaseTypesRequestBuilderGetQueryParameters {

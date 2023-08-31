@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ApplicationSignInDetailedSummaryRequestBuilder WithUrl(string rawUrl) {
+            return new ApplicationSignInDetailedSummaryRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the applicationSignInDetailedSummary objects.
         /// </summary>
         public class ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameters {

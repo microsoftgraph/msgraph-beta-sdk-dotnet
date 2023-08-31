@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OnPremisesSynchronization {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public OnPremisesSynchronizationRequestBuilder WithUrl(string rawUrl) {
+            return new OnPremisesSynchronizationRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Read the properties and relationships of an onPremisesDirectorySynchronization object.
         /// </summary>
         public class OnPremisesSynchronizationRequestBuilderGetQueryParameters {

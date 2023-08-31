@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Me.Profile.Publications {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PublicationsRequestBuilder WithUrl(string rawUrl) {
+            return new PublicationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of itemPublication objects from a user&apos;s profile.
         /// </summary>
         public class PublicationsRequestBuilderGetQueryParameters {

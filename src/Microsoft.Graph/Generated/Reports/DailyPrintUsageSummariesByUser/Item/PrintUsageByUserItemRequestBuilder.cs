@@ -172,6 +172,14 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByUser.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
+        public PrintUsageByUserItemRequestBuilder WithUrl(string rawUrl) {
+            return new PrintUsageByUserItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class PrintUsageByUserItemRequestBuilderDeleteRequestConfiguration {

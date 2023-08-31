@@ -39,8 +39,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item {
         public ConversationThreadItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/threads/{conversationThread%2Did}{?%24select}", rawUrl) {
         }
         /// <summary>
-        /// Delete conversationThread.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationthread-delete?view=graph-rest-1.0" />
+        /// Delete a thread object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-delete-thread?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,8 +59,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationthread-get?view=graph-rest-1.0" />
+        /// Get a thread object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-get-thread?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item {
             return await RequestAdapter.SendAsync<ConversationThread>(requestInfo, ConversationThread.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete conversationThread.
+        /// Delete a thread object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
+        /// Get a thread object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -179,6 +179,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ConversationThreadItemRequestBuilder WithUrl(string rawUrl) {
+            return new ConversationThreadItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         public class ConversationThreadItemRequestBuilderDeleteRequestConfiguration {
@@ -195,7 +202,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item {
             }
         }
         /// <summary>
-        /// Get a specific thread that belongs to a group. You can specify both the parent conversation and the thread, or, you can specify the thread without referencing the parent conversation. 
+        /// Get a thread object.
         /// </summary>
         public class ConversationThreadItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>

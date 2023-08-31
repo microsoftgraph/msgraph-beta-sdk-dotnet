@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.DomainDnsRecords {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public DomainDnsRecordsRequestBuilder WithUrl(string rawUrl) {
+            return new DomainDnsRecordsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get entities from domainDnsRecords
         /// </summary>
         public class DomainDnsRecordsRequestBuilderGetQueryParameters {

@@ -73,6 +73,13 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.ContentTypes.GetCompatibleH
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GetCompatibleHubContentTypesRequestBuilder WithUrl(string rawUrl) {
+            return new GetCompatibleHubContentTypesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Invoke function getCompatibleHubContentTypes
         /// </summary>
         public class GetCompatibleHubContentTypesRequestBuilderGetQueryParameters {

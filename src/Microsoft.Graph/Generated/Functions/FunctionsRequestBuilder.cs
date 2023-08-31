@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Functions {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public FunctionsRequestBuilder WithUrl(string rawUrl) {
+            return new FunctionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get entities from functions
         /// </summary>
         public class FunctionsRequestBuilderGetQueryParameters {

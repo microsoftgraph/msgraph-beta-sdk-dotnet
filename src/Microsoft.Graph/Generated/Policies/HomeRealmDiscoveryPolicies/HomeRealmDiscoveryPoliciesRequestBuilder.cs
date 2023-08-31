@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Policies.HomeRealmDiscoveryPolicies {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public HomeRealmDiscoveryPoliciesRequestBuilder WithUrl(string rawUrl) {
+            return new HomeRealmDiscoveryPoliciesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of homeRealmDiscoveryPolicy objects.
         /// </summary>
         public class HomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters {

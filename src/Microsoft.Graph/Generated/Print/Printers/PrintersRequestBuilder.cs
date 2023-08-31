@@ -142,6 +142,13 @@ namespace Microsoft.Graph.Beta.Print.Printers {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PrintersRequestBuilder WithUrl(string rawUrl) {
+            return new PrintersRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the list of printers that are registered in the tenant.
         /// </summary>
         public class PrintersRequestBuilderGetQueryParameters {

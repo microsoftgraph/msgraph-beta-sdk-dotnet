@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Applications.Item.ExtensionProperties {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ExtensionPropertiesRequestBuilder WithUrl(string rawUrl) {
+            return new ExtensionPropertiesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve the list of directory extension definitions, represented by extensionProperty objects on an application.
         /// </summary>
         public class ExtensionPropertiesRequestBuilderGetQueryParameters {

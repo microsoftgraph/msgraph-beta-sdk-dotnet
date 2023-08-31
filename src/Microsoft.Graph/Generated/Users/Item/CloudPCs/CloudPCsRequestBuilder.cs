@@ -158,6 +158,13 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public CloudPCsRequestBuilder WithUrl(string rawUrl) {
+            return new CloudPCsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// List the cloudPC devices that are attributed to the signed-in user. 
         /// </summary>
         public class CloudPCsRequestBuilderGetQueryParameters {

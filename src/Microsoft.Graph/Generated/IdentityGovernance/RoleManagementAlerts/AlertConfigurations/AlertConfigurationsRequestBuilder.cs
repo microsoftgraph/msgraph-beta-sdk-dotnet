@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.AlertConf
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AlertConfigurationsRequestBuilder WithUrl(string rawUrl) {
+            return new AlertConfigurationsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the alert configurations. The alert configurations are a collection of following types that are derived from the unifiedRoleManagementAlertConfiguration object:
         /// </summary>
         public class AlertConfigurationsRequestBuilderGetQueryParameters {

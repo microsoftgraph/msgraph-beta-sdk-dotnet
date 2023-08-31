@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.AuditLogs.Provisioning {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ProvisioningRequestBuilder WithUrl(string rawUrl) {
+            return new ProvisioningRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
         /// </summary>
         public class ProvisioningRequestBuilderGetQueryParameters {

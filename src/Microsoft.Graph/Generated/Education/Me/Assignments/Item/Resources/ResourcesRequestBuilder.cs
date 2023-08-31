@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Resources {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ResourcesRequestBuilder WithUrl(string rawUrl) {
+            return new ResourcesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
         /// </summary>
         public class ResourcesRequestBuilderGetQueryParameters {

@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("inboundTrust", value); }
         }
 #endif
-        /// <summary>The isInMultiTenantOrganization property</summary>
+        /// <summary>Identifies whether a tenant is a member of a multi-tenant organization.</summary>
         public bool? IsInMultiTenantOrganization {
             get { return BackingStore?.Get<bool?>("isInMultiTenantOrganization"); }
             set { BackingStore?.Set("isInMultiTenantOrganization", value); }

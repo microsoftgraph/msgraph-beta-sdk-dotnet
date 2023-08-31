@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders.Item.Learnin
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public LearningCourseActivitiesRequestBuilder WithUrl(string rawUrl) {
+            return new LearningCourseActivitiesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get learningCourseActivities from employeeExperience
         /// </summary>
         public class LearningCourseActivitiesRequestBuilderGetQueryParameters {

@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Me.Planner.RecentPlans.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public PlannerPlanItemRequestBuilder WithUrl(string rawUrl) {
+            return new PlannerPlanItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
         /// </summary>
         public class PlannerPlanItemRequestBuilderGetQueryParameters {

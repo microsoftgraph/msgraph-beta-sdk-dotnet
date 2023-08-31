@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ReviewSetsRequestBuilder WithUrl(string rawUrl) {
+            return new ReviewSetsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of ediscoveryReviewSet objects associated with an eDiscovery case.
         /// </summary>
         public class ReviewSetsRequestBuilderGetQueryParameters {

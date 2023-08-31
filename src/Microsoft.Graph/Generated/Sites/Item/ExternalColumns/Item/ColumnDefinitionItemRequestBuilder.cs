@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Sites.Item.ExternalColumns.Item {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ColumnDefinitionItemRequestBuilder WithUrl(string rawUrl) {
+            return new ColumnDefinitionItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
         /// </summary>
         public class ColumnDefinitionItemRequestBuilderGetQueryParameters {

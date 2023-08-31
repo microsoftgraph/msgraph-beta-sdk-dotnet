@@ -88,6 +88,13 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Bitlocker.Recove
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public RecoveryKeysRequestBuilder WithUrl(string rawUrl) {
+            return new RecoveryKeysRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get a list of the bitlockerRecoveryKey objects and their properties.  This operation does not return the key property. For information about how to read the key property, see Get bitlockerRecoveryKey.
         /// </summary>
         public class RecoveryKeysRequestBuilderGetQueryParameters {

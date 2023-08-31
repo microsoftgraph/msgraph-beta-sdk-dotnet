@@ -146,6 +146,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests 
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AppConsentRequestsRequestBuilder WithUrl(string rawUrl) {
+            return new AppConsentRequestsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve appConsentRequest objects and their properties.
         /// </summary>
         public class AppConsentRequestsRequestBuilderGetQueryParameters {

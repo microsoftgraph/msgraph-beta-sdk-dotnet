@@ -87,6 +87,13 @@ namespace Microsoft.Graph.Beta.Shares.Item.Items {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ItemsRequestBuilder WithUrl(string rawUrl) {
+            return new ItemsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// All driveItems contained in the sharing root. This collection cannot be enumerated.
         /// </summary>
         public class ItemsRequestBuilderGetQueryParameters {

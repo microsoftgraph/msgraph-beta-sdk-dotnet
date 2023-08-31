@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Security.IpSecurityProfiles {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public IpSecurityProfilesRequestBuilder WithUrl(string rawUrl) {
+            return new IpSecurityProfilesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get ipSecurityProfiles from security
         /// </summary>
         public class IpSecurityProfilesRequestBuilderGetQueryParameters {

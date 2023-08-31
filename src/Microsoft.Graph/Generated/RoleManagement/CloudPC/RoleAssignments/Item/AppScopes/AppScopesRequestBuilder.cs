@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleAssignments.Item.AppSc
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public AppScopesRequestBuilder WithUrl(string rawUrl) {
+            return new AppScopesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.
         /// </summary>
         public class AppScopesRequestBuilderGetQueryParameters {

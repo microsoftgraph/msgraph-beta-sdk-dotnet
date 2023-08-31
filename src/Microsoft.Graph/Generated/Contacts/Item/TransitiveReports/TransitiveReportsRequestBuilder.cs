@@ -87,6 +87,13 @@ namespace Microsoft.Graph.Beta.Contacts.Item.TransitiveReports {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TransitiveReportsRequestBuilder WithUrl(string rawUrl) {
+            return new TransitiveReportsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The transitive reports for a contact. Read-only.
         /// </summary>
         public class TransitiveReportsRequestBuilderGetQueryParameters {

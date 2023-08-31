@@ -138,6 +138,13 @@ namespace Microsoft.Graph.Beta.Security.SubjectRightsRequests.Item.Notes {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public NotesRequestBuilder WithUrl(string rawUrl) {
+            return new NotesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Get the list of authored notes associated with a subject rights request. 
         /// </summary>
         public class NotesRequestBuilderGetQueryParameters {

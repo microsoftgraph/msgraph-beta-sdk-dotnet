@@ -135,6 +135,13 @@ namespace Microsoft.Graph.Beta.TermStore {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public TermStoreRequestBuilder WithUrl(string rawUrl) {
+            return new TermStoreRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Read the properties and relationships of a store object.
         /// </summary>
         public class TermStoreRequestBuilderGetQueryParameters {

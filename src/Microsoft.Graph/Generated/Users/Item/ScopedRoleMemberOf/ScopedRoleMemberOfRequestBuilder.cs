@@ -137,6 +137,13 @@ namespace Microsoft.Graph.Beta.Users.Item.ScopedRoleMemberOf {
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public ScopedRoleMemberOfRequestBuilder WithUrl(string rawUrl) {
+            return new ScopedRoleMemberOfRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Retrieve a list of scopedRoleMembership for the user.
         /// </summary>
         public class ScopedRoleMemberOfRequestBuilderGetQueryParameters {

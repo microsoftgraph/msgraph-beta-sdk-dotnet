@@ -74,6 +74,13 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialD
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public LastIndexOperationRequestBuilder WithUrl(string rawUrl) {
+            return new LastIndexOperationRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Operation entity that represents the latest indexing for the non-custodial data source.
         /// </summary>
         public class LastIndexOperationRequestBuilderGetQueryParameters {

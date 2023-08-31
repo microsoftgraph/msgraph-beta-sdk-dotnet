@@ -136,6 +136,13 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions.Item.Seg
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public SegmentsRequestBuilder WithUrl(string rawUrl) {
+            return new SegmentsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// The list of segments involved in the session. Read-only. Nullable.
         /// </summary>
         public class SegmentsRequestBuilderGetQueryParameters {

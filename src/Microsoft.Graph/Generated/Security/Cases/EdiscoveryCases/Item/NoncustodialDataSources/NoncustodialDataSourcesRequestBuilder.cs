@@ -147,6 +147,13 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialD
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public NoncustodialDataSourcesRequestBuilder WithUrl(string rawUrl) {
+            return new NoncustodialDataSourcesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Returns a list of case ediscoveryNoncustodialDataSource objects for this case.
         /// </summary>
         public class NoncustodialDataSourcesRequestBuilderGetQueryParameters {

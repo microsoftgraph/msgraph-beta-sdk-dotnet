@@ -75,6 +75,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissionsWithScope
             return requestInfo;
         }
         /// <summary>
+        /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        /// </summary>
+        /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        public GetEffectivePermissionsWithScopeRequestBuilder WithUrl(string rawUrl) {
+            return new GetEffectivePermissionsWithScopeRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
         /// Invoke function getEffectivePermissions
         /// </summary>
         public class GetEffectivePermissionsWithScopeRequestBuilderGetQueryParameters {
