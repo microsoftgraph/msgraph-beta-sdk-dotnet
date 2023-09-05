@@ -2,42 +2,43 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum ConditionalAccessConditions {
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         [EnumMember(Value = "application")]
-        Application,
+        Application = 2,
         [EnumMember(Value = "users")]
-        Users,
+        Users = 4,
         [EnumMember(Value = "devicePlatform")]
-        DevicePlatform,
+        DevicePlatform = 8,
         [EnumMember(Value = "location")]
-        Location,
+        Location = 16,
         [EnumMember(Value = "clientType")]
-        ClientType,
+        ClientType = 32,
         [EnumMember(Value = "signInRisk")]
-        SignInRisk,
+        SignInRisk = 64,
         [EnumMember(Value = "userRisk")]
-        UserRisk,
+        UserRisk = 128,
         [EnumMember(Value = "time")]
-        Time,
+        Time = 256,
         [EnumMember(Value = "deviceState")]
-        DeviceState,
+        DeviceState = 512,
         [EnumMember(Value = "client")]
-        Client,
+        Client = 1024,
         [EnumMember(Value = "ipAddressSeenByAzureAD")]
-        IpAddressSeenByAzureAD,
+        IpAddressSeenByAzureAD = 2048,
         [EnumMember(Value = "ipAddressSeenByResourceProvider")]
-        IpAddressSeenByResourceProvider,
+        IpAddressSeenByResourceProvider = 4096,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 8192,
         [EnumMember(Value = "servicePrincipals")]
-        ServicePrincipals,
+        ServicePrincipals = 16384,
         [EnumMember(Value = "servicePrincipalRisk")]
-        ServicePrincipalRisk,
+        ServicePrincipalRisk = 32768,
         [EnumMember(Value = "authenticationFlows")]
-        AuthenticationFlows,
+        AuthenticationFlows = 65536,
         [EnumMember(Value = "insiderRisk")]
-        InsiderRisk,
+        InsiderRisk = 131072,
     }
 }

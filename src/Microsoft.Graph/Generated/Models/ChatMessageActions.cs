@@ -2,14 +2,15 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum ChatMessageActions {
         [EnumMember(Value = "reactionAdded")]
-        ReactionAdded,
+        ReactionAdded = 1,
         [EnumMember(Value = "reactionRemoved")]
-        ReactionRemoved,
+        ReactionRemoved = 2,
         [EnumMember(Value = "actionUndefined")]
-        ActionUndefined,
+        ActionUndefined = 4,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 8,
     }
 }

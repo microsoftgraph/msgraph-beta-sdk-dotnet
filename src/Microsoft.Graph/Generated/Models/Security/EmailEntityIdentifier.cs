@@ -2,12 +2,13 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    [Flags]
     public enum EmailEntityIdentifier {
         [EnumMember(Value = "networkMessageId")]
-        NetworkMessageId,
+        NetworkMessageId = 1,
         [EnumMember(Value = "recipientEmailAddress")]
-        RecipientEmailAddress,
+        RecipientEmailAddress = 2,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 4,
     }
 }

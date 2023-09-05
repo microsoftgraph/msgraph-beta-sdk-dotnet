@@ -2,18 +2,19 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum DirectoryDefinitionDiscoverabilities {
         [EnumMember(Value = "None")]
-        None,
+        None = 1,
         [EnumMember(Value = "AttributeNames")]
-        AttributeNames,
+        AttributeNames = 2,
         [EnumMember(Value = "AttributeDataTypes")]
-        AttributeDataTypes,
+        AttributeDataTypes = 4,
         [EnumMember(Value = "AttributeReadOnly")]
-        AttributeReadOnly,
+        AttributeReadOnly = 8,
         [EnumMember(Value = "ReferenceAttributes")]
-        ReferenceAttributes,
+        ReferenceAttributes = 16,
         [EnumMember(Value = "UnknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 32,
     }
 }

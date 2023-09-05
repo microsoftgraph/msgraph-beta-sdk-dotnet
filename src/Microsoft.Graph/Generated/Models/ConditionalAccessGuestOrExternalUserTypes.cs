@@ -2,22 +2,23 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum ConditionalAccessGuestOrExternalUserTypes {
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         [EnumMember(Value = "internalGuest")]
-        InternalGuest,
+        InternalGuest = 2,
         [EnumMember(Value = "b2bCollaborationGuest")]
-        B2bCollaborationGuest,
+        B2bCollaborationGuest = 4,
         [EnumMember(Value = "b2bCollaborationMember")]
-        B2bCollaborationMember,
+        B2bCollaborationMember = 8,
         [EnumMember(Value = "b2bDirectConnectUser")]
-        B2bDirectConnectUser,
+        B2bDirectConnectUser = 16,
         [EnumMember(Value = "otherExternalUser")]
-        OtherExternalUser,
+        OtherExternalUser = 32,
         [EnumMember(Value = "serviceProvider")]
-        ServiceProvider,
+        ServiceProvider = 64,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 128,
     }
 }

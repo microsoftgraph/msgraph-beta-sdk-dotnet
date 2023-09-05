@@ -2,14 +2,15 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum AllowedRolePrincipalTypes {
         [EnumMember(Value = "user")]
-        User,
+        User = 1,
         [EnumMember(Value = "servicePrincipal")]
-        ServicePrincipal,
+        ServicePrincipal = 2,
         [EnumMember(Value = "group")]
-        Group,
+        Group = 4,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 8,
     }
 }

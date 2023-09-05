@@ -2,16 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum EligibilityFilteringEnabledEntities {
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         [EnumMember(Value = "swapRequest")]
-        SwapRequest,
+        SwapRequest = 2,
         [EnumMember(Value = "offerShiftRequest")]
-        OfferShiftRequest,
+        OfferShiftRequest = 4,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 8,
         [EnumMember(Value = "timeOffReason")]
-        TimeOffReason,
+        TimeOffReason = 16,
     }
 }

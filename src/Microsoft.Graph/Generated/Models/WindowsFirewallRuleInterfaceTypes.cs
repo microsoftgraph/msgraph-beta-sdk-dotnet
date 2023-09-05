@@ -3,18 +3,19 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Flags representing firewall rule interface types.</summary>
+    [Flags]
     public enum WindowsFirewallRuleInterfaceTypes {
         /// <summary>No flags set.</summary>
         [EnumMember(Value = "notConfigured")]
-        NotConfigured,
+        NotConfigured = 1,
         /// <summary>The Remote Access interface type.</summary>
         [EnumMember(Value = "remoteAccess")]
-        RemoteAccess,
+        RemoteAccess = 2,
         /// <summary>The Wireless interface type.</summary>
         [EnumMember(Value = "wireless")]
-        Wireless,
+        Wireless = 4,
         /// <summary>The LAN interface type.</summary>
         [EnumMember(Value = "lan")]
-        Lan,
+        Lan = 8,
     }
 }

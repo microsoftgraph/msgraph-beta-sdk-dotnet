@@ -3,15 +3,16 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Specifies which platform(s) can be targeted for a given Android LOB application or Managed Android LOB application.</summary>
+    [Flags]
     public enum AndroidTargetedPlatforms {
         /// <summary>Indicates the Android targeted platform is Android Device Administrator.</summary>
         [EnumMember(Value = "androidDeviceAdministrator")]
-        AndroidDeviceAdministrator,
+        AndroidDeviceAdministrator = 1,
         /// <summary>Indicates the Android targeted platform is Android Open Source Project.</summary>
         [EnumMember(Value = "androidOpenSourceProject")]
-        AndroidOpenSourceProject,
+        AndroidOpenSourceProject = 2,
         /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 4,
     }
 }

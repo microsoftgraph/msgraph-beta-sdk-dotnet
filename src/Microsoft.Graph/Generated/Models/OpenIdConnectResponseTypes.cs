@@ -2,12 +2,13 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum OpenIdConnectResponseTypes {
         [EnumMember(Value = "code")]
-        Code,
+        Code = 1,
         [EnumMember(Value = "id_token")]
-        Id_token,
+        Id_token = 2,
         [EnumMember(Value = "token")]
-        Token,
+        Token = 4,
     }
 }

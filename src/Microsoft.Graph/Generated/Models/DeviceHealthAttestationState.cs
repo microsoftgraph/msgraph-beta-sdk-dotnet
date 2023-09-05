@@ -224,6 +224,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("earlyLaunchAntiMalwareDriverProtection", value); }
         }
 #endif
+        /// <summary>A list of possible Firmware protection type for a device. Firmware protection is a set of features that helps to ensure attackers can&apos;t get your device to start with untrusted or malicious firmware. Firmware protection type is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values &quot;systemGuardSecureLaunch&quot; or &quot;firmwareAttackSurfaceReduction&quot; or &quot;disabled&quot;. Windows 10 devices will have value &quot;notApplicable&quot;.</summary>
+        public FirmwareProtectionType? FirmwareProtection {
+            get { return BackingStore?.Get<FirmwareProtectionType?>("firmwareProtection"); }
+            set { BackingStore?.Set("firmwareProtection", value); }
+        }
         /// <summary>This attribute indicates if DHA is supported for the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -271,6 +276,16 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastUpdateDateTime", value); }
         }
 #endif
+        /// <summary>A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values &quot;enabled&quot; or &quot;disabled&quot;. Windows 10 devices will have value &quot;notApplicable&quot;.</summary>
+        public AzureAttestationSettingStatus? MemoryAccessProtection {
+            get { return BackingStore?.Get<AzureAttestationSettingStatus?>("memoryAccessProtection"); }
+            set { BackingStore?.Set("memoryAccessProtection", value); }
+        }
+        /// <summary>A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values &quot;enabled&quot; or &quot;disabled&quot;. Windows 10 devices will have value &quot;notApplicable&quot;.</summary>
+        public AzureAttestationSettingStatus? MemoryIntegrityProtection {
+            get { return BackingStore?.Get<AzureAttestationSettingStatus?>("memoryIntegrityProtection"); }
+            set { BackingStore?.Set("memoryIntegrityProtection", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -393,6 +408,16 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("secureBootConfigurationPolicyFingerPrint", value); }
         }
 #endif
+        /// <summary>A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values &quot;enabled&quot; or &quot;disabled&quot;. Windows 10 devices will have value &quot;notApplicable&quot;.</summary>
+        public AzureAttestationSettingStatus? SecuredCorePC {
+            get { return BackingStore?.Get<AzureAttestationSettingStatus?>("securedCorePC"); }
+            set { BackingStore?.Set("securedCorePC", value); }
+        }
+        /// <summary>A list of possible System Management Mode levels for a device. System Management Mode levels is determined by report sent from Microsoft Azure Attestation service. Only specific hardwares support System Management Mode. Windows 11 devices will have values &quot;notApplicable&quot;, &quot;level1&quot;, &quot;level2&quot; or &quot;level3&quot;. Windows 10 devices will have value &quot;notApplicable&quot;.</summary>
+        public SystemManagementModeLevel? SystemManagementMode {
+            get { return BackingStore?.Get<SystemManagementModeLevel?>("systemManagementMode"); }
+            set { BackingStore?.Set("systemManagementMode", value); }
+        }
         /// <summary>When test signing is allowed, the device does not enforce signature validation during boot</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -421,6 +446,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tpmVersion", value); }
         }
 #endif
+        /// <summary>A list of possible Azure Attestation states for a device. Azure Attestation setting status is determined by report sent from Microsoft Azure Attestation service. Only Windows 11 devices will have values &quot;enabled&quot; or &quot;disabled&quot;. Windows 10 devices will have value &quot;notApplicable&quot;.</summary>
+        public AzureAttestationSettingStatus? VirtualizationBasedSecurity {
+            get { return BackingStore?.Get<AzureAttestationSettingStatus?>("virtualizationBasedSecurity"); }
+            set { BackingStore?.Set("virtualizationBasedSecurity", value); }
+        }
         /// <summary>VSM is a container that protects high value assets from a compromised kernel</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -484,10 +514,13 @@ namespace Microsoft.Graph.Beta.Models {
                 {"dataExcutionPolicy", n => { DataExcutionPolicy = n.GetStringValue(); } },
                 {"deviceHealthAttestationStatus", n => { DeviceHealthAttestationStatus = n.GetStringValue(); } },
                 {"earlyLaunchAntiMalwareDriverProtection", n => { EarlyLaunchAntiMalwareDriverProtection = n.GetStringValue(); } },
+                {"firmwareProtection", n => { FirmwareProtection = n.GetEnumValue<FirmwareProtectionType>(); } },
                 {"healthAttestationSupportedStatus", n => { HealthAttestationSupportedStatus = n.GetStringValue(); } },
                 {"healthStatusMismatchInfo", n => { HealthStatusMismatchInfo = n.GetStringValue(); } },
                 {"issuedDateTime", n => { IssuedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastUpdateDateTime", n => { LastUpdateDateTime = n.GetStringValue(); } },
+                {"memoryAccessProtection", n => { MemoryAccessProtection = n.GetEnumValue<AzureAttestationSettingStatus>(); } },
+                {"memoryIntegrityProtection", n => { MemoryIntegrityProtection = n.GetEnumValue<AzureAttestationSettingStatus>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"operatingSystemKernelDebugging", n => { OperatingSystemKernelDebugging = n.GetStringValue(); } },
                 {"operatingSystemRevListInfo", n => { OperatingSystemRevListInfo = n.GetStringValue(); } },
@@ -498,8 +531,11 @@ namespace Microsoft.Graph.Beta.Models {
                 {"safeMode", n => { SafeMode = n.GetStringValue(); } },
                 {"secureBoot", n => { SecureBoot = n.GetStringValue(); } },
                 {"secureBootConfigurationPolicyFingerPrint", n => { SecureBootConfigurationPolicyFingerPrint = n.GetStringValue(); } },
+                {"securedCorePC", n => { SecuredCorePC = n.GetEnumValue<AzureAttestationSettingStatus>(); } },
+                {"systemManagementMode", n => { SystemManagementMode = n.GetEnumValue<SystemManagementModeLevel>(); } },
                 {"testSigning", n => { TestSigning = n.GetStringValue(); } },
                 {"tpmVersion", n => { TpmVersion = n.GetStringValue(); } },
+                {"virtualizationBasedSecurity", n => { VirtualizationBasedSecurity = n.GetEnumValue<AzureAttestationSettingStatus>(); } },
                 {"virtualSecureMode", n => { VirtualSecureMode = n.GetStringValue(); } },
                 {"windowsPE", n => { WindowsPE = n.GetStringValue(); } },
             };
@@ -525,10 +561,13 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("dataExcutionPolicy", DataExcutionPolicy);
             writer.WriteStringValue("deviceHealthAttestationStatus", DeviceHealthAttestationStatus);
             writer.WriteStringValue("earlyLaunchAntiMalwareDriverProtection", EarlyLaunchAntiMalwareDriverProtection);
+            writer.WriteEnumValue<FirmwareProtectionType>("firmwareProtection", FirmwareProtection);
             writer.WriteStringValue("healthAttestationSupportedStatus", HealthAttestationSupportedStatus);
             writer.WriteStringValue("healthStatusMismatchInfo", HealthStatusMismatchInfo);
             writer.WriteDateTimeOffsetValue("issuedDateTime", IssuedDateTime);
             writer.WriteStringValue("lastUpdateDateTime", LastUpdateDateTime);
+            writer.WriteEnumValue<AzureAttestationSettingStatus>("memoryAccessProtection", MemoryAccessProtection);
+            writer.WriteEnumValue<AzureAttestationSettingStatus>("memoryIntegrityProtection", MemoryIntegrityProtection);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("operatingSystemKernelDebugging", OperatingSystemKernelDebugging);
             writer.WriteStringValue("operatingSystemRevListInfo", OperatingSystemRevListInfo);
@@ -539,8 +578,11 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("safeMode", SafeMode);
             writer.WriteStringValue("secureBoot", SecureBoot);
             writer.WriteStringValue("secureBootConfigurationPolicyFingerPrint", SecureBootConfigurationPolicyFingerPrint);
+            writer.WriteEnumValue<AzureAttestationSettingStatus>("securedCorePC", SecuredCorePC);
+            writer.WriteEnumValue<SystemManagementModeLevel>("systemManagementMode", SystemManagementMode);
             writer.WriteStringValue("testSigning", TestSigning);
             writer.WriteStringValue("tpmVersion", TpmVersion);
+            writer.WriteEnumValue<AzureAttestationSettingStatus>("virtualizationBasedSecurity", VirtualizationBasedSecurity);
             writer.WriteStringValue("virtualSecureMode", VirtualSecureMode);
             writer.WriteStringValue("windowsPE", WindowsPE);
             writer.WriteAdditionalData(AdditionalData);

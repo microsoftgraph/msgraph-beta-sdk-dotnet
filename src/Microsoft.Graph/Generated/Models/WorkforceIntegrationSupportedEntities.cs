@@ -2,30 +2,31 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum WorkforceIntegrationSupportedEntities {
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         [EnumMember(Value = "shift")]
-        Shift,
+        Shift = 2,
         [EnumMember(Value = "swapRequest")]
-        SwapRequest,
+        SwapRequest = 4,
         [EnumMember(Value = "userShiftPreferences")]
-        UserShiftPreferences,
+        UserShiftPreferences = 8,
         [EnumMember(Value = "openShift")]
-        OpenShift,
+        OpenShift = 16,
         [EnumMember(Value = "openShiftRequest")]
-        OpenShiftRequest,
+        OpenShiftRequest = 32,
         [EnumMember(Value = "offerShiftRequest")]
-        OfferShiftRequest,
+        OfferShiftRequest = 64,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 128,
         [EnumMember(Value = "timeCard")]
-        TimeCard,
+        TimeCard = 256,
         [EnumMember(Value = "timeOffReason")]
-        TimeOffReason,
+        TimeOffReason = 512,
         [EnumMember(Value = "timeOff")]
-        TimeOff,
+        TimeOff = 1024,
         [EnumMember(Value = "timeOffRequest")]
-        TimeOffRequest,
+        TimeOffRequest = 2048,
     }
 }

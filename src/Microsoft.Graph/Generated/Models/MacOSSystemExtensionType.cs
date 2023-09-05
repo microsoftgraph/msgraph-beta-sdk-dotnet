@@ -3,15 +3,16 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Flag enum representing the allowed macOS system extension types.</summary>
+    [Flags]
     public enum MacOSSystemExtensionType {
         /// <summary>Enables driver extensions.</summary>
         [EnumMember(Value = "driverExtensionsAllowed")]
-        DriverExtensionsAllowed,
+        DriverExtensionsAllowed = 1,
         /// <summary>Enables network extensions.</summary>
         [EnumMember(Value = "networkExtensionsAllowed")]
-        NetworkExtensionsAllowed,
+        NetworkExtensionsAllowed = 2,
         /// <summary>Enables endpoint security extensions.</summary>
         [EnumMember(Value = "endpointSecurityExtensionsAllowed")]
-        EndpointSecurityExtensionsAllowed,
+        EndpointSecurityExtensionsAllowed = 4,
     }
 }

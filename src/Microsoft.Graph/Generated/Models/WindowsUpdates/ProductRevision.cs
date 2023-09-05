@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class ProductRevision : Entity, IParsable {
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the content. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The knowledgeBaseArticle property</summary>
+        /// <summary>The knowledge base article associated with the product revision.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle? KnowledgeBaseArticle {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("osBuild", value); }
         }
 #endif
-        /// <summary>The product property</summary>
+        /// <summary>The product of the revision. Possible values are: Windows 10, Windows 11. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Product {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("product", value); }
         }
 #endif
-        /// <summary>The releaseDateTime property</summary>
+        /// <summary>The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? ReleaseDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("releaseDateTime"); }
             set { BackingStore?.Set("releaseDateTime", value); }
         }
-        /// <summary>The version property</summary>
+        /// <summary>The version of the feature update. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Version {

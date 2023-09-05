@@ -3,27 +3,28 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Contains properties for detection operator.</summary>
+    [Flags]
     public enum Win32LobAppDetectionOperator {
         /// <summary>Not configured.</summary>
         [EnumMember(Value = "notConfigured")]
-        NotConfigured,
+        NotConfigured = 1,
         /// <summary>Equal operator.</summary>
         [EnumMember(Value = "equal")]
-        Equal,
+        Equal = 2,
         /// <summary>Not equal operator.</summary>
         [EnumMember(Value = "notEqual")]
-        NotEqual,
+        NotEqual = 4,
         /// <summary>Greater than operator.</summary>
         [EnumMember(Value = "greaterThan")]
-        GreaterThan,
+        GreaterThan = 8,
         /// <summary>Greater than or equal operator.</summary>
         [EnumMember(Value = "greaterThanOrEqual")]
-        GreaterThanOrEqual,
+        GreaterThanOrEqual = 16,
         /// <summary>Less than operator.</summary>
         [EnumMember(Value = "lessThan")]
-        LessThan,
+        LessThan = 32,
         /// <summary>Less than or equal operator.</summary>
         [EnumMember(Value = "lessThanOrEqual")]
-        LessThanOrEqual,
+        LessThanOrEqual = 64,
     }
 }

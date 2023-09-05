@@ -2,10 +2,11 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum OnlineMeetingVideoDisabledReason {
         [EnumMember(Value = "watermarkProtection")]
-        WatermarkProtection,
+        WatermarkProtection = 1,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 2,
     }
 }

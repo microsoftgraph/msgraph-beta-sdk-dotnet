@@ -2,12 +2,13 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum DecisionItemPrincipalResourceMembershipType {
         [EnumMember(Value = "direct")]
-        Direct,
+        Direct = 1,
         [EnumMember(Value = "indirect")]
-        Indirect,
+        Indirect = 2,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 4,
     }
 }

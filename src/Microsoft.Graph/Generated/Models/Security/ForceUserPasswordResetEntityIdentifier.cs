@@ -2,16 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    [Flags]
     public enum ForceUserPasswordResetEntityIdentifier {
         [EnumMember(Value = "accountSid")]
-        AccountSid,
+        AccountSid = 1,
         [EnumMember(Value = "initiatingProcessAccountSid")]
-        InitiatingProcessAccountSid,
+        InitiatingProcessAccountSid = 2,
         [EnumMember(Value = "requestAccountSid")]
-        RequestAccountSid,
+        RequestAccountSid = 4,
         [EnumMember(Value = "onPremSid")]
-        OnPremSid,
+        OnPremSid = 8,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 16,
     }
 }

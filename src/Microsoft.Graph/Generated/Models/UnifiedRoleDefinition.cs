@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
-        /// <summary>The isPrivileged property</summary>
+        /// <summary>Flag indicating if the role is privileged. Azure AD defines a role as privileged if it contains at least one sensitive resource action in the rolePermissions and allowedResourceActions objects. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).</summary>
         public bool? IsPrivileged {
             get { return BackingStore?.Get<bool?>("isPrivileged"); }
             set { BackingStore?.Set("isPrivileged", value); }

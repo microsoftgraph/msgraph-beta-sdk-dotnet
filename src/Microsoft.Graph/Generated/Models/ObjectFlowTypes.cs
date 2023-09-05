@@ -2,14 +2,15 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum ObjectFlowTypes {
         [EnumMember(Value = "None")]
-        None,
+        None = 1,
         [EnumMember(Value = "Add")]
-        Add,
+        Add = 2,
         [EnumMember(Value = "Update")]
-        Update,
+        Update = 4,
         [EnumMember(Value = "Delete")]
-        Delete,
+        Delete = 8,
     }
 }

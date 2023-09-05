@@ -7,7 +7,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class MonitoringRule : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>The action triggered when the threshold for the given signal is met. Possible values are: alertError, pauseDeployment, unknownFutureValue.</summary>
+        /// <summary>The action triggered when the threshold for the given signal is reached. Possible values are: alertError, pauseDeployment, offerFallback, unknownFutureValue. The offerFallback member is only supported on feature update deployments of Windows 11 and must be paired with the ineligible signal. The fallback version offered is the version 22H2 of Windows 10.</summary>
         public MonitoringAction? Action {
             get { return BackingStore?.Get<MonitoringAction?>("action"); }
             set { BackingStore?.Set("action", value); }
@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The signal to monitor. Possible values are: rollback, unknownFutureValue.</summary>
+        /// <summary>The signal to monitor. Possible values are: rollback, ineligible, unknownFutureValue. The ineligible member is only supported on feature update deployments of Windows 11 and must be paired with the offerFallback action.</summary>
         public MonitoringSignal? Signal {
             get { return BackingStore?.Get<MonitoringSignal?>("signal"); }
             set { BackingStore?.Set("signal", value); }
         }
-        /// <summary>The threshold for a signal at which to trigger action. An integer from 1 to 100 (inclusive).</summary>
+        /// <summary>The threshold for a signal at which to trigger the action. An integer from 1 to 100 (inclusive). This value is ignored when the signal is ineligible and the action is offerFallback.</summary>
         public int? Threshold {
             get { return BackingStore?.Get<int?>("threshold"); }
             set { BackingStore?.Set("threshold", value); }

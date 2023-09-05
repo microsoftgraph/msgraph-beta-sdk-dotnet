@@ -2,14 +2,15 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum TeamsAppInstallationScopes {
         [EnumMember(Value = "team")]
-        Team,
+        Team = 1,
         [EnumMember(Value = "groupChat")]
-        GroupChat,
+        GroupChat = 2,
         [EnumMember(Value = "personal")]
-        Personal,
+        Personal = 4,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 8,
     }
 }

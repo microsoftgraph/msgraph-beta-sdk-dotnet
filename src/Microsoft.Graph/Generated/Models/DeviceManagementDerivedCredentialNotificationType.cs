@@ -3,15 +3,16 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Supported values for the notification type to use.</summary>
+    [Flags]
     public enum DeviceManagementDerivedCredentialNotificationType {
         /// <summary>None</summary>
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         /// <summary>Company Portal</summary>
         [EnumMember(Value = "companyPortal")]
-        CompanyPortal,
+        CompanyPortal = 2,
         /// <summary>Email</summary>
         [EnumMember(Value = "email")]
-        Email,
+        Email = 4,
     }
 }

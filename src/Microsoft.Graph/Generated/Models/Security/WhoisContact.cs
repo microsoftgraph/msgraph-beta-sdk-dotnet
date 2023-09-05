@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The address property</summary>
+        /// <summary>The physical address of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.PhysicalAddress? Address {
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The email property</summary>
+        /// <summary>The email of this WHOIS contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email {
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("email", value); }
         }
 #endif
-        /// <summary>The fax property</summary>
+        /// <summary>The fax of this WHOIS contact. No format is guaranteed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Fax {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("fax", value); }
         }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name of this WHOIS contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name {
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The organization property</summary>
+        /// <summary>The organization of this WHOIS contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Organization {
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("organization", value); }
         }
 #endif
-        /// <summary>The telephone property</summary>
+        /// <summary>The telephone of this WHOIS contact. No format is guaranteed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Telephone {

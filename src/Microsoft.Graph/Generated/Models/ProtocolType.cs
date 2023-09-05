@@ -2,22 +2,23 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum ProtocolType {
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         [EnumMember(Value = "oAuth2")]
-        OAuth2,
+        OAuth2 = 2,
         [EnumMember(Value = "ropc")]
-        Ropc,
+        Ropc = 4,
         [EnumMember(Value = "wsFederation")]
-        WsFederation,
+        WsFederation = 8,
         [EnumMember(Value = "saml20")]
-        Saml20,
+        Saml20 = 16,
         [EnumMember(Value = "deviceCode")]
-        DeviceCode,
+        DeviceCode = 32,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 64,
         [EnumMember(Value = "authenticationTransfer")]
-        AuthenticationTransfer,
+        AuthenticationTransfer = 128,
     }
 }

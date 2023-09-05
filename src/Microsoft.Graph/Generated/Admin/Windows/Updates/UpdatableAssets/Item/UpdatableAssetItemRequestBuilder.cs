@@ -69,8 +69,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read the properties and relationships of an updatableAsset object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-get?view=graph-rest-1.0" />
+        /// Read the properties of an azureADDevice object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an updatableAsset object.
+        /// Read the properties of an azureADDevice object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -211,7 +211,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of an updatableAsset object.
+        /// Read the properties of an azureADDevice object.
         /// </summary>
         public class UpdatableAssetItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

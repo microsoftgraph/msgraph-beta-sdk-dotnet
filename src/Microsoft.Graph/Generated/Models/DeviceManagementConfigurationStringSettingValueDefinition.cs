@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("fileTypes", value); }
         }
 #endif
-        /// <summary>The format property</summary>
+        /// <summary>Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub, bashScript, unknownFutureValue.</summary>
         public DeviceManagementConfigurationStringFormat? Format {
             get { return BackingStore?.Get<DeviceManagementConfigurationStringFormat?>("format"); }
             set { BackingStore?.Set("format", value); }

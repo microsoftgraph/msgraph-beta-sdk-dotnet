@@ -2,20 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum SynchronizationJobRestartScope {
         [EnumMember(Value = "None")]
-        None,
+        None = 1,
         [EnumMember(Value = "ConnectorDataStore")]
-        ConnectorDataStore,
+        ConnectorDataStore = 2,
         [EnumMember(Value = "Escrows")]
-        Escrows,
+        Escrows = 4,
         [EnumMember(Value = "Watermark")]
-        Watermark,
+        Watermark = 8,
         [EnumMember(Value = "QuarantineState")]
-        QuarantineState,
+        QuarantineState = 16,
         [EnumMember(Value = "Full")]
-        Full,
+        Full = 32,
         [EnumMember(Value = "ForceDeletes")]
-        ForceDeletes,
+        ForceDeletes = 64,
     }
 }

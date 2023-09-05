@@ -2,12 +2,13 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
+    [Flags]
     public enum ContentExperienceType {
         [EnumMember(Value = "search")]
-        Search,
+        Search = 1,
         [EnumMember(Value = "compliance")]
-        Compliance,
+        Compliance = 2,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 4,
     }
 }

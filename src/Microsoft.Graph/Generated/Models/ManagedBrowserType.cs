@@ -3,12 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Type of managed browser</summary>
+    [Flags]
     public enum ManagedBrowserType {
         /// <summary>Not configured</summary>
         [EnumMember(Value = "notConfigured")]
-        NotConfigured,
+        NotConfigured = 1,
         /// <summary>Microsoft Edge</summary>
         [EnumMember(Value = "microsoftEdge")]
-        MicrosoftEdge,
+        MicrosoftEdge = 2,
     }
 }

@@ -87,6 +87,21 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("earlyLaunchAntiMalwareDriverEnabled"); }
             set { BackingStore?.Set("earlyLaunchAntiMalwareDriverEnabled", value); }
         }
+        /// <summary>When TRUE, indicates that Firmware protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Firmware protection is not required to be reported as healthy. Devices that support either Dynamic Root of Trust for Measurement (DRTM) or Firmware Attack Surface Reduction (FASR) will report compliant for this setting. Default value is FALSE.</summary>
+        public bool? FirmwareProtectionEnabled {
+            get { return BackingStore?.Get<bool?>("firmwareProtectionEnabled"); }
+            set { BackingStore?.Set("firmwareProtectionEnabled", value); }
+        }
+        /// <summary>When TRUE, indicates that Kernel Direct Memory Access (DMA) protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Kernel DMA Protection is not required to be reported as healthy. Default value is FALSE.</summary>
+        public bool? KernelDmaProtectionEnabled {
+            get { return BackingStore?.Get<bool?>("kernelDmaProtectionEnabled"); }
+            set { BackingStore?.Set("kernelDmaProtectionEnabled", value); }
+        }
+        /// <summary>When TRUE, indicates that Memory Integrity as known as Hypervisor-protected Code Integrity (HVCI) or Hypervisor Enforced Code Integrity protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Memory Integrity Protection is not required to be reported as healthy. Default value is FALSE.</summary>
+        public bool? MemoryIntegrityEnabled {
+            get { return BackingStore?.Get<bool?>("memoryIntegrityEnabled"); }
+            set { BackingStore?.Set("memoryIntegrityEnabled", value); }
+        }
         /// <summary>Maximum Windows Phone version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -232,6 +247,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("validOperatingSystemBuildRanges", value); }
         }
 #endif
+        /// <summary>When TRUE, indicates that Virtualization-based Security is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Virtualization-based Security is not required to be reported as healthy. Default value is FALSE.</summary>
+        public bool? VirtualizationBasedSecurityEnabled {
+            get { return BackingStore?.Get<bool?>("virtualizationBasedSecurityEnabled"); }
+            set { BackingStore?.Set("virtualizationBasedSecurityEnabled", value); }
+        }
         /// <summary>
         /// Instantiates a new windows10CompliancePolicy and sets the default values.
         /// </summary>
@@ -263,6 +283,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceThreatProtectionEnabled", n => { DeviceThreatProtectionEnabled = n.GetBoolValue(); } },
                 {"deviceThreatProtectionRequiredSecurityLevel", n => { DeviceThreatProtectionRequiredSecurityLevel = n.GetEnumValue<DeviceThreatProtectionLevel>(); } },
                 {"earlyLaunchAntiMalwareDriverEnabled", n => { EarlyLaunchAntiMalwareDriverEnabled = n.GetBoolValue(); } },
+                {"firmwareProtectionEnabled", n => { FirmwareProtectionEnabled = n.GetBoolValue(); } },
+                {"kernelDmaProtectionEnabled", n => { KernelDmaProtectionEnabled = n.GetBoolValue(); } },
+                {"memoryIntegrityEnabled", n => { MemoryIntegrityEnabled = n.GetBoolValue(); } },
                 {"mobileOsMaximumVersion", n => { MobileOsMaximumVersion = n.GetStringValue(); } },
                 {"mobileOsMinimumVersion", n => { MobileOsMinimumVersion = n.GetStringValue(); } },
                 {"osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
@@ -283,6 +306,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
                 {"tpmRequired", n => { TpmRequired = n.GetBoolValue(); } },
                 {"validOperatingSystemBuildRanges", n => { ValidOperatingSystemBuildRanges = n.GetCollectionOfObjectValues<OperatingSystemVersionRange>(OperatingSystemVersionRange.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"virtualizationBasedSecurityEnabled", n => { VirtualizationBasedSecurityEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -304,6 +328,9 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("deviceThreatProtectionEnabled", DeviceThreatProtectionEnabled);
             writer.WriteEnumValue<DeviceThreatProtectionLevel>("deviceThreatProtectionRequiredSecurityLevel", DeviceThreatProtectionRequiredSecurityLevel);
             writer.WriteBoolValue("earlyLaunchAntiMalwareDriverEnabled", EarlyLaunchAntiMalwareDriverEnabled);
+            writer.WriteBoolValue("firmwareProtectionEnabled", FirmwareProtectionEnabled);
+            writer.WriteBoolValue("kernelDmaProtectionEnabled", KernelDmaProtectionEnabled);
+            writer.WriteBoolValue("memoryIntegrityEnabled", MemoryIntegrityEnabled);
             writer.WriteStringValue("mobileOsMaximumVersion", MobileOsMaximumVersion);
             writer.WriteStringValue("mobileOsMinimumVersion", MobileOsMinimumVersion);
             writer.WriteStringValue("osMaximumVersion", OsMaximumVersion);
@@ -324,6 +351,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("storageRequireEncryption", StorageRequireEncryption);
             writer.WriteBoolValue("tpmRequired", TpmRequired);
             writer.WriteCollectionOfObjectValues<OperatingSystemVersionRange>("validOperatingSystemBuildRanges", ValidOperatingSystemBuildRanges);
+            writer.WriteBoolValue("virtualizationBasedSecurityEnabled", VirtualizationBasedSecurityEnabled);
         }
     }
 }

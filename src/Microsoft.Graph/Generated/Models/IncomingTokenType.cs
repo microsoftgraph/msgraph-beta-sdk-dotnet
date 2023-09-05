@@ -2,18 +2,19 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum IncomingTokenType {
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         [EnumMember(Value = "primaryRefreshToken")]
-        PrimaryRefreshToken,
+        PrimaryRefreshToken = 2,
         [EnumMember(Value = "saml11")]
-        Saml11,
+        Saml11 = 4,
         [EnumMember(Value = "saml20")]
-        Saml20,
+        Saml20 = 8,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 16,
         [EnumMember(Value = "remoteDesktopToken")]
-        RemoteDesktopToken,
+        RemoteDesktopToken = 32,
     }
 }

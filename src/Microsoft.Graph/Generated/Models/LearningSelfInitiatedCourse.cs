@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class LearningSelfInitiatedCourse : LearningCourseActivity, IParsable {
-        /// <summary>The date time value on which the self-initiated course was started by the learner. Optional.</summary>
+        /// <summary>The date and time on which the self-initiated course was started by the learner. Optional.</summary>
         public DateTimeOffset? StartedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
             set { BackingStore?.Set("startedDateTime", value); }

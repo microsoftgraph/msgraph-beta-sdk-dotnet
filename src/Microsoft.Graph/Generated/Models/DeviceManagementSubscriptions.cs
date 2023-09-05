@@ -3,24 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Tenant mobile device management subscriptions.</summary>
+    [Flags]
     public enum DeviceManagementSubscriptions {
         /// <summary>None</summary>
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         /// <summary>Microsoft Intune Subscription</summary>
         [EnumMember(Value = "intune")]
-        Intune,
+        Intune = 2,
         /// <summary>Office365 Subscription</summary>
         [EnumMember(Value = "office365")]
-        Office365,
+        Office365 = 4,
         /// <summary>Microsoft Intune Premium Subscription</summary>
         [EnumMember(Value = "intunePremium")]
-        IntunePremium,
+        IntunePremium = 8,
         /// <summary>Microsoft Intune for Education Subscription</summary>
         [EnumMember(Value = "intune_EDU")]
-        Intune_EDU,
+        Intune_EDU = 16,
         /// <summary>Microsoft Intune for Small Businesses Subscription</summary>
         [EnumMember(Value = "intune_SMB")]
-        Intune_SMB,
+        Intune_SMB = 32,
     }
 }

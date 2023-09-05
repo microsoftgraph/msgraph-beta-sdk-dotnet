@@ -2,12 +2,13 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    [Flags]
     public enum AdditionalDataOptions {
         [EnumMember(Value = "allVersions")]
-        AllVersions,
+        AllVersions = 1,
         [EnumMember(Value = "linkedFiles")]
-        LinkedFiles,
+        LinkedFiles = 2,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 4,
     }
 }

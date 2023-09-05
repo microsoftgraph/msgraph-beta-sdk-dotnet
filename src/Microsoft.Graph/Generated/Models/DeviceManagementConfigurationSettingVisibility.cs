@@ -3,18 +3,19 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Supported setting types</summary>
+    [Flags]
     public enum DeviceManagementConfigurationSettingVisibility {
         /// <summary>Default. Not visible.</summary>
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         /// <summary>Visible to setting catalog policy type.</summary>
         [EnumMember(Value = "settingsCatalog")]
-        SettingsCatalog,
+        SettingsCatalog = 2,
         /// <summary>Visible to template policy type.</summary>
         [EnumMember(Value = "template")]
-        Template,
+        Template = 4,
         /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 8,
     }
 }

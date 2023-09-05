@@ -2,44 +2,45 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    [Flags]
     public enum UserMailboxSetting {
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         [EnumMember(Value = "junkMailDeletion")]
-        JunkMailDeletion,
+        JunkMailDeletion = 2,
         [EnumMember(Value = "isFromAddressInAddressBook")]
-        IsFromAddressInAddressBook,
+        IsFromAddressInAddressBook = 4,
         [EnumMember(Value = "isFromAddressInAddressSafeList")]
-        IsFromAddressInAddressSafeList,
+        IsFromAddressInAddressSafeList = 8,
         [EnumMember(Value = "isFromAddressInAddressBlockList")]
-        IsFromAddressInAddressBlockList,
+        IsFromAddressInAddressBlockList = 16,
         [EnumMember(Value = "isFromAddressInAddressImplicitSafeList")]
-        IsFromAddressInAddressImplicitSafeList,
+        IsFromAddressInAddressImplicitSafeList = 32,
         [EnumMember(Value = "isFromAddressInAddressImplicitJunkList")]
-        IsFromAddressInAddressImplicitJunkList,
+        IsFromAddressInAddressImplicitJunkList = 64,
         [EnumMember(Value = "isFromDomainInDomainSafeList")]
-        IsFromDomainInDomainSafeList,
+        IsFromDomainInDomainSafeList = 128,
         [EnumMember(Value = "isFromDomainInDomainBlockList")]
-        IsFromDomainInDomainBlockList,
+        IsFromDomainInDomainBlockList = 256,
         [EnumMember(Value = "isRecipientInRecipientSafeList")]
-        IsRecipientInRecipientSafeList,
+        IsRecipientInRecipientSafeList = 512,
         [EnumMember(Value = "customRule")]
-        CustomRule,
+        CustomRule = 1024,
         [EnumMember(Value = "junkMailRule")]
-        JunkMailRule,
+        JunkMailRule = 2048,
         [EnumMember(Value = "senderPraPresent")]
-        SenderPraPresent,
+        SenderPraPresent = 4096,
         [EnumMember(Value = "fromFirstTimeSender")]
-        FromFirstTimeSender,
+        FromFirstTimeSender = 8192,
         [EnumMember(Value = "exclusive")]
-        Exclusive,
+        Exclusive = 16384,
         [EnumMember(Value = "priorSeenPass")]
-        PriorSeenPass,
+        PriorSeenPass = 32768,
         [EnumMember(Value = "senderAuthenticationSucceeded")]
-        SenderAuthenticationSucceeded,
+        SenderAuthenticationSucceeded = 65536,
         [EnumMember(Value = "isJunkMailRuleEnabled")]
-        IsJunkMailRuleEnabled,
+        IsJunkMailRuleEnabled = 131072,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 262144,
     }
 }

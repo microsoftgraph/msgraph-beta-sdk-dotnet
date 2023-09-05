@@ -2,18 +2,19 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    [Flags]
     public enum DataSourceScopes {
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         [EnumMember(Value = "allTenantMailboxes")]
-        AllTenantMailboxes,
+        AllTenantMailboxes = 2,
         [EnumMember(Value = "allTenantSites")]
-        AllTenantSites,
+        AllTenantSites = 4,
         [EnumMember(Value = "allCaseCustodians")]
-        AllCaseCustodians,
+        AllCaseCustodians = 8,
         [EnumMember(Value = "allCaseNoncustodialDataSources")]
-        AllCaseNoncustodialDataSources,
+        AllCaseNoncustodialDataSources = 16,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 32,
     }
 }

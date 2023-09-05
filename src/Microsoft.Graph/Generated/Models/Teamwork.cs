@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Teamwork : Entity, IParsable {
-        /// <summary>The deletedChats property</summary>
+        /// <summary>A collection of deleted chats.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DeletedChat>? DeletedChats {

@@ -2,12 +2,13 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    [Flags]
     public enum SourceType {
         [EnumMember(Value = "mailbox")]
-        Mailbox,
+        Mailbox = 1,
         [EnumMember(Value = "site")]
-        Site,
+        Site = 2,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 4,
     }
 }

@@ -3,12 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Hash Algorithm Options.</summary>
+    [Flags]
     public enum HashAlgorithms {
         /// <summary>SHA-1 Hash Algorithm.</summary>
         [EnumMember(Value = "sha1")]
-        Sha1,
+        Sha1 = 1,
         /// <summary>SHA-2 Hash Algorithm.</summary>
         [EnumMember(Value = "sha2")]
-        Sha2,
+        Sha2 = 2,
     }
 }
