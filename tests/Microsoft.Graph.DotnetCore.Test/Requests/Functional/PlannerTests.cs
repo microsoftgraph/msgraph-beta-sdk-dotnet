@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
     using Xunit;
     using Microsoft.Graph.Beta.Models;
@@ -9,7 +10,7 @@
 
     public class PlannerTests : GraphTestBase
     {
-        private readonly Group testGroup = new ();
+        private Group testGroup = new ();
 
         private async void TestCleanUp()
         {
@@ -115,7 +116,6 @@
                 Assert.Fail($"Something happened, check out a trace. Error: {e.Message}");
             }
         }
-/*
         // Successful 4/27/2017 - Creates a task without a bucket.
         [Fact(Skip = "No CI set up for functional tests")]
         //https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/api/planner_post_tasks
@@ -131,18 +131,21 @@
             taskToCreate.PlanId = plannerPlan.Id;
             taskToCreate.Title = "New task title";
             taskToCreate.Assignments = new PlannerAssignments();
-            taskToCreate.Assignments.AddAssignee("me");
+            taskToCreate.Assignments.AdditionalData["me"] = new PlannerAssignment
+            {
+                OrderHint = " !"
+            };
             taskToCreate.AppliedCategories = new PlannerAppliedCategories();
-            taskToCreate.AppliedCategories.Category3 = true;
+            taskToCreate.AppliedCategories.AdditionalData["category3"] = true;
             taskToCreate.DueDateTime = DateTimeOffset.UtcNow.AddDays(3);
 
             PlannerTask createdTask = await graphClient.Planner.Tasks.PostAsync(taskToCreate);
 
             Assert.NotNull(createdTask);
+            Assert.NotNull(createdTask.Assignments);
             Assert.Equal(taskToCreate.Title, createdTask.Title);
-            Assert.Equal(1, createdTask.Assignments.Count);
-            Assert.Equal(createdTask.Assignments.Assignees.First(), createdTask.Assignments.First().Value.AssignedBy.User.Id);
-            Assert.Equal(true, createdTask.AppliedCategories.Category3);
+            Assert.Single(createdTask.Assignments.AdditionalData);
+            Assert.Equal(true, createdTask.AppliedCategories.AdditionalData["category3"]);
             Assert.Equal(taskToCreate.DueDateTime, createdTask.DueDateTime);
         }
 
@@ -162,25 +165,40 @@
 
             PlannerTaskDetails taskDetailsToUpdate = new PlannerTaskDetails();
             taskDetailsToUpdate.Checklist = new PlannerChecklistItems();
-            string checklistItemId1 = taskDetailsToUpdate.Checklist.AddChecklistItem("Do something");
-            string checklistItemId2 = taskDetailsToUpdate.Checklist.AddChecklistItem("Do something else");
-
+            string checklistItemId1 = Guid.NewGuid().ToString();
+            taskDetailsToUpdate.Checklist.AdditionalData[checklistItemId1] = new PlannerCheckListItem()
+            {
+                Title = "Do Something"
+            };
+            string checklistItemId2 = Guid.NewGuid().ToString();
+            taskDetailsToUpdate.Checklist.AdditionalData[checklistItemId1] = new PlannerCheckListItem()
+            {
+                Title = "Do Something else"
+            };
             taskDetailsToUpdate.References = new PlannerExternalReferences();
-            taskDetailsToUpdate.References.AddReference("http://developer.microsoft.com", "Developer resources");
+            taskDetailsToUpdate.References.AdditionalData["http://developer.microsoft.com"]= new PlannerExternalReference()
+            {
+                Alias = "Developer resources"
+            };
 
             taskDetailsToUpdate.PreviewType = PlannerPreviewType.Checklist;
             taskDetailsToUpdate.Description = "Description of the task";
 
-            string etag = taskDetails.GetEtag();
-            PlannerTaskDetails updatedTaskDetails = await graphClient.Planner.Tasks[createdTask.Id].Details.Header("If-Match", etag).Header("Prefer", "return=representation").UpdateAsync(taskDetailsToUpdate);
+            string etag = taskDetails.AdditionalData["@odata.etag"].ToString();
+            PlannerTaskDetails updatedTaskDetails = await graphClient.Planner.Tasks[createdTask.Id].Details
+                .PatchAsync(taskDetailsToUpdate, requestConfiguration =>
+                {
+                    requestConfiguration.Headers.Add("If-Match", etag);
+                    requestConfiguration.Headers.Add("Prefer", "return=representation");
+                });
 
             Assert.Equal("Description of the task", updatedTaskDetails.Description);
             Assert.Equal(PlannerPreviewType.Checklist, updatedTaskDetails.PreviewType);
-            Assert.Equal(2, updatedTaskDetails.Checklist.Count());
-            Assert.Equal("Do something", updatedTaskDetails.Checklist[checklistItemId1]?.Title);
-            Assert.Equal("Do something else", updatedTaskDetails.Checklist[checklistItemId2]?.Title);
-            Assert.Equal(1, updatedTaskDetails.References.Count());
-            Assert.Equal("Developer resources", updatedTaskDetails.References["http://developer.microsoft.com"]?.Alias);
+            Assert.Equal(2, updatedTaskDetails.Checklist.AdditionalData.Count());
+            Assert.Equal("Do something", ((PlannerCheckListItem)updatedTaskDetails.Checklist.AdditionalData[checklistItemId1])?.Title);
+            Assert.Equal("Do something else", ((PlannerCheckListItem)updatedTaskDetails.Checklist.AdditionalData[checklistItemId2])?.Title);
+            Assert.Single(updatedTaskDetails.References.AdditionalData);
+            Assert.Equal("Developer resources", ((PlannerExternalReference)updatedTaskDetails.References.AdditionalData["http://developer.microsoft.com"])?.Alias);
         }
 
         [Fact(Skip = "No CI set up for functional tests")]
@@ -193,21 +211,25 @@
 
             PlannerPlanDetails planDetails = await graphClient.Planner.Plans[plannerPlan.Id].Details.GetAsync();
 
-            string etag = planDetails.GetEtag();
+            string etag = planDetails.AdditionalData["@odata.etag"].ToString();
             PlannerPlanDetails planDetailsToUpdate = new PlannerPlanDetails();
             planDetailsToUpdate.CategoryDescriptions = new PlannerCategoryDescriptions();
             planDetailsToUpdate.CategoryDescriptions.Category1 = "First category";
             planDetailsToUpdate.CategoryDescriptions.Category4 = "Category 4";
             planDetailsToUpdate.SharedWith = new PlannerUserIds();
-            planDetailsToUpdate.SharedWith.Add("me");
+            planDetailsToUpdate.SharedWith.AdditionalData["me"]=true;
 
-            PlannerPlanDetails updatedPlanDetails = await graphClient.Planner.Plans[plannerPlan.Id].Details.Header("If-Match", etag).Header("Prefer", "return=representation").UpdateAsync(planDetailsToUpdate);
+            PlannerPlanDetails updatedPlanDetails = await graphClient.Planner.Plans[plannerPlan.Id].Details.PatchAsync(planDetailsToUpdate, requestConfiguration =>
+            {
+                requestConfiguration.Headers.Add("If-Match", etag);
+                requestConfiguration.Headers.Add("Prefer", "return=representation");
+            });
 
             Assert.Equal("First category", updatedPlanDetails.CategoryDescriptions.Category1);
             Assert.Equal("Category 4", updatedPlanDetails.CategoryDescriptions.Category4);
 
             // plan creator is the current user as well, we can get the id from there.
-            Assert.True(updatedPlanDetails.SharedWith.Contains(plannerPlan.CreatedBy.User.Id));
+            Assert.True(updatedPlanDetails.SharedWith.AdditionalData.ContainsKey(plannerPlan.CreatedBy.User.Id));
         }
 
         [Fact(Skip = "No CI set up for functional tests")]
@@ -221,7 +243,10 @@
             taskToCreate.PlanId = plannerPlan.Id;
             taskToCreate.Title = "Top";
             taskToCreate.Assignments = new PlannerAssignments();
-            taskToCreate.Assignments.AddAssignee("me");
+            taskToCreate.Assignments.AdditionalData["me"] = new PlannerAssignment()
+            {
+                OrderHint = " !"
+            };
 
             PlannerTask topTask = await graphClient.Planner.Tasks.PostAsync(taskToCreate);
 
@@ -229,7 +254,10 @@
             taskToCreate.PlanId = plannerPlan.Id;
             taskToCreate.Title = "Bottom";
             taskToCreate.Assignments = new PlannerAssignments();
-            taskToCreate.Assignments.AddAssignee("me");
+            taskToCreate.Assignments.AdditionalData["me"] = new PlannerAssignment()
+            {
+                OrderHint = " !"
+            };
 
             PlannerTask bottomTask = await graphClient.Planner.Tasks.PostAsync(taskToCreate);
 
@@ -237,7 +265,10 @@
             taskToCreate.PlanId = plannerPlan.Id;
             taskToCreate.Title = "Middle";
             taskToCreate.Assignments = new PlannerAssignments();
-            taskToCreate.Assignments.AddAssignee("me");
+            taskToCreate.Assignments.AdditionalData["me"] = new PlannerAssignment()
+            {
+                OrderHint = " !"
+            };
 
             PlannerTask middleTask = await graphClient.Planner.Tasks.PostAsync(taskToCreate);
 
@@ -247,43 +278,49 @@
             var myUserId = plannerPlan.CreatedBy.User.Id;
 
             // get assigned to task board formats of the tasks in plan.
-            var taskIdsWithTaskBoardFormats = await graphClient.Planner.Plans[plannerPlan.Id].Tasks.Request().Select("id").Expand("assignedToTaskBoardFormat").GetAsync();
-            IDictionary<string, PlannerAssignedToTaskBoardTaskFormat> formatsByTasks = taskIdsWithTaskBoardFormats.ToDictionary(item => item.Id, item => item.AssignedToTaskBoardFormat);
+            var taskIdsWithTaskBoardFormats = await graphClient.Planner.Plans[plannerPlan.Id].Tasks.GetAsync( requestConfiguration =>
+            {
+                requestConfiguration.QueryParameters.Select = new[] { "id" };
+                requestConfiguration.QueryParameters.Expand = new[] { "assignedToTaskBoardFormat" };
+            });
+            IDictionary<string, PlannerAssignedToTaskBoardTaskFormat> formatsByTasks = taskIdsWithTaskBoardFormats.Value.ToDictionary(item => item.Id, item => item.AssignedToTaskBoardFormat);
 
             var bottomTaskFormatUpdate = new PlannerAssignedToTaskBoardTaskFormat();
             bottomTaskFormatUpdate.OrderHintsByAssignee = new PlannerOrderHintsByAssignee();
-            bottomTaskFormatUpdate.OrderHintsByAssignee[myUserId] = $"{formatsByTasks[topTask.Id].GetOrderHintForAssignee(myUserId)} !"; // after top task.
+            bottomTaskFormatUpdate.OrderHintsByAssignee.AdditionalData[myUserId] = $"{formatsByTasks[topTask.Id].OrderHintsByAssignee.AdditionalData[myUserId]} !"; // after top task.
 
             var middleTaskFormatUpdate = new PlannerAssignedToTaskBoardTaskFormat();
             middleTaskFormatUpdate.OrderHintsByAssignee = new PlannerOrderHintsByAssignee();
-            middleTaskFormatUpdate.OrderHintsByAssignee[myUserId] = $"{formatsByTasks[topTask.Id].GetOrderHintForAssignee(myUserId)} {bottomTaskFormatUpdate.GetOrderHintForAssignee(myUserId)}!"; // after top task, before bottom task's client side new value.
+            middleTaskFormatUpdate.OrderHintsByAssignee.AdditionalData[myUserId] = $"{formatsByTasks[topTask.Id].OrderHintsByAssignee.AdditionalData[myUserId]} {bottomTaskFormatUpdate.OrderHintsByAssignee.AdditionalData[myUserId]}!"; // after top task, before bottom task's client side new value.
 
-            string etag = formatsByTasks[bottomTask.Id].GetEtag();
+            string etag = formatsByTasks[bottomTask.Id].AdditionalData["@odata.etag"].ToString();
             formatsByTasks[bottomTask.Id] = await graphClient
                 .Planner
                 .Tasks[bottomTask.Id]
                 .AssignedToTaskBoardFormat
-                .Request()
-                .Header("If-Match", etag)
-                .Header("Prefer", "return=representation")
-                .UpdateAsync(bottomTaskFormatUpdate);
+                .PatchAsync(bottomTaskFormatUpdate, requestConfiguration =>
+                {
+                    requestConfiguration.Headers.Add("If-Match", etag);
+                    requestConfiguration.Headers.Add("Prefer", "return=representation");
+                });
 
-            etag = formatsByTasks[middleTask.Id].GetEtag();
+            etag = formatsByTasks[middleTask.Id].AdditionalData["@odata.etag"].ToString();
             formatsByTasks[middleTask.Id] = await graphClient
                 .Planner
                 .Tasks[middleTask.Id]
                 .AssignedToTaskBoardFormat
-                .Request()
-                .Header("If-Match", etag)
-                .Header("Prefer", "return=representation")
-                .UpdateAsync(middleTaskFormatUpdate);
+                .PatchAsync(middleTaskFormatUpdate, requestConfiguration =>
+                {
+                    requestConfiguration.Headers.Add("If-Match", etag);
+                    requestConfiguration.Headers.Add("Prefer", "return=representation");
+                });
 
             // verify final order
-            var orderedTaskFormats = formatsByTasks.OrderBy(kvp => kvp.Value.GetOrderHintForAssignee(myUserId), StringComparer.Ordinal).ToList();
+            var orderedTaskFormats = formatsByTasks.OrderBy(kvp => kvp.Value.OrderHintsByAssignee.AdditionalData[myUserId].ToString(), StringComparer.Ordinal).ToList();
             Assert.Equal(topTask.Id, orderedTaskFormats[0].Key);
             Assert.Equal(middleTask.Id, orderedTaskFormats[1].Key);
             Assert.Equal(bottomTask.Id, orderedTaskFormats[2].Key);
         }
-*/
+
     }
 }

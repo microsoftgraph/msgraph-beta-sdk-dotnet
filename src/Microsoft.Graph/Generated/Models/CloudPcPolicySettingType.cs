@@ -2,12 +2,13 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum CloudPcPolicySettingType {
         [EnumMember(Value = "region")]
-        Region,
+        Region = 1,
         [EnumMember(Value = "singleSignOn")]
-        SingleSignOn,
+        SingleSignOn = 2,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 4,
     }
 }

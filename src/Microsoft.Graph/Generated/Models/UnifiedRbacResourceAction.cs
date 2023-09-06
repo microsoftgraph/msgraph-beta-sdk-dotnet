@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isAuthenticationContextSettable"); }
             set { BackingStore?.Set("isAuthenticationContextSettable", value); }
         }
-        /// <summary>The isPrivileged property</summary>
+        /// <summary>Flag indicating if the action is a sensitive resource action. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).</summary>
         public bool? IsPrivileged {
             get { return BackingStore?.Get<bool?>("isPrivileged"); }
             set { BackingStore?.Set("isPrivileged", value); }

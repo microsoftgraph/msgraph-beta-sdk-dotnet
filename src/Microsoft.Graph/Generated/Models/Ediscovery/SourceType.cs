@@ -2,10 +2,11 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    [Flags]
     public enum SourceType {
         [EnumMember(Value = "mailbox")]
-        Mailbox,
+        Mailbox = 1,
         [EnumMember(Value = "site")]
-        Site,
+        Site = 2,
     }
 }

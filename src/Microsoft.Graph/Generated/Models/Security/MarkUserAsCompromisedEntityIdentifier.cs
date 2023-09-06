@@ -2,16 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    [Flags]
     public enum MarkUserAsCompromisedEntityIdentifier {
         [EnumMember(Value = "accountObjectId")]
-        AccountObjectId,
+        AccountObjectId = 1,
         [EnumMember(Value = "initiatingProcessAccountObjectId")]
-        InitiatingProcessAccountObjectId,
+        InitiatingProcessAccountObjectId = 2,
         [EnumMember(Value = "servicePrincipalId")]
-        ServicePrincipalId,
+        ServicePrincipalId = 4,
         [EnumMember(Value = "recipientObjectId")]
-        RecipientObjectId,
+        RecipientObjectId = 8,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 16,
     }
 }

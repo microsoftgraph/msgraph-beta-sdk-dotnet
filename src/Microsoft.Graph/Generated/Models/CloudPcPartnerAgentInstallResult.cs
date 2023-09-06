@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Indicates the name of a partner agent and includes first-party and third-party. Currently, Citrix is the only third-party value. Read-Only.</summary>
+        /// <summary>The name of the partner agent, whether first party or third party. Possible values for third-party partners are Citrix and VMware. Read-Only.</summary>
         public CloudPcPartnerAgentName? PartnerAgentName {
             get { return BackingStore?.Get<CloudPcPartnerAgentName?>("partnerAgentName"); }
             set { BackingStore?.Set("partnerAgentName", value); }

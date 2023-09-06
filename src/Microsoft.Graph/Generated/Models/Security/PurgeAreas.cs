@@ -2,12 +2,13 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    [Flags]
     public enum PurgeAreas {
         [EnumMember(Value = "mailboxes")]
-        Mailboxes,
+        Mailboxes = 1,
         [EnumMember(Value = "teamsMessages")]
-        TeamsMessages,
+        TeamsMessages = 2,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 4,
     }
 }

@@ -2,12 +2,13 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum PlannerTaskCompletionRequirements {
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         [EnumMember(Value = "checklistCompletion")]
-        ChecklistCompletion,
+        ChecklistCompletion = 2,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 4,
     }
 }

@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class KnowledgeBaseArticle : Entity, IParsable {
-        /// <summary>The url property</summary>
+        /// <summary>The URL of the knowledge base article. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url {

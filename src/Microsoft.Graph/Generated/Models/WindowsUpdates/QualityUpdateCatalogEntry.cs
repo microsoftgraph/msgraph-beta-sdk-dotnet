@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class QualityUpdateCatalogEntry : SoftwareUpdateCatalogEntry, IParsable {
-        /// <summary>The catalogName property</summary>
+        /// <summary>The catalog name of the content. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CatalogName {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("catalogName", value); }
         }
 #endif
-        /// <summary>The cveSeverityInformation property</summary>
+        /// <summary>Severity information of the Common Vulnerabilities and Exposures associated with the content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public QualityUpdateCveSeverityInformation? CveSeverityInformation {
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             get { return BackingStore?.Get<bool?>("isExpeditable"); }
             set { BackingStore?.Set("isExpeditable", value); }
         }
-        /// <summary>The productRevisions property</summary>
+        /// <summary>The operating system product revisions that are released as part of this quality update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ProductRevision>? ProductRevisions {
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("productRevisions", value); }
         }
 #endif
-        /// <summary>The qualityUpdateCadence property</summary>
+        /// <summary>The publishing cadence of the quality update. Possible values are: monthly, outOfBand, unknownFutureValue. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence? QualityUpdateCadence {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence?>("qualityUpdateCadence"); }
             set { BackingStore?.Set("qualityUpdateCadence", value); }
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification?>("qualityUpdateClassification"); }
             set { BackingStore?.Set("qualityUpdateClassification", value); }
         }
-        /// <summary>The shortName property</summary>
+        /// <summary>The short name of the content. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShortName {

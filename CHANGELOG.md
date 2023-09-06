@@ -7,6 +7,11 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.47.0-preview] - 2023-09-06
+
+- Fixes serialization and deserialization of bitwise enums.
+- Latest metadata updates from 6th September 2023.
+
 ## [5.46.0-preview] - 2023-08-30
 
 - Add `WithUrl` request builders to allow for easier making of requests with arbitrary Urls(https://github.com/microsoft/kiota/pull/3212)

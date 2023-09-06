@@ -2,22 +2,23 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum AllowedAudiences {
         [EnumMember(Value = "me")]
-        Me,
+        Me = 1,
         [EnumMember(Value = "family")]
-        Family,
+        Family = 2,
         [EnumMember(Value = "contacts")]
-        Contacts,
+        Contacts = 4,
         [EnumMember(Value = "groupMembers")]
-        GroupMembers,
+        GroupMembers = 8,
         [EnumMember(Value = "organization")]
-        Organization,
+        Organization = 16,
         [EnumMember(Value = "federatedOrganizations")]
-        FederatedOrganizations,
+        FederatedOrganizations = 32,
         [EnumMember(Value = "everyone")]
-        Everyone,
+        Everyone = 64,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 128,
     }
 }

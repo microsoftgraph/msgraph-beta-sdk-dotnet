@@ -2,16 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum SensitivityLabelTarget {
         [EnumMember(Value = "email")]
-        Email,
+        Email = 1,
         [EnumMember(Value = "site")]
-        Site,
+        Site = 2,
         [EnumMember(Value = "unifiedGroup")]
-        UnifiedGroup,
+        UnifiedGroup = 4,
         [EnumMember(Value = "teamwork")]
-        Teamwork,
+        Teamwork = 8,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 16,
     }
 }

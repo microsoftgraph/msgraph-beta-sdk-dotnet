@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class WhoisRecord : WhoisBaseRecord, IParsable {
-        /// <summary>The history property</summary>
+        /// <summary>The collection of historical records associated to this WHOIS object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<WhoisHistoryRecord>? History {

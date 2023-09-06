@@ -2,18 +2,19 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum SignInAccessType {
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         [EnumMember(Value = "b2bCollaboration")]
-        B2bCollaboration,
+        B2bCollaboration = 2,
         [EnumMember(Value = "b2bDirectConnect")]
-        B2bDirectConnect,
+        B2bDirectConnect = 4,
         [EnumMember(Value = "microsoftSupport")]
-        MicrosoftSupport,
+        MicrosoftSupport = 8,
         [EnumMember(Value = "serviceProvider")]
-        ServiceProvider,
+        ServiceProvider = 16,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 32,
     }
 }

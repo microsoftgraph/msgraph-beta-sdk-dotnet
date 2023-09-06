@@ -2,14 +2,15 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum ConfirmedBy {
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         [EnumMember(Value = "user")]
-        User,
+        User = 2,
         [EnumMember(Value = "manager")]
-        Manager,
+        Manager = 4,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 8,
     }
 }

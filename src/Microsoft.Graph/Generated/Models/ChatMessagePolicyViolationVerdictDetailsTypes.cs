@@ -2,14 +2,15 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum ChatMessagePolicyViolationVerdictDetailsTypes {
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         [EnumMember(Value = "allowFalsePositiveOverride")]
-        AllowFalsePositiveOverride,
+        AllowFalsePositiveOverride = 2,
         [EnumMember(Value = "allowOverrideWithoutJustification")]
-        AllowOverrideWithoutJustification,
+        AllowOverrideWithoutJustification = 4,
         [EnumMember(Value = "allowOverrideWithJustification")]
-        AllowOverrideWithJustification,
+        AllowOverrideWithJustification = 8,
     }
 }

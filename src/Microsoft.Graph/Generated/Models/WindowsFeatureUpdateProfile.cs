@@ -89,6 +89,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("featureUpdateVersion", value); }
         }
 #endif
+        /// <summary>If true, the latest Microsoft Windows 10 update will be installed on devices ineligible for Microsoft Windows 11</summary>
+        public bool? InstallLatestWindows10OnWindows11IneligibleDevice {
+            get { return BackingStore?.Get<bool?>("installLatestWindows10OnWindows11IneligibleDevice"); }
+            set { BackingStore?.Set("installLatestWindows10OnWindows11IneligibleDevice", value); }
+        }
         /// <summary>The date time that the profile was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -142,6 +147,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"endOfSupportDate", n => { EndOfSupportDate = n.GetDateTimeOffsetValue(); } },
                 {"featureUpdateVersion", n => { FeatureUpdateVersion = n.GetStringValue(); } },
+                {"installLatestWindows10OnWindows11IneligibleDevice", n => { InstallLatestWindows10OnWindows11IneligibleDevice = n.GetBoolValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"rolloutSettings", n => { RolloutSettings = n.GetObjectValue<WindowsUpdateRolloutSettings>(WindowsUpdateRolloutSettings.CreateFromDiscriminatorValue); } },
@@ -161,6 +167,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("endOfSupportDate", EndOfSupportDate);
             writer.WriteStringValue("featureUpdateVersion", FeatureUpdateVersion);
+            writer.WriteBoolValue("installLatestWindows10OnWindows11IneligibleDevice", InstallLatestWindows10OnWindows11IneligibleDevice);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteObjectValue<WindowsUpdateRolloutSettings>("rolloutSettings", RolloutSettings);

@@ -2,16 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    [Flags]
     public enum FileEntityIdentifier {
         [EnumMember(Value = "sha1")]
-        Sha1,
+        Sha1 = 1,
         [EnumMember(Value = "initiatingProcessSHA1")]
-        InitiatingProcessSHA1,
+        InitiatingProcessSHA1 = 2,
         [EnumMember(Value = "sha256")]
-        Sha256,
+        Sha256 = 4,
         [EnumMember(Value = "initiatingProcessSHA256")]
-        InitiatingProcessSHA256,
+        InitiatingProcessSHA256 = 8,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 16,
     }
 }

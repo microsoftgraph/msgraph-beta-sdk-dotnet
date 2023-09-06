@@ -2,14 +2,15 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum CloudPcManagementService {
         [EnumMember(Value = "windows365")]
-        Windows365,
+        Windows365 = 1,
         [EnumMember(Value = "devBox")]
-        DevBox,
+        DevBox = 2,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 4,
         [EnumMember(Value = "rpaBox")]
-        RpaBox,
+        RpaBox = 8,
     }
 }

@@ -2,16 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    [Flags]
     public enum NotificationDestination {
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         [EnumMember(Value = "api")]
-        Api,
+        Api = 2,
         [EnumMember(Value = "email")]
-        Email,
+        Email = 4,
         [EnumMember(Value = "sms")]
-        Sms,
+        Sms = 8,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 16,
     }
 }

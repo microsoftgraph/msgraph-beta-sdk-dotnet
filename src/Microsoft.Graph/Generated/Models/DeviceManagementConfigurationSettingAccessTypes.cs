@@ -2,20 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum DeviceManagementConfigurationSettingAccessTypes {
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         [EnumMember(Value = "add")]
-        Add,
+        Add = 2,
         [EnumMember(Value = "copy")]
-        Copy,
+        Copy = 4,
         [EnumMember(Value = "delete")]
-        Delete,
+        Delete = 8,
         [EnumMember(Value = "get")]
-        Get,
+        Get = 16,
         [EnumMember(Value = "replace")]
-        Replace,
+        Replace = 32,
         [EnumMember(Value = "execute")]
-        Execute,
+        Execute = 64,
     }
 }

@@ -2,14 +2,15 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    [Flags]
     public enum StopAndQuarantineFileEntityIdentifier {
         [EnumMember(Value = "deviceId")]
-        DeviceId,
+        DeviceId = 1,
         [EnumMember(Value = "sha1")]
-        Sha1,
+        Sha1 = 2,
         [EnumMember(Value = "initiatingProcessSHA1")]
-        InitiatingProcessSHA1,
+        InitiatingProcessSHA1 = 4,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 8,
     }
 }

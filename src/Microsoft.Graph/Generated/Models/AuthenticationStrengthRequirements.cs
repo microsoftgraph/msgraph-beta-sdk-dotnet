@@ -2,12 +2,13 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum AuthenticationStrengthRequirements {
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         [EnumMember(Value = "mfa")]
-        Mfa,
+        Mfa = 2,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 4,
     }
 }

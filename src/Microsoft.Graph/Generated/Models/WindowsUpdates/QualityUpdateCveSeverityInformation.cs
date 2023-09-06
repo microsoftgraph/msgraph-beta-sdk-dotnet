@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("exploitedCves", value); }
         }
 #endif
-        /// <summary>The maxBaseScore property</summary>
+        /// <summary>Highest base score that occurs of any CVE addressed by the quality update. Read-only.</summary>
         public double? MaxBaseScore {
             get { return BackingStore?.Get<double?>("maxBaseScore"); }
             set { BackingStore?.Set("maxBaseScore", value); }

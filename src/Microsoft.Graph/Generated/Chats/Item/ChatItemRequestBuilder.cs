@@ -94,7 +94,8 @@ namespace Microsoft.Graph.Beta.Chats.Item {
         public ChatItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/chats/{chat%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete entity from chats
+        /// Soft-delete a chat. When invoked with delegated permissions, this operation only works for tenant admins and Teams service admins.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +156,7 @@ namespace Microsoft.Graph.Beta.Chats.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Chat>(requestInfo, Microsoft.Graph.Beta.Models.Chat.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Delete entity from chats
+        /// Soft-delete a chat. When invoked with delegated permissions, this operation only works for tenant admins and Teams service admins.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

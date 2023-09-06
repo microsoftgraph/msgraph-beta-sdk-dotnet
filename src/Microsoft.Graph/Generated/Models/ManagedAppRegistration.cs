@@ -267,6 +267,7 @@ namespace Microsoft.Graph.Beta.Models {
             return mappingValue switch {
                 "#microsoft.graph.androidManagedAppRegistration" => new AndroidManagedAppRegistration(),
                 "#microsoft.graph.iosManagedAppRegistration" => new IosManagedAppRegistration(),
+                "#microsoft.graph.windowsManagedAppRegistration" => new WindowsManagedAppRegistration(),
                 _ => new ManagedAppRegistration(),
             };
         }

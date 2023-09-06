@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisHistoryRecords.I
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get whoisHistoryRecords from security
+        /// Retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisHistoryRecords.I
             return requestInfo;
         }
         /// <summary>
-        /// Get whoisHistoryRecords from security
+        /// Retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisHistoryRecords.I
             }
         }
         /// <summary>
-        /// Get whoisHistoryRecords from security
+        /// Retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.
         /// </summary>
         public class WhoisHistoryRecordItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

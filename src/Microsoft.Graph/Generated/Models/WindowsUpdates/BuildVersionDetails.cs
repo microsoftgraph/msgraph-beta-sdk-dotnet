@@ -14,17 +14,17 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The buildNumber property</summary>
+        /// <summary>The build number of the product release. Read-only.</summary>
         public int? BuildNumber {
             get { return BackingStore?.Get<int?>("buildNumber"); }
             set { BackingStore?.Set("buildNumber", value); }
         }
-        /// <summary>The majorVersion property</summary>
+        /// <summary>The major version of the product release. Read-only.</summary>
         public int? MajorVersion {
             get { return BackingStore?.Get<int?>("majorVersion"); }
             set { BackingStore?.Set("majorVersion", value); }
         }
-        /// <summary>The minorVersion property</summary>
+        /// <summary>The minor version of the product release. Read-only.</summary>
         public int? MinorVersion {
             get { return BackingStore?.Get<int?>("minorVersion"); }
             set { BackingStore?.Set("minorVersion", value); }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The updateBuildRevision property</summary>
+        /// <summary>The update build revision number of the product revision. Read-only.</summary>
         public int? UpdateBuildRevision {
             get { return BackingStore?.Get<int?>("updateBuildRevision"); }
             set { BackingStore?.Set("updateBuildRevision", value); }

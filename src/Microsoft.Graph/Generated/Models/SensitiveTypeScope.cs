@@ -2,10 +2,11 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum SensitiveTypeScope {
         [EnumMember(Value = "fullDocument")]
-        FullDocument,
+        FullDocument = 1,
         [EnumMember(Value = "partialDocument")]
-        PartialDocument,
+        PartialDocument = 2,
     }
 }

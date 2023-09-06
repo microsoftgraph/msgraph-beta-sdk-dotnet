@@ -3,18 +3,19 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Type of start menu app list visibility.</summary>
+    [Flags]
     public enum WindowsStartMenuAppListVisibilityType {
         /// <summary>User defined. Default value.</summary>
         [EnumMember(Value = "userDefined")]
-        UserDefined,
+        UserDefined = 1,
         /// <summary>Collapse the app list on the start menu.</summary>
         [EnumMember(Value = "collapse")]
-        Collapse,
+        Collapse = 2,
         /// <summary>Removes the app list entirely from the start menu.</summary>
         [EnumMember(Value = "remove")]
-        Remove,
+        Remove = 4,
         /// <summary>Disables the corresponding toggle (Collapse or Remove) in the Settings app.</summary>
         [EnumMember(Value = "disableSettingsApp")]
-        DisableSettingsApp,
+        DisableSettingsApp = 8,
     }
 }

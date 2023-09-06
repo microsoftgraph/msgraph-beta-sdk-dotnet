@@ -310,6 +310,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("systemFamily", value); }
         }
 #endif
+        /// <summary>Userless enrollment block status, indicating whether the next device enrollment will be blocked.</summary>
+        public WindowsAutopilotUserlessEnrollmentStatus? UserlessEnrollmentStatus {
+            get { return BackingStore?.Get<WindowsAutopilotUserlessEnrollmentStatus?>("userlessEnrollmentStatus"); }
+            set { BackingStore?.Set("userlessEnrollmentStatus", value); }
+        }
         /// <summary>User Principal Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -363,6 +368,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
                 {"skuNumber", n => { SkuNumber = n.GetStringValue(); } },
                 {"systemFamily", n => { SystemFamily = n.GetStringValue(); } },
+                {"userlessEnrollmentStatus", n => { UserlessEnrollmentStatus = n.GetEnumValue<WindowsAutopilotUserlessEnrollmentStatus>(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
@@ -399,6 +405,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("serialNumber", SerialNumber);
             writer.WriteStringValue("skuNumber", SkuNumber);
             writer.WriteStringValue("systemFamily", SystemFamily);
+            writer.WriteEnumValue<WindowsAutopilotUserlessEnrollmentStatus>("userlessEnrollmentStatus", UserlessEnrollmentStatus);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
         }
     }

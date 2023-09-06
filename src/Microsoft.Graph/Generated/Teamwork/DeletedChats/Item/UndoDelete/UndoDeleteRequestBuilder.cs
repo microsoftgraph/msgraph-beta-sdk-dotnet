@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedChats.Item.UndoDelete {
         public UndoDeleteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/deletedChats/{deletedChat%2Did}/undoDelete", rawUrl) {
         }
         /// <summary>
-        /// Invoke action undoDelete
+        /// Restore a  deletedChat to an active chat.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/deletedchat-undodelete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedChats.Item.UndoDelete {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Invoke action undoDelete
+        /// Restore a  deletedChat to an active chat.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

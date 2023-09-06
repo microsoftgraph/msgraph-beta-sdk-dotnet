@@ -1647,6 +1647,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.windowsKioskConfiguration" => new WindowsKioskConfiguration(),
                 "#microsoft.graph.windowsMalwareInformation" => new WindowsMalwareInformation(),
                 "#microsoft.graph.windowsManagedAppProtection" => new WindowsManagedAppProtection(),
+                "#microsoft.graph.windowsManagedAppRegistration" => new WindowsManagedAppRegistration(),
                 "#microsoft.graph.windowsManagedDevice" => new WindowsManagedDevice(),
                 "#microsoft.graph.windowsManagementApp" => new WindowsManagementApp(),
                 "#microsoft.graph.windowsManagementAppHealthState" => new WindowsManagementAppHealthState(),

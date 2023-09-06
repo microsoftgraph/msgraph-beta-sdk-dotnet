@@ -20,6 +20,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("upns", value); }
         }
 #endif
+        /// <summary>The userPrincipalNames property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? UserPrincipalNames {
+            get { return BackingStore?.Get<List<string>?>("userPrincipalNames"); }
+            set { BackingStore?.Set("userPrincipalNames", value); }
+        }
+#nullable restore
+#else
+        public List<string> UserPrincipalNames {
+            get { return BackingStore?.Get<List<string>>("userPrincipalNames"); }
+            set { BackingStore?.Set("userPrincipalNames", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new subjectRightsRequestEnumeratedMailboxLocation and sets the default values.
         /// </summary>
@@ -40,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"upns", n => { Upns = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"userPrincipalNames", n => { UserPrincipalNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -50,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("upns", Upns);
+            writer.WriteCollectionOfPrimitiveValues<string>("userPrincipalNames", UserPrincipalNames);
         }
     }
 }

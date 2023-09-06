@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class ThreatIntelligence : Entity, IParsable {
-        /// <summary>Refers to indicators of threat or compromise highlighted in an microsoft.graph.security.article.Note: List retrieval is not yet supported.</summary>
+        /// <summary>Refers to indicators of threat or compromise highlighted in an article.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ArticleIndicator>? ArticleIndicators {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("articles", value); }
         }
 #endif
-        /// <summary>Retrieve details about microsoft.graph.security.hostComponent objects.Note: List retrieval is not yet supported.</summary>
+        /// <summary>Retrieve details about hostComponent objects.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<HostComponent>? HostComponents {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("hostComponents", value); }
         }
 #endif
-        /// <summary>Retrieve details about microsoft.graph.security.hostCookie objects.Note: List retrieval is not yet supported.</summary>
+        /// <summary>Retrieve details about hostCookie objects.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<HostCookie>? HostCookies {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("hostCookies", value); }
         }
 #endif
-        /// <summary>Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.</summary>
+        /// <summary>Retrieve details about hostTracker objects.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<HostPair>? HostPairs {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("hostPairs", value); }
         }
 #endif
-        /// <summary>Refers to microsoft.graph.security.host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.</summary>
+        /// <summary>Refers to host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Host>? Hosts {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("hostSslCertificates", value); }
         }
 #endif
-        /// <summary>Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.</summary>
+        /// <summary>Retrieve details about hostTracker objects.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<HostTracker>? HostTrackers {
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("intelProfiles", value); }
         }
 #endif
-        /// <summary>Retrieve details about microsoft.graph.security.passiveDnsRecord objects.Note: List retrieval is not yet supported.</summary>
+        /// <summary>Retrieve details about passiveDnsRecord objects.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PassiveDnsRecord>? PassiveDnsRecords {
@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("sslCertificates", value); }
         }
 #endif
-        /// <summary>Retrieve details about the microsoft.graph.security.subdomain.Note: List retrieval is not yet supported.</summary>
+        /// <summary>Retrieve details about the subdomain.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Subdomain>? Subdomains {
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("subdomains", value); }
         }
 #endif
-        /// <summary>Retrieve details about microsoft.graph.security.vulnerabilities.Note: List retrieval is not yet supported.</summary>
+        /// <summary>Retrieve details about vulnerabilities.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Vulnerability>? Vulnerabilities {
@@ -202,7 +202,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("vulnerabilities", value); }
         }
 #endif
-        /// <summary>The whoisHistoryRecords property</summary>
+        /// <summary>Retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<WhoisHistoryRecord>? WhoisHistoryRecords {
@@ -216,7 +216,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("whoisHistoryRecords", value); }
         }
 #endif
-        /// <summary>The whoisRecords property</summary>
+        /// <summary>A list of whoisRecord objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<WhoisRecord>? WhoisRecords {

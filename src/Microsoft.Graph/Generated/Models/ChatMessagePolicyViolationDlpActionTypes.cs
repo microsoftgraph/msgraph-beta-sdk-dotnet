@@ -2,14 +2,15 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum ChatMessagePolicyViolationDlpActionTypes {
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         [EnumMember(Value = "notifySender")]
-        NotifySender,
+        NotifySender = 2,
         [EnumMember(Value = "blockAccess")]
-        BlockAccess,
+        BlockAccess = 4,
         [EnumMember(Value = "blockAccessExternal")]
-        BlockAccessExternal,
+        BlockAccessExternal = 8,
     }
 }

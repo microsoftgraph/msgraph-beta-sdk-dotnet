@@ -2,16 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum ClonableTeamParts {
         [EnumMember(Value = "apps")]
-        Apps,
+        Apps = 1,
         [EnumMember(Value = "tabs")]
-        Tabs,
+        Tabs = 2,
         [EnumMember(Value = "settings")]
-        Settings,
+        Settings = 4,
         [EnumMember(Value = "channels")]
-        Channels,
+        Channels = 8,
         [EnumMember(Value = "members")]
-        Members,
+        Members = 16,
     }
 }

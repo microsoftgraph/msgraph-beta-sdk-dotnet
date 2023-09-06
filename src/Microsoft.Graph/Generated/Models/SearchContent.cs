@@ -2,12 +2,13 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum SearchContent {
         [EnumMember(Value = "sharedContent")]
-        SharedContent,
+        SharedContent = 1,
         [EnumMember(Value = "privateContent")]
-        PrivateContent,
+        PrivateContent = 2,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 4,
     }
 }

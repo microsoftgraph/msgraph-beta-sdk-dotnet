@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class WhoisBaseRecord : Entity, IParsable {
-        /// <summary>The abuse property</summary>
+        /// <summary>The contact information for the abuse contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public WhoisContact? Abuse {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("abuse", value); }
         }
 #endif
-        /// <summary>The admin property</summary>
+        /// <summary>The contact information for the admin contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public WhoisContact? Admin {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("admin", value); }
         }
 #endif
-        /// <summary>The billing property</summary>
+        /// <summary>The contact information for the billing contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public WhoisContact? Billing {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("billing", value); }
         }
 #endif
-        /// <summary>The domainStatus property</summary>
+        /// <summary>The domain status for this WHOIS object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DomainStatus {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("domainStatus", value); }
         }
 #endif
-        /// <summary>The expirationDateTime property</summary>
+        /// <summary>The date and time when this WHOIS record expires with the registrar. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>The firstSeenDateTime property</summary>
+        /// <summary>The first seen date and time of this WHOIS record. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? FirstSeenDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
             set { BackingStore?.Set("firstSeenDateTime", value); }
@@ -86,17 +86,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("host", value); }
         }
 #endif
-        /// <summary>The lastSeenDateTime property</summary>
+        /// <summary>The last seen date and time of this WHOIS record. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastSeenDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
-        /// <summary>The lastUpdateDateTime property</summary>
+        /// <summary>The date and time when this WHOIS record was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastUpdateDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdateDateTime"); }
             set { BackingStore?.Set("lastUpdateDateTime", value); }
         }
-        /// <summary>The nameservers property</summary>
+        /// <summary>The nameservers for this WHOIS object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<WhoisNameserver>? Nameservers {
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("nameservers", value); }
         }
 #endif
-        /// <summary>The noc property</summary>
+        /// <summary>The contact information for the noc contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public WhoisContact? Noc {
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("noc", value); }
         }
 #endif
-        /// <summary>The rawWhoisText property</summary>
+        /// <summary>The raw WHOIS details for this WHOIS object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RawWhoisText {
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("rawWhoisText", value); }
         }
 #endif
-        /// <summary>The registrant property</summary>
+        /// <summary>The contact information for the registrant contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public WhoisContact? Registrant {
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("registrant", value); }
         }
 #endif
-        /// <summary>The registrar property</summary>
+        /// <summary>The contact information for the registrar contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public WhoisContact? Registrar {
@@ -166,12 +166,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("registrar", value); }
         }
 #endif
-        /// <summary>The registrationDateTime property</summary>
+        /// <summary>The date and time when this WHOIS record was registered with a registrar. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? RegistrationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("registrationDateTime"); }
             set { BackingStore?.Set("registrationDateTime", value); }
         }
-        /// <summary>The technical property</summary>
+        /// <summary>The contact information for the technical contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public WhoisContact? Technical {
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("technical", value); }
         }
 #endif
-        /// <summary>The whoisServer property</summary>
+        /// <summary>The WHOIS server that provides the details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WhoisServer {
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("whoisServer", value); }
         }
 #endif
-        /// <summary>The zone property</summary>
+        /// <summary>The contact information for the zone contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public WhoisContact? Zone {

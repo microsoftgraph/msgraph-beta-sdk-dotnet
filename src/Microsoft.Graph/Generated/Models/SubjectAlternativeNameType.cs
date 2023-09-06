@@ -3,24 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Subject Alternative Name Options.</summary>
+    [Flags]
     public enum SubjectAlternativeNameType {
         /// <summary>No subject alternative name.</summary>
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         /// <summary>Email address.</summary>
         [EnumMember(Value = "emailAddress")]
-        EmailAddress,
+        EmailAddress = 2,
         /// <summary>User Principal Name (UPN).</summary>
         [EnumMember(Value = "userPrincipalName")]
-        UserPrincipalName,
+        UserPrincipalName = 4,
         /// <summary>Custom Azure AD Attribute.</summary>
         [EnumMember(Value = "customAzureADAttribute")]
-        CustomAzureADAttribute,
+        CustomAzureADAttribute = 8,
         /// <summary>Domain Name Service (DNS).</summary>
         [EnumMember(Value = "domainNameService")]
-        DomainNameService,
+        DomainNameService = 16,
         /// <summary>Universal Resource Identifier (URI).</summary>
         [EnumMember(Value = "universalResourceIdentifier")]
-        UniversalResourceIdentifier,
+        UniversalResourceIdentifier = 32,
     }
 }

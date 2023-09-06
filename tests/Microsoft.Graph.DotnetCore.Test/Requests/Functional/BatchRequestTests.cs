@@ -35,10 +35,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             BatchRequestStep requestStep2 = new BatchRequestStep("2", httpRequestMessage2, new List<string> { "1" });
 
             var baseClient = new GraphServiceClient(new HttpClientRequestAdapter(new AnonymousAuthenticationProvider()));
+#pragma warning disable CS0618 // Type or member is obsolete
             BatchRequestContent batchRequestContent = new BatchRequestContent(baseClient);
             batchRequestContent.AddBatchRequestStep(requestStep1);
             batchRequestContent.AddBatchRequestStep(requestStep2);
-
+#pragma warning restore CS0618 // Type or member is obsolete
+            
             HttpResponseMessage response = await httpClient.PostAsync("https://graph.microsoft.com/v1.0/$batch", batchRequestContent);
 
             BatchResponseContent batchResponseContent = new BatchResponseContent(response);

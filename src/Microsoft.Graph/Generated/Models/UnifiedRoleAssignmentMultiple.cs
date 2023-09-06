@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Ids of the directory objects representing the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.</summary>
+        /// <summary>Ids of the directory objects that represent the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DirectoryScopeIds {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("directoryScopeIds", value); }
         }
 #endif
-        /// <summary>Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.</summary>
+        /// <summary>Read-only collection that references the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DirectoryObject>? DirectoryScopes {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("principalIds", value); }
         }
 #endif
-        /// <summary>Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.</summary>
+        /// <summary>Read-only collection that references the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DirectoryObject>? Principals {

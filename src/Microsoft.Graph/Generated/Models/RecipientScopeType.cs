@@ -2,16 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum RecipientScopeType {
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         [EnumMember(Value = "internal")]
-        Internal,
+        Internal = 2,
         [EnumMember(Value = "external")]
-        External,
+        External = 4,
         [EnumMember(Value = "externalPartner")]
-        ExternalPartner,
+        ExternalPartner = 8,
         [EnumMember(Value = "externalNonPartner")]
-        ExternalNonPartner,
+        ExternalNonPartner = 16,
     }
 }

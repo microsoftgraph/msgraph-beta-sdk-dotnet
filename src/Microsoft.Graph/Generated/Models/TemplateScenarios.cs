@@ -2,20 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    [Flags]
     public enum TemplateScenarios {
         [EnumMember(Value = "new")]
-        New,
+        New = 1,
         [EnumMember(Value = "secureFoundation")]
-        SecureFoundation,
+        SecureFoundation = 2,
         [EnumMember(Value = "zeroTrust")]
-        ZeroTrust,
+        ZeroTrust = 4,
         [EnumMember(Value = "remoteWork")]
-        RemoteWork,
+        RemoteWork = 8,
         [EnumMember(Value = "protectAdmins")]
-        ProtectAdmins,
+        ProtectAdmins = 16,
         [EnumMember(Value = "emergingThreats")]
-        EmergingThreats,
+        EmergingThreats = 32,
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 64,
     }
 }

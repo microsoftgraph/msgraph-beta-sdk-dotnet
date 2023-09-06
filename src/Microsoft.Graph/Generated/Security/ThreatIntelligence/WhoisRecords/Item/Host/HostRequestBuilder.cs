@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisRecords.Item.Hos
         public HostRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/whoisRecords/{whoisRecord%2Did}/host{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get host from security
+        /// The host associated to this WHOIS object.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisRecords.Item.Hos
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.Host>(requestInfo, Microsoft.Graph.Beta.Models.Security.Host.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get host from security
+        /// The host associated to this WHOIS object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisRecords.Item.Hos
             return new HostRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get host from security
+        /// The host associated to this WHOIS object.
         /// </summary>
         public class HostRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

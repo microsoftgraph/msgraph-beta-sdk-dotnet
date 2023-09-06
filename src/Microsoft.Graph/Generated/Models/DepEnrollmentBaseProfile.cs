@@ -159,6 +159,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("touchIdDisabled"); }
             set { BackingStore?.Set("touchIdDisabled", value); }
         }
+        /// <summary>Indicates if the device will need to wait for configured confirmation</summary>
+        public bool? WaitForDeviceConfiguredConfirmation {
+            get { return BackingStore?.Get<bool?>("waitForDeviceConfiguredConfirmation"); }
+            set { BackingStore?.Set("waitForDeviceConfiguredConfirmation", value); }
+        }
         /// <summary>
         /// Instantiates a new depEnrollmentBaseProfile and sets the default values.
         /// </summary>
@@ -204,6 +209,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"supportPhoneNumber", n => { SupportPhoneNumber = n.GetStringValue(); } },
                 {"termsAndConditionsDisabled", n => { TermsAndConditionsDisabled = n.GetBoolValue(); } },
                 {"touchIdDisabled", n => { TouchIdDisabled = n.GetBoolValue(); } },
+                {"waitForDeviceConfiguredConfirmation", n => { WaitForDeviceConfiguredConfirmation = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -234,6 +240,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("supportPhoneNumber", SupportPhoneNumber);
             writer.WriteBoolValue("termsAndConditionsDisabled", TermsAndConditionsDisabled);
             writer.WriteBoolValue("touchIdDisabled", TouchIdDisabled);
+            writer.WriteBoolValue("waitForDeviceConfiguredConfirmation", WaitForDeviceConfiguredConfirmation);
         }
     }
 }

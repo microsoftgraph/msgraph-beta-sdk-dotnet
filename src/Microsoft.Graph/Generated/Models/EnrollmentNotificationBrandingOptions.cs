@@ -3,27 +3,28 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Branding Options for the Message Template. Branding is defined in the Intune Admin Console.</summary>
+    [Flags]
     public enum EnrollmentNotificationBrandingOptions {
         /// <summary>Indicates that the template has no branding.</summary>
         [EnumMember(Value = "none")]
-        None,
+        None = 1,
         /// <summary>Indicates that the Company Logo is included in the notification.</summary>
         [EnumMember(Value = "includeCompanyLogo")]
-        IncludeCompanyLogo,
+        IncludeCompanyLogo = 2,
         /// <summary>Indicates that the Company Name is included in the notification.</summary>
         [EnumMember(Value = "includeCompanyName")]
-        IncludeCompanyName,
+        IncludeCompanyName = 4,
         /// <summary>Indicates that the Contact Information is included in the notification.</summary>
         [EnumMember(Value = "includeContactInformation")]
-        IncludeContactInformation,
+        IncludeContactInformation = 8,
         /// <summary>Indicates that the Company Portal Link is included in the notification.</summary>
         [EnumMember(Value = "includeCompanyPortalLink")]
-        IncludeCompanyPortalLink,
+        IncludeCompanyPortalLink = 16,
         /// <summary>Indicates that the DeviceDetails is included in the notification.</summary>
         [EnumMember(Value = "includeDeviceDetails")]
-        IncludeDeviceDetails,
+        IncludeDeviceDetails = 32,
         /// <summary>unknownFutureValue for evolvable enums pattern.</summary>
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
+        UnknownFutureValue = 64,
     }
 }
