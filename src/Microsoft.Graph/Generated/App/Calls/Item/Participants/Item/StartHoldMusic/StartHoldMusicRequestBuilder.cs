@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.StartHoldMusic {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<StartHoldMusicOperation>(requestInfo, StartHoldMusicOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<StartHoldMusicOperation>(requestInfo, StartHoldMusicOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Put a participant on hold and play music in the background.

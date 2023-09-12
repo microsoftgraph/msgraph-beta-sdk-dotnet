@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Security.ProviderTenantSettings.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get providerTenantSettings from security
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Security.ProviderTenantSettings.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ProviderTenantSetting>(requestInfo, ProviderTenantSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ProviderTenantSetting>(requestInfo, ProviderTenantSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property providerTenantSettings in security
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Security.ProviderTenantSettings.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ProviderTenantSetting>(requestInfo, ProviderTenantSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ProviderTenantSetting>(requestInfo, ProviderTenantSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property providerTenantSettings for security

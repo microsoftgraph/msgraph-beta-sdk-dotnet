@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Activities.Item.HistoryItems {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ActivityHistoryItemCollectionResponse>(requestInfo, ActivityHistoryItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ActivityHistoryItemCollectionResponse>(requestInfo, ActivityHistoryItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to historyItems for users
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Activities.Item.HistoryItems {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ActivityHistoryItem>(requestInfo, ActivityHistoryItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ActivityHistoryItem>(requestInfo, ActivityHistoryItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Optional. NavigationProperty/Containment; navigation property to the activity&apos;s historyItems.

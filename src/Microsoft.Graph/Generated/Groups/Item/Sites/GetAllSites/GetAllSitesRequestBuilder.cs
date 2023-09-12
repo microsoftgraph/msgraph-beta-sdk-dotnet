@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.GetAllSites {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetAllSitesResponse>(requestInfo, GetAllSitesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetAllSitesResponse>(requestInfo, GetAllSitesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getAllSites

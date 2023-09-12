@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding.CustomCSS {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding.CustomCSS {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.

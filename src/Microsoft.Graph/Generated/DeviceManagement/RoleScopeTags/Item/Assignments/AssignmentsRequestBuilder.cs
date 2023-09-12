@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assignments {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RoleScopeTagAutoAssignmentCollectionResponse>(requestInfo, RoleScopeTagAutoAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleScopeTagAutoAssignmentCollectionResponse>(requestInfo, RoleScopeTagAutoAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to assignments for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assignments {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RoleScopeTagAutoAssignment>(requestInfo, RoleScopeTagAutoAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleScopeTagAutoAssignment>(requestInfo, RoleScopeTagAutoAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of assignments for this Role Scope Tag.

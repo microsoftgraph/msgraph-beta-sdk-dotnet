@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Payloads.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents an attack simulation training campaign payload in a tenant.
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Payloads.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Payload>(requestInfo, Microsoft.Graph.Beta.Models.Payload.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Payload>(requestInfo, Microsoft.Graph.Beta.Models.Payload.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property payloads in security
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Payloads.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Payload>(requestInfo, Microsoft.Graph.Beta.Models.Payload.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Payload>(requestInfo, Microsoft.Graph.Beta.Models.Payload.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property payloads for security

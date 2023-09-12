@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.MarkUnread {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MarkUnreadResponse>(requestInfo, MarkUnreadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MarkUnreadResponse>(requestInfo, MarkUnreadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Mark a list of serviceUpdateMessages as unread for the signed in user.

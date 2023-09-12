@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.GetVirtualAppointmentJoin
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetVirtualAppointmentJoinWebUrlResponse>(requestInfo, GetVirtualAppointmentJoinWebUrlResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetVirtualAppointmentJoinWebUrlResponse>(requestInfo, GetVirtualAppointmentJoinWebUrlResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getVirtualAppointmentJoinWebUrl

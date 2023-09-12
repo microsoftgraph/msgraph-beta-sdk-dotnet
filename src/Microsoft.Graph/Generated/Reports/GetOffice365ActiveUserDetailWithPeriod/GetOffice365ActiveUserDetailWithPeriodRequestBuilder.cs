@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithPeriod {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetOffice365ActiveUserDetailWithPeriodResponse>(requestInfo, GetOffice365ActiveUserDetailWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetOffice365ActiveUserDetailWithPeriodResponse>(requestInfo, GetOffice365ActiveUserDetailWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getOffice365ActiveUserDetail

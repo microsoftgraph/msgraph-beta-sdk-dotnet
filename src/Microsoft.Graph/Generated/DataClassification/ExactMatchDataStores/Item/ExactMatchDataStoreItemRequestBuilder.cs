@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get exactMatchDataStores from dataClassification
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ExactMatchDataStore>(requestInfo, ExactMatchDataStore.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ExactMatchDataStore>(requestInfo, ExactMatchDataStore.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property exactMatchDataStores in dataClassification
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ExactMatchDataStore>(requestInfo, ExactMatchDataStore.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ExactMatchDataStore>(requestInfo, ExactMatchDataStore.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property exactMatchDataStores for dataClassification

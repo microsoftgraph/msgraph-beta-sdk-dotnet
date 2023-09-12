@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Container for navigation properties for Azure AD authentication methods resources.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AuthenticationMethodsRoot>(requestInfo, AuthenticationMethodsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AuthenticationMethodsRoot>(requestInfo, AuthenticationMethodsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property authenticationMethods in reports
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AuthenticationMethodsRoot>(requestInfo, AuthenticationMethodsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AuthenticationMethodsRoot>(requestInfo, AuthenticationMethodsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property authenticationMethods for reports

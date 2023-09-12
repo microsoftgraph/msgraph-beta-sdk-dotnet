@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Instances.Item.SnoozeReminder {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DateTimeTimeZone? NewReminderTime {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("NewReminderTime"); }
-            set { BackingStore?.Set("NewReminderTime", value); }
+            get { return BackingStore?.Get<DateTimeTimeZone?>("newReminderTime"); }
+            set { BackingStore?.Set("newReminderTime", value); }
         }
 #nullable restore
 #else
         public DateTimeTimeZone NewReminderTime {
-            get { return BackingStore?.Get<DateTimeTimeZone>("NewReminderTime"); }
-            set { BackingStore?.Set("NewReminderTime", value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("newReminderTime"); }
+            set { BackingStore?.Set("newReminderTime", value); }
         }
 #endif
         /// <summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Instances.Item.SnoozeReminder {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"NewReminderTime", n => { NewReminderTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"newReminderTime", n => { NewReminderTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Instances.Item.SnoozeReminder {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<DateTimeTimeZone>("NewReminderTime", NewReminderTime);
+            writer.WriteObjectValue<DateTimeTimeZone>("newReminderTime", NewReminderTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

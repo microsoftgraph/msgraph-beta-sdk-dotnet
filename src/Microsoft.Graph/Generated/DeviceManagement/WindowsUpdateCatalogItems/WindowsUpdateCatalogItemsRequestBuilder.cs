@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsUpdateCatalogItems {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WindowsUpdateCatalogItemCollectionResponse>(requestInfo, WindowsUpdateCatalogItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsUpdateCatalogItemCollectionResponse>(requestInfo, WindowsUpdateCatalogItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to windowsUpdateCatalogItems for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsUpdateCatalogItems {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WindowsUpdateCatalogItem>(requestInfo, WindowsUpdateCatalogItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsUpdateCatalogItem>(requestInfo, WindowsUpdateCatalogItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A collection of windows update catalog items (fetaure updates item , quality updates item)

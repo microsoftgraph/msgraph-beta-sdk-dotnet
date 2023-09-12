@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Health {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the health details of a Microsoft Teams-enabled device. Device health is calculated based on the device configuration and other device parameters.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Health {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TeamworkDeviceHealth>(requestInfo, TeamworkDeviceHealth.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamworkDeviceHealth>(requestInfo, TeamworkDeviceHealth.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property health in teamwork
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Health {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TeamworkDeviceHealth>(requestInfo, TeamworkDeviceHealth.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamworkDeviceHealth>(requestInfo, TeamworkDeviceHealth.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property health for teamwork

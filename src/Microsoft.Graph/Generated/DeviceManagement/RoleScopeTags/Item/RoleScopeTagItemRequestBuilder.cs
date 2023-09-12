@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The Role Scope Tags.
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RoleScopeTag>(requestInfo, RoleScopeTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleScopeTag>(requestInfo, RoleScopeTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property roleScopeTags in deviceManagement
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RoleScopeTag>(requestInfo, RoleScopeTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleScopeTag>(requestInfo, RoleScopeTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property roleScopeTags for deviceManagement

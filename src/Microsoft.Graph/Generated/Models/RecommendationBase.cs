@@ -168,6 +168,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecommendationType?>("recommendationType"); }
             set { BackingStore?.Set("recommendationType", value); }
         }
+        /// <summary>The current release type of the recommendation. The possible values are: preview or generallyAvailable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReleaseType {
+            get { return BackingStore?.Get<string?>("releaseType"); }
+            set { BackingStore?.Set("releaseType", value); }
+        }
+#nullable restore
+#else
+        public string ReleaseType {
+            get { return BackingStore?.Get<string>("releaseType"); }
+            set { BackingStore?.Set("releaseType", value); }
+        }
+#endif
         /// <summary>Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -222,6 +236,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"postponeUntilDateTime", n => { PostponeUntilDateTime = n.GetDateTimeOffsetValue(); } },
                 {"priority", n => { Priority = n.GetEnumValue<RecommendationPriority>(); } },
                 {"recommendationType", n => { RecommendationType = n.GetEnumValue<RecommendationType>(); } },
+                {"releaseType", n => { ReleaseType = n.GetStringValue(); } },
                 {"remediationImpact", n => { RemediationImpact = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<RecommendationStatus>(); } },
             };
@@ -251,6 +266,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("postponeUntilDateTime", PostponeUntilDateTime);
             writer.WriteEnumValue<RecommendationPriority>("priority", Priority);
             writer.WriteEnumValue<RecommendationType>("recommendationType", RecommendationType);
+            writer.WriteStringValue("releaseType", ReleaseType);
             writer.WriteStringValue("remediationImpact", RemediationImpact);
             writer.WriteEnumValue<RecommendationStatus>("status", Status);
         }

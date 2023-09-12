@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The user&apos;s mail folders. Read-only. Nullable.
@@ -96,11 +96,11 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MailFolder>(requestInfo, MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MailFolder>(requestInfo, MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the writable properties of a mailSearchFolder object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailsearchfolder-update?view=graph-rest-1.0" />
+        /// Update the properties of mailFolder object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MailFolder>(requestInfo, MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MailFolder>(requestInfo, MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete the specified mailFolder. The folder can be a mailSearchFolder. You can specify a mail folder by its folder ID, or by its well-known folder name, if one exists.
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the writable properties of a mailSearchFolder object.
+        /// Update the properties of mailFolder object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -238,9 +238,11 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
             /// <summary>Include Hidden Folders</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            [QueryParameter("includeHiddenFolders")]
             public string? IncludeHiddenFolders { get; set; }
 #nullable restore
 #else
+            [QueryParameter("includeHiddenFolders")]
             public string IncludeHiddenFolders { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationSimulationUserCoverage
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetAttackSimulationSimulationUserCoverageResponse>(requestInfo, GetAttackSimulationSimulationUserCoverageResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetAttackSimulationSimulationUserCoverageResponse>(requestInfo, GetAttackSimulationSimulationUserCoverageResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getAttackSimulationSimulationUserCoverage

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Template {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TeamsTemplate>(requestInfo, TeamsTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamsTemplate>(requestInfo, TeamsTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The template this team was created from. See available templates.

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.InstalledApps.Item.TeamsApp
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TeamsApp>(requestInfo, Microsoft.Graph.Beta.Models.TeamsApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TeamsApp>(requestInfo, Microsoft.Graph.Beta.Models.TeamsApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The app that is installed.

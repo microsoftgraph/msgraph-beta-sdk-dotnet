@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Dismiss {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Recommendation>(requestInfo, Recommendation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Recommendation>(requestInfo, Recommendation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Dismiss a recommendation object that you consider to be inapplicable to your tenant and update its status to dismissed .

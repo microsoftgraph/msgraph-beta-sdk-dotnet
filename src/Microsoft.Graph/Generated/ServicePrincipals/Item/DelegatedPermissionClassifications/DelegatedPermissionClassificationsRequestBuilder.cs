@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DelegatedPermissionClassif
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DelegatedPermissionClassificationCollectionResponse>(requestInfo, DelegatedPermissionClassificationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DelegatedPermissionClassificationCollectionResponse>(requestInfo, DelegatedPermissionClassificationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DelegatedPermissionClassif
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DelegatedPermissionClassification>(requestInfo, DelegatedPermissionClassification.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DelegatedPermissionClassification>(requestInfo, DelegatedPermissionClassification.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.

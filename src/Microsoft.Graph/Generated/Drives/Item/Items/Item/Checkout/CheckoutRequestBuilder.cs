@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Checkout {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Check out a driveItem resource to prevent others from editing the document, and prevent your changes from being visible until the documented is checked in.

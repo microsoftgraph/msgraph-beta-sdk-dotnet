@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisRecords.Item.His
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WhoisHistoryRecordCollectionResponse>(requestInfo, WhoisHistoryRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WhoisHistoryRecordCollectionResponse>(requestInfo, WhoisHistoryRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of whoisHistoryRecord objects for a whoisRecord, including the properties and relationships of each whoisHistoryRecord object.

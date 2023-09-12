@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.MicrosoftGr
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the rules within a forwarding policy.

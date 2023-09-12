@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ComanagementEligibleDeviceCollectionResponse>(requestInfo, ComanagementEligibleDeviceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ComanagementEligibleDeviceCollectionResponse>(requestInfo, ComanagementEligibleDeviceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to comanagementEligibleDevices for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ComanagementEligibleDevice>(requestInfo, ComanagementEligibleDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ComanagementEligibleDevice>(requestInfo, ComanagementEligibleDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of co-management eligible devices report

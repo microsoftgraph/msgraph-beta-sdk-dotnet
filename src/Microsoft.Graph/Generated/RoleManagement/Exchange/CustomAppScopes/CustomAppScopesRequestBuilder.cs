@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CustomAppScopeCollectionResponse>(requestInfo, CustomAppScopeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomAppScopeCollectionResponse>(requestInfo, CustomAppScopeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CustomAppScope>(requestInfo, CustomAppScope.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomAppScope>(requestInfo, CustomAppScope.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of customAppScope objects for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.

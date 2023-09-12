@@ -19,20 +19,20 @@ namespace Microsoft.Graph.Beta.Me.GetMailTips {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? EmailAddresses {
-            get { return BackingStore?.Get<List<string>?>("EmailAddresses"); }
-            set { BackingStore?.Set("EmailAddresses", value); }
+            get { return BackingStore?.Get<List<string>?>("emailAddresses"); }
+            set { BackingStore?.Set("emailAddresses", value); }
         }
 #nullable restore
 #else
         public List<string> EmailAddresses {
-            get { return BackingStore?.Get<List<string>>("EmailAddresses"); }
-            set { BackingStore?.Set("EmailAddresses", value); }
+            get { return BackingStore?.Get<List<string>>("emailAddresses"); }
+            set { BackingStore?.Set("emailAddresses", value); }
         }
 #endif
         /// <summary>The MailTipsOptions property</summary>
         public MailTipsType? MailTipsOptions {
-            get { return BackingStore?.Get<MailTipsType?>("MailTipsOptions"); }
-            set { BackingStore?.Set("MailTipsOptions", value); }
+            get { return BackingStore?.Get<MailTipsType?>("mailTipsOptions"); }
+            set { BackingStore?.Set("mailTipsOptions", value); }
         }
         /// <summary>
         /// Instantiates a new getMailTipsPostRequestBody and sets the default values.
@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Beta.Me.GetMailTips {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"EmailAddresses", n => { EmailAddresses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"MailTipsOptions", n => { MailTipsOptions = n.GetEnumValue<MailTipsType>(); } },
+                {"emailAddresses", n => { EmailAddresses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"mailTipsOptions", n => { MailTipsOptions = n.GetEnumValue<MailTipsType>(); } },
             };
         }
         /// <summary>
@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Beta.Me.GetMailTips {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("EmailAddresses", EmailAddresses);
-            writer.WriteEnumValue<MailTipsType>("MailTipsOptions", MailTipsOptions);
+            writer.WriteCollectionOfPrimitiveValues<string>("emailAddresses", EmailAddresses);
+            writer.WriteEnumValue<MailTipsType>("mailTipsOptions", MailTipsOptions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

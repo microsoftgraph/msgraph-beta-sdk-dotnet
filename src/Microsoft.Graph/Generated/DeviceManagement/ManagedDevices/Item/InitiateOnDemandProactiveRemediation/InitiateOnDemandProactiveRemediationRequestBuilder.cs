@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.InitiateOnDe
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Perform On Demand Proactive Remediation

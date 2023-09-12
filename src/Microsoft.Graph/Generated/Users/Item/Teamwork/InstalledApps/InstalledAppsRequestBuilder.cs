@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UserScopeTeamsAppInstallationCollectionResponse>(requestInfo, UserScopeTeamsAppInstallationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UserScopeTeamsAppInstallationCollectionResponse>(requestInfo, UserScopeTeamsAppInstallationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Install an app in the personal scope of the specified user.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UserScopeTeamsAppInstallation>(requestInfo, UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UserScopeTeamsAppInstallation>(requestInfo, UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the list of apps installed in the personal scope of the specified user.

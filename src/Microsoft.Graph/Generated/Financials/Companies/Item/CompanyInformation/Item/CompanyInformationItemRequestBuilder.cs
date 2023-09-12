@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CompanyInformation>(requestInfo, Microsoft.Graph.Beta.Models.CompanyInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CompanyInformation>(requestInfo, Microsoft.Graph.Beta.Models.CompanyInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property companyInformation in financials
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CompanyInformation.Item
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CompanyInformation>(requestInfo, Microsoft.Graph.Beta.Models.CompanyInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CompanyInformation>(requestInfo, Microsoft.Graph.Beta.Models.CompanyInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get companyInformation from financials

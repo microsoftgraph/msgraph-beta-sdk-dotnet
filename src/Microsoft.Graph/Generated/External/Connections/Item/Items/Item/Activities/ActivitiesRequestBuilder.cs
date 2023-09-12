@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item.Activities {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ExternalActivityCollectionResponse>(requestInfo, ExternalActivityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ExternalActivityCollectionResponse>(requestInfo, ExternalActivityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to activities for external
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item.Activities {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ExternalActivity>(requestInfo, ExternalActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ExternalActivity>(requestInfo, ExternalActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of activities performed on the item. Write-only.

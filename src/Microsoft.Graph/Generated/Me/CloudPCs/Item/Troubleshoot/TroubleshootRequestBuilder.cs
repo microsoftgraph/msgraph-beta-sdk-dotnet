@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.Troubleshoot {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host.

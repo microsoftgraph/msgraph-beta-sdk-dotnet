@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.PermissionGrants.Item.CheckMemberObje
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CheckMemberObjectsResponse>(requestInfo, CheckMemberObjectsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CheckMemberObjectsResponse>(requestInfo, CheckMemberObjectsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action checkMemberObjects

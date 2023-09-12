@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.UnsetVerifiedPublisher {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Unset the the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.

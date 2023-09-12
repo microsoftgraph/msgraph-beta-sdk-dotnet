@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Invite {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<InviteParticipantsOperation>(requestInfo, InviteParticipantsOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<InviteParticipantsOperation>(requestInfo, InviteParticipantsOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invite participants to the active call. For more information about how to handle operations, see commsOperation.

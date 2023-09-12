@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The address property</summary>
+        /// <summary>A physical address of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.PhysicalAddress? Address {
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("address", value); }
         }
 #endif
-        /// <summary>The alternateNames property</summary>
+        /// <summary>Alternate names for this entity that are part of the certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AlternateNames {
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The commonName property</summary>
+        /// <summary>A common name for this entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CommonName {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("commonName", value); }
         }
 #endif
-        /// <summary>The email property</summary>
+        /// <summary>An email for this entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email {
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("email", value); }
         }
 #endif
-        /// <summary>The givenName property</summary>
+        /// <summary>If the entity is a person, this is the person&apos;s given name (first name).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GivenName {
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The organizationName property</summary>
+        /// <summary>If the entity is an organization, this is the name of the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationName {
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("organizationName", value); }
         }
 #endif
-        /// <summary>The organizationUnitName property</summary>
+        /// <summary>If the entity is an organization, this communicates if a unit in the organization is named on the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationUnitName {
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("organizationUnitName", value); }
         }
 #endif
-        /// <summary>The serialNumber property</summary>
+        /// <summary>A serial number assigned to the entity; usually only available if the entity is the issuer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SerialNumber {
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("serialNumber", value); }
         }
 #endif
-        /// <summary>The surname property</summary>
+        /// <summary>If the entity is a person, this is the person&apos;s surname (last name).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Surname {

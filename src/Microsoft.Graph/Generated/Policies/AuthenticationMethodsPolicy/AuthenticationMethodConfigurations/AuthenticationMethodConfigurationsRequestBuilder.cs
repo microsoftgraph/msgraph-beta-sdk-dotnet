@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy.Authenticati
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AuthenticationMethodConfigurationCollectionResponse>(requestInfo, AuthenticationMethodConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AuthenticationMethodConfigurationCollectionResponse>(requestInfo, AuthenticationMethodConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to authenticationMethodConfigurations for policies
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy.Authenticati
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AuthenticationMethodConfiguration>(requestInfo, AuthenticationMethodConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AuthenticationMethodConfiguration>(requestInfo, AuthenticationMethodConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.

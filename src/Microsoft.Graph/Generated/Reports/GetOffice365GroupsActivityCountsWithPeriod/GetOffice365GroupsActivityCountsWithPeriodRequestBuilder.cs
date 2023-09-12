@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityCountsWithPerio
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetOffice365GroupsActivityCountsWithPeriodResponse>(requestInfo, GetOffice365GroupsActivityCountsWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetOffice365GroupsActivityCountsWithPeriodResponse>(requestInfo, GetOffice365GroupsActivityCountsWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getOffice365GroupsActivityCounts

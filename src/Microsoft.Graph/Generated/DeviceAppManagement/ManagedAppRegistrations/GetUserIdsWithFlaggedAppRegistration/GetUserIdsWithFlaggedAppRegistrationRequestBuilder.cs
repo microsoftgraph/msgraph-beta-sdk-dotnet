@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.GetUs
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetUserIdsWithFlaggedAppRegistrationResponse>(requestInfo, GetUserIdsWithFlaggedAppRegistrationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetUserIdsWithFlaggedAppRegistrationResponse>(requestInfo, GetUserIdsWithFlaggedAppRegistrationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getUserIdsWithFlaggedAppRegistration

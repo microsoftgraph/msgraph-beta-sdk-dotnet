@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.Descriptors 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents out-of-the-box values that provide more options to improve the manageability and organization of the content you need to label.
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.Descriptors 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<FilePlanDescriptor>(requestInfo, FilePlanDescriptor.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<FilePlanDescriptor>(requestInfo, FilePlanDescriptor.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property descriptors in security
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.Descriptors 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<FilePlanDescriptor>(requestInfo, FilePlanDescriptor.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<FilePlanDescriptor>(requestInfo, FilePlanDescriptor.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property descriptors for security

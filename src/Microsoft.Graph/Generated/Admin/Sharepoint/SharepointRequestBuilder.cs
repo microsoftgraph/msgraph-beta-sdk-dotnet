@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Admin.Sharepoint {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get sharepoint from admin
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Admin.Sharepoint {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Sharepoint>(requestInfo, Microsoft.Graph.Beta.Models.Sharepoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Sharepoint>(requestInfo, Microsoft.Graph.Beta.Models.Sharepoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property sharepoint in admin
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Admin.Sharepoint {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Sharepoint>(requestInfo, Microsoft.Graph.Beta.Models.Sharepoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Sharepoint>(requestInfo, Microsoft.Graph.Beta.Models.Sharepoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property sharepoint for admin

@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ChromeOSOnboardingSettingsCollectionResponse>(requestInfo, ChromeOSOnboardingSettingsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ChromeOSOnboardingSettingsCollectionResponse>(requestInfo, ChromeOSOnboardingSettingsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to chromeOSOnboardingSettings for deviceManagement
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings>(requestInfo, Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings>(requestInfo, Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Collection of ChromeOSOnboardingSettings settings associated with account.

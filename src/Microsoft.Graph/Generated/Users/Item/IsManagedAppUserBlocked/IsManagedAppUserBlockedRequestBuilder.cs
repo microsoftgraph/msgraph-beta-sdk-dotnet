@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Users.Item.IsManagedAppUserBlocked {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<IsManagedAppUserBlockedResponse>(requestInfo, IsManagedAppUserBlockedResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<IsManagedAppUserBlockedResponse>(requestInfo, IsManagedAppUserBlockedResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets the blocked state of a managed app user.

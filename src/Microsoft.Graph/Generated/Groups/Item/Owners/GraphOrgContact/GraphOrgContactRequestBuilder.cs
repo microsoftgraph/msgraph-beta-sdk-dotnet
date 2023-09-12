@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Owners.GraphOrgContact {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<OrgContactCollectionResponse>(requestInfo, OrgContactCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<OrgContactCollectionResponse>(requestInfo, OrgContactCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection

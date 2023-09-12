@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GraphMobileLobApp 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MobileLobAppCollectionResponse>(requestInfo, MobileLobAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileLobAppCollectionResponse>(requestInfo, MobileLobAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the items of type microsoft.graph.mobileLobApp in the microsoft.graph.mobileApp collection

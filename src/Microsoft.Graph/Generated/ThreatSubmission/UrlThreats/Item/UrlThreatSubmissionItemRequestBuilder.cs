@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.ThreatSubmission.UrlThreats.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of an urlThreatSubmission object.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.ThreatSubmission.UrlThreats.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UrlThreatSubmission>(requestInfo, UrlThreatSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UrlThreatSubmission>(requestInfo, UrlThreatSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property urlThreats in threatSubmission
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.ThreatSubmission.UrlThreats.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UrlThreatSubmission>(requestInfo, UrlThreatSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UrlThreatSubmission>(requestInfo, UrlThreatSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property urlThreats for threatSubmission

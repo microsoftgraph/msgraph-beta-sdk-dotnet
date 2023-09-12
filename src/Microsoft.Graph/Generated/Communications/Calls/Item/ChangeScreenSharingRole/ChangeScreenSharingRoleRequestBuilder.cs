@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.ChangeScreenSharingRole
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Allow applications to share screen content with the participants of a group call.

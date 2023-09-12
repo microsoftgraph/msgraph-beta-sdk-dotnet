@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Look
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<LookupResponse>(requestInfo, LookupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<LookupResponse>(requestInfo, LookupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action lookup

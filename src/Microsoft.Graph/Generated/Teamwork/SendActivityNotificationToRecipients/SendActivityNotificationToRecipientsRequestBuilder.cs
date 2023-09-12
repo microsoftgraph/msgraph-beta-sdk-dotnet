@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Send activity feed notifications to multiple users, in bulk. For more details about sending notifications and the requirements for doing so, seesending Teams activity notifications.

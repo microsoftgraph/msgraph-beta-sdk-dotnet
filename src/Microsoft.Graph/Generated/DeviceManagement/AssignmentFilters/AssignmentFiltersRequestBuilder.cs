@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceAndAppManagementAssignmentFilterCollectionResponse>(requestInfo, DeviceAndAppManagementAssignmentFilterCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceAndAppManagementAssignmentFilterCollectionResponse>(requestInfo, DeviceAndAppManagementAssignmentFilterCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the getPlatformSupportedProperties method.
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceAndAppManagementAssignmentFilter>(requestInfo, DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceAndAppManagementAssignmentFilter>(requestInfo, DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of assignment filters

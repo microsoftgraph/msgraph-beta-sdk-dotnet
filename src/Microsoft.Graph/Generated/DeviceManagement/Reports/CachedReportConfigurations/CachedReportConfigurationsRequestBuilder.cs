@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.CachedReportConfiguratio
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementCachedReportConfigurationCollectionResponse>(requestInfo, DeviceManagementCachedReportConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementCachedReportConfigurationCollectionResponse>(requestInfo, DeviceManagementCachedReportConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to cachedReportConfigurations for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.CachedReportConfiguratio
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementCachedReportConfiguration>(requestInfo, DeviceManagementCachedReportConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementCachedReportConfiguration>(requestInfo, DeviceManagementCachedReportConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Entity representing the configuration of a cached report

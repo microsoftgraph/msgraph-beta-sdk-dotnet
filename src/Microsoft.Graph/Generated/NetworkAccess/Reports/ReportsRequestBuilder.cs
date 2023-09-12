@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents the status of the Global Secure Access services for the tenant.
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.Reports>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.Reports.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.Reports>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.Reports.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the entitiesSummaries method.
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.Reports>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.Reports.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.Reports>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.Reports.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property reports for networkAccess

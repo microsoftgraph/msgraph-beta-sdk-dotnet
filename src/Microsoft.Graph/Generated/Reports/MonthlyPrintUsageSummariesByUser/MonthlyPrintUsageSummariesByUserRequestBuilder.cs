@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByUser {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrintUsageByUserCollectionResponse>(requestInfo, PrintUsageByUserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrintUsageByUserCollectionResponse>(requestInfo, PrintUsageByUserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to monthlyPrintUsageSummariesByUser for reports
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByUser {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrintUsageByUser>(requestInfo, PrintUsageByUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrintUsageByUser>(requestInfo, PrintUsageByUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get monthlyPrintUsageSummariesByUser from reports

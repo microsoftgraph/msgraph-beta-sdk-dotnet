@@ -19,34 +19,34 @@ namespace Microsoft.Graph.Beta.Me.Calendar.CalendarView.Item.Instances.Item.Exce
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comment {
-            get { return BackingStore?.Get<string?>("Comment"); }
-            set { BackingStore?.Set("Comment", value); }
+            get { return BackingStore?.Get<string?>("comment"); }
+            set { BackingStore?.Set("comment", value); }
         }
 #nullable restore
 #else
         public string Comment {
-            get { return BackingStore?.Get<string>("Comment"); }
-            set { BackingStore?.Set("Comment", value); }
+            get { return BackingStore?.Get<string>("comment"); }
+            set { BackingStore?.Set("comment", value); }
         }
 #endif
         /// <summary>The ProposedNewTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public TimeSlot? ProposedNewTime {
-            get { return BackingStore?.Get<TimeSlot?>("ProposedNewTime"); }
-            set { BackingStore?.Set("ProposedNewTime", value); }
+            get { return BackingStore?.Get<TimeSlot?>("proposedNewTime"); }
+            set { BackingStore?.Set("proposedNewTime", value); }
         }
 #nullable restore
 #else
         public TimeSlot ProposedNewTime {
-            get { return BackingStore?.Get<TimeSlot>("ProposedNewTime"); }
-            set { BackingStore?.Set("ProposedNewTime", value); }
+            get { return BackingStore?.Get<TimeSlot>("proposedNewTime"); }
+            set { BackingStore?.Set("proposedNewTime", value); }
         }
 #endif
         /// <summary>The SendResponse property</summary>
         public bool? SendResponse {
-            get { return BackingStore?.Get<bool?>("SendResponse"); }
-            set { BackingStore?.Set("SendResponse", value); }
+            get { return BackingStore?.Get<bool?>("sendResponse"); }
+            set { BackingStore?.Set("sendResponse", value); }
         }
         /// <summary>
         /// Instantiates a new tentativelyAcceptPostRequestBody and sets the default values.
@@ -68,9 +68,9 @@ namespace Microsoft.Graph.Beta.Me.Calendar.CalendarView.Item.Instances.Item.Exce
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"Comment", n => { Comment = n.GetStringValue(); } },
-                {"ProposedNewTime", n => { ProposedNewTime = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
-                {"SendResponse", n => { SendResponse = n.GetBoolValue(); } },
+                {"comment", n => { Comment = n.GetStringValue(); } },
+                {"proposedNewTime", n => { ProposedNewTime = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
+                {"sendResponse", n => { SendResponse = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -79,9 +79,9 @@ namespace Microsoft.Graph.Beta.Me.Calendar.CalendarView.Item.Instances.Item.Exce
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Comment", Comment);
-            writer.WriteObjectValue<TimeSlot>("ProposedNewTime", ProposedNewTime);
-            writer.WriteBoolValue("SendResponse", SendResponse);
+            writer.WriteStringValue("comment", Comment);
+            writer.WriteObjectValue<TimeSlot>("proposedNewTime", ProposedNewTime);
+            writer.WriteBoolValue("sendResponse", SendResponse);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

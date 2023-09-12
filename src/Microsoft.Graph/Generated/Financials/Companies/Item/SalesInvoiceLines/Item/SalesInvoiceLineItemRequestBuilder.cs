@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoiceLines.Item 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SalesInvoiceLine>(requestInfo, SalesInvoiceLine.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SalesInvoiceLine>(requestInfo, SalesInvoiceLine.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property salesInvoiceLines in financials
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoiceLines.Item 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SalesInvoiceLine>(requestInfo, SalesInvoiceLine.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SalesInvoiceLine>(requestInfo, SalesInvoiceLine.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get salesInvoiceLines from financials

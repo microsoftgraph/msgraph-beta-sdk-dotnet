@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CompanyCollectionResponse>(requestInfo, CompanyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CompanyCollectionResponse>(requestInfo, CompanyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get companies from financials

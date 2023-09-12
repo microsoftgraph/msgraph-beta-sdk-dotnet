@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementExchangeOnPremisesPolicyCollectionResponse>(requestInfo, DeviceManagementExchangeOnPremisesPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementExchangeOnPremisesPolicyCollectionResponse>(requestInfo, DeviceManagementExchangeOnPremisesPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to exchangeOnPremisesPolicies for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementExchangeOnPremisesPolicy>(requestInfo, DeviceManagementExchangeOnPremisesPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementExchangeOnPremisesPolicy>(requestInfo, DeviceManagementExchangeOnPremisesPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of Exchange On Premisis policies configured by the tenant.

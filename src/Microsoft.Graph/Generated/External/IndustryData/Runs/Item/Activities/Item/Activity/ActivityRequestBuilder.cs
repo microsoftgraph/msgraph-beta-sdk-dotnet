@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities.Item.A
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<IndustryDataActivity>(requestInfo, IndustryDataActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<IndustryDataActivity>(requestInfo, IndustryDataActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The flow that was run by this activity.

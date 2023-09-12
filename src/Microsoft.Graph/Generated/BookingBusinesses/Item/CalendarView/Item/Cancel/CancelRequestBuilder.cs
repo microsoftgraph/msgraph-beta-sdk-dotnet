@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView.Item.Cancel {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Cancel the specified bookingAppointment in the specified bookingBusiness, and send a message to the involved customer and staff members.

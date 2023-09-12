@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.PermissionGrants {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ResourceSpecificPermissionGrantCollectionResponse>(requestInfo, ResourceSpecificPermissionGrantCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ResourceSpecificPermissionGrantCollectionResponse>(requestInfo, ResourceSpecificPermissionGrantCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to permissionGrants for teams
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.PermissionGrants {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ResourceSpecificPermissionGrant>(requestInfo, ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ResourceSpecificPermissionGrant>(requestInfo, ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all resource-specific permission grants on the team. This list specifies the Azure AD apps that have access to the team, along with the corresponding kind of resource-specific access that each app has.

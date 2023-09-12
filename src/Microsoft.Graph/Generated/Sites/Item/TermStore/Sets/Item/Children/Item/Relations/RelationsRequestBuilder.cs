@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.Children.Item.Rela
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RelationCollectionResponse>(requestInfo, RelationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RelationCollectionResponse>(requestInfo, RelationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to relations for sites
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.Children.Item.Rela
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Relation>(requestInfo, Relation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Relation>(requestInfo, Relation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// To indicate which terms are related to the current term as either pinned or reused.

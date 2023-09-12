@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetSuggestedEnrollmentLimitWithE
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SuggestedEnrollmentLimit>(requestInfo, SuggestedEnrollmentLimit.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SuggestedEnrollmentLimit>(requestInfo, SuggestedEnrollmentLimit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getSuggestedEnrollmentLimit

@@ -18,14 +18,14 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Copy {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationId {
-            get { return BackingStore?.Get<string?>("DestinationId"); }
-            set { BackingStore?.Set("DestinationId", value); }
+            get { return BackingStore?.Get<string?>("destinationId"); }
+            set { BackingStore?.Set("destinationId", value); }
         }
 #nullable restore
 #else
         public string DestinationId {
-            get { return BackingStore?.Get<string>("DestinationId"); }
-            set { BackingStore?.Set("DestinationId", value); }
+            get { return BackingStore?.Get<string>("destinationId"); }
+            set { BackingStore?.Set("destinationId", value); }
         }
 #endif
         /// <summary>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Copy {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"DestinationId", n => { DestinationId = n.GetStringValue(); } },
+                {"destinationId", n => { DestinationId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Copy {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("DestinationId", DestinationId);
+            writer.WriteStringValue("destinationId", DestinationId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

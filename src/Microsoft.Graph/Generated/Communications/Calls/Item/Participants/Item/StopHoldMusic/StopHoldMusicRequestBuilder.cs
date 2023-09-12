@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Item.StopH
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<StopHoldMusicOperation>(requestInfo, StopHoldMusicOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<StopHoldMusicOperation>(requestInfo, StopHoldMusicOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Reincorporate a participant previously put on hold to the call.

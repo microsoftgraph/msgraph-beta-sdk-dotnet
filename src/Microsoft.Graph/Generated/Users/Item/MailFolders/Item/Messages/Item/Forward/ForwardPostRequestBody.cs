@@ -19,42 +19,42 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item.Forward
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comment {
-            get { return BackingStore?.Get<string?>("Comment"); }
-            set { BackingStore?.Set("Comment", value); }
+            get { return BackingStore?.Get<string?>("comment"); }
+            set { BackingStore?.Set("comment", value); }
         }
 #nullable restore
 #else
         public string Comment {
-            get { return BackingStore?.Get<string>("Comment"); }
-            set { BackingStore?.Set("Comment", value); }
+            get { return BackingStore?.Get<string>("comment"); }
+            set { BackingStore?.Set("comment", value); }
         }
 #endif
         /// <summary>The Message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Message? Message {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Message?>("Message"); }
-            set { BackingStore?.Set("Message", value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Message?>("message"); }
+            set { BackingStore?.Set("message", value); }
         }
 #nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Message Message {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Message>("Message"); }
-            set { BackingStore?.Set("Message", value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Message>("message"); }
+            set { BackingStore?.Set("message", value); }
         }
 #endif
         /// <summary>The ToRecipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Recipient>? ToRecipients {
-            get { return BackingStore?.Get<List<Recipient>?>("ToRecipients"); }
-            set { BackingStore?.Set("ToRecipients", value); }
+            get { return BackingStore?.Get<List<Recipient>?>("toRecipients"); }
+            set { BackingStore?.Set("toRecipients", value); }
         }
 #nullable restore
 #else
         public List<Recipient> ToRecipients {
-            get { return BackingStore?.Get<List<Recipient>>("ToRecipients"); }
-            set { BackingStore?.Set("ToRecipients", value); }
+            get { return BackingStore?.Get<List<Recipient>>("toRecipients"); }
+            set { BackingStore?.Set("toRecipients", value); }
         }
 #endif
         /// <summary>
@@ -77,9 +77,9 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item.Forward
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"Comment", n => { Comment = n.GetStringValue(); } },
-                {"Message", n => { Message = n.GetObjectValue<Microsoft.Graph.Beta.Models.Message>(Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue); } },
-                {"ToRecipients", n => { ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"comment", n => { Comment = n.GetStringValue(); } },
+                {"message", n => { Message = n.GetObjectValue<Microsoft.Graph.Beta.Models.Message>(Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue); } },
+                {"toRecipients", n => { ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -88,9 +88,9 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item.Forward
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Comment", Comment);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Message>("Message", Message);
-            writer.WriteCollectionOfObjectValues<Recipient>("ToRecipients", ToRecipients);
+            writer.WriteStringValue("comment", Comment);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Message>("message", Message);
+            writer.WriteCollectionOfObjectValues<Recipient>("toRecipients", ToRecipients);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

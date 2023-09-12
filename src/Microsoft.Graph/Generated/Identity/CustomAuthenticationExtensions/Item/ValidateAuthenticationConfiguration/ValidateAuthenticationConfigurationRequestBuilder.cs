@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item.Vali
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AuthenticationConfigurationValidation>(requestInfo, AuthenticationConfigurationValidation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AuthenticationConfigurationValidation>(requestInfo, AuthenticationConfigurationValidation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// An API to check validity of the endpoint and and authentication configuration for a customAuthenticationExtension.

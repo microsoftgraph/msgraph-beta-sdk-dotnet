@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Policies.IdentitySecurityDefaultsEnforcementPolic
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the properties of an identitySecurityDefaultsEnforcementPolicy object.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Policies.IdentitySecurityDefaultsEnforcementPolic
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy>(requestInfo, Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy>(requestInfo, Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of an identitySecurityDefaultsEnforcementPolicy object.
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Policies.IdentitySecurityDefaultsEnforcementPolic
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy>(requestInfo, Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy>(requestInfo, Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property identitySecurityDefaultsEnforcementPolicy for policies

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item.RoleDefinit
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RoleDefinition>(requestInfo, Microsoft.Graph.Beta.Models.RoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RoleDefinition>(requestInfo, Microsoft.Graph.Beta.Models.RoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Role definition this assignment is part of.

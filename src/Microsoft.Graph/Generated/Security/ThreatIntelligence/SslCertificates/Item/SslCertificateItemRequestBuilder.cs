@@ -50,10 +50,11 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.SslCertificates.Item 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sslCertificates from security
+        /// Get the properties and relationships of an sslCertificate object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-sslcertificate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +70,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.SslCertificates.Item 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.SslCertificate>(requestInfo, Microsoft.Graph.Beta.Models.Security.SslCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.SslCertificate>(requestInfo, Microsoft.Graph.Beta.Models.Security.SslCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property sslCertificates in security
@@ -90,7 +91,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.SslCertificates.Item 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.SslCertificate>(requestInfo, Microsoft.Graph.Beta.Models.Security.SslCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.SslCertificate>(requestInfo, Microsoft.Graph.Beta.Models.Security.SslCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property sslCertificates for security
@@ -117,7 +118,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.SslCertificates.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Get sslCertificates from security
+        /// Get the properties and relationships of an sslCertificate object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -194,7 +195,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.SslCertificates.Item 
             }
         }
         /// <summary>
-        /// Get sslCertificates from security
+        /// Get the properties and relationships of an sslCertificate object.
         /// </summary>
         public class SslCertificateItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

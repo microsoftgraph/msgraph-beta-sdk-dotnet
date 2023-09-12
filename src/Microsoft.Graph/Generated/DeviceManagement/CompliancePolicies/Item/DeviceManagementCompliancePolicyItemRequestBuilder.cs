@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List of all compliance policies
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementCompliancePolicy>(requestInfo, DeviceManagementCompliancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementCompliancePolicy>(requestInfo, DeviceManagementCompliancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property compliancePolicies in deviceManagement
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementCompliancePolicy>(requestInfo, DeviceManagementCompliancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementCompliancePolicy>(requestInfo, DeviceManagementCompliancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property compliancePolicies for deviceManagement

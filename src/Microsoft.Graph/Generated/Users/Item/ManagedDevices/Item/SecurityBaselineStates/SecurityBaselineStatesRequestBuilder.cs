@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SecurityBaselineSt
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SecurityBaselineStateCollectionResponse>(requestInfo, SecurityBaselineStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SecurityBaselineStateCollectionResponse>(requestInfo, SecurityBaselineStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to securityBaselineStates for users
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SecurityBaselineSt
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SecurityBaselineState>(requestInfo, SecurityBaselineState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SecurityBaselineState>(requestInfo, SecurityBaselineState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Security baseline states for this device.

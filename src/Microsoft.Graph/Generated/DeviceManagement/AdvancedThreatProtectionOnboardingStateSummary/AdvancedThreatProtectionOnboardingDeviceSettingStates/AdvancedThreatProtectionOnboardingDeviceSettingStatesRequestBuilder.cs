@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardi
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse>(requestInfo, AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse>(requestInfo, AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to advancedThreatProtectionOnboardingDeviceSettingStates for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardi
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AdvancedThreatProtectionOnboardingDeviceSettingState>(requestInfo, AdvancedThreatProtectionOnboardingDeviceSettingState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AdvancedThreatProtectionOnboardingDeviceSettingState>(requestInfo, AdvancedThreatProtectionOnboardingDeviceSettingState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get advancedThreatProtectionOnboardingDeviceSettingStates from deviceManagement

@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrivilegedSignupStatusCollectionResponse>(requestInfo, PrivilegedSignupStatusCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedSignupStatusCollectionResponse>(requestInfo, PrivilegedSignupStatusCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to privilegedSignupStatus
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrivilegedSignupStatus>(requestInfo, Microsoft.Graph.Beta.Models.PrivilegedSignupStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrivilegedSignupStatus>(requestInfo, Microsoft.Graph.Beta.Models.PrivilegedSignupStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from privilegedSignupStatus

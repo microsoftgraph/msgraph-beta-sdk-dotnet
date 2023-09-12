@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Security.DomainSecurityProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DomainSecurityProfileCollectionResponse>(requestInfo, DomainSecurityProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DomainSecurityProfileCollectionResponse>(requestInfo, DomainSecurityProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to domainSecurityProfiles for security
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Security.DomainSecurityProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DomainSecurityProfile>(requestInfo, DomainSecurityProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DomainSecurityProfile>(requestInfo, DomainSecurityProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get domainSecurityProfiles from security

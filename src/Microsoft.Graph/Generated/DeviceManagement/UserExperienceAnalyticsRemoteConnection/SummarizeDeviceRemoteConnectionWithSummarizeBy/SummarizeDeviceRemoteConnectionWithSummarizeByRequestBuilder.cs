@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteCon
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SummarizeDeviceRemoteConnectionWithSummarizeByResponse>(requestInfo, SummarizeDeviceRemoteConnectionWithSummarizeByResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SummarizeDeviceRemoteConnectionWithSummarizeByResponse>(requestInfo, SummarizeDeviceRemoteConnectionWithSummarizeByResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function summarizeDeviceRemoteConnection

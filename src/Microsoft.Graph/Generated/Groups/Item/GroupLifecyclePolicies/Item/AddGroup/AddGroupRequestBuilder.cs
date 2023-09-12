@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Item.AddGroup 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AddGroupResponse>(requestInfo, AddGroupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AddGroupResponse>(requestInfo, AddGroupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action addGroup

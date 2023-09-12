@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.SensitivityPolicySettings {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get sensitivityPolicySettings from informationProtection
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.SensitivityPolicySettings {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.SensitivityPolicySettings>(requestInfo, Microsoft.Graph.Beta.Models.SensitivityPolicySettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.SensitivityPolicySettings>(requestInfo, Microsoft.Graph.Beta.Models.SensitivityPolicySettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property sensitivityPolicySettings in informationProtection
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.SensitivityPolicySettings {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.SensitivityPolicySettings>(requestInfo, Microsoft.Graph.Beta.Models.SensitivityPolicySettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.SensitivityPolicySettings>(requestInfo, Microsoft.Graph.Beta.Models.SensitivityPolicySettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property sensitivityPolicySettings for informationProtection

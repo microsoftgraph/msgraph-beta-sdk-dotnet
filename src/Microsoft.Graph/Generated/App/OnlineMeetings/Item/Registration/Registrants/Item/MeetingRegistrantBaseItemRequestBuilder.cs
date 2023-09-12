@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration.Registrants.
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Registrants of the online meeting.
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration.Registrants.
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MeetingRegistrantBase>(requestInfo, MeetingRegistrantBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MeetingRegistrantBase>(requestInfo, MeetingRegistrantBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property registrants in app
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration.Registrants.
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MeetingRegistrantBase>(requestInfo, MeetingRegistrantBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MeetingRegistrantBase>(requestInfo, MeetingRegistrantBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property registrants for app

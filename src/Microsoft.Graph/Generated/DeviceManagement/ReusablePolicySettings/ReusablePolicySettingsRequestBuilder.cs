@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementReusablePolicySettingCollectionResponse>(requestInfo, DeviceManagementReusablePolicySettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementReusablePolicySettingCollectionResponse>(requestInfo, DeviceManagementReusablePolicySettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to reusablePolicySettings for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementReusablePolicySetting>(requestInfo, DeviceManagementReusablePolicySetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementReusablePolicySetting>(requestInfo, DeviceManagementReusablePolicySetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List of all reusable settings that can be referred in a policy

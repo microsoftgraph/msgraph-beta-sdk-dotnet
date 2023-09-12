@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Vulnerabilities.Item.
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<VulnerabilityComponentCollectionResponse>(requestInfo, VulnerabilityComponentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<VulnerabilityComponentCollectionResponse>(requestInfo, VulnerabilityComponentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to components for security
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Vulnerabilities.Item.
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<VulnerabilityComponent>(requestInfo, VulnerabilityComponent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<VulnerabilityComponent>(requestInfo, VulnerabilityComponent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the microsoft.graph.security.vulnerabilityComponent objects and their properties.

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceCompliancePolicyStat
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Device compliance policy states for this device.
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceCompliancePolicyStat
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceCompliancePolicyState>(requestInfo, DeviceCompliancePolicyState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceCompliancePolicyState>(requestInfo, DeviceCompliancePolicyState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property deviceCompliancePolicyStates in me
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceCompliancePolicyStat
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceCompliancePolicyState>(requestInfo, DeviceCompliancePolicyState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceCompliancePolicyState>(requestInfo, DeviceCompliancePolicyState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property deviceCompliancePolicyStates for me

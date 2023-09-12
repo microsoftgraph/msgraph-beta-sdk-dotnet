@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A container for service communications resources. Read-only.
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ServiceAnnouncement>(requestInfo, Microsoft.Graph.Beta.Models.ServiceAnnouncement.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ServiceAnnouncement>(requestInfo, Microsoft.Graph.Beta.Models.ServiceAnnouncement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property serviceAnnouncement in admin
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ServiceAnnouncement>(requestInfo, Microsoft.Graph.Beta.Models.ServiceAnnouncement.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ServiceAnnouncement>(requestInfo, Microsoft.Graph.Beta.Models.ServiceAnnouncement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property serviceAnnouncement for admin

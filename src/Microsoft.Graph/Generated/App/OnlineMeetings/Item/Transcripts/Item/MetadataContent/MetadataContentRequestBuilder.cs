@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Transcripts.Item.Metadata
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The time-aligned metadata of the utterances in the transcript. Read-only.
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Transcripts.Item.Metadata
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The time-aligned metadata of the utterances in the transcript. Read-only.

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Trainings.Item.Language
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TrainingLanguageDetailCollectionResponse>(requestInfo, TrainingLanguageDetailCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TrainingLanguageDetailCollectionResponse>(requestInfo, TrainingLanguageDetailCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to languageDetails for security
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Trainings.Item.Language
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TrainingLanguageDetail>(requestInfo, TrainingLanguageDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TrainingLanguageDetail>(requestInfo, TrainingLanguageDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get languageDetails from security

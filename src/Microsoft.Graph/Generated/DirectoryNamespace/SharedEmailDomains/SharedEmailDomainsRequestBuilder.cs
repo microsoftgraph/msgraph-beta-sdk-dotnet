@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SharedEmailDomains {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SharedEmailDomainCollectionResponse>(requestInfo, SharedEmailDomainCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SharedEmailDomainCollectionResponse>(requestInfo, SharedEmailDomainCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to sharedEmailDomains for directory
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SharedEmailDomains {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SharedEmailDomain>(requestInfo, SharedEmailDomain.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SharedEmailDomain>(requestInfo, SharedEmailDomain.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get sharedEmailDomains from directory

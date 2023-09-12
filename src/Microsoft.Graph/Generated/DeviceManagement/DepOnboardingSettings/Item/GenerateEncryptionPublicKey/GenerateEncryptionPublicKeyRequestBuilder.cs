@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Gener
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GenerateEncryptionPublicKeyResponse>(requestInfo, GenerateEncryptionPublicKeyResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GenerateEncryptionPublicKeyResponse>(requestInfo, GenerateEncryptionPublicKeyResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Generate a public key to use to encrypt the Apple device enrollment program token

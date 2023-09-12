@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.IdentityProviders.AvailableProviderTypes {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AvailableProviderTypesResponse>(requestInfo, AvailableProviderTypesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AvailableProviderTypesResponse>(requestInfo, AvailableProviderTypesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function availableProviderTypes

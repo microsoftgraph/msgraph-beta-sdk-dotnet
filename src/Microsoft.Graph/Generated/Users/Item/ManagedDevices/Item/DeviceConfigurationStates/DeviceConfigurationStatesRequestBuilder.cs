@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceConfiguratio
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceConfigurationStateCollectionResponse>(requestInfo, DeviceConfigurationStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceConfigurationStateCollectionResponse>(requestInfo, DeviceConfigurationStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to deviceConfigurationStates for users
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DeviceConfiguratio
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceConfigurationState>(requestInfo, DeviceConfigurationState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceConfigurationState>(requestInfo, DeviceConfigurationState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Device configuration states for this device.

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ZebraFotaDeploymentCollectionResponse>(requestInfo, ZebraFotaDeploymentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ZebraFotaDeploymentCollectionResponse>(requestInfo, ZebraFotaDeploymentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to zebraFotaDeployments for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ZebraFotaDeployment>(requestInfo, ZebraFotaDeployment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ZebraFotaDeployment>(requestInfo, ZebraFotaDeployment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Collection of ZebraFotaDeployments associated with account.

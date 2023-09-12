@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SecurityActionCollectionResponse>(requestInfo, SecurityActionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SecurityActionCollectionResponse>(requestInfo, SecurityActionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new securityAction object.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SecurityAction>(requestInfo, SecurityAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SecurityAction>(requestInfo, SecurityAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of securityAction objects.

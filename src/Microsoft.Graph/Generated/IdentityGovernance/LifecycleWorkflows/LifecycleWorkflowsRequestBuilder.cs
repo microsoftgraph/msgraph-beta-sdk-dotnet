@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get lifecycleWorkflows from identityGovernance
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<LifecycleWorkflowsContainer>(requestInfo, LifecycleWorkflowsContainer.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<LifecycleWorkflowsContainer>(requestInfo, LifecycleWorkflowsContainer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property lifecycleWorkflows in identityGovernance
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<LifecycleWorkflowsContainer>(requestInfo, LifecycleWorkflowsContainer.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<LifecycleWorkflowsContainer>(requestInfo, LifecycleWorkflowsContainer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property lifecycleWorkflows for identityGovernance

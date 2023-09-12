@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetComanagedDevicesSummary {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ComanagedDevicesSummary>(requestInfo, ComanagedDevicesSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ComanagedDevicesSummary>(requestInfo, ComanagedDevicesSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getComanagedDevicesSummary

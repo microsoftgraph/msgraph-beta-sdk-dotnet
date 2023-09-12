@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RemoteActionAudits {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RemoteActionAuditCollectionResponse>(requestInfo, RemoteActionAuditCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RemoteActionAuditCollectionResponse>(requestInfo, RemoteActionAuditCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to remoteActionAudits for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RemoteActionAudits {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RemoteActionAudit>(requestInfo, RemoteActionAudit.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RemoteActionAudit>(requestInfo, RemoteActionAudit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of device remote action audits with the tenant.

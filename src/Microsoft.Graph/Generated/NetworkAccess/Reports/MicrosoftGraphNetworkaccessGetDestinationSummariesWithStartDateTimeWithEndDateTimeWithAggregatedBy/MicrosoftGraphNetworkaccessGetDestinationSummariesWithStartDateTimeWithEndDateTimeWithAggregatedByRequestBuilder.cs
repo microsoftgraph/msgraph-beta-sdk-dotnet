@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByResponse>(requestInfo, GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByResponse>(requestInfo, GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getDestinationSummaries

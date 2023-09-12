@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Places.GraphRoom {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RoomCollectionResponse>(requestInfo, RoomCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RoomCollectionResponse>(requestInfo, RoomCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the items of type microsoft.graph.room in the microsoft.graph.place collection

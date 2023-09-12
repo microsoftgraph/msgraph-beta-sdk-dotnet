@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.DataClassification.SensitivityLabels.Evaluate {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EvaluateLabelJobResponse>(requestInfo, EvaluateLabelJobResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EvaluateLabelJobResponse>(requestInfo, EvaluateLabelJobResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action evaluate

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovern
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovern
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CloudPcCrossCloudGovernmentOrganizationMapping>(requestInfo, CloudPcCrossCloudGovernmentOrganizationMapping.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcCrossCloudGovernmentOrganizationMapping>(requestInfo, CloudPcCrossCloudGovernmentOrganizationMapping.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property crossCloudGovernmentOrganizationMapping in deviceManagement
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovern
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CloudPcCrossCloudGovernmentOrganizationMapping>(requestInfo, CloudPcCrossCloudGovernmentOrganizationMapping.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcCrossCloudGovernmentOrganizationMapping>(requestInfo, CloudPcCrossCloudGovernmentOrganizationMapping.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property crossCloudGovernmentOrganizationMapping for deviceManagement

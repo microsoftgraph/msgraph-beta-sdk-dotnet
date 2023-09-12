@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Rename {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Rename a specific Cloud PC. Use this API to update the displayName for the Cloud PC entity.

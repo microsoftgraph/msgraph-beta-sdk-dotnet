@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComplianceManagementPartners {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ComplianceManagementPartnerCollectionResponse>(requestInfo, ComplianceManagementPartnerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ComplianceManagementPartnerCollectionResponse>(requestInfo, ComplianceManagementPartnerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to complianceManagementPartners for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComplianceManagementPartners {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ComplianceManagementPartner>(requestInfo, ComplianceManagementPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ComplianceManagementPartner>(requestInfo, ComplianceManagementPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of Compliance Management Partners configured by the tenant.

@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item.Members.GraphServicePrin
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ServicePrincipalCollectionResponse>(requestInfo, ServicePrincipalCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipalCollectionResponse>(requestInfo, ServicePrincipalCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the items of type microsoft.graph.servicePrincipal in the microsoft.graph.directoryObject collection

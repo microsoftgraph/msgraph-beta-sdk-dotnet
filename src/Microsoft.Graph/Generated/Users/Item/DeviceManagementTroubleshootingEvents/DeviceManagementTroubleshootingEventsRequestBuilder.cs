@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementTroubleshootingEventCollectionResponse>(requestInfo, DeviceManagementTroubleshootingEventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementTroubleshootingEventCollectionResponse>(requestInfo, DeviceManagementTroubleshootingEventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to deviceManagementTroubleshootingEvents for users
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementTroubleshootingEvent>(requestInfo, DeviceManagementTroubleshootingEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementTroubleshootingEvent>(requestInfo, DeviceManagementTroubleshootingEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of troubleshooting events for this user.

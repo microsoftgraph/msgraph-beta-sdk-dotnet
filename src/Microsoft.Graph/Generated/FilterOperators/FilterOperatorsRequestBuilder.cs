@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.FilterOperators {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<FilterOperatorSchemaCollectionResponse>(requestInfo, FilterOperatorSchemaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<FilterOperatorSchemaCollectionResponse>(requestInfo, FilterOperatorSchemaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to filterOperators
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.FilterOperators {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<FilterOperatorSchema>(requestInfo, FilterOperatorSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<FilterOperatorSchema>(requestInfo, FilterOperatorSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from filterOperators

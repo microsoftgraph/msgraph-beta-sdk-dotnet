@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBase
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SecurityBaselineSettingStateCollectionResponse>(requestInfo, SecurityBaselineSettingStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SecurityBaselineSettingStateCollectionResponse>(requestInfo, SecurityBaselineSettingStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to settingStates for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBase
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SecurityBaselineSettingState>(requestInfo, SecurityBaselineSettingState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SecurityBaselineSettingState>(requestInfo, SecurityBaselineSettingState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The security baseline state for different settings for a device

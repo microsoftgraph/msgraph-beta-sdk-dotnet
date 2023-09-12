@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.RestoreFactoryDefaults {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Restore a printer&apos;s default settings to the values specified by the manufacturer.

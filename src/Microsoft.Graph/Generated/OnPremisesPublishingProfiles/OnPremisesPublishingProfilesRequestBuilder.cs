@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<OnPremisesPublishingProfileCollectionResponse>(requestInfo, OnPremisesPublishingProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<OnPremisesPublishingProfileCollectionResponse>(requestInfo, OnPremisesPublishingProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to onPremisesPublishingProfiles
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<OnPremisesPublishingProfile>(requestInfo, OnPremisesPublishingProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<OnPremisesPublishingProfile>(requestInfo, OnPremisesPublishingProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from onPremisesPublishingProfiles

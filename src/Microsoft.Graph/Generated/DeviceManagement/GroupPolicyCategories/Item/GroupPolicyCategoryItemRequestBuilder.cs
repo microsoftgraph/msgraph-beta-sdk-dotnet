@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The available group policy categories for this account.
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GroupPolicyCategory>(requestInfo, GroupPolicyCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyCategory>(requestInfo, GroupPolicyCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property groupPolicyCategories in deviceManagement
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GroupPolicyCategory>(requestInfo, GroupPolicyCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyCategory>(requestInfo, GroupPolicyCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property groupPolicyCategories for deviceManagement

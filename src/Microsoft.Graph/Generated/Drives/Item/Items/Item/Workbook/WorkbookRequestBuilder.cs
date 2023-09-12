@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet&apos;s contents. Nullable.
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Workbook>(requestInfo, Microsoft.Graph.Beta.Models.Workbook.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Workbook>(requestInfo, Microsoft.Graph.Beta.Models.Workbook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property workbook in drives
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Workbook>(requestInfo, Microsoft.Graph.Beta.Models.Workbook.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Workbook>(requestInfo, Microsoft.Graph.Beta.Models.Workbook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the sessionInfoResource method.

@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents.GetAuditActivityType
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetAuditActivityTypesWithCategoryResponse>(requestInfo, GetAuditActivityTypesWithCategoryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetAuditActivityTypesWithCategoryResponse>(requestInfo, GetAuditActivityTypesWithCategoryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getAuditActivityTypes

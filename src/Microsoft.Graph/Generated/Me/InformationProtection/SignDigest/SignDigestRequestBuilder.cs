@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.SignDigest {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SigningResult>(requestInfo, SigningResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SigningResult>(requestInfo, SigningResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action signDigest

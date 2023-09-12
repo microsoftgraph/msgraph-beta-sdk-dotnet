@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ConfigManagerCollectionCollectionResponse>(requestInfo, ConfigManagerCollectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ConfigManagerCollectionCollectionResponse>(requestInfo, ConfigManagerCollectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the getPolicySummary method.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ConfigManagerCollection>(requestInfo, ConfigManagerCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ConfigManagerCollection>(requestInfo, ConfigManagerCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A list of ConfigManagerCollection

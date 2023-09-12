@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Documents {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrintDocumentCollectionResponse>(requestInfo, PrintDocumentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrintDocumentCollectionResponse>(requestInfo, PrintDocumentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to documents for print
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Documents {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrintDocument>(requestInfo, PrintDocument.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrintDocument>(requestInfo, PrintDocument.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get documents from print

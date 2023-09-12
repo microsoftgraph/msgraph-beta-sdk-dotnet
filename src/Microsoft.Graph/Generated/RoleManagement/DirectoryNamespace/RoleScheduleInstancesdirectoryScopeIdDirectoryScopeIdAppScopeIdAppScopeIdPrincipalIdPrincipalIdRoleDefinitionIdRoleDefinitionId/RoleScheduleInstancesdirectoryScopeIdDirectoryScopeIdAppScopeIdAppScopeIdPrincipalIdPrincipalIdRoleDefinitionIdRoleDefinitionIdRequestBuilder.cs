@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleScheduleIns
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdResponse>(requestInfo, RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdResponse>(requestInfo, RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function roleScheduleInstances
@@ -86,9 +86,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleScheduleIns
             /// <summary>Usage: appScopeId=&apos;@appScopeId&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            [QueryParameter("appScopeId")]
             public string? AppScopeId { get; set; }
 #nullable restore
 #else
+            [QueryParameter("appScopeId")]
             public string AppScopeId { get; set; }
 #endif
             /// <summary>Include count of items</summary>
@@ -97,9 +99,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleScheduleIns
             /// <summary>Usage: directoryScopeId=&apos;@directoryScopeId&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            [QueryParameter("directoryScopeId")]
             public string? DirectoryScopeId { get; set; }
 #nullable restore
 #else
+            [QueryParameter("directoryScopeId")]
             public string DirectoryScopeId { get; set; }
 #endif
             /// <summary>Filter items by property values</summary>
@@ -125,17 +129,21 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleScheduleIns
             /// <summary>Usage: principalId=&apos;@principalId&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            [QueryParameter("principalId")]
             public string? PrincipalId { get; set; }
 #nullable restore
 #else
+            [QueryParameter("principalId")]
             public string PrincipalId { get; set; }
 #endif
             /// <summary>Usage: roleDefinitionId=&apos;@roleDefinitionId&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            [QueryParameter("roleDefinitionId")]
             public string? RoleDefinitionId { get; set; }
 #nullable restore
 #else
+            [QueryParameter("roleDefinitionId")]
             public string RoleDefinitionId { get; set; }
 #endif
             /// <summary>Search items by search phrases</summary>

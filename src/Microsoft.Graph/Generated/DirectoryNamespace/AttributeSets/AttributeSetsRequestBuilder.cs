@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AttributeSets {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AttributeSetCollectionResponse>(requestInfo, AttributeSetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AttributeSetCollectionResponse>(requestInfo, AttributeSetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new attributeSet object.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AttributeSets {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AttributeSet>(requestInfo, AttributeSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AttributeSet>(requestInfo, AttributeSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the attributeSet objects and their properties.

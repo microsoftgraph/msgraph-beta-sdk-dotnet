@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DownloadApplePushNotificationCertificateSigningRequestResponse>(requestInfo, DownloadApplePushNotificationCertificateSigningRequestResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DownloadApplePushNotificationCertificateSigningRequestResponse>(requestInfo, DownloadApplePushNotificationCertificateSigningRequestResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Download Apple push notification certificate signing request

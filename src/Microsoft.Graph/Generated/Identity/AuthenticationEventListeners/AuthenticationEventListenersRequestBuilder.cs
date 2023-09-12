@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AuthenticationEventListenerCollectionResponse>(requestInfo, AuthenticationEventListenerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AuthenticationEventListenerCollectionResponse>(requestInfo, AuthenticationEventListenerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new authenticationEventListener object. You can create one of the following subtypes that are derived from authenticationEventListener.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AuthenticationEventListener>(requestInfo, AuthenticationEventListener.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AuthenticationEventListener>(requestInfo, AuthenticationEventListener.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the authenticationEventListener objects and their properties. The following derived types are supported:

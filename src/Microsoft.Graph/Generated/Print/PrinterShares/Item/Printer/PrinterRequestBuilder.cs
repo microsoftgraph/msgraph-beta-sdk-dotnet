@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Printer {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Printer>(requestInfo, Microsoft.Graph.Beta.Models.Printer.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Printer>(requestInfo, Microsoft.Graph.Beta.Models.Printer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The printer that this printer share is related to.

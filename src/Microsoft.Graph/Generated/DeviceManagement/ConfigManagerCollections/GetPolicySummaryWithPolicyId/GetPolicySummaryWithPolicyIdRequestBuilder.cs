@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.GetPoli
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ConfigManagerPolicySummary>(requestInfo, ConfigManagerPolicySummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ConfigManagerPolicySummary>(requestInfo, ConfigManagerPolicySummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getPolicySummary

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.CertificateBasedAuthConfigurati
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CertificateBasedAuthConfigurationCollectionResponse>(requestInfo, CertificateBasedAuthConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CertificateBasedAuthConfigurationCollectionResponse>(requestInfo, CertificateBasedAuthConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new certificateBasedAuthConfiguration object.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.CertificateBasedAuthConfigurati
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration>(requestInfo, Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration>(requestInfo, Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of certificateBasedAuthConfiguration objects.

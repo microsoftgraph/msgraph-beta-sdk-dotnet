@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MailFolderCollectionResponse>(requestInfo, MailFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MailFolderCollectionResponse>(requestInfo, MailFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Use this API to create a new mail folder in the root folder of the user&apos;s mailbox. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MailFolder>(requestInfo, MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MailFolder>(requestInfo, MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The user&apos;s mail folders. Read-only. Nullable.
@@ -179,9 +179,11 @@ namespace Microsoft.Graph.Beta.Me.MailFolders {
             /// <summary>Include Hidden Folders</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            [QueryParameter("includeHiddenFolders")]
             public string? IncludeHiddenFolders { get; set; }
 #nullable restore
 #else
+            [QueryParameter("includeHiddenFolders")]
             public string IncludeHiddenFolders { get; set; }
 #endif
             /// <summary>Order items by property values</summary>

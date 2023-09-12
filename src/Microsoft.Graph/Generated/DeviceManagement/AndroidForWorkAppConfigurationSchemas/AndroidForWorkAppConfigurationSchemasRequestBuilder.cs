@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkAppConfigurationSc
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AndroidForWorkAppConfigurationSchemaCollectionResponse>(requestInfo, AndroidForWorkAppConfigurationSchemaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AndroidForWorkAppConfigurationSchemaCollectionResponse>(requestInfo, AndroidForWorkAppConfigurationSchemaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to androidForWorkAppConfigurationSchemas for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkAppConfigurationSc
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AndroidForWorkAppConfigurationSchema>(requestInfo, AndroidForWorkAppConfigurationSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AndroidForWorkAppConfigurationSchema>(requestInfo, AndroidForWorkAppConfigurationSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Android for Work app configuration schema entities.

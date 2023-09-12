@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Me.GetManagedAppPolicies {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetManagedAppPoliciesResponse>(requestInfo, GetManagedAppPoliciesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetManagedAppPoliciesResponse>(requestInfo, GetManagedAppPoliciesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets app restrictions for a given user.

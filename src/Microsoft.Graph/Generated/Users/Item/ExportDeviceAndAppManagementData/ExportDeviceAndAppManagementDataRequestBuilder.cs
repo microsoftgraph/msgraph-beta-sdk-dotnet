@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ExportDeviceAndAppManagementData {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceAndAppManagementData>(requestInfo, DeviceAndAppManagementData.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceAndAppManagementData>(requestInfo, DeviceAndAppManagementData.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function exportDeviceAndAppManagementData

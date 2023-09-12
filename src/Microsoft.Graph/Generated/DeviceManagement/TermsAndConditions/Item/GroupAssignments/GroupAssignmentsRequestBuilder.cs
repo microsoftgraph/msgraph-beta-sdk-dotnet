@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.GroupAss
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TermsAndConditionsGroupAssignmentCollectionResponse>(requestInfo, TermsAndConditionsGroupAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TermsAndConditionsGroupAssignmentCollectionResponse>(requestInfo, TermsAndConditionsGroupAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to groupAssignments for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.GroupAss
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TermsAndConditionsGroupAssignment>(requestInfo, TermsAndConditionsGroupAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TermsAndConditionsGroupAssignment>(requestInfo, TermsAndConditionsGroupAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of group assignments for this T&amp;C policy.

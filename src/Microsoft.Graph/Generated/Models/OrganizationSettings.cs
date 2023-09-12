@@ -62,34 +62,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("peopleInsights", value); }
         }
 #endif
-        /// <summary>The profileCardProperties property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<ProfileCardProperty>? ProfileCardProperties {
-            get { return BackingStore?.Get<List<ProfileCardProperty>?>("profileCardProperties"); }
-            set { BackingStore?.Set("profileCardProperties", value); }
-        }
-#nullable restore
-#else
-        public List<ProfileCardProperty> ProfileCardProperties {
-            get { return BackingStore?.Get<List<ProfileCardProperty>>("profileCardProperties"); }
-            set { BackingStore?.Set("profileCardProperties", value); }
-        }
-#endif
-        /// <summary>The pronouns property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public PronounsSettings? Pronouns {
-            get { return BackingStore?.Get<PronounsSettings?>("pronouns"); }
-            set { BackingStore?.Set("pronouns", value); }
-        }
-#nullable restore
-#else
-        public PronounsSettings Pronouns {
-            get { return BackingStore?.Get<PronounsSettings>("pronouns"); }
-            set { BackingStore?.Set("pronouns", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -107,8 +79,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"itemInsights", n => { ItemInsights = n.GetObjectValue<InsightsSettings>(InsightsSettings.CreateFromDiscriminatorValue); } },
                 {"microsoftApplicationDataAccess", n => { MicrosoftApplicationDataAccess = n.GetObjectValue<MicrosoftApplicationDataAccessSettings>(MicrosoftApplicationDataAccessSettings.CreateFromDiscriminatorValue); } },
                 {"peopleInsights", n => { PeopleInsights = n.GetObjectValue<InsightsSettings>(InsightsSettings.CreateFromDiscriminatorValue); } },
-                {"profileCardProperties", n => { ProfileCardProperties = n.GetCollectionOfObjectValues<ProfileCardProperty>(ProfileCardProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"pronouns", n => { Pronouns = n.GetObjectValue<PronounsSettings>(PronounsSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -122,8 +92,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<InsightsSettings>("itemInsights", ItemInsights);
             writer.WriteObjectValue<MicrosoftApplicationDataAccessSettings>("microsoftApplicationDataAccess", MicrosoftApplicationDataAccess);
             writer.WriteObjectValue<InsightsSettings>("peopleInsights", PeopleInsights);
-            writer.WriteCollectionOfObjectValues<ProfileCardProperty>("profileCardProperties", ProfileCardProperties);
-            writer.WriteObjectValue<PronounsSettings>("pronouns", Pronouns);
         }
     }
 }

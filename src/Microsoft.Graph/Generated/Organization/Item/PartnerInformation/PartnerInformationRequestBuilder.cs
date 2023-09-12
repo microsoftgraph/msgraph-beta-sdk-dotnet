@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.PartnerInformation {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get partnerInformation from organization
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.PartnerInformation {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PartnerInformation>(requestInfo, Microsoft.Graph.Beta.Models.PartnerInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PartnerInformation>(requestInfo, Microsoft.Graph.Beta.Models.PartnerInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property partnerInformation in organization
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.PartnerInformation {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PartnerInformation>(requestInfo, Microsoft.Graph.Beta.Models.PartnerInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PartnerInformation>(requestInfo, Microsoft.Graph.Beta.Models.PartnerInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property partnerInformation for organization

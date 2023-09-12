@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.It
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GeneralLedgerEntry>(requestInfo, GeneralLedgerEntry.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GeneralLedgerEntry>(requestInfo, GeneralLedgerEntry.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get generalLedgerEntries from financials

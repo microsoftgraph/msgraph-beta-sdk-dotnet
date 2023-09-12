@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DerivedCredentials {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementDerivedCredentialSettingsCollectionResponse>(requestInfo, DeviceManagementDerivedCredentialSettingsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementDerivedCredentialSettingsCollectionResponse>(requestInfo, DeviceManagementDerivedCredentialSettingsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to derivedCredentials for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DerivedCredentials {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementDerivedCredentialSettings>(requestInfo, DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementDerivedCredentialSettings>(requestInfo, DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Collection of Derived credential settings associated with account.

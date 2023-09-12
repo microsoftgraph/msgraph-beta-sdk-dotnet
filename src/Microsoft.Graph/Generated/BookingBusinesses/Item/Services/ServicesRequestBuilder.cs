@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Services {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<BookingServiceCollectionResponse>(requestInfo, BookingServiceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<BookingServiceCollectionResponse>(requestInfo, BookingServiceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new bookingService for the specified bookingBusiness.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Services {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<BookingService>(requestInfo, BookingService.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<BookingService>(requestInfo, BookingService.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of bookingService objects in the specified bookingBusiness.

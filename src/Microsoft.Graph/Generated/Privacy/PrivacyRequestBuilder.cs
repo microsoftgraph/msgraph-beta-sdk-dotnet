@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Privacy {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Privacy>(requestInfo, Microsoft.Graph.Beta.Models.Privacy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Privacy>(requestInfo, Microsoft.Graph.Beta.Models.Privacy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update privacy
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Privacy {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Privacy>(requestInfo, Microsoft.Graph.Beta.Models.Privacy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Privacy>(requestInfo, Microsoft.Graph.Beta.Models.Privacy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get privacy

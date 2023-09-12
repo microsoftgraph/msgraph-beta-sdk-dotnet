@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Reports.AppCredentialSignInActivities {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AppCredentialSignInActivityCollectionResponse>(requestInfo, AppCredentialSignInActivityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AppCredentialSignInActivityCollectionResponse>(requestInfo, AppCredentialSignInActivityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to appCredentialSignInActivities for reports
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Reports.AppCredentialSignInActivities {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AppCredentialSignInActivity>(requestInfo, AppCredentialSignInActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AppCredentialSignInActivity>(requestInfo, AppCredentialSignInActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of appCredentialSignInActivity objects that contains recent activity of application credentials.

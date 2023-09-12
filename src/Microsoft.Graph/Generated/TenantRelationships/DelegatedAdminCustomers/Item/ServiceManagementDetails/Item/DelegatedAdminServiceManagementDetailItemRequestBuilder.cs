@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item.
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Contains the management details of a service in the customer tenant that&apos;s managed by delegated administration.
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item.
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DelegatedAdminServiceManagementDetail>(requestInfo, DelegatedAdminServiceManagementDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DelegatedAdminServiceManagementDetail>(requestInfo, DelegatedAdminServiceManagementDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property serviceManagementDetails in tenantRelationships
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers.Item.
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DelegatedAdminServiceManagementDetail>(requestInfo, DelegatedAdminServiceManagementDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DelegatedAdminServiceManagementDetail>(requestInfo, DelegatedAdminServiceManagementDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property serviceManagementDetails for tenantRelationships

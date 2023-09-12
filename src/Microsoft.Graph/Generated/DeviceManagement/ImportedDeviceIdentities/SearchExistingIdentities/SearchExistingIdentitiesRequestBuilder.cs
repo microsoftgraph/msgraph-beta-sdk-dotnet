@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.SearchE
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SearchExistingIdentitiesResponse>(requestInfo, SearchExistingIdentitiesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SearchExistingIdentitiesResponse>(requestInfo, SearchExistingIdentitiesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action searchExistingIdentities

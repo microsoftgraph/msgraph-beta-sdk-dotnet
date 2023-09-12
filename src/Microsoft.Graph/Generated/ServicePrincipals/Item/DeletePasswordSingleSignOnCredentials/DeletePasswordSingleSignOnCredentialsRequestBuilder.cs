@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DeletePasswordSingleSignOn
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete single sign-on credentials using a password for a user or group.

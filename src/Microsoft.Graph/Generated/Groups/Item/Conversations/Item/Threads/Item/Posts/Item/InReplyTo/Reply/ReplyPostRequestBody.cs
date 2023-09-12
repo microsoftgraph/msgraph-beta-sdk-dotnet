@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Post? Post {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Post?>("Post"); }
-            set { BackingStore?.Set("Post", value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Post?>("post"); }
+            set { BackingStore?.Set("post", value); }
         }
 #nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Post Post {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Post>("Post"); }
-            set { BackingStore?.Set("Post", value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Post>("post"); }
+            set { BackingStore?.Set("post", value); }
         }
 #endif
         /// <summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"Post", n => { Post = n.GetObjectValue<Microsoft.Graph.Beta.Models.Post>(Microsoft.Graph.Beta.Models.Post.CreateFromDiscriminatorValue); } },
+                {"post", n => { Post = n.GetObjectValue<Microsoft.Graph.Beta.Models.Post>(Microsoft.Graph.Beta.Models.Post.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Post>("Post", Post);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Post>("post", Post);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

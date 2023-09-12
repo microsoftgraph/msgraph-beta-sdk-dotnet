@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationDet
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of a userRegistrationDetails object.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationDet
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserRegistrationDetails>(requestInfo, Microsoft.Graph.Beta.Models.UserRegistrationDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserRegistrationDetails>(requestInfo, Microsoft.Graph.Beta.Models.UserRegistrationDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property userRegistrationDetails in reports
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationDet
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserRegistrationDetails>(requestInfo, Microsoft.Graph.Beta.Models.UserRegistrationDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserRegistrationDetails>(requestInfo, Microsoft.Graph.Beta.Models.UserRegistrationDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property userRegistrationDetails for reports

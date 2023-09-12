@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Resume {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Resume the sync of a specific school data synchronization profile in the tenant.

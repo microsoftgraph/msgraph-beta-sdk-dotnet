@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcLaunchInfo {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CloudPcLaunchInfo>(requestInfo, CloudPcLaunchInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcLaunchInfo>(requestInfo, CloudPcLaunchInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getCloudPcLaunchInfo

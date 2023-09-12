@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The PolicySet of Policies and Applications
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PolicySet>(requestInfo, PolicySet.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PolicySet>(requestInfo, PolicySet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property policySets in deviceAppManagement
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PolicySet>(requestInfo, PolicySet.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PolicySet>(requestInfo, PolicySet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property policySets for deviceAppManagement

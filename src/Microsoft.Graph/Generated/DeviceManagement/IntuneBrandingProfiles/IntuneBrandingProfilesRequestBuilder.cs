@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<IntuneBrandingProfileCollectionResponse>(requestInfo, IntuneBrandingProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<IntuneBrandingProfileCollectionResponse>(requestInfo, IntuneBrandingProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to intuneBrandingProfiles for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<IntuneBrandingProfile>(requestInfo, IntuneBrandingProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<IntuneBrandingProfile>(requestInfo, IntuneBrandingProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Intune branding profiles targeted to AAD groups

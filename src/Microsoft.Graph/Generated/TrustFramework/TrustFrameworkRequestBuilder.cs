@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.TrustFramework {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TrustFramework>(requestInfo, Microsoft.Graph.Beta.Models.TrustFramework.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TrustFramework>(requestInfo, Microsoft.Graph.Beta.Models.TrustFramework.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update trustFramework
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.TrustFramework {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TrustFramework>(requestInfo, Microsoft.Graph.Beta.Models.TrustFramework.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TrustFramework>(requestInfo, Microsoft.Graph.Beta.Models.TrustFramework.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get trustFramework

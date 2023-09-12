@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace.Localizations.Item.
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AgreementFileVersionCollectionResponse>(requestInfo, AgreementFileVersionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AgreementFileVersionCollectionResponse>(requestInfo, AgreementFileVersionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to versions for agreements
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace.Localizations.Item.
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AgreementFileVersion>(requestInfo, AgreementFileVersion.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AgreementFileVersion>(requestInfo, AgreementFileVersion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.

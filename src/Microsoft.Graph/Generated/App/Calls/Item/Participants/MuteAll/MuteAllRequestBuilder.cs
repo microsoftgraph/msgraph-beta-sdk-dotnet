@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.MuteAll {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MuteParticipantsOperation>(requestInfo, MuteParticipantsOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MuteParticipantsOperation>(requestInfo, MuteParticipantsOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Mute all participants in the call.

@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UpdateAlertsResponse>(requestInfo, UpdateAlertsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UpdateAlertsResponse>(requestInfo, UpdateAlertsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update multiple alerts in one request instead of multiple requests.

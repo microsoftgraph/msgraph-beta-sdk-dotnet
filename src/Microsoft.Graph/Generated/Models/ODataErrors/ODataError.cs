@@ -29,6 +29,8 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
             set { BackingStore?.Set("error", value); }
         }
 #endif
+        /// <summary>The primary error message.</summary>
+        public override string Message { get => Error?.Message ?? string.Empty; }
         /// <summary>
         /// Instantiates a new ODataError and sets the default values.
         /// </summary>

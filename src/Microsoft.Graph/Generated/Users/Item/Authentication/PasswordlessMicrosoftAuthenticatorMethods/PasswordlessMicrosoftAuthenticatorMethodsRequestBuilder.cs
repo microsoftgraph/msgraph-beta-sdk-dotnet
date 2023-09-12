@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAu
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse>(requestInfo, PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse>(requestInfo, PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of a user&apos;s Microsoft Authenticator Passwordless Phone Sign-in method objects and their properties.

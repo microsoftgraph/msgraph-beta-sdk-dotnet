@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.TokenIssuancePolicies.Item.Ref 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Remove a tokenIssuancePolicy from an application.

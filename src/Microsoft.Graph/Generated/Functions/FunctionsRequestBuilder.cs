@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Functions {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AttributeMappingFunctionSchemaCollectionResponse>(requestInfo, AttributeMappingFunctionSchemaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AttributeMappingFunctionSchemaCollectionResponse>(requestInfo, AttributeMappingFunctionSchemaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to functions
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Functions {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AttributeMappingFunctionSchema>(requestInfo, AttributeMappingFunctionSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AttributeMappingFunctionSchema>(requestInfo, AttributeMappingFunctionSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from functions

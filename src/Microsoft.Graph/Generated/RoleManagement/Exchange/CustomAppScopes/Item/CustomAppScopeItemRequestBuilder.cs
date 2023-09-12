@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the properties of a customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CustomAppScope>(requestInfo, CustomAppScope.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomAppScope>(requestInfo, CustomAppScope.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update an existing customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CustomAppScope>(requestInfo, CustomAppScope.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomAppScope>(requestInfo, CustomAppScope.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a customAppScope object of an RBAC provider. Currently only the Exchange Online RBAC provider is supported.

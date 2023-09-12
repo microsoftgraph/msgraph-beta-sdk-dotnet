@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.ValidateFilter
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AssignmentFilterValidationResult>(requestInfo, AssignmentFilterValidationResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AssignmentFilterValidationResult>(requestInfo, AssignmentFilterValidationResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action validateFilter

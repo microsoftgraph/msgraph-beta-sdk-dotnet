@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UploadUrlResponse>(requestInfo, UploadUrlResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UploadUrlResponse>(requestInfo, UploadUrlResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function uploadUrl

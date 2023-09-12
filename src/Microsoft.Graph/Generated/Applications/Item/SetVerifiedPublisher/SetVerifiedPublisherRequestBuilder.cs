@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.SetVerifiedPublisher {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Set the the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification.

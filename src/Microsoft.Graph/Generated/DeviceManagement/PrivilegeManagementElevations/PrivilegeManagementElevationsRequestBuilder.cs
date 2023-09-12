@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.PrivilegeManagementElevations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrivilegeManagementElevationCollectionResponse>(requestInfo, PrivilegeManagementElevationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegeManagementElevationCollectionResponse>(requestInfo, PrivilegeManagementElevationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to privilegeManagementElevations for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.PrivilegeManagementElevations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrivilegeManagementElevation>(requestInfo, PrivilegeManagementElevation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegeManagementElevation>(requestInfo, PrivilegeManagementElevation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The endpoint privilege management elevation event entity contains elevation details.

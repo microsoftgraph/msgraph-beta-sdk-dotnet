@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.AllowedDataLocations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AllowedDataLocationCollectionResponse>(requestInfo, AllowedDataLocationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AllowedDataLocationCollectionResponse>(requestInfo, AllowedDataLocationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to allowedDataLocations
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.AllowedDataLocations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AllowedDataLocation>(requestInfo, AllowedDataLocation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AllowedDataLocation>(requestInfo, AllowedDataLocation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from allowedDataLocations

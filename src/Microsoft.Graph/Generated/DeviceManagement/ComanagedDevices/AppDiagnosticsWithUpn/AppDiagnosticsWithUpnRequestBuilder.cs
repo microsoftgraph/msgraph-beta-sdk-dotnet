@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.AppDiagnosticsW
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AppDiagnosticsWithUpnResponse>(requestInfo, AppDiagnosticsWithUpnResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AppDiagnosticsWithUpnResponse>(requestInfo, AppDiagnosticsWithUpnResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function appDiagnostics

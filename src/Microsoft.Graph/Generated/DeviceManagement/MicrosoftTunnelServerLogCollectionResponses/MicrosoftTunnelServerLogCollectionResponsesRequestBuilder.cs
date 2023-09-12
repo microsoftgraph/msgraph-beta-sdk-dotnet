@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftTunnelServerLogCollectionResponseCollectionResponse>(requestInfo, MicrosoftTunnelServerLogCollectionResponseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftTunnelServerLogCollectionResponseCollectionResponse>(requestInfo, MicrosoftTunnelServerLogCollectionResponseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to microsoftTunnelServerLogCollectionResponses for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftTunnelServerLogCollectionResponse>(requestInfo, MicrosoftTunnelServerLogCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftTunnelServerLogCollectionResponse>(requestInfo, MicrosoftTunnelServerLogCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.

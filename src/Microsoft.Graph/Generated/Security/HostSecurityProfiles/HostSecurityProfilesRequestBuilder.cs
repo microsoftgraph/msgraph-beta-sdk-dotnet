@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Security.HostSecurityProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<HostSecurityProfileCollectionResponse>(requestInfo, HostSecurityProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<HostSecurityProfileCollectionResponse>(requestInfo, HostSecurityProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to hostSecurityProfiles for security
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Security.HostSecurityProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<HostSecurityProfile>(requestInfo, HostSecurityProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<HostSecurityProfile>(requestInfo, HostSecurityProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get hostSecurityProfiles from security

@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides tenants capability to launch a simulated and realistic phishing attack and learn from it.
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AttackSimulationRoot>(requestInfo, AttackSimulationRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AttackSimulationRoot>(requestInfo, AttackSimulationRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property attackSimulation in security
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AttackSimulationRoot>(requestInfo, AttackSimulationRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AttackSimulationRoot>(requestInfo, AttackSimulationRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property attackSimulation for security

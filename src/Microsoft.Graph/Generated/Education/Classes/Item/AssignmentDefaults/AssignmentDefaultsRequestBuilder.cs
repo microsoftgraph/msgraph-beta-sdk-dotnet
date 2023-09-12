@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentDefaults {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of an educationAssignmentDefaults object.  These are the class-level assignment defaults respected by new assignments created in the class. Callers can continue to specify custom values on each assignment creation if they don&apos;t want the default behaviors. Only teachers can perform this operation.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentDefaults {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EducationAssignmentDefaults>(requestInfo, EducationAssignmentDefaults.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationAssignmentDefaults>(requestInfo, EducationAssignmentDefaults.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of an educationAssignmentDefaults object. Only teachers can update these settings.
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentDefaults {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EducationAssignmentDefaults>(requestInfo, EducationAssignmentDefaults.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationAssignmentDefaults>(requestInfo, EducationAssignmentDefaults.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property assignmentDefaults for education

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetShiftWorkCloudPcAcces
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendPrimitiveAsync<ShiftWorkCloudPcAccessState?>(requestInfo, errorMapping, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<ShiftWorkCloudPcAccessState?>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getShiftWorkCloudPcAccessState

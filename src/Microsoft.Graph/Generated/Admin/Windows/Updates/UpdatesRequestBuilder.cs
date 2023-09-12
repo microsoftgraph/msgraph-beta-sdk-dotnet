@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Entity that acts as a container for all Windows Update for Business deployment service functionalities. Read-only.
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AdminWindowsUpdates>(requestInfo, AdminWindowsUpdates.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AdminWindowsUpdates>(requestInfo, AdminWindowsUpdates.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property updates in admin
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AdminWindowsUpdates>(requestInfo, AdminWindowsUpdates.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AdminWindowsUpdates>(requestInfo, AdminWindowsUpdates.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property updates for admin

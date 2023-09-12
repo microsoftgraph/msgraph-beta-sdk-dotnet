@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CloudAppSecurityProfileCollectionResponse>(requestInfo, CloudAppSecurityProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudAppSecurityProfileCollectionResponse>(requestInfo, CloudAppSecurityProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to cloudAppSecurityProfiles for security
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CloudAppSecurityProfile>(requestInfo, CloudAppSecurityProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudAppSecurityProfile>(requestInfo, CloudAppSecurityProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get cloudAppSecurityProfiles from security

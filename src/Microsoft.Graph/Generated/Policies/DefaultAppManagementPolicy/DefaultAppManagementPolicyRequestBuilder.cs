@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties of a tenantAppManagementPolicy object.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TenantAppManagementPolicy>(requestInfo, TenantAppManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TenantAppManagementPolicy>(requestInfo, TenantAppManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of a tenantAppManagementPolicy object.
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TenantAppManagementPolicy>(requestInfo, TenantAppManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TenantAppManagementPolicy>(requestInfo, TenantAppManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property defaultAppManagementPolicy for policies

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ApprovalWorkflowProviderCollectionResponse>(requestInfo, ApprovalWorkflowProviderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ApprovalWorkflowProviderCollectionResponse>(requestInfo, ApprovalWorkflowProviderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to approvalWorkflowProviders
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ApprovalWorkflowProvider>(requestInfo, ApprovalWorkflowProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ApprovalWorkflowProvider>(requestInfo, ApprovalWorkflowProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from approvalWorkflowProviders

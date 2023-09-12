@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item.Policies.It
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.Policy>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.Policy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.Policy>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.Policy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Policy.

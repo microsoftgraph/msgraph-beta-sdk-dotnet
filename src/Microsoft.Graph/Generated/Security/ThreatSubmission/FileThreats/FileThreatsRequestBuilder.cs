@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.FileThreats {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<FileThreatSubmissionCollectionResponse>(requestInfo, FileThreatSubmissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<FileThreatSubmissionCollectionResponse>(requestInfo, FileThreatSubmissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to fileThreats for security
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.FileThreats {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<FileThreatSubmission>(requestInfo, FileThreatSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<FileThreatSubmission>(requestInfo, FileThreatSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the fileThreatSubmission objects and their properties.

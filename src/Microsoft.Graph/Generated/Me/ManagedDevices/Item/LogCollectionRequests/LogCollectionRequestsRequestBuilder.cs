@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.LogCollectionRequests {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceLogCollectionResponseCollectionResponse>(requestInfo, DeviceLogCollectionResponseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceLogCollectionResponseCollectionResponse>(requestInfo, DeviceLogCollectionResponseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to logCollectionRequests for me
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.LogCollectionRequests {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceLogCollectionResponse>(requestInfo, DeviceLogCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceLogCollectionResponse>(requestInfo, DeviceLogCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List of log collection requests

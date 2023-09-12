@@ -12,14 +12,14 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Beta_In
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Json? A {
-            get { return BackingStore?.Get<Json?>("A"); }
-            set { BackingStore?.Set("A", value); }
+            get { return BackingStore?.Get<Json?>("a"); }
+            set { BackingStore?.Set("a", value); }
         }
 #nullable restore
 #else
         public Json A {
-            get { return BackingStore?.Get<Json>("A"); }
-            set { BackingStore?.Set("A", value); }
+            get { return BackingStore?.Get<Json>("a"); }
+            set { BackingStore?.Set("a", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -45,14 +45,14 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Beta_In
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Json? B {
-            get { return BackingStore?.Get<Json?>("B"); }
-            set { BackingStore?.Set("B", value); }
+            get { return BackingStore?.Get<Json?>("b"); }
+            set { BackingStore?.Set("b", value); }
         }
 #nullable restore
 #else
         public Json B {
-            get { return BackingStore?.Get<Json>("B"); }
-            set { BackingStore?.Set("B", value); }
+            get { return BackingStore?.Get<Json>("b"); }
+            set { BackingStore?.Set("b", value); }
         }
 #endif
         /// <summary>Stores model information.</summary>
@@ -105,9 +105,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Beta_In
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"A", n => { A = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"a", n => { A = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"alpha", n => { Alpha = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"B", n => { B = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"b", n => { B = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"beta", n => { Beta = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"probability", n => { Probability = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
@@ -118,9 +118,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Beta_In
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("A", A);
+            writer.WriteObjectValue<Json>("a", A);
             writer.WriteObjectValue<Json>("alpha", Alpha);
-            writer.WriteObjectValue<Json>("B", B);
+            writer.WriteObjectValue<Json>("b", B);
             writer.WriteObjectValue<Json>("beta", Beta);
             writer.WriteObjectValue<Json>("probability", Probability);
             writer.WriteAdditionalData(AdditionalData);

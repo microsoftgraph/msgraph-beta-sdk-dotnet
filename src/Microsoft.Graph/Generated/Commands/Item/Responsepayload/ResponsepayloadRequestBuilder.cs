@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Commands.Item.Responsepayload {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PayloadResponse>(requestInfo, Microsoft.Graph.Beta.Models.PayloadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PayloadResponse>(requestInfo, Microsoft.Graph.Beta.Models.PayloadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get responsepayload from commands

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Items.Item.Fields {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The values of the columns set on this list item.
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Items.Item.Fields {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<FieldValueSet>(requestInfo, FieldValueSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<FieldValueSet>(requestInfo, FieldValueSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties on a [listItem][].
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Items.Item.Fields {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<FieldValueSet>(requestInfo, FieldValueSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<FieldValueSet>(requestInfo, FieldValueSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property fields for shares

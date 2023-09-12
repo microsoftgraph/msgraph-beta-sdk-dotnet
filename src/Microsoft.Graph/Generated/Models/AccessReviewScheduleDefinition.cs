@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("descriptionForReviewers", value); }
         }
 #endif
-        /// <summary>Name of the access review series. Supports $select and $orderBy. Required on create.</summary>
+        /// <summary>Name of the access review series. Supports $select and $orderby. Required on create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {

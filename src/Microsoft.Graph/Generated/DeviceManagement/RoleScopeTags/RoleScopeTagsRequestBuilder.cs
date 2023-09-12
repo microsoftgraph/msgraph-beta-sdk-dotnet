@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RoleScopeTagCollectionResponse>(requestInfo, RoleScopeTagCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleScopeTagCollectionResponse>(requestInfo, RoleScopeTagCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to roleScopeTags for deviceManagement
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RoleScopeTag>(requestInfo, RoleScopeTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleScopeTag>(requestInfo, RoleScopeTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The Role Scope Tags.

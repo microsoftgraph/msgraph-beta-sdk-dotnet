@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.UnsubscribeByMail {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Calling this method will disable the current user to receive email notifications for this group about new posts, events, and files in that group. Supported for Microsoft 365 groups only.

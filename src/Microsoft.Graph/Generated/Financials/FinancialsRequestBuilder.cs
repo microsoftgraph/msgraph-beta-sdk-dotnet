@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Financials {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Financials>(requestInfo, Microsoft.Graph.Beta.Models.Financials.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Financials>(requestInfo, Microsoft.Graph.Beta.Models.Financials.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update financials
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Financials {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Financials>(requestInfo, Microsoft.Graph.Beta.Models.Financials.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Financials>(requestInfo, Microsoft.Graph.Beta.Models.Financials.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get financials

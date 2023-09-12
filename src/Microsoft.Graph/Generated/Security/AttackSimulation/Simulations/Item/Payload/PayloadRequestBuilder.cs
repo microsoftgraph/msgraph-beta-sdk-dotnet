@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations.Item.Payloa
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Payload>(requestInfo, Microsoft.Graph.Beta.Models.Payload.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Payload>(requestInfo, Microsoft.Graph.Beta.Models.Payload.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The payload associated with a simulation during its creation.

@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.WindowsProtectionS
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The device protection status. This property is read-only.
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.WindowsProtectionS
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsProtectionState>(requestInfo, Microsoft.Graph.Beta.Models.WindowsProtectionState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsProtectionState>(requestInfo, Microsoft.Graph.Beta.Models.WindowsProtectionState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property windowsProtectionState in users
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.WindowsProtectionS
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsProtectionState>(requestInfo, Microsoft.Graph.Beta.Models.WindowsProtectionState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsProtectionState>(requestInfo, Microsoft.Graph.Beta.Models.WindowsProtectionState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property windowsProtectionState for users

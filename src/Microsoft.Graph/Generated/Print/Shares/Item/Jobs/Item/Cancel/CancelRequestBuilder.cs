@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Print.Shares.Item.Jobs.Item.Cancel {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.

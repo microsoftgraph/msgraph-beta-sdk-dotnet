@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("hosts", value); }
         }
 #endif
-        /// <summary>The hostSslCertificates property</summary>
+        /// <summary>Retrieve details about hostSslCertificate objects.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<HostSslCertificate>? HostSslCertificates {
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("passiveDnsRecords", value); }
         }
 #endif
-        /// <summary>The sslCertificates property</summary>
+        /// <summary>Retrieve details about sslCertificate objects.Note: List retrieval is not yet supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<SslCertificate>? SslCertificates {

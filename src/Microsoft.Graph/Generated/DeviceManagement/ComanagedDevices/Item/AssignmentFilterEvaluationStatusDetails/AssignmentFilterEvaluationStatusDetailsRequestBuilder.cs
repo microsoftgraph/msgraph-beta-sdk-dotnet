@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Assignment
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AssignmentFilterEvaluationStatusDetailsCollectionResponse>(requestInfo, AssignmentFilterEvaluationStatusDetailsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AssignmentFilterEvaluationStatusDetailsCollectionResponse>(requestInfo, AssignmentFilterEvaluationStatusDetailsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to assignmentFilterEvaluationStatusDetails for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Assignment
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationStatusDetails>(requestInfo, Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationStatusDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationStatusDetails>(requestInfo, Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationStatusDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Managed device mobile app configuration states for this device.

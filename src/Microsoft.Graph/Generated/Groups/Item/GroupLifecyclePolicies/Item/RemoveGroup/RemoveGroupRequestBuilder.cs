@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Item.RemoveGro
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RemoveGroupResponse>(requestInfo, RemoveGroupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RemoveGroupResponse>(requestInfo, RemoveGroupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action removeGroup

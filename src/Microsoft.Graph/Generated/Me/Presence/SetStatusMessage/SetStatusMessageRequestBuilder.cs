@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Me.Presence.SetStatusMessage {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Set a presence status message for a user. An optional expiration date and time can be supplied.

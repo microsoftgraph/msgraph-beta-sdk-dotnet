@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.UrlThreats {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UrlThreatSubmissionCollectionResponse>(requestInfo, UrlThreatSubmissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UrlThreatSubmissionCollectionResponse>(requestInfo, UrlThreatSubmissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new urlThreatSubmission object.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.UrlThreats {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UrlThreatSubmission>(requestInfo, UrlThreatSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UrlThreatSubmission>(requestInfo, UrlThreatSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the urlThreatSubmission objects and their properties.

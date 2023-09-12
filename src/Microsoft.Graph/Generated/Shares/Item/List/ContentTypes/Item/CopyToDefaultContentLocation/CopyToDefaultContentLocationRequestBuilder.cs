@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.CopyToDefaultC
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Copy a file to a default content location in a [content type][contentType]. The file can then be added as a default file or template via a POST operation.

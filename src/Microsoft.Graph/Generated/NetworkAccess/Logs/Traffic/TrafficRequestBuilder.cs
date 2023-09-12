@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<NetworkAccessTrafficCollectionResponse>(requestInfo, NetworkAccessTrafficCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<NetworkAccessTrafficCollectionResponse>(requestInfo, NetworkAccessTrafficCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to traffic for networkAccess
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<NetworkAccessTraffic>(requestInfo, NetworkAccessTraffic.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<NetworkAccessTraffic>(requestInfo, NetworkAccessTraffic.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of log events for traffic routed through the Global Secure Access services.

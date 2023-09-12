@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.SignUp {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrivilegedSignupStatus>(requestInfo, Microsoft.Graph.Beta.Models.PrivilegedSignupStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrivilegedSignupStatus>(requestInfo, Microsoft.Graph.Beta.Models.PrivilegedSignupStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action signUp

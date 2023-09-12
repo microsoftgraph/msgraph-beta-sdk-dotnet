@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.Ap
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The collection property of AppLogUploadRequest.
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.Ap
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AppLogCollectionRequest>(requestInfo, AppLogCollectionRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AppLogCollectionRequest>(requestInfo, AppLogCollectionRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property appLogCollectionRequests in users
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.Ap
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AppLogCollectionRequest>(requestInfo, AppLogCollectionRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AppLogCollectionRequest>(requestInfo, AppLogCollectionRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property appLogCollectionRequests for users

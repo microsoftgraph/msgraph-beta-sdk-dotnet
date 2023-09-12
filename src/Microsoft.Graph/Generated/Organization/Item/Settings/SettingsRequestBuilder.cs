@@ -5,8 +5,6 @@ using Microsoft.Graph.Beta.Organization.Item.Settings.ContactInsights;
 using Microsoft.Graph.Beta.Organization.Item.Settings.ItemInsights;
 using Microsoft.Graph.Beta.Organization.Item.Settings.MicrosoftApplicationDataAccess;
 using Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights;
-using Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties;
-using Microsoft.Graph.Beta.Organization.Item.Settings.Pronouns;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -35,14 +33,6 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings {
         /// <summary>Provides operations to manage the peopleInsights property of the microsoft.graph.organizationSettings entity.</summary>
         public PeopleInsightsRequestBuilder PeopleInsights { get =>
             new PeopleInsightsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the profileCardProperties property of the microsoft.graph.organizationSettings entity.</summary>
-        public ProfileCardPropertiesRequestBuilder ProfileCardProperties { get =>
-            new ProfileCardPropertiesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the pronouns property of the microsoft.graph.organizationSettings entity.</summary>
-        public PronounsRequestBuilder Pronouns { get =>
-            new PronounsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new SettingsRequestBuilder and sets the default values.
@@ -75,7 +65,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the properties and relationships of organizationSettings object. Nullable.
@@ -94,7 +84,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.OrganizationSettings>(requestInfo, Microsoft.Graph.Beta.Models.OrganizationSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.OrganizationSettings>(requestInfo, Microsoft.Graph.Beta.Models.OrganizationSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property settings in organization
@@ -115,7 +105,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.OrganizationSettings>(requestInfo, Microsoft.Graph.Beta.Models.OrganizationSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.OrganizationSettings>(requestInfo, Microsoft.Graph.Beta.Models.OrganizationSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property settings for organization

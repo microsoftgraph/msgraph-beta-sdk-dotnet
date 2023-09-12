@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallReco
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeResponse>(requestInfo, GetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeResponse>(requestInfo, GetPstnBlockedUsersLogWithFromDateTimeWithToDateTimeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getPstnBlockedUsersLog

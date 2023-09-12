@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Print.Services.Item.Endpoints {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrintServiceEndpointCollectionResponse>(requestInfo, PrintServiceEndpointCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrintServiceEndpointCollectionResponse>(requestInfo, PrintServiceEndpointCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to endpoints for print
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Print.Services.Item.Endpoints {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrintServiceEndpoint>(requestInfo, PrintServiceEndpoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrintServiceEndpoint>(requestInfo, PrintServiceEndpoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of endpoints exposed by a print service.

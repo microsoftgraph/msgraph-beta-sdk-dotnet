@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStateSummary 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStateSummary 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementIntentDeviceStateSummary>(requestInfo, DeviceManagementIntentDeviceStateSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementIntentDeviceStateSummary>(requestInfo, DeviceManagementIntentDeviceStateSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property deviceStateSummary in deviceManagement
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.DeviceStateSummary 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementIntentDeviceStateSummary>(requestInfo, DeviceManagementIntentDeviceStateSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementIntentDeviceStateSummary>(requestInfo, DeviceManagementIntentDeviceStateSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property deviceStateSummary for deviceManagement

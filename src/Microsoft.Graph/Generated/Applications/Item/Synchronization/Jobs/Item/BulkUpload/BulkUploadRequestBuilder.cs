@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.BulkU
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The bulk upload operation for the job.
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.BulkU
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.BulkUpload>(requestInfo, Microsoft.Graph.Beta.Models.BulkUpload.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.BulkUpload>(requestInfo, Microsoft.Graph.Beta.Models.BulkUpload.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property bulkUpload in applications
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.BulkU
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.BulkUpload>(requestInfo, Microsoft.Graph.Beta.Models.BulkUpload.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.BulkUpload>(requestInfo, Microsoft.Graph.Beta.Models.BulkUpload.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property bulkUpload for applications

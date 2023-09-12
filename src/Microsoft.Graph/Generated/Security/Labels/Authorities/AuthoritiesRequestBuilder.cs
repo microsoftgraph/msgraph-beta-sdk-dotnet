@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AuthorityTemplateCollectionResponse>(requestInfo, AuthorityTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AuthorityTemplateCollectionResponse>(requestInfo, AuthorityTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new authorityTemplate object.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.AuthorityTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.AuthorityTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.AuthorityTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.AuthorityTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the authorityTemplate objects and their properties.

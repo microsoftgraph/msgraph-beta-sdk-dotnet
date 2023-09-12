@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Users.Item.EmployeeExperience {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get employeeExperience from users
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Users.Item.EmployeeExperience {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EmployeeExperienceUser>(requestInfo, EmployeeExperienceUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EmployeeExperienceUser>(requestInfo, EmployeeExperienceUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property employeeExperience in users
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Users.Item.EmployeeExperience {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EmployeeExperienceUser>(requestInfo, EmployeeExperienceUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EmployeeExperienceUser>(requestInfo, EmployeeExperienceUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property employeeExperience for users

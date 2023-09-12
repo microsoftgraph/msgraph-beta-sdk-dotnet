@@ -45,10 +45,10 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Comments.Item.Tas
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get changes from drives
+        /// A collection of task change histories.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Comments.Item.Tas
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WorkbookDocumentTaskChange>(requestInfo, WorkbookDocumentTaskChange.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WorkbookDocumentTaskChange>(requestInfo, WorkbookDocumentTaskChange.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property changes in drives
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Comments.Item.Tas
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WorkbookDocumentTaskChange>(requestInfo, WorkbookDocumentTaskChange.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WorkbookDocumentTaskChange>(requestInfo, WorkbookDocumentTaskChange.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property changes for drives
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Comments.Item.Tas
             return requestInfo;
         }
         /// <summary>
-        /// Get changes from drives
+        /// A collection of task change histories.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Comments.Item.Tas
             }
         }
         /// <summary>
-        /// Get changes from drives
+        /// A collection of task change histories.
         /// </summary>
         public class WorkbookDocumentTaskChangeItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

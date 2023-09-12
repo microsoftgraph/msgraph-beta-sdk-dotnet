@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Unpublish {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Unpublish a [contentType][] from a content type hub site.

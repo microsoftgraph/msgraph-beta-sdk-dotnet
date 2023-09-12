@@ -70,11 +70,11 @@ namespace Microsoft.Graph.Beta.Me.Presence {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a user&apos;s presence information.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0" />
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Me.Presence {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Presence>(requestInfo, Microsoft.Graph.Beta.Models.Presence.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Presence>(requestInfo, Microsoft.Graph.Beta.Models.Presence.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property presence in me
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Me.Presence {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Presence>(requestInfo, Microsoft.Graph.Beta.Models.Presence.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Presence>(requestInfo, Microsoft.Graph.Beta.Models.Presence.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property presence for me
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Me.Presence {
             return requestInfo;
         }
         /// <summary>
-        /// Get a user&apos;s presence information.
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -215,7 +215,7 @@ namespace Microsoft.Graph.Beta.Me.Presence {
             }
         }
         /// <summary>
-        /// Get a user&apos;s presence information.
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
         /// </summary>
         public class PresenceRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

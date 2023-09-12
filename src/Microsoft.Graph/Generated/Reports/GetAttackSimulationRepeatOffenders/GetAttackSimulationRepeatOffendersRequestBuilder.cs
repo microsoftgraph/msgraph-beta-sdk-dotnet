@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationRepeatOffenders {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetAttackSimulationRepeatOffendersResponse>(requestInfo, GetAttackSimulationRepeatOffendersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetAttackSimulationRepeatOffendersResponse>(requestInfo, GetAttackSimulationRepeatOffendersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getAttackSimulationRepeatOffenders

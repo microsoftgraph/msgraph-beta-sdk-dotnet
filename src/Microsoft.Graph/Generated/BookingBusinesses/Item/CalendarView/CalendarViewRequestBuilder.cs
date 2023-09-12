@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<BookingAppointmentCollectionResponse>(requestInfo, BookingAppointmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<BookingAppointmentCollectionResponse>(requestInfo, BookingAppointmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to calendarView for bookingBusinesses
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, BookingAppointment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, BookingAppointment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The set of appointments of this business in a specified date range. Read-only. Nullable.
@@ -153,9 +153,11 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView {
             /// <summary>The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            [QueryParameter("end")]
             public string? End { get; set; }
 #nullable restore
 #else
+            [QueryParameter("end")]
             public string End { get; set; }
 #endif
             /// <summary>Expand related entities</summary>
@@ -214,9 +216,11 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView {
             /// <summary>The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            [QueryParameter("start")]
             public string? Start { get; set; }
 #nullable restore
 #else
+            [QueryParameter("start")]
             public string Start { get; set; }
 #endif
             /// <summary>Show only the first n items</summary>

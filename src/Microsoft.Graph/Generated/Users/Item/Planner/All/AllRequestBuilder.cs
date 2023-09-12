@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.All {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PlannerDeltaCollectionResponse>(requestInfo, PlannerDeltaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PlannerDeltaCollectionResponse>(requestInfo, PlannerDeltaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to all for users
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.All {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PlannerDelta>(requestInfo, PlannerDelta.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PlannerDelta>(requestInfo, PlannerDelta.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get all from users

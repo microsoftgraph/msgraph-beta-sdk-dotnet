@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Cust
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get paymentTerm from financials
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Cust
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PaymentTerm>(requestInfo, Microsoft.Graph.Beta.Models.PaymentTerm.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PaymentTerm>(requestInfo, Microsoft.Graph.Beta.Models.PaymentTerm.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property paymentTerm in financials
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Cust
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PaymentTerm>(requestInfo, Microsoft.Graph.Beta.Models.PaymentTerm.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PaymentTerm>(requestInfo, Microsoft.Graph.Beta.Models.PaymentTerm.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property paymentTerm for financials

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftAuthenticatorAuthenticationMethodCollectionResponse>(requestInfo, MicrosoftAuthenticatorAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftAuthenticatorAuthenticationMethodCollectionResponse>(requestInfo, MicrosoftAuthenticatorAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the microsoftAuthenticatorAuthenticationMethod objects and their properties.

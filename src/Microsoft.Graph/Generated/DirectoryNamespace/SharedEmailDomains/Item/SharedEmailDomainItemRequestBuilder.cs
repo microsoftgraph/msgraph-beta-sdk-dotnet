@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SharedEmailDomains.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get sharedEmailDomains from directory
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SharedEmailDomains.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SharedEmailDomain>(requestInfo, SharedEmailDomain.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SharedEmailDomain>(requestInfo, SharedEmailDomain.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property sharedEmailDomains in directory
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SharedEmailDomains.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SharedEmailDomain>(requestInfo, SharedEmailDomain.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SharedEmailDomain>(requestInfo, SharedEmailDomain.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property sharedEmailDomains for directory

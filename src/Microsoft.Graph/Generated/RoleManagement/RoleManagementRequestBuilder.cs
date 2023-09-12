@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.RoleManagement {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RoleManagement>(requestInfo, Microsoft.Graph.Beta.Models.RoleManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RoleManagement>(requestInfo, Microsoft.Graph.Beta.Models.RoleManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update roleManagement
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.RoleManagement {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RoleManagement>(requestInfo, Microsoft.Graph.Beta.Models.RoleManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RoleManagement>(requestInfo, Microsoft.Graph.Beta.Models.RoleManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get roleManagement

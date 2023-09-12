@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.CheckGrantedPermissionsForApp {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CheckGrantedPermissionsForAppResponse>(requestInfo, CheckGrantedPermissionsForAppResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CheckGrantedPermissionsForAppResponse>(requestInfo, CheckGrantedPermissionsForAppResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action checkGrantedPermissionsForApp

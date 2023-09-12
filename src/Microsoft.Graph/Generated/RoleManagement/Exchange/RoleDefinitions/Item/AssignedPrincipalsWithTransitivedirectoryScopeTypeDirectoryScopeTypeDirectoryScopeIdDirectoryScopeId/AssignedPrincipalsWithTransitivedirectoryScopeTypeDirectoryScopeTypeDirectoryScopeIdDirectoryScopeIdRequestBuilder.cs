@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.RoleDefinitions.Item.Assi
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdResponse>(requestInfo, AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdResponse>(requestInfo, AssignedPrincipalsWithTransitivedirectoryScopeTypeDirectoryScopeTypeDirectoryScopeIdDirectoryScopeIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function assignedPrincipals
@@ -89,17 +89,21 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.RoleDefinitions.Item.Assi
             /// <summary>Usage: directoryScopeId=&apos;@directoryScopeId&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            [QueryParameter("directoryScopeId")]
             public string? DirectoryScopeId { get; set; }
 #nullable restore
 #else
+            [QueryParameter("directoryScopeId")]
             public string DirectoryScopeId { get; set; }
 #endif
             /// <summary>Usage: directoryScopeType=&apos;@directoryScopeType&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            [QueryParameter("directoryScopeType")]
             public string? DirectoryScopeType { get; set; }
 #nullable restore
 #else
+            [QueryParameter("directoryScopeType")]
             public string DirectoryScopeType { get; set; }
 #endif
             /// <summary>Filter items by property values</summary>
@@ -149,6 +153,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.RoleDefinitions.Item.Assi
             [QueryParameter("%24top")]
             public int? Top { get; set; }
             /// <summary>Usage: transitive=@transitive</summary>
+            [QueryParameter("transitive")]
             public bool? Transitive { get; set; }
         }
         /// <summary>

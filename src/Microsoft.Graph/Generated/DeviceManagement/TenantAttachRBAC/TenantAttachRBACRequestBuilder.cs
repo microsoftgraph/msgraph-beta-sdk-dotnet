@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// TenantAttach RBAC Enablement
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TenantAttachRBAC>(requestInfo, Microsoft.Graph.Beta.Models.TenantAttachRBAC.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TenantAttachRBAC>(requestInfo, Microsoft.Graph.Beta.Models.TenantAttachRBAC.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property tenantAttachRBAC in deviceManagement
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TenantAttachRBAC>(requestInfo, Microsoft.Graph.Beta.Models.TenantAttachRBAC.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TenantAttachRBAC>(requestInfo, Microsoft.Graph.Beta.Models.TenantAttachRBAC.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property tenantAttachRBAC for deviceManagement

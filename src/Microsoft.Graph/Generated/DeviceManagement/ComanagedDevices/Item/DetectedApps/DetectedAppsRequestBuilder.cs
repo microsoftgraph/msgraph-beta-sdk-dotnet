@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.DetectedAp
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DetectedAppCollectionResponse>(requestInfo, DetectedAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DetectedAppCollectionResponse>(requestInfo, DetectedAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// All applications currently installed on the device

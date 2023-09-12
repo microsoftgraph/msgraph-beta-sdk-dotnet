@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EducationSynchronizationErrorCollectionResponse>(requestInfo, EducationSynchronizationErrorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationSynchronizationErrorCollectionResponse>(requestInfo, EducationSynchronizationErrorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to errors for education
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EducationSynchronizationError>(requestInfo, EducationSynchronizationError.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationSynchronizationError>(requestInfo, EducationSynchronizationError.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.

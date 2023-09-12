@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPer
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetAzureADApplicationSignInSummaryWithPeriodResponse>(requestInfo, GetAzureADApplicationSignInSummaryWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetAzureADApplicationSignInSummaryWithPeriodResponse>(requestInfo, GetAzureADApplicationSignInSummaryWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getAzureADApplicationSignInSummary

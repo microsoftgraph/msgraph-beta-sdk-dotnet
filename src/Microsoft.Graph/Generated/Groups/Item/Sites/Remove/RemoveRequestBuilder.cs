@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Remove {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RemoveResponse>(requestInfo, RemoveResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RemoveResponse>(requestInfo, RemoveResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Unfollow a user&apos;s site or multiple sites.

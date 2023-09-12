@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConf
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of a plannerTaskConfiguration object.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConf
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PlannerTaskConfiguration>(requestInfo, PlannerTaskConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PlannerTaskConfiguration>(requestInfo, PlannerTaskConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of a plannerTaskConfiguration object.
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConf
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PlannerTaskConfiguration>(requestInfo, PlannerTaskConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PlannerTaskConfiguration>(requestInfo, PlannerTaskConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property taskConfiguration for solutions

@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A group that&apos;s governed through Privileged Identity Management (PIM).
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrivilegedAccessGroup>(requestInfo, PrivilegedAccessGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedAccessGroup>(requestInfo, PrivilegedAccessGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property group in identityGovernance
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrivilegedAccessGroup>(requestInfo, PrivilegedAccessGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedAccessGroup>(requestInfo, PrivilegedAccessGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property group for identityGovernance

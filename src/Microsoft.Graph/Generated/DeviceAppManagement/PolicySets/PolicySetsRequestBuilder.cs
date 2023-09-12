@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PolicySetCollectionResponse>(requestInfo, PolicySetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PolicySetCollectionResponse>(requestInfo, PolicySetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to policySets for deviceAppManagement
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PolicySet>(requestInfo, PolicySet.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PolicySet>(requestInfo, PolicySet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The PolicySet of Policies and Applications

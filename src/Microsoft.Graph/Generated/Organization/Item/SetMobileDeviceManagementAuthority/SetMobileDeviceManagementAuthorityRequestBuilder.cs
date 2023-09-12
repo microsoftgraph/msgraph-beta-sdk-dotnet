@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.SetMobileDeviceManagementAuthor
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SetMobileDeviceManagementAuthorityResponse>(requestInfo, SetMobileDeviceManagementAuthorityResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SetMobileDeviceManagementAuthorityResponse>(requestInfo, SetMobileDeviceManagementAuthorityResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Set mobile device management authority

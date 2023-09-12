@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.CalendarView.Item.ExceptionOccu
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Dismiss a reminder that has been triggered for an event in a user calendar.

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Me.InferenceClassification {
         public InferenceClassificationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/inferenceClassification{?%24select}", rawUrl) {
         }
         /// <summary>
-        /// Relevance classification of the user&apos;s messages based on explicit designations which override inferred relevance or importance.
+        /// Relevance classification of the user&apos;s messages based on explicit designations that override inferred relevance or importance.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Me.InferenceClassification {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.InferenceClassification>(requestInfo, Microsoft.Graph.Beta.Models.InferenceClassification.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.InferenceClassification>(requestInfo, Microsoft.Graph.Beta.Models.InferenceClassification.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property inferenceClassification in me
@@ -71,10 +71,10 @@ namespace Microsoft.Graph.Beta.Me.InferenceClassification {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.InferenceClassification>(requestInfo, Microsoft.Graph.Beta.Models.InferenceClassification.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.InferenceClassification>(requestInfo, Microsoft.Graph.Beta.Models.InferenceClassification.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Relevance classification of the user&apos;s messages based on explicit designations which override inferred relevance or importance.
+        /// Relevance classification of the user&apos;s messages based on explicit designations that override inferred relevance or importance.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Me.InferenceClassification {
             return new InferenceClassificationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Relevance classification of the user&apos;s messages based on explicit designations which override inferred relevance or importance.
+        /// Relevance classification of the user&apos;s messages based on explicit designations that override inferred relevance or importance.
         /// </summary>
         public class InferenceClassificationRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>

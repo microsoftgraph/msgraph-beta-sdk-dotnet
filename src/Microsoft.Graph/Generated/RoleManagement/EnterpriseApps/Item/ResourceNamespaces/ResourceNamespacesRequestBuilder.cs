@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamesp
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UnifiedRbacResourceNamespaceCollectionResponse>(requestInfo, UnifiedRbacResourceNamespaceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UnifiedRbacResourceNamespaceCollectionResponse>(requestInfo, UnifiedRbacResourceNamespaceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to resourceNamespaces for roleManagement
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamesp
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UnifiedRbacResourceNamespace>(requestInfo, UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UnifiedRbacResourceNamespace>(requestInfo, UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the unifiedRbacResourceNamespace objects and their properties.

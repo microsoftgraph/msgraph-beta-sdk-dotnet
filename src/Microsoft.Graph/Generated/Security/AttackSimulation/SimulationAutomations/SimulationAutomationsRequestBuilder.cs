@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SimulationAutomationCollectionResponse>(requestInfo, SimulationAutomationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SimulationAutomationCollectionResponse>(requestInfo, SimulationAutomationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to simulationAutomations for security
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SimulationAutomation>(requestInfo, SimulationAutomation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SimulationAutomation>(requestInfo, SimulationAutomation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of attack simulation automations for a tenant.

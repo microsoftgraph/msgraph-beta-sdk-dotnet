@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.ThreatAssessmentRequests.It
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the properties and relationships of a specified threatAssessmentRequest object. A threat assessment request can be one of the following types:
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.ThreatAssessmentRequests.It
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ThreatAssessmentRequest>(requestInfo, ThreatAssessmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ThreatAssessmentRequest>(requestInfo, ThreatAssessmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property threatAssessmentRequests in informationProtection
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.ThreatAssessmentRequests.It
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ThreatAssessmentRequest>(requestInfo, ThreatAssessmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ThreatAssessmentRequest>(requestInfo, ThreatAssessmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property threatAssessmentRequests for informationProtection

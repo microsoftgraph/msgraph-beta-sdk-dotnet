@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ResellerDelegatedAdminRelationship : DelegatedAdminRelationship, IParsable {
-        /// <summary>The indirectProviderTenantId property</summary>
+        /// <summary>The tenant ID of the indirect provider partner who created the relationship for the indirect reseller partner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IndirectProviderTenantId {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("indirectProviderTenantId", value); }
         }
 #endif
-        /// <summary>The isPartnerConsentPending property</summary>
+        /// <summary>Indicates the indirect reseller partner consent status. true indicates that the partner has yet to review the relationship; false indicates that the partner has already provided consent by approving or rejecting the relationship.</summary>
         public bool? IsPartnerConsentPending {
             get { return BackingStore?.Get<bool?>("isPartnerConsentPending"); }
             set { BackingStore?.Set("isPartnerConsentPending", value); }

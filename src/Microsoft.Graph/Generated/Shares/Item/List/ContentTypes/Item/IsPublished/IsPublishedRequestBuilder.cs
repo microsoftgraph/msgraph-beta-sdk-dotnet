@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.IsPublished {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<IsPublishedResponse>(requestInfo, IsPublishedResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<IsPublishedResponse>(requestInfo, IsPublishedResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function isPublished

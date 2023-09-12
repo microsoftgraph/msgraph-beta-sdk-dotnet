@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get threatIntelligence from security
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.ThreatIntelligence>(requestInfo, Microsoft.Graph.Beta.Models.Security.ThreatIntelligence.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.ThreatIntelligence>(requestInfo, Microsoft.Graph.Beta.Models.Security.ThreatIntelligence.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property threatIntelligence in security
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.ThreatIntelligence>(requestInfo, Microsoft.Graph.Beta.Models.Security.ThreatIntelligence.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.ThreatIntelligence>(requestInfo, Microsoft.Graph.Beta.Models.Security.ThreatIntelligence.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property threatIntelligence for security

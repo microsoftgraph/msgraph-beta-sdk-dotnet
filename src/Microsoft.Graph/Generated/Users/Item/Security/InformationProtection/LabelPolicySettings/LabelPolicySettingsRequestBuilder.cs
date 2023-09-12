@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.LabelPo
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of an informationProtectionPolicySetting object. The settings exposed by this API should be used in applications to populate the moreInfoUrl property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.LabelPo
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<InformationProtectionPolicySetting>(requestInfo, InformationProtectionPolicySetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<InformationProtectionPolicySetting>(requestInfo, InformationProtectionPolicySetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property labelPolicySettings in users
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.LabelPo
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<InformationProtectionPolicySetting>(requestInfo, InformationProtectionPolicySetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<InformationProtectionPolicySetting>(requestInfo, InformationProtectionPolicySetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property labelPolicySettings for users
