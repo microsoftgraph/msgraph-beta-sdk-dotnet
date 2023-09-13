@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinit
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AllowedValueCollectionResponse>(requestInfo, AllowedValueCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AllowedValueCollectionResponse>(requestInfo, AllowedValueCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new allowedValue object.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinit
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AllowedValue>(requestInfo, AllowedValue.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AllowedValue>(requestInfo, AllowedValue.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the allowedValue objects and their properties.

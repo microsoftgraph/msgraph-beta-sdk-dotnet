@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Operations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TeamsAsyncOperationCollectionResponse>(requestInfo, TeamsAsyncOperationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamsAsyncOperationCollectionResponse>(requestInfo, TeamsAsyncOperationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to operations for teams
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Operations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TeamsAsyncOperation>(requestInfo, TeamsAsyncOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamsAsyncOperation>(requestInfo, TeamsAsyncOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The async operations that ran or are running on this team.

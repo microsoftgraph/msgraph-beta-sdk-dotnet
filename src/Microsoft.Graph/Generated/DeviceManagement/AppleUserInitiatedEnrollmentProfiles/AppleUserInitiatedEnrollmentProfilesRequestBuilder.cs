@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProf
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AppleUserInitiatedEnrollmentProfileCollectionResponse>(requestInfo, AppleUserInitiatedEnrollmentProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AppleUserInitiatedEnrollmentProfileCollectionResponse>(requestInfo, AppleUserInitiatedEnrollmentProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to appleUserInitiatedEnrollmentProfiles for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProf
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AppleUserInitiatedEnrollmentProfile>(requestInfo, AppleUserInitiatedEnrollmentProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AppleUserInitiatedEnrollmentProfile>(requestInfo, AppleUserInitiatedEnrollmentProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Apple user initiated enrollment profiles

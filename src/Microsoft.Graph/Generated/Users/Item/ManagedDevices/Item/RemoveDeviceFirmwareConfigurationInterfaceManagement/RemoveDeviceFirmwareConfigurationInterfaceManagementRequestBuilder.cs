@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RemoveDeviceFirmwa
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Remove device from Device Firmware Configuration Interface management

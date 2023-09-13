@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.DeviceHeal
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceHealthScriptPolicyStateCollectionResponse>(requestInfo, DeviceHealthScriptPolicyStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceHealthScriptPolicyStateCollectionResponse>(requestInfo, DeviceHealthScriptPolicyStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to deviceHealthScriptStates for deviceManagement
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.DeviceHeal
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceHealthScriptPolicyState>(requestInfo, DeviceHealthScriptPolicyState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceHealthScriptPolicyState>(requestInfo, DeviceHealthScriptPolicyState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Results of device health scripts that ran for this device. Default is empty list. This property is read-only.

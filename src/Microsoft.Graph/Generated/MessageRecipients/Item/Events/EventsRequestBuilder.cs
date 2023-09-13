@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.MessageRecipients.Item.Events {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MessageEventCollectionResponse>(requestInfo, MessageEventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MessageEventCollectionResponse>(requestInfo, MessageEventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to events for messageRecipients
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.MessageRecipients.Item.Events {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MessageEvent>(requestInfo, MessageEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MessageEvent>(requestInfo, MessageEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get events from messageRecipients

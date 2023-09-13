@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TodoTaskCollectionResponse>(requestInfo, TodoTaskCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TodoTaskCollectionResponse>(requestInfo, TodoTaskCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new task object in a specified todoTaskList.
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TodoTask>(requestInfo, TodoTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TodoTask>(requestInfo, TodoTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the todoTask resources from the tasks navigation property of a specified todoTaskList.

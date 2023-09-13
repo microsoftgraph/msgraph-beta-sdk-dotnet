@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.GetProvisionedCloudPCsWithGro
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse>(requestInfo, GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse>(requestInfo, GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getProvisionedCloudPCs

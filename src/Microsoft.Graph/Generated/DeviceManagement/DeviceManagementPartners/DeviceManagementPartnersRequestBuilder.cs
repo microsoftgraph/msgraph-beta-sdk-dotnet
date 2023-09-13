@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementPartners {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementPartnerCollectionResponse>(requestInfo, DeviceManagementPartnerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementPartnerCollectionResponse>(requestInfo, DeviceManagementPartnerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to deviceManagementPartners for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementPartners {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementPartner>(requestInfo, DeviceManagementPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementPartner>(requestInfo, DeviceManagementPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of Device Management Partners configured by the tenant.

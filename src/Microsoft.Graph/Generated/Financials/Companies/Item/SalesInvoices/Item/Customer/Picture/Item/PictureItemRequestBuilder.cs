@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Cust
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get picture from financials
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Cust
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Picture>(requestInfo, Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Picture>(requestInfo, Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property picture in financials
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Cust
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Picture>(requestInfo, Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Picture>(requestInfo, Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property picture for financials

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcDevices
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CloudPcDeviceCollectionResponse>(requestInfo, CloudPcDeviceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcDeviceCollectionResponse>(requestInfo, CloudPcDeviceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to cloudPcDevices for tenantRelationships
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcDevices
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CloudPcDevice>(requestInfo, CloudPcDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcDevice>(requestInfo, CloudPcDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the cloudPcDevice objects and their properties.

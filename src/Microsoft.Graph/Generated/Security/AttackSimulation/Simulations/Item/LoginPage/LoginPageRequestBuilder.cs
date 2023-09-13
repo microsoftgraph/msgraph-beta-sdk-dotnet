@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations.Item.LoginP
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.LoginPage>(requestInfo, Microsoft.Graph.Beta.Models.LoginPage.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.LoginPage>(requestInfo, Microsoft.Graph.Beta.Models.LoginPage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get loginPage from security

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SynchronizationTemplateCollectionResponse>(requestInfo, SynchronizationTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SynchronizationTemplateCollectionResponse>(requestInfo, SynchronizationTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to templates for servicePrincipals
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SynchronizationTemplate>(requestInfo, SynchronizationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SynchronizationTemplate>(requestInfo, SynchronizationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List the synchronization templates associated with a given application or service principal.

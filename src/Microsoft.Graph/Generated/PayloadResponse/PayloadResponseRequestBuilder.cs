@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.PayloadResponse {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PayloadResponseCollectionResponse>(requestInfo, PayloadResponseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PayloadResponseCollectionResponse>(requestInfo, PayloadResponseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to payloadResponse
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.PayloadResponse {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PayloadResponse>(requestInfo, Microsoft.Graph.Beta.Models.PayloadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PayloadResponse>(requestInfo, Microsoft.Graph.Beta.Models.PayloadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from payloadResponse

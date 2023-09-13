@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<IndustryDataRun>(requestInfo, IndustryDataRun.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<IndustryDataRun>(requestInfo, IndustryDataRun.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of an industryDataRun object.

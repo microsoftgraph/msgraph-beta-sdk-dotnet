@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents the capability for Azure Active Directory (Azure AD) identity synchronization through the Microsoft Graph API.
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Synchronization>(requestInfo, Microsoft.Graph.Beta.Models.Synchronization.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Synchronization>(requestInfo, Microsoft.Graph.Beta.Models.Synchronization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property synchronization in servicePrincipals
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Synchronization>(requestInfo, Microsoft.Graph.Beta.Models.Synchronization.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Synchronization>(requestInfo, Microsoft.Graph.Beta.Models.Synchronization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property synchronization for servicePrincipals

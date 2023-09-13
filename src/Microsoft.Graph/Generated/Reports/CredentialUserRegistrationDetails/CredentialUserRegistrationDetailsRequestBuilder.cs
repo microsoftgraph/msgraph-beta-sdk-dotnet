@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CredentialUserRegistrationDetailsCollectionResponse>(requestInfo, CredentialUserRegistrationDetailsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CredentialUserRegistrationDetailsCollectionResponse>(requestInfo, CredentialUserRegistrationDetailsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to credentialUserRegistrationDetails for reports
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>(requestInfo, Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>(requestInfo, Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of credentialUserRegistrationDetails objects for a given tenant.

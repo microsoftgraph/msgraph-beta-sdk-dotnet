@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsNotAutopi
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse>(requestInfo, UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse>(requestInfo, UserExperienceAnalyticsNotAutopilotReadyDeviceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to userExperienceAnalyticsNotAutopilotReadyDevice for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsNotAutopi
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice>(requestInfo, Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice>(requestInfo, Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// User experience analytics devices not Windows Autopilot ready.

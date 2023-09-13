@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisHistoryRecords {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WhoisHistoryRecordCollectionResponse>(requestInfo, WhoisHistoryRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WhoisHistoryRecordCollectionResponse>(requestInfo, WhoisHistoryRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to whoisHistoryRecords for security
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisHistoryRecords {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WhoisHistoryRecord>(requestInfo, WhoisHistoryRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WhoisHistoryRecord>(requestInfo, WhoisHistoryRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.

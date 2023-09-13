@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.OpenShiftChangeRequests
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<OpenShiftChangeRequestCollectionResponse>(requestInfo, OpenShiftChangeRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<OpenShiftChangeRequestCollectionResponse>(requestInfo, OpenShiftChangeRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create instance of an openShiftChangeRequest object.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.OpenShiftChangeRequests
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<OpenShiftChangeRequest>(requestInfo, OpenShiftChangeRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<OpenShiftChangeRequest>(requestInfo, OpenShiftChangeRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of openShiftChangeRequest objects in a team.

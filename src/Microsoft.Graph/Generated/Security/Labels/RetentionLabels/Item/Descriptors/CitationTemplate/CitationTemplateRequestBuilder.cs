@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.Descriptors.
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.CitationTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.CitationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.CitationTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.CitationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The specific rule or regulation created by a jurisdiction used to determine whether certain labels and content should be retained or deleted.

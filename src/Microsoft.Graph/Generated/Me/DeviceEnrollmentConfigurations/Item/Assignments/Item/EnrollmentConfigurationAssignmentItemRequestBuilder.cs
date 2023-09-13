@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.Item.Assignment
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of group assignments for the device configuration profile
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.Item.Assignment
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EnrollmentConfigurationAssignment>(requestInfo, EnrollmentConfigurationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EnrollmentConfigurationAssignment>(requestInfo, EnrollmentConfigurationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property assignments in me
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.Item.Assignment
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EnrollmentConfigurationAssignment>(requestInfo, EnrollmentConfigurationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EnrollmentConfigurationAssignment>(requestInfo, EnrollmentConfigurationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property assignments for me

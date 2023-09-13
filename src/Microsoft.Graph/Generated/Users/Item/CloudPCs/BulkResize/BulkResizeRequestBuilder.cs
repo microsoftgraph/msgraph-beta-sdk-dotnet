@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.BulkResize {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<BulkResizeResponse>(requestInfo, BulkResizeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<BulkResizeResponse>(requestInfo, BulkResizeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation. If any devices cannot be resized, those devices will indicate &apos;resize failed&apos;. The remaining devices will be provisioned for the resize process.

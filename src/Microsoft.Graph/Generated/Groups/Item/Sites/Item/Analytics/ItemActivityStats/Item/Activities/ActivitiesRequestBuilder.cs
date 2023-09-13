@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Analytics.ItemActivityStat
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ItemActivityCollectionResponse>(requestInfo, ItemActivityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ItemActivityCollectionResponse>(requestInfo, ItemActivityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to activities for groups
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Analytics.ItemActivityStat
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ItemActivity>(requestInfo, ItemActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ItemActivity>(requestInfo, ItemActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Exposes the itemActivities represented in this itemActivityStat resource.

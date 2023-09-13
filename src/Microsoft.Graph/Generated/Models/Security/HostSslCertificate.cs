@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class HostSslCertificate : Artifact, IParsable {
-        /// <summary>The firstSeenDateTime property</summary>
+        /// <summary>The first date and time that this hostSslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? FirstSeenDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
             set { BackingStore?.Set("firstSeenDateTime", value); }
         }
-        /// <summary>The host property</summary>
+        /// <summary>The host for this hostSslCertificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Security.Host? Host {
@@ -25,12 +25,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("host", value); }
         }
 #endif
-        /// <summary>The lastSeenDateTime property</summary>
+        /// <summary>The most recent date and time that this hostSslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastSeenDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
-        /// <summary>The ports property</summary>
+        /// <summary>The ports related with this hostSslCertificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<HostSslCertificatePort>? Ports {
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("ports", value); }
         }
 #endif
-        /// <summary>The sslCertificate property</summary>
+        /// <summary>The sslCertificate for this hostSslCertificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Security.SslCertificate? SslCertificate {

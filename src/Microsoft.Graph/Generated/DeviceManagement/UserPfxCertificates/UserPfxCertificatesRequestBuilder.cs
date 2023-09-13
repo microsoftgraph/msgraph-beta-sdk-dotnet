@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserPfxCertificates {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UserPFXCertificateCollectionResponse>(requestInfo, UserPFXCertificateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UserPFXCertificateCollectionResponse>(requestInfo, UserPFXCertificateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to userPfxCertificates for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserPfxCertificates {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UserPFXCertificate>(requestInfo, UserPFXCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UserPFXCertificate>(requestInfo, UserPFXCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Collection of PFX certificates associated with a user.

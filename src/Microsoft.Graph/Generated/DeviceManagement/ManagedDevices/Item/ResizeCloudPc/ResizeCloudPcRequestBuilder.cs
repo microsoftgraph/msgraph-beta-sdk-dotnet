@@ -34,6 +34,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ResizeCloudP
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The resizeCloudPc API is deprecated and will stop returning on Oct 30, 2023. Please use resize instead as of 2023-05/resizeCloudPc on 2023-07-24 and will be removed 2023-10-30")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PostAsync(ResizeCloudPcPostRequestBody body, Action<ResizeCloudPcRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -47,13 +48,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ResizeCloudP
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The resizeCloudPc API is deprecated and will stop returning on Oct 30, 2023. Please use resize instead as of 2023-05/resizeCloudPc on 2023-07-24 and will be removed 2023-10-30")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(ResizeCloudPcPostRequestBody body, Action<ResizeCloudPcRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
@@ -80,6 +82,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ResizeCloudP
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The resizeCloudPc API is deprecated and will stop returning on Oct 30, 2023. Please use resize instead as of 2023-05/resizeCloudPc on 2023-07-24 and will be removed 2023-10-30")]
         public ResizeCloudPcRequestBuilder WithUrl(string rawUrl) {
             return new ResizeCloudPcRequestBuilder(rawUrl, RequestAdapter);
         }

@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             get { return BackingStore?.Get<long?>("linkSpeed"); }
             set { BackingStore?.Set("linkSpeed", value); }
         }
-        /// <summary>The media access control (MAC) address of the media endpoint&apos;s network device.</summary>
+        /// <summary>The media access control (MAC) address of the media endpoint&apos;s network device. This value may be missing or shown as 02:00:00:00:00:00 due to operating system privacy policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MacAddress {

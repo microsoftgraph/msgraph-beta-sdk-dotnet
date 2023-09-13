@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PersonInterestCollectionResponse>(requestInfo, PersonInterestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PersonInterestCollectionResponse>(requestInfo, PersonInterestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new personInterest.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PersonInterest>(requestInfo, PersonInterest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PersonInterest>(requestInfo, PersonInterest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of personInterest objects from a user&apos;s profile.

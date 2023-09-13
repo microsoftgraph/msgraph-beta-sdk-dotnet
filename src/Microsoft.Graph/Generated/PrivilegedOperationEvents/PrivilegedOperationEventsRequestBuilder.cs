@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.PrivilegedOperationEvents {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrivilegedOperationEventCollectionResponse>(requestInfo, PrivilegedOperationEventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedOperationEventCollectionResponse>(requestInfo, PrivilegedOperationEventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to privilegedOperationEvents
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.PrivilegedOperationEvents {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrivilegedOperationEvent>(requestInfo, PrivilegedOperationEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedOperationEvent>(requestInfo, PrivilegedOperationEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from privilegedOperationEvents

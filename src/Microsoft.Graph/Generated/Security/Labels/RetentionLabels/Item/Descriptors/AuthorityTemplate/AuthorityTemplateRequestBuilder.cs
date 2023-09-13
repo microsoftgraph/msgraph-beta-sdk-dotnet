@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.Descriptors.
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.AuthorityTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.AuthorityTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.AuthorityTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.AuthorityTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Specifies the underlying authority that describes the type of content to be retained and its retention schedule.

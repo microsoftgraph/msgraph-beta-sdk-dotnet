@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UserCredentialUsageDetailsCollectionResponse>(requestInfo, UserCredentialUsageDetailsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UserCredentialUsageDetailsCollectionResponse>(requestInfo, UserCredentialUsageDetailsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to userCredentialUsageDetails for reports
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>(requestInfo, Microsoft.Graph.Beta.Models.UserCredentialUsageDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>(requestInfo, Microsoft.Graph.Beta.Models.UserCredentialUsageDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of userCredentialUsageDetails objects for a given tenant. Details include user information, status of the reset, and the reason for failure.

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsReceivable.
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AgedAccountsReceivable>(requestInfo, Microsoft.Graph.Beta.Models.AgedAccountsReceivable.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AgedAccountsReceivable>(requestInfo, Microsoft.Graph.Beta.Models.AgedAccountsReceivable.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get agedAccountsReceivable from financials

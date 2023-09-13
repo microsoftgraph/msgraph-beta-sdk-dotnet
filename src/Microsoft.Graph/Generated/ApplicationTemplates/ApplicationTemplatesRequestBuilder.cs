@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.ApplicationTemplates {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ApplicationTemplateCollectionResponse>(requestInfo, ApplicationTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ApplicationTemplateCollectionResponse>(requestInfo, ApplicationTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of applicationTemplate objects from the Azure AD application gallery.

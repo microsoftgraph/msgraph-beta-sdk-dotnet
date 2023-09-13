@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.FederatedIdentityCredentia
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<FederatedIdentityCredentialCollectionResponse>(requestInfo, FederatedIdentityCredentialCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<FederatedIdentityCredentialCollectionResponse>(requestInfo, FederatedIdentityCredentialCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to federatedIdentityCredentials for servicePrincipals
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.FederatedIdentityCredentia
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<FederatedIdentityCredential>(requestInfo, FederatedIdentityCredential.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<FederatedIdentityCredential>(requestInfo, FederatedIdentityCredential.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get federatedIdentityCredentials from servicePrincipals

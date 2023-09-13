@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetIosAvail
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetIosAvailableUpdateVersionsResponse>(requestInfo, GetIosAvailableUpdateVersionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetIosAvailableUpdateVersionsResponse>(requestInfo, GetIosAvailableUpdateVersionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getIosAvailableUpdateVersions

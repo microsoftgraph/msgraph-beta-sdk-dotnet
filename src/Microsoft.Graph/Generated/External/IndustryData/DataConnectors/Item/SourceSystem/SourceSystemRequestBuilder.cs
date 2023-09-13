@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item.SourceS
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SourceSystemDefinition>(requestInfo, SourceSystemDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SourceSystemDefinition>(requestInfo, SourceSystemDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The sourceSystemDefinition this connector is connected to.

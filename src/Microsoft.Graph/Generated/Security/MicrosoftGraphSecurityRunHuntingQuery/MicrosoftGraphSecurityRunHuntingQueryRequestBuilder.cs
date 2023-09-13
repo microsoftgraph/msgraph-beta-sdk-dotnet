@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityRunHuntingQuery {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<HuntingQueryResults>(requestInfo, HuntingQueryResults.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<HuntingQueryResults>(requestInfo, HuntingQueryResults.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action runHuntingQuery

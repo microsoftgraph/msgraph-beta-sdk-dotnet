@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionD
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WindowsInformationProtectionDeviceRegistrationCollectionResponse>(requestInfo, WindowsInformationProtectionDeviceRegistrationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsInformationProtectionDeviceRegistrationCollectionResponse>(requestInfo, WindowsInformationProtectionDeviceRegistrationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to windowsInformationProtectionDeviceRegistrations for deviceAppManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionD
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WindowsInformationProtectionDeviceRegistration>(requestInfo, WindowsInformationProtectionDeviceRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsInformationProtectionDeviceRegistration>(requestInfo, WindowsInformationProtectionDeviceRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Windows information protection device registrations that are not MDM enrolled.

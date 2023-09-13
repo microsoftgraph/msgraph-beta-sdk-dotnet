@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A threat submission sent to Microsoft; for example, a suspicious email threat, URL threat, or file threat.
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ThreatSubmissionRoot>(requestInfo, ThreatSubmissionRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ThreatSubmissionRoot>(requestInfo, ThreatSubmissionRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property threatSubmission in security
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ThreatSubmissionRoot>(requestInfo, ThreatSubmissionRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ThreatSubmissionRoot>(requestInfo, ThreatSubmissionRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property threatSubmission for security

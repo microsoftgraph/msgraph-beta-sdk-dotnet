@@ -18,14 +18,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comment {
-            get { return BackingStore?.Get<string?>("Comment"); }
-            set { BackingStore?.Set("Comment", value); }
+            get { return BackingStore?.Get<string?>("comment"); }
+            set { BackingStore?.Set("comment", value); }
         }
 #nullable restore
 #else
         public string Comment {
-            get { return BackingStore?.Get<string>("Comment"); }
-            set { BackingStore?.Set("Comment", value); }
+            get { return BackingStore?.Get<string>("comment"); }
+            set { BackingStore?.Set("comment", value); }
         }
 #endif
         /// <summary>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"Comment", n => { Comment = n.GetStringValue(); } },
+                {"comment", n => { Comment = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Comment", Comment);
+            writer.WriteStringValue("comment", Comment);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

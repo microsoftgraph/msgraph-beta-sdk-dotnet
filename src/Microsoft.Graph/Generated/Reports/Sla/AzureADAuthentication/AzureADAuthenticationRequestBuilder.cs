@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Reports.Sla.AzureADAuthentication {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of an azureADAuthentication object to find the level of Azure AD authentication availability for your tenant. The Azure AD Service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Azure Active Directory SLA performance. This object provides you with your tenant’s actual performance against this commitment.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Reports.Sla.AzureADAuthentication {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AzureADAuthentication>(requestInfo, Microsoft.Graph.Beta.Models.AzureADAuthentication.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AzureADAuthentication>(requestInfo, Microsoft.Graph.Beta.Models.AzureADAuthentication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property azureADAuthentication in reports
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Reports.Sla.AzureADAuthentication {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AzureADAuthentication>(requestInfo, Microsoft.Graph.Beta.Models.AzureADAuthentication.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AzureADAuthentication>(requestInfo, Microsoft.Graph.Beta.Models.AzureADAuthentication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property azureADAuthentication for reports

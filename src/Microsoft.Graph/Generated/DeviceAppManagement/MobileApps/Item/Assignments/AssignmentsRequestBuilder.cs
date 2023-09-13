@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assignments {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MobileAppAssignmentCollectionResponse>(requestInfo, MobileAppAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileAppAssignmentCollectionResponse>(requestInfo, MobileAppAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to assignments for deviceAppManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assignments {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MobileAppAssignment>(requestInfo, MobileAppAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileAppAssignment>(requestInfo, MobileAppAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of group assignments for this mobile app.

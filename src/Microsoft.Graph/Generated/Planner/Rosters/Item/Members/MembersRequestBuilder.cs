@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Members {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PlannerRosterMemberCollectionResponse>(requestInfo, PlannerRosterMemberCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PlannerRosterMemberCollectionResponse>(requestInfo, PlannerRosterMemberCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add a member to the plannerRoster object.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Members {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PlannerRosterMember>(requestInfo, PlannerRosterMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PlannerRosterMember>(requestInfo, PlannerRosterMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the list of plannerRosterMembers from a plannerRoster.

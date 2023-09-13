@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item.Children.Item.Set {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermStore.Set>(requestInfo, Microsoft.Graph.Beta.Models.TermStore.Set.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermStore.Set>(requestInfo, Microsoft.Graph.Beta.Models.TermStore.Set.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The [set] in which the term is created.

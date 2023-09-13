@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class Host : Artifact, IParsable {
-        /// <summary>The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a childHost.</summary>
+        /// <summary>The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<HostPair>? ChildHostPairs {
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("reputation", value); }
         }
 #endif
-        /// <summary>The sslCertificates property</summary>
+        /// <summary>The hostSslCertificates that are associated with this host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<HostSslCertificate>? SslCertificates {

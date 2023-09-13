@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisHistoryRecords.I
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisHistoryRecords.I
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WhoisHistoryRecord>(requestInfo, WhoisHistoryRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WhoisHistoryRecord>(requestInfo, WhoisHistoryRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property whoisHistoryRecords in security
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisHistoryRecords.I
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WhoisHistoryRecord>(requestInfo, WhoisHistoryRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WhoisHistoryRecord>(requestInfo, WhoisHistoryRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property whoisHistoryRecords for security

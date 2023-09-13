@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.SharedWithTeams {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SharedWithChannelTeamInfoCollectionResponse>(requestInfo, SharedWithChannelTeamInfoCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SharedWithChannelTeamInfoCollectionResponse>(requestInfo, SharedWithChannelTeamInfoCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to sharedWithTeams for teams
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.SharedWithTeams {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SharedWithChannelTeamInfo>(requestInfo, SharedWithChannelTeamInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SharedWithChannelTeamInfo>(requestInfo, SharedWithChannelTeamInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the list of teams that has been shared a specified channel. This operation is allowed only for channels with a membershipType value of shared.

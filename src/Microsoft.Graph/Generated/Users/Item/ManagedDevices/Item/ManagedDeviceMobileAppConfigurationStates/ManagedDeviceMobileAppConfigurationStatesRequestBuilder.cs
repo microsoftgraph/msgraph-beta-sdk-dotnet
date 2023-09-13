@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ManagedDeviceMobil
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationStateCollectionResponse>(requestInfo, ManagedDeviceMobileAppConfigurationStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationStateCollectionResponse>(requestInfo, ManagedDeviceMobileAppConfigurationStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to managedDeviceMobileAppConfigurationStates for users
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.ManagedDeviceMobil
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationState>(requestInfo, ManagedDeviceMobileAppConfigurationState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationState>(requestInfo, ManagedDeviceMobileAppConfigurationState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Managed device mobile app configuration states for this device.

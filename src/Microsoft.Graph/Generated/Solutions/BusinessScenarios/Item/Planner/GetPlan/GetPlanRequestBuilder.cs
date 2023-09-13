@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.GetPlan 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<BusinessScenarioPlanReference>(requestInfo, BusinessScenarioPlanReference.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<BusinessScenarioPlanReference>(requestInfo, BusinessScenarioPlanReference.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get information about the plannerPlan mapped to a given target. If a plannerPlan doesn&apos;t exist for the specified target at the time of the request, a new plan will be created for the businessScenario.

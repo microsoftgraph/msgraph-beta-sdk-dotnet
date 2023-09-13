@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.GetStaffAvailability {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetStaffAvailabilityResponse>(requestInfo, GetStaffAvailabilityResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetStaffAvailabilityResponse>(requestInfo, GetStaffAvailabilityResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the availability information of staff members of a Microsoft Bookings calendar.

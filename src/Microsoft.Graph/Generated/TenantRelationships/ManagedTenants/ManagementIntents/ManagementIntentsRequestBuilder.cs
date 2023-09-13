@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementInte
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ManagementIntentCollectionResponse>(requestInfo, ManagementIntentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagementIntentCollectionResponse>(requestInfo, ManagementIntentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to managementIntents for tenantRelationships
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementInte
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ManagementIntent>(requestInfo, ManagementIntent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagementIntent>(requestInfo, ManagementIntent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the managementIntent objects and their properties.

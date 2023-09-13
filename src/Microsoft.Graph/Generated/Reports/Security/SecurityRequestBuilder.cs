@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Reports.Security {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Reports.Security {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SecurityReportsRoot>(requestInfo, SecurityReportsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SecurityReportsRoot>(requestInfo, SecurityReportsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property security in reports
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Reports.Security {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SecurityReportsRoot>(requestInfo, SecurityReportsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SecurityReportsRoot>(requestInfo, SecurityReportsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property security for reports

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettin
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetCustomizedSettingsResponse>(requestInfo, GetCustomizedSettingsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetCustomizedSettingsResponse>(requestInfo, GetCustomizedSettingsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getCustomizedSettings

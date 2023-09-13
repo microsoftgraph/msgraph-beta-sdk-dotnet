@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Photos {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ProfilePhotoCollectionResponse>(requestInfo, ProfilePhotoCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ProfilePhotoCollectionResponse>(requestInfo, ProfilePhotoCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get photos from users

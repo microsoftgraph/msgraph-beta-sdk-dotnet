@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.CompareWithTemplate
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CompareWithTemplateIdResponse>(requestInfo, CompareWithTemplateIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CompareWithTemplateIdResponse>(requestInfo, CompareWithTemplateIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function compare

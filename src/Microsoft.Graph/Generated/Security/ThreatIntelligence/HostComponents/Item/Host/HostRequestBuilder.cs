@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostComponents.Item.H
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.Host>(requestInfo, Microsoft.Graph.Beta.Models.Security.Host.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.Host>(requestInfo, Microsoft.Graph.Beta.Models.Security.Host.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The host related to this component. This is a reverse navigation property. When navigating to components from a host, this should be assumed to be a return reference.

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages.Item.Rep
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Undo soft deletion of a single chatMessage or a chat message reply in a channel or a chat.

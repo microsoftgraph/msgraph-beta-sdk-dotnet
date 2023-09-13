@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of a personAnnotation object from a user&apos;s profile.
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PersonAnnotation>(requestInfo, PersonAnnotation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PersonAnnotation>(requestInfo, PersonAnnotation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of a personAnnotation object in a user&apos;s profile.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PersonAnnotation>(requestInfo, PersonAnnotation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PersonAnnotation>(requestInfo, PersonAnnotation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a personAnnotation object from a user&apos;s profile.

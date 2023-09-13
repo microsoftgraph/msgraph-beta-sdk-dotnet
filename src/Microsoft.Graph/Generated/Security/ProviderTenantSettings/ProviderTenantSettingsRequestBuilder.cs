@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Security.ProviderTenantSettings {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ProviderTenantSettingCollectionResponse>(requestInfo, ProviderTenantSettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ProviderTenantSettingCollectionResponse>(requestInfo, ProviderTenantSettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to providerTenantSettings for security
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Security.ProviderTenantSettings {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ProviderTenantSetting>(requestInfo, ProviderTenantSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ProviderTenantSetting>(requestInfo, ProviderTenantSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get providerTenantSettings from security

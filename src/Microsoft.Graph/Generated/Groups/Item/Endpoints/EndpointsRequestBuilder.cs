@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Endpoints {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EndpointCollectionResponse>(requestInfo, EndpointCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EndpointCollectionResponse>(requestInfo, EndpointCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to endpoints for groups
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Endpoints {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Endpoint>(requestInfo, Endpoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Endpoint>(requestInfo, Endpoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of endpoint objects.

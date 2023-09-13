@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Settings.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Settings that can govern this group&apos;s behavior, like whether members can invite guest users to the group. Nullable.
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Settings.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DirectorySetting>(requestInfo, DirectorySetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DirectorySetting>(requestInfo, DirectorySetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property settings in groups
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Settings.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DirectorySetting>(requestInfo, DirectorySetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DirectorySetting>(requestInfo, DirectorySetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property settings for groups

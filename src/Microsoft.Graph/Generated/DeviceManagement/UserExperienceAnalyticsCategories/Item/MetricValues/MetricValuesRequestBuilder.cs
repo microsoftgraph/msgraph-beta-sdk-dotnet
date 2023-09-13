@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategorie
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsMetricCollectionResponse>(requestInfo, UserExperienceAnalyticsMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsMetricCollectionResponse>(requestInfo, UserExperienceAnalyticsMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to metricValues for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategorie
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsMetric>(requestInfo, UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsMetric>(requestInfo, UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The metric values for the user experience analytics category. Read-only.

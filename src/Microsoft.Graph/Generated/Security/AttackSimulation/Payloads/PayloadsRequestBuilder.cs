@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Payloads {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PayloadCollectionResponse>(requestInfo, PayloadCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PayloadCollectionResponse>(requestInfo, PayloadCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to payloads for security
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Payloads {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Payload>(requestInfo, Microsoft.Graph.Beta.Models.Payload.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Payload>(requestInfo, Microsoft.Graph.Beta.Models.Payload.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of payloads for attack simulation campaigns. This operation expects the mandatory parameter source to filter and query the respective data source.

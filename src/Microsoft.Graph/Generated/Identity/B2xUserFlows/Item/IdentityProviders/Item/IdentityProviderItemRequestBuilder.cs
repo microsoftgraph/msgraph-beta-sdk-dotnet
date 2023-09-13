@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.IdentityProviders.Item
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get identityProviders from identity
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.IdentityProviders.Item
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<IdentityProvider>(requestInfo, IdentityProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<IdentityProvider>(requestInfo, IdentityProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete an identity provider from a b2xIdentityUserFlow object. For self-service sign up user flows, the values can be Google-OAUTH or Facebook-OAUTH.

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<BranchSiteCollectionResponse>(requestInfo, BranchSiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<BranchSiteCollectionResponse>(requestInfo, BranchSiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new branch.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<BranchSite>(requestInfo, BranchSite.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<BranchSite>(requestInfo, BranchSite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of branches within a tenant connected to the Global Secure Access services.

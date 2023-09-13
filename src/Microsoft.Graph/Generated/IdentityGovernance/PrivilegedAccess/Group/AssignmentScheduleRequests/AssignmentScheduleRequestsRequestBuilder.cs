@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse>(requestInfo, PrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse>(requestInfo, PrivilegedAccessGroupAssignmentScheduleRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new privilegedAccessGroupAssignmentScheduleRequest object.
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrivilegedAccessGroupAssignmentScheduleRequest>(requestInfo, PrivilegedAccessGroupAssignmentScheduleRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedAccessGroupAssignmentScheduleRequest>(requestInfo, PrivilegedAccessGroupAssignmentScheduleRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the privilegedAccessGroupAssignmentScheduleRequest objects and their properties.

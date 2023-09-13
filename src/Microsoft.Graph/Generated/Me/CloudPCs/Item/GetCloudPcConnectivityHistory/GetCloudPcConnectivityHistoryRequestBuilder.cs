@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcConnectivityHistory {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetCloudPcConnectivityHistoryResponse>(requestInfo, GetCloudPcConnectivityHistoryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetCloudPcConnectivityHistoryResponse>(requestInfo, GetCloudPcConnectivityHistoryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getCloudPcConnectivityHistory

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.ContentSharingSessions 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ContentSharingSessionCollectionResponse>(requestInfo, ContentSharingSessionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ContentSharingSessionCollectionResponse>(requestInfo, ContentSharingSessionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to contentSharingSessions for communications
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.ContentSharingSessions 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ContentSharingSession>(requestInfo, ContentSharingSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ContentSharingSession>(requestInfo, ContentSharingSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of contentSharingSession objects in a call.

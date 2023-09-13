@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TemplateInsights {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementTemplateInsightsDefinitionCollectionResponse>(requestInfo, DeviceManagementTemplateInsightsDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementTemplateInsightsDefinitionCollectionResponse>(requestInfo, DeviceManagementTemplateInsightsDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to templateInsights for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TemplateInsights {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementTemplateInsightsDefinition>(requestInfo, DeviceManagementTemplateInsightsDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementTemplateInsightsDefinition>(requestInfo, DeviceManagementTemplateInsightsDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List of setting insights in a template

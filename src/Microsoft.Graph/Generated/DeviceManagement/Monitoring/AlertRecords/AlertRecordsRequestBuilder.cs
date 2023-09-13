@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AlertRecordCollectionResponse>(requestInfo, AlertRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AlertRecordCollectionResponse>(requestInfo, AlertRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to alertRecords for deviceManagement
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AlertRecord>(requestInfo, AlertRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AlertRecord>(requestInfo, AlertRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the alertRecord objects and their properties.

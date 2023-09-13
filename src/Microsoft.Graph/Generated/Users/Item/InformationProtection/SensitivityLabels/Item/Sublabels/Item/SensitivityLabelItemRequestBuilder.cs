@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get sublabels from users
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SensitivityLabel>(requestInfo, SensitivityLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SensitivityLabel>(requestInfo, SensitivityLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property sublabels in users
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.SensitivityLabel
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SensitivityLabel>(requestInfo, SensitivityLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SensitivityLabel>(requestInfo, SensitivityLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property sublabels for users

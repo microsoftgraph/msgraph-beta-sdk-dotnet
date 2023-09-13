@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.DataLossPreventi
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get dataLossPreventionPolicies from sites
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.DataLossPreventi
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DataLossPreventionPolicy>(requestInfo, DataLossPreventionPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DataLossPreventionPolicy>(requestInfo, DataLossPreventionPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property dataLossPreventionPolicies in sites
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.DataLossPreventi
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DataLossPreventionPolicy>(requestInfo, DataLossPreventionPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DataLossPreventionPolicy>(requestInfo, DataLossPreventionPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property dataLossPreventionPolicies for sites

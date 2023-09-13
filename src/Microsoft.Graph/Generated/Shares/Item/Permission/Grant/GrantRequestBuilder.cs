@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.Permission.Grant {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GrantResponse>(requestInfo, GrantResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GrantResponse>(requestInfo, GrantResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Grant users access to a link represented by a [permission][].

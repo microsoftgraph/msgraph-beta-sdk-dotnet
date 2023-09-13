@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleAssignments {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceAndAppManagementRoleAssignmentCollectionResponse>(requestInfo, DeviceAndAppManagementRoleAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceAndAppManagementRoleAssignmentCollectionResponse>(requestInfo, DeviceAndAppManagementRoleAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to roleAssignments for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleAssignments {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceAndAppManagementRoleAssignment>(requestInfo, DeviceAndAppManagementRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceAndAppManagementRoleAssignment>(requestInfo, DeviceAndAppManagementRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The Role Assignments.

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Categories.It
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MobileAppCategory>(requestInfo, MobileAppCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileAppCategory>(requestInfo, MobileAppCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of categories for this app.

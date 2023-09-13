@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PurchaseInvoice>(requestInfo, PurchaseInvoice.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PurchaseInvoice>(requestInfo, PurchaseInvoice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property purchaseInvoices in financials
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PurchaseInvoice>(requestInfo, PurchaseInvoice.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PurchaseInvoice>(requestInfo, PurchaseInvoice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get purchaseInvoices from financials

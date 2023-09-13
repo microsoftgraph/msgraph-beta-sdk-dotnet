@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.EndUserNotifications {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EndUserNotificationCollectionResponse>(requestInfo, EndUserNotificationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EndUserNotificationCollectionResponse>(requestInfo, EndUserNotificationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to endUserNotifications for security
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.EndUserNotifications {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EndUserNotification>(requestInfo, EndUserNotification.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EndUserNotification>(requestInfo, EndUserNotification.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get endUserNotifications from security

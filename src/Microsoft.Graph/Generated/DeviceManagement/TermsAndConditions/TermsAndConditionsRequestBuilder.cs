@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TermsAndConditionsCollectionResponse>(requestInfo, TermsAndConditionsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TermsAndConditionsCollectionResponse>(requestInfo, TermsAndConditionsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to termsAndConditions for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermsAndConditions>(requestInfo, Microsoft.Graph.Beta.Models.TermsAndConditions.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermsAndConditions>(requestInfo, Microsoft.Graph.Beta.Models.TermsAndConditions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The terms and conditions associated with device management of the company.

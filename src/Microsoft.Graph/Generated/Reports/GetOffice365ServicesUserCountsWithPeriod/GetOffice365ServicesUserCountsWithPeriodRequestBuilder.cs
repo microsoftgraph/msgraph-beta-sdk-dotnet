@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetOffice365ServicesUserCountsWithPeriodResponse>(requestInfo, GetOffice365ServicesUserCountsWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetOffice365ServicesUserCountsWithPeriodResponse>(requestInfo, GetOffice365ServicesUserCountsWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getOffice365ServicesUserCounts

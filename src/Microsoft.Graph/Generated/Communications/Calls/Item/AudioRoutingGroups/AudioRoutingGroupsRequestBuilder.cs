@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.AudioRoutingGroups {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AudioRoutingGroupCollectionResponse>(requestInfo, AudioRoutingGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AudioRoutingGroupCollectionResponse>(requestInfo, AudioRoutingGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new audioRoutingGroup.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.AudioRoutingGroups {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AudioRoutingGroup>(requestInfo, AudioRoutingGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AudioRoutingGroup>(requestInfo, AudioRoutingGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of audioRoutingGroup objects.

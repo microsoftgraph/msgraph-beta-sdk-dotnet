@@ -55,10 +55,11 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostSslCertificates.I
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get hostSslCertificates from security
+        /// Get the properties and relationships of a hostSslCertificate object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-hostsslcertificate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostSslCertificates.I
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<HostSslCertificate>(requestInfo, HostSslCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<HostSslCertificate>(requestInfo, HostSslCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property hostSslCertificates in security
@@ -95,7 +96,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostSslCertificates.I
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<HostSslCertificate>(requestInfo, HostSslCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<HostSslCertificate>(requestInfo, HostSslCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property hostSslCertificates for security
@@ -122,7 +123,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostSslCertificates.I
             return requestInfo;
         }
         /// <summary>
-        /// Get hostSslCertificates from security
+        /// Get the properties and relationships of a hostSslCertificate object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -199,7 +200,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostSslCertificates.I
             }
         }
         /// <summary>
-        /// Get hostSslCertificates from security
+        /// Get the properties and relationships of a hostSslCertificate object.
         /// </summary>
         public class HostSslCertificateItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

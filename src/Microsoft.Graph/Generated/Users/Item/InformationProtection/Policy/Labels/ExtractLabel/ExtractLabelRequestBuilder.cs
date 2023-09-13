@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels.Ex
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<InformationProtectionContentLabel>(requestInfo, InformationProtectionContentLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<InformationProtectionContentLabel>(requestInfo, InformationProtectionContentLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.

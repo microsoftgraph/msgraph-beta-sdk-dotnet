@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Security.FileSecurityProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<FileSecurityProfileCollectionResponse>(requestInfo, FileSecurityProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<FileSecurityProfileCollectionResponse>(requestInfo, FileSecurityProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to fileSecurityProfiles for security
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Security.FileSecurityProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<FileSecurityProfile>(requestInfo, FileSecurityProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<FileSecurityProfile>(requestInfo, FileSecurityProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get fileSecurityProfiles from security

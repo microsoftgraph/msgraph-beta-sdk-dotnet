@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSto
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetStorageAccountsWithSubscriptionIdResponse>(requestInfo, GetStorageAccountsWithSubscriptionIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetStorageAccountsWithSubscriptionIdResponse>(requestInfo, GetStorageAccountsWithSubscriptionIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getStorageAccounts

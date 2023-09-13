@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WindowsHelloForBusinessAuthenticationMethodCollectionResponse>(requestInfo, WindowsHelloForBusinessAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsHelloForBusinessAuthenticationMethodCollectionResponse>(requestInfo, WindowsHelloForBusinessAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the windowsHelloForBusinessAuthenticationMethod objects and their properties.

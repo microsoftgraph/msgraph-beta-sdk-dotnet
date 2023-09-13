@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Security.Triggers.RetentionEvents.Item.RetentionE
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.RetentionEventType>(requestInfo, Microsoft.Graph.Beta.Models.Security.RetentionEventType.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.RetentionEventType>(requestInfo, Microsoft.Graph.Beta.Models.Security.RetentionEventType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Specifies the event that will start the retention period for labels that use this event type when an event is created.

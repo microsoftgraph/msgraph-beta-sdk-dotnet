@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.MeetingAttendanceReport.A
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AttendanceRecordCollectionResponse>(requestInfo, AttendanceRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AttendanceRecordCollectionResponse>(requestInfo, AttendanceRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to attendanceRecords for app
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.MeetingAttendanceReport.A
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AttendanceRecord>(requestInfo, AttendanceRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AttendanceRecord>(requestInfo, AttendanceRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of attendanceRecord objects and their properties.

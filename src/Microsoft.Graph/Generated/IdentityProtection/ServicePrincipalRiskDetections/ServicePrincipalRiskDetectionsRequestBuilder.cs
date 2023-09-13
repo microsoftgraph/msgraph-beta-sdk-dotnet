@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ServicePrincipalRiskDetectionCollectionResponse>(requestInfo, ServicePrincipalRiskDetectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipalRiskDetectionCollectionResponse>(requestInfo, ServicePrincipalRiskDetectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to servicePrincipalRiskDetections for identityProtection
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ServicePrincipalRiskDetection>(requestInfo, ServicePrincipalRiskDetection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipalRiskDetection>(requestInfo, ServicePrincipalRiskDetection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the properties of a collection of servicePrincipalRiskDetection objects.

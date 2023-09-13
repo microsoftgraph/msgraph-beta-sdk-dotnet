@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Subscriptions.Item.Reauthorize {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Reauthorize a subscription when you receive a reauthorizationRequired challenge.

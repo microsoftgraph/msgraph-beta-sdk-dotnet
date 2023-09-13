@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetState {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AssignmentFilterState>(requestInfo, AssignmentFilterState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AssignmentFilterState>(requestInfo, AssignmentFilterState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getState

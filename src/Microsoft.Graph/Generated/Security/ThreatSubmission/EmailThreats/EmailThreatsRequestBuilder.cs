@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreats {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EmailThreatSubmissionCollectionResponse>(requestInfo, EmailThreatSubmissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EmailThreatSubmissionCollectionResponse>(requestInfo, EmailThreatSubmissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new emailThreatSubmission object.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreats {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EmailThreatSubmission>(requestInfo, EmailThreatSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EmailThreatSubmission>(requestInfo, EmailThreatSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the emailThreatSubmission objects and their properties.

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Operations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AttackSimulationOperationCollectionResponse>(requestInfo, AttackSimulationOperationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AttackSimulationOperationCollectionResponse>(requestInfo, AttackSimulationOperationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to operations for security
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Operations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AttackSimulationOperation>(requestInfo, AttackSimulationOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AttackSimulationOperation>(requestInfo, AttackSimulationOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get an attack simulation operation to track a long-running operation request for a tenant.

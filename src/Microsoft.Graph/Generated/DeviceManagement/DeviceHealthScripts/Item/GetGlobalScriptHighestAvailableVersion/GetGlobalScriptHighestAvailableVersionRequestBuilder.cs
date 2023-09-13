@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.GetGlob
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetGlobalScriptHighestAvailableVersionResponse>(requestInfo, GetGlobalScriptHighestAvailableVersionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetGlobalScriptHighestAvailableVersionResponse>(requestInfo, GetGlobalScriptHighestAvailableVersionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the Proprietary Device Health Script

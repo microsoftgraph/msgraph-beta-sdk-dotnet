@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CategoryTemplateCollectionResponse>(requestInfo, CategoryTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CategoryTemplateCollectionResponse>(requestInfo, CategoryTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new categoryTemplate object.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.CategoryTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.CategoryTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.CategoryTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.CategoryTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the categoryTemplate objects and their properties.

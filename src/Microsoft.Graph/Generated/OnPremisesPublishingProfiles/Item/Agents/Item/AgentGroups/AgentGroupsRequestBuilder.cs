@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Agents.Item.Age
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<OnPremisesAgentGroupCollectionResponse>(requestInfo, OnPremisesAgentGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<OnPremisesAgentGroupCollectionResponse>(requestInfo, OnPremisesAgentGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.

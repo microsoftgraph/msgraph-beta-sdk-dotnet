@@ -1561,6 +1561,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.userSettings" => new UserSettings(),
                 "#microsoft.graph.userSignInInsight" => new UserSignInInsight(),
                 "#microsoft.graph.userTeamwork" => new UserTeamwork(),
+                "#microsoft.graph.userVirtualEventsRoot" => new UserVirtualEventsRoot(),
                 "#microsoft.graph.verticalSection" => new VerticalSection(),
                 "#microsoft.graph.virtualEndpoint" => new VirtualEndpoint(),
                 "#microsoft.graph.virtualEvent" => new VirtualEvent(),

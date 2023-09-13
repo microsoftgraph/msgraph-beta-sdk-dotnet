@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.GetReme
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceHealthScriptRemediationHistory>(requestInfo, DeviceHealthScriptRemediationHistory.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceHealthScriptRemediationHistory>(requestInfo, DeviceHealthScriptRemediationHistory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Function to get the number of remediations by a device health scripts

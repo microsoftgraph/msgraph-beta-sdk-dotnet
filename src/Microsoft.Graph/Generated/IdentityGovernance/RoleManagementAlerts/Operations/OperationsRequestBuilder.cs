@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Operation
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<LongRunningOperationCollectionResponse>(requestInfo, LongRunningOperationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<LongRunningOperationCollectionResponse>(requestInfo, LongRunningOperationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to operations for identityGovernance
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Operation
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<LongRunningOperation>(requestInfo, LongRunningOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<LongRunningOperation>(requestInfo, LongRunningOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents operations on resources that take a long time to complete and can run in the background until completion.

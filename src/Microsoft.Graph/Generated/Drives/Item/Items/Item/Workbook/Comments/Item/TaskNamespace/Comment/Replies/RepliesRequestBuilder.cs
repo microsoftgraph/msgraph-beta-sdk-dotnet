@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Comments.Item.Tas
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WorkbookCommentReplyCollectionResponse>(requestInfo, WorkbookCommentReplyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WorkbookCommentReplyCollectionResponse>(requestInfo, WorkbookCommentReplyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to replies for drives
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Comments.Item.Tas
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WorkbookCommentReply>(requestInfo, WorkbookCommentReply.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WorkbookCommentReply>(requestInfo, WorkbookCommentReply.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get replies from drives

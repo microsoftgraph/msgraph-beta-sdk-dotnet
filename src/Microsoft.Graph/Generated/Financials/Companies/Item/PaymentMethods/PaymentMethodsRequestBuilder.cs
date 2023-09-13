@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PaymentMethods {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PaymentMethodCollectionResponse>(requestInfo, PaymentMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PaymentMethodCollectionResponse>(requestInfo, PaymentMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to paymentMethods for financials
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PaymentMethods {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PaymentMethod>(requestInfo, Microsoft.Graph.Beta.Models.PaymentMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PaymentMethod>(requestInfo, Microsoft.Graph.Beta.Models.PaymentMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get paymentMethods from financials

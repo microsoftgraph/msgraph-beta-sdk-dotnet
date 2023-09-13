@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DataClassification.SensitiveTypes.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get sensitiveTypes from dataClassification
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.DataClassification.SensitiveTypes.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SensitiveType>(requestInfo, SensitiveType.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SensitiveType>(requestInfo, SensitiveType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property sensitiveTypes in dataClassification
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.DataClassification.SensitiveTypes.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SensitiveType>(requestInfo, SensitiveType.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SensitiveType>(requestInfo, SensitiveType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property sensitiveTypes for dataClassification

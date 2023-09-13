@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represnts network connections that are routed through Global Secure Access.
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.Logs>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.Logs.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.Logs>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.Logs.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property logs in networkAccess
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.Logs>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.Logs.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.Logs>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.Logs.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property logs for networkAccess

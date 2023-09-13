@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionW
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WindowsInformationProtectionWipeActionCollectionResponse>(requestInfo, WindowsInformationProtectionWipeActionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsInformationProtectionWipeActionCollectionResponse>(requestInfo, WindowsInformationProtectionWipeActionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to windowsInformationProtectionWipeActions for deviceAppManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionW
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WindowsInformationProtectionWipeAction>(requestInfo, WindowsInformationProtectionWipeAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsInformationProtectionWipeAction>(requestInfo, WindowsInformationProtectionWipeAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Windows information protection wipe actions.

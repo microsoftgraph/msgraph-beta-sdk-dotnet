@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Publications {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ItemPublicationCollectionResponse>(requestInfo, ItemPublicationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ItemPublicationCollectionResponse>(requestInfo, ItemPublicationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new itemPublication object in a user&apos;s profile.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Publications {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ItemPublication>(requestInfo, ItemPublication.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ItemPublication>(requestInfo, ItemPublication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of itemPublication objects from a user&apos;s profile.

@@ -16,8 +16,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item.MarkAsJunk {
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The MoveToJunk property</summary>
         public bool? MoveToJunk {
-            get { return BackingStore?.Get<bool?>("MoveToJunk"); }
-            set { BackingStore?.Set("MoveToJunk", value); }
+            get { return BackingStore?.Get<bool?>("moveToJunk"); }
+            set { BackingStore?.Set("moveToJunk", value); }
         }
         /// <summary>
         /// Instantiates a new markAsJunkPostRequestBody and sets the default values.
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item.MarkAsJunk {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"MoveToJunk", n => { MoveToJunk = n.GetBoolValue(); } },
+                {"moveToJunk", n => { MoveToJunk = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item.MarkAsJunk {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("MoveToJunk", MoveToJunk);
+            writer.WriteBoolValue("moveToJunk", MoveToJunk);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

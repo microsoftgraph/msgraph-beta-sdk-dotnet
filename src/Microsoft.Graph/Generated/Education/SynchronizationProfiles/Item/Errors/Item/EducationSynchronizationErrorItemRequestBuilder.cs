@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors.Ite
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// All errors associated with this synchronization profile.
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors.Ite
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EducationSynchronizationError>(requestInfo, EducationSynchronizationError.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationSynchronizationError>(requestInfo, EducationSynchronizationError.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property errors in education
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors.Ite
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EducationSynchronizationError>(requestInfo, EducationSynchronizationError.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationSynchronizationError>(requestInfo, EducationSynchronizationError.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property errors for education

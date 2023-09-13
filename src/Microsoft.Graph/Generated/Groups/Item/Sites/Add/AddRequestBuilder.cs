@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Add {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AddResponse>(requestInfo, AddResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AddResponse>(requestInfo, AddResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Follow a user&apos;s site or multiple sites.

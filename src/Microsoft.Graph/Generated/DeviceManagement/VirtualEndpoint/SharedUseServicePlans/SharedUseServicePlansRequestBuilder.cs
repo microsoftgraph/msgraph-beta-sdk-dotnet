@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SharedUseService
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CloudPcSharedUseServicePlanCollectionResponse>(requestInfo, CloudPcSharedUseServicePlanCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcSharedUseServicePlanCollectionResponse>(requestInfo, CloudPcSharedUseServicePlanCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to sharedUseServicePlans for deviceManagement
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SharedUseService
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CloudPcSharedUseServicePlan>(requestInfo, CloudPcSharedUseServicePlan.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcSharedUseServicePlan>(requestInfo, CloudPcSharedUseServicePlan.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the cloudPcSharedUseServicePlan objects and their properties.

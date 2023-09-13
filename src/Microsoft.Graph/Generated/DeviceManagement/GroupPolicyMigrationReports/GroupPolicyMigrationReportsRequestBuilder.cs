@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GroupPolicyMigrationReportCollectionResponse>(requestInfo, GroupPolicyMigrationReportCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyMigrationReportCollectionResponse>(requestInfo, GroupPolicyMigrationReportCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to groupPolicyMigrationReports for deviceManagement
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GroupPolicyMigrationReport>(requestInfo, GroupPolicyMigrationReport.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GroupPolicyMigrationReport>(requestInfo, GroupPolicyMigrationReport.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A list of Group Policy migration reports.

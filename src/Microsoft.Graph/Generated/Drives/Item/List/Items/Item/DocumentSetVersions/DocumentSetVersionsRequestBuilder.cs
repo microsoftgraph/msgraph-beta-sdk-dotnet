@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Items.Item.DocumentSetVersions {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DocumentSetVersionCollectionResponse>(requestInfo, DocumentSetVersionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DocumentSetVersionCollectionResponse>(requestInfo, DocumentSetVersionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new version of a document set item in a list.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Items.Item.DocumentSetVersions {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DocumentSetVersion>(requestInfo, DocumentSetVersion.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DocumentSetVersion>(requestInfo, DocumentSetVersion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the versions of a document set item in a list.

@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Me.TranslateExchangeIds {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TranslateExchangeIdsResponse>(requestInfo, TranslateExchangeIdsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TranslateExchangeIdsResponse>(requestInfo, TranslateExchangeIdsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Translate identifiers of Outlook-related resources between formats.

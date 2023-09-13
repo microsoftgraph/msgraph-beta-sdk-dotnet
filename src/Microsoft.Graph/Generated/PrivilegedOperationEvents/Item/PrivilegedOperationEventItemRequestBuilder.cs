@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.PrivilegedOperationEvents.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entity from privilegedOperationEvents by key
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.PrivilegedOperationEvents.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrivilegedOperationEvent>(requestInfo, PrivilegedOperationEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedOperationEvent>(requestInfo, PrivilegedOperationEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update entity in privilegedOperationEvents
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.PrivilegedOperationEvents.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrivilegedOperationEvent>(requestInfo, PrivilegedOperationEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedOperationEvent>(requestInfo, PrivilegedOperationEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete entity from privilegedOperationEvents

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Settings
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the properties of an entitlementManagementSettings object.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Settings
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EntitlementManagementSettings>(requestInfo, EntitlementManagementSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EntitlementManagementSettings>(requestInfo, EntitlementManagementSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update an existing entitlementManagementSettings object to change one or more of its properties.
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Settings
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EntitlementManagementSettings>(requestInfo, EntitlementManagementSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EntitlementManagementSettings>(requestInfo, EntitlementManagementSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property settings for identityGovernance

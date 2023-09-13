@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.Acceptan
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TermsAndConditionsAcceptanceStatusCollectionResponse>(requestInfo, TermsAndConditionsAcceptanceStatusCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TermsAndConditionsAcceptanceStatusCollectionResponse>(requestInfo, TermsAndConditionsAcceptanceStatusCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to acceptanceStatuses for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.Acceptan
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TermsAndConditionsAcceptanceStatus>(requestInfo, TermsAndConditionsAcceptanceStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TermsAndConditionsAcceptanceStatus>(requestInfo, TermsAndConditionsAcceptanceStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of acceptance statuses for this T&amp;C policy.

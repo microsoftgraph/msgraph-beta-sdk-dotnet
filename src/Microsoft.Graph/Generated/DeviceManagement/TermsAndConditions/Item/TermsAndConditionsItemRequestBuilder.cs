@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The terms and conditions associated with device management of the company.
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermsAndConditions>(requestInfo, Microsoft.Graph.Beta.Models.TermsAndConditions.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermsAndConditions>(requestInfo, Microsoft.Graph.Beta.Models.TermsAndConditions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property termsAndConditions in deviceManagement
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermsAndConditions>(requestInfo, Microsoft.Graph.Beta.Models.TermsAndConditions.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermsAndConditions>(requestInfo, Microsoft.Graph.Beta.Models.TermsAndConditions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property termsAndConditions for deviceManagement

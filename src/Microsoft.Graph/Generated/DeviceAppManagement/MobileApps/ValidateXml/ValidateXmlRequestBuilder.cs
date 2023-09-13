@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ValidateXmlResponse>(requestInfo, ValidateXmlResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ValidateXmlResponse>(requestInfo, ValidateXmlResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action validateXml

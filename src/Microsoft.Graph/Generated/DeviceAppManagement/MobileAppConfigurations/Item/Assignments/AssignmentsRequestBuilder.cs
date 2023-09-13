@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations.Item.
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationAssignmentCollectionResponse>(requestInfo, ManagedDeviceMobileAppConfigurationAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationAssignmentCollectionResponse>(requestInfo, ManagedDeviceMobileAppConfigurationAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to assignments for deviceAppManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations.Item.
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationAssignment>(requestInfo, ManagedDeviceMobileAppConfigurationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedDeviceMobileAppConfigurationAssignment>(requestInfo, ManagedDeviceMobileAppConfigurationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of group assignemenets for app configration.

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.UserRunS
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementScriptDeviceStateCollectionResponse>(requestInfo, DeviceManagementScriptDeviceStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementScriptDeviceStateCollectionResponse>(requestInfo, DeviceManagementScriptDeviceStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to deviceRunStates for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.UserRunS
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementScriptDeviceState>(requestInfo, DeviceManagementScriptDeviceState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementScriptDeviceState>(requestInfo, DeviceManagementScriptDeviceState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List of run states for this script across all devices of specific user.

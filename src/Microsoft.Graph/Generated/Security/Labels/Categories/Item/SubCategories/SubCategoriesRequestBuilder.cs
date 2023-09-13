@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.SubCategories {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SubCategoryTemplateCollectionResponse>(requestInfo, SubCategoryTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SubCategoryTemplateCollectionResponse>(requestInfo, SubCategoryTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new subCategoryTemplate object.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.SubCategories {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SubCategoryTemplate>(requestInfo, SubCategoryTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SubCategoryTemplate>(requestInfo, SubCategoryTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of subcategories subCategoryTemplate associated with a category template.

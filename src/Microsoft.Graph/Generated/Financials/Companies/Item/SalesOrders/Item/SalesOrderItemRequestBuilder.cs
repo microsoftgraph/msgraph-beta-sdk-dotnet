@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrders.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SalesOrder>(requestInfo, SalesOrder.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SalesOrder>(requestInfo, SalesOrder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property salesOrders in financials
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrders.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SalesOrder>(requestInfo, SalesOrder.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SalesOrder>(requestInfo, SalesOrder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get salesOrders from financials

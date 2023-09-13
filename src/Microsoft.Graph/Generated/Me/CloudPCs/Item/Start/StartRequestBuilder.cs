@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.Start {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Start a specific Cloud PC for a user. Currently, only Windows 365 Frontline Cloud PCs are supported.

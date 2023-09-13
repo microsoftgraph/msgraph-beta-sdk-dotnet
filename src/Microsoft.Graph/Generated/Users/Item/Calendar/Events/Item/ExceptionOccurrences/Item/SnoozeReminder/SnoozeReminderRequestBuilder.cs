@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.ExceptionOccurren
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Postpone a reminder for an event in a user calendar until a new time.

@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CustomerPaymentCollectionResponse>(requestInfo, CustomerPaymentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomerPaymentCollectionResponse>(requestInfo, CustomerPaymentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to customerPayments for financials
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPaymentJournals
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CustomerPayment>(requestInfo, CustomerPayment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomerPayment>(requestInfo, CustomerPayment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get customerPayments from financials

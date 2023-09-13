@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ItemInsights {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the user-customizable privacy settings for itemInsights and meeting hours insights.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ItemInsights {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UserInsightsSettings>(requestInfo, UserInsightsSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UserInsightsSettings>(requestInfo, UserInsightsSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the privacy settings for itemInsights and meeting hours insights of a user.
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ItemInsights {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UserInsightsSettings>(requestInfo, UserInsightsSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UserInsightsSettings>(requestInfo, UserInsightsSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property itemInsights for me

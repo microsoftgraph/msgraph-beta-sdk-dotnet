@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance>(requestInfo, Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance>(requestInfo, Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update identityGovernance
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance>(requestInfo, Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance>(requestInfo, Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get identityGovernance

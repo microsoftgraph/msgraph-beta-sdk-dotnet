@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<LearningProviderCollectionResponse>(requestInfo, LearningProviderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<LearningProviderCollectionResponse>(requestInfo, LearningProviderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new learningProvider object and register it with Viva Learning using the specified display name and logos for different themes.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<LearningProvider>(requestInfo, LearningProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<LearningProvider>(requestInfo, LearningProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the learningProvider resources registered in Viva Learning for a tenant.

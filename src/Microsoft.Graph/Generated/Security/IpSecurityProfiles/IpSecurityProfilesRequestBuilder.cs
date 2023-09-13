@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Security.IpSecurityProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<IpSecurityProfileCollectionResponse>(requestInfo, IpSecurityProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<IpSecurityProfileCollectionResponse>(requestInfo, IpSecurityProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to ipSecurityProfiles for security
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Security.IpSecurityProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<IpSecurityProfile>(requestInfo, IpSecurityProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<IpSecurityProfile>(requestInfo, IpSecurityProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get ipSecurityProfiles from security

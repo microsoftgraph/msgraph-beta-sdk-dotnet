@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.ReferenceDefinitions {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ReferenceDefinitionCollectionResponse>(requestInfo, ReferenceDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ReferenceDefinitionCollectionResponse>(requestInfo, ReferenceDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to referenceDefinitions for external
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.ReferenceDefinitions {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ReferenceDefinition>(requestInfo, ReferenceDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ReferenceDefinition>(requestInfo, ReferenceDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the referenceDefinition objects and their properties.

@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.SslCertificates.Item.
         public HostItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/sslCertificates/{sslCertificate%2Did}/relatedHosts/{host%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get relatedHosts from security
+        /// The hosts related with this sslCertificate.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -45,10 +45,10 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.SslCertificates.Item.
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.Host>(requestInfo, Microsoft.Graph.Beta.Models.Security.Host.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.Host>(requestInfo, Microsoft.Graph.Beta.Models.Security.Host.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get relatedHosts from security
+        /// The hosts related with this sslCertificate.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.SslCertificates.Item.
             return new HostItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get relatedHosts from security
+        /// The hosts related with this sslCertificate.
         /// </summary>
         public class HostItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

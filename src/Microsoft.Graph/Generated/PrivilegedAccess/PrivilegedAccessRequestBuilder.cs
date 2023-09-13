@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrivilegedAccessCollectionResponse>(requestInfo, PrivilegedAccessCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedAccessCollectionResponse>(requestInfo, PrivilegedAccessCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to privilegedAccess
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrivilegedAccess>(requestInfo, Microsoft.Graph.Beta.Models.PrivilegedAccess.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrivilegedAccess>(requestInfo, Microsoft.Graph.Beta.Models.PrivilegedAccess.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from privilegedAccess

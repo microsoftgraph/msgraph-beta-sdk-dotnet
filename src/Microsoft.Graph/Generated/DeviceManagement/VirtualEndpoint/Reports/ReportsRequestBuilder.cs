@@ -2,7 +2,9 @@
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ExportJobs;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetConnectionQualityReports;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetDailyAggregatedRemoteConnectionReports;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetFrontlineReport;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetInaccessibleCloudPcReports;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRawRemoteConnectionReports;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealTimeRemoteConnectionLatencyWithCloudPcId;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealTimeRemoteConnectionStatusWithCloudPcId;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRemoteConnectionHistoricalReports;
@@ -35,9 +37,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         public GetDailyAggregatedRemoteConnectionReportsRequestBuilder GetDailyAggregatedRemoteConnectionReports { get =>
             new GetDailyAggregatedRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getFrontlineReport method.</summary>
+        public GetFrontlineReportRequestBuilder GetFrontlineReport { get =>
+            new GetFrontlineReportRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the getInaccessibleCloudPcReports method.</summary>
         public GetInaccessibleCloudPcReportsRequestBuilder GetInaccessibleCloudPcReports { get =>
             new GetInaccessibleCloudPcReportsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getRawRemoteConnectionReports method.</summary>
+        public GetRawRemoteConnectionReportsRequestBuilder GetRawRemoteConnectionReports { get =>
+            new GetRawRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getRemoteConnectionHistoricalReports method.</summary>
         public GetRemoteConnectionHistoricalReportsRequestBuilder GetRemoteConnectionHistoricalReports { get =>
@@ -82,7 +92,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Cloud PC related reports.
@@ -101,7 +111,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CloudPcReports>(requestInfo, CloudPcReports.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcReports>(requestInfo, CloudPcReports.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the getRealTimeRemoteConnectionLatency method.
@@ -138,7 +148,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CloudPcReports>(requestInfo, CloudPcReports.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcReports>(requestInfo, CloudPcReports.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property reports for deviceManagement

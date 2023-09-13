@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Erf_Pre
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Json? X {
-            get { return BackingStore?.Get<Json?>("X"); }
-            set { BackingStore?.Set("X", value); }
+            get { return BackingStore?.Get<Json?>("x"); }
+            set { BackingStore?.Set("x", value); }
         }
 #nullable restore
 #else
         public Json X {
-            get { return BackingStore?.Get<Json>("X"); }
-            set { BackingStore?.Set("X", value); }
+            get { return BackingStore?.Get<Json>("x"); }
+            set { BackingStore?.Set("x", value); }
         }
 #endif
         /// <summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Erf_Pre
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"X", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"x", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Erf_Pre
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("X", X);
+            writer.WriteObjectValue<Json>("x", X);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

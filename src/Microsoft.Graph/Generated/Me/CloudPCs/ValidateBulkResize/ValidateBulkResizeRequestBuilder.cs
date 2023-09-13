@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.ValidateBulkResize {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ValidateBulkResizeResponse>(requestInfo, ValidateBulkResizeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ValidateBulkResizeResponse>(requestInfo, ValidateBulkResizeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Validate that a set of cloudPC devices meet the requirements to be bulk resized.

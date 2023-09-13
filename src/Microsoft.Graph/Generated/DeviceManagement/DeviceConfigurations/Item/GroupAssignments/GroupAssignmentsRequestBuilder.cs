@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.GroupA
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceConfigurationGroupAssignmentCollectionResponse>(requestInfo, DeviceConfigurationGroupAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceConfigurationGroupAssignmentCollectionResponse>(requestInfo, DeviceConfigurationGroupAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to groupAssignments for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.GroupA
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceConfigurationGroupAssignment>(requestInfo, DeviceConfigurationGroupAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceConfigurationGroupAssignment>(requestInfo, DeviceConfigurationGroupAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of group assignments for the device configuration profile.

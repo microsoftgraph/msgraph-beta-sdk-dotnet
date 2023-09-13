@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Articles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ArticleCollectionResponse>(requestInfo, ArticleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ArticleCollectionResponse>(requestInfo, ArticleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to articles for security
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Articles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Article>(requestInfo, Article.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Article>(requestInfo, Article.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of article objects, including their properties and relationships.

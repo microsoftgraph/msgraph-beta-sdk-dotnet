@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tables", value); }
         }
 #endif
-        /// <summary>The tasks property</summary>
+        /// <summary>Collection of document tasks on this worksheet. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<WorkbookDocumentTask>? Tasks {
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tasks", value); }
         }
 #endif
-        /// <summary>The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.</summary>
+        /// <summary>The visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Visibility {

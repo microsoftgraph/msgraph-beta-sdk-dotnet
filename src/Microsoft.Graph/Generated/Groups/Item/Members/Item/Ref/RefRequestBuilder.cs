@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Members.Item.Ref {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Remove a member from a group via the members navigation property. You can&apos;t remove a member from groups with dynamic memberships.

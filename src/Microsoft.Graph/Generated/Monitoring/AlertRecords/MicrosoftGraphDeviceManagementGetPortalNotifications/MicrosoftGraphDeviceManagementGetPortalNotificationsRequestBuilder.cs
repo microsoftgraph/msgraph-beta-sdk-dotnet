@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords.MicrosoftGraphDeviceManag
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetPortalNotificationsResponse>(requestInfo, GetPortalNotificationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetPortalNotificationsResponse>(requestInfo, GetPortalNotificationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getPortalNotifications

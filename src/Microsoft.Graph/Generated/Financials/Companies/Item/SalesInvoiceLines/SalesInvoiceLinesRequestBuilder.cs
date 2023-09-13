@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoiceLines {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SalesInvoiceLineCollectionResponse>(requestInfo, SalesInvoiceLineCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SalesInvoiceLineCollectionResponse>(requestInfo, SalesInvoiceLineCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get salesInvoiceLines from financials

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TeamworkDeviceOperationCollectionResponse>(requestInfo, TeamworkDeviceOperationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamworkDeviceOperationCollectionResponse>(requestInfo, TeamworkDeviceOperationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to operations for teamwork
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TeamworkDeviceOperation>(requestInfo, TeamworkDeviceOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamworkDeviceOperation>(requestInfo, TeamworkDeviceOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the operations that are running on a Microsoft Teams-enabled device.

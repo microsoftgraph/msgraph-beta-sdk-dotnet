@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ProvisioningObjectSummaryCollectionResponse>(requestInfo, ProvisioningObjectSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ProvisioningObjectSummaryCollectionResponse>(requestInfo, ProvisioningObjectSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to directoryProvisioning for auditLogs
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ProvisioningObjectSummary>(requestInfo, ProvisioningObjectSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ProvisioningObjectSummary>(requestInfo, ProvisioningObjectSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get directoryProvisioning from auditLogs

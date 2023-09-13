@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DataClassification.SensitiveTypes {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SensitiveTypeCollectionResponse>(requestInfo, SensitiveTypeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SensitiveTypeCollectionResponse>(requestInfo, SensitiveTypeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to sensitiveTypes for dataClassification
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DataClassification.SensitiveTypes {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SensitiveType>(requestInfo, SensitiveType.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SensitiveType>(requestInfo, SensitiveType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get sensitiveTypes from dataClassification

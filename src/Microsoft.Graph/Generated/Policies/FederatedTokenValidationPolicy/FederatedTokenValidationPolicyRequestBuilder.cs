@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get federatedTokenValidationPolicy from policies
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy>(requestInfo, Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy>(requestInfo, Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property federatedTokenValidationPolicy in policies
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy>(requestInfo, Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy>(requestInfo, Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property federatedTokenValidationPolicy for policies

@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Vendors {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<VendorCollectionResponse>(requestInfo, VendorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<VendorCollectionResponse>(requestInfo, VendorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to vendors for financials
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Vendors {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Vendor>(requestInfo, Microsoft.Graph.Beta.Models.Vendor.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Vendor>(requestInfo, Microsoft.Graph.Beta.Models.Vendor.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get vendors from financials

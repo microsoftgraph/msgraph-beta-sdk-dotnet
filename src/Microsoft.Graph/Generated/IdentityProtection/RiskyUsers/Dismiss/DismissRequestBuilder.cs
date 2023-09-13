@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Dismiss {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Dismiss the risk of one or more riskyUser objects. This action sets the targeted user&apos;s risk level to none. The maximum count of users to dismiss in one call is 60.

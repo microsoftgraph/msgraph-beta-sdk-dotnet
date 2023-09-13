@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceEncryptionStates {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ManagedDeviceEncryptionStateCollectionResponse>(requestInfo, ManagedDeviceEncryptionStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedDeviceEncryptionStateCollectionResponse>(requestInfo, ManagedDeviceEncryptionStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to managedDeviceEncryptionStates for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceEncryptionStates {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ManagedDeviceEncryptionState>(requestInfo, ManagedDeviceEncryptionState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedDeviceEncryptionState>(requestInfo, ManagedDeviceEncryptionState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Encryption report for devices in this account

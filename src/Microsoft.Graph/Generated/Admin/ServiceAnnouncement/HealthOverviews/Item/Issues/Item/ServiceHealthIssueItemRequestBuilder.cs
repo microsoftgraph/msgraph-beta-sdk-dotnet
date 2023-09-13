@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews.Item.Is
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A collection of issues that happened on the service, with detailed information for each issue.
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews.Item.Is
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ServiceHealthIssue>(requestInfo, ServiceHealthIssue.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ServiceHealthIssue>(requestInfo, ServiceHealthIssue.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property issues in admin
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.HealthOverviews.Item.Is
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ServiceHealthIssue>(requestInfo, ServiceHealthIssue.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ServiceHealthIssue>(requestInfo, ServiceHealthIssue.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property issues for admin

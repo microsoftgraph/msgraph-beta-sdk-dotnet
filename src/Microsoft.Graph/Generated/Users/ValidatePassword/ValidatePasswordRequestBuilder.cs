@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.ValidatePassword {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PasswordValidationInformation>(requestInfo, PasswordValidationInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PasswordValidationInformation>(requestInfo, PasswordValidationInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Check a user&apos;s password against the organization&apos;s password validation policy and report whether the password is valid. Use this action to provide real-time feedback on password strength while the user types their password.

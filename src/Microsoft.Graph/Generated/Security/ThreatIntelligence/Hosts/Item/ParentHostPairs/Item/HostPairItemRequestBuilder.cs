@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.ParentHost
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<HostPair>(requestInfo, HostPair.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<HostPair>(requestInfo, HostPair.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The hostPairs that are associated with a host, where that host is the childHost and has an incoming pairing with a parentHost.

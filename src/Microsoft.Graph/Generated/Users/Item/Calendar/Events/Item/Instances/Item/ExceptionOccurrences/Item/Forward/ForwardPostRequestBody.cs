@@ -19,28 +19,28 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.Instances.Item.Ex
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comment {
-            get { return BackingStore?.Get<string?>("Comment"); }
-            set { BackingStore?.Set("Comment", value); }
+            get { return BackingStore?.Get<string?>("comment"); }
+            set { BackingStore?.Set("comment", value); }
         }
 #nullable restore
 #else
         public string Comment {
-            get { return BackingStore?.Get<string>("Comment"); }
-            set { BackingStore?.Set("Comment", value); }
+            get { return BackingStore?.Get<string>("comment"); }
+            set { BackingStore?.Set("comment", value); }
         }
 #endif
         /// <summary>The ToRecipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Recipient>? ToRecipients {
-            get { return BackingStore?.Get<List<Recipient>?>("ToRecipients"); }
-            set { BackingStore?.Set("ToRecipients", value); }
+            get { return BackingStore?.Get<List<Recipient>?>("toRecipients"); }
+            set { BackingStore?.Set("toRecipients", value); }
         }
 #nullable restore
 #else
         public List<Recipient> ToRecipients {
-            get { return BackingStore?.Get<List<Recipient>>("ToRecipients"); }
-            set { BackingStore?.Set("ToRecipients", value); }
+            get { return BackingStore?.Get<List<Recipient>>("toRecipients"); }
+            set { BackingStore?.Set("toRecipients", value); }
         }
 #endif
         /// <summary>
@@ -63,8 +63,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.Instances.Item.Ex
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"Comment", n => { Comment = n.GetStringValue(); } },
-                {"ToRecipients", n => { ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"comment", n => { Comment = n.GetStringValue(); } },
+                {"toRecipients", n => { ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -73,8 +73,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.Instances.Item.Ex
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Comment", Comment);
-            writer.WriteCollectionOfObjectValues<Recipient>("ToRecipients", ToRecipients);
+            writer.WriteStringValue("comment", Comment);
+            writer.WriteCollectionOfObjectValues<Recipient>("toRecipients", ToRecipients);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

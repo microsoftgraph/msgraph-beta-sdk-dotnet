@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBookCategories.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The mobile eBook categories.
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBookCategories.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ManagedEBookCategory>(requestInfo, ManagedEBookCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedEBookCategory>(requestInfo, ManagedEBookCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property managedEBookCategories in deviceAppManagement
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBookCategories.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ManagedEBookCategory>(requestInfo, ManagedEBookCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedEBookCategory>(requestInfo, ManagedEBookCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property managedEBookCategories for deviceAppManagement

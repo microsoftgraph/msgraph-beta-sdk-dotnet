@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategorie
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The metric values for the user experience analytics category. Read-only.
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategorie
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsMetric>(requestInfo, UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsMetric>(requestInfo, UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property metricValues in deviceManagement
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategorie
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsMetric>(requestInfo, UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsMetric>(requestInfo, UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property metricValues for deviceManagement

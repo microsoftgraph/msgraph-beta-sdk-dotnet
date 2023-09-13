@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.In
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ServicePrincipalCreationConditionSetCollectionResponse>(requestInfo, ServicePrincipalCreationConditionSetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipalCreationConditionSetCollectionResponse>(requestInfo, ServicePrincipalCreationConditionSetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to includes for policies
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.In
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ServicePrincipalCreationConditionSet>(requestInfo, ServicePrincipalCreationConditionSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipalCreationConditionSet>(requestInfo, ServicePrincipalCreationConditionSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get includes from policies

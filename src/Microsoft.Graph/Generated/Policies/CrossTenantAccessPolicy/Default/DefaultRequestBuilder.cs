@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the default configuration of a cross-tenant access policy. This default configuration may be the service default assigned by Azure AD (isServiceDefault is true) or may be customized in your tenant (isServiceDefault is false).
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CrossTenantAccessPolicyConfigurationDefault>(requestInfo, CrossTenantAccessPolicyConfigurationDefault.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CrossTenantAccessPolicyConfigurationDefault>(requestInfo, CrossTenantAccessPolicyConfigurationDefault.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the default configuration of a cross-tenant access policy.
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Default {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CrossTenantAccessPolicyConfigurationDefault>(requestInfo, CrossTenantAccessPolicyConfigurationDefault.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CrossTenantAccessPolicyConfigurationDefault>(requestInfo, CrossTenantAccessPolicyConfigurationDefault.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property default for policies

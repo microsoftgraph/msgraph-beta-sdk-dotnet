@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.ItemCategories.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get itemCategories from financials
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.ItemCategories.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ItemCategory>(requestInfo, Microsoft.Graph.Beta.Models.ItemCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ItemCategory>(requestInfo, Microsoft.Graph.Beta.Models.ItemCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property itemCategories in financials
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.ItemCategories.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ItemCategory>(requestInfo, Microsoft.Graph.Beta.Models.ItemCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ItemCategory>(requestInfo, Microsoft.Graph.Beta.Models.ItemCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property itemCategories for financials

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.TriggerTypes.RetentionEventTypes {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RetentionEventTypeCollectionResponse>(requestInfo, RetentionEventTypeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RetentionEventTypeCollectionResponse>(requestInfo, RetentionEventTypeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new retentionEventType object.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Security.TriggerTypes.RetentionEventTypes {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.RetentionEventType>(requestInfo, Microsoft.Graph.Beta.Models.Security.RetentionEventType.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.RetentionEventType>(requestInfo, Microsoft.Graph.Beta.Models.Security.RetentionEventType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the retentionEventType objects and their properties.

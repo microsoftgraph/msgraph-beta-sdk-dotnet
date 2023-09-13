@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("replies", value); }
         }
 #endif
-        /// <summary>The task property</summary>
+        /// <summary>The task associated with the comment. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public WorkbookDocumentTask? Task {

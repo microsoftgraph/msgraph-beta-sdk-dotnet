@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.RoleGroups {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RoleGroupCollectionResponse>(requestInfo, RoleGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleGroupCollectionResponse>(requestInfo, RoleGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to roleGroups for external
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.RoleGroups {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RoleGroup>(requestInfo, RoleGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RoleGroup>(requestInfo, RoleGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the roleGroup objects and their properties.

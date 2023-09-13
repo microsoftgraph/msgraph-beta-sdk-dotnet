@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Policy {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of an accessReviewPolicy object.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Policy {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessReviewPolicy>(requestInfo, Microsoft.Graph.Beta.Models.AccessReviewPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessReviewPolicy>(requestInfo, Microsoft.Graph.Beta.Models.AccessReviewPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of an accessReviewPolicy object.
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Policy {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessReviewPolicy>(requestInfo, Microsoft.Graph.Beta.Models.AccessReviewPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessReviewPolicy>(requestInfo, Microsoft.Graph.Beta.Models.AccessReviewPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property policy for identityGovernance

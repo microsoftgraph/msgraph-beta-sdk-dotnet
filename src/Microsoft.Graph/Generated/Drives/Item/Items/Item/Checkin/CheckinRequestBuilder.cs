@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Checkin {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Check in a checked out driveItem resource, which makes the version of the document available to others.

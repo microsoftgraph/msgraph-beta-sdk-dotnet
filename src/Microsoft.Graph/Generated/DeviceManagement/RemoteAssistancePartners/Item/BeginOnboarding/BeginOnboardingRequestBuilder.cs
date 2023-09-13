@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners.Item.Be
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information

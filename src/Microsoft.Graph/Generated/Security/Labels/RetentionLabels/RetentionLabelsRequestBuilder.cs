@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RetentionLabelCollectionResponse>(requestInfo, RetentionLabelCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RetentionLabelCollectionResponse>(requestInfo, RetentionLabelCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new retentionLabel object. To create a disposition review stage, include the actionAfterRetentionPeriod property in the request body with one of the possible values specified.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.RetentionLabel>(requestInfo, Microsoft.Graph.Beta.Models.Security.RetentionLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.RetentionLabel>(requestInfo, Microsoft.Graph.Beta.Models.Security.RetentionLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the retentionLabel objects and their properties.

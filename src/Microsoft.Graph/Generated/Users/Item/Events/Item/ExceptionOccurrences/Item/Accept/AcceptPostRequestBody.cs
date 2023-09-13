@@ -18,20 +18,20 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comment {
-            get { return BackingStore?.Get<string?>("Comment"); }
-            set { BackingStore?.Set("Comment", value); }
+            get { return BackingStore?.Get<string?>("comment"); }
+            set { BackingStore?.Set("comment", value); }
         }
 #nullable restore
 #else
         public string Comment {
-            get { return BackingStore?.Get<string>("Comment"); }
-            set { BackingStore?.Set("Comment", value); }
+            get { return BackingStore?.Get<string>("comment"); }
+            set { BackingStore?.Set("comment", value); }
         }
 #endif
         /// <summary>The SendResponse property</summary>
         public bool? SendResponse {
-            get { return BackingStore?.Get<bool?>("SendResponse"); }
-            set { BackingStore?.Set("SendResponse", value); }
+            get { return BackingStore?.Get<bool?>("sendResponse"); }
+            set { BackingStore?.Set("sendResponse", value); }
         }
         /// <summary>
         /// Instantiates a new acceptPostRequestBody and sets the default values.
@@ -53,8 +53,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"Comment", n => { Comment = n.GetStringValue(); } },
-                {"SendResponse", n => { SendResponse = n.GetBoolValue(); } },
+                {"comment", n => { Comment = n.GetStringValue(); } },
+                {"sendResponse", n => { SendResponse = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -63,8 +63,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("Comment", Comment);
-            writer.WriteBoolValue("SendResponse", SendResponse);
+            writer.WriteStringValue("comment", Comment);
+            writer.WriteBoolValue("sendResponse", SendResponse);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.SalesQ
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SalesQuoteLineCollectionResponse>(requestInfo, SalesQuoteLineCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SalesQuoteLineCollectionResponse>(requestInfo, SalesQuoteLineCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get salesQuoteLines from financials

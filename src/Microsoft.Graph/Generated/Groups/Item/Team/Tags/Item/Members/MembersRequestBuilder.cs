@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Tags.Item.Members {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TeamworkTagMemberCollectionResponse>(requestInfo, TeamworkTagMemberCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamworkTagMemberCollectionResponse>(requestInfo, TeamworkTagMemberCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new teamworkTagMember object in a team.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Tags.Item.Members {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TeamworkTagMember>(requestInfo, TeamworkTagMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TeamworkTagMember>(requestInfo, TeamworkTagMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the members of a standard tag in a team and their properties.

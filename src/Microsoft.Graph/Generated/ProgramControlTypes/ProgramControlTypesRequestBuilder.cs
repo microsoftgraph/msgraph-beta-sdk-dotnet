@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.ProgramControlTypes {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ProgramControlTypeCollectionResponse>(requestInfo, ProgramControlTypeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ProgramControlTypeCollectionResponse>(requestInfo, ProgramControlTypeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to programControlTypes
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.ProgramControlTypes {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ProgramControlType>(requestInfo, ProgramControlType.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ProgramControlType>(requestInfo, ProgramControlType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// In the Azure AD access reviews feature, list all the programControlType objects.

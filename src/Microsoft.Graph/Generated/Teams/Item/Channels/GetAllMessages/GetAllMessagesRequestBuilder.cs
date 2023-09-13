@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.GetAllMessages {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetAllMessagesResponse>(requestInfo, GetAllMessagesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetAllMessagesResponse>(requestInfo, GetAllMessagesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getAllMessages
@@ -99,9 +99,11 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.GetAllMessages {
             /// <summary>The payment model for the API</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            [QueryParameter("model")]
             public string? Model { get; set; }
 #nullable restore
 #else
+            [QueryParameter("model")]
             public string Model { get; set; }
 #endif
             /// <summary>Order items by property values</summary>

@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleDefinitions.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The Role Definitions.
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleDefinitions.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RoleDefinition>(requestInfo, Microsoft.Graph.Beta.Models.RoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RoleDefinition>(requestInfo, Microsoft.Graph.Beta.Models.RoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property roleDefinitions in deviceManagement
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleDefinitions.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RoleDefinition>(requestInfo, Microsoft.Graph.Beta.Models.RoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RoleDefinition>(requestInfo, Microsoft.Graph.Beta.Models.RoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property roleDefinitions for deviceManagement

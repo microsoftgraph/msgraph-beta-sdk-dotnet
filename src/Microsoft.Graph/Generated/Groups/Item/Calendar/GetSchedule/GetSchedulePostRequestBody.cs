@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.GetSchedule {
         }
         /// <summary>The AvailabilityViewInterval property</summary>
         public int? AvailabilityViewInterval {
-            get { return BackingStore?.Get<int?>("AvailabilityViewInterval"); }
-            set { BackingStore?.Set("AvailabilityViewInterval", value); }
+            get { return BackingStore?.Get<int?>("availabilityViewInterval"); }
+            set { BackingStore?.Set("availabilityViewInterval", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
@@ -24,42 +24,42 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.GetSchedule {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DateTimeTimeZone? EndTime {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("EndTime"); }
-            set { BackingStore?.Set("EndTime", value); }
+            get { return BackingStore?.Get<DateTimeTimeZone?>("endTime"); }
+            set { BackingStore?.Set("endTime", value); }
         }
 #nullable restore
 #else
         public DateTimeTimeZone EndTime {
-            get { return BackingStore?.Get<DateTimeTimeZone>("EndTime"); }
-            set { BackingStore?.Set("EndTime", value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("endTime"); }
+            set { BackingStore?.Set("endTime", value); }
         }
 #endif
         /// <summary>The Schedules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Schedules {
-            get { return BackingStore?.Get<List<string>?>("Schedules"); }
-            set { BackingStore?.Set("Schedules", value); }
+            get { return BackingStore?.Get<List<string>?>("schedules"); }
+            set { BackingStore?.Set("schedules", value); }
         }
 #nullable restore
 #else
         public List<string> Schedules {
-            get { return BackingStore?.Get<List<string>>("Schedules"); }
-            set { BackingStore?.Set("Schedules", value); }
+            get { return BackingStore?.Get<List<string>>("schedules"); }
+            set { BackingStore?.Set("schedules", value); }
         }
 #endif
         /// <summary>The StartTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DateTimeTimeZone? StartTime {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("StartTime"); }
-            set { BackingStore?.Set("StartTime", value); }
+            get { return BackingStore?.Get<DateTimeTimeZone?>("startTime"); }
+            set { BackingStore?.Set("startTime", value); }
         }
 #nullable restore
 #else
         public DateTimeTimeZone StartTime {
-            get { return BackingStore?.Get<DateTimeTimeZone>("StartTime"); }
-            set { BackingStore?.Set("StartTime", value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("startTime"); }
+            set { BackingStore?.Set("startTime", value); }
         }
 #endif
         /// <summary>
@@ -82,10 +82,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.GetSchedule {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"AvailabilityViewInterval", n => { AvailabilityViewInterval = n.GetIntValue(); } },
-                {"EndTime", n => { EndTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"Schedules", n => { Schedules = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"StartTime", n => { StartTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"availabilityViewInterval", n => { AvailabilityViewInterval = n.GetIntValue(); } },
+                {"endTime", n => { EndTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"schedules", n => { Schedules = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"startTime", n => { StartTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -94,10 +94,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.GetSchedule {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("AvailabilityViewInterval", AvailabilityViewInterval);
-            writer.WriteObjectValue<DateTimeTimeZone>("EndTime", EndTime);
-            writer.WriteCollectionOfPrimitiveValues<string>("Schedules", Schedules);
-            writer.WriteObjectValue<DateTimeTimeZone>("StartTime", StartTime);
+            writer.WriteIntValue("availabilityViewInterval", AvailabilityViewInterval);
+            writer.WriteObjectValue<DateTimeTimeZone>("endTime", EndTime);
+            writer.WriteCollectionOfPrimitiveValues<string>("schedules", Schedules);
+            writer.WriteObjectValue<DateTimeTimeZone>("startTime", StartTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

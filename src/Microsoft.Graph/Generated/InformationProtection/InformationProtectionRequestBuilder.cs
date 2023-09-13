@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.InformationProtection {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.InformationProtection>(requestInfo, Microsoft.Graph.Beta.Models.InformationProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.InformationProtection>(requestInfo, Microsoft.Graph.Beta.Models.InformationProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update informationProtection
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.InformationProtection {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.InformationProtection>(requestInfo, Microsoft.Graph.Beta.Models.InformationProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.InformationProtection>(requestInfo, Microsoft.Graph.Beta.Models.InformationProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get informationProtection

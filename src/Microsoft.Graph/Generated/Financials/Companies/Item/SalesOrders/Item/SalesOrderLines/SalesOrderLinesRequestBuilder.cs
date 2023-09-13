@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrders.Item.SalesO
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SalesOrderLineCollectionResponse>(requestInfo, SalesOrderLineCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SalesOrderLineCollectionResponse>(requestInfo, SalesOrderLineCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get salesOrderLines from financials

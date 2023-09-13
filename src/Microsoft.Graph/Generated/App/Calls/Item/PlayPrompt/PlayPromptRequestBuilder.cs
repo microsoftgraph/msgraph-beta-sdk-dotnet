@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.PlayPrompt {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PlayPromptOperation>(requestInfo, PlayPromptOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PlayPromptOperation>(requestInfo, PlayPromptOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Play a prompt in the call. For more information about how to handle operations, see commsOperation

@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.ShipmentMethods {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ShipmentMethodCollectionResponse>(requestInfo, ShipmentMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ShipmentMethodCollectionResponse>(requestInfo, ShipmentMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to shipmentMethods for financials
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.ShipmentMethods {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ShipmentMethod>(requestInfo, Microsoft.Graph.Beta.Models.ShipmentMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ShipmentMethod>(requestInfo, Microsoft.Graph.Beta.Models.ShipmentMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get shipmentMethods from financials

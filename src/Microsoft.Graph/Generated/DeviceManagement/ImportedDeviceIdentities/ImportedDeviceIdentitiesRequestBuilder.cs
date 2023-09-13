@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ImportedDeviceIdentityCollectionResponse>(requestInfo, ImportedDeviceIdentityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ImportedDeviceIdentityCollectionResponse>(requestInfo, ImportedDeviceIdentityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to importedDeviceIdentities for deviceManagement
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ImportedDeviceIdentity>(requestInfo, ImportedDeviceIdentity.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ImportedDeviceIdentity>(requestInfo, ImportedDeviceIdentity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The imported device identities.

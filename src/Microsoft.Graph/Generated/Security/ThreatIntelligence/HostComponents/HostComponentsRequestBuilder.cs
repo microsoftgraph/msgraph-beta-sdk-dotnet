@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostComponents {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<HostComponentCollectionResponse>(requestInfo, HostComponentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<HostComponentCollectionResponse>(requestInfo, HostComponentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to hostComponents for security
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostComponents {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<HostComponent>(requestInfo, HostComponent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<HostComponent>(requestInfo, HostComponent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of a hostComponent object.

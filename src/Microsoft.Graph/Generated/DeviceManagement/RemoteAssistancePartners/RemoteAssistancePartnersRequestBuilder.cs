@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RemoteAssistancePartnerCollectionResponse>(requestInfo, RemoteAssistancePartnerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RemoteAssistancePartnerCollectionResponse>(requestInfo, RemoteAssistancePartnerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to remoteAssistancePartners for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RemoteAssistancePartner>(requestInfo, RemoteAssistancePartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RemoteAssistancePartner>(requestInfo, RemoteAssistancePartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The remote assist partners.

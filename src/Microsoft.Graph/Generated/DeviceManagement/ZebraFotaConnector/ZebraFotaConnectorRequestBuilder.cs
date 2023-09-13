@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The singleton ZebraFotaConnector associated with account.
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ZebraFotaConnector>(requestInfo, Microsoft.Graph.Beta.Models.ZebraFotaConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ZebraFotaConnector>(requestInfo, Microsoft.Graph.Beta.Models.ZebraFotaConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property zebraFotaConnector in deviceManagement
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ZebraFotaConnector>(requestInfo, Microsoft.Graph.Beta.Models.ZebraFotaConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ZebraFotaConnector>(requestInfo, Microsoft.Graph.Beta.Models.ZebraFotaConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property zebraFotaConnector for deviceManagement

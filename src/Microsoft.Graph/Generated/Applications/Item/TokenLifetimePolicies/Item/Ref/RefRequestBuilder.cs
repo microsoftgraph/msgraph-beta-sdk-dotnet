@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.TokenLifetimePolicies.Item.Ref 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Remove a tokenLifetimePolicy from an application or servicePrincipal.

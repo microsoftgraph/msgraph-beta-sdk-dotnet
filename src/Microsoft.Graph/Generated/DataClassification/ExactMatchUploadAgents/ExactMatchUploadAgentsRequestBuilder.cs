@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchUploadAgents {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ExactMatchUploadAgentCollectionResponse>(requestInfo, ExactMatchUploadAgentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ExactMatchUploadAgentCollectionResponse>(requestInfo, ExactMatchUploadAgentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to exactMatchUploadAgents for dataClassification
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchUploadAgents {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ExactMatchUploadAgent>(requestInfo, ExactMatchUploadAgent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ExactMatchUploadAgent>(requestInfo, ExactMatchUploadAgent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get exactMatchUploadAgents from dataClassification

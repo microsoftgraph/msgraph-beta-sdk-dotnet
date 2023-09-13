@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.ProfileSta
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.ProfileSta
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EducationSynchronizationProfileStatus>(requestInfo, EducationSynchronizationProfileStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationSynchronizationProfileStatus>(requestInfo, EducationSynchronizationProfileStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property profileStatus in education
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.ProfileSta
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EducationSynchronizationProfileStatus>(requestInfo, EducationSynchronizationProfileStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationSynchronizationProfileStatus>(requestInfo, EducationSynchronizationProfileStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property profileStatus for education

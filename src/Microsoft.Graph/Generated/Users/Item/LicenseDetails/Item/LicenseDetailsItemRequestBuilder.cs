@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Users.Item.LicenseDetails.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get licenseDetails from users
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Users.Item.LicenseDetails.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.LicenseDetails>(requestInfo, Microsoft.Graph.Beta.Models.LicenseDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.LicenseDetails>(requestInfo, Microsoft.Graph.Beta.Models.LicenseDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property licenseDetails in users
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Users.Item.LicenseDetails.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.LicenseDetails>(requestInfo, Microsoft.Graph.Beta.Models.LicenseDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.LicenseDetails>(requestInfo, Microsoft.Graph.Beta.Models.LicenseDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property licenseDetails for users

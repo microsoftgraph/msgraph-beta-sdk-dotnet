@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Analytics.ItemActivityStat
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ItemActivityStatCollectionResponse>(requestInfo, ItemActivityStatCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ItemActivityStatCollectionResponse>(requestInfo, ItemActivityStatCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to itemActivityStats for drives
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Analytics.ItemActivityStat
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ItemActivityStat>(requestInfo, ItemActivityStat.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ItemActivityStat>(requestInfo, ItemActivityStat.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get itemActivityStats from drives

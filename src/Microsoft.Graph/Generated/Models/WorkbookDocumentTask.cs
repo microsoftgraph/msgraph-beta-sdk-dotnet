@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookDocumentTask : Entity, IParsable {
-        /// <summary>The assignees property</summary>
+        /// <summary>A collection of user identities the task is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<WorkbookEmailIdentity>? Assignees {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assignees", value); }
         }
 #endif
-        /// <summary>The changes property</summary>
+        /// <summary>A collection of task change histories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<WorkbookDocumentTaskChange>? Changes {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("changes", value); }
         }
 #endif
-        /// <summary>The comment property</summary>
+        /// <summary>The comment that the task is associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public WorkbookComment? Comment {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("comment", value); }
         }
 #endif
-        /// <summary>The completedBy property</summary>
+        /// <summary>The identity of the user who completed the task. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public WorkbookEmailIdentity? CompletedBy {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("completedBy", value); }
         }
 #endif
-        /// <summary>The completedDateTime property</summary>
+        /// <summary>Date and time when the task was completed. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CompletedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
-        /// <summary>The createdBy property</summary>
+        /// <summary>A user identity that creates the task. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public WorkbookEmailIdentity? CreatedBy {
@@ -81,22 +81,22 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Date and time when the task was created. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The percentComplete property</summary>
+        /// <summary>An integer value from 0 to 100 that represents the percentage of the completion of the task. 100 means that the task is completed. Nullable.</summary>
         public int? PercentComplete {
             get { return BackingStore?.Get<int?>("percentComplete"); }
             set { BackingStore?.Set("percentComplete", value); }
         }
-        /// <summary>The priority property</summary>
+        /// <summary>An integer value from 0 to 10 that represents the priority of the task. A lower value indicates a higher priority. Nullable.</summary>
         public int? Priority {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
-        /// <summary>The startAndDueDateTime property</summary>
+        /// <summary>Start and due date of the task. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public WorkbookDocumentTaskSchedule? StartAndDueDateTime {
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("startAndDueDateTime", value); }
         }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>The title of the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title {

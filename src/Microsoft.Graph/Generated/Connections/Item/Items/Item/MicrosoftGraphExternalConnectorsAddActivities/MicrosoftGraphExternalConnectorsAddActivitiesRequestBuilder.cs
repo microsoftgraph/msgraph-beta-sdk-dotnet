@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Items.Item.MicrosoftGraphExterna
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AddActivitiesResponse>(requestInfo, AddActivitiesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AddActivitiesResponse>(requestInfo, AddActivitiesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action addActivities

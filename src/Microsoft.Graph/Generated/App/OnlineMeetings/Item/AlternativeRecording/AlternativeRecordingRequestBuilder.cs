@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.AlternativeRecording {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.AlternativeRecording {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The content stream of the alternative recording of a Microsoft Teams live event. Read-only.

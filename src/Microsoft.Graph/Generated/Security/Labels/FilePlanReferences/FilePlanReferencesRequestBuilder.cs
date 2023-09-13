@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.FilePlanReferences {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<FilePlanReferenceTemplateCollectionResponse>(requestInfo, FilePlanReferenceTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<FilePlanReferenceTemplateCollectionResponse>(requestInfo, FilePlanReferenceTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new filePlanReferenceTemplate object.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.FilePlanReferences {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.FilePlanReferenceTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.FilePlanReferenceTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.FilePlanReferenceTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.FilePlanReferenceTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the filePlanReferenceTemplate objects and their properties.

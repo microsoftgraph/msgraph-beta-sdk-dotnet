@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationsByAzureAdDeviceId {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Issues a wipe operation on an app registration with specified aad device Id.

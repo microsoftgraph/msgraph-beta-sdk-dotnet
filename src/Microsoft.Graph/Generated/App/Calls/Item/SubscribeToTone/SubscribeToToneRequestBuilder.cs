@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.SubscribeToTone {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SubscribeToToneOperation>(requestInfo, SubscribeToToneOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SubscribeToToneOperation>(requestInfo, SubscribeToToneOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Subscribe to DTMF (dual-tone multi-frequency signaling). This allows you to be notified when the user presses keys on a &apos;Dialpad&apos;.

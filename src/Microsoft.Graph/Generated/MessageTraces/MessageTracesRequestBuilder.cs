@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.MessageTraces {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MessageTraceCollectionResponse>(requestInfo, MessageTraceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MessageTraceCollectionResponse>(requestInfo, MessageTraceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to messageTraces
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.MessageTraces {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MessageTrace>(requestInfo, MessageTrace.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MessageTrace>(requestInfo, MessageTrace.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from messageTraces

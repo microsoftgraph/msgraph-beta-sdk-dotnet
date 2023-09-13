@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Relationships
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List of relationships for this mobile app.
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Relationships
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MobileAppRelationship>(requestInfo, MobileAppRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileAppRelationship>(requestInfo, MobileAppRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property relationships in deviceAppManagement
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Relationships
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MobileAppRelationship>(requestInfo, MobileAppRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileAppRelationship>(requestInfo, MobileAppRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property relationships for deviceAppManagement

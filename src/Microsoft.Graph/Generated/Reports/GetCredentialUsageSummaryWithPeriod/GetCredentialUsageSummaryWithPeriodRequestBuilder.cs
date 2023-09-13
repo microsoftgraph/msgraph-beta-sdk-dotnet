@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUsageSummaryWithPeriod {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetCredentialUsageSummaryWithPeriodResponse>(requestInfo, GetCredentialUsageSummaryWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetCredentialUsageSummaryWithPeriodResponse>(requestInfo, GetCredentialUsageSummaryWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getCredentialUsageSummary

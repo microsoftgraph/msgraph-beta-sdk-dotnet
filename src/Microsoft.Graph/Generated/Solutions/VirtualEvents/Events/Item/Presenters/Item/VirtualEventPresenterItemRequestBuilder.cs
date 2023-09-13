@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Presenters.It
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Presenters&apos; information of the virtual event.
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Presenters.It
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<VirtualEventPresenter>(requestInfo, VirtualEventPresenter.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<VirtualEventPresenter>(requestInfo, VirtualEventPresenter.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property presenters in solutions
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Presenters.It
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<VirtualEventPresenter>(requestInfo, VirtualEventPresenter.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<VirtualEventPresenter>(requestInfo, VirtualEventPresenter.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property presenters for solutions

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.C
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update content for the navigation property picture in financials
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item.C
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Picture>(requestInfo, Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Picture>(requestInfo, Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get content for the navigation property picture from financials

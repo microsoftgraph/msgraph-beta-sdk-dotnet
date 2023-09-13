@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Favorite {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<FavoriteResponse>(requestInfo, FavoriteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<FavoriteResponse>(requestInfo, FavoriteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Change the status of a list of serviceUpdateMessages to favorite for the signed in user.

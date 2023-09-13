@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MessageRecipientCollectionResponse>(requestInfo, MessageRecipientCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MessageRecipientCollectionResponse>(requestInfo, MessageRecipientCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to recipients for messageTraces
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MessageRecipient>(requestInfo, MessageRecipient.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MessageRecipient>(requestInfo, MessageRecipient.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get recipients from messageTraces

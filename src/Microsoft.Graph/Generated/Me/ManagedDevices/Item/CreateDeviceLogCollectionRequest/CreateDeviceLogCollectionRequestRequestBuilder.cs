@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.CreateDeviceLogCollectionR
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceLogCollectionResponse>(requestInfo, DeviceLogCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceLogCollectionResponse>(requestInfo, DeviceLogCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action createDeviceLogCollectionRequest

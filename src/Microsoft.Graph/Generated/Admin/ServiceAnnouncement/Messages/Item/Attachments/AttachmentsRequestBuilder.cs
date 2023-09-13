@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Item.Attachmen
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ServiceAnnouncementAttachmentCollectionResponse>(requestInfo, ServiceAnnouncementAttachmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ServiceAnnouncementAttachmentCollectionResponse>(requestInfo, ServiceAnnouncementAttachmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to attachments for admin
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Item.Attachmen
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ServiceAnnouncementAttachment>(requestInfo, ServiceAnnouncementAttachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ServiceAnnouncementAttachment>(requestInfo, ServiceAnnouncementAttachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of attachments associated with a service message.

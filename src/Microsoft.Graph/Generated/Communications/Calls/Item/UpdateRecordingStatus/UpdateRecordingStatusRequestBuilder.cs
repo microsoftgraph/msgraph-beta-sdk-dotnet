@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.UpdateRecordingStatus {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UpdateRecordingStatusOperation>(requestInfo, UpdateRecordingStatusOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UpdateRecordingStatusOperation>(requestInfo, UpdateRecordingStatusOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the application&apos;s recording status associated with a call. This requires the use of the Teams policy-based recording solution.

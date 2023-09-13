@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ManagementTemplateCollectionTenantSummaryCollectionResponse>(requestInfo, ManagementTemplateCollectionTenantSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagementTemplateCollectionTenantSummaryCollectionResponse>(requestInfo, ManagementTemplateCollectionTenantSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to managementTemplateCollectionTenantSummaries for tenantRelationships
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ManagementTemplateCollectionTenantSummary>(requestInfo, ManagementTemplateCollectionTenantSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagementTemplateCollectionTenantSummary>(requestInfo, ManagementTemplateCollectionTenantSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get managementTemplateCollectionTenantSummaries from tenantRelationships

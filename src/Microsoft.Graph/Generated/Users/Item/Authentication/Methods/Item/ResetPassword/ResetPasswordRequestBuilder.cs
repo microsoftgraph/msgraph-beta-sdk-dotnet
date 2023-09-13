@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.ResetPassw
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PasswordResetResponse>(requestInfo, PasswordResetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PasswordResetResponse>(requestInfo, PasswordResetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action resetPassword

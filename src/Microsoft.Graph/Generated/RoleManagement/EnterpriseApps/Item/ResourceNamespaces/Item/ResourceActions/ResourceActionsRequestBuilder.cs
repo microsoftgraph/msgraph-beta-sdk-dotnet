@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamesp
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UnifiedRbacResourceActionCollectionResponse>(requestInfo, UnifiedRbacResourceActionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UnifiedRbacResourceActionCollectionResponse>(requestInfo, UnifiedRbacResourceActionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to resourceActions for roleManagement
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamesp
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UnifiedRbacResourceAction>(requestInfo, UnifiedRbacResourceAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UnifiedRbacResourceAction>(requestInfo, UnifiedRbacResourceAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the unifiedRbacResourceAction objects and their properties.

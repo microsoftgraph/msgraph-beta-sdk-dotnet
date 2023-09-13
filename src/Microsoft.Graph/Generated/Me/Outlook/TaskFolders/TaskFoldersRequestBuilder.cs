@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<OutlookTaskFolderCollectionResponse>(requestInfo, OutlookTaskFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<OutlookTaskFolderCollectionResponse>(requestInfo, OutlookTaskFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a task folder in the default task group (My Tasks) of the user&apos;s mailbox.
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<OutlookTaskFolder>(requestInfo, OutlookTaskFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<OutlookTaskFolder>(requestInfo, OutlookTaskFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get all the Outlook task folders in the user&apos;s mailbox.

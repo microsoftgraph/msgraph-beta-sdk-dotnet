@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<InboundSharedUserProfileCollectionResponse>(requestInfo, InboundSharedUserProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<InboundSharedUserProfileCollectionResponse>(requestInfo, InboundSharedUserProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to inboundSharedUserProfiles for directory
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<InboundSharedUserProfile>(requestInfo, InboundSharedUserProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<InboundSharedUserProfile>(requestInfo, InboundSharedUserProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the properties of all inboundSharedUserProfiles.

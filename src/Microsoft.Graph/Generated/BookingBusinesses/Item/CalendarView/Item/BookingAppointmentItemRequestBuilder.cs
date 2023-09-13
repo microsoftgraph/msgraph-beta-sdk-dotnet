@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The set of appointments of this business in a specified date range. Read-only. Nullable.
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, BookingAppointment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, BookingAppointment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property calendarView in bookingBusinesses
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, BookingAppointment.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, BookingAppointment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property calendarView for bookingBusinesses
@@ -200,9 +200,11 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView.Item {
             /// <summary>The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            [QueryParameter("end")]
             public string? End { get; set; }
 #nullable restore
 #else
+            [QueryParameter("end")]
             public string End { get; set; }
 #endif
             /// <summary>Expand related entities</summary>
@@ -228,9 +230,11 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CalendarView.Item {
             /// <summary>The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            [QueryParameter("start")]
             public string? Start { get; set; }
 #nullable restore
 #else
+            [QueryParameter("start")]
             public string Start { get; set; }
 #endif
         }

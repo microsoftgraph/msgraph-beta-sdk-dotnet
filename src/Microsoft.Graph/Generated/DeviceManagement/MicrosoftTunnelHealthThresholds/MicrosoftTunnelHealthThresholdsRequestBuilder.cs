@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelHealthThresholds 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftTunnelHealthThresholdCollectionResponse>(requestInfo, MicrosoftTunnelHealthThresholdCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftTunnelHealthThresholdCollectionResponse>(requestInfo, MicrosoftTunnelHealthThresholdCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to microsoftTunnelHealthThresholds for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelHealthThresholds 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MicrosoftTunnelHealthThreshold>(requestInfo, MicrosoftTunnelHealthThreshold.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MicrosoftTunnelHealthThreshold>(requestInfo, MicrosoftTunnelHealthThreshold.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Collection of MicrosoftTunnelHealthThreshold settings associated with account.

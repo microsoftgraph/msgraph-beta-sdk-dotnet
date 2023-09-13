@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetNonCompli
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetNonCompliantSettingsResponse>(requestInfo, GetNonCompliantSettingsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetNonCompliantSettingsResponse>(requestInfo, GetNonCompliantSettingsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getNonCompliantSettings

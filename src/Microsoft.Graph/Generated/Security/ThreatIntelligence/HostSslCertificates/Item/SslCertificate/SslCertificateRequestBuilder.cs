@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostSslCertificates.I
         public SslCertificateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hostSslCertificates/{hostSslCertificate%2Did}/sslCertificate{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get sslCertificate from security
+        /// The sslCertificate for this hostSslCertificate.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -45,10 +45,10 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostSslCertificates.I
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.SslCertificate>(requestInfo, Microsoft.Graph.Beta.Models.Security.SslCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.SslCertificate>(requestInfo, Microsoft.Graph.Beta.Models.Security.SslCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sslCertificate from security
+        /// The sslCertificate for this hostSslCertificate.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostSslCertificates.I
             return new SslCertificateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get sslCertificate from security
+        /// The sslCertificate for this hostSslCertificate.
         /// </summary>
         public class SslCertificateRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

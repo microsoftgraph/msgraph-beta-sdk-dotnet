@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.Bitlocker {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Bitlocker>(requestInfo, Microsoft.Graph.Beta.Models.Bitlocker.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Bitlocker>(requestInfo, Microsoft.Graph.Beta.Models.Bitlocker.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get bitlocker from me

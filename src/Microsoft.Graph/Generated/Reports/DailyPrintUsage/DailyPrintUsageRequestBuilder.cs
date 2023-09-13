@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsage {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrintUsageCollectionResponse>(requestInfo, PrintUsageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrintUsageCollectionResponse>(requestInfo, PrintUsageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to dailyPrintUsage for reports
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsage {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrintUsage>(requestInfo, PrintUsage.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrintUsage>(requestInfo, PrintUsage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get dailyPrintUsage from reports

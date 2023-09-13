@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisRecords.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of a whoisRecord object.
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisRecords.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WhoisRecord>(requestInfo, WhoisRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WhoisRecord>(requestInfo, WhoisRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property whoisRecords in security
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.WhoisRecords.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WhoisRecord>(requestInfo, WhoisRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WhoisRecord>(requestInfo, WhoisRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property whoisRecords for security

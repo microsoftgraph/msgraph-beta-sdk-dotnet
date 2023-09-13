@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.ArticleIndicators {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ArticleIndicatorCollectionResponse>(requestInfo, ArticleIndicatorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ArticleIndicatorCollectionResponse>(requestInfo, ArticleIndicatorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to articleIndicators for security
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.ArticleIndicators {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ArticleIndicator>(requestInfo, ArticleIndicator.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ArticleIndicator>(requestInfo, ArticleIndicator.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of an articleIndicator object.

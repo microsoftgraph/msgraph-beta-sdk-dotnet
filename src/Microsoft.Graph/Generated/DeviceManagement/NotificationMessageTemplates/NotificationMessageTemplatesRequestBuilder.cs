@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<NotificationMessageTemplateCollectionResponse>(requestInfo, NotificationMessageTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<NotificationMessageTemplateCollectionResponse>(requestInfo, NotificationMessageTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to notificationMessageTemplates for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<NotificationMessageTemplate>(requestInfo, NotificationMessageTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<NotificationMessageTemplate>(requestInfo, NotificationMessageTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The Notification Message Templates.

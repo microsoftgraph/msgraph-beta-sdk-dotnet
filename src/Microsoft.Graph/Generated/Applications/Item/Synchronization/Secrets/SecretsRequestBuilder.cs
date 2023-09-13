@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Secrets {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<SynchronizationSecretKeyStringValuePair>(requestInfo, SynchronizationSecretKeyStringValuePair.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<SynchronizationSecretKeyStringValuePair>(requestInfo, SynchronizationSecretKeyStringValuePair.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>

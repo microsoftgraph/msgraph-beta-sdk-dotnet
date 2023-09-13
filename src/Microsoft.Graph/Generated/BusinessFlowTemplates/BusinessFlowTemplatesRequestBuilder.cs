@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<BusinessFlowTemplateCollectionResponse>(requestInfo, BusinessFlowTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<BusinessFlowTemplateCollectionResponse>(requestInfo, BusinessFlowTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to businessFlowTemplates
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<BusinessFlowTemplate>(requestInfo, BusinessFlowTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<BusinessFlowTemplate>(requestInfo, BusinessFlowTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// In the Azure AD access reviews feature, list all the businessFlowTemplate objects.

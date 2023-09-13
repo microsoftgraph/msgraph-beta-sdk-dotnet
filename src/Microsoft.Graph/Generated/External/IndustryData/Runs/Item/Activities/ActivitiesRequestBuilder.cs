@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item.Activities {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<IndustryDataRunActivityCollectionResponse>(requestInfo, IndustryDataRunActivityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<IndustryDataRunActivityCollectionResponse>(requestInfo, IndustryDataRunActivityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The set of activities performed during the run.

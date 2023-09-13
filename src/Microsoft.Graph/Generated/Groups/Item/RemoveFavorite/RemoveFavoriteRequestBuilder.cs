@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.RemoveFavorite {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Remove the group from the list of the current user&apos;s favorite groups. Supported for Microsoft 365 groups only.

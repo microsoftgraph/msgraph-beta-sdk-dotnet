@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<NamedLocationCollectionResponse>(requestInfo, NamedLocationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<NamedLocationCollectionResponse>(requestInfo, NamedLocationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new namedLocation object. Named locations can be either ipNamedLocation or countryNamedLocation objects.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<NamedLocation>(requestInfo, NamedLocation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<NamedLocation>(requestInfo, NamedLocation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of namedLocation objects.

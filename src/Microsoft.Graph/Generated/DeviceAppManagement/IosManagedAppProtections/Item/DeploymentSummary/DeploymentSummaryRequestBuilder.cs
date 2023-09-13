@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections.Item
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Navigation property to deployment summary of the configuration.
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections.Item
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ManagedAppPolicyDeploymentSummary>(requestInfo, ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedAppPolicyDeploymentSummary>(requestInfo, ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property deploymentSummary in deviceAppManagement
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections.Item
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ManagedAppPolicyDeploymentSummary>(requestInfo, ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedAppPolicyDeploymentSummary>(requestInfo, ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property deploymentSummary for deviceAppManagement

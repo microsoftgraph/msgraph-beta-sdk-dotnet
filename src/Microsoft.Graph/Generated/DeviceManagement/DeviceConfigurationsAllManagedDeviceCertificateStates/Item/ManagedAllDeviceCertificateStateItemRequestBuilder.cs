@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDe
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Summary of all certificates for all devices.
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDe
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ManagedAllDeviceCertificateState>(requestInfo, ManagedAllDeviceCertificateState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedAllDeviceCertificateState>(requestInfo, ManagedAllDeviceCertificateState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property deviceConfigurationsAllManagedDeviceCertificateStates in deviceManagement
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDe
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ManagedAllDeviceCertificateState>(requestInfo, ManagedAllDeviceCertificateState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ManagedAllDeviceCertificateState>(requestInfo, ManagedAllDeviceCertificateState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property deviceConfigurationsAllManagedDeviceCertificateStates for deviceManagement

@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredOwners.GraphEnd
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EndpointCollectionResponse>(requestInfo, EndpointCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EndpointCollectionResponse>(requestInfo, EndpointCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the items of type microsoft.graph.endpoint in the microsoft.graph.directoryObject collection

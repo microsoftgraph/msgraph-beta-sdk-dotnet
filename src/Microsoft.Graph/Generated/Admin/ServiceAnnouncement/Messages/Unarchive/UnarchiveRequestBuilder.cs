@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Unarchive {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UnarchiveResponse>(requestInfo, UnarchiveResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UnarchiveResponse>(requestInfo, UnarchiveResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Unarchive a list of serviceUpdateMessages for the signed in user.

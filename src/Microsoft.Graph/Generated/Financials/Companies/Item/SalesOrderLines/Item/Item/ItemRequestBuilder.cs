@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrderLines.Item.It
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get item from financials
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrderLines.Item.It
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Item>(requestInfo, Microsoft.Graph.Beta.Models.Item.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Item>(requestInfo, Microsoft.Graph.Beta.Models.Item.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property item in financials
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrderLines.Item.It
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Item>(requestInfo, Microsoft.Graph.Beta.Models.Item.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Item>(requestInfo, Microsoft.Graph.Beta.Models.Item.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property item for financials

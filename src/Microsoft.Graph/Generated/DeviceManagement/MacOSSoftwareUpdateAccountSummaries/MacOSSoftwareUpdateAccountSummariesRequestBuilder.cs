@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummar
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MacOSSoftwareUpdateAccountSummaryCollectionResponse>(requestInfo, MacOSSoftwareUpdateAccountSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MacOSSoftwareUpdateAccountSummaryCollectionResponse>(requestInfo, MacOSSoftwareUpdateAccountSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to macOSSoftwareUpdateAccountSummaries for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummar
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MacOSSoftwareUpdateAccountSummary>(requestInfo, MacOSSoftwareUpdateAccountSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MacOSSoftwareUpdateAccountSummary>(requestInfo, MacOSSoftwareUpdateAccountSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The MacOS software update account summaries for this account.

@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Me.Insights {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get insights from me
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Me.Insights {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ItemInsights>(requestInfo, Microsoft.Graph.Beta.Models.ItemInsights.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ItemInsights>(requestInfo, Microsoft.Graph.Beta.Models.ItemInsights.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property insights in me
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Me.Insights {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ItemInsights>(requestInfo, Microsoft.Graph.Beta.Models.ItemInsights.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ItemInsights>(requestInfo, Microsoft.Graph.Beta.Models.ItemInsights.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property insights for me

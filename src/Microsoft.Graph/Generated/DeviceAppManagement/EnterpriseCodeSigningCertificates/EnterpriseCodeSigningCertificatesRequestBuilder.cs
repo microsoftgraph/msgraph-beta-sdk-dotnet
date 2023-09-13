@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.EnterpriseCodeSigningCertific
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EnterpriseCodeSigningCertificateCollectionResponse>(requestInfo, EnterpriseCodeSigningCertificateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EnterpriseCodeSigningCertificateCollectionResponse>(requestInfo, EnterpriseCodeSigningCertificateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to enterpriseCodeSigningCertificates for deviceAppManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.EnterpriseCodeSigningCertific
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EnterpriseCodeSigningCertificate>(requestInfo, EnterpriseCodeSigningCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EnterpriseCodeSigningCertificate>(requestInfo, EnterpriseCodeSigningCertificate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The Windows Enterprise Code Signing Certificate.

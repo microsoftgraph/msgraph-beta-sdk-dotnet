@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents the self-service password reset (SSPR) usage for a given tenant.
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>(requestInfo, Microsoft.Graph.Beta.Models.UserCredentialUsageDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>(requestInfo, Microsoft.Graph.Beta.Models.UserCredentialUsageDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property userCredentialUsageDetails in reports
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>(requestInfo, Microsoft.Graph.Beta.Models.UserCredentialUsageDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>(requestInfo, Microsoft.Graph.Beta.Models.UserCredentialUsageDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property userCredentialUsageDetails for reports

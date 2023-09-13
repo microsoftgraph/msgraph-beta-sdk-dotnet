@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.It
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SalesCreditMemoLine>(requestInfo, SalesCreditMemoLine.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SalesCreditMemoLine>(requestInfo, SalesCreditMemoLine.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property salesCreditMemoLines in financials
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemoLines.It
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SalesCreditMemoLine>(requestInfo, SalesCreditMemoLine.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SalesCreditMemoLine>(requestInfo, SalesCreditMemoLine.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get salesCreditMemoLines from financials

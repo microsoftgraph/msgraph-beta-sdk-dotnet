@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxGroups {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TaxGroupCollectionResponse>(requestInfo, TaxGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TaxGroupCollectionResponse>(requestInfo, TaxGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to taxGroups for financials
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.TaxGroups {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TaxGroup>(requestInfo, TaxGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TaxGroup>(requestInfo, TaxGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get taxGroups from financials

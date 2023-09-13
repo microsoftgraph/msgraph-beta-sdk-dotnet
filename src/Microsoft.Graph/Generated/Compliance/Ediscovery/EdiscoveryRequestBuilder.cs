@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get ediscovery from compliance
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Ediscoveryroot>(requestInfo, Ediscoveryroot.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Ediscoveryroot>(requestInfo, Ediscoveryroot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property ediscovery in compliance
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Ediscoveryroot>(requestInfo, Ediscoveryroot.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Ediscoveryroot>(requestInfo, Ediscoveryroot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property ediscovery for compliance

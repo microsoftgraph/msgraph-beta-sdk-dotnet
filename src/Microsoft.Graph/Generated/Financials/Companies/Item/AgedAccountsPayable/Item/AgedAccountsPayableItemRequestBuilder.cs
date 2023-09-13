@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsPayable.Ite
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AgedAccountsPayable>(requestInfo, Microsoft.Graph.Beta.Models.AgedAccountsPayable.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AgedAccountsPayable>(requestInfo, Microsoft.Graph.Beta.Models.AgedAccountsPayable.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get agedAccountsPayable from financials

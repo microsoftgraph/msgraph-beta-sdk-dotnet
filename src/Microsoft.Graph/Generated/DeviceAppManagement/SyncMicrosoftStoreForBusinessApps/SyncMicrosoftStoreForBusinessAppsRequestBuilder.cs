@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.SyncMicrosoftStoreForBusiness
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Syncs Intune account with Microsoft Store For Business

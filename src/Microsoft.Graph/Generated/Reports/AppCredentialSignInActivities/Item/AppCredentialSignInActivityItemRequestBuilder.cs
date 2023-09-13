@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Reports.AppCredentialSignInActivities.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get an appCredentialSignInActivity object that contains recent activity of an application credential.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Reports.AppCredentialSignInActivities.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AppCredentialSignInActivity>(requestInfo, AppCredentialSignInActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AppCredentialSignInActivity>(requestInfo, AppCredentialSignInActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property appCredentialSignInActivities in reports
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Reports.AppCredentialSignInActivities.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AppCredentialSignInActivity>(requestInfo, AppCredentialSignInActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AppCredentialSignInActivity>(requestInfo, AppCredentialSignInActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property appCredentialSignInActivities for reports

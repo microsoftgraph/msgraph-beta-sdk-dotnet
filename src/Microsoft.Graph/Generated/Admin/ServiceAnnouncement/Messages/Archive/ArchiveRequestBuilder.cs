@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Archive {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ArchiveResponse>(requestInfo, ArchiveResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ArchiveResponse>(requestInfo, ArchiveResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Archive a list of serviceUpdateMessages for the signed in user.

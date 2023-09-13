@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.SubCategories.Ite
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of a subCategoryTemplate object.
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.SubCategories.Ite
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SubCategoryTemplate>(requestInfo, SubCategoryTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SubCategoryTemplate>(requestInfo, SubCategoryTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property subCategories in security
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.SubCategories.Ite
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SubCategoryTemplate>(requestInfo, SubCategoryTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SubCategoryTemplate>(requestInfo, SubCategoryTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a subCategoryTemplate object.

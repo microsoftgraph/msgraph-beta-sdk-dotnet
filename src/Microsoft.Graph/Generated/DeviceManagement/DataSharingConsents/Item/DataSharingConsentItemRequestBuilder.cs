@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Data sharing consents.
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DataSharingConsent>(requestInfo, DataSharingConsent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DataSharingConsent>(requestInfo, DataSharingConsent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property dataSharingConsents in deviceManagement
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DataSharingConsents.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DataSharingConsent>(requestInfo, DataSharingConsent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DataSharingConsent>(requestInfo, DataSharingConsent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property dataSharingConsents for deviceManagement

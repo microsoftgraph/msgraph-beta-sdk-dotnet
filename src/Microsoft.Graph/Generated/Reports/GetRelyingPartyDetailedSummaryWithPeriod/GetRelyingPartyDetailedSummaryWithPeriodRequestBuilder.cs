@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Reports.GetRelyingPartyDetailedSummaryWithPeriod 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetRelyingPartyDetailedSummaryWithPeriodResponse>(requestInfo, GetRelyingPartyDetailedSummaryWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetRelyingPartyDetailedSummaryWithPeriodResponse>(requestInfo, GetRelyingPartyDetailedSummaryWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getRelyingPartyDetailedSummary

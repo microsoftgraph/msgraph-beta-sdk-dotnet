@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.ThreatSubmission.EmailThreatSubmissionPolicies {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EmailThreatSubmissionPolicyCollectionResponse>(requestInfo, EmailThreatSubmissionPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EmailThreatSubmissionPolicyCollectionResponse>(requestInfo, EmailThreatSubmissionPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to emailThreatSubmissionPolicies for threatSubmission
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.ThreatSubmission.EmailThreatSubmissionPolicies {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EmailThreatSubmissionPolicy>(requestInfo, EmailThreatSubmissionPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EmailThreatSubmissionPolicy>(requestInfo, EmailThreatSubmissionPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the emailThreatSubmissionPolicy objects and their properties.

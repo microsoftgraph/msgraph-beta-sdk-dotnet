@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of assignment filters
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceAndAppManagementAssignmentFilter>(requestInfo, DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceAndAppManagementAssignmentFilter>(requestInfo, DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property assignmentFilters in deviceManagement
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceAndAppManagementAssignmentFilter>(requestInfo, DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceAndAppManagementAssignmentFilter>(requestInfo, DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property assignmentFilters for deviceManagement

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ConditionalAccessTemplateCollectionResponse>(requestInfo, ConditionalAccessTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ConditionalAccessTemplateCollectionResponse>(requestInfo, ConditionalAccessTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the conditionalAccessTemplate objects and their properties.

@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelligenceProfileIn
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of a intelligenceProfileIndicator object.
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelligenceProfileIn
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<IntelligenceProfileIndicator>(requestInfo, IntelligenceProfileIndicator.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<IntelligenceProfileIndicator>(requestInfo, IntelligenceProfileIndicator.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property intelligenceProfileIndicators in security
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.IntelligenceProfileIn
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<IntelligenceProfileIndicator>(requestInfo, IntelligenceProfileIndicator.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<IntelligenceProfileIndicator>(requestInfo, IntelligenceProfileIndicator.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property intelligenceProfileIndicators for security

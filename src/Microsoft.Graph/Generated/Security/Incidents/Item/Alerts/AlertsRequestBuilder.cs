@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Security.Incidents.Item.Alerts {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AlertCollectionResponse>(requestInfo, AlertCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AlertCollectionResponse>(requestInfo, AlertCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of related alerts. Supports $expand.

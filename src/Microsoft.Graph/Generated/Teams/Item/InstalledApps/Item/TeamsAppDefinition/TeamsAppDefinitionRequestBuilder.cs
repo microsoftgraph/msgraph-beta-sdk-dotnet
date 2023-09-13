@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.InstalledApps.Item.TeamsAppDefinition 
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TeamsAppDefinition>(requestInfo, Microsoft.Graph.Beta.Models.TeamsAppDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TeamsAppDefinition>(requestInfo, Microsoft.Graph.Beta.Models.TeamsAppDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The details of this version of the app.

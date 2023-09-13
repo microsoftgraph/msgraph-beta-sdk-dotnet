@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.PolicyRules
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PolicyRuleCollectionResponse>(requestInfo, PolicyRuleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PolicyRuleCollectionResponse>(requestInfo, PolicyRuleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to policyRules for networkAccess
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.PolicyRules
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PolicyRule>(requestInfo, PolicyRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PolicyRule>(requestInfo, PolicyRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents the definition of the policy ruleset that makes up the core definition of a policy.

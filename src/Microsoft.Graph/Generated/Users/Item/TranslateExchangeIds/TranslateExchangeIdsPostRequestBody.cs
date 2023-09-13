@@ -19,25 +19,25 @@ namespace Microsoft.Graph.Beta.Users.Item.TranslateExchangeIds {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? InputIds {
-            get { return BackingStore?.Get<List<string>?>("InputIds"); }
-            set { BackingStore?.Set("InputIds", value); }
+            get { return BackingStore?.Get<List<string>?>("inputIds"); }
+            set { BackingStore?.Set("inputIds", value); }
         }
 #nullable restore
 #else
         public List<string> InputIds {
-            get { return BackingStore?.Get<List<string>>("InputIds"); }
-            set { BackingStore?.Set("InputIds", value); }
+            get { return BackingStore?.Get<List<string>>("inputIds"); }
+            set { BackingStore?.Set("inputIds", value); }
         }
 #endif
         /// <summary>The SourceIdType property</summary>
         public ExchangeIdFormat? SourceIdType {
-            get { return BackingStore?.Get<ExchangeIdFormat?>("SourceIdType"); }
-            set { BackingStore?.Set("SourceIdType", value); }
+            get { return BackingStore?.Get<ExchangeIdFormat?>("sourceIdType"); }
+            set { BackingStore?.Set("sourceIdType", value); }
         }
         /// <summary>The TargetIdType property</summary>
         public ExchangeIdFormat? TargetIdType {
-            get { return BackingStore?.Get<ExchangeIdFormat?>("TargetIdType"); }
-            set { BackingStore?.Set("TargetIdType", value); }
+            get { return BackingStore?.Get<ExchangeIdFormat?>("targetIdType"); }
+            set { BackingStore?.Set("targetIdType", value); }
         }
         /// <summary>
         /// Instantiates a new translateExchangeIdsPostRequestBody and sets the default values.
@@ -59,9 +59,9 @@ namespace Microsoft.Graph.Beta.Users.Item.TranslateExchangeIds {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"InputIds", n => { InputIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"SourceIdType", n => { SourceIdType = n.GetEnumValue<ExchangeIdFormat>(); } },
-                {"TargetIdType", n => { TargetIdType = n.GetEnumValue<ExchangeIdFormat>(); } },
+                {"inputIds", n => { InputIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"sourceIdType", n => { SourceIdType = n.GetEnumValue<ExchangeIdFormat>(); } },
+                {"targetIdType", n => { TargetIdType = n.GetEnumValue<ExchangeIdFormat>(); } },
             };
         }
         /// <summary>
@@ -70,9 +70,9 @@ namespace Microsoft.Graph.Beta.Users.Item.TranslateExchangeIds {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("InputIds", InputIds);
-            writer.WriteEnumValue<ExchangeIdFormat>("SourceIdType", SourceIdType);
-            writer.WriteEnumValue<ExchangeIdFormat>("TargetIdType", TargetIdType);
+            writer.WriteCollectionOfPrimitiveValues<string>("inputIds", InputIds);
+            writer.WriteEnumValue<ExchangeIdFormat>("sourceIdType", SourceIdType);
+            writer.WriteEnumValue<ExchangeIdFormat>("targetIdType", TargetIdType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

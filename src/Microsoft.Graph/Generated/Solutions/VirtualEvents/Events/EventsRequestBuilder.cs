@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<VirtualEventCollectionResponse>(requestInfo, VirtualEventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<VirtualEventCollectionResponse>(requestInfo, VirtualEventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to events for solutions
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<VirtualEvent>(requestInfo, VirtualEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<VirtualEvent>(requestInfo, VirtualEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get events from solutions

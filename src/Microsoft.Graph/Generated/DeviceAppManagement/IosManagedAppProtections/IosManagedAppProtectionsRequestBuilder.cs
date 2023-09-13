@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<IosManagedAppProtectionCollectionResponse>(requestInfo, IosManagedAppProtectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<IosManagedAppProtectionCollectionResponse>(requestInfo, IosManagedAppProtectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to iosManagedAppProtections for deviceAppManagement
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<IosManagedAppProtection>(requestInfo, IosManagedAppProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<IosManagedAppProtection>(requestInfo, IosManagedAppProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// iOS managed app policies.

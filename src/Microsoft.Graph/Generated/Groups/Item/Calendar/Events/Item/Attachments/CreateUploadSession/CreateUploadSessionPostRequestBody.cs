@@ -17,14 +17,14 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.Attachments.Crea
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.AttachmentItem? AttachmentItem {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttachmentItem?>("AttachmentItem"); }
-            set { BackingStore?.Set("AttachmentItem", value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttachmentItem?>("attachmentItem"); }
+            set { BackingStore?.Set("attachmentItem", value); }
         }
 #nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AttachmentItem AttachmentItem {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttachmentItem>("AttachmentItem"); }
-            set { BackingStore?.Set("AttachmentItem", value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttachmentItem>("attachmentItem"); }
+            set { BackingStore?.Set("attachmentItem", value); }
         }
 #endif
         /// <summary>Stores model information.</summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.Attachments.Crea
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"AttachmentItem", n => { AttachmentItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.AttachmentItem>(Microsoft.Graph.Beta.Models.AttachmentItem.CreateFromDiscriminatorValue); } },
+                {"attachmentItem", n => { AttachmentItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.AttachmentItem>(Microsoft.Graph.Beta.Models.AttachmentItem.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.Attachments.Crea
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AttachmentItem>("AttachmentItem", AttachmentItem);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AttachmentItem>("attachmentItem", AttachmentItem);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

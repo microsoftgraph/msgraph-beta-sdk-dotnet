@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Settings {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get settings from privilegedApproval
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Settings {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrivilegedRoleSettings>(requestInfo, PrivilegedRoleSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedRoleSettings>(requestInfo, PrivilegedRoleSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property settings in privilegedApproval
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Settings {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PrivilegedRoleSettings>(requestInfo, PrivilegedRoleSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedRoleSettings>(requestInfo, PrivilegedRoleSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property settings for privilegedApproval

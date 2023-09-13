@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of a sourceSystemDefinition object.
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SourceSystemDefinition>(requestInfo, SourceSystemDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SourceSystemDefinition>(requestInfo, SourceSystemDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of a sourceSystemDefinition object.
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SourceSystemDefinition>(requestInfo, SourceSystemDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SourceSystemDefinition>(requestInfo, SourceSystemDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a sourceSystemDefinition object.

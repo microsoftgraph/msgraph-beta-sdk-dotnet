@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Articles.Item.Indicat
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ArticleIndicator>(requestInfo, ArticleIndicator.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ArticleIndicator>(requestInfo, ArticleIndicator.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Indicators related to this article.

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.LicenseDetails {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<LicenseDetailsCollectionResponse>(requestInfo, LicenseDetailsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<LicenseDetailsCollectionResponse>(requestInfo, LicenseDetailsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to licenseDetails for servicePrincipals
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.LicenseDetails {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.LicenseDetails>(requestInfo, Microsoft.Graph.Beta.Models.LicenseDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.LicenseDetails>(requestInfo, Microsoft.Graph.Beta.Models.LicenseDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get licenseDetails from servicePrincipals

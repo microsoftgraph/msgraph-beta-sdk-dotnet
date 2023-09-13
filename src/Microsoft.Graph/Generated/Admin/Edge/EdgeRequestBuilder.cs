@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Admin.Edge {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A container for Microsoft Edge resources. Read-only.
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Admin.Edge {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Edge>(requestInfo, Microsoft.Graph.Beta.Models.Edge.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Edge>(requestInfo, Microsoft.Graph.Beta.Models.Edge.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property edge in admin
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Admin.Edge {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Edge>(requestInfo, Microsoft.Graph.Beta.Models.Edge.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Edge>(requestInfo, Microsoft.Graph.Beta.Models.Edge.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property edge for admin

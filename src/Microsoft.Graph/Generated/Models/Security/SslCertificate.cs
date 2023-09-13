@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class SslCertificate : Artifact, IParsable {
-        /// <summary>The expirationDateTime property</summary>
+        /// <summary>The date and time when a certificate expires. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>The fingerprint property</summary>
+        /// <summary>A hash of the certificate calculated on the data and signature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Fingerprint {
@@ -25,17 +25,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("fingerprint", value); }
         }
 #endif
-        /// <summary>The firstSeenDateTime property</summary>
+        /// <summary>The first date and time that this sslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? FirstSeenDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
             set { BackingStore?.Set("firstSeenDateTime", value); }
         }
-        /// <summary>The issueDateTime property</summary>
+        /// <summary>The date and time when a certificate was issued. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? IssueDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("issueDateTime"); }
             set { BackingStore?.Set("issueDateTime", value); }
         }
-        /// <summary>The issuer property</summary>
+        /// <summary>The entity granting this certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SslCertificateEntity? Issuer {
@@ -49,12 +49,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("issuer", value); }
         }
 #endif
-        /// <summary>The lastSeenDateTime property</summary>
+        /// <summary>The most recent date and time that this sslCertificate was observed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastSeenDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
-        /// <summary>The relatedHosts property</summary>
+        /// <summary>The hosts related with this sslCertificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Host>? RelatedHosts {
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("relatedHosts", value); }
         }
 #endif
-        /// <summary>The serialNumber property</summary>
+        /// <summary>The serial number associated with an SSL certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SerialNumber {
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("serialNumber", value); }
         }
 #endif
-        /// <summary>The sha1 property</summary>
+        /// <summary>A SHA-1 hash of the certificate. Note: This is not the signature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sha1 {
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("sha1", value); }
         }
 #endif
-        /// <summary>The subject property</summary>
+        /// <summary>The person, site, machine, and so on, this certificate is for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SslCertificateEntity? Subject {

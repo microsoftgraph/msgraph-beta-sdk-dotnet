@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAppConfigurat
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AndroidManagedStoreAppConfigurationSchemaCollectionResponse>(requestInfo, AndroidManagedStoreAppConfigurationSchemaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AndroidManagedStoreAppConfigurationSchemaCollectionResponse>(requestInfo, AndroidManagedStoreAppConfigurationSchemaCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to androidManagedStoreAppConfigurationSchemas for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAppConfigurat
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AndroidManagedStoreAppConfigurationSchema>(requestInfo, AndroidManagedStoreAppConfigurationSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AndroidManagedStoreAppConfigurationSchema>(requestInfo, AndroidManagedStoreAppConfigurationSchema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Android Enterprise app configuration schema entities.

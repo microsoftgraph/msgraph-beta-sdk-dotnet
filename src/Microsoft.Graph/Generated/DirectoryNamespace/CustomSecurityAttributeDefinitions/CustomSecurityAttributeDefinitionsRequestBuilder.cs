@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinit
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CustomSecurityAttributeDefinitionCollectionResponse>(requestInfo, CustomSecurityAttributeDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomSecurityAttributeDefinitionCollectionResponse>(requestInfo, CustomSecurityAttributeDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new customSecurityAttributeDefinition object.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinit
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CustomSecurityAttributeDefinition>(requestInfo, CustomSecurityAttributeDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomSecurityAttributeDefinition>(requestInfo, CustomSecurityAttributeDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the customSecurityAttributeDefinition objects and their properties.

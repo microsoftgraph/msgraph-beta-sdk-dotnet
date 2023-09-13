@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SharedEmailDomainInvitationCollectionResponse>(requestInfo, SharedEmailDomainInvitationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SharedEmailDomainInvitationCollectionResponse>(requestInfo, SharedEmailDomainInvitationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to sharedEmailDomainInvitations for domains
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SharedEmailDomainInvitation>(requestInfo, SharedEmailDomainInvitation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SharedEmailDomainInvitation>(requestInfo, SharedEmailDomainInvitation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get sharedEmailDomainInvitations from domains

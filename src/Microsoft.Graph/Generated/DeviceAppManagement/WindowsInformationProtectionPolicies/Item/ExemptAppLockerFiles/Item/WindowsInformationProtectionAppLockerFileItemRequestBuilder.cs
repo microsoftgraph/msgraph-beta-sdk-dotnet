@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionP
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Another way to input exempt apps through xml files
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionP
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WindowsInformationProtectionAppLockerFile>(requestInfo, WindowsInformationProtectionAppLockerFile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsInformationProtectionAppLockerFile>(requestInfo, WindowsInformationProtectionAppLockerFile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property exemptAppLockerFiles in deviceAppManagement
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionP
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WindowsInformationProtectionAppLockerFile>(requestInfo, WindowsInformationProtectionAppLockerFile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsInformationProtectionAppLockerFile>(requestInfo, WindowsInformationProtectionAppLockerFile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property exemptAppLockerFiles for deviceAppManagement

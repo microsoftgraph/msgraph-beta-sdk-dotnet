@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Reports.Sla {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A placeholder to allow for the desired URL path for SLA.
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Reports.Sla {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ServiceLevelAgreementRoot>(requestInfo, ServiceLevelAgreementRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ServiceLevelAgreementRoot>(requestInfo, ServiceLevelAgreementRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property sla in reports
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Reports.Sla {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ServiceLevelAgreementRoot>(requestInfo, ServiceLevelAgreementRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ServiceLevelAgreementRoot>(requestInfo, ServiceLevelAgreementRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property sla for reports

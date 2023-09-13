@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Policies.ActivityBasedTimeoutPolicies {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ActivityBasedTimeoutPolicyCollectionResponse>(requestInfo, ActivityBasedTimeoutPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ActivityBasedTimeoutPolicyCollectionResponse>(requestInfo, ActivityBasedTimeoutPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new activityBasedTimeoutPolicy object.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Policies.ActivityBasedTimeoutPolicies {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ActivityBasedTimeoutPolicy>(requestInfo, ActivityBasedTimeoutPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ActivityBasedTimeoutPolicy>(requestInfo, ActivityBasedTimeoutPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of activityBasedTimeoutPolicy objects.

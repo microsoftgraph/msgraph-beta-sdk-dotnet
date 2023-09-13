@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Transcripts.It
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The content of the transcript. Read-only.
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Transcripts.It
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CallTranscript>(requestInfo, CallTranscript.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CallTranscript>(requestInfo, CallTranscript.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The content of the transcript. Read-only.

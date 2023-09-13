@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementResourceAccessProfileBaseCollectionResponse>(requestInfo, DeviceManagementResourceAccessProfileBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementResourceAccessProfileBaseCollectionResponse>(requestInfo, DeviceManagementResourceAccessProfileBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to resourceAccessProfiles for deviceManagement
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceManagementResourceAccessProfileBase>(requestInfo, DeviceManagementResourceAccessProfileBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceManagementResourceAccessProfileBase>(requestInfo, DeviceManagementResourceAccessProfileBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Collection of resource access settings associated with account.

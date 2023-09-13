@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration.R
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MeetingRegistrantBaseCollectionResponse>(requestInfo, MeetingRegistrantBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MeetingRegistrantBaseCollectionResponse>(requestInfo, MeetingRegistrantBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to registrants for communications
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration.R
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MeetingRegistrantBase>(requestInfo, MeetingRegistrantBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MeetingRegistrantBase>(requestInfo, MeetingRegistrantBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Registrants of the online meeting.

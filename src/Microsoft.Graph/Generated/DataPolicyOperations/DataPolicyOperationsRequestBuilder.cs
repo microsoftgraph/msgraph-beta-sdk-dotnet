@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DataPolicyOperations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DataPolicyOperationCollectionResponse>(requestInfo, DataPolicyOperationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DataPolicyOperationCollectionResponse>(requestInfo, DataPolicyOperationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to dataPolicyOperations
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DataPolicyOperations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DataPolicyOperation>(requestInfo, DataPolicyOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DataPolicyOperation>(requestInfo, DataPolicyOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the properties of the dataPolicyOperation object.

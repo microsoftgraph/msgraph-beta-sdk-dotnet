@@ -17,9 +17,15 @@ namespace Microsoft.Graph.Beta.Models {
         UnknownFutureValue,
         [EnumMember(Value = "noLicenseAvailableConnectivityFailureReport")]
         NoLicenseAvailableConnectivityFailureReport,
+        [EnumMember(Value = "frontlineLicenseUsageReport")]
+        FrontlineLicenseUsageReport,
+        [EnumMember(Value = "frontlineLicenseUsageRealTimeReport")]
+        FrontlineLicenseUsageRealTimeReport,
         [EnumMember(Value = "remoteConnectionQualityReports")]
         RemoteConnectionQualityReports,
         [EnumMember(Value = "inaccessibleCloudPcReports")]
         InaccessibleCloudPcReports,
+        [EnumMember(Value = "rawRemoteConnectionReports")]
+        RawRemoteConnectionReports,
     }
 }

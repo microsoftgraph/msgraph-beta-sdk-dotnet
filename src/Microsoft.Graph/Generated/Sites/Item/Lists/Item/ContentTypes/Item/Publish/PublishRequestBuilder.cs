@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.ContentTypes.Item.Publish {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Publishes a [contentType][] present in a content type hub site.

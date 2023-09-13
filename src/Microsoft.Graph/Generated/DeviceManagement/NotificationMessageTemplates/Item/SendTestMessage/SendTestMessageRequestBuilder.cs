@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates.Ite
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Sends test message using the specified notificationMessageTemplate in the default locale

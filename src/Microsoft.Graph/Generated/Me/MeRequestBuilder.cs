@@ -97,6 +97,7 @@ using Microsoft.Graph.Beta.Me.TransitiveReports;
 using Microsoft.Graph.Beta.Me.TranslateExchangeIds;
 using Microsoft.Graph.Beta.Me.UnblockManagedApps;
 using Microsoft.Graph.Beta.Me.UsageRights;
+using Microsoft.Graph.Beta.Me.VirtualEvents;
 using Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations;
 using Microsoft.Graph.Beta.Me.WipeAndBlockManagedApps;
 using Microsoft.Graph.Beta.Me.WipeManagedAppRegistrationByDeviceTag;
@@ -497,6 +498,10 @@ namespace Microsoft.Graph.Beta.Me {
         public UsageRightsRequestBuilder UsageRights { get =>
             new UsageRightsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the virtualEvents property of the microsoft.graph.user entity.</summary>
+        public VirtualEventsRequestBuilder VirtualEvents { get =>
+            new VirtualEventsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.</summary>
         public WindowsInformationProtectionDeviceRegistrationsRequestBuilder WindowsInformationProtectionDeviceRegistrations { get =>
             new WindowsInformationProtectionDeviceRegistrationsRequestBuilder(PathParameters, RequestAdapter);
@@ -567,7 +572,7 @@ namespace Microsoft.Graph.Beta.Me {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
@@ -589,7 +594,7 @@ namespace Microsoft.Graph.Beta.Me {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the reminderView method.

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item.DefaultUserRole
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DefaultUserRoleOverrideCollectionResponse>(requestInfo, DefaultUserRoleOverrideCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DefaultUserRoleOverrideCollectionResponse>(requestInfo, DefaultUserRoleOverrideCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to defaultUserRoleOverrides for policies
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item.DefaultUserRole
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DefaultUserRoleOverride>(requestInfo, DefaultUserRoleOverride.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DefaultUserRoleOverride>(requestInfo, DefaultUserRoleOverride.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get defaultUserRoleOverrides from policies

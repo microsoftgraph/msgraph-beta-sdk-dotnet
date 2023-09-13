@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Citations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CitationTemplateCollectionResponse>(requestInfo, CitationTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CitationTemplateCollectionResponse>(requestInfo, CitationTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new citationTemplate object.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Citations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.CitationTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.CitationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.CitationTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.CitationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the citationTemplate objects and their properties.

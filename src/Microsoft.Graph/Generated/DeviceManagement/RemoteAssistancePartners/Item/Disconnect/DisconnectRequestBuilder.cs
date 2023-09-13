@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners.Item.Di
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A request to remove the active TeamViewer connector

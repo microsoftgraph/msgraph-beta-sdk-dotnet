@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ApplicationSignInDetailedSummaryCollectionResponse>(requestInfo, ApplicationSignInDetailedSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ApplicationSignInDetailedSummaryCollectionResponse>(requestInfo, ApplicationSignInDetailedSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to applicationSignInDetailedSummary for reports
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>(requestInfo, Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>(requestInfo, Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the applicationSignInDetailedSummary objects.

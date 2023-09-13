@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Settings {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<LifecycleManagementSettings>(requestInfo, LifecycleManagementSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<LifecycleManagementSettings>(requestInfo, LifecycleManagementSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of a lifecycleManagementSettings object.
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Settings {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<LifecycleManagementSettings>(requestInfo, LifecycleManagementSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<LifecycleManagementSettings>(requestInfo, LifecycleManagementSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of a lifecycleManagementSettings object.

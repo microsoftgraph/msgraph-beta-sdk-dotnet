@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.LandingPages.Item.Detai
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get details from security
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.LandingPages.Item.Detai
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<LandingPageDetail>(requestInfo, LandingPageDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<LandingPageDetail>(requestInfo, LandingPageDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property details in security
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.LandingPages.Item.Detai
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<LandingPageDetail>(requestInfo, LandingPageDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<LandingPageDetail>(requestInfo, LandingPageDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property details for security

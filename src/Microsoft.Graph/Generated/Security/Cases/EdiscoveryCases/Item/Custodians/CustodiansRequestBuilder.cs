@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Count;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Item;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.MicrosoftGraphSecurityApplyHold;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.MicrosoftGraphSecurityRemoveHold;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.MicrosoftGraphSecurityUpdateIndex;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -29,6 +30,10 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians {
         /// <summary>Provides operations to call the removeHold method.</summary>
         public MicrosoftGraphSecurityRemoveHoldRequestBuilder MicrosoftGraphSecurityRemoveHold { get =>
             new MicrosoftGraphSecurityRemoveHoldRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the updateIndex method.</summary>
+        public MicrosoftGraphSecurityUpdateIndexRequestBuilder MicrosoftGraphSecurityUpdateIndex { get =>
+            new MicrosoftGraphSecurityUpdateIndexRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the custodians property of the microsoft.graph.security.ediscoveryCase entity.</summary>
         /// <param name="position">The unique identifier of ediscoveryCustodian</param>
@@ -69,7 +74,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EdiscoveryCustodianCollectionResponse>(requestInfo, EdiscoveryCustodianCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EdiscoveryCustodianCollectionResponse>(requestInfo, EdiscoveryCustodianCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new ediscoveryCustodian object.After the custodian object is created, you will need to create the custodian&apos;s userSource to reference their mailbox and OneDrive for Business site.
@@ -91,7 +96,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EdiscoveryCustodian>(requestInfo, EdiscoveryCustodian.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EdiscoveryCustodian>(requestInfo, EdiscoveryCustodian.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the custodian objects and their properties.

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.ColumnLinks {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ColumnLinkCollectionResponse>(requestInfo, ColumnLinkCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ColumnLinkCollectionResponse>(requestInfo, ColumnLinkCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to columnLinks for sites
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.ColumnLinks {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ColumnLink>(requestInfo, ColumnLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ColumnLink>(requestInfo, ColumnLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The collection of columns that are required by this content type

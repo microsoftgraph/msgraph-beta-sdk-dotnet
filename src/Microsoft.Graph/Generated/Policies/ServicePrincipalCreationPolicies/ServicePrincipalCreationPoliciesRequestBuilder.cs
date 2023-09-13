@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ServicePrincipalCreationPolicyCollectionResponse>(requestInfo, ServicePrincipalCreationPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipalCreationPolicyCollectionResponse>(requestInfo, ServicePrincipalCreationPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to servicePrincipalCreationPolicies for policies
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ServicePrincipalCreationPolicy>(requestInfo, ServicePrincipalCreationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipalCreationPolicy>(requestInfo, ServicePrincipalCreationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get servicePrincipalCreationPolicies from policies

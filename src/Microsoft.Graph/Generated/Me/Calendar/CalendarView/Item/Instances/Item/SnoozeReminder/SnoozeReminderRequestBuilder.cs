@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.CalendarView.Item.Instances.Item.Snoo
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Postpone a reminder for an event in a user calendar until a new time.

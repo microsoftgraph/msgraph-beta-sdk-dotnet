@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Items.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<BaseItem>(requestInfo, BaseItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<BaseItem>(requestInfo, BaseItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Used to address any item contained in this site. This collection cannot be enumerated.

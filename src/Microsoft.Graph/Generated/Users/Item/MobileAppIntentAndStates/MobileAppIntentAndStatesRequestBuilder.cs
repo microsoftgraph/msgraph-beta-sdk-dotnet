@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppIntentAndStates {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MobileAppIntentAndStateCollectionResponse>(requestInfo, MobileAppIntentAndStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileAppIntentAndStateCollectionResponse>(requestInfo, MobileAppIntentAndStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to mobileAppIntentAndStates for users
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppIntentAndStates {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MobileAppIntentAndState>(requestInfo, MobileAppIntentAndState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MobileAppIntentAndState>(requestInfo, MobileAppIntentAndState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of troubleshooting events for this user.

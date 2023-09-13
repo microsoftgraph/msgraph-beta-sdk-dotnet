@@ -1875,7 +1875,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get functions from drives
@@ -1894,7 +1894,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WorkbookFunctions>(requestInfo, WorkbookFunctions.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WorkbookFunctions>(requestInfo, WorkbookFunctions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property functions in drives
@@ -1915,7 +1915,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WorkbookFunctions>(requestInfo, WorkbookFunctions.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WorkbookFunctions>(requestInfo, WorkbookFunctions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property functions for drives

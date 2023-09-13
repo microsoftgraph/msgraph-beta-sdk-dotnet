@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.Descriptors.
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.DepartmentTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.DepartmentTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.DepartmentTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.DepartmentTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Specifies the  department or business unit of an organization to which a label belongs.

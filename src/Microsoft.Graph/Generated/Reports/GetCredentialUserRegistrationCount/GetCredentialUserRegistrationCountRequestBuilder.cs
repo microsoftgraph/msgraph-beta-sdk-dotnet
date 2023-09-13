@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetCredentialUserRegistrationCountResponse>(requestInfo, GetCredentialUserRegistrationCountResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetCredentialUserRegistrationCountResponse>(requestInfo, GetCredentialUserRegistrationCountResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.

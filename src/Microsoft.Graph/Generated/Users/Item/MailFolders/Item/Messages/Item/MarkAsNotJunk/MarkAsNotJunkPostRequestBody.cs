@@ -16,8 +16,8 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item.MarkAsN
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The MoveToInbox property</summary>
         public bool? MoveToInbox {
-            get { return BackingStore?.Get<bool?>("MoveToInbox"); }
-            set { BackingStore?.Set("MoveToInbox", value); }
+            get { return BackingStore?.Get<bool?>("moveToInbox"); }
+            set { BackingStore?.Set("moveToInbox", value); }
         }
         /// <summary>
         /// Instantiates a new markAsNotJunkPostRequestBody and sets the default values.
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item.MarkAsN
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"MoveToInbox", n => { MoveToInbox = n.GetBoolValue(); } },
+                {"moveToInbox", n => { MoveToInbox = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item.MarkAsN
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("MoveToInbox", MoveToInbox);
+            writer.WriteBoolValue("moveToInbox", MoveToInbox);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

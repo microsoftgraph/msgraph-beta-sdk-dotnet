@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.AddLargeGalleryView {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AddLargeGalleryViewOperation>(requestInfo, AddLargeGalleryViewOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AddLargeGalleryViewOperation>(requestInfo, AddLargeGalleryViewOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add the large gallery view to a call.  For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.

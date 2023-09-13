@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.CustomSecurityAttributeAudits {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CustomSecurityAttributeAuditCollectionResponse>(requestInfo, CustomSecurityAttributeAuditCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomSecurityAttributeAuditCollectionResponse>(requestInfo, CustomSecurityAttributeAuditCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to customSecurityAttributeAudits for auditLogs
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.CustomSecurityAttributeAudits {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CustomSecurityAttributeAudit>(requestInfo, CustomSecurityAttributeAudit.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CustomSecurityAttributeAudit>(requestInfo, CustomSecurityAttributeAudit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get customSecurityAttributeAudits from auditLogs

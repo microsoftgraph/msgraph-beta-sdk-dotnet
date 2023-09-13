@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaArtifacts {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ZebraFotaArtifactCollectionResponse>(requestInfo, ZebraFotaArtifactCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ZebraFotaArtifactCollectionResponse>(requestInfo, ZebraFotaArtifactCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to zebraFotaArtifacts for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaArtifacts {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ZebraFotaArtifact>(requestInfo, ZebraFotaArtifact.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ZebraFotaArtifact>(requestInfo, ZebraFotaArtifact.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The Collection of ZebraFotaArtifacts.

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OnPremisesSynchronization {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<OnPremisesDirectorySynchronizationCollectionResponse>(requestInfo, OnPremisesDirectorySynchronizationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<OnPremisesDirectorySynchronizationCollectionResponse>(requestInfo, OnPremisesDirectorySynchronizationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to onPremisesSynchronization for directory
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OnPremisesSynchronization {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<OnPremisesDirectorySynchronization>(requestInfo, OnPremisesDirectorySynchronization.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<OnPremisesDirectorySynchronization>(requestInfo, OnPremisesDirectorySynchronization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of an onPremisesDirectorySynchronization object.

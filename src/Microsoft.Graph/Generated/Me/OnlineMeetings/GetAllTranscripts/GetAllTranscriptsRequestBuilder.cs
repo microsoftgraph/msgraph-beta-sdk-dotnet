@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.GetAllTranscripts {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetAllTranscriptsResponse>(requestInfo, GetAllTranscriptsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetAllTranscriptsResponse>(requestInfo, GetAllTranscriptsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getAllTranscripts

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WindowsQualityUpdateProfileCollectionResponse>(requestInfo, WindowsQualityUpdateProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsQualityUpdateProfileCollectionResponse>(requestInfo, WindowsQualityUpdateProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to windowsQualityUpdateProfiles for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WindowsQualityUpdateProfile>(requestInfo, WindowsQualityUpdateProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsQualityUpdateProfile>(requestInfo, WindowsQualityUpdateProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A collection of windows quality update profiles

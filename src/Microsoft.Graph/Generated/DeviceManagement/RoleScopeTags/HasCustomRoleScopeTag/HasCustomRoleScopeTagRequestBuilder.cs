@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.HasCustomRoleScope
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<HasCustomRoleScopeTagResponse>(requestInfo, HasCustomRoleScopeTagResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<HasCustomRoleScopeTagResponse>(requestInfo, HasCustomRoleScopeTagResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function hasCustomRoleScopeTag

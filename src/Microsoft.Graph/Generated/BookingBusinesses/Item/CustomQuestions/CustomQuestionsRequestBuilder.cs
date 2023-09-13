@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<BookingCustomQuestionCollectionResponse>(requestInfo, BookingCustomQuestionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<BookingCustomQuestionCollectionResponse>(requestInfo, BookingCustomQuestionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new bookingCustomQuestion object.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<BookingCustomQuestion>(requestInfo, BookingCustomQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<BookingCustomQuestion>(requestInfo, BookingCustomQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the bookingCustomQuestion resources associated with a bookingBusiness.

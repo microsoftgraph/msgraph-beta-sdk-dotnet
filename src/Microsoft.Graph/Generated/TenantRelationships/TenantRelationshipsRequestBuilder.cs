@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TenantRelationship>(requestInfo, TenantRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TenantRelationship>(requestInfo, TenantRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update tenantRelationships
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TenantRelationship>(requestInfo, TenantRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TenantRelationship>(requestInfo, TenantRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get tenantRelationships

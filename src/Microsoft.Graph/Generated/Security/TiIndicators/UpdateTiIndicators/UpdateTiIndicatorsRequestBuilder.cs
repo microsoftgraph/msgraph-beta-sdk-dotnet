@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UpdateTiIndicatorsResponse>(requestInfo, UpdateTiIndicatorsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UpdateTiIndicatorsResponse>(requestInfo, UpdateTiIndicatorsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update multiple threat intelligence (TI) indicators in one request instead of multiple requests.

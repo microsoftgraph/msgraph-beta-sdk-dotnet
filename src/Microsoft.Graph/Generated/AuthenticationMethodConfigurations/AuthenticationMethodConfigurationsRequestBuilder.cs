@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.AuthenticationMethodConfigurations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AuthenticationMethodConfigurationCollectionResponse>(requestInfo, AuthenticationMethodConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AuthenticationMethodConfigurationCollectionResponse>(requestInfo, AuthenticationMethodConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to authenticationMethodConfigurations
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.AuthenticationMethodConfigurations {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AuthenticationMethodConfiguration>(requestInfo, AuthenticationMethodConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AuthenticationMethodConfiguration>(requestInfo, AuthenticationMethodConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from authenticationMethodConfigurations

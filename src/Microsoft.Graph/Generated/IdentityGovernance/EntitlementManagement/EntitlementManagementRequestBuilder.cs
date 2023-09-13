@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entitlementManagement from identityGovernance
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.EntitlementManagement>(requestInfo, Microsoft.Graph.Beta.Models.EntitlementManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.EntitlementManagement>(requestInfo, Microsoft.Graph.Beta.Models.EntitlementManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property entitlementManagement in identityGovernance
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.EntitlementManagement>(requestInfo, Microsoft.Graph.Beta.Models.EntitlementManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.EntitlementManagement>(requestInfo, Microsoft.Graph.Beta.Models.EntitlementManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property entitlementManagement for identityGovernance

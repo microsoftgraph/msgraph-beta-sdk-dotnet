@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TenantGroupCollectionResponse>(requestInfo, TenantGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TenantGroupCollectionResponse>(requestInfo, TenantGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to tenantGroups for tenantRelationships
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<TenantGroup>(requestInfo, TenantGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TenantGroup>(requestInfo, TenantGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the tenantGroup objects and their properties.

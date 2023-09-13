@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.SearchWithQ {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SearchWithQResponse>(requestInfo, SearchWithQResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SearchWithQResponse>(requestInfo, SearchWithQResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function search

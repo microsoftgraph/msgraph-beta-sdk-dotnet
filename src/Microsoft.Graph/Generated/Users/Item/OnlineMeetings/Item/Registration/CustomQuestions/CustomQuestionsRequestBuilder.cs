@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MeetingRegistrationQuestionCollectionResponse>(requestInfo, MeetingRegistrationQuestionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MeetingRegistrationQuestionCollectionResponse>(requestInfo, MeetingRegistrationQuestionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<MeetingRegistrationQuestion>(requestInfo, MeetingRegistrationQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MeetingRegistrationQuestion>(requestInfo, MeetingRegistrationQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GovernancePolicyTemplateCollectionResponse>(requestInfo, GovernancePolicyTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GovernancePolicyTemplateCollectionResponse>(requestInfo, GovernancePolicyTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to policyTemplates for approvalWorkflowProviders
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GovernancePolicyTemplate>(requestInfo, GovernancePolicyTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GovernancePolicyTemplate>(requestInfo, GovernancePolicyTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get policyTemplates from approvalWorkflowProviders

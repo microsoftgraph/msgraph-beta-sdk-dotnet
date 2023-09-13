@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProf
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AndroidDeviceOwnerEnrollmentProfileCollectionResponse>(requestInfo, AndroidDeviceOwnerEnrollmentProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AndroidDeviceOwnerEnrollmentProfileCollectionResponse>(requestInfo, AndroidDeviceOwnerEnrollmentProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to androidDeviceOwnerEnrollmentProfiles for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidDeviceOwnerEnrollmentProf
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AndroidDeviceOwnerEnrollmentProfile>(requestInfo, AndroidDeviceOwnerEnrollmentProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AndroidDeviceOwnerEnrollmentProfile>(requestInfo, AndroidDeviceOwnerEnrollmentProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Android device owner enrollment profile entities.

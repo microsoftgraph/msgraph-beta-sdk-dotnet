@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Reports.ServicePrincipalSignInActivities {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ServicePrincipalSignInActivityCollectionResponse>(requestInfo, ServicePrincipalSignInActivityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipalSignInActivityCollectionResponse>(requestInfo, ServicePrincipalSignInActivityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to servicePrincipalSignInActivities for reports
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Reports.ServicePrincipalSignInActivities {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ServicePrincipalSignInActivity>(requestInfo, ServicePrincipalSignInActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ServicePrincipalSignInActivity>(requestInfo, ServicePrincipalSignInActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of servicePrincipalSignInActivity objects that contains sign-in activity information for service principals in an Azure Active Directory tenant. You can use a service principal as a client or resource. A service principal supports delegated or app-only authentication context.

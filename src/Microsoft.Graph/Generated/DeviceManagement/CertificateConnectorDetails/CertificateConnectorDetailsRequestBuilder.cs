@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CertificateConnectorDetailsCollectionResponse>(requestInfo, CertificateConnectorDetailsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CertificateConnectorDetailsCollectionResponse>(requestInfo, CertificateConnectorDetailsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to certificateConnectorDetails for deviceManagement
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CertificateConnectorDetails>(requestInfo, Microsoft.Graph.Beta.Models.CertificateConnectorDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CertificateConnectorDetails>(requestInfo, Microsoft.Graph.Beta.Models.CertificateConnectorDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.

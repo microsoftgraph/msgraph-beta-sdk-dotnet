@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Users.Item.GetManagedDevicesWithAppFailures {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetManagedDevicesWithAppFailuresResponse>(requestInfo, GetManagedDevicesWithAppFailuresResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetManagedDevicesWithAppFailuresResponse>(requestInfo, GetManagedDevicesWithAppFailuresResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the list of devices with failed apps

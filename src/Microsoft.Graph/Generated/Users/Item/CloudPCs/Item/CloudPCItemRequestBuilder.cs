@@ -2,6 +2,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.ChangeUserAccountType;
+using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.CreateSnapshot;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.EndGracePeriod;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcConnectivityHistory;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcLaunchInfo;
@@ -12,6 +13,7 @@ using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.PowerOn;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Reboot;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Rename;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Reprovision;
+using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Resize;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Restore;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.RetryPartnerAgentInstallation;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Start;
@@ -33,6 +35,10 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item {
         /// <summary>Provides operations to call the changeUserAccountType method.</summary>
         public ChangeUserAccountTypeRequestBuilder ChangeUserAccountType { get =>
             new ChangeUserAccountTypeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the createSnapshot method.</summary>
+        public CreateSnapshotRequestBuilder CreateSnapshot { get =>
+            new CreateSnapshotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the endGracePeriod method.</summary>
         public EndGracePeriodRequestBuilder EndGracePeriod { get =>
@@ -73,6 +79,10 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item {
         /// <summary>Provides operations to call the reprovision method.</summary>
         public ReprovisionRequestBuilder Reprovision { get =>
             new ReprovisionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the resize method.</summary>
+        public ResizeRequestBuilder Resize { get =>
+            new ResizeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
         public RestoreRequestBuilder Restore { get =>
@@ -125,7 +135,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of a specific cloudPC object.
@@ -145,7 +155,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudPC>(requestInfo, Microsoft.Graph.Beta.Models.CloudPC.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudPC>(requestInfo, Microsoft.Graph.Beta.Models.CloudPC.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property cloudPCs in users
@@ -166,7 +176,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudPC>(requestInfo, Microsoft.Graph.Beta.Models.CloudPC.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudPC>(requestInfo, Microsoft.Graph.Beta.Models.CloudPC.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property cloudPCs for users

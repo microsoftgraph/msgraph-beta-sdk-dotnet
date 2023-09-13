@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<IndustryDataRoot>(requestInfo, IndustryDataRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<IndustryDataRoot>(requestInfo, IndustryDataRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get industryData from external
