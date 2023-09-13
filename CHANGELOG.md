@@ -7,6 +7,11 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.48.0] - 2023-09-13
+
+- Improves message of `OdataError`(https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/2094,https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1954)
+- Latest metadata updates from 12th September 2023.
+
 ## [5.47.0-preview] - 2023-09-06
 
 - Fixes serialization and deserialization of bitwise enums.
