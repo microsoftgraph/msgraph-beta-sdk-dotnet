@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         ITeamworkWorkforceIntegrationsCollectionRequestBuilder WorkforceIntegrations { get; }
 
         /// <summary>
+        /// Gets the request builder for DeletedChats.
+        /// </summary>
+        /// <returns>The <see cref="ITeamworkDeletedChatsCollectionRequestBuilder"/>.</returns>
+        ITeamworkDeletedChatsCollectionRequestBuilder DeletedChats { get; }
+
+        /// <summary>
         /// Gets the request builder for DeletedTeams.
         /// </summary>
         /// <returns>The <see cref="ITeamworkDeletedTeamsCollectionRequestBuilder"/>.</returns>

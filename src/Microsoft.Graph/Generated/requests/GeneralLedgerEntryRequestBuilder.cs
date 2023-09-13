@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type GeneralLedgerEntryRequestBuilder.
     /// </summary>
-    public partial class GeneralLedgerEntryRequestBuilder : EntityRequestBuilder, IGeneralLedgerEntryRequestBuilder
+    public partial class GeneralLedgerEntryRequestBuilder : BaseRequestBuilder, IGeneralLedgerEntryRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IGeneralLedgerEntryRequest Request()
+        public IGeneralLedgerEntryRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IGeneralLedgerEntryRequest Request(IEnumerable<Option> options)
+        public IGeneralLedgerEntryRequest Request(IEnumerable<Option> options)
         {
             return new GeneralLedgerEntryRequest(this.RequestUrl, this.Client, options);
         }

@@ -22,59 +22,45 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device count.
-        /// User experience analytics device startup process summarized count.
+        /// The count of devices which initiated this process on startup. Supports: $filter, $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("deviceCount")]
         public Int64? DeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets median impact in ms.
-        /// User experience analytics device startup process median impact in milliseconds.
+        /// The median impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("medianImpactInMs")]
-        public Int32? MedianImpactInMs { get; set; }
-    
-        /// <summary>
-        /// Gets or sets median impact in ms2.
-        /// User experience analytics device startup process median impact in milliseconds.
-        /// </summary>
-        [JsonPropertyName("medianImpactInMs2")]
-        public Int64? MedianImpactInMs2 { get; set; }
+        public Int64? MedianImpactInMs { get; set; }
     
         /// <summary>
         /// Gets or sets process name.
-        /// User experience analytics device startup process name.
+        /// The name of the startup process. Examples: outlook, excel. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("processName")]
         public string ProcessName { get; set; }
     
         /// <summary>
         /// Gets or sets product name.
-        /// The user experience analytics device startup process product name.
+        /// The product name of the startup process. Examples: Microsoft Outlook, Microsoft Excel. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("productName")]
         public string ProductName { get; set; }
     
         /// <summary>
         /// Gets or sets publisher.
-        /// The User experience analytics device startup process publisher.
+        /// The publisher of the startup process. Examples: Microsoft Corporation, Contoso Corp. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("publisher")]
         public string Publisher { get; set; }
     
         /// <summary>
         /// Gets or sets total impact in ms.
-        /// User experience analytics device startup process total impact in milliseconds.
+        /// The total impact of startup process on device boot time in milliseconds. Supports: $filter, $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("totalImpactInMs")]
-        public Int32? TotalImpactInMs { get; set; }
-    
-        /// <summary>
-        /// Gets or sets total impact in ms2.
-        /// User experience analytics device startup process total impact in milliseconds.
-        /// </summary>
-        [JsonPropertyName("totalImpactInMs2")]
-        public Int64? TotalImpactInMs2 { get; set; }
+        public Int64? TotalImpactInMs { get; set; }
     
     }
 }

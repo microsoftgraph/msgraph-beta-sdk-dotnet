@@ -99,6 +99,18 @@ namespace Microsoft.Graph.SecurityNamespace
         }
 
         /// <summary>
+        /// Gets the request builder for HostPairs.
+        /// </summary>
+        /// <returns>The <see cref="IThreatIntelligenceHostPairsCollectionRequestBuilder"/>.</returns>
+        public IThreatIntelligenceHostPairsCollectionRequestBuilder HostPairs
+        {
+            get
+            {
+                return new ThreatIntelligenceHostPairsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("hostPairs"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Hosts.
         /// </summary>
         /// <returns>The <see cref="IThreatIntelligenceHostsCollectionRequestBuilder"/>.</returns>
@@ -107,6 +119,18 @@ namespace Microsoft.Graph.SecurityNamespace
             get
             {
                 return new ThreatIntelligenceHostsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("hosts"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for HostSslCertificates.
+        /// </summary>
+        /// <returns>The <see cref="IThreatIntelligenceHostSslCertificatesCollectionRequestBuilder"/>.</returns>
+        public IThreatIntelligenceHostSslCertificatesCollectionRequestBuilder HostSslCertificates
+        {
+            get
+            {
+                return new ThreatIntelligenceHostSslCertificatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("hostSslCertificates"), this.Client);
             }
         }
 
@@ -159,6 +183,30 @@ namespace Microsoft.Graph.SecurityNamespace
         }
 
         /// <summary>
+        /// Gets the request builder for SslCertificates.
+        /// </summary>
+        /// <returns>The <see cref="IThreatIntelligenceSslCertificatesCollectionRequestBuilder"/>.</returns>
+        public IThreatIntelligenceSslCertificatesCollectionRequestBuilder SslCertificates
+        {
+            get
+            {
+                return new ThreatIntelligenceSslCertificatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sslCertificates"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Subdomains.
+        /// </summary>
+        /// <returns>The <see cref="IThreatIntelligenceSubdomainsCollectionRequestBuilder"/>.</returns>
+        public IThreatIntelligenceSubdomainsCollectionRequestBuilder Subdomains
+        {
+            get
+            {
+                return new ThreatIntelligenceSubdomainsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("subdomains"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Vulnerabilities.
         /// </summary>
         /// <returns>The <see cref="IThreatIntelligenceVulnerabilitiesCollectionRequestBuilder"/>.</returns>
@@ -167,6 +215,30 @@ namespace Microsoft.Graph.SecurityNamespace
             get
             {
                 return new ThreatIntelligenceVulnerabilitiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("vulnerabilities"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for WhoisHistoryRecords.
+        /// </summary>
+        /// <returns>The <see cref="IThreatIntelligenceWhoisHistoryRecordsCollectionRequestBuilder"/>.</returns>
+        public IThreatIntelligenceWhoisHistoryRecordsCollectionRequestBuilder WhoisHistoryRecords
+        {
+            get
+            {
+                return new ThreatIntelligenceWhoisHistoryRecordsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("whoisHistoryRecords"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for WhoisRecords.
+        /// </summary>
+        /// <returns>The <see cref="IThreatIntelligenceWhoisRecordsCollectionRequestBuilder"/>.</returns>
+        public IThreatIntelligenceWhoisRecordsCollectionRequestBuilder WhoisRecords
+        {
+            get
+            {
+                return new ThreatIntelligenceWhoisRecordsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("whoisRecords"), this.Client);
             }
         }
     

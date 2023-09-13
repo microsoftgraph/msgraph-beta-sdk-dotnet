@@ -93,7 +93,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device compliance setting states.
-        /// Not yet documented
         /// </summary>
         [JsonPropertyName("deviceComplianceSettingStates")]
         public IDeviceCompliancePolicySettingStateSummaryDeviceComplianceSettingStatesCollectionPage DeviceComplianceSettingStates { get; set; }

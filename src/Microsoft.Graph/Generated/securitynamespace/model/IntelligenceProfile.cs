@@ -29,6 +29,13 @@ namespace Microsoft.Graph.SecurityNamespace
         public IEnumerable<string> Aliases { get; set; }
     
         /// <summary>
+        /// Gets or sets countries or regions of origin.
+        /// The country/region of origin for the given actor or threat associated with this intelligenceProfile.
+        /// </summary>
+        [JsonPropertyName("countriesOrRegionsOfOrigin")]
+        public IEnumerable<IntelligenceProfileCountryOrRegionOfOrigin> CountriesOrRegionsOfOrigin { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// A synopsis of the threat actor. This property places the threat actor in wider context, tracing its discovery, history, significant campaigns, targeting, techniques of note, affiliations with governments, law enforcement countermeasures, and any areas of dispute among the security community regarding attribution.
         /// </summary>
@@ -48,13 +55,6 @@ namespace Microsoft.Graph.SecurityNamespace
         /// </summary>
         [JsonPropertyName("kind")]
         public IntelligenceProfileKind? Kind { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sponsor states.
-        /// Known states (such as a country or government) who have sponsored threat actors associated with this intelligenceProfile. This is also known as the country/region of origin for the given actor or threat.
-        /// </summary>
-        [JsonPropertyName("sponsorStates")]
-        public IEnumerable<IntelligenceProfileSponsorState> SponsorStates { get; set; }
     
         /// <summary>
         /// Gets or sets summary.

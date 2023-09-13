@@ -29,5 +29,10 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 1,
 	
+        /// <summary>
+        /// VMware
+        /// </summary>
+        VMware = 2,
+	
     }
 }

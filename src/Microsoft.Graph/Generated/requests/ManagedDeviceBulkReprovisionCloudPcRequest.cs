@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ManagedDeviceBulkReprovisionCloudPcRequest.
     /// </summary>
+    [Obsolete("The bulkReprovisionCloudPc action is deprecated and will stop supporting on September 24, 2023. Please use bulk action entity api.")]
     public partial class ManagedDeviceBulkReprovisionCloudPcRequest : BaseRequest, IManagedDeviceBulkReprovisionCloudPcRequest
     {
         /// <summary>

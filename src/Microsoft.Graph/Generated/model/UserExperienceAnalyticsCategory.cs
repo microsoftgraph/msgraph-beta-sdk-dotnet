@@ -22,14 +22,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets insights.
-        /// The insights for the user experience analytics category.
+        /// The insights for the category. Read-only.
         /// </summary>
         [JsonPropertyName("insights")]
         public IEnumerable<UserExperienceAnalyticsInsight> Insights { get; set; }
     
         /// <summary>
         /// Gets or sets metric values.
-        /// The metric values for the user experience analytics category.
+        /// The metric values for the user experience analytics category. Read-only.
         /// </summary>
         [JsonPropertyName("metricValues")]
         public IUserExperienceAnalyticsCategoryMetricValuesCollectionPage MetricValues { get; set; }

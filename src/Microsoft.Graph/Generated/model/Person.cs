@@ -64,7 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is favorite.
-        /// true if the user has flagged this person as a favorite.
+        /// True if the user has flagged this person as a favorite.
         /// </summary>
         [JsonPropertyName("isFavorite")]
         public bool? IsFavorite { get; set; }

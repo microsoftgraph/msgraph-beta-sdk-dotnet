@@ -109,6 +109,18 @@ namespace Microsoft.Graph
                 return new WorkbookWorksheetTablesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tables"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Tasks.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookWorksheetTasksCollectionRequestBuilder"/>.</returns>
+        public IWorkbookWorksheetTasksCollectionRequestBuilder Tasks
+        {
+            get
+            {
+                return new WorkbookWorksheetTasksCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tasks"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for WorkbookWorksheetCell.

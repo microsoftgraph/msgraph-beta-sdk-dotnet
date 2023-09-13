@@ -23,6 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allowed principal types.
+        /// Types of principals that can be assigned the role. Read-only. The possible values are: user, servicePrincipal, group, unknownFutureValue. This is a multi-valued enumeration that can contain up to three values as a comma-separated string. For example, user, group. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("allowedPrincipalTypes")]
         public AllowedRolePrincipalTypes? AllowedPrincipalTypes { get; set; }
@@ -36,14 +37,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith operators only).
+        /// The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq and startsWith).
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is built in.
-        /// Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.  Supports $filter (eq operator only).
+        /// Flag indicating if the unifiedRoleDefinition is part of the default set included with the product or custom. Read-only.  Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("isBuiltIn")]
         public bool? IsBuiltIn { get; set; }
@@ -56,8 +57,15 @@ namespace Microsoft.Graph
         public bool? IsEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets is privileged.
+        /// Flag indicating if the role is privileged. Azure AD defines a role as privileged if it contains at least one sensitive resource action in the rolePermissions and allowedResourceActions objects. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
+        /// </summary>
+        [JsonPropertyName("isPrivileged")]
+        public bool? IsPrivileged { get; set; }
+    
+        /// <summary>
         /// Gets or sets resource scopes.
-        /// List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment
+        /// List of scopes permissions granted by the role definition apply to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.
         /// </summary>
         [JsonPropertyName("resourceScopes")]
         public IEnumerable<string> ResourceScopes { get; set; }
@@ -78,7 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets version.
-        /// Indicates version of the unifiedRoleDefinition. Read-only when isBuiltIn is true.
+        /// Indicates the version of the unifiedRoleDefinition object. Read-only when isBuiltIn is true.
         /// </summary>
         [JsonPropertyName("version")]
         public string Version { get; set; }

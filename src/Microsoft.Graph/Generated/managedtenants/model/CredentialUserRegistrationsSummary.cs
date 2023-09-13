@@ -91,6 +91,13 @@ namespace Microsoft.Graph.ManagedTenants
         public string TenantId { get; set; }
     
         /// <summary>
+        /// Gets or sets tenant license type.
+        /// The license type associated with the tenant; for example, AADFree, AADPremium1, AADPremium2.
+        /// </summary>
+        [JsonPropertyName("tenantLicenseType")]
+        public string TenantLicenseType { get; set; }
+    
+        /// <summary>
         /// Gets or sets total user count.
         /// The total number of users in the given managed tenant. Optional. Read-only.
         /// </summary>

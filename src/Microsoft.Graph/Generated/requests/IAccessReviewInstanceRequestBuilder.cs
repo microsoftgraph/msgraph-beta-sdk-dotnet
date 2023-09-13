@@ -94,6 +94,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAccessReviewInstanceSendReminderRequestBuilder"/>.</returns>
         IAccessReviewInstanceSendReminderRequestBuilder SendReminder();
+
+        /// <summary>
+        /// Gets the request builder for AccessReviewInstanceStopApplyDecisions.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceStopApplyDecisionsRequestBuilder"/>.</returns>
+        IAccessReviewInstanceStopApplyDecisionsRequestBuilder StopApplyDecisions();
     
     }
 }

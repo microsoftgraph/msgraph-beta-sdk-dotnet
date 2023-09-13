@@ -64,6 +64,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for CloudPCCreateSnapshot.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCCreateSnapshotRequestBuilder"/>.</returns>
+        public ICloudPCCreateSnapshotRequestBuilder CreateSnapshot()
+        {
+            return new CloudPCCreateSnapshotRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.createSnapshot"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for CloudPCEndGracePeriod.
         /// </summary>
         /// <returns>The <see cref="ICloudPCEndGracePeriodRequestBuilder"/>.</returns>
@@ -133,6 +144,19 @@ namespace Microsoft.Graph
                 this.Client,
                 userAccountType,
                 osVersion);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CloudPCResize.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCResizeRequestBuilder"/>.</returns>
+        public ICloudPCResizeRequestBuilder Resize(
+            string targetServicePlanId = null)
+        {
+            return new CloudPCResizeRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.resize"),
+                this.Client,
+                targetServicePlanId);
         }
 
         /// <summary>

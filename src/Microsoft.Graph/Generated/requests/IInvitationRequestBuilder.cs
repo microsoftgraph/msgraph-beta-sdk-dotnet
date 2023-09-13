@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IUserWithReferenceRequestBuilder"/>.</returns>
         IUserWithReferenceRequestBuilder InvitedUser { get; }
+
+        /// <summary>
+        /// Gets the request builder for InvitedUserSponsors.
+        /// </summary>
+        /// <returns>The <see cref="IInvitationInvitedUserSponsorsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IInvitationInvitedUserSponsorsCollectionWithReferencesRequestBuilder InvitedUserSponsors { get; }
     
     }
 }

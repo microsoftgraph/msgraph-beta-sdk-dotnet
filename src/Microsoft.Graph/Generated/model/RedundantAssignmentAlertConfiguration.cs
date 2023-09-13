@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets duration.
+        /// The number of days without activation to look back on from current timestamp.
         /// </summary>
         [JsonPropertyName("duration")]
         public Duration Duration { get; set; }

@@ -244,6 +244,18 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Invitation invitationToInitialize)
         {
 
+            if (invitationToInitialize != null)
+            {
+                if (invitationToInitialize.InvitedUserSponsors != null && invitationToInitialize.InvitedUserSponsors.CurrentPage != null)
+                {
+                    invitationToInitialize.InvitedUserSponsors.InitializeNextPageRequest(this.Client, invitationToInitialize.InvitedUserSponsorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    invitationToInitialize.InvitedUserSponsors.AdditionalData = invitationToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

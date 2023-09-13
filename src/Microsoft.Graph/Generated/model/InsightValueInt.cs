@@ -29,7 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets value.
-        /// Not yet documented
+        /// The int value of the user experience analytics insight.
         /// </summary>
         [JsonPropertyName("value")]
         public Int32? Value { get; set; }

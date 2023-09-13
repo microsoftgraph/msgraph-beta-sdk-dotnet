@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type TaxAreaRequestBuilder.
     /// </summary>
-    public partial class TaxAreaRequestBuilder : EntityRequestBuilder, ITaxAreaRequestBuilder
+    public partial class TaxAreaRequestBuilder : BaseRequestBuilder, ITaxAreaRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new ITaxAreaRequest Request()
+        public ITaxAreaRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new ITaxAreaRequest Request(IEnumerable<Option> options)
+        public ITaxAreaRequest Request(IEnumerable<Option> options)
         {
             return new TaxAreaRequest(this.RequestUrl, this.Client, options);
         }

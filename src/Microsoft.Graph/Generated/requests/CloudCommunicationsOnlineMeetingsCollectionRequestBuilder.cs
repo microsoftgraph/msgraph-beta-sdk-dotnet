@@ -82,5 +82,27 @@ namespace Microsoft.Graph
                 startDateTime,
                 subject);
         }
+
+        /// <summary>
+        /// Gets the request builder for OnlineMeetingGetAllRecordings.
+        /// </summary>
+        /// <returns>The <see cref="IOnlineMeetingGetAllRecordingsRequestBuilder"/>.</returns>
+        public IOnlineMeetingGetAllRecordingsRequestBuilder GetAllRecordings()
+        {
+            return new OnlineMeetingGetAllRecordingsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAllRecordings"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for OnlineMeetingGetAllTranscripts.
+        /// </summary>
+        /// <returns>The <see cref="IOnlineMeetingGetAllTranscriptsRequestBuilder"/>.</returns>
+        public IOnlineMeetingGetAllTranscriptsRequestBuilder GetAllTranscripts()
+        {
+            return new OnlineMeetingGetAllTranscriptsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAllTranscripts"),
+                this.Client);
+        }
     }
 }

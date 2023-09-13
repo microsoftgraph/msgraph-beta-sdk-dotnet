@@ -32,12 +32,6 @@ namespace Microsoft.Graph
         new IOnlineMeetingRequest Request(IEnumerable<Option> options);
     
         /// <summary>
-        /// Gets the request builder for VirtualAppointment.
-        /// </summary>
-        /// <returns>The <see cref="IVirtualAppointmentRequestBuilder"/>.</returns>
-        IVirtualAppointmentRequestBuilder VirtualAppointment { get; }
-
-        /// <summary>
         /// Gets the request builder for AttendanceReports.
         /// </summary>
         /// <returns>The <see cref="IOnlineMeetingAttendanceReportsCollectionRequestBuilder"/>.</returns>
@@ -56,6 +50,12 @@ namespace Microsoft.Graph
         IMeetingRegistrationRequestBuilder Registration { get; }
 
         /// <summary>
+        /// Gets the request builder for Recordings.
+        /// </summary>
+        /// <returns>The <see cref="IOnlineMeetingRecordingsCollectionRequestBuilder"/>.</returns>
+        IOnlineMeetingRecordingsCollectionRequestBuilder Recordings { get; }
+
+        /// <summary>
         /// Gets the request builder for Transcripts.
         /// </summary>
         /// <returns>The <see cref="IOnlineMeetingTranscriptsCollectionRequestBuilder"/>.</returns>
@@ -72,6 +72,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IOnlineMeetingAttendeeReportRequestBuilder"/>.</returns>
         IOnlineMeetingAttendeeReportRequestBuilder AttendeeReport { get; }
+
+        /// <summary>
+        /// Gets the request builder for BroadcastRecording.
+        /// </summary>
+        /// <returns>The <see cref="IOnlineMeetingBroadcastRecordingRequestBuilder"/>.</returns>
+        IOnlineMeetingBroadcastRecordingRequestBuilder BroadcastRecording { get; }
 
         /// <summary>
         /// Gets the request builder for Recording.

@@ -35,6 +35,12 @@ namespace Microsoft.Graph
         public string BusinessScenariosNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets virtual events.
+        /// </summary>
+        [JsonPropertyName("virtualEvents")]
+        public VirtualEventsRoot VirtualEvents { get; set; }
+    
+        /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
         [JsonPropertyName("@odata.type")]

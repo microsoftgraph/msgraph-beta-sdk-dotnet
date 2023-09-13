@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CompanyInformationRequestBuilder.
     /// </summary>
-    public partial class CompanyInformationRequestBuilder : EntityRequestBuilder, ICompanyInformationRequestBuilder
+    public partial class CompanyInformationRequestBuilder : BaseRequestBuilder, ICompanyInformationRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new ICompanyInformationRequest Request()
+        public ICompanyInformationRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new ICompanyInformationRequest Request(IEnumerable<Option> options)
+        public ICompanyInformationRequest Request(IEnumerable<Option> options)
         {
             return new CompanyInformationRequest(this.RequestUrl, this.Client, options);
         }

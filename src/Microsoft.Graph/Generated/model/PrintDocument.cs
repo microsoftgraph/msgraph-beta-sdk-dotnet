@@ -23,6 +23,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets configuration.
         /// </summary>
+        [Obsolete("The configuration property is deprecated and will stop returning data on July 31, 2023. Please use the printJob entity configuration property instead of this.")]
         [JsonPropertyName("configuration")]
         public PrinterDocumentConfiguration Configuration { get; set; }
     

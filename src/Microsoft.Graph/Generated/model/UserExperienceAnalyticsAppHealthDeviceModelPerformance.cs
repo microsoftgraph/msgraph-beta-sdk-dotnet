@@ -23,52 +23,45 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets active device count.
-        /// The number of active devices for the model. Valid values -2147483648 to 2147483647
+        /// The number of active devices for the model. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("activeDeviceCount")]
         public Int32? ActiveDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets device manufacturer.
-        /// The manufacturer name of the device.
+        /// The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("deviceManufacturer")]
         public string DeviceManufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets device model.
-        /// The model name of the device.
+        /// The model name of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("deviceModel")]
         public string DeviceModel { get; set; }
     
         /// <summary>
         /// Gets or sets health status.
-        /// The health state of the user experience analytics model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals, unknownFutureValue.
+        /// The health state of the user experience analytics model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals. Unknown by default. Supports: $filter, $select, $OrderBy. Read-only. Possible values are: unknown, insufficientData, needsAttention, meetingGoals, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("healthStatus")]
         public UserExperienceAnalyticsHealthState? HealthStatus { get; set; }
     
         /// <summary>
         /// Gets or sets mean time to failure in minutes.
-        /// The mean time to failure for the model device in minutes. Valid values -2147483648 to 2147483647
+        /// The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("meanTimeToFailureInMinutes")]
         public Int32? MeanTimeToFailureInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets model app health score.
-        /// The app health score of the device model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// The application health score of the device model. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("modelAppHealthScore")]
         public double? ModelAppHealthScore { get; set; }
-    
-        /// <summary>
-        /// Gets or sets model app health status.
-        /// The overall app health status of the device model.
-        /// </summary>
-        [JsonPropertyName("modelAppHealthStatus")]
-        public string ModelAppHealthStatus { get; set; }
     
     }
 }

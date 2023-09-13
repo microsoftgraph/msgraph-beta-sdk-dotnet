@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeletedChats.
+        /// </summary>
+        /// <returns>The <see cref="ITeamworkDeletedChatsCollectionRequestBuilder"/>.</returns>
+        public ITeamworkDeletedChatsCollectionRequestBuilder DeletedChats
+        {
+            get
+            {
+                return new TeamworkDeletedChatsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deletedChats"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for DeletedTeams.
         /// </summary>
         /// <returns>The <see cref="ITeamworkDeletedTeamsCollectionRequestBuilder"/>.</returns>

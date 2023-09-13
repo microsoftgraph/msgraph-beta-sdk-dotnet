@@ -30,42 +30,42 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets activity date time.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        /// Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $filter (eq, gt, lt) and orderby.
         /// </summary>
         [JsonPropertyName("activityDateTime")]
         public DateTimeOffset? ActivityDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets change id.
-        /// Unique ID of this change in this cycle.
+        /// Unique ID of this change in this cycle. Supports $filter (eq, contains).
         /// </summary>
         [JsonPropertyName("changeId")]
         public string ChangeId { get; set; }
     
         /// <summary>
         /// Gets or sets cycle id.
-        /// Unique ID per job iteration.
+        /// Unique ID per job iteration. Supports $filter (eq, contains).
         /// </summary>
         [JsonPropertyName("cycleId")]
         public string CycleId { get; set; }
     
         /// <summary>
         /// Gets or sets duration in milliseconds.
-        /// Indicates how long this provisioning action took to finish. Measured in milliseconds.
+        /// Indicates how long this provisioning action took to finish. Measured in milliseconds. Supports $filter (eq, gt, lt).
         /// </summary>
         [JsonPropertyName("durationInMilliseconds")]
         public Int32? DurationInMilliseconds { get; set; }
     
         /// <summary>
         /// Gets or sets initiated by.
-        /// Details of who initiated this provisioning.
+        /// Details of who initiated this provisioning. Supports $filter (eq, contains).
         /// </summary>
         [JsonPropertyName("initiatedBy")]
         public Initiator InitiatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets job id.
-        /// The unique ID for the whole provisioning job.
+        /// The unique ID for the whole provisioning job. Supports $filter (eq, contains).
         /// </summary>
         [JsonPropertyName("jobId")]
         public string JobId { get; set; }
@@ -79,14 +79,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets provisioning action.
-        /// Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.
+        /// Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list. Supports $filter (eq, contains).
         /// </summary>
         [JsonPropertyName("provisioningAction")]
         public ProvisioningAction? ProvisioningAction { get; set; }
     
         /// <summary>
         /// Gets or sets provisioning status info.
-        /// Details of provisioning status.
+        /// Details of provisioning status. Supports $filter (eq, contains) for status.
         /// </summary>
         [JsonPropertyName("provisioningStatusInfo")]
         public ProvisioningStatusInfo ProvisioningStatusInfo { get; set; }
@@ -100,21 +100,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service principal.
-        /// Represents the service principal used for provisioning.
+        /// Represents the service principal used for provisioning. Supports $filter (eq) for id and name.
         /// </summary>
         [JsonPropertyName("servicePrincipal")]
         public ProvisioningServicePrincipal ServicePrincipal { get; set; }
     
         /// <summary>
         /// Gets or sets source identity.
-        /// Details of source object being provisioned.
+        /// Details of source object being provisioned. Supports $filter (eq, contains) for identityType, id, and displayName.
         /// </summary>
         [JsonPropertyName("sourceIdentity")]
         public ProvisionedIdentity SourceIdentity { get; set; }
     
         /// <summary>
         /// Gets or sets source system.
-        /// Details of source system of the object being provisioned.
+        /// Details of source system of the object being provisioned. Supports $filter (eq, contains) for displayName.
         /// </summary>
         [JsonPropertyName("sourceSystem")]
         public ProvisioningSystem SourceSystem { get; set; }
@@ -128,21 +128,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target identity.
-        /// Details of target object being provisioned.
+        /// Details of target object being provisioned. Supports $filter (eq, contains) for identityType, id, and displayName.
         /// </summary>
         [JsonPropertyName("targetIdentity")]
         public ProvisionedIdentity TargetIdentity { get; set; }
     
         /// <summary>
         /// Gets or sets target system.
-        /// Details of target system of the object being provisioned.
+        /// Details of target system of the object being provisioned. Supports $filter (eq, contains) for displayName.
         /// </summary>
         [JsonPropertyName("targetSystem")]
         public ProvisioningSystem TargetSystem { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.
-        /// Unique Azure AD tenant ID.
+        /// Unique Azure AD tenant ID. Supports $filter (eq, contains).
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }

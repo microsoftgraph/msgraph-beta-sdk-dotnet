@@ -75,6 +75,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for WindowsAutopilotDeviceIdentityAllowNextEnrollment.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsAutopilotDeviceIdentityAllowNextEnrollmentRequestBuilder"/>.</returns>
+        public IWindowsAutopilotDeviceIdentityAllowNextEnrollmentRequestBuilder AllowNextEnrollment()
+        {
+            return new WindowsAutopilotDeviceIdentityAllowNextEnrollmentRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.allowNextEnrollment"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for WindowsAutopilotDeviceIdentityAssignResourceAccountToDevice.
         /// </summary>
         /// <returns>The <see cref="IWindowsAutopilotDeviceIdentityAssignResourceAccountToDeviceRequestBuilder"/>.</returns>

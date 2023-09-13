@@ -24,7 +24,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets status.
-        /// Possible values are: success, warning, failure, skipped, unknownFutureValue.
+        /// Possible values are: success, warning, failure, skipped, unknownFutureValue. Supports $filter (eq, contains).
         /// </summary>
         [JsonPropertyName("status")]
         public ProvisioningResult? Status { get; set; }

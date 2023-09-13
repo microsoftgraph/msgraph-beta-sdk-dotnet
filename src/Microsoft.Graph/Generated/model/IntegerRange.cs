@@ -31,12 +31,14 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets maximum.
         /// </summary>
+        [Obsolete("The maximum property is deprecated and will stop returning data on July 31, 2023. Please use the end property instead of this.")]
         [JsonPropertyName("maximum")]
         public Int64? Maximum { get; set; }
     
         /// <summary>
         /// Gets or sets minimum.
         /// </summary>
+        [Obsolete("The minimum property is deprecated and will stop returning data on July 31, 2023. Please use the start property instead of this.")]
         [JsonPropertyName("minimum")]
         public Int64? Minimum { get; set; }
     

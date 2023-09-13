@@ -23,14 +23,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets key.
-        /// Name of the metadata property.
         /// </summary>
         [JsonPropertyName("key")]
         public string Key { get; set; }
     
         /// <summary>
         /// Gets or sets value.
-        /// Value of the metadata property.
         /// </summary>
         [JsonPropertyName("value")]
         public string Value { get; set; }

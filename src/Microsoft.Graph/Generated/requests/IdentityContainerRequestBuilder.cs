@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AuthenticationEventsFlows.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerAuthenticationEventsFlowsCollectionRequestBuilder"/>.</returns>
+        public IIdentityContainerAuthenticationEventsFlowsCollectionRequestBuilder AuthenticationEventsFlows
+        {
+            get
+            {
+                return new IdentityContainerAuthenticationEventsFlowsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("authenticationEventsFlows"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for B2cUserFlows.
         /// </summary>
         /// <returns>The <see cref="IIdentityContainerB2cUserFlowsCollectionRequestBuilder"/>.</returns>

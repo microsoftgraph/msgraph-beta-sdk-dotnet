@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CountryRegionRequestBuilder.
     /// </summary>
-    public partial class CountryRegionRequestBuilder : EntityRequestBuilder, ICountryRegionRequestBuilder
+    public partial class CountryRegionRequestBuilder : BaseRequestBuilder, ICountryRegionRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new ICountryRegionRequest Request()
+        public ICountryRegionRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new ICountryRegionRequest Request(IEnumerable<Option> options)
+        public ICountryRegionRequest Request(IEnumerable<Option> options)
         {
             return new CountryRegionRequest(this.RequestUrl, this.Client, options);
         }

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Experience Analytics Anomaly Device.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsAnomalyDevice>))]
     public partial class UserExperienceAnalyticsAnomalyDevice : Entity
     {
     
@@ -40,6 +41,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("anomalyOnDeviceLatestOccurrenceDateTime")]
         public DateTimeOffset? AnomalyOnDeviceLatestOccurrenceDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets correlation group id.
+        /// The unique identifier of the correlation group.
+        /// </summary>
+        [JsonPropertyName("correlationGroupId")]
+        public string CorrelationGroupId { get; set; }
     
         /// <summary>
         /// Gets or sets device id.
@@ -68,6 +76,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceName")]
         public string DeviceName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets device status.
+        /// Indicates the device status with respect to the correlation group. At risk devices are devices that share correlation group features but may not yet be affected by an anomaly, such as when a device is experiencing crashes on an application but that application has not been used on the device but is currently installed. This could lead to the device becoming anomalous if the application in question were to be used. Possible values are: anomolous, affected or atRisk. Possible values are: anomalous, affected, atRisk, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("deviceStatus")]
+        public UserExperienceAnalyticsDeviceStatus? DeviceStatus { get; set; }
     
         /// <summary>
         /// Gets or sets os name.

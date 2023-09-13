@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISalesCreditMemoRequestBuilder.
     /// </summary>
-    public partial interface ISalesCreditMemoRequestBuilder : IEntityRequestBuilder
+    public partial interface ISalesCreditMemoRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new ISalesCreditMemoRequest Request();
+        ISalesCreditMemoRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new ISalesCreditMemoRequest Request(IEnumerable<Option> options);
+        ISalesCreditMemoRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for Currency.

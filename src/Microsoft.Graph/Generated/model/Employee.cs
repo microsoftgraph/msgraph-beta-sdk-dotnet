@@ -17,7 +17,8 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Employee.
     /// </summary>
-    public partial class Employee : Entity
+    [JsonConverter(typeof(DerivedTypeConverter<Employee>))]
+    public partial class Employee
     {
     
         /// <summary>
@@ -55,6 +56,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("givenName")]
         public string GivenName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        [JsonPropertyName("id")]
+        public Guid? Id { get; set; }
     
         /// <summary>
         /// Gets or sets job title.
@@ -134,6 +141,18 @@ namespace Microsoft.Graph
         [JsonPropertyName("picture@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string PictureNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonPropertyName("@odata.type")]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

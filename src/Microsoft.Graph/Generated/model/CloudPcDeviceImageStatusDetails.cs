@@ -47,7 +47,27 @@ namespace Microsoft.Graph
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 999,
+        UnknownFutureValue = 5,
+	
+        /// <summary>
+        /// Vm Already Azure Adjoined
+        /// </summary>
+        VmAlreadyAzureAdjoined = 6,
+	
+        /// <summary>
+        /// Paid Source Image Not Support
+        /// </summary>
+        PaidSourceImageNotSupport = 7,
+	
+        /// <summary>
+        /// Source Image Not Support Customize VMName
+        /// </summary>
+        SourceImageNotSupportCustomizeVMName = 8,
+	
+        /// <summary>
+        /// Source Image Size Exceeds Limitation
+        /// </summary>
+        SourceImageSizeExceedsLimitation = 9,
 	
     }
 }

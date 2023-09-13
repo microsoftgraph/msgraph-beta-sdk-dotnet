@@ -22,70 +22,70 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
-        /// The date the custom baseline was created.
+        /// The date the custom baseline was created. The value cannot be modified and is automatically populated when the baseline is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The name of the user experience analytics baseline.
+        /// The name of the baseline.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is built in.
-        /// Signifies if the current baseline is the commercial median baseline or a custom baseline.
+        /// When TRUE, indicates the current baseline is the commercial median baseline. When FALSE, indicates it is a custom baseline. FALSE by default.
         /// </summary>
         [JsonPropertyName("isBuiltIn")]
         public bool? IsBuiltIn { get; set; }
     
         /// <summary>
         /// Gets or sets app health metrics.
-        /// The user experience analytics app health metrics.
+        /// The scores and insights for the application health metrics.
         /// </summary>
         [JsonPropertyName("appHealthMetrics")]
         public UserExperienceAnalyticsCategory AppHealthMetrics { get; set; }
     
         /// <summary>
         /// Gets or sets battery health metrics.
-        /// The user experience analytics battery health metrics.
+        /// The scores and insights for the battery health metrics.
         /// </summary>
         [JsonPropertyName("batteryHealthMetrics")]
         public UserExperienceAnalyticsCategory BatteryHealthMetrics { get; set; }
     
         /// <summary>
         /// Gets or sets best practices metrics.
-        /// The user experience analytics best practices metrics.
+        /// The scores and insights for the best practices metrics.
         /// </summary>
         [JsonPropertyName("bestPracticesMetrics")]
         public UserExperienceAnalyticsCategory BestPracticesMetrics { get; set; }
     
         /// <summary>
         /// Gets or sets device boot performance metrics.
-        /// The user experience analytics device boot performance metrics.
+        /// The scores and insights for the device boot performance metrics.
         /// </summary>
         [JsonPropertyName("deviceBootPerformanceMetrics")]
         public UserExperienceAnalyticsCategory DeviceBootPerformanceMetrics { get; set; }
     
         /// <summary>
         /// Gets or sets reboot analytics metrics.
-        /// The user experience analytics reboot analytics metrics.
+        /// The scores and insights for the reboot analytics metrics.
         /// </summary>
         [JsonPropertyName("rebootAnalyticsMetrics")]
         public UserExperienceAnalyticsCategory RebootAnalyticsMetrics { get; set; }
     
         /// <summary>
         /// Gets or sets resource performance metrics.
-        /// The user experience analytics resource performance metrics.
+        /// The scores and insights for the resource performance metrics.
         /// </summary>
         [JsonPropertyName("resourcePerformanceMetrics")]
         public UserExperienceAnalyticsCategory ResourcePerformanceMetrics { get; set; }
     
         /// <summary>
         /// Gets or sets work from anywhere metrics.
-        /// The user experience analytics work from anywhere metrics.
+        /// The scores and insights for the work from anywhere metrics.
         /// </summary>
         [JsonPropertyName("workFromAnywhereMetrics")]
         public UserExperienceAnalyticsCategory WorkFromAnywhereMetrics { get; set; }

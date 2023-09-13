@@ -252,6 +252,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     onlineMeetingToInitialize.AttendanceReports.AdditionalData = onlineMeetingToInitialize.AdditionalData;
                 }
+                if (onlineMeetingToInitialize.Recordings != null && onlineMeetingToInitialize.Recordings.CurrentPage != null)
+                {
+                    onlineMeetingToInitialize.Recordings.InitializeNextPageRequest(this.Client, onlineMeetingToInitialize.RecordingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    onlineMeetingToInitialize.Recordings.AdditionalData = onlineMeetingToInitialize.AdditionalData;
+                }
                 if (onlineMeetingToInitialize.Transcripts != null && onlineMeetingToInitialize.Transcripts.CurrentPage != null)
                 {
                     onlineMeetingToInitialize.Transcripts.InitializeNextPageRequest(this.Client, onlineMeetingToInitialize.TranscriptsNextLink);

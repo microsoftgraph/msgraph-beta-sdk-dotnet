@@ -17,7 +17,8 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Item.
     /// </summary>
-    public partial class Item : Entity
+    [JsonConverter(typeof(DerivedTypeConverter<Item>))]
+    public partial class Item
     {
     
         /// <summary>
@@ -43,6 +44,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("gtin")]
         public string Gtin { get; set; }
+    
+        /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        [JsonPropertyName("id")]
+        public Guid? Id { get; set; }
     
         /// <summary>
         /// Gets or sets inventory.
@@ -128,6 +135,18 @@ namespace Microsoft.Graph
         [JsonPropertyName("picture@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string PictureNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonPropertyName("@odata.type")]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

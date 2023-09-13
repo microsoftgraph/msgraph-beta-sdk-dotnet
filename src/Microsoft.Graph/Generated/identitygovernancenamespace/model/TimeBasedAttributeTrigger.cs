@@ -37,7 +37,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets timeBasedAttribute.
-        /// Determines which time-based identity property to reference. The possible values are: employeeHireDate, employeeLeaveDateTime, unknownFutureValue.
+        /// Determines which time-based identity property to reference. The possible values are: employeeHireDate, employeeLeaveDateTime, createdDateTime, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("timeBasedAttribute")]
         public WorkflowTriggerTimeBasedAttribute? TimeBasedAttribute { get; set; }

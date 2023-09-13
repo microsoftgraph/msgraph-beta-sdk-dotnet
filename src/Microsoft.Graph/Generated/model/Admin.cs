@@ -49,6 +49,36 @@ namespace Microsoft.Graph
         public AdminReportSettings ReportSettings { get; set; }
     
         /// <summary>
+        /// Gets or sets apps and services.
+        /// </summary>
+        [JsonPropertyName("appsAndServices")]
+        public AdminAppsAndServices AppsAndServices { get; set; }
+    
+        /// <summary>
+        /// Gets or sets dynamics.
+        /// </summary>
+        [JsonPropertyName("dynamics")]
+        public AdminDynamics Dynamics { get; set; }
+    
+        /// <summary>
+        /// Gets or sets forms.
+        /// </summary>
+        [JsonPropertyName("forms")]
+        public AdminForms Forms { get; set; }
+    
+        /// <summary>
+        /// Gets or sets todo.
+        /// </summary>
+        [JsonPropertyName("todo")]
+        public AdminTodo Todo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets people.
+        /// </summary>
+        [JsonPropertyName("people")]
+        public PeopleAdminSettings People { get; set; }
+    
+        /// <summary>
         /// Gets or sets windows.
         /// A container for all Windows administrator functionalities. Read-only.
         /// </summary>

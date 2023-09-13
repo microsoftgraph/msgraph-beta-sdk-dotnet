@@ -45,9 +45,14 @@ namespace Microsoft.Graph
         Warning = 40,
 	
         /// <summary>
+        /// Informational
+        /// </summary>
+        Informational = 50,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 999,
+        UnknownFutureValue = 51,
 	
     }
 }

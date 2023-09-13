@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets expiration date time.
-        /// Time that the cached report expires
+        /// Time that the cached report expires. This property is read-only.
         /// </summary>
         [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last refresh date time.
-        /// Time that the cached report was last refreshed
+        /// Time that the cached report was last refreshed. This property is read-only.
         /// </summary>
         [JsonPropertyName("lastRefreshDateTime")]
         public DateTimeOffset? LastRefreshDateTime { get; set; }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets report name.
-        /// Name of the report
+        /// Name of the report. This property is read-only.
         /// </summary>
         [JsonPropertyName("reportName")]
         public string ReportName { get; set; }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// Status of the cached report. Possible values are: unknown, notStarted, inProgress, completed, failed.
+        /// Status of the cached report. This property is read-only. Possible values are: unknown, notStarted, inProgress, completed, failed.
         /// </summary>
         [JsonPropertyName("status")]
         public DeviceManagementReportStatus? Status { get; set; }

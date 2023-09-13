@@ -57,21 +57,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device display name.
-        /// The name of the device.
+        /// The name of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("deviceDisplayName")]
         public string DeviceDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets device id.
-        /// The id of the device.
+        /// The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets processed date time.
-        /// The date and time when the statistics were last computed.
+        /// The date and time when the statistics were last computed. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
         /// </summary>
         [JsonPropertyName("processedDateTime")]
         public DateTimeOffset? ProcessedDateTime { get; set; }

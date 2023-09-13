@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets checkedOutBy.
+        /// User who has checked out the file.
+        /// </summary>
+        [JsonPropertyName("checkedOutBy")]
+        public IdentitySet CheckedOutBy { get; set; }
+    
+        /// <summary>
         /// Gets or sets level.
         /// The state of publication for this document. Either published or checkout. Read-only.
         /// </summary>

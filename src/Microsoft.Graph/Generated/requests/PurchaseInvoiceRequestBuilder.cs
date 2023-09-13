@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PurchaseInvoiceRequestBuilder.
     /// </summary>
-    public partial class PurchaseInvoiceRequestBuilder : EntityRequestBuilder, IPurchaseInvoiceRequestBuilder
+    public partial class PurchaseInvoiceRequestBuilder : BaseRequestBuilder, IPurchaseInvoiceRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IPurchaseInvoiceRequest Request()
+        public IPurchaseInvoiceRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IPurchaseInvoiceRequest Request(IEnumerable<Option> options)
+        public IPurchaseInvoiceRequest Request(IEnumerable<Option> options)
         {
             return new PurchaseInvoiceRequest(this.RequestUrl, this.Client, options);
         }

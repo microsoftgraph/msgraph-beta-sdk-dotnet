@@ -174,5 +174,25 @@ namespace Microsoft.Graph
         /// </summary>
         RotateLocalAdminPassword = 32,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 33,
+	
+        /// <summary>
+        /// Launch Remote Help
+        /// </summary>
+        LaunchRemoteHelp = 34,
+	
+        /// <summary>
+        /// Revoke Apple Vpp Licenses
+        /// </summary>
+        RevokeAppleVppLicenses = 35,
+	
+        /// <summary>
+        /// Remove Device Firmware Configuration Interface Management
+        /// </summary>
+        RemoveDeviceFirmwareConfigurationInterfaceManagement = 36,
+	
     }
 }

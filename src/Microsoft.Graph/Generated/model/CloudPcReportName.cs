@@ -10,6 +10,7 @@
 
 namespace Microsoft.Graph
 {
+    using System;
     using System.Text.Json.Serialization;
 
     /// <summary>
@@ -37,17 +38,49 @@ namespace Microsoft.Graph
         /// <summary>
         /// Shared Use License Usage Report
         /// </summary>
+        [Obsolete("The sharedUseLicenseUsageReport value is deprecated and will stop returning on Oct 17, 2023. Use frontlineLicenseUsageReport report")]
         SharedUseLicenseUsageReport = 3,
 	
         /// <summary>
         /// Shared Use License Usage Real Time Report
         /// </summary>
+        [Obsolete("The sharedUseLicenseUsageRealTimeReport value is deprecated and will stop returning on Oct 17, 2023. Use frontlineLicenseUsageRealTimeReport report")]
         SharedUseLicenseUsageRealTimeReport = 4,
 	
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 999,
+        UnknownFutureValue = 5,
+	
+        /// <summary>
+        /// No License Available Connectivity Failure Report
+        /// </summary>
+        NoLicenseAvailableConnectivityFailureReport = 6,
+	
+        /// <summary>
+        /// Frontline License Usage Report
+        /// </summary>
+        FrontlineLicenseUsageReport = 7,
+	
+        /// <summary>
+        /// Frontline License Usage Real Time Report
+        /// </summary>
+        FrontlineLicenseUsageRealTimeReport = 8,
+	
+        /// <summary>
+        /// Remote Connection Quality Reports
+        /// </summary>
+        RemoteConnectionQualityReports = 9,
+	
+        /// <summary>
+        /// Inaccessible Cloud Pc Reports
+        /// </summary>
+        InaccessibleCloudPcReports = 10,
+	
+        /// <summary>
+        /// Raw Remote Connection Reports
+        /// </summary>
+        RawRemoteConnectionReports = 12,
 	
     }
 }

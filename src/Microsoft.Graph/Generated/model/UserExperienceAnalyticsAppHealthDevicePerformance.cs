@@ -23,84 +23,77 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app crash count.
-        /// The number of app crashes for the device. Valid values -2147483648 to 2147483647
+        /// The number of application crashes for the device. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("appCrashCount")]
         public Int32? AppCrashCount { get; set; }
     
         /// <summary>
         /// Gets or sets app hang count.
-        /// The number of app hangs for the device. Valid values -2147483648 to 2147483647
+        /// The number of application hangs for the device. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("appHangCount")]
         public Int32? AppHangCount { get; set; }
     
         /// <summary>
         /// Gets or sets crashed app count.
-        /// The number of distinct app crashes for the device. Valid values -2147483648 to 2147483647
+        /// The number of distinct application crashes for the device. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("crashedAppCount")]
         public Int32? CrashedAppCount { get; set; }
     
         /// <summary>
         /// Gets or sets device app health score.
-        /// The app health score of the device. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// The application health score of the device. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("deviceAppHealthScore")]
         public double? DeviceAppHealthScore { get; set; }
     
         /// <summary>
-        /// Gets or sets device app health status.
-        /// The overall app health status of the device.
-        /// </summary>
-        [JsonPropertyName("deviceAppHealthStatus")]
-        public string DeviceAppHealthStatus { get; set; }
-    
-        /// <summary>
         /// Gets or sets device display name.
-        /// The name of the device.
+        /// The name of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("deviceDisplayName")]
         public string DeviceDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets device id.
-        /// The id of the device.
+        /// The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets device manufacturer.
-        /// The manufacturer name of the device.
+        /// The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("deviceManufacturer")]
         public string DeviceManufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets device model.
-        /// The model name of the device.
+        /// The model name of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("deviceModel")]
         public string DeviceModel { get; set; }
     
         /// <summary>
         /// Gets or sets health status.
-        /// The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals, unknownFutureValue.
+        /// The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals. Unknown by default. Supports: $filter, $select, $OrderBy. Read-only. Possible values are: unknown, insufficientData, needsAttention, meetingGoals, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("healthStatus")]
         public UserExperienceAnalyticsHealthState? HealthStatus { get; set; }
     
         /// <summary>
         /// Gets or sets mean time to failure in minutes.
-        /// The mean time to failure for the device in minutes. Valid values -2147483648 to 2147483647
+        /// The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("meanTimeToFailureInMinutes")]
         public Int32? MeanTimeToFailureInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets processed date time.
-        /// The date and time when the statistics were last computed.
+        /// The date and time when the statistics were last computed. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
         /// </summary>
         [JsonPropertyName("processedDateTime")]
         public DateTimeOffset? ProcessedDateTime { get; set; }

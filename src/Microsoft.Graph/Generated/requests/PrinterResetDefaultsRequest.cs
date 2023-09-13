@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PrinterResetDefaultsRequest.
     /// </summary>
+    [Obsolete("The resetDefaults API is deprecated and will stop returning data on July 31, 2023. Please use the restoreFactoryDefaults API instead of this.")]
     public partial class PrinterResetDefaultsRequest : BaseRequest, IPrinterResetDefaultsRequest
     {
         /// <summary>

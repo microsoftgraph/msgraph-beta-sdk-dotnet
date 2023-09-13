@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets cloudPcId.
+        /// The cloudPC id that corresponds to its unique identifier.
         /// </summary>
         [JsonPropertyName("cloudPcId")]
         public string CloudPcId { get; set; }
     
         /// <summary>
         /// Gets or sets validationResult.
+        /// Describes a list of the validation result for the Cloud PC resize action. The possible values are: success, cloudPcNotFound, operationCnflict, operationNotSupported, targetLicenseHasAssigned, internalServerError, and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("validationResult")]
         public CloudPcResizeValidationCode? ValidationResult { get; set; }

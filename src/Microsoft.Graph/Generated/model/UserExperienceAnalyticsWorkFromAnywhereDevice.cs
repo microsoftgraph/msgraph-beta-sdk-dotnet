@@ -23,238 +23,238 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets auto pilot profile assigned.
-        /// The user experience analytics work from anywhere intune device's autopilotProfileAssigned.
+        /// When TRUE, indicates the intune device's autopilot profile is assigned. When FALSE, indicates it's not Assigned. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("autoPilotProfileAssigned")]
         public bool? AutoPilotProfileAssigned { get; set; }
     
         /// <summary>
         /// Gets or sets auto pilot registered.
-        /// The user experience work from anywhere intune device's autopilotRegistered.
+        /// When TRUE, indicates the intune device's autopilot is registered. When FALSE, indicates it's not registered. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("autoPilotRegistered")]
         public bool? AutoPilotRegistered { get; set; }
     
         /// <summary>
         /// Gets or sets azure ad device id.
-        /// The user experience work from anywhere azure Ad device Id.
+        /// The Azure Active Directory (Azure AD) device Id. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("azureAdDeviceId")]
         public string AzureAdDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets azure ad join type.
-        /// The user experience work from anywhere device's azure Ad joinType.
+        /// The work from anywhere device's Azure Active Directory (Azure AD) join type. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("azureAdJoinType")]
         public string AzureAdJoinType { get; set; }
     
         /// <summary>
         /// Gets or sets azure ad registered.
-        /// The user experience work from anywhere device's azureAdRegistered.
+        /// When TRUE, indicates the device's Azure Active Directory (Azure AD) is registered. When False, indicates it's not registered. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("azureAdRegistered")]
         public bool? AzureAdRegistered { get; set; }
     
         /// <summary>
         /// Gets or sets cloud identity score.
-        /// The user experience work from anywhere per device cloud identity score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// Indicates per device cloud identity score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("cloudIdentityScore")]
         public double? CloudIdentityScore { get; set; }
     
         /// <summary>
         /// Gets or sets cloud management score.
-        /// The user experience work from anywhere per device cloud management score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// Indicates per device cloud management score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("cloudManagementScore")]
         public double? CloudManagementScore { get; set; }
     
         /// <summary>
         /// Gets or sets cloud provisioning score.
-        /// The user experience work from anywhere per device cloud provisioning score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// Indicates per device cloud provisioning score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("cloudProvisioningScore")]
         public double? CloudProvisioningScore { get; set; }
     
         /// <summary>
         /// Gets or sets compliance policy set to intune.
-        /// The user experience work from anywhere device's compliancePolicySetToIntune.
+        /// When TRUE, indicates the device's compliance policy is set to intune. When FALSE, indicates it's not set to intune. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("compliancePolicySetToIntune")]
         public bool? CompliancePolicySetToIntune { get; set; }
     
         /// <summary>
         /// Gets or sets device id.
-        /// The user experience work from anywhere device Id.
+        /// The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets device name.
-        /// The work from anywhere device's name.
+        /// The name of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("deviceName")]
         public string DeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets health status.
-        /// The user experience work from anywhere per device health status. Possible values are: unknown, insufficientData, needsAttention, meetingGoals, unknownFutureValue.
+        /// The health state of the user experience analytics work from anywhere device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals. Unknown by default. Supports: $select, $OrderBy. Read-only. Possible values are: unknown, insufficientData, needsAttention, meetingGoals, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("healthStatus")]
         public UserExperienceAnalyticsHealthState? HealthStatus { get; set; }
     
         /// <summary>
         /// Gets or sets is cloud managed gateway enabled.
-        /// The user experience work from anywhere device's Cloud Management Gateway for Configuration Manager is enabled.
+        /// When TRUE, indicates the device's Cloud Management Gateway for Configuration Manager is enabled. When FALSE, indicates it's not enabled. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("isCloudManagedGatewayEnabled")]
         public bool? IsCloudManagedGatewayEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets managed by.
-        /// The user experience work from anywhere management agent of the device.
+        /// The management agent of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("managedBy")]
         public string ManagedBy { get; set; }
     
         /// <summary>
         /// Gets or sets manufacturer.
-        /// The user experience work from anywhere device's manufacturer.
+        /// The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("manufacturer")]
         public string Manufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets model.
-        /// The user experience work from anywhere device's model.
+        /// The model name of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("model")]
         public string Model { get; set; }
     
         /// <summary>
         /// Gets or sets os check failed.
-        /// The user experience work from anywhere device, Is OS check failed for device to upgrade to the latest version of windows.
+        /// When TRUE, indicates OS check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("osCheckFailed")]
         public bool? OsCheckFailed { get; set; }
     
         /// <summary>
         /// Gets or sets os description.
-        /// The user experience work from anywhere device's OS Description.
+        /// The OS description of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("osDescription")]
         public string OsDescription { get; set; }
     
         /// <summary>
         /// Gets or sets os version.
-        /// The user experience work from anywhere device's OS Version.
+        /// The OS version of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("osVersion")]
         public string OsVersion { get; set; }
     
         /// <summary>
         /// Gets or sets other workloads set to intune.
-        /// The user experience work from anywhere device's otherWorkloadsSetToIntune.
+        /// When TRUE, indicates the device's other workloads is set to intune. When FALSE, indicates it's not set to intune. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("otherWorkloadsSetToIntune")]
         public bool? OtherWorkloadsSetToIntune { get; set; }
     
         /// <summary>
         /// Gets or sets ownership.
-        /// The user experience work from anywhere device's ownership.
+        /// Ownership of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("ownership")]
         public string Ownership { get; set; }
     
         /// <summary>
         /// Gets or sets processor64bit check failed.
-        /// The user experience work from anywhere device, Is processor hardware 64-bit architecture check failed for device to upgrade to the latest version of windows.
+        /// When TRUE, indicates processor hardware 64-bit architecture check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("processor64BitCheckFailed")]
         public bool? Processor64BitCheckFailed { get; set; }
     
         /// <summary>
         /// Gets or sets processor core count check failed.
-        /// The user experience work from anywhere device, Is processor hardware core count check failed for device to upgrade to the latest version of windows.
+        /// When TRUE, indicates processor hardware core count check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("processorCoreCountCheckFailed")]
         public bool? ProcessorCoreCountCheckFailed { get; set; }
     
         /// <summary>
         /// Gets or sets processor family check failed.
-        /// The user experience work from anywhere device, Is processor hardware family check failed for device to upgrade to the latest version of windows.
+        /// When TRUE, indicates processor hardware family check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("processorFamilyCheckFailed")]
         public bool? ProcessorFamilyCheckFailed { get; set; }
     
         /// <summary>
         /// Gets or sets processor speed check failed.
-        /// The user experience work from anywhere device, Is processor hardware speed check failed for device to upgrade to the latest version of windows.
+        /// When TRUE, indicates processor hardware speed check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("processorSpeedCheckFailed")]
         public bool? ProcessorSpeedCheckFailed { get; set; }
     
         /// <summary>
         /// Gets or sets ram check failed.
-        /// Is the user experience analytics work from anywhere device RAM hardware check failed for device to upgrade to the latest version of windows
+        /// When TRUE, indicates RAM hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("ramCheckFailed")]
         public bool? RamCheckFailed { get; set; }
     
         /// <summary>
         /// Gets or sets secure boot check failed.
-        /// The user experience work from anywhere device, Is secure boot hardware check failed for device to upgrade to the latest version of windows.
+        /// When TRUE, indicates secure boot hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("secureBootCheckFailed")]
         public bool? SecureBootCheckFailed { get; set; }
     
         /// <summary>
         /// Gets or sets serial number.
-        /// The user experience work from anywhere device's serial number.
+        /// The serial number of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("serialNumber")]
         public string SerialNumber { get; set; }
     
         /// <summary>
         /// Gets or sets storage check failed.
-        /// The user experience work from anywhere device, Is storage hardware check failed for device to upgrade to the latest version of windows.
+        /// When TRUE, indicates storage hardware check failed for device to upgrade to the latest version of windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("storageCheckFailed")]
         public bool? StorageCheckFailed { get; set; }
     
         /// <summary>
         /// Gets or sets tenant attached.
-        /// The user experience work from anywhere device's tenantAttached.
+        /// When TRUE, indicates the device is Tenant Attached. When FALSE, indicates it's not Tenant Attached. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("tenantAttached")]
         public bool? TenantAttached { get; set; }
     
         /// <summary>
         /// Gets or sets tpm check failed.
-        /// The user experience work from anywhere device, Is Trusted Platform Module (TPM) hardware check failed for device to the latest version of upgrade to windows.
+        /// When TRUE, indicates Trusted Platform Module (TPM) hardware check failed for device to the latest version of upgrade to windows. When FALSE, indicates the check succeeded. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("tpmCheckFailed")]
         public bool? TpmCheckFailed { get; set; }
     
         /// <summary>
         /// Gets or sets upgrade eligibility.
-        /// The user experience work from anywhere windows upgrade eligibility status of device. Possible values are: upgraded, unknown, notCapable, capable.
+        /// The windows upgrade eligibility status of device. Possible values are: upgraded, unknown, notCapable, capable. Unknown by default. Supports: $select, $OrderBy. Read-only. Possible values are: upgraded, unknown, notCapable, capable, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("upgradeEligibility")]
         public OperatingSystemUpgradeEligibility? UpgradeEligibility { get; set; }
     
         /// <summary>
         /// Gets or sets windows score.
-        /// The user experience work from anywhere per device windows score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// Indicates per device windows score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("windowsScore")]
         public double? WindowsScore { get; set; }
     
         /// <summary>
         /// Gets or sets work from anywhere score.
-        /// The user experience work from anywhere per device overall score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// Indicates work from anywhere per device overall score. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("workFromAnywhereScore")]
         public double? WorkFromAnywhereScore { get; set; }

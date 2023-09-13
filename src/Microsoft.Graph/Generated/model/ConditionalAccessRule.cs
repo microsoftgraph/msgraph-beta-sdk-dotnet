@@ -189,5 +189,20 @@ namespace Microsoft.Graph
         /// </summary>
         MicrosoftAdminPortals = 33,
 	
+        /// <summary>
+        /// Device Code Flow
+        /// </summary>
+        DeviceCodeFlow = 34,
+	
+        /// <summary>
+        /// Authentication Transfer
+        /// </summary>
+        AuthenticationTransfer = 35,
+	
+        /// <summary>
+        /// Insider Risk
+        /// </summary>
+        InsiderRisk = 36,
+	
     }
 }

@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets expiration date time.
-        /// Time that the exported report expires
+        /// Time that the exported report expires. This property is read-only.
         /// </summary>
         [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets request date time.
-        /// Time that the exported report was requested
+        /// Time that the exported report was requested. This property is read-only.
         /// </summary>
         [JsonPropertyName("requestDateTime")]
         public DateTimeOffset? RequestDateTime { get; set; }
@@ -79,14 +79,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// Status of the export job. Possible values are: unknown, notStarted, inProgress, completed, failed.
+        /// Status of the export job. This property is read-only. Possible values are: unknown, notStarted, inProgress, completed, failed.
         /// </summary>
         [JsonPropertyName("status")]
         public DeviceManagementReportStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets url.
-        /// Temporary location of the exported report
+        /// Temporary location of the exported report. This property is read-only.
         /// </summary>
         [JsonPropertyName("url")]
         public string Url { get; set; }

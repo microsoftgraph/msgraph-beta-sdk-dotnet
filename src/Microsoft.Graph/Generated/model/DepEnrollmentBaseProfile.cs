@@ -79,6 +79,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> EnabledSkipKeys { get; set; }
     
         /// <summary>
+        /// Gets or sets enrollment time azure ad group ids.
+        /// EnrollmentTimeAzureAdGroupIds contains list of enrollment time Azure Group Ids to be associated with profile
+        /// </summary>
+        [JsonPropertyName("enrollmentTimeAzureAdGroupIds")]
+        public IEnumerable<Guid> EnrollmentTimeAzureAdGroupIds { get; set; }
+    
+        /// <summary>
         /// Gets or sets is default.
         /// Indicates if this is the default profile
         /// </summary>
@@ -168,6 +175,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("touchIdDisabled")]
         public bool? TouchIdDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets wait for device configured confirmation.
+        /// Indicates if the device will need to wait for configured confirmation
+        /// </summary>
+        [JsonPropertyName("waitForDeviceConfiguredConfirmation")]
+        public bool? WaitForDeviceConfiguredConfirmation { get; set; }
     
     }
 }

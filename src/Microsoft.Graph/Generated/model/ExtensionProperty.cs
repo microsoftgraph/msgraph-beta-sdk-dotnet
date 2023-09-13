@@ -44,6 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is multi valued.
+        /// Defines the directory extension as a multi-valued property. When true, the directory extension property can store a collection of objects of the dataType; for example, a collection of integers. The default value is false.
         /// </summary>
         [JsonPropertyName("isMultiValued")]
         public bool? IsMultiValued { get; set; }

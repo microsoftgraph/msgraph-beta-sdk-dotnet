@@ -29,7 +29,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets estimated runtime in minutes.
-        /// The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647
+        /// The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647
         /// </summary>
         [JsonPropertyName("estimatedRuntimeInMinutes")]
         public Int32? EstimatedRuntimeInMinutes { get; set; }

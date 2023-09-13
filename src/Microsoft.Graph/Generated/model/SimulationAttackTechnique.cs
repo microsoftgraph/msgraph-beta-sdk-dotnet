@@ -54,5 +54,10 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 6,
 	
+        /// <summary>
+        /// OAuth Consent Grant
+        /// </summary>
+        OAuthConsentGrant = 7,
+	
     }
 }

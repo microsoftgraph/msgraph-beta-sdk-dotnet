@@ -51,6 +51,42 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for EndUserNotifications.
+        /// </summary>
+        /// <returns>The <see cref="IAttackSimulationRootEndUserNotificationsCollectionRequestBuilder"/>.</returns>
+        public IAttackSimulationRootEndUserNotificationsCollectionRequestBuilder EndUserNotifications
+        {
+            get
+            {
+                return new AttackSimulationRootEndUserNotificationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("endUserNotifications"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for LandingPages.
+        /// </summary>
+        /// <returns>The <see cref="IAttackSimulationRootLandingPagesCollectionRequestBuilder"/>.</returns>
+        public IAttackSimulationRootLandingPagesCollectionRequestBuilder LandingPages
+        {
+            get
+            {
+                return new AttackSimulationRootLandingPagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("landingPages"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for LoginPages.
+        /// </summary>
+        /// <returns>The <see cref="IAttackSimulationRootLoginPagesCollectionRequestBuilder"/>.</returns>
+        public IAttackSimulationRootLoginPagesCollectionRequestBuilder LoginPages
+        {
+            get
+            {
+                return new AttackSimulationRootLoginPagesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("loginPages"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Operations.
         /// </summary>
         /// <returns>The <see cref="IAttackSimulationRootOperationsCollectionRequestBuilder"/>.</returns>
@@ -95,6 +131,18 @@ namespace Microsoft.Graph
             get
             {
                 return new AttackSimulationRootSimulationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("simulations"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Trainings.
+        /// </summary>
+        /// <returns>The <see cref="IAttackSimulationRootTrainingsCollectionRequestBuilder"/>.</returns>
+        public IAttackSimulationRootTrainingsCollectionRequestBuilder Trainings
+        {
+            get
+            {
+                return new AttackSimulationRootTrainingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("trainings"), this.Client);
             }
         }
     

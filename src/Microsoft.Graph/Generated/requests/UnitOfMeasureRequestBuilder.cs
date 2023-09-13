@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UnitOfMeasureRequestBuilder.
     /// </summary>
-    public partial class UnitOfMeasureRequestBuilder : EntityRequestBuilder, IUnitOfMeasureRequestBuilder
+    public partial class UnitOfMeasureRequestBuilder : BaseRequestBuilder, IUnitOfMeasureRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IUnitOfMeasureRequest Request()
+        public IUnitOfMeasureRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IUnitOfMeasureRequest Request(IEnumerable<Option> options)
+        public IUnitOfMeasureRequest Request(IEnumerable<Option> options)
         {
             return new UnitOfMeasureRequest(this.RequestUrl, this.Client, options);
         }

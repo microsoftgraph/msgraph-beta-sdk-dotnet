@@ -22,77 +22,77 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets os check failed percentage.
-        /// The percentage of devices for which OS check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// The percentage of devices for which OS check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("osCheckFailedPercentage")]
         public double? OsCheckFailedPercentage { get; set; }
     
         /// <summary>
         /// Gets or sets processor64bit check failed percentage.
-        /// The percentage of devices for which processor hardware 64-bit architecture check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// The percentage of devices for which processor hardware 64-bit architecture check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("processor64BitCheckFailedPercentage")]
         public double? Processor64BitCheckFailedPercentage { get; set; }
     
         /// <summary>
         /// Gets or sets processor core count check failed percentage.
-        /// The percentage of devices for which processor hardware core count check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// The percentage of devices for which processor hardware core count check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("processorCoreCountCheckFailedPercentage")]
         public double? ProcessorCoreCountCheckFailedPercentage { get; set; }
     
         /// <summary>
         /// Gets or sets processor family check failed percentage.
-        /// The percentage of devices for which processor hardware family check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// The percentage of devices for which processor hardware family check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("processorFamilyCheckFailedPercentage")]
         public double? ProcessorFamilyCheckFailedPercentage { get; set; }
     
         /// <summary>
         /// Gets or sets processor speed check failed percentage.
-        /// The percentage of devices for which processor hardware speed check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// The percentage of devices for which processor hardware speed check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("processorSpeedCheckFailedPercentage")]
         public double? ProcessorSpeedCheckFailedPercentage { get; set; }
     
         /// <summary>
         /// Gets or sets ram check failed percentage.
-        /// The percentage of devices for which RAM hardware check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// The percentage of devices for which RAM hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("ramCheckFailedPercentage")]
         public double? RamCheckFailedPercentage { get; set; }
     
         /// <summary>
         /// Gets or sets secure boot check failed percentage.
-        /// The percentage of devices for which secure boot hardware check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// The percentage of devices for which secure boot hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("secureBootCheckFailedPercentage")]
         public double? SecureBootCheckFailedPercentage { get; set; }
     
         /// <summary>
         /// Gets or sets storage check failed percentage.
-        /// The percentage of devices for which storage hardware check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// The percentage of devices for which storage hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("storageCheckFailedPercentage")]
         public double? StorageCheckFailedPercentage { get; set; }
     
         /// <summary>
         /// Gets or sets total device count.
-        /// The count of total devices in an organization. Valid values -2147483648 to 2147483647
+        /// The count of total devices in an organization. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("totalDeviceCount")]
         public Int32? TotalDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets tpm check failed percentage.
-        /// The percentage of devices for which Trusted Platform Module (TPM) hardware check has failed. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// The percentage of devices for which Trusted Platform Module (TPM) hardware check has failed. Valid values 0 to 100. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("tpmCheckFailedPercentage")]
         public double? TpmCheckFailedPercentage { get; set; }
     
         /// <summary>
         /// Gets or sets upgrade eligible device count.
-        /// The count of devices in an organization eligible for windows upgrade. Valid values -2147483648 to 2147483647
+        /// The count of devices in an organization eligible for windows upgrade. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("upgradeEligibleDeviceCount")]
         public Int32? UpgradeEligibleDeviceCount { get; set; }

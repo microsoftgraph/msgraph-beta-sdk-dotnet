@@ -20,18 +20,18 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     public partial interface IWorkflowExecutionScopeCollectionReferencesRequest : Microsoft.Graph.IBaseRequest
     {
         /// <summary>
-        /// Adds the specified Microsoft.Graph.User to the collection via POST.
+        /// Adds the specified Microsoft.Graph.ReferenceRequestBody to the collection via POST.
         /// </summary>
-        /// <param name="user">The Microsoft.Graph.User to add.</param>
+        /// <param name="userProcessingResultReference">The Microsoft.Graph.ReferenceRequestBody to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task AddAsync(Microsoft.Graph.User user, CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task AddAsync(Microsoft.Graph.ReferenceRequestBody userProcessingResultReference, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Adds the specified Microsoft.Graph.User to the collection via POST and returns a <see cref="GraphResponse{Microsoft.Graph.User}"/> object of the request.
+        /// Adds the specified Microsoft.Graph.ReferenceRequestBody to the collection via POST and returns a <see cref="GraphResponse{Microsoft.Graph.ReferenceRequestBody}"/> object of the request.
         /// </summary>
-        /// <param name="user">The Microsoft.Graph.User to add.</param>
+        /// <param name="userProcessingResultReference">The Microsoft.Graph.ReferenceRequestBody to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(Microsoft.Graph.User user, CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(Microsoft.Graph.ReferenceRequestBody userProcessingResultReference, CancellationToken cancellationToken = default);
 
     }
 }

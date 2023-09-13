@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SalesOrderRequestBuilder.
     /// </summary>
-    public partial class SalesOrderRequestBuilder : EntityRequestBuilder, ISalesOrderRequestBuilder
+    public partial class SalesOrderRequestBuilder : BaseRequestBuilder, ISalesOrderRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new ISalesOrderRequest Request()
+        public ISalesOrderRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new ISalesOrderRequest Request(IEnumerable<Option> options)
+        public ISalesOrderRequest Request(IEnumerable<Option> options)
         {
             return new SalesOrderRequest(this.RequestUrl, this.Client, options);
         }

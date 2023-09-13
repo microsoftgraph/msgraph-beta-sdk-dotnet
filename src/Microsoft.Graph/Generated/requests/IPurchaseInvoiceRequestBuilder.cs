@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPurchaseInvoiceRequestBuilder.
     /// </summary>
-    public partial interface IPurchaseInvoiceRequestBuilder : IEntityRequestBuilder
+    public partial interface IPurchaseInvoiceRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IPurchaseInvoiceRequest Request();
+        IPurchaseInvoiceRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IPurchaseInvoiceRequest Request(IEnumerable<Option> options);
+        IPurchaseInvoiceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for Currency.

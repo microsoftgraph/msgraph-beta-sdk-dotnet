@@ -114,6 +114,27 @@ namespace Microsoft.Graph
         public bool? EarlyLaunchAntiMalwareDriverEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets firmware protection enabled.
+        /// When TRUE, indicates that Firmware protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Firmware protection is not required to be reported as healthy. Devices that support either Dynamic Root of Trust for Measurement (DRTM) or Firmware Attack Surface Reduction (FASR) will report compliant for this setting. Default value is FALSE.
+        /// </summary>
+        [JsonPropertyName("firmwareProtectionEnabled")]
+        public bool? FirmwareProtectionEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets kernel dma protection enabled.
+        /// When TRUE, indicates that Kernel Direct Memory Access (DMA) protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Kernel DMA Protection is not required to be reported as healthy. Default value is FALSE.
+        /// </summary>
+        [JsonPropertyName("kernelDmaProtectionEnabled")]
+        public bool? KernelDmaProtectionEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets memory integrity enabled.
+        /// When TRUE, indicates that Memory Integrity as known as Hypervisor-protected Code Integrity (HVCI) or Hypervisor Enforced Code Integrity protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Memory Integrity Protection is not required to be reported as healthy. Default value is FALSE.
+        /// </summary>
+        [JsonPropertyName("memoryIntegrityEnabled")]
+        public bool? MemoryIntegrityEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets mobile os maximum version.
         /// Maximum Windows Phone version.
         /// </summary>
@@ -252,6 +273,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("validOperatingSystemBuildRanges")]
         public IEnumerable<OperatingSystemVersionRange> ValidOperatingSystemBuildRanges { get; set; }
+    
+        /// <summary>
+        /// Gets or sets virtualization based security enabled.
+        /// When TRUE, indicates that Virtualization-based Security is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Virtualization-based Security is not required to be reported as healthy. Default value is FALSE.
+        /// </summary>
+        [JsonPropertyName("virtualizationBasedSecurityEnabled")]
+        public bool? VirtualizationBasedSecurityEnabled { get; set; }
     
     }
 }

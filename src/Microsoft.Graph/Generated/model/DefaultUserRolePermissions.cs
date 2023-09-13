@@ -23,21 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowedToCreateApps.
-        /// Indicates whether the default user role can create applications.
+        /// Indicates whether the default user role can create applications. This setting corresponds to the Users can register applications setting in the User settings menu in the Azure portal.
         /// </summary>
         [JsonPropertyName("allowedToCreateApps")]
         public bool? AllowedToCreateApps { get; set; }
     
         /// <summary>
         /// Gets or sets allowedToCreateSecurityGroups.
-        /// Indicates whether the default user role can create security groups.
+        /// Indicates whether the default user role can create security groups. This setting corresponds to the following menus in the Azure portal:  The Users can create security groups in Azure portals, API or PowerShell setting in the Group settings menu.  Users can create security groups setting in the User settings menu.
         /// </summary>
         [JsonPropertyName("allowedToCreateSecurityGroups")]
         public bool? AllowedToCreateSecurityGroups { get; set; }
     
         /// <summary>
         /// Gets or sets allowedToCreateTenants.
-        /// Indicates whether the default user role can create tenants.
+        /// Indicates whether the default user role can create tenants. This setting corresponds to the Restrict non-admin users from creating tenants setting in the User settings menu in the Azure portal. When this setting is false, users assigned the Tenant Creator role can still create tenants.
         /// </summary>
         [JsonPropertyName("allowedToCreateTenants")]
         public bool? AllowedToCreateTenants { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allowedToReadOtherUsers.
-        /// Indicates whether the default user role can read other users.
+        /// Indicates whether the default user role can read other users. DO NOT SET THIS VALUE TO false.
         /// </summary>
         [JsonPropertyName("allowedToReadOtherUsers")]
         public bool? AllowedToReadOtherUsers { get; set; }

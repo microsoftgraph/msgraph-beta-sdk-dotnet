@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IJournalLineRequestBuilder.
     /// </summary>
-    public partial interface IJournalLineRequestBuilder : IEntityRequestBuilder
+    public partial interface IJournalLineRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IJournalLineRequest Request();
+        IJournalLineRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IJournalLineRequest Request(IEnumerable<Option> options);
+        IJournalLineRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for Account.

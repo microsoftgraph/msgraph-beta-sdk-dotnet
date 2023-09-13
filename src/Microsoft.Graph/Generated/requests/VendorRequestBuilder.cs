@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type VendorRequestBuilder.
     /// </summary>
-    public partial class VendorRequestBuilder : EntityRequestBuilder, IVendorRequestBuilder
+    public partial class VendorRequestBuilder : BaseRequestBuilder, IVendorRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IVendorRequest Request()
+        public IVendorRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IVendorRequest Request(IEnumerable<Option> options)
+        public IVendorRequest Request(IEnumerable<Option> options)
         {
             return new VendorRequest(this.RequestUrl, this.Client, options);
         }

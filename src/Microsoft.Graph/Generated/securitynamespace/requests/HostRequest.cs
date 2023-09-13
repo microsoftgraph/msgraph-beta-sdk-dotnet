@@ -246,6 +246,12 @@ namespace Microsoft.Graph.SecurityNamespace
 
             if (hostToInitialize != null)
             {
+                if (hostToInitialize.ChildHostPairs != null && hostToInitialize.ChildHostPairs.CurrentPage != null)
+                {
+                    hostToInitialize.ChildHostPairs.InitializeNextPageRequest(this.Client, hostToInitialize.ChildHostPairsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    hostToInitialize.ChildHostPairs.AdditionalData = hostToInitialize.AdditionalData;
+                }
                 if (hostToInitialize.Components != null && hostToInitialize.Components.CurrentPage != null)
                 {
                     hostToInitialize.Components.InitializeNextPageRequest(this.Client, hostToInitialize.ComponentsNextLink);
@@ -258,6 +264,18 @@ namespace Microsoft.Graph.SecurityNamespace
                     // Copy the additional data collection to the page itself so that information is not lost
                     hostToInitialize.Cookies.AdditionalData = hostToInitialize.AdditionalData;
                 }
+                if (hostToInitialize.HostPairs != null && hostToInitialize.HostPairs.CurrentPage != null)
+                {
+                    hostToInitialize.HostPairs.InitializeNextPageRequest(this.Client, hostToInitialize.HostPairsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    hostToInitialize.HostPairs.AdditionalData = hostToInitialize.AdditionalData;
+                }
+                if (hostToInitialize.ParentHostPairs != null && hostToInitialize.ParentHostPairs.CurrentPage != null)
+                {
+                    hostToInitialize.ParentHostPairs.InitializeNextPageRequest(this.Client, hostToInitialize.ParentHostPairsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    hostToInitialize.ParentHostPairs.AdditionalData = hostToInitialize.AdditionalData;
+                }
                 if (hostToInitialize.PassiveDns != null && hostToInitialize.PassiveDns.CurrentPage != null)
                 {
                     hostToInitialize.PassiveDns.InitializeNextPageRequest(this.Client, hostToInitialize.PassiveDnsNextLink);
@@ -269,6 +287,18 @@ namespace Microsoft.Graph.SecurityNamespace
                     hostToInitialize.PassiveDnsReverse.InitializeNextPageRequest(this.Client, hostToInitialize.PassiveDnsReverseNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     hostToInitialize.PassiveDnsReverse.AdditionalData = hostToInitialize.AdditionalData;
+                }
+                if (hostToInitialize.SslCertificates != null && hostToInitialize.SslCertificates.CurrentPage != null)
+                {
+                    hostToInitialize.SslCertificates.InitializeNextPageRequest(this.Client, hostToInitialize.SslCertificatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    hostToInitialize.SslCertificates.AdditionalData = hostToInitialize.AdditionalData;
+                }
+                if (hostToInitialize.Subdomains != null && hostToInitialize.Subdomains.CurrentPage != null)
+                {
+                    hostToInitialize.Subdomains.InitializeNextPageRequest(this.Client, hostToInitialize.SubdomainsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    hostToInitialize.Subdomains.AdditionalData = hostToInitialize.AdditionalData;
                 }
                 if (hostToInitialize.Trackers != null && hostToInitialize.Trackers.CurrentPage != null)
                 {

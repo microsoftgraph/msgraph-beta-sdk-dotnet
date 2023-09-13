@@ -89,5 +89,10 @@ namespace Microsoft.Graph
         /// </summary>
         DeviceConfigurationScripts = 22,
 	
+        /// <summary>
+        /// Device Configuration Policies
+        /// </summary>
+        DeviceConfigurationPolicies = 23,
+	
     }
 }

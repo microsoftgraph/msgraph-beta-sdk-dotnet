@@ -32,6 +32,24 @@ namespace Microsoft.Graph
         new IAttackSimulationRootRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for EndUserNotifications.
+        /// </summary>
+        /// <returns>The <see cref="IAttackSimulationRootEndUserNotificationsCollectionRequestBuilder"/>.</returns>
+        IAttackSimulationRootEndUserNotificationsCollectionRequestBuilder EndUserNotifications { get; }
+
+        /// <summary>
+        /// Gets the request builder for LandingPages.
+        /// </summary>
+        /// <returns>The <see cref="IAttackSimulationRootLandingPagesCollectionRequestBuilder"/>.</returns>
+        IAttackSimulationRootLandingPagesCollectionRequestBuilder LandingPages { get; }
+
+        /// <summary>
+        /// Gets the request builder for LoginPages.
+        /// </summary>
+        /// <returns>The <see cref="IAttackSimulationRootLoginPagesCollectionRequestBuilder"/>.</returns>
+        IAttackSimulationRootLoginPagesCollectionRequestBuilder LoginPages { get; }
+
+        /// <summary>
         /// Gets the request builder for Operations.
         /// </summary>
         /// <returns>The <see cref="IAttackSimulationRootOperationsCollectionRequestBuilder"/>.</returns>
@@ -54,6 +72,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAttackSimulationRootSimulationsCollectionRequestBuilder"/>.</returns>
         IAttackSimulationRootSimulationsCollectionRequestBuilder Simulations { get; }
+
+        /// <summary>
+        /// Gets the request builder for Trainings.
+        /// </summary>
+        /// <returns>The <see cref="IAttackSimulationRootTrainingsCollectionRequestBuilder"/>.</returns>
+        IAttackSimulationRootTrainingsCollectionRequestBuilder Trainings { get; }
     
     }
 }

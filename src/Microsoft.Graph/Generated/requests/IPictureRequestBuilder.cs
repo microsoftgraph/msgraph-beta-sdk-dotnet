@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IPictureRequestBuilder.
     /// </summary>
-    public partial interface IPictureRequestBuilder : IEntityRequestBuilder
+    public partial interface IPictureRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IPictureRequest Request();
+        IPictureRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IPictureRequest Request(IEnumerable<Option> options);
+        IPictureRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for Content.

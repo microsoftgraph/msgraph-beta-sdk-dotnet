@@ -1909,6 +1909,64 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetWindowsDriverUpdateAlertsPerPolicyPerDeviceReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportRequestBuilder GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getWindowsDriverUpdateAlertsPerPolicyPerDeviceReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetWindowsDriverUpdateAlertSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetWindowsDriverUpdateAlertSummaryReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetWindowsDriverUpdateAlertSummaryReportRequestBuilder GetWindowsDriverUpdateAlertSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetWindowsDriverUpdateAlertSummaryReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getWindowsDriverUpdateAlertSummaryReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder"/>.</returns>

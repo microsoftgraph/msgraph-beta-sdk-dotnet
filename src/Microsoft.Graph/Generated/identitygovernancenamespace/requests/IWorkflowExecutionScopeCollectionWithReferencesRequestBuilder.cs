@@ -30,11 +30,11 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
         IWorkflowExecutionScopeCollectionWithReferencesRequest Request(IEnumerable<Microsoft.Graph.Option> options);
 
         /// <summary>
-        /// Gets an <see cref="Microsoft.Graph.IUserWithReferenceRequestBuilder"/> for the specified Microsoft.Graph.User.
+        /// Gets an <see cref="IUserProcessingResultWithReferenceRequestBuilder"/> for the specified UserProcessingResult.
         /// </summary>
-        /// <param name="id">The ID for the Microsoft.Graph.User.</param>
-        /// <returns>The <see cref="Microsoft.Graph.IUserWithReferenceRequestBuilder"/>.</returns>
-        Microsoft.Graph.IUserWithReferenceRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the UserProcessingResult.</param>
+        /// <returns>The <see cref="IUserProcessingResultWithReferenceRequestBuilder"/>.</returns>
+        IUserProcessingResultWithReferenceRequestBuilder this[string id] { get; }
         
         /// <summary>
         /// Gets an <see cref="IWorkflowExecutionScopeCollectionReferencesRequestBuilder"/> for the references in the collection.

@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CloudPcProvisioningPolicyApplyRequest.
     /// </summary>
+    [Obsolete("The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.")]
     public partial class CloudPcProvisioningPolicyApplyRequest : BaseRequest, ICloudPcProvisioningPolicyApplyRequest
     {
         /// <summary>
@@ -29,7 +30,14 @@ namespace Microsoft.Graph
             IEnumerable<Option> options)
             : base(requestUrl, client, options)
         {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.RequestBody = new CloudPcProvisioningPolicyApplyRequestBody();
         }
+
+        /// <summary>
+        /// Gets the request body.
+        /// </summary>
+        public CloudPcProvisioningPolicyApplyRequestBody RequestBody { get; private set; }
 
         /// <summary>
         /// Issues the POST request.
@@ -40,7 +48,7 @@ namespace Microsoft.Graph
             CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.POST;
-            return this.SendAsync(null, cancellationToken);
+            return this.SendAsync(this.RequestBody, cancellationToken);
         }
 
         /// <summary>
@@ -51,7 +59,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GraphResponse> PostResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse(null, cancellationToken);
+            return this.SendAsyncWithGraphResponse(this.RequestBody, cancellationToken);
         }
 
 

@@ -177,6 +177,13 @@ namespace Microsoft.Graph
         public Int32? ReferenceCount { get; set; }
     
         /// <summary>
+        /// Gets or sets specified completion requirements.
+        /// Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue. Read-only. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.
+        /// </summary>
+        [JsonPropertyName("specifiedCompletionRequirements")]
+        public PlannerTaskCompletionRequirements? SpecifiedCompletionRequirements { get; set; }
+    
+        /// <summary>
         /// Gets or sets start date time.
         /// Date and time at which the task starts. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
         /// </summary>

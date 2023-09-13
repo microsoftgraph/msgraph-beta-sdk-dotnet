@@ -31,30 +31,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets alert definition id.
+        /// The identifier of an alert definition. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("alertDefinitionId")]
         public string AlertDefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets is enabled.
+        /// true if the alert is enabled. Setting it to false disables PIM scanning the tenant to identify instances that trigger the alert.
         /// </summary>
         [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets scope id.
+        /// The identifier of the scope to which the alert is related. Only / is supported to represent the tenant scope. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("scopeId")]
         public string ScopeId { get; set; }
     
         /// <summary>
         /// Gets or sets scope type.
+        /// The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.
         /// </summary>
         [JsonPropertyName("scopeType")]
         public string ScopeType { get; set; }
     
         /// <summary>
         /// Gets or sets alert definition.
+        /// The definition of the alert that contains its description, impact, and measures to mitigate or prevent it. Supports $expand.
         /// </summary>
         [JsonPropertyName("alertDefinition")]
         public UnifiedRoleManagementAlertDefinition AlertDefinition { get; set; }

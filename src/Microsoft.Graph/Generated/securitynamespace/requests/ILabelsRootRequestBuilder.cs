@@ -32,6 +32,36 @@ namespace Microsoft.Graph.SecurityNamespace
         new ILabelsRootRequest Request(IEnumerable<Microsoft.Graph.Option> options);
     
         /// <summary>
+        /// Gets the request builder for Authorities.
+        /// </summary>
+        /// <returns>The <see cref="ILabelsRootAuthoritiesCollectionRequestBuilder"/>.</returns>
+        ILabelsRootAuthoritiesCollectionRequestBuilder Authorities { get; }
+
+        /// <summary>
+        /// Gets the request builder for Categories.
+        /// </summary>
+        /// <returns>The <see cref="ILabelsRootCategoriesCollectionRequestBuilder"/>.</returns>
+        ILabelsRootCategoriesCollectionRequestBuilder Categories { get; }
+
+        /// <summary>
+        /// Gets the request builder for Citations.
+        /// </summary>
+        /// <returns>The <see cref="ILabelsRootCitationsCollectionRequestBuilder"/>.</returns>
+        ILabelsRootCitationsCollectionRequestBuilder Citations { get; }
+
+        /// <summary>
+        /// Gets the request builder for Departments.
+        /// </summary>
+        /// <returns>The <see cref="ILabelsRootDepartmentsCollectionRequestBuilder"/>.</returns>
+        ILabelsRootDepartmentsCollectionRequestBuilder Departments { get; }
+
+        /// <summary>
+        /// Gets the request builder for FilePlanReferences.
+        /// </summary>
+        /// <returns>The <see cref="ILabelsRootFilePlanReferencesCollectionRequestBuilder"/>.</returns>
+        ILabelsRootFilePlanReferencesCollectionRequestBuilder FilePlanReferences { get; }
+
+        /// <summary>
         /// Gets the request builder for RetentionLabels.
         /// </summary>
         /// <returns>The <see cref="ILabelsRootRetentionLabelsCollectionRequestBuilder"/>.</returns>

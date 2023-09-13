@@ -75,6 +75,12 @@ namespace Microsoft.Graph
         IDomainPromoteRequestBuilder Promote();
 
         /// <summary>
+        /// Gets the request builder for DomainPromoteToInitial.
+        /// </summary>
+        /// <returns>The <see cref="IDomainPromoteToInitialRequestBuilder"/>.</returns>
+        IDomainPromoteToInitialRequestBuilder PromoteToInitial();
+
+        /// <summary>
         /// Gets the request builder for DomainVerify.
         /// </summary>
         /// <returns>The <see cref="IDomainVerifyRequestBuilder"/>.</returns>

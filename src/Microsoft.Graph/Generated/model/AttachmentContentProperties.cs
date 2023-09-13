@@ -33,5 +33,11 @@ namespace Microsoft.Graph
         [JsonPropertyName("currentLabel")]
         public CurrentLabel CurrentLabel { get; set; }
     
+        /// <summary>
+        /// Gets or sets discoveredSensitiveTypes.
+        /// </summary>
+        [JsonPropertyName("discoveredSensitiveTypes")]
+        public IEnumerable<DiscoveredSensitiveType> DiscoveredSensitiveTypes { get; set; }
+    
     }
 }

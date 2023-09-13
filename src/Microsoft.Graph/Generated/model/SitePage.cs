@@ -18,7 +18,7 @@ namespace Microsoft.Graph
     /// The type Site Page.
     /// </summary>
     [JsonConverter(typeof(DerivedTypeConverter<SitePage>))]
-    public partial class SitePage : BaseItem
+    public partial class SitePage : BaseSitePage
     {
     
         ///<summary>
@@ -30,32 +30,11 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets or sets content type.
-        /// Inherited from baseItem.
-        /// </summary>
-        [JsonPropertyName("contentType")]
-        public ContentTypeInfo ContentType { get; set; }
-    
-        /// <summary>
-        /// Gets or sets page layout.
-        /// The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.
-        /// </summary>
-        [JsonPropertyName("pageLayout")]
-        public PageLayoutType? PageLayout { get; set; }
-    
-        /// <summary>
         /// Gets or sets promotion kind.
         /// Indicates the promotion kind of the sitePage. The possible values are: microsoftReserved, page, newsPost, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("promotionKind")]
         public PagePromotionType? PromotionKind { get; set; }
-    
-        /// <summary>
-        /// Gets or sets publishing state.
-        /// The publishing status and the MM.mm version of the page.
-        /// </summary>
-        [JsonPropertyName("publishingState")]
-        public PublicationFacet PublishingState { get; set; }
     
         /// <summary>
         /// Gets or sets reactions.
@@ -86,13 +65,6 @@ namespace Microsoft.Graph
         public string ThumbnailWebUrl { get; set; }
     
         /// <summary>
-        /// Gets or sets title.
-        /// Title of the sitePage.
-        /// </summary>
-        [JsonPropertyName("title")]
-        public string Title { get; set; }
-    
-        /// <summary>
         /// Gets or sets title area.
         /// Title area on the SharePoint page.
         /// </summary>
@@ -101,14 +73,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets canvas layout.
-        /// Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical section
+        /// Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical sections.
         /// </summary>
         [JsonPropertyName("canvasLayout")]
         public CanvasLayout CanvasLayout { get; set; }
     
         /// <summary>
         /// Gets or sets web parts.
-        /// Collection of webparts on the SharePoint page
+        /// Collection of webparts on the SharePoint page.
         /// </summary>
         [JsonPropertyName("webParts")]
         public ISitePageWebPartsCollectionPage WebParts { get; set; }

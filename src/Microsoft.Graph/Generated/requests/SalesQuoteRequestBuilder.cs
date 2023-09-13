@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SalesQuoteRequestBuilder.
     /// </summary>
-    public partial class SalesQuoteRequestBuilder : EntityRequestBuilder, ISalesQuoteRequestBuilder
+    public partial class SalesQuoteRequestBuilder : BaseRequestBuilder, ISalesQuoteRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new ISalesQuoteRequest Request()
+        public ISalesQuoteRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new ISalesQuoteRequest Request(IEnumerable<Option> options)
+        public ISalesQuoteRequest Request(IEnumerable<Option> options)
         {
             return new SalesQuoteRequest(this.RequestUrl, this.Client, options);
         }

@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets duration.
+        /// The number of days to look back from current timestamp within which the account has not signed in.
         /// </summary>
         [JsonPropertyName("duration")]
         public Duration Duration { get; set; }

@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Android Lob App.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<AndroidLobApp>))]
     public partial class AndroidLobApp : MobileLobApp
     {
     
@@ -55,6 +56,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("packageId")]
         public string PackageId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets targeted platforms.
+        /// The platforms to which the application can be targeted. If not specified, will defauilt to Android Device Administrator. Possible values are: androidDeviceAdministrator, androidOpenSourceProject, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("targetedPlatforms")]
+        public AndroidTargetedPlatforms? TargetedPlatforms { get; set; }
     
         /// <summary>
         /// Gets or sets version code.

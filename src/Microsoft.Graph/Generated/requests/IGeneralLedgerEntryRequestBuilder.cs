@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGeneralLedgerEntryRequestBuilder.
     /// </summary>
-    public partial interface IGeneralLedgerEntryRequestBuilder : IEntityRequestBuilder
+    public partial interface IGeneralLedgerEntryRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IGeneralLedgerEntryRequest Request();
+        IGeneralLedgerEntryRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IGeneralLedgerEntryRequest Request(IEnumerable<Option> options);
+        IGeneralLedgerEntryRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for Account.

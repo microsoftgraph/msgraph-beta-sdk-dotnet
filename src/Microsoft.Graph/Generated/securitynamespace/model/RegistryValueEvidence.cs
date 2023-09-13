@@ -28,6 +28,13 @@ namespace Microsoft.Graph.SecurityNamespace
         }
 
         /// <summary>
+        /// Gets or sets mdeDeviceId.
+        /// A unique identifier assigned to a device by Microsoft Defender for Endpoint.
+        /// </summary>
+        [JsonPropertyName("mdeDeviceId")]
+        public string MdeDeviceId { get; set; }
+    
+        /// <summary>
         /// Gets or sets registryHive.
         /// Registry hive of the key that the recorded action was applied to.
         /// </summary>

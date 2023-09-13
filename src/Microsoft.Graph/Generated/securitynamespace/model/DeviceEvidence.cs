@@ -64,6 +64,13 @@ namespace Microsoft.Graph.SecurityNamespace
         public DeviceHealthStatus? HealthStatus { get; set; }
     
         /// <summary>
+        /// Gets or sets ipInterfaces.
+        /// Ip interfaces of the device during the time of the alert.
+        /// </summary>
+        [JsonPropertyName("ipInterfaces")]
+        public IEnumerable<string> IpInterfaces { get; set; }
+    
+        /// <summary>
         /// Gets or sets loggedOnUsers.
         /// Users that were logged on the machine during the time of the alert.
         /// </summary>

@@ -85,6 +85,12 @@ namespace Microsoft.Graph
         public Int32? DurationInDays { get; set; }
     
         /// <summary>
+        /// Gets or sets end user notification setting.
+        /// </summary>
+        [JsonPropertyName("endUserNotificationSetting")]
+        public EndUserNotificationSetting EndUserNotificationSetting { get; set; }
+    
+        /// <summary>
         /// Gets or sets excluded account target.
         /// Users excluded from the simulation.
         /// </summary>
@@ -127,6 +133,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? LaunchDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets o auth consent app detail.
+        /// </summary>
+        [JsonPropertyName("oAuthConsentAppDetail")]
+        public OAuthConsentAppDetail OAuthConsentAppDetail { get; set; }
+    
+        /// <summary>
         /// Gets or sets payload delivery platform.
         /// Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.
         /// </summary>
@@ -146,6 +158,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("status")]
         public SimulationStatus? Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets training setting.
+        /// </summary>
+        [JsonPropertyName("trainingSetting")]
+        public TrainingSetting TrainingSetting { get; set; }
+    
+        /// <summary>
+        /// Gets or sets landing page.
+        /// </summary>
+        [JsonPropertyName("landingPage")]
+        public LandingPage LandingPage { get; set; }
+    
+        /// <summary>
+        /// Gets or sets login page.
+        /// </summary>
+        [JsonPropertyName("loginPage")]
+        public LoginPage LoginPage { get; set; }
     
         /// <summary>
         /// Gets or sets payload.

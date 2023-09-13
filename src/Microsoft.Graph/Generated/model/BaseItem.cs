@@ -31,7 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created by.
-        /// Identity of the user, device, or application which created the item. Read-only.
+        /// Identity of the user, device, or application that created the item. Read-only.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public IdentitySet CreatedBy { get; set; }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last modified by.
-        /// Identity of the user, device, and application which last modified the item. Read-only.
+        /// Identity of the user, device, and application that last modified the item. Read-only.
         /// </summary>
         [JsonPropertyName("lastModifiedBy")]
         public IdentitySet LastModifiedBy { get; set; }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets web url.
-        /// URL that displays the resource in the browser. Read-only.
+        /// URL that either displays the resource in the browser (for Office file formats), or is a direct link to the file (for other formats). Read-only.
         /// </summary>
         [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }

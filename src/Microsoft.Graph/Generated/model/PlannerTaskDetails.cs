@@ -37,6 +37,13 @@ namespace Microsoft.Graph
         public PlannerChecklistItems Checklist { get; set; }
     
         /// <summary>
+        /// Gets or sets completion requirements.
+        /// Contains detailed information about requirements on the task.
+        /// </summary>
+        [JsonPropertyName("completionRequirements")]
+        public PlannerTaskCompletionRequirementDetails CompletionRequirements { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// Description of the task.
         /// </summary>

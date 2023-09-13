@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CloudPcReportsGetSharedUseLicenseUsageReportRequest.
     /// </summary>
+    [Obsolete("The getSharedUseLicenseUsageReport API is deprecated and will stop returning on Oct 17, 2023. Please use getFrontlineReport instead.")]
     public partial class CloudPcReportsGetSharedUseLicenseUsageReportRequest : BaseRequest, ICloudPcReportsGetSharedUseLicenseUsageReportRequest
     {
         /// <summary>

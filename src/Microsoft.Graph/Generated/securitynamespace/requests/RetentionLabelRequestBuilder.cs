@@ -51,6 +51,18 @@ namespace Microsoft.Graph.SecurityNamespace
         }
     
         /// <summary>
+        /// Gets the request builder for Descriptors.
+        /// </summary>
+        /// <returns>The <see cref="IFilePlanDescriptorRequestBuilder"/>.</returns>
+        public IFilePlanDescriptorRequestBuilder Descriptors
+        {
+            get
+            {
+                return new FilePlanDescriptorRequestBuilder(this.AppendSegmentToRequestUrl("descriptors"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for DispositionReviewStages.
         /// </summary>
         /// <returns>The <see cref="IRetentionLabelDispositionReviewStagesCollectionRequestBuilder"/>.</returns>

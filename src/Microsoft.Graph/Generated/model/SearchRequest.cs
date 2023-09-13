@@ -114,7 +114,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets size.
-        /// The size of the page to be retrieved. Optional.
+        /// The size of the page to be retrieved. The maximum value is 500. Optional.
         /// </summary>
         [JsonPropertyName("size")]
         public Int32? Size { get; set; }

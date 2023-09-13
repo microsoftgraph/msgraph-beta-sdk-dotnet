@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets id.
-        /// The id of the content type.
+        /// The ID of the content type.
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }

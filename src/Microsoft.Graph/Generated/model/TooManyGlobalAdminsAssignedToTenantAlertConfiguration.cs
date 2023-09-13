@@ -30,12 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets global admin count threshold.
+        /// The threshold for the number of accounts assigned the Global Administrator role in the tenant. Triggers an alert if the number of global administrators in the tenant reaches or crosses this threshold value.
         /// </summary>
         [JsonPropertyName("globalAdminCountThreshold")]
         public Int32? GlobalAdminCountThreshold { get; set; }
     
         /// <summary>
         /// Gets or sets percentage of global admins out of roles threshold.
+        /// Threshold of the percentage of global administrators out of all the role assignments in the tenant. Triggers an alert if the percentage in the tenant reaches or crosses this threshold value.
         /// </summary>
         [JsonPropertyName("percentageOfGlobalAdminsOutOfRolesThreshold")]
         public Int32? PercentageOfGlobalAdminsOutOfRolesThreshold { get; set; }

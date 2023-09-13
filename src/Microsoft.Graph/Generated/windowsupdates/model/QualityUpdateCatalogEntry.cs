@@ -30,6 +30,20 @@ namespace Microsoft.Graph.WindowsUpdates
         }
 
         /// <summary>
+        /// Gets or sets catalog name.
+        /// The catalog name of the content. Read-only.
+        /// </summary>
+        [JsonPropertyName("catalogName")]
+        public string CatalogName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cve severity information.
+        /// Severity information of the Common Vulnerabilities and Exposures associated with the content.
+        /// </summary>
+        [JsonPropertyName("cveSeverityInformation")]
+        public QualityUpdateCveSeverityInformation CveSeverityInformation { get; set; }
+    
+        /// <summary>
         /// Gets or sets is expeditable.
         /// Indicates whether the content can be deployed as an expedited quality update. Read-only.
         /// </summary>
@@ -37,11 +51,39 @@ namespace Microsoft.Graph.WindowsUpdates
         public bool? IsExpeditable { get; set; }
     
         /// <summary>
+        /// Gets or sets quality update cadence.
+        /// The publishing cadence of the quality update. Possible values are: monthly, outOfBand, unknownFutureValue. Read-only.
+        /// </summary>
+        [JsonPropertyName("qualityUpdateCadence")]
+        public QualityUpdateCadence? QualityUpdateCadence { get; set; }
+    
+        /// <summary>
         /// Gets or sets quality update classification.
         /// The classification on the quality update. Possible values are: all, security, nonSecurity, unknownFutureValue. Read-only.
         /// </summary>
         [JsonPropertyName("qualityUpdateClassification")]
         public QualityUpdateClassification? QualityUpdateClassification { get; set; }
+    
+        /// <summary>
+        /// Gets or sets short name.
+        /// The short name of the content. Read-only.
+        /// </summary>
+        [JsonPropertyName("shortName")]
+        public string ShortName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets product revisions.
+        /// The operating system product revisions that are released as part of this quality update.
+        /// </summary>
+        [JsonPropertyName("productRevisions")]
+        public IQualityUpdateCatalogEntryProductRevisionsCollectionPage ProductRevisions { get; set; }
+
+        /// <summary>
+        /// Gets or sets productRevisionsNextLink.
+        /// </summary>
+        [JsonPropertyName("productRevisions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ProductRevisionsNextLink { get; set; }
     
     }
 }

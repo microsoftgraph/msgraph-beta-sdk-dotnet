@@ -41,7 +41,8 @@ namespace Microsoft.Graph
         /// Gets the request builder for CloudPcProvisioningPolicyApply.
         /// </summary>
         /// <returns>The <see cref="ICloudPcProvisioningPolicyApplyRequestBuilder"/>.</returns>
-        ICloudPcProvisioningPolicyApplyRequestBuilder Apply();
+        ICloudPcProvisioningPolicyApplyRequestBuilder Apply(
+            CloudPcPolicySettingType? policySettings = null);
 
         /// <summary>
         /// Gets the request builder for CloudPcProvisioningPolicyAssign.

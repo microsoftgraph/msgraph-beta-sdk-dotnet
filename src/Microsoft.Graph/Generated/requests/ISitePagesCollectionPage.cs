@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// The interface ISitePagesCollectionPage.
     /// </summary>
     [InterfaceConverter(typeof(InterfaceConverter<SitePagesCollectionPage>))]
-    public interface ISitePagesCollectionPage : ICollectionPage<SitePage>
+    public interface ISitePagesCollectionPage : ICollectionPage<BaseSitePage>
     {
         /// <summary>
         /// Gets the next page <see cref="ISitePagesCollectionRequest"/> instance.

@@ -191,27 +191,6 @@ namespace Microsoft.Graph
         public string CategoriesNextLink { get; set; }
     
         /// <summary>
-        /// Gets or sets device statuses.
-        /// The list of installation states for this mobile app.
-        /// </summary>
-        [JsonPropertyName("deviceStatuses")]
-        public IMobileAppDeviceStatusesCollectionPage DeviceStatuses { get; set; }
-
-        /// <summary>
-        /// Gets or sets deviceStatusesNextLink.
-        /// </summary>
-        [JsonPropertyName("deviceStatuses@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string DeviceStatusesNextLink { get; set; }
-    
-        /// <summary>
-        /// Gets or sets install summary.
-        /// Mobile App Install Summary.
-        /// </summary>
-        [JsonPropertyName("installSummary")]
-        public MobileAppInstallSummary InstallSummary { get; set; }
-    
-        /// <summary>
         /// Gets or sets relationships.
         /// List of relationships for this mobile app.
         /// </summary>
@@ -224,20 +203,6 @@ namespace Microsoft.Graph
         [JsonPropertyName("relationships@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string RelationshipsNextLink { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user statuses.
-        /// The list of installation states for this mobile app.
-        /// </summary>
-        [JsonPropertyName("userStatuses")]
-        public IMobileAppUserStatusesCollectionPage UserStatuses { get; set; }
-
-        /// <summary>
-        /// Gets or sets userStatusesNextLink.
-        /// </summary>
-        [JsonPropertyName("userStatuses@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string UserStatusesNextLink { get; set; }
     
     }
 }

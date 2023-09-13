@@ -246,6 +246,24 @@ namespace Microsoft.Graph
 
             if (attackSimulationRootToInitialize != null)
             {
+                if (attackSimulationRootToInitialize.EndUserNotifications != null && attackSimulationRootToInitialize.EndUserNotifications.CurrentPage != null)
+                {
+                    attackSimulationRootToInitialize.EndUserNotifications.InitializeNextPageRequest(this.Client, attackSimulationRootToInitialize.EndUserNotificationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    attackSimulationRootToInitialize.EndUserNotifications.AdditionalData = attackSimulationRootToInitialize.AdditionalData;
+                }
+                if (attackSimulationRootToInitialize.LandingPages != null && attackSimulationRootToInitialize.LandingPages.CurrentPage != null)
+                {
+                    attackSimulationRootToInitialize.LandingPages.InitializeNextPageRequest(this.Client, attackSimulationRootToInitialize.LandingPagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    attackSimulationRootToInitialize.LandingPages.AdditionalData = attackSimulationRootToInitialize.AdditionalData;
+                }
+                if (attackSimulationRootToInitialize.LoginPages != null && attackSimulationRootToInitialize.LoginPages.CurrentPage != null)
+                {
+                    attackSimulationRootToInitialize.LoginPages.InitializeNextPageRequest(this.Client, attackSimulationRootToInitialize.LoginPagesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    attackSimulationRootToInitialize.LoginPages.AdditionalData = attackSimulationRootToInitialize.AdditionalData;
+                }
                 if (attackSimulationRootToInitialize.Operations != null && attackSimulationRootToInitialize.Operations.CurrentPage != null)
                 {
                     attackSimulationRootToInitialize.Operations.InitializeNextPageRequest(this.Client, attackSimulationRootToInitialize.OperationsNextLink);
@@ -269,6 +287,12 @@ namespace Microsoft.Graph
                     attackSimulationRootToInitialize.Simulations.InitializeNextPageRequest(this.Client, attackSimulationRootToInitialize.SimulationsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     attackSimulationRootToInitialize.Simulations.AdditionalData = attackSimulationRootToInitialize.AdditionalData;
+                }
+                if (attackSimulationRootToInitialize.Trainings != null && attackSimulationRootToInitialize.Trainings.CurrentPage != null)
+                {
+                    attackSimulationRootToInitialize.Trainings.InitializeNextPageRequest(this.Client, attackSimulationRootToInitialize.TrainingsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    attackSimulationRootToInitialize.Trainings.AdditionalData = attackSimulationRootToInitialize.AdditionalData;
                 }
 
             }

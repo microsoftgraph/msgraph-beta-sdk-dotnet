@@ -23,21 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets coManagedDeviceCount.
-        /// Total number of  co-managed devices.
+        /// Total number of  co-managed devices. Read-only.
         /// </summary>
         [JsonPropertyName("coManagedDeviceCount")]
         public Int32? CoManagedDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets intuneDeviceCount.
-        /// The count of intune devices that are not autopilot registerd.
+        /// The count of intune devices that are not autopilot registerd. Read-only.
         /// </summary>
         [JsonPropertyName("intuneDeviceCount")]
         public Int32? IntuneDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets tenantAttachDeviceCount.
-        /// Total count of tenant attach devices.
+        /// Total count of tenant attach devices. Read-only.
         /// </summary>
         [JsonPropertyName("tenantAttachDeviceCount")]
         public Int32? TenantAttachDeviceCount { get; set; }

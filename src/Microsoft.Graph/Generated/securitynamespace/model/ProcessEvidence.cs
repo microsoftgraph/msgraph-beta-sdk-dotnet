@@ -30,7 +30,7 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets detectionStatus.
-        /// The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.
+        /// The status of the detection. The possible values are: detected, blocked, prevented, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("detectionStatus")]
         public DetectionStatus? DetectionStatus { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets parentProcessCreationDateTime.
-        /// Date and time when the parent of the process was created.
+        /// Date and time when the parent of the process was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("parentProcessCreationDateTime")]
         public DateTimeOffset? ParentProcessCreationDateTime { get; set; }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets processCreationDateTime.
-        /// Date and time the process was created.
+        /// Date and time when the process was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("processCreationDateTime")]
         public DateTimeOffset? ProcessCreationDateTime { get; set; }

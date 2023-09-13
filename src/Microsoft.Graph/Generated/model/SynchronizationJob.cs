@@ -49,6 +49,14 @@ namespace Microsoft.Graph
         public string TemplateId { get; set; }
     
         /// <summary>
+        /// Gets or sets bulk upload.
+        /// The bulk upload operation for the job.
+        /// </summary>
+        [Obsolete("")]
+        [JsonPropertyName("bulkUpload")]
+        public BulkUpload BulkUpload { get; set; }
+    
+        /// <summary>
         /// Gets or sets schema.
         /// The synchronization schema configured for the job.
         /// </summary>

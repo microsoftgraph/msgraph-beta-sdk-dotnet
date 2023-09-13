@@ -51,7 +51,7 @@ namespace Microsoft.Graph.DeviceManagementNamespace
     
         /// <summary>
         /// Gets or sets alertRuleTemplate.
-        /// The associated alert rule template. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.
+        /// The associated alert rule template. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
         /// </summary>
         [JsonPropertyName("alertRuleTemplate")]
         public AlertRuleTemplate? AlertRuleTemplate { get; set; }

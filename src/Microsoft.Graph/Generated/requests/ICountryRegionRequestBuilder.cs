@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICountryRegionRequestBuilder.
     /// </summary>
-    public partial interface ICountryRegionRequestBuilder : IEntityRequestBuilder
+    public partial interface ICountryRegionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new ICountryRegionRequest Request();
+        ICountryRegionRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new ICountryRegionRequest Request(IEnumerable<Option> options);
+        ICountryRegionRequest Request(IEnumerable<Option> options);
     
     }
 }

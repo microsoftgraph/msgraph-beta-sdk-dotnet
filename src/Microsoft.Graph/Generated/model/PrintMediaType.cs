@@ -10,11 +10,13 @@
 
 namespace Microsoft.Graph
 {
+    using System;
     using System.Text.Json.Serialization;
 
     /// <summary>
     /// The enum PrintMediaType.
     /// </summary>
+    [Obsolete("The printMediaType enum type is deprecated and will stop returning data on July 31, 2023. This enum type properties are replaced with string type properties.")]
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum PrintMediaType
     {

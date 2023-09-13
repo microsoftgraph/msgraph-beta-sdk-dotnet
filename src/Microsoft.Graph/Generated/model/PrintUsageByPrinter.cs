@@ -34,6 +34,13 @@ namespace Microsoft.Graph
         [JsonPropertyName("printerId")]
         public string PrinterId { get; set; }
     
+        /// <summary>
+        /// Gets or sets printer name.
+        /// The name of the printer represented by these statistics.
+        /// </summary>
+        [JsonPropertyName("printerName")]
+        public string PrinterName { get; set; }
+    
     }
 }
 

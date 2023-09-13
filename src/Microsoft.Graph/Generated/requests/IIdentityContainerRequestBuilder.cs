@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         IIdentityContainerAuthenticationEventListenersCollectionRequestBuilder AuthenticationEventListeners { get; }
 
         /// <summary>
+        /// Gets the request builder for AuthenticationEventsFlows.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerAuthenticationEventsFlowsCollectionRequestBuilder"/>.</returns>
+        IIdentityContainerAuthenticationEventsFlowsCollectionRequestBuilder AuthenticationEventsFlows { get; }
+
+        /// <summary>
         /// Gets the request builder for B2cUserFlows.
         /// </summary>
         /// <returns>The <see cref="IIdentityContainerB2cUserFlowsCollectionRequestBuilder"/>.</returns>

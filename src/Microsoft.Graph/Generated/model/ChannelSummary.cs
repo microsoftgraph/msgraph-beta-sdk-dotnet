@@ -23,24 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets guestsCount.
+        /// Count of guests in a channel.
         /// </summary>
         [JsonPropertyName("guestsCount")]
         public Int32? GuestsCount { get; set; }
     
         /// <summary>
         /// Gets or sets hasMembersFromOtherTenants.
+        /// Indicates whether external members are included on the channel.
         /// </summary>
         [JsonPropertyName("hasMembersFromOtherTenants")]
         public bool? HasMembersFromOtherTenants { get; set; }
     
         /// <summary>
         /// Gets or sets membersCount.
+        /// Count of members in a channel.
         /// </summary>
         [JsonPropertyName("membersCount")]
         public Int32? MembersCount { get; set; }
     
         /// <summary>
         /// Gets or sets ownersCount.
+        /// Count of owners in a channel.
         /// </summary>
         [JsonPropertyName("ownersCount")]
         public Int32? OwnersCount { get; set; }

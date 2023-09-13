@@ -23,14 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets activity date time.
-        /// Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
+        /// Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.Supports $filter (eq, ge, le) and $orderby.
         /// </summary>
         [JsonPropertyName("activityDateTime")]
         public DateTimeOffset? ActivityDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets activity display name.
-        /// Indicates the activity name or the operation name (E.g. 'Create User', 'Add member to group'). For a list of activities logged, refer to Azure Ad activity list.
+        /// Indicates the activity name or the operation name (E.g. 'Create User', 'Add member to group'). For a list of activities logged, refer to Azure AD audit log categories and activities. Supports $filter (eq, startswith).
         /// </summary>
         [JsonPropertyName("activityDisplayName")]
         public string ActivityDisplayName { get; set; }
@@ -44,28 +44,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets category.
-        /// Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.
+        /// Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement. For a list of categories for activities logged, refer to Azure AD audit log categories and activities.
         /// </summary>
         [JsonPropertyName("category")]
         public string Category { get; set; }
     
         /// <summary>
         /// Gets or sets correlation id.
-        /// Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.
+        /// Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("correlationId")]
         public string CorrelationId { get; set; }
     
         /// <summary>
         /// Gets or sets initiated by.
-        /// Indicates information about the user or app initiated the activity.
+        /// Indicates information about the user or app initiated the activity. Supports $filter (eq) for user/id, user/displayName, user/userPrincipalName, app/appId, app/displayName; and $filter (startswith) for user/userPrincipalName.
         /// </summary>
         [JsonPropertyName("initiatedBy")]
         public AuditActivityInitiator InitiatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets logged by service.
-        /// Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.
+        /// Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("loggedByService")]
         public string LoggedByService { get; set; }
@@ -93,7 +93,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target resources.
-        /// Information about the resource that changed due to the activity.
+        /// Information about the resource that changed due to the activity. Supports $filter (eq) for id and displayName; and $filter (startswith) for displayName.
         /// </summary>
         [JsonPropertyName("targetResources")]
         public IEnumerable<TargetResource> TargetResources { get; set; }

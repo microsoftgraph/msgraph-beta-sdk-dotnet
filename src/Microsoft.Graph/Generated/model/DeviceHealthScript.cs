@@ -50,6 +50,13 @@ namespace Microsoft.Graph
         public IEnumerable<DeviceHealthScriptParameter> DetectionScriptParameters { get; set; }
     
         /// <summary>
+        /// Gets or sets device health script type.
+        /// DeviceHealthScriptType for the script policy. Possible values are: deviceHealthScript, managedInstallerScript.
+        /// </summary>
+        [JsonPropertyName("deviceHealthScriptType")]
+        public DeviceHealthScriptType? DeviceHealthScriptType { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// Name of the device health script
         /// </summary>

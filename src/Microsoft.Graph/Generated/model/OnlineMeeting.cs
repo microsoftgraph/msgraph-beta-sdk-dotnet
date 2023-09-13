@@ -58,6 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allow recording.
+        /// Indicates whether recording is enabled for the meeting.
         /// </summary>
         [JsonPropertyName("allowRecording")]
         public bool? AllowRecording { get; set; }
@@ -71,6 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allow transcription.
+        /// Indicates whether transcription is enabled for the meeting.
         /// </summary>
         [JsonPropertyName("allowTranscription")]
         public bool? AllowTranscription { get; set; }
@@ -84,6 +86,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets anonymize identity for roles.
+        /// Specifies whose identity will be anonymized in the meeting. Possible values are: attendee. The attendee value cannot be removed through a PATCH operation once added.
         /// </summary>
         [JsonPropertyName("anonymizeIdentityForRoles")]
         public IEnumerable<OnlineMeetingRole> AnonymizeIdentityForRoles { get; set; }
@@ -101,6 +104,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("audioConferencing")]
         public AudioConferencing AudioConferencing { get; set; }
+    
+        /// <summary>
+        /// Gets or sets broadcast recording.
+        /// </summary>
+        [JsonPropertyName("broadcastRecording")]
+        public Stream BroadcastRecording { get; set; }
     
         /// <summary>
         /// Gets or sets broadcast settings.
@@ -121,6 +130,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("chatInfo")]
         public ChatInfo ChatInfo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets chat restrictions.
+        /// </summary>
+        [JsonPropertyName("chatRestrictions")]
+        public ChatRestrictions ChatRestrictions { get; set; }
     
         /// <summary>
         /// Gets or sets creation date time.
@@ -248,13 +263,6 @@ namespace Microsoft.Graph
         public WatermarkProtectionValues WatermarkProtection { get; set; }
     
         /// <summary>
-        /// Gets or sets virtual appointment.
-        /// </summary>
-        [Obsolete("The Virtual appointment resource is deprecated and will stop returning data on May 31, 2023. Existing apps that use this feature should be updated to the new getVirtualAppointmentJoinWebUrl API.")]
-        [JsonPropertyName("virtualAppointment")]
-        public VirtualAppointment VirtualAppointment { get; set; }
-    
-        /// <summary>
         /// Gets or sets attendance reports.
         /// The attendance reports of an online meeting. Read-only.
         /// </summary>
@@ -280,6 +288,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("registration")]
         public MeetingRegistration Registration { get; set; }
+    
+        /// <summary>
+        /// Gets or sets recordings.
+        /// The recordings of an online meeting. Read-only.
+        /// </summary>
+        [JsonPropertyName("recordings")]
+        public IOnlineMeetingRecordingsCollectionPage Recordings { get; set; }
+
+        /// <summary>
+        /// Gets or sets recordingsNextLink.
+        /// </summary>
+        [JsonPropertyName("recordings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string RecordingsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets transcripts.

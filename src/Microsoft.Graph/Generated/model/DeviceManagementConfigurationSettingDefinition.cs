@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets applicability.
-        /// Details which device setting is applicable on
+        /// Details which device setting is applicable on. Supports: $filters.
         /// </summary>
         [JsonPropertyName("applicability")]
         public DeviceManagementConfigurationSettingApplicability Applicability { get; set; }
@@ -44,35 +44,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets category id.
-        /// Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)
+        /// Specify category in which the setting is under. Support $filters.
         /// </summary>
         [JsonPropertyName("categoryId")]
         public string CategoryId { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// Description of the item
+        /// Description of the setting.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// Display name of the item
+        /// Name of the setting. For example: Allow Toast.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets help text.
-        /// Help text of the item
+        /// Help text of the setting. Give more details of the setting.
         /// </summary>
         [JsonPropertyName("helpText")]
         public string HelpText { get; set; }
     
         /// <summary>
         /// Gets or sets info urls.
-        /// List of links more info for the setting can be found at
+        /// List of links more info for the setting can be found at.
         /// </summary>
         [JsonPropertyName("infoUrls")]
         public IEnumerable<string> InfoUrls { get; set; }
@@ -114,21 +114,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets root definition id.
-        /// Root setting definition if the setting is a child setting.
+        /// Root setting definition id if the setting is a child setting.
         /// </summary>
         [JsonPropertyName("rootDefinitionId")]
         public string RootDefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets setting usage.
-        /// Setting type, for example, configuration and compliance. Possible values are: none, configuration, compliance.
+        /// Indicate setting type for the setting. Possible values are: configuration, compliance, reusableSetting. Each setting usage has separate API end-point to call. Possible values are: none, configuration, compliance, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("settingUsage")]
         public DeviceManagementConfigurationSettingUsage? SettingUsage { get; set; }
     
         /// <summary>
         /// Gets or sets ux behavior.
-        /// Setting control type representation in the UX. Possible values are: default, dropdown, smallTextBox, largeTextBox, toggle, multiheaderGrid, contextPane.
+        /// Setting control type representation in the UX. Possible values are: default, dropdown, smallTextBox, largeTextBox, toggle, multiheaderGrid, contextPane. Possible values are: default, dropdown, smallTextBox, largeTextBox, toggle, multiheaderGrid, contextPane, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("uxBehavior")]
         public DeviceManagementConfigurationControlType? UxBehavior { get; set; }
@@ -142,7 +142,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets visibility.
-        /// Setting visibility scope to UX. Possible values are: none, settingsCatalog, template.
+        /// Setting visibility scope to UX. Possible values are: none, settingsCatalog, template. Possible values are: none, settingsCatalog, template, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("visibility")]
         public DeviceManagementConfigurationSettingVisibility? Visibility { get; set; }

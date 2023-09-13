@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets authenticationMethod.
-        /// Name of authentication method.
+        /// Name of the authentication method.
         /// </summary>
         [JsonPropertyName("authenticationMethod")]
         public string AuthenticationMethod { get; set; }

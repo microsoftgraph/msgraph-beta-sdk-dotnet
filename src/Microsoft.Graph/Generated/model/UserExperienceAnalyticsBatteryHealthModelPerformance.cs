@@ -17,33 +17,34 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type User Experience Analytics Battery Health Model Performance.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<UserExperienceAnalyticsBatteryHealthModelPerformance>))]
     public partial class UserExperienceAnalyticsBatteryHealthModelPerformance : Entity
     {
     
         /// <summary>
         /// Gets or sets active devices.
-        /// Number of active devices for that model. Valid values -2147483648 to 2147483647
+        /// Number of active devices for that model. Valid values 0 to 2147483647
         /// </summary>
         [JsonPropertyName("activeDevices")]
         public Int32? ActiveDevices { get; set; }
     
         /// <summary>
         /// Gets or sets average battery age in days.
-        /// The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values -2147483648 to 2147483647
+        /// The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values 0 to 2147483647
         /// </summary>
         [JsonPropertyName("averageBatteryAgeInDays")]
         public Int32? AverageBatteryAgeInDays { get; set; }
     
         /// <summary>
         /// Gets or sets average estimated runtime in minutes.
-        /// The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values -2147483648 to 2147483647
+        /// The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647
         /// </summary>
         [JsonPropertyName("averageEstimatedRuntimeInMinutes")]
         public Int32? AverageEstimatedRuntimeInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets average max capacity percentage.
-        /// The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values -2147483648 to 2147483647
+        /// The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
         /// </summary>
         [JsonPropertyName("averageMaxCapacityPercentage")]
         public Int32? AverageMaxCapacityPercentage { get; set; }
@@ -56,6 +57,34 @@ namespace Microsoft.Graph
         public string Manufacturer { get; set; }
     
         /// <summary>
+        /// Gets or sets mean full battery drain count.
+        /// The mean of number of times the battery has been discharged an amount that equals 100% of its capacity for all devices of a given model in a tenant. Valid values 0 to 2147483647
+        /// </summary>
+        [JsonPropertyName("meanFullBatteryDrainCount")]
+        public Int32? MeanFullBatteryDrainCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets median estimated runtime in minutes.
+        /// The median of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647
+        /// </summary>
+        [JsonPropertyName("medianEstimatedRuntimeInMinutes")]
+        public Int32? MedianEstimatedRuntimeInMinutes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets median full battery drain count.
+        /// The median of number of times the battery has been discharged an amount that equals 100% of its capacity for all devices of a given model in a tenant. Valid values 0 to 2147483647
+        /// </summary>
+        [JsonPropertyName("medianFullBatteryDrainCount")]
+        public Int32? MedianFullBatteryDrainCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets median max capacity percentage.
+        /// The median of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647
+        /// </summary>
+        [JsonPropertyName("medianMaxCapacityPercentage")]
+        public Int32? MedianMaxCapacityPercentage { get; set; }
+    
+        /// <summary>
         /// Gets or sets model.
         /// The model name of the device.
         /// </summary>
@@ -64,10 +93,17 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets model battery health score.
-        /// A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values -2147483648 to 2147483647
+        /// A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647
         /// </summary>
         [JsonPropertyName("modelBatteryHealthScore")]
         public Int32? ModelBatteryHealthScore { get; set; }
+    
+        /// <summary>
+        /// Gets or sets model health status.
+        /// The overall battery health status of a given model in a tenant. Possible values are: unknown, insufficientData, needsAttention, meetingGoals, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("modelHealthStatus")]
+        public UserExperienceAnalyticsHealthState? ModelHealthStatus { get; set; }
     
     }
 }

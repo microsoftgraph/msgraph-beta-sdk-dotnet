@@ -22,35 +22,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets managed device id.
-        /// The user experience analytics device id.
+        /// The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("managedDeviceId")]
         public string ManagedDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets process name.
-        /// User experience analytics device startup process name.
+        /// The name of the process. Examples: outlook, excel. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("processName")]
         public string ProcessName { get; set; }
     
         /// <summary>
         /// Gets or sets product name.
-        /// The user experience analytics device startup process product name.
+        /// The product name of the process. Examples: Microsoft Outlook, Microsoft Excel. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("productName")]
         public string ProductName { get; set; }
     
         /// <summary>
         /// Gets or sets publisher.
-        /// The User experience analytics device startup process publisher.
+        /// The publisher of the process. Examples: Microsoft Corporation, Contoso Corp. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("publisher")]
         public string Publisher { get; set; }
     
         /// <summary>
         /// Gets or sets startup impact in ms.
-        /// User experience analytics device startup process impact in milliseconds.
+        /// The impact of startup process on device boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("startupImpactInMs")]
         public Int32? StartupImpactInMs { get; set; }

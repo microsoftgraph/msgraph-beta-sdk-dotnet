@@ -29,7 +29,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role definition id.
-        /// The identifier of the role definition object where the policy applies. If not specified, the policy applies to all roles. Supports $filter (eq).
+        /// For Azure AD roles policy, it's the identifier of the role definition object where the policy applies. For PIM for groups membership and ownership, it's either member or owner. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("roleDefinitionId")]
         public string RoleDefinitionId { get; set; }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets scope type.
-        /// The type of the scope where the policy is assigned. One of Directory, DirectoryRole. Required.
+        /// The type of the scope where the policy is assigned. One of Directory, DirectoryRole, Group. Required.
         /// </summary>
         [JsonPropertyName("scopeType")]
         public string ScopeType { get; set; }

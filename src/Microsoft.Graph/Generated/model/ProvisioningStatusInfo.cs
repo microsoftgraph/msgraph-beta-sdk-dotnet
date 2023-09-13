@@ -23,13 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets errorInformation.
+        /// If status is not success/ skipped details for the error are contained in this.
         /// </summary>
         [JsonPropertyName("errorInformation")]
         public ProvisioningErrorInfo ErrorInformation { get; set; }
     
         /// <summary>
         /// Gets or sets status.
-        /// Possible values are: success, warning, failure, skipped, unknownFutureValue.
+        /// Possible values are: success, failure, skipped, warning, unknownFutureValue. Supports $filter (eq, contains).
         /// </summary>
         [JsonPropertyName("status")]
         public ProvisioningResult? Status { get; set; }

@@ -244,6 +244,18 @@ namespace Microsoft.Graph.WindowsUpdates
         private void InitializeCollectionProperties(QualityUpdateCatalogEntry qualityUpdateCatalogEntryToInitialize)
         {
 
+            if (qualityUpdateCatalogEntryToInitialize != null)
+            {
+                if (qualityUpdateCatalogEntryToInitialize.ProductRevisions != null && qualityUpdateCatalogEntryToInitialize.ProductRevisions.CurrentPage != null)
+                {
+                    qualityUpdateCatalogEntryToInitialize.ProductRevisions.InitializeNextPageRequest(this.Client, qualityUpdateCatalogEntryToInitialize.ProductRevisionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    qualityUpdateCatalogEntryToInitialize.ProductRevisions.AdditionalData = qualityUpdateCatalogEntryToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

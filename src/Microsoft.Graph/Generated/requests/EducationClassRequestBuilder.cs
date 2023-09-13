@@ -99,6 +99,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Modules.
+        /// </summary>
+        /// <returns>The <see cref="IEducationClassModulesCollectionRequestBuilder"/>.</returns>
+        public IEducationClassModulesCollectionRequestBuilder Modules
+        {
+            get
+            {
+                return new EducationClassModulesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("modules"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Group.
         /// </summary>
         /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>

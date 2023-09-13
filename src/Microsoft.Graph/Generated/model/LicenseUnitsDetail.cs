@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         public Int32? Enabled { get; set; }
     
         /// <summary>
+        /// Gets or sets lockedOut.
+        /// The number of units that are locked out because the customer cancelled their subscription of the service SKU.
+        /// </summary>
+        [JsonPropertyName("lockedOut")]
+        public Int32? LockedOut { get; set; }
+    
+        /// <summary>
         /// Gets or sets suspended.
         /// The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.
         /// </summary>

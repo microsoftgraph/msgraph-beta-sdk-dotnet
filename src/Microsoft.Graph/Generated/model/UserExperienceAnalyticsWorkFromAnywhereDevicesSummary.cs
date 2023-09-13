@@ -23,98 +23,98 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets autopilotDevicesSummary.
-        /// The value of work from anywhere autopilot devices summary.
+        /// The user experience analytics work from anywhere Autopilot devices summary. Read-only.
         /// </summary>
         [JsonPropertyName("autopilotDevicesSummary")]
         public UserExperienceAnalyticsAutopilotDevicesSummary AutopilotDevicesSummary { get; set; }
     
         /// <summary>
         /// Gets or sets cloudIdentityDevicesSummary.
-        /// The user experience analytics work from anywhere Cloud Identity devices summary.
+        /// The user experience analytics work from anywhere Cloud Identity devices summary. Read-only.
         /// </summary>
         [JsonPropertyName("cloudIdentityDevicesSummary")]
         public UserExperienceAnalyticsCloudIdentityDevicesSummary CloudIdentityDevicesSummary { get; set; }
     
         /// <summary>
         /// Gets or sets cloudManagementDevicesSummary.
-        /// The user experience work from anywhere Cloud management devices summary.
+        /// The user experience analytics work from anywhere Cloud management devices summary. Read-only.
         /// </summary>
         [JsonPropertyName("cloudManagementDevicesSummary")]
         public UserExperienceAnalyticsCloudManagementDevicesSummary CloudManagementDevicesSummary { get; set; }
     
         /// <summary>
         /// Gets or sets coManagedDevices.
-        /// Total number of co-managed devices. Valid values -2147483648 to 2147483647
+        /// Total number of co-managed devices. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("coManagedDevices")]
         public Int32? CoManagedDevices { get; set; }
     
         /// <summary>
         /// Gets or sets devicesNotAutopilotRegistered.
-        /// The count of intune devices that are not autopilot registerd. Valid values -2147483648 to 2147483647
+        /// The count of intune devices that are not autopilot registerd. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("devicesNotAutopilotRegistered")]
         public Int32? DevicesNotAutopilotRegistered { get; set; }
     
         /// <summary>
         /// Gets or sets devicesWithoutAutopilotProfileAssigned.
-        /// The count of intune devices not autopilot profile assigned. Valid values -2147483648 to 2147483647
+        /// The count of intune devices not autopilot profile assigned. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("devicesWithoutAutopilotProfileAssigned")]
         public Int32? DevicesWithoutAutopilotProfileAssigned { get; set; }
     
         /// <summary>
         /// Gets or sets devicesWithoutCloudIdentity.
-        /// The count of devices that are not cloud identity. Valid values -2147483648 to 2147483647
+        /// The count of devices that are not cloud identity. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("devicesWithoutCloudIdentity")]
         public Int32? DevicesWithoutCloudIdentity { get; set; }
     
         /// <summary>
         /// Gets or sets intuneDevices.
-        /// The count of intune devices that are not autopilot registerd. Valid values -2147483648 to 2147483647
+        /// The count of intune devices that are not autopilot registerd. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("intuneDevices")]
         public Int32? IntuneDevices { get; set; }
     
         /// <summary>
         /// Gets or sets tenantAttachDevices.
-        /// Total count of tenant attach devices. Valid values -2147483648 to 2147483647
+        /// Total count of tenant attach devices. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("tenantAttachDevices")]
         public Int32? TenantAttachDevices { get; set; }
     
         /// <summary>
         /// Gets or sets totalDevices.
-        /// The total count of devices. Valid values -2147483648 to 2147483647
+        /// The total count of devices. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("totalDevices")]
         public Int32? TotalDevices { get; set; }
     
         /// <summary>
         /// Gets or sets unsupportedOSversionDevices.
-        /// The count of Windows 10 devices that have unsupported OS versions. Valid values -2147483648 to 2147483647
+        /// The count of Windows 10 devices that have unsupported OS versions. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("unsupportedOSversionDevices")]
         public Int32? UnsupportedOSversionDevices { get; set; }
     
         /// <summary>
         /// Gets or sets windows10Devices.
-        /// The count of windows 10 devices. Valid values -2147483648 to 2147483647
+        /// The count of windows 10 devices. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("windows10Devices")]
         public Int32? Windows10Devices { get; set; }
     
         /// <summary>
         /// Gets or sets windows10DevicesSummary.
-        /// The user experience analytics work from anywhere Windows 10 devices summary.
+        /// The user experience analytics work from anywhere Windows 10 devices summary. Read-only.
         /// </summary>
         [JsonPropertyName("windows10DevicesSummary")]
         public UserExperienceAnalyticsWindows10DevicesSummary Windows10DevicesSummary { get; set; }
     
         /// <summary>
         /// Gets or sets windows10DevicesWithoutTenantAttach.
-        /// The count of windows 10 devices that are Intune and Comanaged. Valid values -2147483648 to 2147483647
+        /// The count of windows 10 devices that are Intune and co-managed. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("windows10DevicesWithoutTenantAttach")]
         public Int32? Windows10DevicesWithoutTenantAttach { get; set; }

@@ -184,6 +184,12 @@ namespace Microsoft.Graph
             string password = null);
 
         /// <summary>
+        /// Gets the request builder for DriveItemPermanentDelete.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemPermanentDeleteRequestBuilder"/>.</returns>
+        IDriveItemPermanentDeleteRequestBuilder PermanentDelete();
+
+        /// <summary>
         /// Gets the request builder for DriveItemPreview.
         /// </summary>
         /// <returns>The <see cref="IDriveItemPreviewRequestBuilder"/>.</returns>

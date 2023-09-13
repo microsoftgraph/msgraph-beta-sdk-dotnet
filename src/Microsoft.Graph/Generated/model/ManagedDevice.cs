@@ -490,6 +490,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
+        /// Gets or sets security patch level.
+        /// This indicates the security patch level of the operating system. These special updates contain important security fixes. For iOS/MacOS they are in (a) format. For android its in 2017-08-07 format. This property is read-only.
+        /// </summary>
+        [JsonPropertyName("securityPatchLevel")]
+        public string SecurityPatchLevel { get; set; }
+    
+        /// <summary>
         /// Gets or sets serial number.
         /// SerialNumber. This property is read-only.
         /// </summary>

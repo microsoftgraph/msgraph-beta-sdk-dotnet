@@ -270,11 +270,23 @@ namespace Microsoft.Graph.SecurityNamespace
                     // Copy the additional data collection to the page itself so that information is not lost
                     threatIntelligenceToInitialize.HostCookies.AdditionalData = threatIntelligenceToInitialize.AdditionalData;
                 }
+                if (threatIntelligenceToInitialize.HostPairs != null && threatIntelligenceToInitialize.HostPairs.CurrentPage != null)
+                {
+                    threatIntelligenceToInitialize.HostPairs.InitializeNextPageRequest(this.Client, threatIntelligenceToInitialize.HostPairsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    threatIntelligenceToInitialize.HostPairs.AdditionalData = threatIntelligenceToInitialize.AdditionalData;
+                }
                 if (threatIntelligenceToInitialize.Hosts != null && threatIntelligenceToInitialize.Hosts.CurrentPage != null)
                 {
                     threatIntelligenceToInitialize.Hosts.InitializeNextPageRequest(this.Client, threatIntelligenceToInitialize.HostsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     threatIntelligenceToInitialize.Hosts.AdditionalData = threatIntelligenceToInitialize.AdditionalData;
+                }
+                if (threatIntelligenceToInitialize.HostSslCertificates != null && threatIntelligenceToInitialize.HostSslCertificates.CurrentPage != null)
+                {
+                    threatIntelligenceToInitialize.HostSslCertificates.InitializeNextPageRequest(this.Client, threatIntelligenceToInitialize.HostSslCertificatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    threatIntelligenceToInitialize.HostSslCertificates.AdditionalData = threatIntelligenceToInitialize.AdditionalData;
                 }
                 if (threatIntelligenceToInitialize.HostTrackers != null && threatIntelligenceToInitialize.HostTrackers.CurrentPage != null)
                 {
@@ -300,11 +312,35 @@ namespace Microsoft.Graph.SecurityNamespace
                     // Copy the additional data collection to the page itself so that information is not lost
                     threatIntelligenceToInitialize.PassiveDnsRecords.AdditionalData = threatIntelligenceToInitialize.AdditionalData;
                 }
+                if (threatIntelligenceToInitialize.SslCertificates != null && threatIntelligenceToInitialize.SslCertificates.CurrentPage != null)
+                {
+                    threatIntelligenceToInitialize.SslCertificates.InitializeNextPageRequest(this.Client, threatIntelligenceToInitialize.SslCertificatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    threatIntelligenceToInitialize.SslCertificates.AdditionalData = threatIntelligenceToInitialize.AdditionalData;
+                }
+                if (threatIntelligenceToInitialize.Subdomains != null && threatIntelligenceToInitialize.Subdomains.CurrentPage != null)
+                {
+                    threatIntelligenceToInitialize.Subdomains.InitializeNextPageRequest(this.Client, threatIntelligenceToInitialize.SubdomainsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    threatIntelligenceToInitialize.Subdomains.AdditionalData = threatIntelligenceToInitialize.AdditionalData;
+                }
                 if (threatIntelligenceToInitialize.Vulnerabilities != null && threatIntelligenceToInitialize.Vulnerabilities.CurrentPage != null)
                 {
                     threatIntelligenceToInitialize.Vulnerabilities.InitializeNextPageRequest(this.Client, threatIntelligenceToInitialize.VulnerabilitiesNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     threatIntelligenceToInitialize.Vulnerabilities.AdditionalData = threatIntelligenceToInitialize.AdditionalData;
+                }
+                if (threatIntelligenceToInitialize.WhoisHistoryRecords != null && threatIntelligenceToInitialize.WhoisHistoryRecords.CurrentPage != null)
+                {
+                    threatIntelligenceToInitialize.WhoisHistoryRecords.InitializeNextPageRequest(this.Client, threatIntelligenceToInitialize.WhoisHistoryRecordsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    threatIntelligenceToInitialize.WhoisHistoryRecords.AdditionalData = threatIntelligenceToInitialize.AdditionalData;
+                }
+                if (threatIntelligenceToInitialize.WhoisRecords != null && threatIntelligenceToInitialize.WhoisRecords.CurrentPage != null)
+                {
+                    threatIntelligenceToInitialize.WhoisRecords.InitializeNextPageRequest(this.Client, threatIntelligenceToInitialize.WhoisRecordsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    threatIntelligenceToInitialize.WhoisRecords.AdditionalData = threatIntelligenceToInitialize.AdditionalData;
                 }
 
             }

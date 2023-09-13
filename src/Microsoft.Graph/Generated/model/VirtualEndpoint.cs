@@ -35,6 +35,19 @@ namespace Microsoft.Graph
         public string AuditEventsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets bulk actions.
+        /// </summary>
+        [JsonPropertyName("bulkActions")]
+        public IVirtualEndpointBulkActionsCollectionPage BulkActions { get; set; }
+
+        /// <summary>
+        /// Gets or sets bulkActionsNextLink.
+        /// </summary>
+        [JsonPropertyName("bulkActions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string BulkActionsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets cloud pcs.
         /// Cloud managed virtual desktops.
         /// </summary>
@@ -84,6 +97,19 @@ namespace Microsoft.Graph
         public string ExternalPartnerSettingsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets front line service plans.
+        /// </summary>
+        [JsonPropertyName("frontLineServicePlans")]
+        public IVirtualEndpointFrontLineServicePlansCollectionPage FrontLineServicePlans { get; set; }
+
+        /// <summary>
+        /// Gets or sets frontLineServicePlansNextLink.
+        /// </summary>
+        [JsonPropertyName("frontLineServicePlans@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string FrontLineServicePlansNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets gallery images.
         /// The gallery image resource on Cloud PC.
         /// </summary>
@@ -122,6 +148,7 @@ namespace Microsoft.Graph
         /// Gets or sets provisioning policies.
         /// Cloud PC provisioning policy.
         /// </summary>
+        [Obsolete("The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.")]
         [JsonPropertyName("provisioningPolicies")]
         public IVirtualEndpointProvisioningPoliciesCollectionPage ProvisioningPolicies { get; set; }
 
@@ -157,6 +184,7 @@ namespace Microsoft.Graph
         /// Gets or sets shared use service plans.
         /// Cloud PC shared-use service plans.
         /// </summary>
+        [Obsolete("The sharedUseServicePlans property is deprecated and will not be supported starting Oct 8, 2023. This property will not be included as part of the API response.")]
         [JsonPropertyName("sharedUseServicePlans")]
         public IVirtualEndpointSharedUseServicePlansCollectionPage SharedUseServicePlans { get; set; }
 

@@ -49,5 +49,12 @@ namespace Microsoft.Graph.SecurityNamespace
         /// <returns>The <see cref="IEdiscoveryCustodianRemoveHoldRequestBuilder"/>.</returns>
         IEdiscoveryCustodianRemoveHoldRequestBuilder RemoveHold(
             IEnumerable<string> ids = null);
+
+        /// <summary>
+        /// Gets the request builder for EdiscoveryCustodianUpdateIndex.
+        /// </summary>
+        /// <returns>The <see cref="IEdiscoveryCustodianUpdateIndexRequestBuilder"/>.</returns>
+        IEdiscoveryCustodianUpdateIndexRequestBuilder UpdateIndex(
+            IEnumerable<string> ids = null);
     }
 }

@@ -50,13 +50,6 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastCollectedDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets lastCollectedDateTimeUtc.
-        /// Time at which location was recorded, relative to UTC
-        /// </summary>
-        [JsonPropertyName("lastCollectedDateTimeUtc")]
-        public DateTimeOffset? LastCollectedDateTimeUtc { get; set; }
-    
-        /// <summary>
         /// Gets or sets latitude.
         /// Latitude coordinate of the device's location
         /// </summary>

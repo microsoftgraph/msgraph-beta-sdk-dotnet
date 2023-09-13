@@ -393,12 +393,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceGetFileVaultKeyRequestBuilder"/>.</returns>
         IManagedDeviceGetFileVaultKeyRequestBuilder GetFileVaultKey();
-
-        /// <summary>
-        /// Gets the request builder for ManagedDeviceGetOemWarranty.
-        /// </summary>
-        /// <returns>The <see cref="IManagedDeviceGetOemWarrantyRequestBuilder"/>.</returns>
-        IManagedDeviceGetOemWarrantyRequestBuilder GetOemWarranty();
     
     }
 }

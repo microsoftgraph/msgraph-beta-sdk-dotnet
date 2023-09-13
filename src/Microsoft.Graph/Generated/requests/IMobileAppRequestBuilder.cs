@@ -44,28 +44,10 @@ namespace Microsoft.Graph
         IMobileAppCategoriesCollectionWithReferencesRequestBuilder Categories { get; }
 
         /// <summary>
-        /// Gets the request builder for DeviceStatuses.
-        /// </summary>
-        /// <returns>The <see cref="IMobileAppDeviceStatusesCollectionRequestBuilder"/>.</returns>
-        IMobileAppDeviceStatusesCollectionRequestBuilder DeviceStatuses { get; }
-
-        /// <summary>
-        /// Gets the request builder for InstallSummary.
-        /// </summary>
-        /// <returns>The <see cref="IMobileAppInstallSummaryRequestBuilder"/>.</returns>
-        IMobileAppInstallSummaryRequestBuilder InstallSummary { get; }
-
-        /// <summary>
         /// Gets the request builder for Relationships.
         /// </summary>
         /// <returns>The <see cref="IMobileAppRelationshipsCollectionRequestBuilder"/>.</returns>
         IMobileAppRelationshipsCollectionRequestBuilder Relationships { get; }
-
-        /// <summary>
-        /// Gets the request builder for UserStatuses.
-        /// </summary>
-        /// <returns>The <see cref="IMobileAppUserStatusesCollectionRequestBuilder"/>.</returns>
-        IMobileAppUserStatusesCollectionRequestBuilder UserStatuses { get; }
     
         /// <summary>
         /// Gets the request builder for MobileAppAssign.
@@ -80,14 +62,6 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IMobileAppUpdateRelationshipsRequestBuilder"/>.</returns>
         IMobileAppUpdateRelationshipsRequestBuilder UpdateRelationships(
             IEnumerable<MobileAppRelationship> relationships = null);
-
-        /// <summary>
-        /// Gets the request builder for MobileAppGetRelatedAppStates.
-        /// </summary>
-        /// <returns>The <see cref="IMobileAppGetRelatedAppStatesRequestBuilder"/>.</returns>
-        IMobileAppGetRelatedAppStatesRequestBuilder GetRelatedAppStates(
-            string userPrincipalName = null,
-            string deviceId = null);
     
     }
 }

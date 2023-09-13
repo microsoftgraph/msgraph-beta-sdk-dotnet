@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderBy.
+        /// Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderby.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -121,6 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service provisioning errors.
+        /// Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from an orgContact object .  Supports $filter (eq, not, for isResolved and serviceInstance).
         /// </summary>
         [JsonPropertyName("serviceProvisioningErrors")]
         public IEnumerable<ServiceProvisioningError> ServiceProvisioningErrors { get; set; }

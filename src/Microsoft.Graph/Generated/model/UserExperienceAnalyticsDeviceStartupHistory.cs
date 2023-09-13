@@ -23,112 +23,112 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets core boot time in ms.
-        /// The user experience analytics device core boot time in milliseconds.
+        /// The device core boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("coreBootTimeInMs")]
         public Int32? CoreBootTimeInMs { get; set; }
     
         /// <summary>
         /// Gets or sets core login time in ms.
-        /// The user experience analytics device core login time in milliseconds.
+        /// The device core login time in milliseconds. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("coreLoginTimeInMs")]
         public Int32? CoreLoginTimeInMs { get; set; }
     
         /// <summary>
         /// Gets or sets device id.
-        /// The user experience analytics device id.
+        /// The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets feature update boot time in ms.
-        /// The user experience analytics device feature update time in milliseconds.
+        /// The impact of device feature updates on boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("featureUpdateBootTimeInMs")]
         public Int32? FeatureUpdateBootTimeInMs { get; set; }
     
         /// <summary>
         /// Gets or sets group policy boot time in ms.
-        /// The User experience analytics Device group policy boot time in milliseconds.
+        /// The impact of device group policy client on boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("groupPolicyBootTimeInMs")]
         public Int32? GroupPolicyBootTimeInMs { get; set; }
     
         /// <summary>
         /// Gets or sets group policy login time in ms.
-        /// The User experience analytics Device group policy login time in milliseconds.
+        /// The impact of device group policy client on login time in milliseconds. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("groupPolicyLoginTimeInMs")]
         public Int32? GroupPolicyLoginTimeInMs { get; set; }
     
         /// <summary>
         /// Gets or sets is feature update.
-        /// The user experience analytics device boot record is a feature update.
+        /// When TRUE, indicates the device boot record is associated with feature updates. When FALSE, indicates the device boot record is not associated with feature updates. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("isFeatureUpdate")]
         public bool? IsFeatureUpdate { get; set; }
     
         /// <summary>
         /// Gets or sets is first login.
-        /// The user experience analytics device first login.
+        /// When TRUE, indicates the device login is the first login after a reboot. When FALSE, indicates the device login is not the first login after a reboot. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("isFirstLogin")]
         public bool? IsFirstLogin { get; set; }
     
         /// <summary>
         /// Gets or sets operating system version.
-        /// The user experience analytics device boot record's operating system version.
+        /// The user experience analytics device boot record's operating system version. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("operatingSystemVersion")]
         public string OperatingSystemVersion { get; set; }
     
         /// <summary>
         /// Gets or sets responsive desktop time in ms.
-        /// The user experience analytics responsive desktop time in milliseconds.
+        /// The time for desktop to become responsive during login process in milliseconds. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("responsiveDesktopTimeInMs")]
         public Int32? ResponsiveDesktopTimeInMs { get; set; }
     
         /// <summary>
         /// Gets or sets restart category.
-        /// OS restart category. Possible values are: unknown, restartWithUpdate, restartWithoutUpdate, blueScreen, shutdownWithUpdate, shutdownWithoutUpdate, longPowerButtonPress, bootError, update.
+        /// OS restart category. Possible values are: unknown, restartWithUpdate, restartWithoutUpdate, blueScreen, shutdownWithUpdate, shutdownWithoutUpdate, longPowerButtonPress, bootError, update. Unknown by default. Supports: $select, $OrderBy. Read-only. Possible values are: unknown, restartWithUpdate, restartWithoutUpdate, blueScreen, shutdownWithUpdate, shutdownWithoutUpdate, longPowerButtonPress, bootError, update, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("restartCategory")]
         public UserExperienceAnalyticsOperatingSystemRestartCategory? RestartCategory { get; set; }
     
         /// <summary>
         /// Gets or sets restart fault bucket.
-        /// OS restart fault bucket. The fault bucket is used to find additional information about a system crash.
+        /// OS restart fault bucket. The fault bucket is used to find additional information about a system crash. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("restartFaultBucket")]
         public string RestartFaultBucket { get; set; }
     
         /// <summary>
         /// Gets or sets restart stop code.
-        /// OS restart stop code. This shows the bug check code which can be used to look up the blue screen reason.
+        /// OS restart stop code. This shows the bug check code which can be used to look up the blue screen reason. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("restartStopCode")]
         public string RestartStopCode { get; set; }
     
         /// <summary>
         /// Gets or sets start time.
-        /// The user experience analytics device boot start time.
+        /// The device boot start time. The value cannot be modified and is automatically populated when the device performs a reboot. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
         /// </summary>
         [JsonPropertyName("startTime")]
         public DateTimeOffset? StartTime { get; set; }
     
         /// <summary>
         /// Gets or sets total boot time in ms.
-        /// The user experience analytics device total boot time in milliseconds.
+        /// The device total boot time in milliseconds. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("totalBootTimeInMs")]
         public Int32? TotalBootTimeInMs { get; set; }
     
         /// <summary>
         /// Gets or sets total login time in ms.
-        /// The user experience analytics device total login time in milliseconds.
+        /// The device total login time in milliseconds. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("totalLoginTimeInMs")]
         public Int32? TotalLoginTimeInMs { get; set; }

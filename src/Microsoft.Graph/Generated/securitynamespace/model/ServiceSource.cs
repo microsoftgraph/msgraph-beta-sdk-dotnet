@@ -69,5 +69,10 @@ namespace Microsoft.Graph.SecurityNamespace
         /// </summary>
         UnknownFutureValue = 255,
 	
+        /// <summary>
+        /// Microsoft Defender For Cloud
+        /// </summary>
+        MicrosoftDefenderForCloud = 256,
+	
     }
 }

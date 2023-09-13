@@ -125,7 +125,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPrintJobRedirectRequestBuilder"/>.</returns>
         public IPrintJobRedirectRequestBuilder Redirect(
-            string destinationPrinterId = null,
+            string destinationPrinterId,
             PrintJobConfiguration configuration = null)
         {
             return new PrintJobRedirectRequestBuilder(

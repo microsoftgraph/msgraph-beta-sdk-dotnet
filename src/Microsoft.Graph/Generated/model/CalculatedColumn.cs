@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets format.
-        /// For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.
+        /// For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.
         /// </summary>
         [JsonPropertyName("format")]
         public string Format { get; set; }
@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets outputType.
-        /// The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.
+        /// The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.
         /// </summary>
         [JsonPropertyName("outputType")]
         public string OutputType { get; set; }

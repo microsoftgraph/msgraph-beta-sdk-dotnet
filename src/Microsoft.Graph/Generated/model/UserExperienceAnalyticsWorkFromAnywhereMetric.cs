@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets metric devices.
-        /// The work from anywhere metric devices.
+        /// The work from anywhere metric devices. Read-only.
         /// </summary>
         [JsonPropertyName("metricDevices")]
         public IUserExperienceAnalyticsWorkFromAnywhereMetricMetricDevicesCollectionPage MetricDevices { get; set; }

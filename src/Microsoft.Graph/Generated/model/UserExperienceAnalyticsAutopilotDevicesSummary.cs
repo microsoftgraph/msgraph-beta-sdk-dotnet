@@ -23,21 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets devicesNotAutopilotRegistered.
-        /// The count of intune devices that are not autopilot registerd.
+        /// The count of intune devices that are not autopilot registerd. Read-only.
         /// </summary>
         [JsonPropertyName("devicesNotAutopilotRegistered")]
         public Int32? DevicesNotAutopilotRegistered { get; set; }
     
         /// <summary>
         /// Gets or sets devicesWithoutAutopilotProfileAssigned.
-        /// The count of intune devices not autopilot profile assigned.
+        /// The count of intune devices not autopilot profile assigned. Read-only.
         /// </summary>
         [JsonPropertyName("devicesWithoutAutopilotProfileAssigned")]
         public Int32? DevicesWithoutAutopilotProfileAssigned { get; set; }
     
         /// <summary>
         /// Gets or sets totalWindows10DevicesWithoutTenantAttached.
-        /// The count of windows 10 devices that are Intune and Comanaged.
+        /// The count of windows 10 devices that are Intune and co-managed. Read-only.
         /// </summary>
         [JsonPropertyName("totalWindows10DevicesWithoutTenantAttached")]
         public Int32? TotalWindows10DevicesWithoutTenantAttached { get; set; }

@@ -34,5 +34,10 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
         /// </summary>
         UnknownFutureValue = 2,
 	
+        /// <summary>
+        /// Created Date Time
+        /// </summary>
+        CreatedDateTime = 3,
+	
     }
 }

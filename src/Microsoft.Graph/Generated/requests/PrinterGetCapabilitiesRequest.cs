@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PrinterGetCapabilitiesRequest.
     /// </summary>
+    [Obsolete("The getCapabilities API is deprecated and will stop returning data on July 31, 2023. Please use the capabilities property instead of this.")]
     public partial class PrinterGetCapabilitiesRequest : BaseRequest, IPrinterGetCapabilitiesRequest
     {
         /// <summary>

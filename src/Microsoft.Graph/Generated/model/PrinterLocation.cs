@@ -66,6 +66,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets floorNumber.
         /// </summary>
+        [Obsolete("The floorNumber property is deprecated and will stop returning data on July 31, 2023. Please use the floor property instead of this.")]
         [JsonPropertyName("floorNumber")]
         public Int32? FloorNumber { get; set; }
     
@@ -114,6 +115,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets roomNumber.
         /// </summary>
+        [Obsolete("The roomNumber property is deprecated and will stop returning data on July 31, 2023. Please use the roomName property instead of this.")]
         [JsonPropertyName("roomNumber")]
         public Int32? RoomNumber { get; set; }
     

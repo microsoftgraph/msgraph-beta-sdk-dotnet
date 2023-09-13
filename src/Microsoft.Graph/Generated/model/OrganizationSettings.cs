@@ -47,27 +47,6 @@ namespace Microsoft.Graph
         [JsonPropertyName("peopleInsights")]
         public InsightsSettings PeopleInsights { get; set; }
     
-        /// <summary>
-        /// Gets or sets profile card properties.
-        /// Contains a collection of the properties an administrator has defined as visible on the Microsoft 365 profile card. Get organization settings returns the properties configured for profile cards for the organization.
-        /// </summary>
-        [JsonPropertyName("profileCardProperties")]
-        public IOrganizationSettingsProfileCardPropertiesCollectionPage ProfileCardProperties { get; set; }
-
-        /// <summary>
-        /// Gets or sets profileCardPropertiesNextLink.
-        /// </summary>
-        [JsonPropertyName("profileCardProperties@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string ProfileCardPropertiesNextLink { get; set; }
-    
-        /// <summary>
-        /// Gets or sets pronouns.
-        /// Represents administrator settings that manage the support of pronouns in an organization.
-        /// </summary>
-        [JsonPropertyName("pronouns")]
-        public PronounsSettings Pronouns { get; set; }
-    
     }
 }
 

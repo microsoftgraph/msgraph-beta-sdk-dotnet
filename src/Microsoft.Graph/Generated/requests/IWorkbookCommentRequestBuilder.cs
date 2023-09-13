@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IWorkbookCommentRepliesCollectionRequestBuilder"/>.</returns>
         IWorkbookCommentRepliesCollectionRequestBuilder Replies { get; }
+
+        /// <summary>
+        /// Gets the request builder for @Task.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookDocumentTaskRequestBuilder"/>.</returns>
+        IWorkbookDocumentTaskRequestBuilder @Task { get; }
     
     }
 }

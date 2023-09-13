@@ -43,7 +43,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is searchable.
-        /// Indicates whether custom security attribute values will be indexed for searching on objects that are assigned attribute values. Cannot be changed later.
+        /// Indicates whether custom security attribute values are indexed for searching on objects that are assigned attribute values. Cannot be changed later.
         /// </summary>
         [JsonPropertyName("isSearchable")]
         public bool? IsSearchable { get; set; }
@@ -57,14 +57,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// Specifies whether the custom security attribute is active or deactivated. Acceptable values are Available and Deprecated. Can be changed later.
+        /// Specifies whether the custom security attribute is active or deactivated. Acceptable values are: Available and Deprecated. Can be changed later.
         /// </summary>
         [JsonPropertyName("status")]
         public string Status { get; set; }
     
         /// <summary>
         /// Gets or sets type.
-        /// Data type for the custom security attribute values. Supported types are Boolean, Integer, and String. Cannot be changed later.
+        /// Data type for the custom security attribute values. Supported types are: Boolean, Integer, and String. Cannot be changed later.
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }
@@ -78,7 +78,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allowed values.
-        /// Values that are predefined for this custom security attribute.This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
+        /// Values that are predefined for this custom security attribute. This navigation property is not returned by default and must be specified in an $expand query. For example, /directory/customSecurityAttributeDefinitions?$expand=allowedValues.
         /// </summary>
         [JsonPropertyName("allowedValues")]
         public ICustomSecurityAttributeDefinitionAllowedValuesCollectionPage AllowedValues { get; set; }

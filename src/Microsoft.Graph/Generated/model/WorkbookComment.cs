@@ -47,6 +47,13 @@ namespace Microsoft.Graph
         [JsonConverter(typeof(NextLinkConverter))]
         public string RepliesNextLink { get; set; }
     
+        /// <summary>
+        /// Gets or sets task.
+        /// The task associated with the comment. Read-only. Nullable.
+        /// </summary>
+        [JsonPropertyName("task")]
+        public WorkbookDocumentTask @Task { get; set; }
+    
     }
 }
 

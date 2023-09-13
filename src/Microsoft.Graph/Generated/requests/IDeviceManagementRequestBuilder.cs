@@ -434,6 +434,12 @@ namespace Microsoft.Graph
         IDeviceManagementMobileAppTroubleshootingEventsCollectionRequestBuilder MobileAppTroubleshootingEvents { get; }
 
         /// <summary>
+        /// Gets the request builder for PrivilegeManagementElevations.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementPrivilegeManagementElevationsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementPrivilegeManagementElevationsCollectionRequestBuilder PrivilegeManagementElevations { get; }
+
+        /// <summary>
         /// Gets the request builder for RemoteActionAudits.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementRemoteActionAuditsCollectionRequestBuilder"/>.</returns>
@@ -450,6 +456,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAnomalyCollectionRequestBuilder"/>.</returns>
         IDeviceManagementUserExperienceAnalyticsAnomalyCollectionRequestBuilder UserExperienceAnalyticsAnomaly { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAnomalyCorrelationGroupOverview.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAnomalyCorrelationGroupOverviewCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsAnomalyCorrelationGroupOverviewCollectionRequestBuilder UserExperienceAnalyticsAnomalyCorrelationGroupOverview { get; }
 
         /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsAnomalyDevice.

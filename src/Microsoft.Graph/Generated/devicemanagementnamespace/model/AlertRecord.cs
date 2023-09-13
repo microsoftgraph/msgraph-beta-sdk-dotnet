@@ -23,7 +23,7 @@ namespace Microsoft.Graph.DeviceManagementNamespace
     
         /// <summary>
         /// Gets or sets alert impact.
-        /// The impact of the alert event. Consists of a number followed by the aggregation type. For example, 6 affectedCloudPcCount means that 6 Cloud PCs are affected. 12 affectedCloudPcPercentage means 12% of Cloud PCs are affected.
+        /// The impact of the alert event. Consists of a list of key-value pair and a number followed by the aggregation type. For example, 6 affectedCloudPcCount means that 6 Cloud PCs are affected. 12 affectedCloudPcPercentage means 12% of Cloud PCs are affected. The list of key-value pair indicates the details of the alert impact.
         /// </summary>
         [JsonPropertyName("alertImpact")]
         public AlertImpact AlertImpact { get; set; }
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.DeviceManagementNamespace
     
         /// <summary>
         /// Gets or sets alert rule template.
-        /// The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.
+        /// The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.
         /// </summary>
         [JsonPropertyName("alertRuleTemplate")]
         public AlertRuleTemplate? AlertRuleTemplate { get; set; }

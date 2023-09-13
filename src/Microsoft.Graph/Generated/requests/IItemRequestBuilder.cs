@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IItemRequestBuilder.
     /// </summary>
-    public partial interface IItemRequestBuilder : IEntityRequestBuilder
+    public partial interface IItemRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IItemRequest Request();
+        IItemRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IItemRequest Request(IEnumerable<Option> options);
+        IItemRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for ItemCategory.

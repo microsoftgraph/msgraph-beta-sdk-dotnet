@@ -29,6 +29,18 @@ namespace Microsoft.Graph.SecurityNamespace
         public string ActorDisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonPropertyName("additionalData")]
+        public Dictionary AdditionalData { get; set; }
+    
+        /// <summary>
+        /// Gets or sets alert policy id.
+        /// </summary>
+        [JsonPropertyName("alertPolicyId")]
+        public string AlertPolicyId { get; set; }
+    
+        /// <summary>
         /// Gets or sets alert web url.
         /// URL for the alert page in the Microsoft 365 Defender portal.
         /// </summary>
@@ -51,7 +63,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets classification.
-        /// Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, benignPositive, unknownFutureValue.
+        /// Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("classification")]
         public AlertClassification? Classification { get; set; }
@@ -79,7 +91,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets detection source.
-        /// Detection technology or sensor that identified the notable component or activity.
+        /// Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud.
         /// </summary>
         [JsonPropertyName("detectionSource")]
         public DetectionSource? DetectionSource { get; set; }
@@ -170,7 +182,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets service source.
-        /// The service or product that created this alert. Possible values are: microsoftDefenderForEndpoint, microsoftDefenderForIdentity, microsoftCloudAppSecurity, microsoftDefenderForOffice365, microsoft365Defender, aadIdentityProtection, appGovernance, dataLossPrevention.
+        /// The service or product that created this alert. Possible values are: unknown, microsoftDefenderForEndpoint, microsoftDefenderForIdentity, microsoftDefenderForCloudApps, microsoftDefenderForOffice365, microsoft365Defender, azureAdIdentityProtection, microsoftAppGovernance, dataLossPrevention, unknownFutureValue, microsoftDefenderForCloud. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: microsoftDefenderForCloud.
         /// </summary>
         [JsonPropertyName("serviceSource")]
         public ServiceSource? ServiceSource { get; set; }

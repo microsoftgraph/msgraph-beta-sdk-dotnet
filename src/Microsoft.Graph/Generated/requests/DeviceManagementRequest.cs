@@ -570,6 +570,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.MobileAppTroubleshootingEvents.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
+                if (deviceManagementToInitialize.PrivilegeManagementElevations != null && deviceManagementToInitialize.PrivilegeManagementElevations.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.PrivilegeManagementElevations.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.PrivilegeManagementElevationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.PrivilegeManagementElevations.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
                 if (deviceManagementToInitialize.RemoteActionAudits != null && deviceManagementToInitialize.RemoteActionAudits.CurrentPage != null)
                 {
                     deviceManagementToInitialize.RemoteActionAudits.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.RemoteActionAuditsNextLink);
@@ -581,6 +587,12 @@ namespace Microsoft.Graph
                     deviceManagementToInitialize.UserExperienceAnalyticsAnomaly.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsAnomalyNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsAnomaly.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.UserExperienceAnalyticsAnomalyCorrelationGroupOverview != null && deviceManagementToInitialize.UserExperienceAnalyticsAnomalyCorrelationGroupOverview.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAnomalyCorrelationGroupOverview.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsAnomalyCorrelationGroupOverviewNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.UserExperienceAnalyticsAnomalyCorrelationGroupOverview.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
                 if (deviceManagementToInitialize.UserExperienceAnalyticsAnomalyDevice != null && deviceManagementToInitialize.UserExperienceAnalyticsAnomalyDevice.CurrentPage != null)
                 {

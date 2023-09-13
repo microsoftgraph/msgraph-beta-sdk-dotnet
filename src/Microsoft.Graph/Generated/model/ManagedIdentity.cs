@@ -29,6 +29,20 @@ namespace Microsoft.Graph
         public string AssociatedResourceId { get; set; }
     
         /// <summary>
+        /// Gets or sets federatedTokenId.
+        /// The unique ID of the federated token.
+        /// </summary>
+        [JsonPropertyName("federatedTokenId")]
+        public string FederatedTokenId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets federatedTokenIssuer.
+        /// The issuer of the federated token.
+        /// </summary>
+        [JsonPropertyName("federatedTokenIssuer")]
+        public string FederatedTokenIssuer { get; set; }
+    
+        /// <summary>
         /// Gets or sets msiType.
         /// The possible values are: none, userAssigned, systemAssigned, unknownFutureValue.
         /// </summary>

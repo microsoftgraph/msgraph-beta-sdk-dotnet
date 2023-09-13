@@ -23,11 +23,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
+        /// <param name="policySettings">A policySettings parameter for the OData method call.</param>
         public CloudPcProvisioningPolicyApplyRequestBuilder(
             string requestUrl,
-            IBaseClient client)
+            IBaseClient client,
+            CloudPcPolicySettingType? policySettings)
             : base(requestUrl, client)
         {
+            this.SetParameter("policySettings", policySettings, true);
         }
 
         /// <summary>
@@ -39,6 +42,11 @@ namespace Microsoft.Graph
         protected override ICloudPcProvisioningPolicyApplyRequest CreateRequest(string functionUrl, IEnumerable<Option> options)
         {
             var request = new CloudPcProvisioningPolicyApplyRequest(functionUrl, this.Client, options);
+
+            if (this.HasParameter("policySettings"))
+            {
+                request.RequestBody.PolicySettings = this.GetParameter<CloudPcPolicySettingType?>("policySettings");
+            }
 
             return request;
         }

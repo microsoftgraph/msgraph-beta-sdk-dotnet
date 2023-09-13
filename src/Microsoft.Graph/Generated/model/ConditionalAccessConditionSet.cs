@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets clientAppTypes.
-        /// Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.
+        /// Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync which includes EAS supported and unsupported platforms.
         /// </summary>
         [JsonPropertyName("clientAppTypes")]
         public IEnumerable<ConditionalAccessClientApp> ClientAppTypes { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets deviceStates.
-        /// Device states in the policy.
+        /// Device states in the policy. To be deprecated and removed. Use the devices property instead.
         /// </summary>
         [JsonPropertyName("deviceStates")]
         public ConditionalAccessDeviceStates DeviceStates { get; set; }

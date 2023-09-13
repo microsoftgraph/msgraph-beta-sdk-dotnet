@@ -85,5 +85,18 @@ namespace Microsoft.Graph.SecurityNamespace
                 this.Client,
                 ids);
         }
+
+        /// <summary>
+        /// Gets the request builder for EdiscoveryCustodianUpdateIndex.
+        /// </summary>
+        /// <returns>The <see cref="IEdiscoveryCustodianUpdateIndexRequestBuilder"/>.</returns>
+        public IEdiscoveryCustodianUpdateIndexRequestBuilder UpdateIndex(
+            IEnumerable<string> ids = null)
+        {
+            return new EdiscoveryCustodianUpdateIndexRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.security.updateIndex"),
+                this.Client,
+                ids);
+        }
     }
 }

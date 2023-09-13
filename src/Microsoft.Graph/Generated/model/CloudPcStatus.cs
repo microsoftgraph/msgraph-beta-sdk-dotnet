@@ -84,5 +84,10 @@ namespace Microsoft.Graph
         /// </summary>
         ResizePendingLicense = 12,
 	
+        /// <summary>
+        /// Updating Single Sign On
+        /// </summary>
+        UpdatingSingleSignOn = 13,
+	
     }
 }

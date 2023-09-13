@@ -22,7 +22,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets article indicators.
-        /// Refers to indicators of threat or compromise highlighted in an microsoft.graph.security.article.Note: List retrieval is not yet supported.
+        /// Refers to indicators of threat or compromise highlighted in an article.Note: List retrieval is not yet supported.
         /// </summary>
         [JsonPropertyName("articleIndicators")]
         public IThreatIntelligenceArticleIndicatorsCollectionPage ArticleIndicators { get; set; }
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets host components.
-        /// Retrieve details about microsoft.graph.security.hostComponent objects.Note: List retrieval is not yet supported.
+        /// Retrieve details about hostComponent objects.Note: List retrieval is not yet supported.
         /// </summary>
         [JsonPropertyName("hostComponents")]
         public IThreatIntelligenceHostComponentsCollectionPage HostComponents { get; set; }
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets host cookies.
-        /// Retrieve details about microsoft.graph.security.hostCookie objects.Note: List retrieval is not yet supported.
+        /// Retrieve details about hostCookie objects.Note: List retrieval is not yet supported.
         /// </summary>
         [JsonPropertyName("hostCookies")]
         public IThreatIntelligenceHostCookiesCollectionPage HostCookies { get; set; }
@@ -77,8 +77,22 @@ namespace Microsoft.Graph.SecurityNamespace
         public string HostCookiesNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets host pairs.
+        /// Retrieve details about hostTracker objects.Note: List retrieval is not yet supported.
+        /// </summary>
+        [JsonPropertyName("hostPairs")]
+        public IThreatIntelligenceHostPairsCollectionPage HostPairs { get; set; }
+
+        /// <summary>
+        /// Gets or sets hostPairsNextLink.
+        /// </summary>
+        [JsonPropertyName("hostPairs@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string HostPairsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets hosts.
-        /// Refers to microsoft.graph.security.host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.
+        /// Refers to host objects that Microsoft Threat Intelligence has observed.Note: List retrieval is not yet supported.
         /// </summary>
         [JsonPropertyName("hosts")]
         public IThreatIntelligenceHostsCollectionPage Hosts { get; set; }
@@ -91,8 +105,22 @@ namespace Microsoft.Graph.SecurityNamespace
         public string HostsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets host ssl certificates.
+        /// Retrieve details about hostSslCertificate objects.Note: List retrieval is not yet supported.
+        /// </summary>
+        [JsonPropertyName("hostSslCertificates")]
+        public IThreatIntelligenceHostSslCertificatesCollectionPage HostSslCertificates { get; set; }
+
+        /// <summary>
+        /// Gets or sets hostSslCertificatesNextLink.
+        /// </summary>
+        [JsonPropertyName("hostSslCertificates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string HostSslCertificatesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets host trackers.
-        /// Retrieve details about microsoft.graph.security.hostTracker objects.Note: List retrieval is not yet supported.
+        /// Retrieve details about hostTracker objects.Note: List retrieval is not yet supported.
         /// </summary>
         [JsonPropertyName("hostTrackers")]
         public IThreatIntelligenceHostTrackersCollectionPage HostTrackers { get; set; }
@@ -133,7 +161,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets passive dns records.
-        /// Retrieve details about microsoft.graph.security.passiveDnsRecord objects.Note: List retrieval is not yet supported.
+        /// Retrieve details about passiveDnsRecord objects.Note: List retrieval is not yet supported.
         /// </summary>
         [JsonPropertyName("passiveDnsRecords")]
         public IThreatIntelligencePassiveDnsRecordsCollectionPage PassiveDnsRecords { get; set; }
@@ -146,8 +174,36 @@ namespace Microsoft.Graph.SecurityNamespace
         public string PassiveDnsRecordsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets ssl certificates.
+        /// Retrieve details about sslCertificate objects.Note: List retrieval is not yet supported.
+        /// </summary>
+        [JsonPropertyName("sslCertificates")]
+        public IThreatIntelligenceSslCertificatesCollectionPage SslCertificates { get; set; }
+
+        /// <summary>
+        /// Gets or sets sslCertificatesNextLink.
+        /// </summary>
+        [JsonPropertyName("sslCertificates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string SslCertificatesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subdomains.
+        /// Retrieve details about the subdomain.Note: List retrieval is not yet supported.
+        /// </summary>
+        [JsonPropertyName("subdomains")]
+        public IThreatIntelligenceSubdomainsCollectionPage Subdomains { get; set; }
+
+        /// <summary>
+        /// Gets or sets subdomainsNextLink.
+        /// </summary>
+        [JsonPropertyName("subdomains@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string SubdomainsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets vulnerabilities.
-        /// Retrieve details about microsoft.graph.security.vulnerabilities.Note: List retrieval is not yet supported.
+        /// Retrieve details about vulnerabilities.Note: List retrieval is not yet supported.
         /// </summary>
         [JsonPropertyName("vulnerabilities")]
         public IThreatIntelligenceVulnerabilitiesCollectionPage Vulnerabilities { get; set; }
@@ -158,6 +214,34 @@ namespace Microsoft.Graph.SecurityNamespace
         [JsonPropertyName("vulnerabilities@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string VulnerabilitiesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets whois history records.
+        /// Retrieve details about whoisHistoryRecord objects.Note: List retrieval is not yet supported.
+        /// </summary>
+        [JsonPropertyName("whoisHistoryRecords")]
+        public IThreatIntelligenceWhoisHistoryRecordsCollectionPage WhoisHistoryRecords { get; set; }
+
+        /// <summary>
+        /// Gets or sets whoisHistoryRecordsNextLink.
+        /// </summary>
+        [JsonPropertyName("whoisHistoryRecords@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string WhoisHistoryRecordsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets whois records.
+        /// A list of whoisRecord objects.
+        /// </summary>
+        [JsonPropertyName("whoisRecords")]
+        public IThreatIntelligenceWhoisRecordsCollectionPage WhoisRecords { get; set; }
+
+        /// <summary>
+        /// Gets or sets whoisRecordsNextLink.
+        /// </summary>
+        [JsonPropertyName("whoisRecords@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string WhoisRecordsNextLink { get; set; }
     
     }
 }

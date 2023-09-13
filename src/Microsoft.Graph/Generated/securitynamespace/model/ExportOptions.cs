@@ -10,6 +10,7 @@
 
 namespace Microsoft.Graph.SecurityNamespace
 {
+    using System;
     using System.Text.Json.Serialization;
 
     /// <summary>
@@ -38,6 +39,7 @@ namespace Microsoft.Graph.SecurityNamespace
         /// <summary>
         /// File Info
         /// </summary>
+        [Obsolete("The fileInfo will be deprecated on July 30, 2023.")]
         FileInfo = 8,
 	
         /// <summary>

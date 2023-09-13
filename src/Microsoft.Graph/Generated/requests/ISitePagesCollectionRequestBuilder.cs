@@ -30,11 +30,11 @@ namespace Microsoft.Graph
         ISitePagesCollectionRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="ISitePageRequestBuilder"/> for the specified SitePage.
+        /// Gets an <see cref="IBaseSitePageRequestBuilder"/> for the specified BaseSitePage.
         /// </summary>
-        /// <param name="id">The ID for the SitePage.</param>
-        /// <returns>The <see cref="ISitePageRequestBuilder"/>.</returns>
-        ISitePageRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the BaseSitePage.</param>
+        /// <returns>The <see cref="IBaseSitePageRequestBuilder"/>.</returns>
+        IBaseSitePageRequestBuilder this[string id] { get; }
 
         
     }

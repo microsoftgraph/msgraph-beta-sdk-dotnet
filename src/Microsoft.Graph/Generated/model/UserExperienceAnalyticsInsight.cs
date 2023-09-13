@@ -30,14 +30,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets severity.
-        /// The value of the user experience analytics insight. Possible values are: none, informational, warning, error.
+        /// The severity of the user experience analytics insight. Possible values are: none, informational, warning, error. None by default. Possible values are: none, informational, warning, error, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("severity")]
         public UserExperienceAnalyticsInsightSeverity? Severity { get; set; }
     
         /// <summary>
         /// Gets or sets userExperienceAnalyticsMetricId.
-        /// The unique identifier of the user experience analytics insight.
+        /// The unique identifier of the user experience analytics metric.
         /// </summary>
         [JsonPropertyName("userExperienceAnalyticsMetricId")]
         public string UserExperienceAnalyticsMetricId { get; set; }

@@ -23,6 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app id.
+        /// The identifier for an application corresponding to a condition which will trigger an authenticationEventListener.
         /// </summary>
         [JsonPropertyName("appId")]
         public string AppId { get; set; }

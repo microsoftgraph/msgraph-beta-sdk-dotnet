@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PictureRequestBuilder.
     /// </summary>
-    public partial class PictureRequestBuilder : EntityRequestBuilder, IPictureRequestBuilder
+    public partial class PictureRequestBuilder : BaseRequestBuilder, IPictureRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IPictureRequest Request()
+        public IPictureRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IPictureRequest Request(IEnumerable<Option> options)
+        public IPictureRequest Request(IEnumerable<Option> options)
         {
             return new PictureRequest(this.RequestUrl, this.Client, options);
         }

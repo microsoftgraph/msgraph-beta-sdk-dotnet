@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IShipmentMethodRequestBuilder.
     /// </summary>
-    public partial interface IShipmentMethodRequestBuilder : IEntityRequestBuilder
+    public partial interface IShipmentMethodRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IShipmentMethodRequest Request();
+        IShipmentMethodRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IShipmentMethodRequest Request(IEnumerable<Option> options);
+        IShipmentMethodRequest Request(IEnumerable<Option> options);
     
     }
 }

@@ -55,5 +55,11 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISiteDeltaRequestBuilder"/>.</returns>
         ISiteDeltaRequestBuilder Delta();
+
+        /// <summary>
+        /// Gets the request builder for SiteGetAllSites.
+        /// </summary>
+        /// <returns>The <see cref="ISiteGetAllSitesRequestBuilder"/>.</returns>
+        ISiteGetAllSitesRequestBuilder GetAllSites();
     }
 }

@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets access details.
-        /// The access details containing the identifiers of the administrative roles that the partner admin is requesting in the customer tenant.
+        /// The access details that contain the identifiers of the administrative roles that the partner admin is requesting in the customer tenant.
         /// </summary>
         [JsonPropertyName("accessDetails")]
         public DelegatedAdminAccessDetails AccessDetails { get; set; }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderBy.
+        /// The status of the relationship. Read Only. The possible values are: activating, active, approvalPending, approved, created, expired, expiring, terminated, terminating, terminationRequested, unknownFutureValue. Supports $orderby.
         /// </summary>
         [JsonPropertyName("status")]
         public DelegatedAdminRelationshipStatus? Status { get; set; }

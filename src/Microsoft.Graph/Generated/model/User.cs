@@ -44,14 +44,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets age group.
-        /// Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).
+        /// Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).
         /// </summary>
         [JsonPropertyName("ageGroup")]
         public string AgeGroup { get; set; }
     
         /// <summary>
         /// Gets or sets assigned licenses.
-        /// The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
+        /// The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn't differentiate directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).
         /// </summary>
         [JsonPropertyName("assignedLicenses")]
         public IEnumerable<AssignedLicense> AssignedLicenses { get; set; }
@@ -79,14 +79,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets city.
-        /// The city in which the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        /// The city where the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         /// </summary>
         [JsonPropertyName("city")]
         public string City { get; set; }
     
         /// <summary>
+        /// Gets or sets cloud realtime communication info.
+        /// Microsoft realtime communication information related to the user.  Supports $filter (eq, ne,not).
+        /// </summary>
+        [JsonPropertyName("cloudRealtimeCommunicationInfo")]
+        public CloudRealtimeCommunicationInfo CloudRealtimeCommunicationInfo { get; set; }
+    
+        /// <summary>
         /// Gets or sets company name.
-        /// The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        /// The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         /// </summary>
         [JsonPropertyName("companyName")]
         public string CompanyName { get; set; }
@@ -100,7 +107,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets country.
-        /// The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        /// The country or region where the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         /// </summary>
         [JsonPropertyName("country")]
         public string Country { get; set; }
@@ -141,7 +148,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.
+        /// The name displayed in the address book for the user. This value is usually the combination of the user's first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -169,7 +176,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets employee org data.
-        /// Represents organization data (e.g. division and costCenter) associated with a user. Supports $filter (eq, ne, not , ge, le, in).
+        /// Represents organization data (for example, division and costCenter) associated with a user. Supports $filter (eq, ne, not , ge, le, in).
         /// </summary>
         [JsonPropertyName("employeeOrgData")]
         public EmployeeOrgData EmployeeOrgData { get; set; }
@@ -231,7 +238,15 @@ namespace Microsoft.Graph
         public IEnumerable<string> InfoCatalogs { get; set; }
     
         /// <summary>
+        /// Gets or sets is license reconciliation needed.
+        /// Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).
+        /// </summary>
+        [JsonPropertyName("isLicenseReconciliationNeeded")]
+        public bool? IsLicenseReconciliationNeeded { get; set; }
+    
+        /// <summary>
         /// Gets or sets is management restricted.
+        /// true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
         /// </summary>
         [JsonPropertyName("isManagementRestricted")]
         public bool? IsManagementRestricted { get; set; }
@@ -252,28 +267,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last password change date time.
-        /// The time when this Azure AD user last changed their password or when their password was created, , whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
+        /// The time when this Azure AD user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.
         /// </summary>
         [JsonPropertyName("lastPasswordChangeDateTime")]
         public DateTimeOffset? LastPasswordChangeDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets legal age group classification.
-        /// Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.
+        /// Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. For more information, see legal age group property definitions. Returned only on $select.
         /// </summary>
         [JsonPropertyName("legalAgeGroupClassification")]
         public string LegalAgeGroupClassification { get; set; }
     
         /// <summary>
         /// Gets or sets license assignment states.
-        /// State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
+        /// State of license assignments for this user. Also indicates licenses that are directly assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.
         /// </summary>
         [JsonPropertyName("licenseAssignmentStates")]
         public IEnumerable<LicenseAssignmentState> LicenseAssignmentStates { get; set; }
     
         /// <summary>
         /// Gets or sets mail.
-        /// The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user's proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
+        /// The SMTP address for the user, for example, admin@contoso.com. Changes to this property also updates the user's proxyAddresses collection to include the value as an SMTP address. This property can't contain accent characters.  NOTE: We don't recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).
         /// </summary>
         [JsonPropertyName("mail")]
         public string Mail { get; set; }
@@ -287,7 +302,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mobile phone.
-        /// The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        /// The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.
         /// </summary>
         [JsonPropertyName("mobilePhone")]
         public string MobilePhone { get; set; }
@@ -322,7 +337,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises immutable id.
-        /// This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters cannot be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
+        /// This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you're using a federated domain for the user's userPrincipalName (UPN) property. Note: The $ and _ characters can't be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).
         /// </summary>
         [JsonPropertyName("onPremisesImmutableId")]
         public string OnPremisesImmutableId { get; set; }
@@ -356,6 +371,13 @@ namespace Microsoft.Graph
         public string OnPremisesSecurityIdentifier { get; set; }
     
         /// <summary>
+        /// Gets or sets on premises sip info.
+        /// Contains all on-premises Session Initiation Protocol (SIP) information related to the user. Read-only.
+        /// </summary>
+        [JsonPropertyName("onPremisesSipInfo")]
+        public OnPremisesSipInfo OnPremisesSipInfo { get; set; }
+    
+        /// <summary>
         /// Gets or sets on premises sync enabled.
         /// true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn't being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).
         /// </summary>
@@ -371,14 +393,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets other mails.
-        /// A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
+        /// A list of additional email addresses for the user; for example: ['bob@contoso.com', 'Robert@fabrikam.com'].NOTE: This property can't contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).
         /// </summary>
         [JsonPropertyName("otherMails")]
         public IEnumerable<string> OtherMails { get; set; }
     
         /// <summary>
         /// Gets or sets password policies.
-        /// Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).
+        /// Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD password policies. Supports $filter (ne, not, and eq on null values).
         /// </summary>
         [JsonPropertyName("passwordPolicies")]
         public string PasswordPolicies { get; set; }
@@ -406,7 +428,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preferred language.
-        /// The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        /// The preferred language for the user. Should follow ISO 639-1 Code; for example, en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         /// </summary>
         [JsonPropertyName("preferredLanguage")]
         public string PreferredLanguage { get; set; }
@@ -420,14 +442,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets proxy addresses.
-        /// For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
+        /// For example: ['SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com']. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).
         /// </summary>
         [JsonPropertyName("proxyAddresses")]
         public IEnumerable<string> ProxyAddresses { get; set; }
     
         /// <summary>
         /// Gets or sets refresh tokens valid from date time.
-        /// Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
+        /// Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.
         /// </summary>
         [JsonPropertyName("refreshTokensValidFromDateTime")]
         public DateTimeOffset? RefreshTokensValidFromDateTime { get; set; }
@@ -441,6 +463,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service provisioning errors.
+        /// Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).
         /// </summary>
         [JsonPropertyName("serviceProvisioningErrors")]
         public IEnumerable<ServiceProvisioningError> ServiceProvisioningErrors { get; set; }
@@ -454,7 +477,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sign in sessions valid from date time.
-        /// Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
+        /// Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.
         /// </summary>
         [JsonPropertyName("signInSessionsValidFromDateTime")]
         public DateTimeOffset? SignInSessionsValidFromDateTime { get; set; }
@@ -482,14 +505,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets usage location.
-        /// A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        /// A two letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
         /// </summary>
         [JsonPropertyName("usageLocation")]
         public string UsageLocation { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
-        /// The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.
+        /// The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can't contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, ' . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
@@ -659,7 +682,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created objects.
-        /// Directory objects that were created by the user. Read-only. Nullable.
+        /// Directory objects that the user created. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("createdObjects")]
         public IUserCreatedObjectsCollectionWithReferencesPage CreatedObjects { get; set; }
@@ -748,7 +771,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owned objects.
-        /// Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
         [JsonPropertyName("ownedObjects")]
         public IUserOwnedObjectsCollectionWithReferencesPage OwnedObjects { get; set; }
@@ -787,6 +810,20 @@ namespace Microsoft.Graph
         [JsonPropertyName("scopedRoleMemberOf@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string ScopedRoleMemberOfNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sponsors.
+        /// The users and groups that are responsible for this guest user's privileges in the tenant and keep the guest user's information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
+        /// </summary>
+        [JsonPropertyName("sponsors")]
+        public IUserSponsorsCollectionWithReferencesPage Sponsors { get; set; }
+
+        /// <summary>
+        /// Gets or sets sponsorsNextLink.
+        /// </summary>
+        [JsonPropertyName("sponsors@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string SponsorsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets transitive member of.
@@ -909,7 +946,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets inference classification.
-        /// Relevance classification of the user's messages based on explicit designations which override inferred relevance or importance.
+        /// Relevance classification of the user's messages based on explicit designations that override inferred relevance or importance.
         /// </summary>
         [JsonPropertyName("inferenceClassification")]
         public InferenceClassification InferenceClassification { get; set; }
@@ -1250,6 +1287,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets activities.
+        /// The user's activities across devices. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("activities")]
         public IUserActivitiesCollectionPage Activities { get; set; }
@@ -1276,6 +1314,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets online meetings.
+        /// Information about a meeting, including the URL used to join a meeting, the attendees' list, and the description.
         /// </summary>
         [JsonPropertyName("onlineMeetings")]
         public IUserOnlineMeetingsCollectionPage OnlineMeetings { get; set; }
@@ -1294,7 +1333,14 @@ namespace Microsoft.Graph
         public Presence Presence { get; set; }
     
         /// <summary>
+        /// Gets or sets virtual events.
+        /// </summary>
+        [JsonPropertyName("virtualEvents")]
+        public UserVirtualEventsRoot VirtualEvents { get; set; }
+    
+        /// <summary>
         /// Gets or sets authentication.
+        /// The authentication methods that are supported for the user.
         /// </summary>
         [JsonPropertyName("authentication")]
         public Authentication Authentication { get; set; }
@@ -1325,6 +1371,20 @@ namespace Microsoft.Graph
         [JsonPropertyName("joinedTeams@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string JoinedTeamsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets permission grants.
+        /// List all resource-specific permission grants of a user.
+        /// </summary>
+        [JsonPropertyName("permissionGrants")]
+        public IUserPermissionGrantsCollectionPage PermissionGrants { get; set; }
+
+        /// <summary>
+        /// Gets or sets permissionGrantsNextLink.
+        /// </summary>
+        [JsonPropertyName("permissionGrants@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string PermissionGrantsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets teamwork.

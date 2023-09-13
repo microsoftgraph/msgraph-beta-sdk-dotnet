@@ -17,7 +17,8 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Sales Invoice.
     /// </summary>
-    public partial class SalesInvoice : Entity
+    [JsonConverter(typeof(DerivedTypeConverter<SalesInvoice>))]
+    public partial class SalesInvoice
     {
     
         /// <summary>
@@ -109,6 +110,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("externalDocumentNumber")]
         public string ExternalDocumentNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        [JsonPropertyName("id")]
+        public Guid? Id { get; set; }
     
         /// <summary>
         /// Gets or sets invoice date.
@@ -254,6 +261,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("shipmentMethod")]
         public ShipmentMethod ShipmentMethod { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonPropertyName("@odata.type")]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

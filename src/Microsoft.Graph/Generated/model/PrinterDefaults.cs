@@ -45,6 +45,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets documentMimeType.
         /// </summary>
+        [Obsolete("The documentMimeType property is deprecated and will stop returning data on July 31, 2023. Please use the contentType property instead of this.")]
         [JsonPropertyName("documentMimeType")]
         public string DocumentMimeType { get; set; }
     
@@ -58,6 +59,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets duplexConfiguration.
         /// </summary>
+        [Obsolete("The duplexConfiguration enum type is deprecated and will stop returning data on July 31, 2023. Please use the printDuplexMode enum type instead of this.")]
         [JsonPropertyName("duplexConfiguration")]
         public PrintDuplexConfiguration? DuplexConfiguration { get; set; }
     
@@ -141,24 +143,28 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets pdfFitToPage.
         /// </summary>
+        [Obsolete("The pdfFitToPage property is deprecated and will stop returning data on July 31, 2023. Please use the fitPdfToPage property instead of this.")]
         [JsonPropertyName("pdfFitToPage")]
         public bool? PdfFitToPage { get; set; }
     
         /// <summary>
         /// Gets or sets presentationDirection.
         /// </summary>
+        [Obsolete("The presentationDirection enum type is deprecated and will stop returning data on July 31, 2023. Please use the printMultipageLayout enum type instead of this.")]
         [JsonPropertyName("presentationDirection")]
         public PrintPresentationDirection? PresentationDirection { get; set; }
     
         /// <summary>
         /// Gets or sets printColorConfiguration.
         /// </summary>
+        [Obsolete("The printColorConfiguration enum type is deprecated and will stop returning data on July 31, 2023. Please use the printColorMode enum type instead of this.")]
         [JsonPropertyName("printColorConfiguration")]
         public PrintColorConfiguration? PrintColorConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets printQuality.
         /// </summary>
+        [Obsolete("The printQuality property is deprecated and will stop returning data on July 31, 2023. Please use the quality property instead of this.")]
         [JsonPropertyName("printQuality")]
         public PrintQuality? PrintQuality { get; set; }
     

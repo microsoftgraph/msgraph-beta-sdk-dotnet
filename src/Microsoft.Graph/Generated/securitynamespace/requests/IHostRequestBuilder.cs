@@ -32,6 +32,12 @@ namespace Microsoft.Graph.SecurityNamespace
         new IHostRequest Request(IEnumerable<Microsoft.Graph.Option> options);
     
         /// <summary>
+        /// Gets the request builder for ChildHostPairs.
+        /// </summary>
+        /// <returns>The <see cref="IHostChildHostPairsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IHostChildHostPairsCollectionWithReferencesRequestBuilder ChildHostPairs { get; }
+
+        /// <summary>
         /// Gets the request builder for Components.
         /// </summary>
         /// <returns>The <see cref="IHostComponentsCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -42,6 +48,18 @@ namespace Microsoft.Graph.SecurityNamespace
         /// </summary>
         /// <returns>The <see cref="IHostCookiesCollectionWithReferencesRequestBuilder"/>.</returns>
         IHostCookiesCollectionWithReferencesRequestBuilder Cookies { get; }
+
+        /// <summary>
+        /// Gets the request builder for HostPairs.
+        /// </summary>
+        /// <returns>The <see cref="IHostHostPairsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IHostHostPairsCollectionWithReferencesRequestBuilder HostPairs { get; }
+
+        /// <summary>
+        /// Gets the request builder for ParentHostPairs.
+        /// </summary>
+        /// <returns>The <see cref="IHostParentHostPairsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IHostParentHostPairsCollectionWithReferencesRequestBuilder ParentHostPairs { get; }
 
         /// <summary>
         /// Gets the request builder for PassiveDns.
@@ -62,10 +80,28 @@ namespace Microsoft.Graph.SecurityNamespace
         IHostReputationRequestBuilder Reputation { get; }
 
         /// <summary>
+        /// Gets the request builder for SslCertificates.
+        /// </summary>
+        /// <returns>The <see cref="IHostSslCertificatesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IHostSslCertificatesCollectionWithReferencesRequestBuilder SslCertificates { get; }
+
+        /// <summary>
+        /// Gets the request builder for Subdomains.
+        /// </summary>
+        /// <returns>The <see cref="IHostSubdomainsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IHostSubdomainsCollectionWithReferencesRequestBuilder Subdomains { get; }
+
+        /// <summary>
         /// Gets the request builder for Trackers.
         /// </summary>
         /// <returns>The <see cref="IHostTrackersCollectionWithReferencesRequestBuilder"/>.</returns>
         IHostTrackersCollectionWithReferencesRequestBuilder Trackers { get; }
+
+        /// <summary>
+        /// Gets the request builder for Whois.
+        /// </summary>
+        /// <returns>The <see cref="IWhoisRecordWithReferenceRequestBuilder"/>.</returns>
+        IWhoisRecordWithReferenceRequestBuilder Whois { get; }
     
     }
 }

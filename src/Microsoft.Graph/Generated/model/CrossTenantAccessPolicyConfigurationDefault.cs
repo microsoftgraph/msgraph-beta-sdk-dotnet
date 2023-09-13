@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets automatic user consent settings.
-        /// Determines the default configuration for automatic user consent settings. inboundAllowed and outboundAllowed will always be false and cannot be updated in the default configuration. Read only.
+        /// Determines the default configuration for automatic user consent settings. The inboundAllowed and outboundAllowed properties are always false and cannot be updated in the default configuration. Read-only.
         /// </summary>
         [JsonPropertyName("automaticUserConsentSettings")]
         public InboundOutboundPolicyConfiguration AutomaticUserConsentSettings { get; set; }
@@ -71,6 +71,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tenant restrictions.
+        /// Defines the default tenant restrictions configuration for your organization users accessing an external organization on your network or devices.
         /// </summary>
         [JsonPropertyName("tenantRestrictions")]
         public CrossTenantAccessPolicyTenantRestrictions TenantRestrictions { get; set; }

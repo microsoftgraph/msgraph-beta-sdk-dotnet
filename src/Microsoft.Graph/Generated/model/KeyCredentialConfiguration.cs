@@ -22,6 +22,12 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets certificateBasedApplicationConfigurationIds.
+        /// </summary>
+        [JsonPropertyName("certificateBasedApplicationConfigurationIds")]
+        public IEnumerable<string> CertificateBasedApplicationConfigurationIds { get; set; }
+    
+        /// <summary>
         /// Gets or sets maxLifetime.
         /// </summary>
         [JsonPropertyName("maxLifetime")]

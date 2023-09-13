@@ -72,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets reviewerType.
-        /// Who should be asked to do the review, either Self or Reviewers.
+        /// Who should be asked to do the review, either Self, Reviewers or Manager.
         /// </summary>
         [JsonPropertyName("reviewerType")]
         public string ReviewerType { get; set; }

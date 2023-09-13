@@ -34,7 +34,7 @@ namespace Microsoft.Graph
             DateTimeOffset? endDateTime)
             : base(requestUrl, client)
         {
-            this.SetParameter("printerId", printerId, true);
+            this.SetParameter("printerId", printerId, false);
             this.SetParameter("startDateTime", startDateTime, true);
             this.SetParameter("endDateTime", endDateTime, true);
             this.SetFunctionParameters();

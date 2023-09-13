@@ -17,7 +17,8 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Aged Accounts Receivable.
     /// </summary>
-    public partial class AgedAccountsReceivable : Entity
+    [JsonConverter(typeof(DerivedTypeConverter<AgedAccountsReceivable>))]
+    public partial class AgedAccountsReceivable
     {
     
         /// <summary>
@@ -45,10 +46,22 @@ namespace Microsoft.Graph
         public Decimal? CurrentAmount { get; set; }
     
         /// <summary>
+        /// Gets or sets customer id.
+        /// </summary>
+        [JsonPropertyName("customerId")]
+        public string CustomerId { get; set; }
+    
+        /// <summary>
         /// Gets or sets customer number.
         /// </summary>
         [JsonPropertyName("customerNumber")]
         public string CustomerNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        [JsonPropertyName("id")]
+        public Guid? Id { get; set; }
     
         /// <summary>
         /// Gets or sets name.
@@ -79,6 +92,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("periodLengthFilter")]
         public string PeriodLengthFilter { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonPropertyName("@odata.type")]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

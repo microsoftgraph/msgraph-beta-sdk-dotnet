@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Cloud Pc Shared Use Service Plan.
     /// </summary>
+    [Obsolete("The cloudPcSharedUseServicePlan is deprecated and will not be supported starting October 08, 2023. This entity will not be included in the API response.")]
     public partial class CloudPcSharedUseServicePlan : Entity
     {
     

@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets errors.
+        /// Errors in the validation result of a customAuthenticationExtension.
         /// </summary>
         [JsonPropertyName("errors")]
         public IEnumerable<GenericError> Errors { get; set; }
     
         /// <summary>
         /// Gets or sets warnings.
+        /// Warnings in the validation result of a customAuthenticationExtension.
         /// </summary>
         [JsonPropertyName("warnings")]
         public IEnumerable<GenericError> Warnings { get; set; }

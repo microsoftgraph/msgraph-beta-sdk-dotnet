@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Credential User Registration Details.
     /// </summary>
+    [Obsolete("The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API.")]
     [JsonConverter(typeof(DerivedTypeConverter<CredentialUserRegistrationDetails>))]
     public partial class CredentialUserRegistrationDetails : Entity
     {

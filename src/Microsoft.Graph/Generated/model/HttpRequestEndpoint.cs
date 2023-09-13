@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets targetUrl.
+        /// The HTTP endpoint that a custom extension calls.
         /// </summary>
         [JsonPropertyName("targetUrl")]
         public string TargetUrl { get; set; }

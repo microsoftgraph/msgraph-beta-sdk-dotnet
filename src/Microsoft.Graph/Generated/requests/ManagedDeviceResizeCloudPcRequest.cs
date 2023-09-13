@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ManagedDeviceResizeCloudPcRequest.
     /// </summary>
+    [Obsolete("The resizeCloudPc API is deprecated and will stop returning on Oct 30, 2023. Please use resize instead")]
     public partial class ManagedDeviceResizeCloudPcRequest : BaseRequest, IManagedDeviceResizeCloudPcRequest
     {
         /// <summary>

@@ -128,6 +128,12 @@ namespace Microsoft.Graph
         IUserScopedRoleMemberOfCollectionRequestBuilder ScopedRoleMemberOf { get; }
 
         /// <summary>
+        /// Gets the request builder for Sponsors.
+        /// </summary>
+        /// <returns>The <see cref="IUserSponsorsCollectionWithReferencesRequestBuilder"/>.</returns>
+        IUserSponsorsCollectionWithReferencesRequestBuilder Sponsors { get; }
+
+        /// <summary>
         /// Gets the request builder for TransitiveMemberOf.
         /// </summary>
         /// <returns>The <see cref="IUserTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -386,6 +392,12 @@ namespace Microsoft.Graph
         IPresenceRequestBuilder Presence { get; }
 
         /// <summary>
+        /// Gets the request builder for VirtualEvents.
+        /// </summary>
+        /// <returns>The <see cref="IUserVirtualEventsRootRequestBuilder"/>.</returns>
+        IUserVirtualEventsRootRequestBuilder VirtualEvents { get; }
+
+        /// <summary>
         /// Gets the request builder for Authentication.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationRequestBuilder"/>.</returns>
@@ -402,6 +414,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IUserJoinedTeamsCollectionWithReferencesRequestBuilder"/>.</returns>
         IUserJoinedTeamsCollectionWithReferencesRequestBuilder JoinedTeams { get; }
+
+        /// <summary>
+        /// Gets the request builder for PermissionGrants.
+        /// </summary>
+        /// <returns>The <see cref="IUserPermissionGrantsCollectionRequestBuilder"/>.</returns>
+        IUserPermissionGrantsCollectionRequestBuilder PermissionGrants { get; }
 
         /// <summary>
         /// Gets the request builder for Teamwork.

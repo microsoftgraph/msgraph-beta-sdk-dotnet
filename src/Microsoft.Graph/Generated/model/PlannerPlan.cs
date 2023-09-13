@@ -72,6 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets shared with containers.
+        /// List of containers the plan is shared with.
         /// </summary>
         [JsonPropertyName("sharedWithContainers")]
         public IEnumerable<PlannerSharedWithContainer> SharedWithContainers { get; set; }

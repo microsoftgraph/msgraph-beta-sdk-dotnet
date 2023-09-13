@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IUnitOfMeasureRequestBuilder.
     /// </summary>
-    public partial interface IUnitOfMeasureRequestBuilder : IEntityRequestBuilder
+    public partial interface IUnitOfMeasureRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IUnitOfMeasureRequest Request();
+        IUnitOfMeasureRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IUnitOfMeasureRequest Request(IEnumerable<Option> options);
+        IUnitOfMeasureRequest Request(IEnumerable<Option> options);
     
     }
 }

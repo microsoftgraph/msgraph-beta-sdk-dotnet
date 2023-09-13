@@ -17,7 +17,8 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Picture.
     /// </summary>
-    public partial class Picture : Entity
+    [JsonConverter(typeof(DerivedTypeConverter<Picture>))]
+    public partial class Picture
     {
     
         /// <summary>
@@ -39,10 +40,28 @@ namespace Microsoft.Graph
         public Int32? Height { get; set; }
     
         /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        [JsonPropertyName("id")]
+        public Guid? Id { get; set; }
+    
+        /// <summary>
         /// Gets or sets width.
         /// </summary>
         [JsonPropertyName("width")]
         public Int32? Width { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonPropertyName("@odata.type")]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

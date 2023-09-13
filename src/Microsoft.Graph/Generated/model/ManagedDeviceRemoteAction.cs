@@ -109,5 +109,10 @@ namespace Microsoft.Graph
         /// </summary>
         InitiateOnDemandProactiveRemediation = 17,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 18,
+	
     }
 }

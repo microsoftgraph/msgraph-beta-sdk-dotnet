@@ -49,5 +49,10 @@ namespace Microsoft.Graph
         /// </summary>
         OperatingSystemVersionRegression = 6,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 7,
+	
     }
 }

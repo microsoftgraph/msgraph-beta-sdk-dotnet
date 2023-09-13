@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IEmployeeRequestBuilder.
     /// </summary>
-    public partial interface IEmployeeRequestBuilder : IEntityRequestBuilder
+    public partial interface IEmployeeRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IEmployeeRequest Request();
+        IEmployeeRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IEmployeeRequest Request(IEnumerable<Option> options);
+        IEmployeeRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for Picture.

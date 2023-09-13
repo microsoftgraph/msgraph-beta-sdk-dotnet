@@ -49,5 +49,10 @@ namespace Microsoft.Graph
         /// </summary>
         LoopPage = 6,
 	
+        /// <summary>
+        /// Project
+        /// </summary>
+        Project = 7,
+	
     }
 }

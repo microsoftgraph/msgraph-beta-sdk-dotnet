@@ -23,7 +23,6 @@ namespace Microsoft.Graph.ExternalConnectors
 
         /// <summary>
         /// Gets or sets eDiscoveryResultTemplates.
-        /// Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of two eDiscovery result templates per connection.
         /// </summary>
         [JsonPropertyName("eDiscoveryResultTemplates")]
         public IEnumerable<DisplayTemplate> EDiscoveryResultTemplates { get; set; }

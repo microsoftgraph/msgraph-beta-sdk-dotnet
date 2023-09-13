@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IReportRootRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AppCredentialSignInActivities.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootAppCredentialSignInActivitiesCollectionRequestBuilder"/>.</returns>
+        IReportRootAppCredentialSignInActivitiesCollectionRequestBuilder AppCredentialSignInActivities { get; }
+
+        /// <summary>
         /// Gets the request builder for ApplicationSignInDetailedSummary.
         /// </summary>
         /// <returns>The <see cref="IReportRootApplicationSignInDetailedSummaryCollectionRequestBuilder"/>.</returns>
@@ -48,6 +54,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootCredentialUserRegistrationDetailsCollectionRequestBuilder"/>.</returns>
         IReportRootCredentialUserRegistrationDetailsCollectionRequestBuilder CredentialUserRegistrationDetails { get; }
+
+        /// <summary>
+        /// Gets the request builder for ServicePrincipalSignInActivities.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootServicePrincipalSignInActivitiesCollectionRequestBuilder"/>.</returns>
+        IReportRootServicePrincipalSignInActivitiesCollectionRequestBuilder ServicePrincipalSignInActivities { get; }
+
+        /// <summary>
+        /// Gets the request builder for Sla.
+        /// </summary>
+        /// <returns>The <see cref="IServiceLevelAgreementRootRequestBuilder"/>.</returns>
+        IServiceLevelAgreementRootRequestBuilder Sla { get; }
 
         /// <summary>
         /// Gets the request builder for UserCredentialUsageDetails.
@@ -953,7 +971,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootGetGroupArchivedPrintJobsRequestBuilder"/>.</returns>
         IReportRootGetGroupArchivedPrintJobsRequestBuilder GetGroupArchivedPrintJobs(
-            string groupId = null,
+            string groupId,
             DateTimeOffset? startDateTime = null,
             DateTimeOffset? endDateTime = null);
 
@@ -962,7 +980,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootGetPrinterArchivedPrintJobsRequestBuilder"/>.</returns>
         IReportRootGetPrinterArchivedPrintJobsRequestBuilder GetPrinterArchivedPrintJobs(
-            string printerId = null,
+            string printerId,
             DateTimeOffset? startDateTime = null,
             DateTimeOffset? endDateTime = null);
 
@@ -971,7 +989,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootGetUserArchivedPrintJobsRequestBuilder"/>.</returns>
         IReportRootGetUserArchivedPrintJobsRequestBuilder GetUserArchivedPrintJobs(
-            string userId = null,
+            string userId,
             DateTimeOffset? startDateTime = null,
             DateTimeOffset? endDateTime = null);
 

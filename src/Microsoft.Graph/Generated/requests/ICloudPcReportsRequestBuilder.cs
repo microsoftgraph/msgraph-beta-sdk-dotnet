@@ -38,10 +38,63 @@ namespace Microsoft.Graph
         ICloudPcReportsExportJobsCollectionRequestBuilder ExportJobs { get; }
     
         /// <summary>
+        /// Gets the request builder for CloudPcReportsGetConnectionQualityReports.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcReportsGetConnectionQualityReportsRequestBuilder"/>.</returns>
+        ICloudPcReportsGetConnectionQualityReportsRequestBuilder GetConnectionQualityReports(
+            string filter = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null);
+
+        /// <summary>
         /// Gets the request builder for CloudPcReportsGetDailyAggregatedRemoteConnectionReports.
         /// </summary>
         /// <returns>The <see cref="ICloudPcReportsGetDailyAggregatedRemoteConnectionReportsRequestBuilder"/>.</returns>
         ICloudPcReportsGetDailyAggregatedRemoteConnectionReportsRequestBuilder GetDailyAggregatedRemoteConnectionReports(
+            string filter = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null);
+
+        /// <summary>
+        /// Gets the request builder for CloudPcReportsGetFrontlineReport.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcReportsGetFrontlineReportRequestBuilder"/>.</returns>
+        ICloudPcReportsGetFrontlineReportRequestBuilder GetFrontlineReport(
+            CloudPcReportName? reportName = null,
+            string filter = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null);
+
+        /// <summary>
+        /// Gets the request builder for CloudPcReportsGetInaccessibleCloudPcReports.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcReportsGetInaccessibleCloudPcReportsRequestBuilder"/>.</returns>
+        ICloudPcReportsGetInaccessibleCloudPcReportsRequestBuilder GetInaccessibleCloudPcReports(
+            string filter = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null);
+
+        /// <summary>
+        /// Gets the request builder for CloudPcReportsGetRawRemoteConnectionReports.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcReportsGetRawRemoteConnectionReportsRequestBuilder"/>.</returns>
+        ICloudPcReportsGetRawRemoteConnectionReportsRequestBuilder GetRawRemoteConnectionReports(
             string filter = null,
             IEnumerable<string> select = null,
             string search = null,

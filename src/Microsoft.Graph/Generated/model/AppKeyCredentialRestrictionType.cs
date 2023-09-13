@@ -25,6 +25,11 @@ namespace Microsoft.Graph
         AsymmetricKeyLifetime = 0,
 	
         /// <summary>
+        /// Trusted Certificate Authority
+        /// </summary>
+        TrustedCertificateAuthority = 1,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
         UnknownFutureValue = 99,

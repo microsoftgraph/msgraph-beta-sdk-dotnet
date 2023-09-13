@@ -71,6 +71,13 @@ namespace Microsoft.Graph
         public RegistrationEnforcement RegistrationEnforcement { get; set; }
     
         /// <summary>
+        /// Gets or sets report suspicious activity settings.
+        /// Enable users to report unexpected voice call or phone app notification multi-factor authentication prompts as suspicious.
+        /// </summary>
+        [JsonPropertyName("reportSuspiciousActivitySettings")]
+        public ReportSuspiciousActivitySettings ReportSuspiciousActivitySettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets system credential preferences.
         /// Prompt users with their most-preferred credential for multifactor authentication.
         /// </summary>

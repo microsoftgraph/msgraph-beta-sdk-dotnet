@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAgedAccountsReceivableRequestBuilder.
     /// </summary>
-    public partial interface IAgedAccountsReceivableRequestBuilder : IEntityRequestBuilder
+    public partial interface IAgedAccountsReceivableRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IAgedAccountsReceivableRequest Request();
+        IAgedAccountsReceivableRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IAgedAccountsReceivableRequest Request(IEnumerable<Option> options);
+        IAgedAccountsReceivableRequest Request(IEnumerable<Option> options);
     
     }
 }

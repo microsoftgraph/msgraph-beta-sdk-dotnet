@@ -275,6 +275,16 @@ namespace Microsoft.Graph
         PermissionCheckNoResourceGroupNetworkContributorRole = 603,
 	
         /// <summary>
+        /// Permission Check No Windows365Network User Role
+        /// </summary>
+        PermissionCheckNoWindows365NetworkUserRole = 604,
+	
+        /// <summary>
+        /// Permission Check No Windows365Network Interface Contributor Role
+        /// </summary>
+        PermissionCheckNoWindows365NetworkInterfaceContributorRole = 605,
+	
+        /// <summary>
         /// Permission Check Transient Service Error
         /// </summary>
         PermissionCheckTransientServiceError = 698,
@@ -288,6 +298,16 @@ namespace Microsoft.Graph
         /// Udp Connectivity Check Stun Url Not Allow Listed
         /// </summary>
         UdpConnectivityCheckStunUrlNotAllowListed = 800,
+	
+        /// <summary>
+        /// Udp Connectivity Check Turn Url Not Allow Listed
+        /// </summary>
+        UdpConnectivityCheckTurnUrlNotAllowListed = 801,
+	
+        /// <summary>
+        /// Udp Connectivity Check Urls Not Allow Listed
+        /// </summary>
+        UdpConnectivityCheckUrlsNotAllowListed = 802,
 	
         /// <summary>
         /// Udp Connectivity Check Unknown Error

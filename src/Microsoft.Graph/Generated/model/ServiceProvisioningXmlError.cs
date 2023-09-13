@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets errorDetail.
+        /// Error Information published by the Federated Service as an xml string .
         /// </summary>
         [JsonPropertyName("errorDetail")]
         public string ErrorDetail { get; set; }

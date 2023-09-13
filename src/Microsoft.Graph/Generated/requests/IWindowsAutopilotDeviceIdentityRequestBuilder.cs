@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         IWindowsAutopilotDeploymentProfileWithReferenceRequestBuilder IntendedDeploymentProfile { get; }
     
         /// <summary>
+        /// Gets the request builder for WindowsAutopilotDeviceIdentityAllowNextEnrollment.
+        /// </summary>
+        /// <returns>The <see cref="IWindowsAutopilotDeviceIdentityAllowNextEnrollmentRequestBuilder"/>.</returns>
+        IWindowsAutopilotDeviceIdentityAllowNextEnrollmentRequestBuilder AllowNextEnrollment();
+
+        /// <summary>
         /// Gets the request builder for WindowsAutopilotDeviceIdentityAssignResourceAccountToDevice.
         /// </summary>
         /// <returns>The <see cref="IWindowsAutopilotDeviceIdentityAssignResourceAccountToDeviceRequestBuilder"/>.</returns>

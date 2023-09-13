@@ -60,6 +60,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IWorkbookWorksheetTablesCollectionRequestBuilder"/>.</returns>
         IWorkbookWorksheetTablesCollectionRequestBuilder Tables { get; }
+
+        /// <summary>
+        /// Gets the request builder for Tasks.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookWorksheetTasksCollectionRequestBuilder"/>.</returns>
+        IWorkbookWorksheetTasksCollectionRequestBuilder Tasks { get; }
     
         /// <summary>
         /// Gets the request builder for WorkbookWorksheetCell.

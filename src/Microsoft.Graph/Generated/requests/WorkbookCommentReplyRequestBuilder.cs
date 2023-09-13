@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new WorkbookCommentReplyRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for @Task.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookDocumentTaskRequestBuilder"/>.</returns>
+        public IWorkbookDocumentTaskRequestBuilder @Task
+        {
+            get
+            {
+                return new WorkbookDocumentTaskRequestBuilder(this.AppendSegmentToRequestUrl("@Task"), this.Client);
+            }
+        }
+    
     }
 }

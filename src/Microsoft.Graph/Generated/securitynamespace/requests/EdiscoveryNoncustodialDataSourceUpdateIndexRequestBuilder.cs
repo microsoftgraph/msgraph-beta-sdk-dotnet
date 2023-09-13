@@ -23,6 +23,21 @@ namespace Microsoft.Graph.SecurityNamespace
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="Microsoft.Graph.IBaseClient"/> for handling requests.</param>
+        /// <param name="ids">A ids parameter for the OData method call.</param>
+        public EdiscoveryNoncustodialDataSourceUpdateIndexRequestBuilder(
+            string requestUrl,
+            Microsoft.Graph.IBaseClient client,
+            IEnumerable<string> ids)
+            : base(requestUrl, client)
+        {
+            this.SetParameter("ids", ids, true);
+        }
+
+        /// <summary>
+        /// Constructs a new <see cref="EdiscoveryNoncustodialDataSourceUpdateIndexRequestBuilder"/>.
+        /// </summary>
+        /// <param name="requestUrl">The URL for the request.</param>
+        /// <param name="client">The <see cref="Microsoft.Graph.IBaseClient"/> for handling requests.</param>
         public EdiscoveryNoncustodialDataSourceUpdateIndexRequestBuilder(
             string requestUrl,
             Microsoft.Graph.IBaseClient client)
@@ -39,6 +54,11 @@ namespace Microsoft.Graph.SecurityNamespace
         protected override IEdiscoveryNoncustodialDataSourceUpdateIndexRequest CreateRequest(string functionUrl, IEnumerable<Microsoft.Graph.Option> options)
         {
             var request = new EdiscoveryNoncustodialDataSourceUpdateIndexRequest(functionUrl, this.Client, options);
+
+            if (this.HasParameter("ids"))
+            {
+                request.RequestBody.Ids = this.GetParameter<IEnumerable<string>>("ids");
+            }
 
             return request;
         }

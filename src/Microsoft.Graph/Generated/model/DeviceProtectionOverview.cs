@@ -23,63 +23,63 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets cleanDeviceCount.
-        /// Clean device count.
+        /// Indicates number of devices reporting as clean
         /// </summary>
         [JsonPropertyName("cleanDeviceCount")]
         public Int32? CleanDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets criticalFailuresDeviceCount.
-        /// Critical failures device count.
+        /// Indicates number of devices with critical failures
         /// </summary>
         [JsonPropertyName("criticalFailuresDeviceCount")]
         public Int32? CriticalFailuresDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets inactiveThreatAgentDeviceCount.
-        /// Device with inactive threat agent count
+        /// Indicates number of devices with inactive threat agent
         /// </summary>
         [JsonPropertyName("inactiveThreatAgentDeviceCount")]
         public Int32? InactiveThreatAgentDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets pendingFullScanDeviceCount.
-        /// Pending full scan device count.
+        /// Indicates number of devices pending full scan
         /// </summary>
         [JsonPropertyName("pendingFullScanDeviceCount")]
         public Int32? PendingFullScanDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets pendingManualStepsDeviceCount.
-        /// Pending manual steps device count.
+        /// Indicates number of devices with pending manual steps
         /// </summary>
         [JsonPropertyName("pendingManualStepsDeviceCount")]
         public Int32? PendingManualStepsDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets pendingOfflineScanDeviceCount.
-        /// Pending offline scan device count.
+        /// Indicates number of pending offline scan devices
         /// </summary>
         [JsonPropertyName("pendingOfflineScanDeviceCount")]
         public Int32? PendingOfflineScanDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets pendingQuickScanDeviceCount.
-        /// Pending quick scan device count. Valid values -2147483648 to 2147483647
+        /// Indicates the number of devices that have a pending full scan. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("pendingQuickScanDeviceCount")]
         public Int32? PendingQuickScanDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets pendingRestartDeviceCount.
-        /// Pending restart device count.
+        /// Indicates number of devices pending restart
         /// </summary>
         [JsonPropertyName("pendingRestartDeviceCount")]
         public Int32? PendingRestartDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets pendingSignatureUpdateDeviceCount.
-        /// Device with old signature count.
+        /// Indicates number of devices with an old signature
         /// </summary>
         [JsonPropertyName("pendingSignatureUpdateDeviceCount")]
         public Int32? PendingSignatureUpdateDeviceCount { get; set; }
@@ -93,7 +93,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets unknownStateThreatAgentDeviceCount.
-        /// Device with threat agent state as unknown count.
+        /// Indicates number of devices with threat agent state as unknown
         /// </summary>
         [JsonPropertyName("unknownStateThreatAgentDeviceCount")]
         public Int32? UnknownStateThreatAgentDeviceCount { get; set; }

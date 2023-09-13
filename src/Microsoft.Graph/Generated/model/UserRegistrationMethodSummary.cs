@@ -37,14 +37,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets userRoles.
-        /// User role type. Possible values are: all, privilegedAdmin, admin, user.
+        /// The role type of the user. Possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("userRoles")]
         public IncludedUserRoles? UserRoles { get; set; }
     
         /// <summary>
         /// Gets or sets userTypes.
-        /// User type. Possible values are: all, member, guest.
+        /// User type. Possible values are: all, member, guest, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("userTypes")]
         public IncludedUserTypes? UserTypes { get; set; }

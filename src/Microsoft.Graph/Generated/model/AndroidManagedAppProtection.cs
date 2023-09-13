@@ -44,6 +44,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> AllowedAndroidDeviceModels { get; set; }
     
         /// <summary>
+        /// Gets or sets app action if account is clocked out.
+        /// Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time).
+        /// </summary>
+        [JsonPropertyName("appActionIfAccountIsClockedOut")]
+        public ManagedAppRemediationAction? AppActionIfAccountIsClockedOut { get; set; }
+    
+        /// <summary>
         /// Gets or sets app action if android device manufacturer not allowed.
         /// Defines a managed app behavior, either block or wipe, if the specified device manufacturer is not allowed. Possible values are: block, wipe, warn.
         /// </summary>
@@ -98,6 +105,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("appActionIfDevicePasscodeComplexityLessThanMedium")]
         public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanMedium { get; set; }
+    
+        /// <summary>
+        /// Gets or sets app action if samsung knox attestation required.
+        /// Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block &amp; wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured.
+        /// </summary>
+        [JsonPropertyName("appActionIfSamsungKnoxAttestationRequired")]
+        public ManagedAppRemediationAction? AppActionIfSamsungKnoxAttestationRequired { get; set; }
     
         /// <summary>
         /// Gets or sets approved keyboards.

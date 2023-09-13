@@ -51,6 +51,13 @@ namespace Microsoft.Graph
         public string AllowedIosDeviceModels { get; set; }
     
         /// <summary>
+        /// Gets or sets app action if account is clocked out.
+        /// Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.
+        /// </summary>
+        [JsonPropertyName("appActionIfAccountIsClockedOut")]
+        public ManagedAppRemediationAction? AppActionIfAccountIsClockedOut { get; set; }
+    
+        /// <summary>
         /// Gets or sets app action if android device manufacturer not allowed.
         /// Defines a managed app behavior, either block or wipe, if the specified device manufacturer is not allowed. (Android only). Possible values are: block, wipe, warn.
         /// </summary>

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SitePageRequestBuilder.
     /// </summary>
-    public partial class SitePageRequestBuilder : BaseItemRequestBuilder, ISitePageRequestBuilder
+    public partial class SitePageRequestBuilder : BaseSitePageRequestBuilder, ISitePageRequestBuilder
     {
 
         /// <summary>

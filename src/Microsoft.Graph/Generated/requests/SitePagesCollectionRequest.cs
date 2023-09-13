@@ -34,29 +34,29 @@ namespace Microsoft.Graph
         {
         }
         /// <summary>
-        /// Adds the specified SitePage to the collection via POST.
+        /// Adds the specified BaseSitePage to the collection via POST.
         /// </summary>
-        /// <param name="sitePage">The SitePage to add.</param>
+        /// <param name="baseSitePage">The BaseSitePage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created SitePage.</returns>
-        public System.Threading.Tasks.Task<SitePage> AddAsync(SitePage sitePage, CancellationToken cancellationToken = default)
+        /// <returns>The created BaseSitePage.</returns>
+        public System.Threading.Tasks.Task<BaseSitePage> AddAsync(BaseSitePage baseSitePage, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsync<SitePage>(sitePage, cancellationToken);
+            return this.SendAsync<BaseSitePage>(baseSitePage, cancellationToken);
         }
 
         /// <summary>
-        /// Adds the specified SitePage to the collection via POST and returns a <see cref="GraphResponse{SitePage}"/> object of the request.
+        /// Adds the specified BaseSitePage to the collection via POST and returns a <see cref="GraphResponse{BaseSitePage}"/> object of the request.
         /// </summary>
-        /// <param name="sitePage">The SitePage to add.</param>
+        /// <param name="baseSitePage">The BaseSitePage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{SitePage}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<SitePage>> AddResponseAsync(SitePage sitePage, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{BaseSitePage}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BaseSitePage>> AddResponseAsync(BaseSitePage baseSitePage, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse<SitePage>(sitePage, cancellationToken);
+            return this.SendAsyncWithGraphResponse<BaseSitePage>(baseSitePage, cancellationToken);
         }
 
 
@@ -107,7 +107,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public ISitePagesCollectionRequest Expand(Expression<Func<SitePage, object>> expandExpression)
+        public ISitePagesCollectionRequest Expand(Expression<Func<BaseSitePage, object>> expandExpression)
         {
             if (expandExpression == null)
             {
@@ -142,7 +142,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public ISitePagesCollectionRequest Select(Expression<Func<SitePage, object>> selectExpression)
+        public ISitePagesCollectionRequest Select(Expression<Func<BaseSitePage, object>> selectExpression)
         {
             if (selectExpression == null)
             {

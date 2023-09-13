@@ -10,11 +10,13 @@
 
 namespace Microsoft.Graph
 {
+    using System;
     using System.Text.Json.Serialization;
 
     /// <summary>
     /// The enum PrinterFeedDirection.
     /// </summary>
+    [Obsolete("The printerFeedDirection enum type is deprecated and will stop returning data on July 31, 2023. Please use the printerFeedOrientation enum type instead of this.")]
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum PrinterFeedDirection
     {

@@ -246,6 +246,12 @@ namespace Microsoft.Graph
 
             if (reportRootToInitialize != null)
             {
+                if (reportRootToInitialize.AppCredentialSignInActivities != null && reportRootToInitialize.AppCredentialSignInActivities.CurrentPage != null)
+                {
+                    reportRootToInitialize.AppCredentialSignInActivities.InitializeNextPageRequest(this.Client, reportRootToInitialize.AppCredentialSignInActivitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    reportRootToInitialize.AppCredentialSignInActivities.AdditionalData = reportRootToInitialize.AdditionalData;
+                }
                 if (reportRootToInitialize.ApplicationSignInDetailedSummary != null && reportRootToInitialize.ApplicationSignInDetailedSummary.CurrentPage != null)
                 {
                     reportRootToInitialize.ApplicationSignInDetailedSummary.InitializeNextPageRequest(this.Client, reportRootToInitialize.ApplicationSignInDetailedSummaryNextLink);
@@ -257,6 +263,12 @@ namespace Microsoft.Graph
                     reportRootToInitialize.CredentialUserRegistrationDetails.InitializeNextPageRequest(this.Client, reportRootToInitialize.CredentialUserRegistrationDetailsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     reportRootToInitialize.CredentialUserRegistrationDetails.AdditionalData = reportRootToInitialize.AdditionalData;
+                }
+                if (reportRootToInitialize.ServicePrincipalSignInActivities != null && reportRootToInitialize.ServicePrincipalSignInActivities.CurrentPage != null)
+                {
+                    reportRootToInitialize.ServicePrincipalSignInActivities.InitializeNextPageRequest(this.Client, reportRootToInitialize.ServicePrincipalSignInActivitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    reportRootToInitialize.ServicePrincipalSignInActivities.AdditionalData = reportRootToInitialize.AdditionalData;
                 }
                 if (reportRootToInitialize.UserCredentialUsageDetails != null && reportRootToInitialize.UserCredentialUsageDetails.CurrentPage != null)
                 {

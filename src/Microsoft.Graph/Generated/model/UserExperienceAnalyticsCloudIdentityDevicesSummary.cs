@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets deviceWithoutCloudIdentityCount.
-        /// The count of devices that are not cloud identity.
+        /// The count of devices that are not cloud identity. Read-only.
         /// </summary>
         [JsonPropertyName("deviceWithoutCloudIdentityCount")]
         public Int32? DeviceWithoutCloudIdentityCount { get; set; }

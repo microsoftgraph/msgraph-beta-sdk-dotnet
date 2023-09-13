@@ -30,55 +30,63 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is admin.
-        /// Whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
+        /// Indicates whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
         /// </summary>
         [JsonPropertyName("isAdmin")]
         public bool? IsAdmin { get; set; }
     
         /// <summary>
         /// Gets or sets is mfa capable.
-        /// Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
+        /// Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("isMfaCapable")]
         public bool? IsMfaCapable { get; set; }
     
         /// <summary>
         /// Gets or sets is mfa registered.
-        /// Whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy.  Supports $filter (eq).
+        /// Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("isMfaRegistered")]
         public bool? IsMfaRegistered { get; set; }
     
         /// <summary>
         /// Gets or sets is passwordless capable.
-        /// Whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).
+        /// Indicates whether the user has registered a passwordless strong authentication method (including FIDO2, Windows Hello for Business, and Microsoft Authenticator (Passwordless)) that is allowed by the authentication methods policy. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("isPasswordlessCapable")]
         public bool? IsPasswordlessCapable { get; set; }
     
         /// <summary>
         /// Gets or sets is sspr capable.
-        /// Whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports $filter (eq).
+        /// Indicates whether the user has registered the required number of authentication methods for self-service password reset and the user is allowed to perform self-service password reset by policy. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("isSsprCapable")]
         public bool? IsSsprCapable { get; set; }
     
         /// <summary>
         /// Gets or sets is sspr enabled.
-        /// Whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports $filter (eq).
+        /// Indicates whether the user is allowed to perform self-service password reset by policy. The user may not necessarily have registered the required number of authentication methods for self-service password reset. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("isSsprEnabled")]
         public bool? IsSsprEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets is sspr registered.
-        /// Whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports $filter (eq).
+        /// Indicates whether the user has registered the required number of authentication methods for self-service password reset. The user may not necessarily be allowed to perform self-service password reset by policy. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("isSsprRegistered")]
         public bool? IsSsprRegistered { get; set; }
     
         /// <summary>
+        /// Gets or sets is system preferred authentication method enabled.
+        /// Indicates whether system preferred authentication method is enabled. If enabled, the system dynamically determines the most secure authentication method among the methods registered by the user. Supports $filter (eq).
+        /// </summary>
+        [JsonPropertyName("isSystemPreferredAuthenticationMethodEnabled")]
+        public bool? IsSystemPreferredAuthenticationMethodEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets last updated date time.
+        /// The date and time (UTC) when the record was last updated. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("lastUpdatedDateTime")]
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
@@ -91,15 +99,29 @@ namespace Microsoft.Graph
         public IEnumerable<string> MethodsRegistered { get; set; }
     
         /// <summary>
+        /// Gets or sets system preferred authentication methods.
+        /// Collection of authentication methods that the system determined to be the most secure authentication methods among the registered methods for second factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue. Supports $filter (any with eq).
+        /// </summary>
+        [JsonPropertyName("systemPreferredAuthenticationMethods")]
+        public IEnumerable<string> SystemPreferredAuthenticationMethods { get; set; }
+    
+        /// <summary>
         /// Gets or sets user display name.
-        /// The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderBy.
+        /// The user display name, such as Adele Vance. Supports $filter (eq, startsWith) and $orderby.
         /// </summary>
         [JsonPropertyName("userDisplayName")]
         public string UserDisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets user preferred method for secondary authentication.
+        /// The method the user selected as the default second-factor for performing multi-factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("userPreferredMethodForSecondaryAuthentication")]
+        public UserDefaultAuthenticationMethod? UserPreferredMethodForSecondaryAuthentication { get; set; }
+    
+        /// <summary>
         /// Gets or sets user principal name.
-        /// The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderBy.
+        /// The user principal name, such as AdeleV@contoso.com. Supports $filter (eq, startsWith) and $orderby.
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }

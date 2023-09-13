@@ -85,7 +85,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets lifecycle notification url.
-        /// Optional. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol.
+        /// Required for Teams resources if the expirationDateTime value is more than 1 hour from now; optional otherwise. The URL of the endpoint that receives lifecycle notifications, including subscriptionRemoved, reauthorizationRequired, and missed notifications. This URL must make use of the HTTPS protocol. For more information, see Reduce missing subscriptions and change notifications.
         /// </summary>
         [JsonPropertyName("lifecycleNotificationUrl")]
         public string LifecycleNotificationUrl { get; set; }

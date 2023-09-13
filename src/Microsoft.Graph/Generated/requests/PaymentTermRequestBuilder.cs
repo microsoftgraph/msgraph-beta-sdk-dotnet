@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PaymentTermRequestBuilder.
     /// </summary>
-    public partial class PaymentTermRequestBuilder : EntityRequestBuilder, IPaymentTermRequestBuilder
+    public partial class PaymentTermRequestBuilder : BaseRequestBuilder, IPaymentTermRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IPaymentTermRequest Request()
+        public IPaymentTermRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IPaymentTermRequest Request(IEnumerable<Option> options)
+        public IPaymentTermRequest Request(IEnumerable<Option> options)
         {
             return new PaymentTermRequest(this.RequestUrl, this.Client, options);
         }

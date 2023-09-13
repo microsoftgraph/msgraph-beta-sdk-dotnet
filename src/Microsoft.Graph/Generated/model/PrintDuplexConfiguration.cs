@@ -10,11 +10,13 @@
 
 namespace Microsoft.Graph
 {
+    using System;
     using System.Text.Json.Serialization;
 
     /// <summary>
     /// The enum PrintDuplexConfiguration.
     /// </summary>
+    [Obsolete("The duplexConfiguration enum type is deprecated and will stop returning data on July 31, 2023. Please use the printDuplexMode enum type instead of this.")]
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum PrintDuplexConfiguration
     {

@@ -49,6 +49,13 @@ namespace Microsoft.Graph
         public PlannerFieldRules CheckLists { get; set; }
     
         /// <summary>
+        /// Gets or sets completionRequirements.
+        /// Rules and restrictions for completion requirements of the task. Accepted values are allow, add, remove, edit, and block.
+        /// </summary>
+        [JsonPropertyName("completionRequirements")]
+        public IEnumerable<string> CompletionRequirements { get; set; }
+    
+        /// <summary>
         /// Gets or sets delete.
         /// Rules and restrictions for deleting the task. Accepted values are allow and block.
         /// </summary>
@@ -85,7 +92,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets percentComplete.
-        /// Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, setToNotStarted, setToInProgress, and block.
+        /// Rules and restrictions for changing the completion percentage of the task. Accepted values are allow, setToComplete, overrideRequirements, setToNotStarted, setToInProgress, and block.
         /// </summary>
         [JsonPropertyName("percentComplete")]
         public IEnumerable<string> PercentComplete { get; set; }

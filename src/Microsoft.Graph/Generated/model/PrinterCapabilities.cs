@@ -73,6 +73,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets feedDirections.
         /// </summary>
+        [Obsolete("The feedDirections property is deprecated and will stop returning data on July 31, 2023. Please use the feedOrientations property instead of this.")]
         [JsonPropertyName("feedDirections")]
         public IEnumerable<PrinterFeedDirection> FeedDirections { get; set; }
     
@@ -191,78 +192,91 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets supportedColorConfigurations.
         /// </summary>
+        [Obsolete("The supportedColorConfigurations property is deprecated and will stop returning data on July 31, 2023. Please use the colorModes property instead of this.")]
         [JsonPropertyName("supportedColorConfigurations")]
         public IEnumerable<PrintColorConfiguration> SupportedColorConfigurations { get; set; }
     
         /// <summary>
         /// Gets or sets supportedCopiesPerJob.
         /// </summary>
+        [Obsolete("The supportedCopiesPerJob property is deprecated and will stop returning data on July 31, 2023. Please use the copiesPerJob property instead of this.")]
         [JsonPropertyName("supportedCopiesPerJob")]
         public IntegerRange SupportedCopiesPerJob { get; set; }
     
         /// <summary>
         /// Gets or sets supportedDocumentMimeTypes.
         /// </summary>
+        [Obsolete("The supportedDocumentMimeTypes property is deprecated and will stop returning data on July 31, 2023. Please use the contentTypes property instead of this.")]
         [JsonPropertyName("supportedDocumentMimeTypes")]
         public IEnumerable<string> SupportedDocumentMimeTypes { get; set; }
     
         /// <summary>
         /// Gets or sets supportedDuplexConfigurations.
         /// </summary>
+        [Obsolete("The supportedDuplexConfigurations property is deprecated and will stop returning data on July 31, 2023. Please use the duplexModes property instead of this.")]
         [JsonPropertyName("supportedDuplexConfigurations")]
         public IEnumerable<PrintDuplexConfiguration> SupportedDuplexConfigurations { get; set; }
     
         /// <summary>
         /// Gets or sets supportedFinishings.
         /// </summary>
+        [Obsolete("The supportedFinishings property is deprecated and will stop returning data on July 31, 2023. Please use the finishings property instead of this.")]
         [JsonPropertyName("supportedFinishings")]
         public IEnumerable<PrintFinishing> SupportedFinishings { get; set; }
     
         /// <summary>
         /// Gets or sets supportedMediaColors.
         /// </summary>
+        [Obsolete("The supportedMediaColors property is deprecated and will stop returning data on July 31, 2023. Please use the mediaColors property instead of this.")]
         [JsonPropertyName("supportedMediaColors")]
         public IEnumerable<string> SupportedMediaColors { get; set; }
     
         /// <summary>
         /// Gets or sets supportedMediaSizes.
         /// </summary>
+        [Obsolete("The supportedMediaSizes property is deprecated and will stop returning data on July 31, 2023. Please use the mediaSizes property instead of this.")]
         [JsonPropertyName("supportedMediaSizes")]
         public IEnumerable<string> SupportedMediaSizes { get; set; }
     
         /// <summary>
         /// Gets or sets supportedMediaTypes.
         /// </summary>
+        [Obsolete("The supportedMediaTypes property is deprecated and will stop returning data on July 31, 2023. Please use the mediaTypes property instead of this.")]
         [JsonPropertyName("supportedMediaTypes")]
         public IEnumerable<PrintMediaType> SupportedMediaTypes { get; set; }
     
         /// <summary>
         /// Gets or sets supportedOrientations.
         /// </summary>
+        [Obsolete("The supportedOrientations property is deprecated and will stop returning data on July 31, 2023. Please use the orientations property instead of this.")]
         [JsonPropertyName("supportedOrientations")]
         public IEnumerable<PrintOrientation> SupportedOrientations { get; set; }
     
         /// <summary>
         /// Gets or sets supportedOutputBins.
         /// </summary>
+        [Obsolete("The supportedOutputBins property is deprecated and will stop returning data on July 31, 2023. Please use the outputBins property instead of this.")]
         [JsonPropertyName("supportedOutputBins")]
         public IEnumerable<string> SupportedOutputBins { get; set; }
     
         /// <summary>
         /// Gets or sets supportedPagesPerSheet.
         /// </summary>
+        [Obsolete("The supportedPagesPerSheet property is deprecated and will stop returning data on July 31, 2023. Please use the pagesPerSheet property instead of this.")]
         [JsonPropertyName("supportedPagesPerSheet")]
         public IntegerRange SupportedPagesPerSheet { get; set; }
     
         /// <summary>
         /// Gets or sets supportedPresentationDirections.
         /// </summary>
+        [Obsolete("The supportedPresentationDirections property is deprecated and will stop returning data on July 31, 2023. Please use the multipageLayouts property instead of this.")]
         [JsonPropertyName("supportedPresentationDirections")]
         public IEnumerable<PrintPresentationDirection> SupportedPresentationDirections { get; set; }
     
         /// <summary>
         /// Gets or sets supportedPrintQualities.
         /// </summary>
+        [Obsolete("The supportedPrintQualities property is deprecated and will stop returning data on July 31, 2023. Please use the qualities property instead of this.")]
         [JsonPropertyName("supportedPrintQualities")]
         public IEnumerable<PrintQuality> SupportedPrintQualities { get; set; }
     

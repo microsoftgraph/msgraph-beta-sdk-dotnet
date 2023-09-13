@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CustomerPaymentJournalRequestBuilder.
     /// </summary>
-    public partial class CustomerPaymentJournalRequestBuilder : EntityRequestBuilder, ICustomerPaymentJournalRequestBuilder
+    public partial class CustomerPaymentJournalRequestBuilder : BaseRequestBuilder, ICustomerPaymentJournalRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new ICustomerPaymentJournalRequest Request()
+        public ICustomerPaymentJournalRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new ICustomerPaymentJournalRequest Request(IEnumerable<Option> options)
+        public ICustomerPaymentJournalRequest Request(IEnumerable<Option> options)
         {
             return new CustomerPaymentJournalRequest(this.RequestUrl, this.Client, options);
         }

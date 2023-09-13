@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PrintJobStartPrintJobRequest.
     /// </summary>
+    [Obsolete("The startPrintJob API is deprecated and will stop returning data on July 31, 2023. Please use the start API instead of this.")]
     public partial class PrintJobStartPrintJobRequest : BaseRequest, IPrintJobStartPrintJobRequest
     {
         /// <summary>

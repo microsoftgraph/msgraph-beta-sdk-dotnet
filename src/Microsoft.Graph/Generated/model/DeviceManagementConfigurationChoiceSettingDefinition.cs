@@ -31,14 +31,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets default option id.
-        /// Default option for the choice setting.
+        /// Default option for choice setting
         /// </summary>
         [JsonPropertyName("defaultOptionId")]
         public string DefaultOptionId { get; set; }
     
         /// <summary>
         /// Gets or sets options.
-        /// Options for the setting that can be selected.
+        /// Options for the setting that can be selected
         /// </summary>
         [JsonPropertyName("options")]
         public IEnumerable<DeviceManagementConfigurationOptionDefinition> Options { get; set; }

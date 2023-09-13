@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ManagedDeviceReprovisionCloudPcRequest.
     /// </summary>
+    [Obsolete("The reprovisionCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use reprovision instead")]
     public partial class ManagedDeviceReprovisionCloudPcRequest : BaseRequest, IManagedDeviceReprovisionCloudPcRequest
     {
         /// <summary>

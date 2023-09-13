@@ -993,6 +993,36 @@ namespace Microsoft.Graph
             string filter = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetWindowsDriverUpdateAlertsPerPolicyPerDeviceReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetWindowsDriverUpdateAlertsPerPolicyPerDeviceReportRequestBuilder GetWindowsDriverUpdateAlertsPerPolicyPerDeviceReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetWindowsDriverUpdateAlertSummaryReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetWindowsDriverUpdateAlertSummaryReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetWindowsDriverUpdateAlertSummaryReportRequestBuilder GetWindowsDriverUpdateAlertSummaryReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetWindowsQualityUpdateAlertsPerPolicyPerDeviceReportRequestBuilder"/>.</returns>

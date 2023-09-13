@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         public string AadDeviceId { get; set; }
     
         /// <summary>
+        /// Gets or sets connection settings.
+        /// </summary>
+        [JsonPropertyName("connectionSettings")]
+        public CloudPcConnectionSettings ConnectionSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets connectivity result.
         /// The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC can be connected.
         /// </summary>
@@ -121,6 +127,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets power state.
+        /// The power state of a Cloud PC. The possible values are: running, poweredOff and unknown. This property only supports shift work Cloud PCs.
         /// </summary>
         [JsonPropertyName("powerState")]
         public CloudPcPowerState? PowerState { get; set; }

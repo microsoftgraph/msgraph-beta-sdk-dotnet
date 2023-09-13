@@ -59,5 +59,10 @@ namespace Microsoft.Graph
         /// </summary>
         ClockwiseFromBottomRight = 7,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 8,
+	
     }
 }

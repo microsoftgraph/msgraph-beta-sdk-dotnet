@@ -72,7 +72,7 @@ namespace Microsoft.Graph.CallRecords
     
         /// <summary>
         /// Gets or sets macAddress.
-        /// The media access control (MAC) address of the media endpoint's network device.
+        /// The media access control (MAC) address of the media endpoint's network device. This value may be missing or shown as 02:00:00:00:00:00 due to operating system privacy policies.
         /// </summary>
         [JsonPropertyName("macAddress")]
         public string MacAddress { get; set; }

@@ -99,6 +99,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for CertificateAuthorities.
+        /// </summary>
+        /// <returns>The <see cref="ICertificateAuthorityPathRequestBuilder"/>.</returns>
+        public ICertificateAuthorityPathRequestBuilder CertificateAuthorities
+        {
+            get
+            {
+                return new CertificateAuthorityPathRequestBuilder(this.AppendSegmentToRequestUrl("certificateAuthorities"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for CustomSecurityAttributeDefinitions.
         /// </summary>
         /// <returns>The <see cref="IDirectoryCustomSecurityAttributeDefinitionsCollectionRequestBuilder"/>.</returns>
@@ -179,6 +191,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DirectorySharedEmailDomainsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sharedEmailDomains"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Subscriptions.
+        /// </summary>
+        /// <returns>The <see cref="IDirectorySubscriptionsCollectionRequestBuilder"/>.</returns>
+        public IDirectorySubscriptionsCollectionRequestBuilder Subscriptions
+        {
+            get
+            {
+                return new DirectorySubscriptionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("subscriptions"), this.Client);
             }
         }
 

@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ISalesOrderRequestBuilder.
     /// </summary>
-    public partial interface ISalesOrderRequestBuilder : IEntityRequestBuilder
+    public partial interface ISalesOrderRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new ISalesOrderRequest Request();
+        ISalesOrderRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new ISalesOrderRequest Request(IEnumerable<Option> options);
+        ISalesOrderRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for Currency.

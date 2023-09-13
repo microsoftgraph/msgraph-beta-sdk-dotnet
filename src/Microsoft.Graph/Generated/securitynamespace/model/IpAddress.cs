@@ -37,7 +37,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets country or region.
-        /// The country or region for this IP address.
+        /// The country/region for this IP address.
         /// </summary>
         [JsonPropertyName("countryOrRegion")]
         public string CountryOrRegion { get; set; }

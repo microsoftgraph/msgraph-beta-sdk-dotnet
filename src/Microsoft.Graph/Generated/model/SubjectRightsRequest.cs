@@ -190,7 +190,6 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets approvers.
         /// </summary>
-        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("approvers")]
         public ISubjectRightsRequestApproversCollectionWithReferencesPage Approvers { get; set; }
 
@@ -204,7 +203,6 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets collaborators.
         /// </summary>
-        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("collaborators")]
         public ISubjectRightsRequestCollaboratorsCollectionWithReferencesPage Collaborators { get; set; }
 

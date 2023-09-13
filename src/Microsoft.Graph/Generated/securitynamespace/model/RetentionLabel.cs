@@ -120,8 +120,15 @@ namespace Microsoft.Graph.SecurityNamespace
         public RetentionTrigger? RetentionTrigger { get; set; }
     
         /// <summary>
+        /// Gets or sets descriptors.
+        /// Represents out-of-the-box values that provide more options to improve the manageability and organization of the content you need to label.
+        /// </summary>
+        [JsonPropertyName("descriptors")]
+        public FilePlanDescriptor Descriptors { get; set; }
+    
+        /// <summary>
         /// Gets or sets disposition review stages.
-        /// Review stages during which reviewers are notified to determine whether a document must be deleted or retained.
+        /// When action at the end of retention is chosen as 'dispositionReview', dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
         /// </summary>
         [JsonPropertyName("dispositionReviewStages")]
         public IRetentionLabelDispositionReviewStagesCollectionPage DispositionReviewStages { get; set; }
@@ -135,6 +142,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets retention event type.
+        /// Represents the type associated with a retention event.
         /// </summary>
         [JsonPropertyName("retentionEventType")]
         public RetentionEventType RetentionEventType { get; set; }

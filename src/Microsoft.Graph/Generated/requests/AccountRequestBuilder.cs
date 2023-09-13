@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AccountRequestBuilder.
     /// </summary>
-    public partial class AccountRequestBuilder : EntityRequestBuilder, IAccountRequestBuilder
+    public partial class AccountRequestBuilder : BaseRequestBuilder, IAccountRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IAccountRequest Request()
+        public IAccountRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IAccountRequest Request(IEnumerable<Option> options)
+        public IAccountRequest Request(IEnumerable<Option> options)
         {
             return new AccountRequest(this.RequestUrl, this.Client, options);
         }

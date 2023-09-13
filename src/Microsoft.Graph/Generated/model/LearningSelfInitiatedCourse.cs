@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets started date time.
-        /// The date time value on which the self-initiated course was started by the learner. Optional.
+        /// The date and time on which the self-initiated course was started by the learner. Optional.
         /// </summary>
         [JsonPropertyName("startedDateTime")]
         public DateTimeOffset? StartedDateTime { get; set; }

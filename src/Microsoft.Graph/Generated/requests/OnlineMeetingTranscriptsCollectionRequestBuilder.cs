@@ -60,6 +60,15 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for CallTranscriptDelta.
+        /// </summary>
+        /// <returns>The <see cref="ICallTranscriptDeltaRequestBuilder"/>.</returns>
+        public ICallTranscriptDeltaRequestBuilder Delta()
+        {
+            return new CallTranscriptDeltaRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
+                this.Client);
+        }
     }
 }

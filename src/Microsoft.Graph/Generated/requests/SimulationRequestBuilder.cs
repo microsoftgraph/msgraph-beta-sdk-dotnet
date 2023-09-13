@@ -51,6 +51,30 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for LandingPage.
+        /// </summary>
+        /// <returns>The <see cref="ILandingPageWithReferenceRequestBuilder"/>.</returns>
+        public ILandingPageWithReferenceRequestBuilder LandingPage
+        {
+            get
+            {
+                return new LandingPageWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("landingPage"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for LoginPage.
+        /// </summary>
+        /// <returns>The <see cref="ILoginPageWithReferenceRequestBuilder"/>.</returns>
+        public ILoginPageWithReferenceRequestBuilder LoginPage
+        {
+            get
+            {
+                return new LoginPageWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("loginPage"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Payload.
         /// </summary>
         /// <returns>The <see cref="IPayloadWithReferenceRequestBuilder"/>.</returns>

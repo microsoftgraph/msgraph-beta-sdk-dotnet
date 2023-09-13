@@ -104,6 +104,12 @@ namespace Microsoft.Graph
         IExternalIdentitiesPolicyRequestBuilder ExternalIdentitiesPolicy { get; }
 
         /// <summary>
+        /// Gets the request builder for FederatedTokenValidationPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IFederatedTokenValidationPolicyRequestBuilder"/>.</returns>
+        IFederatedTokenValidationPolicyRequestBuilder FederatedTokenValidationPolicy { get; }
+
+        /// <summary>
         /// Gets the request builder for HomeRealmDiscoveryPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootHomeRealmDiscoveryPoliciesCollectionRequestBuilder"/>.</returns>

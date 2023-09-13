@@ -34,5 +34,10 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 2,
 	
+        /// <summary>
+        /// Strict Location
+        /// </summary>
+        StrictLocation = 3,
+	
     }
 }

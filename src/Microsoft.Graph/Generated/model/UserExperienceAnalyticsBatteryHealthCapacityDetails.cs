@@ -22,28 +22,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets active devices.
-        /// Number of active devices within the tenant. Valid values -2147483648 to 2147483647
+        /// Number of active devices within the tenant. Valid values 0 to 2147483647
         /// </summary>
         [JsonPropertyName("activeDevices")]
         public Int32? ActiveDevices { get; set; }
     
         /// <summary>
         /// Gets or sets battery capacity fair.
-        /// Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values -2147483648 to 2147483647
+        /// Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values 0 to 2147483647
         /// </summary>
         [JsonPropertyName("batteryCapacityFair")]
         public Int32? BatteryCapacityFair { get; set; }
     
         /// <summary>
         /// Gets or sets battery capacity good.
-        /// Number of devices whose battery maximum capacity is greater than 80%. Valid values -2147483648 to 2147483647
+        /// Number of devices whose battery maximum capacity is greater than 80%. Valid values 0 to 2147483647
         /// </summary>
         [JsonPropertyName("batteryCapacityGood")]
         public Int32? BatteryCapacityGood { get; set; }
     
         /// <summary>
         /// Gets or sets battery capacity poor.
-        /// Number of devices whose battery maximum capacity is lesser than 50%. Valid values -2147483648 to 2147483647
+        /// Number of devices whose battery maximum capacity is lesser than 50%. Valid values 0 to 2147483647
         /// </summary>
         [JsonPropertyName("batteryCapacityPoor")]
         public Int32? BatteryCapacityPoor { get; set; }

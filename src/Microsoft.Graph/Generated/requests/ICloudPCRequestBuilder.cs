@@ -39,6 +39,12 @@ namespace Microsoft.Graph
             CloudPcUserAccountType? userAccountType = null);
 
         /// <summary>
+        /// Gets the request builder for CloudPCCreateSnapshot.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCCreateSnapshotRequestBuilder"/>.</returns>
+        ICloudPCCreateSnapshotRequestBuilder CreateSnapshot();
+
+        /// <summary>
         /// Gets the request builder for CloudPCEndGracePeriod.
         /// </summary>
         /// <returns>The <see cref="ICloudPCEndGracePeriodRequestBuilder"/>.</returns>
@@ -76,6 +82,13 @@ namespace Microsoft.Graph
         ICloudPCReprovisionRequestBuilder Reprovision(
             CloudPcUserAccountType? userAccountType = null,
             CloudPcOperatingSystem? osVersion = null);
+
+        /// <summary>
+        /// Gets the request builder for CloudPCResize.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCResizeRequestBuilder"/>.</returns>
+        ICloudPCResizeRequestBuilder Resize(
+            string targetServicePlanId = null);
 
         /// <summary>
         /// Gets the request builder for CloudPCRestore.

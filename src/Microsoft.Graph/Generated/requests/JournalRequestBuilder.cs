@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type JournalRequestBuilder.
     /// </summary>
-    public partial class JournalRequestBuilder : EntityRequestBuilder, IJournalRequestBuilder
+    public partial class JournalRequestBuilder : BaseRequestBuilder, IJournalRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IJournalRequest Request()
+        public IJournalRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IJournalRequest Request(IEnumerable<Option> options)
+        public IJournalRequest Request(IEnumerable<Option> options)
         {
             return new JournalRequest(this.RequestUrl, this.Client, options);
         }

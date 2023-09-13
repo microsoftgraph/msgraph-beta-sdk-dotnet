@@ -63,6 +63,31 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for CloudPcReportsGetConnectionQualityReports.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcReportsGetConnectionQualityReportsRequestBuilder"/>.</returns>
+        public ICloudPcReportsGetConnectionQualityReportsRequestBuilder GetConnectionQualityReports(
+            string filter = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null)
+        {
+            return new CloudPcReportsGetConnectionQualityReportsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getConnectionQualityReports"),
+                this.Client,
+                filter,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top);
+        }
+
+        /// <summary>
         /// Gets the request builder for CloudPcReportsGetDailyAggregatedRemoteConnectionReports.
         /// </summary>
         /// <returns>The <see cref="ICloudPcReportsGetDailyAggregatedRemoteConnectionReportsRequestBuilder"/>.</returns>
@@ -77,6 +102,83 @@ namespace Microsoft.Graph
         {
             return new CloudPcReportsGetDailyAggregatedRemoteConnectionReportsRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getDailyAggregatedRemoteConnectionReports"),
+                this.Client,
+                filter,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CloudPcReportsGetFrontlineReport.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcReportsGetFrontlineReportRequestBuilder"/>.</returns>
+        public ICloudPcReportsGetFrontlineReportRequestBuilder GetFrontlineReport(
+            CloudPcReportName? reportName = null,
+            string filter = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null)
+        {
+            return new CloudPcReportsGetFrontlineReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getFrontlineReport"),
+                this.Client,
+                reportName,
+                filter,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CloudPcReportsGetInaccessibleCloudPcReports.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcReportsGetInaccessibleCloudPcReportsRequestBuilder"/>.</returns>
+        public ICloudPcReportsGetInaccessibleCloudPcReportsRequestBuilder GetInaccessibleCloudPcReports(
+            string filter = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null)
+        {
+            return new CloudPcReportsGetInaccessibleCloudPcReportsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getInaccessibleCloudPcReports"),
+                this.Client,
+                filter,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CloudPcReportsGetRawRemoteConnectionReports.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcReportsGetRawRemoteConnectionReportsRequestBuilder"/>.</returns>
+        public ICloudPcReportsGetRawRemoteConnectionReportsRequestBuilder GetRawRemoteConnectionReports(
+            string filter = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null)
+        {
+            return new CloudPcReportsGetRawRemoteConnectionReportsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getRawRemoteConnectionReports"),
                 this.Client,
                 filter,
                 select,

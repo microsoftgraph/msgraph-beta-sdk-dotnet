@@ -37,6 +37,13 @@ namespace Microsoft.Graph
         public Enablement? EnhancedBiometricsState { get; set; }
     
         /// <summary>
+        /// Gets or sets enhanced sign in security.
+        /// Setting to configure Enahcned sign-in security. Default is enabled on one secure modality (face or fingerprint)
+        /// </summary>
+        [JsonPropertyName("enhancedSignInSecurity")]
+        public Int32? EnhancedSignInSecurity { get; set; }
+    
+        /// <summary>
         /// Gets or sets pin expiration in days.
         /// Controls the period of time (in days) that a PIN can be used before the system requires the user to change it. This must be set between 0 and 730, inclusive. If set to 0, the user's PIN will never expire
         /// </summary>

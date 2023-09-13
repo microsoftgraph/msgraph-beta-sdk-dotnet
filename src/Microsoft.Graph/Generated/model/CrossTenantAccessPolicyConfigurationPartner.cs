@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets automatic user consent settings.
-        /// Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties will be null and inherit from the default settings, which is always false.
+        /// Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.
         /// </summary>
         [JsonPropertyName("automaticUserConsentSettings")]
         public InboundOutboundPolicyConfiguration AutomaticUserConsentSettings { get; set; }
@@ -64,6 +64,13 @@ namespace Microsoft.Graph
         public CrossTenantAccessPolicyInboundTrust InboundTrust { get; set; }
     
         /// <summary>
+        /// Gets or sets is in multi tenant organization.
+        /// Identifies whether a tenant is a member of a multi-tenant organization.
+        /// </summary>
+        [JsonPropertyName("isInMultiTenantOrganization")]
+        public bool? IsInMultiTenantOrganization { get; set; }
+    
+        /// <summary>
         /// Gets or sets is service provider.
         /// Identifies whether the partner-specific configuration is a Cloud Service Provider for your organization.
         /// </summary>
@@ -79,13 +86,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tenant restrictions.
+        /// Defines the partner-specific tenant restrictions configuration for your organization users accessing a partner organization using partner supplied idenities on your network or devices.
         /// </summary>
         [JsonPropertyName("tenantRestrictions")]
         public CrossTenantAccessPolicyTenantRestrictions TenantRestrictions { get; set; }
     
         /// <summary>
         /// Gets or sets identity synchronization.
-        /// Defines the cross-tenant policy for synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating creating, updating, and deleting users from one tenant to another.
+        /// Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating the creation, update, and deletion of users from one tenant to another.
         /// </summary>
         [Obsolete("")]
         [JsonPropertyName("identitySynchronization")]

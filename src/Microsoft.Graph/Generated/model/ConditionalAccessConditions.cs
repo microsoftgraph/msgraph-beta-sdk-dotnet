@@ -100,5 +100,15 @@ namespace Microsoft.Graph
         /// </summary>
         ServicePrincipalRisk = 16384,
 	
+        /// <summary>
+        /// Authentication Flows
+        /// </summary>
+        AuthenticationFlows = 32768,
+	
+        /// <summary>
+        /// Insider Risk
+        /// </summary>
+        InsiderRisk = 65536,
+	
     }
 }
