@@ -31,8 +31,15 @@ namespace Microsoft.Graph
         /// Gets or sets upns.
         /// Collection of mailboxes that should be included in the search. Includes the UPN (user principal name) of each mailbox, for example, Monica.Thompson@contoso.com.
         /// </summary>
+        [Obsolete("upns property is deprecated and will stop working on  Dec 23, 2023. Please use the new property caller userPrincipalNames.")]
         [JsonPropertyName("upns")]
         public IEnumerable<string> Upns { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userPrincipalNames.
+        /// </summary>
+        [JsonPropertyName("userPrincipalNames")]
+        public IEnumerable<string> UserPrincipalNames { get; set; }
     
     }
 }

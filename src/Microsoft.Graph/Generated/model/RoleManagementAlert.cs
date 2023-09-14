@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets alert configurations.
+        /// The various configurations of an alert for Azure AD roles. The configurations are pre-defined and cannot be created or deleted, but some of the configurations can be modified.
         /// </summary>
         [JsonPropertyName("alertConfigurations")]
         public IRoleManagementAlertAlertConfigurationsCollectionPage AlertConfigurations { get; set; }
@@ -35,6 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets alert definitions.
+        /// Defines an alert, its impact, and measures to mitigate or prevent it.
         /// </summary>
         [JsonPropertyName("alertDefinitions")]
         public IRoleManagementAlertAlertDefinitionsCollectionPage AlertDefinitions { get; set; }
@@ -48,6 +50,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets alerts.
+        /// Represents the alert entity.
         /// </summary>
         [JsonPropertyName("alerts")]
         public IRoleManagementAlertAlertsCollectionPage Alerts { get; set; }
@@ -61,6 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets operations.
+        /// Represents operations on resources that take a long time to complete and can run in the background until completion.
         /// </summary>
         [JsonPropertyName("operations")]
         public IRoleManagementAlertOperationsCollectionPage Operations { get; set; }

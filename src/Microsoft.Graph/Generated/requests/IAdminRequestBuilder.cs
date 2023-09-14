@@ -56,6 +56,36 @@ namespace Microsoft.Graph
         IAdminReportSettingsRequestBuilder ReportSettings { get; }
 
         /// <summary>
+        /// Gets the request builder for AppsAndServices.
+        /// </summary>
+        /// <returns>The <see cref="IAdminAppsAndServicesRequestBuilder"/>.</returns>
+        IAdminAppsAndServicesRequestBuilder AppsAndServices { get; }
+
+        /// <summary>
+        /// Gets the request builder for Dynamics.
+        /// </summary>
+        /// <returns>The <see cref="IAdminDynamicsRequestBuilder"/>.</returns>
+        IAdminDynamicsRequestBuilder Dynamics { get; }
+
+        /// <summary>
+        /// Gets the request builder for Forms.
+        /// </summary>
+        /// <returns>The <see cref="IAdminFormsRequestBuilder"/>.</returns>
+        IAdminFormsRequestBuilder Forms { get; }
+
+        /// <summary>
+        /// Gets the request builder for Todo.
+        /// </summary>
+        /// <returns>The <see cref="IAdminTodoRequestBuilder"/>.</returns>
+        IAdminTodoRequestBuilder Todo { get; }
+
+        /// <summary>
+        /// Gets the request builder for People.
+        /// </summary>
+        /// <returns>The <see cref="IPeopleAdminSettingsRequestBuilder"/>.</returns>
+        IPeopleAdminSettingsRequestBuilder People { get; }
+
+        /// <summary>
         /// Gets the request builder for Windows.
         /// </summary>
         /// <returns>The <see cref="IAdminWindowsRequestBuilder"/>.</returns>

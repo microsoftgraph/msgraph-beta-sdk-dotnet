@@ -244,18 +244,6 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OrganizationSettings organizationSettingsToInitialize)
         {
 
-            if (organizationSettingsToInitialize != null)
-            {
-                if (organizationSettingsToInitialize.ProfileCardProperties != null && organizationSettingsToInitialize.ProfileCardProperties.CurrentPage != null)
-                {
-                    organizationSettingsToInitialize.ProfileCardProperties.InitializeNextPageRequest(this.Client, organizationSettingsToInitialize.ProfileCardPropertiesNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    organizationSettingsToInitialize.ProfileCardProperties.AdditionalData = organizationSettingsToInitialize.AdditionalData;
-                }
-
-            }
-
-
         }
     }
 }

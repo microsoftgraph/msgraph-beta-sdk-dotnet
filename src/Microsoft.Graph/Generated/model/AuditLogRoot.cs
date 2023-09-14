@@ -22,6 +22,19 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets custom security attribute audits.
+        /// </summary>
+        [JsonPropertyName("customSecurityAttributeAudits")]
+        public IAuditLogRootCustomSecurityAttributeAuditsCollectionPage CustomSecurityAttributeAudits { get; set; }
+
+        /// <summary>
+        /// Gets or sets customSecurityAttributeAuditsNextLink.
+        /// </summary>
+        [JsonPropertyName("customSecurityAttributeAudits@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string CustomSecurityAttributeAuditsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets directory audits.
         /// </summary>
         [JsonPropertyName("directoryAudits")]

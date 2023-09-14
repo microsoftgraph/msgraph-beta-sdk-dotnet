@@ -22,63 +22,63 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets content.
-        /// The WindowsDefenderApplicationControl supplemental policy content in byte array format.
+        /// Indicates the content of the Windows Defender Application Control Supplemental Policy in byte array format.
         /// </summary>
         [JsonPropertyName("content")]
         public byte[] Content { get; set; }
     
         /// <summary>
         /// Gets or sets content file name.
-        /// The WindowsDefenderApplicationControl supplemental policy content's file name.
+        /// Indicates the file name associated with the content of the Windows Defender Application Control Supplemental Policy.
         /// </summary>
         [JsonPropertyName("contentFileName")]
         public string ContentFileName { get; set; }
     
         /// <summary>
         /// Gets or sets creation date time.
-        /// The date and time when the WindowsDefenderApplicationControl supplemental policy was uploaded.
+        /// Indicates the created date and time when the Windows Defender Application Control Supplemental Policy was uploaded.
         /// </summary>
         [JsonPropertyName("creationDateTime")]
         public DateTimeOffset? CreationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// The description of WindowsDefenderApplicationControl supplemental policy.
+        /// The description of the Windows Defender Application Control Supplemental Policy.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name of WindowsDefenderApplicationControl supplemental policy.
+        /// The display name of the Windows Defender Application Control Supplemental Policy.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// The date and time when the WindowsDefenderApplicationControl supplemental policy was last modified.
+        /// Indicates the last modified date and time of the Windows Defender Application Control Supplemental Policy.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tag ids.
-        /// List of Scope Tags for this WindowsDefenderApplicationControl supplemental policy entity.
+        /// List of Scope Tags for the Windows Defender Application Control Supplemental Policy entity.
         /// </summary>
         [JsonPropertyName("roleScopeTagIds")]
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets version.
-        /// The WindowsDefenderApplicationControl supplemental policy's version.
+        /// Indicates the Windows Defender Application Control Supplemental Policy's version.
         /// </summary>
         [JsonPropertyName("version")]
         public string Version { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
-        /// The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.
+        /// The associated group assignments for the Windows Defender Application Control Supplemental Policy.
         /// </summary>
         [JsonPropertyName("assignments")]
         public IWindowsDefenderApplicationControlSupplementalPolicyAssignmentsCollectionPage Assignments { get; set; }

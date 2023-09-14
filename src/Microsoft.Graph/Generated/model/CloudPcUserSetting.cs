@@ -49,6 +49,13 @@ namespace Microsoft.Graph
         public bool? LocalAdminEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets reset enabled.
+        /// Indicates whether an end user is allowed to reset their Cloud PC. When true, the user is allowed to reset their Cloud PC. When false, end-user initiated reset is not allowed. The default value is false.
+        /// </summary>
+        [JsonPropertyName("resetEnabled")]
+        public bool? ResetEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets restore point setting.
         /// Defines how frequently a restore point is created that is, a snapshot is taken) for users' provisioned Cloud PCs (default is 12 hours), and whether the user is allowed to restore their own Cloud PCs to a backup made at a specific point in time.
         /// </summary>
@@ -59,6 +66,7 @@ namespace Microsoft.Graph
         /// Gets or sets self service enabled.
         /// Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal.
         /// </summary>
+        [Obsolete("The selfServiceEnabled property is deprecated and will not be supported starting Dec 1, 2023. This property will not be included as part of the API response.")]
         [JsonPropertyName("selfServiceEnabled")]
         public bool? SelfServiceEnabled { get; set; }
     

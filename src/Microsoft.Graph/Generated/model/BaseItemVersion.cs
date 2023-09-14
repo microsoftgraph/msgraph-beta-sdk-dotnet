@@ -38,7 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// Date and time the version was last modified. Read-only.
+        /// Date and time when the version was last modified. Read-only.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }

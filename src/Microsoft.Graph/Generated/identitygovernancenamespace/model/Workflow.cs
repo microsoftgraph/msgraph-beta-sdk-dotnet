@@ -44,7 +44,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets next schedule run date time.
-        /// The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderBy.
+        /// The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderby.
         /// </summary>
         [JsonPropertyName("nextScheduleRunDateTime")]
         public DateTimeOffset? NextScheduleRunDateTime { get; set; }
@@ -60,7 +60,6 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
         /// Gets or sets execution scope.
         /// The unique identifier of the Azure AD identity that last modified the workflow object.
         /// </summary>
-        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("executionScope")]
         public IWorkflowExecutionScopeCollectionWithReferencesPage ExecutionScope { get; set; }
 

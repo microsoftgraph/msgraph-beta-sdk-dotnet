@@ -345,6 +345,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DriveItemPermanentDelete.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemPermanentDeleteRequestBuilder"/>.</returns>
+        public IDriveItemPermanentDeleteRequestBuilder PermanentDelete()
+        {
+            return new DriveItemPermanentDeleteRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.permanentDelete"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for DriveItemPreview.
         /// </summary>
         /// <returns>The <see cref="IDriveItemPreviewRequestBuilder"/>.</returns>

@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets content.
-        /// A field that represents the content of the transcript. Read-only.
+        /// The content of the transcript. Read-only.
         /// </summary>
         [JsonPropertyName("content")]
         public Stream Content { get; set; }
@@ -35,11 +35,32 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets meeting id.
+        /// The unique identifier of the online meeting related to this transcript. Read-only.
+        /// </summary>
+        [JsonPropertyName("meetingId")]
+        public string MeetingId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets meeting organizer id.
+        /// The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.
+        /// </summary>
+        [JsonPropertyName("meetingOrganizerId")]
+        public string MeetingOrganizerId { get; set; }
+    
+        /// <summary>
         /// Gets or sets metadata content.
-        /// A field that represents the time-aligned metadata of the utterances in the transcript. Read-only.
+        /// The time-aligned metadata of the utterances in the transcript. Read-only.
         /// </summary>
         [JsonPropertyName("metadataContent")]
         public Stream MetadataContent { get; set; }
+    
+        /// <summary>
+        /// Gets or sets transcript content url.
+        /// The URL which can be used to access the content of the transcript. Read-only.
+        /// </summary>
+        [JsonPropertyName("transcriptContentUrl")]
+        public string TranscriptContentUrl { get; set; }
     
     }
 }

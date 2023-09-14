@@ -84,6 +84,12 @@ namespace Microsoft.Graph.SecurityNamespace
         public string IncidentWebUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets last modified by.
+        /// </summary>
+        [JsonPropertyName("lastModifiedBy")]
+        public string LastModifiedBy { get; set; }
+    
+        /// <summary>
         /// Gets or sets last update date time.
         /// Time when the incident was last updated.
         /// </summary>
@@ -118,7 +124,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets status.
-        /// The status of the incident. Possible values are: active, resolved, inProgress, redirected, unknownFutureValue.
+        /// The status of the incident. Possible values are: active, resolved, inProgress, redirected, unknownFutureValue, and awaitingAction.
         /// </summary>
         [JsonPropertyName("status")]
         public IncidentStatus? Status { get; set; }

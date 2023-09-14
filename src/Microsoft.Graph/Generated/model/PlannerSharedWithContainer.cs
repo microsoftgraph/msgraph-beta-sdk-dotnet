@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets accessLevel.
+        /// The maxmimum access level the shared container can provide to the plan. The possible values are: readAccess, readWriteAccess, fullAccess, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("accessLevel")]
         public PlannerPlanAccessLevel? AccessLevel { get; set; }

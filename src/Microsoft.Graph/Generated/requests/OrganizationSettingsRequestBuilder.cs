@@ -97,30 +97,6 @@ namespace Microsoft.Graph
                 return new InsightsSettingsRequestBuilder(this.AppendSegmentToRequestUrl("peopleInsights"), this.Client);
             }
         }
-
-        /// <summary>
-        /// Gets the request builder for ProfileCardProperties.
-        /// </summary>
-        /// <returns>The <see cref="IOrganizationSettingsProfileCardPropertiesCollectionRequestBuilder"/>.</returns>
-        public IOrganizationSettingsProfileCardPropertiesCollectionRequestBuilder ProfileCardProperties
-        {
-            get
-            {
-                return new OrganizationSettingsProfileCardPropertiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("profileCardProperties"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Pronouns.
-        /// </summary>
-        /// <returns>The <see cref="IPronounsSettingsRequestBuilder"/>.</returns>
-        public IPronounsSettingsRequestBuilder Pronouns
-        {
-            get
-            {
-                return new PronounsSettingsRequestBuilder(this.AppendSegmentToRequestUrl("pronouns"), this.Client);
-            }
-        }
     
     }
 }

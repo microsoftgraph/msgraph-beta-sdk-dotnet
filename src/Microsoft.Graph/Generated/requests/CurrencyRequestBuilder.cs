@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CurrencyRequestBuilder.
     /// </summary>
-    public partial class CurrencyRequestBuilder : EntityRequestBuilder, ICurrencyRequestBuilder
+    public partial class CurrencyRequestBuilder : BaseRequestBuilder, ICurrencyRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new ICurrencyRequest Request()
+        public ICurrencyRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new ICurrencyRequest Request(IEnumerable<Option> options)
+        public ICurrencyRequest Request(IEnumerable<Option> options)
         {
             return new CurrencyRequest(this.RequestUrl, this.Client, options);
         }

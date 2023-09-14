@@ -48,6 +48,11 @@ namespace Microsoft.Graph
             string endDateTime,
             string interval);
         /// <summary>
+        /// Gets the request builder for SiteGetAllSitesRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="ISiteGetAllSitesRequestBuilder"/>.</returns>
+        ISiteGetAllSitesRequestBuilder GetAllSites();
+        /// <summary>
         /// Gets the request builder for SiteGetApplicableContentTypesForListRequestBuilder.
         /// </summary>
         /// <param name="listId">A listId parameter for the OData method call.</param>
@@ -136,10 +141,10 @@ namespace Microsoft.Graph
         IRichLongRunningOperationRequestBuilder Operations  { get; }
         /// <summary>
         /// Gets the request builder for Pages.
-        /// The collection of pages in the SitePages list in this site.
+        /// The collection of pages in the baseSitePages list in this site.
         /// </summary>
-        /// <returns>The <see cref="ISitePageRequestBuilder"/>.</returns>
-        ISitePageRequestBuilder Pages  { get; }
+        /// <returns>The <see cref="IBaseSitePageRequestBuilder"/>.</returns>
+        IBaseSitePageRequestBuilder Pages  { get; }
         /// <summary>
         /// Gets the request builder for Permissions.
         /// The permissions associated with the site. Nullable.

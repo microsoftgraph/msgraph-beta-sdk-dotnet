@@ -37,13 +37,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+        /// Display name for the administrative unit. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is member management restricted.
+        /// true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don't inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so cannot be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Azure Active Directory.
         /// </summary>
         [JsonPropertyName("isMemberManagementRestricted")]
         public bool? IsMemberManagementRestricted { get; set; }

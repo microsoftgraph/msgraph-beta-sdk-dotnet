@@ -44,6 +44,20 @@ namespace Microsoft.Graph.SecurityNamespace
         public DateTimeOffset? LastSeenDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets child host pairs.
+        /// The hostPairs that are resources associated with a host, where that host is the parentHost and has an outgoing pairing to a cihldHost.
+        /// </summary>
+        [JsonPropertyName("childHostPairs")]
+        public IHostChildHostPairsCollectionWithReferencesPage ChildHostPairs { get; set; }
+
+        /// <summary>
+        /// Gets or sets childHostPairsNextLink.
+        /// </summary>
+        [JsonPropertyName("childHostPairs@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ChildHostPairsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets components.
         /// The hostComponents that are associated with this host.
         /// </summary>
@@ -70,6 +84,34 @@ namespace Microsoft.Graph.SecurityNamespace
         [JsonPropertyName("cookies@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string CookiesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets host pairs.
+        /// The hostPairs that are associated with this host, where this host is either the parentHost or childHost.
+        /// </summary>
+        [JsonPropertyName("hostPairs")]
+        public IHostHostPairsCollectionWithReferencesPage HostPairs { get; set; }
+
+        /// <summary>
+        /// Gets or sets hostPairsNextLink.
+        /// </summary>
+        [JsonPropertyName("hostPairs@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string HostPairsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets parent host pairs.
+        /// The hostPairs that are associated with a host, where that host is the childHost and has an incoming pairing with a parentHost.
+        /// </summary>
+        [JsonPropertyName("parentHostPairs")]
+        public IHostParentHostPairsCollectionWithReferencesPage ParentHostPairs { get; set; }
+
+        /// <summary>
+        /// Gets or sets parentHostPairsNextLink.
+        /// </summary>
+        [JsonPropertyName("parentHostPairs@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ParentHostPairsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets passive dns.
@@ -107,6 +149,34 @@ namespace Microsoft.Graph.SecurityNamespace
         public HostReputation Reputation { get; set; }
     
         /// <summary>
+        /// Gets or sets ssl certificates.
+        /// The hostSslCertificates that are associated with this host.
+        /// </summary>
+        [JsonPropertyName("sslCertificates")]
+        public IHostSslCertificatesCollectionWithReferencesPage SslCertificates { get; set; }
+
+        /// <summary>
+        /// Gets or sets sslCertificatesNextLink.
+        /// </summary>
+        [JsonPropertyName("sslCertificates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string SslCertificatesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subdomains.
+        /// The subdomains that are associated with this host.
+        /// </summary>
+        [JsonPropertyName("subdomains")]
+        public IHostSubdomainsCollectionWithReferencesPage Subdomains { get; set; }
+
+        /// <summary>
+        /// Gets or sets subdomainsNextLink.
+        /// </summary>
+        [JsonPropertyName("subdomains@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string SubdomainsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets trackers.
         /// The hostTrackers that are associated with this host.
         /// </summary>
@@ -119,6 +189,13 @@ namespace Microsoft.Graph.SecurityNamespace
         [JsonPropertyName("trackers@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string TrackersNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets whois.
+        /// The most recent whoisRecord for this host.
+        /// </summary>
+        [JsonPropertyName("whois")]
+        public WhoisRecord Whois { get; set; }
     
     }
 }

@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         public string Metadata { get; set; }
     
         /// <summary>
+        /// Gets or sets preferred display name.
+        /// </summary>
+        [JsonPropertyName("preferredDisplayName")]
+        public string PreferredDisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets recording info.
         /// Information on whether the participant has recording capability.
         /// </summary>

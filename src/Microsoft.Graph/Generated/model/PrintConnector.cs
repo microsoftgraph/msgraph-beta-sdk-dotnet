@@ -31,6 +31,7 @@ namespace Microsoft.Graph
         /// Gets or sets device health.
         /// The connector's device health.
         /// </summary>
+        [Obsolete("The deviceHealth type is deprecated and will stop returning data on July 31, 2023.")]
         [JsonPropertyName("deviceHealth")]
         public DeviceHealth DeviceHealth { get; set; }
     
@@ -58,6 +59,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets name.
         /// </summary>
+        [Obsolete("The name property is deprecated and will stop returning data on July 31, 2023. Please use the displayName property instead of this.")]
         [JsonPropertyName("name")]
         public string Name { get; set; }
     

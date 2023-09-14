@@ -72,6 +72,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> CdnList { get; set; }
     
         /// <summary>
+        /// Gets or sets content customization.
+        /// Represents the various content options to be customized throughout the authentication flow for a tenant. NOTE: Supported by Azure Active Directory for customers tenants only.
+        /// </summary>
+        [JsonPropertyName("contentCustomization")]
+        public ContentCustomization ContentCustomization { get; set; }
+    
+        /// <summary>
         /// Gets or sets custom account reset credentials url.
         /// A custom URL for resetting account credentials. This URL must be in ASCII format or non-ASCII characters must be URL encoded, and not exceed 128 characters.
         /// </summary>

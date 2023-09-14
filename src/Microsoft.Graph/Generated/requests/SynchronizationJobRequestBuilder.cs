@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for BulkUpload.
+        /// </summary>
+        /// <returns>The <see cref="IBulkUploadRequestBuilder"/>.</returns>
+        public IBulkUploadRequestBuilder BulkUpload
+        {
+            get
+            {
+                return new BulkUploadRequestBuilder(this.AppendSegmentToRequestUrl("bulkUpload"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Schema.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationSchemaRequestBuilder"/>.</returns>
@@ -70,17 +82,6 @@ namespace Microsoft.Graph
         {
             return new SynchronizationJobStartRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.start"),
-                this.Client);
-        }
-
-        /// <summary>
-        /// Gets the request builder for SynchronizationJobStop.
-        /// </summary>
-        /// <returns>The <see cref="ISynchronizationJobStopRequestBuilder"/>.</returns>
-        public ISynchronizationJobStopRequestBuilder Stop()
-        {
-            return new SynchronizationJobStopRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.stop"),
                 this.Client);
         }
 

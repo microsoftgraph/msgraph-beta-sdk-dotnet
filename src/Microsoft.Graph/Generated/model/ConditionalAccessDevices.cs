@@ -43,7 +43,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets includeDevices.
-        /// States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFIlter is set.
+        /// States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFilter is set.
         /// </summary>
         [JsonPropertyName("includeDevices")]
         public IEnumerable<string> IncludeDevices { get; set; }

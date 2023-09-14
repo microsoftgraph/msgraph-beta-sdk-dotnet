@@ -22,45 +22,38 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets active device count.
-        /// The number of active devices for the OS version. Valid values -2147483648 to 2147483647
+        /// The number of active devices for the OS version. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("activeDeviceCount")]
         public Int32? ActiveDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets mean time to failure in minutes.
-        /// The mean time to failure for the OS version in minutes. Valid values -2147483648 to 2147483647
+        /// The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("meanTimeToFailureInMinutes")]
         public Int32? MeanTimeToFailureInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets os build number.
-        /// The OS build number installed on the device.
+        /// The OS build number installed on the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("osBuildNumber")]
         public string OsBuildNumber { get; set; }
     
         /// <summary>
         /// Gets or sets os version.
-        /// The OS version installed on the device.
+        /// The OS version installed on the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("osVersion")]
         public string OsVersion { get; set; }
     
         /// <summary>
         /// Gets or sets os version app health score.
-        /// The app health score of the OS version. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// The application health score of the OS version. Valid values 0 to 100. Supports: $filter, $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("osVersionAppHealthScore")]
         public double? OsVersionAppHealthScore { get; set; }
-    
-        /// <summary>
-        /// Gets or sets os version app health status.
-        /// The overall app health status of the OS version.
-        /// </summary>
-        [JsonPropertyName("osVersionAppHealthStatus")]
-        public string OsVersionAppHealthStatus { get; set; }
     
     }
 }

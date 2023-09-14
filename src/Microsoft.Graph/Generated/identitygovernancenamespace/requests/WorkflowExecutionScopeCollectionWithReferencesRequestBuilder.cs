@@ -49,15 +49,15 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
         }
 
         /// <summary>
-        /// Gets an <see cref="Microsoft.Graph.IUserWithReferenceRequestBuilder"/> for the specified WorkflowMicrosoft.Graph.User.
+        /// Gets an <see cref="IUserProcessingResultWithReferenceRequestBuilder"/> for the specified WorkflowUserProcessingResult.
         /// </summary>
-        /// <param name="id">The ID for the WorkflowMicrosoft.Graph.User.</param>
-        /// <returns>The <see cref="Microsoft.Graph.IUserWithReferenceRequestBuilder"/>.</returns>
-        public Microsoft.Graph.IUserWithReferenceRequestBuilder this[string id]
+        /// <param name="id">The ID for the WorkflowUserProcessingResult.</param>
+        /// <returns>The <see cref="IUserProcessingResultWithReferenceRequestBuilder"/>.</returns>
+        public IUserProcessingResultWithReferenceRequestBuilder this[string id]
         {
             get
             {
-                return new Microsoft.Graph.UserWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new UserProcessingResultWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 

@@ -25,9 +25,14 @@ namespace Microsoft.Graph.WindowsUpdates
         Rollback = 0,
 	
         /// <summary>
+        /// Ineligible
+        /// </summary>
+        Ineligible = 1,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 1,
+        UnknownFutureValue = 2,
 	
     }
 }

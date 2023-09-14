@@ -33,43 +33,41 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
         {
         }
         /// <summary>
-        /// Adds the specified Microsoft.Graph.User to the collection via POST.
+        /// Adds the specified Microsoft.Graph.ReferenceRequestBody to the collection via POST.
         /// </summary>
-        /// <param name="user">The Microsoft.Graph.User to add.</param>
+        /// <param name="userProcessingResultReference">The Microsoft.Graph.ReferenceRequestBody to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(Microsoft.Graph.User user, CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task AddAsync(Microsoft.Graph.ReferenceRequestBody userProcessingResultReference, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
 
-            if (string.IsNullOrEmpty(user.Id))
+            if (string.IsNullOrEmpty(userProcessingResultReference.ODataId))
             {
                 throw new Microsoft.Graph.ServiceException(new Microsoft.Graph.Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
             }
 
-            var requestBody = new Microsoft.Graph.ReferenceRequestBody { ODataId = string.Format("{0}/users/{1}", this.Client.BaseUrl, user.Id) };
-            return this.SendAsync(requestBody, cancellationToken);
+            return this.SendAsync(userProcessingResultReference, cancellationToken);
         }
 
         /// <summary>
-        /// Adds the specified Microsoft.Graph.User to the collection via POST and returns a <see cref="GraphResponse{Microsoft.Graph.User}"/> object of the request.
+        /// Adds the specified Microsoft.Graph.ReferenceRequestBody to the collection via POST and returns a <see cref="GraphResponse{Microsoft.Graph.ReferenceRequestBody}"/> object of the request.
         /// </summary>
-        /// <param name="user">The Microsoft.Graph.User to add.</param>
+        /// <param name="userProcessingResultReference">The Microsoft.Graph.ReferenceRequestBody to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(Microsoft.Graph.User user, CancellationToken cancellationToken = default)
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(Microsoft.Graph.ReferenceRequestBody userProcessingResultReference, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
 
-            if (string.IsNullOrEmpty(user.Id))
+            if (string.IsNullOrEmpty(userProcessingResultReference.ODataId))
             {
                 throw new Microsoft.Graph.ServiceException(new Microsoft.Graph.Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
             }
 
-            var requestBody = new Microsoft.Graph.ReferenceRequestBody { ODataId = string.Format("{0}/users/{1}", this.Client.BaseUrl, user.Id) };
-            return this.SendAsyncWithGraphResponse(requestBody, cancellationToken);
+            return this.SendAsyncWithGraphResponse(userProcessingResultReference, cancellationToken);
         }
 
     }

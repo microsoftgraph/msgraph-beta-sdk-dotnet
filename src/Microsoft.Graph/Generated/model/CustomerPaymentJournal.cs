@@ -17,7 +17,8 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Customer Payment Journal.
     /// </summary>
-    public partial class CustomerPaymentJournal : Entity
+    [JsonConverter(typeof(DerivedTypeConverter<CustomerPaymentJournal>))]
+    public partial class CustomerPaymentJournal
     {
     
         /// <summary>
@@ -45,6 +46,12 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        [JsonPropertyName("id")]
+        public Guid? Id { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
@@ -68,6 +75,18 @@ namespace Microsoft.Graph
         [JsonPropertyName("customerPayments@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string CustomerPaymentsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonPropertyName("@odata.type")]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

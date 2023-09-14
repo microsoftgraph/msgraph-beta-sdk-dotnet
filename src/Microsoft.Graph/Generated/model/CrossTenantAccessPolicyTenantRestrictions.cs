@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets devices.
+        /// Defines the rule for filtering devices and whether devices satisfying the rule should be allowed or blocked. Not implemented.
         /// </summary>
         [JsonPropertyName("devices")]
         public DevicesFilter Devices { get; set; }

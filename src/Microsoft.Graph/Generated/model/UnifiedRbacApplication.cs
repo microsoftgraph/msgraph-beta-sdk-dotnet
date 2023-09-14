@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets custom app scopes.
+        /// Workload-specific scope object that represents the resources for which the principal has been granted access.
         /// </summary>
         [JsonPropertyName("customAppScopes")]
         public IUnifiedRbacApplicationCustomAppScopesCollectionPage CustomAppScopes { get; set; }

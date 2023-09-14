@@ -23,63 +23,63 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets cloud identity score.
-        /// The user experience work from anywhere's cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// The cloud identity score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("cloudIdentityScore")]
         public double? CloudIdentityScore { get; set; }
     
         /// <summary>
         /// Gets or sets cloud management score.
-        /// The user experience work from anywhere's cloud management score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// The cloud management score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("cloudManagementScore")]
         public double? CloudManagementScore { get; set; }
     
         /// <summary>
         /// Gets or sets cloud provisioning score.
-        /// The user experience work from anywhere's cloud provisioning score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// The cloud provisioning score of the device model.  Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("cloudProvisioningScore")]
         public double? CloudProvisioningScore { get; set; }
     
         /// <summary>
         /// Gets or sets health status.
-        /// The health state of the user experience analytics work from anywhere model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals, unknownFutureValue.
+        /// The health state of the user experience analytics work from anywhere device model. Possible values are: unknown, insufficientData, needsAttention, meetingGoals. Unknown by default. Supports: $select, $OrderBy. Read-only. Possible values are: unknown, insufficientData, needsAttention, meetingGoals, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("healthStatus")]
         public UserExperienceAnalyticsHealthState? HealthStatus { get; set; }
     
         /// <summary>
         /// Gets or sets manufacturer.
-        /// The user experience work from anywhere's manufacturer name of the devices.
+        /// The manufacturer name of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("manufacturer")]
         public string Manufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets model.
-        /// The user experience work from anywhere's model name of the devices.
+        /// The model name of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("model")]
         public string Model { get; set; }
     
         /// <summary>
         /// Gets or sets model device count.
-        /// The user experience work from anywhere's devices count for the model. Valid values -2147483648 to 2147483647
+        /// The devices count for the model. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("modelDeviceCount")]
         public Int32? ModelDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets windows score.
-        /// The user experience work from anywhere windows score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// The window score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("windowsScore")]
         public double? WindowsScore { get; set; }
     
         /// <summary>
         /// Gets or sets work from anywhere score.
-        /// The user experience work from anywhere overall score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// The work from anywhere score of the device model. Valid values 0 to 100. Value -1 means associated score is unavailable. Supports: $select, $OrderBy. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("workFromAnywhereScore")]
         public double? WorkFromAnywhereScore { get; set; }

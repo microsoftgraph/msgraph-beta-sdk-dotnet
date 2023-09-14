@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets includeAllApplications.
+        /// Whether the custom authentication extension should trigger for all applications with appIds specified in the includeApplications relationship. This property must be set to false for listener of type onTokenIssuanceStartListener.
         /// </summary>
         [JsonPropertyName("includeAllApplications")]
         public bool? IncludeAllApplications { get; set; }

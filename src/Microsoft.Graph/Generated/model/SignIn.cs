@@ -23,14 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app display name.
-        /// The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).
+        /// The application name displayed in the Azure Portal.  Supports $filter (eq, startsWith).
         /// </summary>
         [JsonPropertyName("appDisplayName")]
         public string AppDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets app id.
-        /// The application identifier in Azure Active Directory. Supports $filter (eq operator only).
+        /// The application identifier in Azure Active Directory.  Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("appId")]
         public string AppId { get; set; }
@@ -48,6 +48,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("appliedEventListeners")]
         public IEnumerable<AppliedAuthenticationEventListener> AppliedEventListeners { get; set; }
+    
+        /// <summary>
+        /// Gets or sets app token protection status.
+        /// </summary>
+        [JsonPropertyName("appTokenProtectionStatus")]
+        public TokenProtectionStatus? AppTokenProtectionStatus { get; set; }
     
         /// <summary>
         /// Gets or sets authentication app device details.
@@ -100,7 +106,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication requirement.
-        /// This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed. Supports $filter (eq and startsWith operators only).
+        /// This holds the highest level of authentication needed through all the sign-in steps, for sign-in to succeed.  Supports $filter (eq, startsWith).
         /// </summary>
         [JsonPropertyName("authenticationRequirement")]
         public string AuthenticationRequirement { get; set; }
@@ -128,7 +134,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets client app used.
-        /// The legacy client used for sign-in activity. For example: Browser, Exchange ActiveSync, Modern clients, IMAP, MAPI, SMTP, or POP. Supports $filter (eq operator only).
+        /// The legacy client used for sign-in activity. For example: Browser, Exchange ActiveSync, Modern clients, IMAP, MAPI, SMTP, or POP.  Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("clientAppUsed")]
         public string ClientAppUsed { get; set; }
@@ -142,21 +148,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets conditional access status.
-        /// The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue. Supports $filter (eq operator only).
+        /// The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue.  Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("conditionalAccessStatus")]
         public ConditionalAccessStatus? ConditionalAccessStatus { get; set; }
     
         /// <summary>
         /// Gets or sets correlation id.
-        /// The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support. Supports $filter (eq operator only).
+        /// The identifier that's sent from the client when sign-in is initiated. This is used for troubleshooting the corresponding sign-in activity when calling for support.  Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("correlationId")]
         public string CorrelationId { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
-        /// The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $orderby and $filter (eq, le, and ge operators only).
+        /// The date and time the sign-in was initiated. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $orderby, $filter (eq, le, and ge).
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -170,7 +176,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device detail.
-        /// The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser. Supports $filter (eq and startsWith operators only) on browser and operatingSystem properties.
+        /// The device information from where the sign-in occurred. Includes information such as deviceId, OS, and browser.  Supports $filter (eq, startsWith) on browser and operatingSystem properties.
         /// </summary>
         [JsonPropertyName("deviceDetail")]
         public DeviceDetail DeviceDetail { get; set; }
@@ -212,7 +218,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets ip address.
-        /// The IP address of the client from where the sign-in occurred. Supports $filter (eq and startsWith operators only).
+        /// The IP address of the client from where the sign-in occurred.  Supports $filter (eq, startsWith).
         /// </summary>
         [JsonPropertyName("ipAddress")]
         public string IpAddress { get; set; }
@@ -240,14 +246,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets location.
-        /// The city, state, and 2 letter country code from where the sign-in occurred. Supports $filter (eq and startsWith operators only) on city, state, and countryOrRegion properties.
+        /// The city, state, and 2 letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.
         /// </summary>
         [JsonPropertyName("location")]
         public SignInLocation Location { get; set; }
     
         /// <summary>
         /// Gets or sets managed service identity.
-        /// Contains information about the managed identity used for the sign in, including its type and associated Azure Resource Manager (ARM) resource ID.
+        /// Contains information about the managed identity used for the sign in, including its type, associated Azure Resource Manager (ARM) resource ID, and federated token information.
         /// </summary>
         [JsonPropertyName("managedServiceIdentity")]
         public ManagedIdentity ManagedServiceIdentity { get; set; }
@@ -267,10 +273,17 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets original request id.
-        /// The request identifier of the first request in the authentication sequence. Supports $filter (eq operator only).
+        /// The request identifier of the first request in the authentication sequence.  Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("originalRequestId")]
         public string OriginalRequestId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets original transfer method.
+        /// Transfer method used to initiate a session throughout all subsequent request. The possible values are: none, deviceCodeFlow, authenticationTransfer, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("originalTransferMethod")]
+        public OriginalTransferMethods? OriginalTransferMethod { get; set; }
     
         /// <summary>
         /// Gets or sets private link details.
@@ -288,14 +301,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resource display name.
-        /// The name of the resource that the user signed in to. Supports $filter (eq operator only).
+        /// The name of the resource that the user signed in to.  Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("resourceDisplayName")]
         public string ResourceDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets resource id.
-        /// The identifier of the resource that the user signed in to. Supports $filter (eq operator only).
+        /// The identifier of the resource that the user signed in to.  Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("resourceId")]
         public string ResourceId { get; set; }
@@ -316,35 +329,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets risk detail.
-        /// The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+        /// The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
         /// </summary>
         [JsonPropertyName("riskDetail")]
         public RiskDetail? RiskDetail { get; set; }
     
         /// <summary>
         /// Gets or sets risk event types_v2.
-        /// The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue. Supports $filter (eq and startsWith operators only).
+        /// The list of risk event types associated with the sign-in. Possible values: unlikelyTravel, anonymizedIPAddress, maliciousIPAddress, unfamiliarFeatures, malwareInfectedIPAddress, suspiciousIPAddress, leakedCredentials, investigationsThreatIntelligence,  generic, or unknownFutureValue.  Supports $filter (eq, startsWith).
         /// </summary>
         [JsonPropertyName("riskEventTypes_v2")]
         public IEnumerable<string> RiskEventTypes_v2 { get; set; }
     
         /// <summary>
         /// Gets or sets risk level aggregated.
-        /// The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+        /// The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
         /// </summary>
         [JsonPropertyName("riskLevelAggregated")]
         public RiskLevel? RiskLevelAggregated { get; set; }
     
         /// <summary>
         /// Gets or sets risk level during sign in.
-        /// The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection. Supports $filter (eq operator only). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
+        /// The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.
         /// </summary>
         [JsonPropertyName("riskLevelDuringSignIn")]
         public RiskLevel? RiskLevelDuringSignIn { get; set; }
     
         /// <summary>
         /// Gets or sets risk state.
-        /// The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue. Supports $filter (eq operator only).
+        /// The risk state of a risky user, sign-in, or a risk event. Possible values: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, or unknownFutureValue.  Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("riskState")]
         public RiskState? RiskState { get; set; }
@@ -365,14 +378,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service principal id.
-        /// The application identifier used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
+        /// The application identifier used for sign-in. This field is populated when you are signing in using an application.  Supports $filter (eq, startsWith).
         /// </summary>
         [JsonPropertyName("servicePrincipalId")]
         public string ServicePrincipalId { get; set; }
     
         /// <summary>
         /// Gets or sets service principal name.
-        /// The application name used for sign-in. This field is populated when you are signing in using an application. Supports $filter (eq and startsWith operators only).
+        /// The application name used for sign-in. This field is populated when you are signing in using an application.  Supports $filter (eq, startsWith).
         /// </summary>
         [JsonPropertyName("servicePrincipalName")]
         public string ServicePrincipalName { get; set; }
@@ -386,7 +399,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sign in event types.
-        /// Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue. Supports $filter (eq, ne).
+        /// Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("signInEventTypes")]
         public IEnumerable<string> SignInEventTypes { get; set; }
@@ -406,15 +419,22 @@ namespace Microsoft.Graph
         public SignInIdentifierType? SignInIdentifierType { get; set; }
     
         /// <summary>
+        /// Gets or sets sign in token protection status.
+        /// Token protection creates a cryptographically secure tie between the token and the device it's issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("signInTokenProtectionStatus")]
+        public TokenProtectionStatus? SignInTokenProtectionStatus { get; set; }
+    
+        /// <summary>
         /// Gets or sets status.
-        /// The sign-in status. Includes the error code and description of the error (in case of a sign-in failure). Supports $filter (eq operator only) on errorCode property.
+        /// The sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.
         /// </summary>
         [JsonPropertyName("status")]
         public SignInStatus Status { get; set; }
     
         /// <summary>
         /// Gets or sets token issuer name.
-        /// The name of the identity provider. For example, sts.microsoft.com. Supports $filter (eq operator only).
+        /// The name of the identity provider. For example, sts.microsoft.com.  Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("tokenIssuerName")]
         public string TokenIssuerName { get; set; }
@@ -435,28 +455,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user agent.
-        /// The user agent information related to sign-in. Supports $filter (eq and startsWith operators only).
+        /// The user agent information related to sign-in.  Supports $filter (eq, startsWith).
         /// </summary>
         [JsonPropertyName("userAgent")]
         public string UserAgent { get; set; }
     
         /// <summary>
         /// Gets or sets user display name.
-        /// The display name of the user. Supports $filter (eq and startsWith operators only).
+        /// The display name of the user.  Supports $filter (eq, startsWith).
         /// </summary>
         [JsonPropertyName("userDisplayName")]
         public string UserDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
-        /// The identifier of the user. Supports $filter (eq operator only).
+        /// The identifier of the user.  Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }
     
         /// <summary>
         /// Gets or sets user principal name.
-        /// The UPN of the user. Supports $filter (eq and startsWith operators only).
+        /// The UPN of the user.  Supports $filter (eq, startsWith).
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }

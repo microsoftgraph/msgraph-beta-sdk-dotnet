@@ -24,13 +24,16 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="cloudPcIds">A cloudPcIds parameter for the OData method call.</param>
+        /// <param name="policySettings">A policySettings parameter for the OData method call.</param>
         public CloudPcProvisioningPolicyApplyConfigRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            IEnumerable<string> cloudPcIds)
+            IEnumerable<string> cloudPcIds,
+            CloudPcPolicySettingType? policySettings)
             : base(requestUrl, client)
         {
             this.SetParameter("cloudPcIds", cloudPcIds, true);
+            this.SetParameter("policySettings", policySettings, true);
         }
 
         /// <summary>
@@ -46,6 +49,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("cloudPcIds"))
             {
                 request.RequestBody.CloudPcIds = this.GetParameter<IEnumerable<string>>("cloudPcIds");
+            }
+
+            if (this.HasParameter("policySettings"))
+            {
+                request.RequestBody.PolicySettings = this.GetParameter<CloudPcPolicySettingType?>("policySettings");
             }
 
             return request;

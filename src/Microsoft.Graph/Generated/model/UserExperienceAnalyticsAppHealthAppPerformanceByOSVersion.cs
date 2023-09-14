@@ -22,63 +22,63 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets active device count.
-        /// The number of devices where the app has been active. Valid values -2147483648 to 2147483647
+        /// The number of devices where the application has been active. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("activeDeviceCount")]
         public Int32? ActiveDeviceCount { get; set; }
     
         /// <summary>
         /// Gets or sets app crash count.
-        /// The number of crashes for the app. Valid values -2147483648 to 2147483647
+        /// The number of crashes for the application. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("appCrashCount")]
         public Int32? AppCrashCount { get; set; }
     
         /// <summary>
         /// Gets or sets app display name.
-        /// The friendly name of the application.
+        /// The friendly name of the application. Possible values are: Outlook, Excel. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("appDisplayName")]
         public string AppDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets app name.
-        /// The name of the application.
+        /// The name of the application. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("appName")]
         public string AppName { get; set; }
     
         /// <summary>
         /// Gets or sets app publisher.
-        /// The publisher of the application.
+        /// The publisher of the application. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("appPublisher")]
         public string AppPublisher { get; set; }
     
         /// <summary>
         /// Gets or sets app usage duration.
-        /// The total usage time of the application in minutes. Valid values -2147483648 to 2147483647
+        /// The total usage time of the application in minutes. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("appUsageDuration")]
         public Int32? AppUsageDuration { get; set; }
     
         /// <summary>
         /// Gets or sets mean time to failure in minutes.
-        /// The mean time to failure for the app in minutes. Valid values -2147483648 to 2147483647
+        /// The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("meanTimeToFailureInMinutes")]
         public Int32? MeanTimeToFailureInMinutes { get; set; }
     
         /// <summary>
         /// Gets or sets os build number.
-        /// The os build number of the application.
+        /// The OS build number of the application. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("osBuildNumber")]
         public string OsBuildNumber { get; set; }
     
         /// <summary>
         /// Gets or sets os version.
-        /// The os version of the application.
+        /// The OS version of the application. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("osVersion")]
         public string OsVersion { get; set; }

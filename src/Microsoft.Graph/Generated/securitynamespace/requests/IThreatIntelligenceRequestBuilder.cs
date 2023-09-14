@@ -56,10 +56,22 @@ namespace Microsoft.Graph.SecurityNamespace
         IThreatIntelligenceHostCookiesCollectionRequestBuilder HostCookies { get; }
 
         /// <summary>
+        /// Gets the request builder for HostPairs.
+        /// </summary>
+        /// <returns>The <see cref="IThreatIntelligenceHostPairsCollectionRequestBuilder"/>.</returns>
+        IThreatIntelligenceHostPairsCollectionRequestBuilder HostPairs { get; }
+
+        /// <summary>
         /// Gets the request builder for Hosts.
         /// </summary>
         /// <returns>The <see cref="IThreatIntelligenceHostsCollectionRequestBuilder"/>.</returns>
         IThreatIntelligenceHostsCollectionRequestBuilder Hosts { get; }
+
+        /// <summary>
+        /// Gets the request builder for HostSslCertificates.
+        /// </summary>
+        /// <returns>The <see cref="IThreatIntelligenceHostSslCertificatesCollectionRequestBuilder"/>.</returns>
+        IThreatIntelligenceHostSslCertificatesCollectionRequestBuilder HostSslCertificates { get; }
 
         /// <summary>
         /// Gets the request builder for HostTrackers.
@@ -86,10 +98,34 @@ namespace Microsoft.Graph.SecurityNamespace
         IThreatIntelligencePassiveDnsRecordsCollectionRequestBuilder PassiveDnsRecords { get; }
 
         /// <summary>
+        /// Gets the request builder for SslCertificates.
+        /// </summary>
+        /// <returns>The <see cref="IThreatIntelligenceSslCertificatesCollectionRequestBuilder"/>.</returns>
+        IThreatIntelligenceSslCertificatesCollectionRequestBuilder SslCertificates { get; }
+
+        /// <summary>
+        /// Gets the request builder for Subdomains.
+        /// </summary>
+        /// <returns>The <see cref="IThreatIntelligenceSubdomainsCollectionRequestBuilder"/>.</returns>
+        IThreatIntelligenceSubdomainsCollectionRequestBuilder Subdomains { get; }
+
+        /// <summary>
         /// Gets the request builder for Vulnerabilities.
         /// </summary>
         /// <returns>The <see cref="IThreatIntelligenceVulnerabilitiesCollectionRequestBuilder"/>.</returns>
         IThreatIntelligenceVulnerabilitiesCollectionRequestBuilder Vulnerabilities { get; }
+
+        /// <summary>
+        /// Gets the request builder for WhoisHistoryRecords.
+        /// </summary>
+        /// <returns>The <see cref="IThreatIntelligenceWhoisHistoryRecordsCollectionRequestBuilder"/>.</returns>
+        IThreatIntelligenceWhoisHistoryRecordsCollectionRequestBuilder WhoisHistoryRecords { get; }
+
+        /// <summary>
+        /// Gets the request builder for WhoisRecords.
+        /// </summary>
+        /// <returns>The <see cref="IThreatIntelligenceWhoisRecordsCollectionRequestBuilder"/>.</returns>
+        IThreatIntelligenceWhoisRecordsCollectionRequestBuilder WhoisRecords { get; }
     
     }
 }

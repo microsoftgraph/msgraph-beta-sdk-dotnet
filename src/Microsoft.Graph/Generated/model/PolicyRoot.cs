@@ -140,6 +140,12 @@ namespace Microsoft.Graph
         public ExternalIdentitiesPolicy ExternalIdentitiesPolicy { get; set; }
     
         /// <summary>
+        /// Gets or sets federated token validation policy.
+        /// </summary>
+        [JsonPropertyName("federatedTokenValidationPolicy")]
+        public FederatedTokenValidationPolicy FederatedTokenValidationPolicy { get; set; }
+    
+        /// <summary>
         /// Gets or sets home realm discovery policies.
         /// The policy to control Azure AD authentication behavior for federated users.
         /// </summary>

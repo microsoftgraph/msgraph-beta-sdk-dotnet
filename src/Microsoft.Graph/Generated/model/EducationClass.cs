@@ -148,6 +148,20 @@ namespace Microsoft.Graph
         public EducationAssignmentSettings AssignmentSettings { get; set; }
     
         /// <summary>
+        /// Gets or sets modules.
+        /// All modules in the class. Nullable.
+        /// </summary>
+        [JsonPropertyName("modules")]
+        public IEducationClassModulesCollectionPage Modules { get; set; }
+
+        /// <summary>
+        /// Gets or sets modulesNextLink.
+        /// </summary>
+        [JsonPropertyName("modules@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ModulesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets group.
         /// </summary>
         [JsonPropertyName("group")]

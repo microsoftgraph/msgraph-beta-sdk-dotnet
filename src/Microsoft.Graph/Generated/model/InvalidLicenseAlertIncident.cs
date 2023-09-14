@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets tenant license status.
+        /// Status of the tenant's Azure AD Premium P2 license.
         /// </summary>
         [JsonPropertyName("tenantLicenseStatus")]
         public string TenantLicenseStatus { get; set; }

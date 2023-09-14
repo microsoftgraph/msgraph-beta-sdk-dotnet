@@ -17,7 +17,8 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type General Ledger Entry.
     /// </summary>
-    public partial class GeneralLedgerEntry : Entity
+    [JsonConverter(typeof(DerivedTypeConverter<GeneralLedgerEntry>))]
+    public partial class GeneralLedgerEntry
     {
     
         /// <summary>
@@ -63,6 +64,12 @@ namespace Microsoft.Graph
         public string DocumentType { get; set; }
     
         /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        [JsonPropertyName("id")]
+        public Guid? Id { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
@@ -79,6 +86,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("account")]
         public Account Account { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonPropertyName("@odata.type")]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

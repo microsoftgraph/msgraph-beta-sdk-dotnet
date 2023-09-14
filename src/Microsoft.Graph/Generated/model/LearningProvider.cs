@@ -28,6 +28,13 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets is course activity sync enabled.
+        /// Indicates whether a provider can ingest learning course activity records. The default value is false. Set to true to make learningCourseActivities available for this provider.
+        /// </summary>
+        [JsonPropertyName("isCourseActivitySyncEnabled")]
+        public bool? IsCourseActivitySyncEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets login web url.
         /// Authentication URL to access the courses for the provider. Optional.
         /// </summary>

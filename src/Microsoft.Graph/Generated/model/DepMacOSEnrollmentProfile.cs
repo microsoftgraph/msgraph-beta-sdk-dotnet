@@ -57,6 +57,13 @@ namespace Microsoft.Graph
         public string AdminAccountUserName { get; set; }
     
         /// <summary>
+        /// Gets or sets auto advance setup enabled.
+        /// Indicates if Setup Assistant will automatically advance through its screen
+        /// </summary>
+        [JsonPropertyName("autoAdvanceSetupEnabled")]
+        public bool? AutoAdvanceSetupEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets auto unlock with watch disabled.
         /// Indicates if UnlockWithWatch screen is disabled
         /// </summary>
@@ -139,6 +146,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("registrationDisabled")]
         public bool? RegistrationDisabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets request requires network tether.
+        /// Indicates if the device is network-tethered to run the command
+        /// </summary>
+        [JsonPropertyName("requestRequiresNetworkTether")]
+        public bool? RequestRequiresNetworkTether { get; set; }
     
         /// <summary>
         /// Gets or sets set primary setup account as regular user.

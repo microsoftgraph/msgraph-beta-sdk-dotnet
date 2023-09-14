@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CloudPcProvisioningPolicyAssignRequest.
     /// </summary>
+    [Obsolete("The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023.")]
     public partial class CloudPcProvisioningPolicyAssignRequest : BaseRequest, ICloudPcProvisioningPolicyAssignRequest
     {
         /// <summary>

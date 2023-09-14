@@ -64,6 +64,34 @@ namespace Microsoft.Graph.CallRecords
         public Decimal? Charge { get; set; }
     
         /// <summary>
+        /// Gets or sets clientLocalIpV4Address.
+        /// Local IPv4 of the client that is retrieved from the operating system of the client.
+        /// </summary>
+        [JsonPropertyName("clientLocalIpV4Address")]
+        public string ClientLocalIpV4Address { get; set; }
+    
+        /// <summary>
+        /// Gets or sets clientLocalIpV6Address.
+        /// Local IPv6 of the client that is retrieved from the operating system of the client.
+        /// </summary>
+        [JsonPropertyName("clientLocalIpV6Address")]
+        public string ClientLocalIpV6Address { get; set; }
+    
+        /// <summary>
+        /// Gets or sets clientPublicIpV4Address.
+        /// Public IPv4 of the client that can be used to determine the location of the client.
+        /// </summary>
+        [JsonPropertyName("clientPublicIpV4Address")]
+        public string ClientPublicIpV4Address { get; set; }
+    
+        /// <summary>
+        /// Gets or sets clientPublicIpV6Address.
+        /// Public IPv6 of the client that can be used to determine the location of the client.
+        /// </summary>
+        [JsonPropertyName("clientPublicIpV6Address")]
+        public string ClientPublicIpV6Address { get; set; }
+    
+        /// <summary>
         /// Gets or sets conferenceId.
         /// ID of the audio conference.
         /// </summary>

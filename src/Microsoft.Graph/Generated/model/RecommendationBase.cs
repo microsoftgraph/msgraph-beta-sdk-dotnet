@@ -141,6 +141,13 @@ namespace Microsoft.Graph
         public RecommendationType? RecommendationType { get; set; }
     
         /// <summary>
+        /// Gets or sets release type.
+        /// The current release type of the recommendation. The possible values are: preview or generallyAvailable.
+        /// </summary>
+        [JsonPropertyName("releaseType")]
+        public string ReleaseType { get; set; }
+    
+        /// <summary>
         /// Gets or sets remediation impact.
         /// Description of the impact on users of the remediation. Only applies to recommendations with category set to identitySecureScore.
         /// </summary>

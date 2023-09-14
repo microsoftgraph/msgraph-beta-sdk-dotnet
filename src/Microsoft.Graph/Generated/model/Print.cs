@@ -72,6 +72,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets printer shares.
         /// </summary>
+        [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.")]
         [JsonPropertyName("printerShares")]
         public IPrintPrinterSharesCollectionPage PrinterShares { get; set; }
 

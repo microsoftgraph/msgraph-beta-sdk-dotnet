@@ -37,6 +37,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> AllowedGoogleAccountDomains { get; set; }
     
         /// <summary>
+        /// Gets or sets block unified password for work profile.
+        /// Prevent using unified password for unlocking device and work profile.
+        /// </summary>
+        [JsonPropertyName("blockUnifiedPasswordForWorkProfile")]
+        public bool? BlockUnifiedPasswordForWorkProfile { get; set; }
+    
+        /// <summary>
         /// Gets or sets password block face unlock.
         /// Indicates whether or not to block face unlock.
         /// </summary>

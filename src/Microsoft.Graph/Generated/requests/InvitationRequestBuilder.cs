@@ -61,6 +61,18 @@ namespace Microsoft.Graph
                 return new UserWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("invitedUser"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for InvitedUserSponsors.
+        /// </summary>
+        /// <returns>The <see cref="IInvitationInvitedUserSponsorsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IInvitationInvitedUserSponsorsCollectionWithReferencesRequestBuilder InvitedUserSponsors
+        {
+            get
+            {
+                return new InvitationInvitedUserSponsorsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("invitedUserSponsors"), this.Client);
+            }
+        }
     
     }
 }

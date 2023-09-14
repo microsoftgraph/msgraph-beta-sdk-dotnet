@@ -20,14 +20,14 @@ namespace Microsoft.Graph.SecurityNamespace
     {
     
         /// <summary>
-        /// Microsoft Defender Threat Intelligence
+        /// Microsoft
         /// </summary>
-        MicrosoftDefenderThreatIntelligence = 0,
+        Microsoft = 0,
 	
         /// <summary>
-        /// Open Source Intelligence
+        /// Osint
         /// </summary>
-        OpenSourceIntelligence = 1,
+        Osint = 1,
 	
         /// <summary>
         /// Public

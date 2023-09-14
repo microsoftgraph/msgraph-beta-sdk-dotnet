@@ -24,6 +24,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets acquiredByPrinter.
         /// </summary>
+        [Obsolete("The acquiredByPrinter property is deprecated and will stop returning data on July 31, 2023. Please use the isAcquiredByPrinter property instead of this.")]
         [JsonPropertyName("acquiredByPrinter")]
         public bool? AcquiredByPrinter { get; set; }
     
@@ -51,12 +52,14 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets processingState.
         /// </summary>
+        [Obsolete("The processingState property is deprecated and will stop returning data on July 31, 2023. Please use the state property instead of this.")]
         [JsonPropertyName("processingState")]
         public PrintJobProcessingState? ProcessingState { get; set; }
     
         /// <summary>
         /// Gets or sets processingStateDescription.
         /// </summary>
+        [Obsolete("The processingStateDescription property is deprecated and will stop returning data on July 31, 2023. Please use the description property instead of this.")]
         [JsonPropertyName("processingStateDescription")]
         public string ProcessingStateDescription { get; set; }
     

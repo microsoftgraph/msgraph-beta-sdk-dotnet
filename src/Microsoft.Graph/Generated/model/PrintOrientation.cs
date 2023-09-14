@@ -39,5 +39,10 @@ namespace Microsoft.Graph
         /// </summary>
         ReversePortrait = 6,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 7,
+	
     }
 }

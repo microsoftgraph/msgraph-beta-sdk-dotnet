@@ -29,6 +29,13 @@ namespace Microsoft.Graph.DeviceManagementNamespace
         public AggregationType? AggregationType { get; set; }
     
         /// <summary>
+        /// Gets or sets alertImpactDetails.
+        /// The detail information of the impact. For example, if the Frontline Cloud PCs near concurrency limit alert is triggered, the details contain the impacted Frontline license SKU name, such as Windows 365 Frontline 2 vCPU/8GB/128GB, and the corresponding impacted value.
+        /// </summary>
+        [JsonPropertyName("alertImpactDetails")]
+        public IEnumerable<Microsoft.Graph.KeyValuePair> AlertImpactDetails { get; set; }
+    
+        /// <summary>
         /// Gets or sets value.
         /// The number value of the impact. For the aggregation types of count and affectedCloudPcCount, the value indicates the number of affected instances. For example, 6 affectedCloudPcCount means that 6 Cloud PCs are affected. For the aggregation types of percentage and affectedCloudPcPercentage, the value indicates the percent of affected instances. For example, 12 affectedCloudPcPercentage means that 12% of Cloud PCs are affected.
         /// </summary>

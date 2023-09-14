@@ -324,6 +324,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.ScopedRoleMemberOf.AdditionalData = userToInitialize.AdditionalData;
                 }
+                if (userToInitialize.Sponsors != null && userToInitialize.Sponsors.CurrentPage != null)
+                {
+                    userToInitialize.Sponsors.InitializeNextPageRequest(this.Client, userToInitialize.SponsorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    userToInitialize.Sponsors.AdditionalData = userToInitialize.AdditionalData;
+                }
                 if (userToInitialize.TransitiveMemberOf != null && userToInitialize.TransitiveMemberOf.CurrentPage != null)
                 {
                     userToInitialize.TransitiveMemberOf.InitializeNextPageRequest(this.Client, userToInitialize.TransitiveMemberOfNextLink);
@@ -521,6 +527,12 @@ namespace Microsoft.Graph
                     userToInitialize.JoinedTeams.InitializeNextPageRequest(this.Client, userToInitialize.JoinedTeamsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.JoinedTeams.AdditionalData = userToInitialize.AdditionalData;
+                }
+                if (userToInitialize.PermissionGrants != null && userToInitialize.PermissionGrants.CurrentPage != null)
+                {
+                    userToInitialize.PermissionGrants.InitializeNextPageRequest(this.Client, userToInitialize.PermissionGrantsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    userToInitialize.PermissionGrants.AdditionalData = userToInitialize.AdditionalData;
                 }
 
             }

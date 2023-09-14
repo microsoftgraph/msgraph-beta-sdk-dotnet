@@ -39,5 +39,20 @@ namespace Microsoft.Graph
         /// </summary>
         Unresponsive = 3,
 	
+        /// <summary>
+        /// Not Set Up
+        /// </summary>
+        NotSetUp = 4,
+	
+        /// <summary>
+        /// Error
+        /// </summary>
+        Error = 5,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 6,
+	
     }
 }

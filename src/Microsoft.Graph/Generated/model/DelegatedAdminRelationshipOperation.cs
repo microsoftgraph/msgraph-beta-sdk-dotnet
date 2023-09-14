@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// The status of the operation. Read-only. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only. Supports $orderBy.
+        /// The status of the operation. Read-only. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue. Read-only. Supports $orderby.
         /// </summary>
         [JsonPropertyName("status")]
         public LongRunningOperationStatus? Status { get; set; }

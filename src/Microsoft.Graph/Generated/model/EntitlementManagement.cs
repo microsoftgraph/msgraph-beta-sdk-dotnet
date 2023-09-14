@@ -199,6 +199,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets subjects.
+        /// Represents the subjects within entitlement management.
         /// </summary>
         [JsonPropertyName("subjects")]
         public IEntitlementManagementSubjectsCollectionPage Subjects { get; set; }

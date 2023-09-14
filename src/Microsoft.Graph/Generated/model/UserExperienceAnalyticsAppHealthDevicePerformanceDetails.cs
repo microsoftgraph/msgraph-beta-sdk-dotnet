@@ -22,49 +22,49 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app display name.
-        /// The friendly name of the application for which the event occurred.
+        /// The friendly name of the application for which the event occurred. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("appDisplayName")]
         public string AppDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets app publisher.
-        /// The publisher of the application.
+        /// The publisher of the application. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("appPublisher")]
         public string AppPublisher { get; set; }
     
         /// <summary>
         /// Gets or sets app version.
-        /// The version of the application.
+        /// The version of the application. Possible values are: 1.0.0.1, 75.65.23.9. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("appVersion")]
         public string AppVersion { get; set; }
     
         /// <summary>
         /// Gets or sets device display name.
-        /// The name of the device.
+        /// The name of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("deviceDisplayName")]
         public string DeviceDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets device id.
-        /// The id of the device.
+        /// The Intune device id of the device. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets event date time.
-        /// The time the event occurred.
+        /// The time the event occurred. The value cannot be modified and is automatically populated when the statistics are computed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2022 would look like this: '2022-01-01T00:00:00Z'. Returned by default. Read-only.
         /// </summary>
         [JsonPropertyName("eventDateTime")]
         public DateTimeOffset? EventDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets event type.
-        /// The type of the event.
+        /// The type of the event. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("eventType")]
         public string EventType { get; set; }

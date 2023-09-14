@@ -243,6 +243,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Sponsors.
+        /// </summary>
+        /// <returns>The <see cref="IUserSponsorsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserSponsorsCollectionWithReferencesRequestBuilder Sponsors
+        {
+            get
+            {
+                return new UserSponsorsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("sponsors"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for TransitiveMemberOf.
         /// </summary>
         /// <returns>The <see cref="IUserTransitiveMemberOfCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -759,6 +771,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for VirtualEvents.
+        /// </summary>
+        /// <returns>The <see cref="IUserVirtualEventsRootRequestBuilder"/>.</returns>
+        public IUserVirtualEventsRootRequestBuilder VirtualEvents
+        {
+            get
+            {
+                return new UserVirtualEventsRootRequestBuilder(this.AppendSegmentToRequestUrl("virtualEvents"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Authentication.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationRequestBuilder"/>.</returns>
@@ -791,6 +815,18 @@ namespace Microsoft.Graph
             get
             {
                 return new UserJoinedTeamsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("joinedTeams"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for PermissionGrants.
+        /// </summary>
+        /// <returns>The <see cref="IUserPermissionGrantsCollectionRequestBuilder"/>.</returns>
+        public IUserPermissionGrantsCollectionRequestBuilder PermissionGrants
+        {
+            get
+            {
+                return new UserPermissionGrantsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("permissionGrants"), this.Client);
             }
         }
 

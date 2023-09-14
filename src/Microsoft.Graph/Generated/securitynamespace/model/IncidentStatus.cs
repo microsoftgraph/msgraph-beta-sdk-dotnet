@@ -44,5 +44,10 @@ namespace Microsoft.Graph.SecurityNamespace
         /// </summary>
         UnknownFutureValue = 127,
 	
+        /// <summary>
+        /// Awaiting Action
+        /// </summary>
+        AwaitingAction = 128,
+	
     }
 }

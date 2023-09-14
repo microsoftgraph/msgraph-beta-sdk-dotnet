@@ -36,8 +36,15 @@ namespace Microsoft.Graph
         public string Email { get; set; }
     
         /// <summary>
+        /// Gets or sets outOfOfficeDays.
+        /// Number of days the user is OOF during a simulation journey/course of a campaign.
+        /// </summary>
+        [JsonPropertyName("outOfOfficeDays")]
+        public Int32? OutOfOfficeDays { get; set; }
+    
+        /// <summary>
         /// Gets or sets userId.
-        /// This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
+        /// The id property value of the user resource that represents the user in the Azure Active Directory tenant.
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }

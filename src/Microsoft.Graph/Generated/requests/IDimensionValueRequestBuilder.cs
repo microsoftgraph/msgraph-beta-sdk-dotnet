@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IDimensionValueRequestBuilder.
     /// </summary>
-    public partial interface IDimensionValueRequestBuilder : IEntityRequestBuilder
+    public partial interface IDimensionValueRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IDimensionValueRequest Request();
+        IDimensionValueRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IDimensionValueRequest Request(IEnumerable<Option> options);
+        IDimensionValueRequest Request(IEnumerable<Option> options);
     
     }
 }

@@ -18,6 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ManagedDeviceRestoreCloudPcRequest.
     /// </summary>
+    [Obsolete("The restoreCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use restore instead")]
     public partial class ManagedDeviceRestoreCloudPcRequest : BaseRequest, IManagedDeviceRestoreCloudPcRequest
     {
         /// <summary>

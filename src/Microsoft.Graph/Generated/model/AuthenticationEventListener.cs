@@ -31,18 +31,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication events flow id.
+        /// The identifier of the authenticationEventsFlow object.
         /// </summary>
         [JsonPropertyName("authenticationEventsFlowId")]
         public string AuthenticationEventsFlowId { get; set; }
     
         /// <summary>
         /// Gets or sets conditions.
+        /// The conditions on which this authenticationEventListener should trigger.
         /// </summary>
         [JsonPropertyName("conditions")]
         public AuthenticationConditions Conditions { get; set; }
     
         /// <summary>
         /// Gets or sets priority.
+        /// The priority of this handler. Between 0 (lower priority) and 1000 (higher priority).
         /// </summary>
         [JsonPropertyName("priority")]
         public Int32? Priority { get; set; }

@@ -96,7 +96,6 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
         /// Gets or sets last modified by.
         /// The user who last modified the workflow.
         /// </summary>
-        [Obsolete("The Graph Notification API is deprecated and will stop returning data on March 20, 2023.")]
         [JsonPropertyName("lastModifiedBy")]
         public Microsoft.Graph.User LastModifiedBy { get; set; }
     

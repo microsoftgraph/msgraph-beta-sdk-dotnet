@@ -38,7 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allowed to use sspr.
-        /// Indicates whether the Self-Serve Password Reset feature can be used by users on the tenant.
+        /// Indicates whether the Admin Self-Serve Password Reset feature is enabled on the tenant.
         /// </summary>
         [JsonPropertyName("allowedToUseSSPR")]
         public bool? AllowedToUseSSPR { get; set; }
@@ -59,7 +59,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allow user consent for risky apps.
-        /// Indicates whether user consent for risky apps is allowed. We recommend to keep this as false.
+        /// Indicates whether user consent for risky apps is allowed. Default value is false. We recommend that you keep the value set to false.
         /// </summary>
         [JsonPropertyName("allowUserConsentForRiskyApps")]
         public bool? AllowUserConsentForRiskyApps { get; set; }

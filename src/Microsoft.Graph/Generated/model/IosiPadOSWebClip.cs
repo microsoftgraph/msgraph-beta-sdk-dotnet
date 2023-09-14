@@ -36,6 +36,34 @@ namespace Microsoft.Graph
         public string AppUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets full screen enabled.
+        /// Whether or not to open the web clip as a full-screen web app. Defaults to false. If TRUE, opens the web clip as a full-screen web app. If FALSE, the web clip opens inside of another app, such as Safari or the app specified with targetApplicationBundleIdentifier.
+        /// </summary>
+        [JsonPropertyName("fullScreenEnabled")]
+        public bool? FullScreenEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ignore manifest scope.
+        /// Whether or not a full screen web clip can navigate to an external web site without showing the Safari UI. Defaults to false. If FALSE, the Safari UI appears when navigating away. If TRUE, the Safari UI will not be shown.
+        /// </summary>
+        [JsonPropertyName("ignoreManifestScope")]
+        public bool? IgnoreManifestScope { get; set; }
+    
+        /// <summary>
+        /// Gets or sets pre composed icon enabled.
+        /// Whether or not the icon for the app is precomosed. Defaults to false. If TRUE, prevents SpringBoard from adding 'shine' to the icon. If FALSE, SpringBoard can add 'shine'.
+        /// </summary>
+        [JsonPropertyName("preComposedIconEnabled")]
+        public bool? PreComposedIconEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets target application bundle identifier.
+        /// Specifies the application bundle identifier which opens the URL. Available in iOS 14 and later.
+        /// </summary>
+        [JsonPropertyName("targetApplicationBundleIdentifier")]
+        public string TargetApplicationBundleIdentifier { get; set; }
+    
+        /// <summary>
         /// Gets or sets use managed browser.
         /// Whether or not to use managed browser. When TRUE, the app will be required to be opened in Microsoft Edge. When FALSE, the app will not be required to be opened in Microsoft Edge. By default, this property is set to FALSE.
         /// </summary>

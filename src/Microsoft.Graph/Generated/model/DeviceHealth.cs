@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DeviceHealth.
     /// </summary>
+    [Obsolete("The deviceHealth type is deprecated and will stop returning data on July 31, 2023.")]
     [JsonConverter(typeof(DerivedTypeConverter<DeviceHealth>))]
     public partial class DeviceHealth
     {

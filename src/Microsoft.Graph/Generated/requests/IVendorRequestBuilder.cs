@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IVendorRequestBuilder.
     /// </summary>
-    public partial interface IVendorRequestBuilder : IEntityRequestBuilder
+    public partial interface IVendorRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IVendorRequest Request();
+        IVendorRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IVendorRequest Request(IEnumerable<Option> options);
+        IVendorRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for Currency.

@@ -31,18 +31,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets createdDateTime.
+        /// The date and time at which the error occurred.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets isResolved.
+        /// Indicates whether the Error has been attended to.
         /// </summary>
         [JsonPropertyName("isResolved")]
         public bool? IsResolved { get; set; }
     
         /// <summary>
         /// Gets or sets serviceInstance.
+        /// Qualified service instance (e.g., 'SharePoint/Dublin') that published the service error information.
         /// </summary>
         [JsonPropertyName("serviceInstance")]
         public string ServiceInstance { get; set; }

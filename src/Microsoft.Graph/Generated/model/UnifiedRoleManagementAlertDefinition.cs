@@ -23,60 +23,70 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
+        /// The description of the alert.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Azure portal.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets how to prevent.
+        /// Long-form text that indicates the ways to prevent the alert from being triggered in your tenant.
         /// </summary>
         [JsonPropertyName("howToPrevent")]
         public string HowToPrevent { get; set; }
     
         /// <summary>
         /// Gets or sets is configurable.
+        /// true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the 'There are too many global administrators' alert can be configured by users, while the 'This organization does not have Azure AD Premium P2' cannot be configured, because the criteria is restricted.
         /// </summary>
         [JsonPropertyName("isConfigurable")]
         public bool? IsConfigurable { get; set; }
     
         /// <summary>
         /// Gets or sets is remediatable.
+        /// true if the alert can be remediated, and false otherwise.
         /// </summary>
         [JsonPropertyName("isRemediatable")]
         public bool? IsRemediatable { get; set; }
     
         /// <summary>
         /// Gets or sets mitigation steps.
+        /// The methods to mitigate the alert when it's triggered in the tenant. For example, to mitigate the 'There are too many global administrators', you could remove redundant privileged role assignments.
         /// </summary>
         [JsonPropertyName("mitigationSteps")]
         public string MitigationSteps { get; set; }
     
         /// <summary>
         /// Gets or sets scope id.
+        /// The identifier of the scope where the alert is related. / is the only supported one for the tenant. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("scopeId")]
         public string ScopeId { get; set; }
     
         /// <summary>
         /// Gets or sets scope type.
+        /// The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD Roles.
         /// </summary>
         [JsonPropertyName("scopeType")]
         public string ScopeType { get; set; }
     
         /// <summary>
         /// Gets or sets security impact.
+        /// Security impact of the alert. For example, it could be information leaks or unauthorized access.
         /// </summary>
         [JsonPropertyName("securityImpact")]
         public string SecurityImpact { get; set; }
     
         /// <summary>
         /// Gets or sets severity level.
+        /// Severity level of the alert. The possible values are: unknown, informational, low, medium, high, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("severityLevel")]
         public AlertSeverity? SeverityLevel { get; set; }

@@ -23,14 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets default.
-        /// Whether this is the default Content Type
+        /// Indicates whether this is the default content type.
         /// </summary>
         [JsonPropertyName("default")]
         public bool? Default { get; set; }
     
         /// <summary>
         /// Gets or sets position.
-        /// Specifies the position in which the Content Type appears in the selection UI.
+        /// Specifies the position in which the content type appears in the selection UI.
         /// </summary>
         [JsonPropertyName("position")]
         public Int32? Position { get; set; }

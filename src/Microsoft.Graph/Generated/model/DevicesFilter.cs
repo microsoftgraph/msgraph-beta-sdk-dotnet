@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets mode.
+        /// Determines whether devices satisfying the rule should be allowed or blocked.The possible values are: allowed, blocked, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("mode")]
         public CrossTenantAccessPolicyTargetConfigurationAccessType? Mode { get; set; }
     
         /// <summary>
         /// Gets or sets rule.
+        /// Defines the rule to filter the devices. For example, device.deviceAttribute2 -eq 'PrivilegedAccessWorkstation'.
         /// </summary>
         [JsonPropertyName("rule")]
         public string Rule { get; set; }

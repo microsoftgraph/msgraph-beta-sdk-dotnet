@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IAccountRequestBuilder.
     /// </summary>
-    public partial interface IAccountRequestBuilder : IEntityRequestBuilder
+    public partial interface IAccountRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new IAccountRequest Request();
+        IAccountRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new IAccountRequest Request(IEnumerable<Option> options);
+        IAccountRequest Request(IEnumerable<Option> options);
     
     }
 }

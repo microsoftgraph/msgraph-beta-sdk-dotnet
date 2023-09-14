@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets multi tenant organization.
+        /// Defines an organization with more than one instance of Azure Active Directory (Azure AD).
+        /// </summary>
+        [JsonPropertyName("multiTenantOrganization")]
+        public MultiTenantOrganization MultiTenantOrganization { get; set; }
+    
+        /// <summary>
         /// Gets or sets managed tenants.
         /// The operations available to interact with the multi-tenant management platform.
         /// </summary>

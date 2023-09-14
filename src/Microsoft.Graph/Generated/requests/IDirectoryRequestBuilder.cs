@@ -56,6 +56,12 @@ namespace Microsoft.Graph
         IDirectoryAttributeSetsCollectionRequestBuilder AttributeSets { get; }
 
         /// <summary>
+        /// Gets the request builder for CertificateAuthorities.
+        /// </summary>
+        /// <returns>The <see cref="ICertificateAuthorityPathRequestBuilder"/>.</returns>
+        ICertificateAuthorityPathRequestBuilder CertificateAuthorities { get; }
+
+        /// <summary>
         /// Gets the request builder for CustomSecurityAttributeDefinitions.
         /// </summary>
         /// <returns>The <see cref="IDirectoryCustomSecurityAttributeDefinitionsCollectionRequestBuilder"/>.</returns>
@@ -96,6 +102,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDirectorySharedEmailDomainsCollectionRequestBuilder"/>.</returns>
         IDirectorySharedEmailDomainsCollectionRequestBuilder SharedEmailDomains { get; }
+
+        /// <summary>
+        /// Gets the request builder for Subscriptions.
+        /// </summary>
+        /// <returns>The <see cref="IDirectorySubscriptionsCollectionRequestBuilder"/>.</returns>
+        IDirectorySubscriptionsCollectionRequestBuilder Subscriptions { get; }
 
         /// <summary>
         /// Gets the request builder for FeatureRolloutPolicies.

@@ -34,7 +34,7 @@ namespace Microsoft.Graph
             DateTimeOffset? endDateTime)
             : base(requestUrl, client)
         {
-            this.SetParameter("groupId", groupId, true);
+            this.SetParameter("groupId", groupId, false);
             this.SetParameter("startDateTime", startDateTime, true);
             this.SetParameter("endDateTime", endDateTime, true);
             this.SetFunctionParameters();

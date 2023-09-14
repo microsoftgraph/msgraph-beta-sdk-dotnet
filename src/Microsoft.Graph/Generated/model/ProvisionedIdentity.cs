@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets identityType.
-        /// Type of identity that has been provisioned, such as 'user' or 'group'.
+        /// Type of identity that has been provisioned, such as 'user' or 'group'. Supports $filter (eq, contains).
         /// </summary>
         [JsonPropertyName("identityType")]
         public string IdentityType { get; set; }

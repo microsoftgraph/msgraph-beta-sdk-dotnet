@@ -57,21 +57,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device count with crashes.
-        /// The total number of devices that have reported one or more application crashes for this application and version. Valid values -2147483648 to 2147483647
+        /// The total number of devices that have reported one or more application crashes for this application and version. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("deviceCountWithCrashes")]
         public Int32? DeviceCountWithCrashes { get; set; }
     
         /// <summary>
         /// Gets or sets is latest used version.
-        /// Is the version of application the latest version for that app that is in use.
+        /// When TRUE, indicates the version of application is the latest version for that application that is in use. When FALSE, indicates the version is not the latest version. FALSE by default. Supports: $select, $OrderBy.
         /// </summary>
         [JsonPropertyName("isLatestUsedVersion")]
         public bool? IsLatestUsedVersion { get; set; }
     
         /// <summary>
         /// Gets or sets is most used version.
-        /// Is the version of application the most used version for that app.
+        /// When TRUE, indicates the version of application is the most used version for that application. When FALSE, indicates the version is not the most used version. FALSE by default. Supports: $select, $OrderBy. Read-only.
         /// </summary>
         [JsonPropertyName("isMostUsedVersion")]
         public bool? IsMostUsedVersion { get; set; }

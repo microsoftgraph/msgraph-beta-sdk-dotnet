@@ -17,7 +17,8 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Unit Of Measure.
     /// </summary>
-    public partial class UnitOfMeasure : Entity
+    [JsonConverter(typeof(DerivedTypeConverter<UnitOfMeasure>))]
+    public partial class UnitOfMeasure
     {
     
         /// <summary>
@@ -33,6 +34,12 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        [JsonPropertyName("id")]
+        public Guid? Id { get; set; }
+    
+        /// <summary>
         /// Gets or sets international standard code.
         /// </summary>
         [JsonPropertyName("internationalStandardCode")]
@@ -43,6 +50,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonPropertyName("@odata.type")]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

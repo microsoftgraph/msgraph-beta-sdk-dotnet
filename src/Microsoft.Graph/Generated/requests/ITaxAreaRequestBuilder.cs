@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ITaxAreaRequestBuilder.
     /// </summary>
-    public partial interface ITaxAreaRequestBuilder : IEntityRequestBuilder
+    public partial interface ITaxAreaRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new ITaxAreaRequest Request();
+        ITaxAreaRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new ITaxAreaRequest Request(IEnumerable<Option> options);
+        ITaxAreaRequest Request(IEnumerable<Option> options);
     
     }
 }

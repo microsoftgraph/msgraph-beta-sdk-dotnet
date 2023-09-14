@@ -26,5 +26,11 @@ namespace Microsoft.Graph
         [JsonPropertyName("cloudPcIds")]
         public IEnumerable<string> CloudPcIds { get; set; }
     
+        /// <summary>
+        /// Gets or sets PolicySettings.
+        /// </summary>
+        [JsonPropertyName("policySettings")]
+        public CloudPcPolicySettingType? PolicySettings { get; set; }
+    
     }
 }

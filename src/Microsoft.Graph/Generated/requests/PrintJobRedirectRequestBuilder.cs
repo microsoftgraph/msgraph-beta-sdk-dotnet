@@ -32,7 +32,7 @@ namespace Microsoft.Graph
             PrintJobConfiguration configuration)
             : base(requestUrl, client)
         {
-            this.SetParameter("destinationPrinterId", destinationPrinterId, true);
+            this.SetParameter("destinationPrinterId", destinationPrinterId, false);
             this.SetParameter("configuration", configuration, true);
         }
 

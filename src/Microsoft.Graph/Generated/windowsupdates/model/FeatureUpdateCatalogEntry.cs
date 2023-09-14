@@ -29,6 +29,13 @@ namespace Microsoft.Graph.WindowsUpdates
         }
 
         /// <summary>
+        /// Gets or sets build number.
+        /// The build number of the feature update. Read-only.
+        /// </summary>
+        [JsonPropertyName("buildNumber")]
+        public string BuildNumber { get; set; }
+    
+        /// <summary>
         /// Gets or sets version.
         /// The version of the feature update. Read-only.
         /// </summary>

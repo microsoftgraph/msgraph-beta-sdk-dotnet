@@ -21,6 +21,20 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets app credential sign in activities.
+        /// Represents a collection of sign-in activities of application credentials.
+        /// </summary>
+        [JsonPropertyName("appCredentialSignInActivities")]
+        public IReportRootAppCredentialSignInActivitiesCollectionPage AppCredentialSignInActivities { get; set; }
+
+        /// <summary>
+        /// Gets or sets appCredentialSignInActivitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("appCredentialSignInActivities@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AppCredentialSignInActivitiesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets application sign in detailed summary.
         /// Represents a detailed summary of an application sign-in.
         /// </summary>
@@ -45,6 +59,7 @@ namespace Microsoft.Graph
         /// Gets or sets credential user registration details.
         /// Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
         /// </summary>
+        [Obsolete("The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API.")]
         [JsonPropertyName("credentialUserRegistrationDetails")]
         public IReportRootCredentialUserRegistrationDetailsCollectionPage CredentialUserRegistrationDetails { get; set; }
 
@@ -54,6 +69,27 @@ namespace Microsoft.Graph
         [JsonPropertyName("credentialUserRegistrationDetails@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string CredentialUserRegistrationDetailsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets service principal sign in activities.
+        /// Represents a collection of sign-in activities of service principals.
+        /// </summary>
+        [JsonPropertyName("servicePrincipalSignInActivities")]
+        public IReportRootServicePrincipalSignInActivitiesCollectionPage ServicePrincipalSignInActivities { get; set; }
+
+        /// <summary>
+        /// Gets or sets servicePrincipalSignInActivitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("servicePrincipalSignInActivities@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ServicePrincipalSignInActivitiesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sla.
+        /// A placeholder to allow for the desired URL path for SLA.
+        /// </summary>
+        [JsonPropertyName("sla")]
+        public ServiceLevelAgreementRoot Sla { get; set; }
     
         /// <summary>
         /// Gets or sets user credential usage details.
@@ -84,6 +120,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets daily print usage by printer.
+        /// Retrieve a list of daily print usage summaries, grouped by printer.
         /// </summary>
         [JsonPropertyName("dailyPrintUsageByPrinter")]
         public IReportRootDailyPrintUsageByPrinterCollectionPage DailyPrintUsageByPrinter { get; set; }
@@ -97,6 +134,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets daily print usage by user.
+        /// Retrieve a list of daily print usage summaries, grouped by user.
         /// </summary>
         [JsonPropertyName("dailyPrintUsageByUser")]
         public IReportRootDailyPrintUsageByUserCollectionPage DailyPrintUsageByUser { get; set; }
@@ -111,6 +149,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets daily print usage summaries by printer.
         /// </summary>
+        [Obsolete("The dailyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsageByPrinter navigation property instead of this.")]
         [JsonPropertyName("dailyPrintUsageSummariesByPrinter")]
         public IReportRootDailyPrintUsageSummariesByPrinterCollectionPage DailyPrintUsageSummariesByPrinter { get; set; }
 
@@ -124,6 +163,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets daily print usage summaries by user.
         /// </summary>
+        [Obsolete("The dailyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the dailyPrintUsage navigation property instead of this.")]
         [JsonPropertyName("dailyPrintUsageSummariesByUser")]
         public IReportRootDailyPrintUsageSummariesByUserCollectionPage DailyPrintUsageSummariesByUser { get; set; }
 
@@ -136,6 +176,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets monthly print usage by printer.
+        /// Retrieve a list of monthly print usage summaries, grouped by printer.
         /// </summary>
         [JsonPropertyName("monthlyPrintUsageByPrinter")]
         public IReportRootMonthlyPrintUsageByPrinterCollectionPage MonthlyPrintUsageByPrinter { get; set; }
@@ -149,6 +190,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets monthly print usage by user.
+        /// Retrieve a list of monthly print usage summaries, grouped by user.
         /// </summary>
         [JsonPropertyName("monthlyPrintUsageByUser")]
         public IReportRootMonthlyPrintUsageByUserCollectionPage MonthlyPrintUsageByUser { get; set; }
@@ -163,6 +205,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets monthly print usage summaries by printer.
         /// </summary>
+        [Obsolete("The monthlyPrintUsageSummariesByPrinter navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByPrinter navigation property instead of this.")]
         [JsonPropertyName("monthlyPrintUsageSummariesByPrinter")]
         public IReportRootMonthlyPrintUsageSummariesByPrinterCollectionPage MonthlyPrintUsageSummariesByPrinter { get; set; }
 
@@ -176,6 +219,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets monthly print usage summaries by user.
         /// </summary>
+        [Obsolete("The monthlyPrintUsageSummariesByUser navigation property is deprecated and will stop returning data on July 31, 2023. Please use the monthlyPrintUsageByUser navigation property instead of this.")]
         [JsonPropertyName("monthlyPrintUsageSummariesByUser")]
         public IReportRootMonthlyPrintUsageSummariesByUserCollectionPage MonthlyPrintUsageSummariesByUser { get; set; }
 

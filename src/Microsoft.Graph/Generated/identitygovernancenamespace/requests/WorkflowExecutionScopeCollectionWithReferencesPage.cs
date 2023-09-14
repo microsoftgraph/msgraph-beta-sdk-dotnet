@@ -14,7 +14,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     /// <summary>
     /// The type WorkflowExecutionScopeCollectionWithReferencesPage.
     /// </summary>
-    public partial class WorkflowExecutionScopeCollectionWithReferencesPage : Microsoft.Graph.CollectionPage<Microsoft.Graph.User>, IWorkflowExecutionScopeCollectionWithReferencesPage
+    public partial class WorkflowExecutionScopeCollectionWithReferencesPage : Microsoft.Graph.CollectionPage<UserProcessingResult>, IWorkflowExecutionScopeCollectionWithReferencesPage
     {
         /// <summary>
         /// Gets the next page <see cref="IWorkflowExecutionScopeCollectionWithReferencesRequest"/> instance.

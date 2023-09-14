@@ -22,14 +22,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device id.
-        /// The user experience analytics device id.
+        /// The Intune device id of the device.
         /// </summary>
         [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets metric date time.
-        /// The user experience analytics metric date time.
+        /// The metric date time. The value cannot be modified and is automatically populated when the metric is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned by default.
         /// </summary>
         [JsonPropertyName("metricDateTime")]
         public DateTimeOffset? MetricDateTime { get; set; }

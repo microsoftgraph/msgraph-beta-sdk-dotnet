@@ -312,6 +312,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     directoryToInitialize.SharedEmailDomains.AdditionalData = directoryToInitialize.AdditionalData;
                 }
+                if (directoryToInitialize.Subscriptions != null && directoryToInitialize.Subscriptions.CurrentPage != null)
+                {
+                    directoryToInitialize.Subscriptions.InitializeNextPageRequest(this.Client, directoryToInitialize.SubscriptionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    directoryToInitialize.Subscriptions.AdditionalData = directoryToInitialize.AdditionalData;
+                }
                 if (directoryToInitialize.FeatureRolloutPolicies != null && directoryToInitialize.FeatureRolloutPolicies.CurrentPage != null)
                 {
                     directoryToInitialize.FeatureRolloutPolicies.InitializeNextPageRequest(this.Client, directoryToInitialize.FeatureRolloutPoliciesNextLink);

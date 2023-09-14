@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         public bool? IsSystemPreferredAuthenticationMethodEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets userPreferredMethodForSecondaryAuthentication.
+        /// The default second-factor method used by the user when signing in. If a user is enabled for system-preferred authentication, then this value is ignored except for a few scenarios where a user is authenticating via NPS extension or ADFS adapter. Possible values are push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, and unknownFutureValue
+        /// </summary>
+        [JsonPropertyName("userPreferredMethodForSecondaryAuthentication")]
+        public UserDefaultAuthenticationMethodType? UserPreferredMethodForSecondaryAuthentication { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

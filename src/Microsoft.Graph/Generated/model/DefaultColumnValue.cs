@@ -23,14 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets formula.
-        /// The formula used to compute the default value for this column.
+        /// The formula used to compute the default value for the column.
         /// </summary>
         [JsonPropertyName("formula")]
         public string Formula { get; set; }
     
         /// <summary>
         /// Gets or sets value.
-        /// The direct value to use as the default value for this column.
+        /// The direct value to use as the default value for the column.
         /// </summary>
         [JsonPropertyName("value")]
         public string Value { get; set; }

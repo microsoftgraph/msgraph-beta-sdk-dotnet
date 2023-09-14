@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets active devices.
-        /// Number of active devices for using that app over a 14-day period. Valid values -2147483648 to 2147483647
+        /// Number of active devices for using that app over a 14-day period. Valid values 0 to 2147483647
         /// </summary>
         [JsonPropertyName("activeDevices")]
         public Int32? ActiveDevices { get; set; }
@@ -50,7 +50,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets battery usage percentage.
-        /// The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values -1.79769313486232E+308 to 1.79769313486232E+308
+        /// The percent of total battery power used by this application when the device was not plugged into AC power, over 14 days computed across all devices in the tenant. Unit in percentage. Valid values 0 to 1.79769313486232E+308
         /// </summary>
         [JsonPropertyName("batteryUsagePercentage")]
         public double? BatteryUsagePercentage { get; set; }

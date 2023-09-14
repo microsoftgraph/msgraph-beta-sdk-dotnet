@@ -855,6 +855,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for PrivilegeManagementElevations.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementPrivilegeManagementElevationsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementPrivilegeManagementElevationsCollectionRequestBuilder PrivilegeManagementElevations
+        {
+            get
+            {
+                return new DeviceManagementPrivilegeManagementElevationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("privilegeManagementElevations"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for RemoteActionAudits.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementRemoteActionAuditsCollectionRequestBuilder"/>.</returns>
@@ -887,6 +899,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DeviceManagementUserExperienceAnalyticsAnomalyCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsAnomaly"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAnomalyCorrelationGroupOverview.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAnomalyCorrelationGroupOverviewCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsAnomalyCorrelationGroupOverviewCollectionRequestBuilder UserExperienceAnalyticsAnomalyCorrelationGroupOverview
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsAnomalyCorrelationGroupOverviewCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsAnomalyCorrelationGroupOverview"), this.Client);
             }
         }
 

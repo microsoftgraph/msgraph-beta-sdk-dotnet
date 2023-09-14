@@ -23,24 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets attributes.
+        /// Defines attributes of the object.
         /// </summary>
         [JsonPropertyName("attributes")]
         public IEnumerable<AttributeDefinition> Attributes { get; set; }
     
         /// <summary>
         /// Gets or sets metadata.
+        /// Metadata for the given object.
         /// </summary>
         [JsonPropertyName("metadata")]
-        public IEnumerable<MetadataEntry> Metadata { get; set; }
+        public IEnumerable<ObjectDefinitionMetadataEntry> Metadata { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// Name of the object. Must be unique within a directory definition. Not nullable.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets supportedApis.
+        /// The API that the provisioning service queries to retrieve data for synchronization.
         /// </summary>
         [JsonPropertyName("supportedApis")]
         public IEnumerable<string> SupportedApis { get; set; }

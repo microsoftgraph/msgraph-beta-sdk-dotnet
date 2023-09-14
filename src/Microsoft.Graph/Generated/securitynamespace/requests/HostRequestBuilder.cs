@@ -51,6 +51,18 @@ namespace Microsoft.Graph.SecurityNamespace
         }
     
         /// <summary>
+        /// Gets the request builder for ChildHostPairs.
+        /// </summary>
+        /// <returns>The <see cref="IHostChildHostPairsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IHostChildHostPairsCollectionWithReferencesRequestBuilder ChildHostPairs
+        {
+            get
+            {
+                return new HostChildHostPairsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("childHostPairs"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Components.
         /// </summary>
         /// <returns>The <see cref="IHostComponentsCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -71,6 +83,30 @@ namespace Microsoft.Graph.SecurityNamespace
             get
             {
                 return new HostCookiesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("cookies"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for HostPairs.
+        /// </summary>
+        /// <returns>The <see cref="IHostHostPairsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IHostHostPairsCollectionWithReferencesRequestBuilder HostPairs
+        {
+            get
+            {
+                return new HostHostPairsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("hostPairs"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ParentHostPairs.
+        /// </summary>
+        /// <returns>The <see cref="IHostParentHostPairsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IHostParentHostPairsCollectionWithReferencesRequestBuilder ParentHostPairs
+        {
+            get
+            {
+                return new HostParentHostPairsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("parentHostPairs"), this.Client);
             }
         }
 
@@ -111,6 +147,30 @@ namespace Microsoft.Graph.SecurityNamespace
         }
 
         /// <summary>
+        /// Gets the request builder for SslCertificates.
+        /// </summary>
+        /// <returns>The <see cref="IHostSslCertificatesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IHostSslCertificatesCollectionWithReferencesRequestBuilder SslCertificates
+        {
+            get
+            {
+                return new HostSslCertificatesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("sslCertificates"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Subdomains.
+        /// </summary>
+        /// <returns>The <see cref="IHostSubdomainsCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IHostSubdomainsCollectionWithReferencesRequestBuilder Subdomains
+        {
+            get
+            {
+                return new HostSubdomainsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("subdomains"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Trackers.
         /// </summary>
         /// <returns>The <see cref="IHostTrackersCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -119,6 +179,18 @@ namespace Microsoft.Graph.SecurityNamespace
             get
             {
                 return new HostTrackersCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("trackers"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Whois.
+        /// </summary>
+        /// <returns>The <see cref="IWhoisRecordWithReferenceRequestBuilder"/>.</returns>
+        public IWhoisRecordWithReferenceRequestBuilder Whois
+        {
+            get
+            {
+                return new WhoisRecordWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("whois"), this.Client);
             }
         }
     

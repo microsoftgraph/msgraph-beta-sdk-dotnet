@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AppCredentialSignInActivities.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootAppCredentialSignInActivitiesCollectionRequestBuilder"/>.</returns>
+        public IReportRootAppCredentialSignInActivitiesCollectionRequestBuilder AppCredentialSignInActivities
+        {
+            get
+            {
+                return new ReportRootAppCredentialSignInActivitiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appCredentialSignInActivities"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ApplicationSignInDetailedSummary.
         /// </summary>
         /// <returns>The <see cref="IReportRootApplicationSignInDetailedSummaryCollectionRequestBuilder"/>.</returns>
@@ -83,6 +95,30 @@ namespace Microsoft.Graph
             get
             {
                 return new ReportRootCredentialUserRegistrationDetailsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("credentialUserRegistrationDetails"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ServicePrincipalSignInActivities.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootServicePrincipalSignInActivitiesCollectionRequestBuilder"/>.</returns>
+        public IReportRootServicePrincipalSignInActivitiesCollectionRequestBuilder ServicePrincipalSignInActivities
+        {
+            get
+            {
+                return new ReportRootServicePrincipalSignInActivitiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("servicePrincipalSignInActivities"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Sla.
+        /// </summary>
+        /// <returns>The <see cref="IServiceLevelAgreementRootRequestBuilder"/>.</returns>
+        public IServiceLevelAgreementRootRequestBuilder Sla
+        {
+            get
+            {
+                return new ServiceLevelAgreementRootRequestBuilder(this.AppendSegmentToRequestUrl("sla"), this.Client);
             }
         }
 
@@ -1770,7 +1806,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootGetGroupArchivedPrintJobsRequestBuilder"/>.</returns>
         public IReportRootGetGroupArchivedPrintJobsRequestBuilder GetGroupArchivedPrintJobs(
-            string groupId = null,
+            string groupId,
             DateTimeOffset? startDateTime = null,
             DateTimeOffset? endDateTime = null)
         {
@@ -1787,7 +1823,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootGetPrinterArchivedPrintJobsRequestBuilder"/>.</returns>
         public IReportRootGetPrinterArchivedPrintJobsRequestBuilder GetPrinterArchivedPrintJobs(
-            string printerId = null,
+            string printerId,
             DateTimeOffset? startDateTime = null,
             DateTimeOffset? endDateTime = null)
         {
@@ -1804,7 +1840,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IReportRootGetUserArchivedPrintJobsRequestBuilder"/>.</returns>
         public IReportRootGetUserArchivedPrintJobsRequestBuilder GetUserArchivedPrintJobs(
-            string userId = null,
+            string userId,
             DateTimeOffset? startDateTime = null,
             DateTimeOffset? endDateTime = null)
         {

@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets applications.
+        /// Applications which will trigger a custom authentication extension.
         /// </summary>
         [JsonPropertyName("applications")]
         public AuthenticationConditionsApplications Applications { get; set; }

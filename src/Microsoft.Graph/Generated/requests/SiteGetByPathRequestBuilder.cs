@@ -89,6 +89,16 @@ namespace Microsoft.Graph
                 interval);
         }
         /// <summary>
+        /// Gets the request builder for SiteGetAllSitesRequestBuilder.
+        /// </summary>
+        /// <returns>The <see cref="ISiteGetAllSitesRequestBuilder"/>.</returns>
+        public ISiteGetAllSitesRequestBuilder GetAllSites()
+        {
+            return new SiteGetAllSitesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAllSites"),
+                this.Client);
+        }
+        /// <summary>
         /// Gets the request builder for SiteGetApplicableContentTypesForListRequestBuilder.
         /// </summary>
         /// <param name="listId">A listId parameter for the OData method call.</param>
@@ -261,14 +271,14 @@ namespace Microsoft.Graph
         }
         /// <summary>
         /// Gets the request builder for Pages.
-        /// The collection of pages in the SitePages list in this site.
+        /// The collection of pages in the baseSitePages list in this site.
         /// </summary>
-        /// <returns>The <see cref="ISitePageRequestBuilder"/>.</returns>
-        public ISitePageRequestBuilder Pages
+        /// <returns>The <see cref="IBaseSitePageRequestBuilder"/>.</returns>
+        public IBaseSitePageRequestBuilder Pages
         {
             get
             {
-                return new SitePageRequestBuilder(this.AppendSegmentToRequestUrl("pages"), this.Client);
+                return new BaseSitePageRequestBuilder(this.AppendSegmentToRequestUrl("pages"), this.Client);
             }
         }
         /// <summary>

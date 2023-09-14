@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         public string AdditionalDetails { get; set; }
     
         /// <summary>
+        /// Gets or sets correlationId.
+        /// The unique identifier of the health check item-related activities. This identifier can be useful in troubleshooting.
+        /// </summary>
+        [JsonPropertyName("correlationId")]
+        public string CorrelationId { get; set; }
+    
+        /// <summary>
         /// Gets or sets displayName.
         /// The display name for this health check item.
         /// </summary>
@@ -65,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// The status of the health check item. Possible values are: pending, running, passed, failed, unknownFutureValue. Read-only.
+        /// The status of the health check item. Possible values are: pending, running, passed, failed, warning, informational, unknownFutureValue. Read-only.
         /// </summary>
         [JsonPropertyName("status")]
         public CloudPcOnPremisesConnectionStatus? Status { get; set; }

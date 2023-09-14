@@ -128,7 +128,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+        /// The display name for the service principal. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -462,7 +462,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owned objects.
-        /// Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
         [JsonPropertyName("ownedObjects")]
         public IServicePrincipalOwnedObjectsCollectionWithReferencesPage OwnedObjects { get; set; }
@@ -476,7 +476,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owners.
-        /// Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.
         /// </summary>
         [JsonPropertyName("owners")]
         public IServicePrincipalOwnersCollectionWithReferencesPage Owners { get; set; }

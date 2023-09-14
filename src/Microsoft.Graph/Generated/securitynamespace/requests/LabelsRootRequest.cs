@@ -246,6 +246,36 @@ namespace Microsoft.Graph.SecurityNamespace
 
             if (labelsRootToInitialize != null)
             {
+                if (labelsRootToInitialize.Authorities != null && labelsRootToInitialize.Authorities.CurrentPage != null)
+                {
+                    labelsRootToInitialize.Authorities.InitializeNextPageRequest(this.Client, labelsRootToInitialize.AuthoritiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    labelsRootToInitialize.Authorities.AdditionalData = labelsRootToInitialize.AdditionalData;
+                }
+                if (labelsRootToInitialize.Categories != null && labelsRootToInitialize.Categories.CurrentPage != null)
+                {
+                    labelsRootToInitialize.Categories.InitializeNextPageRequest(this.Client, labelsRootToInitialize.CategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    labelsRootToInitialize.Categories.AdditionalData = labelsRootToInitialize.AdditionalData;
+                }
+                if (labelsRootToInitialize.Citations != null && labelsRootToInitialize.Citations.CurrentPage != null)
+                {
+                    labelsRootToInitialize.Citations.InitializeNextPageRequest(this.Client, labelsRootToInitialize.CitationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    labelsRootToInitialize.Citations.AdditionalData = labelsRootToInitialize.AdditionalData;
+                }
+                if (labelsRootToInitialize.Departments != null && labelsRootToInitialize.Departments.CurrentPage != null)
+                {
+                    labelsRootToInitialize.Departments.InitializeNextPageRequest(this.Client, labelsRootToInitialize.DepartmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    labelsRootToInitialize.Departments.AdditionalData = labelsRootToInitialize.AdditionalData;
+                }
+                if (labelsRootToInitialize.FilePlanReferences != null && labelsRootToInitialize.FilePlanReferences.CurrentPage != null)
+                {
+                    labelsRootToInitialize.FilePlanReferences.InitializeNextPageRequest(this.Client, labelsRootToInitialize.FilePlanReferencesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    labelsRootToInitialize.FilePlanReferences.AdditionalData = labelsRootToInitialize.AdditionalData;
+                }
                 if (labelsRootToInitialize.RetentionLabels != null && labelsRootToInitialize.RetentionLabels.CurrentPage != null)
                 {
                     labelsRootToInitialize.RetentionLabels.InitializeNextPageRequest(this.Client, labelsRootToInitialize.RetentionLabelsNextLink);

@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets isCollapsed.
-        /// Indicates whether the current result is collapses when the collapseProperties property is used.
+        /// Indicates whether the current result is collapses when the collapseProperties property in the searchRequest is used.
         /// </summary>
         [JsonPropertyName("isCollapsed")]
         public bool? IsCollapsed { get; set; }

@@ -36,14 +36,14 @@ namespace Microsoft.Graph
         UnifiedGroup = 4,
 	
         /// <summary>
-        /// Unknown Future Value
-        /// </summary>
-        UnknownFutureValue = 16,
-	
-        /// <summary>
         /// Teamwork
         /// </summary>
         Teamwork = 8,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 16,
 	
     }
 }

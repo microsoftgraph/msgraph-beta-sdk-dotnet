@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets container text web part id.
+        /// The instance identifier of the container text webPart. It only works for inline standard webPart in rich text webParts.
+        /// </summary>
+        [JsonPropertyName("containerTextWebPartId")]
+        public string ContainerTextWebPartId { get; set; }
+    
+        /// <summary>
         /// Gets or sets data.
         /// Data of the webPart.
         /// </summary>
@@ -37,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets web part type.
-        /// A Guid which indicates the type of the webParts
+        /// A Guid that indicates the webPart type.
         /// </summary>
         [JsonPropertyName("webPartType")]
         public string WebPartType { get; set; }

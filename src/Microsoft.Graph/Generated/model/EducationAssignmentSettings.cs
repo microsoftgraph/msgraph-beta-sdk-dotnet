@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets submission animation disabled.
-        /// Indicates whether turn-in celebration animation will be shown. A value of true indicates that the animation will not be shown. Default value is false.
+        /// Indicates whether turn-in celebration animation will be shown. If true, the animation will not be shown. The default value is false.
         /// </summary>
         [JsonPropertyName("submissionAnimationDisabled")]
         public bool? SubmissionAnimationDisabled { get; set; }

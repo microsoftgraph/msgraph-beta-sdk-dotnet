@@ -63,7 +63,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// Name of the access review series. Supports $select and $orderBy. Required on create.
+        /// Name of the access review series. Supports $select and $orderby. Required on create.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

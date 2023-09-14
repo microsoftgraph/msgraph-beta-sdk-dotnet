@@ -23,20 +23,21 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets accountName.
-        /// The user account's displayed name.
+        /// The displayed name of the user account.
         /// </summary>
         [JsonPropertyName("accountName")]
         public string AccountName { get; set; }
     
         /// <summary>
         /// Gets or sets azureAdUserId.
-        /// The user object identifier in Azure AD.
+        /// The user object identifier in Azure Active Directory (Azure AD).
         /// </summary>
         [JsonPropertyName("azureAdUserId")]
         public string AzureAdUserId { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// The user display name in Azure AD.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

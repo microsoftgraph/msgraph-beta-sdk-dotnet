@@ -246,6 +246,12 @@ namespace Microsoft.Graph
 
             if (auditLogRootToInitialize != null)
             {
+                if (auditLogRootToInitialize.CustomSecurityAttributeAudits != null && auditLogRootToInitialize.CustomSecurityAttributeAudits.CurrentPage != null)
+                {
+                    auditLogRootToInitialize.CustomSecurityAttributeAudits.InitializeNextPageRequest(this.Client, auditLogRootToInitialize.CustomSecurityAttributeAuditsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    auditLogRootToInitialize.CustomSecurityAttributeAudits.AdditionalData = auditLogRootToInitialize.AdditionalData;
+                }
                 if (auditLogRootToInitialize.DirectoryAudits != null && auditLogRootToInitialize.DirectoryAudits.CurrentPage != null)
                 {
                     auditLogRootToInitialize.DirectoryAudits.InitializeNextPageRequest(this.Client, auditLogRootToInitialize.DirectoryAuditsNextLink);

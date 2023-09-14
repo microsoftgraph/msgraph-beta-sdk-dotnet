@@ -23,28 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets totalUserCount.
-        /// Total number of users accounts, excluding those that are blocked
+        /// Total number of users accounts, excluding those that are blocked.
         /// </summary>
         [JsonPropertyName("totalUserCount")]
         public Int64? TotalUserCount { get; set; }
     
         /// <summary>
         /// Gets or sets userRegistrationFeatureCounts.
-        /// Number of users registered or capable for Multi-Factor Authentication, Self-Service Password Reset and Passwordless Authentication.
+        /// Number of users registered or capable for multi-factor authentication, self-service password reset, and passwordless authentication.
         /// </summary>
         [JsonPropertyName("userRegistrationFeatureCounts")]
         public IEnumerable<UserRegistrationFeatureCount> UserRegistrationFeatureCounts { get; set; }
     
         /// <summary>
         /// Gets or sets userRoles.
-        /// User role type. Possible values are: all, privilegedAdmin, admin, user.
+        /// The role type of the user. Possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("userRoles")]
         public IncludedUserRoles? UserRoles { get; set; }
     
         /// <summary>
         /// Gets or sets userTypes.
-        /// User type. Possible values are: all, member, guest.
+        /// User type. Possible values are: all, member, guest, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("userTypes")]
         public IncludedUserTypes? UserTypes { get; set; }

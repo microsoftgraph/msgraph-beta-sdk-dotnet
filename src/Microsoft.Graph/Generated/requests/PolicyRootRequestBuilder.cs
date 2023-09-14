@@ -195,6 +195,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for FederatedTokenValidationPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IFederatedTokenValidationPolicyRequestBuilder"/>.</returns>
+        public IFederatedTokenValidationPolicyRequestBuilder FederatedTokenValidationPolicy
+        {
+            get
+            {
+                return new FederatedTokenValidationPolicyRequestBuilder(this.AppendSegmentToRequestUrl("federatedTokenValidationPolicy"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for HomeRealmDiscoveryPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootHomeRealmDiscoveryPoliciesCollectionRequestBuilder"/>.</returns>

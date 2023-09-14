@@ -63,6 +63,13 @@ namespace Microsoft.Graph
         public string FeatureUpdateVersion { get; set; }
     
         /// <summary>
+        /// Gets or sets install latest windows10on windows11ineligible device.
+        /// If true, the latest Microsoft Windows 10 update will be installed on devices ineligible for Microsoft Windows 11
+        /// </summary>
+        [JsonPropertyName("installLatestWindows10OnWindows11IneligibleDevice")]
+        public bool? InstallLatestWindows10OnWindows11IneligibleDevice { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// The date time that the profile was last modified.
         /// </summary>

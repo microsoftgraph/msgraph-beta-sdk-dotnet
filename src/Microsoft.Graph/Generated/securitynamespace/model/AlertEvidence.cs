@@ -23,10 +23,17 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets createdDateTime.
-        /// The time the evidence was created and added to the alert.
+        /// The date and time when the evidence was created and added to the alert. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets detailedRoles.
+        /// Detailed description of the entity role/s in an alert. Values are free-form.
+        /// </summary>
+        [JsonPropertyName("detailedRoles")]
+        public IEnumerable<string> DetailedRoles { get; set; }
     
         /// <summary>
         /// Gets or sets remediationStatus.
@@ -44,14 +51,14 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets roles.
-        /// The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role 'Attacker'.
+        /// The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role Attacker.
         /// </summary>
         [JsonPropertyName("roles")]
         public IEnumerable<EvidenceRole> Roles { get; set; }
     
         /// <summary>
         /// Gets or sets tags.
-        /// Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.
+        /// Array of custom tags associated with an evidence instance, for example, to denote a group of devices, high-value assets, etc.
         /// </summary>
         [JsonPropertyName("tags")]
         public IEnumerable<string> Tags { get; set; }

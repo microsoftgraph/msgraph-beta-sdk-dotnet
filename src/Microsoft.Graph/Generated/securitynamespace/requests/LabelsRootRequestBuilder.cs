@@ -51,6 +51,66 @@ namespace Microsoft.Graph.SecurityNamespace
         }
     
         /// <summary>
+        /// Gets the request builder for Authorities.
+        /// </summary>
+        /// <returns>The <see cref="ILabelsRootAuthoritiesCollectionRequestBuilder"/>.</returns>
+        public ILabelsRootAuthoritiesCollectionRequestBuilder Authorities
+        {
+            get
+            {
+                return new LabelsRootAuthoritiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("authorities"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Categories.
+        /// </summary>
+        /// <returns>The <see cref="ILabelsRootCategoriesCollectionRequestBuilder"/>.</returns>
+        public ILabelsRootCategoriesCollectionRequestBuilder Categories
+        {
+            get
+            {
+                return new LabelsRootCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("categories"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Citations.
+        /// </summary>
+        /// <returns>The <see cref="ILabelsRootCitationsCollectionRequestBuilder"/>.</returns>
+        public ILabelsRootCitationsCollectionRequestBuilder Citations
+        {
+            get
+            {
+                return new LabelsRootCitationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("citations"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Departments.
+        /// </summary>
+        /// <returns>The <see cref="ILabelsRootDepartmentsCollectionRequestBuilder"/>.</returns>
+        public ILabelsRootDepartmentsCollectionRequestBuilder Departments
+        {
+            get
+            {
+                return new LabelsRootDepartmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("departments"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for FilePlanReferences.
+        /// </summary>
+        /// <returns>The <see cref="ILabelsRootFilePlanReferencesCollectionRequestBuilder"/>.</returns>
+        public ILabelsRootFilePlanReferencesCollectionRequestBuilder FilePlanReferences
+        {
+            get
+            {
+                return new LabelsRootFilePlanReferencesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("filePlanReferences"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for RetentionLabels.
         /// </summary>
         /// <returns>The <see cref="ILabelsRootRetentionLabelsCollectionRequestBuilder"/>.</returns>

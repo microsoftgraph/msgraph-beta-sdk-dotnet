@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IVirtualEndpointAuditEventsCollectionRequestBuilder AuditEvents { get; }
 
         /// <summary>
+        /// Gets the request builder for BulkActions.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointBulkActionsCollectionRequestBuilder"/>.</returns>
+        IVirtualEndpointBulkActionsCollectionRequestBuilder BulkActions { get; }
+
+        /// <summary>
         /// Gets the request builder for CloudPCs.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointCloudPCsCollectionRequestBuilder"/>.</returns>
@@ -60,6 +66,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointExternalPartnerSettingsCollectionRequestBuilder"/>.</returns>
         IVirtualEndpointExternalPartnerSettingsCollectionRequestBuilder ExternalPartnerSettings { get; }
+
+        /// <summary>
+        /// Gets the request builder for FrontLineServicePlans.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointFrontLineServicePlansCollectionRequestBuilder"/>.</returns>
+        IVirtualEndpointFrontLineServicePlansCollectionRequestBuilder FrontLineServicePlans { get; }
 
         /// <summary>
         /// Gets the request builder for GalleryImages.

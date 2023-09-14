@@ -28,6 +28,13 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets name.
+        /// </summary>
+        [Obsolete("The name property is deprecated and will stop returning data on July 31, 2023. Please use the id property instead of this.")]
+        [JsonPropertyName("name")]
+        public string Name { get; set; }
+    
+        /// <summary>
         /// Gets or sets uri.
         /// The URI that can be used to access the service.
         /// </summary>

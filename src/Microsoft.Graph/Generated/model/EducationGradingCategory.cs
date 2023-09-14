@@ -22,12 +22,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
+        /// The name of the grading category.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets percentage weight.
+        /// The weight of the category; an integer between 0 and 100.
         /// </summary>
         [JsonPropertyName("percentageWeight")]
         public Int32? PercentageWeight { get; set; }

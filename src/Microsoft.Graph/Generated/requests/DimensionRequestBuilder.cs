@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type DimensionRequestBuilder.
     /// </summary>
-    public partial class DimensionRequestBuilder : EntityRequestBuilder, IDimensionRequestBuilder
+    public partial class DimensionRequestBuilder : BaseRequestBuilder, IDimensionRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IDimensionRequest Request()
+        public IDimensionRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IDimensionRequest Request(IEnumerable<Option> options)
+        public IDimensionRequest Request(IEnumerable<Option> options)
         {
             return new DimensionRequest(this.RequestUrl, this.Client, options);
         }

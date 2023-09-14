@@ -30,35 +30,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets ignore version detection.
-        /// A value indicating whether the app's version will be used to detect the app after it is installed on a device. Set this to true for apps that use a self-update feature. Set this to false to install the app when it is not already installed on the device, or if the deploying app's version number does not match the version that's already installed on the device.
+        /// When TRUE, indicates that the app's version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app's version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.
         /// </summary>
         [JsonPropertyName("ignoreVersionDetection")]
         public bool? IgnoreVersionDetection { get; set; }
     
         /// <summary>
         /// Gets or sets included apps.
-        /// The list of apps expected to be installed by the DMG.
+        /// The list of .apps expected to be installed by the DMG (Apple Disk Image)
         /// </summary>
         [JsonPropertyName("includedApps")]
         public IEnumerable<MacOSIncludedApp> IncludedApps { get; set; }
     
         /// <summary>
         /// Gets or sets minimum supported operating system.
-        /// The value for the minimum applicable operating system.
+        /// ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.
         /// </summary>
         [JsonPropertyName("minimumSupportedOperatingSystem")]
         public MacOSMinimumOperatingSystem MinimumSupportedOperatingSystem { get; set; }
     
         /// <summary>
         /// Gets or sets primary bundle id.
-        /// The primary CFBundleIdentifier of the DMG.
+        /// The bundleId of the primary .app in the DMG (Apple Disk Image). This maps to the CFBundleIdentifier in the app's bundle configuration.
         /// </summary>
         [JsonPropertyName("primaryBundleId")]
         public string PrimaryBundleId { get; set; }
     
         /// <summary>
         /// Gets or sets primary bundle version.
-        /// The primary CFBundleVersion of the DMG.
+        /// The version of the primary .app in the DMG (Apple Disk Image). This maps to the CFBundleShortVersion in the app's bundle configuration.
         /// </summary>
         [JsonPropertyName("primaryBundleVersion")]
         public string PrimaryBundleVersion { get; set; }

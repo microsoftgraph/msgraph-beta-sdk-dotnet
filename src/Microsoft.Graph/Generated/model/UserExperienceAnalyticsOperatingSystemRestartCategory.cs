@@ -64,5 +64,10 @@ namespace Microsoft.Graph
         /// </summary>
         Update = 8,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 9,
+	
     }
 }

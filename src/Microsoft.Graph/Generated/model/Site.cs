@@ -42,6 +42,12 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets is personal site.
+        /// </summary>
+        [JsonPropertyName("isPersonalSite")]
+        public bool? IsPersonalSite { get; set; }
+    
+        /// <summary>
         /// Gets or sets root.
         /// If present, indicates that this is the root site in the site collection. Read-only.
         /// </summary>
@@ -189,7 +195,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets pages.
-        /// The collection of pages in the SitePages list in this site.
+        /// The collection of pages in the baseSitePages list in this site.
         /// </summary>
         [JsonPropertyName("pages")]
         public ISitePagesCollectionPage Pages { get; set; }

@@ -61,6 +61,18 @@ namespace Microsoft.Graph
                 return new SolutionsRootBusinessScenariosCollectionRequestBuilder(this.AppendSegmentToRequestUrl("businessScenarios"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for VirtualEvents.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEventsRootRequestBuilder"/>.</returns>
+        public IVirtualEventsRootRequestBuilder VirtualEvents
+        {
+            get
+            {
+                return new VirtualEventsRootRequestBuilder(this.AppendSegmentToRequestUrl("virtualEvents"), this.Client);
+            }
+        }
     
     }
 }

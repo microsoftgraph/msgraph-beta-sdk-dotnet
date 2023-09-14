@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets steps.
+        /// Used to represent the decision associated with a single step in the approval process configured in approvalStage.
         /// </summary>
         [JsonPropertyName("steps")]
         public IApprovalStepsCollectionPage Steps { get; set; }

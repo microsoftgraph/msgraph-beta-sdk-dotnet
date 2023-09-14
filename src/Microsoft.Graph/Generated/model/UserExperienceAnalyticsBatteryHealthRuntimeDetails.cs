@@ -22,28 +22,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets active devices.
-        /// Number of active devices within the tenant. Valid values -2147483648 to 2147483647
+        /// Number of active devices within the tenant. Valid values 0 to 2147483647
         /// </summary>
         [JsonPropertyName("activeDevices")]
         public Int32? ActiveDevices { get; set; }
     
         /// <summary>
         /// Gets or sets battery runtime fair.
-        /// Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values -2147483648 to 2147483647
+        /// Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values 0 to 2147483647
         /// </summary>
         [JsonPropertyName("batteryRuntimeFair")]
         public Int32? BatteryRuntimeFair { get; set; }
     
         /// <summary>
         /// Gets or sets battery runtime good.
-        /// Number of devices  whose active runtime is greater than 5 hours. Valid values -2147483648 to 2147483647
+        /// Number of devices  whose active runtime is greater than 5 hours. Valid values 0 to 2147483647
         /// </summary>
         [JsonPropertyName("batteryRuntimeGood")]
         public Int32? BatteryRuntimeGood { get; set; }
     
         /// <summary>
         /// Gets or sets battery runtime poor.
-        /// Number of devices whose active runtime is lesser than 3 hours. Valid values -2147483648 to 2147483647
+        /// Number of devices whose active runtime is lesser than 3 hours. Valid values 0 to 2147483647
         /// </summary>
         [JsonPropertyName("batteryRuntimePoor")]
         public Int32? BatteryRuntimePoor { get; set; }

@@ -22,6 +22,12 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        [JsonPropertyName("id")]
+        public Guid? Id { get; set; }
+    
+        /// <summary>
         /// Gets or sets companies.
         /// </summary>
         [JsonPropertyName("companies")]

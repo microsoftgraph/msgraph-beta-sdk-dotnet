@@ -30,18 +30,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets assignee display name.
+        /// Display name of the subject that the incident applies to.
         /// </summary>
         [JsonPropertyName("assigneeDisplayName")]
         public string AssigneeDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets assignee id.
+        /// The identifier of the subject that the incident applies to.
         /// </summary>
         [JsonPropertyName("assigneeId")]
         public string AssigneeId { get; set; }
     
         /// <summary>
         /// Gets or sets assignee user principal name.
+        /// User principal name of the subject that the incident applies to. Applies to user principals.
         /// </summary>
         [JsonPropertyName("assigneeUserPrincipalName")]
         public string AssigneeUserPrincipalName { get; set; }
@@ -54,18 +57,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role definition id.
+        /// The identifier for the directory role definition that's in scope of this incident.
         /// </summary>
         [JsonPropertyName("roleDefinitionId")]
         public string RoleDefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets role display name.
+        /// The display name for the directory role.
         /// </summary>
         [JsonPropertyName("roleDisplayName")]
         public string RoleDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets role template id.
+        /// The globally unique identifier for the directory role.
         /// </summary>
         [JsonPropertyName("roleTemplateId")]
         public string RoleTemplateId { get; set; }

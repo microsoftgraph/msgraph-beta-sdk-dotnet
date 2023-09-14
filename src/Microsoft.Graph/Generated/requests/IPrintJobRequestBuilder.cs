@@ -73,7 +73,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPrintJobRedirectRequestBuilder"/>.</returns>
         IPrintJobRedirectRequestBuilder Redirect(
-            string destinationPrinterId = null,
+            string destinationPrinterId,
             PrintJobConfiguration configuration = null);
 
         /// <summary>

@@ -50,5 +50,17 @@ namespace Microsoft.Graph.WindowsUpdates
             return new QualityUpdateCatalogEntryRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for ProductRevisions.
+        /// </summary>
+        /// <returns>The <see cref="IQualityUpdateCatalogEntryProductRevisionsCollectionRequestBuilder"/>.</returns>
+        public IQualityUpdateCatalogEntryProductRevisionsCollectionRequestBuilder ProductRevisions
+        {
+            get
+            {
+                return new QualityUpdateCatalogEntryProductRevisionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("productRevisions"), this.Client);
+            }
+        }
+    
     }
 }

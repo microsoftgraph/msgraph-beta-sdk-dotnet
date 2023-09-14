@@ -20,6 +20,10 @@ namespace Microsoft.Graph.SecurityNamespace
     /// </summary>
     public partial interface IEdiscoveryNoncustodialDataSourceUpdateIndexRequest : Microsoft.Graph.IBaseRequest
     {
+        /// <summary>
+        /// Gets the request body.
+        /// </summary>
+        EdiscoveryNoncustodialDataSourceUpdateIndexRequestBody RequestBody { get; }
 
 
         /// <summary>

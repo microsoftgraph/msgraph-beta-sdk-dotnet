@@ -55,5 +55,10 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 32,
 	
+        /// <summary>
+        /// Authentication Transfer
+        /// </summary>
+        AuthenticationTransfer = 64,
+	
     }
 }

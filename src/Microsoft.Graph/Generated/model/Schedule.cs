@@ -98,6 +98,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets offer shift requests.
+        /// The offer requests for shifts in the schedule.
         /// </summary>
         [JsonPropertyName("offerShiftRequests")]
         public IScheduleOfferShiftRequestsCollectionPage OfferShiftRequests { get; set; }

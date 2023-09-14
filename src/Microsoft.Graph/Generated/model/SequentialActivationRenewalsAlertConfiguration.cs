@@ -30,12 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets sequential activation counter threshold.
+        /// The minimum number of activations within the timeIntervalBetweenActivations period to trigger an alert.
         /// </summary>
         [JsonPropertyName("sequentialActivationCounterThreshold")]
         public Int32? SequentialActivationCounterThreshold { get; set; }
     
         /// <summary>
         /// Gets or sets time interval between activations.
+        /// Time interval between activations to trigger an alert.
         /// </summary>
         [JsonPropertyName("timeIntervalBetweenActivations")]
         public Duration TimeIntervalBetweenActivations { get; set; }

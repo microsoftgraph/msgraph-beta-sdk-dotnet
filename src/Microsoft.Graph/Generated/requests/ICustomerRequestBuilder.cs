@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ICustomerRequestBuilder.
     /// </summary>
-    public partial interface ICustomerRequestBuilder : IEntityRequestBuilder
+    public partial interface ICustomerRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new ICustomerRequest Request();
+        ICustomerRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new ICustomerRequest Request(IEnumerable<Option> options);
+        ICustomerRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for Currency.

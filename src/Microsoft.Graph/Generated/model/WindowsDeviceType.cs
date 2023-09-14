@@ -45,5 +45,10 @@ namespace Microsoft.Graph
         /// </summary>
         Team = 8,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 16,
+	
     }
 }

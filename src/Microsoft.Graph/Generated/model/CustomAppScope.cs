@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets custom attributes.
+        /// An open dictionary type that holds workload-specific properties for the scope object.
         /// </summary>
         [JsonPropertyName("customAttributes")]
         public CustomAppScopeAttributesDictionary CustomAttributes { get; set; }

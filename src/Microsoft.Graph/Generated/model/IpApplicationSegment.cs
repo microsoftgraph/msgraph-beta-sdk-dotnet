@@ -40,6 +40,12 @@ namespace Microsoft.Graph
         [JsonPropertyName("port")]
         public Int32? Port { get; set; }
     
+        /// <summary>
+        /// Gets or sets ports.
+        /// </summary>
+        [JsonPropertyName("ports")]
+        public IEnumerable<string> Ports { get; set; }
+    
     }
 }
 

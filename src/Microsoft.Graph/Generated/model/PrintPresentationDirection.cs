@@ -10,11 +10,13 @@
 
 namespace Microsoft.Graph
 {
+    using System;
     using System.Text.Json.Serialization;
 
     /// <summary>
     /// The enum PrintPresentationDirection.
     /// </summary>
+    [Obsolete("The presentationDirection enum type is deprecated and will stop returning data on July 31, 2023. Please use the printMultipageLayout enum type instead of this.")]
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum PrintPresentationDirection
     {

@@ -75,30 +75,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceStatuses.
-        /// </summary>
-        /// <returns>The <see cref="IMobileAppDeviceStatusesCollectionRequestBuilder"/>.</returns>
-        public IMobileAppDeviceStatusesCollectionRequestBuilder DeviceStatuses
-        {
-            get
-            {
-                return new MobileAppDeviceStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("deviceStatuses"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for InstallSummary.
-        /// </summary>
-        /// <returns>The <see cref="IMobileAppInstallSummaryRequestBuilder"/>.</returns>
-        public IMobileAppInstallSummaryRequestBuilder InstallSummary
-        {
-            get
-            {
-                return new MobileAppInstallSummaryRequestBuilder(this.AppendSegmentToRequestUrl("installSummary"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for Relationships.
         /// </summary>
         /// <returns>The <see cref="IMobileAppRelationshipsCollectionRequestBuilder"/>.</returns>
@@ -107,18 +83,6 @@ namespace Microsoft.Graph
             get
             {
                 return new MobileAppRelationshipsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("relationships"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for UserStatuses.
-        /// </summary>
-        /// <returns>The <see cref="IMobileAppUserStatusesCollectionRequestBuilder"/>.</returns>
-        public IMobileAppUserStatusesCollectionRequestBuilder UserStatuses
-        {
-            get
-            {
-                return new MobileAppUserStatusesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userStatuses"), this.Client);
             }
         }
     
@@ -146,21 +110,6 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.updateRelationships"),
                 this.Client,
                 relationships);
-        }
-
-        /// <summary>
-        /// Gets the request builder for MobileAppGetRelatedAppStates.
-        /// </summary>
-        /// <returns>The <see cref="IMobileAppGetRelatedAppStatesRequestBuilder"/>.</returns>
-        public IMobileAppGetRelatedAppStatesRequestBuilder GetRelatedAppStates(
-            string userPrincipalName = null,
-            string deviceId = null)
-        {
-            return new MobileAppGetRelatedAppStatesRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getRelatedAppStates"),
-                this.Client,
-                userPrincipalName,
-                deviceId);
         }
     
     }

@@ -23,9 +23,16 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets alt sec id.
+        /// Not Supported.
         /// </summary>
         [JsonPropertyName("altSecId")]
         public string AltSecId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets cleanup scheduled date time.
+        /// </summary>
+        [JsonPropertyName("cleanupScheduledDateTime")]
+        public DateTimeOffset? CleanupScheduledDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets connected organization id.
@@ -50,7 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets object id.
-        /// The object identifier of the subject. null if the subject is not yet a user in the tenant.
+        /// The object identifier of the subject. null if the subject is not yet a user in the tenant. Alternate key.
         /// </summary>
         [JsonPropertyName("objectId")]
         public string ObjectId { get; set; }
@@ -70,6 +77,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets subject lifecycle.
+        /// The lifecycle of the subject user, if a guest. The possible values are: notDefined, notGoverned, governed, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("subjectLifecycle")]
         public AccessPackageSubjectLifecycle? SubjectLifecycle { get; set; }

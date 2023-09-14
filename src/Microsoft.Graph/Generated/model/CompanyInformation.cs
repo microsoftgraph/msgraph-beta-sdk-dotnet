@@ -17,7 +17,8 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Company Information.
     /// </summary>
-    public partial class CompanyInformation : Entity
+    [JsonConverter(typeof(DerivedTypeConverter<CompanyInformation>))]
+    public partial class CompanyInformation
     {
     
         /// <summary>
@@ -57,6 +58,12 @@ namespace Microsoft.Graph
         public string FaxNumber { get; set; }
     
         /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        [JsonPropertyName("id")]
+        public Guid? Id { get; set; }
+    
+        /// <summary>
         /// Gets or sets industry.
         /// </summary>
         [JsonPropertyName("industry")]
@@ -91,6 +98,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("website")]
         public string Website { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonPropertyName("@odata.type")]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

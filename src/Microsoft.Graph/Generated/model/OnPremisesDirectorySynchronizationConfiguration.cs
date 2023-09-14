@@ -29,6 +29,27 @@ namespace Microsoft.Graph
         public OnPremisesAccidentalDeletionPrevention AccidentalDeletionPrevention { get; set; }
     
         /// <summary>
+        /// Gets or sets anchorAttribute.
+        /// The anchor attribute allows customers to customize the property used to create source anchors for synchronization enabled objects.
+        /// </summary>
+        [JsonPropertyName("anchorAttribute")]
+        public string AnchorAttribute { get; set; }
+    
+        /// <summary>
+        /// Gets or sets applicationId.
+        /// The identifier of the on-premises directory synchronization client application that is configured for the tenant.
+        /// </summary>
+        [JsonPropertyName("applicationId")]
+        public string ApplicationId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets currentExportData.
+        /// Data for the current export run.
+        /// </summary>
+        [JsonPropertyName("currentExportData")]
+        public OnPremisesCurrentExportData CurrentExportData { get; set; }
+    
+        /// <summary>
         /// Gets or sets customerRequestedSynchronizationInterval.
         /// Interval of time that the customer requested the sync client waits between sync cycles.
         /// </summary>
@@ -36,11 +57,25 @@ namespace Microsoft.Graph
         public Duration CustomerRequestedSynchronizationInterval { get; set; }
     
         /// <summary>
+        /// Gets or sets synchronizationClientVersion.
+        /// Indicates the version of the on-premises directory synchronization application.
+        /// </summary>
+        [JsonPropertyName("synchronizationClientVersion")]
+        public string SynchronizationClientVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets synchronizationInterval.
         /// Interval of time the sync client should honor between sync cycles
         /// </summary>
         [JsonPropertyName("synchronizationInterval")]
         public Duration SynchronizationInterval { get; set; }
+    
+        /// <summary>
+        /// Gets or sets writebackConfiguration.
+        /// Configuration to control how cloud created or owned objects are synchronized back to the on-premises directory.
+        /// </summary>
+        [JsonPropertyName("writebackConfiguration")]
+        public OnPremisesWritebackConfiguration WritebackConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

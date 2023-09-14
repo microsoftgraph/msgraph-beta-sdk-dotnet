@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets certificationControls.
+        /// Collection of the certification controls associated with the certification.
         /// </summary>
         [JsonPropertyName("certificationControls")]
         public IEnumerable<CertificationControl> CertificationControls { get; set; }
     
         /// <summary>
         /// Gets or sets certificationName.
+        /// The name of the compliance certification, for example, ISO 27018:2014, GDPR, FedRAMP, and NIST 800-171.
         /// </summary>
         [JsonPropertyName("certificationName")]
         public string CertificationName { get; set; }

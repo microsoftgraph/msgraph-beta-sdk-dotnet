@@ -258,23 +258,11 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     mobileAppToInitialize.Categories.AdditionalData = mobileAppToInitialize.AdditionalData;
                 }
-                if (mobileAppToInitialize.DeviceStatuses != null && mobileAppToInitialize.DeviceStatuses.CurrentPage != null)
-                {
-                    mobileAppToInitialize.DeviceStatuses.InitializeNextPageRequest(this.Client, mobileAppToInitialize.DeviceStatusesNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    mobileAppToInitialize.DeviceStatuses.AdditionalData = mobileAppToInitialize.AdditionalData;
-                }
                 if (mobileAppToInitialize.Relationships != null && mobileAppToInitialize.Relationships.CurrentPage != null)
                 {
                     mobileAppToInitialize.Relationships.InitializeNextPageRequest(this.Client, mobileAppToInitialize.RelationshipsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     mobileAppToInitialize.Relationships.AdditionalData = mobileAppToInitialize.AdditionalData;
-                }
-                if (mobileAppToInitialize.UserStatuses != null && mobileAppToInitialize.UserStatuses.CurrentPage != null)
-                {
-                    mobileAppToInitialize.UserStatuses.InitializeNextPageRequest(this.Client, mobileAppToInitialize.UserStatusesNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    mobileAppToInitialize.UserStatuses.AdditionalData = mobileAppToInitialize.AdditionalData;
                 }
 
             }

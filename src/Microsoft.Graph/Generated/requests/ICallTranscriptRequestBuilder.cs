@@ -43,5 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ICallTranscriptMetadataContentRequestBuilder"/>.</returns>
         ICallTranscriptMetadataContentRequestBuilder MetadataContent { get; }
     
+        
+    
     }
 }

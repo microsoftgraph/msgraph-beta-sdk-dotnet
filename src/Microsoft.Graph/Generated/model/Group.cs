@@ -73,14 +73,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+        /// The display name for the group. Required. Maximum length is 256 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets expiration date time.
-        /// Timestamp of when the group is set to expire. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
+        /// Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.
         /// </summary>
         [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
@@ -115,6 +115,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is management restricted.
+        /// Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a group that's a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.
         /// </summary>
         [JsonPropertyName("isManagementRestricted")]
         public bool? IsManagementRestricted { get; set; }
@@ -274,6 +275,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service provisioning errors.
+        /// Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).
         /// </summary>
         [JsonPropertyName("serviceProvisioningErrors")]
         public IEnumerable<ServiceProvisioningError> ServiceProvisioningErrors { get; set; }
@@ -286,8 +288,14 @@ namespace Microsoft.Graph
         public string Theme { get; set; }
     
         /// <summary>
+        /// Gets or sets unique name.
+        /// </summary>
+        [JsonPropertyName("uniqueName")]
+        public string UniqueName { get; set; }
+    
+        /// <summary>
         /// Gets or sets visibility.
-        /// Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. See group visibility options to learn more. Returned by default. Nullable.
+        /// Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can't be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.
         /// </summary>
         [JsonPropertyName("visibility")]
         public string Visibility { get; set; }

@@ -35,5 +35,10 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
         /// </summary>
         UnknownFutureValue = 4,
 	
+        /// <summary>
+        /// Mover
+        /// </summary>
+        Mover = 8,
+	
     }
 }

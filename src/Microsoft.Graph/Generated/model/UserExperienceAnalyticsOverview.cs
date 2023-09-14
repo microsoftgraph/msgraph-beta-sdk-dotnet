@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets insights.
-        /// The user experience analytics insights.
+        /// The user experience analytics insights. Read-only.
         /// </summary>
         [JsonPropertyName("insights")]
         public IEnumerable<UserExperienceAnalyticsInsight> Insights { get; set; }

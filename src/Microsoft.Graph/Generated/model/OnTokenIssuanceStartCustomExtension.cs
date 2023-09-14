@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets claims for token configuration.
+        /// Collection of claims to be returned by the API called by this custom authentication extension.
         /// </summary>
         [JsonPropertyName("claimsForTokenConfiguration")]
         public IEnumerable<OnTokenIssuanceStartReturnClaim> ClaimsForTokenConfiguration { get; set; }

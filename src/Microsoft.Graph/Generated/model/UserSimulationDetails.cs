@@ -57,6 +57,13 @@ namespace Microsoft.Graph
         public bool? IsCompromised { get; set; }
     
         /// <summary>
+        /// Gets or sets latestSimulationActivity.
+        /// Indicates latest user activity.
+        /// </summary>
+        [JsonPropertyName("latestSimulationActivity")]
+        public string LatestSimulationActivity { get; set; }
+    
+        /// <summary>
         /// Gets or sets reportedPhishDateTime.
         /// Date and time when a user reported the delivered payload as phishing in the attack simulation and training campaign.
         /// </summary>

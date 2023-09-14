@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.
+        /// The Azure AD display name of the customer tenant. Read-only. Supports $orderby.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

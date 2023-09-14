@@ -31,7 +31,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets source.
-        /// The source that provides this indicator. The possible values are: microsoftDefenderThreatIntelligence, openSourceIntelligence, public, unknownFutureValue.
+        /// The source that provides this indicator. The possible values are: microsoft, osint, public, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("source")]
         public IndicatorSource? Source { get; set; }

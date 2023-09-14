@@ -17,7 +17,8 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Payment Method.
     /// </summary>
-    public partial class PaymentMethod : Entity
+    [JsonConverter(typeof(DerivedTypeConverter<PaymentMethod>))]
+    public partial class PaymentMethod
     {
     
         /// <summary>
@@ -33,10 +34,28 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        [JsonPropertyName("id")]
+        public Guid? Id { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonPropertyName("@odata.type")]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

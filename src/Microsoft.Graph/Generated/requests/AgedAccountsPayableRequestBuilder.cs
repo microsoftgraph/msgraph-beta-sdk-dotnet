@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type AgedAccountsPayableRequestBuilder.
     /// </summary>
-    public partial class AgedAccountsPayableRequestBuilder : EntityRequestBuilder, IAgedAccountsPayableRequestBuilder
+    public partial class AgedAccountsPayableRequestBuilder : BaseRequestBuilder, IAgedAccountsPayableRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IAgedAccountsPayableRequest Request()
+        public IAgedAccountsPayableRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IAgedAccountsPayableRequest Request(IEnumerable<Option> options)
+        public IAgedAccountsPayableRequest Request(IEnumerable<Option> options)
         {
             return new AgedAccountsPayableRequest(this.RequestUrl, this.Client, options);
         }

@@ -135,6 +135,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DomainPromoteToInitial.
+        /// </summary>
+        /// <returns>The <see cref="IDomainPromoteToInitialRequestBuilder"/>.</returns>
+        public IDomainPromoteToInitialRequestBuilder PromoteToInitial()
+        {
+            return new DomainPromoteToInitialRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.promoteToInitial"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for DomainVerify.
         /// </summary>
         /// <returns>The <see cref="IDomainVerifyRequestBuilder"/>.</returns>

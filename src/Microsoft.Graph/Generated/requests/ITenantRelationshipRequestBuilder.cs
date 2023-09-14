@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         ITenantRelationshipRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for MultiTenantOrganization.
+        /// </summary>
+        /// <returns>The <see cref="IMultiTenantOrganizationRequestBuilder"/>.</returns>
+        IMultiTenantOrganizationRequestBuilder MultiTenantOrganization { get; }
+
+        /// <summary>
         /// Gets the request builder for ManagedTenants.
         /// </summary>
         /// <returns>The <see cref="Microsoft.Graph.ManagedTenants.IManagedTenantRequestBuilder"/>.</returns>

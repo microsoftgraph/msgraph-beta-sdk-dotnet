@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PrinterDocumentConfiguration.
     /// </summary>
+    [Obsolete("The printerDocumentConfiguration type is deprecated and will stop returning data on July 31, 2023. Please use the printJobConfiguration instead of this.")]
     [JsonConverter(typeof(DerivedTypeConverter<PrinterDocumentConfiguration>))]
     public partial class PrinterDocumentConfiguration
     {
@@ -54,6 +55,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets feedDirection.
         /// </summary>
+        [Obsolete("The printerFeedDirection enum type is deprecated and will stop returning data on July 31, 2023. Please use the printerFeedOrientation enum type instead of this.")]
         [JsonPropertyName("feedDirection")]
         public PrinterFeedDirection? FeedDirection { get; set; }
     

@@ -21,20 +21,20 @@ namespace Microsoft.Graph
     public partial interface ISitePagesCollectionRequest : IBaseRequest
     {
         /// <summary>
-        /// Adds the specified SitePage to the collection via POST.
+        /// Adds the specified BaseSitePage to the collection via POST.
         /// </summary>
-        /// <param name="sitePage">The SitePage to add.</param>
+        /// <param name="baseSitePage">The BaseSitePage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created SitePage.</returns>
-        System.Threading.Tasks.Task<SitePage> AddAsync(SitePage sitePage, CancellationToken cancellationToken = default);
+        /// <returns>The created BaseSitePage.</returns>
+        System.Threading.Tasks.Task<BaseSitePage> AddAsync(BaseSitePage baseSitePage, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Adds the specified SitePage to the collection via POST and returns a <see cref="GraphResponse{SitePage}"/> object of the request.
+        /// Adds the specified BaseSitePage to the collection via POST and returns a <see cref="GraphResponse{BaseSitePage}"/> object of the request.
         /// </summary>
-        /// <param name="sitePage">The SitePage to add.</param>
+        /// <param name="baseSitePage">The BaseSitePage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{SitePage}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<SitePage>> AddResponseAsync(SitePage sitePage, CancellationToken cancellationToken = default);
+        /// <returns>The <see cref="GraphResponse{BaseSitePage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BaseSitePage>> AddResponseAsync(BaseSitePage baseSitePage, CancellationToken cancellationToken = default);
 
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        ISitePagesCollectionRequest Expand(Expression<Func<SitePage, object>> expandExpression);
+        ISitePagesCollectionRequest Expand(Expression<Func<BaseSitePage, object>> expandExpression);
 
         /// <summary>
         /// Adds the specified select value to the request.
@@ -77,7 +77,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        ISitePagesCollectionRequest Select(Expression<Func<SitePage, object>> selectExpression);
+        ISitePagesCollectionRequest Select(Expression<Func<BaseSitePage, object>> selectExpression);
 
         /// <summary>
         /// Adds the specified top value to the request.

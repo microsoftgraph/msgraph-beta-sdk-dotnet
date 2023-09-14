@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets unsupportedOSversionDeviceCount.
-        /// The count of Windows 10 devices that have unsupported OS versions.
+        /// The count of Windows 10 devices that have unsupported OS versions. Read-only.
         /// </summary>
         [JsonPropertyName("unsupportedOSversionDeviceCount")]
         public Int32? UnsupportedOSversionDeviceCount { get; set; }

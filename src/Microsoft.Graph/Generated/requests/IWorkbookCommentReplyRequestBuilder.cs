@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IWorkbookCommentReplyRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for @Task.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookDocumentTaskRequestBuilder"/>.</returns>
+        IWorkbookDocumentTaskRequestBuilder @Task { get; }
+    
     }
 }

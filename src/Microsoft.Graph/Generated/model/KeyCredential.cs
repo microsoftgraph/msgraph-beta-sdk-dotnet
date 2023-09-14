@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets key.
-        /// Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.
+        /// Value for the key credential. Should be a Base64 encoded value. Returned only on $select for a single object, that is, GET applications/{applicationId}?$select=keyCredentials or GET servicePrincipals/{servicePrincipalId}?$select=keyCredentials; otherwise, it is always null.  From a .cer certificate, you can read the key using the Convert.ToBase64String() method. For more information, see Get the certificate key.
         /// </summary>
         [JsonPropertyName("key")]
         public byte[] Key { get; set; }
@@ -65,14 +65,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets type.
-        /// The type of key credential; for example, Symmetric, AsymmetricX509Cert.
+        /// The type of key credential; for example, Symmetric, AsymmetricX509Cert, or X509CertAndPassword.
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }
     
         /// <summary>
         /// Gets or sets usage.
-        /// A string that describes the purpose for which the key can be used; for example, Verify.
+        /// A string that describes the purpose for which the key can be used; for example, None​, Verify​, PairwiseIdentifier​, Delegation​, Decrypt​, Encrypt​, HashedIdentifier​, SelfSignedTls, or Sign. If usage is Sign​, the type should be X509CertAndPassword​, and the passwordCredentials​ for signing should be defined.
         /// </summary>
         [JsonPropertyName("usage")]
         public string Usage { get; set; }

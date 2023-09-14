@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets total user count.
-        /// Provides the total user count in the tenant.
+        /// Provides the count of users with accountEnabled set to true in the tenant.
         /// </summary>
         [JsonPropertyName("totalUserCount")]
         public Int64? TotalUserCount { get; set; }

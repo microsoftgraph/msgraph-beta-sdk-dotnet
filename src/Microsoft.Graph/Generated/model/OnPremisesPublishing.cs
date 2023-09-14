@@ -64,6 +64,12 @@ namespace Microsoft.Graph
         public string InternalUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets isAccessibleViaZTNAClient.
+        /// </summary>
+        [JsonPropertyName("isAccessibleViaZTNAClient")]
+        public bool? IsAccessibleViaZTNAClient { get; set; }
+    
+        /// <summary>
         /// Gets or sets isBackendCertificateValidationEnabled.
         /// Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.
         /// </summary>

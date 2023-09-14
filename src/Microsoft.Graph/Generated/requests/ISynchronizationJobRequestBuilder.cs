@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new ISynchronizationJobRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for BulkUpload.
+        /// </summary>
+        /// <returns>The <see cref="IBulkUploadRequestBuilder"/>.</returns>
+        IBulkUploadRequestBuilder BulkUpload { get; }
+
+        /// <summary>
         /// Gets the request builder for Schema.
         /// </summary>
         /// <returns>The <see cref="ISynchronizationSchemaRequestBuilder"/>.</returns>
@@ -42,12 +48,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISynchronizationJobStartRequestBuilder"/>.</returns>
         ISynchronizationJobStartRequestBuilder Start();
-
-        /// <summary>
-        /// Gets the request builder for SynchronizationJobStop.
-        /// </summary>
-        /// <returns>The <see cref="ISynchronizationJobStopRequestBuilder"/>.</returns>
-        ISynchronizationJobStopRequestBuilder Stop();
 
         /// <summary>
         /// Gets the request builder for SynchronizationJobPause.

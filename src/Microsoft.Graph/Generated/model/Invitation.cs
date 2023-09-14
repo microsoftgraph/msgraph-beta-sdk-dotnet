@@ -90,6 +90,20 @@ namespace Microsoft.Graph
         [JsonPropertyName("invitedUser")]
         public User InvitedUser { get; set; }
     
+        /// <summary>
+        /// Gets or sets invited user sponsors.
+        /// The users or groups who are sponsors of the invited user. Sponsors are users and groups that are responsible for guest users' privileges in the tenant and for keeping the guest users' information and access up to date.
+        /// </summary>
+        [JsonPropertyName("invitedUserSponsors")]
+        public IInvitationInvitedUserSponsorsCollectionWithReferencesPage InvitedUserSponsors { get; set; }
+
+        /// <summary>
+        /// Gets or sets invitedUserSponsorsNextLink.
+        /// </summary>
+        [JsonPropertyName("invitedUserSponsors@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string InvitedUserSponsorsNextLink { get; set; }
+    
     }
 }
 

@@ -25,6 +25,11 @@ namespace Microsoft.Graph.WindowsUpdates
         AlertError = 0,
 	
         /// <summary>
+        /// Offer Fallback
+        /// </summary>
+        OfferFallback = 1,
+	
+        /// <summary>
         /// Pause Deployment
         /// </summary>
         PauseDeployment = 3,

@@ -17,7 +17,8 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Dimension.
     /// </summary>
-    public partial class Dimension : Entity
+    [JsonConverter(typeof(DerivedTypeConverter<Dimension>))]
+    public partial class Dimension
     {
     
         /// <summary>
@@ -31,6 +32,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        [JsonPropertyName("id")]
+        public Guid? Id { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
@@ -50,6 +57,18 @@ namespace Microsoft.Graph
         [JsonPropertyName("dimensionValues@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string DimensionValuesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonPropertyName("@odata.type")]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

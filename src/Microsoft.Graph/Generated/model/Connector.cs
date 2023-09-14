@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public ConnectorStatus? Status { get; set; }
     
         /// <summary>
+        /// Gets or sets version.
+        /// </summary>
+        [JsonPropertyName("version")]
+        public string Version { get; set; }
+    
+        /// <summary>
         /// Gets or sets member of.
         /// The connectorGroup that the connector is a member of. Read-only.
         /// </summary>

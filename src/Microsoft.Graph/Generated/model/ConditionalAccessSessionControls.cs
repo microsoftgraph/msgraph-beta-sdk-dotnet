@@ -58,6 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets secureSignInSession.
+        /// Session control to require sign in sessions to be bound to a device.
         /// </summary>
         [JsonPropertyName("secureSignInSession")]
         public SecureSignInSessionControl SecureSignInSession { get; set; }

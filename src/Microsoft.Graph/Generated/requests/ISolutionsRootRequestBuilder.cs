@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ISolutionsRootBusinessScenariosCollectionRequestBuilder"/>.</returns>
         ISolutionsRootBusinessScenariosCollectionRequestBuilder BusinessScenarios { get; }
+
+        /// <summary>
+        /// Gets the request builder for VirtualEvents.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEventsRootRequestBuilder"/>.</returns>
+        IVirtualEventsRootRequestBuilder VirtualEvents { get; }
     
     }
 }

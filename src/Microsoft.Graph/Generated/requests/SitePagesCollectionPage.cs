@@ -14,7 +14,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type SitePagesCollectionPage.
     /// </summary>
-    public partial class SitePagesCollectionPage : CollectionPage<SitePage>, ISitePagesCollectionPage
+    public partial class SitePagesCollectionPage : CollectionPage<BaseSitePage>, ISitePagesCollectionPage
     {
         /// <summary>
         /// Gets the next page <see cref="ISitePagesCollectionRequest"/> instance.

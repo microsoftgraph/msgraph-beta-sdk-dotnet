@@ -49,6 +49,20 @@ namespace Microsoft.Graph
         public string AuthenticationEventListenersNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets authentication events flows.
+        /// Represents the entry point for self-service sign up and sign in user flows in both Azure AD workforce and customer tenants.
+        /// </summary>
+        [JsonPropertyName("authenticationEventsFlows")]
+        public IIdentityContainerAuthenticationEventsFlowsCollectionPage AuthenticationEventsFlows { get; set; }
+
+        /// <summary>
+        /// Gets or sets authenticationEventsFlowsNextLink.
+        /// </summary>
+        [JsonPropertyName("authenticationEventsFlows@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AuthenticationEventsFlowsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets b2c user flows.
         /// Represents entry point for B2C identity userflows.
         /// </summary>

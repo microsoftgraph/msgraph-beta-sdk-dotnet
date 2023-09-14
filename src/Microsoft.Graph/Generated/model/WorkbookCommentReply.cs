@@ -34,6 +34,13 @@ namespace Microsoft.Graph
         [JsonPropertyName("contentType")]
         public string ContentType { get; set; }
     
+        /// <summary>
+        /// Gets or sets task.
+        /// The task associated with the comment thread.
+        /// </summary>
+        [JsonPropertyName("task")]
+        public WorkbookDocumentTask @Task { get; set; }
+    
     }
 }
 

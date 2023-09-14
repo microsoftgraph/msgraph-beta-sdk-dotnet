@@ -56,10 +56,10 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets metadata.
-        /// Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
+        /// Metadata for the given object.
         /// </summary>
         [JsonPropertyName("metadata")]
-        public IEnumerable<MetadataEntry> Metadata { get; set; }
+        public IEnumerable<AttributeDefinitionMetadataEntry> Metadata { get; set; }
     
         /// <summary>
         /// Gets or sets multivalued.

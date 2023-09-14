@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets unit.
-        /// The unit of the user experience analytics metric.
+        /// The unit of the user experience analytics metric. Examples: none, percentage, count, seconds, score.
         /// </summary>
         [JsonPropertyName("unit")]
         public string Unit { get; set; }

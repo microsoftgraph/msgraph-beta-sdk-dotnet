@@ -23,14 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets bundleId.
-        /// The CFBundleIdentifier.
+        /// The bundleId of the app. This maps to the CFBundleIdentifier in the app's bundle configuration.
         /// </summary>
         [JsonPropertyName("bundleId")]
         public string BundleId { get; set; }
     
         /// <summary>
         /// Gets or sets bundleVersion.
-        /// The CFBundleVersion.
+        /// The version of the app. This maps to the CFBundleShortVersion in the app's bundle configuration.
         /// </summary>
         [JsonPropertyName("bundleVersion")]
         public string BundleVersion { get; set; }

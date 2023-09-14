@@ -148,6 +148,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets module url.
+        /// The URL of the module from which to access the assignment.
+        /// </summary>
+        [JsonPropertyName("moduleUrl")]
+        public string ModuleUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets notification channel url.
         /// Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.
         /// </summary>

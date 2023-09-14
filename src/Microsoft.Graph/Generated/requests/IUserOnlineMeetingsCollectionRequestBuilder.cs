@@ -47,5 +47,17 @@ namespace Microsoft.Graph
             MeetingParticipants participants = null,
             DateTimeOffset? startDateTime = null,
             string subject = null);
+
+        /// <summary>
+        /// Gets the request builder for OnlineMeetingGetAllRecordings.
+        /// </summary>
+        /// <returns>The <see cref="IOnlineMeetingGetAllRecordingsRequestBuilder"/>.</returns>
+        IOnlineMeetingGetAllRecordingsRequestBuilder GetAllRecordings();
+
+        /// <summary>
+        /// Gets the request builder for OnlineMeetingGetAllTranscripts.
+        /// </summary>
+        /// <returns>The <see cref="IOnlineMeetingGetAllTranscriptsRequestBuilder"/>.</returns>
+        IOnlineMeetingGetAllTranscriptsRequestBuilder GetAllTranscripts();
     }
 }

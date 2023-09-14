@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets claimIdInApiResponse.
+        /// The identifier of the claim returned by an API that is to be add to a token being issued.
         /// </summary>
         [JsonPropertyName("claimIdInApiResponse")]
         public string ClaimIdInApiResponse { get; set; }

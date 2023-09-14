@@ -48,15 +48,15 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets an <see cref="ISitePageRequestBuilder"/> for the specified SiteSitePage.
+        /// Gets an <see cref="IBaseSitePageRequestBuilder"/> for the specified SiteBaseSitePage.
         /// </summary>
-        /// <param name="id">The ID for the SiteSitePage.</param>
-        /// <returns>The <see cref="ISitePageRequestBuilder"/>.</returns>
-        public ISitePageRequestBuilder this[string id]
+        /// <param name="id">The ID for the SiteBaseSitePage.</param>
+        /// <returns>The <see cref="IBaseSitePageRequestBuilder"/>.</returns>
+        public IBaseSitePageRequestBuilder this[string id]
         {
             get
             {
-                return new SitePageRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
+                return new BaseSitePageRequestBuilder(this.AppendSegmentToRequestUrl(id), this.Client);
             }
         }
 

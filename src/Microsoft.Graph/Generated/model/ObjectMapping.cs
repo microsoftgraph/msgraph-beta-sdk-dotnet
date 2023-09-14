@@ -47,7 +47,7 @@ namespace Microsoft.Graph
         /// Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.
         /// </summary>
         [JsonPropertyName("metadata")]
-        public IEnumerable<MetadataEntry> Metadata { get; set; }
+        public IEnumerable<ObjectMappingMetadataEntry> Metadata { get; set; }
     
         /// <summary>
         /// Gets or sets name.

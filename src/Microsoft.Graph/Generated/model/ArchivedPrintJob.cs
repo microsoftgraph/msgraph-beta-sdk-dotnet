@@ -106,6 +106,13 @@ namespace Microsoft.Graph
         public string PrinterId { get; set; }
     
         /// <summary>
+        /// Gets or sets printerName.
+        /// The printer name that the job was queued for. Read-only.
+        /// </summary>
+        [JsonPropertyName("printerName")]
+        public string PrinterName { get; set; }
+    
+        /// <summary>
         /// Gets or sets processingState.
         /// The print job's final processing state. Read-only.
         /// </summary>

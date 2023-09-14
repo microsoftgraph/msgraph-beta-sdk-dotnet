@@ -22,10 +22,10 @@
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageReleaseNotes>
-- Removes incorrect deprecation notice on User object from the 10th May 2023 metadata snapshot   
+- Updated models and request builders from 13th September 2023 metadata snapshot   
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
-    <VersionPrefix>4.73.1</VersionPrefix>
+    <VersionPrefix>4.74.0</VersionPrefix>
     <!-- adds a version suffix if the Prerelease environment variable is set. BUILD_BUILDID is an
     environment variable set by Azure pipelines from the build. We can use the buildid to correlate
     which commit was used to generate the preview build. -->

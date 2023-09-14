@@ -252,6 +252,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     virtualEndpointToInitialize.AuditEvents.AdditionalData = virtualEndpointToInitialize.AdditionalData;
                 }
+                if (virtualEndpointToInitialize.BulkActions != null && virtualEndpointToInitialize.BulkActions.CurrentPage != null)
+                {
+                    virtualEndpointToInitialize.BulkActions.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.BulkActionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    virtualEndpointToInitialize.BulkActions.AdditionalData = virtualEndpointToInitialize.AdditionalData;
+                }
                 if (virtualEndpointToInitialize.CloudPCs != null && virtualEndpointToInitialize.CloudPCs.CurrentPage != null)
                 {
                     virtualEndpointToInitialize.CloudPCs.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.CloudPCsNextLink);
@@ -269,6 +275,12 @@ namespace Microsoft.Graph
                     virtualEndpointToInitialize.ExternalPartnerSettings.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.ExternalPartnerSettingsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     virtualEndpointToInitialize.ExternalPartnerSettings.AdditionalData = virtualEndpointToInitialize.AdditionalData;
+                }
+                if (virtualEndpointToInitialize.FrontLineServicePlans != null && virtualEndpointToInitialize.FrontLineServicePlans.CurrentPage != null)
+                {
+                    virtualEndpointToInitialize.FrontLineServicePlans.InitializeNextPageRequest(this.Client, virtualEndpointToInitialize.FrontLineServicePlansNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    virtualEndpointToInitialize.FrontLineServicePlans.AdditionalData = virtualEndpointToInitialize.AdditionalData;
                 }
                 if (virtualEndpointToInitialize.GalleryImages != null && virtualEndpointToInitialize.GalleryImages.CurrentPage != null)
                 {

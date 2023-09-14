@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ItemRequestBuilder.
     /// </summary>
-    public partial class ItemRequestBuilder : EntityRequestBuilder, IItemRequestBuilder
+    public partial class ItemRequestBuilder : BaseRequestBuilder, IItemRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IItemRequest Request()
+        public IItemRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IItemRequest Request(IEnumerable<Option> options)
+        public IItemRequest Request(IEnumerable<Option> options)
         {
             return new ItemRequest(this.RequestUrl, this.Client, options);
         }

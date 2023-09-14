@@ -37,6 +37,13 @@ namespace Microsoft.Graph
         public bool? AccountsBlockModification { get; set; }
     
         /// <summary>
+        /// Gets or sets android device owner delegated scope app settings.
+        /// Specifies the list of managed apps with app details and its associated delegated scope(s). This collection can contain a maximum of 500 elements.
+        /// </summary>
+        [JsonPropertyName("androidDeviceOwnerDelegatedScopeAppSettings")]
+        public IEnumerable<AndroidDeviceOwnerDelegatedScopeAppSetting> AndroidDeviceOwnerDelegatedScopeAppSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets apps allow install from unknown sources.
         /// Indicates whether or not the user is allowed to enable to unknown sources setting.
         /// </summary>

@@ -22,12 +22,6 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
-        /// Gets or sets action.
-        /// </summary>
-        [JsonPropertyName("action")]
-        public DlpAction? Action { get; set; }
-    
-        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets handler.
+        /// The handler to invoke when conditions are met for this onTokenIssuanceStartListener.
         /// </summary>
         [JsonPropertyName("handler")]
         public OnTokenIssuanceStartHandler Handler { get; set; }

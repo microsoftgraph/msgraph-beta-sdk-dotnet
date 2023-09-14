@@ -44,5 +44,10 @@ namespace Microsoft.Graph
         /// </summary>
         MfaCapable = 4,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 5,
+	
     }
 }

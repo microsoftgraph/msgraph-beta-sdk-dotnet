@@ -76,6 +76,12 @@ namespace Microsoft.Graph
         public string AttributeSetsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets certificate authorities.
+        /// </summary>
+        [JsonPropertyName("certificateAuthorities")]
+        public CertificateAuthorityPath CertificateAuthorities { get; set; }
+    
+        /// <summary>
         /// Gets or sets custom security attribute definitions.
         /// Schema of a custom security attributes (key-value pairs).
         /// </summary>
@@ -169,6 +175,20 @@ namespace Microsoft.Graph
         [JsonPropertyName("sharedEmailDomains@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string SharedEmailDomainsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subscriptions.
+        /// List of commercial subscriptions that an organization has acquired.
+        /// </summary>
+        [JsonPropertyName("subscriptions")]
+        public IDirectorySubscriptionsCollectionPage Subscriptions { get; set; }
+
+        /// <summary>
+        /// Gets or sets subscriptionsNextLink.
+        /// </summary>
+        [JsonPropertyName("subscriptions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string SubscriptionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets feature rollout policies.

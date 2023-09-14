@@ -64,7 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets scope type.
-        /// The type of the scope where the policy is created. One of Directory, DirectoryRole. Required.
+        /// The type of the scope where the policy is created. One of Directory, DirectoryRole, Group. Required.
         /// </summary>
         [JsonPropertyName("scopeType")]
         public string ScopeType { get; set; }

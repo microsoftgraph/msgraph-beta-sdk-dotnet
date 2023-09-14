@@ -22,60 +22,70 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets alert definition id.
+        /// The identifier of an alert definition. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("alertDefinitionId")]
         public string AlertDefinitionId { get; set; }
     
         /// <summary>
         /// Gets or sets incident count.
+        /// The number of incidents triggered in the tenant and relating to the alert. Can only be a positive integer.
         /// </summary>
         [JsonPropertyName("incidentCount")]
         public Int32? IncidentCount { get; set; }
     
         /// <summary>
         /// Gets or sets is active.
+        /// false by default. true if the alert is active.
         /// </summary>
         [JsonPropertyName("isActive")]
         public bool? IsActive { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// The date time when the alert configuration was updated or new incidents generated.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last scanned date time.
+        /// The date time when the tenant was last scanned for incidents that trigger this alert.
         /// </summary>
         [JsonPropertyName("lastScannedDateTime")]
         public DateTimeOffset? LastScannedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets scope id.
+        /// The identifier of the scope where the alert is related. / is the only supported one for the tenant. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("scopeId")]
         public string ScopeId { get; set; }
     
         /// <summary>
         /// Gets or sets scope type.
+        /// The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.
         /// </summary>
         [JsonPropertyName("scopeType")]
         public string ScopeType { get; set; }
     
         /// <summary>
         /// Gets or sets alert configuration.
+        /// The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.
         /// </summary>
         [JsonPropertyName("alertConfiguration")]
         public UnifiedRoleManagementAlertConfiguration AlertConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets alert definition.
+        /// Contains the description, impact, and measures to mitigate or prevent the security alert from being triggered in your tenant. Supports $expand.
         /// </summary>
         [JsonPropertyName("alertDefinition")]
         public UnifiedRoleManagementAlertDefinition AlertDefinition { get; set; }
     
         /// <summary>
         /// Gets or sets alert incidents.
+        /// Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Azure AD roles in the tenant. Supports $expand.
         /// </summary>
         [JsonPropertyName("alertIncidents")]
         public IUnifiedRoleManagementAlertAlertIncidentsCollectionPage AlertIncidents { get; set; }

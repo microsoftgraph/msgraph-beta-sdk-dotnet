@@ -78,7 +78,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets advanced threat protection onboarding device setting states.
-        /// Not yet documented
         /// </summary>
         [JsonPropertyName("advancedThreatProtectionOnboardingDeviceSettingStates")]
         public IAdvancedThreatProtectionOnboardingStateSummaryAdvancedThreatProtectionOnboardingDeviceSettingStatesCollectionPage AdvancedThreatProtectionOnboardingDeviceSettingStates { get; set; }

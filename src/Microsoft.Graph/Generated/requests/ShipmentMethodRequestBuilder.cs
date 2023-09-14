@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ShipmentMethodRequestBuilder.
     /// </summary>
-    public partial class ShipmentMethodRequestBuilder : EntityRequestBuilder, IShipmentMethodRequestBuilder
+    public partial class ShipmentMethodRequestBuilder : BaseRequestBuilder, IShipmentMethodRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IShipmentMethodRequest Request()
+        public IShipmentMethodRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IShipmentMethodRequest Request(IEnumerable<Option> options)
+        public IShipmentMethodRequest Request(IEnumerable<Option> options)
         {
             return new ShipmentMethodRequest(this.RequestUrl, this.Client, options);
         }

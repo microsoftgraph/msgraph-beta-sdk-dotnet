@@ -23,21 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets identityProvider.
-        /// For internal use only
+        /// For internal use only.
         /// </summary>
         [JsonPropertyName("identityProvider")]
         public string IdentityProvider { get; set; }
     
         /// <summary>
         /// Gets or sets key.
-        /// For internal use only
+        /// For internal use only.
         /// </summary>
         [JsonPropertyName("key")]
         public byte[] Key { get; set; }
     
         /// <summary>
         /// Gets or sets type.
-        /// For internal use only
+        /// For internal use only.
         /// </summary>
         [JsonPropertyName("type")]
         public Int32? Type { get; set; }

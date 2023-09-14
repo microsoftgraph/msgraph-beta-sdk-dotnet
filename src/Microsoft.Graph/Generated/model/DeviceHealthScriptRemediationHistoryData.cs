@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         public Date Date { get; set; }
     
         /// <summary>
+        /// Gets or sets detectFailedDeviceCount.
+        /// The number of devices for which the detection script found an issue.
+        /// </summary>
+        [JsonPropertyName("detectFailedDeviceCount")]
+        public Int32? DetectFailedDeviceCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets noIssueDeviceCount.
         /// The number of devices that were found to have no issue by the device health script.
         /// </summary>

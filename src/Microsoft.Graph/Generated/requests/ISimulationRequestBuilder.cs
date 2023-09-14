@@ -32,6 +32,18 @@ namespace Microsoft.Graph
         new ISimulationRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for LandingPage.
+        /// </summary>
+        /// <returns>The <see cref="ILandingPageWithReferenceRequestBuilder"/>.</returns>
+        ILandingPageWithReferenceRequestBuilder LandingPage { get; }
+
+        /// <summary>
+        /// Gets the request builder for LoginPage.
+        /// </summary>
+        /// <returns>The <see cref="ILoginPageWithReferenceRequestBuilder"/>.</returns>
+        ILoginPageWithReferenceRequestBuilder LoginPage { get; }
+
+        /// <summary>
         /// Gets the request builder for Payload.
         /// </summary>
         /// <returns>The <see cref="IPayloadWithReferenceRequestBuilder"/>.</returns>

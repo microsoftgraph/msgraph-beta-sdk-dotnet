@@ -23,24 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets expression.
+        /// Equivalent expression representation of this attributeMappingSource object.
         /// </summary>
         [JsonPropertyName("expression")]
         public string Expression { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// Name parameter of the mapping source. Depending on the type property value, this can be the name of the function, the name of the source attribute, or a constant value to be used.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets parameters.
+        /// If this object represents a function, lists function parameters. Parameters consist of attributeMappingSource objects themselves, allowing for complex expressions. If type is not Function, this property will be null/empty array.
         /// </summary>
         [JsonPropertyName("parameters")]
         public IEnumerable<StringKeyAttributeMappingSourceValuePair> Parameters { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// The type of this attribute mapping source. Possible values are: Attribute, Constant, Function. Default is Attribute.
         /// </summary>
         [JsonPropertyName("type")]
         public AttributeMappingSourceType? Type { get; set; }

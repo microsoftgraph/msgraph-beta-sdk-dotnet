@@ -47,6 +47,13 @@ namespace Microsoft.Graph
         public bool? IsAuthenticationContextSettable { get; set; }
     
         /// <summary>
+        /// Gets or sets is privileged.
+        /// Flag indicating if the action is a sensitive resource action. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).
+        /// </summary>
+        [JsonPropertyName("isPrivileged")]
+        public bool? IsPrivileged { get; set; }
+    
+        /// <summary>
         /// Gets or sets name.
         /// Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).
         /// </summary>

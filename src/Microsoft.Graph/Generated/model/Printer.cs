@@ -31,6 +31,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets accepting jobs.
         /// </summary>
+        [Obsolete("The acceptingJobs property is deprecated and will stop returning data on July 31, 2023. Please use the isAcceptingJobs property instead of this.")]
         [JsonPropertyName("acceptingJobs")]
         public bool? AcceptingJobs { get; set; }
     
@@ -79,6 +80,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets share.
         /// </summary>
+        [Obsolete("The share navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this.")]
         [JsonPropertyName("share")]
         public PrinterShare Share { get; set; }
     

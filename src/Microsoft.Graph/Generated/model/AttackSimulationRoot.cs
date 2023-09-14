@@ -30,6 +30,45 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets or sets end user notifications.
+        /// </summary>
+        [JsonPropertyName("endUserNotifications")]
+        public IAttackSimulationRootEndUserNotificationsCollectionPage EndUserNotifications { get; set; }
+
+        /// <summary>
+        /// Gets or sets endUserNotificationsNextLink.
+        /// </summary>
+        [JsonPropertyName("endUserNotifications@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string EndUserNotificationsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets landing pages.
+        /// </summary>
+        [JsonPropertyName("landingPages")]
+        public IAttackSimulationRootLandingPagesCollectionPage LandingPages { get; set; }
+
+        /// <summary>
+        /// Gets or sets landingPagesNextLink.
+        /// </summary>
+        [JsonPropertyName("landingPages@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string LandingPagesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets login pages.
+        /// </summary>
+        [JsonPropertyName("loginPages")]
+        public IAttackSimulationRootLoginPagesCollectionPage LoginPages { get; set; }
+
+        /// <summary>
+        /// Gets or sets loginPagesNextLink.
+        /// </summary>
+        [JsonPropertyName("loginPages@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string LoginPagesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets operations.
         /// Represents an attack simulation training operation.
         /// </summary>
@@ -84,6 +123,19 @@ namespace Microsoft.Graph
         [JsonPropertyName("simulations@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string SimulationsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets trainings.
+        /// </summary>
+        [JsonPropertyName("trainings")]
+        public IAttackSimulationRootTrainingsCollectionPage Trainings { get; set; }
+
+        /// <summary>
+        /// Gets or sets trainingsNextLink.
+        /// </summary>
+        [JsonPropertyName("trainings@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string TrainingsNextLink { get; set; }
     
     }
 }

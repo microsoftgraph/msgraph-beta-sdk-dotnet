@@ -74,6 +74,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets name.
         /// </summary>
+        [Obsolete("The name property is deprecated and will stop returning data on July 31, 2023. Please use the displayName property instead of this.")]
         [JsonPropertyName("name")]
         public string Name { get; set; }
     

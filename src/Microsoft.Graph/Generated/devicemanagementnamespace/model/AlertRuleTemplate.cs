@@ -37,7 +37,17 @@ namespace Microsoft.Graph.DeviceManagementNamespace
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 999,
+        UnknownFutureValue = 3,
+	
+        /// <summary>
+        /// Cloud Pc In Grace Period Scenario
+        /// </summary>
+        CloudPcInGracePeriodScenario = 4,
+	
+        /// <summary>
+        /// Cloud Pc Frontline Insufficient Licenses Scenario
+        /// </summary>
+        CloudPcFrontlineInsufficientLicensesScenario = 5,
 	
     }
 }

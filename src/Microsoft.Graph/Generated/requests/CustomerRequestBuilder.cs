@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type CustomerRequestBuilder.
     /// </summary>
-    public partial class CustomerRequestBuilder : EntityRequestBuilder, ICustomerRequestBuilder
+    public partial class CustomerRequestBuilder : BaseRequestBuilder, ICustomerRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new ICustomerRequest Request()
+        public ICustomerRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new ICustomerRequest Request(IEnumerable<Option> options)
+        public ICustomerRequest Request(IEnumerable<Option> options)
         {
             return new CustomerRequest(this.RequestUrl, this.Client, options);
         }

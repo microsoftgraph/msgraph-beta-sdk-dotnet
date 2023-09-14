@@ -30,12 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets role display name.
+        /// The name of the Azure AD directory role.
         /// </summary>
         [JsonPropertyName("roleDisplayName")]
         public string RoleDisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets role template id.
+        /// The globally unique identifier for a directory role.
         /// </summary>
         [JsonPropertyName("roleTemplateId")]
         public string RoleTemplateId { get; set; }

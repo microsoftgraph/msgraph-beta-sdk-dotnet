@@ -32,6 +32,12 @@ namespace Microsoft.Graph.SecurityNamespace
         new IRetentionLabelRequest Request(IEnumerable<Microsoft.Graph.Option> options);
     
         /// <summary>
+        /// Gets the request builder for Descriptors.
+        /// </summary>
+        /// <returns>The <see cref="IFilePlanDescriptorRequestBuilder"/>.</returns>
+        IFilePlanDescriptorRequestBuilder Descriptors { get; }
+
+        /// <summary>
         /// Gets the request builder for DispositionReviewStages.
         /// </summary>
         /// <returns>The <see cref="IRetentionLabelDispositionReviewStagesCollectionRequestBuilder"/>.</returns>

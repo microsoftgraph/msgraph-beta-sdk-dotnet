@@ -85,5 +85,18 @@ namespace Microsoft.Graph.SecurityNamespace
                 this.Client,
                 ids);
         }
+
+        /// <summary>
+        /// Gets the request builder for EdiscoveryNoncustodialDataSourceUpdateIndex.
+        /// </summary>
+        /// <returns>The <see cref="IEdiscoveryNoncustodialDataSourceUpdateIndexRequestBuilder"/>.</returns>
+        public IEdiscoveryNoncustodialDataSourceUpdateIndexRequestBuilder UpdateIndex(
+            IEnumerable<string> ids = null)
+        {
+            return new EdiscoveryNoncustodialDataSourceUpdateIndexRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.security.updateIndex"),
+                this.Client,
+                ids);
+        }
     }
 }

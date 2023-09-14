@@ -31,5 +31,11 @@ namespace Microsoft.Graph.WindowsUpdates
         /// <returns>The built request.</returns>
         new IQualityUpdateCatalogEntryRequest Request(IEnumerable<Microsoft.Graph.Option> options);
     
+        /// <summary>
+        /// Gets the request builder for ProductRevisions.
+        /// </summary>
+        /// <returns>The <see cref="IQualityUpdateCatalogEntryProductRevisionsCollectionRequestBuilder"/>.</returns>
+        IQualityUpdateCatalogEntryProductRevisionsCollectionRequestBuilder ProductRevisions { get; }
+    
     }
 }

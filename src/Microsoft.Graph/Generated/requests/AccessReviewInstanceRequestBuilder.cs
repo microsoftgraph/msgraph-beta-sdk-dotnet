@@ -171,6 +171,17 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.sendReminder"),
                 this.Client);
         }
+
+        /// <summary>
+        /// Gets the request builder for AccessReviewInstanceStopApplyDecisions.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewInstanceStopApplyDecisionsRequestBuilder"/>.</returns>
+        public IAccessReviewInstanceStopApplyDecisionsRequestBuilder StopApplyDecisions()
+        {
+            return new AccessReviewInstanceStopApplyDecisionsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.stopApplyDecisions"),
+                this.Client);
+        }
     
     }
 }

@@ -17,7 +17,8 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Sales Order.
     /// </summary>
-    public partial class SalesOrder : Entity
+    [JsonConverter(typeof(DerivedTypeConverter<SalesOrder>))]
+    public partial class SalesOrder
     {
     
         /// <summary>
@@ -103,6 +104,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("fullyShipped")]
         public bool? FullyShipped { get; set; }
+    
+        /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        [JsonPropertyName("id")]
+        public Guid? Id { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
@@ -236,6 +243,18 @@ namespace Microsoft.Graph
         [JsonPropertyName("salesOrderLines@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string SalesOrderLinesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonPropertyName("@odata.type")]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

@@ -190,6 +190,13 @@ namespace Microsoft.Graph
         public string SystemFamily { get; set; }
     
         /// <summary>
+        /// Gets or sets userless enrollment status.
+        /// Enrollment status for userless enrollments.
+        /// </summary>
+        [JsonPropertyName("userlessEnrollmentStatus")]
+        public WindowsAutopilotUserlessEnrollmentStatus? UserlessEnrollmentStatus { get; set; }
+    
+        /// <summary>
         /// Gets or sets user principal name.
         /// User Principal Name.
         /// </summary>

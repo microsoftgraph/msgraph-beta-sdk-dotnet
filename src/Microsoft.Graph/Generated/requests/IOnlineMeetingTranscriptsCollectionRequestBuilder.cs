@@ -36,6 +36,10 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ICallTranscriptRequestBuilder"/>.</returns>
         ICallTranscriptRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for CallTranscriptDelta.
+        /// </summary>
+        /// <returns>The <see cref="ICallTranscriptDeltaRequestBuilder"/>.</returns>
+        ICallTranscriptDeltaRequestBuilder Delta();
     }
 }

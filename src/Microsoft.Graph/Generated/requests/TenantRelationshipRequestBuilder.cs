@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for MultiTenantOrganization.
+        /// </summary>
+        /// <returns>The <see cref="IMultiTenantOrganizationRequestBuilder"/>.</returns>
+        public IMultiTenantOrganizationRequestBuilder MultiTenantOrganization
+        {
+            get
+            {
+                return new MultiTenantOrganizationRequestBuilder(this.AppendSegmentToRequestUrl("multiTenantOrganization"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedTenants.
         /// </summary>
         /// <returns>The <see cref="Microsoft.Graph.ManagedTenants.IManagedTenantRequestBuilder"/>.</returns>

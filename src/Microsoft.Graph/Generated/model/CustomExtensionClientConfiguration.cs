@@ -22,8 +22,15 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets maximumRetries.
+        /// The max number of retries that Azure AD will make to the external API. Values of 0 or 1 are supported. If null, the default for the service will apply.
+        /// </summary>
+        [JsonPropertyName("maximumRetries")]
+        public Int32? MaximumRetries { get; set; }
+    
+        /// <summary>
         /// Gets or sets timeoutInMilliseconds.
-        /// The max duration in milliseconds that Azure AD will wait for a response from the logic app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.
+        /// The max duration in milliseconds that Azure AD will wait for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. If null, the default for the service will apply.
         /// </summary>
         [JsonPropertyName("timeoutInMilliseconds")]
         public Int32? TimeoutInMilliseconds { get; set; }

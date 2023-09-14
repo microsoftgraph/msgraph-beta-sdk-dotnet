@@ -21,15 +21,29 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets account id.
+        /// The unique ID of the account this SKU belongs to.
+        /// </summary>
+        [JsonPropertyName("accountId")]
+        public string AccountId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets account name.
+        /// The name of the account this SKU belongs to.
+        /// </summary>
+        [JsonPropertyName("accountName")]
+        public string AccountName { get; set; }
+    
+        /// <summary>
         /// Gets or sets applies to.
-        /// For example, 'User' or 'Company'.
+        /// The target class for this SKU. Only SKUs with target class User are assignable. Possible values are: User, Company.
         /// </summary>
         [JsonPropertyName("appliesTo")]
         public string AppliesTo { get; set; }
     
         /// <summary>
         /// Gets or sets capability status.
-        /// Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.
+        /// Enabled indicates that the prepaidUnits property has at least one unit that is enabled. LockedOut indicates that the customer cancelled their subscription. Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut.
         /// </summary>
         [JsonPropertyName("capabilityStatus")]
         public string CapabilityStatus { get; set; }
@@ -64,10 +78,16 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sku part number.
-        /// The SKU part number; for example: 'AAD_PREMIUM' or 'RMSBASIC'. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
+        /// The SKU part number; for example, AAD_PREMIUM or RMSBASIC. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.
         /// </summary>
         [JsonPropertyName("skuPartNumber")]
         public string SkuPartNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets subscription ids.
+        /// </summary>
+        [JsonPropertyName("subscriptionIds")]
+        public IEnumerable<string> SubscriptionIds { get; set; }
     
     }
 }

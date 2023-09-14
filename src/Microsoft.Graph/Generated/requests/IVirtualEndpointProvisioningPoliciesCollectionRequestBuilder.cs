@@ -41,6 +41,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ICloudPcProvisioningPolicyApplyConfigRequestBuilder"/>.</returns>
         ICloudPcProvisioningPolicyApplyConfigRequestBuilder ApplyConfig(
-            IEnumerable<string> cloudPcIds = null);
+            IEnumerable<string> cloudPcIds = null,
+            CloudPcPolicySettingType? policySettings = null);
     }
 }

@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type EmployeeRequestBuilder.
     /// </summary>
-    public partial class EmployeeRequestBuilder : EntityRequestBuilder, IEmployeeRequestBuilder
+    public partial class EmployeeRequestBuilder : BaseRequestBuilder, IEmployeeRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IEmployeeRequest Request()
+        public IEmployeeRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IEmployeeRequest Request(IEnumerable<Option> options)
+        public IEmployeeRequest Request(IEnumerable<Option> options)
         {
             return new EmployeeRequest(this.RequestUrl, this.Client, options);
         }

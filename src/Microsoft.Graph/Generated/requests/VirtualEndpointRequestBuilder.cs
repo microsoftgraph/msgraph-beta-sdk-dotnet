@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for BulkActions.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointBulkActionsCollectionRequestBuilder"/>.</returns>
+        public IVirtualEndpointBulkActionsCollectionRequestBuilder BulkActions
+        {
+            get
+            {
+                return new VirtualEndpointBulkActionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("bulkActions"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for CloudPCs.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointCloudPCsCollectionRequestBuilder"/>.</returns>
@@ -107,6 +119,18 @@ namespace Microsoft.Graph
             get
             {
                 return new VirtualEndpointExternalPartnerSettingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("externalPartnerSettings"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for FrontLineServicePlans.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointFrontLineServicePlansCollectionRequestBuilder"/>.</returns>
+        public IVirtualEndpointFrontLineServicePlansCollectionRequestBuilder FrontLineServicePlans
+        {
+            get
+            {
+                return new VirtualEndpointFrontLineServicePlansCollectionRequestBuilder(this.AppendSegmentToRequestUrl("frontLineServicePlans"), this.Client);
             }
         }
 

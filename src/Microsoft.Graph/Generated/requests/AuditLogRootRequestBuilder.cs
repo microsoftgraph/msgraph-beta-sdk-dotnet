@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for CustomSecurityAttributeAudits.
+        /// </summary>
+        /// <returns>The <see cref="IAuditLogRootCustomSecurityAttributeAuditsCollectionRequestBuilder"/>.</returns>
+        public IAuditLogRootCustomSecurityAttributeAuditsCollectionRequestBuilder CustomSecurityAttributeAudits
+        {
+            get
+            {
+                return new AuditLogRootCustomSecurityAttributeAuditsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("customSecurityAttributeAudits"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for DirectoryAudits.
         /// </summary>
         /// <returns>The <see cref="IAuditLogRootDirectoryAuditsCollectionRequestBuilder"/>.</returns>

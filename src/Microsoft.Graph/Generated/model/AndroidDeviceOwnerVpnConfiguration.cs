@@ -72,6 +72,13 @@ namespace Microsoft.Graph
         public string MicrosoftTunnelSiteId { get; set; }
     
         /// <summary>
+        /// Gets or sets proxy exclusion list.
+        /// List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.
+        /// </summary>
+        [JsonPropertyName("proxyExclusionList")]
+        public IEnumerable<string> ProxyExclusionList { get; set; }
+    
+        /// <summary>
         /// Gets or sets proxy server.
         /// Proxy server.
         /// </summary>

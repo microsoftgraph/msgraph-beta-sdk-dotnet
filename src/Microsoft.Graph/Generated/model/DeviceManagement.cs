@@ -1000,6 +1000,20 @@ namespace Microsoft.Graph
         public string MobileAppTroubleshootingEventsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets privilege management elevations.
+        /// The endpoint privilege management elevation event entity contains elevation details.
+        /// </summary>
+        [JsonPropertyName("privilegeManagementElevations")]
+        public IDeviceManagementPrivilegeManagementElevationsCollectionPage PrivilegeManagementElevations { get; set; }
+
+        /// <summary>
+        /// Gets or sets privilegeManagementElevationsNextLink.
+        /// </summary>
+        [JsonPropertyName("privilegeManagementElevations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string PrivilegeManagementElevationsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets remote action audits.
         /// The list of device remote action audits with the tenant.
         /// </summary>
@@ -1033,6 +1047,20 @@ namespace Microsoft.Graph
         [JsonPropertyName("userExperienceAnalyticsAnomaly@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string UserExperienceAnalyticsAnomalyNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics anomaly correlation group overview.
+        /// The user experience analytics anomaly correlation group overview entity contains the information for each correlation group of an anomaly.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsAnomalyCorrelationGroupOverview")]
+        public IDeviceManagementUserExperienceAnalyticsAnomalyCorrelationGroupOverviewCollectionPage UserExperienceAnalyticsAnomalyCorrelationGroupOverview { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsAnomalyCorrelationGroupOverviewNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsAnomalyCorrelationGroupOverview@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string UserExperienceAnalyticsAnomalyCorrelationGroupOverviewNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics anomaly device.

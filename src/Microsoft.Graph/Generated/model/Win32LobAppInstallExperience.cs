@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         public Win32LobAppRestartBehavior? DeviceRestartBehavior { get; set; }
     
         /// <summary>
+        /// Gets or sets maxRunTimeInMinutes.
+        /// The number of minutes the system will wait for install program to finish. Default value is 60 minutes.
+        /// </summary>
+        [JsonPropertyName("maxRunTimeInMinutes")]
+        public Int32? MaxRunTimeInMinutes { get; set; }
+    
+        /// <summary>
         /// Gets or sets runAsAccount.
         /// Indicates the type of execution context the app runs in. Possible values are: system, user.
         /// </summary>

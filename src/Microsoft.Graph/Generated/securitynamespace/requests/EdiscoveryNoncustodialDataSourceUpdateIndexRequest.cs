@@ -29,7 +29,14 @@ namespace Microsoft.Graph.SecurityNamespace
             IEnumerable<Microsoft.Graph.Option> options)
             : base(requestUrl, client, options)
         {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.RequestBody = new EdiscoveryNoncustodialDataSourceUpdateIndexRequestBody();
         }
+
+        /// <summary>
+        /// Gets the request body.
+        /// </summary>
+        public EdiscoveryNoncustodialDataSourceUpdateIndexRequestBody RequestBody { get; private set; }
 
         /// <summary>
         /// Issues the POST request.
@@ -40,7 +47,7 @@ namespace Microsoft.Graph.SecurityNamespace
             CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.POST;
-            return this.SendAsync(null, cancellationToken);
+            return this.SendAsync(this.RequestBody, cancellationToken);
         }
 
         /// <summary>
@@ -51,7 +58,7 @@ namespace Microsoft.Graph.SecurityNamespace
         public System.Threading.Tasks.Task<GraphResponse> PostResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse(null, cancellationToken);
+            return this.SendAsyncWithGraphResponse(this.RequestBody, cancellationToken);
         }
 
 

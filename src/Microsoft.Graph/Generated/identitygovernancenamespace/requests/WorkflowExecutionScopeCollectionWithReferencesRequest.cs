@@ -81,7 +81,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IWorkflowExecutionScopeCollectionWithReferencesRequest Expand(Expression<Func<Microsoft.Graph.User, object>> expandExpression)
+        public IWorkflowExecutionScopeCollectionWithReferencesRequest Expand(Expression<Func<UserProcessingResult, object>> expandExpression)
         {
             if (expandExpression == null)
             {
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IWorkflowExecutionScopeCollectionWithReferencesRequest Select(Expression<Func<Microsoft.Graph.User, object>> selectExpression)
+        public IWorkflowExecutionScopeCollectionWithReferencesRequest Select(Expression<Func<UserProcessingResult, object>> selectExpression)
         {
             if (selectExpression == null)
             {

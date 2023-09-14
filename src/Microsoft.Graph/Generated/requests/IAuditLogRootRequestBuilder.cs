@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         IAuditLogRootRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for CustomSecurityAttributeAudits.
+        /// </summary>
+        /// <returns>The <see cref="IAuditLogRootCustomSecurityAttributeAuditsCollectionRequestBuilder"/>.</returns>
+        IAuditLogRootCustomSecurityAttributeAuditsCollectionRequestBuilder CustomSecurityAttributeAudits { get; }
+
+        /// <summary>
         /// Gets the request builder for DirectoryAudits.
         /// </summary>
         /// <returns>The <see cref="IAuditLogRootDirectoryAuditsCollectionRequestBuilder"/>.</returns>

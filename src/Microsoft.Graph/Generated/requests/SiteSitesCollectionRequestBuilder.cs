@@ -96,5 +96,16 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
                 this.Client);
         }
+
+        /// <summary>
+        /// Gets the request builder for SiteGetAllSites.
+        /// </summary>
+        /// <returns>The <see cref="ISiteGetAllSitesRequestBuilder"/>.</returns>
+        public ISiteGetAllSitesRequestBuilder GetAllSites()
+        {
+            return new SiteGetAllSitesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getAllSites"),
+                this.Client);
+        }
     }
 }

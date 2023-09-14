@@ -1086,17 +1086,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceBranding request builder.
-        /// </summary>
-        public virtual IOrganizationalBrandingRequestBuilder Branding
-        {
-            get
-            {
-                return new OrganizationalBrandingRequestBuilder(this.BaseUrl + "/branding", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceDirectory request builder.
         /// </summary>
         public virtual IDirectoryRequestBuilder Directory
@@ -1170,6 +1159,17 @@ namespace Microsoft.Graph
             get
             {
                 return new DriveRequestBuilder(this.BaseUrl + "/drive", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceEmployeeExperience request builder.
+        /// </summary>
+        public virtual IEmployeeExperienceRequestBuilder EmployeeExperience
+        {
+            get
+            {
+                return new EmployeeExperienceRequestBuilder(this.BaseUrl + "/employeeExperience", this);
             }
         }
     
@@ -1317,13 +1317,13 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceEmployeeExperience request builder.
+        /// Gets the GraphServiceNetworkAccess request builder.
         /// </summary>
-        public virtual IEmployeeExperienceRequestBuilder EmployeeExperience
+        public virtual Microsoft.Graph.Networkaccess.INetworkAccessRootRequestBuilder NetworkAccess
         {
             get
             {
-                return new EmployeeExperienceRequestBuilder(this.BaseUrl + "/employeeExperience", this);
+                return new Microsoft.Graph.Networkaccess.NetworkAccessRootRequestBuilder(this.BaseUrl + "/networkAccess", this);
             }
         }
     

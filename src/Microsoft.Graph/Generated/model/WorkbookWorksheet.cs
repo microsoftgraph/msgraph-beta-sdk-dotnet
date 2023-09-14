@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets visibility.
-        /// The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
+        /// The visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.
         /// </summary>
         [JsonPropertyName("visibility")]
         public string Visibility { get; set; }
@@ -103,6 +103,20 @@ namespace Microsoft.Graph
         [JsonPropertyName("tables@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string TablesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tasks.
+        /// Collection of document tasks on this worksheet. Read-only.
+        /// </summary>
+        [JsonPropertyName("tasks")]
+        public IWorkbookWorksheetTasksCollectionPage Tasks { get; set; }
+
+        /// <summary>
+        /// Gets or sets tasksNextLink.
+        /// </summary>
+        [JsonPropertyName("tasks@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string TasksNextLink { get; set; }
     
     }
 }

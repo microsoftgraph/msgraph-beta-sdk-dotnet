@@ -107,7 +107,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets partner state.
-        /// Mobile Threat Defense partner state for this account. Possible values are: unavailable, available, enabled, unresponsive.
+        /// Mobile Threat Defense partner state for this account. Possible values are: unavailable, available, enabled, unresponsive, notSetUp, error, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("partnerState")]
         public MobileThreatPartnerTenantState? PartnerState { get; set; }

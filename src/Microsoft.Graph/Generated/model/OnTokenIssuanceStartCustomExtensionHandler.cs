@@ -28,6 +28,12 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets configuration.
+        /// </summary>
+        [JsonPropertyName("configuration")]
+        public CustomExtensionOverwriteConfiguration Configuration { get; set; }
+    
+        /// <summary>
         /// Gets or sets customExtension.
         /// </summary>
         [JsonPropertyName("customExtension")]

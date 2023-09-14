@@ -99,6 +99,66 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AppsAndServices.
+        /// </summary>
+        /// <returns>The <see cref="IAdminAppsAndServicesRequestBuilder"/>.</returns>
+        public IAdminAppsAndServicesRequestBuilder AppsAndServices
+        {
+            get
+            {
+                return new AdminAppsAndServicesRequestBuilder(this.AppendSegmentToRequestUrl("appsAndServices"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Dynamics.
+        /// </summary>
+        /// <returns>The <see cref="IAdminDynamicsRequestBuilder"/>.</returns>
+        public IAdminDynamicsRequestBuilder Dynamics
+        {
+            get
+            {
+                return new AdminDynamicsRequestBuilder(this.AppendSegmentToRequestUrl("dynamics"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Forms.
+        /// </summary>
+        /// <returns>The <see cref="IAdminFormsRequestBuilder"/>.</returns>
+        public IAdminFormsRequestBuilder Forms
+        {
+            get
+            {
+                return new AdminFormsRequestBuilder(this.AppendSegmentToRequestUrl("forms"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Todo.
+        /// </summary>
+        /// <returns>The <see cref="IAdminTodoRequestBuilder"/>.</returns>
+        public IAdminTodoRequestBuilder Todo
+        {
+            get
+            {
+                return new AdminTodoRequestBuilder(this.AppendSegmentToRequestUrl("todo"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for People.
+        /// </summary>
+        /// <returns>The <see cref="IPeopleAdminSettingsRequestBuilder"/>.</returns>
+        public IPeopleAdminSettingsRequestBuilder People
+        {
+            get
+            {
+                return new PeopleAdminSettingsRequestBuilder(this.AppendSegmentToRequestUrl("people"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Windows.
         /// </summary>
         /// <returns>The <see cref="IAdminWindowsRequestBuilder"/>.</returns>

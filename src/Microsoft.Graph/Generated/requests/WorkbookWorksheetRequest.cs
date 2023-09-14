@@ -270,6 +270,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     workbookWorksheetToInitialize.Tables.AdditionalData = workbookWorksheetToInitialize.AdditionalData;
                 }
+                if (workbookWorksheetToInitialize.Tasks != null && workbookWorksheetToInitialize.Tasks.CurrentPage != null)
+                {
+                    workbookWorksheetToInitialize.Tasks.InitializeNextPageRequest(this.Client, workbookWorksheetToInitialize.TasksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    workbookWorksheetToInitialize.Tasks.AdditionalData = workbookWorksheetToInitialize.AdditionalData;
+                }
 
             }
 
