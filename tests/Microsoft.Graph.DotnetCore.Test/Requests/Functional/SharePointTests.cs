@@ -63,10 +63,9 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 Assert.True(siteSearchResults.Value.Count > 0, "Expected at least one search result. Got zero. Check test data.");
 
                 // Call the Microsoft Graph API. Get the sites drives collection page.
-                var drives = graphClient.Sites[siteSearchResults.Value[0].Id]
+                var drives = await graphClient.Sites[siteSearchResults.Value[0].Id]
                                                                                        .Drives
-                                                                                       .GetAsync()
-                                                                                       .Result;
+                                                                                       .GetAsync();
 
                 // Call the Microsoft Graph API. Get the drives collection page.
                 // var library = graphClient.Sites[siteSearchResults.Value[0].Id]
