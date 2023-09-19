@@ -39,6 +39,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("meetingId", value); }
         }
 #endif
+        /// <summary>The meetingOrganizer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public IdentitySet? MeetingOrganizer {
+            get { return BackingStore?.Get<IdentitySet?>("meetingOrganizer"); }
+            set { BackingStore?.Set("meetingOrganizer", value); }
+        }
+#nullable restore
+#else
+        public IdentitySet MeetingOrganizer {
+            get { return BackingStore?.Get<IdentitySet>("meetingOrganizer"); }
+            set { BackingStore?.Set("meetingOrganizer", value); }
+        }
+#endif
         /// <summary>The unique identifier of the organizer of the onlineMeeting related to this transcript. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,6 +111,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"content", n => { Content = n.GetByteArrayValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"meetingId", n => { MeetingId = n.GetStringValue(); } },
+                {"meetingOrganizer", n => { MeetingOrganizer = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"meetingOrganizerId", n => { MeetingOrganizerId = n.GetStringValue(); } },
                 {"metadataContent", n => { MetadataContent = n.GetByteArrayValue(); } },
                 {"transcriptContentUrl", n => { TranscriptContentUrl = n.GetStringValue(); } },
@@ -112,6 +127,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteByteArrayValue("content", Content);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("meetingId", MeetingId);
+            writer.WriteObjectValue<IdentitySet>("meetingOrganizer", MeetingOrganizer);
             writer.WriteStringValue("meetingOrganizerId", MeetingOrganizerId);
             writer.WriteByteArrayValue("metadataContent", MetadataContent);
             writer.WriteStringValue("transcriptContentUrl", TranscriptContentUrl);

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.BulkResize {
         public BulkResizeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/cloudPCs/bulkResize", rawUrl) {
         }
         /// <summary>
-        /// Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation. If any devices cannot be resized, those devices will indicate &apos;resize failed&apos;. The remaining devices will be provisioned for the resize process.
+        /// Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation. If any devices can&apos;t be resized, those devices indicate &apos;resize failed&apos;. The remaining devices are provisioned for the resize process.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-bulkresize?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.BulkResize {
             return await RequestAdapter.SendAsync<BulkResizeResponse>(requestInfo, BulkResizeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation. If any devices cannot be resized, those devices will indicate &apos;resize failed&apos;. The remaining devices will be provisioned for the resize process.
+        /// Perform a bulk resize action to resize a group of cloudPCs that have successfully passed validation. If any devices can&apos;t be resized, those devices indicate &apos;resize failed&apos;. The remaining devices are provisioned for the resize process.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).</summary>
+        /// <summary>Description of the NIC (for example, Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ipV4Address", value); }
         }
 #endif
-        /// <summary>Last Public (aka global) IPv6 address associated with this NIC.</summary>
+        /// <summary>Last Public (also known as global) IPv6 address associated with this NIC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IpV6Address {

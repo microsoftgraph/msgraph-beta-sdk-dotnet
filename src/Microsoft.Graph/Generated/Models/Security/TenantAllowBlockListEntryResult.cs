@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The entry type of tenant allow block list. The possible values are: url, fileHash, sender, recipient and unkownFutureValue.</summary>
+        /// <summary>The tenant allow-block list entry type. The possible values are: url, fileHash, sender, recipient and unkownFutureValue.</summary>
         public TenantAllowBlockListEntryType? EntryType {
             get { return BackingStore?.Get<TenantAllowBlockListEntryType?>("entryType"); }
             set { BackingStore?.Set("entryType", value); }
         }
-        /// <summary>Specifies when will this entry expire in date time.</summary>
+        /// <summary>Specifies the date and time when the entry expires.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }

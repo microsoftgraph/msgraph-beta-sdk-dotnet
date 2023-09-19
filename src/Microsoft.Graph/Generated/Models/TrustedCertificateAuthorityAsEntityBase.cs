@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class TrustedCertificateAuthorityAsEntityBase : DirectoryObject, IParsable {
-        /// <summary>The trustedCertificateAuthorities property</summary>
+        /// <summary>Collection of trusted certificate authorities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<CertificateAuthorityAsEntity>? TrustedCertificateAuthorities {

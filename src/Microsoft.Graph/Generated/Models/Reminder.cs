@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("eventSubject", value); }
         }
 #endif
-        /// <summary>The URL to open the event in Outlook on the web.The event will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.</summary>
+        /// <summary>The URL to open the event in Outlook on the web.The event opens in the browser if you&apos;re logged in to your mailbox via Outlook on the web. You&apos;re prompted to log in if you aren&apos;t already logged in with the browser.This URL can&apos;t be accessed from within an iFrame.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventWebLink {

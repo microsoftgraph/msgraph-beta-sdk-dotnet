@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         public CustomExtensionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageAssignments/{accessPackageAssignment%2Did}/accessPackageAssignmentPolicy/customExtensionStageSettings/{customExtensionStageSetting%2Did}/customExtension{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Indicates the custom workflow extension that will be executed at this stage. Nullable. Supports $expand.
+        /// Indicates the custom workflow extension that is executed at this stage. Nullable. Supports $expand.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return await RequestAdapter.SendAsync<CustomCalloutExtension>(requestInfo, CustomCalloutExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Indicates the custom workflow extension that will be executed at this stage. Nullable. Supports $expand.
+        /// Indicates the custom workflow extension that is executed at this stage. Nullable. Supports $expand.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete(" as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31")]
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return new CustomExtensionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Indicates the custom workflow extension that will be executed at this stage. Nullable. Supports $expand.
+        /// Indicates the custom workflow extension that is executed at this stage. Nullable. Supports $expand.
         /// </summary>
         public class CustomExtensionRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

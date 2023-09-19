@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The name of the onPremises client machine which ran the last export.</summary>
+        /// <summary>The name of the onPremises client machine that ran the last export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientMachineName {
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("pendingObjectsUpdate"); }
             set { BackingStore?.Set("pendingObjectsUpdate", value); }
         }
-        /// <summary>The name of the dirsync service account which is configured to connect to the directory.</summary>
+        /// <summary>The name of the dirsync service account that is configured to connect to the directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServiceAccount {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("successfulLinksProvisioningCount"); }
             set { BackingStore?.Set("successfulLinksProvisioningCount", value); }
         }
-        /// <summary>The count of objects which were successfully provisioned during the current directory sync export run.</summary>
+        /// <summary>The count of objects that were successfully provisioned during the current directory sync export run.</summary>
         public int? SuccessfulObjectsProvisioningCount {
             get { return BackingStore?.Get<int?>("successfulObjectsProvisioningCount"); }
             set { BackingStore?.Set("successfulObjectsProvisioningCount", value); }

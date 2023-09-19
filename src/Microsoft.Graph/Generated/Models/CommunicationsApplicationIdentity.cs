@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("applicationType", value); }
         }
 #endif
-        /// <summary>True if the participant would not like to be shown in other participants&apos; rosters.</summary>
+        /// <summary>True if the participant wouldn&apos;t like to be shown in other participants&apos; rosters.</summary>
         public bool? Hidden {
             get { return BackingStore?.Get<bool?>("hidden"); }
             set { BackingStore?.Set("hidden", value); }

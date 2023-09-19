@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerTaskConfiguration : Entity, IParsable {
-        /// <summary>Policy configuration for tasks created for the businessScenario when they are being changed outside of the scenario.</summary>
+        /// <summary>Policy configuration for tasks created for the businessScenario when they&apos;re being changed outside of the scenario.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerTaskPolicy? EditPolicy {

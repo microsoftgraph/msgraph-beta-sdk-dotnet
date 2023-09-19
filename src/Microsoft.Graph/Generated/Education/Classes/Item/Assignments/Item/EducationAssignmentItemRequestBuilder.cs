@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item {
             return await RequestAdapter.SendAsync<EducationAssignment>(requestInfo, EducationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an educationAssignment object.  Only teachers in the class can do this. Note that you can&apos;t use a PATCH request to change the status of an assignment. Use the publish action to change the assignment status.
+        /// Update an educationAssignment object.  Only teachers in the class can do this. You can&apos;t use a PATCH request to change the status of an assignment. Use the publish action to change the assignment status.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update an educationAssignment object.  Only teachers in the class can do this. Note that you can&apos;t use a PATCH request to change the status of an assignment. Use the publish action to change the assignment status.
+        /// Update an educationAssignment object.  Only teachers in the class can do this. You can&apos;t use a PATCH request to change the status of an assignment. Use the publish action to change the assignment status.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

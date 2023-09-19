@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<MeetingAudience?>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
-        /// <summary>Identity information of co-organizers of the webinar.</summary>
+        /// <summary>Identity information of coorganizers of the webinar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<CommunicationsUserIdentity>? CoOrganizers {

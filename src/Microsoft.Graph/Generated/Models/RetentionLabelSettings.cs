@@ -15,32 +15,32 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The behaviorDuringRetentionPeriod property</summary>
+        /// <summary>Describes the item behavior during retention period. Possible values are: doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.Security.BehaviorDuringRetentionPeriod? BehaviorDuringRetentionPeriod {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.BehaviorDuringRetentionPeriod?>("behaviorDuringRetentionPeriod"); }
             set { BackingStore?.Set("behaviorDuringRetentionPeriod", value); }
         }
-        /// <summary>The isContentUpdateAllowed property</summary>
+        /// <summary>Specifies whether updates to document content are allowed. Read-only.</summary>
         public bool? IsContentUpdateAllowed {
             get { return BackingStore?.Get<bool?>("isContentUpdateAllowed"); }
             set { BackingStore?.Set("isContentUpdateAllowed", value); }
         }
-        /// <summary>The isDeleteAllowed property</summary>
+        /// <summary>Specifies whether the document deletion is allowed. Read-only.</summary>
         public bool? IsDeleteAllowed {
             get { return BackingStore?.Get<bool?>("isDeleteAllowed"); }
             set { BackingStore?.Set("isDeleteAllowed", value); }
         }
-        /// <summary>The isLabelUpdateAllowed property</summary>
+        /// <summary>Specifies whether you&apos;re allowed to change the retention label on the document. Read-only.</summary>
         public bool? IsLabelUpdateAllowed {
             get { return BackingStore?.Get<bool?>("isLabelUpdateAllowed"); }
             set { BackingStore?.Set("isLabelUpdateAllowed", value); }
         }
-        /// <summary>The isMetadataUpdateAllowed property</summary>
+        /// <summary>Specifies whether updates to the item metadata (for example, the Title field) are blocked. Read-only.</summary>
         public bool? IsMetadataUpdateAllowed {
             get { return BackingStore?.Get<bool?>("isMetadataUpdateAllowed"); }
             set { BackingStore?.Set("isMetadataUpdateAllowed", value); }
         }
-        /// <summary>The isRecordLocked property</summary>
+        /// <summary>Specifies whether the item is locked. Read-write.</summary>
         public bool? IsRecordLocked {
             get { return BackingStore?.Get<bool?>("isRecordLocked"); }
             set { BackingStore?.Set("isRecordLocked", value); }

@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<SubmissionResultCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
-        /// <summary>Specifies the additional details provided by Microsoft to substantiate their analysis result.</summary>
+        /// <summary>Specifies the extra details provided by Microsoft to substantiate their analysis result.</summary>
         public SubmissionResultDetail? Detail {
             get { return BackingStore?.Get<SubmissionResultDetail?>("detail"); }
             set { BackingStore?.Set("detail", value); }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("detectedFiles", value); }
         }
 #endif
-        /// <summary>Specifes the URLs detected by Microsoft in the submitted email.</summary>
+        /// <summary>Specifies the URLs detected by Microsoft in the submitted email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DetectedUrls {

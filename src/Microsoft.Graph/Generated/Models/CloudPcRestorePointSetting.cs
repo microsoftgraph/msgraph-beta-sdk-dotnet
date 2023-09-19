@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.</summary>
+        /// <summary>If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users can&apos;t use snapshots to restore the Cloud PC.</summary>
         public bool? UserRestoreEnabled {
             get { return BackingStore?.Get<bool?>("userRestoreEnabled"); }
             set { BackingStore?.Set("userRestoreEnabled", value); }

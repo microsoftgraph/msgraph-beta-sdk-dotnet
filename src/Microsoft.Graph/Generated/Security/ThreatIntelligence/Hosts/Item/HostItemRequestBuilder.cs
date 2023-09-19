@@ -8,6 +8,7 @@ using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.HostPairs;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.ParentHostPairs;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDns;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.PassiveDnsReverse;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Ports;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Reputation;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.SslCertificates;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Subdomains;
@@ -53,6 +54,10 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item {
         /// <summary>Provides operations to manage the passiveDnsReverse property of the microsoft.graph.security.host entity.</summary>
         public PassiveDnsReverseRequestBuilder PassiveDnsReverse { get =>
             new PassiveDnsReverseRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the ports property of the microsoft.graph.security.host entity.</summary>
+        public PortsRequestBuilder Ports { get =>
+            new PortsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the reputation property of the microsoft.graph.security.host entity.</summary>
         public ReputationRequestBuilder Reputation { get =>

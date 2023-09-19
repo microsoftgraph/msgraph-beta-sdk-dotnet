@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("conferenceId", value); }
         }
 #endif
-        /// <summary>The external link that launches the online meeting. This is a URL that clients will launch into a browser and will redirect the user to join the meeting.</summary>
+        /// <summary>The external link that launches the online meeting. This is a URL that clients launch into a browser and will redirect the user to join the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JoinUrl {
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("phones", value); }
         }
 #endif
-        /// <summary>The pre-formatted quickdial for this call.</summary>
+        /// <summary>The preformatted quick dial for this call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? QuickDial {

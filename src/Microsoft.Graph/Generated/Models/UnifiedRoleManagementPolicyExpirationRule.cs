@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isExpirationRequired"); }
             set { BackingStore?.Set("isExpirationRequired", value); }
         }
-        /// <summary>The maximum duration allowed for eligibility or assignment which is not permanent. Required when isExpirationRequired is true.</summary>
+        /// <summary>The maximum duration allowed for eligibility or assignment that isn&apos;t permanent. Required when isExpirationRequired is true.</summary>
         public TimeSpan? MaximumDuration {
             get { return BackingStore?.Get<TimeSpan?>("maximumDuration"); }
             set { BackingStore?.Set("maximumDuration", value); }

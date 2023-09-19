@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             set { BackingStore?.Set("redundancyDetection", value); }
         }
 #endif
-        /// <summary>The Topic Modeling (Themes) settings for the case.</summary>
+        /// <summary>The article Modeling (Themes) settings for the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public TopicModelingSettings? TopicModeling {

@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ItemRetentionLabel : Entity, IParsable {
-        /// <summary>The isLabelAppliedExplicitly property</summary>
+        /// <summary>Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.</summary>
         public bool? IsLabelAppliedExplicitly {
             get { return BackingStore?.Get<bool?>("isLabelAppliedExplicitly"); }
             set { BackingStore?.Set("isLabelAppliedExplicitly", value); }
         }
-        /// <summary>The labelAppliedBy property</summary>
+        /// <summary>Identity of the user who applied the label. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public IdentitySet? LabelAppliedBy {
@@ -25,12 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("labelAppliedBy", value); }
         }
 #endif
-        /// <summary>The labelAppliedDateTime property</summary>
+        /// <summary>The date and time when the label was applied on the item. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? LabelAppliedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("labelAppliedDateTime"); }
             set { BackingStore?.Set("labelAppliedDateTime", value); }
         }
-        /// <summary>The name property</summary>
+        /// <summary>The retention label on the document. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name {
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>The retentionSettings property</summary>
+        /// <summary>The retention settings enforced on the item. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RetentionLabelSettings? RetentionSettings {

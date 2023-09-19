@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>RSA Key - private exponent. Field cannot be read back.</summary>
+        /// <summary>RSA Key - private exponent. Field can&apos;t be read back.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? D {
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("d", value); }
         }
 #endif
-        /// <summary>RSA Key - first exponent. Field cannot be read back.</summary>
+        /// <summary>RSA Key - first exponent. Field can&apos;t be read back.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Dp {
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dp", value); }
         }
 #endif
-        /// <summary>RSA Key - second exponent. Field cannot be read back.</summary>
+        /// <summary>RSA Key - second exponent. Field can&apos;t be read back.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Dq {
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("exp"); }
             set { BackingStore?.Set("exp", value); }
         }
-        /// <summary>Symmetric Key for oct key type. Field cannot be read back.</summary>
+        /// <summary>Symmetric Key for oct key type. Field can&apos;t be read back.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? K {
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>RSA Key - first prime. Field cannot be read back.</summary>
+        /// <summary>RSA Key - first prime. Field can&apos;t be read back.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? P {
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("p", value); }
         }
 #endif
-        /// <summary>RSA Key - second prime. Field cannot be read back.</summary>
+        /// <summary>RSA Key - second prime. Field can&apos;t be read back.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Q {
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("q", value); }
         }
 #endif
-        /// <summary>RSA Key - Coefficient. Field cannot be read back.</summary>
+        /// <summary>RSA Key - Coefficient. Field can&apos;t be read back.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Qi {
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("x5c", value); }
         }
 #endif
-        /// <summary>The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate RFC 5280.</summary>
+        /// <summary>The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (also known as digest) of the DER encoding of an X.509 certificate RFC 5280.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? X5t {

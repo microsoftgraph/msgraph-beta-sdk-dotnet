@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DelegatedPermissionClassification : Entity, IParsable {
-        /// <summary>The classification value being given. Possible value: low. Does not support $filter.</summary>
+        /// <summary>The classification value being given. Possible value: low. Doesn&apos;t support $filter.</summary>
         public PermissionClassificationType? Classification {
             get { return BackingStore?.Get<PermissionClassificationType?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
-        /// <summary>The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.</summary>
+        /// <summary>The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Doesn&apos;t support $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PermissionId {
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("permissionId", value); }
         }
 #endif
-        /// <summary>The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.</summary>
+        /// <summary>The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Doesn&apos;t support $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PermissionName {

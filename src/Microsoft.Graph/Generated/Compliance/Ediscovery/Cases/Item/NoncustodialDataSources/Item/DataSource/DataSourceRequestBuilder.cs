@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// User source or SharePoint site data source as non-custodial data source.
+        /// User source or SharePoint site data source as noncustodial data source.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             return requestInfo;
         }
         /// <summary>
-        /// User source or SharePoint site data source as non-custodial data source.
+        /// User source or SharePoint site data source as noncustodial data source.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01")]
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             }
         }
         /// <summary>
-        /// User source or SharePoint site data source as non-custodial data source.
+        /// User source or SharePoint site data source as noncustodial data source.
         /// </summary>
         public class DataSourceRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

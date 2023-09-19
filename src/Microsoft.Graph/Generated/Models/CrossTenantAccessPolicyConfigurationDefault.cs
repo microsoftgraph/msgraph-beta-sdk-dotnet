@@ -90,6 +90,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("inboundTrust", value); }
         }
 #endif
+        /// <summary>The invitationRedemptionIdentityProviderConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public DefaultInvitationRedemptionIdentityProviderConfiguration? InvitationRedemptionIdentityProviderConfiguration {
+            get { return BackingStore?.Get<DefaultInvitationRedemptionIdentityProviderConfiguration?>("invitationRedemptionIdentityProviderConfiguration"); }
+            set { BackingStore?.Set("invitationRedemptionIdentityProviderConfiguration", value); }
+        }
+#nullable restore
+#else
+        public DefaultInvitationRedemptionIdentityProviderConfiguration InvitationRedemptionIdentityProviderConfiguration {
+            get { return BackingStore?.Get<DefaultInvitationRedemptionIdentityProviderConfiguration>("invitationRedemptionIdentityProviderConfiguration"); }
+            set { BackingStore?.Set("invitationRedemptionIdentityProviderConfiguration", value); }
+        }
+#endif
         /// <summary>If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.</summary>
         public bool? IsServiceDefault {
             get { return BackingStore?.Get<bool?>("isServiceDefault"); }
@@ -128,6 +142,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"b2bDirectConnectInbound", n => { B2bDirectConnectInbound = n.GetObjectValue<CrossTenantAccessPolicyB2BSetting>(CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
                 {"b2bDirectConnectOutbound", n => { B2bDirectConnectOutbound = n.GetObjectValue<CrossTenantAccessPolicyB2BSetting>(CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
                 {"inboundTrust", n => { InboundTrust = n.GetObjectValue<CrossTenantAccessPolicyInboundTrust>(CrossTenantAccessPolicyInboundTrust.CreateFromDiscriminatorValue); } },
+                {"invitationRedemptionIdentityProviderConfiguration", n => { InvitationRedemptionIdentityProviderConfiguration = n.GetObjectValue<DefaultInvitationRedemptionIdentityProviderConfiguration>(DefaultInvitationRedemptionIdentityProviderConfiguration.CreateFromDiscriminatorValue); } },
                 {"isServiceDefault", n => { IsServiceDefault = n.GetBoolValue(); } },
                 {"tenantRestrictions", n => { TenantRestrictions = n.GetObjectValue<CrossTenantAccessPolicyTenantRestrictions>(CrossTenantAccessPolicyTenantRestrictions.CreateFromDiscriminatorValue); } },
             };
@@ -145,6 +160,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectInbound", B2bDirectConnectInbound);
             writer.WriteObjectValue<CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectOutbound", B2bDirectConnectOutbound);
             writer.WriteObjectValue<CrossTenantAccessPolicyInboundTrust>("inboundTrust", InboundTrust);
+            writer.WriteObjectValue<DefaultInvitationRedemptionIdentityProviderConfiguration>("invitationRedemptionIdentityProviderConfiguration", InvitationRedemptionIdentityProviderConfiguration);
             writer.WriteBoolValue("isServiceDefault", IsServiceDefault);
             writer.WriteObjectValue<CrossTenantAccessPolicyTenantRestrictions>("tenantRestrictions", TenantRestrictions);
         }

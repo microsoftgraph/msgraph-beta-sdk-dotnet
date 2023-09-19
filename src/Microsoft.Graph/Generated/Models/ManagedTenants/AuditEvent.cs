@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class AuditEvent : Entity, IParsable {
-        /// <summary>A string which uniquely represents the operation that occurred. Required. Read-only.</summary>
+        /// <summary>A string that uniquely represents the operation that occurred. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Activity {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("activity", value); }
         }
 #endif
-        /// <summary>The time when the activity ocurred. Required. Read-only.</summary>
+        /// <summary>The time when the activity occurred. Required. Read-only.</summary>
         public DateTimeOffset? ActivityDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
             set { BackingStore?.Set("activityDateTime", value); }
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("activityId", value); }
         }
 #endif
-        /// <summary>A category which represents a logical grouping of activities. Required. Read-only.</summary>
+        /// <summary>A category that represents a logical grouping of activities. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category {
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("requestUrl", value); }
         }
 #endif
-        /// <summary>The collection of Azure Active Directory tenant identifiers for the managed tenants that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.</summary>
+        /// <summary>The collection of Azure Active Directory tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantIds {
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("tenantIds", value); }
         }
 #endif
-        /// <summary>The collection of tenant names that were impacted by this change. This is formatted as a list of comma-separated values. Required. Read-only.</summary>
+        /// <summary>The collection of tenant names that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantNames {

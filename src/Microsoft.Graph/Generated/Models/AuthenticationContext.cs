@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<AuthenticationContextDetail?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
-        /// <summary>The identifier of a authentication context in your tenant.</summary>
+        /// <summary>The identifier of an authentication context in your tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id {

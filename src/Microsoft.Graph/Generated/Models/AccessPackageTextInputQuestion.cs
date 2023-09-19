@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isSingleLineQuestion"); }
             set { BackingStore?.Set("isSingleLineQuestion", value); }
         }
-        /// <summary>This is the regex pattern that the corresponding text answer must follow.</summary>
+        /// <summary>The regex pattern that the corresponding text answer must follow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RegexPattern {

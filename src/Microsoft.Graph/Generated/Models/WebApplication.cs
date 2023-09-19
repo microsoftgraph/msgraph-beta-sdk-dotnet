@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("implicitGrantSettings", value); }
         }
 #endif
-        /// <summary>Specifies the URL that will be used by Microsoft&apos;s authorization service to logout an user using front-channel, back-channel or SAML logout protocols.</summary>
+        /// <summary>Specifies the URL that will be used by Microsoft&apos;s authorization service to logout a user using front-channel, back-channel or SAML logout protocols.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LogoutUrl {

@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ContentType : Entity, IParsable {
-        /// <summary>List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.</summary>
+        /// <summary>List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AssociatedHubsUrls {
@@ -217,12 +217,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("propagateChanges"); }
             set { BackingStore?.Set("propagateChanges", value); }
         }
-        /// <summary>If true, the content type cannot be modified unless this value is first set to false.</summary>
+        /// <summary>If true, the content type can&apos;t be modified unless this value is first set to false.</summary>
         public bool? ReadOnly {
             get { return BackingStore?.Get<bool?>("readOnly"); }
             set { BackingStore?.Set("readOnly", value); }
         }
-        /// <summary>If true, the content type cannot be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.</summary>
+        /// <summary>If true, the content type can&apos;t be modified by users or through push-down operations. Only site collection administrators can seal or unseal content types.</summary>
         public bool? Sealed {
             get { return BackingStore?.Get<bool?>("sealed"); }
             set { BackingStore?.Set("sealed", value); }

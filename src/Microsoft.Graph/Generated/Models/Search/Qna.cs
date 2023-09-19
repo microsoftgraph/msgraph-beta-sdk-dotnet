@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Search {
     public class Qna : SearchAnswer, IParsable {
-        /// <summary>Timestamp of when the qna will stop to appear as a search result. Set as null for always available.</summary>
+        /// <summary>Timestamp of when the qna stops to appear as a search result. Set as null for always available.</summary>
         public DateTimeOffset? AvailabilityEndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("availabilityEndDateTime"); }
             set { BackingStore?.Set("availabilityEndDateTime", value); }
         }
-        /// <summary>Timestamp of when the qna will start to appear as a search result. Set as null for always available.</summary>
+        /// <summary>Timestamp of when the qna starts to appear as a search result. Set as null for always available.</summary>
         public DateTimeOffset? AvailabilityStartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("availabilityStartDateTime"); }
             set { BackingStore?.Set("availabilityStartDateTime", value); }
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
             set { BackingStore?.Set("groupIds", value); }
         }
 #endif
-        /// <summary>True if this qna was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.</summary>
+        /// <summary>True if a user or Microsoft suggested this qna to the admin. Read-only.</summary>
         public bool? IsSuggested {
             get { return BackingStore?.Get<bool?>("isSuggested"); }
             set { BackingStore?.Set("isSuggested", value); }
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
             get { return BackingStore?.Get<AnswerState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
-        /// <summary>Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.</summary>
+        /// <summary>Variations of a qna for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AnswerVariant>? TargetedVariations {

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>If you are configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that will point to the traffic manager.</summary>
+        /// <summary>If you&apos;re configuring a traffic manager in front of multiple App Proxy applications, the alternateUrl is the user-friendly URL that points to the traffic manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AlternateUrl {
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alternateUrl", value); }
         }
 #endif
-        /// <summary>The duration the connector will wait for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is &apos;Backend Timeout&apos;. Default value is default.</summary>
+        /// <summary>The duration the connector waits for a response from the backend application before closing the connection. Possible values are default, long. When set to default, the backend application timeout has a length of 85 seconds. When set to long, the backend timeout is increased to 180 seconds. Use long if your server takes more than 85 seconds to respond to requests or if you are unable to access the application and the error status is &apos;Backend Timeout&apos;. Default value is default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApplicationServerTimeout {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Passthru does not require authentication. Possible values are: passthru, aadPreAuthentication.</summary>
+        /// <summary>Details the pre-authentication setting for the application. Pre-authentication enforces that users must authenticate before accessing the app. Pass through doesn&apos;t require authentication. Possible values are: passthru, aadPreAuthentication.</summary>
         public Microsoft.Graph.Beta.Models.ExternalAuthenticationType? ExternalAuthenticationType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalAuthenticationType?>("externalAuthenticationType"); }
             set { BackingStore?.Set("externalAuthenticationType", value); }
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isAccessibleViaZTNAClient"); }
             set { BackingStore?.Set("isAccessibleViaZTNAClient", value); }
         }
-        /// <summary>Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property will be set to true by default. For all existing apps, the property will be set to false.</summary>
+        /// <summary>Indicates whether backend SSL certificate validation is enabled for the application. For all new Application Proxy apps, the property is set to true by default. For all existing apps, the property is set to false.</summary>
         public bool? IsBackendCertificateValidationEnabled {
             get { return BackingStore?.Get<bool?>("isBackendCertificateValidationEnabled"); }
             set { BackingStore?.Set("isBackendCertificateValidationEnabled", value); }
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isHttpOnlyCookieEnabled"); }
             set { BackingStore?.Set("isHttpOnlyCookieEnabled", value); }
         }
-        /// <summary>Indicates if the application is currently being published via Application Proxy or not. This is pre-set by the system. Read-only.</summary>
+        /// <summary>Indicates if the application is currently being published via Application Proxy or not. This is preset by the system. Read-only.</summary>
         public bool? IsOnPremPublishingEnabled {
             get { return BackingStore?.Get<bool?>("isOnPremPublishingEnabled"); }
             set { BackingStore?.Set("isOnPremPublishingEnabled", value); }
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isStateSessionEnabled"); }
             set { BackingStore?.Set("isStateSessionEnabled", value); }
         }
-        /// <summary>Indicates if the application should translate urls in the reponse headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.</summary>
+        /// <summary>Indicates if the application should translate urls in the response headers. Keep this value as true unless your application required the original host header in the authentication request. Default value is true.</summary>
         public bool? IsTranslateHostHeaderEnabled {
             get { return BackingStore?.Get<bool?>("isTranslateHostHeaderEnabled"); }
             set { BackingStore?.Set("isTranslateHostHeaderEnabled", value); }

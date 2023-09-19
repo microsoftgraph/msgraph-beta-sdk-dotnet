@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The claim that provides the display name or full name for the user. It is a required propoerty.</summary>
+        /// <summary>The claim that provides the display name or full name for the user. It&apos;s a required property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("surname", value); }
         }
 #endif
-        /// <summary>The claim that provides the unique identifier for the signed-in user. It is a required propoerty.</summary>
+        /// <summary>The claim that provides the unique identifier for the signed-in user. It is a required property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {

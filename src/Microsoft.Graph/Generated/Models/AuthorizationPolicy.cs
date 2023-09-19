@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("allowUserConsentForRiskyApps"); }
             set { BackingStore?.Set("allowUserConsentForRiskyApps", value); }
         }
-        /// <summary>To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This does not affect Azure AD Connect or Microsoft Graph.</summary>
+        /// <summary>To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This doesn&apos;t affect Azure AD Connect or Microsoft Graph.</summary>
         public bool? BlockMsolPowerShell {
             get { return BackingStore?.Get<bool?>("blockMsolPowerShell"); }
             set { BackingStore?.Set("blockMsolPowerShell", value); }
