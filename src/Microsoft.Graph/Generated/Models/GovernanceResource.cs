@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleAssignments", value); }
         }
 #endif
-        /// <summary>The collection of role defintions for the resource.</summary>
+        /// <summary>The collection of role definitions for the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<GovernanceRoleDefinition>? RoleDefinitions {

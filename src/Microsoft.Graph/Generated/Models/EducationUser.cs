@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<EducationExternalSource?>("externalSource"); }
             set { BackingStore?.Set("externalSource", value); }
         }
-        /// <summary>The name of the external source this resources was generated from.</summary>
+        /// <summary>The name of the external source this resource was generated from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalSourceDetail {
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mail", value); }
         }
 #endif
-        /// <summary>Mail address of user. Note: type and postOfficeBox are not supported for educationUser resources.</summary>
+        /// <summary>Mail address of user. Note: type and postOfficeBox aren&apos;t supported for educationUser resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PhysicalAddress? MailingAddress {
@@ -240,7 +240,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("officeLocation", value); }
         }
 #endif
-        /// <summary>Additional information used to associate the AAD user with it&apos;s Active Directory counterpart.</summary>
+        /// <summary>Additional information used to associate the Azure Active Directory user with its Active Directory counterpart.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EducationOnPremisesInfo? OnPremisesInfo {
@@ -254,7 +254,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onPremisesInfo", value); }
         }
 #endif
-        /// <summary>Specifies password policies for the user. See standard [user] resource for additional details.</summary>
+        /// <summary>Specifies password policies for the user. See standard [user] resource for more details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PasswordPolicies {
@@ -268,7 +268,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("passwordPolicies", value); }
         }
 #endif
-        /// <summary>Specifies the password profile for the user. The profile contains the user&apos;s password. This property is required when a user is created. See standard [user] resource for additional details.</summary>
+        /// <summary>Specifies the password profile for the user. The profile contains the user&apos;s password. This property is required when a user is created. See standard [user] resource for more details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.PasswordProfile? PasswordProfile {
@@ -334,7 +334,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("relatedContacts", value); }
         }
 #endif
-        /// <summary>Address where user lives. Note: type and postOfficeBox are not supported for educationUser resources.</summary>
+        /// <summary>Address where user lives. Note: type and postOfficeBox aren&apos;t supported for educationUser resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PhysicalAddress? ResidenceAddress {
@@ -381,7 +381,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("showInAddressList"); }
             set { BackingStore?.Set("showInAddressList", value); }
         }
-        /// <summary>If the primary role is student, this block will contain student specific data.</summary>
+        /// <summary>If the primary role is student, this block contains student specific data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EducationStudent? Student {

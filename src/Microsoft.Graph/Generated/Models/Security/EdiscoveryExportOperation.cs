@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("exportFileMetadata", value); }
         }
 #endif
-        /// <summary>The options provided for the export. For more details, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags. The fileInfo member is deprecated and will stop returning data on April 30th, 2023. Going forward, the summary and load file are always included.</summary>
+        /// <summary>The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags. The fileInfo member is deprecated and will stop returning data on April 30, 2023. Going forward, the summary and load file are always included.</summary>
         public Microsoft.Graph.Beta.Models.Security.ExportOptions? ExportOptions {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ExportOptions?>("exportOptions"); }
             set { BackingStore?.Set("exportOptions", value); }
         }
-        /// <summary>The options provided that specify the structure of the export. For more details, see reviewSet: export. Possible values are: none, directory, pst.</summary>
+        /// <summary>The options provided that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.</summary>
         public ExportFileStructure? ExportStructure {
             get { return BackingStore?.Get<ExportFileStructure?>("exportStructure"); }
             set { BackingStore?.Set("exportStructure", value); }
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("reviewSet", value); }
         }
 #endif
-        /// <summary>The review set query which is used to filter the documents for export.</summary>
+        /// <summary>The review set query that is used to filter the documents for export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EdiscoveryReviewSetQuery? ReviewSetQuery {

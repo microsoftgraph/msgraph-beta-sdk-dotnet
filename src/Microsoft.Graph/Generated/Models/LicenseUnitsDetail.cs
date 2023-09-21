@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
-        /// <summary>The number of units that are locked out because the customer cancelled their subscription of the service SKU.</summary>
+        /// <summary>The number of units that are locked out because the customer canceled their subscription of the service SKU.</summary>
         public int? LockedOut {
             get { return BackingStore?.Get<int?>("lockedOut"); }
             set { BackingStore?.Set("lockedOut", value); }
@@ -38,12 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.</summary>
+        /// <summary>The number of units that are suspended because the subscription of the service SKU has been canceled. The units can&apos;t be assigned but can still be reactivated before they&apos;re deleted.</summary>
         public int? Suspended {
             get { return BackingStore?.Get<int?>("suspended"); }
             set { BackingStore?.Set("suspended", value); }
         }
-        /// <summary>The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it is cancelled (moved to a suspended state).</summary>
+        /// <summary>The number of units that are in warning status. When the subscription of the service SKU has expired, the customer has a grace period to renew their subscription before it&apos;s canceled (moved to a suspended state).</summary>
         public int? Warning {
             get { return BackingStore?.Get<int?>("warning"); }
             set { BackingStore?.Set("warning", value); }

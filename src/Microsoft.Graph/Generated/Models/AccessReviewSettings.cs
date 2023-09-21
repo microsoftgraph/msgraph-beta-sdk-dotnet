@@ -27,12 +27,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("autoApplyReviewResultsEnabled"); }
             set { BackingStore?.Set("autoApplyReviewResultsEnabled", value); }
         }
-        /// <summary>Indicates whether a decision should be set if the reviewer did not supply one. For use when auto-apply is enabled. If you don&apos;t want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.</summary>
+        /// <summary>Indicates whether a decision should be set if the reviewer didn&apos;t supply one. For use when, auto-apply is enabled. If you don&apos;t want to have a review decision recorded unless the reviewer makes an explicit choice, set it to false.</summary>
         public bool? AutoReviewEnabled {
             get { return BackingStore?.Get<bool?>("autoReviewEnabled"); }
             set { BackingStore?.Set("autoReviewEnabled", value); }
         }
-        /// <summary>Detailed settings for how the feature should set the review decision. For use when auto-apply is enabled.</summary>
+        /// <summary>Detailed settings for how the feature should set the review decision. For use when, auto-apply is enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.AutoReviewSettings? AutoReviewSettings {

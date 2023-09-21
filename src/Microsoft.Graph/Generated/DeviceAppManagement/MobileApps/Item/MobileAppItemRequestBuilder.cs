@@ -2,8 +2,27 @@
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assign;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Assignments;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Categories;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidForWorkApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidLobApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidManagedStoreApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphAndroidStoreApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphIosLobApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphIosStoreApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphIosVppApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMacOSDmgApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMacOSLobApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMacOSPkgApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedAndroidLobApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedMobileLobApp;
-using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMobileLobApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMicrosoftStoreForBusinessApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWin32LobApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWinGetApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsAppX;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsMobileMSI;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsStoreApp;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsUniversalAppX;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsWebApp;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Relationships;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelationships;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -33,13 +52,89 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
         public CategoriesRequestBuilder Categories { get =>
             new CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Casts the previous resource to androidForWorkApp.</summary>
+        public GraphAndroidForWorkAppRequestBuilder GraphAndroidForWorkApp { get =>
+            new GraphAndroidForWorkAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to androidLobApp.</summary>
+        public GraphAndroidLobAppRequestBuilder GraphAndroidLobApp { get =>
+            new GraphAndroidLobAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to androidManagedStoreApp.</summary>
+        public GraphAndroidManagedStoreAppRequestBuilder GraphAndroidManagedStoreApp { get =>
+            new GraphAndroidManagedStoreAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to androidStoreApp.</summary>
+        public GraphAndroidStoreAppRequestBuilder GraphAndroidStoreApp { get =>
+            new GraphAndroidStoreAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to iosLobApp.</summary>
+        public GraphIosLobAppRequestBuilder GraphIosLobApp { get =>
+            new GraphIosLobAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to iosStoreApp.</summary>
+        public GraphIosStoreAppRequestBuilder GraphIosStoreApp { get =>
+            new GraphIosStoreAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to iosVppApp.</summary>
+        public GraphIosVppAppRequestBuilder GraphIosVppApp { get =>
+            new GraphIosVppAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to macOSDmgApp.</summary>
+        public GraphMacOSDmgAppRequestBuilder GraphMacOSDmgApp { get =>
+            new GraphMacOSDmgAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to macOSLobApp.</summary>
+        public GraphMacOSLobAppRequestBuilder GraphMacOSLobApp { get =>
+            new GraphMacOSLobAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to macOSPkgApp.</summary>
+        public GraphMacOSPkgAppRequestBuilder GraphMacOSPkgApp { get =>
+            new GraphMacOSPkgAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to managedAndroidLobApp.</summary>
+        public GraphManagedAndroidLobAppRequestBuilder GraphManagedAndroidLobApp { get =>
+            new GraphManagedAndroidLobAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to managedIOSLobApp.</summary>
+        public GraphManagedIOSLobAppRequestBuilder GraphManagedIOSLobApp { get =>
+            new GraphManagedIOSLobAppRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Casts the previous resource to managedMobileLobApp.</summary>
         public GraphManagedMobileLobAppRequestBuilder GraphManagedMobileLobApp { get =>
             new GraphManagedMobileLobAppRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Casts the previous resource to mobileLobApp.</summary>
-        public GraphMobileLobAppRequestBuilder GraphMobileLobApp { get =>
-            new GraphMobileLobAppRequestBuilder(PathParameters, RequestAdapter);
+        /// <summary>Casts the previous resource to microsoftStoreForBusinessApp.</summary>
+        public GraphMicrosoftStoreForBusinessAppRequestBuilder GraphMicrosoftStoreForBusinessApp { get =>
+            new GraphMicrosoftStoreForBusinessAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to win32LobApp.</summary>
+        public GraphWin32LobAppRequestBuilder GraphWin32LobApp { get =>
+            new GraphWin32LobAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to windowsAppX.</summary>
+        public GraphWindowsAppXRequestBuilder GraphWindowsAppX { get =>
+            new GraphWindowsAppXRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to windowsMobileMSI.</summary>
+        public GraphWindowsMobileMSIRequestBuilder GraphWindowsMobileMSI { get =>
+            new GraphWindowsMobileMSIRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to windowsStoreApp.</summary>
+        public GraphWindowsStoreAppRequestBuilder GraphWindowsStoreApp { get =>
+            new GraphWindowsStoreAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to windowsUniversalAppX.</summary>
+        public GraphWindowsUniversalAppXRequestBuilder GraphWindowsUniversalAppX { get =>
+            new GraphWindowsUniversalAppXRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to windowsWebApp.</summary>
+        public GraphWindowsWebAppRequestBuilder GraphWindowsWebApp { get =>
+            new GraphWindowsWebAppRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to winGetApp.</summary>
+        public GraphWinGetAppRequestBuilder GraphWinGetApp { get =>
+            new GraphWinGetAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.</summary>
         public RelationshipsRequestBuilder Relationships { get =>

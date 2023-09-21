@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>If status is not success/ skipped details for the error are contained in this.</summary>
+        /// <summary>If status isn&apos;t success/ skipped details for the error are contained in this.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ProvisioningErrorInfo? ErrorInformation {

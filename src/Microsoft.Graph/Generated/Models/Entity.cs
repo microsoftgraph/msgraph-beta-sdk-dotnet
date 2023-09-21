@@ -1284,6 +1284,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.security.hostCookie" => new HostCookie(),
                 "#microsoft.graph.security.hostname" => new Hostname(),
                 "#microsoft.graph.security.hostPair" => new HostPair(),
+                "#microsoft.graph.security.hostPort" => new HostPort(),
                 "#microsoft.graph.security.hostReputation" => new HostReputation(),
                 "#microsoft.graph.security.hostSslCertificate" => new HostSslCertificate(),
                 "#microsoft.graph.security.hostTracker" => new HostTracker(),

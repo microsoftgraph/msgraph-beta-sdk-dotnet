@@ -222,7 +222,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>An identification number that ties the indicator back to the indicator provider’s system (e.g. a foreign key).</summary>
+        /// <summary>An identification number that ties the indicator back to the indicator provider’s system (for example, a foreign key).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalId {
@@ -383,7 +383,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastReportedDateTime"); }
             set { BackingStore?.Set("lastReportedDateTime", value); }
         }
-        /// <summary>The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible which can be found via the Windows Defender Security Intelligence threat encyclopedia.</summary>
+        /// <summary>The malware family name associated with an indicator if it exists. Microsoft prefers the Microsoft malware family name if at all possible that can be found via the Windows Defender Security Intelligence threat encyclopedia.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MalwareFamilyNames {
@@ -553,12 +553,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("networkSourcePort"); }
             set { BackingStore?.Set("networkSourcePort", value); }
         }
-        /// <summary>Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools will not notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they will simply log that a match occurred but will not perform the action. Default value is false.</summary>
+        /// <summary>Determines if the indicator should trigger an event that is visible to an end-user. When set to ‘true,’ security tools won&apos;t notify the end user that a ‘hit’ has occurred. This is most often treated as audit or silent mode by security products where they&apos;ll simply log that a match occurred but won&apos;t perform the action. Default value is false.</summary>
         public bool? PassiveOnly {
             get { return BackingStore?.Get<bool?>("passiveOnly"); }
             set { BackingStore?.Set("passiveOnly", value); }
         }
-        /// <summary>An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero is not severe at all. Default value is 3.</summary>
+        /// <summary>An integer representing the severity of the malicious behavior identified by the data within the indicator. Acceptable values are 0 – 5 where 5 is the most severe and zero isn&apos;t severe at all. Default value is 3.</summary>
         public int? Severity {
             get { return BackingStore?.Get<int?>("severity"); }
             set { BackingStore?.Set("severity", value); }

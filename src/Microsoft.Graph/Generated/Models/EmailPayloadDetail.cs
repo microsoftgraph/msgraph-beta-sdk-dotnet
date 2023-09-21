@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("fromName", value); }
         }
 #endif
-        /// <summary>Indicates whether the sender is not from the user&apos;s organization.</summary>
+        /// <summary>Indicates whether the sender isn&apos;t from the user&apos;s organization.</summary>
         public bool? IsExternalSender {
             get { return BackingStore?.Get<bool?>("isExternalSender"); }
             set { BackingStore?.Set("isExternalSender", value); }

@@ -114,6 +114,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("passiveDnsReverse", value); }
         }
 #endif
+        /// <summary>The ports property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<HostPort>? Ports {
+            get { return BackingStore?.Get<List<HostPort>?>("ports"); }
+            set { BackingStore?.Set("ports", value); }
+        }
+#nullable restore
+#else
+        public List<HostPort> Ports {
+            get { return BackingStore?.Get<List<HostPort>>("ports"); }
+            set { BackingStore?.Set("ports", value); }
+        }
+#endif
         /// <summary>Represents a calculated reputation of this host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -217,6 +231,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"parentHostPairs", n => { ParentHostPairs = n.GetCollectionOfObjectValues<HostPair>(HostPair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"passiveDns", n => { PassiveDns = n.GetCollectionOfObjectValues<PassiveDnsRecord>(PassiveDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"passiveDnsReverse", n => { PassiveDnsReverse = n.GetCollectionOfObjectValues<PassiveDnsRecord>(PassiveDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"ports", n => { Ports = n.GetCollectionOfObjectValues<HostPort>(HostPort.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"reputation", n => { Reputation = n.GetObjectValue<HostReputation>(HostReputation.CreateFromDiscriminatorValue); } },
                 {"sslCertificates", n => { SslCertificates = n.GetCollectionOfObjectValues<HostSslCertificate>(HostSslCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"subdomains", n => { Subdomains = n.GetCollectionOfObjectValues<Subdomain>(Subdomain.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -240,6 +255,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             writer.WriteCollectionOfObjectValues<HostPair>("parentHostPairs", ParentHostPairs);
             writer.WriteCollectionOfObjectValues<PassiveDnsRecord>("passiveDns", PassiveDns);
             writer.WriteCollectionOfObjectValues<PassiveDnsRecord>("passiveDnsReverse", PassiveDnsReverse);
+            writer.WriteCollectionOfObjectValues<HostPort>("ports", Ports);
             writer.WriteObjectValue<HostReputation>("reputation", Reputation);
             writer.WriteCollectionOfObjectValues<HostSslCertificate>("sslCertificates", SslCertificates);
             writer.WriteCollectionOfObjectValues<Subdomain>("subdomains", Subdomains);

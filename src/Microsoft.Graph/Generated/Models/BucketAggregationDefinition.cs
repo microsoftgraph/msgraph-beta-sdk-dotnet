@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("prefixFilter", value); }
         }
 #endif
-        /// <summary>Specifies the manual ranges to compute the aggregations. This is only valid for non-string refiners of date or numeric type. Optional.</summary>
+        /// <summary>Specifies the manual ranges to compute the aggregations. This is only valid for nonstring refiners of date or numeric type. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<BucketAggregationRange>? Ranges {

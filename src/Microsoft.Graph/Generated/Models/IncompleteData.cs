@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The service does not have source data before the specified time.</summary>
+        /// <summary>The service doesn&apos;t have source data before the specified time.</summary>
         public DateTimeOffset? MissingDataBeforeDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("missingDataBeforeDateTime"); }
             set { BackingStore?.Set("missingDataBeforeDateTime", value); }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Some data was not recorded due to excessive activity.</summary>
+        /// <summary>Some data wasn&apos;t recorded due to excessive activity.</summary>
         public bool? WasThrottled {
             get { return BackingStore?.Get<bool?>("wasThrottled"); }
             set { BackingStore?.Set("wasThrottled", value); }

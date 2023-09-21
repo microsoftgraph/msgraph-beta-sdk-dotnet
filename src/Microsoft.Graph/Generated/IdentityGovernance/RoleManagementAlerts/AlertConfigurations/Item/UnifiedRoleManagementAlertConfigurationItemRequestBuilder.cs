@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.AlertConf
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The various configurations of an alert for Azure AD roles. The configurations are pre-defined and cannot be created or deleted, but some of the configurations can be modified.
+        /// The various configurations of an alert for Azure AD roles. The configurations are predefined and can&apos;t be created or deleted, but some of the configurations can be modified.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.AlertConf
             return requestInfo;
         }
         /// <summary>
-        /// The various configurations of an alert for Azure AD roles. The configurations are pre-defined and cannot be created or deleted, but some of the configurations can be modified.
+        /// The various configurations of an alert for Azure AD roles. The configurations are predefined and can&apos;t be created or deleted, but some of the configurations can be modified.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.AlertConf
             }
         }
         /// <summary>
-        /// The various configurations of an alert for Azure AD roles. The configurations are pre-defined and cannot be created or deleted, but some of the configurations can be modified.
+        /// The various configurations of an alert for Azure AD roles. The configurations are predefined and can&apos;t be created or deleted, but some of the configurations can be modified.
         /// </summary>
         public class UnifiedRoleManagementAlertConfigurationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

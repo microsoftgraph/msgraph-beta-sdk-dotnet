@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class EmailThreatSubmission : ThreatSubmission, IParsable {
-        /// <summary>If the email is phishing simulation, this field will not be null.</summary>
+        /// <summary>If the email is phishing simulation, this field won&apos;t be null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo? AttackSimulationInfo {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("attackSimulationInfo", value); }
         }
 #endif
-        /// <summary>Specifies the internet message id of the email being submitted. This information is present in the email header.</summary>
+        /// <summary>Specifies the internet message ID of the email being submitted. This information is present in the email header.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InternetMessageId {
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("senderIP", value); }
         }
 #endif
-        /// <summary>Specifies the subject of the email .</summary>
+        /// <summary>Specifies the subject of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject {
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("subject", value); }
         }
 #endif
-        /// <summary>It is used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.</summary>
+        /// <summary>It&apos;s used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction? TenantAllowOrBlockListAction {

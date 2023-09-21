@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Indicates whether the downgrade is or is not justified.</summary>
+        /// <summary>Indicates whether the downgrade is or isn&apos;t justified.</summary>
         public bool? IsDowngradeJustified {
             get { return BackingStore?.Get<bool?>("isDowngradeJustified"); }
             set { BackingStore?.Set("isDowngradeJustified", value); }
         }
-        /// <summary>Message that indicates why a downgrade is justified. The message will appear in administrative logs.</summary>
+        /// <summary>Message that indicates why a downgrade is justified. The message appears in administrative logs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JustificationMessage {

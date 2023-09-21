@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isHeaderShown"); }
             set { BackingStore?.Set("isHeaderShown", value); }
         }
-        /// <summary>Represents the layout template to be displayed on the login page for a tenant. The possible values are  default - Represents the default Microsoft layout with a centered lightbox.  verticalSplit - Represents a layout with a backgound on the left side and a full-height lightbox to the right.  unknownFutureValue - Evolvable enumeration sentinel value. Do not use.</summary>
+        /// <summary>Represents the layout template to be displayed on the login page for a tenant. The possible values are  default - Represents the default Microsoft layout with a centered lightbox.  verticalSplit - Represents a layout with a background on the left side and a full-height lightbox to the right.  unknownFutureValue - Evolvable enumeration sentinel value. Don&apos;t use.</summary>
         public Microsoft.Graph.Beta.Models.LayoutTemplateType? LayoutTemplateType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LayoutTemplateType?>("layoutTemplateType"); }
             set { BackingStore?.Set("layoutTemplateType", value); }

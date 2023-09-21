@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationSubmissionResource : Entity, IParsable {
-        /// <summary>Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.</summary>
+        /// <summary>Pointer to the assignment from which the resource was copied. If the value is null, the student uploaded the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignmentResourceUrl {
@@ -18,6 +18,20 @@ namespace Microsoft.Graph.Beta.Models {
         public string AssignmentResourceUrl {
             get { return BackingStore?.Get<string>("assignmentResourceUrl"); }
             set { BackingStore?.Set("assignmentResourceUrl", value); }
+        }
+#endif
+        /// <summary>The dependentResources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<EducationSubmissionResource>? DependentResources {
+            get { return BackingStore?.Get<List<EducationSubmissionResource>?>("dependentResources"); }
+            set { BackingStore?.Set("dependentResources", value); }
+        }
+#nullable restore
+#else
+        public List<EducationSubmissionResource> DependentResources {
+            get { return BackingStore?.Get<List<EducationSubmissionResource>>("dependentResources"); }
+            set { BackingStore?.Set("dependentResources", value); }
         }
 #endif
         /// <summary>Resource object.</summary>
@@ -48,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"assignmentResourceUrl", n => { AssignmentResourceUrl = n.GetStringValue(); } },
+                {"dependentResources", n => { DependentResources = n.GetCollectionOfObjectValues<EducationSubmissionResource>(EducationSubmissionResource.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"resource", n => { Resource = n.GetObjectValue<EducationResource>(EducationResource.CreateFromDiscriminatorValue); } },
             };
         }
@@ -59,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("assignmentResourceUrl", AssignmentResourceUrl);
+            writer.WriteCollectionOfObjectValues<EducationSubmissionResource>("dependentResources", DependentResources);
             writer.WriteObjectValue<EducationResource>("resource", Resource);
         }
     }

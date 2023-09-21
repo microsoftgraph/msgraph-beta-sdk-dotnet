@@ -6,6 +6,7 @@ using Microsoft.Graph.Beta.Security.ThreatIntelligence.Articles;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.HostComponents;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.HostCookies;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.HostPairs;
+using Microsoft.Graph.Beta.Security.ThreatIntelligence.HostPorts;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.HostSslCertificates;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.HostTrackers;
 using Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts;
@@ -49,6 +50,10 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence {
         /// <summary>Provides operations to manage the hostPairs property of the microsoft.graph.security.threatIntelligence entity.</summary>
         public HostPairsRequestBuilder HostPairs { get =>
             new HostPairsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the hostPorts property of the microsoft.graph.security.threatIntelligence entity.</summary>
+        public HostPortsRequestBuilder HostPorts { get =>
+            new HostPortsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hosts property of the microsoft.graph.security.threatIntelligence entity.</summary>
         public HostsRequestBuilder Hosts { get =>

@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.RejectedSenders.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a new user or group to the rejectedSender list. Specify the user or group in @odata.id in the request body. Users in the rejected senders list cannot post to conversations of the group (identified in the POST request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+        /// Add a new user or group to the rejectedSender list. Specify the user or group in @odata.id in the request body. Users in the rejected senders list can&apos;t post to conversations of the group (identified in the POST request URL). Make sure you don&apos;t specify the same user or group in the rejected senders and accepted senders lists, otherwise you&apos;ll get an error.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-post-rejectedsenders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.RejectedSenders.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Add a new user or group to the rejectedSender list. Specify the user or group in @odata.id in the request body. Users in the rejected senders list cannot post to conversations of the group (identified in the POST request URL). Make sure you do not specify the same user or group in the rejected senders and accepted senders lists, otherwise you will get an error.
+        /// Add a new user or group to the rejectedSender list. Specify the user or group in @odata.id in the request body. Users in the rejected senders list can&apos;t post to conversations of the group (identified in the POST request URL). Make sure you don&apos;t specify the same user or group in the rejected senders and accepted senders lists, otherwise you&apos;ll get an error.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

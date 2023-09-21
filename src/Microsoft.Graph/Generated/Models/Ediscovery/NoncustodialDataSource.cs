@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class NoncustodialDataSource : DataSourceContainer, IParsable {
-        /// <summary>Indicates if hold is applied to non-custodial data source (such as mailbox or site).</summary>
+        /// <summary>Indicates if hold is applied to noncustodial data source (such as mailbox or site).</summary>
         public bool? ApplyHoldToSource {
             get { return BackingStore?.Get<bool?>("applyHoldToSource"); }
             set { BackingStore?.Set("applyHoldToSource", value); }
         }
-        /// <summary>User source or SharePoint site data source as non-custodial data source.</summary>
+        /// <summary>User source or SharePoint site data source as noncustodial data source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Ediscovery.DataSource? DataSource {

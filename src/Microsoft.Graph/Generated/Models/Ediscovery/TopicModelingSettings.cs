@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             get { return BackingStore?.Get<bool?>("ignoreNumbers"); }
             set { BackingStore?.Set("ignoreNumbers", value); }
         }
-        /// <summary>Indicates whether themes is enabled for the case.</summary>
+        /// <summary>Indicates whether themes are enabled for the case.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }

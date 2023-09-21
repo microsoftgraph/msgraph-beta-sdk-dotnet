@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcPartnerAgentInstallStatus?>("installStatus"); }
             set { BackingStore?.Set("installStatus", value); }
         }
-        /// <summary>Indicates if the partner agent is a third party. When &apos;TRUE&apos;, the agent is a third-party (non-Microsoft) agent.  When &apos;FALSE&apos;, the agent is a Microsoft agent or is not known.  The default value is &apos;FALSE&apos;.</summary>
+        /// <summary>Indicates if the partner agent is a third party. When &apos;TRUE&apos; the agent is a third-party (non-Microsoft) agent and when &apos;FALSE&apos; the agent is a Microsoft agent or isn&apos;t known.  The default value is &apos;FALSE&apos;</summary>
         public bool? IsThirdPartyPartner {
             get { return BackingStore?.Get<bool?>("isThirdPartyPartner"); }
             set { BackingStore?.Set("isThirdPartyPartner", value); }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcPartnerAgentName?>("partnerAgentName"); }
             set { BackingStore?.Set("partnerAgentName", value); }
         }
-        /// <summary>Indicates if the partner agent is a third party. When &apos;TRUE&apos;, the agent is a third-party (non-Microsoft) agent. When &apos;FALSE&apos;, the agent is a Microsoft agent or is not known. The default value is &apos;FALSE&apos;.</summary>
+        /// <summary>Indicates if the partner agent is a third party. When &apos;TRUE&apos; the agent is a third-party (non-Microsoft) agent and when &apos;FALSE&apos; the agent is a Microsoft agent or isn&apos;t known. The default value is &apos;FALSE&apos;</summary>
         public bool? Retriable {
             get { return BackingStore?.Get<bool?>("retriable"); }
             set { BackingStore?.Set("retriable", value); }

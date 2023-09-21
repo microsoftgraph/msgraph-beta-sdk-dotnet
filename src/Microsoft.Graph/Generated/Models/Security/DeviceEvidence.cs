@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
             set { BackingStore?.Set("firstSeenDateTime", value); }
         }
-        /// <summary>The health state of the device.The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.</summary>
+        /// <summary>The health state of the device. The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.</summary>
         public DeviceHealthStatus? HealthStatus {
             get { return BackingStore?.Get<DeviceHealthStatus?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("mdeDeviceId", value); }
         }
 #endif
-        /// <summary>The status of the machine onboarding to Microsoft Defender for Endpoint.The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.</summary>
+        /// <summary>The status of the machine onboarding to Microsoft Defender for Endpoint. The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Security.OnboardingStatus? OnboardingStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.OnboardingStatus?>("onboardingStatus"); }
             set { BackingStore?.Set("onboardingStatus", value); }
@@ -115,12 +115,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("osPlatform", value); }
         }
 #endif
-        /// <summary>The ID of the role-based access control (RBAC) device group.</summary>
+        /// <summary>The ID of the role-based access control device group.</summary>
         public int? RbacGroupId {
             get { return BackingStore?.Get<int?>("rbacGroupId"); }
             set { BackingStore?.Set("rbacGroupId", value); }
         }
-        /// <summary>The name of the RBAC device group.</summary>
+        /// <summary>The name of the role-based access control device group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RbacGroupName {

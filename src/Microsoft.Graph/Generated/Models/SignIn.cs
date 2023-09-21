@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class SignIn : Entity, IParsable {
-        /// <summary>The application name displayed in the Azure Portal.  Supports $filter (eq, startsWith).</summary>
+        /// <summary>The application name displayed in the Azure portal.  Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppDisplayName {
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationContextClassReferences", value); }
         }
 #endif
-        /// <summary>The result of the authentication attempt and additional details on the authentication method.</summary>
+        /// <summary>The result of the authentication attempt and more details on the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AuthenticationDetail>? AuthenticationDetails {
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationMethodsUsed", value); }
         }
 #endif
-        /// <summary>Additional authentication processing details, such as the agent name in case of PTA/PHS or Server/farm name in case of federated authentication.</summary>
+        /// <summary>Extra authentication processing details, such as the agent name for PTA/PHS or Server/farm name for federated authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<KeyValue>? AuthenticationProcessingDetails {
@@ -246,7 +246,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in did not cross tenant boundaries, the value is none.</summary>
+        /// <summary>Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in didn&apos;t cross tenant boundaries, the value is none.</summary>
         public SignInAccessType? CrossTenantAccessType {
             get { return BackingStore?.Get<SignInAccessType?>("crossTenantAccessType"); }
             set { BackingStore?.Set("crossTenantAccessType", value); }
@@ -279,7 +279,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("federatedCredentialId", value); }
         }
 #endif
-        /// <summary>During a failed sign in, a user may click a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.</summary>
+        /// <summary>During a failed sign in, a user may select a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.</summary>
         public bool? FlaggedForReview {
             get { return BackingStore?.Get<bool?>("flaggedForReview"); }
             set { BackingStore?.Set("flaggedForReview", value); }
@@ -312,7 +312,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("homeTenantName", value); }
         }
 #endif
-        /// <summary>Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Do not infer the lack of a token if it is not one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.</summary>
+        /// <summary>Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Don&apos;t infer the lack of a token if it isn&apos;t one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.</summary>
         public Microsoft.Graph.Beta.Models.IncomingTokenType? IncomingTokenType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IncomingTokenType?>("incomingTokenType"); }
             set { BackingStore?.Set("incomingTokenType", value); }
@@ -355,7 +355,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isTenantRestricted"); }
             set { BackingStore?.Set("isTenantRestricted", value); }
         }
-        /// <summary>The city, state, and 2 letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.</summary>
+        /// <summary>The city, state, and two letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SignInLocation? Location {
@@ -529,7 +529,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<RiskLevel?>("riskLevelAggregated"); }
             set { BackingStore?.Set("riskLevelAggregated", value); }
         }
-        /// <summary>The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.</summary>
+        /// <summary>The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn&apos;t enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.</summary>
         public RiskLevel? RiskLevelDuringSignIn {
             get { return BackingStore?.Get<RiskLevel?>("riskLevelDuringSignIn"); }
             set { BackingStore?.Set("riskLevelDuringSignIn", value); }
@@ -567,7 +567,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("servicePrincipalCredentialThumbprint", value); }
         }
 #endif
-        /// <summary>The application identifier used for sign-in. This field is populated when you are signing in using an application.  Supports $filter (eq, startsWith).</summary>
+        /// <summary>The application identifier used for sign-in. This field is populated when you&apos;re signing in using an application.  Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServicePrincipalId {
@@ -581,7 +581,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("servicePrincipalId", value); }
         }
 #endif
-        /// <summary>The application name used for sign-in. This field is populated when you are signing in using an application.  Supports $filter (eq, startsWith).</summary>
+        /// <summary>The application name used for sign-in. This field is populated when you&apos;re signing in using an application.  Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServicePrincipalName {
@@ -647,7 +647,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<TokenProtectionStatus?>("signInTokenProtectionStatus"); }
             set { BackingStore?.Set("signInTokenProtectionStatus", value); }
         }
-        /// <summary>The sign-in status. Includes the error code and description of the error (in case of a sign-in failure).  Supports $filter (eq) on errorCode property.</summary>
+        /// <summary>The sign-in status. Includes the error code and description of the error (for a sign-in failure).  Supports $filter (eq) on errorCode property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SignInStatus? Status {
@@ -675,12 +675,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tokenIssuerName", value); }
         }
 #endif
-        /// <summary>The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.</summary>
+        /// <summary>The type of identity provider. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue, AzureADBackupAuth, ADFederationServicesMFAAdapter, NPSExtension. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: AzureADBackupAuth , ADFederationServicesMFAAdapter , NPSExtension.</summary>
         public Microsoft.Graph.Beta.Models.TokenIssuerType? TokenIssuerType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TokenIssuerType?>("tokenIssuerType"); }
             set { BackingStore?.Set("tokenIssuerType", value); }
         }
-        /// <summary>A unique base64 encoded request identifier used to track tokens issued by Azure AD as they are redeemed at resource providers.</summary>
+        /// <summary>A unique base64 encoded request identifier used to track tokens issued by Azure AD as they&apos;re redeemed at resource providers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UniqueTokenIdentifier {

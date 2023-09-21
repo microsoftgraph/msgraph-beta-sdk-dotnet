@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("content", value); }
         }
 #endif
-        /// <summary>An eTag for the content of the item. This eTag is not changed if only the metadata is changed. Note This property is not returned if the item is a folder. Read-only.</summary>
+        /// <summary>An eTag for the content of the item. This eTag isn&apos;t changed if only the metadata is changed. Note This property isn&apos;t returned if the item is a folder. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CTag {
@@ -286,7 +286,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("photo", value); }
         }
 #endif
-        /// <summary>Provides information about the published or checked-out state of an item, in locations that support such actions. This property is not returned by default. Read-only.</summary>
+        /// <summary>Provides information about the published or checked-out state of an item, in locations that support such actions. This property isn&apos;t returned by default. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PublicationFacet? Publication {
@@ -314,7 +314,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("remoteItem", value); }
         }
 #endif
-        /// <summary>The retentionLabel property</summary>
+        /// <summary>Information about retention label and settings enforced on the driveItem. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ItemRetentionLabel? RetentionLabel {
@@ -487,7 +487,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("webDavUrl", value); }
         }
 #endif
-        /// <summary>For files that are Excel spreadsheets, accesses the workbook API to work with the spreadsheet&apos;s contents. Nullable.</summary>
+        /// <summary>For files that are Excel spreadsheets, access to the workbook API to work with the spreadsheet&apos;s contents. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Workbook? Workbook {

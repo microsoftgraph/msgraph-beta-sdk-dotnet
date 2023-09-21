@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("executionConditions", value); }
         }
 #endif
-        /// <summary>Whether the workflow is enabled or disabled. If this setting is true, the workflow can be run on demand or on schedule when isSchedulingEnabled is true.</summary>
+        /// <summary>Determines whether the workflow is enabled or disabled. If this setting is true, the workflow can be run on demand or on schedule when isSchedulingEnabled is true.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
-        /// <summary>If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Cannot be true for a disabled workflow (where isEnabled is false).</summary>
+        /// <summary>If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Can&apos;t be true for a disabled workflow (where isEnabled is false).</summary>
         public bool? IsSchedulingEnabled {
             get { return BackingStore?.Get<bool?>("isSchedulingEnabled"); }
             set { BackingStore?.Set("isSchedulingEnabled", value); }

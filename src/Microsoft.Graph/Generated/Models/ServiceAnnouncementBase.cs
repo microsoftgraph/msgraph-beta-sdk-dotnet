@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ServiceAnnouncementBase : Entity, IParsable {
-        /// <summary>Additional details about service event. This property doesn&apos;t support filters.</summary>
+        /// <summary>Extra details about service event. This property doesn&apos;t support filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<KeyValuePair>? Details {

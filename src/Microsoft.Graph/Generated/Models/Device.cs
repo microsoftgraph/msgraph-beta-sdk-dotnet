@@ -331,6 +331,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("onPremisesLastSyncDateTime"); }
             set { BackingStore?.Set("onPremisesLastSyncDateTime", value); }
         }
+        /// <summary>The onPremisesSecurityIdentifier property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OnPremisesSecurityIdentifier {
+            get { return BackingStore?.Get<string?>("onPremisesSecurityIdentifier"); }
+            set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }
+        }
+#nullable restore
+#else
+        public string OnPremisesSecurityIdentifier {
+            get { return BackingStore?.Get<string>("onPremisesSecurityIdentifier"); }
+            set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }
+        }
+#endif
         /// <summary>true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; null if this object has never been synced from an on-premises directory (default). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).</summary>
         public bool? OnPremisesSyncEnabled {
             get { return BackingStore?.Get<bool?>("onPremisesSyncEnabled"); }
@@ -557,6 +571,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"model", n => { Model = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"onPremisesLastSyncDateTime", n => { OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                {"onPremisesSecurityIdentifier", n => { OnPremisesSecurityIdentifier = n.GetStringValue(); } },
                 {"onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
                 {"operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
                 {"operatingSystemVersion", n => { OperatingSystemVersion = n.GetStringValue(); } },
@@ -609,6 +624,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("onPremisesLastSyncDateTime", OnPremisesLastSyncDateTime);
+            writer.WriteStringValue("onPremisesSecurityIdentifier", OnPremisesSecurityIdentifier);
             writer.WriteBoolValue("onPremisesSyncEnabled", OnPremisesSyncEnabled);
             writer.WriteStringValue("operatingSystem", OperatingSystem);
             writer.WriteStringValue("operatingSystemVersion", OperatingSystemVersion);

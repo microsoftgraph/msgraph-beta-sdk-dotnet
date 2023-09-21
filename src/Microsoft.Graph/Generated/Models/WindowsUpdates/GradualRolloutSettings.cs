@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The duration between each set of devices being offered the update. The value is represented in ISO 8601 format for duration. Default value is P1D (1 day).</summary>
+        /// <summary>The duration between each set of devices being offered the update. The value is represented in ISO 8601 format for duration. Default value is P1D (one day).</summary>
         public TimeSpan? DurationBetweenOffers {
             get { return BackingStore?.Get<TimeSpan?>("durationBetweenOffers"); }
             set { BackingStore?.Set("durationBetweenOffers", value); }

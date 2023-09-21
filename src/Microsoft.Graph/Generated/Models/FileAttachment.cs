@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contentId", value); }
         }
 #endif
-        /// <summary>Do not use this property as it is not supported.</summary>
+        /// <summary>Don&apos;t use this property as it isn&apos;t supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentLocation {
