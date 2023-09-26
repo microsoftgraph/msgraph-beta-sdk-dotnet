@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CertificateAuthorityPath : Entity, IParsable {
-        /// <summary>Defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.</summary>
+        /// <summary>The certificateBasedApplicationConfigurations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<CertificateBasedApplicationConfiguration>? CertificateBasedApplicationConfigurations {

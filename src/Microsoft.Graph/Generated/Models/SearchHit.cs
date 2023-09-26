@@ -175,7 +175,6 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"_summary", n => { _summary = n.GetStringValue(); } },
                 {"contentSource", n => { ContentSource = n.GetStringValue(); } },
                 {"hitId", n => { HitId = n.GetStringValue(); } },
                 {"_id", n => { Id = n.GetStringValue(); } },
@@ -187,6 +186,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"_score", n => { Score = n.GetIntValue(); } },
                 {"_source", n => { Source = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
                 {"summary", n => { Summary = n.GetStringValue(); } },
+                {"_summary", n => { _summary = n.GetStringValue(); } },
             };
         }
         /// <summary>

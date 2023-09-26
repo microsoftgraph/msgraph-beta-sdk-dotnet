@@ -573,7 +573,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.ediscovery.legalHold" => new LegalHold(),
                 "#microsoft.graph.ediscovery.noncustodialDataSource" => new NoncustodialDataSource(),
                 "#microsoft.graph.ediscovery.purgeDataOperation" => new PurgeDataOperation(),
-                "#microsoft.graph.ediscovery.reviewSet" => new ReviewSet(),
+                "#microsoft.graph.ediscovery.reviewSet" => new Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet(),
                 "#microsoft.graph.ediscovery.reviewSetQuery" => new ReviewSetQuery(),
                 "#microsoft.graph.ediscovery.siteSource" => new Microsoft.Graph.Beta.Models.Ediscovery.SiteSource(),
                 "#microsoft.graph.ediscovery.sourceCollection" => new SourceCollection(),

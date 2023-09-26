@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class SignIn : Entity, IParsable {
-        /// <summary>The application name displayed in the Azure portal.  Supports $filter (eq, startsWith).</summary>
+        /// <summary>The application name displayed in the Microsoft Entra admin center.  Supports $filter (eq, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppDisplayName {
@@ -770,9 +770,9 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
                 {"appId", n => { AppId = n.GetStringValue(); } },
+                {"appTokenProtectionStatus", n => { AppTokenProtectionStatus = n.GetEnumValue<TokenProtectionStatus>(); } },
                 {"appliedConditionalAccessPolicies", n => { AppliedConditionalAccessPolicies = n.GetCollectionOfObjectValues<AppliedConditionalAccessPolicy>(AppliedConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"appliedEventListeners", n => { AppliedEventListeners = n.GetCollectionOfObjectValues<AppliedAuthenticationEventListener>(AppliedAuthenticationEventListener.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"appTokenProtectionStatus", n => { AppTokenProtectionStatus = n.GetEnumValue<TokenProtectionStatus>(); } },
                 {"authenticationAppDeviceDetails", n => { AuthenticationAppDeviceDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails>(Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails.CreateFromDiscriminatorValue); } },
                 {"authenticationAppPolicyEvaluationDetails", n => { AuthenticationAppPolicyEvaluationDetails = n.GetCollectionOfObjectValues<AuthenticationAppPolicyDetails>(AuthenticationAppPolicyDetails.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"authenticationContextClassReferences", n => { AuthenticationContextClassReferences = n.GetCollectionOfObjectValues<AuthenticationContext>(AuthenticationContext.CreateFromDiscriminatorValue)?.ToList(); } },

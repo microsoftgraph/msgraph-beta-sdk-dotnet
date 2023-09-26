@@ -7,7 +7,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class TenantAllowOrBlockListAction : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>Specifies whether the tenant allow block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.</summary>
+        /// <summary>Specifies whether the tenant allow-or-block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.</summary>
         public TenantAllowBlockListAction? Action {
             get { return BackingStore?.Get<TenantAllowBlockListAction?>("action"); }
             set { BackingStore?.Set("action", value); }
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>Specifies the note added to the tenant allow block list entry in the format of string.</summary>
+        /// <summary>Specifies the note added to the tenant allow-or-block list entry in the format of string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Note {

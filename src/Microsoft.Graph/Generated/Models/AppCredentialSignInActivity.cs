@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AppCredentialSignInActivity : Entity, IParsable {
-        /// <summary>The globally unique appId (also called client ID on the Azure portal) of the credential application.</summary>
+        /// <summary>The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credential application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppId {

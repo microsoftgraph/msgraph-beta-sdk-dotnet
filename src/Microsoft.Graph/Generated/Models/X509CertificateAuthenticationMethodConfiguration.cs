@@ -48,6 +48,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("includeTargets", value); }
         }
 #endif
+        /// <summary>The issuerHintsConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public X509CertificateIssuerHintsConfiguration? IssuerHintsConfiguration {
+            get { return BackingStore?.Get<X509CertificateIssuerHintsConfiguration?>("issuerHintsConfiguration"); }
+            set { BackingStore?.Set("issuerHintsConfiguration", value); }
+        }
+#nullable restore
+#else
+        public X509CertificateIssuerHintsConfiguration IssuerHintsConfiguration {
+            get { return BackingStore?.Get<X509CertificateIssuerHintsConfiguration>("issuerHintsConfiguration"); }
+            set { BackingStore?.Set("issuerHintsConfiguration", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new x509CertificateAuthenticationMethodConfiguration and sets the default values.
         /// </summary>
@@ -70,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"authenticationModeConfiguration", n => { AuthenticationModeConfiguration = n.GetObjectValue<X509CertificateAuthenticationModeConfiguration>(X509CertificateAuthenticationModeConfiguration.CreateFromDiscriminatorValue); } },
                 {"certificateUserBindings", n => { CertificateUserBindings = n.GetCollectionOfObjectValues<X509CertificateUserBinding>(X509CertificateUserBinding.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<AuthenticationMethodTarget>(AuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"issuerHintsConfiguration", n => { IssuerHintsConfiguration = n.GetObjectValue<X509CertificateIssuerHintsConfiguration>(X509CertificateIssuerHintsConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -82,6 +97,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<X509CertificateAuthenticationModeConfiguration>("authenticationModeConfiguration", AuthenticationModeConfiguration);
             writer.WriteCollectionOfObjectValues<X509CertificateUserBinding>("certificateUserBindings", CertificateUserBindings);
             writer.WriteCollectionOfObjectValues<AuthenticationMethodTarget>("includeTargets", IncludeTargets);
+            writer.WriteObjectValue<X509CertificateIssuerHintsConfiguration>("issuerHintsConfiguration", IssuerHintsConfiguration);
         }
     }
 }

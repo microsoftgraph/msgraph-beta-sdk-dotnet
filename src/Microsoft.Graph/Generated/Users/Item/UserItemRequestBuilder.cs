@@ -90,6 +90,7 @@ using Microsoft.Graph.Beta.Users.Item.RevokeSignInSessions;
 using Microsoft.Graph.Beta.Users.Item.ScopedRoleMemberOf;
 using Microsoft.Graph.Beta.Users.Item.Security;
 using Microsoft.Graph.Beta.Users.Item.SendMail;
+using Microsoft.Graph.Beta.Users.Item.ServiceProvisioningErrors;
 using Microsoft.Graph.Beta.Users.Item.Settings;
 using Microsoft.Graph.Beta.Users.Item.Sponsors;
 using Microsoft.Graph.Beta.Users.Item.Teamwork;
@@ -461,6 +462,10 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// <summary>Provides operations to call the sendMail method.</summary>
         public SendMailRequestBuilder SendMail { get =>
             new SendMailRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The serviceProvisioningErrors property</summary>
+        public ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors { get =>
+            new ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.user entity.</summary>
         public SettingsRequestBuilder Settings { get =>

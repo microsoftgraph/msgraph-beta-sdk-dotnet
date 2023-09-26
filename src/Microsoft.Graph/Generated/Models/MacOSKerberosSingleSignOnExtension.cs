@@ -322,9 +322,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"requireUserPresence", n => { RequireUserPresence = n.GetBoolValue(); } },
                 {"signInHelpText", n => { SignInHelpText = n.GetStringValue(); } },
                 {"tlsForLDAPRequired", n => { TlsForLDAPRequired = n.GetBoolValue(); } },
-                {"usernameLabelCustom", n => { UsernameLabelCustom = n.GetStringValue(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
                 {"userSetupDelayed", n => { UserSetupDelayed = n.GetBoolValue(); } },
+                {"usernameLabelCustom", n => { UsernameLabelCustom = n.GetStringValue(); } },
             };
         }
         /// <summary>

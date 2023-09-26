@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
         public RegistrationConfigurationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrationConfiguration{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get registrationConfiguration from solutions
+        /// Registration configuration of the webinar.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
             return await RequestAdapter.SendAsync<VirtualEventRegistrationConfiguration>(requestInfo, VirtualEventRegistrationConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get registrationConfiguration from solutions
+        /// Registration configuration of the webinar.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
             return new RegistrationConfigurationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get registrationConfiguration from solutions
+        /// Registration configuration of the webinar.
         /// </summary>
         public class RegistrationConfigurationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

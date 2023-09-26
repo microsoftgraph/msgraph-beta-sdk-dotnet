@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The email address of the user subject. If the subject is in other types, it is empty.</summary>
+        /// <summary>The email address of the user subject. If the subject is in other types, it&apos;s empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("email", value); }
         }
 #endif
-        /// <summary>The principal name of the user subject. If the subject is in other types, it is empty.</summary>
+        /// <summary>The principal name of the user subject. If the subject is in other types, it&apos;s empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrincipalName {

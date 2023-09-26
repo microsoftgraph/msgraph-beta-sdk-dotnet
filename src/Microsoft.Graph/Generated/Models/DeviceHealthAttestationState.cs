@@ -535,8 +535,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"systemManagementMode", n => { SystemManagementMode = n.GetEnumValue<SystemManagementModeLevel>(); } },
                 {"testSigning", n => { TestSigning = n.GetStringValue(); } },
                 {"tpmVersion", n => { TpmVersion = n.GetStringValue(); } },
-                {"virtualizationBasedSecurity", n => { VirtualizationBasedSecurity = n.GetEnumValue<AzureAttestationSettingStatus>(); } },
                 {"virtualSecureMode", n => { VirtualSecureMode = n.GetStringValue(); } },
+                {"virtualizationBasedSecurity", n => { VirtualizationBasedSecurity = n.GetEnumValue<AzureAttestationSettingStatus>(); } },
                 {"windowsPE", n => { WindowsPE = n.GetStringValue(); } },
             };
         }

@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Modules {
             return await RequestAdapter.SendAsync<EducationModuleCollectionResponse>(requestInfo, EducationModuleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new module in a class. Only teachers in a class can create a module. Modules start in the draft state, which means that students will not see the modules until publication.
+        /// Create a new module in a class. Only teachers in a class can create a module. Modules start in the draft state, which means that students won&apos;t see the modules until publication.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-post-module?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Modules {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new module in a class. Only teachers in a class can create a module. Modules start in the draft state, which means that students will not see the modules until publication.
+        /// Create a new module in a class. Only teachers in a class can create a module. Modules start in the draft state, which means that students won&apos;t see the modules until publication.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

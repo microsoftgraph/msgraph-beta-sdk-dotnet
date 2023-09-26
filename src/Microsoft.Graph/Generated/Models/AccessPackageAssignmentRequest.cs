@@ -217,10 +217,10 @@ namespace Microsoft.Graph.Beta.Models {
                 {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"isValidationOnly", n => { IsValidationOnly = n.GetBoolValue(); } },
                 {"justification", n => { Justification = n.GetStringValue(); } },
-                {"requestor", n => { Requestor = n.GetObjectValue<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue); } },
                 {"requestState", n => { RequestState = n.GetStringValue(); } },
                 {"requestStatus", n => { RequestStatus = n.GetStringValue(); } },
                 {"requestType", n => { RequestType = n.GetStringValue(); } },
+                {"requestor", n => { Requestor = n.GetObjectValue<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue); } },
                 {"schedule", n => { Schedule = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
                 {"verifiedCredentialsData", n => { VerifiedCredentialsData = n.GetCollectionOfObjectValues<VerifiedCredentialData>(VerifiedCredentialData.CreateFromDiscriminatorValue)?.ToList(); } },
             };

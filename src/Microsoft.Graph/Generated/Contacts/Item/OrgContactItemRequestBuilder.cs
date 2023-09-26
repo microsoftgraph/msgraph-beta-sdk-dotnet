@@ -8,6 +8,7 @@ using Microsoft.Graph.Beta.Contacts.Item.Manager;
 using Microsoft.Graph.Beta.Contacts.Item.MemberOf;
 using Microsoft.Graph.Beta.Contacts.Item.Restore;
 using Microsoft.Graph.Beta.Contacts.Item.RetryServiceProvisioning;
+using Microsoft.Graph.Beta.Contacts.Item.ServiceProvisioningErrors;
 using Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf;
 using Microsoft.Graph.Beta.Contacts.Item.TransitiveReports;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -60,6 +61,10 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
         /// <summary>Provides operations to call the retryServiceProvisioning method.</summary>
         public RetryServiceProvisioningRequestBuilder RetryServiceProvisioning { get =>
             new RetryServiceProvisioningRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The serviceProvisioningErrors property</summary>
+        public ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors { get =>
+            new ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transitiveMemberOf property of the microsoft.graph.orgContact entity.</summary>
         public TransitiveMemberOfRequestBuilder TransitiveMemberOf { get =>
