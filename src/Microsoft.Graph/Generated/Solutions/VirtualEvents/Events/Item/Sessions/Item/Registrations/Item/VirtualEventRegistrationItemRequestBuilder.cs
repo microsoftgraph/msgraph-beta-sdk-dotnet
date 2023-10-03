@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
         public VirtualEventRegistrationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/sessions/{virtualEventSession%2Did}/registrations/{virtualEventRegistration%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get registrations from solutions
+        /// Registration records of this virtual event session.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
             return await RequestAdapter.SendAsync<VirtualEventRegistration>(requestInfo, VirtualEventRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get registrations from solutions
+        /// Registration records of this virtual event session.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
             return new VirtualEventRegistrationItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get registrations from solutions
+        /// Registration records of this virtual event session.
         /// </summary>
         public class VirtualEventRegistrationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

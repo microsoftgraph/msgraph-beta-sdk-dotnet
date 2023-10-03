@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>Operations that an authorized principal are allowed to perform.</summary>
+        /// <summary>Operations that an authorized principal is allowed to perform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UnifiedRbacResourceAction>? ResourceActions {

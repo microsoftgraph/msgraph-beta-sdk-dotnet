@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("offerWhileRecommendedBy", value); }
         }
 #endif
-        /// <summary>Settings for governing safeguard holds on offering content.</summary>
+        /// <summary>Settings for governing safeguard-holds on offering content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SafeguardSettings? Safeguard {

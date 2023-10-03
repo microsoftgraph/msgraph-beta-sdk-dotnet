@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("healthCheckStatusDetails", value); }
         }
 #endif
-        /// <summary>When true, the Azure network connection is in use. When false, the connection is not in use. You cannot delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.</summary>
+        /// <summary>When true, the Azure network connection is in use. When false, the connection isn&apos;t in use. You can&apos;t delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.</summary>
         public bool? InUse {
             get { return BackingStore?.Get<bool?>("inUse"); }
             set { BackingStore?.Set("inUse", value); }
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("subscriptionName", value); }
         }
 #endif
-        /// <summary>Specifies how the provisioned Cloud PC will be joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.</summary>
+        /// <summary>Specifies how the provisioned Cloud PC is joined to Azure Active Directory. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.</summary>
         public CloudPcOnPremisesConnectionType? Type {
             get { return BackingStore?.Get<CloudPcOnPremisesConnectionType?>("type"); }
             set { BackingStore?.Set("type", value); }

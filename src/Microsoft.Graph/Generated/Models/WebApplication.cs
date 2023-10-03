@@ -128,8 +128,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"logoutUrl", n => { LogoutUrl = n.GetStringValue(); } },
                 {"oauth2AllowImplicitFlow", n => { Oauth2AllowImplicitFlow = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"redirectUris", n => { RedirectUris = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"redirectUriSettings", n => { RedirectUriSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RedirectUriSettings>(Microsoft.Graph.Beta.Models.RedirectUriSettings.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"redirectUris", n => { RedirectUris = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

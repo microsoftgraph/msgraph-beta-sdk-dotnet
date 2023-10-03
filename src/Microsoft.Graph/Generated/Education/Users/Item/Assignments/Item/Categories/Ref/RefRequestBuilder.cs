@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Categories.
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/categories/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Categories.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Categories.
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

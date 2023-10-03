@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class BaseItemVersion : Entity, IParsable {
-        /// <summary>Identity of the user which last modified the version. Read-only.</summary>
+        /// <summary>Identity of the user that last modified the version. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public IdentitySet? LastModifiedBy {

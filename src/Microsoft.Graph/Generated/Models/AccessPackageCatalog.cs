@@ -204,8 +204,8 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"accessPackageCustomWorkflowExtensions", n => { AccessPackageCustomWorkflowExtensions = n.GetCollectionOfObjectValues<CustomCalloutExtension>(CustomCalloutExtension.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"accessPackageResourceRoles", n => { AccessPackageResourceRoles = n.GetCollectionOfObjectValues<AccessPackageResourceRole>(AccessPackageResourceRole.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"accessPackageResources", n => { AccessPackageResources = n.GetCollectionOfObjectValues<AccessPackageResource>(AccessPackageResource.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"accessPackageResourceScopes", n => { AccessPackageResourceScopes = n.GetCollectionOfObjectValues<AccessPackageResourceScope>(AccessPackageResourceScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"accessPackageResources", n => { AccessPackageResources = n.GetCollectionOfObjectValues<AccessPackageResource>(AccessPackageResource.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"accessPackages", n => { AccessPackages = n.GetCollectionOfObjectValues<AccessPackage>(AccessPackage.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"catalogStatus", n => { CatalogStatus = n.GetStringValue(); } },
                 {"catalogType", n => { CatalogType = n.GetStringValue(); } },

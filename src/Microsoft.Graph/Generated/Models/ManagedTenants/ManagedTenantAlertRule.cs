@@ -176,8 +176,8 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"alertDisplayName", n => { AlertDisplayName = n.GetStringValue(); } },
-                {"alerts", n => { Alerts = n.GetCollectionOfObjectValues<ManagedTenantAlert>(ManagedTenantAlert.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"alertTTL", n => { AlertTTL = n.GetIntValue(); } },
+                {"alerts", n => { Alerts = n.GetCollectionOfObjectValues<ManagedTenantAlert>(ManagedTenantAlert.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },

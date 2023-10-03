@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
         public OnPremisesAgentGroupItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/agentGroups/{onPremisesAgentGroup%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an onPremisesAgentGroup object.
+        /// Delete an onPremisesAgentGroup object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onpremisesagentgroup-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an onPremisesAgentGroup object.
+        /// Retrieve the properties and relationships of an onPremisesAgentGroup object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onpremisesagentgroup-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
             return await RequestAdapter.SendAsync<OnPremisesAgentGroup>(requestInfo, OnPremisesAgentGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an onPremisesAgentGroup object.
+        /// Update the properties of an onPremisesAgentGroup object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onpremisesagentgroup-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
             return await RequestAdapter.SendAsync<OnPremisesAgentGroup>(requestInfo, OnPremisesAgentGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an onPremisesAgentGroup object.
+        /// Delete an onPremisesAgentGroup object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an onPremisesAgentGroup object.
+        /// Retrieve the properties and relationships of an onPremisesAgentGroup object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an onPremisesAgentGroup object.
+        /// Update the properties of an onPremisesAgentGroup object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -202,7 +202,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an onPremisesAgentGroup object.
+        /// Retrieve the properties and relationships of an onPremisesAgentGroup object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class OnPremisesAgentGroupItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

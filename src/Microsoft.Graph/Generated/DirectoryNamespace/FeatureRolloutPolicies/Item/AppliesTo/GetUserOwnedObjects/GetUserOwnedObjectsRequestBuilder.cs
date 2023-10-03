@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.FeatureRolloutPolicies.Item.Ap
         public GetUserOwnedObjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/featureRolloutPolicies/{featureRolloutPolicy%2Did}/appliesTo/getUserOwnedObjects", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn&apos;t support pagination.
+        /// Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn&apos;t support pagination. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-deleteditems-getuserownedobjects?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.FeatureRolloutPolicies.Item.Ap
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn&apos;t support pagination.
+        /// Retrieve a list of recently deleted application and group objects owned by the specified user. This API returns up to 1,000 deleted objects owned by the user, sorted by ID, and doesn&apos;t support pagination. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

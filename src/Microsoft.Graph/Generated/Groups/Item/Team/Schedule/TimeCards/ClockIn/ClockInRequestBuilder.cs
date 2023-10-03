@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.ClockIn {
         public ClockInRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/team/schedule/timeCards/clockIn", rawUrl) {
         }
         /// <summary>
-        /// Clock in to start a timeCard.
+        /// Clock in to start a timeCard. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-clockin?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.ClockIn {
             return await RequestAdapter.SendAsync<TimeCard>(requestInfo, TimeCard.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Clock in to start a timeCard.
+        /// Clock in to start a timeCard. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

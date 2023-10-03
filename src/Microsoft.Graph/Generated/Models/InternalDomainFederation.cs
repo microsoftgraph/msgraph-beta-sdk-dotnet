@@ -25,12 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FederatedIdpMfaBehavior?>("federatedIdpMfaBehavior"); }
             set { BackingStore?.Set("federatedIdpMfaBehavior", value); }
         }
-        /// <summary>If true, when SAML authentication requests are sent to the federated SAML IdP, Azure AD will sign those requests using the OrgID signing key. If false (default), the SAML authentication requests sent to the federated IdP are not signed.</summary>
+        /// <summary>If true, when SAML authentication requests are sent to the federated SAML IdP, Azure AD will sign those requests using the OrgID signing key. If false (default), the SAML authentication requests sent to the federated IdP aren&apos;t signed.</summary>
         public bool? IsSignedAuthenticationRequestRequired {
             get { return BackingStore?.Get<bool?>("isSignedAuthenticationRequestRequired"); }
             set { BackingStore?.Set("isSignedAuthenticationRequestRequired", value); }
         }
-        /// <summary>Fallback token signing certificate that is used to sign tokens when the primary signing certificate expires. Formatted as Base64 encoded strings of the public portion of the federated IdP&apos;s token signing certificate. Needs to be compatible with the X509Certificate2 class. Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate is not present in the federation properties after the federation service certificate has been updated.</summary>
+        /// <summary>Fallback token signing certificate that is used to sign tokens when the primary signing certificate expires. Formatted as Base64 encoded strings of the public portion of the federated IdP&apos;s token signing certificate. Needs to be compatible with the X509Certificate2 class. Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate isn&apos;t present in the federation properties after the federation service certificate has been updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NextSigningCertificate {
@@ -101,8 +101,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isSignedAuthenticationRequestRequired", n => { IsSignedAuthenticationRequestRequired = n.GetBoolValue(); } },
                 {"nextSigningCertificate", n => { NextSigningCertificate = n.GetStringValue(); } },
                 {"promptLoginBehavior", n => { PromptLoginBehavior = n.GetEnumValue<PromptLoginBehavior>(); } },
-                {"signingCertificateUpdateStatus", n => { SigningCertificateUpdateStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.SigningCertificateUpdateStatus>(Microsoft.Graph.Beta.Models.SigningCertificateUpdateStatus.CreateFromDiscriminatorValue); } },
                 {"signOutUri", n => { SignOutUri = n.GetStringValue(); } },
+                {"signingCertificateUpdateStatus", n => { SigningCertificateUpdateStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.SigningCertificateUpdateStatus>(Microsoft.Graph.Beta.Models.SigningCertificateUpdateStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

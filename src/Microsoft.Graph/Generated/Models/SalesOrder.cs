@@ -409,10 +409,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"billingPostalAddress", n => { BillingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"billToCustomerId", n => { BillToCustomerId = n.GetGuidValue(); } },
                 {"billToCustomerNumber", n => { BillToCustomerNumber = n.GetStringValue(); } },
                 {"billToName", n => { BillToName = n.GetStringValue(); } },
+                {"billingPostalAddress", n => { BillingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"currency", n => { Currency = n.GetObjectValue<Microsoft.Graph.Beta.Models.Currency>(Microsoft.Graph.Beta.Models.Currency.CreateFromDiscriminatorValue); } },
                 {"currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
                 {"currencyId", n => { CurrencyId = n.GetGuidValue(); } },
@@ -439,9 +439,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"salesOrderLines", n => { SalesOrderLines = n.GetCollectionOfObjectValues<SalesOrderLine>(SalesOrderLine.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"salesperson", n => { Salesperson = n.GetStringValue(); } },
                 {"sellingPostalAddress", n => { SellingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
-                {"shippingPostalAddress", n => { ShippingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"shipToContact", n => { ShipToContact = n.GetStringValue(); } },
                 {"shipToName", n => { ShipToName = n.GetStringValue(); } },
+                {"shippingPostalAddress", n => { ShippingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"status", n => { Status = n.GetStringValue(); } },
                 {"totalAmountExcludingTax", n => { TotalAmountExcludingTax = n.GetDecimalValue(); } },
                 {"totalAmountIncludingTax", n => { TotalAmountIncludingTax = n.GetDecimalValue(); } },

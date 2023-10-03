@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.StartBreak {
         public StartBreakRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/timeCards/{timeCard%2Did}/startBreak", rawUrl) {
         }
         /// <summary>
-        /// Start a break in a specific timeCard.
+        /// Start a break in a specific timeCard. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-startbreak?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.StartBreak {
             return await RequestAdapter.SendAsync<TimeCard>(requestInfo, TimeCard.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Start a break in a specific timeCard.
+        /// Start a break in a specific timeCard. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

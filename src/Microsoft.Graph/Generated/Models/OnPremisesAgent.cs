@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("externalIp", value); }
         }
 #endif
-        /// <summary>The name of the machine that the aggent is running on. Read-only</summary>
+        /// <summary>The name of the machine that the agent is running on. Read-only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MachineName {

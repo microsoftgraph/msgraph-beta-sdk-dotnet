@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.CustomQuestio
         public MeetingRegistrationQuestionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/onlineMeetings/{onlineMeeting%2Did}/registration/customQuestions/{meetingRegistrationQuestion%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
+        /// Delete a custom registration question from a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.CustomQuestio
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+        /// Get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.CustomQuestio
             return await RequestAdapter.SendAsync<MeetingRegistrationQuestion>(requestInfo, MeetingRegistrationQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+        /// Update a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.CustomQuestio
             return await RequestAdapter.SendAsync<MeetingRegistrationQuestion>(requestInfo, MeetingRegistrationQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
+        /// Delete a custom registration question from a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.CustomQuestio
             return requestInfo;
         }
         /// <summary>
-        /// Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+        /// Get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.CustomQuestio
             return requestInfo;
         }
         /// <summary>
-        /// Update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+        /// Update a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.CustomQuestio
             }
         }
         /// <summary>
-        /// Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+        /// Get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
         /// </summary>
         public class MeetingRegistrationQuestionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

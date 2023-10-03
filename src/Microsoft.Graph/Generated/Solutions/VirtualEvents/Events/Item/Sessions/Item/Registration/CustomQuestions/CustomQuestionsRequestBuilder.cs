@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
         public CustomQuestionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/sessions/{virtualEventSession%2Did}/registration/customQuestions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+        /// Get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistration-list-customquestions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
             return await RequestAdapter.SendAsync<MeetingRegistrationQuestionCollectionResponse>(requestInfo, MeetingRegistrationQuestionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+        /// Create a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistration-post-customquestions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
             return await RequestAdapter.SendAsync<MeetingRegistrationQuestion>(requestInfo, MeetingRegistrationQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+        /// Get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+        /// Create a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
             return new CustomQuestionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+        /// Get a custom registration question associated with a meetingRegistration object on behalf of the organizer. This API is supported in the following national cloud deployments.
         /// </summary>
         public class CustomQuestionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

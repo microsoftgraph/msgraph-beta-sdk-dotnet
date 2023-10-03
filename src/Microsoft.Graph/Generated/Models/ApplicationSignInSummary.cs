@@ -50,8 +50,8 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
                 {"failedSignInCount", n => { FailedSignInCount = n.GetLongValue(); } },
-                {"successfulSignInCount", n => { SuccessfulSignInCount = n.GetLongValue(); } },
                 {"successPercentage", n => { SuccessPercentage = n.GetDoubleValue(); } },
+                {"successfulSignInCount", n => { SuccessfulSignInCount = n.GetLongValue(); } },
             };
         }
         /// <summary>

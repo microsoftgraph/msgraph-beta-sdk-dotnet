@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents {
         public AuditEventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/auditEvents{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List all the cloudPcAuditEvent objects for the tenant.
+        /// List all the cloudPcAuditEvent objects for the tenant. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-auditevents?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents {
             return await RequestAdapter.SendAsync<CloudPcAuditEvent>(requestInfo, CloudPcAuditEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all the cloudPcAuditEvent objects for the tenant.
+        /// List all the cloudPcAuditEvent objects for the tenant. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents {
             return new AuditEventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all the cloudPcAuditEvent objects for the tenant.
+        /// List all the cloudPcAuditEvent objects for the tenant. This API is supported in the following national cloud deployments.
         /// </summary>
         public class AuditEventsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows {
         public UserFlowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/userFlows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of userflows.
+        /// Retrieve a list of userflows. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflow-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows {
             return await RequestAdapter.SendAsync<IdentityUserFlowCollectionResponse>(requestInfo, IdentityUserFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new userFlow object.
+        /// Create a new userFlow object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflow-post-userflows?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows {
             return await RequestAdapter.SendAsync<IdentityUserFlow>(requestInfo, IdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of userflows.
+        /// Retrieve a list of userflows. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The identity/userflows API is deprecated and will stop returning data on January 2022. Please use the new b2cUserflows or b2xUserflows APIs. as of 2021-05/identityProvider on 2021-05-21 and will be removed 2022-01-15")]
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new userFlow object.
+        /// Create a new userFlow object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows {
             return new UserFlowsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of userflows.
+        /// Retrieve a list of userflows. This API is supported in the following national cloud deployments.
         /// </summary>
         public class UserFlowsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

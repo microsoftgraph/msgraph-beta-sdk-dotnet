@@ -34,6 +34,26 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ApproveFotaAp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+        public async Task<ApproveFotaAppsPostResponse?> PostAsApproveFotaAppsPostResponseAsync(Action<ApproveFotaAppsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task<ApproveFotaAppsPostResponse> PostAsApproveFotaAppsPostResponseAsync(Action<ApproveFotaAppsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            var requestInfo = ToPostRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<ApproveFotaAppsPostResponse>(requestInfo, ApproveFotaAppsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Invoke action approveFotaApps
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This method is obsolete. Use PostAsApproveFotaAppsPostResponse instead.")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<ApproveFotaAppsResponse?> PostAsync(Action<ApproveFotaAppsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else

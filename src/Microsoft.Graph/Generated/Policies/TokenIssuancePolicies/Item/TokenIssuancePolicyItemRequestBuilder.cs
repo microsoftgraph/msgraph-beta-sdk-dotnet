@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies.Item {
         public TokenIssuancePolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/tokenIssuancePolicies/{tokenIssuancePolicy%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a tokenIssuancePolicy object.
+        /// Delete a tokenIssuancePolicy object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tokenissuancepolicy-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a tokenIssuancePolicy object.
+        /// Retrieve the properties and relationships of a tokenIssuancePolicy object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tokenissuancepolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies.Item {
             return await RequestAdapter.SendAsync<TokenIssuancePolicy>(requestInfo, TokenIssuancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a tokenIssuancePolicy object.
+        /// Update the properties of a tokenIssuancePolicy object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tokenissuancepolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies.Item {
             return await RequestAdapter.SendAsync<TokenIssuancePolicy>(requestInfo, TokenIssuancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a tokenIssuancePolicy object.
+        /// Delete a tokenIssuancePolicy object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a tokenIssuancePolicy object.
+        /// Retrieve the properties and relationships of a tokenIssuancePolicy object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a tokenIssuancePolicy object.
+        /// Update the properties of a tokenIssuancePolicy object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -197,7 +197,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a tokenIssuancePolicy object.
+        /// Retrieve the properties and relationships of a tokenIssuancePolicy object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class TokenIssuancePolicyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

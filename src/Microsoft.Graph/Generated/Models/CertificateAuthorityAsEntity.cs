@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CertificateAuthorityAsEntity : Entity, IParsable {
-        /// <summary>The trusted certificate.</summary>
+        /// <summary>The certificate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Certificate {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("certificate", value); }
         }
 #endif
-        /// <summary>Indicates if the certificate is a root authority. In a certificateBasedApplicationConfiguration object, at least one object in the trustedCertificateAuthorities collection must be a root authority.</summary>
+        /// <summary>The isRootAuthority property</summary>
         public bool? IsRootAuthority {
             get { return BackingStore?.Get<bool?>("isRootAuthority"); }
             set { BackingStore?.Set("isRootAuthority", value); }
         }
-        /// <summary>The issuer of the trusted certificate.</summary>
+        /// <summary>The issuer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Issuer {
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("issuer", value); }
         }
 #endif
-        /// <summary>The subject key identifier of the trusted certificate.</summary>
+        /// <summary>The issuerSubjectKeyIdentifier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IssuerSubjectKeyIdentifier {

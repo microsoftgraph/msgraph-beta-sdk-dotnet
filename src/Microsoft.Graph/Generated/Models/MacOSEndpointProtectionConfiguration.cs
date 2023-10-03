@@ -240,8 +240,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"fileVaultSelectedRecoveryKeyTypes", n => { FileVaultSelectedRecoveryKeyTypes = n.GetEnumValue<MacOSFileVaultRecoveryKeyTypes>(); } },
                 {"firewallApplications", n => { FirewallApplications = n.GetCollectionOfObjectValues<MacOSFirewallApplication>(MacOSFirewallApplication.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"firewallBlockAllIncoming", n => { FirewallBlockAllIncoming = n.GetBoolValue(); } },
-                {"firewallEnabled", n => { FirewallEnabled = n.GetBoolValue(); } },
                 {"firewallEnableStealthMode", n => { FirewallEnableStealthMode = n.GetBoolValue(); } },
+                {"firewallEnabled", n => { FirewallEnabled = n.GetBoolValue(); } },
                 {"gatekeeperAllowedAppSource", n => { GatekeeperAllowedAppSource = n.GetEnumValue<MacOSGatekeeperAppSources>(); } },
                 {"gatekeeperBlockOverride", n => { GatekeeperBlockOverride = n.GetBoolValue(); } },
             };

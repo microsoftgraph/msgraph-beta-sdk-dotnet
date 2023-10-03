@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems {
         public ChecklistItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/todo/lists/{todoTaskList%2Did}/tasks/{todoTask%2Did}/checklistItems{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the checklistItem resources associated to the checklistItems navigation property of a todoTask.
+        /// Get the checklistItem resources associated to the checklistItems navigation property of a todoTask. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-list-checklistitems?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems {
             return await RequestAdapter.SendAsync<ChecklistItemCollectionResponse>(requestInfo, ChecklistItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new checklistItem object as a subtask in a bigger todoTask.
+        /// Create a new checklistItem object as a subtask in a bigger todoTask. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-post-checklistitems?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems {
             return await RequestAdapter.SendAsync<ChecklistItem>(requestInfo, ChecklistItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the checklistItem resources associated to the checklistItems navigation property of a todoTask.
+        /// Get the checklistItem resources associated to the checklistItems navigation property of a todoTask. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new checklistItem object as a subtask in a bigger todoTask.
+        /// Create a new checklistItem object as a subtask in a bigger todoTask. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.ChecklistItems {
             return new ChecklistItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the checklistItem resources associated to the checklistItems navigation property of a todoTask.
+        /// Get the checklistItem resources associated to the checklistItems navigation property of a todoTask. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ChecklistItemsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

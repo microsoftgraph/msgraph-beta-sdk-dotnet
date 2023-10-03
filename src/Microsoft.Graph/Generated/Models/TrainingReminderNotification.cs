@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class TrainingReminderNotification : BaseEndUserNotification, IParsable {
-        /// <summary>The deliveryFrequency property</summary>
+        /// <summary>Configurable frequency for the reminder email introduced during simulation creation. Possible values are: unknown, weekly, biWeekly, unknownFutureValue.</summary>
         public NotificationDeliveryFrequency? DeliveryFrequency {
             get { return BackingStore?.Get<NotificationDeliveryFrequency?>("deliveryFrequency"); }
             set { BackingStore?.Set("deliveryFrequency", value); }

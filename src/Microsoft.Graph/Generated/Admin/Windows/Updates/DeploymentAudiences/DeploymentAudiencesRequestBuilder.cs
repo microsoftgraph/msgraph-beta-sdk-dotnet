@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences {
         public DeploymentAudiencesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/windows/updates/deploymentAudiences{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of deploymentAudience objects and their properties.
+        /// Get a list of deploymentAudience objects and their properties. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/adminwindowsupdates-list-deploymentaudiences?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences {
             return await RequestAdapter.SendAsync<DeploymentAudienceCollectionResponse>(requestInfo, DeploymentAudienceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new deploymentAudience object.
+        /// Create a new deploymentAudience object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/adminwindowsupdates-post-deploymentaudiences?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences {
             return await RequestAdapter.SendAsync<DeploymentAudience>(requestInfo, DeploymentAudience.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of deploymentAudience objects and their properties.
+        /// Get a list of deploymentAudience objects and their properties. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new deploymentAudience object.
+        /// Create a new deploymentAudience object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences {
             return new DeploymentAudiencesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of deploymentAudience objects and their properties.
+        /// Get a list of deploymentAudience objects and their properties. This API is supported in the following national cloud deployments.
         /// </summary>
         public class DeploymentAudiencesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

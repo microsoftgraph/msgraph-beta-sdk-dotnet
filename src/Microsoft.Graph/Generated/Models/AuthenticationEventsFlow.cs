@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationEventsFlow : Entity, IParsable {
-        /// <summary>The conditions representing the context of the authentication request which will be used to decide whether the events policy will be invoked.</summary>
+        /// <summary>The conditions representing the context of the authentication request that will be used to decide whether the events policy will be invoked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AuthenticationConditions? Conditions {

@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("activityGroupNames", value); }
         }
 #endif
-        /// <summary>A catchall area into which extra data from the indicator not covered by the other tiIndicator properties may be placed. Data placed into additionalInformation will typically not be utilized by the targetProduct security tool.</summary>
+        /// <summary>A catchall area for extra data from the indicator that is not specifically covered by other tiIndicator properties. The security tool specified by targetProduct typically does not utilize this data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AdditionalInformation {

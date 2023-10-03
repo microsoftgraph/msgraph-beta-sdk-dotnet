@@ -12,14 +12,14 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The appScope property</summary>
+        /// <summary>App scope. Possible values are: unknown, readCalendar, readContact, readMail, readAllChat, readAllFile, readAndWriteMail, sendMail, unknownFutureValue.</summary>
         public OAuthAppScope? AppScope {
             get { return BackingStore?.Get<OAuthAppScope?>("appScope"); }
             set { BackingStore?.Set("appScope", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The displayLogo property</summary>
+        /// <summary>App display logo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayLogo {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayLogo", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>App name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {

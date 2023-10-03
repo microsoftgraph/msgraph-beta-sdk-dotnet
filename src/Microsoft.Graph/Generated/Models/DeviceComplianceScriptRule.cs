@@ -97,8 +97,8 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"dataType", n => { DataType = n.GetEnumValue<DataType>(); } },
-                {"deviceComplianceScriptRuleDataType", n => { DeviceComplianceScriptRuleDataType = n.GetEnumValue<DeviceComplianceScriptRuleDataType>(); } },
                 {"deviceComplianceScriptRulOperator", n => { DeviceComplianceScriptRulOperator = n.GetEnumValue<DeviceComplianceScriptRulOperator>(); } },
+                {"deviceComplianceScriptRuleDataType", n => { DeviceComplianceScriptRuleDataType = n.GetEnumValue<DeviceComplianceScriptRuleDataType>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"operand", n => { Operand = n.GetStringValue(); } },
                 {"operator", n => { Operator = n.GetEnumValue<Operator>(); } },

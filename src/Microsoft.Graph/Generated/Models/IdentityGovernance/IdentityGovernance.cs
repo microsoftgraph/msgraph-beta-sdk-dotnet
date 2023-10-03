@@ -84,6 +84,20 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The permissionsManagement property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.PermissionsManagement? PermissionsManagement {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsManagement?>("permissionsManagement"); }
+            set { BackingStore?.Set("permissionsManagement", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.PermissionsManagement PermissionsManagement {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsManagement>("permissionsManagement"); }
+            set { BackingStore?.Set("permissionsManagement", value); }
+        }
+#endif
         /// <summary>The privilegedAccess property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -151,6 +165,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
                 {"entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<Microsoft.Graph.Beta.Models.EntitlementManagement>(Microsoft.Graph.Beta.Models.EntitlementManagement.CreateFromDiscriminatorValue); } },
                 {"lifecycleWorkflows", n => { LifecycleWorkflows = n.GetObjectValue<LifecycleWorkflowsContainer>(LifecycleWorkflowsContainer.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"permissionsManagement", n => { PermissionsManagement = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsManagement>(Microsoft.Graph.Beta.Models.PermissionsManagement.CreateFromDiscriminatorValue); } },
                 {"privilegedAccess", n => { PrivilegedAccess = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrivilegedAccessRoot>(Microsoft.Graph.Beta.Models.PrivilegedAccessRoot.CreateFromDiscriminatorValue); } },
                 {"roleManagementAlerts", n => { RoleManagementAlerts = n.GetObjectValue<Microsoft.Graph.Beta.Models.RoleManagementAlert>(Microsoft.Graph.Beta.Models.RoleManagementAlert.CreateFromDiscriminatorValue); } },
                 {"termsOfUse", n => { TermsOfUse = n.GetObjectValue<Microsoft.Graph.Beta.Models.TermsOfUseContainer>(Microsoft.Graph.Beta.Models.TermsOfUseContainer.CreateFromDiscriminatorValue); } },
@@ -167,6 +182,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EntitlementManagement>("entitlementManagement", EntitlementManagement);
             writer.WriteObjectValue<LifecycleWorkflowsContainer>("lifecycleWorkflows", LifecycleWorkflows);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsManagement>("permissionsManagement", PermissionsManagement);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrivilegedAccessRoot>("privilegedAccess", PrivilegedAccess);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RoleManagementAlert>("roleManagementAlerts", RoleManagementAlerts);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TermsOfUseContainer>("termsOfUse", TermsOfUse);

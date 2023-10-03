@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.ItemInsights {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the user-customizable privacy settings for itemInsights and meeting hours insights.
+        /// Get the user-customizable privacy settings for itemInsights and meeting hours insights. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/userinsightssettings-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.ItemInsights {
             return await RequestAdapter.SendAsync<UserInsightsSettings>(requestInfo, UserInsightsSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the privacy settings for itemInsights and meeting hours insights of a user.
+        /// Update the privacy settings for itemInsights and meeting hours insights of a user. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/userinsightssettings-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.ItemInsights {
             return requestInfo;
         }
         /// <summary>
-        /// Get the user-customizable privacy settings for itemInsights and meeting hours insights.
+        /// Get the user-customizable privacy settings for itemInsights and meeting hours insights. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.ItemInsights {
             return requestInfo;
         }
         /// <summary>
-        /// Update the privacy settings for itemInsights and meeting hours insights of a user.
+        /// Update the privacy settings for itemInsights and meeting hours insights of a user. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.ItemInsights {
             }
         }
         /// <summary>
-        /// Get the user-customizable privacy settings for itemInsights and meeting hours insights.
+        /// Get the user-customizable privacy settings for itemInsights and meeting hours insights. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ItemInsightsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

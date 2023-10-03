@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases {
         public CasesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of case objects.
+        /// Retrieve a list of case objects. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases {
             return await RequestAdapter.SendAsync<CaseCollectionResponse>(requestInfo, CaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new case object.
+        /// Create a new case object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases {
             return await RequestAdapter.SendAsync<Case>(requestInfo, Case.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of case objects.
+        /// Retrieve a list of case objects. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01")]
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new case object.
+        /// Create a new case object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases {
             return new CasesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of case objects.
+        /// Retrieve a list of case objects. This API is supported in the following national cloud deployments.
         /// </summary>
         public class CasesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

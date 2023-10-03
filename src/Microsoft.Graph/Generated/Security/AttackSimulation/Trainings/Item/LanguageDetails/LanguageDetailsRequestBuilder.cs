@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Trainings.Item.Language
         public LanguageDetailsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/attackSimulation/trainings/{training%2Did}/languageDetails{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get languageDetails from security
+        /// Language specific details on a training.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Trainings.Item.Language
             return await RequestAdapter.SendAsync<TrainingLanguageDetail>(requestInfo, TrainingLanguageDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get languageDetails from security
+        /// Language specific details on a training.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Trainings.Item.Language
             return new LanguageDetailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get languageDetails from security
+        /// Language specific details on a training.
         /// </summary>
         public class LanguageDetailsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

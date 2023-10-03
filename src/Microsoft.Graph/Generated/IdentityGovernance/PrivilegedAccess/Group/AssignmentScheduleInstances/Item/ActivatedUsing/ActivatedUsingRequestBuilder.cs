@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
         public ActivatedUsingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/privilegedAccess/group/assignmentScheduleInstances/{privilegedAccessGroupAssignmentScheduleInstance%2Did}/activatedUsing{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it is null.
+        /// When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it&apos;s null.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
             return await RequestAdapter.SendAsync<PrivilegedAccessGroupEligibilityScheduleInstance>(requestInfo, PrivilegedAccessGroupEligibilityScheduleInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it is null.
+        /// When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it&apos;s null.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess.Group.Assignm
             return new ActivatedUsingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it is null.
+        /// When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it&apos;s null.
         /// </summary>
         public class ActivatedUsingRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

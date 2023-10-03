@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
         public DeviceLinksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/deviceLinks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of device links associated with a specific branch.
+        /// Retrieve a list of device links associated with a specific branch. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-branchsite-list-devicelinks?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
             return await RequestAdapter.SendAsync<DeviceLinkCollectionResponse>(requestInfo, DeviceLinkCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a branch site with associated device links.
+        /// Create a branch site with associated device links. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-branchsite-post-devicelinks?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
             return await RequestAdapter.SendAsync<DeviceLink>(requestInfo, DeviceLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of device links associated with a specific branch.
+        /// Retrieve a list of device links associated with a specific branch. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
             return requestInfo;
         }
         /// <summary>
-        /// Create a branch site with associated device links.
+        /// Create a branch site with associated device links. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
             return new DeviceLinksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of device links associated with a specific branch.
+        /// Retrieve a list of device links associated with a specific branch. This API is supported in the following national cloud deployments.
         /// </summary>
         public class DeviceLinksRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

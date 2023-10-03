@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item {
         public B2cIdentityUserFlowItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a b2cIdentityUserFlow object.
+        /// Delete a b2cIdentityUserFlow object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2cidentityuserflow-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a b2cUserFlow object.
+        /// Retrieve the properties and relationships of a b2cUserFlow object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2cidentityuserflow-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item {
             return await RequestAdapter.SendAsync<B2cIdentityUserFlow>(requestInfo, B2cIdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a b2cIdentityUserFlow object.
+        /// Update the properties of a b2cIdentityUserFlow object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2cidentityuserflow-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item {
             return await RequestAdapter.SendAsync<B2cIdentityUserFlow>(requestInfo, B2cIdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a b2cIdentityUserFlow object.
+        /// Delete a b2cIdentityUserFlow object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a b2cUserFlow object.
+        /// Retrieve the properties and relationships of a b2cUserFlow object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a b2cIdentityUserFlow object.
+        /// Update the properties of a b2cIdentityUserFlow object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -212,7 +212,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a b2cUserFlow object.
+        /// Retrieve the properties and relationships of a b2cUserFlow object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class B2cIdentityUserFlowItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

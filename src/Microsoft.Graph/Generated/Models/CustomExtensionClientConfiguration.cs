@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The max number of retries that Azure AD will make to the external API. Values of 0 or 1 are supported. If null, the default for the service will apply.</summary>
+        /// <summary>The max number of retries that Azure AD makes to the external API. Values of 0 or 1 are supported. If null, the default for the service applies.</summary>
         public int? MaximumRetries {
             get { return BackingStore?.Get<int?>("maximumRetries"); }
             set { BackingStore?.Set("maximumRetries", value); }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The max duration in milliseconds that Azure AD will wait for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. If null, the default for the service will apply.</summary>
+        /// <summary>The max duration in milliseconds that Azure AD waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. If null, the default for the service applies.</summary>
         public int? TimeoutInMilliseconds {
             get { return BackingStore?.Get<int?>("timeoutInMilliseconds"); }
             set { BackingStore?.Set("timeoutInMilliseconds", value); }

@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Me.CalendarView.Item.ExceptionOccurrences.Item.At
         public AttachmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendarView/{event%2Did}/exceptionOccurrences/{event%2Did1}/attachments{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of attachment objects attached to an event.
+        /// Retrieve a list of attachment objects attached to an event. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-list-attachments?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Me.CalendarView.Item.ExceptionOccurrences.Item.At
             return await RequestAdapter.SendAsync<AttachmentCollectionResponse>(requestInfo, AttachmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource.
+        /// Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Me.CalendarView.Item.ExceptionOccurrences.Item.At
             return await RequestAdapter.SendAsync<Attachment>(requestInfo, Attachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of attachment objects attached to an event.
+        /// Retrieve a list of attachment objects attached to an event. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Me.CalendarView.Item.ExceptionOccurrences.Item.At
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource.
+        /// Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.Me.CalendarView.Item.ExceptionOccurrences.Item.At
             return new AttachmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of attachment objects attached to an event.
+        /// Retrieve a list of attachment objects attached to an event. This API is supported in the following national cloud deployments.
         /// </summary>
         public class AttachmentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

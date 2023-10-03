@@ -34,6 +34,26 @@ namespace Microsoft.Graph.Beta.Me.GetManagedDevicesWithFailedOrPendingApps {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+        public async Task<GetManagedDevicesWithFailedOrPendingAppsGetResponse?> GetAsGetManagedDevicesWithFailedOrPendingAppsGetResponseAsync(Action<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task<GetManagedDevicesWithFailedOrPendingAppsGetResponse> GetAsGetManagedDevicesWithFailedOrPendingAppsGetResponseAsync(Action<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<GetManagedDevicesWithFailedOrPendingAppsGetResponse>(requestInfo, GetManagedDevicesWithFailedOrPendingAppsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Retrieves the list of devices with failed or pending apps
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This method is obsolete. Use GetAsGetManagedDevicesWithFailedOrPendingAppsGetResponse instead.")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<GetManagedDevicesWithFailedOrPendingAppsResponse?> GetAsync(Action<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else

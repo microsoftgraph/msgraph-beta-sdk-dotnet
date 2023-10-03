@@ -450,12 +450,12 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"allowAttendeeToEnableCamera", n => { AllowAttendeeToEnableCamera = n.GetBoolValue(); } },
                 {"allowAttendeeToEnableMic", n => { AllowAttendeeToEnableMic = n.GetBoolValue(); } },
-                {"allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<OnlineMeetingPresenters>(); } },
                 {"allowMeetingChat", n => { AllowMeetingChat = n.GetEnumValue<MeetingChatMode>(); } },
                 {"allowParticipantsToChangeName", n => { AllowParticipantsToChangeName = n.GetBoolValue(); } },
                 {"allowRecording", n => { AllowRecording = n.GetBoolValue(); } },
                 {"allowTeamworkReactions", n => { AllowTeamworkReactions = n.GetBoolValue(); } },
                 {"allowTranscription", n => { AllowTranscription = n.GetBoolValue(); } },
+                {"allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<OnlineMeetingPresenters>(); } },
                 {"alternativeRecording", n => { AlternativeRecording = n.GetByteArrayValue(); } },
                 {"anonymizeIdentityForRoles", n => { AnonymizeIdentityForRoles = n.GetCollectionOfEnumValues<OnlineMeetingRole>()?.ToList(); } },
                 {"attendanceReports", n => { AttendanceReports = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>(Microsoft.Graph.Beta.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue)?.ToList(); } },

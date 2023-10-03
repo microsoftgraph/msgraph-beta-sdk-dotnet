@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceC
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a managedDeviceCompliance object.
+        /// Read the properties and relationships of a managedDeviceCompliance object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-manageddevicecompliance-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceC
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a managedDeviceCompliance object.
+        /// Read the properties and relationships of a managedDeviceCompliance object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceC
             }
         }
         /// <summary>
-        /// Read the properties and relationships of a managedDeviceCompliance object.
+        /// Read the properties and relationships of a managedDeviceCompliance object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ManagedDeviceComplianceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

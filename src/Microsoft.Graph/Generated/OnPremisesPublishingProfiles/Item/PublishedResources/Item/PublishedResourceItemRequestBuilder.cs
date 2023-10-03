@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of publishedResource object.
+        /// Retrieve the properties and relationships of publishedResource object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/publishedresource-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
             return await RequestAdapter.SendAsync<PublishedResource>(requestInfo, PublishedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of publishedresource  publishedResource object.
+        /// Update the properties of published resource  publishedResource object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/publishedresource-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of publishedResource object.
+        /// Retrieve the properties and relationships of publishedResource object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of publishedresource  publishedResource object.
+        /// Update the properties of published resource  publishedResource object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of publishedResource object.
+        /// Retrieve the properties and relationships of publishedResource object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class PublishedResourceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

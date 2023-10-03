@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CertificateBasedApplicationConfiguration : TrustedCertificateAuthorityAsEntityBase, IParsable {
-        /// <summary>The description of the trusted certificate authorities.</summary>
+        /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The display name of the trusted certificate authorities.</summary>
+        /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {

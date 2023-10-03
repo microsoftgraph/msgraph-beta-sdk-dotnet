@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Notification : Entity, IParsable {
-        /// <summary>Sets how long (in seconds) this notification content will stay in each platform&apos;s notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user&apos;s Windows Action Center.</summary>
+        /// <summary>Sets how long (in seconds) this notification content stays in each platform&apos;s notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification stays in the user&apos;s Windows Action Center.</summary>
         public int? DisplayTimeToLive {
             get { return BackingStore?.Get<int?>("displayTimeToLive"); }
             set { BackingStore?.Set("displayTimeToLive", value); }
@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>The name of the group that this notification belongs to. It is set by the developer for the purpose of grouping notifications together.</summary>
+        /// <summary>The name of the group that this notification belongs to. It is set by the developer for grouping notifications together.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupName {

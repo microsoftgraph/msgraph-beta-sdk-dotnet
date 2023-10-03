@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
-        /// <summary>true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don&apos;t inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so cannot be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Azure Active Directory.</summary>
+        /// <summary>true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. Default value is false. Use this property to define administrative units whose roles don&apos;t inherit from tenant-level administrators, and management of individual member objects is limited to administrators scoped to a restricted management administrative unit. Immutable, so can&apos;t be changed later.  For more information about working with restricted management administrative units, see Restricted management administrative units in Azure Active Directory.</summary>
         public bool? IsMemberManagementRestricted {
             get { return BackingStore?.Get<bool?>("isMemberManagementRestricted"); }
             set { BackingStore?.Set("isMemberManagementRestricted", value); }

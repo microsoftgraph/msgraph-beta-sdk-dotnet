@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The URL to the documentation or Azure portal page.</summary>
+        /// <summary>The URL to the documentation or Microsoft Entra admin center page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url {

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.RoleDefinitions {
         public RoleDefinitionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/roleManagement/exchange/roleDefinitions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- directory (Azure AD) - entitlement management (Azure AD)- Exchange Online
+        /// Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- directory (Azure AD) - entitlement management (Azure AD)- Exchange Online This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-roledefinitions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.RoleDefinitions {
             return await RequestAdapter.SendAsync<UnifiedRoleDefinition>(requestInfo, UnifiedRoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- directory (Azure AD) - entitlement management (Azure AD)- Exchange Online
+        /// Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- directory (Azure AD) - entitlement management (Azure AD)- Exchange Online This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.RoleDefinitions {
             return new RoleDefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- directory (Azure AD) - entitlement management (Azure AD)- Exchange Online
+        /// Get a list of unifiedRoleDefinition objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune)- directory (Azure AD) - entitlement management (Azure AD)- Exchange Online This API is supported in the following national cloud deployments.
         /// </summary>
         public class RoleDefinitionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
         public AgreementItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/termsOfUse/agreements/{agreement%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an agreement object.
+        /// Delete an agreement object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreement-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve all files related to an agreement. This includes the default file and all localized files.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreement-list-files?view=graph-rest-1.0" />
+        /// Retrieve the properties and relationships of an agreement object. This API is supported in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreement-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
             return await RequestAdapter.SendAsync<Agreement>(requestInfo, Agreement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an agreement object.
+        /// Update the properties of an agreement object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreement-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
             return await RequestAdapter.SendAsync<Agreement>(requestInfo, Agreement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an agreement object.
+        /// Delete an agreement object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve all files related to an agreement. This includes the default file and all localized files.
+        /// Retrieve the properties and relationships of an agreement object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an agreement object.
+        /// Update the properties of an agreement object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -207,7 +207,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
             }
         }
         /// <summary>
-        /// Retrieve all files related to an agreement. This includes the default file and all localized files.
+        /// Retrieve the properties and relationships of an agreement object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class AgreementItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

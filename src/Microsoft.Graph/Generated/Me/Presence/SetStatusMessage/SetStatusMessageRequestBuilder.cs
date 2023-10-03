@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Me.Presence.SetStatusMessage {
         public SetStatusMessageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/presence/setStatusMessage", rawUrl) {
         }
         /// <summary>
-        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Me.Presence.SetStatusMessage {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

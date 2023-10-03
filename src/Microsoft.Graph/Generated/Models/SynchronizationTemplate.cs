@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("factoryTag", value); }
         }
 #endif
-        /// <summary>Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</summary>
+        /// <summary>Additional extension properties. Unless mentioned explicitly, metadata values shouldn&apos;t be changed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<SynchronizationMetadataEntry>? Metadata {

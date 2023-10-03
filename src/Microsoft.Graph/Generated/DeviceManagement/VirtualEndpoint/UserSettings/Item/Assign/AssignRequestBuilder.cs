@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
         public AssignRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/userSettings/{cloudPcUserSetting%2Did}/assign", rawUrl) {
         }
         /// <summary>
-        /// Assign a cloudPcUserSetting to user groups.
+        /// Assign a cloudPcUserSetting to user groups. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcusersetting-assign?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Assign a cloudPcUserSetting to user groups.
+        /// Assign a cloudPcUserSetting to user groups. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

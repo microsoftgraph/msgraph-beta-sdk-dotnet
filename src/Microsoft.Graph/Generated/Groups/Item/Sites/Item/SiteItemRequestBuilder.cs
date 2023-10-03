@@ -17,6 +17,7 @@ using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Operations;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Permissions;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.RecycleBin;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Sites;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -93,6 +94,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
         /// <summary>Provides operations to manage the permissions property of the microsoft.graph.site entity.</summary>
         public PermissionsRequestBuilder Permissions { get =>
             new PermissionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the recycleBin property of the microsoft.graph.site entity.</summary>
+        public RecycleBinRequestBuilder RecycleBin { get =>
+            new RecycleBinRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sites property of the microsoft.graph.site entity.</summary>
         public Microsoft.Graph.Beta.Groups.Item.Sites.Item.Sites.SitesRequestBuilder Sites { get =>

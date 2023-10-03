@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.RiskDetections {
         public RiskDetectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/riskDetections{?%24top,%24search,%24filter,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the properties of a riskDetection object.
+        /// Retrieve the properties of a riskDetection object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.RiskDetections {
             return await RequestAdapter.SendAsync<RiskDetection>(requestInfo, RiskDetection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of a riskDetection object.
+        /// Retrieve the properties of a riskDetection object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.RiskDetections {
             return new RiskDetectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties of a riskDetection object.
+        /// Retrieve the properties of a riskDetection object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class RiskDetectionsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

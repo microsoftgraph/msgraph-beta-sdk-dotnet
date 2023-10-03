@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.EndBreak {
         public EndBreakRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/timeCards/{timeCard%2Did}/endBreak", rawUrl) {
         }
         /// <summary>
-        /// End the open break in a specific timeCard.
+        /// End the open break in a specific timeCard. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-endbreak?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.EndBreak {
             return await RequestAdapter.SendAsync<TimeCard>(requestInfo, TimeCard.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// End the open break in a specific timeCard.
+        /// End the open break in a specific timeCard. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

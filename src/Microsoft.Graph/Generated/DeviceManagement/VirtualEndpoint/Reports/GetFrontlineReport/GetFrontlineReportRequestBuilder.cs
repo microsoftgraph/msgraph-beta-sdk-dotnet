@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetFront
         public GetFrontlineReportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports/getFrontlineReport", rawUrl) {
         }
         /// <summary>
-        /// Invoke action getFrontlineReport
+        /// Get the Windows 365 Frontline reports, such as real-time or historical data reports.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcreports-getfrontlinereport?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetFront
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action getFrontlineReport
+        /// Get the Windows 365 Frontline reports, such as real-time or historical data reports.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

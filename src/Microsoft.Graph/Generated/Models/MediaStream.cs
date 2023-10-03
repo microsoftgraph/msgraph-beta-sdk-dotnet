@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Indicates whether the media is muted by the server.</summary>
+        /// <summary>Indicates whether the server has muted the media.</summary>
         public bool? ServerMuted {
             get { return BackingStore?.Get<bool?>("serverMuted"); }
             set { BackingStore?.Set("serverMuted", value); }

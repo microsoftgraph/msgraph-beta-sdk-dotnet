@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Defi
         public DefinitionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/pendingAccessReviewInstances/{accessReviewInstance%2Did}/definition{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// There is exactly one accessReviewScheduleDefinition associated with each instance. It is the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
+        /// There&apos;s exactly one accessReviewScheduleDefinition associated with each instance. It&apos;s the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Defi
             return await RequestAdapter.SendAsync<AccessReviewScheduleDefinition>(requestInfo, AccessReviewScheduleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// There is exactly one accessReviewScheduleDefinition associated with each instance. It is the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
+        /// There&apos;s exactly one accessReviewScheduleDefinition associated with each instance. It&apos;s the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Defi
             return new DefinitionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// There is exactly one accessReviewScheduleDefinition associated with each instance. It is the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
+        /// There&apos;s exactly one accessReviewScheduleDefinition associated with each instance. It&apos;s the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.
         /// </summary>
         public class DefinitionRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class EndUserNotificationDetail : Entity, IParsable {
-        /// <summary>The emailContent property</summary>
+        /// <summary>Email HTML content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmailContent {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("emailContent", value); }
         }
 #endif
-        /// <summary>The isDefaultLangauge property</summary>
+        /// <summary>Indicates whether this language is default.</summary>
         public bool? IsDefaultLangauge {
             get { return BackingStore?.Get<bool?>("isDefaultLangauge"); }
             set { BackingStore?.Set("isDefaultLangauge", value); }
         }
-        /// <summary>The language property</summary>
+        /// <summary>Notification language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Language {
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("language", value); }
         }
 #endif
-        /// <summary>The locale property</summary>
+        /// <summary>Notification locale.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Locale {
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("locale", value); }
         }
 #endif
-        /// <summary>The sentFrom property</summary>
+        /// <summary>Email details of the sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EmailIdentity? SentFrom {
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sentFrom", value); }
         }
 #endif
-        /// <summary>The subject property</summary>
+        /// <summary>Mail subject.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject {

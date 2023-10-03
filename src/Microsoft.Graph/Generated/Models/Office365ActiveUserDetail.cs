@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assignedProducts", value); }
         }
 #endif
-        /// <summary>The date when the delete operation happened. Default value is &apos;null&apos; when the user has not been deleted.</summary>
+        /// <summary>The date when the delete operation happened. Default value is &apos;null&apos; when the user hasn&apos;t been deleted.</summary>
         public Date? DeletedDate {
             get { return BackingStore?.Get<Date?>("deletedDate"); }
             set { BackingStore?.Set("deletedDate", value); }
         }
-        /// <summary>The name displayed in the address book for the user. This is usually the combination of the user&apos;s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates.</summary>
+        /// <summary>The name displayed in the address book for the user. This is usually the combination of the user&apos;s first name, middle initial, and last name. This property is required when a user is created and it can&apos;t be cleared during updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {

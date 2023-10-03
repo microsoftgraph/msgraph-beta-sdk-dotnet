@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CustomExtensionHandler : Entity, IParsable {
-        /// <summary>Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.</summary>
+        /// <summary>Indicates which custom workflow extension is executed at this stage. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CustomAccessPackageWorkflowExtension? CustomExtension {

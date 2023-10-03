@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.Methods.Item {
         public AuthenticationMethodItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/authentication/methods/{authenticationMethod%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an authenticationMethod object.
+        /// Retrieve the properties and relationships of an authenticationMethod object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationmethod-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.Methods.Item {
             return await RequestAdapter.SendAsync<AuthenticationMethod>(requestInfo, AuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an authenticationMethod object.
+        /// Retrieve the properties and relationships of an authenticationMethod object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.Methods.Item {
             return new AuthenticationMethodItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an authenticationMethod object.
+        /// Retrieve the properties and relationships of an authenticationMethod object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class AuthenticationMethodItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

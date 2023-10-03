@@ -376,10 +376,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"billingPostalAddress", n => { BillingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"billToCustomerId", n => { BillToCustomerId = n.GetGuidValue(); } },
                 {"billToCustomerNumber", n => { BillToCustomerNumber = n.GetStringValue(); } },
                 {"billToName", n => { BillToName = n.GetStringValue(); } },
+                {"billingPostalAddress", n => { BillingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"creditMemoDate", n => { CreditMemoDate = n.GetDateValue(); } },
                 {"currency", n => { Currency = n.GetObjectValue<Microsoft.Graph.Beta.Models.Currency>(Microsoft.Graph.Beta.Models.Currency.CreateFromDiscriminatorValue); } },
                 {"currencyCode", n => { CurrencyCode = n.GetStringValue(); } },

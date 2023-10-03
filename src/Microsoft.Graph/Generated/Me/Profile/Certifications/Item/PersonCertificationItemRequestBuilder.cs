@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Certifications.Item {
         public PersonCertificationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/certifications/{personCertification%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a personCertification object from a user&apos;s profile.
+        /// Deletes a personCertification object from a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/personcertification-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Certifications.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a personCertification object in a user&apos;s profile.
+        /// Read the properties and relationships of a personCertification object in a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/personcertification-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Certifications.Item {
             return await RequestAdapter.SendAsync<PersonCertification>(requestInfo, PersonCertification.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a personCertification object from a user&apos;s profile.
+        /// Update the properties of a personCertification object from a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/personcertification-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Certifications.Item {
             return await RequestAdapter.SendAsync<PersonCertification>(requestInfo, PersonCertification.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a personCertification object from a user&apos;s profile.
+        /// Deletes a personCertification object from a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Certifications.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a personCertification object in a user&apos;s profile.
+        /// Read the properties and relationships of a personCertification object in a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Certifications.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a personCertification object from a user&apos;s profile.
+        /// Update the properties of a personCertification object from a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Certifications.Item {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of a personCertification object in a user&apos;s profile.
+        /// Read the properties and relationships of a personCertification object in a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// </summary>
         public class PersonCertificationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("history", value); }
         }
 #endif
-        /// <summary>Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions will include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
+        /// <summary>Include all versions of the documents. By default, the current copies of the documents will be returned. If SharePoint sites have versioning enabled, including all versions include the historical copies of the documents. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
         public bool? IncludeAllVersions {
             get { return BackingStore?.Get<bool?>("includeAllVersions"); }
             set { BackingStore?.Set("includeAllVersions", value); }
@@ -209,18 +209,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The mailboxlocations property</summary>
+        /// <summary>The mailbox locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SubjectRightsRequestMailboxLocation? Mailboxlocations {
-            get { return BackingStore?.Get<SubjectRightsRequestMailboxLocation?>("mailboxlocations"); }
-            set { BackingStore?.Set("mailboxlocations", value); }
+        public SubjectRightsRequestMailboxLocation? MailboxLocations {
+            get { return BackingStore?.Get<SubjectRightsRequestMailboxLocation?>("mailboxLocations"); }
+            set { BackingStore?.Set("mailboxLocations", value); }
         }
 #nullable restore
 #else
-        public SubjectRightsRequestMailboxLocation Mailboxlocations {
-            get { return BackingStore?.Get<SubjectRightsRequestMailboxLocation>("mailboxlocations"); }
-            set { BackingStore?.Set("mailboxlocations", value); }
+        public SubjectRightsRequestMailboxLocation MailboxLocations {
+            get { return BackingStore?.Get<SubjectRightsRequestMailboxLocation>("mailboxLocations"); }
+            set { BackingStore?.Set("mailboxLocations", value); }
         }
 #endif
         /// <summary>List of notes associated with the request.</summary>
@@ -237,12 +237,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("notes", value); }
         }
 #endif
-        /// <summary>Pause the request after estimate has finished. By default, the data estimate will run and then pause, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
+        /// <summary>Pause the request after estimate has finished. By default, the data estimate runs and then pauses, allowing you to preview results and then select the option to retrieve data in the UI. You can set this property to false if you want it to perform the estimate and then automatically begin with the retrieval of the content. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
         public bool? PauseAfterEstimate {
             get { return BackingStore?.Get<bool?>("pauseAfterEstimate"); }
             set { BackingStore?.Set("pauseAfterEstimate", value); }
         }
-        /// <summary>List of regulations that this request will fulfill.</summary>
+        /// <summary>List of regulations that this request fulfills.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Regulations {
@@ -256,18 +256,18 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("regulations", value); }
         }
 #endif
-        /// <summary>The sitelocations property</summary>
+        /// <summary>The SharePoint and OneDrive site locations that should be searched. This property is defined only for APIs accessed using the /security query path and not the /privacy query path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SubjectRightsRequestSiteLocation? Sitelocations {
-            get { return BackingStore?.Get<SubjectRightsRequestSiteLocation?>("sitelocations"); }
-            set { BackingStore?.Set("sitelocations", value); }
+        public SubjectRightsRequestSiteLocation? SiteLocations {
+            get { return BackingStore?.Get<SubjectRightsRequestSiteLocation?>("siteLocations"); }
+            set { BackingStore?.Set("siteLocations", value); }
         }
 #nullable restore
 #else
-        public SubjectRightsRequestSiteLocation Sitelocations {
-            get { return BackingStore?.Get<SubjectRightsRequestSiteLocation>("sitelocations"); }
-            set { BackingStore?.Set("sitelocations", value); }
+        public SubjectRightsRequestSiteLocation SiteLocations {
+            get { return BackingStore?.Get<SubjectRightsRequestSiteLocation>("siteLocations"); }
+            set { BackingStore?.Set("siteLocations", value); }
         }
 #endif
         /// <summary>Information about the different stages for the request.</summary>
@@ -340,11 +340,11 @@ namespace Microsoft.Graph.Beta.Models {
                 {"internalDueDateTime", n => { InternalDueDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"mailboxlocations", n => { Mailboxlocations = n.GetObjectValue<SubjectRightsRequestMailboxLocation>(SubjectRightsRequestMailboxLocation.CreateFromDiscriminatorValue); } },
+                {"mailboxLocations", n => { MailboxLocations = n.GetObjectValue<SubjectRightsRequestMailboxLocation>(SubjectRightsRequestMailboxLocation.CreateFromDiscriminatorValue); } },
                 {"notes", n => { Notes = n.GetCollectionOfObjectValues<AuthoredNote>(AuthoredNote.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"pauseAfterEstimate", n => { PauseAfterEstimate = n.GetBoolValue(); } },
                 {"regulations", n => { Regulations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"sitelocations", n => { Sitelocations = n.GetObjectValue<SubjectRightsRequestSiteLocation>(SubjectRightsRequestSiteLocation.CreateFromDiscriminatorValue); } },
+                {"siteLocations", n => { SiteLocations = n.GetObjectValue<SubjectRightsRequestSiteLocation>(SubjectRightsRequestSiteLocation.CreateFromDiscriminatorValue); } },
                 {"stages", n => { Stages = n.GetCollectionOfObjectValues<SubjectRightsRequestStageDetail>(SubjectRightsRequestStageDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"status", n => { Status = n.GetEnumValue<SubjectRightsRequestStatus>(); } },
                 {"team", n => { Team = n.GetObjectValue<Microsoft.Graph.Beta.Models.Team>(Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue); } },
@@ -377,11 +377,11 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("internalDueDateTime", InternalDueDateTime);
             writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteObjectValue<SubjectRightsRequestMailboxLocation>("mailboxlocations", Mailboxlocations);
+            writer.WriteObjectValue<SubjectRightsRequestMailboxLocation>("mailboxLocations", MailboxLocations);
             writer.WriteCollectionOfObjectValues<AuthoredNote>("notes", Notes);
             writer.WriteBoolValue("pauseAfterEstimate", PauseAfterEstimate);
             writer.WriteCollectionOfPrimitiveValues<string>("regulations", Regulations);
-            writer.WriteObjectValue<SubjectRightsRequestSiteLocation>("sitelocations", Sitelocations);
+            writer.WriteObjectValue<SubjectRightsRequestSiteLocation>("siteLocations", SiteLocations);
             writer.WriteCollectionOfObjectValues<SubjectRightsRequestStageDetail>("stages", Stages);
             writer.WriteEnumValue<SubjectRightsRequestStatus>("status", Status);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Team>("team", Team);

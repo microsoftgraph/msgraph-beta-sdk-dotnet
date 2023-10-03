@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+        /// Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/calltranscript-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+        /// Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -200,7 +200,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
             }
         }
         /// <summary>
-        /// Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API does not support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript.
+        /// Retrieve a callTranscript object associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call transcripts from channel meetings. Retrieving the transcript returns the metadata of the single transcript associated with the online meeting. Retrieving the content of the transcript returns the stream of text associated with the transcript. This API is supported in the following national cloud deployments.
         /// </summary>
         public class CallTranscriptItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

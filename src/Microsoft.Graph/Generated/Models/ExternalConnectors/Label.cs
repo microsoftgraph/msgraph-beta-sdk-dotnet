@@ -23,11 +23,11 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         FileExtension,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
-        [EnumMember(Value = "iconUrl")]
-        IconUrl,
         [EnumMember(Value = "containerName")]
         ContainerName,
         [EnumMember(Value = "containerUrl")]
         ContainerUrl,
+        [EnumMember(Value = "iconUrl")]
+        IconUrl,
     }
 }

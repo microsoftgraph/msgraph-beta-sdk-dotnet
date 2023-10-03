@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class NoTrainingNotificationSetting : EndUserNotificationSetting, IParsable {
-        /// <summary>The simulationNotification property</summary>
+        /// <summary>The notification for the user who is part of the simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.SimulationNotification? SimulationNotification {

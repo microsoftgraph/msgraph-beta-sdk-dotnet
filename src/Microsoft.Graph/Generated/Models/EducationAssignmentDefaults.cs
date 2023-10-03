@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<EducationAddedStudentAction?>("addedStudentAction"); }
             set { BackingStore?.Set("addedStudentAction", value); }
         }
-        /// <summary>Optional field to control adding assignments to students&apos; and teachers&apos; calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.</summary>
+        /// <summary>Optional field to control adding assignments to students&apos; and teachers&apos; calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.</summary>
         public EducationAddToCalendarOptions? AddToCalendarAction {
             get { return BackingStore?.Get<EducationAddToCalendarOptions?>("addToCalendarAction"); }
             set { BackingStore?.Set("addToCalendarAction", value); }
@@ -49,8 +49,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"addedStudentAction", n => { AddedStudentAction = n.GetEnumValue<EducationAddedStudentAction>(); } },
                 {"addToCalendarAction", n => { AddToCalendarAction = n.GetEnumValue<EducationAddToCalendarOptions>(); } },
+                {"addedStudentAction", n => { AddedStudentAction = n.GetEnumValue<EducationAddedStudentAction>(); } },
                 {"dueTime", n => { DueTime = n.GetTimeValue(); } },
                 {"notificationChannelUrl", n => { NotificationChannelUrl = n.GetStringValue(); } },
             };

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("decisions", value); }
         }
 #endif
-        /// <summary>There is exactly one accessReviewScheduleDefinition associated with each instance. It is the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.</summary>
+        /// <summary>There&apos;s exactly one accessReviewScheduleDefinition associated with each instance. It&apos;s the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AccessReviewScheduleDefinition? Definition {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("definition", value); }
         }
 #endif
-        /// <summary>DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.</summary>
+        /// <summary>DateTime when review instance is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.</summary>
         public DateTimeOffset? EndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("errors", value); }
         }
 #endif
-        /// <summary>This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user&apos;s manager does not exist. Supports $select.</summary>
+        /// <summary>This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn&apos;t exist, or manager is specified as reviewer but a user&apos;s manager doesn&apos;t exist. Supports $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AccessReviewReviewerScope>? FallbackReviewers {

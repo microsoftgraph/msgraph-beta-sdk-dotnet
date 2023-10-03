@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isAnonymousJoinEnabled"); }
             set { BackingStore?.Set("isAnonymousJoinEnabled", value); }
         }
-        /// <summary>True means this service is not available to customers for booking.</summary>
+        /// <summary>True means this service isn&apos;t available to customers for booking.</summary>
         public bool? IsHiddenFromCustomers {
             get { return BackingStore?.Get<bool?>("isHiddenFromCustomers"); }
             set { BackingStore?.Set("isHiddenFromCustomers", value); }

@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>Search answer URL link. When users click this search answer in search results, they will go to this URL.</summary>
+        /// <summary>Search answer URL link. When users click this search answer in search results, they&apos;ll go to this URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebUrl {

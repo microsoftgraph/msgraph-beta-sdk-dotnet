@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.TenantStatus {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the onboarding status of a specific tenant.
+        /// Retrieve the onboarding status of a specific tenant. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-tenantstatus-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.TenantStatus {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the onboarding status of a specific tenant.
+        /// Retrieve the onboarding status of a specific tenant. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.TenantStatus {
             }
         }
         /// <summary>
-        /// Retrieve the onboarding status of a specific tenant.
+        /// Retrieve the onboarding status of a specific tenant. This API is supported in the following national cloud deployments.
         /// </summary>
         public class TenantStatusRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
