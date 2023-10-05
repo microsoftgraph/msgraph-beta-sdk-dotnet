@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Chats.Item {
         public ChatItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/chats/{chat%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Soft-delete a chat. When invoked with delegated permissions, this operation only works for tenant admins and Teams service admins.
+        /// Soft-delete a chat. When invoked with delegated permissions, this operation only works for tenant admins and Teams service admins. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Chats.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
+        /// Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Chats.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Chat>(requestInfo, Microsoft.Graph.Beta.Models.Chat.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a chat object.
+        /// Update the properties of a chat object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-patch?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Beta.Chats.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Chat>(requestInfo, Microsoft.Graph.Beta.Models.Chat.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Soft-delete a chat. When invoked with delegated permissions, this operation only works for tenant admins and Teams service admins.
+        /// Soft-delete a chat. When invoked with delegated permissions, this operation only works for tenant admins and Teams service admins. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Beta.Chats.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
+        /// Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -206,7 +206,7 @@ namespace Microsoft.Graph.Beta.Chats.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a chat object.
+        /// Update the properties of a chat object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -257,7 +257,7 @@ namespace Microsoft.Graph.Beta.Chats.Item {
             }
         }
         /// <summary>
-        /// Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
+        /// Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ChatItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

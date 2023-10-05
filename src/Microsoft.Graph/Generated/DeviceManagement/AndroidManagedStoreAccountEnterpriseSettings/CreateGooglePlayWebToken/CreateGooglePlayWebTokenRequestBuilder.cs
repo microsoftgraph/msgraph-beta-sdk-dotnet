@@ -35,6 +35,28 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+        public async Task<CreateGooglePlayWebTokenPostResponse?> PostAsCreateGooglePlayWebTokenPostResponseAsync(CreateGooglePlayWebTokenPostRequestBody body, Action<CreateGooglePlayWebTokenRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task<CreateGooglePlayWebTokenPostResponse> PostAsCreateGooglePlayWebTokenPostResponseAsync(CreateGooglePlayWebTokenPostRequestBody body, Action<CreateGooglePlayWebTokenRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<CreateGooglePlayWebTokenPostResponse>(requestInfo, CreateGooglePlayWebTokenPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Generates a web token that is used in an embeddable component.
+        /// </summary>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This method is obsolete. Use PostAsCreateGooglePlayWebTokenPostResponse instead.")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<CreateGooglePlayWebTokenResponse?> PostAsync(CreateGooglePlayWebTokenPostRequestBody body, Action<CreateGooglePlayWebTokenRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else

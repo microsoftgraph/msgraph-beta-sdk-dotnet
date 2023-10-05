@@ -27,6 +27,8 @@ namespace Microsoft.Graph.Beta.Models {
         AdJoinCheckAccountLockedOrDisabled,
         [EnumMember(Value = "adJoinCheckAccountQuotaExceeded")]
         AdJoinCheckAccountQuotaExceeded,
+        [EnumMember(Value = "adJoinCheckServerNotOperational")]
+        AdJoinCheckServerNotOperational,
         [EnumMember(Value = "adJoinCheckUnknownError")]
         AdJoinCheckUnknownError,
         [EnumMember(Value = "endpointConnectivityCheckCloudPcUrlNotAllowListed")]

@@ -368,8 +368,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
                 {"skuNumber", n => { SkuNumber = n.GetStringValue(); } },
                 {"systemFamily", n => { SystemFamily = n.GetStringValue(); } },
-                {"userlessEnrollmentStatus", n => { UserlessEnrollmentStatus = n.GetEnumValue<WindowsAutopilotUserlessEnrollmentStatus>(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                {"userlessEnrollmentStatus", n => { UserlessEnrollmentStatus = n.GetEnumValue<WindowsAutopilotUserlessEnrollmentStatus>(); } },
             };
         }
         /// <summary>

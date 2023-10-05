@@ -222,6 +222,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("permissions", value); }
         }
 #endif
+        /// <summary>The recycleBin property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.RecycleBin? RecycleBin {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecycleBin?>("recycleBin"); }
+            set { BackingStore?.Set("recycleBin", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.RecycleBin RecycleBin {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecycleBin>("recycleBin"); }
+            set { BackingStore?.Set("recycleBin", value); }
+        }
+#endif
         /// <summary>If present, indicates that this is the root site in the site collection. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -341,6 +355,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"operations", n => { Operations = n.GetCollectionOfObjectValues<RichLongRunningOperation>(RichLongRunningOperation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"pages", n => { Pages = n.GetCollectionOfObjectValues<BaseSitePage>(BaseSitePage.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"permissions", n => { Permissions = n.GetCollectionOfObjectValues<Permission>(Permission.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"recycleBin", n => { RecycleBin = n.GetObjectValue<Microsoft.Graph.Beta.Models.RecycleBin>(Microsoft.Graph.Beta.Models.RecycleBin.CreateFromDiscriminatorValue); } },
                 {"root", n => { Root = n.GetObjectValue<Microsoft.Graph.Beta.Models.Root>(Microsoft.Graph.Beta.Models.Root.CreateFromDiscriminatorValue); } },
                 {"settings", n => { Settings = n.GetObjectValue<SiteSettings>(SiteSettings.CreateFromDiscriminatorValue); } },
                 {"sharepointIds", n => { SharepointIds = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharepointIds>(Microsoft.Graph.Beta.Models.SharepointIds.CreateFromDiscriminatorValue); } },
@@ -372,6 +387,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<RichLongRunningOperation>("operations", Operations);
             writer.WriteCollectionOfObjectValues<BaseSitePage>("pages", Pages);
             writer.WriteCollectionOfObjectValues<Permission>("permissions", Permissions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RecycleBin>("recycleBin", RecycleBin);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Root>("root", Root);
             writer.WriteObjectValue<SiteSettings>("settings", Settings);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharepointIds>("sharepointIds", SharepointIds);

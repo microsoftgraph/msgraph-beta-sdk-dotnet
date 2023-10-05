@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
         public RecordingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/sessions/{virtualEventSession%2Did}/recording", rawUrl) {
         }
         /// <summary>
-        /// The content stream of the recording of a Teams live event. Read-only.
+        /// Get recording for the navigation property sessions from solutions
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The content stream of the recording of a Teams live event. Read-only.
+        /// Update recording for the navigation property sessions in solutions
         /// </summary>
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The content stream of the recording of a Teams live event. Read-only.
+        /// Get recording for the navigation property sessions from solutions
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
             return requestInfo;
         }
         /// <summary>
-        /// The content stream of the recording of a Teams live event. Read-only.
+        /// Update recording for the navigation property sessions in solutions
         /// </summary>
         /// <param name="body">Binary request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class EndUserNotification : Entity, IParsable {
-        /// <summary>The createdBy property</summary>
+        /// <summary>Identity of the user who created the notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EmailIdentity? CreatedBy {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Date and time when the notification was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>Description of the notification as defined by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("details", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>Name of the notification as defined by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The lastModifiedBy property</summary>
+        /// <summary>Identity of the user who last modified the notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EmailIdentity? LastModifiedBy {
@@ -81,27 +81,27 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>Date and time when the notification was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The notificationType property</summary>
+        /// <summary>Type of notification. Possible values are: unknown, positiveReinforcement, noTraining, trainingAssignment, trainingReminder, unknownFutureValue.</summary>
         public EndUserNotificationType? NotificationType {
             get { return BackingStore?.Get<EndUserNotificationType?>("notificationType"); }
             set { BackingStore?.Set("notificationType", value); }
         }
-        /// <summary>The source property</summary>
+        /// <summary>The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.</summary>
         public SimulationContentSource? Source {
             get { return BackingStore?.Get<SimulationContentSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
-        /// <summary>The status property</summary>
+        /// <summary>The status of the notification. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.</summary>
         public SimulationContentStatus? Status {
             get { return BackingStore?.Get<SimulationContentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The supportedLocales property</summary>
+        /// <summary>Supported locales for endUserNotification content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SupportedLocales {

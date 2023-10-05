@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PositiveReinforcementNotification : BaseEndUserNotification, IParsable {
-        /// <summary>The deliveryPreference property</summary>
+        /// <summary>Delivery preference. Possible values are: unknown, deliverImmedietly, deliverAfterCampaignEnd, unknownFutureValue.</summary>
         public NotificationDeliveryPreference? DeliveryPreference {
             get { return BackingStore?.Get<NotificationDeliveryPreference?>("deliveryPreference"); }
             set { BackingStore?.Set("deliveryPreference", value); }

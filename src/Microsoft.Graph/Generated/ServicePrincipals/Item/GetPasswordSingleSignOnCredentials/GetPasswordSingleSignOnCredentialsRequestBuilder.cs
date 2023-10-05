@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.GetPasswordSingleSignOnCre
         public GetPasswordSingleSignOnCredentialsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/getPasswordSingleSignOnCredentials", rawUrl) {
         }
         /// <summary>
-        /// Get a list of single sign-on credentials using a password for a user or group.
+        /// Get a list of single sign-on credentials using a password for a user or group. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-getpasswordsinglesignoncredentials?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.GetPasswordSingleSignOnCre
             return await RequestAdapter.SendAsync<PasswordSingleSignOnCredentialSet>(requestInfo, PasswordSingleSignOnCredentialSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of single sign-on credentials using a password for a user or group.
+        /// Get a list of single sign-on credentials using a password for a user or group. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

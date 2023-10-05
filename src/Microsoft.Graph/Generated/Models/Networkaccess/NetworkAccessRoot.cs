@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("connectivity", value); }
         }
 #endif
-        /// <summary>A forwarding policy defines the specific traffic that is routed through the Gloval Secure Access Service. It is then added to a forwarding profile.</summary>
+        /// <summary>A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It&apos;s then added to a forwarding profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ForwardingPolicy>? ForwardingPolicies {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("forwardingProfiles", value); }
         }
 #endif
-        /// <summary>Represnts network connections that are routed through Global Secure Access.</summary>
+        /// <summary>Represents network connections that are routed through Global Secure Access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Networkaccess.Logs? Logs {

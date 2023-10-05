@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
         public ExternalPartnerSettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/externalPartnerSettings{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the cloudPcExternalPartnerSetting objects and their properties.
+        /// Get a list of the cloudPcExternalPartnerSetting objects and their properties. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-externalpartnersettings?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             return await RequestAdapter.SendAsync<CloudPcExternalPartnerSettingCollectionResponse>(requestInfo, CloudPcExternalPartnerSettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new cloudPcExternalPartnerSetting object.
+        /// Create a new cloudPcExternalPartnerSetting object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-post-externalpartnersettings?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             return await RequestAdapter.SendAsync<CloudPcExternalPartnerSetting>(requestInfo, CloudPcExternalPartnerSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the cloudPcExternalPartnerSetting objects and their properties.
+        /// Get a list of the cloudPcExternalPartnerSetting objects and their properties. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             return requestInfo;
         }
         /// <summary>
-        /// Create a new cloudPcExternalPartnerSetting object.
+        /// Create a new cloudPcExternalPartnerSetting object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             return new ExternalPartnerSettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the cloudPcExternalPartnerSetting objects and their properties.
+        /// Get a list of the cloudPcExternalPartnerSetting objects and their properties. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ExternalPartnerSettingsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

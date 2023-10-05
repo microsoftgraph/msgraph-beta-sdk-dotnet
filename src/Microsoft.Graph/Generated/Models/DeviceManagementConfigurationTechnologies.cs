@@ -26,17 +26,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Setting can be deployed through the Exchange Online agent channel.</summary>
         [EnumMember(Value = "exchangeOnline")]
         ExchangeOnline = 64,
+        /// <summary>Setting can be deployed through the Mobile Application Management (MAM) channel</summary>
+        [EnumMember(Value = "mobileApplicationManagement")]
+        MobileApplicationManagement = 128,
         /// <summary>Setting can be deployed through the Linux Mdm channel.</summary>
         [EnumMember(Value = "linuxMdm")]
-        LinuxMdm = 128,
+        LinuxMdm = 256,
         /// <summary>Setting can be deployed through device enrollment.</summary>
         [EnumMember(Value = "enrollment")]
-        Enrollment = 256,
+        Enrollment = 512,
         /// <summary>Setting can be deployed using the Endpoint privilege management channel</summary>
         [EnumMember(Value = "endpointPrivilegeManagement")]
-        EndpointPrivilegeManagement = 512,
+        EndpointPrivilegeManagement = 1024,
         /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue = 1024,
+        UnknownFutureValue = 2048,
     }
 }

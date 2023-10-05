@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.</summary>
+        /// <summary>The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.ManagedTenants.DelegatedPrivilegeStatus? DelegatedPrivilegeStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.DelegatedPrivilegeStatus?>("delegatedPrivilegeStatus"); }
             set { BackingStore?.Set("delegatedPrivilegeStatus", value); }

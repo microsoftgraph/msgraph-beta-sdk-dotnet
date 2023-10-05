@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<AuthenticationAttributeCollectionInputType?>("inputType"); }
             set { BackingStore?.Set("inputType", value); }
         }
-        /// <summary>The label of the attribute field that will be displayed to end user, unless overridden.</summary>
+        /// <summary>The label of the attribute field that is displayed to end user, unless overridden.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("validationRegEx", value); }
         }
 #endif
-        /// <summary>Whether the value collected will be stored.</summary>
+        /// <summary>Whether the value collected is stored.</summary>
         public bool? WriteToDirectory {
             get { return BackingStore?.Get<bool?>("writeToDirectory"); }
             set { BackingStore?.Set("writeToDirectory", value); }

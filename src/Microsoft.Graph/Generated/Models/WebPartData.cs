@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Audience information of the web part. By using this property, specific content will be prioritized to specific audiences.</summary>
+        /// <summary>Audience information of the web part. By using this property, specific content is prioritized to specific audiences.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Audiences {

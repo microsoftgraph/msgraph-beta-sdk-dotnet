@@ -35,6 +35,26 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationRepeatOffenders {
         [Obsolete("This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans on 2022-05-24 and will be removed 2022-08-20")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+        public async Task<GetAttackSimulationRepeatOffendersGetResponse?> GetAsGetAttackSimulationRepeatOffendersGetResponseAsync(Action<GetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task<GetAttackSimulationRepeatOffendersGetResponse> GetAsGetAttackSimulationRepeatOffendersGetResponseAsync(Action<GetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<GetAttackSimulationRepeatOffendersGetResponse>(requestInfo, GetAttackSimulationRepeatOffendersGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Invoke function getAttackSimulationRepeatOffenders
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This method is obsolete. Use GetAsGetAttackSimulationRepeatOffendersGetResponse instead.")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<GetAttackSimulationRepeatOffendersResponse?> GetAsync(Action<GetAttackSimulationRepeatOffendersRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else

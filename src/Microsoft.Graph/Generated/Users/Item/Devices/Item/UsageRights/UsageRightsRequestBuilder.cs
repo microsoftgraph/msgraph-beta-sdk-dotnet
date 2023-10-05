@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.UsageRights {
         public UsageRightsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/usageRights{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of usageRight objects for a given device.
+        /// Retrieve a list of usageRight objects for a given device. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/device-list-usagerights?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.UsageRights {
             return await RequestAdapter.SendAsync<UsageRight>(requestInfo, UsageRight.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of usageRight objects for a given device.
+        /// Retrieve a list of usageRight objects for a given device. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.UsageRights {
             return new UsageRightsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of usageRight objects for a given device.
+        /// Retrieve a list of usageRight objects for a given device. This API is supported in the following national cloud deployments.
         /// </summary>
         public class UsageRightsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

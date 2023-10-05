@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AttackSimulationRoot : Entity, IParsable {
-        /// <summary>The endUserNotifications property</summary>
+        /// <summary>Represents an end user&apos;s notification for an attack simulation training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<EndUserNotification>? EndUserNotifications {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("endUserNotifications", value); }
         }
 #endif
-        /// <summary>The landingPages property</summary>
+        /// <summary>Represents an attack simulation training landing page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<LandingPage>? LandingPages {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("landingPages", value); }
         }
 #endif
-        /// <summary>The loginPages property</summary>
+        /// <summary>Represents an attack simulation training login page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<LoginPage>? LoginPages {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("simulations", value); }
         }
 #endif
-        /// <summary>The trainings property</summary>
+        /// <summary>Represents details about attack simulation trainings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Training>? Trainings {

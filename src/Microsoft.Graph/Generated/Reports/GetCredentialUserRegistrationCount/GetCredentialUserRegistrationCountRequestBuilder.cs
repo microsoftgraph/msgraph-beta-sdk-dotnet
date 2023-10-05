@@ -28,11 +28,32 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount {
         public GetCredentialUserRegistrationCountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getCredentialUserRegistrationCount(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
+        /// Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getcredentialuserregistrationcount?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<GetCredentialUserRegistrationCountGetResponse?> GetAsGetCredentialUserRegistrationCountGetResponseAsync(Action<GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task<GetCredentialUserRegistrationCountGetResponse> GetAsGetCredentialUserRegistrationCountGetResponseAsync(Action<GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<GetCredentialUserRegistrationCountGetResponse>(requestInfo, GetCredentialUserRegistrationCountGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities. This API is supported in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getcredentialuserregistrationcount?view=graph-rest-1.0" />
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This method is obsolete. Use GetAsGetCredentialUserRegistrationCountGetResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<GetCredentialUserRegistrationCountResponse?> GetAsync(Action<GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -48,7 +69,7 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount {
             return await RequestAdapter.SendAsync<GetCredentialUserRegistrationCountResponse>(requestInfo, GetCredentialUserRegistrationCountResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
+        /// Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +102,7 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount {
             return new GetCredentialUserRegistrationCountRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
+        /// Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities. This API is supported in the following national cloud deployments.
         /// </summary>
         public class GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

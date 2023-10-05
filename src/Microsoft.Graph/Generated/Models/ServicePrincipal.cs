@@ -572,6 +572,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("publisherName", value); }
         }
 #endif
+        /// <summary>The remoteDesktopSecurityConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.RemoteDesktopSecurityConfiguration? RemoteDesktopSecurityConfiguration {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemoteDesktopSecurityConfiguration?>("remoteDesktopSecurityConfiguration"); }
+            set { BackingStore?.Set("remoteDesktopSecurityConfiguration", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.RemoteDesktopSecurityConfiguration RemoteDesktopSecurityConfiguration {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemoteDesktopSecurityConfiguration>("remoteDesktopSecurityConfiguration"); }
+            set { BackingStore?.Set("remoteDesktopSecurityConfiguration", value); }
+        }
+#endif
         /// <summary>The URLs that user tokens are sent to for sign in with the associated application, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to for the associated application. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -770,13 +784,13 @@ namespace Microsoft.Graph.Beta.Models {
                 {"appDescription", n => { AppDescription = n.GetStringValue(); } },
                 {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
                 {"appId", n => { AppId = n.GetStringValue(); } },
-                {"applicationTemplateId", n => { ApplicationTemplateId = n.GetStringValue(); } },
                 {"appManagementPolicies", n => { AppManagementPolicies = n.GetCollectionOfObjectValues<AppManagementPolicy>(AppManagementPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"appOwnerOrganizationId", n => { AppOwnerOrganizationId = n.GetGuidValue(); } },
                 {"appRoleAssignedTo", n => { AppRoleAssignedTo = n.GetCollectionOfObjectValues<AppRoleAssignment>(AppRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"appRoleAssignmentRequired", n => { AppRoleAssignmentRequired = n.GetBoolValue(); } },
                 {"appRoleAssignments", n => { AppRoleAssignments = n.GetCollectionOfObjectValues<AppRoleAssignment>(AppRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"appRoles", n => { AppRoles = n.GetCollectionOfObjectValues<AppRole>(AppRole.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"applicationTemplateId", n => { ApplicationTemplateId = n.GetStringValue(); } },
                 {"claimsMappingPolicies", n => { ClaimsMappingPolicies = n.GetCollectionOfObjectValues<ClaimsMappingPolicy>(ClaimsMappingPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"createdObjects", n => { CreatedObjects = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"customSecurityAttributes", n => { CustomSecurityAttributes = n.GetObjectValue<CustomSecurityAttributeValue>(CustomSecurityAttributeValue.CreateFromDiscriminatorValue); } },
@@ -787,8 +801,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"endpoints", n => { Endpoints = n.GetCollectionOfObjectValues<Endpoint>(Endpoint.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"errorUrl", n => { ErrorUrl = n.GetStringValue(); } },
                 {"federatedIdentityCredentials", n => { FederatedIdentityCredentials = n.GetCollectionOfObjectValues<FederatedIdentityCredential>(FederatedIdentityCredential.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"homepage", n => { Homepage = n.GetStringValue(); } },
                 {"homeRealmDiscoveryPolicies", n => { HomeRealmDiscoveryPolicies = n.GetCollectionOfObjectValues<HomeRealmDiscoveryPolicy>(HomeRealmDiscoveryPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"homepage", n => { Homepage = n.GetStringValue(); } },
                 {"info", n => { Info = n.GetObjectValue<InformationalUrl>(InformationalUrl.CreateFromDiscriminatorValue); } },
                 {"keyCredentials", n => { KeyCredentials = n.GetCollectionOfObjectValues<KeyCredential>(KeyCredential.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"licenseDetails", n => { LicenseDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LicenseDetails>(Microsoft.Graph.Beta.Models.LicenseDetails.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -807,6 +821,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"preferredTokenSigningKeyThumbprint", n => { PreferredTokenSigningKeyThumbprint = n.GetStringValue(); } },
                 {"publishedPermissionScopes", n => { PublishedPermissionScopes = n.GetCollectionOfObjectValues<PermissionScope>(PermissionScope.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"publisherName", n => { PublisherName = n.GetStringValue(); } },
+                {"remoteDesktopSecurityConfiguration", n => { RemoteDesktopSecurityConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.RemoteDesktopSecurityConfiguration>(Microsoft.Graph.Beta.Models.RemoteDesktopSecurityConfiguration.CreateFromDiscriminatorValue); } },
                 {"replyUrls", n => { ReplyUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"samlMetadataUrl", n => { SamlMetadataUrl = n.GetStringValue(); } },
                 {"samlSingleSignOnSettings", n => { SamlSingleSignOnSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.SamlSingleSignOnSettings>(Microsoft.Graph.Beta.Models.SamlSingleSignOnSettings.CreateFromDiscriminatorValue); } },
@@ -872,6 +887,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("preferredTokenSigningKeyThumbprint", PreferredTokenSigningKeyThumbprint);
             writer.WriteCollectionOfObjectValues<PermissionScope>("publishedPermissionScopes", PublishedPermissionScopes);
             writer.WriteStringValue("publisherName", PublisherName);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RemoteDesktopSecurityConfiguration>("remoteDesktopSecurityConfiguration", RemoteDesktopSecurityConfiguration);
             writer.WriteCollectionOfPrimitiveValues<string>("replyUrls", ReplyUrls);
             writer.WriteStringValue("samlMetadataUrl", SamlMetadataUrl);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SamlSingleSignOnSettings>("samlSingleSignOnSettings", SamlSingleSignOnSettings);

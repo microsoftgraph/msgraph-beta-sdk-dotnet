@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Names {
         public NamesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/names{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of personName objects from a user&apos;s profile.
+        /// Retrieve a list of personName objects from a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-names?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Names {
             return await RequestAdapter.SendAsync<PersonNameCollectionResponse>(requestInfo, PersonNameCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new personName object in a user&apos;s profile.
+        /// Use this API to create a new personName object in a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-names?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Names {
             return await RequestAdapter.SendAsync<PersonName>(requestInfo, PersonName.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of personName objects from a user&apos;s profile.
+        /// Retrieve a list of personName objects from a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Names {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new personName object in a user&apos;s profile.
+        /// Use this API to create a new personName object in a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Names {
             return new NamesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of personName objects from a user&apos;s profile.
+        /// Retrieve a list of personName objects from a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// </summary>
         public class NamesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

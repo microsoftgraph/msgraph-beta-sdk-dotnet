@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleDefinitions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of role defintions for the provider.
+        /// A collection of role definitions for the provider.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleDefinitions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of role defintions for the provider.
+        /// A collection of role definitions for the provider.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleDefinitions.Item {
             }
         }
         /// <summary>
-        /// A collection of role defintions for the provider.
+        /// A collection of role definitions for the provider.
         /// </summary>
         public class GovernanceRoleDefinitionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
         public TrustFrameworkKeySetItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/trustFramework/keySets/{trustFrameworkKeySet%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a trustFrameworkKeySet.
+        /// Delete a trustFrameworkKeySet. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframeworkkeyset-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and associations for a Trustframeworkkeyset.
+        /// Retrieve the properties and associations for a Trustframeworkkeyset. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframeworkkeyset-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
             return await RequestAdapter.SendAsync<TrustFrameworkKeySet>(requestInfo, TrustFrameworkKeySet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a trustFrameworkKeySet.
+        /// Delete a trustFrameworkKeySet. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and associations for a Trustframeworkkeyset.
+        /// Retrieve the properties and associations for a Trustframeworkkeyset. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -217,7 +217,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and associations for a Trustframeworkkeyset.
+        /// Retrieve the properties and associations for a Trustframeworkkeyset. This API is supported in the following national cloud deployments.
         /// </summary>
         public class TrustFrameworkKeySetItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

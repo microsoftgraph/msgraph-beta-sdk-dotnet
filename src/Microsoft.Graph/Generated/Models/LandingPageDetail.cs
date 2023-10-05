@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class LandingPageDetail : Entity, IParsable {
-        /// <summary>The content property</summary>
+        /// <summary>Landing page detail content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Content {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("content", value); }
         }
 #endif
-        /// <summary>The isDefaultLangauge property</summary>
+        /// <summary>Indicates whether this language detail is default for the landing page.</summary>
         public bool? IsDefaultLangauge {
             get { return BackingStore?.Get<bool?>("isDefaultLangauge"); }
             set { BackingStore?.Set("isDefaultLangauge", value); }
         }
-        /// <summary>The language property</summary>
+        /// <summary>The content language for the landing page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Language {

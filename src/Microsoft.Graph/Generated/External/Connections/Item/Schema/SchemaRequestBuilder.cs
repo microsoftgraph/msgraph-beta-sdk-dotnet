@@ -29,26 +29,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Schema {
         public SchemaRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/connections/{externalConnection%2Did}/schema{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property schema for external
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task DeleteAsync(Action<SchemaRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
-#nullable restore
-#else
-        public async Task DeleteAsync(Action<SchemaRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
-#endif
-            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieve the properties of a schema for an externalConnection.
+        /// Retrieve the properties of a schema for an externalConnection. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +49,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Schema {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ExternalConnectors.Schema>(requestInfo, Microsoft.Graph.Beta.Models.ExternalConnectors.Schema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a schema for an externalConnection.
+        /// Update the properties of a schema for an externalConnection. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -90,31 +71,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Schema {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ExternalConnectors.Schema>(requestInfo, Microsoft.Graph.Beta.Models.ExternalConnectors.Schema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property schema for external
-        /// </summary>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<SchemaRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
-#nullable restore
-#else
-        public RequestInformation ToDeleteRequestInformation(Action<SchemaRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
-#endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.DELETE,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new SchemaRequestBuilderDeleteRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            return requestInfo;
-        }
-        /// <summary>
-        /// Retrieve the properties of a schema for an externalConnection.
+        /// Retrieve the properties of a schema for an externalConnection. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +97,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Schema {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a schema for an externalConnection.
+        /// Update the properties of a schema for an externalConnection. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -175,23 +132,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Schema {
             return new SchemaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        public class SchemaRequestBuilderDeleteRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new schemaRequestBuilderDeleteRequestConfiguration and sets the default values.
-            /// </summary>
-            public SchemaRequestBuilderDeleteRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
-        }
-        /// <summary>
-        /// Retrieve the properties of a schema for an externalConnection.
+        /// Retrieve the properties of a schema for an externalConnection. This API is supported in the following national cloud deployments.
         /// </summary>
         public class SchemaRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

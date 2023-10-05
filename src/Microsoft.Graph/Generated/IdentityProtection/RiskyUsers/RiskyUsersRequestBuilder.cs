@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
         public RiskyUsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityProtection/riskyUsers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a riskyUser object.
+        /// Retrieve the properties and relationships of a riskyUser object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskyusers-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
             return await RequestAdapter.SendAsync<RiskyUser>(requestInfo, RiskyUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a riskyUser object.
+        /// Retrieve the properties and relationships of a riskyUser object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
             return new RiskyUsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a riskyUser object.
+        /// Retrieve the properties and relationships of a riskyUser object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class RiskyUsersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

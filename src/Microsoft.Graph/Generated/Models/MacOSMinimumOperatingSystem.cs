@@ -91,6 +91,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("v13_0"); }
             set { BackingStore?.Set("v13_0", value); }
         }
+        /// <summary>When TRUE, indicates macOS 14.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
+        public bool? V140 {
+            get { return BackingStore?.Get<bool?>("v14_0"); }
+            set { BackingStore?.Set("v14_0", value); }
+        }
         /// <summary>
         /// Instantiates a new macOSMinimumOperatingSystem and sets the default values.
         /// </summary>
@@ -124,6 +129,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"v11_0", n => { V110 = n.GetBoolValue(); } },
                 {"v12_0", n => { V120 = n.GetBoolValue(); } },
                 {"v13_0", n => { V130 = n.GetBoolValue(); } },
+                {"v14_0", n => { V140 = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -145,6 +151,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("v11_0", V110);
             writer.WriteBoolValue("v12_0", V120);
             writer.WriteBoolValue("v13_0", V130);
+            writer.WriteBoolValue("v14_0", V140);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

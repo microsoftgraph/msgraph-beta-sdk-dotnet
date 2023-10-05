@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Me.Sponsors {
         public SponsorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/sponsors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest user&apos;s privileges in the tenant and for keeping the guest user&apos;s information and access up to date.
+        /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest&apos;s privileges in the tenant and for keeping the guest&apos;s information and access up to date. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-sponsors?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Me.Sponsors {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest user&apos;s privileges in the tenant and for keeping the guest user&apos;s information and access up to date.
+        /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest&apos;s privileges in the tenant and for keeping the guest&apos;s information and access up to date. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Me.Sponsors {
             return new SponsorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest user&apos;s privileges in the tenant and for keeping the guest user&apos;s information and access up to date.
+        /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest&apos;s privileges in the tenant and for keeping the guest&apos;s information and access up to date. This API is supported in the following national cloud deployments.
         /// </summary>
         public class SponsorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

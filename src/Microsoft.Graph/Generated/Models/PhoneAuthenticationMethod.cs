@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PhoneAuthenticationMethod : AuthenticationMethod, IParsable {
-        /// <summary>The phone number to text or call for authentication. Phone numbers use the format &apos;+&lt;country code&gt; &lt;number&gt;x&lt;extension&gt;&apos;, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they do not match the required format.</summary>
+        /// <summary>The phone number to text or call for authentication. Phone numbers use the format &apos;+&lt;country code&gt; &lt;number&gt;x&lt;extension&gt;&apos;, with extension optional. For example, +1 5555551234 or +1 5555551234x123 are valid. Numbers are rejected when creating/updating if they don&apos;t match the required format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhoneNumber {

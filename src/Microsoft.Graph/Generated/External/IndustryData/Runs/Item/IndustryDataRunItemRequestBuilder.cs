@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item {
         public IndustryDataRunItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/runs/{industryDataRun%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read the properties and relationships of an industryDataRun object.
+        /// Read the properties and relationships of an industryDataRun object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydatarun-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item {
             return await RequestAdapter.SendAsync<IndustryDataRun>(requestInfo, IndustryDataRun.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an industryDataRun object.
+        /// Read the properties and relationships of an industryDataRun object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item {
             return new IndustryDataRunItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of an industryDataRun object.
+        /// Read the properties and relationships of an industryDataRun object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class IndustryDataRunItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

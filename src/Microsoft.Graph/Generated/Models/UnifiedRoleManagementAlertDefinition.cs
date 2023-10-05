@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Azure portal.</summary>
+        /// <summary>The friendly display name that renders in Privileged Identity Management (PIM) alerts in the Microsoft Entra admin center.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("howToPrevent", value); }
         }
 #endif
-        /// <summary>true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the &apos;There are too many global administrators&apos; alert can be configured by users, while the &apos;This organization does not have Azure AD Premium P2&apos; cannot be configured, because the criteria is restricted.</summary>
+        /// <summary>true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the &apos;There are too many global administrators&apos; alert can be configured by users, while the &apos;This organization doesn&apos;t have Azure AD Premium P2&apos; can&apos;t be configured, because the criteria are restricted.</summary>
         public bool? IsConfigurable {
             get { return BackingStore?.Get<bool?>("isConfigurable"); }
             set { BackingStore?.Set("isConfigurable", value); }

@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Specifies whether the column will allow more than one value</summary>
+        /// <summary>Specifies whether the column allows more than one value</summary>
         public bool? AllowMultipleValues {
             get { return BackingStore?.Get<bool?>("allowMultipleValues"); }
             set { BackingStore?.Set("allowMultipleValues", value); }

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignme
         public StepsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/roleManagement/entitlementManagement/roleAssignmentApprovals/{approval%2Did}/steps{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios:
+        /// List the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios: This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/approval-list-steps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignme
             return await RequestAdapter.SendAsync<ApprovalStep>(requestInfo, ApprovalStep.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios:
+        /// List the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios: This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignme
             return new StepsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios:
+        /// List the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios: This API is supported in the following national cloud deployments.
         /// </summary>
         public class StepsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

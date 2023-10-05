@@ -3,10 +3,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Devices.Count;
 using Microsoft.Graph.Beta.Users.Item.Devices.Delta;
-using Microsoft.Graph.Beta.Users.Item.Devices.GetByIds;
-using Microsoft.Graph.Beta.Users.Item.Devices.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item;
-using Microsoft.Graph.Beta.Users.Item.Devices.ValidateProperties;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -27,18 +24,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices {
         /// <summary>Provides operations to call the delta method.</summary>
         public DeltaRequestBuilder Delta { get =>
             new DeltaRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getByIds method.</summary>
-        public GetByIdsRequestBuilder GetByIds { get =>
-            new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getUserOwnedObjects method.</summary>
-        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
-            new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the validateProperties method.</summary>
-        public ValidatePropertiesRequestBuilder ValidateProperties { get =>
-            new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the devices property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of device</param>

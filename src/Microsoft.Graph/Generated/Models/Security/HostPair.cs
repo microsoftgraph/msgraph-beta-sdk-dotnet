@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
-        /// <summary>The reason the two hosts are identified as hostPairs.</summary>
+        /// <summary>The reason that two hosts are identified as hostPair.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LinkKind {

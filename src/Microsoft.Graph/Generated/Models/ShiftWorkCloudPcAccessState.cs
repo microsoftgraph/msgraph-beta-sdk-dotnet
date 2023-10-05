@@ -13,8 +13,6 @@ namespace Microsoft.Graph.Beta.Models {
         Active,
         [EnumMember(Value = "activating")]
         Activating,
-        [EnumMember(Value = "waitlisted")]
-        Waitlisted,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
         [EnumMember(Value = "standbyMode")]

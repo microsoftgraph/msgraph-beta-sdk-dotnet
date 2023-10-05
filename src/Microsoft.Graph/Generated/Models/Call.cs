@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contentSharingSessions", value); }
         }
 #endif
-        /// <summary>The direction of the call. The possible value are incoming or outgoing. Read-only.</summary>
+        /// <summary>The direction of the call. The possible values are incoming or outgoing. Read-only.</summary>
         public CallDirection? Direction {
             get { return BackingStore?.Get<CallDirection?>("direction"); }
             set { BackingStore?.Set("direction", value); }
@@ -415,10 +415,10 @@ namespace Microsoft.Graph.Beta.Models {
                 {"activeModalities", n => { ActiveModalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
                 {"answeredBy", n => { AnsweredBy = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
                 {"audioRoutingGroups", n => { AudioRoutingGroups = n.GetCollectionOfObjectValues<AudioRoutingGroup>(AudioRoutingGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"callbackUri", n => { CallbackUri = n.GetStringValue(); } },
                 {"callChainId", n => { CallChainId = n.GetStringValue(); } },
                 {"callOptions", n => { CallOptions = n.GetObjectValue<Microsoft.Graph.Beta.Models.CallOptions>(Microsoft.Graph.Beta.Models.CallOptions.CreateFromDiscriminatorValue); } },
                 {"callRoutes", n => { CallRoutes = n.GetCollectionOfObjectValues<CallRoute>(CallRoute.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"callbackUri", n => { CallbackUri = n.GetStringValue(); } },
                 {"chatInfo", n => { ChatInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ChatInfo>(Microsoft.Graph.Beta.Models.ChatInfo.CreateFromDiscriminatorValue); } },
                 {"contentSharingSessions", n => { ContentSharingSessions = n.GetCollectionOfObjectValues<ContentSharingSession>(ContentSharingSession.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"direction", n => { Direction = n.GetEnumValue<CallDirection>(); } },

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contextDetails", value); }
         }
 #endif
-        /// <summary>The set of user IDs that this plan is shared with. If you are using Microsoft 365 groups, use the groups API to manage group membership to share the group&apos;s plan. You can also add existing members of the group to this collection, although it is not required in order for them to access the plan owned by the group.</summary>
+        /// <summary>The set of user IDs that this plan is shared with. If you&apos;re using Microsoft 365 groups, use the groups API to manage group membership to share the group&apos;s plan. You can also add existing members of the group to this collection, although it isn&apos;t required in order for them to access the plan owned by the group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerUserIds? SharedWith {

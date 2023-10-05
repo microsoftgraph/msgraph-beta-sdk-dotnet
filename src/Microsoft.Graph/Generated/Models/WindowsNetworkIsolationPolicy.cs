@@ -146,9 +146,9 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"enterpriseCloudResources", n => { EnterpriseCloudResources = n.GetCollectionOfObjectValues<ProxiedDomain>(ProxiedDomain.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"enterpriseInternalProxyServers", n => { EnterpriseInternalProxyServers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"enterpriseIPRanges", n => { EnterpriseIPRanges = n.GetCollectionOfObjectValues<IpRange>(IpRange.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"enterpriseIPRangesAreAuthoritative", n => { EnterpriseIPRangesAreAuthoritative = n.GetBoolValue(); } },
+                {"enterpriseInternalProxyServers", n => { EnterpriseInternalProxyServers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"enterpriseNetworkDomainNames", n => { EnterpriseNetworkDomainNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"enterpriseProxyServers", n => { EnterpriseProxyServers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"enterpriseProxyServersAreAuthoritative", n => { EnterpriseProxyServersAreAuthoritative = n.GetBoolValue(); } },

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.ReprovisionCloudPc {
         public ReprovisionCloudPcRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/managedDevices/{managedDevice%2Did}/reprovisionCloudPc", rawUrl) {
         }
         /// <summary>
-        /// Reprovision a Cloud PC with an Intune managed device ID.
+        /// Reprovision a Cloud PC with an Intune managed device ID. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/manageddevice-reprovisioncloudpc?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.ReprovisionCloudPc {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Reprovision a Cloud PC with an Intune managed device ID.
+        /// Reprovision a Cloud PC with an Intune managed device ID. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The reprovisionCloudPc API is deprecated and will stop returning on Sep 30, 2023. Please use reprovision instead as of 2023-07/reprovisionCloudPc on 2023-07-17 and will be removed 2023-09-30")]

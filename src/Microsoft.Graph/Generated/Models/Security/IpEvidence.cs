@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class IpEvidence : AlertEvidence, IParsable {
-        /// <summary>The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).</summary>
+        /// <summary>The two-letter country code according to ISO 3166 format, for example: US, UK, or CA.).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CountryLetterCode {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("countryLetterCode", value); }
         }
 #endif
-        /// <summary>The value of the IP Address, can be either in V4 address or V6 address format.</summary>
+        /// <summary>The value of the IP Address can be either in V4 address or V6 address format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IpAddress {

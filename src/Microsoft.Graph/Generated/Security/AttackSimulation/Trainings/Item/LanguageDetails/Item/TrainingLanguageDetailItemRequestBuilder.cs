@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Trainings.Item.Language
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get languageDetails from security
+        /// Language specific details on a training.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Trainings.Item.Language
             return requestInfo;
         }
         /// <summary>
-        /// Get languageDetails from security
+        /// Language specific details on a training.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Trainings.Item.Language
             }
         }
         /// <summary>
-        /// Get languageDetails from security
+        /// Language specific details on a training.
         /// </summary>
         public class TrainingLanguageDetailItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

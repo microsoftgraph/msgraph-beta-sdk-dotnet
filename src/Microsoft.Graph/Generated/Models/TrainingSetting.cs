@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The settingType property</summary>
+        /// <summary>Type of setting. Possible values are: microsoftCustom, microsoftManaged, noTraining, custom, unknownFutureValue.</summary>
         public TrainingSettingType? SettingType {
             get { return BackingStore?.Get<TrainingSettingType?>("settingType"); }
             set { BackingStore?.Set("settingType", value); }

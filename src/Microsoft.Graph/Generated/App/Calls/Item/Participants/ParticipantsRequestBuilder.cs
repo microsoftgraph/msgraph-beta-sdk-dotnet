@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants {
         public ParticipantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/calls/{call%2Did}/participants{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of participant objects in the call.
+        /// Retrieve a list of participant objects in the call. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-list-participants?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants {
             return await RequestAdapter.SendAsync<Participant>(requestInfo, Participant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of participant objects in the call.
+        /// Retrieve a list of participant objects in the call. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants {
             return new ParticipantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of participant objects in the call.
+        /// Retrieve a list of participant objects in the call. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ParticipantsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

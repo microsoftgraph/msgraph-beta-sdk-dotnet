@@ -3,9 +3,6 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.JoinedGroups.Delta;
 using Microsoft.Graph.Beta.Users.Item.JoinedGroups.EvaluateDynamicMembership;
-using Microsoft.Graph.Beta.Users.Item.JoinedGroups.GetByIds;
-using Microsoft.Graph.Beta.Users.Item.JoinedGroups.GetUserOwnedObjects;
-using Microsoft.Graph.Beta.Users.Item.JoinedGroups.ValidateProperties;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -26,18 +23,6 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups {
         /// <summary>Provides operations to call the evaluateDynamicMembership method.</summary>
         public EvaluateDynamicMembershipRequestBuilder EvaluateDynamicMembership { get =>
             new EvaluateDynamicMembershipRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getByIds method.</summary>
-        public GetByIdsRequestBuilder GetByIds { get =>
-            new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getUserOwnedObjects method.</summary>
-        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
-            new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the validateProperties method.</summary>
-        public ValidatePropertiesRequestBuilder ValidateProperties { get =>
-            new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new JoinedGroupsRequestBuilder and sets the default values.

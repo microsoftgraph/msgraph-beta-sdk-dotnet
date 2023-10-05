@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("continuousAccessEvaluation", value); }
         }
 #endif
-        /// <summary>Session control that determines whether it is acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.</summary>
+        /// <summary>Session control that determines whether it&apos;s acceptable for Azure AD to extend existing sessions based on information collected prior to an outage or not.</summary>
         public bool? DisableResilienceDefaults {
             get { return BackingStore?.Get<bool?>("disableResilienceDefaults"); }
             set { BackingStore?.Set("disableResilienceDefaults", value); }

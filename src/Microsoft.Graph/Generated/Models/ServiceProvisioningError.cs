@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Qualified service instance (e.g., &apos;SharePoint/Dublin&apos;) that published the service error information.</summary>
+        /// <summary>Qualified service instance (for example, &apos;SharePoint/Dublin&apos;) that published the service error information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServiceInstance {

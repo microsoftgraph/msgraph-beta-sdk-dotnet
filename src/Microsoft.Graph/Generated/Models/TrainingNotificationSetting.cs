@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class TrainingNotificationSetting : EndUserNotificationSetting, IParsable {
-        /// <summary>The trainingAssignment property</summary>
+        /// <summary>Training assignment details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public BaseEndUserNotification? TrainingAssignment {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("trainingAssignment", value); }
         }
 #endif
-        /// <summary>The trainingReminder property</summary>
+        /// <summary>Training reminder details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public TrainingReminderNotification? TrainingReminder {

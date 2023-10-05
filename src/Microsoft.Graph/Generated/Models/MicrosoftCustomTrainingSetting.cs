@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftCustomTrainingSetting : TrainingSetting, IParsable {
-        /// <summary>The completionDateTime property</summary>
+        /// <summary>The completion date and time of the training. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CompletionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("completionDateTime"); }
             set { BackingStore?.Set("completionDateTime", value); }
         }
-        /// <summary>The trainingAssignmentMappings property</summary>
+        /// <summary>The mapping details of the associated training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<MicrosoftTrainingAssignmentMapping>? TrainingAssignmentMappings {
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("trainingAssignmentMappings", value); }
         }
 #endif
-        /// <summary>The trainingCompletionDuration property</summary>
+        /// <summary>The training completion duration that needs to be provided before scheduling the training. Possible values are: week, fortnite, month, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.TrainingCompletionDuration? TrainingCompletionDuration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TrainingCompletionDuration?>("trainingCompletionDuration"); }
             set { BackingStore?.Set("trainingCompletionDuration", value); }

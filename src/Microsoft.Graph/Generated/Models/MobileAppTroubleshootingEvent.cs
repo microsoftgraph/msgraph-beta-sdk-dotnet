@@ -106,8 +106,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"applicationId", n => { ApplicationId = n.GetStringValue(); } },
                 {"appLogCollectionRequests", n => { AppLogCollectionRequests = n.GetCollectionOfObjectValues<AppLogCollectionRequest>(AppLogCollectionRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"applicationId", n => { ApplicationId = n.GetStringValue(); } },
                 {"deviceId", n => { DeviceId = n.GetStringValue(); } },
                 {"history", n => { History = n.GetCollectionOfObjectValues<MobileAppTroubleshootingHistoryItem>(MobileAppTroubleshootingHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managedDeviceIdentifier", n => { ManagedDeviceIdentifier = n.GetStringValue(); } },

@@ -159,6 +159,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("justification", value); }
         }
 #endif
+        /// <summary>The name of parent process associated with the elevated process. This is always populated for both parent and child process types</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ParentProcessName {
+            get { return BackingStore?.Get<string?>("parentProcessName"); }
+            set { BackingStore?.Set("parentProcessName", value); }
+        }
+#nullable restore
+#else
+        public string ParentProcessName {
+            get { return BackingStore?.Get<string>("parentProcessName"); }
+            set { BackingStore?.Set("parentProcessName", value); }
+        }
+#endif
+        /// <summary>Unique Identifier of the policy configured to run the application with elevated access</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PolicyId {
+            get { return BackingStore?.Get<string?>("policyId"); }
+            set { BackingStore?.Set("policyId", value); }
+        }
+#nullable restore
+#else
+        public string PolicyId {
+            get { return BackingStore?.Get<string>("policyId"); }
+            set { BackingStore?.Set("policyId", value); }
+        }
+#endif
+        /// <summary>The name of the policy configured to run the application in elevated access</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PolicyName {
+            get { return BackingStore?.Get<string?>("policyName"); }
+            set { BackingStore?.Set("policyName", value); }
+        }
+#nullable restore
+#else
+        public string PolicyName {
+            get { return BackingStore?.Get<string>("policyName"); }
+            set { BackingStore?.Set("policyName", value); }
+        }
+#endif
+        /// <summary>Indicates the type of elevated process</summary>
+        public PrivilegeManagementProcessType? ProcessType {
+            get { return BackingStore?.Get<PrivilegeManagementProcessType?>("processType"); }
+            set { BackingStore?.Set("processType", value); }
+        }
         /// <summary>The product name of the application. This value is set by the creator of the application. Example: `Visual Studio`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -178,6 +225,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("result"); }
             set { BackingStore?.Set("result", value); }
         }
+        /// <summary>Unique identifier of the rule configured to run the application with elevated access</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RuleId {
+            get { return BackingStore?.Get<string?>("ruleId"); }
+            set { BackingStore?.Set("ruleId", value); }
+        }
+#nullable restore
+#else
+        public string RuleId {
+            get { return BackingStore?.Get<string>("ruleId"); }
+            set { BackingStore?.Set("ruleId", value); }
+        }
+#endif
         /// <summary>The User Principal Name of the user who performed the elevation. Example: `john@domain.com`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -222,8 +283,13 @@ namespace Microsoft.Graph.Beta.Models {
                 {"hash", n => { Hash = n.GetStringValue(); } },
                 {"internalName", n => { InternalName = n.GetStringValue(); } },
                 {"justification", n => { Justification = n.GetStringValue(); } },
+                {"parentProcessName", n => { ParentProcessName = n.GetStringValue(); } },
+                {"policyId", n => { PolicyId = n.GetStringValue(); } },
+                {"policyName", n => { PolicyName = n.GetStringValue(); } },
+                {"processType", n => { ProcessType = n.GetEnumValue<PrivilegeManagementProcessType>(); } },
                 {"productName", n => { ProductName = n.GetStringValue(); } },
                 {"result", n => { Result = n.GetIntValue(); } },
+                {"ruleId", n => { RuleId = n.GetStringValue(); } },
                 {"upn", n => { Upn = n.GetStringValue(); } },
                 {"userType", n => { UserType = n.GetEnumValue<PrivilegeManagementEndUserType>(); } },
             };
@@ -247,8 +313,13 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("hash", Hash);
             writer.WriteStringValue("internalName", InternalName);
             writer.WriteStringValue("justification", Justification);
+            writer.WriteStringValue("parentProcessName", ParentProcessName);
+            writer.WriteStringValue("policyId", PolicyId);
+            writer.WriteStringValue("policyName", PolicyName);
+            writer.WriteEnumValue<PrivilegeManagementProcessType>("processType", ProcessType);
             writer.WriteStringValue("productName", ProductName);
             writer.WriteIntValue("result", Result);
+            writer.WriteStringValue("ruleId", RuleId);
             writer.WriteStringValue("upn", Upn);
             writer.WriteEnumValue<PrivilegeManagementEndUserType>("userType", UserType);
         }

@@ -47,20 +47,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The contact information about the notification receivers, such as email addresses. For portal notifications, receivers can be left blank. For email notifications, receivers consists of email addresses such as serena.davis@contoso.com.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Receivers {
-            get { return BackingStore?.Get<List<string>?>("receivers"); }
-            set { BackingStore?.Set("receivers", value); }
-        }
-#nullable restore
-#else
-        public List<string> Receivers {
-            get { return BackingStore?.Get<List<string>>("receivers"); }
-            set { BackingStore?.Set("receivers", value); }
-        }
-#endif
         /// <summary>
         /// Instantiates a new notificationChannel and sets the default values.
         /// </summary>
@@ -84,7 +70,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
                 {"notificationChannelType", n => { NotificationChannelType = n.GetEnumValue<NotificationChannelType>(); } },
                 {"notificationReceivers", n => { NotificationReceivers = n.GetCollectionOfObjectValues<NotificationReceiver>(NotificationReceiver.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"receivers", n => { Receivers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -96,7 +81,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteEnumValue<NotificationChannelType>("notificationChannelType", NotificationChannelType);
             writer.WriteCollectionOfObjectValues<NotificationReceiver>("notificationReceivers", NotificationReceivers);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfPrimitiveValues<string>("receivers", Receivers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

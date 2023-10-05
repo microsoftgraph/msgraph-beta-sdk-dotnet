@@ -133,9 +133,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"appliedDateTime", n => { AppliedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"applyResult", n => { ApplyResult = n.GetStringValue(); } },
                 {"justification", n => { Justification = n.GetStringValue(); } },
+                {"reviewResult", n => { ReviewResult = n.GetStringValue(); } },
                 {"reviewedBy", n => { ReviewedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
                 {"reviewedDateTime", n => { ReviewedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"reviewResult", n => { ReviewResult = n.GetStringValue(); } },
             };
         }
         /// <summary>

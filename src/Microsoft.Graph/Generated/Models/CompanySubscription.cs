@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("skuPartNumber", value); }
         }
 #endif
-        /// <summary>The status of this subscription. Possible values are: Enabled, Expired, Suspended, Warning, LockedOut.</summary>
+        /// <summary>The status of this subscription. Possible values are: Enabled, Deleted, Suspended, Warning, LockedOut.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status {

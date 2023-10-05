@@ -14,6 +14,20 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The errorMessage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ErrorMessage {
+            get { return BackingStore?.Get<string?>("errorMessage"); }
+            set { BackingStore?.Set("errorMessage", value); }
+        }
+#nullable restore
+#else
+        public string ErrorMessage {
+            get { return BackingStore?.Get<string>("errorMessage"); }
+            set { BackingStore?.Set("errorMessage", value); }
+        }
+#endif
         /// <summary>The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.</summary>
         public CloudPcPartnerAgentInstallStatus? InstallStatus {
             get { return BackingStore?.Get<CloudPcPartnerAgentInstallStatus?>("installStatus"); }
@@ -68,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
                 {"installStatus", n => { InstallStatus = n.GetEnumValue<CloudPcPartnerAgentInstallStatus>(); } },
                 {"isThirdPartyPartner", n => { IsThirdPartyPartner = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -81,6 +96,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("errorMessage", ErrorMessage);
             writer.WriteEnumValue<CloudPcPartnerAgentInstallStatus>("installStatus", InstallStatus);
             writer.WriteBoolValue("isThirdPartyPartner", IsThirdPartyPartner);
             writer.WriteStringValue("@odata.type", OdataType);

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Run campaigns to remind users to setup targeted authentication methods.</summary>
+        /// <summary>Run campaigns to remind users to set up targeted authentication methods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign? AuthenticationMethodsRegistrationCampaign {

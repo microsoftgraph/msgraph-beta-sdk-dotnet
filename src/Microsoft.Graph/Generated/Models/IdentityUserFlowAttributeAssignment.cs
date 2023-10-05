@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Determines whether the identityUserFlowAttribute is optional. true means the user doesn&apos;t have to provide a value. false means the user cannot complete sign-up without providing a value.</summary>
+        /// <summary>Determines whether the identityUserFlowAttribute is optional. true means the user doesn&apos;t have to provide a value. false means the user can&apos;t complete sign-up without providing a value.</summary>
         public bool? IsOptional {
             get { return BackingStore?.Get<bool?>("isOptional"); }
             set { BackingStore?.Set("isOptional", value); }

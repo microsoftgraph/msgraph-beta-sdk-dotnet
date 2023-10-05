@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups.Ref {
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/printerShares/{printerShare%2Did}/allowedGroups/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+        /// Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/printershare-list-allowedgroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups.Ref {
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Grant the specified group access to submit print jobs to the associated printerShare.
+        /// Grant the specified group access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/printershare-post-allowedgroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+        /// Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Grant the specified group access to submit print jobs to the associated printerShare.
+        /// Grant the specified group access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups.Ref {
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare.
+        /// Retrieve a list of groups that have been granted access to submit print jobs to the associated printerShare. This API is supported in the following national cloud deployments.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

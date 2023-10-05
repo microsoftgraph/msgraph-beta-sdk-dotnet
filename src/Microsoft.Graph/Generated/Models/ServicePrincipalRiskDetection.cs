@@ -115,6 +115,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("location", value); }
         }
 #endif
+        /// <summary>The mitreTechniqueId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MitreTechniqueId {
+            get { return BackingStore?.Get<string?>("mitreTechniqueId"); }
+            set { BackingStore?.Set("mitreTechniqueId", value); }
+        }
+#nullable restore
+#else
+        public string MitreTechniqueId {
+            get { return BackingStore?.Get<string>("mitreTechniqueId"); }
+            set { BackingStore?.Set("mitreTechniqueId", value); }
+        }
+#endif
         /// <summary>Request identifier of the sign-in activity associated with the risk detection. This property is null if the risk detection is not associated with a sign-in activity. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -229,6 +243,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"keyIds", n => { KeyIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"location", n => { Location = n.GetObjectValue<SignInLocation>(SignInLocation.CreateFromDiscriminatorValue); } },
+                {"mitreTechniqueId", n => { MitreTechniqueId = n.GetStringValue(); } },
                 {"requestId", n => { RequestId = n.GetStringValue(); } },
                 {"riskDetail", n => { RiskDetail = n.GetEnumValue<RiskDetail>(); } },
                 {"riskEventType", n => { RiskEventType = n.GetStringValue(); } },
@@ -258,6 +273,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("keyIds", KeyIds);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteObjectValue<SignInLocation>("location", Location);
+            writer.WriteStringValue("mitreTechniqueId", MitreTechniqueId);
             writer.WriteStringValue("requestId", RequestId);
             writer.WriteEnumValue<RiskDetail>("riskDetail", RiskDetail);
             writer.WriteStringValue("riskEventType", RiskEventType);

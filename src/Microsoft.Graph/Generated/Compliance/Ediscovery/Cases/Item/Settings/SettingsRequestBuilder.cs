@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an eDiscovery caseSettings object.
+        /// Read the properties and relationships of an eDiscovery caseSettings object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-casesettings-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings {
             return await RequestAdapter.SendAsync<CaseSettings>(requestInfo, CaseSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a an eDiscovery caseSettings object.
+        /// Update the properties of a an eDiscovery caseSettings object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-casesettings-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an eDiscovery caseSettings object.
+        /// Read the properties and relationships of an eDiscovery caseSettings object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01")]
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a an eDiscovery caseSettings object.
+        /// Update the properties of a an eDiscovery caseSettings object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Settings {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of an eDiscovery caseSettings object.
+        /// Read the properties and relationships of an eDiscovery caseSettings object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class SettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

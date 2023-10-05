@@ -49,5 +49,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Template Family for device configuration policies</summary>
         [EnumMember(Value = "deviceConfigurationPolicies")]
         DeviceConfigurationPolicies,
+        /// <summary>Template Family for Company Portal settings</summary>
+        [EnumMember(Value = "companyPortal")]
+        CompanyPortal,
     }
 }

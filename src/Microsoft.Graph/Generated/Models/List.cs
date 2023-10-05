@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("activities", value); }
         }
 #endif
-        /// <summary>The columns property</summary>
+        /// <summary>The collection of field definitions for this list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ColumnDefinition>? Columns {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("columns", value); }
         }
 #endif
-        /// <summary>The contentTypes property</summary>
+        /// <summary>The collection of content types present in this list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ContentType>? ContentTypes {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].</summary>
+        /// <summary>Allows access to the list as a drive resource with driveItems. Only present on document libraries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Drive? Drive {
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("items", value); }
         }
 #endif
-        /// <summary>Provides additional details about the list.</summary>
+        /// <summary>Contains more details about the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ListInfo? ListProp {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("list", value); }
         }
 #endif
-        /// <summary>The collection of long running operations for the list.</summary>
+        /// <summary>The collection of long-running operations on the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<RichLongRunningOperation>? Operations {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("operations", value); }
         }
 #endif
-        /// <summary>The sharepointIds property</summary>
+        /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.SharepointIds? SharepointIds {
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("subscriptions", value); }
         }
 #endif
-        /// <summary>If present, indicates that this is a system-managed list. Read-only.</summary>
+        /// <summary>If present, indicates that the list is system-managed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SystemFacet? System {

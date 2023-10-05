@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates {
         public BusinessFlowTemplatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/businessFlowTemplates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, list all the businessFlowTemplate objects.
+        /// In the Azure AD access reviews feature, list all the businessFlowTemplate objects. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessflowtemplate-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates {
             return await RequestAdapter.SendAsync<BusinessFlowTemplate>(requestInfo, BusinessFlowTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, list all the businessFlowTemplate objects.
+        /// In the Azure AD access reviews feature, list all the businessFlowTemplate objects. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates {
             return new BusinessFlowTemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, list all the businessFlowTemplate objects.
+        /// In the Azure AD access reviews feature, list all the businessFlowTemplate objects. This API is supported in the following national cloud deployments.
         /// </summary>
         public class BusinessFlowTemplatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

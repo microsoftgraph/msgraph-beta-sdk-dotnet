@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes.Item {
         public PersonAnnotationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/notes/{personAnnotation%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a personAnnotation object from a user&apos;s profile.
+        /// Deletes a personAnnotation object from a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/personannotation-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a personAnnotation object from a user&apos;s profile.
+        /// Read the properties and relationships of a personAnnotation object from a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/personannotation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes.Item {
             return await RequestAdapter.SendAsync<PersonAnnotation>(requestInfo, PersonAnnotation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a personAnnotation object in a user&apos;s profile.
+        /// Update the properties of a personAnnotation object in a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/personannotation-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes.Item {
             return await RequestAdapter.SendAsync<PersonAnnotation>(requestInfo, PersonAnnotation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a personAnnotation object from a user&apos;s profile.
+        /// Deletes a personAnnotation object from a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a personAnnotation object from a user&apos;s profile.
+        /// Read the properties and relationships of a personAnnotation object from a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a personAnnotation object in a user&apos;s profile.
+        /// Update the properties of a personAnnotation object in a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes.Item {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of a personAnnotation object from a user&apos;s profile.
+        /// Read the properties and relationships of a personAnnotation object from a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// </summary>
         public class PersonAnnotationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

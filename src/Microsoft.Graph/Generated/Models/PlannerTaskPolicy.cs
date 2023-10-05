@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The rules that should be enforced on the tasks when they are being changed outside of the scenario, based on the role of the caller.</summary>
+        /// <summary>The rules that should be enforced on the tasks when they&apos;re being changed outside of the scenario, based on the role of the caller.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PlannerTaskRoleBasedRule>? Rules {

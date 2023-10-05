@@ -28,6 +28,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The ticketApproverIdentityId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TicketApproverIdentityId {
+            get { return BackingStore?.Get<string?>("ticketApproverIdentityId"); }
+            set { BackingStore?.Set("ticketApproverIdentityId", value); }
+        }
+#nullable restore
+#else
+        public string TicketApproverIdentityId {
+            get { return BackingStore?.Get<string>("ticketApproverIdentityId"); }
+            set { BackingStore?.Set("ticketApproverIdentityId", value); }
+        }
+#endif
         /// <summary>The ticket number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,6 +54,20 @@ namespace Microsoft.Graph.Beta.Models {
         public string TicketNumber {
             get { return BackingStore?.Get<string>("ticketNumber"); }
             set { BackingStore?.Set("ticketNumber", value); }
+        }
+#endif
+        /// <summary>The ticketSubmitterIdentityId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TicketSubmitterIdentityId {
+            get { return BackingStore?.Get<string?>("ticketSubmitterIdentityId"); }
+            set { BackingStore?.Set("ticketSubmitterIdentityId", value); }
+        }
+#nullable restore
+#else
+        public string TicketSubmitterIdentityId {
+            get { return BackingStore?.Get<string>("ticketSubmitterIdentityId"); }
+            set { BackingStore?.Set("ticketSubmitterIdentityId", value); }
         }
 #endif
         /// <summary>The description of the ticket system.</summary>
@@ -77,7 +105,9 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"ticketApproverIdentityId", n => { TicketApproverIdentityId = n.GetStringValue(); } },
                 {"ticketNumber", n => { TicketNumber = n.GetStringValue(); } },
+                {"ticketSubmitterIdentityId", n => { TicketSubmitterIdentityId = n.GetStringValue(); } },
                 {"ticketSystem", n => { TicketSystem = n.GetStringValue(); } },
             };
         }
@@ -88,7 +118,9 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteStringValue("ticketApproverIdentityId", TicketApproverIdentityId);
             writer.WriteStringValue("ticketNumber", TicketNumber);
+            writer.WriteStringValue("ticketSubmitterIdentityId", TicketSubmitterIdentityId);
             writer.WriteStringValue("ticketSystem", TicketSystem);
             writer.WriteAdditionalData(AdditionalData);
         }

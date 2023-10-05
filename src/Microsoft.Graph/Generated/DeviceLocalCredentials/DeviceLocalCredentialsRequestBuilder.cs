@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials {
         public DeviceLocalCredentialsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceLocalCredentials{?%24search,%24filter,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the deviceLocalCredentialInfo objects and their properties excluding the credentials. 
+        /// Get a list of the deviceLocalCredentialInfo objects and their properties excluding the credentials.  This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/devicelocalcredentialinfo-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials {
             return await RequestAdapter.SendAsync<DeviceLocalCredentialInfo>(requestInfo, DeviceLocalCredentialInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the deviceLocalCredentialInfo objects and their properties excluding the credentials. 
+        /// Get a list of the deviceLocalCredentialInfo objects and their properties excluding the credentials.  This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials {
             return new DeviceLocalCredentialsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the deviceLocalCredentialInfo objects and their properties excluding the credentials. 
+        /// Get a list of the deviceLocalCredentialInfo objects and their properties excluding the credentials.  This API is supported in the following national cloud deployments.
         /// </summary>
         public class DeviceLocalCredentialsRequestBuilderGetQueryParameters {
             /// <summary>Filter items by property values</summary>

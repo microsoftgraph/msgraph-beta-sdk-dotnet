@@ -13,6 +13,20 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
+        /// <summary>The authorizationSystems property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.AuthorizationSystem>? AuthorizationSystems {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthorizationSystem>?>("authorizationSystems"); }
+            set { BackingStore?.Set("authorizationSystems", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.AuthorizationSystem> AuthorizationSystems {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthorizationSystem>>("authorizationSystems"); }
+            set { BackingStore?.Set("authorizationSystems", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The connections property</summary>
@@ -77,6 +91,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"authorizationSystems", n => { AuthorizationSystems = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationSystem>(Microsoft.Graph.Beta.Models.AuthorizationSystem.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"connections", n => { Connections = n.GetCollectionOfObjectValues<ExternalConnection>(ExternalConnection.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"industryData", n => { IndustryData = n.GetObjectValue<IndustryDataRoot>(IndustryDataRoot.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -88,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationSystem>("authorizationSystems", AuthorizationSystems);
             writer.WriteCollectionOfObjectValues<ExternalConnection>("connections", Connections);
             writer.WriteObjectValue<IndustryDataRoot>("industryData", IndustryData);
             writer.WriteStringValue("@odata.type", OdataType);

@@ -124,8 +124,8 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"edgeKioskEnablePublicBrowsing", n => { EdgeKioskEnablePublicBrowsing = n.GetBoolValue(); } },
-                {"kioskBrowserBlockedUrlExceptions", n => { KioskBrowserBlockedUrlExceptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"kioskBrowserBlockedURLs", n => { KioskBrowserBlockedURLs = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"kioskBrowserBlockedUrlExceptions", n => { KioskBrowserBlockedUrlExceptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"kioskBrowserDefaultUrl", n => { KioskBrowserDefaultUrl = n.GetStringValue(); } },
                 {"kioskBrowserEnableEndSessionButton", n => { KioskBrowserEnableEndSessionButton = n.GetBoolValue(); } },
                 {"kioskBrowserEnableHomeButton", n => { KioskBrowserEnableHomeButton = n.GetBoolValue(); } },

@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class VirtualEventRegistrationConfiguration : Entity, IParsable {
-        /// <summary>The capacity property</summary>
+        /// <summary>Total capacity of the virtual event.</summary>
         public int? Capacity {
             get { return BackingStore?.Get<int?>("capacity"); }
             set { BackingStore?.Set("capacity", value); }
         }
-        /// <summary>The questions property</summary>
+        /// <summary>Registration questions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<VirtualEventRegistrationQuestion>? Questions {
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("questions", value); }
         }
 #endif
-        /// <summary>The registrationWebUrl property</summary>
+        /// <summary>Registration URL of the virtual event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RegistrationWebUrl {

@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp : OnInteractiveAuthFlowStartHandler, IParsable {
-        /// <summary>Optional. Specifes whether the authentication flow includes an option to sign up (create account) as well as sign in. Default value is false meaning only sign in is enabled.</summary>
+        /// <summary>Optional. Specifies whether the authentication flow includes an option to sign up (create account) and sign in. Default value is false meaning only sign in is enabled.</summary>
         public bool? IsSignUpAllowed {
             get { return BackingStore?.Get<bool?>("isSignUpAllowed"); }
             set { BackingStore?.Set("isSignUpAllowed", value); }

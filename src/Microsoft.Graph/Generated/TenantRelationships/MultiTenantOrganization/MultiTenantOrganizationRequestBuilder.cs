@@ -39,26 +39,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
         public MultiTenantOrganizationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/multiTenantOrganization{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property multiTenantOrganization for tenantRelationships
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task DeleteAsync(Action<MultiTenantOrganizationRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
-#nullable restore
-#else
-        public async Task DeleteAsync(Action<MultiTenantOrganizationRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
-#endif
-            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Get properties of the multi-tenant organization.
+        /// Get properties of the multi-tenant organization. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganization-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,31 +81,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MultiTenantOrganization>(requestInfo, Microsoft.Graph.Beta.Models.MultiTenantOrganization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property multiTenantOrganization for tenantRelationships
-        /// </summary>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<MultiTenantOrganizationRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
-#nullable restore
-#else
-        public RequestInformation ToDeleteRequestInformation(Action<MultiTenantOrganizationRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
-#endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.DELETE,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new MultiTenantOrganizationRequestBuilderDeleteRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            return requestInfo;
-        }
-        /// <summary>
-        /// Get properties of the multi-tenant organization.
+        /// Get properties of the multi-tenant organization. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -185,23 +142,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
             return new MultiTenantOrganizationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        public class MultiTenantOrganizationRequestBuilderDeleteRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new multiTenantOrganizationRequestBuilderDeleteRequestConfiguration and sets the default values.
-            /// </summary>
-            public MultiTenantOrganizationRequestBuilderDeleteRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
-        }
-        /// <summary>
-        /// Get properties of the multi-tenant organization.
+        /// Get properties of the multi-tenant organization. This API is supported in the following national cloud deployments.
         /// </summary>
         public class MultiTenantOrganizationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

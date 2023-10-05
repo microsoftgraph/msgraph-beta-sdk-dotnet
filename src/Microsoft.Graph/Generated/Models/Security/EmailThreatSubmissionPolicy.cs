@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("customizedNotificationSenderEmailAddress", value); }
         }
 #endif
-        /// <summary>Specifies the destination where the reported messages from end users will land whenever they report something as phish, junk or not junk. The default value is null. Optional for creation.</summary>
+        /// <summary>Specifies the destination where the reported messages from end users land whenever they report something as phish, junk or not junk. The default value is null. Optional for creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomizedReportRecipientEmailAddress {
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<bool?>("isAskMeEnabledForUsers"); }
             set { BackingStore?.Set("isAskMeEnabledForUsers", value); }
         }
-        /// <summary>Indicates whether the email notifications sent to end users to inform them if an email is phish, spam or junk is customized or not. The default value is false. Optional for creation.</summary>
+        /// <summary>Indicates whether the email notifications sent to end users to inform them if an email is a phish mail, spam or junk is customized or not. The default value is false. Optional for creation.</summary>
         public bool? IsCustomizedMessageEnabled {
             get { return BackingStore?.Get<bool?>("isCustomizedMessageEnabled"); }
             set { BackingStore?.Set("isCustomizedMessageEnabled", value); }
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<bool?>("isCustomizedNotificationSenderEnabled"); }
             set { BackingStore?.Set("isCustomizedNotificationSenderEnabled", value); }
         }
-        /// <summary>Indicates whether end users can simply move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it. The default value is true. Optional for creation.</summary>
+        /// <summary>Indicates whether end users can move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it. The default value is true. Optional for creation.</summary>
         public bool? IsNeverReportEnabledForUsers {
             get { return BackingStore?.Get<bool?>("isNeverReportEnabledForUsers"); }
             set { BackingStore?.Set("isNeverReportEnabledForUsers", value); }
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<bool?>("isReportFromQuarantineEnabled"); }
             set { BackingStore?.Set("isReportFromQuarantineEnabled", value); }
         }
-        /// <summary>Indicates whether emails reported by end users should be send to the custom mailbox configured using customizedReportRecipientEmailAddress.  The default value is false. Optional for creation.</summary>
+        /// <summary>Indicates whether emails reported by end users should be sent to the custom mailbox configured using customizedReportRecipientEmailAddress.  The default value is false. Optional for creation.</summary>
         public bool? IsReportToCustomizedEmailAddressEnabled {
             get { return BackingStore?.Get<bool?>("isReportToCustomizedEmailAddressEnabled"); }
             set { BackingStore?.Set("isReportToCustomizedEmailAddressEnabled", value); }
         }
-        /// <summary>If enabled, the email will be sent to Microsoft for analysis. The default value is false. Required for creation.</summary>
+        /// <summary>If enabled, the email is sent to Microsoft for analysis. The default value is false. Required for creation.</summary>
         public bool? IsReportToMicrosoftEnabled {
             get { return BackingStore?.Get<bool?>("isReportToMicrosoftEnabled"); }
             set { BackingStore?.Set("isReportToMicrosoftEnabled", value); }

@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Training : Entity, IParsable {
-        /// <summary>The availabilityStatus property</summary>
+        /// <summary>Training availability status.Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.</summary>
         public TrainingAvailabilityStatus? AvailabilityStatus {
             get { return BackingStore?.Get<TrainingAvailabilityStatus?>("availabilityStatus"); }
             set { BackingStore?.Set("availabilityStatus", value); }
         }
-        /// <summary>The createdBy property</summary>
+        /// <summary>Identity of the user who created the training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EmailIdentity? CreatedBy {
@@ -25,12 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Date and time when the training was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>The description for the training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name for the training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -58,17 +58,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The durationInMinutes property</summary>
+        /// <summary>Training duration.</summary>
         public int? DurationInMinutes {
             get { return BackingStore?.Get<int?>("durationInMinutes"); }
             set { BackingStore?.Set("durationInMinutes", value); }
         }
-        /// <summary>The hasEvaluation property</summary>
+        /// <summary>Indicates whether the training has any evaluation.</summary>
         public bool? HasEvaluation {
             get { return BackingStore?.Get<bool?>("hasEvaluation"); }
             set { BackingStore?.Set("hasEvaluation", value); }
         }
-        /// <summary>The languageDetails property</summary>
+        /// <summary>Language specific details on a training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<TrainingLanguageDetail>? LanguageDetails {
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("languageDetails", value); }
         }
 #endif
-        /// <summary>The lastModifiedBy property</summary>
+        /// <summary>Identity of the user who last modified the training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EmailIdentity? LastModifiedBy {
@@ -96,17 +96,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>Date and time when the training was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The source property</summary>
+        /// <summary>Training content source. Possible values are: unknown, global, tenant, unknownFutureValue.</summary>
         public SimulationContentSource? Source {
             get { return BackingStore?.Get<SimulationContentSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
-        /// <summary>The supportedLocales property</summary>
+        /// <summary>Supported locales for content for the associated training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SupportedLocales {
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("supportedLocales", value); }
         }
 #endif
-        /// <summary>The tags property</summary>
+        /// <summary>Training tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tags {
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tags", value); }
         }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The type of training. Possible values are: unknown, phishing, unknownFutureValue.</summary>
         public TrainingType? Type {
             get { return BackingStore?.Get<TrainingType?>("type"); }
             set { BackingStore?.Set("type", value); }

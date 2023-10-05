@@ -198,12 +198,12 @@ namespace Microsoft.Graph.Beta.Models {
                 {"securityDisableUsbDebugging", n => { SecurityDisableUsbDebugging = n.GetBoolValue(); } },
                 {"securityPreventInstallAppsFromUnknownSources", n => { SecurityPreventInstallAppsFromUnknownSources = n.GetBoolValue(); } },
                 {"securityRequireCompanyPortalAppIntegrity", n => { SecurityRequireCompanyPortalAppIntegrity = n.GetBoolValue(); } },
-                {"securityRequiredAndroidSafetyNetEvaluationType", n => { SecurityRequiredAndroidSafetyNetEvaluationType = n.GetEnumValue<AndroidSafetyNetEvaluationType>(); } },
                 {"securityRequireGooglePlayServices", n => { SecurityRequireGooglePlayServices = n.GetBoolValue(); } },
                 {"securityRequireSafetyNetAttestationBasicIntegrity", n => { SecurityRequireSafetyNetAttestationBasicIntegrity = n.GetBoolValue(); } },
                 {"securityRequireSafetyNetAttestationCertifiedDevice", n => { SecurityRequireSafetyNetAttestationCertifiedDevice = n.GetBoolValue(); } },
                 {"securityRequireUpToDateSecurityProviders", n => { SecurityRequireUpToDateSecurityProviders = n.GetBoolValue(); } },
                 {"securityRequireVerifyApps", n => { SecurityRequireVerifyApps = n.GetBoolValue(); } },
+                {"securityRequiredAndroidSafetyNetEvaluationType", n => { SecurityRequiredAndroidSafetyNetEvaluationType = n.GetEnumValue<AndroidSafetyNetEvaluationType>(); } },
                 {"storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
             };
         }

@@ -451,10 +451,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"billingPostalAddress", n => { BillingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"billToCustomerId", n => { BillToCustomerId = n.GetGuidValue(); } },
                 {"billToCustomerNumber", n => { BillToCustomerNumber = n.GetStringValue(); } },
                 {"billToName", n => { BillToName = n.GetStringValue(); } },
+                {"billingPostalAddress", n => { BillingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"currency", n => { Currency = n.GetObjectValue<Microsoft.Graph.Beta.Models.Currency>(Microsoft.Graph.Beta.Models.Currency.CreateFromDiscriminatorValue); } },
                 {"currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
                 {"currencyId", n => { CurrencyId = n.GetGuidValue(); } },
@@ -482,11 +482,11 @@ namespace Microsoft.Graph.Beta.Models {
                 {"salesInvoiceLines", n => { SalesInvoiceLines = n.GetCollectionOfObjectValues<SalesInvoiceLine>(SalesInvoiceLine.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"salesperson", n => { Salesperson = n.GetStringValue(); } },
                 {"sellingPostalAddress", n => { SellingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
+                {"shipToContact", n => { ShipToContact = n.GetStringValue(); } },
+                {"shipToName", n => { ShipToName = n.GetStringValue(); } },
                 {"shipmentMethod", n => { ShipmentMethod = n.GetObjectValue<Microsoft.Graph.Beta.Models.ShipmentMethod>(Microsoft.Graph.Beta.Models.ShipmentMethod.CreateFromDiscriminatorValue); } },
                 {"shipmentMethodId", n => { ShipmentMethodId = n.GetGuidValue(); } },
                 {"shippingPostalAddress", n => { ShippingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
-                {"shipToContact", n => { ShipToContact = n.GetStringValue(); } },
-                {"shipToName", n => { ShipToName = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetStringValue(); } },
                 {"totalAmountExcludingTax", n => { TotalAmountExcludingTax = n.GetDecimalValue(); } },
                 {"totalAmountIncludingTax", n => { TotalAmountIncludingTax = n.GetDecimalValue(); } },

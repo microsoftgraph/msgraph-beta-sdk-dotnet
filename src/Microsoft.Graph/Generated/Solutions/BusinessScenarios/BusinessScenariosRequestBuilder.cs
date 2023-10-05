@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios {
         public BusinessScenariosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/businessScenarios{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of all businessScenario objects in an organization.
+        /// Get a list of all businessScenario objects in an organization. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/solutionsroot-list-businessscenarios?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios {
             return await RequestAdapter.SendAsync<BusinessScenarioCollectionResponse>(requestInfo, BusinessScenarioCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new businessScenario object.
+        /// Create a new businessScenario object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/solutionsroot-post-businessscenarios?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios {
             return await RequestAdapter.SendAsync<BusinessScenario>(requestInfo, BusinessScenario.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of all businessScenario objects in an organization.
+        /// Get a list of all businessScenario objects in an organization. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new businessScenario object.
+        /// Create a new businessScenario object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios {
             return new BusinessScenariosRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of all businessScenario objects in an organization.
+        /// Get a list of all businessScenario objects in an organization. This API is supported in the following national cloud deployments.
         /// </summary>
         public class BusinessScenariosRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

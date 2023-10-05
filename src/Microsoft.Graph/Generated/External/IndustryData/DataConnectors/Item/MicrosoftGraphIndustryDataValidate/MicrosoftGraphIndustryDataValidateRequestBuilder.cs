@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item.Microso
         public MicrosoftGraphIndustryDataValidateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}/microsoft.graph.industryData.validate", rawUrl) {
         }
         /// <summary>
-        /// Perform validations applicable for the specific instance of the data connector.
+        /// Perform validations applicable for the specific instance of the data connector. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-validate?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item.Microso
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Perform validations applicable for the specific instance of the data connector.
+        /// Perform validations applicable for the specific instance of the data connector. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

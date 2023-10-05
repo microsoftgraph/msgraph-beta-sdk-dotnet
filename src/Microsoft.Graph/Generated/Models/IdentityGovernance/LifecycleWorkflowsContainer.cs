@@ -107,8 +107,8 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
                 {"deletedItems", n => { DeletedItems = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeletedItemContainer>(Microsoft.Graph.Beta.Models.DeletedItemContainer.CreateFromDiscriminatorValue); } },
                 {"settings", n => { Settings = n.GetObjectValue<LifecycleManagementSettings>(LifecycleManagementSettings.CreateFromDiscriminatorValue); } },
                 {"taskDefinitions", n => { TaskDefinitions = n.GetCollectionOfObjectValues<TaskDefinition>(TaskDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"workflows", n => { Workflows = n.GetCollectionOfObjectValues<Workflow>(Workflow.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"workflowTemplates", n => { WorkflowTemplates = n.GetCollectionOfObjectValues<WorkflowTemplate>(WorkflowTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"workflows", n => { Workflows = n.GetCollectionOfObjectValues<Workflow>(Workflow.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

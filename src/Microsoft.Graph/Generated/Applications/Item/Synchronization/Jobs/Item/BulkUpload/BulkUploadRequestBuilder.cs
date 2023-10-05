@@ -16,7 +16,6 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.BulkU
     /// </summary>
     public class BulkUploadRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the media for the application entity.</summary>
-        [Obsolete(" as of 2022-10/PrivatePreview:HRInboundPushApi on 2022-10-04 and will be removed 2023-06-14")]
         public ContentRequestBuilder Content { get =>
             new ContentRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -39,7 +38,6 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.BulkU
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2022-10/PrivatePreview:HRInboundPushApi on 2022-10-04 and will be removed 2023-06-14")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<BulkUploadRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -59,7 +57,6 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.BulkU
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2022-10/PrivatePreview:HRInboundPushApi on 2022-10-04 and will be removed 2023-06-14")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.BulkUpload?> GetAsync(Action<BulkUploadRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -80,7 +77,6 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.BulkU
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2022-10/PrivatePreview:HRInboundPushApi on 2022-10-04 and will be removed 2023-06-14")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.BulkUpload?> PatchAsync(Microsoft.Graph.Beta.Models.BulkUpload body, Action<BulkUploadRequestBuilderPatchRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -100,7 +96,6 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.BulkU
         /// Delete navigation property bulkUpload for applications
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2022-10/PrivatePreview:HRInboundPushApi on 2022-10-04 and will be removed 2023-06-14")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<BulkUploadRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
@@ -125,7 +120,6 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.BulkU
         /// The bulk upload operation for the job.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2022-10/PrivatePreview:HRInboundPushApi on 2022-10-04 and will be removed 2023-06-14")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<BulkUploadRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
@@ -153,7 +147,6 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.BulkU
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2022-10/PrivatePreview:HRInboundPushApi on 2022-10-04 and will be removed 2023-06-14")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.BulkUpload body, Action<BulkUploadRequestBuilderPatchRequestConfiguration>? requestConfiguration = default) {
@@ -181,7 +174,6 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.BulkU
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2022-10/PrivatePreview:HRInboundPushApi on 2022-10-04 and will be removed 2023-06-14")]
         public BulkUploadRequestBuilder WithUrl(string rawUrl) {
             return new BulkUploadRequestBuilder(rawUrl, RequestAdapter);
         }

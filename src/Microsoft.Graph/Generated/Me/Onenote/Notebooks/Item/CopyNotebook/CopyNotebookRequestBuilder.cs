@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Me.Onenote.Notebooks.Item.CopyNotebook {
         public CopyNotebookRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/onenote/notebooks/{notebook%2Did}/copyNotebook", rawUrl) {
         }
         /// <summary>
-        /// Copies a notebook to the Notebooks folder in the destination Documents library. The folder is created if it doesn&apos;t exist. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+        /// Copies a notebook to the Notebooks folder in the destination Documents library. The folder is created if it doesn&apos;t exist. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/notebook-copynotebook?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Me.Onenote.Notebooks.Item.CopyNotebook {
             return await RequestAdapter.SendAsync<OnenoteOperation>(requestInfo, OnenoteOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Copies a notebook to the Notebooks folder in the destination Documents library. The folder is created if it doesn&apos;t exist. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+        /// Copies a notebook to the Notebooks folder in the destination Documents library. The folder is created if it doesn&apos;t exist. For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

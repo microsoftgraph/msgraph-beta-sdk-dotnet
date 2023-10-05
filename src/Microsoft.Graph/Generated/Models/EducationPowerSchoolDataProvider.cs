@@ -119,8 +119,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"clientSecret", n => { ClientSecret = n.GetStringValue(); } },
                 {"connectionUrl", n => { ConnectionUrl = n.GetStringValue(); } },
                 {"customizations", n => { Customizations = n.GetObjectValue<EducationSynchronizationCustomizations>(EducationSynchronizationCustomizations.CreateFromDiscriminatorValue); } },
-                {"schoolsIds", n => { SchoolsIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"schoolYear", n => { SchoolYear = n.GetStringValue(); } },
+                {"schoolsIds", n => { SchoolsIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The hold status of the dataSourceContainer.The possible values are: notApplied, applied, applying, removing, partial</summary>
+        /// <summary>The hold status of the dataSourceContainer. The possible values are: notApplied, applied, applying, removing, partial</summary>
         public DataSourceHoldStatus? HoldStatus {
             get { return BackingStore?.Get<DataSourceHoldStatus?>("holdStatus"); }
             set { BackingStore?.Set("holdStatus", value); }
