@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Positions.Item {
         public WorkPositionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/positions/{workPosition%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a specific workPosition object from a user&apos;s profile.
+        /// Delete a specific workPosition object from a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/workposition-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Positions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a workPosition object in a user&apos;s profile.
+        /// Retrieve the properties and relationships of a workPosition object in a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/workposition-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Positions.Item {
             return await RequestAdapter.SendAsync<WorkPosition>(requestInfo, WorkPosition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a workPosition object in a user&apos;s profile.
+        /// Update the properties of a workPosition object in a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/workposition-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Positions.Item {
             return await RequestAdapter.SendAsync<WorkPosition>(requestInfo, WorkPosition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a specific workPosition object from a user&apos;s profile.
+        /// Delete a specific workPosition object from a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Positions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a workPosition object in a user&apos;s profile.
+        /// Retrieve the properties and relationships of a workPosition object in a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Positions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a workPosition object in a user&apos;s profile.
+        /// Update the properties of a workPosition object in a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Positions.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a workPosition object in a user&apos;s profile.
+        /// Retrieve the properties and relationships of a workPosition object in a user&apos;s profile. This API is supported in the following national cloud deployments.
         /// </summary>
         public class WorkPositionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

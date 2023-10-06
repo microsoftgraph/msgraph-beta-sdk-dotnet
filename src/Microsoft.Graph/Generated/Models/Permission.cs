@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Permission : Entity, IParsable {
-        /// <summary>A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there is no expiration set for this permission. Optional.</summary>
+        /// <summary>A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there&apos;s no expiration set for this permission. Optional.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("hasPassword"); }
             set { BackingStore?.Set("hasPassword", value); }
         }
-        /// <summary>Provides a reference to the ancestor of the current permission, if it is inherited from an ancestor. Read-only.</summary>
+        /// <summary>Provides a reference to the ancestor of the current permission, if it&apos;s inherited from an ancestor. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ItemReference? InheritedFrom {
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("invitation", value); }
         }
 #endif
-        /// <summary>Provides the link details of the current permission, if it is a link type permissions. Read-only.</summary>
+        /// <summary>Provides the link details of the current permission, if it&apos;s a link type permission. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SharingLink? Link {
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("link", value); }
         }
 #endif
-        /// <summary>The type of permission, for example, read. See below for the full list of roles. Read-only.</summary>
+        /// <summary>The type of permission, for example, read. See the Roles property values section for the full list of roles. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Roles {

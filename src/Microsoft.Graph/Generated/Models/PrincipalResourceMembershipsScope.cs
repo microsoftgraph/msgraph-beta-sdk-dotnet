@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PrincipalResourceMembershipsScope : AccessReviewScope, IParsable {
-        /// <summary>Defines the scopes of the principals whose access to resources are reviewed in the access review.</summary>
+        /// <summary>Defines the scopes of the principals for which access to resources are reviewed in the access review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AccessReviewScope>? PrincipalScopes {

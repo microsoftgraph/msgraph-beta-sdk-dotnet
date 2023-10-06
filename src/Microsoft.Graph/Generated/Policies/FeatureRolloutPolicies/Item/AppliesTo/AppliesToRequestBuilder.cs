@@ -2,12 +2,8 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo.Count;
-using Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo.Delta;
-using Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo.GetByIds;
-using Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo.Item;
 using Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo.Ref;
-using Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo.ValidateProperties;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -25,25 +21,9 @@ namespace Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the delta method.</summary>
-        public DeltaRequestBuilder Delta { get =>
-            new DeltaRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getByIds method.</summary>
-        public GetByIdsRequestBuilder GetByIds { get =>
-            new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the getUserOwnedObjects method.</summary>
-        public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
-            new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the collection of policyRoot entities.</summary>
         public RefRequestBuilder Ref { get =>
             new RefRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the validateProperties method.</summary>
-        public ValidatePropertiesRequestBuilder ValidateProperties { get =>
-            new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.policies.featureRolloutPolicies.item.appliesTo.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
@@ -86,7 +66,7 @@ namespace Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
+        /// Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/featurerolloutpolicy-post-appliesto?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -134,7 +114,7 @@ namespace Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo {
             return requestInfo;
         }
         /// <summary>
-        /// Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied.
+        /// Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

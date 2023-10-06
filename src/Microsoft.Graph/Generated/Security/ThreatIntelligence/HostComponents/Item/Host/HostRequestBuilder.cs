@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostComponents.Item.H
         public HostRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hostComponents/{hostComponent%2Did}/host{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The host related to this component. This is a reverse navigation property. When navigating to components from a host, this should be assumed to be a return reference.
+        /// The host related to this component. This is a reverse navigation property. When you navigate to components from a host, this should be assumed to be a return reference.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostComponents.Item.H
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.Host>(requestInfo, Microsoft.Graph.Beta.Models.Security.Host.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The host related to this component. This is a reverse navigation property. When navigating to components from a host, this should be assumed to be a return reference.
+        /// The host related to this component. This is a reverse navigation property. When you navigate to components from a host, this should be assumed to be a return reference.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostComponents.Item.H
             return new HostRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The host related to this component. This is a reverse navigation property. When navigating to components from a host, this should be assumed to be a return reference.
+        /// The host related to this component. This is a reverse navigation property. When you navigate to components from a host, this should be assumed to be a return reference.
         /// </summary>
         public class HostRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

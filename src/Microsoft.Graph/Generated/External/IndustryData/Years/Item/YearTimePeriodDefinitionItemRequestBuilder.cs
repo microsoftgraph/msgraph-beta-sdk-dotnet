@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years.Item {
         public YearTimePeriodDefinitionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/years/{yearTimePeriodDefinition%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a yearTimePeriodDefinition object.
+        /// Delete a yearTimePeriodDefinition object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a yearTimePeriodDefinition object.
+        /// Read the properties and relationships of a yearTimePeriodDefinition object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years.Item {
             return await RequestAdapter.SendAsync<YearTimePeriodDefinition>(requestInfo, YearTimePeriodDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a yearTimePeriodDefinition object.
+        /// Update the properties of a yearTimePeriodDefinition object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years.Item {
             return await RequestAdapter.SendAsync<YearTimePeriodDefinition>(requestInfo, YearTimePeriodDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a yearTimePeriodDefinition object.
+        /// Delete a yearTimePeriodDefinition object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a yearTimePeriodDefinition object.
+        /// Read the properties and relationships of a yearTimePeriodDefinition object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a yearTimePeriodDefinition object.
+        /// Update the properties of a yearTimePeriodDefinition object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years.Item {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of a yearTimePeriodDefinition object.
+        /// Read the properties and relationships of a yearTimePeriodDefinition object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class YearTimePeriodDefinitionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

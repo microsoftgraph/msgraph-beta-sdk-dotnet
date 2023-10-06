@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CustomTrainingSetting : TrainingSetting, IParsable {
-        /// <summary>The assignedTo property</summary>
+        /// <summary>A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<TrainingAssignedTo?>? AssignedTo {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assignedTo", value); }
         }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>The description of the custom training setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the custom training setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -48,21 +48,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The durationInMinutes property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DurationInMinutes {
-            get { return BackingStore?.Get<string?>("durationInMinutes"); }
+        /// <summary>Training duration.</summary>
+        public int? DurationInMinutes {
+            get { return BackingStore?.Get<int?>("durationInMinutes"); }
             set { BackingStore?.Set("durationInMinutes", value); }
         }
-#nullable restore
-#else
-        public string DurationInMinutes {
-            get { return BackingStore?.Get<string>("durationInMinutes"); }
-            set { BackingStore?.Set("durationInMinutes", value); }
-        }
-#endif
-        /// <summary>The url property</summary>
+        /// <summary>The training URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url {
@@ -98,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"assignedTo", n => { AssignedTo = n.GetCollectionOfEnumValues<TrainingAssignedTo>()?.ToList(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"durationInMinutes", n => { DurationInMinutes = n.GetStringValue(); } },
+                {"durationInMinutes", n => { DurationInMinutes = n.GetIntValue(); } },
                 {"url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -112,7 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfEnumValues<TrainingAssignedTo>("assignedTo", AssignedTo);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteStringValue("durationInMinutes", DurationInMinutes);
+            writer.WriteIntValue("durationInMinutes", DurationInMinutes);
             writer.WriteStringValue("url", Url);
         }
     }

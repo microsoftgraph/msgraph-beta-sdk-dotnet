@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("exchangeMailboxTotalItemCount"); }
             set { BackingStore?.Set("exchangeMailboxTotalItemCount", value); }
         }
-        /// <summary>The number of email that the group mailbox received.</summary>
+        /// <summary>The number of emails that the group mailbox received.</summary>
         public long? ExchangeReceivedEmailCount {
             get { return BackingStore?.Get<long?>("exchangeReceivedEmailCount"); }
             set { BackingStore?.Set("exchangeReceivedEmailCount", value); }

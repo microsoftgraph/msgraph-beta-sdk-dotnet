@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialD
             return await RequestAdapter.SendAsync<EdiscoveryNoncustodialDataSourceCollectionResponse>(requestInfo, EdiscoveryNoncustodialDataSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new ediscoveryNoncustodialDataSource object.
+        /// Create a new ediscoveryNoncustodialDataSource object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-post-noncustodialdatasources?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.NoncustodialD
             return requestInfo;
         }
         /// <summary>
-        /// Create a new ediscoveryNoncustodialDataSource object.
+        /// Create a new ediscoveryNoncustodialDataSource object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -1645,7 +1645,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("refreshTokensValidFromDateTime"); }
             set { BackingStore?.Set("refreshTokensValidFromDateTime", value); }
         }
-        /// <summary>Devices that are registered for the user. Read-only. Nullable. Supports $expand.</summary>
+        /// <summary>Devices that are registered for the user. Read-only. Nullable. Supports $expand and returns up to 100 objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DirectoryObject>? RegisteredDevices {
@@ -2028,8 +2028,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"businessPhones", n => { BusinessPhones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"calendar", n => { Calendar = n.GetObjectValue<Microsoft.Graph.Beta.Models.Calendar>(Microsoft.Graph.Beta.Models.Calendar.CreateFromDiscriminatorValue); } },
                 {"calendarGroups", n => { CalendarGroups = n.GetCollectionOfObjectValues<CalendarGroup>(CalendarGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"calendars", n => { Calendars = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Calendar>(Microsoft.Graph.Beta.Models.Calendar.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"calendarView", n => { CalendarView = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"calendars", n => { Calendars = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Calendar>(Microsoft.Graph.Beta.Models.Calendar.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"chats", n => { Chats = n.GetCollectionOfObjectValues<Chat>(Chat.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"city", n => { City = n.GetStringValue(); } },
                 {"cloudPCs", n => { CloudPCs = n.GetCollectionOfObjectValues<CloudPC>(CloudPC.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -2085,9 +2085,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"licenseAssignmentStates", n => { LicenseAssignmentStates = n.GetCollectionOfObjectValues<LicenseAssignmentState>(LicenseAssignmentState.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"licenseDetails", n => { LicenseDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LicenseDetails>(Microsoft.Graph.Beta.Models.LicenseDetails.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"mail", n => { Mail = n.GetStringValue(); } },
-                {"mailboxSettings", n => { MailboxSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.MailboxSettings>(Microsoft.Graph.Beta.Models.MailboxSettings.CreateFromDiscriminatorValue); } },
                 {"mailFolders", n => { MailFolders = n.GetCollectionOfObjectValues<MailFolder>(MailFolder.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"mailNickname", n => { MailNickname = n.GetStringValue(); } },
+                {"mailboxSettings", n => { MailboxSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.MailboxSettings>(Microsoft.Graph.Beta.Models.MailboxSettings.CreateFromDiscriminatorValue); } },
                 {"managedAppRegistrations", n => { ManagedAppRegistrations = n.GetCollectionOfObjectValues<ManagedAppRegistration>(ManagedAppRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managedDevices", n => { ManagedDevices = n.GetCollectionOfObjectValues<ManagedDevice>(ManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"manager", n => { Manager = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
@@ -2100,8 +2100,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"notifications", n => { Notifications = n.GetCollectionOfObjectValues<Notification>(Notification.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"oauth2PermissionGrants", n => { Oauth2PermissionGrants = n.GetCollectionOfObjectValues<OAuth2PermissionGrant>(OAuth2PermissionGrant.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"officeLocation", n => { OfficeLocation = n.GetStringValue(); } },
-                {"onenote", n => { Onenote = n.GetObjectValue<Microsoft.Graph.Beta.Models.Onenote>(Microsoft.Graph.Beta.Models.Onenote.CreateFromDiscriminatorValue); } },
-                {"onlineMeetings", n => { OnlineMeetings = n.GetCollectionOfObjectValues<OnlineMeeting>(OnlineMeeting.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"onPremisesDistinguishedName", n => { OnPremisesDistinguishedName = n.GetStringValue(); } },
                 {"onPremisesDomainName", n => { OnPremisesDomainName = n.GetStringValue(); } },
                 {"onPremisesExtensionAttributes", n => { OnPremisesExtensionAttributes = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes>(Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes.CreateFromDiscriminatorValue); } },
@@ -2113,6 +2111,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"onPremisesSipInfo", n => { OnPremisesSipInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnPremisesSipInfo>(Microsoft.Graph.Beta.Models.OnPremisesSipInfo.CreateFromDiscriminatorValue); } },
                 {"onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
                 {"onPremisesUserPrincipalName", n => { OnPremisesUserPrincipalName = n.GetStringValue(); } },
+                {"onenote", n => { Onenote = n.GetObjectValue<Microsoft.Graph.Beta.Models.Onenote>(Microsoft.Graph.Beta.Models.Onenote.CreateFromDiscriminatorValue); } },
+                {"onlineMeetings", n => { OnlineMeetings = n.GetCollectionOfObjectValues<OnlineMeeting>(OnlineMeeting.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"otherMails", n => { OtherMails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"outlook", n => { Outlook = n.GetObjectValue<OutlookUser>(OutlookUser.CreateFromDiscriminatorValue); } },
                 {"ownedDevices", n => { OwnedDevices = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },

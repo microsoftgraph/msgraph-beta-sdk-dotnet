@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Columns.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get columns from groups
+        /// The collection of field definitions for this list.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Columns.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get columns from groups
+        /// The collection of field definitions for this list.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Columns.Item {
             }
         }
         /// <summary>
-        /// Get columns from groups
+        /// The collection of field definitions for this list.
         /// </summary>
         public class ColumnDefinitionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

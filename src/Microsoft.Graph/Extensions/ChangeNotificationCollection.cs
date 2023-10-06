@@ -9,6 +9,14 @@ namespace Microsoft.Graph.Beta.Models {
     public class ChangeNotificationCollection : IAdditionalDataHolder,IBackedModel, IParsable {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        
+        /// <summary>
+        /// Instantiates a new ChangeNotificationCollection and sets the default values.
+        /// </summary>
+        public ChangeNotificationCollection() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }

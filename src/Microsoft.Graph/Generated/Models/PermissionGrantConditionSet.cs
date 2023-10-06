@@ -121,11 +121,11 @@ namespace Microsoft.Graph.Beta.Models {
                 {"certifiedClientApplicationsOnly", n => { CertifiedClientApplicationsOnly = n.GetBoolValue(); } },
                 {"clientApplicationIds", n => { ClientApplicationIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"clientApplicationPublisherIds", n => { ClientApplicationPublisherIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"clientApplicationsFromVerifiedPublisherOnly", n => { ClientApplicationsFromVerifiedPublisherOnly = n.GetBoolValue(); } },
                 {"clientApplicationTenantIds", n => { ClientApplicationTenantIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"clientApplicationsFromVerifiedPublisherOnly", n => { ClientApplicationsFromVerifiedPublisherOnly = n.GetBoolValue(); } },
                 {"permissionClassification", n => { PermissionClassification = n.GetStringValue(); } },
-                {"permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"permissionType", n => { PermissionType = n.GetEnumValue<PermissionType>(); } },
+                {"permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"resourceApplication", n => { ResourceApplication = n.GetStringValue(); } },
             };
         }

@@ -75,8 +75,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"emailThreats", n => { EmailThreats = n.GetCollectionOfObjectValues<EmailThreatSubmission>(EmailThreatSubmission.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"emailThreatSubmissionPolicies", n => { EmailThreatSubmissionPolicies = n.GetCollectionOfObjectValues<EmailThreatSubmissionPolicy>(EmailThreatSubmissionPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"emailThreats", n => { EmailThreats = n.GetCollectionOfObjectValues<EmailThreatSubmission>(EmailThreatSubmission.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"fileThreats", n => { FileThreats = n.GetCollectionOfObjectValues<FileThreatSubmission>(FileThreatSubmission.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"urlThreats", n => { UrlThreats = n.GetCollectionOfObjectValues<UrlThreatSubmission>(UrlThreatSubmission.CreateFromDiscriminatorValue)?.ToList(); } },
             };

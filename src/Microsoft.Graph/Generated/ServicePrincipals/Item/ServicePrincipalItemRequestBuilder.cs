@@ -23,6 +23,7 @@ using Microsoft.Graph.Beta.ServicePrincipals.Item.MemberOf;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Oauth2PermissionGrants;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Owners;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Restore;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.TokenIssuancePolicies;
@@ -130,6 +131,10 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
         public OwnersRequestBuilder Owners { get =>
             new OwnersRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the remoteDesktopSecurityConfiguration property of the microsoft.graph.servicePrincipal entity.</summary>
+        public RemoteDesktopSecurityConfigurationRequestBuilder RemoteDesktopSecurityConfiguration { get =>
+            new RemoteDesktopSecurityConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the restore method.</summary>
         public RestoreRequestBuilder Restore { get =>
             new RestoreRequestBuilder(PathParameters, RequestAdapter);
@@ -169,7 +174,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
         public ServicePrincipalItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a servicePrincipal object.
+        /// Delete a servicePrincipal object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -189,7 +194,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a servicePrincipal object.
+        /// Retrieve the properties and relationships of a servicePrincipal object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -209,7 +214,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
             return await RequestAdapter.SendAsync<ServicePrincipal>(requestInfo, ServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of servicePrincipal object.
+        /// Update the properties of servicePrincipal object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -231,7 +236,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
             return await RequestAdapter.SendAsync<ServicePrincipal>(requestInfo, ServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a servicePrincipal object.
+        /// Delete a servicePrincipal object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -255,7 +260,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a servicePrincipal object.
+        /// Retrieve the properties and relationships of a servicePrincipal object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -281,7 +286,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of servicePrincipal object.
+        /// Update the properties of servicePrincipal object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -332,7 +337,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a servicePrincipal object.
+        /// Retrieve the properties and relationships of a servicePrincipal object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class ServicePrincipalItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

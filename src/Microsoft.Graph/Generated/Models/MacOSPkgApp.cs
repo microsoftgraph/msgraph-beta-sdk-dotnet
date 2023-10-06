@@ -42,6 +42,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #endif
+        /// <summary>ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public MacOSAppScript? PostInstallScript {
+            get { return BackingStore?.Get<MacOSAppScript?>("postInstallScript"); }
+            set { BackingStore?.Set("postInstallScript", value); }
+        }
+#nullable restore
+#else
+        public MacOSAppScript PostInstallScript {
+            get { return BackingStore?.Get<MacOSAppScript>("postInstallScript"); }
+            set { BackingStore?.Set("postInstallScript", value); }
+        }
+#endif
+        /// <summary>ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public MacOSAppScript? PreInstallScript {
+            get { return BackingStore?.Get<MacOSAppScript?>("preInstallScript"); }
+            set { BackingStore?.Set("preInstallScript", value); }
+        }
+#nullable restore
+#else
+        public MacOSAppScript PreInstallScript {
+            get { return BackingStore?.Get<MacOSAppScript>("preInstallScript"); }
+            set { BackingStore?.Set("preInstallScript", value); }
+        }
+#endif
         /// <summary>The primary CFBundleIdentifier of the .pkg.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +120,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"ignoreVersionDetection", n => { IgnoreVersionDetection = n.GetBoolValue(); } },
                 {"includedApps", n => { IncludedApps = n.GetCollectionOfObjectValues<MacOSIncludedApp>(MacOSIncludedApp.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<MacOSMinimumOperatingSystem>(MacOSMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
+                {"postInstallScript", n => { PostInstallScript = n.GetObjectValue<MacOSAppScript>(MacOSAppScript.CreateFromDiscriminatorValue); } },
+                {"preInstallScript", n => { PreInstallScript = n.GetObjectValue<MacOSAppScript>(MacOSAppScript.CreateFromDiscriminatorValue); } },
                 {"primaryBundleId", n => { PrimaryBundleId = n.GetStringValue(); } },
                 {"primaryBundleVersion", n => { PrimaryBundleVersion = n.GetStringValue(); } },
             };
@@ -106,6 +136,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("ignoreVersionDetection", IgnoreVersionDetection);
             writer.WriteCollectionOfObjectValues<MacOSIncludedApp>("includedApps", IncludedApps);
             writer.WriteObjectValue<MacOSMinimumOperatingSystem>("minimumSupportedOperatingSystem", MinimumSupportedOperatingSystem);
+            writer.WriteObjectValue<MacOSAppScript>("postInstallScript", PostInstallScript);
+            writer.WriteObjectValue<MacOSAppScript>("preInstallScript", PreInstallScript);
             writer.WriteStringValue("primaryBundleId", PrimaryBundleId);
             writer.WriteStringValue("primaryBundleVersion", PrimaryBundleVersion);
         }

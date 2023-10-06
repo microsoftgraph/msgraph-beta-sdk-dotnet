@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AppleManagedIdentityProvider : IdentityProviderBase, IParsable {
-        /// <summary>The certificate data which is a long string of text from the certificate, can be null.</summary>
+        /// <summary>The certificate data that is a long string of text from the certificate, can be null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CertificateData {

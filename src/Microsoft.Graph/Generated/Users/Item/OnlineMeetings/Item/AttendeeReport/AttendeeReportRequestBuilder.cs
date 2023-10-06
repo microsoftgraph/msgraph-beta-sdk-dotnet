@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AttendeeReport {
         public AttendeeReportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/onlineMeetings/{onlineMeeting%2Did}/attendeeReport", rawUrl) {
         }
         /// <summary>
-        /// The content stream of the attendee report of a Teams live event. Read-only.
+        /// Get attendeeReport for the navigation property onlineMeetings from users
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AttendeeReport {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The content stream of the attendee report of a Teams live event. Read-only.
+        /// Update attendeeReport for the navigation property onlineMeetings in users
         /// </summary>
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AttendeeReport {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The content stream of the attendee report of a Teams live event. Read-only.
+        /// Get attendeeReport for the navigation property onlineMeetings from users
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.AttendeeReport {
             return requestInfo;
         }
         /// <summary>
-        /// The content stream of the attendee report of a Teams live event. Read-only.
+        /// Update attendeeReport for the navigation property onlineMeetings in users
         /// </summary>
         /// <param name="body">Binary request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

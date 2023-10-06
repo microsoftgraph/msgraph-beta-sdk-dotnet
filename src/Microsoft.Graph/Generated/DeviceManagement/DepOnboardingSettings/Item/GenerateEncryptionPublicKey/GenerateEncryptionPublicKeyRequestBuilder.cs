@@ -34,6 +34,26 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Gener
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+        public async Task<GenerateEncryptionPublicKeyPostResponse?> PostAsGenerateEncryptionPublicKeyPostResponseAsync(Action<GenerateEncryptionPublicKeyRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task<GenerateEncryptionPublicKeyPostResponse> PostAsGenerateEncryptionPublicKeyPostResponseAsync(Action<GenerateEncryptionPublicKeyRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            var requestInfo = ToPostRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<GenerateEncryptionPublicKeyPostResponse>(requestInfo, GenerateEncryptionPublicKeyPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Generate a public key to use to encrypt the Apple device enrollment program token
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This method is obsolete. Use PostAsGenerateEncryptionPublicKeyPostResponse instead.")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<GenerateEncryptionPublicKeyResponse?> PostAsync(Action<GenerateEncryptionPublicKeyRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else

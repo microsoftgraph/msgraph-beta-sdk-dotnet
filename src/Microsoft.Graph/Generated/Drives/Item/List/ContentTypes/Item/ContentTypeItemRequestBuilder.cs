@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get contentTypes from drives
+        /// The collection of content types present in this list.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -162,7 +162,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get contentTypes from drives
+        /// The collection of content types present in this list.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -239,7 +239,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item {
             }
         }
         /// <summary>
-        /// Get contentTypes from drives
+        /// The collection of content types present in this list.
         /// </summary>
         public class ContentTypeItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

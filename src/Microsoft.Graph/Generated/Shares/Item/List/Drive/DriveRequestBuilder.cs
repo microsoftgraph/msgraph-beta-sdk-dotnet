@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Drive {
         public DriveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/shares/{sharedDriveItem%2Did}/list/drive{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+        /// Allows access to the list as a drive resource with driveItems. Only present on document libraries.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Drive {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Drive>(requestInfo, Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+        /// Allows access to the list as a drive resource with driveItems. Only present on document libraries.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Drive {
             return new DriveRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Only present on document libraries. Allows access to the list as a [drive][] resource with [driveItems][driveItem].
+        /// Allows access to the list as a drive resource with driveItems. Only present on document libraries.
         /// </summary>
         public class DriveRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

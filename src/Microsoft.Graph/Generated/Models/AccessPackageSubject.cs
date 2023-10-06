@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("altSecId", value); }
         }
 #endif
-        /// <summary>The cleanupScheduledDateTime property</summary>
+        /// <summary>The date and time the subject is marked to be blocked from sign in or deleted. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time.</summary>
         public DateTimeOffset? CleanupScheduledDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("cleanupScheduledDateTime"); }
             set { BackingStore?.Set("cleanupScheduledDateTime", value); }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("email", value); }
         }
 #endif
-        /// <summary>The object identifier of the subject. null if the subject is not yet a user in the tenant. Alternate key.</summary>
+        /// <summary>The object identifier of the subject. null if the subject isn&apos;t yet a user in the tenant. Alternate key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectId {

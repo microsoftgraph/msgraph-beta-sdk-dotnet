@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<PrivilegedAccessGroupRelationships?>("accessId"); }
             set { BackingStore?.Set("accessId", value); }
         }
-        /// <summary>When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it is null.</summary>
+        /// <summary>When the request activates a membership or ownership in PIM for groups, this object represents the eligibility request for the group. Otherwise, it&apos;s null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PrivilegedAccessGroupEligibilityScheduleInstance? ActivatedUsing {

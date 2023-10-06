@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class VirtualEventSession : OnlineMeeting, IParsable {
-        /// <summary>The registrations property</summary>
+        /// <summary>Registration records of this virtual event session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<VirtualEventRegistration>? Registrations {

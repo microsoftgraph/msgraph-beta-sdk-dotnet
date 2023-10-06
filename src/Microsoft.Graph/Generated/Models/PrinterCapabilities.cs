@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("bottomMargins", value); }
         }
 #endif
-        /// <summary>True if the printer supports collating when printing muliple copies of a multi-page document; false otherwise.</summary>
+        /// <summary>True if the printer supports collating when printing multiple copies of a multi-page document; false otherwise.</summary>
         public bool? Collation {
             get { return BackingStore?.Get<bool?>("collation"); }
             set { BackingStore?.Set("collation", value); }
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("colorModes", value); }
         }
 #endif
-        /// <summary>A list of supported content (MIME) types that the printer supports. It is not guaranteed that the Universal Print service supports printing all of these MIME types.</summary>
+        /// <summary>A list of supported content (MIME) types that the printer supports. It isn&apos;t guaranteed that the Universal Print service supports printing all of these MIME types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ContentTypes {
@@ -183,7 +183,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("leftMargins", value); }
         }
 #endif
-        /// <summary>The media (i.e., paper) colors supported by the printer.</summary>
+        /// <summary>The media (that is, paper) colors supported by the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MediaColors {

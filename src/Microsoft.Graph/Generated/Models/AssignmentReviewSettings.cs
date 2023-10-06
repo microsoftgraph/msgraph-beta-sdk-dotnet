@@ -7,7 +7,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AssignmentReviewSettings : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>The default decision to apply if the request is not reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.</summary>
+        /// <summary>The default decision to apply if the request isn&apos;t reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.AccessReviewTimeoutBehavior? AccessReviewTimeoutBehavior {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewTimeoutBehavior?>("accessReviewTimeoutBehavior"); }
             set { BackingStore?.Set("accessReviewTimeoutBehavior", value); }
@@ -127,8 +127,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"recurrenceType", n => { RecurrenceType = n.GetStringValue(); } },
-                {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"reviewerType", n => { ReviewerType = n.GetStringValue(); } },
+                {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }

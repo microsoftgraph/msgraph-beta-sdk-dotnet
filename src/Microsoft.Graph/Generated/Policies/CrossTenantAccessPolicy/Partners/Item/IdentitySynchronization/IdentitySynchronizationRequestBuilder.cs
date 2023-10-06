@@ -29,12 +29,11 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
         public IdentitySynchronizationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/partners/{crossTenantAccessPolicyConfigurationPartner%2DtenantId}/identitySynchronization{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete the user synchronization policy for a partner-specific configuration.
+        /// Delete the user synchronization policy for a partner-specific configuration. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2022-04/PrivatePreview:CrossTenantSyncPolicy on 2022-03-24 and will be removed 2023-06-06")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<IdentitySynchronizationRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -50,12 +49,11 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the user synchronization policy of a partner-specific configuration.
+        /// Get the user synchronization policy of a partner-specific configuration. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2022-04/PrivatePreview:CrossTenantSyncPolicy on 2022-03-24 and will be removed 2023-06-06")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<CrossTenantIdentitySyncPolicyPartner?> GetAsync(Action<IdentitySynchronizationRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -76,7 +74,6 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2022-04/PrivatePreview:CrossTenantSyncPolicy on 2022-03-24 and will be removed 2023-06-06")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<CrossTenantIdentitySyncPolicyPartner?> PutAsync(CrossTenantIdentitySyncPolicyPartner body, Action<IdentitySynchronizationRequestBuilderPutRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -93,10 +90,9 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
             return await RequestAdapter.SendAsync<CrossTenantIdentitySyncPolicyPartner>(requestInfo, CrossTenantIdentitySyncPolicyPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the user synchronization policy for a partner-specific configuration.
+        /// Delete the user synchronization policy for a partner-specific configuration. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2022-04/PrivatePreview:CrossTenantSyncPolicy on 2022-03-24 and will be removed 2023-06-06")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<IdentitySynchronizationRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
@@ -118,10 +114,9 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
             return requestInfo;
         }
         /// <summary>
-        /// Get the user synchronization policy of a partner-specific configuration.
+        /// Get the user synchronization policy of a partner-specific configuration. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2022-04/PrivatePreview:CrossTenantSyncPolicy on 2022-03-24 and will be removed 2023-06-06")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<IdentitySynchronizationRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
@@ -149,7 +144,6 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2022-04/PrivatePreview:CrossTenantSyncPolicy on 2022-03-24 and will be removed 2023-06-06")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPutRequestInformation(CrossTenantIdentitySyncPolicyPartner body, Action<IdentitySynchronizationRequestBuilderPutRequestConfiguration>? requestConfiguration = default) {
@@ -177,7 +171,6 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2022-04/PrivatePreview:CrossTenantSyncPolicy on 2022-03-24 and will be removed 2023-06-06")]
         public IdentitySynchronizationRequestBuilder WithUrl(string rawUrl) {
             return new IdentitySynchronizationRequestBuilder(rawUrl, RequestAdapter);
         }
@@ -198,7 +191,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Partners.Item.Id
             }
         }
         /// <summary>
-        /// Get the user synchronization policy of a partner-specific configuration.
+        /// Get the user synchronization policy of a partner-specific configuration. This API is supported in the following national cloud deployments.
         /// </summary>
         public class IdentitySynchronizationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

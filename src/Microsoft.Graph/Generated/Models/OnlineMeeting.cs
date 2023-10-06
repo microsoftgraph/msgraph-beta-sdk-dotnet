@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("allowTranscription"); }
             set { BackingStore?.Set("allowTranscription", value); }
         }
-        /// <summary>The content stream of the alternative recording of a Microsoft Teams live event. Read-only.</summary>
+        /// <summary>The alternativeRecording property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? AlternativeRecording {
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("attendanceReports", value); }
         }
 #endif
-        /// <summary>The content stream of the attendee report of a Teams live event. Read-only.</summary>
+        /// <summary>The attendeeReport property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? AttendeeReport {
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("broadcastRecording", value); }
         }
 #endif
-        /// <summary>Settings related to a live event.</summary>
+        /// <summary>The broadcastSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public BroadcastMeetingSettings? BroadcastSettings {
@@ -210,10 +210,15 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("externalId", value); }
         }
 #endif
-        /// <summary>Indicates whether this is a Teams live event.</summary>
+        /// <summary>The isBroadcast property</summary>
         public bool? IsBroadcast {
             get { return BackingStore?.Get<bool?>("isBroadcast"); }
             set { BackingStore?.Set("isBroadcast", value); }
+        }
+        /// <summary>The isEndToEndEncryptionEnabled property</summary>
+        public bool? IsEndToEndEncryptionEnabled {
+            get { return BackingStore?.Get<bool?>("isEndToEndEncryptionEnabled"); }
+            set { BackingStore?.Set("isEndToEndEncryptionEnabled", value); }
         }
         /// <summary>Indicates whether to announce when callers join or leave.</summary>
         public bool? IsEntryExitAnnounced {
@@ -323,7 +328,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("recordAutomatically"); }
             set { BackingStore?.Set("recordAutomatically", value); }
         }
-        /// <summary>The content stream of the recording of a Teams live event. Read-only.</summary>
+        /// <summary>The recording property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Recording {
@@ -450,12 +455,12 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"allowAttendeeToEnableCamera", n => { AllowAttendeeToEnableCamera = n.GetBoolValue(); } },
                 {"allowAttendeeToEnableMic", n => { AllowAttendeeToEnableMic = n.GetBoolValue(); } },
-                {"allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<OnlineMeetingPresenters>(); } },
                 {"allowMeetingChat", n => { AllowMeetingChat = n.GetEnumValue<MeetingChatMode>(); } },
                 {"allowParticipantsToChangeName", n => { AllowParticipantsToChangeName = n.GetBoolValue(); } },
                 {"allowRecording", n => { AllowRecording = n.GetBoolValue(); } },
                 {"allowTeamworkReactions", n => { AllowTeamworkReactions = n.GetBoolValue(); } },
                 {"allowTranscription", n => { AllowTranscription = n.GetBoolValue(); } },
+                {"allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<OnlineMeetingPresenters>(); } },
                 {"alternativeRecording", n => { AlternativeRecording = n.GetByteArrayValue(); } },
                 {"anonymizeIdentityForRoles", n => { AnonymizeIdentityForRoles = n.GetCollectionOfEnumValues<OnlineMeetingRole>()?.ToList(); } },
                 {"attendanceReports", n => { AttendanceReports = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>(Microsoft.Graph.Beta.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -470,6 +475,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 {"externalId", n => { ExternalId = n.GetStringValue(); } },
                 {"isBroadcast", n => { IsBroadcast = n.GetBoolValue(); } },
+                {"isEndToEndEncryptionEnabled", n => { IsEndToEndEncryptionEnabled = n.GetBoolValue(); } },
                 {"isEntryExitAnnounced", n => { IsEntryExitAnnounced = n.GetBoolValue(); } },
                 {"joinInformation", n => { JoinInformation = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
                 {"joinMeetingIdSettings", n => { JoinMeetingIdSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.JoinMeetingIdSettings>(Microsoft.Graph.Beta.Models.JoinMeetingIdSettings.CreateFromDiscriminatorValue); } },
@@ -519,6 +525,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteStringValue("externalId", ExternalId);
             writer.WriteBoolValue("isBroadcast", IsBroadcast);
+            writer.WriteBoolValue("isEndToEndEncryptionEnabled", IsEndToEndEncryptionEnabled);
             writer.WriteBoolValue("isEntryExitAnnounced", IsEntryExitAnnounced);
             writer.WriteObjectValue<ItemBody>("joinInformation", JoinInformation);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.JoinMeetingIdSettings>("joinMeetingIdSettings", JoinMeetingIdSettings);

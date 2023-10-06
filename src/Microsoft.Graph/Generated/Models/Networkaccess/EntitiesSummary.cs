@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
             set { BackingStore?.Set("trafficType", value); }
         }
-        /// <summary>Count of unique Azure Active Directoy users that were seen.</summary>
+        /// <summary>Count of unique Azure Active Directory users that were seen.</summary>
         public long? UserCount {
             get { return BackingStore?.Get<long?>("userCount"); }
             set { BackingStore?.Set("userCount", value); }

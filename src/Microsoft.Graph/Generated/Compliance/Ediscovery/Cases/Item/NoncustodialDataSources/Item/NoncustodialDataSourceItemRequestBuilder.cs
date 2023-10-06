@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a noncustodialDataSource object.
+        /// Read the properties and relationships of a noncustodialDataSource object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-noncustodialdatasource-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a noncustodialDataSource object.
+        /// Read the properties and relationships of a noncustodialDataSource object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01")]
@@ -233,7 +233,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             }
         }
         /// <summary>
-        /// Read the properties and relationships of a noncustodialDataSource object.
+        /// Read the properties and relationships of a noncustodialDataSource object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class NoncustodialDataSourceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Pause {
         public PauseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}/pause", rawUrl) {
         }
         /// <summary>
-        /// Pause the sync of a specific school data synchronization profile in the tenant.
+        /// Pause the sync of a specific school data synchronization profile in the tenant. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-pause?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Pause {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Pause the sync of a specific school data synchronization profile in the tenant.
+        /// Pause the sync of a specific school data synchronization profile in the tenant. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

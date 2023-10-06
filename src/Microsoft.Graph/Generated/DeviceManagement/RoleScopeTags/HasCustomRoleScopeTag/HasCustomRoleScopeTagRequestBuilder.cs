@@ -34,6 +34,26 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.HasCustomRoleScope
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+        public async Task<HasCustomRoleScopeTagGetResponse?> GetAsHasCustomRoleScopeTagGetResponseAsync(Action<HasCustomRoleScopeTagRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task<HasCustomRoleScopeTagGetResponse> GetAsHasCustomRoleScopeTagGetResponseAsync(Action<HasCustomRoleScopeTagRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<HasCustomRoleScopeTagGetResponse>(requestInfo, HasCustomRoleScopeTagGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Invoke function hasCustomRoleScopeTag
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This method is obsolete. Use GetAsHasCustomRoleScopeTagGetResponse instead.")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<HasCustomRoleScopeTagResponse?> GetAsync(Action<HasCustomRoleScopeTagRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else

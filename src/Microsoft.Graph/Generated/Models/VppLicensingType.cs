@@ -73,9 +73,9 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"supportDeviceLicensing", n => { SupportDeviceLicensing = n.GetBoolValue(); } },
+                {"supportUserLicensing", n => { SupportUserLicensing = n.GetBoolValue(); } },
                 {"supportsDeviceLicensing", n => { SupportsDeviceLicensing = n.GetBoolValue(); } },
                 {"supportsUserLicensing", n => { SupportsUserLicensing = n.GetBoolValue(); } },
-                {"supportUserLicensing", n => { SupportUserLicensing = n.GetBoolValue(); } },
             };
         }
         /// <summary>

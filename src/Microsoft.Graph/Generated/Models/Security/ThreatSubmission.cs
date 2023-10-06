@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class ThreatSubmission : Entity, IParsable {
-        /// <summary>Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.</summary>
+        /// <summary>Specifies the admin review property that constitutes of who reviewed the user submission, when and what was it identified as.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SubmissionAdminReview? AdminReview {
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<LongRunningOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.</summary>
+        /// <summary>Indicates the tenant id of the submitter. Not required when created using a POST operation. It&apos;s extracted from the token of the post API call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId {

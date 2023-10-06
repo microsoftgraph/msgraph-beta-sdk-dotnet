@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Determines whether users will be able to approve push notifications on other Microsoft applications such as Outlook Mobile.</summary>
+        /// <summary>Determines whether users are able to approve push notifications on other Microsoft applications such as Outlook Mobile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AuthenticationMethodFeatureConfiguration? CompanionAppAllowedState {
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("companionAppAllowedState", value); }
         }
 #endif
-        /// <summary>Determines whether the user&apos;s Authenticator app will show them the client app they are signing into.</summary>
+        /// <summary>Determines whether the user&apos;s Authenticator app shows them the client app they&apos;re signing into.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AuthenticationMethodFeatureConfiguration? DisplayAppInformationRequiredState {
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayAppInformationRequiredState", value); }
         }
 #endif
-        /// <summary>Determines whether the user&apos;s Authenticator app will show them the geographic location of where the authentication request originated from.</summary>
+        /// <summary>Determines whether the user&apos;s Authenticator app shows them the geographic location of where the authentication request originated from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AuthenticationMethodFeatureConfiguration? DisplayLocationInformationRequiredState {

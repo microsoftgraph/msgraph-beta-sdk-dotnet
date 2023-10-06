@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item {
         public MobilityManagementPolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a mobilityManagementPolicy object.
+        /// Delete a mobilityManagementPolicy object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a mobilityManagementPolicy object.
+        /// Read the properties and relationships of a mobilityManagementPolicy object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item {
             return await RequestAdapter.SendAsync<MobilityManagementPolicy>(requestInfo, MobilityManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a mobilityManagementPolicy object.
+        /// Update the properties of a mobilityManagementPolicy object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item {
             return await RequestAdapter.SendAsync<MobilityManagementPolicy>(requestInfo, MobilityManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a mobilityManagementPolicy object.
+        /// Delete a mobilityManagementPolicy object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a mobilityManagementPolicy object.
+        /// Read the properties and relationships of a mobilityManagementPolicy object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a mobilityManagementPolicy object.
+        /// Update the properties of a mobilityManagementPolicy object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -197,7 +197,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of a mobilityManagementPolicy object.
+        /// Read the properties and relationships of a mobilityManagementPolicy object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class MobilityManagementPolicyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

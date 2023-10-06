@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
-        /// <summary>The preferredDisplayName property</summary>
+        /// <summary>The participant&apos;s preferred display name that overrides the original display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PreferredDisplayName {

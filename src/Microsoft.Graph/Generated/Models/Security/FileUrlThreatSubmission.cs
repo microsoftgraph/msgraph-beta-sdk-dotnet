@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class FileUrlThreatSubmission : FileThreatSubmission, IParsable {
-        /// <summary>It specifies the URL of the file which needs to be submitted.</summary>
+        /// <summary>It specifies the URL of the file that needs to be submitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileUrl {

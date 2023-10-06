@@ -7,6 +7,13 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.50.0-preview] - 2023-10-05
+
+- Drops invalid function/actions bound to `directoryObject` type. These are the `permissionGrants`,`externalSponsors`, `internalSponsors` and `appliesTo` navigation properties. (https://github.com/microsoftgraph/msgraph-metadata/pull/451)
+- Fixes missing nested paths under `deviceAppManagement/mobileApps` path (https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/issues/439)
+- Fixes initialization of `ChangeNotificationCollection` model (https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/issues/730)
+- Latest metadata updates from 5th October 2023.
+
 ## [5.49.0-preview] - 2023-09-20
 
 - Fixes odata cast paths for `deviceAppManagement/mobileApps` path

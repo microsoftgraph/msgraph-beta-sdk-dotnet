@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.SendReminder
         public SendReminderRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/pendingAccessReviewInstances/{accessReviewInstance%2Did}/sendReminder", rawUrl) {
         }
         /// <summary>
-        /// Send a reminder to the reviewers of a currently active accessReviewInstance.
+        /// Send a reminder to the reviewers of a currently active accessReviewInstance. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstance-sendreminder?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.SendReminder
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send a reminder to the reviewers of a currently active accessReviewInstance.
+        /// Send a reminder to the reviewers of a currently active accessReviewInstance. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

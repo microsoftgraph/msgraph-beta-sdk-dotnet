@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Whether the printer should collate pages wehen printing multiple copies of a multi-page document.</summary>
+        /// <summary>Whether the printer should collate pages when printing multiple copies of a multi-page document.</summary>
         public bool? Collate {
             get { return BackingStore?.Get<bool?>("collate"); }
             set { BackingStore?.Set("collate", value); }

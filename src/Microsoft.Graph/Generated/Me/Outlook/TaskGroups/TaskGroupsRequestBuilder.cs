@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups {
         public TaskGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/outlook/taskGroups{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Get all the Outlook task groups in the user&apos;s mailbox. The response always includes the default task group My Tasks, and any other task groups that have been created in the mailbox.
+        /// Get all the Outlook task groups in the user&apos;s mailbox. The response always includes the default task group My Tasks, and any other task groups that have been created in the mailbox. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookuser-list-taskgroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups {
             return await RequestAdapter.SendAsync<OutlookTaskGroupCollectionResponse>(requestInfo, OutlookTaskGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an Outlook task group in the user&apos;s mailbox.
+        /// Create an Outlook task group in the user&apos;s mailbox. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookuser-post-taskgroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups {
             return await RequestAdapter.SendAsync<OutlookTaskGroup>(requestInfo, OutlookTaskGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all the Outlook task groups in the user&apos;s mailbox. The response always includes the default task group My Tasks, and any other task groups that have been created in the mailbox.
+        /// Get all the Outlook task groups in the user&apos;s mailbox. The response always includes the default task group My Tasks, and any other task groups that have been created in the mailbox. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20")]
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups {
             return requestInfo;
         }
         /// <summary>
-        /// Create an Outlook task group in the user&apos;s mailbox.
+        /// Create an Outlook task group in the user&apos;s mailbox. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups {
             return new TaskGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all the Outlook task groups in the user&apos;s mailbox. The response always includes the default task group My Tasks, and any other task groups that have been created in the mailbox.
+        /// Get all the Outlook task groups in the user&apos;s mailbox. The response always includes the default task group My Tasks, and any other task groups that have been created in the mailbox. This API is supported in the following national cloud deployments.
         /// </summary>
         public class TaskGroupsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

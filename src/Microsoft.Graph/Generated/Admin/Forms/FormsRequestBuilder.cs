@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Admin.Forms {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a adminForms object.
+        /// Read the properties and relationships of a adminForms object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/adminforms-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Admin.Forms {
             return await RequestAdapter.SendAsync<AdminForms>(requestInfo, AdminForms.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a adminForms object.
+        /// Update the properties of a adminForms object. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/adminforms-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Admin.Forms {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a adminForms object.
+        /// Read the properties and relationships of a adminForms object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Admin.Forms {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a adminForms object.
+        /// Update the properties of a adminForms object. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.Admin.Forms {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of a adminForms object.
+        /// Read the properties and relationships of a adminForms object. This API is supported in the following national cloud deployments.
         /// </summary>
         public class FormsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("recurrenceCount"); }
             set { BackingStore?.Set("recurrenceCount", value); }
         }
-        /// <summary>How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it is never, then there is no explicit end of the recurrence series. If it is endBy, then the recurrence ends at a certain date. If it is occurrences, then the series ends after recurrenceCount instances of the review have completed.</summary>
+        /// <summary>How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it&apos;s never, then there&apos;s no explicit end of the recurrence series. If it&apos;s endBy, then the recurrence ends at a certain date. If it&apos;s occurrences, then the series ends after recurrenceCount instances of the review have completed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecurrenceEndType {
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recurrenceEndType", value); }
         }
 #endif
-        /// <summary>The recurrence interval. Possible vaules: onetime, weekly, monthly, quarterly, halfyearly or annual.</summary>
+        /// <summary>The recurrence interval. Possible values: onetime, weekly, monthly, quarterly, halfyearly or annual.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecurrenceType {

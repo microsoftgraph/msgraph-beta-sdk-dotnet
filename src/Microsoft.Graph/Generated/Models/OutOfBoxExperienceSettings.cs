@@ -82,8 +82,8 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"deviceUsageType", n => { DeviceUsageType = n.GetEnumValue<WindowsDeviceUsageType>(); } },
-                {"hideEscapeLink", n => { HideEscapeLink = n.GetBoolValue(); } },
                 {"hideEULA", n => { HideEULA = n.GetBoolValue(); } },
+                {"hideEscapeLink", n => { HideEscapeLink = n.GetBoolValue(); } },
                 {"hidePrivacySettings", n => { HidePrivacySettings = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"skipKeyboardSelectionPage", n => { SkipKeyboardSelectionPage = n.GetBoolValue(); } },

@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians {
         public CustodiansRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/custodians{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the custodian objects and their properties.
+        /// Get a list of the custodian objects and their properties. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-list-custodians?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians {
             return await RequestAdapter.SendAsync<CustodianCollectionResponse>(requestInfo, CustodianCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new custodian object. After the custodian object is created, you will need to create the custodian&apos;s userSource to reference their mailbox and OneDrive for Business site.
+        /// Create a new custodian object. After the custodian object is created, you will need to create the custodian&apos;s userSource to reference their mailbox and OneDrive for Business site. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-post-custodians?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Ediscovery.Custodian>(requestInfo, Microsoft.Graph.Beta.Models.Ediscovery.Custodian.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the custodian objects and their properties.
+        /// Get a list of the custodian objects and their properties. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01")]
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new custodian object. After the custodian object is created, you will need to create the custodian&apos;s userSource to reference their mailbox and OneDrive for Business site.
+        /// Create a new custodian object. After the custodian object is created, you will need to create the custodian&apos;s userSource to reference their mailbox and OneDrive for Business site. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians {
             return new CustodiansRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the custodian objects and their properties.
+        /// Get a list of the custodian objects and their properties. This API is supported in the following national cloud deployments.
         /// </summary>
         public class CustodiansRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

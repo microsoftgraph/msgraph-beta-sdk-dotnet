@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AlternativeRecording {
         public AlternativeRecordingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/onlineMeetings/{onlineMeeting%2Did}/alternativeRecording", rawUrl) {
         }
         /// <summary>
-        /// The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+        /// Get alternativeRecording for the navigation property onlineMeetings from me
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AlternativeRecording {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+        /// Update alternativeRecording for the navigation property onlineMeetings in me
         /// </summary>
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AlternativeRecording {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+        /// Get alternativeRecording for the navigation property onlineMeetings from me
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.AlternativeRecording {
             return requestInfo;
         }
         /// <summary>
-        /// The content stream of the alternative recording of a Microsoft Teams live event. Read-only.
+        /// Update alternativeRecording for the navigation property onlineMeetings in me
         /// </summary>
         /// <param name="body">Binary request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

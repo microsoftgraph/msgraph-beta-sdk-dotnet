@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isStagedForDeletion"); }
             set { BackingStore?.Set("isStagedForDeletion", value); }
         }
-        /// <summary>The schedulingGroupId property</summary>
+        /// <summary>ID of the scheduling group the shift is part of. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SchedulingGroupId {
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("schedulingGroupId", value); }
         }
 #endif
-        /// <summary>The sharedShift property</summary>
+        /// <summary>The shared version of this shift that is viewable by both employees and managers. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ShiftItem? SharedShift {
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sharedShift", value); }
         }
 #endif
-        /// <summary>The userId property</summary>
+        /// <summary>ID of the user assigned to the shift. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {

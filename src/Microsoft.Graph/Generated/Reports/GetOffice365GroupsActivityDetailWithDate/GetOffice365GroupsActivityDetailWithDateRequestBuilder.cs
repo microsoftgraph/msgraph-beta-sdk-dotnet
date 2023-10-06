@@ -36,6 +36,26 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithDate 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+        public async Task<GetOffice365GroupsActivityDetailWithDateGetResponse?> GetAsGetOffice365GroupsActivityDetailWithDateGetResponseAsync(Action<GetOffice365GroupsActivityDetailWithDateRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task<GetOffice365GroupsActivityDetailWithDateGetResponse> GetAsGetOffice365GroupsActivityDetailWithDateGetResponseAsync(Action<GetOffice365GroupsActivityDetailWithDateRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<GetOffice365GroupsActivityDetailWithDateGetResponse>(requestInfo, GetOffice365GroupsActivityDetailWithDateGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Invoke function getOffice365GroupsActivityDetail
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This method is obsolete. Use GetAsGetOffice365GroupsActivityDetailWithDateGetResponse instead.")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<GetOffice365GroupsActivityDetailWithDateResponse?> GetAsync(Action<GetOffice365GroupsActivityDetailWithDateRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else

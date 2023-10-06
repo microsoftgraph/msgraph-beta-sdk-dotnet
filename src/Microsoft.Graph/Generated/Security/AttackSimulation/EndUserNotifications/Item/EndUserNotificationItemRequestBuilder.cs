@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.EndUserNotifications.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get endUserNotifications from security
+        /// Represents an end user&apos;s notification for an attack simulation training.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.EndUserNotifications.It
             return requestInfo;
         }
         /// <summary>
-        /// Get endUserNotifications from security
+        /// Represents an end user&apos;s notification for an attack simulation training.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.EndUserNotifications.It
             }
         }
         /// <summary>
-        /// Get endUserNotifications from security
+        /// Represents an end user&apos;s notification for an attack simulation training.
         /// </summary>
         public class EndUserNotificationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The notificationPreference property</summary>
+        /// <summary>Notification preference. Possible values are: unknown, microsoft, custom, unknownFutureValue.</summary>
         public EndUserNotificationPreference? NotificationPreference {
             get { return BackingStore?.Get<EndUserNotificationPreference?>("notificationPreference"); }
             set { BackingStore?.Set("notificationPreference", value); }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The positiveReinforcement property</summary>
+        /// <summary>Positive reinforcement detail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PositiveReinforcementNotification? PositiveReinforcement {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("positiveReinforcement", value); }
         }
 #endif
-        /// <summary>The settingType property</summary>
+        /// <summary>End user notification type. Possible values are: unknown, noTraining, trainingSelected, noNotification, unknownFutureValue.</summary>
         public EndUserNotificationSettingType? SettingType {
             get { return BackingStore?.Get<EndUserNotificationSettingType?>("settingType"); }
             set { BackingStore?.Set("settingType", value); }

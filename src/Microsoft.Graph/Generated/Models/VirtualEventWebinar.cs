@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("coOrganizers", value); }
         }
 #endif
-        /// <summary>The registrationConfiguration property</summary>
+        /// <summary>Registration configuration of the webinar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public VirtualEventRegistrationConfiguration? RegistrationConfiguration {
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("registrationConfiguration", value); }
         }
 #endif
-        /// <summary>The registrations property</summary>
+        /// <summary>Registration records of the webinar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<VirtualEventRegistration>? Registrations {

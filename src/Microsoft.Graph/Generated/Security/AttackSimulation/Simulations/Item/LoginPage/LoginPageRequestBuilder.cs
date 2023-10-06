@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations.Item.LoginP
         public LoginPageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/attackSimulation/simulations/{simulation%2Did}/loginPage{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get loginPage from security
+        /// The login page associated with a simulation during its creation.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations.Item.LoginP
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.LoginPage>(requestInfo, Microsoft.Graph.Beta.Models.LoginPage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get loginPage from security
+        /// The login page associated with a simulation during its creation.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations.Item.LoginP
             return new LoginPageRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get loginPage from security
+        /// The login page associated with a simulation during its creation.
         /// </summary>
         public class LoginPageRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

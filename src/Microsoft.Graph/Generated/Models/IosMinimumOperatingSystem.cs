@@ -66,6 +66,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("v16_0"); }
             set { BackingStore?.Set("v16_0", value); }
         }
+        /// <summary>When TRUE, only Version 17.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
+        public bool? V170 {
+            get { return BackingStore?.Get<bool?>("v17_0"); }
+            set { BackingStore?.Set("v17_0", value); }
+        }
         /// <summary>When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V80 {
             get { return BackingStore?.Get<bool?>("v8_0"); }
@@ -104,6 +109,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"v14_0", n => { V140 = n.GetBoolValue(); } },
                 {"v15_0", n => { V150 = n.GetBoolValue(); } },
                 {"v16_0", n => { V160 = n.GetBoolValue(); } },
+                {"v17_0", n => { V170 = n.GetBoolValue(); } },
                 {"v8_0", n => { V80 = n.GetBoolValue(); } },
                 {"v9_0", n => { V90 = n.GetBoolValue(); } },
             };
@@ -122,6 +128,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("v14_0", V140);
             writer.WriteBoolValue("v15_0", V150);
             writer.WriteBoolValue("v16_0", V160);
+            writer.WriteBoolValue("v17_0", V170);
             writer.WriteBoolValue("v8_0", V80);
             writer.WriteBoolValue("v9_0", V90);
             writer.WriteAdditionalData(AdditionalData);

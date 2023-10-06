@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders {
         public TaskFoldersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/outlook/taskFolders{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Get all the Outlook task folders in the user&apos;s mailbox.
+        /// Get all the Outlook task folders in the user&apos;s mailbox. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookuser-list-taskfolders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders {
             return await RequestAdapter.SendAsync<OutlookTaskFolderCollectionResponse>(requestInfo, OutlookTaskFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a task folder in the default task group (My Tasks) of the user&apos;s mailbox.
+        /// Create a task folder in the default task group (My Tasks) of the user&apos;s mailbox. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookuser-post-taskfolders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders {
             return await RequestAdapter.SendAsync<OutlookTaskFolder>(requestInfo, OutlookTaskFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all the Outlook task folders in the user&apos;s mailbox.
+        /// Get all the Outlook task folders in the user&apos;s mailbox. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20")]
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders {
             return requestInfo;
         }
         /// <summary>
-        /// Create a task folder in the default task group (My Tasks) of the user&apos;s mailbox.
+        /// Create a task folder in the default task group (My Tasks) of the user&apos;s mailbox. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders {
             return new TaskFoldersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all the Outlook task folders in the user&apos;s mailbox.
+        /// Get all the Outlook task folders in the user&apos;s mailbox. This API is supported in the following national cloud deployments.
         /// </summary>
         public class TaskFoldersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

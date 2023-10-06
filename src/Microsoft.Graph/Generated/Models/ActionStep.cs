@@ -7,7 +7,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ActionStep : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>A link to the documentation or Azure portal page that is associated with the action step.</summary>
+        /// <summary>A link to the documentation or Microsoft Entra admin center page that is associated with the action step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.ActionUrl? ActionUrl {

@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Beta.Teams.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of the specified team.
+        /// Retrieve the properties and relationships of the specified team. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Beta.Teams.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Team>(requestInfo, Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of the specified team.
+        /// Update the properties of the specified team. This API is supported in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -214,7 +214,7 @@ namespace Microsoft.Graph.Beta.Teams.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of the specified team.
+        /// Retrieve the properties and relationships of the specified team. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -240,7 +240,7 @@ namespace Microsoft.Graph.Beta.Teams.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of the specified team.
+        /// Update the properties of the specified team. This API is supported in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -291,7 +291,7 @@ namespace Microsoft.Graph.Beta.Teams.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of the specified team.
+        /// Retrieve the properties and relationships of the specified team. This API is supported in the following national cloud deployments.
         /// </summary>
         public class TeamItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

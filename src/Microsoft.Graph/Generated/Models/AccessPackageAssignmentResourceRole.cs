@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("originSystem", value); }
         }
 #endif
-        /// <summary>The value is PendingFulfillment when the access package assignment has not yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.</summary>
+        /// <summary>The value is PendingFulfillment when the access package assignment hasn&apos;t yet been delivered to the origin system, and Fulfilled when the access package assignment has been delivered to the origin system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status {

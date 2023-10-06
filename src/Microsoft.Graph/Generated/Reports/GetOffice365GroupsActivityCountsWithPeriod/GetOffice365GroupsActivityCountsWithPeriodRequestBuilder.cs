@@ -36,6 +36,26 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityCountsWithPerio
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+        public async Task<GetOffice365GroupsActivityCountsWithPeriodGetResponse?> GetAsGetOffice365GroupsActivityCountsWithPeriodGetResponseAsync(Action<GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+#nullable restore
+#else
+        public async Task<GetOffice365GroupsActivityCountsWithPeriodGetResponse> GetAsGetOffice365GroupsActivityCountsWithPeriodGetResponseAsync(Action<GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<GetOffice365GroupsActivityCountsWithPeriodGetResponse>(requestInfo, GetOffice365GroupsActivityCountsWithPeriodGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Invoke function getOffice365GroupsActivityCounts
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This method is obsolete. Use GetAsGetOffice365GroupsActivityCountsWithPeriodGetResponse instead.")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public async Task<GetOffice365GroupsActivityCountsWithPeriodResponse?> GetAsync(Action<GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else

@@ -225,5 +225,40 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
             var streamReader = new StreamReader(serializedStream);
             Assert.Equal(expectedSerializedString, streamReader.ReadToEnd());
         }
+        [Fact]
+        public void TestChangeNoticationCollectionDeserialization()
+        {
+            var json = @"{
+                ""value"": [
+                    {
+                        ""changeType"": ""updated"",
+                        ""subscriptionId"": ""c224ac82-d3f3-4079-80ed-b6cd355e0f56"",
+                        ""resource"": ""external"",
+                        ""clientState"": null,
+                        ""resourceData"": {
+                            ""@odata.type"": ""#Microsoft.Graph.connector"",
+                            ""@odata.id"": ""external"",
+                            ""id"": ""cf6c33ae-e462-41c8-928b-88a8dd410f23"",
+                            ""state"": ""enabled"",
+                            ""connectorsTicket"": ""eyJhbGciOiJIU...""
+                        },
+                        ""subscriptionExpirationDateTime"": ""2023-09-20T20:39:46.8577199+00:00"",
+                        ""tenantId"": ""cf6c33ae-e462-41c8-928b-88a8dd410f23""
+                    }
+                ],
+                ""validationTokens"": [
+                    ""eyJ0eXAiOiJKV1...""
+                ]
+            }";
+
+            using var memStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(json));
+            var parseNode = new JsonParseNodeFactory().GetRootParseNode("application/json", memStream);
+            var changeNotifications = parseNode.GetObjectValue(ChangeNotificationCollection.CreateFromDiscriminatorValue);
+
+            Assert.NotNull(changeNotifications.Value);
+            Assert.Single(changeNotifications.Value);
+            Assert.NotNull(changeNotifications.ValidationTokens);
+            Assert.Single(changeNotifications.ValidationTokens);
+        }
     }
 }
