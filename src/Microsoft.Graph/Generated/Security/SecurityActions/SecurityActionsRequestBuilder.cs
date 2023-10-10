@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions {
         public SecurityActionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/securityActions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of securityAction objects. This API is supported in the following national cloud deployments.
+        /// Retrieve a list of securityAction objects. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/securityactions-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions {
             return await RequestAdapter.SendAsync<SecurityActionCollectionResponse>(requestInfo, SecurityActionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new securityAction object. This API is supported in the following national cloud deployments.
+        /// Create a new securityAction object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/securityactions-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions {
             return await RequestAdapter.SendAsync<SecurityAction>(requestInfo, SecurityAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of securityAction objects. This API is supported in the following national cloud deployments.
+        /// Retrieve a list of securityAction objects. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new securityAction object. This API is supported in the following national cloud deployments.
+        /// Create a new securityAction object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions {
             return new SecurityActionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of securityAction objects. This API is supported in the following national cloud deployments.
+        /// Retrieve a list of securityAction objects. This API is available in the following national cloud deployments.
         /// </summary>
         public class SecurityActionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

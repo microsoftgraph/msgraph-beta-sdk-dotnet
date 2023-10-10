@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class MultiTenantOrganizationJoinRequestTransitionDetails : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>State of the tenant in the multi-tenant organization currently being processed. The possible values are: pending, active, removed, unknownFutureValue. Read-only.</summary>
+        /// <summary>State of the tenant in the multitenant organization currently being processed. The possible values are: pending, active, removed, unknownFutureValue. Read-only.</summary>
         public MultiTenantOrganizationMemberState? DesiredMemberState {
             get { return BackingStore?.Get<MultiTenantOrganizationMemberState?>("desiredMemberState"); }
             set { BackingStore?.Set("desiredMemberState", value); }

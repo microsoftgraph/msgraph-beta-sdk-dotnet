@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item.MarkAsJunk {
     public class MarkAsJunkPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The MoveToJunk property</summary>
         public bool? MoveToJunk {
-            get { return BackingStore?.Get<bool?>("moveToJunk"); }
-            set { BackingStore?.Set("moveToJunk", value); }
+            get { return BackingStore?.Get<bool?>("MoveToJunk"); }
+            set { BackingStore?.Set("MoveToJunk", value); }
         }
         /// <summary>
         /// Instantiates a new markAsJunkPostRequestBody and sets the default values.
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item.MarkAsJunk {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"moveToJunk", n => { MoveToJunk = n.GetBoolValue(); } },
+                {"MoveToJunk", n => { MoveToJunk = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item.MarkAsJunk {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("moveToJunk", MoveToJunk);
+            writer.WriteBoolValue("MoveToJunk", MoveToJunk);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

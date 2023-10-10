@@ -10,8 +10,8 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.ExceptionOccurrences.Item.Instance
     public class SnoozeReminderPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.ExceptionOccurrences.Item.Instance
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DateTimeTimeZone? NewReminderTime {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("newReminderTime"); }
-            set { BackingStore?.Set("newReminderTime", value); }
+            get { return BackingStore?.Get<DateTimeTimeZone?>("NewReminderTime"); }
+            set { BackingStore?.Set("NewReminderTime", value); }
         }
 #nullable restore
 #else
         public DateTimeTimeZone NewReminderTime {
-            get { return BackingStore?.Get<DateTimeTimeZone>("newReminderTime"); }
-            set { BackingStore?.Set("newReminderTime", value); }
+            get { return BackingStore?.Get<DateTimeTimeZone>("NewReminderTime"); }
+            set { BackingStore?.Set("NewReminderTime", value); }
         }
 #endif
         /// <summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.ExceptionOccurrences.Item.Instance
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"newReminderTime", n => { NewReminderTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"NewReminderTime", n => { NewReminderTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.ExceptionOccurrences.Item.Instance
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<DateTimeTimeZone>("newReminderTime", NewReminderTime);
+            writer.WriteObjectValue<DateTimeTimeZone>("NewReminderTime", NewReminderTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of a user&apos;s regionalAndLanguageSettings. This API is supported in the following national cloud deployments.
+        /// Retrieve the properties of a user&apos;s regionalAndLanguageSettings. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/regionalandlanguagesettings-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings>(requestInfo, Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update some or all of the properties of a regionalAndLanguageSettings object. This API is supported in the following national cloud deployments.
+        /// Update some or all of the properties of a regionalAndLanguageSettings object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/regionalandlanguagesettings-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of a user&apos;s regionalAndLanguageSettings. This API is supported in the following national cloud deployments.
+        /// Retrieve the properties of a user&apos;s regionalAndLanguageSettings. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Update some or all of the properties of a regionalAndLanguageSettings object. This API is supported in the following national cloud deployments.
+        /// Update some or all of the properties of a regionalAndLanguageSettings object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings {
             }
         }
         /// <summary>
-        /// Retrieve the properties of a user&apos;s regionalAndLanguageSettings. This API is supported in the following national cloud deployments.
+        /// Retrieve the properties of a user&apos;s regionalAndLanguageSettings. This API is available in the following national cloud deployments.
         /// </summary>
         public class RegionalAndLanguageSettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

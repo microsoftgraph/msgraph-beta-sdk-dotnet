@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("allowEmailVerifiedUsersToJoinOrganization"); }
             set { BackingStore?.Set("allowEmailVerifiedUsersToJoinOrganization", value); }
         }
-        /// <summary>Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone. everyone is the default setting for all cloud environments except US Government. See more in the table below.</summary>
+        /// <summary>Indicates who can invite guests to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone. everyone is the default setting for all cloud environments except US Government. See more in the table below.</summary>
         public Microsoft.Graph.Beta.Models.AllowInvitesFrom? AllowInvitesFrom {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AllowInvitesFrom?>("allowInvitesFrom"); }
             set { BackingStore?.Set("allowInvitesFrom", value); }
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("enabledPreviewFeatures", value); }
         }
 #endif
-        /// <summary>Represents role templateId for the role that should be granted to guest user. Refer to List unifiedRoleDefinitions to find the list of available role templates. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).</summary>
+        /// <summary>Represents role templateId for the role that should be granted to guests. Refer to List unifiedRoleDefinitions to find the list of available role templates. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).</summary>
         public Guid? GuestUserRoleId {
             get { return BackingStore?.Get<Guid?>("guestUserRoleId"); }
             set { BackingStore?.Set("guestUserRoleId", value); }

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.MicrosoftGr
         public MicrosoftGraphNetworkaccessUpdatePolicyRulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/forwardingPolicies/{forwardingPolicy%2Did}/microsoft.graph.networkaccess.updatePolicyRules", rawUrl) {
         }
         /// <summary>
-        /// Update the rules within a forwarding policy. This API is supported in the following national cloud deployments.
+        /// Update the rules within a forwarding policy. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-forwardingpolicy-updatepolicyrules?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.MicrosoftGr
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the rules within a forwarding policy. This API is supported in the following national cloud deployments.
+        /// Update the rules within a forwarding policy. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class OnAttributeCollectionListener : AuthenticationEventListener, IParsable {
-        /// <summary>Required. Configuration for what to invoke if the event resolves to this listener. This lets us define potential handler configurations per-event.</summary>
+        /// <summary>Required. Configuration for what to invoke if the event resolves to this listener.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public OnAttributeCollectionHandler? Handler {

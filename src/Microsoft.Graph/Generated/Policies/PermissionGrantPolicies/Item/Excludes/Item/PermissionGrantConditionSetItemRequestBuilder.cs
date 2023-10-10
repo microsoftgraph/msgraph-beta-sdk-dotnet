@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item.Excludes.It
         public PermissionGrantConditionSetItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/permissionGrantPolicies/{permissionGrantPolicy%2Did}/excludes/{permissionGrantConditionSet%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy. This API is supported in the following national cloud deployments.
+        /// Deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/permissiongrantpolicy-delete-excludes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item.Excludes.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
+        /// Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item.Excludes.It
             return await RequestAdapter.SendAsync<PermissionGrantConditionSet>(requestInfo, PermissionGrantConditionSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy. This API is supported in the following national cloud deployments.
+        /// Deletes a permissionGrantConditionSet from the excludes collection of a permissionGrantPolicy. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item.Excludes.It
             return requestInfo;
         }
         /// <summary>
-        /// Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
+        /// Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.Item.Excludes.It
             }
         }
         /// <summary>
-        /// Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.
+        /// Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.
         /// </summary>
         public class PermissionGrantConditionSetItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

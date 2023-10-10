@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
-        /// <summary>Read-only. Value is true if the details object of the task has a non-empty description and false otherwise.</summary>
+        /// <summary>Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.</summary>
         public bool? HasDescription {
             get { return BackingStore?.Get<bool?>("hasDescription"); }
             set { BackingStore?.Set("hasDescription", value); }

@@ -9,8 +9,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AttributeMappingParameterSchema : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>The given parameter can be provided multiple times (for example, multiple input strings in the Concatenate(string,string,...) function).</summary>
         public bool? AllowMultipleOccurrences {

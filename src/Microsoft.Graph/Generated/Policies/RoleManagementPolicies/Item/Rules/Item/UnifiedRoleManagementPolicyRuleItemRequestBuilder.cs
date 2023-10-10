@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item.Rules.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: This API is supported in the following national cloud deployments.
+        /// Retrieve a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedrolemanagementpolicyrule-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item.Rules.Item {
             return await RequestAdapter.SendAsync<UnifiedRoleManagementPolicyRule>(requestInfo, UnifiedRoleManagementPolicyRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Azure AD roles and examples of updating rules, see the following articles:+ Overview of rules for Azure AD roles in PIM APIs in Microsoft Graph+ Use PIM APIs in Microsoft Graph to update Azure AD rules This API is supported in the following national cloud deployments.
+        /// Update a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Azure AD roles and examples of updating rules, see the following articles:+ Overview of rules for Azure AD roles in PIM APIs in Microsoft Graph+ Use PIM APIs in Microsoft Graph to update Azure AD rules This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedrolemanagementpolicyrule-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item.Rules.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: This API is supported in the following national cloud deployments.
+        /// Retrieve a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item.Rules.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Azure AD roles and examples of updating rules, see the following articles:+ Overview of rules for Azure AD roles in PIM APIs in Microsoft Graph+ Use PIM APIs in Microsoft Graph to update Azure AD rules This API is supported in the following national cloud deployments.
+        /// Update a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: For more information about rules for Azure AD roles and examples of updating rules, see the following articles:+ Overview of rules for Azure AD roles in PIM APIs in Microsoft Graph+ Use PIM APIs in Microsoft Graph to update Azure AD rules This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicies.Item.Rules.Item {
             }
         }
         /// <summary>
-        /// Retrieve a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: This API is supported in the following national cloud deployments.
+        /// Retrieve a rule defined for a role management policy. The rule can be one of the following types that are derived from the unifiedRoleManagementPolicyRule object: This API is available in the following national cloud deployments.
         /// </summary>
         public class UnifiedRoleManagementPolicyRuleItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

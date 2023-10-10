@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.MyDecisions {
         public MyDecisionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accessReviews/{accessReview%2Did}/myDecisions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, retrieve the decisions of an accessReview object for the calling user as reviewer. This API is supported in the following national cloud deployments.
+        /// In the Azure AD access reviews feature, retrieve the decisions of an accessReview object for the calling user as reviewer. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreview-listmydecisions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.MyDecisions {
             return await RequestAdapter.SendAsync<AccessReviewDecision>(requestInfo, AccessReviewDecision.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, retrieve the decisions of an accessReview object for the calling user as reviewer. This API is supported in the following national cloud deployments.
+        /// In the Azure AD access reviews feature, retrieve the decisions of an accessReview object for the calling user as reviewer. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.MyDecisions {
             return new MyDecisionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, retrieve the decisions of an accessReview object for the calling user as reviewer. This API is supported in the following national cloud deployments.
+        /// In the Azure AD access reviews feature, retrieve the decisions of an accessReview object for the calling user as reviewer. This API is available in the following national cloud deployments.
         /// </summary>
         public class MyDecisionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

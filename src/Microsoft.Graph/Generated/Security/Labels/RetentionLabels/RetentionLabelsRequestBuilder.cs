@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels {
         public RetentionLabelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/retentionLabels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the retentionLabel objects and their properties. This API is supported in the following national cloud deployments.
+        /// Get a list of the retentionLabel objects and their properties. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-list-retentionlabel?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels {
             return await RequestAdapter.SendAsync<RetentionLabelCollectionResponse>(requestInfo, RetentionLabelCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new retentionLabel object. To create a disposition review stage, include the actionAfterRetentionPeriod property in the request body with one of the possible values specified. This API is supported in the following national cloud deployments.
+        /// Create a new retentionLabel object. To create a disposition review stage, include the actionAfterRetentionPeriod property in the request body with one of the possible values specified. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-post-retentionlabel?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.RetentionLabel>(requestInfo, Microsoft.Graph.Beta.Models.Security.RetentionLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the retentionLabel objects and their properties. This API is supported in the following national cloud deployments.
+        /// Get a list of the retentionLabel objects and their properties. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new retentionLabel object. To create a disposition review stage, include the actionAfterRetentionPeriod property in the request body with one of the possible values specified. This API is supported in the following national cloud deployments.
+        /// Create a new retentionLabel object. To create a disposition review stage, include the actionAfterRetentionPeriod property in the request body with one of the possible values specified. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels {
             return new RetentionLabelsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the retentionLabel objects and their properties. This API is supported in the following national cloud deployments.
+        /// Get a list of the retentionLabel objects and their properties. This API is available in the following national cloud deployments.
         /// </summary>
         public class RetentionLabelsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -9,8 +9,8 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
     public class InnerError : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
@@ -30,8 +30,8 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
 #endif
         /// <summary>Date when the error occured.</summary>
         public DateTimeOffset? Date {
-            get { return BackingStore?.Get<DateTimeOffset?>("date"); }
-            set { BackingStore?.Set("date", value); }
+            get { return BackingStore?.Get<DateTimeOffset?>("Date"); }
+            set { BackingStore?.Set("Date", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"client-request-id", n => { ClientRequestId = n.GetStringValue(); } },
-                {"date", n => { Date = n.GetDateTimeOffsetValue(); } },
+                {"Date", n => { Date = n.GetDateTimeOffsetValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"request-id", n => { RequestId = n.GetStringValue(); } },
             };
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client-request-id", ClientRequestId);
-            writer.WriteDateTimeOffsetValue("date", Date);
+            writer.WriteDateTimeOffsetValue("Date", Date);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("request-id", RequestId);
             writer.WriteAdditionalData(AdditionalData);

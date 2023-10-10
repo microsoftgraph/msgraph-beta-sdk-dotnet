@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Modules.Item.Resources {
         public ResourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/modules/{educationModule%2Did}/resources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get all the educationModuleResource objects associated with a module. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
+        /// Get all the educationModuleResource objects associated with a module. Only teachers, students, and applications with application permissions can perform this operation. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationmodule-list-resources?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Modules.Item.Resources {
             return await RequestAdapter.SendAsync<EducationModuleResourceCollectionResponse>(requestInfo, EducationModuleResourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a resource in a module. Only teachers can perform this operation. You can create the following types of module resources: Every resource has an @odata.type property to indicate which type of resource is being created.  This API is supported in the following national cloud deployments.
+        /// Create a resource in a module. Only teachers can perform this operation. You can create the following types of module resources: Every resource has an @odata.type property to indicate which type of resource is being created.  This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationmodule-post-resources?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Modules.Item.Resources {
             return await RequestAdapter.SendAsync<EducationModuleResource>(requestInfo, EducationModuleResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all the educationModuleResource objects associated with a module. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
+        /// Get all the educationModuleResource objects associated with a module. Only teachers, students, and applications with application permissions can perform this operation. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Modules.Item.Resources {
             return requestInfo;
         }
         /// <summary>
-        /// Create a resource in a module. Only teachers can perform this operation. You can create the following types of module resources: Every resource has an @odata.type property to indicate which type of resource is being created.  This API is supported in the following national cloud deployments.
+        /// Create a resource in a module. Only teachers can perform this operation. You can create the following types of module resources: Every resource has an @odata.type property to indicate which type of resource is being created.  This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Modules.Item.Resources {
             return new ResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all the educationModuleResource objects associated with a module. Only teachers, students, and applications with application permissions can perform this operation. This API is supported in the following national cloud deployments.
+        /// Get all the educationModuleResource objects associated with a module. Only teachers, students, and applications with application permissions can perform this operation. This API is available in the following national cloud deployments.
         /// </summary>
         public class ResourcesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

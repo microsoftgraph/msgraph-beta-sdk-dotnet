@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: This API is supported in the following national cloud deployments.
+        /// Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Approval>(requestInfo, Microsoft.Graph.Beta.Models.Approval.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: This API is supported in the following national cloud deployments.
+        /// Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return new AccessPackageAssignmentApprovalsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: This API is supported in the following national cloud deployments.
+        /// Retrieve the properties of an approval object. This API request is made by an approver in the following scenarios: This API is available in the following national cloud deployments.
         /// </summary>
         public class AccessPackageAssignmentApprovalsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

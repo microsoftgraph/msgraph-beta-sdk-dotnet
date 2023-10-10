@@ -10,8 +10,8 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.CreateReply {
     public class CreateReplyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
@@ -19,28 +19,28 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.CreateReply {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comment {
-            get { return BackingStore?.Get<string?>("comment"); }
-            set { BackingStore?.Set("comment", value); }
+            get { return BackingStore?.Get<string?>("Comment"); }
+            set { BackingStore?.Set("Comment", value); }
         }
 #nullable restore
 #else
         public string Comment {
-            get { return BackingStore?.Get<string>("comment"); }
-            set { BackingStore?.Set("comment", value); }
+            get { return BackingStore?.Get<string>("Comment"); }
+            set { BackingStore?.Set("Comment", value); }
         }
 #endif
         /// <summary>The Message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Message? Message {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Message?>("message"); }
-            set { BackingStore?.Set("message", value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Message?>("Message"); }
+            set { BackingStore?.Set("Message", value); }
         }
 #nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Message Message {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Message>("message"); }
-            set { BackingStore?.Set("message", value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Message>("Message"); }
+            set { BackingStore?.Set("Message", value); }
         }
 #endif
         /// <summary>
@@ -63,8 +63,8 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.CreateReply {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"comment", n => { Comment = n.GetStringValue(); } },
-                {"message", n => { Message = n.GetObjectValue<Microsoft.Graph.Beta.Models.Message>(Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue); } },
+                {"Comment", n => { Comment = n.GetStringValue(); } },
+                {"Message", n => { Message = n.GetObjectValue<Microsoft.Graph.Beta.Models.Message>(Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,8 +73,8 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.CreateReply {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("comment", Comment);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Message>("message", Message);
+            writer.WriteStringValue("Comment", Comment);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Message>("Message", Message);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

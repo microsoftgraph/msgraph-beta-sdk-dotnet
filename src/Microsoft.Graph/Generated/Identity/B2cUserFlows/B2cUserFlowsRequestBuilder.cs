@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows {
         public B2cUserFlowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/b2cUserFlows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of b2cIdentityUserFlow objects. This API is supported in the following national cloud deployments.
+        /// Retrieve a list of b2cIdentityUserFlow objects. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitycontainer-list-b2cuserflows?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows {
             return await RequestAdapter.SendAsync<B2cIdentityUserFlowCollectionResponse>(requestInfo, B2cIdentityUserFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new b2cIdentityUserFlow object. This API is supported in the following national cloud deployments.
+        /// Create a new b2cIdentityUserFlow object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitycontainer-post-b2cuserflows?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows {
             return await RequestAdapter.SendAsync<B2cIdentityUserFlow>(requestInfo, B2cIdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of b2cIdentityUserFlow objects. This API is supported in the following national cloud deployments.
+        /// Retrieve a list of b2cIdentityUserFlow objects. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new b2cIdentityUserFlow object. This API is supported in the following national cloud deployments.
+        /// Create a new b2cIdentityUserFlow object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows {
             return new B2cUserFlowsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of b2cIdentityUserFlow objects. This API is supported in the following national cloud deployments.
+        /// Retrieve a list of b2cIdentityUserFlow objects. This API is available in the following national cloud deployments.
         /// </summary>
         public class B2cUserFlowsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

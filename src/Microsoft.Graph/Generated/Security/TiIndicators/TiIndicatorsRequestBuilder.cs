@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         public TiIndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/tiIndicators{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of tiIndicator objects. This API is supported in the following national cloud deployments.
+        /// Retrieve a list of tiIndicator objects. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicators-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
             return await RequestAdapter.SendAsync<TiIndicatorCollectionResponse>(requestInfo, TiIndicatorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new tiIndicator object. This API is supported in the following national cloud deployments.
+        /// Create a new tiIndicator object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicators-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
             return await RequestAdapter.SendAsync<TiIndicator>(requestInfo, TiIndicator.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of tiIndicator objects. This API is supported in the following national cloud deployments.
+        /// Retrieve a list of tiIndicator objects. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new tiIndicator object. This API is supported in the following national cloud deployments.
+        /// Create a new tiIndicator object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
             return new TiIndicatorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of tiIndicator objects. This API is supported in the following national cloud deployments.
+        /// Retrieve a list of tiIndicator objects. This API is available in the following national cloud deployments.
         /// </summary>
         public class TiIndicatorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

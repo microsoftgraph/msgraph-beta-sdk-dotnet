@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ConditionalAcc
         public ConditionalAccessPolicyCoveragesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/conditionalAccessPolicyCoverages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list of Azure Active Directory conditional access policy coverage across all tenants that are being managed by the multi-tenant management platform. This API is supported in the following national cloud deployments.
+        /// Get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list Azure Active Directory conditional access policy coverage for all tenants that are being managed by the multi-tenant management platform. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-conditionalaccesspolicycoverages?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ConditionalAcc
             return await RequestAdapter.SendAsync<ConditionalAccessPolicyCoverage>(requestInfo, ConditionalAccessPolicyCoverage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list of Azure Active Directory conditional access policy coverage across all tenants that are being managed by the multi-tenant management platform. This API is supported in the following national cloud deployments.
+        /// Get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list Azure Active Directory conditional access policy coverage for all tenants that are being managed by the multi-tenant management platform. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ConditionalAcc
             return new ConditionalAccessPolicyCoveragesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list of Azure Active Directory conditional access policy coverage across all tenants that are being managed by the multi-tenant management platform. This API is supported in the following national cloud deployments.
+        /// Get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list Azure Active Directory conditional access policy coverage for all tenants that are being managed by the multi-tenant management platform. This API is available in the following national cloud deployments.
         /// </summary>
         public class ConditionalAccessPolicyCoveragesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

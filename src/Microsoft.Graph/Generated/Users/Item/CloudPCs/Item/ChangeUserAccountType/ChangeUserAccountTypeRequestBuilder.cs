@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.ChangeUserAccountType {
         public ChangeUserAccountTypeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/cloudPCs/{cloudPC%2Did}/changeUserAccountType", rawUrl) {
         }
         /// <summary>
-        /// Change the account type of the user on a specific Cloud PC. This API is supported in the following national cloud deployments.
+        /// Change the account type of the user on a specific Cloud PC. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-changeuseraccounttype?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.ChangeUserAccountType {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Change the account type of the user on a specific Cloud PC. This API is supported in the following national cloud deployments.
+        /// Change the account type of the user on a specific Cloud PC. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

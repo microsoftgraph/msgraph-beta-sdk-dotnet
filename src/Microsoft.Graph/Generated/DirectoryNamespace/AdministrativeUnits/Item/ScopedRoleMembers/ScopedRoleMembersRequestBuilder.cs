@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AdministrativeUnits.Item.Scope
         public ScopedRoleMembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/administrativeUnits/{administrativeUnit%2Did}/scopedRoleMembers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List Azure Active Directory (Azure AD) role assignments with administrative unit scope. This API is supported in the following national cloud deployments.
+        /// List Azure Active Directory (Azure AD) role assignments with administrative unit scope. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-list-scopedrolemembers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AdministrativeUnits.Item.Scope
             return await RequestAdapter.SendAsync<ScopedRoleMembershipCollectionResponse>(requestInfo, ScopedRoleMembershipCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Assign an Azure Active Directory (Azure AD) role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope. This API is supported in the following national cloud deployments.
+        /// Assign an Azure Active Directory (Azure AD) role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-post-scopedrolemembers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AdministrativeUnits.Item.Scope
             return await RequestAdapter.SendAsync<ScopedRoleMembership>(requestInfo, ScopedRoleMembership.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List Azure Active Directory (Azure AD) role assignments with administrative unit scope. This API is supported in the following national cloud deployments.
+        /// List Azure Active Directory (Azure AD) role assignments with administrative unit scope. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AdministrativeUnits.Item.Scope
             return requestInfo;
         }
         /// <summary>
-        /// Assign an Azure Active Directory (Azure AD) role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope. This API is supported in the following national cloud deployments.
+        /// Assign an Azure Active Directory (Azure AD) role with administrative unit scope. For a list of roles that can be assigned with administrative unit scope, see Assign Azure AD roles with administrative unit scope. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AdministrativeUnits.Item.Scope
             return new ScopedRoleMembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List Azure Active Directory (Azure AD) role assignments with administrative unit scope. This API is supported in the following national cloud deployments.
+        /// List Azure Active Directory (Azure AD) role assignments with administrative unit scope. This API is available in the following national cloud deployments.
         /// </summary>
         public class ScopedRoleMembersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

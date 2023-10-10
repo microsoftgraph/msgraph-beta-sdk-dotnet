@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("accessReviewPolicy", value); }
         }
 #endif
-        /// <summary>The policy that controls the idle time out for web sessions for applications.</summary>
+        /// <summary>The policy that controls the idle time-out for web sessions for applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ActivityBasedTimeoutPolicy>? ActivityBasedTimeoutPolicies {
@@ -37,8 +37,8 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>The policy by which consent requests are created and managed for the entire tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appManagementPolicies", value); }
         }
 #endif
-        /// <summary>The policy configuration of the self-service sign-up experience of external users.</summary>
+        /// <summary>The policy configuration of the self-service sign-up experience of guests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.AuthenticationFlowsPolicy? AuthenticationFlowsPolicy {
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationFlowsPolicy", value); }
         }
 #endif
-        /// <summary>The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).</summary>
+        /// <summary>The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.AuthenticationMethodsPolicy? AuthenticationMethodsPolicy {
@@ -224,7 +224,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("directoryRoleAccessReviewPolicy", value); }
         }
 #endif
-        /// <summary>Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.</summary>
+        /// <summary>Represents the tenant-wide policy that controls whether guests can leave an Azure AD tenant via self-service controls.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy? ExternalIdentitiesPolicy {
@@ -294,7 +294,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("identitySecurityDefaultsEnforcementPolicy", value); }
         }
 #endif
-        /// <summary>The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.</summary>
+        /// <summary>The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<MobilityManagementPolicy>? MobileAppManagementPolicies {

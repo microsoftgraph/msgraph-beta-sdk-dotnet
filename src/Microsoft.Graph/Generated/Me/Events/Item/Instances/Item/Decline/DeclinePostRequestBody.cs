@@ -10,8 +10,8 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Instances.Item.Decline {
     public class DeclinePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
@@ -19,34 +19,34 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Instances.Item.Decline {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comment {
-            get { return BackingStore?.Get<string?>("comment"); }
-            set { BackingStore?.Set("comment", value); }
+            get { return BackingStore?.Get<string?>("Comment"); }
+            set { BackingStore?.Set("Comment", value); }
         }
 #nullable restore
 #else
         public string Comment {
-            get { return BackingStore?.Get<string>("comment"); }
-            set { BackingStore?.Set("comment", value); }
+            get { return BackingStore?.Get<string>("Comment"); }
+            set { BackingStore?.Set("Comment", value); }
         }
 #endif
         /// <summary>The ProposedNewTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public TimeSlot? ProposedNewTime {
-            get { return BackingStore?.Get<TimeSlot?>("proposedNewTime"); }
-            set { BackingStore?.Set("proposedNewTime", value); }
+            get { return BackingStore?.Get<TimeSlot?>("ProposedNewTime"); }
+            set { BackingStore?.Set("ProposedNewTime", value); }
         }
 #nullable restore
 #else
         public TimeSlot ProposedNewTime {
-            get { return BackingStore?.Get<TimeSlot>("proposedNewTime"); }
-            set { BackingStore?.Set("proposedNewTime", value); }
+            get { return BackingStore?.Get<TimeSlot>("ProposedNewTime"); }
+            set { BackingStore?.Set("ProposedNewTime", value); }
         }
 #endif
         /// <summary>The SendResponse property</summary>
         public bool? SendResponse {
-            get { return BackingStore?.Get<bool?>("sendResponse"); }
-            set { BackingStore?.Set("sendResponse", value); }
+            get { return BackingStore?.Get<bool?>("SendResponse"); }
+            set { BackingStore?.Set("SendResponse", value); }
         }
         /// <summary>
         /// Instantiates a new declinePostRequestBody and sets the default values.
@@ -68,9 +68,9 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Instances.Item.Decline {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"comment", n => { Comment = n.GetStringValue(); } },
-                {"proposedNewTime", n => { ProposedNewTime = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
-                {"sendResponse", n => { SendResponse = n.GetBoolValue(); } },
+                {"Comment", n => { Comment = n.GetStringValue(); } },
+                {"ProposedNewTime", n => { ProposedNewTime = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
+                {"SendResponse", n => { SendResponse = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -79,9 +79,9 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Instances.Item.Decline {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("comment", Comment);
-            writer.WriteObjectValue<TimeSlot>("proposedNewTime", ProposedNewTime);
-            writer.WriteBoolValue("sendResponse", SendResponse);
+            writer.WriteStringValue("Comment", Comment);
+            writer.WriteObjectValue<TimeSlot>("ProposedNewTime", ProposedNewTime);
+            writer.WriteBoolValue("SendResponse", SendResponse);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

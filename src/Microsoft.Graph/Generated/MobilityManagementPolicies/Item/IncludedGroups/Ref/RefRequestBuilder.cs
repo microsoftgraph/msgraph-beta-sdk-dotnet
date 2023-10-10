@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups.Re
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/mobilityManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of groups that are included in a mobile app management policy. This API is supported in the following national cloud deployments.
+        /// Get the list of groups that are included in a mobile app management policy. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-list-includedgroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups.Re
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add groups to be included in a mobile app management policy. This API is supported in the following national cloud deployments.
+        /// Add groups to be included in a mobile app management policy. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-post-includedgroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups.Re
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of groups that are included in a mobile app management policy. This API is supported in the following national cloud deployments.
+        /// Get the list of groups that are included in a mobile app management policy. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups.Re
             return requestInfo;
         }
         /// <summary>
-        /// Add groups to be included in a mobile app management policy. This API is supported in the following national cloud deployments.
+        /// Add groups to be included in a mobile app management policy. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups.Re
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of groups that are included in a mobile app management policy. This API is supported in the following national cloud deployments.
+        /// Get the list of groups that are included in a mobile app management policy. This API is available in the following national cloud deployments.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

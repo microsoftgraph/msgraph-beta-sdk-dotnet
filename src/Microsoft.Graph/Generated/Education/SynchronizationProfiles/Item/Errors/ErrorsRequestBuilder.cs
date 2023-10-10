@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors {
         public ErrorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}/errors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant. This API is supported in the following national cloud deployments.
+        /// Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationerrors-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors {
             return await RequestAdapter.SendAsync<EducationSynchronizationError>(requestInfo, EducationSynchronizationError.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant. This API is supported in the following national cloud deployments.
+        /// Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors {
             return new ErrorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant. This API is supported in the following national cloud deployments.
+        /// Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant. This API is available in the following national cloud deployments.
         /// </summary>
         public class ErrorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

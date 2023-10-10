@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.CalendarPermissions {
         public CalendarPermissionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars/{calendar%2Did}/calendarPermissions{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Get the specified permissions object of a user or group calendar that has been shared. This API is supported in the following national cloud deployments.
+        /// Get the specified permissions object of a user or group calendar that has been shared. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.CalendarPermissions {
             return await RequestAdapter.SendAsync<CalendarPermissionCollectionResponse>(requestInfo, CalendarPermissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated. This API is supported in the following national cloud deployments.
+        /// Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-post-calendarpermissions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.CalendarPermissions {
             return await RequestAdapter.SendAsync<CalendarPermission>(requestInfo, CalendarPermission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the specified permissions object of a user or group calendar that has been shared. This API is supported in the following national cloud deployments.
+        /// Get the specified permissions object of a user or group calendar that has been shared. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.CalendarPermissions {
             return requestInfo;
         }
         /// <summary>
-        /// Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated. This API is supported in the following national cloud deployments.
+        /// Create a calendarPermission resource to specify the identity and role of the user with whom the specified calendar is being shared or delegated. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.CalendarPermissions {
             return new CalendarPermissionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the specified permissions object of a user or group calendar that has been shared. This API is supported in the following national cloud deployments.
+        /// Get the specified permissions object of a user or group calendar that has been shared. This API is available in the following national cloud deployments.
         /// </summary>
         public class CalendarPermissionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

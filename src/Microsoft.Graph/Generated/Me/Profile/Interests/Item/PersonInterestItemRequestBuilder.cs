@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests.Item {
         public PersonInterestItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/interests/{personInterest%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a personInterest object from a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Deletes a personInterest object from a user&apos;s profile. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/personinterest-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a personInterest object in a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a personInterest object in a user&apos;s profile. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/personinterest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests.Item {
             return await RequestAdapter.SendAsync<PersonInterest>(requestInfo, PersonInterest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a personInterest object in a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Update the properties of a personInterest object in a user&apos;s profile. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/personinterest-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests.Item {
             return await RequestAdapter.SendAsync<PersonInterest>(requestInfo, PersonInterest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a personInterest object from a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Deletes a personInterest object from a user&apos;s profile. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a personInterest object in a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a personInterest object in a user&apos;s profile. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a personInterest object in a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Update the properties of a personInterest object in a user&apos;s profile. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a personInterest object in a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a personInterest object in a user&apos;s profile. This API is available in the following national cloud deployments.
         /// </summary>
         public class PersonInterestItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

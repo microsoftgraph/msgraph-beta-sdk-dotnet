@@ -10,21 +10,21 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.Instances.Item.E
     public class CreateUploadSessionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>The AttachmentItem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.AttachmentItem? AttachmentItem {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttachmentItem?>("attachmentItem"); }
-            set { BackingStore?.Set("attachmentItem", value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttachmentItem?>("AttachmentItem"); }
+            set { BackingStore?.Set("AttachmentItem", value); }
         }
 #nullable restore
 #else
         public Microsoft.Graph.Beta.Models.AttachmentItem AttachmentItem {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttachmentItem>("attachmentItem"); }
-            set { BackingStore?.Set("attachmentItem", value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttachmentItem>("AttachmentItem"); }
+            set { BackingStore?.Set("AttachmentItem", value); }
         }
 #endif
         /// <summary>Stores model information.</summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.Instances.Item.E
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"attachmentItem", n => { AttachmentItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.AttachmentItem>(Microsoft.Graph.Beta.Models.AttachmentItem.CreateFromDiscriminatorValue); } },
+                {"AttachmentItem", n => { AttachmentItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.AttachmentItem>(Microsoft.Graph.Beta.Models.AttachmentItem.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar.Events.Item.Instances.Item.E
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AttachmentItem>("attachmentItem", AttachmentItem);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AttachmentItem>("AttachmentItem", AttachmentItem);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

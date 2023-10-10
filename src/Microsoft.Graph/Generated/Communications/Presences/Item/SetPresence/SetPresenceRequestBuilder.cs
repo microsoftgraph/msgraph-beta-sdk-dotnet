@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Communications.Presences.Item.SetPresence {
         public SetPresenceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/presences/{presence%2Did}/setPresence", rawUrl) {
         }
         /// <summary>
-        /// Set the availability and activity status in a presence session of an application for a user. This API is supported in the following national cloud deployments.
+        /// Set the availability and activity status in a presence session of an application for a user. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Communications.Presences.Item.SetPresence {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set the availability and activity status in a presence session of an application for a user. This API is supported in the following national cloud deployments.
+        /// Set the availability and activity status in a presence session of an application for a user. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

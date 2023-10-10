@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contextScenarioId", value); }
         }
 #endif
-        /// <summary>Nullable. The id of the external entity&apos;s containing entity or context.</summary>
+        /// <summary>Nullable. The ID of the external entity&apos;s containing entity or context.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalContextId {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("externalContextId", value); }
         }
 #endif
-        /// <summary>Nullable. The id of the entity that an external service associates with a plan.</summary>
+        /// <summary>Nullable. The ID of the entity that an external service associates with a plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalObjectId {

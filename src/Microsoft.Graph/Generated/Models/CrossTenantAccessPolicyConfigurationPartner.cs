@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models {
     public class CrossTenantAccessPolicyConfigurationPartner : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
-        /// <summary>Determines the partner-specific configuration for automatic user consent settings. Unless specifically configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.</summary>
+        /// <summary>Determines the partner-specific configuration for automatic user consent settings. Unless configured, the inboundAllowed and outboundAllowed properties are null and inherit from the default settings, which is always false.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public InboundOutboundPolicyConfiguration? AutomaticUserConsentSettings {
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multi-tenant organization by automating the creation, update, and deletion of users from one tenant to another.</summary>
+        /// <summary>Defines the cross-tenant policy for the synchronization of users from a partner tenant. Use this user synchronization policy to streamline collaboration between users in a multitenant organization by automating the creation, update, and deletion of users from one tenant to another.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CrossTenantIdentitySyncPolicyPartner? IdentitySynchronization {
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("inboundTrust", value); }
         }
 #endif
-        /// <summary>Identifies whether a tenant is a member of a multi-tenant organization.</summary>
+        /// <summary>Identifies whether a tenant is a member of a multitenant organization.</summary>
         public bool? IsInMultiTenantOrganization {
             get { return BackingStore?.Get<bool?>("isInMultiTenantOrganization"); }
             set { BackingStore?.Set("isInMultiTenantOrganization", value); }
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
-        /// <summary>Defines the partner-specific tenant restrictions configuration for your organization users accessing a partner organization using partner supplied idenities on your network or devices.</summary>
+        /// <summary>Defines the partner-specific tenant restrictions configuration for your organization users accessing a partner organization using partner supplied identities on your network or devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CrossTenantAccessPolicyTenantRestrictions? TenantRestrictions {

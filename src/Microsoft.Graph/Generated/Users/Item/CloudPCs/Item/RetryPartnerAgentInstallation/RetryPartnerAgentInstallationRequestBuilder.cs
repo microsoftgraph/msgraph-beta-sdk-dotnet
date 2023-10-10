@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.RetryPartnerAgentInstall
         public RetryPartnerAgentInstallationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/cloudPCs/{cloudPC%2Did}/retryPartnerAgentInstallation", rawUrl) {
         }
         /// <summary>
-        /// Retry installation for the partner agents that failed to install on the Cloud PC. Service side checks which agent installation failed firstly and retry. This API is supported in the following national cloud deployments.
+        /// Retry installation for the partner agents that failed to install on the Cloud PC. Service side checks which agent installation failed firstly and retry. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-retrypartneragentinstallation?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.RetryPartnerAgentInstall
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retry installation for the partner agents that failed to install on the Cloud PC. Service side checks which agent installation failed firstly and retry. This API is supported in the following national cloud deployments.
+        /// Retry installation for the partner agents that failed to install on the Cloud PC. Service side checks which agent installation failed firstly and retry. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

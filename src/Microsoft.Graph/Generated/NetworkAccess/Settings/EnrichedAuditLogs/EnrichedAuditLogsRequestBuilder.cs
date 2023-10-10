@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.EnrichedAuditLogs {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the settings for the enriched audit logs workloads to control the enrichment feature for each partner workload, such as SharePoint, Teams, and Exchange. This API is supported in the following national cloud deployments.
+        /// Update the settings for the enriched audit logs workloads to control the enrichment feature for each partner workload, such as SharePoint, Teams, and Exchange. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-enrichedauditlogs-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.EnrichedAuditLogs {
             return requestInfo;
         }
         /// <summary>
-        /// Update the settings for the enriched audit logs workloads to control the enrichment feature for each partner workload, such as SharePoint, Teams, and Exchange. This API is supported in the following national cloud deployments.
+        /// Update the settings for the enriched audit logs workloads to control the enrichment feature for each partner workload, such as SharePoint, Teams, and Exchange. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

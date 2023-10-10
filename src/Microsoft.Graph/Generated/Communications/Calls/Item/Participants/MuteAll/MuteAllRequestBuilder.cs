@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants.MuteAll {
         public MuteAllRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/calls/{call%2Did}/participants/muteAll", rawUrl) {
         }
         /// <summary>
-        /// Mute all participants in the call. This API is supported in the following national cloud deployments.
+        /// Mute all participants in the call. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/participant-muteall?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants.MuteAll {
             return await RequestAdapter.SendAsync<MuteParticipantsOperation>(requestInfo, MuteParticipantsOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Mute all participants in the call. This API is supported in the following national cloud deployments.
+        /// Mute all participants in the call. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

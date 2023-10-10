@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartlineformat object. This API is supported in the following national cloud deployments.
+        /// Retrieve the properties and relationships of chartlineformat object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartlineformat-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
             return await RequestAdapter.SendAsync<WorkbookChartLineFormat>(requestInfo, WorkbookChartLineFormat.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of chartlineformat object. This API is supported in the following national cloud deployments.
+        /// Update the properties of chartlineformat object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartlineformat-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartlineformat object. This API is supported in the following national cloud deployments.
+        /// Retrieve the properties and relationships of chartlineformat object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of chartlineformat object. This API is supported in the following national cloud deployments.
+        /// Update the properties of chartlineformat object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of chartlineformat object. This API is supported in the following national cloud deployments.
+        /// Retrieve the properties and relationships of chartlineformat object. This API is available in the following national cloud deployments.
         /// </summary>
         public class LineRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

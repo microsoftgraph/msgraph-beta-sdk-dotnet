@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.LandingPages {
         public LandingPagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/attackSimulation/landingPages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the landingPage objects and their properties. This API is supported in the following national cloud deployments.
+        /// Get a list of the landingPage objects and their properties. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/attacksimulationroot-list-landingpage?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.LandingPages {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.LandingPage>(requestInfo, Microsoft.Graph.Beta.Models.LandingPage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the landingPage objects and their properties. This API is supported in the following national cloud deployments.
+        /// Get a list of the landingPage objects and their properties. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.LandingPages {
             return new LandingPagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the landingPage objects and their properties. This API is supported in the following national cloud deployments.
+        /// Get a list of the landingPage objects and their properties. This API is available in the following national cloud deployments.
         /// </summary>
         public class LandingPagesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

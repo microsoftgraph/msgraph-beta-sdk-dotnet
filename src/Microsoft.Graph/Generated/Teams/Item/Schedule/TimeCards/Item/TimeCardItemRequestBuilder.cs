@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item {
         public TimeCardItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/timeCards/{timeCard%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a timeCard instance in a schedule. This API is supported in the following national cloud deployments.
+        /// Delete a timeCard instance in a schedule. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of a timeCard object by ID. This API is supported in the following national cloud deployments.
+        /// Get the properties and relationships of a timeCard object by ID. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item {
             return await RequestAdapter.SendAsync<TimeCard>(requestInfo, TimeCard.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a timeCard instance in a schedule. This API is supported in the following national cloud deployments.
+        /// Delete a timeCard instance in a schedule. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of a timeCard object by ID. This API is supported in the following national cloud deployments.
+        /// Get the properties and relationships of a timeCard object by ID. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -212,7 +212,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item {
             }
         }
         /// <summary>
-        /// Get the properties and relationships of a timeCard object by ID. This API is supported in the following national cloud deployments.
+        /// Get the properties and relationships of a timeCard object by ID. This API is available in the following national cloud deployments.
         /// </summary>
         public class TimeCardItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans.  This API is supported in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans.  This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/planneruser-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans.  This API is supported in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans.  This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -221,7 +221,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans.  This API is supported in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans.  This API is available in the following national cloud deployments.
         /// </summary>
         public class PlannerRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

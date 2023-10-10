@@ -9,8 +9,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.ExceptionOc
     public class CancelPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
@@ -18,14 +18,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.ExceptionOc
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comment {
-            get { return BackingStore?.Get<string?>("comment"); }
-            set { BackingStore?.Set("comment", value); }
+            get { return BackingStore?.Get<string?>("Comment"); }
+            set { BackingStore?.Set("Comment", value); }
         }
 #nullable restore
 #else
         public string Comment {
-            get { return BackingStore?.Get<string>("comment"); }
-            set { BackingStore?.Set("comment", value); }
+            get { return BackingStore?.Get<string>("Comment"); }
+            set { BackingStore?.Set("Comment", value); }
         }
 #endif
         /// <summary>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.ExceptionOc
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"comment", n => { Comment = n.GetStringValue(); } },
+                {"Comment", n => { Comment = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.ExceptionOc
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("comment", Comment);
+            writer.WriteStringValue("Comment", Comment);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

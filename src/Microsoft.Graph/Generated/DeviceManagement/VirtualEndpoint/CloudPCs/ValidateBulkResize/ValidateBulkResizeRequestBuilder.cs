@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Validat
         public ValidateBulkResizeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/validateBulkResize", rawUrl) {
         }
         /// <summary>
-        /// Validate that a set of cloudPC devices meet the requirements to be bulk resized. This API is supported in the following national cloud deployments.
+        /// Validate that a set of cloudPC devices meet the requirements to be bulk resized. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Validat
             return await RequestAdapter.SendAsync<ValidateBulkResizePostResponse>(requestInfo, ValidateBulkResizePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Validate that a set of cloudPC devices meet the requirements to be bulk resized. This API is supported in the following national cloud deployments.
+        /// Validate that a set of cloudPC devices meet the requirements to be bulk resized. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-validatebulkresize?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Validat
             return await RequestAdapter.SendAsync<ValidateBulkResizeResponse>(requestInfo, ValidateBulkResizeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Validate that a set of cloudPC devices meet the requirements to be bulk resized. This API is supported in the following national cloud deployments.
+        /// Validate that a set of cloudPC devices meet the requirements to be bulk resized. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

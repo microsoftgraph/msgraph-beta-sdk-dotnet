@@ -10,8 +10,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.ExceptionOccurren
     public class ForwardPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
@@ -19,28 +19,28 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.ExceptionOccurren
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comment {
-            get { return BackingStore?.Get<string?>("comment"); }
-            set { BackingStore?.Set("comment", value); }
+            get { return BackingStore?.Get<string?>("Comment"); }
+            set { BackingStore?.Set("Comment", value); }
         }
 #nullable restore
 #else
         public string Comment {
-            get { return BackingStore?.Get<string>("comment"); }
-            set { BackingStore?.Set("comment", value); }
+            get { return BackingStore?.Get<string>("Comment"); }
+            set { BackingStore?.Set("Comment", value); }
         }
 #endif
         /// <summary>The ToRecipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Recipient>? ToRecipients {
-            get { return BackingStore?.Get<List<Recipient>?>("toRecipients"); }
-            set { BackingStore?.Set("toRecipients", value); }
+            get { return BackingStore?.Get<List<Recipient>?>("ToRecipients"); }
+            set { BackingStore?.Set("ToRecipients", value); }
         }
 #nullable restore
 #else
         public List<Recipient> ToRecipients {
-            get { return BackingStore?.Get<List<Recipient>>("toRecipients"); }
-            set { BackingStore?.Set("toRecipients", value); }
+            get { return BackingStore?.Get<List<Recipient>>("ToRecipients"); }
+            set { BackingStore?.Set("ToRecipients", value); }
         }
 #endif
         /// <summary>
@@ -63,8 +63,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.ExceptionOccurren
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"comment", n => { Comment = n.GetStringValue(); } },
-                {"toRecipients", n => { ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"Comment", n => { Comment = n.GetStringValue(); } },
+                {"ToRecipients", n => { ToRecipients = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -73,8 +73,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.ExceptionOccurren
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("comment", Comment);
-            writer.WriteCollectionOfObjectValues<Recipient>("toRecipients", ToRecipients);
+            writer.WriteStringValue("Comment", Comment);
+            writer.WriteCollectionOfObjectValues<Recipient>("ToRecipients", ToRecipients);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

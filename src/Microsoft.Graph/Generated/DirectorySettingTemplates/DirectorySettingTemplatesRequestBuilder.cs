@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
         public DirectorySettingTemplatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directorySettingTemplates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available directorySettingTemplates objects. This API is supported in the following national cloud deployments.
+        /// Directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available directorySettingTemplates objects. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directorysettingtemplate-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
             return await RequestAdapter.SendAsync<DirectorySettingTemplate>(requestInfo, DirectorySettingTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available directorySettingTemplates objects. This API is supported in the following national cloud deployments.
+        /// Directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available directorySettingTemplates objects. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
             return new DirectorySettingTemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available directorySettingTemplates objects. This API is supported in the following national cloud deployments.
+        /// Directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available directorySettingTemplates objects. This API is available in the following national cloud deployments.
         /// </summary>
         public class DirectorySettingTemplatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
