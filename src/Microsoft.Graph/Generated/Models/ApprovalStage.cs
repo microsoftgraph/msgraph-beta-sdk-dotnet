@@ -9,8 +9,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class ApprovalStage : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>The number of days that a request can be pending a response before it&apos;s automatically denied.</summary>
         public int? ApprovalStageTimeOutInDays {

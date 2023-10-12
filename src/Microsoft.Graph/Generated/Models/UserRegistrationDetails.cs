@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class UserRegistrationDetails : Entity, IParsable {
-        /// <summary>The method the user or admin selected as default for performing multi-factor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.</summary>
+        /// <summary>The method the user or admin selected as default for performing multifactor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.</summary>
         public DefaultMfaMethodType? DefaultMfaMethod {
             get { return BackingStore?.Get<DefaultMfaMethodType?>("defaultMfaMethod"); }
             set { BackingStore?.Set("defaultMfaMethod", value); }
@@ -16,12 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isAdmin"); }
             set { BackingStore?.Set("isAdmin", value); }
         }
-        /// <summary>Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).</summary>
+        /// <summary>Indicates whether the user has registered a strong authentication method for multifactor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).</summary>
         public bool? IsMfaCapable {
             get { return BackingStore?.Get<bool?>("isMfaCapable"); }
             set { BackingStore?.Set("isMfaCapable", value); }
         }
-        /// <summary>Indicates whether the user has registered a strong authentication method for multi-factor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).</summary>
+        /// <summary>Indicates whether the user has registered a strong authentication method for multifactor authentication. The method may not necessarily be allowed by the authentication methods policy. Supports $filter (eq).</summary>
         public bool? IsMfaRegistered {
             get { return BackingStore?.Get<bool?>("isMfaRegistered"); }
             set { BackingStore?.Set("isMfaRegistered", value); }
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #endif
-        /// <summary>The method the user selected as the default second-factor for performing multi-factor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.</summary>
+        /// <summary>The method the user selected as the default second-factor for performing multifactor authentication. Possible values are: push, oath, voiceMobile, voiceAlternateMobile, voiceOffice, sms, none, unknownFutureValue.</summary>
         public UserDefaultAuthenticationMethod? UserPreferredMethodForSecondaryAuthentication {
             get { return BackingStore?.Get<UserDefaultAuthenticationMethod?>("userPreferredMethodForSecondaryAuthentication"); }
             set { BackingStore?.Set("userPreferredMethodForSecondaryAuthentication", value); }

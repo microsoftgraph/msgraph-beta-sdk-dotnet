@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Recordings {
         public RecordingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/onlineMeetings/{onlineMeeting%2Did}/recordings{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a callRecording object associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording. This API is supported in the following national cloud deployments.
+        /// Get a callRecording object associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Recordings {
             return await RequestAdapter.SendAsync<CallRecording>(requestInfo, CallRecording.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a callRecording object associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording. This API is supported in the following national cloud deployments.
+        /// Get a callRecording object associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Recordings {
             return new RecordingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a callRecording object associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording. This API is supported in the following national cloud deployments.
+        /// Get a callRecording object associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call recordings from channel meetings.  For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording. This API is available in the following national cloud deployments.
         /// </summary>
         public class RecordingsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -9,8 +9,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class HybridAgentUpdaterConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>Indicates if updater configuration will be skipped and the agent will receive an update when the next version of the agent is available.</summary>
         public bool? AllowUpdateConfigurationOverride {

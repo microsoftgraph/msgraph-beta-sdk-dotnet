@@ -9,8 +9,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class CrossTenantSummary : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>Total numbers of authentication sessions in the time frame between startDateTime and endDateTime.</summary>
         public int? AuthTransactionCount {

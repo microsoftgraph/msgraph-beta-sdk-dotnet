@@ -12,8 +12,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AndroidFotaDeploymentAssignment : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>The Azure Active Directory (Azure AD) we are deploying firmware updates to (e.g.: d93c8f48-bd42-4514-ba40-bc6b84780930). NOTE: Use this property moving forward because the existing property, target, is deprecated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

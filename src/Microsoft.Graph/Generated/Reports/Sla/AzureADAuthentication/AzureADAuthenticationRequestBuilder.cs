@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Reports.Sla.AzureADAuthentication {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an azureADAuthentication object to find the level of Azure AD authentication availability for your tenant. The Azure AD Service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Azure Active Directory SLA performance. This object provides you with your tenant’s actual performance against this commitment. This API is supported in the following national cloud deployments.
+        /// Read the properties and relationships of an azureADAuthentication object to find the level of Azure AD authentication availability for your tenant. The Azure AD Service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Azure Active Directory SLA performance. This object provides you with your tenant’s actual performance against this commitment. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/azureadauthentication-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Reports.Sla.AzureADAuthentication {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an azureADAuthentication object to find the level of Azure AD authentication availability for your tenant. The Azure AD Service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Azure Active Directory SLA performance. This object provides you with your tenant’s actual performance against this commitment. This API is supported in the following national cloud deployments.
+        /// Read the properties and relationships of an azureADAuthentication object to find the level of Azure AD authentication availability for your tenant. The Azure AD Service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Azure Active Directory SLA performance. This object provides you with your tenant’s actual performance against this commitment. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.Reports.Sla.AzureADAuthentication {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of an azureADAuthentication object to find the level of Azure AD authentication availability for your tenant. The Azure AD Service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Azure Active Directory SLA performance. This object provides you with your tenant’s actual performance against this commitment. This API is supported in the following national cloud deployments.
+        /// Read the properties and relationships of an azureADAuthentication object to find the level of Azure AD authentication availability for your tenant. The Azure AD Service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Azure Active Directory SLA performance. This object provides you with your tenant’s actual performance against this commitment. This API is available in the following national cloud deployments.
         /// </summary>
         public class AzureADAuthenticationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

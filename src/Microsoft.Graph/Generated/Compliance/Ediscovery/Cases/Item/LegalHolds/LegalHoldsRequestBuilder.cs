@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds {
         public LegalHoldsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/legalHolds{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read the properties and relationships of a legalHold object. This API is supported in the following national cloud deployments.
+        /// Read the properties and relationships of a legalHold object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds {
             return await RequestAdapter.SendAsync<LegalHold>(requestInfo, LegalHold.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a legalHold object. This API is supported in the following national cloud deployments.
+        /// Read the properties and relationships of a legalHold object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01")]
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds {
             return new LegalHoldsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a legalHold object. This API is supported in the following national cloud deployments.
+        /// Read the properties and relationships of a legalHold object. This API is available in the following national cloud deployments.
         /// </summary>
         public class LegalHoldsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

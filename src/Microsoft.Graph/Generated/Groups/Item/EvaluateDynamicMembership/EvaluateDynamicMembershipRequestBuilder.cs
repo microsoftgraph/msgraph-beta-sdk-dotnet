@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.EvaluateDynamicMembership {
         public EvaluateDynamicMembershipRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/evaluateDynamicMembership", rawUrl) {
         }
         /// <summary>
-        /// Evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways: This API is supported in the following national cloud deployments.
+        /// Evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways: This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-evaluatedynamicmembership?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.EvaluateDynamicMembership {
             return await RequestAdapter.SendAsync<EvaluateDynamicMembershipResult>(requestInfo, EvaluateDynamicMembershipResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways: This API is supported in the following national cloud deployments.
+        /// Evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways: This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Ite
         public RemovePersonalDataRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/outboundSharedUserProfiles/{outboundSharedUserProfile%2DuserId}/tenants/{tenantReference%2DtenantId}/removePersonalData", rawUrl) {
         }
         /// <summary>
-        /// Create a request to remove the personal data for an outboundSharedUserProfile. This API is supported in the following national cloud deployments.
+        /// Create a request to remove the personal data for an outboundSharedUserProfile. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantreference-removepersonaldata?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a request to remove the personal data for an outboundSharedUserProfile. This API is supported in the following national cloud deployments.
+        /// Create a request to remove the personal data for an outboundSharedUserProfile. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

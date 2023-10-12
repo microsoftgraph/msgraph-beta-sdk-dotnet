@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Delta {
         public DeltaRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/messages/delta(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time. This API is supported in the following national cloud deployments.
+        /// Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Delta {
             return await RequestAdapter.SendAsync<DeltaGetResponse>(requestInfo, DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time. This API is supported in the following national cloud deployments.
+        /// Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Delta {
             return await RequestAdapter.SendAsync<DeltaResponse>(requestInfo, DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time. This API is supported in the following national cloud deployments.
+        /// Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Delta {
             return new DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time. This API is supported in the following national cloud deployments.
+        /// Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time. This API is available in the following national cloud deployments.
         /// </summary>
         public class DeltaRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

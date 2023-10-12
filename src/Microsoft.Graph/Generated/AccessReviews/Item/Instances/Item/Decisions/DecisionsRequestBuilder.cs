@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.Decisions {
         public DecisionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}/decisions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, retrieve the decisions of an accessReview object. Note that a recurring access review will not have a decisions relationship.  Instead, the caller must navigate the instance relationship to find an accessReview object for a current or past instance of the access review. This API is supported in the following national cloud deployments.
+        /// In the Azure AD access reviews feature, retrieve the decisions of an accessReview object. Note that a recurring access review will not have a decisions relationship.  Instead, the caller must navigate the instance relationship to find an accessReview object for a current or past instance of the access review. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreview-listdecisions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.Decisions {
             return await RequestAdapter.SendAsync<AccessReviewDecision>(requestInfo, AccessReviewDecision.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, retrieve the decisions of an accessReview object. Note that a recurring access review will not have a decisions relationship.  Instead, the caller must navigate the instance relationship to find an accessReview object for a current or past instance of the access review. This API is supported in the following national cloud deployments.
+        /// In the Azure AD access reviews feature, retrieve the decisions of an accessReview object. Note that a recurring access review will not have a decisions relationship.  Instead, the caller must navigate the instance relationship to find an accessReview object for a current or past instance of the access review. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.Decisions {
             return new DecisionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, retrieve the decisions of an accessReview object. Note that a recurring access review will not have a decisions relationship.  Instead, the caller must navigate the instance relationship to find an accessReview object for a current or past instance of the access review. This API is supported in the following national cloud deployments.
+        /// In the Azure AD access reviews feature, retrieve the decisions of an accessReview object. Note that a recurring access review will not have a decisions relationship.  Instead, the caller must navigate the instance relationship to find an accessReview object for a current or past instance of the access review. This API is available in the following national cloud deployments.
         /// </summary>
         public class DecisionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

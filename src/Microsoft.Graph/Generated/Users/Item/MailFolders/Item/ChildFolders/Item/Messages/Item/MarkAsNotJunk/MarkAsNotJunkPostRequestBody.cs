@@ -9,15 +9,15 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Mes
     public class MarkAsNotJunkPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The MoveToInbox property</summary>
         public bool? MoveToInbox {
-            get { return BackingStore?.Get<bool?>("moveToInbox"); }
-            set { BackingStore?.Set("moveToInbox", value); }
+            get { return BackingStore?.Get<bool?>("MoveToInbox"); }
+            set { BackingStore?.Set("MoveToInbox", value); }
         }
         /// <summary>
         /// Instantiates a new markAsNotJunkPostRequestBody and sets the default values.
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Mes
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"moveToInbox", n => { MoveToInbox = n.GetBoolValue(); } },
+                {"MoveToInbox", n => { MoveToInbox = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders.Item.Mes
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("moveToInbox", MoveToInbox);
+            writer.WriteBoolValue("MoveToInbox", MoveToInbox);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.Reprovision {
         public ReprovisionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/cloudPCs/{cloudPC%2Did}/reprovision", rawUrl) {
         }
         /// <summary>
-        /// Reprovision a specific Cloud PC. This API is supported in the following national cloud deployments.
+        /// Reprovision a specific Cloud PC. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-reprovision?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.Reprovision {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Reprovision a specific Cloud PC. This API is supported in the following national cloud deployments.
+        /// Reprovision a specific Cloud PC. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

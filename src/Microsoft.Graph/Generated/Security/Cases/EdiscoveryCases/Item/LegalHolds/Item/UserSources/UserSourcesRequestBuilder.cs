@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.It
             return await RequestAdapter.SendAsync<UserSourceCollectionResponse>(requestInfo, UserSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new userSource object. This API is supported in the following national cloud deployments.
+        /// Create a new userSource object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryholdpolicy-post-usersources?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.It
             return requestInfo;
         }
         /// <summary>
-        /// Create a new userSource object. This API is supported in the following national cloud deployments.
+        /// Create a new userSource object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

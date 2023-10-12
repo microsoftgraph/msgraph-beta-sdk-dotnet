@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows {
         public AuthenticationEventsFlowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/authenticationEventsFlows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a collection of authentication events policies that are derived from authenticationEventsFlow. Only the externalUsersSelfServiceSignupEventsFlow object type is returned. This API is supported in the following national cloud deployments.
+        /// Get a collection of authentication events policies that are derived from authenticationEventsFlow. Only the externalUsersSelfServiceSignupEventsFlow object type is returned. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitycontainer-list-authenticationeventsflows?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows {
             return await RequestAdapter.SendAsync<AuthenticationEventsFlowCollectionResponse>(requestInfo, AuthenticationEventsFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new authenticationEventsFlow object that is of the type specified in the request body. You can create only an externalUsersSelfServiceSignupEventsFlow object type. This API is supported in the following national cloud deployments.
+        /// Create a new authenticationEventsFlow object that is of the type specified in the request body. You can create only an externalUsersSelfServiceSignupEventsFlow object type. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitycontainer-post-authenticationeventsflows?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows {
             return await RequestAdapter.SendAsync<AuthenticationEventsFlow>(requestInfo, AuthenticationEventsFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a collection of authentication events policies that are derived from authenticationEventsFlow. Only the externalUsersSelfServiceSignupEventsFlow object type is returned. This API is supported in the following national cloud deployments.
+        /// Get a collection of authentication events policies that are derived from authenticationEventsFlow. Only the externalUsersSelfServiceSignupEventsFlow object type is returned. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new authenticationEventsFlow object that is of the type specified in the request body. You can create only an externalUsersSelfServiceSignupEventsFlow object type. This API is supported in the following national cloud deployments.
+        /// Create a new authenticationEventsFlow object that is of the type specified in the request body. You can create only an externalUsersSelfServiceSignupEventsFlow object type. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows {
             return new AuthenticationEventsFlowsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a collection of authentication events policies that are derived from authenticationEventsFlow. Only the externalUsersSelfServiceSignupEventsFlow object type is returned. This API is supported in the following national cloud deployments.
+        /// Get a collection of authentication events policies that are derived from authenticationEventsFlow. Only the externalUsersSelfServiceSignupEventsFlow object type is returned. This API is available in the following national cloud deployments.
         /// </summary>
         public class AuthenticationEventsFlowsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

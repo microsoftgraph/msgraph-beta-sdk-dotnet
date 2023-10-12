@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels {
         public LabelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/informationProtection/policy/labels{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a collection of information protection labels available to the user or to the organization. This API is supported in the following national cloud deployments.
+        /// Get a collection of information protection labels available to the user or to the organization. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/informationprotectionpolicy-list-labels?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels {
             return await RequestAdapter.SendAsync<InformationProtectionLabel>(requestInfo, InformationProtectionLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a collection of information protection labels available to the user or to the organization. This API is supported in the following national cloud deployments.
+        /// Get a collection of information protection labels available to the user or to the organization. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15")]
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels {
             return new LabelsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a collection of information protection labels available to the user or to the organization. This API is supported in the following national cloud deployments.
+        /// Get a collection of information protection labels available to the user or to the organization. This API is available in the following national cloud deployments.
         /// </summary>
         public class LabelsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
         public SourceCollectionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/sourceCollections/{sourceCollection%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a sourceCollection object. This API is supported in the following national cloud deployments.
+        /// Delete a sourceCollection object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return await RequestAdapter.SendAsync<SourceCollection>(requestInfo, SourceCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a sourceCollection object. This API is supported in the following national cloud deployments.
+        /// Update the properties of a sourceCollection object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return await RequestAdapter.SendAsync<SourceCollection>(requestInfo, SourceCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a sourceCollection object. This API is supported in the following national cloud deployments.
+        /// Delete a sourceCollection object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01")]
@@ -187,7 +187,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a sourceCollection object. This API is supported in the following national cloud deployments.
+        /// Update the properties of a sourceCollection object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

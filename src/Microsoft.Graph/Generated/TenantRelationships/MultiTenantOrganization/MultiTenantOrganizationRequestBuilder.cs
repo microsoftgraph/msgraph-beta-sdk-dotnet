@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
         public MultiTenantOrganizationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/multiTenantOrganization{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get properties of the multi-tenant organization. This API is supported in the following national cloud deployments.
+        /// Get properties of the multitenant organization. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganization-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MultiTenantOrganization>(requestInfo, Microsoft.Graph.Beta.Models.MultiTenantOrganization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get properties of the multi-tenant organization. This API is supported in the following national cloud deployments.
+        /// Get properties of the multitenant organization. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
             return new MultiTenantOrganizationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get properties of the multi-tenant organization. This API is supported in the following national cloud deployments.
+        /// Get properties of the multitenant organization. This API is available in the following national cloud deployments.
         /// </summary>
         public class MultiTenantOrganizationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

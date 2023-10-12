@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("details", value); }
         }
 #endif
-        /// <summary>Type of identity that has been provisioned, such as &apos;user&apos; or &apos;group&apos;. Supports $filter (eq, contains).</summary>
+        /// <summary>Type of identity that has been provisioned, such as &apos;user&apos; or &apos;group.&apos; Supports $filter (eq, contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityType {

@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy {
         public DeviceRegistrationPolicyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/deviceRegistrationPolicy{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization. This API is supported in the following national cloud deployments.
+        /// Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/deviceregistrationpolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy>(requestInfo, Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization. This API is supported in the following national cloud deployments.
+        /// Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy {
             return new DeviceRegistrationPolicyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization. This API is supported in the following national cloud deployments.
+        /// Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization. This API is available in the following national cloud deployments.
         /// </summary>
         public class DeviceRegistrationPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

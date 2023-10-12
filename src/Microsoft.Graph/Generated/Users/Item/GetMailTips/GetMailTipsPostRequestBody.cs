@@ -10,8 +10,8 @@ namespace Microsoft.Graph.Beta.Users.Item.GetMailTips {
     public class GetMailTipsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
@@ -19,20 +19,20 @@ namespace Microsoft.Graph.Beta.Users.Item.GetMailTips {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? EmailAddresses {
-            get { return BackingStore?.Get<List<string>?>("emailAddresses"); }
-            set { BackingStore?.Set("emailAddresses", value); }
+            get { return BackingStore?.Get<List<string>?>("EmailAddresses"); }
+            set { BackingStore?.Set("EmailAddresses", value); }
         }
 #nullable restore
 #else
         public List<string> EmailAddresses {
-            get { return BackingStore?.Get<List<string>>("emailAddresses"); }
-            set { BackingStore?.Set("emailAddresses", value); }
+            get { return BackingStore?.Get<List<string>>("EmailAddresses"); }
+            set { BackingStore?.Set("EmailAddresses", value); }
         }
 #endif
         /// <summary>The MailTipsOptions property</summary>
         public MailTipsType? MailTipsOptions {
-            get { return BackingStore?.Get<MailTipsType?>("mailTipsOptions"); }
-            set { BackingStore?.Set("mailTipsOptions", value); }
+            get { return BackingStore?.Get<MailTipsType?>("MailTipsOptions"); }
+            set { BackingStore?.Set("MailTipsOptions", value); }
         }
         /// <summary>
         /// Instantiates a new getMailTipsPostRequestBody and sets the default values.
@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Beta.Users.Item.GetMailTips {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"emailAddresses", n => { EmailAddresses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"mailTipsOptions", n => { MailTipsOptions = n.GetEnumValue<MailTipsType>(); } },
+                {"EmailAddresses", n => { EmailAddresses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"MailTipsOptions", n => { MailTipsOptions = n.GetEnumValue<MailTipsType>(); } },
             };
         }
         /// <summary>
@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Beta.Users.Item.GetMailTips {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("emailAddresses", EmailAddresses);
-            writer.WriteEnumValue<MailTipsType>("mailTipsOptions", MailTipsOptions);
+            writer.WriteCollectionOfPrimitiveValues<string>("EmailAddresses", EmailAddresses);
+            writer.WriteEnumValue<MailTipsType>("MailTipsOptions", MailTipsOptions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

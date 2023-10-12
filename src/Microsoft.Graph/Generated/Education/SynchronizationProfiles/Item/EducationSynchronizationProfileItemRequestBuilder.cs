@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         public EducationSynchronizationProfileItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a school data synchronization profile in the tenant based on the identifier. This API is supported in the following national cloud deployments.
+        /// Delete a school data synchronization profile in the tenant based on the identifier. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a school data synchronization profile in the tenant based on the identifier. This API is supported in the following national cloud deployments.
+        /// Retrieve a school data synchronization profile in the tenant based on the identifier. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
             return await RequestAdapter.SendAsync<EducationSynchronizationProfile>(requestInfo, EducationSynchronizationProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a school data synchronization profile in the tenant based on the identifier. This API is supported in the following national cloud deployments.
+        /// Delete a school data synchronization profile in the tenant based on the identifier. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a school data synchronization profile in the tenant based on the identifier. This API is supported in the following national cloud deployments.
+        /// Retrieve a school data synchronization profile in the tenant based on the identifier. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
             }
         }
         /// <summary>
-        /// Retrieve a school data synchronization profile in the tenant based on the identifier. This API is supported in the following national cloud deployments.
+        /// Retrieve a school data synchronization profile in the tenant based on the identifier. This API is available in the following national cloud deployments.
         /// </summary>
         public class EducationSynchronizationProfileItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

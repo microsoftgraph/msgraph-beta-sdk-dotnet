@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Languages.Item {
         public LanguageProficiencyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/languages/{languageProficiency%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a languageProficiency object from a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Delete a languageProficiency object from a user&apos;s profile. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/languageproficiency-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Languages.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a languageProficiency object within a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a languageProficiency object within a user&apos;s profile. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/languageproficiency-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Languages.Item {
             return await RequestAdapter.SendAsync<LanguageProficiency>(requestInfo, LanguageProficiency.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a languageProficiency object in a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Update the properties of a languageProficiency object in a user&apos;s profile. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/languageproficiency-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Languages.Item {
             return await RequestAdapter.SendAsync<LanguageProficiency>(requestInfo, LanguageProficiency.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a languageProficiency object from a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Delete a languageProficiency object from a user&apos;s profile. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Languages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a languageProficiency object within a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a languageProficiency object within a user&apos;s profile. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Languages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a languageProficiency object in a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Update the properties of a languageProficiency object in a user&apos;s profile. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Languages.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a languageProficiency object within a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a languageProficiency object within a user&apos;s profile. This API is available in the following national cloud deployments.
         /// </summary>
         public class LanguageProficiencyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

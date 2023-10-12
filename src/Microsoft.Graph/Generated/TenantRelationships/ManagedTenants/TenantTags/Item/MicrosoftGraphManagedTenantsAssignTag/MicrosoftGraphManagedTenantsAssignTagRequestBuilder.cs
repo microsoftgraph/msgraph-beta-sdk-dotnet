@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Ite
         public MicrosoftGraphManagedTenantsAssignTagRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/tenantTags/{tenantTag%2Did}/microsoft.graph.managedTenants.assignTag", rawUrl) {
         }
         /// <summary>
-        /// Assign the tenant tag to the specified managed tenants. This API is supported in the following national cloud deployments.
+        /// Assign the tenant tag to the specified managed tenants. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-tenanttag-assigntag?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Ite
             return await RequestAdapter.SendAsync<TenantTag>(requestInfo, TenantTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Assign the tenant tag to the specified managed tenants. This API is supported in the following national cloud deployments.
+        /// Assign the tenant tag to the specified managed tenants. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

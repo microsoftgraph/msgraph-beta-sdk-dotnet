@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.ExceptionOccurrences.Item
         public AcceptRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendar/events/{event%2Did}/exceptionOccurrences/{event%2Did1}/accept", rawUrl) {
         }
         /// <summary>
-        /// Accept the specified event in a user calendar. This API is supported in the following national cloud deployments.
+        /// Accept the specified event in a user calendar. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-accept?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.ExceptionOccurrences.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Accept the specified event in a user calendar. This API is supported in the following national cloud deployments.
+        /// Accept the specified event in a user calendar. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

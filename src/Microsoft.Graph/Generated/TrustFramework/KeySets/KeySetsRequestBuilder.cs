@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets {
         public KeySetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/trustFramework/keySets{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of trustFrameworkKeySets. This API is supported in the following national cloud deployments.
+        /// Retrieve a list of trustFrameworkKeySets. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframework-list-keysets?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets {
             return await RequestAdapter.SendAsync<TrustFrameworkKeySetCollectionResponse>(requestInfo, TrustFrameworkKeySetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new trustFrameworkKeySet. The ID of the trustFrameworkKeySet is expected in the create request; however, it can be modified by the service. The modified ID will be available in the response and in the location header. This API is supported in the following national cloud deployments.
+        /// Create a new trustFrameworkKeySet. The ID of the trustFrameworkKeySet is expected in the create request; however, it can be modified by the service. The modified ID will be available in the response and in the location header. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframework-post-keysets?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets {
             return await RequestAdapter.SendAsync<TrustFrameworkKeySet>(requestInfo, TrustFrameworkKeySet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of trustFrameworkKeySets. This API is supported in the following national cloud deployments.
+        /// Retrieve a list of trustFrameworkKeySets. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new trustFrameworkKeySet. The ID of the trustFrameworkKeySet is expected in the create request; however, it can be modified by the service. The modified ID will be available in the response and in the location header. This API is supported in the following national cloud deployments.
+        /// Create a new trustFrameworkKeySet. The ID of the trustFrameworkKeySet is expected in the create request; however, it can be modified by the service. The modified ID will be available in the response and in the location header. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets {
             return new KeySetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of trustFrameworkKeySets. This API is supported in the following national cloud deployments.
+        /// Retrieve a list of trustFrameworkKeySets. This API is available in the following national cloud deployments.
         /// </summary>
         public class KeySetsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

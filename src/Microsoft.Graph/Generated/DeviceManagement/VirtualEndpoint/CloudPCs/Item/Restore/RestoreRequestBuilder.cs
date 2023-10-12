@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Re
         public RestoreRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC%2Did}/restore", rawUrl) {
         }
         /// <summary>
-        /// Restore a specific Cloud PC. Use this API to trigger a remote action that restores a Cloud PC device to a previous state. This API is supported in the following national cloud deployments.
+        /// Restore a specific Cloud PC. Use this API to trigger a remote action that restores a Cloud PC device to a previous state. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-restore?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Re
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Restore a specific Cloud PC. Use this API to trigger a remote action that restores a Cloud PC device to a previous state. This API is supported in the following national cloud deployments.
+        /// Restore a specific Cloud PC. Use this API to trigger a remote action that restores a Cloud PC device to a previous state. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

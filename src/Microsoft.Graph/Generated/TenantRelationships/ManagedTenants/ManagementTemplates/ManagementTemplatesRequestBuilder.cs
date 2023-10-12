@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         public ManagementTemplatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/managementTemplates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the managementTemplate objects and their properties. This API is supported in the following national cloud deployments.
+        /// Get a list of the managementTemplate objects and their properties. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-managementtemplates?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate>(requestInfo, Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the managementTemplate objects and their properties. This API is supported in the following national cloud deployments.
+        /// Get a list of the managementTemplate objects and their properties. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             return new ManagementTemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the managementTemplate objects and their properties. This API is supported in the following national cloud deployments.
+        /// Get a list of the managementTemplate objects and their properties. This API is available in the following national cloud deployments.
         /// </summary>
         public class ManagementTemplatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

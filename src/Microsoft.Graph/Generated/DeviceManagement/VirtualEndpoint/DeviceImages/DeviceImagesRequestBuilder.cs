@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages {
         public DeviceImagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/deviceImages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC. This API is supported in the following national cloud deployments.
+        /// List the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-deviceimages?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages {
             return await RequestAdapter.SendAsync<CloudPcDeviceImageCollectionResponse>(requestInfo, CloudPcDeviceImageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs. This API is supported in the following national cloud deployments.
+        /// Create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-post-deviceimages?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages {
             return await RequestAdapter.SendAsync<CloudPcDeviceImage>(requestInfo, CloudPcDeviceImage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC. This API is supported in the following national cloud deployments.
+        /// List the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs. This API is supported in the following national cloud deployments.
+        /// Create a new cloudPcDeviceImage object. Upload a custom OS image that you can later provision on Cloud PCs. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages {
             return new DeviceImagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC. This API is supported in the following national cloud deployments.
+        /// List the properties and relationships of the cloudPcDeviceImage objects (OS images) uploaded to Cloud PC. This API is available in the following national cloud deployments.
         /// </summary>
         public class DeviceImagesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -9,8 +9,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class ReportSuspiciousActivitySettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<AdvancedConfigState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
-        /// <summary>Specifies the number the user will enter on their phone to report the MFA prompt as suspicious.</summary>
+        /// <summary>Specifies the number the user enters on their phone to report the MFA prompt as suspicious.</summary>
         public int? VoiceReportingCode {
             get { return BackingStore?.Get<int?>("voiceReportingCode"); }
             set { BackingStore?.Set("voiceReportingCode", value); }

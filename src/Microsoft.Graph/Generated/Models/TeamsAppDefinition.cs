@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamsAppDefinition : Entity, IParsable {
-        /// <summary>A collection of scopes where the Teams app can be installed. Possible values are:team — Indicates that the Teams app can be installed within a team and is authorized to access that team&apos;s data. groupChat  — Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat&apos;s data.  personal — Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user&apos;s data.</summary>
+        /// <summary>A collection of scopes where the Teams app can be installed. Possible values are:team—Indicates that the Teams app can be installed within a team and is authorized to access that team&apos;s data. groupChat—Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat&apos;s data.  personal—Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user&apos;s data.</summary>
         public TeamsAppInstallationScopes? AllowedInstallationScopes {
             get { return BackingStore?.Get<TeamsAppInstallationScopes?>("allowedInstallationScopes"); }
             set { BackingStore?.Set("allowedInstallationScopes", value); }
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("outlineIcon", value); }
         }
 #endif
-        /// <summary>The published status of a specific version of a Teams app. Possible values are:submitted — The specific version of the Teams app has been submitted and is under review. published  — The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.</summary>
+        /// <summary>The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app has been submitted and is under review. published—The request to publish the specific version of the Teams app has been approved by the admin and the app is published.  rejected — The request to publish the specific version of the Teams app was rejected by the admin.</summary>
         public TeamsAppPublishingState? PublishingState {
             get { return BackingStore?.Get<TeamsAppPublishingState?>("publishingState"); }
             set { BackingStore?.Set("publishingState", value); }

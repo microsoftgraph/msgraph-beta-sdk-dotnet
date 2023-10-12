@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
         public CloudPcOnPremisesConnectionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/onPremisesConnections/{cloudPcOnPremisesConnection%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a specific cloudPcOnPremisesConnection object. When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources. You cannot delete an Azure network connection when it&apos;s in use, as indicated by the inUse property. This API is supported in the following national cloud deployments.
+        /// Delete a specific cloudPcOnPremisesConnection object. When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources. You cannot delete an Azure network connection when it&apos;s in use, as indicated by the inUse property. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of the cloudPcOnPremisesConnection object. This API is supported in the following national cloud deployments.
+        /// Read the properties and relationships of the cloudPcOnPremisesConnection object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
             return await RequestAdapter.SendAsync<CloudPcOnPremisesConnection>(requestInfo, CloudPcOnPremisesConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a cloudPcOnPremisesConnection object. This API is supported in the following national cloud deployments.
+        /// Update the properties of a cloudPcOnPremisesConnection object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
             return await RequestAdapter.SendAsync<CloudPcOnPremisesConnection>(requestInfo, CloudPcOnPremisesConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a specific cloudPcOnPremisesConnection object. When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources. You cannot delete an Azure network connection when it&apos;s in use, as indicated by the inUse property. This API is supported in the following national cloud deployments.
+        /// Delete a specific cloudPcOnPremisesConnection object. When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources. You cannot delete an Azure network connection when it&apos;s in use, as indicated by the inUse property. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of the cloudPcOnPremisesConnection object. This API is supported in the following national cloud deployments.
+        /// Read the properties and relationships of the cloudPcOnPremisesConnection object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a cloudPcOnPremisesConnection object. This API is supported in the following national cloud deployments.
+        /// Update the properties of a cloudPcOnPremisesConnection object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -202,7 +202,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
             }
         }
         /// <summary>
-        /// Read the properties and relationships of the cloudPcOnPremisesConnection object. This API is supported in the following national cloud deployments.
+        /// Read the properties and relationships of the cloudPcOnPremisesConnection object. This API is available in the following national cloud deployments.
         /// </summary>
         public class CloudPcOnPremisesConnectionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

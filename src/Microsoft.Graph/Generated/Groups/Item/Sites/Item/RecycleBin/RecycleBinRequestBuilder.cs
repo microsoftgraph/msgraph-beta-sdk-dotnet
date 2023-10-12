@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.RecycleBin {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get recycleBin from groups
+        /// The collection of recycleBinItems under this site.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.RecycleBin {
             return requestInfo;
         }
         /// <summary>
-        /// Get recycleBin from groups
+        /// The collection of recycleBinItems under this site.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.RecycleBin {
             }
         }
         /// <summary>
-        /// Get recycleBin from groups
+        /// The collection of recycleBinItems under this site.
         /// </summary>
         public class RecycleBinRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

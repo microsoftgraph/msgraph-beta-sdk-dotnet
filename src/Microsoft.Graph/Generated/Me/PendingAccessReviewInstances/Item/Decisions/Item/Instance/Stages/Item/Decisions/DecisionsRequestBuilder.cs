@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.It
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object. This API is supported in the following national cloud deployments.
+        /// Get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewstage-list-decisions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.It
             return await RequestAdapter.SendAsync<AccessReviewInstanceDecisionItem>(requestInfo, AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object. This API is supported in the following national cloud deployments.
+        /// Get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Decisions.It
             return new DecisionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object. This API is supported in the following national cloud deployments.
+        /// Get the decisions from a stage in a multi-stage access review. The decisions in an accessReviewStage object are represented by an accessReviewInstanceDecisionItem object. This API is available in the following national cloud deployments.
         /// </summary>
         public class DecisionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

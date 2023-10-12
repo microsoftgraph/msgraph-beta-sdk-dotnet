@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item {
         public AuthenticationEventListenerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/authenticationEventListeners/{authenticationEventListener%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes an authenticationEventListener object. This API is supported in the following national cloud deployments.
+        /// Deletes an authenticationEventListener object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventlistener-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item {
             return await RequestAdapter.SendAsync<AuthenticationEventListener>(requestInfo, AuthenticationEventListener.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update. This API is supported in the following national cloud deployments.
+        /// Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventlistener-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item {
             return await RequestAdapter.SendAsync<AuthenticationEventListener>(requestInfo, AuthenticationEventListener.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an authenticationEventListener object. This API is supported in the following national cloud deployments.
+        /// Deletes an authenticationEventListener object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update. This API is supported in the following national cloud deployments.
+        /// Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

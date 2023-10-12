@@ -9,17 +9,17 @@ namespace Microsoft.Graph.Beta.Models {
     public class MultiTenantOrganizationMemberTransitionDetails : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Role of the tenant in the multi-tenant organization. The possible values are: owner, member, unknownFutureValue.</summary>
+        /// <summary>Role of the tenant in the multitenant organization. The possible values are: owner, member, unknownFutureValue.</summary>
         public MultiTenantOrganizationMemberRole? DesiredRole {
             get { return BackingStore?.Get<MultiTenantOrganizationMemberRole?>("desiredRole"); }
             set { BackingStore?.Set("desiredRole", value); }
         }
-        /// <summary>State of the tenant in the multi-tenant organization currently being processed. The possible values are: pending, active, removed, unknownFutureValue. Read-only.</summary>
+        /// <summary>State of the tenant in the multitenant organization currently being processed. The possible values are: pending, active, removed, unknownFutureValue. Read-only.</summary>
         public MultiTenantOrganizationMemberState? DesiredState {
             get { return BackingStore?.Get<MultiTenantOrganizationMemberState?>("desiredState"); }
             set { BackingStore?.Set("desiredState", value); }

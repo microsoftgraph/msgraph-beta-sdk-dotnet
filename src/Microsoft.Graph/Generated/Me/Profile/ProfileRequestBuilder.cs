@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Me.Profile {
         public ProfileRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a profile object from a user&apos;s account. This API is supported in the following national cloud deployments.
+        /// Deletes a profile object from a user&apos;s account. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Me.Profile {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a profile object for a given user. The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by profile. This API is supported in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a profile object for a given user. The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by profile. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Beta.Me.Profile {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Profile>(requestInfo, Microsoft.Graph.Beta.Models.Profile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a profile object from a user&apos;s account. This API is supported in the following national cloud deployments.
+        /// Deletes a profile object from a user&apos;s account. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -209,7 +209,7 @@ namespace Microsoft.Graph.Beta.Me.Profile {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a profile object for a given user. The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by profile. This API is supported in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a profile object for a given user. The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by profile. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -286,7 +286,7 @@ namespace Microsoft.Graph.Beta.Me.Profile {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a profile object for a given user. The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by profile. This API is supported in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a profile object for a given user. The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by profile. This API is available in the following national cloud deployments.
         /// </summary>
         public class ProfileRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

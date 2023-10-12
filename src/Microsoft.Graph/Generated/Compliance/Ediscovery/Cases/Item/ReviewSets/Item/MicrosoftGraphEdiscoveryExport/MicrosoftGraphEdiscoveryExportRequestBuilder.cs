@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
         public MicrosoftGraphEdiscoveryExportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/reviewSets/{reviewSet%2Did}/microsoft.graph.ediscovery.export", rawUrl) {
         }
         /// <summary>
-        /// Initiate an export from a reviewSet.  For details, see Export documents from a review set in Advanced eDiscovery. This API is supported in the following national cloud deployments.
+        /// Initiate an export from a reviewSet.  For details, see Export documents from a review set in Advanced eDiscovery. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-reviewset-export?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Initiate an export from a reviewSet.  For details, see Export documents from a review set in Advanced eDiscovery. This API is supported in the following national cloud deployments.
+        /// Initiate an export from a reviewSet.  For details, see Export documents from a review set in Advanced eDiscovery. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

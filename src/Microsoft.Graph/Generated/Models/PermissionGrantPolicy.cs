@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PermissionGrantPolicy : PolicyBase, IParsable {
-        /// <summary>Condition sets which are excluded in this permission grant policy. Automatically expanded on GET.</summary>
+        /// <summary>Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PermissionGrantConditionSet>? Excludes {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("excludes", value); }
         }
 #endif
-        /// <summary>Condition sets which are included in this permission grant policy. Automatically expanded on GET.</summary>
+        /// <summary>Condition sets that are included in this permission grant policy. Automatically expanded on GET.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PermissionGrantConditionSet>? Includes {

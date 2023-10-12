@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkSetCloudPcReviewSta
         public BulkSetCloudPcReviewStatusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/managedDevices/bulkSetCloudPcReviewStatus", rawUrl) {
         }
         /// <summary>
-        /// Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices. This API is supported in the following national cloud deployments.
+        /// Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/manageddevice-bulksetcloudpcreviewstatus?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkSetCloudPcReviewSta
             return await RequestAdapter.SendAsync<CloudPcBulkRemoteActionResult>(requestInfo, CloudPcBulkRemoteActionResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices. This API is supported in the following national cloud deployments.
+        /// Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

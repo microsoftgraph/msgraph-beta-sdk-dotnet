@@ -9,8 +9,8 @@ namespace Microsoft.Graph.Beta.Me.CalendarView.Item.ExceptionOccurrences.Item.Ac
     public class AcceptPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
@@ -18,20 +18,20 @@ namespace Microsoft.Graph.Beta.Me.CalendarView.Item.ExceptionOccurrences.Item.Ac
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comment {
-            get { return BackingStore?.Get<string?>("comment"); }
-            set { BackingStore?.Set("comment", value); }
+            get { return BackingStore?.Get<string?>("Comment"); }
+            set { BackingStore?.Set("Comment", value); }
         }
 #nullable restore
 #else
         public string Comment {
-            get { return BackingStore?.Get<string>("comment"); }
-            set { BackingStore?.Set("comment", value); }
+            get { return BackingStore?.Get<string>("Comment"); }
+            set { BackingStore?.Set("Comment", value); }
         }
 #endif
         /// <summary>The SendResponse property</summary>
         public bool? SendResponse {
-            get { return BackingStore?.Get<bool?>("sendResponse"); }
-            set { BackingStore?.Set("sendResponse", value); }
+            get { return BackingStore?.Get<bool?>("SendResponse"); }
+            set { BackingStore?.Set("SendResponse", value); }
         }
         /// <summary>
         /// Instantiates a new acceptPostRequestBody and sets the default values.
@@ -53,8 +53,8 @@ namespace Microsoft.Graph.Beta.Me.CalendarView.Item.ExceptionOccurrences.Item.Ac
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"comment", n => { Comment = n.GetStringValue(); } },
-                {"sendResponse", n => { SendResponse = n.GetBoolValue(); } },
+                {"Comment", n => { Comment = n.GetStringValue(); } },
+                {"SendResponse", n => { SendResponse = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -63,8 +63,8 @@ namespace Microsoft.Graph.Beta.Me.CalendarView.Item.ExceptionOccurrences.Item.Ac
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("comment", Comment);
-            writer.WriteBoolValue("sendResponse", SendResponse);
+            writer.WriteStringValue("Comment", Comment);
+            writer.WriteBoolValue("SendResponse", SendResponse);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

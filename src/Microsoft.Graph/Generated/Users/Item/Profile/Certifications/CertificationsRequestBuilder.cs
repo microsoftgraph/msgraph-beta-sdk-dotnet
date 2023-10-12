@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Certifications {
         public CertificationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/certifications{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of personCertification objects from a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Retrieve a list of personCertification objects from a user&apos;s profile. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-certifications?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Certifications {
             return await RequestAdapter.SendAsync<PersonCertificationCollectionResponse>(requestInfo, PersonCertificationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new personCertification object in a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Create a new personCertification object in a user&apos;s profile. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-certifications?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Certifications {
             return await RequestAdapter.SendAsync<PersonCertification>(requestInfo, PersonCertification.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of personCertification objects from a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Retrieve a list of personCertification objects from a user&apos;s profile. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Certifications {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new personCertification object in a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Create a new personCertification object in a user&apos;s profile. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Certifications {
             return new CertificationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of personCertification objects from a user&apos;s profile. This API is supported in the following national cloud deployments.
+        /// Retrieve a list of personCertification objects from a user&apos;s profile. This API is available in the following national cloud deployments.
         /// </summary>
         public class CertificationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

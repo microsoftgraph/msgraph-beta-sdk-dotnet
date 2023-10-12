@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Admin.People.Pronouns {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties of the pronounsSettings resource for an organization.  For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API. This API is supported in the following national cloud deployments.
+        /// Get the properties of the pronounsSettings resource for an organization.  For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/peopleadminsettings-list-pronouns?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Admin.People.Pronouns {
             return await RequestAdapter.SendAsync<PronounsSettings>(requestInfo, PronounsSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a pronounsSettings in an organization. For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API. This API is supported in the following national cloud deployments.
+        /// Update the properties of a pronounsSettings in an organization. For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/pronounssettings-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Admin.People.Pronouns {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties of the pronounsSettings resource for an organization.  For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API. This API is supported in the following national cloud deployments.
+        /// Get the properties of the pronounsSettings resource for an organization.  For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Admin.People.Pronouns {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a pronounsSettings in an organization. For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API. This API is supported in the following national cloud deployments.
+        /// Update the properties of a pronounsSettings in an organization. For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.Admin.People.Pronouns {
             }
         }
         /// <summary>
-        /// Get the properties of the pronounsSettings resource for an organization.  For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API. This API is supported in the following national cloud deployments.
+        /// Get the properties of the pronounsSettings resource for an organization.  For more information on settings to manage pronouns support, see Manage pronouns settings for an organization using the Microsoft Graph API. This API is available in the following national cloud deployments.
         /// </summary>
         public class PronounsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

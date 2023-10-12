@@ -42,8 +42,8 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.SslCertifi
         public SslCertificatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/sslCertificates{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of hostSslCertificate objects from the host navigation property. This API is supported in the following national cloud deployments.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-hostsslcertificate-list-host?view=graph-rest-1.0" />
+        /// Get a list of hostSslCertificate objects from the host navigation property. This API is available in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-list-sslcertificates?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.SslCertifi
             return await RequestAdapter.SendAsync<HostSslCertificateCollectionResponse>(requestInfo, HostSslCertificateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of hostSslCertificate objects from the host navigation property. This API is supported in the following national cloud deployments.
+        /// Get a list of hostSslCertificate objects from the host navigation property. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.SslCertifi
             return new SslCertificatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of hostSslCertificate objects from the host navigation property. This API is supported in the following national cloud deployments.
+        /// Get a list of hostSslCertificate objects from the host navigation property. This API is available in the following national cloud deployments.
         /// </summary>
         public class SslCertificatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

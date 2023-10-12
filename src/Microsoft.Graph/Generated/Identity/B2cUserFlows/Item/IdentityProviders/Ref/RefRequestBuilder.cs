@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Ref 
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/identityProviders/$ref{?%24top,%24skip,%24search,%24filter,%24count,%24orderby}", rawUrl) {
         }
         /// <summary>
-        /// Get the identity providers in a b2cIdentityUserFlow object. This API is supported in the following national cloud deployments.
+        /// Get the identity providers in a b2cIdentityUserFlow object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2cidentityuserflow-list-identityproviders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Ref 
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add identity providers in a b2cIdentityUserFlow object. This API is supported in the following national cloud deployments.
+        /// Add identity providers in a b2cIdentityUserFlow object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2cidentityuserflow-post-identityproviders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Ref 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the identity providers in a b2cIdentityUserFlow object. This API is supported in the following national cloud deployments.
+        /// Get the identity providers in a b2cIdentityUserFlow object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API. as of 2021-05/identityProvider on 2021-08-24 and will be removed 2023-03-15")]
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Ref 
             return requestInfo;
         }
         /// <summary>
-        /// Add identity providers in a b2cIdentityUserFlow object. This API is supported in the following national cloud deployments.
+        /// Add identity providers in a b2cIdentityUserFlow object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Ref 
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the identity providers in a b2cIdentityUserFlow object. This API is supported in the following national cloud deployments.
+        /// Get the identity providers in a b2cIdentityUserFlow object. This API is available in the following national cloud deployments.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

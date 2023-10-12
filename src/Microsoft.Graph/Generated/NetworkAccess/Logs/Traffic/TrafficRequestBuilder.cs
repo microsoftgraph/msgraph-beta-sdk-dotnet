@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic {
         public TrafficRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/logs/traffic{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of log events for traffic routed through the Global Secure Access services. This API is supported in the following national cloud deployments.
+        /// Get a list of log events for traffic routed through the Global Secure Access services. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-logs-list-traffic?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic {
             return await RequestAdapter.SendAsync<NetworkAccessTraffic>(requestInfo, NetworkAccessTraffic.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of log events for traffic routed through the Global Secure Access services. This API is supported in the following national cloud deployments.
+        /// Get a list of log events for traffic routed through the Global Secure Access services. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic {
             return new TrafficRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of log events for traffic routed through the Global Secure Access services. This API is supported in the following national cloud deployments.
+        /// Get a list of log events for traffic routed through the Global Secure Access services. This API is available in the following national cloud deployments.
         /// </summary>
         public class TrafficRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.FavoritePlans {
         public FavoritePlansRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/favoritePlans{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of plannerPlans that are marked as favorite by a user. You can mark a plan as favorite by updating the plannerUser resource. This API is supported in the following national cloud deployments.
+        /// Retrieve a list of plannerPlans that are marked as favorite by a user. You can mark a plan as favorite by updating the plannerUser resource. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/planneruser-list-favoriteplans?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.FavoritePlans {
             return await RequestAdapter.SendAsync<PlannerPlanCollectionResponse>(requestInfo, PlannerPlanCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of plannerPlans that are marked as favorite by a user. You can mark a plan as favorite by updating the plannerUser resource. This API is supported in the following national cloud deployments.
+        /// Retrieve a list of plannerPlans that are marked as favorite by a user. You can mark a plan as favorite by updating the plannerUser resource. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.FavoritePlans {
             return new FavoritePlansRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of plannerPlans that are marked as favorite by a user. You can mark a plan as favorite by updating the plannerUser resource. This API is supported in the following national cloud deployments.
+        /// Retrieve a list of plannerPlans that are marked as favorite by a user. You can mark a plan as favorite by updating the plannerUser resource. This API is available in the following national cloud deployments.
         /// </summary>
         public class FavoritePlansRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

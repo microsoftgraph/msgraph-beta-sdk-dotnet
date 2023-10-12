@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item {
         public ConversationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}{?%24select}", rawUrl) {
         }
         /// <summary>
-        /// Delete conversation. This API is supported in the following national cloud deployments.
+        /// Delete conversation. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversation-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of conversation object. This API is supported in the following national cloud deployments.
+        /// Retrieve the properties and relationships of conversation object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item {
             return await RequestAdapter.SendAsync<Conversation>(requestInfo, Conversation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete conversation. This API is supported in the following national cloud deployments.
+        /// Delete conversation. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of conversation object. This API is supported in the following national cloud deployments.
+        /// Retrieve the properties and relationships of conversation object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties and relationships of conversation object. This API is supported in the following national cloud deployments.
+        /// Retrieve the properties and relationships of conversation object. This API is available in the following national cloud deployments.
         /// </summary>
         public class ConversationItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>

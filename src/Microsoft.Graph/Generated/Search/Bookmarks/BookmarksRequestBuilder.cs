@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Search.Bookmarks {
         public BookmarksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/bookmarks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of bookmark objects and their properties. This API is supported in the following national cloud deployments.
+        /// Get a list of bookmark objects and their properties. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-searchentity-list-bookmarks?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Search.Bookmarks {
             return await RequestAdapter.SendAsync<BookmarkCollectionResponse>(requestInfo, BookmarkCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new bookmark object. This API is supported in the following national cloud deployments.
+        /// Create a new bookmark object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-searchentity-post-bookmarks?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Search.Bookmarks {
             return await RequestAdapter.SendAsync<Bookmark>(requestInfo, Bookmark.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of bookmark objects and their properties. This API is supported in the following national cloud deployments.
+        /// Get a list of bookmark objects and their properties. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Search.Bookmarks {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new bookmark object. This API is supported in the following national cloud deployments.
+        /// Create a new bookmark object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Search.Bookmarks {
             return new BookmarksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of bookmark objects and their properties. This API is supported in the following national cloud deployments.
+        /// Get a list of bookmark objects and their properties. This API is available in the following national cloud deployments.
         /// </summary>
         public class BookmarksRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

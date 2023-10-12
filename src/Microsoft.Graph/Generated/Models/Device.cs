@@ -256,7 +256,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managementType", value); }
         }
 #endif
-        /// <summary>Manufacturer of the device. Read-only.</summary>
+        /// <summary>Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Manufacturer {
@@ -298,7 +298,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("memberOf", value); }
         }
 #endif
-        /// <summary>Model of the device. Read-only.</summary>
+        /// <summary>Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Model {

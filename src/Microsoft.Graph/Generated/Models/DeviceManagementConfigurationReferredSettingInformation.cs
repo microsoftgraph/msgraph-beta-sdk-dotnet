@@ -12,8 +12,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationReferredSettingInformation : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Setting definition id that is being referred to a setting. Applicable for reusable setting</summary>
+        /// <summary>Setting definition id that is being referred to a setting. Applicable for reusable setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SettingDefinitionId {

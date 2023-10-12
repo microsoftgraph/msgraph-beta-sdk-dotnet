@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Tr
         public TroubleshootRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/{cloudPC%2Did}/troubleshoot", rawUrl) {
         }
         /// <summary>
-        /// Troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host. This API is supported in the following national cloud deployments.
+        /// Troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-troubleshoot?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Tr
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host. This API is supported in the following national cloud deployments.
+        /// Troubleshoot a specific Cloud PC. Use this API to check the health status of the Cloud PC and the session host. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -9,8 +9,8 @@ namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationDetail : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>The type of authentication method used to perform this step of authentication. Possible values: Password, SMS, Voice, Authenticator App, Software OATH token, Satisfied by token, Previously satisfied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationMethod", value); }
         }
 #endif
-        /// <summary>Details about the authentication method used to perform this authentication step. For example, phone number (for SMS and voice), device name (for Authenticator app), and password source (e.g. cloud, AD FS, PTA, PHS).</summary>
+        /// <summary>Details about the authentication method used to perform this authentication step. For example, phone number (for SMS and voice), device name (for Authenticator app), and password source (for example, cloud, AD FS, PTA, PHS).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthenticationMethodDetail {
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("authenticationStepDateTime"); }
             set { BackingStore?.Set("authenticationStepDateTime", value); }
         }
-        /// <summary>The step of authentication that this satisfied. For example, primary authentication, or multi-factor authentication.</summary>
+        /// <summary>The step of authentication that this satisfied. For example, primary authentication, or multifactor authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthenticationStepRequirement {

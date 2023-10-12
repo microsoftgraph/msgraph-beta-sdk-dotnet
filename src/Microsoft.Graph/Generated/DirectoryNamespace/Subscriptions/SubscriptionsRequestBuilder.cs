@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions {
         public SubscriptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/subscriptions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of commercial subscriptions that an organization has acquired. This API is supported in the following national cloud deployments.
+        /// Get the list of commercial subscriptions that an organization has acquired. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-list-subscriptions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions {
             return await RequestAdapter.SendAsync<CompanySubscription>(requestInfo, CompanySubscription.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of commercial subscriptions that an organization has acquired. This API is supported in the following national cloud deployments.
+        /// Get the list of commercial subscriptions that an organization has acquired. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions {
             return new SubscriptionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of commercial subscriptions that an organization has acquired. This API is supported in the following national cloud deployments.
+        /// Get the list of commercial subscriptions that an organization has acquired. This API is available in the following national cloud deployments.
         /// </summary>
         public class SubscriptionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

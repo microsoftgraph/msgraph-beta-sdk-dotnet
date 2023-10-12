@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Applications.Item {
         public ApplicationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API is supported in the following national cloud deployments.
+        /// Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Applications.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of an application object. This API is supported in the following national cloud deployments.
+        /// Get the properties and relationships of an application object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Applications.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Application>(requestInfo, Microsoft.Graph.Beta.Models.Application.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an application object. This API is supported in the following national cloud deployments.
+        /// Update the properties of an application object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -201,7 +201,7 @@ namespace Microsoft.Graph.Beta.Applications.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Application>(requestInfo, Microsoft.Graph.Beta.Models.Application.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API is supported in the following national cloud deployments.
+        /// Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -225,7 +225,7 @@ namespace Microsoft.Graph.Beta.Applications.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of an application object. This API is supported in the following national cloud deployments.
+        /// Get the properties and relationships of an application object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -251,7 +251,7 @@ namespace Microsoft.Graph.Beta.Applications.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an application object. This API is supported in the following national cloud deployments.
+        /// Update the properties of an application object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -302,7 +302,7 @@ namespace Microsoft.Graph.Beta.Applications.Item {
             }
         }
         /// <summary>
-        /// Get the properties and relationships of an application object. This API is supported in the following national cloud deployments.
+        /// Get the properties and relationships of an application object. This API is available in the following national cloud deployments.
         /// </summary>
         public class ApplicationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied. This API is supported in the following national cloud deployments.
+        /// Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/featurerolloutpolicy-post-appliesto?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.Item.AppliesTo {
             return requestInfo;
         }
         /// <summary>
-        /// Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied. This API is supported in the following national cloud deployments.
+        /// Add an appliesTo on a featureRolloutPolicy object to specify the directoryObject to which the featureRolloutPolicy should be applied. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

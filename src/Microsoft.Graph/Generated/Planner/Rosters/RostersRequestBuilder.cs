@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters {
         public RostersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/planner/rosters{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read the properties and relationships of a plannerRoster object. This API is supported in the following national cloud deployments.
+        /// Read the properties and relationships of a plannerRoster object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters {
             return await RequestAdapter.SendAsync<PlannerRosterCollectionResponse>(requestInfo, PlannerRosterCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new plannerRoster object. This API is supported in the following national cloud deployments.
+        /// Create a new plannerRoster object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/planner-post-rosters?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters {
             return await RequestAdapter.SendAsync<PlannerRoster>(requestInfo, PlannerRoster.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a plannerRoster object. This API is supported in the following national cloud deployments.
+        /// Read the properties and relationships of a plannerRoster object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new plannerRoster object. This API is supported in the following national cloud deployments.
+        /// Create a new plannerRoster object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters {
             return new RostersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a plannerRoster object. This API is supported in the following national cloud deployments.
+        /// Read the properties and relationships of a plannerRoster object. This API is available in the following national cloud deployments.
         /// </summary>
         public class RostersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

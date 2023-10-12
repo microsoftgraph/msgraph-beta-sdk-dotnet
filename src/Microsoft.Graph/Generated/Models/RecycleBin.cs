@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class RecycleBin : BaseItem, IParsable {
-        /// <summary>The items property</summary>
+        /// <summary>List of the recycleBinItems deleted by a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<RecycleBinItem>? Items {

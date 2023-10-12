@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators {
         public SubmitTiIndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/tiIndicators/submitTiIndicators", rawUrl) {
         }
         /// <summary>
-        /// Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is supported in the following national cloud deployments.
+        /// Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicator-submittiindicators?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators {
             return await RequestAdapter.SendAsync<SubmitTiIndicatorsPostResponse>(requestInfo, SubmitTiIndicatorsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is supported in the following national cloud deployments.
+        /// Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicator-submittiindicators?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators {
             return await RequestAdapter.SendAsync<SubmitTiIndicatorsResponse>(requestInfo, SubmitTiIndicatorsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is supported in the following national cloud deployments.
+        /// Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

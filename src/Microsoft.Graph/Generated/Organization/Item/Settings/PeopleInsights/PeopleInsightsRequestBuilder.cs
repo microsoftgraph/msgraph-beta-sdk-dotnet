@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties of an insightsSettings object for displaying or returning people insights in an organization. To learn how to customize privacy for people insights in an organization, see Customize people insights privacy in Microsoft Graph. This API is supported in the following national cloud deployments.
+        /// Get the properties of an insightsSettings object for displaying or returning people insights in an organization. To learn how to customize privacy for people insights in an organization, see Customize people insights privacy in Microsoft Graph. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationsettings-list-peopleinsights?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
             return await RequestAdapter.SendAsync<InsightsSettings>(requestInfo, InsightsSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy This API is supported in the following national cloud deployments.
+        /// Update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties of an insightsSettings object for displaying or returning people insights in an organization. To learn how to customize privacy for people insights in an organization, see Customize people insights privacy in Microsoft Graph. This API is supported in the following national cloud deployments.
+        /// Get the properties of an insightsSettings object for displaying or returning people insights in an organization. To learn how to customize privacy for people insights in an organization, see Customize people insights privacy in Microsoft Graph. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
             return requestInfo;
         }
         /// <summary>
-        /// Update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy This API is supported in the following national cloud deployments.
+        /// Update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
             }
         }
         /// <summary>
-        /// Get the properties of an insightsSettings object for displaying or returning people insights in an organization. To learn how to customize privacy for people insights in an organization, see Customize people insights privacy in Microsoft Graph. This API is supported in the following national cloud deployments.
+        /// Get the properties of an insightsSettings object for displaying or returning people insights in an organization. To learn how to customize privacy for people insights in an organization, see Customize people insights privacy in Microsoft Graph. This API is available in the following national cloud deployments.
         /// </summary>
         public class PeopleInsightsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

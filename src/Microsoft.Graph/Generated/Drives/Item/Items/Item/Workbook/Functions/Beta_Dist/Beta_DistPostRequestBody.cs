@@ -12,20 +12,20 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Beta_Di
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Json? A {
-            get { return BackingStore?.Get<Json?>("a"); }
-            set { BackingStore?.Set("a", value); }
+            get { return BackingStore?.Get<Json?>("A"); }
+            set { BackingStore?.Set("A", value); }
         }
 #nullable restore
 #else
         public Json A {
-            get { return BackingStore?.Get<Json>("a"); }
-            set { BackingStore?.Set("a", value); }
+            get { return BackingStore?.Get<Json>("A"); }
+            set { BackingStore?.Set("A", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>The alpha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,14 +45,14 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Beta_Di
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Json? B {
-            get { return BackingStore?.Get<Json?>("b"); }
-            set { BackingStore?.Set("b", value); }
+            get { return BackingStore?.Get<Json?>("B"); }
+            set { BackingStore?.Set("B", value); }
         }
 #nullable restore
 #else
         public Json B {
-            get { return BackingStore?.Get<Json>("b"); }
-            set { BackingStore?.Set("b", value); }
+            get { return BackingStore?.Get<Json>("B"); }
+            set { BackingStore?.Set("B", value); }
         }
 #endif
         /// <summary>Stores model information.</summary>
@@ -119,9 +119,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Beta_Di
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"a", n => { A = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"A", n => { A = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"alpha", n => { Alpha = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
-                {"b", n => { B = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                {"B", n => { B = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"beta", n => { Beta = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"cumulative", n => { Cumulative = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
                 {"x", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
@@ -133,9 +133,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.Beta_Di
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Json>("a", A);
+            writer.WriteObjectValue<Json>("A", A);
             writer.WriteObjectValue<Json>("alpha", Alpha);
-            writer.WriteObjectValue<Json>("b", B);
+            writer.WriteObjectValue<Json>("B", B);
             writer.WriteObjectValue<Json>("beta", Beta);
             writer.WriteObjectValue<Json>("cumulative", Cumulative);
             writer.WriteObjectValue<Json>("x", X);

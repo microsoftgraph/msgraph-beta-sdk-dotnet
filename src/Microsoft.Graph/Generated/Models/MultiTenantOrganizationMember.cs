@@ -6,17 +6,17 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class MultiTenantOrganizationMember : DirectoryObject, IParsable {
-        /// <summary>Tenant ID of the tenant that added the tenant to the multi-tenant organization. Read-only.</summary>
+        /// <summary>Tenant ID of the tenant that added the tenant to the multitenant organization. Read-only.</summary>
         public Guid? AddedByTenantId {
             get { return BackingStore?.Get<Guid?>("addedByTenantId"); }
             set { BackingStore?.Set("addedByTenantId", value); }
         }
-        /// <summary>Date and time when the tenant was added to the multi-tenant organization. Read-only.</summary>
+        /// <summary>Date and time when the tenant was added to the multitenant organization. Read-only.</summary>
         public DateTimeOffset? AddedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("addedDateTime"); }
             set { BackingStore?.Set("addedDateTime", value); }
         }
-        /// <summary>Display name of the tenant added to the multi-tenant organization.</summary>
+        /// <summary>Display name of the tenant added to the multitenant organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -30,22 +30,22 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Date and time when the tenant joined the multi-tenant organization. Read-only.</summary>
+        /// <summary>Date and time when the tenant joined the multitenant organization. Read-only.</summary>
         public DateTimeOffset? JoinedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("joinedDateTime"); }
             set { BackingStore?.Set("joinedDateTime", value); }
         }
-        /// <summary>Role of the tenant in the multi-tenant organization. The possible values are: owner, member (default), unknownFutureValue. Tenants with the owner role can manage the multi-tenant organization but tenants with the member role can only participate in a multi-tenant organization. There can be multiple tenants with the owner role in a multi-tenant organization.</summary>
+        /// <summary>Role of the tenant in the multitenant organization. The possible values are: owner, member (default), unknownFutureValue. Tenants with the owner role can manage the multitenant organization but tenants with the member role can only participate in a multitenant organization. There can be multiple tenants with the owner role in a multitenant organization.</summary>
         public MultiTenantOrganizationMemberRole? Role {
             get { return BackingStore?.Get<MultiTenantOrganizationMemberRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
-        /// <summary>State of the tenant in the multi-tenant organization. The possible values are: pending, active, removed, unknownFutureValue. Tenants in the pending state must join the multi-tenant organization to participate in the multi-tenant organization. Tenants in the active state can participate in the multi-tenant organization. Tenants in the removed state are in the process of being removed from the multi-tenant organization. Read-only.</summary>
+        /// <summary>State of the tenant in the multitenant organization. The possible values are: pending, active, removed, unknownFutureValue. Tenants in the pending state must join the multitenant organization to participate in the multitenant organization. Tenants in the active state can participate in the multitenant organization. Tenants in the removed state are in the process of being removed from the multitenant organization. Read-only.</summary>
         public MultiTenantOrganizationMemberState? State {
             get { return BackingStore?.Get<MultiTenantOrganizationMemberState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
-        /// <summary>Tenant ID of the Azure Active Directory tenant added to the multi-tenant organization. Set at the time tenant is added.Supports $filter. Key.</summary>
+        /// <summary>Tenant ID of the Azure Active Directory tenant added to the multitenant organization. Set at the time tenant is added.Supports $filter. Key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId {
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
-        /// <summary>Details of the processing status for a tenant in a multi-tenant organization. Read-only. Nullable.</summary>
+        /// <summary>Details of the processing status for a tenant in a multitenant organization. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public MultiTenantOrganizationMemberTransitionDetails? TransitionDetails {

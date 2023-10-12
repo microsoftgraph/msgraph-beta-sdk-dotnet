@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents.Item {
         public ItemPatentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/patents/{itemPatent%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes an itemPatent object. This API is supported in the following national cloud deployments.
+        /// Deletes an itemPatent object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/itempatent-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an itemPatent object. This API is supported in the following national cloud deployments.
+        /// Read the properties and relationships of an itemPatent object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/itempatent-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents.Item {
             return await RequestAdapter.SendAsync<ItemPatent>(requestInfo, ItemPatent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an itemPatent object. This API is supported in the following national cloud deployments.
+        /// Update the properties of an itemPatent object. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/itempatent-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents.Item {
             return await RequestAdapter.SendAsync<ItemPatent>(requestInfo, ItemPatent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an itemPatent object. This API is supported in the following national cloud deployments.
+        /// Deletes an itemPatent object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an itemPatent object. This API is supported in the following national cloud deployments.
+        /// Read the properties and relationships of an itemPatent object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an itemPatent object. This API is supported in the following national cloud deployments.
+        /// Update the properties of an itemPatent object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents.Item {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of an itemPatent object. This API is supported in the following national cloud deployments.
+        /// Read the properties and relationships of an itemPatent object. This API is available in the following national cloud deployments.
         /// </summary>
         public class ItemPatentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

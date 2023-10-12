@@ -10,8 +10,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Reply {
     public class ReplyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
-            set { BackingStore?.Set("additionalData", value); }
+            get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
+            set { BackingStore?.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Reply {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Post? Post {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Post?>("post"); }
-            set { BackingStore?.Set("post", value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Post?>("Post"); }
+            set { BackingStore?.Set("Post", value); }
         }
 #nullable restore
 #else
         public Microsoft.Graph.Beta.Models.Post Post {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Post>("post"); }
-            set { BackingStore?.Set("post", value); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Post>("Post"); }
+            set { BackingStore?.Set("Post", value); }
         }
 #endif
         /// <summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Reply {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"post", n => { Post = n.GetObjectValue<Microsoft.Graph.Beta.Models.Post>(Microsoft.Graph.Beta.Models.Post.CreateFromDiscriminatorValue); } },
+                {"Post", n => { Post = n.GetObjectValue<Microsoft.Graph.Beta.Models.Post>(Microsoft.Graph.Beta.Models.Post.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Reply {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Post>("post", Post);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Post>("Post", Post);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

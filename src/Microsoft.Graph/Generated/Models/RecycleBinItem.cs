@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class RecycleBinItem : BaseItem, IParsable {
-        /// <summary>The deletedDateTime property</summary>
+        /// <summary>Date and time when the item was deleted. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? DeletedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("deletedDateTime"); }
             set { BackingStore?.Set("deletedDateTime", value); }
         }
-        /// <summary>The deletedFromLocation property</summary>
+        /// <summary>Relative URL of the list or folder that originally contained the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeletedFromLocation {
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deletedFromLocation", value); }
         }
 #endif
-        /// <summary>The size property</summary>
+        /// <summary>Size of the item in bytes.</summary>
         public long? Size {
             get { return BackingStore?.Get<long?>("size"); }
             set { BackingStore?.Set("size", value); }
