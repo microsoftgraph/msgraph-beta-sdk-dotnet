@@ -7,6 +7,11 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.51.0-preview] - 2023-10-12
+
+- Fixes incorrect casing of model properties during serialization/deserialization (https://github.com/microsoft/kiota/pull/343)
+- Latest metadata updates from 12th October 2023.
+
 ## [5.50.0-preview] - 2023-10-05
 
 - Drops invalid function/actions bound to `directoryObject` type. These are the `permissionGrants`,`externalSponsors`, `internalSponsors` and `appliesTo` navigation properties. (https://github.com/microsoftgraph/msgraph-metadata/pull/451)
