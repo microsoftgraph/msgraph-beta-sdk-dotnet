@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Organization {
         public OrganizationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organization{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of organization objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of organization objects. There&apos;s only one organization object in the collection. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/organization-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Organization {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Organization>(requestInfo, Microsoft.Graph.Beta.Models.Organization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of organization objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of organization objects. There&apos;s only one organization object in the collection. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Organization {
             return new OrganizationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of organization objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of organization objects. There&apos;s only one organization object in the collection. This API is available in the following national cloud deployments.
         /// </summary>
         public class OrganizationRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

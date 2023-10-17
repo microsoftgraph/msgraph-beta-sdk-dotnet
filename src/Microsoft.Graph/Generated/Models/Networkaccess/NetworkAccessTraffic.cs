@@ -127,6 +127,34 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("deviceOperatingSystemVersion", value); }
         }
 #endif
+        /// <summary>The filteringProfileId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FilteringProfileId {
+            get { return BackingStore?.Get<string?>("filteringProfileId"); }
+            set { BackingStore?.Set("filteringProfileId", value); }
+        }
+#nullable restore
+#else
+        public string FilteringProfileId {
+            get { return BackingStore?.Get<string>("filteringProfileId"); }
+            set { BackingStore?.Set("filteringProfileId", value); }
+        }
+#endif
+        /// <summary>The filteringProfileName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FilteringProfileName {
+            get { return BackingStore?.Get<string?>("filteringProfileName"); }
+            set { BackingStore?.Set("filteringProfileName", value); }
+        }
+#nullable restore
+#else
+        public string FilteringProfileName {
+            get { return BackingStore?.Get<string>("filteringProfileName"); }
+            set { BackingStore?.Set("filteringProfileName", value); }
+        }
+#endif
         /// <summary>Represents the headers included in a network request or response. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,6 +167,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         public Microsoft.Graph.Beta.Models.Networkaccess.Headers Headers {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Headers>("headers"); }
             set { BackingStore?.Set("headers", value); }
+        }
+#endif
+        /// <summary>The initiatingProcessName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InitiatingProcessName {
+            get { return BackingStore?.Get<string?>("initiatingProcessName"); }
+            set { BackingStore?.Set("initiatingProcessName", value); }
+        }
+#nullable restore
+#else
+        public string InitiatingProcessName {
+            get { return BackingStore?.Get<string>("initiatingProcessName"); }
+            set { BackingStore?.Set("initiatingProcessName", value); }
         }
 #endif
         /// <summary>Represents the networking protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.</summary>
@@ -174,6 +216,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("policyId", value); }
         }
 #endif
+        /// <summary>The policyName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PolicyName {
+            get { return BackingStore?.Get<string?>("policyName"); }
+            set { BackingStore?.Set("policyName", value); }
+        }
+#nullable restore
+#else
+        public string PolicyName {
+            get { return BackingStore?.Get<string>("policyName"); }
+            set { BackingStore?.Set("policyName", value); }
+        }
+#endif
         /// <summary>Represents a unique identifier assigned to a policy rule. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -188,11 +244,39 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("policyRuleId", value); }
         }
 #endif
+        /// <summary>The policyRuleName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PolicyRuleName {
+            get { return BackingStore?.Get<string?>("policyRuleName"); }
+            set { BackingStore?.Set("policyRuleName", value); }
+        }
+#nullable restore
+#else
+        public string PolicyRuleName {
+            get { return BackingStore?.Get<string>("policyRuleName"); }
+            set { BackingStore?.Set("policyRuleName", value); }
+        }
+#endif
         /// <summary>Represents the total number of bytes received in a network communication or data transfer. Supports $filter (eq) and $orderby.</summary>
         public long? ReceivedBytes {
             get { return BackingStore?.Get<long?>("receivedBytes"); }
             set { BackingStore?.Set("receivedBytes", value); }
         }
+        /// <summary>The resourceTenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ResourceTenantId {
+            get { return BackingStore?.Get<string?>("resourceTenantId"); }
+            set { BackingStore?.Set("resourceTenantId", value); }
+        }
+#nullable restore
+#else
+        public string ResourceTenantId {
+            get { return BackingStore?.Get<string>("resourceTenantId"); }
+            set { BackingStore?.Set("resourceTenantId", value); }
+        }
+#endif
         /// <summary>Represents the total number of bytes sent in a network communication or data transfer. Supports $filter (eq) and $orderby.</summary>
         public long? SentBytes {
             get { return BackingStore?.Get<long?>("sentBytes"); }
@@ -327,12 +411,18 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
                 {"deviceId", n => { DeviceId = n.GetStringValue(); } },
                 {"deviceOperatingSystem", n => { DeviceOperatingSystem = n.GetStringValue(); } },
                 {"deviceOperatingSystemVersion", n => { DeviceOperatingSystemVersion = n.GetStringValue(); } },
+                {"filteringProfileId", n => { FilteringProfileId = n.GetStringValue(); } },
+                {"filteringProfileName", n => { FilteringProfileName = n.GetStringValue(); } },
                 {"headers", n => { Headers = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Headers>(Microsoft.Graph.Beta.Models.Networkaccess.Headers.CreateFromDiscriminatorValue); } },
+                {"initiatingProcessName", n => { InitiatingProcessName = n.GetStringValue(); } },
                 {"networkProtocol", n => { NetworkProtocol = n.GetEnumValue<NetworkingProtocol>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"policyId", n => { PolicyId = n.GetStringValue(); } },
+                {"policyName", n => { PolicyName = n.GetStringValue(); } },
                 {"policyRuleId", n => { PolicyRuleId = n.GetStringValue(); } },
+                {"policyRuleName", n => { PolicyRuleName = n.GetStringValue(); } },
                 {"receivedBytes", n => { ReceivedBytes = n.GetLongValue(); } },
+                {"resourceTenantId", n => { ResourceTenantId = n.GetStringValue(); } },
                 {"sentBytes", n => { SentBytes = n.GetLongValue(); } },
                 {"sessionId", n => { SessionId = n.GetStringValue(); } },
                 {"sourceIp", n => { SourceIp = n.GetStringValue(); } },
@@ -361,12 +451,18 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceOperatingSystem", DeviceOperatingSystem);
             writer.WriteStringValue("deviceOperatingSystemVersion", DeviceOperatingSystemVersion);
+            writer.WriteStringValue("filteringProfileId", FilteringProfileId);
+            writer.WriteStringValue("filteringProfileName", FilteringProfileName);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Headers>("headers", Headers);
+            writer.WriteStringValue("initiatingProcessName", InitiatingProcessName);
             writer.WriteEnumValue<NetworkingProtocol>("networkProtocol", NetworkProtocol);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("policyId", PolicyId);
+            writer.WriteStringValue("policyName", PolicyName);
             writer.WriteStringValue("policyRuleId", PolicyRuleId);
+            writer.WriteStringValue("policyRuleName", PolicyRuleName);
             writer.WriteLongValue("receivedBytes", ReceivedBytes);
+            writer.WriteStringValue("resourceTenantId", ResourceTenantId);
             writer.WriteLongValue("sentBytes", SentBytes);
             writer.WriteStringValue("sessionId", SessionId);
             writer.WriteStringValue("sourceIp", SourceIp);

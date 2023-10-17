@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
-        /// <summary>List of hostNames for the device.</summary>
+        /// <summary>List of host names for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Hostnames {
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isManaged"); }
             set { BackingStore?.Set("isManaged", value); }
         }
-        /// <summary>true if the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a device that&apos;s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.</summary>
+        /// <summary>Indicates whether the device is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a device that&apos;s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.</summary>
         public bool? IsManagementRestricted {
             get { return BackingStore?.Get<bool?>("isManagementRestricted"); }
             set { BackingStore?.Set("isManagementRestricted", value); }
@@ -228,7 +228,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isRooted"); }
             set { BackingStore?.Set("isRooted", value); }
         }
-        /// <summary>Form factor of device. Only returned if user signs in with a Microsoft account as part of Project Rome.</summary>
+        /// <summary>Form factor of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Kind {
@@ -256,7 +256,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managementType", value); }
         }
 #endif
-        /// <summary>Manufacturer of device. Only returned if user signs in with a Microsoft account as part of Project Rome.</summary>
+        /// <summary>Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Manufacturer {
@@ -298,7 +298,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("memberOf", value); }
         }
 #endif
-        /// <summary>Model of device. Only returned if user signs in with a Microsoft account as part of Project Rome.</summary>
+        /// <summary>Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Model {
@@ -312,7 +312,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("model", value); }
         }
 #endif
-        /// <summary>Friendly name of a device. Only returned if user signs in with a Microsoft account as part of Project Rome.</summary>
+        /// <summary>Friendly name of the device. Only returned if user signs in with a Microsoft account as part of Project Rome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name {
@@ -331,7 +331,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("onPremisesLastSyncDateTime"); }
             set { BackingStore?.Set("onPremisesLastSyncDateTime", value); }
         }
-        /// <summary>The onPremisesSecurityIdentifier property</summary>
+        /// <summary>The on-premises security identifier (SID) for the user who was synchronized from on-premises to the cloud. Read-only. Returned only on $select. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OnPremisesSecurityIdentifier {
@@ -392,7 +392,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("physicalIds", value); }
         }
 #endif
-        /// <summary>Platform of device. Only returned if user signs in with a Microsoft account as part of Project Rome. Only returned if user signs in with a Microsoft account as part of Project Rome.</summary>
+        /// <summary>Platform of device. Only returned if the user signs in with a Microsoft account as part of Project Rome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Platform {
@@ -495,7 +495,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
 #endif
-        /// <summary>Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory</summary>
+        /// <summary>Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Azure AD). For more details, see Introduction to device management in Azure Active Directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrustType {

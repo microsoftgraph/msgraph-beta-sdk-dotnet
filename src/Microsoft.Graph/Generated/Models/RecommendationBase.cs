@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecommendationType?>("recommendationType"); }
             set { BackingStore?.Set("recommendationType", value); }
         }
-        /// <summary>The current release type of the recommendation. The possible values are: preview or generallyAvailable.</summary>
+        /// <summary>The current release type of the recommendation. The possible values are: preview, generallyAvailable, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReleaseType {
