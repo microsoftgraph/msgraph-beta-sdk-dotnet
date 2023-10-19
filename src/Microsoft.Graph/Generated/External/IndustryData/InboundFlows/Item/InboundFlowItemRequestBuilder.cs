@@ -59,8 +59,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an inboundFlow object. This API is available in the following national cloud deployments.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-1.0" />
+        /// Read the properties and relationships of an inboundFileFlow object. This API is available in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
             return await RequestAdapter.SendAsync<InboundFlow>(requestInfo, InboundFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an inboundFlow object. This API is available in the following national cloud deployments.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundflow-update?view=graph-rest-1.0" />
+        /// Update the properties of an inboundFileFlow object. This API is available in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an inboundFlow object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an inboundFileFlow object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an inboundFlow object. This API is available in the following national cloud deployments.
+        /// Update the properties of an inboundFileFlow object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -202,7 +202,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of an inboundFlow object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an inboundFileFlow object. This API is available in the following national cloud deployments.
         /// </summary>
         public class InboundFlowItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

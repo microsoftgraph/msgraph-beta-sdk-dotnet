@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedAccessGroupEligibilitySchedule : PrivilegedAccessSchedule, IParsable {
-        /// <summary>The identifier of the membership or ownership eligibility to the group that is governed by PIM. Required. The possible values are: owner, member.</summary>
+        /// <summary>The identifier of the membership or ownership eligibility to the group that is governed by PIM. Required. The possible values are: owner, member. Supports $filter (eq).</summary>
         public PrivilegedAccessGroupRelationships? AccessId {
             get { return BackingStore?.Get<PrivilegedAccessGroupRelationships?>("accessId"); }
             set { BackingStore?.Set("accessId", value); }
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("group", value); }
         }
 #endif
-        /// <summary>The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required.</summary>
+        /// <summary>The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupId {
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("groupId", value); }
         }
 #endif
-        /// <summary>Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the schedule. Required. The possible values are: direct, group, unknownFutureValue.</summary>
+        /// <summary>Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the schedule. Required. The possible values are: direct, group, unknownFutureValue. Supports $filter (eq).</summary>
         public PrivilegedAccessGroupMemberType? MemberType {
             get { return BackingStore?.Get<PrivilegedAccessGroupMemberType?>("memberType"); }
             set { BackingStore?.Set("memberType", value); }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("principal", value); }
         }
 #endif
-        /// <summary>The identifier of the principal whose membership or ownership eligibility is granted through PIM for groups. Required.</summary>
+        /// <summary>The identifier of the principal whose membership or ownership eligibility is granted through PIM for groups. Required. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrincipalId {

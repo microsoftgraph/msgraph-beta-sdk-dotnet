@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Specifies the number of days that the user sees a prompt again if they select &apos;Not now&apos; and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is &apos;0&apos; – The user is prompted during every MFA attempt.</summary>
+        /// <summary>Specifies the number of days that the user sees a prompt again if they select &apos;Not now&apos; and snoozes the prompt. Minimum 0 days. Maximum: 14 days. If the value is 0 – The user is prompted during every MFA attempt.</summary>
         public int? SnoozeDurationInDays {
             get { return BackingStore?.Get<int?>("snoozeDurationInDays"); }
             set { BackingStore?.Set("snoozeDurationInDays", value); }

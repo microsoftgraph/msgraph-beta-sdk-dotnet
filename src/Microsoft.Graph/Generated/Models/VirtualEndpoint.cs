@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("externalPartnerSettings", value); }
         }
 #endif
-        /// <summary>The frontLineServicePlans property</summary>
+        /// <summary>Front-line service plans for a Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<CloudPcFrontLineServicePlan>? FrontLineServicePlans {
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("servicePlans", value); }
         }
 #endif
-        /// <summary>Cloud PC shared-use service plans.</summary>
+        /// <summary>The sharedUseServicePlans property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<CloudPcSharedUseServicePlan>? SharedUseServicePlans {

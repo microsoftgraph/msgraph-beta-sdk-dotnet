@@ -43,6 +43,11 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The rarelyUsedTenantCount property</summary>
+        public int? RarelyUsedTenantCount {
+            get { return BackingStore?.Get<int?>("rarelyUsedTenantCount"); }
+            set { BackingStore?.Set("rarelyUsedTenantCount", value); }
+        }
         /// <summary>Count of unique tenants that were accessed, that are different from the device&apos;s home tenant, in the time frame between startDateTime and endDateTime.</summary>
         public int? TenantCount {
             get { return BackingStore?.Get<int?>("tenantCount"); }
@@ -77,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
                 {"deviceCount", n => { DeviceCount = n.GetIntValue(); } },
                 {"newTenantCount", n => { NewTenantCount = n.GetIntValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"rarelyUsedTenantCount", n => { RarelyUsedTenantCount = n.GetIntValue(); } },
                 {"tenantCount", n => { TenantCount = n.GetIntValue(); } },
                 {"userCount", n => { UserCount = n.GetIntValue(); } },
             };
@@ -91,6 +97,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             writer.WriteIntValue("deviceCount", DeviceCount);
             writer.WriteIntValue("newTenantCount", NewTenantCount);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteIntValue("rarelyUsedTenantCount", RarelyUsedTenantCount);
             writer.WriteIntValue("tenantCount", TenantCount);
             writer.WriteIntValue("userCount", UserCount);
             writer.WriteAdditionalData(AdditionalData);
