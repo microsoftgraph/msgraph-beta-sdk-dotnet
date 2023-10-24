@@ -42,7 +42,8 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Ports {
         public PortsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence/hosts/{host%2Did}/ports{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get ports from security
+        /// Get the list of hostPort resources associated with a host.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-list-ports?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Ports {
             return await RequestAdapter.SendAsync<HostPortCollectionResponse>(requestInfo, HostPortCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get ports from security
+        /// Get the list of hostPort resources associated with a host.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,7 +77,6 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Ports {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new PortsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -84,6 +84,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Ports {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -94,7 +95,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Hosts.Item.Ports {
             return new PortsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get ports from security
+        /// Get the list of hostPort resources associated with a host.
         /// </summary>
         public class PortsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

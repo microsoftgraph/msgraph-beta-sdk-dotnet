@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
             set { BackingStore?.Set("trafficType", value); }
         }
-        /// <summary>Count of unique Azure Active Directory users that were seen.</summary>
+        /// <summary>Count of unique Microsoft Entra users that were seen.</summary>
         public long? UserCount {
             get { return BackingStore?.Get<long?>("userCount"); }
             set { BackingStore?.Set("userCount", value); }
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"deviceCount", n => { DeviceCount = n.GetLongValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("deviceCount", DeviceCount);
             writer.WriteStringValue("@odata.type", OdataType);

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items {
         public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/recycleBin/items{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of recycleBinItems under the specified site.
+        /// Get a list of recycleBinItems under the specified site. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/recyclebin-list-items?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items {
             return await RequestAdapter.SendAsync<RecycleBinItem>(requestInfo, RecycleBinItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of recycleBinItems under the specified site.
+        /// Get a list of recycleBinItems under the specified site. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,7 +98,6 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ItemsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -106,6 +105,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -126,14 +126,14 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new ItemsRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items {
             return new ItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of recycleBinItems under the specified site.
+        /// Get a list of recycleBinItems under the specified site. This API is available in the following national cloud deployments.
         /// </summary>
         public class ItemsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.FrontLineService
         public FrontLineServicePlansRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/frontLineServicePlans{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the cloudPcFrontLineServicePlan objects and their properties.
+        /// Get a list of the cloudPcFrontLineServicePlan objects and their properties. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-frontlineserviceplans?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.FrontLineService
             return await RequestAdapter.SendAsync<CloudPcFrontLineServicePlan>(requestInfo, CloudPcFrontLineServicePlan.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the cloudPcFrontLineServicePlan objects and their properties.
+        /// Get a list of the cloudPcFrontLineServicePlan objects and their properties. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,7 +98,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.FrontLineService
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new FrontLineServicePlansRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -106,6 +105,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.FrontLineService
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -126,14 +126,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.FrontLineService
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new FrontLineServicePlansRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.FrontLineService
             return new FrontLineServicePlansRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the cloudPcFrontLineServicePlan objects and their properties.
+        /// Get a list of the cloudPcFrontLineServicePlan objects and their properties. This API is available in the following national cloud deployments.
         /// </summary>
         public class FrontLineServicePlansRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

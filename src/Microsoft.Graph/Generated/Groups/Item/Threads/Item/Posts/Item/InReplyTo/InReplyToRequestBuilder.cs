@@ -88,7 +88,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Posts.Item.InReplyTo {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new InReplyToRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -96,6 +95,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Posts.Item.InReplyTo {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>

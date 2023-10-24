@@ -2,6 +2,8 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Count;
+using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWithUserIdWithRole;
+using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -61,6 +63,24 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars {
             return await RequestAdapter.SendAsync<VirtualEventWebinarCollectionResponse>(requestInfo, VirtualEventWebinarCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Provides operations to call the getByUserIdAndRole method.
+        /// </summary>
+        /// <param name="role">Usage: role=&apos;{role}&apos;</param>
+        /// <param name="userId">Usage: userId=&apos;{userId}&apos;</param>
+        public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder GetByUserIdAndRoleWithUserIdWithRole(string role, string userId) {
+            if(string.IsNullOrEmpty(role)) throw new ArgumentNullException(nameof(role));
+            if(string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
+            return new GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(PathParameters, RequestAdapter, role, userId);
+        }
+        /// <summary>
+        /// Provides operations to call the getByUserRole method.
+        /// </summary>
+        /// <param name="role">Usage: role=&apos;{role}&apos;</param>
+        public GetByUserRoleWithRoleRequestBuilder GetByUserRoleWithRole(string role) {
+            if(string.IsNullOrEmpty(role)) throw new ArgumentNullException(nameof(role));
+            return new GetByUserRoleWithRoleRequestBuilder(PathParameters, RequestAdapter, role);
+        }
+        /// <summary>
         /// Create new navigation property to webinars for solutions
         /// </summary>
         /// <param name="body">The request body</param>
@@ -97,7 +117,6 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new WebinarsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -105,6 +124,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -125,14 +145,14 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new WebinarsRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

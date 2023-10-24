@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.ProgramControls {
         public ProgramControlsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/programControls{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, list all the programControl objects, across all programs in the tenant. This API is available in the following national cloud deployments.
+        /// In the Microsoft Entra access reviews feature, list all the programControl objects, across all programs in the tenant. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/programcontrol-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.ProgramControls {
             return await RequestAdapter.SendAsync<ProgramControlCollectionResponse>(requestInfo, ProgramControlCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, create a new programControl object.  This links an access review to a program. Prior to making this request, the caller must have previously This API is available in the following national cloud deployments.
+        /// In the Microsoft Entra access reviews feature, create a new programControl object.  This links an access review to a program. Prior to making this request, the caller must have previously This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/programcontrol-create?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.ProgramControls {
             return await RequestAdapter.SendAsync<ProgramControl>(requestInfo, ProgramControl.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, list all the programControl objects, across all programs in the tenant. This API is available in the following national cloud deployments.
+        /// In the Microsoft Entra access reviews feature, list all the programControl objects, across all programs in the tenant. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,7 +99,6 @@ namespace Microsoft.Graph.Beta.ProgramControls {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ProgramControlsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -107,10 +106,11 @@ namespace Microsoft.Graph.Beta.ProgramControls {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, create a new programControl object.  This links an access review to a program. Prior to making this request, the caller must have previously This API is available in the following national cloud deployments.
+        /// In the Microsoft Entra access reviews feature, create a new programControl object.  This links an access review to a program. Prior to making this request, the caller must have previously This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,14 +127,14 @@ namespace Microsoft.Graph.Beta.ProgramControls {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new ProgramControlsRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.ProgramControls {
             return new ProgramControlsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// In the Azure AD access reviews feature, list all the programControl objects, across all programs in the tenant. This API is available in the following national cloud deployments.
+        /// In the Microsoft Entra access reviews feature, list all the programControl objects, across all programs in the tenant. This API is available in the following national cloud deployments.
         /// </summary>
         public class ProgramControlsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

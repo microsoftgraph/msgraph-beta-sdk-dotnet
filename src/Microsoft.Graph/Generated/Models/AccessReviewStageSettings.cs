@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("durationInDays"); }
             set { BackingStore?.Set("durationInDays", value); }
         }
-        /// <summary>If provided, the fallback reviewers are asked to complete a review if the primary reviewers don&apos;t exist. For example, if managers are selected as reviewers and a principal under review doesn&apos;t have a manager in Azure AD, the fallback reviewers are asked to review that principal. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.</summary>
+        /// <summary>If provided, the fallback reviewers are asked to complete a review if the primary reviewers don&apos;t exist. For example, if managers are selected as reviewers and a principal under review doesn&apos;t have a manager in Microsoft Entra ID, the fallback reviewers are asked to review that principal. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AccessReviewReviewerScope>? FallbackReviewers {
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recommendationInsightSettings", value); }
         }
 #endif
-        /// <summary>Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) from which that recommendations will be configured. The recommendation is to deny if the user is inactive during the look back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.</summary>
+        /// <summary>Optional field. Indicates the time period of inactivity (with respect to the start date of the review instance) from which that recommendations will be configured. The recommendation is to deny if the user is inactive during the look back duration. For reviews of groups and Microsoft Entra roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: The value of this property overrides the corresponding setting on the accessReviewScheduleDefinition object.</summary>
         public TimeSpan? RecommendationLookBackDuration {
             get { return BackingStore?.Get<TimeSpan?>("recommendationLookBackDuration"); }
             set { BackingStore?.Set("recommendationLookBackDuration", value); }
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"decisionsThatWillMoveToNextStage", n => { DecisionsThatWillMoveToNextStage = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"dependsOn", n => { DependsOn = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -163,7 +163,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("decisionsThatWillMoveToNextStage", DecisionsThatWillMoveToNextStage);
             writer.WriteCollectionOfPrimitiveValues<string>("dependsOn", DependsOn);

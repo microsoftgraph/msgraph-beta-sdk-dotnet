@@ -25,5 +25,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         UnknownFutureValue,
         [EnumMember(Value = "microsoftDefenderForCloud")]
         MicrosoftDefenderForCloud,
+        [EnumMember(Value = "microsoftSentinel")]
+        MicrosoftSentinel,
     }
 }

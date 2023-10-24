@@ -76,6 +76,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deletedItems", value); }
         }
 #endif
+        /// <summary>The credentials of the device&apos;s local administrator account backed up to Microsoft Entra ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<DeviceLocalCredentialInfo>? DeviceLocalCredentials {
+            get { return BackingStore?.Get<List<DeviceLocalCredentialInfo>?>("deviceLocalCredentials"); }
+            set { BackingStore?.Set("deviceLocalCredentials", value); }
+        }
+#nullable restore
+#else
+        public List<DeviceLocalCredentialInfo> DeviceLocalCredentials {
+            get { return BackingStore?.Get<List<DeviceLocalCredentialInfo>>("deviceLocalCredentials"); }
+            set { BackingStore?.Set("deviceLocalCredentials", value); }
+        }
+#endif
         /// <summary>The featureRolloutPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -213,13 +227,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"administrativeUnits", n => { AdministrativeUnits = n.GetCollectionOfObjectValues<AdministrativeUnit>(AdministrativeUnit.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"attributeSets", n => { AttributeSets = n.GetCollectionOfObjectValues<AttributeSet>(AttributeSet.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"certificateAuthorities", n => { CertificateAuthorities = n.GetObjectValue<CertificateAuthorityPath>(CertificateAuthorityPath.CreateFromDiscriminatorValue); } },
                 {"customSecurityAttributeDefinitions", n => { CustomSecurityAttributeDefinitions = n.GetCollectionOfObjectValues<CustomSecurityAttributeDefinition>(CustomSecurityAttributeDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deletedItems", n => { DeletedItems = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"deviceLocalCredentials", n => { DeviceLocalCredentials = n.GetCollectionOfObjectValues<DeviceLocalCredentialInfo>(DeviceLocalCredentialInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"featureRolloutPolicies", n => { FeatureRolloutPolicies = n.GetCollectionOfObjectValues<FeatureRolloutPolicy>(FeatureRolloutPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"federationConfigurations", n => { FederationConfigurations = n.GetCollectionOfObjectValues<IdentityProviderBase>(IdentityProviderBase.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"impactedResources", n => { ImpactedResources = n.GetCollectionOfObjectValues<ImpactedResource>(ImpactedResource.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -235,7 +250,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<AdministrativeUnit>("administrativeUnits", AdministrativeUnits);
@@ -243,6 +258,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<CertificateAuthorityPath>("certificateAuthorities", CertificateAuthorities);
             writer.WriteCollectionOfObjectValues<CustomSecurityAttributeDefinition>("customSecurityAttributeDefinitions", CustomSecurityAttributeDefinitions);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("deletedItems", DeletedItems);
+            writer.WriteCollectionOfObjectValues<DeviceLocalCredentialInfo>("deviceLocalCredentials", DeviceLocalCredentials);
             writer.WriteCollectionOfObjectValues<FeatureRolloutPolicy>("featureRolloutPolicies", FeatureRolloutPolicies);
             writer.WriteCollectionOfObjectValues<IdentityProviderBase>("federationConfigurations", FederationConfigurations);
             writer.WriteCollectionOfObjectValues<ImpactedResource>("impactedResources", ImpactedResources);

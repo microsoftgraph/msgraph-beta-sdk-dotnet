@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alternateResourceUrl", value); }
         }
 #endif
-        /// <summary>A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Azure AD that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.</summary>
+        /// <summary>A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<CloudPcProvisioningPolicyAssignment>? Assignments {
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Specifies how Cloud PCs will join Azure Active Directory.</summary>
+        /// <summary>Specifies how Cloud PCs will join Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CloudPcDomainJoinConfiguration? DomainJoinConfiguration {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("domainJoinConfigurations", value); }
         }
 #endif
-        /// <summary>True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn&apos;t support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Azure Active Directory (Azure AD) with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.</summary>
+        /// <summary>True if the provisioned Cloud PC can be accessed by single sign-on. False indicates that the provisioned Cloud PC doesn&apos;t support this feature. Default value is false. Windows 365 users can use single sign-on to authenticate to Microsoft Entra ID with passwordless options (for example, FIDO keys) to access their Cloud PC. Optional.</summary>
         public bool? EnableSingleSignOn {
             get { return BackingStore?.Get<bool?>("enableSingleSignOn"); }
             set { BackingStore?.Set("enableSingleSignOn", value); }
@@ -229,7 +229,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"alternateResourceUrl", n => { AlternateResourceUrl = n.GetStringValue(); } },
                 {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<CloudPcProvisioningPolicyAssignment>(CloudPcProvisioningPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -256,7 +256,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("alternateResourceUrl", AlternateResourceUrl);

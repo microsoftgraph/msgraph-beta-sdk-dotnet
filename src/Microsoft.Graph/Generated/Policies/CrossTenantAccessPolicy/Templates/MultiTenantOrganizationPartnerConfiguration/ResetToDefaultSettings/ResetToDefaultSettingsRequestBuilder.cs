@@ -69,6 +69,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Templates.MultiT
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>
