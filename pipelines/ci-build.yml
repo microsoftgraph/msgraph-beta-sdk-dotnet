@@ -89,6 +89,12 @@ steps:
     arguments: '-c $(BuildConfiguration) --no-incremental -f netstandard2.1 --no-restore'
 
 - task: DotNetCoreCLI@2
+  displayName: 'dotnet build net5.0'
+  inputs:
+    projects: '$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.Beta.csproj'
+    arguments: '-c $(BuildConfiguration) --no-incremental -f net5.0 --no-restore'
+
+- task: DotNetCoreCLI@2
   displayName: 'dotnet build test project'
   inputs:
     projects: '$(Build.SourcesDirectory)\tests\Microsoft.Graph.DotnetCore.Test\Microsoft.Graph.DotnetCore.Test.csproj'

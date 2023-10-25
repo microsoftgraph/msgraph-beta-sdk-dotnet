@@ -25,6 +25,8 @@ jobs:
         run: dotnet build ${{ env.projectName }} -f netstandard2.0 --no-restore -c Release
       - name: Build for netstandard2.1
         run: dotnet build ${{ env.projectName }} -f netstandard2.1 --no-restore -c Release
+      - name: Build for net5.0
+        run: dotnet build ${{ env.projectName }} -f net5.0 --no-restore -c Release
       - name: Build
         run: dotnet build ${{ env.solutionName }} --no-restore -c Release
       - name: Test
