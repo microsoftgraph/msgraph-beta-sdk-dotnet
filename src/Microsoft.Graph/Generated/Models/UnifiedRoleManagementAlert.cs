@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleManagementAlert : Entity, IParsable {
-        /// <summary>The configuration of the alert in PIM for Azure AD roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.</summary>
+        /// <summary>The configuration of the alert in PIM for Microsoft Entra roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UnifiedRoleManagementAlertConfiguration? AlertConfiguration {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alertDefinitionId", value); }
         }
 #endif
-        /// <summary>Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Azure AD roles in the tenant. Supports $expand.</summary>
+        /// <summary>Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Microsoft Entra roles in the tenant. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UnifiedRoleManagementAlertIncident>? AlertIncidents {
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("scopeId", value); }
         }
 #endif
-        /// <summary>The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD roles.</summary>
+        /// <summary>The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScopeType {
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"alertConfiguration", n => { AlertConfiguration = n.GetObjectValue<UnifiedRoleManagementAlertConfiguration>(UnifiedRoleManagementAlertConfiguration.CreateFromDiscriminatorValue); } },
                 {"alertDefinition", n => { AlertDefinition = n.GetObjectValue<UnifiedRoleManagementAlertDefinition>(UnifiedRoleManagementAlertDefinition.CreateFromDiscriminatorValue); } },
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<UnifiedRoleManagementAlertConfiguration>("alertConfiguration", AlertConfiguration);

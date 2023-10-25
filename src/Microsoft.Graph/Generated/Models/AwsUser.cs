@@ -21,6 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
+        /// Instantiates a new awsUser and sets the default values.
+        /// </summary>
+        public AwsUser() : base() {
+            OdataType = "#microsoft.graph.awsUser";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -31,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"assumableRoles", n => { AssumableRoles = n.GetCollectionOfObjectValues<AwsRole>(AwsRole.CreateFromDiscriminatorValue)?.ToList(); } },
             };
@@ -40,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<AwsRole>("assumableRoles", AssumableRoles);

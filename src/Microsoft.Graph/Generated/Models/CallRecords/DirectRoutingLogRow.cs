@@ -241,7 +241,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #endif
-        /// <summary>The unique identifier (GUID) of the user in Azure Active Directory. This and other user info is null/empty for bot call types.</summary>
+        /// <summary>The unique identifier (GUID) of the user in Microsoft Entra ID. This and other user info is null/empty for bot call types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {
@@ -255,7 +255,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("userId", value); }
         }
 #endif
-        /// <summary>The user principal name (sign-in name) in Azure Active Directory, is usually the same as the user&apos;s SIP address, and can be same as the user&apos;s e-mail address.</summary>
+        /// <summary>The user principal name (sign-in name) in Microsoft Entra ID, is usually the same as the user&apos;s SIP address, and can be same as the user&apos;s e-mail address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalName {
@@ -287,7 +287,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"callEndSubReason", n => { CallEndSubReason = n.GetIntValue(); } },
                 {"callType", n => { CallType = n.GetStringValue(); } },
@@ -319,7 +319,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("calleeNumber", CalleeNumber);
             writer.WriteIntValue("callEndSubReason", CallEndSubReason);

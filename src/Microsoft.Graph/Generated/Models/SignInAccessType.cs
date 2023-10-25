@@ -16,5 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
         ServiceProvider = 16,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue = 32,
+        [EnumMember(Value = "passthrough")]
+        Passthrough = 64,
     }
 }

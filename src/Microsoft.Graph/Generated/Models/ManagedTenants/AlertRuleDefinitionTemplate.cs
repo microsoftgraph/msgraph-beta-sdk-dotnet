@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"defaultSeverity", n => { DefaultSeverity = n.GetEnumValue<AlertSeverity>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<AlertSeverity>("defaultSeverity", DefaultSeverity);
             writer.WriteStringValue("@odata.type", OdataType);

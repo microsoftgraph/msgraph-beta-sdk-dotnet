@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("accessPackageId", value); }
         }
 #endif
-        /// <summary>Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews are not required.</summary>
+        /// <summary>Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews aren&apos;t required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AssignmentReviewSettings? AccessReviewSettings {
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The number of days in which assignments from this policy last until they are expired.</summary>
+        /// <summary>The number of days in which assignments from this policy last until they&apos;re expired.</summary>
         public int? DurationInDays {
             get { return BackingStore?.Get<int?>("durationInDays"); }
             set { BackingStore?.Set("durationInDays", value); }
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requestorSettings", value); }
         }
 #endif
-        /// <summary>Settings for verifiable credentials set up through the Azure AD Verified ID service. These settings represent the verifiable credentials that a requestor of an access package in this policy can present to be assigned the access package.</summary>
+        /// <summary>Settings for verifiable credentials set up through the Microsoft Entra Verified I D service. These settings represent the verifiable credentials that a requestor of an access package in this policy can present to be assigned the access package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.VerifiableCredentialSettings? VerifiableCredentialSettings {
@@ -238,7 +238,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"accessPackage", n => { AccessPackage = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackage>(Microsoft.Graph.Beta.Models.AccessPackage.CreateFromDiscriminatorValue); } },
                 {"accessPackageCatalog", n => { AccessPackageCatalog = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageCatalog>(Microsoft.Graph.Beta.Models.AccessPackageCatalog.CreateFromDiscriminatorValue); } },
@@ -265,7 +265,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessPackage>("accessPackage", AccessPackage);

@@ -143,6 +143,7 @@ using Microsoft.Graph.Beta.Reports.Security;
 using Microsoft.Graph.Beta.Reports.ServicePrincipalSignInActivities;
 using Microsoft.Graph.Beta.Reports.Sla;
 using Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails;
+using Microsoft.Graph.Beta.Reports.UserInsights;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -271,6 +272,10 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>Provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.</summary>
         public UserCredentialUsageDetailsRequestBuilder UserCredentialUsageDetails { get =>
             new UserCredentialUsageDetailsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the userInsights property of the microsoft.graph.reportRoot entity.</summary>
+        public UserInsightsRequestBuilder UserInsights { get =>
+            new UserInsightsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new ReportsRequestBuilder and sets the default values.
@@ -1276,7 +1281,6 @@ namespace Microsoft.Graph.Beta.Reports {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ReportsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -1284,6 +1288,7 @@ namespace Microsoft.Graph.Beta.Reports {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -1304,14 +1309,14 @@ namespace Microsoft.Graph.Beta.Reports {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new ReportsRequestBuilderPatchRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

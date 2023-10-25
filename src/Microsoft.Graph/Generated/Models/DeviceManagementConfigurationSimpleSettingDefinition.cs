@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSimpleSettingDefinition : DeviceManagementConfigurationSettingDefinition, IParsable {
-        /// <summary>Default setting value for this setting.</summary>
+        /// <summary>Default setting value for this setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DeviceManagementConfigurationSettingValue? DefaultValue {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defaultValue", value); }
         }
 #endif
-        /// <summary>list of child settings that depend on this setting.</summary>
+        /// <summary>list of child settings that depend on this setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DeviceManagementConfigurationSettingDependedOnBy>? DependedOnBy {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dependedOnBy", value); }
         }
 #endif
-        /// <summary>list of parent settings this setting is dependent on.</summary>
+        /// <summary>list of parent settings this setting is dependent on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DeviceManagementConfigurationDependentOn>? DependentOn {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dependentOn", value); }
         }
 #endif
-        /// <summary>Definition of the value for this setting.</summary>
+        /// <summary>Definition of the value for this setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DeviceManagementConfigurationSettingValueDefinition? ValueDefinition {
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"defaultValue", n => { DefaultValue = n.GetObjectValue<DeviceManagementConfigurationSettingValue>(DeviceManagementConfigurationSettingValue.CreateFromDiscriminatorValue); } },
                 {"dependedOnBy", n => { DependedOnBy = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingDependedOnBy>(DeviceManagementConfigurationSettingDependedOnBy.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<DeviceManagementConfigurationSettingValue>("defaultValue", DefaultValue);

@@ -82,7 +82,6 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleSchedulesdi
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -90,6 +89,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleSchedulesdi
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>

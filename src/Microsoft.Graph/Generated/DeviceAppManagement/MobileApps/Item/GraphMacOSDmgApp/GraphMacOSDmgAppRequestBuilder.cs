@@ -83,7 +83,6 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMacOSDmg
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GraphMacOSDmgAppRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -91,6 +90,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMacOSDmg
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>

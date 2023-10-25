@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews;
 using Microsoft.Graph.Beta.IdentityGovernance.AppConsent;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows;
+using Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics;
 using Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement;
 using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess;
 using Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts;
@@ -37,6 +38,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance {
         /// <summary>Provides operations to manage the lifecycleWorkflows property of the microsoft.graph.identityGovernance entity.</summary>
         public LifecycleWorkflowsRequestBuilder LifecycleWorkflows { get =>
             new LifecycleWorkflowsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the permissionsAnalytics property of the microsoft.graph.identityGovernance entity.</summary>
+        public PermissionsAnalyticsRequestBuilder PermissionsAnalytics { get =>
+            new PermissionsAnalyticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionsManagement property of the microsoft.graph.identityGovernance entity.</summary>
         public PermissionsManagementRequestBuilder PermissionsManagement { get =>
@@ -124,7 +129,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new IdentityGovernanceRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -132,6 +136,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -152,14 +157,14 @@ namespace Microsoft.Graph.Beta.IdentityGovernance {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new IdentityGovernanceRequestBuilderPatchRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

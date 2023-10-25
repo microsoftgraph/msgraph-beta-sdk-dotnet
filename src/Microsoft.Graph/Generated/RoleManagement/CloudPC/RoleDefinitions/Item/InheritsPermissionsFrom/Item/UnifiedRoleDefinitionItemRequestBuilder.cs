@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item.Inher
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+        /// Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,10 +114,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item.Inher
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+        /// Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,7 +133,6 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item.Inher
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new UnifiedRoleDefinitionItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -140,6 +140,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item.Inher
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -160,14 +161,14 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item.Inher
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new UnifiedRoleDefinitionItemRequestBuilderPatchRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -194,7 +195,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item.Inher
             }
         }
         /// <summary>
-        /// Read-only collection of role definitions that the given role definition inherits from. Only Azure AD built-in roles support this attribute.
+        /// Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.
         /// </summary>
         public class UnifiedRoleDefinitionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

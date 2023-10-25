@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("tenantGroupId", value); }
         }
 #endif
-        /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Required. Read-only.</summary>
+        /// <summary>The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId {
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"statuses", n => { Statuses = n.GetCollectionOfObjectValues<ManagementActionDeploymentStatus>(ManagementActionDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"tenantGroupId", n => { TenantGroupId = n.GetStringValue(); } },
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<ManagementActionDeploymentStatus>("statuses", Statuses);

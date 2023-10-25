@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.CreateOrGet {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"chatInfo", n => { ChatInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ChatInfo>(Microsoft.Graph.Beta.Models.ChatInfo.CreateFromDiscriminatorValue); } },
                 {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.CreateOrGet {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ChatInfo>("chatInfo", ChatInfo);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);

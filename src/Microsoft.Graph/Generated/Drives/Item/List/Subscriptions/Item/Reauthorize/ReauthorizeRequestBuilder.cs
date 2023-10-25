@@ -69,6 +69,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Subscriptions.Item.Reauthorize {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>

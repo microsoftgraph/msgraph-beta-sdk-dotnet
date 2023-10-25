@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceLocalCredentialInfoItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceLocalCredentials/{deviceLocalCredentialInfo%2Did}{?%24select}", pathParameters) {
+        public DeviceLocalCredentialInfoItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceLocalCredentials/{deviceLocalCredentialInfo%2Did}{?%24select,%24expand}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new DeviceLocalCredentialInfoItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceLocalCredentialInfoItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceLocalCredentials/{deviceLocalCredentialInfo%2Did}{?%24select}", rawUrl) {
+        public DeviceLocalCredentialInfoItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceLocalCredentials/{deviceLocalCredentialInfo%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
         /// Delete entity from deviceLocalCredentials
@@ -48,8 +48,7 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of a deviceLocalCredentialInfo for a specified device object.  This API is available in the following national cloud deployments.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/devicelocalcredentialinfo-get?view=graph-rest-1.0" />
+        /// Get entity from deviceLocalCredentials by key
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,10 +109,11 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials.Item {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of a deviceLocalCredentialInfo for a specified device object.  This API is available in the following national cloud deployments.
+        /// Get entity from deviceLocalCredentials by key
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,7 +128,6 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DeviceLocalCredentialInfoItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -136,6 +135,7 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials.Item {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -156,14 +156,14 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new DeviceLocalCredentialInfoItemRequestBuilderPatchRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -190,9 +190,19 @@ namespace Microsoft.Graph.Beta.DeviceLocalCredentials.Item {
             }
         }
         /// <summary>
-        /// Retrieve the properties of a deviceLocalCredentialInfo for a specified device object.  This API is available in the following national cloud deployments.
+        /// Get entity from deviceLocalCredentials by key
         /// </summary>
         public class DeviceLocalCredentialInfoItemRequestBuilderGetQueryParameters {
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+#endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

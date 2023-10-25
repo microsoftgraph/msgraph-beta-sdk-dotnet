@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
             set { BackingStore?.Set("groups", value); }
         }
 #endif
-        /// <summary>Number of people matched to an Azure Active Directory user, by role.</summary>
+        /// <summary>Number of people matched to a Microsoft Entra user, by role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<IndustryDataRunRoleCountMetric>? MatchedPeopleByRole {
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
             set { BackingStore?.Set("people", value); }
         }
 #endif
-        /// <summary>Number of people not matched to an Azure Active Directory user, by role.</summary>
+        /// <summary>Number of people not matched to a Microsoft Entra user, by role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<IndustryDataRunRoleCountMetric>? UnmatchedPeopleByRole {
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"errors", n => { Errors = n.GetIntValue(); } },
                 {"groups", n => { Groups = n.GetObjectValue<IndustryDataRunEntityCountMetric>(IndustryDataRunEntityCountMetric.CreateFromDiscriminatorValue); } },
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
         }

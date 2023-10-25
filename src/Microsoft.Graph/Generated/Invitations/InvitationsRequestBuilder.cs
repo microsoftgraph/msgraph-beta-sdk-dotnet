@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Invitations {
             return await RequestAdapter.SendAsync<InvitationCollectionResponse>(requestInfo, InvitationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new invitation. Invitation adds an external user to the organization. When creating a new invitation, you have several options available: This API is available in the following national cloud deployments.
+        /// Create a new invitation. The invitation adds an external user to the organization. The following options are available for creating an invitation: This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/invitation-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -98,7 +98,6 @@ namespace Microsoft.Graph.Beta.Invitations {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new InvitationsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -106,10 +105,11 @@ namespace Microsoft.Graph.Beta.Invitations {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new invitation. Invitation adds an external user to the organization. When creating a new invitation, you have several options available: This API is available in the following national cloud deployments.
+        /// Create a new invitation. The invitation adds an external user to the organization. The following options are available for creating an invitation: This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,14 +126,14 @@ namespace Microsoft.Graph.Beta.Invitations {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new InvitationsRequestBuilderPostRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

@@ -84,7 +84,6 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserCountsWithPeriod {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new GetOffice365ActiveUserCountsWithPeriodRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -92,6 +91,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserCountsWithPeriod {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>

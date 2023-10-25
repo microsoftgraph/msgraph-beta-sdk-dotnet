@@ -20,6 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.passwordAuthenticationMethod" => new PasswordAuthenticationMethod(),
                 "#microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod" => new PasswordlessMicrosoftAuthenticatorAuthenticationMethod(),
                 "#microsoft.graph.phoneAuthenticationMethod" => new PhoneAuthenticationMethod(),
+                "#microsoft.graph.platformCredentialAuthenticationMethod" => new PlatformCredentialAuthenticationMethod(),
                 "#microsoft.graph.softwareOathAuthenticationMethod" => new SoftwareOathAuthenticationMethod(),
                 "#microsoft.graph.temporaryAccessPassAuthenticationMethod" => new TemporaryAccessPassAuthenticationMethod(),
                 "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod" => new WindowsHelloForBusinessAuthenticationMethod(),
@@ -29,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
             };
         }
@@ -37,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
         }

@@ -84,6 +84,20 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The permissionsAnalytics property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation? PermissionsAnalytics {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation?>("permissionsAnalytics"); }
+            set { BackingStore?.Set("permissionsAnalytics", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation PermissionsAnalytics {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation>("permissionsAnalytics"); }
+            set { BackingStore?.Set("permissionsAnalytics", value); }
+        }
+#endif
         /// <summary>The permissionsManagement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -158,13 +172,14 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"accessReviews", n => { AccessReviews = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessReviewSet>(Microsoft.Graph.Beta.Models.AccessReviewSet.CreateFromDiscriminatorValue); } },
                 {"appConsent", n => { AppConsent = n.GetObjectValue<Microsoft.Graph.Beta.Models.AppConsentApprovalRoute>(Microsoft.Graph.Beta.Models.AppConsentApprovalRoute.CreateFromDiscriminatorValue); } },
                 {"entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<Microsoft.Graph.Beta.Models.EntitlementManagement>(Microsoft.Graph.Beta.Models.EntitlementManagement.CreateFromDiscriminatorValue); } },
                 {"lifecycleWorkflows", n => { LifecycleWorkflows = n.GetObjectValue<LifecycleWorkflowsContainer>(LifecycleWorkflowsContainer.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"permissionsAnalytics", n => { PermissionsAnalytics = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation>(Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation.CreateFromDiscriminatorValue); } },
                 {"permissionsManagement", n => { PermissionsManagement = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsManagement>(Microsoft.Graph.Beta.Models.PermissionsManagement.CreateFromDiscriminatorValue); } },
                 {"privilegedAccess", n => { PrivilegedAccess = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrivilegedAccessRoot>(Microsoft.Graph.Beta.Models.PrivilegedAccessRoot.CreateFromDiscriminatorValue); } },
                 {"roleManagementAlerts", n => { RoleManagementAlerts = n.GetObjectValue<Microsoft.Graph.Beta.Models.RoleManagementAlert>(Microsoft.Graph.Beta.Models.RoleManagementAlert.CreateFromDiscriminatorValue); } },
@@ -175,13 +190,14 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessReviewSet>("accessReviews", AccessReviews);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AppConsentApprovalRoute>("appConsent", AppConsent);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EntitlementManagement>("entitlementManagement", EntitlementManagement);
             writer.WriteObjectValue<LifecycleWorkflowsContainer>("lifecycleWorkflows", LifecycleWorkflows);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation>("permissionsAnalytics", PermissionsAnalytics);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsManagement>("permissionsManagement", PermissionsManagement);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrivilegedAccessRoot>("privilegedAccess", PrivilegedAccess);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RoleManagementAlert>("roleManagementAlerts", RoleManagementAlerts);

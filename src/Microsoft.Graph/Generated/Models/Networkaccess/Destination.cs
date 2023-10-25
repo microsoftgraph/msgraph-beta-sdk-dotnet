@@ -14,6 +14,11 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The deviceCount property</summary>
+        public int? DeviceCount {
+            get { return BackingStore?.Get<int?>("deviceCount"); }
+            set { BackingStore?.Set("deviceCount", value); }
+        }
         /// <summary>The fqdn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +81,16 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
             set { BackingStore?.Set("trafficType", value); }
         }
+        /// <summary>The transactionCount property</summary>
+        public int? TransactionCount {
+            get { return BackingStore?.Get<int?>("transactionCount"); }
+            set { BackingStore?.Set("transactionCount", value); }
+        }
+        /// <summary>The userCount property</summary>
+        public int? UserCount {
+            get { return BackingStore?.Get<int?>("userCount"); }
+            set { BackingStore?.Set("userCount", value); }
+        }
         /// <summary>
         /// Instantiates a new destination and sets the default values.
         /// </summary>
@@ -94,8 +109,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"deviceCount", n => { DeviceCount = n.GetIntValue(); } },
                 {"fqdn", n => { Fqdn = n.GetStringValue(); } },
                 {"ip", n => { Ip = n.GetStringValue(); } },
                 {"lastAccessDateTime", n => { LastAccessDateTime = n.GetDateTimeOffsetValue(); } },
@@ -103,14 +119,17 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"port", n => { Port = n.GetIntValue(); } },
                 {"trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
+                {"transactionCount", n => { TransactionCount = n.GetIntValue(); } },
+                {"userCount", n => { UserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("deviceCount", DeviceCount);
             writer.WriteStringValue("fqdn", Fqdn);
             writer.WriteStringValue("ip", Ip);
             writer.WriteDateTimeOffsetValue("lastAccessDateTime", LastAccessDateTime);
@@ -118,6 +137,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("port", Port);
             writer.WriteEnumValue<TrafficType>("trafficType", TrafficType);
+            writer.WriteIntValue("transactionCount", TransactionCount);
+            writer.WriteIntValue("userCount", UserCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

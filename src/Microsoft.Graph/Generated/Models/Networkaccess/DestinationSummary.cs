@@ -47,6 +47,11 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The trafficType property</summary>
+        public Microsoft.Graph.Beta.Models.Networkaccess.TrafficType? TrafficType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
+            set { BackingStore?.Set("trafficType", value); }
+        }
         /// <summary>
         /// Instantiates a new destinationSummary and sets the default values.
         /// </summary>
@@ -65,22 +70,24 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"count", n => { Count = n.GetIntValue(); } },
                 {"destination", n => { Destination = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
             writer.WriteStringValue("destination", Destination);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteEnumValue<TrafficType>("trafficType", TrafficType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -69,6 +69,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Categories.
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>

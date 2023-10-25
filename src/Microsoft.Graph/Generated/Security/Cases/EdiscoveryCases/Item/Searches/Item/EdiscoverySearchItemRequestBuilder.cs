@@ -6,6 +6,8 @@ using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.Add
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.LastEstimateStatisticsOperation;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityEstimateStatistics;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityExportReport;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityExportResult;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityPurgeData;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.NoncustodialSources;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -40,6 +42,14 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         /// <summary>Provides operations to call the estimateStatistics method.</summary>
         public MicrosoftGraphSecurityEstimateStatisticsRequestBuilder MicrosoftGraphSecurityEstimateStatistics { get =>
             new MicrosoftGraphSecurityEstimateStatisticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the exportReport method.</summary>
+        public MicrosoftGraphSecurityExportReportRequestBuilder MicrosoftGraphSecurityExportReport { get =>
+            new MicrosoftGraphSecurityExportReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the exportResult method.</summary>
+        public MicrosoftGraphSecurityExportResultRequestBuilder MicrosoftGraphSecurityExportResult { get =>
+            new MicrosoftGraphSecurityExportResultRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the purgeData method.</summary>
         public MicrosoftGraphSecurityPurgeDataRequestBuilder MicrosoftGraphSecurityPurgeData { get =>
@@ -147,6 +157,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>
@@ -165,7 +176,6 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new EdiscoverySearchItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -173,6 +183,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -193,14 +204,14 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new EdiscoverySearchItemRequestBuilderPatchRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

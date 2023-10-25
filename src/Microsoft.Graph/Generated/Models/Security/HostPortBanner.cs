@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The banner property</summary>
+        /// <summary>The text response received from a web component when scanning a hostPort.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Banner {
@@ -28,12 +28,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("banner", value); }
         }
 #endif
-        /// <summary>The firstSeenDateTime property</summary>
+        /// <summary>The first date and time when Microsoft Defender Threat Intelligence observed the hostPortBanner. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? FirstSeenDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
             set { BackingStore?.Set("firstSeenDateTime", value); }
         }
-        /// <summary>The lastSeenDateTime property</summary>
+        /// <summary>The last date and time when Microsoft Defender Threat Intelligence observed the hostPortBanner. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastSeenDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The scanProtocol property</summary>
+        /// <summary>The specific protocol used to scan the hostPort.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScanProtocol {
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("scanProtocol", value); }
         }
 #endif
-        /// <summary>The timesObserved property</summary>
+        /// <summary>The total amount of times that Microsoft Defender Threat Intelligence has observed the hostPortBanner in all its scans.</summary>
         public int? TimesObserved {
             get { return BackingStore?.Get<int?>("timesObserved"); }
             set { BackingStore?.Set("timesObserved", value); }
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"banner", n => { Banner = n.GetStringValue(); } },
                 {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("banner", Banner);
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);

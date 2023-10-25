@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.OverrideComplianceState {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"complianceState", n => { ComplianceState = n.GetEnumValue<AdministratorConfiguredDeviceComplianceState>(); } },
                 {"remediationUrl", n => { RemediationUrl = n.GetStringValue(); } },
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.OverrideComplianceState {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<AdministratorConfiguredDeviceComplianceState>("complianceState", ComplianceState);
             writer.WriteStringValue("remediationUrl", RemediationUrl);

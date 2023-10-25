@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("outOfOfficeDays"); }
             set { BackingStore?.Set("outOfOfficeDays", value); }
         }
-        /// <summary>The id property value of the user resource that represents the user in the Azure Active Directory tenant.</summary>
+        /// <summary>The id property value of the user resource that represents the user in the Microsoft Entra tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"email", n => { Email = n.GetStringValue(); } },
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("email", Email);

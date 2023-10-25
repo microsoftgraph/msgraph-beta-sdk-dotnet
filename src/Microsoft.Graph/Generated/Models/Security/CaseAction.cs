@@ -21,5 +21,9 @@ namespace Microsoft.Graph.Beta.Models.Security {
         UnknownFutureValue,
         [EnumMember(Value = "purgeData")]
         PurgeData,
+        [EnumMember(Value = "exportReport")]
+        ExportReport,
+        [EnumMember(Value = "exportResult")]
+        ExportResult,
     }
 }

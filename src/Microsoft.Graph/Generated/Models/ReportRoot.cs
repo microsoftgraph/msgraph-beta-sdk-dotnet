@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("applicationSignInDetailedSummary", value); }
         }
 #endif
-        /// <summary>Container for navigation properties for Azure AD authentication methods resources.</summary>
+        /// <summary>Container for navigation properties for Microsoft Entra authentication methods resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AuthenticationMethodsRoot? AuthenticationMethods {
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("monthlyPrintUsageSummariesByUser", value); }
         }
 #endif
-        /// <summary>Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.</summary>
+        /// <summary>Provides the ability to launch a realistically simulated phishing attack that organizations can learn from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SecurityReportsRoot? Security {
@@ -244,6 +244,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userCredentialUsageDetails", value); }
         }
 #endif
+        /// <summary>The userInsights property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UserInsightsRoot? UserInsights {
+            get { return BackingStore?.Get<UserInsightsRoot?>("userInsights"); }
+            set { BackingStore?.Set("userInsights", value); }
+        }
+#nullable restore
+#else
+        public UserInsightsRoot UserInsights {
+            get { return BackingStore?.Get<UserInsightsRoot>("userInsights"); }
+            set { BackingStore?.Set("userInsights", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -255,7 +269,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"appCredentialSignInActivities", n => { AppCredentialSignInActivities = n.GetCollectionOfObjectValues<AppCredentialSignInActivity>(AppCredentialSignInActivity.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"applicationSignInDetailedSummary", n => { ApplicationSignInDetailedSummary = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>(Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -274,13 +288,14 @@ namespace Microsoft.Graph.Beta.Models {
                 {"servicePrincipalSignInActivities", n => { ServicePrincipalSignInActivities = n.GetCollectionOfObjectValues<ServicePrincipalSignInActivity>(ServicePrincipalSignInActivity.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"sla", n => { Sla = n.GetObjectValue<ServiceLevelAgreementRoot>(ServiceLevelAgreementRoot.CreateFromDiscriminatorValue); } },
                 {"userCredentialUsageDetails", n => { UserCredentialUsageDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>(Microsoft.Graph.Beta.Models.UserCredentialUsageDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"userInsights", n => { UserInsights = n.GetObjectValue<UserInsightsRoot>(UserInsightsRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<AppCredentialSignInActivity>("appCredentialSignInActivities", AppCredentialSignInActivities);
@@ -300,6 +315,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<ServicePrincipalSignInActivity>("servicePrincipalSignInActivities", ServicePrincipalSignInActivities);
             writer.WriteObjectValue<ServiceLevelAgreementRoot>("sla", Sla);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>("userCredentialUsageDetails", UserCredentialUsageDetails);
+            writer.WriteObjectValue<UserInsightsRoot>("userInsights", UserInsights);
         }
     }
 }

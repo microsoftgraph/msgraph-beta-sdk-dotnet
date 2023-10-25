@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class RoleManagementAlert : Entity, IParsable {
-        /// <summary>The various configurations of an alert for Azure AD roles. The configurations are predefined and can&apos;t be created or deleted, but some of the configurations can be modified.</summary>
+        /// <summary>The various configurations of an alert for Microsoft Entra roles. The configurations are predefined and can&apos;t be created or deleted, but some of the configurations can be modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UnifiedRoleManagementAlertConfiguration>? AlertConfigurations {
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"alertConfigurations", n => { AlertConfigurations = n.GetCollectionOfObjectValues<UnifiedRoleManagementAlertConfiguration>(UnifiedRoleManagementAlertConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"alertDefinitions", n => { AlertDefinitions = n.GetCollectionOfObjectValues<UnifiedRoleManagementAlertDefinition>(UnifiedRoleManagementAlertDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<UnifiedRoleManagementAlertConfiguration>("alertConfigurations", AlertConfigurations);
