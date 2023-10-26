@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appDisplayName", value); }
         }
 #endif
-        /// <summary>The application identifier in Azure Active Directory.  Supports $filter (eq).</summary>
+        /// <summary>The application identifier in Microsoft Entra ID.  Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppId {
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<TokenProtectionStatus?>("appTokenProtectionStatus"); }
             set { BackingStore?.Set("appTokenProtectionStatus", value); }
         }
-        /// <summary>Provides details about the app and device used during an Azure AD authentication step.</summary>
+        /// <summary>Provides details about the app and device used during a Microsoft Entra authentication step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails? AuthenticationAppDeviceDetails {
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationAppDeviceDetails", value); }
         }
 #endif
-        /// <summary>Provides details of the Azure AD policies applied to a user and client authentication app during an authentication step.</summary>
+        /// <summary>Provides details of the Microsoft Entra policies applied to a user and client authentication app during an authentication step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AuthenticationAppPolicyDetails>? AuthenticationAppPolicyEvaluationDetails {
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationMethodsUsed", value); }
         }
 #endif
-        /// <summary>Extra authentication processing details, such as the agent name for PTA/PHS or Server/farm name for federated authentication.</summary>
+        /// <summary>More authentication processing details, such as the agent name for  PTA and PHS, or a server or farm name for federated authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<KeyValue>? AuthenticationProcessingDetails {
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationProcessingDetails", value); }
         }
 #endif
-        /// <summary>Lists the protocol type or grant type used in the authentication. The possible values are: none, oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue. For authentications that use protocols other than the possible values listed, the protocol type is listed as none.</summary>
+        /// <summary>Lists the protocol type or grant type used in the authentication. The possible values are: oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue, authenticationTransfer, and none. Use none for all authentications that do not have a specific value in that list.</summary>
         public ProtocolType? AuthenticationProtocol {
             get { return BackingStore?.Get<ProtocolType?>("authenticationProtocol"); }
             set { BackingStore?.Set("authenticationProtocol", value); }
@@ -217,7 +217,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("clientAppUsed", value); }
         }
 #endif
-        /// <summary>Describes the credential type that a user client or service principal provided to Azure AD to authenticate itself. You may wish to review clientCredentialType to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.</summary>
+        /// <summary>Describes the credential type that a user client or service principal provided to Microsoft Entra ID to authenticate itself. You may wish to review clientCredentialType to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.ClientCredentialType? ClientCredentialType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClientCredentialType?>("clientCredentialType"); }
             set { BackingStore?.Set("clientCredentialType", value); }
@@ -298,7 +298,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("homeTenantId", value); }
         }
 #endif
-        /// <summary>For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.</summary>
+        /// <summary>For user sign ins, the identifier of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Microsoft Entra ID to show the tenant content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HomeTenantName {
@@ -312,7 +312,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("homeTenantName", value); }
         }
 #endif
-        /// <summary>Indicates the token types that were presented to Azure AD to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Azure AD may have also used token types not listed in this Enum type to authenticate the actor. Don&apos;t infer the lack of a token if it isn&apos;t one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.</summary>
+        /// <summary>Indicates the token types that were presented to Microsoft Entra ID to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Microsoft Entra ID may have also used token types not listed in this Enum type to authenticate the actor. Don&apos;t infer the lack of a token if it isn&apos;t one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.</summary>
         public Microsoft.Graph.Beta.Models.IncomingTokenType? IncomingTokenType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IncomingTokenType?>("incomingTokenType"); }
             set { BackingStore?.Set("incomingTokenType", value); }
@@ -345,12 +345,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ipAddressFromResourceProvider", value); }
         }
 #endif
-        /// <summary>Indicates whether a user sign in is interactive. In interactive sign in, the user provides an authentication factor to Azure AD. These factors include passwords, responses to MFA challenges, biometric factors, or QR codes that a user provides to Azure AD or an associated app. In non-interactive sign in, the user doesn&apos;t provide an authentication factor. Instead, the client app uses a token or code to authenticate or access a resource on behalf of a user. Non-interactive sign ins are commonly used for a client to sign in on a user&apos;s behalf in a process transparent to the user.</summary>
+        /// <summary>Indicates whether a user sign in is interactive. In interactive sign in, the user provides an authentication factor to Microsoft Entra ID. These factors include passwords, responses to MFA challenges, biometric factors, or QR codes that a user provides to Microsoft Entra ID or an associated app. In non-interactive sign in, the user doesn&apos;t provide an authentication factor. Instead, the client app uses a token or code to authenticate or access a resource on behalf of a user. Non-interactive sign ins are commonly used for a client to sign in on a user&apos;s behalf in a process transparent to the user.</summary>
         public bool? IsInteractive {
             get { return BackingStore?.Get<bool?>("isInteractive"); }
             set { BackingStore?.Set("isInteractive", value); }
         }
-        /// <summary>Shows whether the sign in event was subject to an Azure AD tenant restriction policy.</summary>
+        /// <summary>Shows whether the sign in event was subject to a Microsoft Entra tenant restriction policy.</summary>
         public bool? IsTenantRestricted {
             get { return BackingStore?.Get<bool?>("isTenantRestricted"); }
             set { BackingStore?.Set("isTenantRestricted", value); }
@@ -430,7 +430,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<OriginalTransferMethods?>("originalTransferMethod"); }
             set { BackingStore?.Set("originalTransferMethod", value); }
         }
-        /// <summary>Contains information about the Azure AD Private Link policy that is associated with the sign in event.</summary>
+        /// <summary>Contains information about the Microsoft Entra Private Link policy that is associated with the sign in event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.PrivateLinkDetails? PrivateLinkDetails {
@@ -505,7 +505,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resourceTenantId", value); }
         }
 #endif
-        /// <summary>The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.</summary>
+        /// <summary>The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
         public Microsoft.Graph.Beta.Models.RiskDetail? RiskDetail {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskDetail?>("riskDetail"); }
             set { BackingStore?.Set("riskDetail", value); }
@@ -524,12 +524,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("riskEventTypes_v2", value); }
         }
 #endif
-        /// <summary>The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.</summary>
+        /// <summary>The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
         public RiskLevel? RiskLevelAggregated {
             get { return BackingStore?.Get<RiskLevel?>("riskLevelAggregated"); }
             set { BackingStore?.Set("riskLevelAggregated", value); }
         }
-        /// <summary>The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn&apos;t enabled for Azure AD Identity Protection.  Supports $filter (eq). Note: Details for this property are only available for Azure AD Premium P2 customers. All other customers are returned hidden.</summary>
+        /// <summary>The risk level during sign-in. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn&apos;t enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
         public RiskLevel? RiskLevelDuringSignIn {
             get { return BackingStore?.Get<RiskLevel?>("riskLevelDuringSignIn"); }
             set { BackingStore?.Set("riskLevelDuringSignIn", value); }
@@ -680,7 +680,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TokenIssuerType?>("tokenIssuerType"); }
             set { BackingStore?.Set("tokenIssuerType", value); }
         }
-        /// <summary>A unique base64 encoded request identifier used to track tokens issued by Azure AD as they&apos;re redeemed at resource providers.</summary>
+        /// <summary>A unique base64 encoded request identifier used to track tokens issued by Microsoft Entra ID as they&apos;re redeemed at resource providers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UniqueTokenIdentifier {
@@ -766,7 +766,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
                 {"appId", n => { AppId = n.GetStringValue(); } },
@@ -841,7 +841,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("appDisplayName", AppDisplayName);

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.ConnectorGroup {
         public ConnectorGroupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{application%2Did}/connectorGroup{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
+        /// The connectorGroup the application is using with Microsoft Entra application proxy. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.ConnectorGroup {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ConnectorGroup>(requestInfo, Microsoft.Graph.Beta.Models.ConnectorGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
+        /// The connectorGroup the application is using with Microsoft Entra application proxy. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,7 +68,6 @@ namespace Microsoft.Graph.Beta.Applications.Item.ConnectorGroup {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new ConnectorGroupRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -76,6 +75,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.ConnectorGroup {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.ConnectorGroup {
             return new ConnectorGroupRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The connectorGroup the application is using with Azure AD Application Proxy. Nullable.
+        /// The connectorGroup the application is using with Microsoft Entra application proxy. Nullable.
         /// </summary>
         public class ConnectorGroupRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

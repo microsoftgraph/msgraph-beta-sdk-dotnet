@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.DirectoryNamespace.AttributeSets;
 using Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities;
 using Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinitions;
 using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems;
+using Microsoft.Graph.Beta.DirectoryNamespace.DeviceLocalCredentials;
 using Microsoft.Graph.Beta.DirectoryNamespace.FeatureRolloutPolicies;
 using Microsoft.Graph.Beta.DirectoryNamespace.FederationConfigurations;
 using Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources;
@@ -47,6 +48,10 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
         /// <summary>Provides operations to manage the deletedItems property of the microsoft.graph.directory entity.</summary>
         public DeletedItemsRequestBuilder DeletedItems { get =>
             new DeletedItemsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the deviceLocalCredentials property of the microsoft.graph.directory entity.</summary>
+        public DeviceLocalCredentialsRequestBuilder DeviceLocalCredentials { get =>
+            new DeviceLocalCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the featureRolloutPolicies property of the microsoft.graph.directory entity.</summary>
         public FeatureRolloutPoliciesRequestBuilder FeatureRolloutPolicies { get =>
@@ -154,7 +159,6 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new DirectoryRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -162,6 +166,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -182,14 +187,14 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new DirectoryRequestBuilderPatchRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

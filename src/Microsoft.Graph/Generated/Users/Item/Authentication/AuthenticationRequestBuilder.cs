@@ -9,6 +9,7 @@ using Microsoft.Graph.Beta.Users.Item.Authentication.Operations;
 using Microsoft.Graph.Beta.Users.Item.Authentication.PasswordMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.PhoneMethods;
+using Microsoft.Graph.Beta.Users.Item.Authentication.PlatformCredentialMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.SoftwareOathMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.TemporaryAccessPassMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.WindowsHelloForBusinessMethods;
@@ -56,6 +57,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication {
         /// <summary>Provides operations to manage the phoneMethods property of the microsoft.graph.authentication entity.</summary>
         public PhoneMethodsRequestBuilder PhoneMethods { get =>
             new PhoneMethodsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the platformCredentialMethods property of the microsoft.graph.authentication entity.</summary>
+        public PlatformCredentialMethodsRequestBuilder PlatformCredentialMethods { get =>
+            new PlatformCredentialMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.</summary>
         public SoftwareOathMethodsRequestBuilder SoftwareOathMethods { get =>
@@ -164,6 +169,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>
@@ -182,7 +188,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new AuthenticationRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -190,6 +195,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -210,14 +216,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new AuthenticationRequestBuilderPatchRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

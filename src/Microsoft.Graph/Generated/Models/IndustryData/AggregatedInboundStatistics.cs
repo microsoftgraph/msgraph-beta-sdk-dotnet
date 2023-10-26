@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
             get { return BackingStore?.Get<int?>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
-        /// <summary>The aggregate count of active people matched to an Azure Active Directory user, by role.</summary>
+        /// <summary>The aggregate count of active people matched to a Microsoft Entra user, by role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<IndustryDataRunRoleCountMetric>? MatchedPeopleByRole {
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
             get { return BackingStore?.Get<int?>("people"); }
             set { BackingStore?.Set("people", value); }
         }
-        /// <summary>The aggregate count of active people not matched to an Azure Active Directory user, by role.</summary>
+        /// <summary>The aggregate count of active people not matched to a Microsoft Entra user, by role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<IndustryDataRunRoleCountMetric>? UnmatchedPeopleByRole {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"errors", n => { Errors = n.GetIntValue(); } },
                 {"groups", n => { Groups = n.GetIntValue(); } },
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

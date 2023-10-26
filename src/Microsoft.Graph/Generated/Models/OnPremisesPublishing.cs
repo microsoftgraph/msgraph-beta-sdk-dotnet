@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isOnPremPublishingEnabled"); }
             set { BackingStore?.Set("isOnPremPublishingEnabled", value); }
         }
-        /// <summary>Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can&apos;t share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Azure Active Directory. Default value is false.</summary>
+        /// <summary>Indicates if the Persistent cookie flag should be set in the HTTP response headers. Keep this value set to false. Only use this setting for applications that can&apos;t share cookies between processes. For more information about cookie settings, see Cookie settings for accessing on-premises applications in Microsoft Entra ID. Default value is false.</summary>
         public bool? IsPersistentCookieEnabled {
             get { return BackingStore?.Get<bool?>("isPersistentCookieEnabled"); }
             set { BackingStore?.Set("isPersistentCookieEnabled", value); }
@@ -162,7 +162,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onPremisesApplicationSegments", value); }
         }
 #endif
-        /// <summary>Represents the collection of application segments for an on-premises wildcard application that&apos;s published through Azure AD Application Proxy.</summary>
+        /// <summary>Represents the collection of application segments for an on-premises wildcard application that&apos;s published through Microsoft Entra application proxy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SegmentConfiguration? SegmentsConfiguration {
@@ -255,7 +255,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"alternateUrl", n => { AlternateUrl = n.GetStringValue(); } },
                 {"applicationServerTimeout", n => { ApplicationServerTimeout = n.GetStringValue(); } },
@@ -286,7 +286,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("alternateUrl", AlternateUrl);
             writer.WriteStringValue("applicationServerTimeout", ApplicationServerTimeout);

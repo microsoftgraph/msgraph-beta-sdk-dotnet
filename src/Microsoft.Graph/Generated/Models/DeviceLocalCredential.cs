@@ -34,12 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("accountSid", value); }
         }
 #endif
-        /// <summary>When the local adminstrator account credential for the device object was backed up to Azure Active Directory.</summary>
+        /// <summary>When the local adminstrator account credential for the device object was backed up to Microsoft Entra ID.</summary>
         public DateTimeOffset? BackupDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("backupDateTime"); }
             set { BackingStore?.Set("backupDateTime", value); }
         }
-        /// <summary>The password for the local administrator account that is backed up to Azure Active Directory and returned as a base 64 encoded value.</summary>
+        /// <summary>The password for the local administrator account that is backed up to Microsoft Entra ID and returned as a base 64 encoded value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PasswordBase64 {
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"accountName", n => { AccountName = n.GetStringValue(); } },
                 {"accountSid", n => { AccountSid = n.GetStringValue(); } },
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("accountName", AccountName);

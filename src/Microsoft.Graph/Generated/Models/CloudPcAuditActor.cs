@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("applicationDisplayName", value); }
         }
 #endif
-        /// <summary>Azure AD application ID.</summary>
+        /// <summary>Microsoft Entra application ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApplicationId {
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcAuditActorType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
-        /// <summary>Azure AD user ID.</summary>
+        /// <summary>Microsoft Entra user ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"applicationDisplayName", n => { ApplicationDisplayName = n.GetStringValue(); } },
                 {"applicationId", n => { ApplicationId = n.GetStringValue(); } },
@@ -211,7 +211,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("applicationDisplayName", ApplicationDisplayName);
             writer.WriteStringValue("applicationId", ApplicationId);

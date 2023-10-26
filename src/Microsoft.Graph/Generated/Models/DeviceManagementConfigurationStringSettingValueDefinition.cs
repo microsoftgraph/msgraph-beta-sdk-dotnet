@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("fileTypes", value); }
         }
 #endif
-        /// <summary>Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub, bashScript, unknownFutureValue.</summary>
+        /// <summary>Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub.</summary>
         public DeviceManagementConfigurationStringFormat? Format {
             get { return BackingStore?.Get<DeviceManagementConfigurationStringFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isSecret"); }
             set { BackingStore?.Set("isSecret", value); }
         }
-        /// <summary>Maximum length of string. Valid values 0 to 87516</summary>
+        /// <summary>Maximum length of string</summary>
         public long? MaximumLength {
             get { return BackingStore?.Get<long?>("maximumLength"); }
             set { BackingStore?.Set("maximumLength", value); }
         }
-        /// <summary>Minimum length of string. Valid values 0 to 87516</summary>
+        /// <summary>Minimum length of string</summary>
         public long? MinimumLength {
             get { return BackingStore?.Get<long?>("minimumLength"); }
             set { BackingStore?.Set("minimumLength", value); }
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"fileTypes", n => { FileTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"format", n => { Format = n.GetEnumValue<DeviceManagementConfigurationStringFormat>(); } },
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("fileTypes", FileTypes);

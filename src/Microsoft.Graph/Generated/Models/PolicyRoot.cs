@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationFlowsPolicy", value); }
         }
 #endif
-        /// <summary>The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Azure Active Directory (Azure AD).</summary>
+        /// <summary>The authentication methods and the users that are allowed to use them to sign in and perform multifactor authentication (MFA) in Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.AuthenticationMethodsPolicy? AuthenticationMethodsPolicy {
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationMethodsPolicy", value); }
         }
 #endif
-        /// <summary>The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.</summary>
+        /// <summary>The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AuthenticationStrengthPolicy>? AuthenticationStrengthPolicies {
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationStrengthPolicies", value); }
         }
 #endif
-        /// <summary>The policy that controls Azure AD authorization settings.</summary>
+        /// <summary>The policy that controls Microsoft Entra authorization settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Microsoft.Graph.Beta.Models.AuthorizationPolicy>? AuthorizationPolicy {
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("conditionalAccessPolicies", value); }
         }
 #endif
-        /// <summary>The custom rules that define an access scenario when interacting with external Azure AD tenants.</summary>
+        /// <summary>The custom rules that define an access scenario when interacting with external Microsoft Entra tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.CrossTenantAccessPolicy? CrossTenantAccessPolicy {
@@ -224,7 +224,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("directoryRoleAccessReviewPolicy", value); }
         }
 #endif
-        /// <summary>Represents the tenant-wide policy that controls whether guests can leave an Azure AD tenant via self-service controls.</summary>
+        /// <summary>Represents the tenant-wide policy that controls whether guests can leave a Microsoft Entra tenant via self-service controls.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy? ExternalIdentitiesPolicy {
@@ -266,7 +266,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("federatedTokenValidationPolicy", value); }
         }
 #endif
-        /// <summary>The policy to control Azure AD authentication behavior for federated users.</summary>
+        /// <summary>The policy to control Microsoft Entra authentication behavior for federated users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<HomeRealmDiscoveryPolicy>? HomeRealmDiscoveryPolicies {
@@ -392,7 +392,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("servicePrincipalCreationPolicies", value); }
         }
 #endif
-        /// <summary>The policy that specifies the characteristics of SAML tokens issued by Azure AD.</summary>
+        /// <summary>The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<TokenIssuancePolicy>? TokenIssuancePolicies {
@@ -406,7 +406,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tokenIssuancePolicies", value); }
         }
 #endif
-        /// <summary>The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.</summary>
+        /// <summary>The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<TokenLifetimePolicy>? TokenLifetimePolicies {
@@ -438,7 +438,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"accessReviewPolicy", n => { AccessReviewPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessReviewPolicy>(Microsoft.Graph.Beta.Models.AccessReviewPolicy.CreateFromDiscriminatorValue); } },
                 {"activityBasedTimeoutPolicies", n => { ActivityBasedTimeoutPolicies = n.GetCollectionOfObjectValues<ActivityBasedTimeoutPolicy>(ActivityBasedTimeoutPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -475,7 +475,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessReviewPolicy>("accessReviewPolicy", AccessReviewPolicy);
             writer.WriteCollectionOfObjectValues<ActivityBasedTimeoutPolicy>("activityBasedTimeoutPolicies", ActivityBasedTimeoutPolicies);

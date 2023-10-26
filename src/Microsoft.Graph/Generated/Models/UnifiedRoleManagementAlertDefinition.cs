@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("howToPrevent", value); }
         }
 #endif
-        /// <summary>true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the &apos;There are too many global administrators&apos; alert can be configured by users, while the &apos;This organization doesn&apos;t have Azure AD Premium P2&apos; can&apos;t be configured, because the criteria are restricted.</summary>
+        /// <summary>true if the alert configuration can be customized in the tenant, and false otherwise. For example, the number and percentage thresholds of the &apos;There are too many global administrators&apos; alert can be configured by users, while the &apos;This organization doesn&apos;t have Microsoft Entra ID P2&apos; can&apos;t be configured, because the criteria are restricted.</summary>
         public bool? IsConfigurable {
             get { return BackingStore?.Get<bool?>("isConfigurable"); }
             set { BackingStore?.Set("isConfigurable", value); }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("scopeId", value); }
         }
 #endif
-        /// <summary>The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Azure AD Roles.</summary>
+        /// <summary>The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScopeType {
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);

@@ -58,7 +58,8 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostPorts.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get hostPorts from security
+        /// Read the properties and relationships of a hostPort object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-hostport-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -119,10 +120,11 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostPorts.Item {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Get hostPorts from security
+        /// Read the properties and relationships of a hostPort object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +139,6 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostPorts.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new HostPortItemRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -145,6 +146,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostPorts.Item {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -165,14 +167,14 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostPorts.Item {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new HostPortItemRequestBuilderPatchRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -199,7 +201,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.HostPorts.Item {
             }
         }
         /// <summary>
-        /// Get hostPorts from security
+        /// Read the properties and relationships of a hostPort object.
         /// </summary>
         public class HostPortItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

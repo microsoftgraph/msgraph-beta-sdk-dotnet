@@ -97,7 +97,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new RegisteredUsersRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -105,6 +104,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.RegisteredUsers {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>

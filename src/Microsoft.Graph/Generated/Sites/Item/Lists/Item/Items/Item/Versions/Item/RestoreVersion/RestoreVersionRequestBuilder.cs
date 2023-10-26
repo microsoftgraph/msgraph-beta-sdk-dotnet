@@ -68,6 +68,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.Versions.Item.Re
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>

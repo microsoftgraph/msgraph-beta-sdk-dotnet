@@ -59,8 +59,8 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the externalMeetingRegistration details associated with an onlineMeeting. This API is available in the following national cloud deployments.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0" />
+        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -122,10 +122,11 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Get the externalMeetingRegistration details associated with an onlineMeeting. This API is available in the following national cloud deployments.
+        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,7 +141,6 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
             if (requestConfiguration != null) {
                 var requestConfig = new RegistrationRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
@@ -148,6 +148,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
             return requestInfo;
         }
         /// <summary>
@@ -168,14 +169,14 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new RegistrationRequestBuilderPatchRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
+            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -202,7 +203,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration {
             }
         }
         /// <summary>
-        /// Get the externalMeetingRegistration details associated with an onlineMeeting. This API is available in the following national cloud deployments.
+        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
         /// </summary>
         public class RegistrationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

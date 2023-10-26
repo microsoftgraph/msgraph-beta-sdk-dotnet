@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class HostPort : Entity, IParsable {
-        /// <summary>The banners property</summary>
+        /// <summary>The hostPortBanners retrieved from scanning the port.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<HostPortBanner>? Banners {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("banners", value); }
         }
 #endif
-        /// <summary>The firstSeenDateTime property</summary>
+        /// <summary>The first date and time when Microsoft Defender Threat Intelligence observed the hostPort. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? FirstSeenDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
             set { BackingStore?.Set("firstSeenDateTime", value); }
@@ -39,17 +39,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("host", value); }
         }
 #endif
-        /// <summary>The lastScanDateTime property</summary>
+        /// <summary>The last date and time when Microsoft Defender Threat Intelligence scanned the hostPort. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastScanDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastScanDateTime"); }
             set { BackingStore?.Set("lastScanDateTime", value); }
         }
-        /// <summary>The lastSeenDateTime property</summary>
+        /// <summary>The last date and time when Microsoft Defender Threat Intelligence observed the hostPort. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastSeenDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
-        /// <summary>The mostRecentSslCertificate property</summary>
+        /// <summary>The most recent sslCertificate used to communicate on the port.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SslCertificate? MostRecentSslCertificate {
@@ -63,17 +63,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("mostRecentSslCertificate", value); }
         }
 #endif
-        /// <summary>The port property</summary>
+        /// <summary>The numerical identifier of the port which is standardized across the internet.</summary>
         public int? Port {
             get { return BackingStore?.Get<int?>("port"); }
             set { BackingStore?.Set("port", value); }
         }
-        /// <summary>The protocol property</summary>
+        /// <summary>The general protocol used to scan the port. The possible values are: tcp, udp, unknownFutureValue.</summary>
         public HostPortProtocol? Protocol {
             get { return BackingStore?.Get<HostPortProtocol?>("protocol"); }
             set { BackingStore?.Set("protocol", value); }
         }
-        /// <summary>The services property</summary>
+        /// <summary>The hostPortComponents retrieved from scanning the port.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<HostPortComponent>? Services {
@@ -87,12 +87,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("services", value); }
         }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>The status of the port. The possible values are: open, filtered, closed, unknownFutureValue.</summary>
         public HostPortStatus? Status {
             get { return BackingStore?.Get<HostPortStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The timesObserved property</summary>
+        /// <summary>The total amount of times that Microsoft Defender Threat Intelligence has observed the hostPort in all its scans.</summary>
         public int? TimesObserved {
             get { return BackingStore?.Get<int?>("timesObserved"); }
             set { BackingStore?.Set("timesObserved", value); }
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"banners", n => { Banners = n.GetCollectionOfObjectValues<HostPortBanner>(HostPortBanner.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<HostPortBanner>("banners", Banners);

@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalDetails", value); }
         }
 #endif
-        /// <summary>The URL link to the corresponding Azure AD resource.</summary>
+        /// <summary>The URL link to the corresponding Microsoft Entra resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiUrl {
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("apiUrl", value); }
         }
 #endif
-        /// <summary>Friendly name of the Azure AD resource.</summary>
+        /// <summary>Friendly name of the Microsoft Entra resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("owner", value); }
         }
 #endif
-        /// <summary>The URL link to the corresponding Azure AD portal page of the resource.</summary>
+        /// <summary>The URL link to the corresponding Microsoft Entra admin center page of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PortalUrl {
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recommendationId", value); }
         }
 #endif
-        /// <summary>Indicates the type of Azure AD resource. Examples include user, application.</summary>
+        /// <summary>Indicates the type of Microsoft Entra resource. Examples include user, application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceType {
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"addedDateTime", n => { AddedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"additionalDetails", n => { AdditionalDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public new void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("addedDateTime", AddedDateTime);
