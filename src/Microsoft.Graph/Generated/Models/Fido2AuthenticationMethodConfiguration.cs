@@ -6,20 +6,6 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Fido2AuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable {
-        /// <summary>A collection of groups that are enabled to use the authentication method.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<AuthenticationMethodTarget>? IncludeTargets {
-            get { return BackingStore?.Get<List<AuthenticationMethodTarget>?>("includeTargets"); }
-            set { BackingStore?.Set("includeTargets", value); }
-        }
-#nullable restore
-#else
-        public List<AuthenticationMethodTarget> IncludeTargets {
-            get { return BackingStore?.Get<List<AuthenticationMethodTarget>>("includeTargets"); }
-            set { BackingStore?.Set("includeTargets", value); }
-        }
-#endif
         /// <summary>Determines whether attestation must be enforced for FIDO2 security key registration.</summary>
         public bool? IsAttestationEnforced {
             get { return BackingStore?.Get<bool?>("isAttestationEnforced"); }
@@ -63,7 +49,6 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<AuthenticationMethodTarget>(AuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"isAttestationEnforced", n => { IsAttestationEnforced = n.GetBoolValue(); } },
                 {"isSelfServiceRegistrationAllowed", n => { IsSelfServiceRegistrationAllowed = n.GetBoolValue(); } },
                 {"keyRestrictions", n => { KeyRestrictions = n.GetObjectValue<Fido2KeyRestrictions>(Fido2KeyRestrictions.CreateFromDiscriminatorValue); } },
@@ -76,7 +61,6 @@ namespace Microsoft.Graph.Beta.Models {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AuthenticationMethodTarget>("includeTargets", IncludeTargets);
             writer.WriteBoolValue("isAttestationEnforced", IsAttestationEnforced);
             writer.WriteBoolValue("isSelfServiceRegistrationAllowed", IsSelfServiceRegistrationAllowed);
             writer.WriteObjectValue<Fido2KeyRestrictions>("keyRestrictions", KeyRestrictions);

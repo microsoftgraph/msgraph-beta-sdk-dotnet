@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.LandingPages.Item.Detai
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get details from security
+        /// The detail information for a landing page associated with a simulation during its creation.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.LandingPages.Item.Detai
             return requestInfo;
         }
         /// <summary>
-        /// Get details from security
+        /// The detail information for a landing page associated with a simulation during its creation.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.LandingPages.Item.Detai
             }
         }
         /// <summary>
-        /// Get details from security
+        /// The detail information for a landing page associated with a simulation during its creation.
         /// </summary>
         public class LandingPageDetailItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

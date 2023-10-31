@@ -73,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 "#microsoft.graph.security.ediscoveryHoldOperation" => new EdiscoveryHoldOperation(),
                 "#microsoft.graph.security.ediscoveryIndexOperation" => new EdiscoveryIndexOperation(),
                 "#microsoft.graph.security.ediscoveryPurgeDataOperation" => new EdiscoveryPurgeDataOperation(),
+                "#microsoft.graph.security.ediscoverySearchExportOperation" => new EdiscoverySearchExportOperation(),
                 "#microsoft.graph.security.ediscoveryTagOperation" => new EdiscoveryTagOperation(),
                 _ => new CaseOperation(),
             };

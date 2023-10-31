@@ -20,6 +20,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("destinationHost", value); }
         }
 #endif
+        /// <summary>The destinationType property</summary>
+        public PrivateNetworkDestinationType? DestinationType {
+            get { return BackingStore?.Get<PrivateNetworkDestinationType?>("destinationType"); }
+            set { BackingStore?.Set("destinationType", value); }
+        }
         /// <summary>The port property</summary>
         public int? Port {
             get { return BackingStore?.Get<int?>("port"); }
@@ -39,6 +44,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ports", value); }
         }
 #endif
+        /// <summary>The protocol property</summary>
+        public PrivateNetworkProtocol? Protocol {
+            get { return BackingStore?.Get<PrivateNetworkProtocol?>("protocol"); }
+            set { BackingStore?.Set("protocol", value); }
+        }
         /// <summary>
         /// Instantiates a new ipApplicationSegment and sets the default values.
         /// </summary>
@@ -59,8 +69,10 @@ namespace Microsoft.Graph.Beta.Models {
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"destinationHost", n => { DestinationHost = n.GetStringValue(); } },
+                {"destinationType", n => { DestinationType = n.GetEnumValue<PrivateNetworkDestinationType>(); } },
                 {"port", n => { Port = n.GetIntValue(); } },
                 {"ports", n => { Ports = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"protocol", n => { Protocol = n.GetEnumValue<PrivateNetworkProtocol>(); } },
             };
         }
         /// <summary>
@@ -71,8 +83,10 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("destinationHost", DestinationHost);
+            writer.WriteEnumValue<PrivateNetworkDestinationType>("destinationType", DestinationType);
             writer.WriteIntValue("port", Port);
             writer.WriteCollectionOfPrimitiveValues<string>("ports", Ports);
+            writer.WriteEnumValue<PrivateNetworkProtocol>("protocol", Protocol);
         }
     }
 }

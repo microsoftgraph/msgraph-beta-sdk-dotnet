@@ -222,7 +222,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("permissions", value); }
         }
 #endif
-        /// <summary>The collection of recycleBinItems under this site.</summary>
+        /// <summary>A container for a collection of recycleBinItem resources in this site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.RecycleBin? RecycleBin {

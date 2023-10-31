@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Training : Entity, IParsable {
-        /// <summary>Training availability status.Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.</summary>
+        /// <summary>Training availability status. Possible values are: unknown, notAvailable, available, archive, delete, unknownFutureValue.</summary>
         public TrainingAvailabilityStatus? AvailabilityStatus {
             get { return BackingStore?.Get<TrainingAvailabilityStatus?>("availabilityStatus"); }
             set { BackingStore?.Set("availabilityStatus", value); }

@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("activatedDateTime"); }
             set { BackingStore?.Set("activatedDateTime", value); }
         }
-        /// <summary>The duration by which the validity of the relationship is automatically extended, denoted in ISO 8601 format. Supported values are: P0D, PT0S, P180D. Default value is PT0S. PT0S indicates that the relationship expires when the endDateTime is reached and it is not automatically extended.</summary>
+        /// <summary>The duration by which the validity of the relationship is automatically extended, denoted in ISO 8601 format. Supported values are: P0D, PT0S, P180D. The default value is PT0S. PT0S indicates that the relationship expires when the endDateTime is reached and it isn&apos;t automatically extended.</summary>
         public TimeSpan? AutoExtendDuration {
             get { return BackingStore?.Get<TimeSpan?>("autoExtendDuration"); }
             set { BackingStore?.Set("autoExtendDuration", value); }

@@ -62,6 +62,25 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("jobTitle", value); }
         }
 #endif
+        /// <summary>The layer property</summary>
+        public int? Layer {
+            get { return BackingStore?.Get<int?>("layer"); }
+            set { BackingStore?.Set("layer", value); }
+        }
+        /// <summary>The level property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Level {
+            get { return BackingStore?.Get<string?>("level"); }
+            set { BackingStore?.Set("level", value); }
+        }
+#nullable restore
+#else
+        public string Level {
+            get { return BackingStore?.Get<string>("level"); }
+            set { BackingStore?.Set("level", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -133,6 +152,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"endMonthYear", n => { EndMonthYear = n.GetDateValue(); } },
                 {"jobTitle", n => { JobTitle = n.GetStringValue(); } },
+                {"layer", n => { Layer = n.GetIntValue(); } },
+                {"level", n => { Level = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"role", n => { Role = n.GetStringValue(); } },
                 {"startMonthYear", n => { StartMonthYear = n.GetDateValue(); } },
@@ -149,6 +170,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteDateValue("endMonthYear", EndMonthYear);
             writer.WriteStringValue("jobTitle", JobTitle);
+            writer.WriteIntValue("layer", Layer);
+            writer.WriteStringValue("level", Level);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("role", Role);
             writer.WriteDateValue("startMonthYear", StartMonthYear);

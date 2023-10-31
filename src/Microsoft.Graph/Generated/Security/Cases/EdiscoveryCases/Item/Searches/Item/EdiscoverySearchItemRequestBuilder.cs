@@ -6,6 +6,8 @@ using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.Add
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.LastEstimateStatisticsOperation;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityEstimateStatistics;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityExportReport;
+using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityExportResult;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityPurgeData;
 using Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item.NoncustodialSources;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -40,6 +42,14 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         /// <summary>Provides operations to call the estimateStatistics method.</summary>
         public MicrosoftGraphSecurityEstimateStatisticsRequestBuilder MicrosoftGraphSecurityEstimateStatistics { get =>
             new MicrosoftGraphSecurityEstimateStatisticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the exportReport method.</summary>
+        public MicrosoftGraphSecurityExportReportRequestBuilder MicrosoftGraphSecurityExportReport { get =>
+            new MicrosoftGraphSecurityExportReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the exportResult method.</summary>
+        public MicrosoftGraphSecurityExportResultRequestBuilder MicrosoftGraphSecurityExportResult { get =>
+            new MicrosoftGraphSecurityExportResultRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the purgeData method.</summary>
         public MicrosoftGraphSecurityPurgeDataRequestBuilder MicrosoftGraphSecurityPurgeData { get =>

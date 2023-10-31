@@ -13,5 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         Project,
         [EnumMember(Value = "driveItem")]
         DriveItem,
+        [EnumMember(Value = "user")]
+        User,
     }
 }
