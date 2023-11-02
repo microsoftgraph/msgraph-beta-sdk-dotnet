@@ -79,7 +79,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             ).Returns(new JsonSerializationWriter());  
             
 
-            await Assert.ThrowsAsync<ODataError>(async () => await graphServiceClient.Groups["groupId"].Members.Ref.PostAsync(userToCreate));
+            await Assert.ThrowsAsync<ODataError>(() => graphServiceClient.Groups["groupId"].Members.Ref.PostAsync(userToCreate));
 
         }
         
