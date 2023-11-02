@@ -130,14 +130,14 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 "value 2",
             };
 
-            var checkMemberGroupsCollectionResponse = new CheckMemberGroupsResponse
+            var checkMemberGroupsCollectionResponse = new CheckMemberGroupsPostResponse
             {
                 Value = checkMemberGroupsCollectionPage,
                 OdataNextLink = nextPageRequestUrl
             };
 
             mockRequestAdapter.Setup(
-                adapter => adapter.SendAsync(It.IsAny<RequestInformation>(),CheckMemberGroupsResponse.CreateFromDiscriminatorValue, It.IsAny<Dictionary<string, ParsableFactory<IParsable>>>(),It.IsAny<CancellationToken>() )
+                adapter => adapter.SendAsync(It.IsAny<RequestInformation>(),CheckMemberGroupsPostResponse.CreateFromDiscriminatorValue, It.IsAny<Dictionary<string, ParsableFactory<IParsable>>>(),It.IsAny<CancellationToken>() )
                 ).ReturnsAsync(checkMemberGroupsCollectionResponse);
             
             mockRequestAdapter.Setup(
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             {
                 GroupIds = new List<string>()
             };
-            var returnedCollectionPage = await graphServiceClient.Me.CheckMemberGroups.PostAsync(requestBody);
+            var returnedCollectionPage = await graphServiceClient.Me.CheckMemberGroups.PostAsCheckMemberGroupsPostResponseAsync(requestBody);
 
             Assert.NotNull(returnedCollectionPage);
             Assert.Equal(checkMemberGroupsCollectionPage, returnedCollectionPage.Value);

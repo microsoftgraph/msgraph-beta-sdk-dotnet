@@ -166,12 +166,12 @@
             PlannerTaskDetails taskDetailsToUpdate = new PlannerTaskDetails();
             taskDetailsToUpdate.Checklist = new PlannerChecklistItems();
             string checklistItemId1 = Guid.NewGuid().ToString();
-            taskDetailsToUpdate.Checklist.AdditionalData[checklistItemId1] = new PlannerCheckListItem()
+            taskDetailsToUpdate.Checklist.AdditionalData[checklistItemId1] = new PlannerChecklistItem()
             {
                 Title = "Do Something"
             };
             string checklistItemId2 = Guid.NewGuid().ToString();
-            taskDetailsToUpdate.Checklist.AdditionalData[checklistItemId1] = new PlannerCheckListItem()
+            taskDetailsToUpdate.Checklist.AdditionalData[checklistItemId1] = new PlannerChecklistItem()
             {
                 Title = "Do Something else"
             };
@@ -195,8 +195,8 @@
             Assert.Equal("Description of the task", updatedTaskDetails.Description);
             Assert.Equal(PlannerPreviewType.Checklist, updatedTaskDetails.PreviewType);
             Assert.Equal(2, updatedTaskDetails.Checklist.AdditionalData.Count());
-            Assert.Equal("Do something", ((PlannerCheckListItem)updatedTaskDetails.Checklist.AdditionalData[checklistItemId1])?.Title);
-            Assert.Equal("Do something else", ((PlannerCheckListItem)updatedTaskDetails.Checklist.AdditionalData[checklistItemId2])?.Title);
+            Assert.Equal("Do something", ((PlannerChecklistItem)updatedTaskDetails.Checklist.AdditionalData[checklistItemId1])?.Title);
+            Assert.Equal("Do something else", ((PlannerChecklistItem)updatedTaskDetails.Checklist.AdditionalData[checklistItemId2])?.Title);
             Assert.Single(updatedTaskDetails.References.AdditionalData);
             Assert.Equal("Developer resources", ((PlannerExternalReference)updatedTaskDetails.References.AdditionalData["http://developer.microsoft.com"])?.Alias);
         }

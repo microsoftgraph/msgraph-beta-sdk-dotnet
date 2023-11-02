@@ -35,7 +35,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         {
             // Check that this item hasn't already been created. 
             // https://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/item_search
-            var searchResults = await graphClient.Drives["driveId"].Items[""].SearchWithQ(fileName).GetAsync();
+            var searchResults = await graphClient.Drives["driveId"].Items[""].SearchWithQ(fileName).GetAsSearchWithQGetResponseAsync();
             foreach (var r in searchResults.Value)
             {
                 if (r.Name != fileName)
