@@ -47,6 +47,11 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The trafficType property</summary>
+        public Microsoft.Graph.Beta.Models.Networkaccess.TrafficType? TrafficType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
+            set { BackingStore?.Set("trafficType", value); }
+        }
         /// <summary>
         /// Instantiates a new destinationSummary and sets the default values.
         /// </summary>
@@ -70,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
                 {"count", n => { Count = n.GetIntValue(); } },
                 {"destination", n => { Destination = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
             };
         }
         /// <summary>
@@ -81,6 +87,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             writer.WriteIntValue("count", Count);
             writer.WriteStringValue("destination", Destination);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteEnumValue<TrafficType>("trafficType", TrafficType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

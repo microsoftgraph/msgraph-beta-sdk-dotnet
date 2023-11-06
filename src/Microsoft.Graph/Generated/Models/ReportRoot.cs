@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("monthlyPrintUsageSummariesByUser", value); }
         }
 #endif
-        /// <summary>Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.</summary>
+        /// <summary>Provides the ability to launch a realistically simulated phishing attack that organizations can learn from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SecurityReportsRoot? Security {
@@ -244,6 +244,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userCredentialUsageDetails", value); }
         }
 #endif
+        /// <summary>The userInsights property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UserInsightsRoot? UserInsights {
+            get { return BackingStore?.Get<UserInsightsRoot?>("userInsights"); }
+            set { BackingStore?.Set("userInsights", value); }
+        }
+#nullable restore
+#else
+        public UserInsightsRoot UserInsights {
+            get { return BackingStore?.Get<UserInsightsRoot>("userInsights"); }
+            set { BackingStore?.Set("userInsights", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -274,6 +288,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"servicePrincipalSignInActivities", n => { ServicePrincipalSignInActivities = n.GetCollectionOfObjectValues<ServicePrincipalSignInActivity>(ServicePrincipalSignInActivity.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"sla", n => { Sla = n.GetObjectValue<ServiceLevelAgreementRoot>(ServiceLevelAgreementRoot.CreateFromDiscriminatorValue); } },
                 {"userCredentialUsageDetails", n => { UserCredentialUsageDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>(Microsoft.Graph.Beta.Models.UserCredentialUsageDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"userInsights", n => { UserInsights = n.GetObjectValue<UserInsightsRoot>(UserInsightsRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -300,6 +315,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<ServicePrincipalSignInActivity>("servicePrincipalSignInActivities", ServicePrincipalSignInActivities);
             writer.WriteObjectValue<ServiceLevelAgreementRoot>("sla", Sla);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>("userCredentialUsageDetails", UserCredentialUsageDetails);
+            writer.WriteObjectValue<UserInsightsRoot>("userInsights", UserInsights);
         }
     }
 }

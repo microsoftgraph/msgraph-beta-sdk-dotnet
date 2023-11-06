@@ -36,7 +36,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 {
                     EmailAddresses = emailAddresses, MailTipsOptions = mailTipsOptions
                 };
-                var mailTipsCollectionPage = await graphClient.Me.GetMailTips.PostAsync(requestBody);
+                var mailTipsCollectionPage = await graphClient.Me.GetMailTips.PostAsGetMailTipsPostResponseAsync(requestBody);
 
                 foreach (var mt in mailTipsCollectionPage.Value)
                 {
@@ -327,7 +327,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 {
                     SecurityEnabledOnly = true
                 };
-                var directoryObjectGetMemberGroupsCollectionPage = await getMemberGroupsRequest.PostAsync(requestBody);
+                var directoryObjectGetMemberGroupsCollectionPage = await getMemberGroupsRequest.PostAsGetMemberGroupsPostResponseAsync(requestBody);
 
                 Assert.NotNull(directoryObjectGetMemberGroupsCollectionPage);
                 Assert.Equal("POST", getMemberGroupsRequest.ToPostRequestInformation(requestBody).HttpMethod.ToString());
@@ -350,7 +350,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             {
                 var getMemberGroupsRequest = graphClient.Me.GetMemberGroups;
                 var requestBody = new GetMemberGroupsPostRequestBody();
-                var directoryObjectGetMemberGroupsCollectionPage = await getMemberGroupsRequest.PostAsync(requestBody);
+                var directoryObjectGetMemberGroupsCollectionPage = await getMemberGroupsRequest.PostAsGetMemberGroupsPostResponseAsync(requestBody);
             }
             catch (ODataError e)
             {

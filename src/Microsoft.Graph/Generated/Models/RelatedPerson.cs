@@ -47,6 +47,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<PersonRelationship?>("relationship"); }
             set { BackingStore?.Set("relationship", value); }
         }
+        /// <summary>The userId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#nullable restore
+#else
+        public string UserId {
+            get { return BackingStore?.Get<string>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#endif
         /// <summary>Email address or reference to person within organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,6 +98,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"relationship", n => { Relationship = n.GetEnumValue<PersonRelationship>(); } },
+                {"userId", n => { UserId = n.GetStringValue(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
@@ -96,6 +111,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<PersonRelationship>("relationship", Relationship);
+            writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteAdditionalData(AdditionalData);
         }

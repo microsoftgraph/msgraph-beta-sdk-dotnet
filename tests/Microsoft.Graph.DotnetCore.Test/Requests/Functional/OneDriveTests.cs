@@ -25,7 +25,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         public async Task OneDriveSharedWithMe()
         {
 
-            var sharedDriveItems = await graphClient.Drives["driveId"].SharedWithMe.GetAsync();
+            var sharedDriveItems = await graphClient.Drives["driveId"].SharedWithMe.GetAsSharedWithMeGetResponseAsync();
             var permissionsPage = await graphClient.Drives["driveId"].Items[sharedDriveItems.Value[0].Id].Permissions.GetAsync();
             var permissions = new List<Permission>();
             permissions.AddRange(permissionsPage.Value);
@@ -234,7 +234,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             try
             {
                 // http://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/item_search
-                var driveItems = await graphClient.Drives["driveId"].SearchWithQ("employee services").GetAsync();
+                var driveItems = await graphClient.Drives["driveId"].SearchWithQ("employee services").GetAsSearchWithQGetResponseAsync();
 
                 // Expecting two results.
                 Assert.Equal(2, driveItems.Value.Count);
@@ -315,7 +315,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                                                            .Root
                                                            .ItemWithPath(itemToShare.Value[0].Name)
                                                            .Invite
-                                                           .PostAsync(invitePostBody);
+                                                           .PostAsInvitePostResponseAsync(invitePostBody);
 
                 Assert.Equal("Alex Wilber", inviteCollection.Value[0].GrantedTo.User.DisplayName);
             }

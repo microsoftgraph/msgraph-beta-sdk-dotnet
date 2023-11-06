@@ -343,7 +343,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                                     "<body>Generated from the test</body></html> ";
 
                 var requestInformation = graphClient.Me.Onenote.Sections[firstSectionID].Pages.ToPostRequestInformation(null);
-                requestInformation.SetStreamContent(new MemoryStream(Encoding.UTF8.GetBytes(htmlBody)));
+                requestInformation.SetStreamContent(new MemoryStream(Encoding.UTF8.GetBytes(htmlBody)), "text/html");
                 requestInformation.Headers.Add("Content-Type","text/html");
 
                 // Send the request and get the response.
@@ -406,7 +406,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     requestInformation.HttpMethod = Method.POST;
 
                     // Create the request message and add the content.
-                    requestInformation.SetStreamContent(stream);
+                    requestInformation.SetStreamContent(stream, "text/html");
                     
                 }
                 
@@ -477,7 +477,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     // Create the request message and add the content.
                     requestInformation.HttpMethod = Method.POST;
                     requestInformation.Headers.Add("Content-Type",contentType);
-                    requestInformation.SetStreamContent(await image.ReadAsStreamAsync());
+                    requestInformation.SetStreamContent(await image.ReadAsStreamAsync(),contentType);
                     
                     // Deserialize into OneNotePage object.
                     testPage = await graphClient.RequestAdapter.SendAsync<OnenotePage>(requestInformation,OnenotePage.CreateFromDiscriminatorValue);
@@ -547,7 +547,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 var serializer = new JsonSerializationWriter();
                 serializer.WriteCollectionOfObjectValues<OnenotePatchContentCommand>(string.Empty,commands);
                 
-                requestInformation.SetStreamContent(serializer.GetSerializedContent());
+                requestInformation.SetStreamContent(serializer.GetSerializedContent(),"application/json");
                 requestInformation.Headers.Add("Content-Type", "application/json");
 
                 // Send the request and get the response.
@@ -608,7 +608,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             var requestInformation =
                 graphClient.Me.Onenote.Sections[firstSectionID].Pages.ToGetRequestInformation();
             requestInformation.HttpMethod = Method.POST;
-            requestInformation.SetStreamContent(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(htmlBody)));
+            requestInformation.SetStreamContent(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(htmlBody)), "text/html");
             requestInformation.Headers.Add("Content-Type","text/html");
             testPage = await graphClient.RequestAdapter.SendAsync(requestInformation,OnenotePage.CreateFromDiscriminatorValue);
 
@@ -664,7 +664,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     var requestInformation =
                         graphClient.Me.Onenote.Sections[firstSectionID].Pages.ToGetRequestInformation();
                     requestInformation.HttpMethod = Method.POST;
-                    requestInformation.SetStreamContent(await multiPartContent.ReadAsStreamAsync());
+                    requestInformation.SetStreamContent(await multiPartContent.ReadAsStreamAsync(), contentType);
                     requestInformation.Headers.Add("Content-Type",contentType);
                     testPage = await graphClient.RequestAdapter.SendAsync(requestInformation,OnenotePage.CreateFromDiscriminatorValue);
                 }

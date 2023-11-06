@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Planner.Plans.Item.Buckets;
 using Microsoft.Graph.Beta.Planner.Plans.Item.Details;
+using Microsoft.Graph.Beta.Planner.Plans.Item.MoveToContainer;
 using Microsoft.Graph.Beta.Planner.Plans.Item.Tasks;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -24,6 +25,10 @@ namespace Microsoft.Graph.Beta.Planner.Plans.Item {
         /// <summary>Provides operations to manage the details property of the microsoft.graph.plannerPlan entity.</summary>
         public DetailsRequestBuilder Details { get =>
             new DetailsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the moveToContainer method.</summary>
+        public MoveToContainerRequestBuilder MoveToContainer { get =>
+            new MoveToContainerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.</summary>
         public TasksRequestBuilder Tasks { get =>

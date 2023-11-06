@@ -55,13 +55,14 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding.Favicon {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PutAsync(Stream body, Action<FaviconRequestBuilderPutRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> PutAsync(Stream body, string contentType, Action<FaviconRequestBuilderPutRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Stream> PutAsync(Stream body, Action<FaviconRequestBuilderPutRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> PutAsync(Stream body, string contentType, Action<FaviconRequestBuilderPutRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
+            if(string.IsNullOrEmpty(contentType)) throw new ArgumentNullException(nameof(contentType));
+            var requestInfo = ToPutRequestInformation(body, contentType, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
@@ -90,7 +91,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding.Favicon {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
-            requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json, application/json");
+            requestInfo.Headers.TryAdd("Accept", "image/bmp, image/jpg, image/jpeg, image/gif, image/vnd.microsoft.icon, image/png, image/tiff, application/json, application/json");
             return requestInfo;
         }
         /// <summary>
@@ -100,12 +101,13 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding.Favicon {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(Stream body, Action<FaviconRequestBuilderPutRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(Stream body, string contentType, Action<FaviconRequestBuilderPutRequestConfiguration>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(Stream body, Action<FaviconRequestBuilderPutRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(Stream body, string contentType, Action<FaviconRequestBuilderPutRequestConfiguration> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(string.IsNullOrEmpty(contentType)) throw new ArgumentNullException(nameof(contentType));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PUT,
                 UrlTemplate = UrlTemplate,
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding.Favicon {
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
-            requestInfo.SetStreamContent(body, "application/octet-stream");
+            requestInfo.SetStreamContent(body, contentType);
             return requestInfo;
         }
         /// <summary>

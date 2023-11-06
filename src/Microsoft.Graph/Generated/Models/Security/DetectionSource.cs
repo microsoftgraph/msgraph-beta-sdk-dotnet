@@ -41,6 +41,28 @@ namespace Microsoft.Graph.Beta.Models.Security {
         UnknownFutureValue,
         [EnumMember(Value = "microsoftDefenderForCloud")]
         MicrosoftDefenderForCloud,
+        [EnumMember(Value = "microsoftDefenderForIoT")]
+        MicrosoftDefenderForIoT,
+        [EnumMember(Value = "microsoftDefenderForServers")]
+        MicrosoftDefenderForServers,
+        [EnumMember(Value = "microsoftDefenderForStorage")]
+        MicrosoftDefenderForStorage,
+        [EnumMember(Value = "microsoftDefenderForDNS")]
+        MicrosoftDefenderForDNS,
+        [EnumMember(Value = "microsoftDefenderForDatabases")]
+        MicrosoftDefenderForDatabases,
+        [EnumMember(Value = "microsoftDefenderForContainers")]
+        MicrosoftDefenderForContainers,
+        [EnumMember(Value = "microsoftDefenderForNetwork")]
+        MicrosoftDefenderForNetwork,
+        [EnumMember(Value = "microsoftDefenderForAppService")]
+        MicrosoftDefenderForAppService,
+        [EnumMember(Value = "microsoftDefenderForKeyVault")]
+        MicrosoftDefenderForKeyVault,
+        [EnumMember(Value = "microsoftDefenderForResourceManager")]
+        MicrosoftDefenderForResourceManager,
+        [EnumMember(Value = "microsoftDefenderForApiManagement")]
+        MicrosoftDefenderForApiManagement,
         [EnumMember(Value = "nrtAlerts")]
         NrtAlerts,
         [EnumMember(Value = "scheduledAlerts")]

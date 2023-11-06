@@ -99,6 +99,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isBackendCertificateValidationEnabled"); }
             set { BackingStore?.Set("isBackendCertificateValidationEnabled", value); }
         }
+        /// <summary>The isDnsResolutionEnabled property</summary>
+        public bool? IsDnsResolutionEnabled {
+            get { return BackingStore?.Get<bool?>("isDnsResolutionEnabled"); }
+            set { BackingStore?.Set("isDnsResolutionEnabled", value); }
+        }
         /// <summary>Indicates if the HTTPOnly cookie flag should be set in the HTTP response headers. Set this value to true to have Application Proxy cookies include the HTTPOnly flag in the HTTP response headers. If using Remote Desktop Services, set this value to False. Default value is false.</summary>
         public bool? IsHttpOnlyCookieEnabled {
             get { return BackingStore?.Get<bool?>("isHttpOnlyCookieEnabled"); }
@@ -265,6 +270,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"internalUrl", n => { InternalUrl = n.GetStringValue(); } },
                 {"isAccessibleViaZTNAClient", n => { IsAccessibleViaZTNAClient = n.GetBoolValue(); } },
                 {"isBackendCertificateValidationEnabled", n => { IsBackendCertificateValidationEnabled = n.GetBoolValue(); } },
+                {"isDnsResolutionEnabled", n => { IsDnsResolutionEnabled = n.GetBoolValue(); } },
                 {"isHttpOnlyCookieEnabled", n => { IsHttpOnlyCookieEnabled = n.GetBoolValue(); } },
                 {"isOnPremPublishingEnabled", n => { IsOnPremPublishingEnabled = n.GetBoolValue(); } },
                 {"isPersistentCookieEnabled", n => { IsPersistentCookieEnabled = n.GetBoolValue(); } },
@@ -296,6 +302,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("internalUrl", InternalUrl);
             writer.WriteBoolValue("isAccessibleViaZTNAClient", IsAccessibleViaZTNAClient);
             writer.WriteBoolValue("isBackendCertificateValidationEnabled", IsBackendCertificateValidationEnabled);
+            writer.WriteBoolValue("isDnsResolutionEnabled", IsDnsResolutionEnabled);
             writer.WriteBoolValue("isHttpOnlyCookieEnabled", IsHttpOnlyCookieEnabled);
             writer.WriteBoolValue("isOnPremPublishingEnabled", IsOnPremPublishingEnabled);
             writer.WriteBoolValue("isPersistentCookieEnabled", IsPersistentCookieEnabled);

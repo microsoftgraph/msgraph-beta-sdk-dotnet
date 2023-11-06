@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace Microsoft.Graph.Beta.Models;
 
-public class PlannerCheckListItem: IAdditionalDataHolder, IBackedModel, IParsable
+public class PlannerChecklistItem: IAdditionalDataHolder, IBackedModel, IParsable
 {
     /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
     public IDictionary<string, object> AdditionalData {
@@ -87,7 +87,7 @@ public class PlannerCheckListItem: IAdditionalDataHolder, IBackedModel, IParsabl
     /// <summary>
     /// Instantiates a new auditActivityInitiator and sets the default values.
     /// </summary>
-    public PlannerCheckListItem() {
+    public PlannerChecklistItem() {
         BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
         AdditionalData = new Dictionary<string, object>();
         OdataType = "#microsoft.graph.plannerChecklistItem";
@@ -96,9 +96,9 @@ public class PlannerCheckListItem: IAdditionalDataHolder, IBackedModel, IParsabl
     /// Creates a new instance of the appropriate class based on discriminator value
     /// </summary>
     /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-    public static PlannerCheckListItem CreateFromDiscriminatorValue(IParseNode parseNode) {
+    public static PlannerChecklistItem CreateFromDiscriminatorValue(IParseNode parseNode) {
         _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-        return new PlannerCheckListItem();
+        return new PlannerChecklistItem();
     }
     /// <summary>
     /// The deserialization information for the current model
@@ -126,5 +126,18 @@ public class PlannerCheckListItem: IAdditionalDataHolder, IBackedModel, IParsabl
         writer.WriteStringValue("orderHint", OrderHint);
         writer.WriteStringValue("title", Title);
         writer.WriteAdditionalData(AdditionalData);
+    }
+}
+
+[Obsolete("This class is obsolete due to incorrect naming. Use PlannerChecklistItem instead.")]
+public class PlannerCheckListItem : PlannerChecklistItem
+{
+    /// <summary>
+    /// Creates a new instance of the appropriate class based on discriminator value
+    /// </summary>
+    /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+    public static new PlannerCheckListItem CreateFromDiscriminatorValue(IParseNode parseNode) {
+        _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+        return new PlannerCheckListItem();
     }
 }
