@@ -49,8 +49,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item {
         public UpdatableAssetItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/windows/updates/updatableAssets/{updatableAsset%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an updatableAsset object. This API is available in the following national cloud deployments.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-delete?view=graph-rest-1.0" />
+        /// Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted. This API is available in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,8 +69,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an updatableAsset object. This API is available in the following national cloud deployments.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatableasset-get?view=graph-rest-1.0" />
+        /// Read the properties of an azureADDevice object. This API is available in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item {
             return await RequestAdapter.SendAsync<UpdatableAsset>(requestInfo, UpdatableAsset.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an updatableAsset object. This API is available in the following national cloud deployments.
+        /// Delete an updatableAssetGroup object. When an updatableAssetGroup object, its member updatableAsset objects are not deleted. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an updatableAsset object. This API is available in the following national cloud deployments.
+        /// Read the properties of an azureADDevice object. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -212,7 +212,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of an updatableAsset object. This API is available in the following national cloud deployments.
+        /// Read the properties of an azureADDevice object. This API is available in the following national cloud deployments.
         /// </summary>
         public class UpdatableAssetItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

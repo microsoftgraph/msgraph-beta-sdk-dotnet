@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Admin.People.ProfileCardProperties {
             return await RequestAdapter.SendAsync<ProfileCardPropertyCollectionResponse>(requestInfo, ProfileCardPropertyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information about how to add properties to the profile card for an organization, see Add or delete custom attributes on a profile card using the profile card API. This API is available in the following national cloud deployments.
+        /// Create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information about how to add properties to the profile card for an organization, see Add or remove custom attributes on a profile card using the profile card API. This API is available in the following national cloud deployments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/peopleadminsettings-post-profilecardproperties?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Admin.People.ProfileCardProperties {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information about how to add properties to the profile card for an organization, see Add or delete custom attributes on a profile card using the profile card API. This API is available in the following national cloud deployments.
+        /// Create a new profileCardProperty for an organization. The new property is identified by its directoryPropertyName property. For more information about how to add properties to the profile card for an organization, see Add or remove custom attributes on a profile card using the profile card API. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.PermissionGrants.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The permissions that have been granted for a group to a specific application. Supports $expand.
+        /// The permissions granted for a group to a specific application. Supports $expand.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.PermissionGrants.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The permissions that have been granted for a group to a specific application. Supports $expand.
+        /// The permissions granted for a group to a specific application. Supports $expand.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.PermissionGrants.Item {
             }
         }
         /// <summary>
-        /// The permissions that have been granted for a group to a specific application. Supports $expand.
+        /// The permissions granted for a group to a specific application. Supports $expand.
         /// </summary>
         public class ResourceSpecificPermissionGrantItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

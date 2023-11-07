@@ -26,6 +26,7 @@ using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.LogCollectionReq
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.LogoutSharedAppleDeviceActiveUser;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ManagedDeviceMobileAppConfigurationStates;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.OverrideComplianceState;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.PauseConfigurationRefresh;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.PlayLostModeSound;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RebootNow;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.RecoverPasscode;
@@ -177,6 +178,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item {
         /// <summary>Provides operations to call the overrideComplianceState method.</summary>
         public OverrideComplianceStateRequestBuilder OverrideComplianceState { get =>
             new OverrideComplianceStateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the pauseConfigurationRefresh method.</summary>
+        public PauseConfigurationRefreshRequestBuilder PauseConfigurationRefresh { get =>
+            new PauseConfigurationRefreshRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the playLostModeSound method.</summary>
         public PlayLostModeSoundRequestBuilder PlayLostModeSound { get =>

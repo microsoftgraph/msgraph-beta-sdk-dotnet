@@ -13,5 +13,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Automatic Proxy Settings via URL.</summary>
         [EnumMember(Value = "automatic")]
         Automatic,
+        /// <summary>Unknown future value for evolvable enum patterns.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

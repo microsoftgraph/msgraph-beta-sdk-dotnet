@@ -14,6 +14,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("batteryAgeInDays"); }
             set { BackingStore?.Set("batteryAgeInDays", value); }
         }
+        /// <summary>Properties (maxCapacity and cycleCount) related to all batteries of the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<UserExperienceAnalyticsDeviceBatteryDetail>? DeviceBatteriesDetails {
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsDeviceBatteryDetail>?>("deviceBatteriesDetails"); }
+            set { BackingStore?.Set("deviceBatteriesDetails", value); }
+        }
+#nullable restore
+#else
+        public List<UserExperienceAnalyticsDeviceBatteryDetail> DeviceBatteriesDetails {
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsDeviceBatteryDetail>>("deviceBatteriesDetails"); }
+            set { BackingStore?.Set("deviceBatteriesDetails", value); }
+        }
+#endif
         /// <summary>Number of batteries in a user device. Valid values 1 to 2147483647</summary>
         public int? DeviceBatteryCount {
             get { return BackingStore?.Get<int?>("deviceBatteryCount"); }
@@ -114,6 +128,7 @@ namespace Microsoft.Graph.Beta.Models {
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"batteryAgeInDays", n => { BatteryAgeInDays = n.GetIntValue(); } },
+                {"deviceBatteriesDetails", n => { DeviceBatteriesDetails = n.GetCollectionOfObjectValues<UserExperienceAnalyticsDeviceBatteryDetail>(UserExperienceAnalyticsDeviceBatteryDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deviceBatteryCount", n => { DeviceBatteryCount = n.GetIntValue(); } },
                 {"deviceBatteryHealthScore", n => { DeviceBatteryHealthScore = n.GetIntValue(); } },
                 {"deviceId", n => { DeviceId = n.GetStringValue(); } },
@@ -134,6 +149,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("batteryAgeInDays", BatteryAgeInDays);
+            writer.WriteCollectionOfObjectValues<UserExperienceAnalyticsDeviceBatteryDetail>("deviceBatteriesDetails", DeviceBatteriesDetails);
             writer.WriteIntValue("deviceBatteryCount", DeviceBatteryCount);
             writer.WriteIntValue("deviceBatteryHealthScore", DeviceBatteryHealthScore);
             writer.WriteStringValue("deviceId", DeviceId);

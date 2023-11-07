@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Assign;
 using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Assignments;
 using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.CreateCopy;
 using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Reorder;
+using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.RetrieveLatestUpgradeDefaultBaselinePolicy;
 using Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Settings;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -34,6 +35,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item {
         /// <summary>Provides operations to call the reorder method.</summary>
         public ReorderRequestBuilder Reorder { get =>
             new ReorderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveLatestUpgradeDefaultBaselinePolicy method.</summary>
+        public RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilder RetrieveLatestUpgradeDefaultBaselinePolicy { get =>
+            new RetrieveLatestUpgradeDefaultBaselinePolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.deviceManagementConfigurationPolicy entity.</summary>
         public SettingsRequestBuilder Settings { get =>

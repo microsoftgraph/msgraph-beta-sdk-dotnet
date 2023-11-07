@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MemberOf {
         public MemberOfRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/memberOf{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+        /// The groups, directory roles, and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-memberof?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MemberOf {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+        /// The groups, directory roles, and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MemberOf {
             return new MemberOfRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
+        /// The groups, directory roles, and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.
         /// </summary>
         public class MemberOfRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

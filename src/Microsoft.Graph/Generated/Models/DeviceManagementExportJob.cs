@@ -136,13 +136,16 @@ namespace Microsoft.Graph.Beta.Models {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteStringValue("filter", Filter);
             writer.WriteEnumValue<DeviceManagementReportFileFormat>("format", Format);
             writer.WriteEnumValue<DeviceManagementExportJobLocalizationType>("localizationType", LocalizationType);
             writer.WriteStringValue("reportName", ReportName);
+            writer.WriteDateTimeOffsetValue("requestDateTime", RequestDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("select", Select);
             writer.WriteStringValue("snapshotId", SnapshotId);
             writer.WriteEnumValue<DeviceManagementReportStatus>("status", Status);
+            writer.WriteStringValue("url", Url);
         }
     }
 }

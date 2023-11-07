@@ -42,7 +42,8 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods {
         public PlatformCredentialMethodsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/authentication/platformCredentialMethods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get platformCredentialMethods from me
+        /// Get a list of the platformCredentialAuthenticationMethod objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/platformcredentialauthenticationmethod-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods {
             return await RequestAdapter.SendAsync<PlatformCredentialAuthenticationMethodCollectionResponse>(requestInfo, PlatformCredentialAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get platformCredentialMethods from me
+        /// Get a list of the platformCredentialAuthenticationMethod objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,7 +95,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods {
             return new PlatformCredentialMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get platformCredentialMethods from me
+        /// Get a list of the platformCredentialAuthenticationMethod objects and their properties.
         /// </summary>
         public class PlatformCredentialMethodsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

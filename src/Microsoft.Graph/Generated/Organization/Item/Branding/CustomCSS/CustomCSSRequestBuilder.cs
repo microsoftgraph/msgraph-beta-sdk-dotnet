@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding.CustomCSS {
         /// </summary>
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="contentType">The request body content type.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,6 +99,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding.CustomCSS {
         /// CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
         /// </summary>
         /// <param name="body">Binary request body</param>
+        /// <param name="contentType">The request body content type.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

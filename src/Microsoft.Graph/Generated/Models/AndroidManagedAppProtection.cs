@@ -244,6 +244,34 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("keyboardsRestricted"); }
             set { BackingStore?.Set("keyboardsRestricted", value); }
         }
+        /// <summary>When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app name which is allowed to be used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessagingRedirectAppDisplayName {
+            get { return BackingStore?.Get<string?>("messagingRedirectAppDisplayName"); }
+            set { BackingStore?.Set("messagingRedirectAppDisplayName", value); }
+        }
+#nullable restore
+#else
+        public string MessagingRedirectAppDisplayName {
+            get { return BackingStore?.Get<string>("messagingRedirectAppDisplayName"); }
+            set { BackingStore?.Set("messagingRedirectAppDisplayName", value); }
+        }
+#endif
+        /// <summary>When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app package id which is allowed to be used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessagingRedirectAppPackageId {
+            get { return BackingStore?.Get<string?>("messagingRedirectAppPackageId"); }
+            set { BackingStore?.Set("messagingRedirectAppPackageId", value); }
+        }
+#nullable restore
+#else
+        public string MessagingRedirectAppPackageId {
+            get { return BackingStore?.Get<string>("messagingRedirectAppPackageId"); }
+            set { BackingStore?.Set("messagingRedirectAppPackageId", value); }
+        }
+#endif
         /// <summary>Minimum version of the Company portal that must be installed on the device or app access will be blocked</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -416,6 +444,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"exemptedAppPackages", n => { ExemptedAppPackages = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"fingerprintAndBiometricEnabled", n => { FingerprintAndBiometricEnabled = n.GetBoolValue(); } },
                 {"keyboardsRestricted", n => { KeyboardsRestricted = n.GetBoolValue(); } },
+                {"messagingRedirectAppDisplayName", n => { MessagingRedirectAppDisplayName = n.GetStringValue(); } },
+                {"messagingRedirectAppPackageId", n => { MessagingRedirectAppPackageId = n.GetStringValue(); } },
                 {"minimumRequiredCompanyPortalVersion", n => { MinimumRequiredCompanyPortalVersion = n.GetStringValue(); } },
                 {"minimumRequiredPatchVersion", n => { MinimumRequiredPatchVersion = n.GetStringValue(); } },
                 {"minimumWarningCompanyPortalVersion", n => { MinimumWarningCompanyPortalVersion = n.GetStringValue(); } },
@@ -468,6 +498,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<KeyValuePair>("exemptedAppPackages", ExemptedAppPackages);
             writer.WriteBoolValue("fingerprintAndBiometricEnabled", FingerprintAndBiometricEnabled);
             writer.WriteBoolValue("keyboardsRestricted", KeyboardsRestricted);
+            writer.WriteStringValue("messagingRedirectAppDisplayName", MessagingRedirectAppDisplayName);
+            writer.WriteStringValue("messagingRedirectAppPackageId", MessagingRedirectAppPackageId);
             writer.WriteStringValue("minimumRequiredCompanyPortalVersion", MinimumRequiredCompanyPortalVersion);
             writer.WriteStringValue("minimumRequiredPatchVersion", MinimumRequiredPatchVersion);
             writer.WriteStringValue("minimumWarningCompanyPortalVersion", MinimumWarningCompanyPortalVersion);

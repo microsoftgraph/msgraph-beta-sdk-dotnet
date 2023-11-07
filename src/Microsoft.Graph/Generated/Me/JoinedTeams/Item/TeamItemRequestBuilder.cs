@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Me.JoinedTeams.Item {
         public TeamItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/joinedTeams/{team%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+        /// The Microsoft Teams teams the user is a member of. Read-only. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Me.JoinedTeams.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Team>(requestInfo, Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+        /// The Microsoft Teams teams the user is a member of. Read-only. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Me.JoinedTeams.Item {
             return new TeamItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The Microsoft Teams teams that the user is a member of. Read-only. Nullable.
+        /// The Microsoft Teams teams the user is a member of. Read-only. Nullable.
         /// </summary>
         public class TeamItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

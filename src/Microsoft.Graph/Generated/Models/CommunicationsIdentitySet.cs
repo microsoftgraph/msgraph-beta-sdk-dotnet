@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("encrypted", value); }
         }
 #endif
-        /// <summary>Type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.</summary>
+        /// <summary>Type of endpoint the participant uses. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.EndpointType? EndpointType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EndpointType?>("endpointType"); }
             set { BackingStore?.Set("endpointType", value); }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("guest", value); }
         }
 #endif
-        /// <summary>The Skype for Business On-Premises user associated with this action.</summary>
+        /// <summary>The Skype for Business on-premises user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Identity? OnPremises {
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onPremises", value); }
         }
 #endif
-        /// <summary>Inherited from identitySet. The phone user associated with this action.</summary>
+        /// <summary>The phone user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Identity? Phone {

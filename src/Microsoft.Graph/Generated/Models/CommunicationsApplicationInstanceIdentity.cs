@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CommunicationsApplicationInstanceIdentity : Identity, IParsable {
-        /// <summary>True if the participant wouldn&apos;t like to be shown in other participants&apos; rosters.</summary>
+        /// <summary>True if the participant shouldn&apos;t be shown in other participants&apos; rosters.</summary>
         public bool? Hidden {
             get { return BackingStore?.Get<bool?>("hidden"); }
             set { BackingStore?.Set("hidden", value); }
         }
-        /// <summary>The application&apos;s tenant ID.</summary>
+        /// <summary>The tenant ID of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId {

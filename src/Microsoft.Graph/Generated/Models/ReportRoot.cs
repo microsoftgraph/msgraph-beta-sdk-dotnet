@@ -202,6 +202,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("security", value); }
         }
 #endif
+        /// <summary>A placeholder to the Microsoft Entra service activity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.ServiceActivity? ServiceActivity {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServiceActivity?>("serviceActivity"); }
+            set { BackingStore?.Set("serviceActivity", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.ServiceActivity ServiceActivity {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServiceActivity>("serviceActivity"); }
+            set { BackingStore?.Set("serviceActivity", value); }
+        }
+#endif
         /// <summary>Represents a collection of sign-in activities of service principals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -285,6 +299,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"monthlyPrintUsageSummariesByPrinter", n => { MonthlyPrintUsageSummariesByPrinter = n.GetCollectionOfObjectValues<PrintUsageByPrinter>(PrintUsageByPrinter.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"monthlyPrintUsageSummariesByUser", n => { MonthlyPrintUsageSummariesByUser = n.GetCollectionOfObjectValues<PrintUsageByUser>(PrintUsageByUser.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"security", n => { Security = n.GetObjectValue<SecurityReportsRoot>(SecurityReportsRoot.CreateFromDiscriminatorValue); } },
+                {"serviceActivity", n => { ServiceActivity = n.GetObjectValue<Microsoft.Graph.Beta.Models.ServiceActivity>(Microsoft.Graph.Beta.Models.ServiceActivity.CreateFromDiscriminatorValue); } },
                 {"servicePrincipalSignInActivities", n => { ServicePrincipalSignInActivities = n.GetCollectionOfObjectValues<ServicePrincipalSignInActivity>(ServicePrincipalSignInActivity.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"sla", n => { Sla = n.GetObjectValue<ServiceLevelAgreementRoot>(ServiceLevelAgreementRoot.CreateFromDiscriminatorValue); } },
                 {"userCredentialUsageDetails", n => { UserCredentialUsageDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>(Microsoft.Graph.Beta.Models.UserCredentialUsageDetails.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -312,6 +327,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<PrintUsageByPrinter>("monthlyPrintUsageSummariesByPrinter", MonthlyPrintUsageSummariesByPrinter);
             writer.WriteCollectionOfObjectValues<PrintUsageByUser>("monthlyPrintUsageSummariesByUser", MonthlyPrintUsageSummariesByUser);
             writer.WriteObjectValue<SecurityReportsRoot>("security", Security);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ServiceActivity>("serviceActivity", ServiceActivity);
             writer.WriteCollectionOfObjectValues<ServicePrincipalSignInActivity>("servicePrincipalSignInActivities", ServicePrincipalSignInActivities);
             writer.WriteObjectValue<ServiceLevelAgreementRoot>("sla", Sla);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>("userCredentialUsageDetails", UserCredentialUsageDetails);

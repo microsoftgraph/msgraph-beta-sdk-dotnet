@@ -126,6 +126,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
+        /// <summary>Require device to have no pending Android system updates.</summary>
+        public bool? RequireNoPendingSystemUpdates {
+            get { return BackingStore?.Get<bool?>("requireNoPendingSystemUpdates"); }
+            set { BackingStore?.Set("requireNoPendingSystemUpdates", value); }
+        }
         /// <summary>If setting is set to true, checks that the Intune app installed on fully managed, dedicated, or corporate-owned work profile Android Enterprise enrolled devices, is the one provided by Microsoft from the Managed Google Playstore. If the check fails, the device will be reported as non-compliant.</summary>
         public bool? SecurityRequireIntuneAppIntegrity {
             get { return BackingStore?.Get<bool?>("securityRequireIntuneAppIntegrity"); }
@@ -183,6 +188,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"passwordPreviousPasswordCountToBlock", n => { PasswordPreviousPasswordCountToBlock = n.GetIntValue(); } },
                 {"passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
                 {"passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<AndroidDeviceOwnerRequiredPasswordType>(); } },
+                {"requireNoPendingSystemUpdates", n => { RequireNoPendingSystemUpdates = n.GetBoolValue(); } },
                 {"securityRequireIntuneAppIntegrity", n => { SecurityRequireIntuneAppIntegrity = n.GetBoolValue(); } },
                 {"securityRequireSafetyNetAttestationBasicIntegrity", n => { SecurityRequireSafetyNetAttestationBasicIntegrity = n.GetBoolValue(); } },
                 {"securityRequireSafetyNetAttestationCertifiedDevice", n => { SecurityRequireSafetyNetAttestationCertifiedDevice = n.GetBoolValue(); } },
@@ -214,6 +220,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("passwordPreviousPasswordCountToBlock", PasswordPreviousPasswordCountToBlock);
             writer.WriteBoolValue("passwordRequired", PasswordRequired);
             writer.WriteEnumValue<AndroidDeviceOwnerRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
+            writer.WriteBoolValue("requireNoPendingSystemUpdates", RequireNoPendingSystemUpdates);
             writer.WriteBoolValue("securityRequireIntuneAppIntegrity", SecurityRequireIntuneAppIntegrity);
             writer.WriteBoolValue("securityRequireSafetyNetAttestationBasicIntegrity", SecurityRequireSafetyNetAttestationBasicIntegrity);
             writer.WriteBoolValue("securityRequireSafetyNetAttestationCertifiedDevice", SecurityRequireSafetyNetAttestationCertifiedDevice);

@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.CreatedOnBehalfOf {
         public CreatedOnBehalfOfRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/createdOnBehalfOf{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
+        /// The user (or application) that created the group. Note: This isn&apos;t set if the user is an administrator. Read-only.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.CreatedOnBehalfOf {
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
+        /// The user (or application) that created the group. Note: This isn&apos;t set if the user is an administrator. Read-only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.CreatedOnBehalfOf {
             return new CreatedOnBehalfOfRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.
+        /// The user (or application) that created the group. Note: This isn&apos;t set if the user is an administrator. Read-only.
         /// </summary>
         public class CreatedOnBehalfOfRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

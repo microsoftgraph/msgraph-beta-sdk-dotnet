@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Group : DirectoryObject, IParsable {
-        /// <summary>The list of users or groups that are allowed to create post&apos;s or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.</summary>
+        /// <summary>The list of users or groups allowed to create posts or calendar events in this group. If this list is non-empty, then only users or groups listed here can post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DirectoryObject>? AcceptedSenders {
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<GroupAccessType?>("accessType"); }
             set { BackingStore?.Set("accessType", value); }
         }
-        /// <summary>Indicates if people external to the organization can send messages to the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        /// <summary>Indicates if people external to the organization can send messages to the group. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? AllowExternalSenders {
             get { return BackingStore?.Get<bool?>("allowExternalSenders"); }
             set { BackingStore?.Set("allowExternalSenders", value); }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assignedLicenses", value); }
         }
 #endif
-        /// <summary>Indicates if new members added to the group will be auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; do not set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        /// <summary>Indicates if new members added to the group are auto-subscribed to receive email notifications. You can set this property in a PATCH request for the group; don&apos;t set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? AutoSubscribeNewMembers {
             get { return BackingStore?.Get<bool?>("autoSubscribeNewMembers"); }
             set { BackingStore?.Set("autoSubscribeNewMembers", value); }
@@ -147,12 +147,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdByAppId", value); }
         }
 #endif
-        /// <summary>Timestamp of when the group was created. The value cannot be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.</summary>
+        /// <summary>Timestamp of when the group was created. The value can&apos;t be modified and is automatically populated when the group is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The user (or application) that created the group. Note: This is not set if the user is an administrator. Read-only.</summary>
+        /// <summary>The user (or application) that created the group. Note: This isn&apos;t set if the user is an administrator. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DirectoryObject? CreatedOnBehalfOf {
@@ -250,7 +250,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("events", value); }
         }
 #endif
-        /// <summary>Timestamp of when the group is set to expire. Is null for security groups but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.</summary>
+        /// <summary>Timestamp of when the group is set to expire. It is null for security groups, but for Microsoft 365 groups, it represents when the group is set to expire as defined in the groupLifecyclePolicy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
@@ -283,7 +283,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("groupLifecyclePolicies", value); }
         }
 #endif
-        /// <summary>Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it&apos;s either a security group or distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).</summary>
+        /// <summary>Specifies the group type and its membership. If the collection contains Unified, the group is a Microsoft 365 group; otherwise, it&apos;s either a security group or a distribution group. For details, see groups overview.If the collection includes DynamicMembership, the group has dynamic membership; otherwise, membership is static. Returned by default. Supports $filter (eq, not).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? GroupTypes {
@@ -302,12 +302,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("hasMembersWithLicenseErrors"); }
             set { BackingStore?.Set("hasMembersWithLicenseErrors", value); }
         }
-        /// <summary>true if the group is not displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        /// <summary>true if the group isn&apos;t displayed in certain parts of the Outlook user interface: in the Address Book, in address lists for selecting message recipients, and in the Browse Groups dialog for searching groups; false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? HideFromAddressLists {
             get { return BackingStore?.Get<bool?>("hideFromAddressLists"); }
             set { BackingStore?.Set("hideFromAddressLists", value); }
         }
-        /// <summary>true if the group is not displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        /// <summary>true if the group isn&apos;t displayed in Outlook clients, such as Outlook for Windows and Outlook on the web, false otherwise. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? HideFromOutlookClients {
             get { return BackingStore?.Get<bool?>("hideFromOutlookClients"); }
             set { BackingStore?.Set("hideFromOutlookClients", value); }
@@ -331,7 +331,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isArchived"); }
             set { BackingStore?.Set("isArchived", value); }
         }
-        /// <summary>Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).</summary>
+        /// <summary>Indicates whether this group can be assigned to a Microsoft Entra role. Optional. This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true,  visibility must be Hidden, and the group cannot be a dynamic group (that is, groupTypes can&apos;t contain DynamicMembership). Only callers in Global Administrator and Privileged Role Administrator roles can set this property. The caller must also be assigned the RoleManagement.ReadWrite.Directory permission to set this property or update the membership of such groups. For more, see Using a group to manage Microsoft Entra role assignmentsUsing this feature requires a Microsoft Entra ID P1 license. Returned by default. Supports $filter (eq, ne, not).</summary>
         public bool? IsAssignableToRole {
             get { return BackingStore?.Get<bool?>("isAssignableToRole"); }
             set { BackingStore?.Set("isAssignableToRole", value); }
@@ -341,17 +341,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isFavorite"); }
             set { BackingStore?.Set("isFavorite", value); }
         }
-        /// <summary>Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a group that&apos;s a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.</summary>
+        /// <summary>Indicates whether the group is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. The default value is false. Read-only.  To manage a group member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.</summary>
         public bool? IsManagementRestricted {
             get { return BackingStore?.Get<bool?>("isManagementRestricted"); }
             set { BackingStore?.Set("isManagementRestricted", value); }
         }
-        /// <summary>Indicates whether the signed-in user is subscribed to receive email conversations. Default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        /// <summary>Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? IsSubscribedByMail {
             get { return BackingStore?.Get<bool?>("isSubscribedByMail"); }
             set { BackingStore?.Set("isSubscribedByMail", value); }
         }
-        /// <summary>Indicates status of the group license assignment to all members of the group. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete. Returned only on $select. Read-only.</summary>
+        /// <summary>Indicates the status of the group license assignment to all group members. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete. Returned only on $select. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.LicenseProcessingState? LicenseProcessingState {
@@ -412,7 +412,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("memberOf", value); }
         }
 #endif
-        /// <summary>Direct members of this group, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=members($select=id,userPrincipalName,displayName).</summary>
+        /// <summary>Direct group members, who can be users, devices, other groups, or service principals. Supports the List members, Add member, and Remove member operations. Nullable. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=members($select=id,userPrincipalName,displayName).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DirectoryObject>? Members {
@@ -454,7 +454,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("membershipRuleProcessingState", value); }
         }
 #endif
-        /// <summary>Describes the processing status for rules-based dynamic groups. The property is null for non-rule based dynamic groups or if the dynamic group processing has been paused. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}). Read-only.</summary>
+        /// <summary>Describes the processing status for rules-based dynamic groups. The property is null for non-rule-based dynamic groups or if the dynamic group processing has been paused. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatus? MembershipRuleProcessingStatus {
@@ -496,7 +496,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onenote", value); }
         }
 #endif
-        /// <summary>Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.</summary>
+        /// <summary>Contains the on-premises domain FQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OnPremisesDomainName {
@@ -510,12 +510,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onPremisesDomainName", value); }
         }
 #endif
-        /// <summary>Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).</summary>
+        /// <summary>Indicates the last time at which the group was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).</summary>
         public DateTimeOffset? OnPremisesLastSyncDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("onPremisesLastSyncDateTime"); }
             set { BackingStore?.Set("onPremisesLastSyncDateTime", value); }
         }
-        /// <summary>Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.</summary>
+        /// <summary>Contains the on-premises netBios name synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OnPremisesNetBiosName {
@@ -543,7 +543,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onPremisesProvisioningErrors", value); }
         }
 #endif
-        /// <summary>Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.</summary>
+        /// <summary>Contains the on-premises SAM account name synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect.Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OnPremisesSamAccountName {
@@ -557,7 +557,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onPremisesSamAccountName", value); }
         }
 #endif
-        /// <summary>Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.</summary>
+        /// <summary>Contains the on-premises security identifier (SID) for the group synchronized from on-premises to the cloud. Returned by default. Supports $filter (eq including on null values). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OnPremisesSecurityIdentifier {
@@ -590,7 +590,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("organizationId", value); }
         }
 #endif
-        /// <summary>The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=owners($select=id,userPrincipalName,displayName).</summary>
+        /// <summary>The owners of the group who can be users or service principals. Nullable. If this property isn&apos;t specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=owners($select=id,userPrincipalName,displayName).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DirectoryObject>? Owners {
@@ -604,7 +604,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("owners", value); }
         }
 #endif
-        /// <summary>The permissions that have been granted for a group to a specific application. Supports $expand.</summary>
+        /// <summary>The permissions granted for a group to a specific application. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ResourceSpecificPermissionGrant>? PermissionGrants {
@@ -660,7 +660,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("planner", value); }
         }
 #endif
-        /// <summary>The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator&apos;s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.</summary>
+        /// <summary>The preferred data location for the Microsoft 365 group. By default, the group inherits the group creator&apos;s preferred data location. To set this property, the calling app must be granted the Directory.ReadWrite.All permission and the user be assigned one of the following Microsoft Entra roles:  Global Administrator  User Account Administrator Directory Writer  Exchange Administrator  SharePoint Administrator  For more information about this property, see OneDrive Online Multi-Geo and Create a Microsoft 365 group with a specific PDL. Nullable. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PreferredDataLocation {
@@ -674,7 +674,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("preferredDataLocation", value); }
         }
 #endif
-        /// <summary>The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>The preferred language for a Microsoft 365 group. Should follow ISO 639-1 Code; for example, en-US. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PreferredLanguage {
@@ -702,7 +702,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("proxyAddresses", value); }
         }
 #endif
-        /// <summary>The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable</summary>
+        /// <summary>The list of users or groups not allowed to create posts or calendar events in this group. Nullable</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DirectoryObject>? RejectedSenders {
@@ -716,7 +716,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("rejectedSenders", value); }
         }
 #endif
-        /// <summary>Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.</summary>
+        /// <summary>Timestamp of when the group was last renewed. This cannot be modified directly and is only updated via the renew service action. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Supports $filter (eq, ne, not, ge, le, in). Read-only.</summary>
         public DateTimeOffset? RenewedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("renewedDateTime"); }
             set { BackingStore?.Set("renewedDateTime", value); }
@@ -735,7 +735,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resourceBehaviorOptions", value); }
         }
 #endif
-        /// <summary>Specifies the group resources that are provisioned as part of Microsoft 365 group creation, that are not normally part of default group creation. Possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.</summary>
+        /// <summary>Specifies the group resources that are provisioned as part of Microsoft 365 group creation that isn&apos;t normally part of default group creation. The possible value is Team. For more information, see Set Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ResourceProvisioningOptions {
@@ -768,7 +768,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("securityIdentifier", value); }
         }
 #endif
-        /// <summary>Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object .  Supports $filter (eq, not, for isResolved and serviceInstance).</summary>
+        /// <summary>Errors published by a federated service describing a non-transient, service-specific error regarding the properties or link from a group object.  Supports $filter (eq, not, for isResolved and serviceInstance).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ServiceProvisioningError>? ServiceProvisioningErrors {
@@ -852,7 +852,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("threads", value); }
         }
 #endif
-        /// <summary>The groups that a group is a member of, either directly and through nested membership. Nullable.</summary>
+        /// <summary>The groups a group is a member of, either directly or through nested membership. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DirectoryObject>? TransitiveMemberOf {
@@ -894,7 +894,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("uniqueName", value); }
         }
 #endif
-        /// <summary>Count of conversations that have been delivered one or more new posts since the signed-in user&apos;s last visit to the group. This property is the same as unseenCount. Returned only on $select.</summary>
+        /// <summary>Count of conversations delivered one or more new posts since the signed-in user&apos;s last visit to the group. This property is the same as unseenCount. Returned only on $select.</summary>
         public int? UnseenConversationsCount {
             get { return BackingStore?.Get<int?>("unseenConversationsCount"); }
             set { BackingStore?.Set("unseenConversationsCount", value); }
@@ -909,7 +909,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("unseenMessagesCount"); }
             set { BackingStore?.Set("unseenMessagesCount", value); }
         }
-        /// <summary>Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups, when the groups are created. It can&apos;t be updated later. Other values of visibility can be updated after group creation. If visibility value is not specified during group creation on Microsoft Graph, a security group is created as Private by default and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.</summary>
+        /// <summary>Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can&apos;t be updated later. Other values of visibility can be updated after group creation. If visibility value isn&apos;t specified during group creation on Microsoft Graph, a security group is created as Private by default, and Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Visibility {
@@ -923,7 +923,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("visibility", value); }
         }
 #endif
-        /// <summary>Specifies whether or not a group is configured to write back group object properties to on-premise Active Directory. These properties are used when group writeback is configured in the Microsoft Entra Connect sync client.</summary>
+        /// <summary>Specifies whether or not a group is configured to write back group object properties to on-premises Active Directory. These properties are used when group writeback is configured in the Microsoft Entra Connect sync client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GroupWritebackConfiguration? WritebackConfiguration {

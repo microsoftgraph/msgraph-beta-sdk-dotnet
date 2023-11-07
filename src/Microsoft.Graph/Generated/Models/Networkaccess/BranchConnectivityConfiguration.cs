@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The branchId property</summary>
+        /// <summary>Unique identifier or a specific reference assigned to a branchSite. Key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BranchId {
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("branchId", value); }
         }
 #endif
-        /// <summary>The branchName property</summary>
+        /// <summary>Display name assigned to a branchSite.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BranchName {
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("branchName", value); }
         }
 #endif
-        /// <summary>The links property</summary>
+        /// <summary>List of connectivity configurations for deviceLink objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ConnectivityConfigurationLink>? Links {

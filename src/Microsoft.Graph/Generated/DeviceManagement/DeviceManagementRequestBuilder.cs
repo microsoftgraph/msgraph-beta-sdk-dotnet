@@ -50,6 +50,7 @@ using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementPartners;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts;
 using Microsoft.Graph.Beta.DeviceManagement.DomainJoinConnectors;
+using Microsoft.Graph.Beta.DeviceManagement.ElevationRequests;
 using Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools;
 using Microsoft.Graph.Beta.DeviceManagement.EnableAndroidDeviceAdministratorEnrollment;
 using Microsoft.Graph.Beta.DeviceManagement.EnableLegacyPcManagement;
@@ -396,6 +397,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>Provides operations to manage the domainJoinConnectors property of the microsoft.graph.deviceManagement entity.</summary>
         public DomainJoinConnectorsRequestBuilder DomainJoinConnectors { get =>
             new DomainJoinConnectorsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the elevationRequests property of the microsoft.graph.deviceManagement entity.</summary>
+        public ElevationRequestsRequestBuilder ElevationRequests { get =>
+            new ElevationRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the embeddedSIMActivationCodePools property of the microsoft.graph.deviceManagement entity.</summary>
         public EmbeddedSIMActivationCodePoolsRequestBuilder EmbeddedSIMActivationCodePools { get =>

@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Information about a meeting, including the URL used to join a meeting, the attendees&apos; list, and the description.
+        /// Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Information about a meeting, including the URL used to join a meeting, the attendees&apos; list, and the description.
+        /// Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -242,7 +242,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item {
             }
         }
         /// <summary>
-        /// Information about a meeting, including the URL used to join a meeting, the attendees&apos; list, and the description.
+        /// Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.
         /// </summary>
         public class OnlineMeetingItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.TransitiveMemberOf.Item {
         public DirectoryObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/transitiveMemberOf/{directoryObject%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The groups that a group is a member of, either directly and through nested membership. Nullable.
+        /// The groups a group is a member of, either directly or through nested membership. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.TransitiveMemberOf.Item {
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The groups that a group is a member of, either directly and through nested membership. Nullable.
+        /// The groups a group is a member of, either directly or through nested membership. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.TransitiveMemberOf.Item {
             return new DirectoryObjectItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The groups that a group is a member of, either directly and through nested membership. Nullable.
+        /// The groups a group is a member of, either directly or through nested membership. Nullable.
         /// </summary>
         public class DirectoryObjectItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

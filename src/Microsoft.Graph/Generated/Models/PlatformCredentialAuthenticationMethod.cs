@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PlatformCredentialAuthenticationMethod : AuthenticationMethod, IParsable {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time that this Platform Credential Key was registered.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The device property</summary>
+        /// <summary>The registered device on which this Platform Credential resides. Supports $expand. When you get a user&apos;s Platform Credential registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/platformCredentialAuthenticationMethod/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Device? Device {
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("device", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The name of the device on which Platform Credential is registered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -39,12 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The keyStrength property</summary>
+        /// <summary>Key strength of this Platform Credential key. Possible values are: normal, weak, unknown.</summary>
         public AuthenticationMethodKeyStrength? KeyStrength {
             get { return BackingStore?.Get<AuthenticationMethodKeyStrength?>("keyStrength"); }
             set { BackingStore?.Set("keyStrength", value); }
         }
-        /// <summary>The platform property</summary>
+        /// <summary>Platform on which this Platform Credential key is present. Possible values are: unknown, windows, macOS,iOS, android, linux.</summary>
         public AuthenticationMethodPlatform? Platform {
             get { return BackingStore?.Get<AuthenticationMethodPlatform?>("platform"); }
             set { BackingStore?.Set("platform", value); }

@@ -10,5 +10,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Token type for Azure AD shared dedicated device enrollment. It applies to CorporateOwnedDedicatedDevice enrollment mode only.</summary>
         [EnumMember(Value = "corporateOwnedDedicatedDeviceWithAzureADSharedMode")]
         CorporateOwnedDedicatedDeviceWithAzureADSharedMode,
+        /// <summary>Token type for Android Device Staging enrollment type. It applies to CorporateOwnedFullyManaged and CorporateOwnedWorkProfile only.</summary>
+        [EnumMember(Value = "deviceStaging")]
+        DeviceStaging,
     }
 }

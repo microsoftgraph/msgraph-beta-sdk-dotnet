@@ -328,6 +328,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("printBlocked"); }
             set { BackingStore?.Set("printBlocked", value); }
         }
+        /// <summary>Defines how app messaging redirection is protected by an App Protection Policy. Default is anyApp.</summary>
+        public MessagingRedirectAppType? ProtectedMessagingRedirectAppType {
+            get { return BackingStore?.Get<MessagingRedirectAppType?>("protectedMessagingRedirectAppType"); }
+            set { BackingStore?.Set("protectedMessagingRedirectAppType", value); }
+        }
         /// <summary>Indicates whether users may use the &apos;Save As&apos; menu item to save a copy of protected files.</summary>
         public bool? SaveAsBlocked {
             get { return BackingStore?.Get<bool?>("saveAsBlocked"); }
@@ -408,6 +413,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"pinRequiredInsteadOfBiometricTimeout", n => { PinRequiredInsteadOfBiometricTimeout = n.GetTimeSpanValue(); } },
                 {"previousPinBlockCount", n => { PreviousPinBlockCount = n.GetIntValue(); } },
                 {"printBlocked", n => { PrintBlocked = n.GetBoolValue(); } },
+                {"protectedMessagingRedirectAppType", n => { ProtectedMessagingRedirectAppType = n.GetEnumValue<MessagingRedirectAppType>(); } },
                 {"saveAsBlocked", n => { SaveAsBlocked = n.GetBoolValue(); } },
                 {"simplePinBlocked", n => { SimplePinBlocked = n.GetBoolValue(); } },
             };
@@ -463,6 +469,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteTimeSpanValue("pinRequiredInsteadOfBiometricTimeout", PinRequiredInsteadOfBiometricTimeout);
             writer.WriteIntValue("previousPinBlockCount", PreviousPinBlockCount);
             writer.WriteBoolValue("printBlocked", PrintBlocked);
+            writer.WriteEnumValue<MessagingRedirectAppType>("protectedMessagingRedirectAppType", ProtectedMessagingRedirectAppType);
             writer.WriteBoolValue("saveAsBlocked", SaveAsBlocked);
             writer.WriteBoolValue("simplePinBlocked", SimplePinBlocked);
         }

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Me.Photos.Item {
         public ProfilePhotoItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/photos/{profilePhoto%2Did}{?%24select}", rawUrl) {
         }
         /// <summary>
-        /// Get photos from me
+        /// The collection of the user&apos;s profile photos in different sizes. Read-only.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Me.Photos.Item {
             return await RequestAdapter.SendAsync<ProfilePhoto>(requestInfo, ProfilePhoto.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get photos from me
+        /// The collection of the user&apos;s profile photos in different sizes. Read-only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Me.Photos.Item {
             return new ProfilePhotoItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get photos from me
+        /// The collection of the user&apos;s profile photos in different sizes. Read-only.
         /// </summary>
         public class ProfilePhotoItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>

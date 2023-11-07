@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.TransitiveMemberOf {
         public TransitiveMemberOfRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/transitiveMemberOf{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The groups that a group is a member of, either directly and through nested membership. Nullable.
+        /// The groups a group is a member of, either directly or through nested membership. Nullable.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-transitivememberof?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.TransitiveMemberOf {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The groups that a group is a member of, either directly and through nested membership. Nullable.
+        /// The groups a group is a member of, either directly or through nested membership. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.TransitiveMemberOf {
             return new TransitiveMemberOfRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The groups that a group is a member of, either directly and through nested membership. Nullable.
+        /// The groups a group is a member of, either directly or through nested membership. Nullable.
         /// </summary>
         public class TransitiveMemberOfRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
