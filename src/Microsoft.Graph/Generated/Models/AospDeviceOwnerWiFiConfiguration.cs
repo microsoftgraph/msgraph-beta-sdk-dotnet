@@ -52,6 +52,58 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("preSharedKeyIsSet"); }
             set { BackingStore?.Set("preSharedKeyIsSet", value); }
         }
+        /// <summary>Specify the proxy server configuration script URL.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProxyAutomaticConfigurationUrl {
+            get { return BackingStore?.Get<string?>("proxyAutomaticConfigurationUrl"); }
+            set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
+        }
+#nullable restore
+#else
+        public string ProxyAutomaticConfigurationUrl {
+            get { return BackingStore?.Get<string>("proxyAutomaticConfigurationUrl"); }
+            set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
+        }
+#endif
+        /// <summary>List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as *.example.com.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ProxyExclusionList {
+            get { return BackingStore?.Get<List<string>?>("proxyExclusionList"); }
+            set { BackingStore?.Set("proxyExclusionList", value); }
+        }
+#nullable restore
+#else
+        public List<string> ProxyExclusionList {
+            get { return BackingStore?.Get<List<string>>("proxyExclusionList"); }
+            set { BackingStore?.Set("proxyExclusionList", value); }
+        }
+#endif
+        /// <summary>Specify the proxy server IP address. Both IPv4 and IPv6 addresses are supported. For example: 192.168.1.1.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProxyManualAddress {
+            get { return BackingStore?.Get<string?>("proxyManualAddress"); }
+            set { BackingStore?.Set("proxyManualAddress", value); }
+        }
+#nullable restore
+#else
+        public string ProxyManualAddress {
+            get { return BackingStore?.Get<string>("proxyManualAddress"); }
+            set { BackingStore?.Set("proxyManualAddress", value); }
+        }
+#endif
+        /// <summary>Specify the proxy server port.</summary>
+        public int? ProxyManualPort {
+            get { return BackingStore?.Get<int?>("proxyManualPort"); }
+            set { BackingStore?.Set("proxyManualPort", value); }
+        }
+        /// <summary>Wi-Fi Proxy Settings.</summary>
+        public WiFiProxySetting? ProxySetting {
+            get { return BackingStore?.Get<WiFiProxySetting?>("proxySetting"); }
+            set { BackingStore?.Set("proxySetting", value); }
+        }
         /// <summary>This is the name of the Wi-Fi network that is broadcast to all devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,6 +151,11 @@ namespace Microsoft.Graph.Beta.Models {
                 {"networkName", n => { NetworkName = n.GetStringValue(); } },
                 {"preSharedKey", n => { PreSharedKey = n.GetStringValue(); } },
                 {"preSharedKeyIsSet", n => { PreSharedKeyIsSet = n.GetBoolValue(); } },
+                {"proxyAutomaticConfigurationUrl", n => { ProxyAutomaticConfigurationUrl = n.GetStringValue(); } },
+                {"proxyExclusionList", n => { ProxyExclusionList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"proxyManualAddress", n => { ProxyManualAddress = n.GetStringValue(); } },
+                {"proxyManualPort", n => { ProxyManualPort = n.GetIntValue(); } },
+                {"proxySetting", n => { ProxySetting = n.GetEnumValue<WiFiProxySetting>(); } },
                 {"ssid", n => { Ssid = n.GetStringValue(); } },
                 {"wiFiSecurityType", n => { WiFiSecurityType = n.GetEnumValue<AospDeviceOwnerWiFiSecurityType>(); } },
             };
@@ -115,6 +172,11 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("networkName", NetworkName);
             writer.WriteStringValue("preSharedKey", PreSharedKey);
             writer.WriteBoolValue("preSharedKeyIsSet", PreSharedKeyIsSet);
+            writer.WriteStringValue("proxyAutomaticConfigurationUrl", ProxyAutomaticConfigurationUrl);
+            writer.WriteCollectionOfPrimitiveValues<string>("proxyExclusionList", ProxyExclusionList);
+            writer.WriteStringValue("proxyManualAddress", ProxyManualAddress);
+            writer.WriteIntValue("proxyManualPort", ProxyManualPort);
+            writer.WriteEnumValue<WiFiProxySetting>("proxySetting", ProxySetting);
             writer.WriteStringValue("ssid", Ssid);
             writer.WriteEnumValue<AospDeviceOwnerWiFiSecurityType>("wiFiSecurityType", WiFiSecurityType);
         }

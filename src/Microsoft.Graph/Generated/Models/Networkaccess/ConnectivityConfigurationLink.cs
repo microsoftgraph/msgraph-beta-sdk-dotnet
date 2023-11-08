@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class ConnectivityConfigurationLink : Entity, IParsable {
-        /// <summary>The displayName property</summary>
+        /// <summary>Specifies the name of the link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The localConfigurations property</summary>
+        /// <summary>Specifies Microsoft&apos;s end of the tunnel configuration for a device link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<LocalConnectivityConfiguration>? LocalConfigurations {

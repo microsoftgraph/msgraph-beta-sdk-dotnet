@@ -789,6 +789,20 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             set { BackingStore?.Set("domainJoinConnectors", value); }
         }
 #endif
+        /// <summary>List of elevation requests</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest>? ElevationRequests {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest>?>("elevationRequests"); }
+            set { BackingStore?.Set("elevationRequests", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest> ElevationRequests {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest>>("elevationRequests"); }
+            set { BackingStore?.Set("elevationRequests", value); }
+        }
+#endif
         /// <summary>The embedded SIM activation code pools created by this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2518,6 +2532,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
                 {"deviceProtectionOverview", n => { DeviceProtectionOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceProtectionOverview>(Microsoft.Graph.Beta.Models.DeviceProtectionOverview.CreateFromDiscriminatorValue); } },
                 {"deviceShellScripts", n => { DeviceShellScripts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceShellScript>(Microsoft.Graph.Beta.Models.DeviceShellScript.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"domainJoinConnectors", n => { DomainJoinConnectors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector>(Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"elevationRequests", n => { ElevationRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest>(Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"embeddedSIMActivationCodePools", n => { EmbeddedSIMActivationCodePools = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool>(Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"exchangeConnectors", n => { ExchangeConnectors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector>(Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"exchangeOnPremisesPolicies", n => { ExchangeOnPremisesPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>(Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -2706,6 +2721,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceProtectionOverview>("deviceProtectionOverview", DeviceProtectionOverview);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceShellScript>("deviceShellScripts", DeviceShellScripts);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector>("domainJoinConnectors", DomainJoinConnectors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest>("elevationRequests", ElevationRequests);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool>("embeddedSIMActivationCodePools", EmbeddedSIMActivationCodePools);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector>("exchangeConnectors", ExchangeConnectors);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>("exchangeOnPremisesPolicies", ExchangeOnPremisesPolicies);

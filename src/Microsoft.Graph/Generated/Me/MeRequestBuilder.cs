@@ -20,6 +20,7 @@ using Microsoft.Graph.Beta.Me.CloudPCs;
 using Microsoft.Graph.Beta.Me.ContactFolders;
 using Microsoft.Graph.Beta.Me.Contacts;
 using Microsoft.Graph.Beta.Me.CreatedObjects;
+using Microsoft.Graph.Beta.Me.DeletePasswordSingleSignOnCredentials;
 using Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations;
 using Microsoft.Graph.Beta.Me.DeviceManagementTroubleshootingEvents;
 using Microsoft.Graph.Beta.Me.Devices;
@@ -46,6 +47,7 @@ using Microsoft.Graph.Beta.Me.GetManagedDevicesWithAppFailures;
 using Microsoft.Graph.Beta.Me.GetManagedDevicesWithFailedOrPendingApps;
 using Microsoft.Graph.Beta.Me.GetMemberGroups;
 using Microsoft.Graph.Beta.Me.GetMemberObjects;
+using Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials;
 using Microsoft.Graph.Beta.Me.InferenceClassification;
 using Microsoft.Graph.Beta.Me.InformationProtection;
 using Microsoft.Graph.Beta.Me.Insights;
@@ -203,6 +205,10 @@ namespace Microsoft.Graph.Beta.Me {
         public CreatedObjectsRequestBuilder CreatedObjects { get =>
             new CreatedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the deletePasswordSingleSignOnCredentials method.</summary>
+        public DeletePasswordSingleSignOnCredentialsRequestBuilder DeletePasswordSingleSignOnCredentials { get =>
+            new DeletePasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.user entity.</summary>
         public DeviceEnrollmentConfigurationsRequestBuilder DeviceEnrollmentConfigurations { get =>
             new DeviceEnrollmentConfigurationsRequestBuilder(PathParameters, RequestAdapter);
@@ -298,6 +304,10 @@ namespace Microsoft.Graph.Beta.Me {
         /// <summary>Provides operations to call the getMemberObjects method.</summary>
         public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
             new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getPasswordSingleSignOnCredentials method.</summary>
+        public GetPasswordSingleSignOnCredentialsRequestBuilder GetPasswordSingleSignOnCredentials { get =>
+            new GetPasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the inferenceClassification property of the microsoft.graph.user entity.</summary>
         public InferenceClassificationRequestBuilder InferenceClassification { get =>
@@ -560,8 +570,8 @@ namespace Microsoft.Graph.Beta.Me {
             return new FindRoomsWithRoomListRequestBuilder(PathParameters, RequestAdapter, roomList);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node. This API is available in the following national cloud deployments.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0" />
+        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. This API is available in the following national cloud deployments.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -612,7 +622,7 @@ namespace Microsoft.Graph.Beta.Me {
             return new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. This API is available in the following national cloud deployments.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -673,7 +683,7 @@ namespace Microsoft.Graph.Beta.Me {
             return new MeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance. This API is available in the following national cloud deployments.
         /// </summary>
         public class MeRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

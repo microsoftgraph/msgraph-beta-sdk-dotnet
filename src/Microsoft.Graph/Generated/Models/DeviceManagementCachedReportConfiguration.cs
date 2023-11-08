@@ -124,9 +124,12 @@ namespace Microsoft.Graph.Beta.Models {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteStringValue("filter", Filter);
+            writer.WriteDateTimeOffsetValue("lastRefreshDateTime", LastRefreshDateTime);
             writer.WriteStringValue("metadata", Metadata);
             writer.WriteCollectionOfPrimitiveValues<string>("orderBy", OrderBy);
+            writer.WriteStringValue("reportName", ReportName);
             writer.WriteCollectionOfPrimitiveValues<string>("select", Select);
             writer.WriteEnumValue<DeviceManagementReportStatus>("status", Status);
         }

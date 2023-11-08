@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Me.TransitiveMemberOf.Item {
         public DirectoryObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/transitiveMemberOf/{directoryObject%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// The groups, including nested groups, and directory roles that a user is a member of. Nullable.
+        /// The groups, including nested groups and directory roles that a user is a member of. Nullable.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Me.TransitiveMemberOf.Item {
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The groups, including nested groups, and directory roles that a user is a member of. Nullable.
+        /// The groups, including nested groups and directory roles that a user is a member of. Nullable.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Me.TransitiveMemberOf.Item {
             return new DirectoryObjectItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The groups, including nested groups, and directory roles that a user is a member of. Nullable.
+        /// The groups, including nested groups and directory roles that a user is a member of. Nullable.
         /// </summary>
         public class DirectoryObjectItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

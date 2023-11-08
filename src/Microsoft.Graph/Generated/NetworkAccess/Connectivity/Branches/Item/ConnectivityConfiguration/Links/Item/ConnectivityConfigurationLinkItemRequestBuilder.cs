@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.Connecti
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get links from networkAccess
+        /// List of connectivity configurations for deviceLink objects.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.Connecti
             return requestInfo;
         }
         /// <summary>
-        /// Get links from networkAccess
+        /// List of connectivity configurations for deviceLink objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.Connecti
             }
         }
         /// <summary>
-        /// Get links from networkAccess
+        /// List of connectivity configurations for deviceLink objects.
         /// </summary>
         public class ConnectivityConfigurationLinkItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

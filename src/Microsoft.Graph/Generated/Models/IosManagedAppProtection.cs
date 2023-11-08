@@ -151,6 +151,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managedUniversalLinks", value); }
         }
 #endif
+        /// <summary>When a specific app redirection is enforced by protectedMessagingRedirectAppType in an App Protection Policy, this value defines the app url redirect schemes which are allowed to be used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessagingRedirectAppUrlScheme {
+            get { return BackingStore?.Get<string?>("messagingRedirectAppUrlScheme"); }
+            set { BackingStore?.Set("messagingRedirectAppUrlScheme", value); }
+        }
+#nullable restore
+#else
+        public string MessagingRedirectAppUrlScheme {
+            get { return BackingStore?.Get<string>("messagingRedirectAppUrlScheme"); }
+            set { BackingStore?.Set("messagingRedirectAppUrlScheme", value); }
+        }
+#endif
         /// <summary>Versions less than the specified version will block the managed app from accessing company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -236,6 +250,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"faceIdBlocked", n => { FaceIdBlocked = n.GetBoolValue(); } },
                 {"filterOpenInToOnlyManagedApps", n => { FilterOpenInToOnlyManagedApps = n.GetBoolValue(); } },
                 {"managedUniversalLinks", n => { ManagedUniversalLinks = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"messagingRedirectAppUrlScheme", n => { MessagingRedirectAppUrlScheme = n.GetStringValue(); } },
                 {"minimumRequiredSdkVersion", n => { MinimumRequiredSdkVersion = n.GetStringValue(); } },
                 {"minimumWarningSdkVersion", n => { MinimumWarningSdkVersion = n.GetStringValue(); } },
                 {"minimumWipeSdkVersion", n => { MinimumWipeSdkVersion = n.GetStringValue(); } },
@@ -264,6 +279,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("faceIdBlocked", FaceIdBlocked);
             writer.WriteBoolValue("filterOpenInToOnlyManagedApps", FilterOpenInToOnlyManagedApps);
             writer.WriteCollectionOfPrimitiveValues<string>("managedUniversalLinks", ManagedUniversalLinks);
+            writer.WriteStringValue("messagingRedirectAppUrlScheme", MessagingRedirectAppUrlScheme);
             writer.WriteStringValue("minimumRequiredSdkVersion", MinimumRequiredSdkVersion);
             writer.WriteStringValue("minimumWarningSdkVersion", MinimumWarningSdkVersion);
             writer.WriteStringValue("minimumWipeSdkVersion", MinimumWipeSdkVersion);

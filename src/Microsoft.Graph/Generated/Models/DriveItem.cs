@@ -244,7 +244,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("package", value); }
         }
 #endif
-        /// <summary>If present, indicates that indicates that one or more operations that may affect the state of the driveItem are pending completion. Read-only.</summary>
+        /// <summary>If present, indicates that indicates that one or more operations that might affect the state of the driveItem are pending completion. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.PendingOperations? PendingOperations {
@@ -356,7 +356,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("searchResult", value); }
         }
 #endif
-        /// <summary>Indicates that the item has been shared with others and provides information about the shared state of the item. Read-only.</summary>
+        /// <summary>Indicates that the item was shared with others and provides information about the shared state of the item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Shared? Shared {
@@ -431,7 +431,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("subscriptions", value); }
         }
 #endif
-        /// <summary>Collection containing [ThumbnailSet][] objects associated with the item. For more info, see [getting thumbnails][]. Read-only. Nullable.</summary>
+        /// <summary>Collection of [thumbnailSet][] objects associated with the item. For more information, see [getting thumbnails][]. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ThumbnailSet>? Thumbnails {

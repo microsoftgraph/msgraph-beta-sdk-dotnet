@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.Connecti
         public LinksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/connectivityConfiguration/links{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get links from networkAccess
+        /// List of connectivity configurations for deviceLink objects.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.Connecti
             return await RequestAdapter.SendAsync<ConnectivityConfigurationLink>(requestInfo, ConnectivityConfigurationLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get links from networkAccess
+        /// List of connectivity configurations for deviceLink objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.Connecti
             return new LinksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get links from networkAccess
+        /// List of connectivity configurations for deviceLink objects.
         /// </summary>
         public class LinksRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -109,5 +109,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicate IT Admin initiates an action to remove devices from Device Firmware Configuration Interface management</summary>
         [EnumMember(Value = "removeDeviceFirmwareConfigurationInterfaceManagement")]
         RemoveDeviceFirmwareConfigurationInterfaceManagement,
+        /// <summary>Indicates an action has been initiated to pause configuration refresh for the device.</summary>
+        [EnumMember(Value = "pauseConfigurationRefresh")]
+        PauseConfigurationRefresh,
     }
 }

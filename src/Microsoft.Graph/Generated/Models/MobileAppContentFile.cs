@@ -86,6 +86,16 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("sizeEncrypted"); }
             set { BackingStore?.Set("sizeEncrypted", value); }
         }
+        /// <summary>Indicates the size of the file after encryption, in bytes.</summary>
+        public long? SizeEncryptedInBytes {
+            get { return BackingStore?.Get<long?>("sizeEncryptedInBytes"); }
+            set { BackingStore?.Set("sizeEncryptedInBytes", value); }
+        }
+        /// <summary>Indicates the original size of the file, in bytes.</summary>
+        public long? SizeInBytes {
+            get { return BackingStore?.Get<long?>("sizeInBytes"); }
+            set { BackingStore?.Set("sizeInBytes", value); }
+        }
         /// <summary>Contains properties for upload request states.</summary>
         public MobileAppContentFileUploadState? UploadState {
             get { return BackingStore?.Get<MobileAppContentFileUploadState?>("uploadState"); }
@@ -114,6 +124,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"size", n => { Size = n.GetLongValue(); } },
                 {"sizeEncrypted", n => { SizeEncrypted = n.GetLongValue(); } },
+                {"sizeEncryptedInBytes", n => { SizeEncryptedInBytes = n.GetLongValue(); } },
+                {"sizeInBytes", n => { SizeInBytes = n.GetLongValue(); } },
                 {"uploadState", n => { UploadState = n.GetEnumValue<MobileAppContentFileUploadState>(); } },
             };
         }
@@ -134,6 +146,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("name", Name);
             writer.WriteLongValue("size", Size);
             writer.WriteLongValue("sizeEncrypted", SizeEncrypted);
+            writer.WriteLongValue("sizeEncryptedInBytes", SizeEncryptedInBytes);
+            writer.WriteLongValue("sizeInBytes", SizeInBytes);
             writer.WriteEnumValue<MobileAppContentFileUploadState>("uploadState", UploadState);
         }
     }

@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item 
         public PlatformCredentialAuthenticationMethodItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/authentication/platformCredentialMethods/{platformCredentialAuthenticationMethod%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete navigation property platformCredentialMethods for me
+        /// Delete a platformCredentialAuthenticationMethod object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/platformcredentialauthenticationmethod-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,7 +54,8 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get platformCredentialMethods from me
+        /// Read the properties and relationships of a platformCredentialAuthenticationMethod object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/platformcredentialauthenticationmethod-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -72,7 +74,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item 
             return await RequestAdapter.SendAsync<PlatformCredentialAuthenticationMethod>(requestInfo, PlatformCredentialAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property platformCredentialMethods for me
+        /// Delete a platformCredentialAuthenticationMethod object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,7 +99,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Get platformCredentialMethods from me
+        /// Read the properties and relationships of a platformCredentialAuthenticationMethod object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +148,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PlatformCredentialMethods.Item 
             }
         }
         /// <summary>
-        /// Get platformCredentialMethods from me
+        /// Read the properties and relationships of a platformCredentialAuthenticationMethod object.
         /// </summary>
         public class PlatformCredentialAuthenticationMethodItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

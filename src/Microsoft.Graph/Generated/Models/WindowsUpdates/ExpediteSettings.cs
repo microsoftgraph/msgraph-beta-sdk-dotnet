@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             get { return BackingStore?.Get<bool?>("isExpedited"); }
             set { BackingStore?.Set("isExpedited", value); }
         }
+        /// <summary>The isReadinessTest property</summary>
+        public bool? IsReadinessTest {
+            get { return BackingStore?.Get<bool?>("isReadinessTest"); }
+            set { BackingStore?.Set("isReadinessTest", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"isExpedited", n => { IsExpedited = n.GetBoolValue(); } },
+                {"isReadinessTest", n => { IsReadinessTest = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -64,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isExpedited", IsExpedited);
+            writer.WriteBoolValue("isReadinessTest", IsReadinessTest);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

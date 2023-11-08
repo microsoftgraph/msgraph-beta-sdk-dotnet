@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CrossTenantAccessPolicyConfigurationDefault : Entity, IParsable {
-        /// <summary>Determines the default configuration for automatic user consent settings. The inboundAllowed and outboundAllowed properties are always false and cannot be updated in the default configuration. Read-only.</summary>
+        /// <summary>Determines the default configuration for automatic user consent settings. The inboundAllowed and outboundAllowed properties are always false and can&apos;t be updated in the default configuration. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public InboundOutboundPolicyConfiguration? AutomaticUserConsentSettings {
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("inboundTrust", value); }
         }
 #endif
-        /// <summary>The invitationRedemptionIdentityProviderConfiguration property</summary>
+        /// <summary>Defines the priority order based on which an identity provider is selected during invitation redemption for a guest user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DefaultInvitationRedemptionIdentityProviderConfiguration? InvitationRedemptionIdentityProviderConfiguration {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("invitationRedemptionIdentityProviderConfiguration", value); }
         }
 #endif
-        /// <summary>If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.</summary>
+        /// <summary>If true, the default configuration is set to the system default configuration. If false, the default settings are customized.</summary>
         public bool? IsServiceDefault {
             get { return BackingStore?.Get<bool?>("isServiceDefault"); }
             set { BackingStore?.Set("isServiceDefault", value); }

@@ -7,7 +7,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class User : DirectoryObject, IParsable {
-        /// <summary>A freeform text entry field for the user to describe themselves. Returned only on $select.</summary>
+        /// <summary>A freeform text entry field for users to describe themselves. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AboutMe {
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("activities", value); }
         }
 #endif
-        /// <summary>Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).</summary>
+        /// <summary>Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Supports $filter (eq, ne, not, and in).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AgeGroup {
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("approvals", value); }
         }
 #endif
-        /// <summary>The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn&apos;t differentiate directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).</summary>
+        /// <summary>The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn&apos;t differentiate between directly assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AssignedLicense>? AssignedLicenses {
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authentication", value); }
         }
 #endif
-        /// <summary>Identifiers that can be used to identify and authenticate a user in non-Azure AD environments. This property can be used to store identifiers for smartcard-based certificates that a user uses for access to on-premises Active Directory deployments or for federated access. It can also be used to store the Subject Alternate Name (SAN) that&apos;s associated with a Common Access Card (CAC). Nullable.Supports $filter (eq and startsWith).</summary>
+        /// <summary>Identifiers that can be used to identify and authenticate a user in non-Azure AD environments. This property can store identifiers for smartcard-based certificates that users use to access on-premises Active Directory deployments or federated access. It can also be used to store the Subject Alternate Name (SAN) that&apos;s associated with a Common Access Card (CAC). Nullable.Supports $filter (eq and startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.AuthorizationInfo? AuthorizationInfo {
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authorizationInfo", value); }
         }
 #endif
-        /// <summary>The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.</summary>
+        /// <summary>The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.</summary>
         public DateTimeOffset? Birthday {
             get { return BackingStore?.Get<DateTimeOffset?>("birthday"); }
             set { BackingStore?.Set("birthday", value); }
@@ -325,7 +325,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("cloudRealtimeCommunicationInfo", value); }
         }
 #endif
-        /// <summary>The name of the company that the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>The name of the company the user is associated with. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompanyName {
@@ -395,7 +395,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("country", value); }
         }
 #endif
-        /// <summary>The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users that were synced to Microsoft Entra ID before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).</summary>
+        /// <summary>The date and time the user was created in ISO 8601 format and UTC. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Microsoft Entra ID. Property is null for some users created before June 2018 and on-premises users synced to Microsoft Entra ID before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
@@ -428,7 +428,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("creationType", value); }
         }
 #endif
-        /// <summary>An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). Filter value is case sensitive.</summary>
+        /// <summary>An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith). The filter value is case-sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CustomSecurityAttributeValue? CustomSecurityAttributes {
@@ -442,7 +442,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("customSecurityAttributes", value); }
         }
 #endif
-        /// <summary>The name for the department in which the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).</summary>
+        /// <summary>The name of the department where the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Department {
@@ -517,7 +517,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("devices", value); }
         }
 #endif
-        /// <summary>The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.</summary>
+        /// <summary>The users and contacts that report to the user. (The users and contacts with their manager property set to this user.) Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DirectoryObject>? DirectReports {
@@ -531,7 +531,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("directReports", value); }
         }
 #endif
-        /// <summary>The name displayed in the address book for the user. This value is usually the combination of the user&apos;s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.</summary>
+        /// <summary>The name displayed in the address book for the user. This value is usually the combination of the user&apos;s first name, middle initial, and last name. This property is required when a user is created, and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderby, and $search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -587,7 +587,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("employeeExperience", value); }
         }
 #endif
-        /// <summary>The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, not , ge, le, in).</summary>
+        /// <summary>The date and time when the user was hired or will start work if there is a future hire. Supports $filter (eq, ne, not , ge, le, in).</summary>
         public DateTimeOffset? EmployeeHireDate {
             get { return BackingStore?.Get<DateTimeOffset?>("employeeHireDate"); }
             set { BackingStore?.Set("employeeHireDate", value); }
@@ -639,7 +639,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("employeeType", value); }
         }
 #endif
-        /// <summary>The user&apos;s events. Default is to show events under the Default Calendar. Read-only. Nullable.</summary>
+        /// <summary>The user&apos;s events. The default is to show events under the Default Calendar. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Event>? Events {
@@ -737,12 +737,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("givenName", value); }
         }
 #endif
-        /// <summary>The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.</summary>
+        /// <summary>The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.</summary>
         public DateTimeOffset? HireDate {
             get { return BackingStore?.Get<DateTimeOffset?>("hireDate"); }
             set { BackingStore?.Set("hireDate", value); }
         }
-        /// <summary>Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.</summary>
+        /// <summary>Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft and tied to a user account. It may contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ObjectIdentity>? Identities {
@@ -756,7 +756,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("identities", value); }
         }
 #endif
-        /// <summary>The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).</summary>
+        /// <summary>The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ImAddresses {
@@ -826,7 +826,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("insights", value); }
         }
 #endif
-        /// <summary>A list for the user to describe their interests. Returned only on $select.</summary>
+        /// <summary>A list for users to describe their interests. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Interests {
@@ -845,7 +845,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isLicenseReconciliationNeeded"); }
             set { BackingStore?.Set("isLicenseReconciliationNeeded", value); }
         }
-        /// <summary>true if the user is a member of a restricted management administrative unit, in which case it requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.</summary>
+        /// <summary>true if the user is a member of a restricted management administrative unit, which requires a role scoped to the restricted administrative unit to manage. Default value is false. Read-only.  To manage a user who is a member of a restricted administrative unit, the calling app must be assigned the Directory.Write.Restricted permission. For delegated scenarios, the administrators must also be explicitly assigned supported roles at the restricted administrative unit scope.</summary>
         public bool? IsManagementRestricted {
             get { return BackingStore?.Get<bool?>("isManagementRestricted"); }
             set { BackingStore?.Set("isManagementRestricted", value); }
@@ -883,7 +883,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("joinedGroups", value); }
         }
 #endif
-        /// <summary>The Microsoft Teams teams that the user is a member of. Read-only. Nullable.</summary>
+        /// <summary>The Microsoft Teams teams the user is a member of. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Team>? JoinedTeams {
@@ -897,12 +897,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("joinedTeams", value); }
         }
 #endif
-        /// <summary>The time when this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.</summary>
+        /// <summary>When this Microsoft Entra user last changed their password or when their password was created, whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.</summary>
         public DateTimeOffset? LastPasswordChangeDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastPasswordChangeDateTime"); }
             set { BackingStore?.Set("lastPasswordChangeDateTime", value); }
         }
-        /// <summary>Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. For more information, see legal age group property definitions. Returned only on $select.</summary>
+        /// <summary>Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LegalAgeGroupClassification {
@@ -916,7 +916,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("legalAgeGroupClassification", value); }
         }
 #endif
-        /// <summary>State of license assignments for this user. Also indicates licenses that are directly assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.</summary>
+        /// <summary>State of license assignments for this user. It also indicates licenses that are directly assigned and the ones the user inherited through group memberships. Read-only. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<LicenseAssignmentState>? LicenseAssignmentStates {
@@ -944,7 +944,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("licenseDetails", value); }
         }
 #endif
-        /// <summary>The SMTP address for the user, for example, admin@contoso.com. Changes to this property also updates the user&apos;s proxyAddresses collection to include the value as an SMTP address. This property can&apos;t contain accent characters.  NOTE: We don&apos;t recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).</summary>
+        /// <summary>The SMTP address for the user, for example, admin@contoso.com. Changes to this property also update the user&apos;s proxyAddresses collection to include the value as an SMTP address. This property can&apos;t contain accent characters.  NOTE: We don&apos;t recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Mail {
@@ -1042,7 +1042,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("manager", value); }
         }
 #endif
-        /// <summary>The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.</summary>
+        /// <summary>The groups, directory roles, and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DirectoryObject>? MemberOf {
@@ -1098,7 +1098,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mobileAppTroubleshootingEvents", value); }
         }
 #endif
-        /// <summary>The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.</summary>
+        /// <summary>The primary cellular telephone number for the user. Read-only for users synced from the on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values) and $search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MobilePhone {
@@ -1112,7 +1112,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mobilePhone", value); }
         }
 #endif
-        /// <summary>The URL for the user&apos;s personal site. Returned only on $select.</summary>
+        /// <summary>The URL for the user&apos;s site. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MySite {
@@ -1182,7 +1182,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onenote", value); }
         }
 #endif
-        /// <summary>Information about a meeting, including the URL used to join a meeting, the attendees&apos; list, and the description.</summary>
+        /// <summary>Information about a meeting, including the URL used to join a meeting, the attendees list, and the description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OnlineMeeting>? OnlineMeetings {
@@ -1196,7 +1196,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onlineMeetings", value); }
         }
 #endif
-        /// <summary>Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.</summary>
+        /// <summary>Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OnPremisesDistinguishedName {
@@ -1210,7 +1210,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onPremisesDistinguishedName", value); }
         }
 #endif
-        /// <summary>Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.</summary>
+        /// <summary>Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OnPremisesDomainName {
@@ -1224,7 +1224,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onPremisesDomainName", value); }
         }
 #endif
-        /// <summary>Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Supports $filter (eq, ne, not, in).</summary>
+        /// <summary>Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during the creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Supports $filter (eq, ne, not, in).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes? OnPremisesExtensionAttributes {
@@ -1238,7 +1238,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onPremisesExtensionAttributes", value); }
         }
 #endif
-        /// <summary>This property is used to associate an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you&apos;re using a federated domain for the user&apos;s userPrincipalName (UPN) property. Note: The $ and _ characters can&apos;t be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).</summary>
+        /// <summary>This property associates an on-premises Active Directory user account to their Microsoft Entra user object. This property must be specified when creating a new user account in the Graph if you&apos;re using a federated domain for the user&apos;s userPrincipalName (UPN) property. Note: The $ and _ characters can&apos;t be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OnPremisesImmutableId {
@@ -1252,7 +1252,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onPremisesImmutableId", value); }
         }
 #endif
-        /// <summary>Indicates the last time at which the object was synced with the on-premises directory; for example: &apos;2013-02-16T03:04:54Z&apos;. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).</summary>
+        /// <summary>Indicates the last time at which the object was synced with the on-premises directory; for example: &apos;2013-02-16T03:04:54Z&apos;. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).</summary>
         public DateTimeOffset? OnPremisesLastSyncDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("onPremisesLastSyncDateTime"); }
             set { BackingStore?.Set("onPremisesLastSyncDateTime", value); }
@@ -1271,7 +1271,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onPremisesProvisioningErrors", value); }
         }
 #endif
-        /// <summary>Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).</summary>
+        /// <summary>Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OnPremisesSamAccountName {
@@ -1285,7 +1285,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onPremisesSamAccountName", value); }
         }
 #endif
-        /// <summary>Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).</summary>
+        /// <summary>Contains the on-premises security identifier (SID) for the user synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OnPremisesSecurityIdentifier {
@@ -1313,12 +1313,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onPremisesSipInfo", value); }
         }
 #endif
-        /// <summary>true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn&apos;t being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).</summary>
+        /// <summary>true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise, the user isn&apos;t being synced and can be managed in Microsoft Entra ID. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).</summary>
         public bool? OnPremisesSyncEnabled {
             get { return BackingStore?.Get<bool?>("onPremisesSyncEnabled"); }
             set { BackingStore?.Set("onPremisesSyncEnabled", value); }
         }
-        /// <summary>Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).</summary>
+        /// <summary>Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers synchronizing their on-premises directory to Microsoft Entra ID via Microsoft Entra Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OnPremisesUserPrincipalName {
@@ -1360,7 +1360,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("outlook", value); }
         }
 #endif
-        /// <summary>Devices that are owned by the user. Read-only. Nullable. Supports $expand.</summary>
+        /// <summary>Devices owned by the user. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DirectoryObject>? OwnedDevices {
@@ -1374,7 +1374,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ownedDevices", value); }
         }
 #endif
-        /// <summary>Directory objects that are owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).</summary>
+        /// <summary>Directory objects owned by the user. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DirectoryObject>? OwnedObjects {
@@ -1416,7 +1416,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("passwordProfile", value); }
         }
 #endif
-        /// <summary>A list for the user to enumerate their past projects. Returned only on $select.</summary>
+        /// <summary>A list for users to enumerate their past projects. Returned only on $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PastProjects {
@@ -1430,7 +1430,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("pastProjects", value); }
         }
 #endif
-        /// <summary>Navigation property to get list of access reviews pending approval by reviewer.</summary>
+        /// <summary>Navigation property to get a list of access reviews pending approval by the reviewer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AccessReviewInstance>? PendingAccessReviewInstances {
@@ -1444,7 +1444,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("pendingAccessReviewInstances", value); }
         }
 #endif
-        /// <summary>Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user&apos;s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.</summary>
+        /// <summary>Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user&apos;s communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Person>? People {
@@ -1486,7 +1486,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("photo", value); }
         }
 #endif
-        /// <summary>The photos property</summary>
+        /// <summary>The collection of the user&apos;s profile photos in different sizes. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ProfilePhoto>? Photos {
@@ -1542,7 +1542,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("preferredDataLocation", value); }
         }
 #endif
-        /// <summary>The preferred language for the user. The preferred language format is based on RFC 4646. The name is a combination of an ISO 639 two-letter lowercase culture code associated with the language, and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: &apos;en-US&apos;, or &apos;es-ES&apos;. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>The preferred language for the user. The preferred language format is based on RFC 4646. The name combines an ISO 639 two-letter lowercase culture code associated with the language and an ISO 3166 two-letter uppercase subculture code associated with the country or region. Example: &apos;en-US&apos;, or &apos;es-ES&apos;. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PreferredLanguage {
@@ -1626,7 +1626,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("provisionedPlans", value); }
         }
 #endif
-        /// <summary>For example: [&apos;SMTP: bob@contoso.com&apos;, &apos;smtp: bob@sales.contoso.com&apos;]. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).</summary>
+        /// <summary>For example: [&apos;SMTP: bob@contoso.com&apos;, &apos;smtp: bob@sales.contoso.com&apos;]. Changes to the mail property also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address, while the ones prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of 10 unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ProxyAddresses {
@@ -1640,7 +1640,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("proxyAddresses", value); }
         }
 #endif
-        /// <summary>Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.</summary>
+        /// <summary>Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If it happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use invalidateAllRefreshTokens to reset.</summary>
         public DateTimeOffset? RefreshTokensValidFromDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("refreshTokensValidFromDateTime"); }
             set { BackingStore?.Set("refreshTokensValidFromDateTime", value); }
@@ -1776,7 +1776,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("signInActivity", value); }
         }
 #endif
-        /// <summary>Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.</summary>
+        /// <summary>Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application must acquire a new refresh token by requesting the authorized endpoint. Read-only. Use revokeSignInSessions to reset.</summary>
         public DateTimeOffset? SignInSessionsValidFromDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("signInSessionsValidFromDateTime"); }
             set { BackingStore?.Set("signInSessionsValidFromDateTime", value); }
@@ -1795,7 +1795,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("skills", value); }
         }
 #endif
-        /// <summary>The users and groups that are responsible for this guest user&apos;s privileges in the tenant and keep the guest user&apos;s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.</summary>
+        /// <summary>The users and groups responsible for this guest user&apos;s privileges in the tenant and keep the guest user&apos;s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DirectoryObject>? Sponsors {
@@ -1879,7 +1879,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("todo", value); }
         }
 #endif
-        /// <summary>The groups, including nested groups, and directory roles that a user is a member of. Nullable.</summary>
+        /// <summary>The groups, including nested groups and directory roles that a user is a member of. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DirectoryObject>? TransitiveMemberOf {
@@ -1907,7 +1907,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("transitiveReports", value); }
         }
 #endif
-        /// <summary>A two letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>A two-letter country code (ISO standard 3166). Required for users that are assigned licenses due to legal requirements to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UsageLocation {
@@ -1935,7 +1935,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("usageRights", value); }
         }
 #endif
-        /// <summary>The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user&apos;s email name. The general format is alias@domain, where domain must be present in the tenant&apos;s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can&apos;t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, &apos; . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.</summary>
+        /// <summary>The user principal name (UPN) of the user. The UPN is an Internet-style sign-in name for the user based on the Internet standard RFC 822. By convention, this should map to the user&apos;s email name. The general format is alias@domain, where the domain must be present in the tenant&apos;s verified domain collection. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property can&apos;t contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, &apos; . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalName {

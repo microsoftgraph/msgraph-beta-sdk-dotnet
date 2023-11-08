@@ -35,6 +35,9 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
+    env:
+      solutionName: Microsoft.Graph.Beta.sln
+      projectName: src/Microsoft.Graph/Microsoft.Graph.Beta.csproj
     strategy:
       fail-fast: false
       matrix:
@@ -46,7 +49,9 @@ jobs:
       uses: github/codeql-action/init@v2
       with:
         languages: ${{ matrix.language }}
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v2
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.solutionName }}
+    - name: Build for netstandard2.0
+      run: dotnet build ${{ env.projectName }} -f netstandard2.0 --no-restore -c Release --no-incremental
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2

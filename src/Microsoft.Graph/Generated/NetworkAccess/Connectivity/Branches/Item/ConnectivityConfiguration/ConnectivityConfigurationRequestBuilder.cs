@@ -53,7 +53,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.Connecti
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get connectivityConfiguration from networkAccess
+        /// Retrieve the IPSec tunnel configuration required to establish a bidirectional communication link between your organization&apos;s router and the Microsoft gateway. This information is vital for configuring your router (customer premise equipment) after creating a deviceLink.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-branchconnectivityconfiguration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.Connecti
             return requestInfo;
         }
         /// <summary>
-        /// Get connectivityConfiguration from networkAccess
+        /// Retrieve the IPSec tunnel configuration required to establish a bidirectional communication link between your organization&apos;s router and the Microsoft gateway. This information is vital for configuring your router (customer premise equipment) after creating a deviceLink.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -195,7 +196,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.Connecti
             }
         }
         /// <summary>
-        /// Get connectivityConfiguration from networkAccess
+        /// Retrieve the IPSec tunnel configuration required to establish a bidirectional communication link between your organization&apos;s router and the Microsoft gateway. This information is vital for configuring your router (customer premise equipment) after creating a deviceLink.
         /// </summary>
         public class ConnectivityConfigurationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

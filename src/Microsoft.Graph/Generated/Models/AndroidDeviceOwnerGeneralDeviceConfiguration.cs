@@ -126,6 +126,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("detailedHelpText", value); }
         }
 #endif
+        /// <summary>Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE)</summary>
+        public AndroidDeviceOwnerLocationMode? DeviceLocationMode {
+            get { return BackingStore?.Get<AndroidDeviceOwnerLocationMode?>("deviceLocationMode"); }
+            set { BackingStore?.Set("deviceLocationMode", value); }
+        }
         /// <summary>Represents the customized lock screen message provided to users when they attempt to modify managed settings on their device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -706,6 +711,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("securityRequireVerifyApps"); }
             set { BackingStore?.Set("securityRequireVerifyApps", value); }
         }
+        /// <summary>Indicates whether or not location sharing is disabled for fully managed devices (COBO), and corporate owned devices with a work profile (COPE)</summary>
+        public bool? ShareDeviceLocationDisabled {
+            get { return BackingStore?.Get<bool?>("shareDeviceLocationDisabled"); }
+            set { BackingStore?.Set("shareDeviceLocationDisabled", value); }
+        }
         /// <summary>Represents the customized short help text provided to users when they attempt to modify managed settings on their device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -929,6 +939,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"dataRoamingBlocked", n => { DataRoamingBlocked = n.GetBoolValue(); } },
                 {"dateTimeConfigurationBlocked", n => { DateTimeConfigurationBlocked = n.GetBoolValue(); } },
                 {"detailedHelpText", n => { DetailedHelpText = n.GetObjectValue<AndroidDeviceOwnerUserFacingMessage>(AndroidDeviceOwnerUserFacingMessage.CreateFromDiscriminatorValue); } },
+                {"deviceLocationMode", n => { DeviceLocationMode = n.GetEnumValue<AndroidDeviceOwnerLocationMode>(); } },
                 {"deviceOwnerLockScreenMessage", n => { DeviceOwnerLockScreenMessage = n.GetObjectValue<AndroidDeviceOwnerUserFacingMessage>(AndroidDeviceOwnerUserFacingMessage.CreateFromDiscriminatorValue); } },
                 {"enrollmentProfile", n => { EnrollmentProfile = n.GetEnumValue<AndroidDeviceOwnerEnrollmentProfileType>(); } },
                 {"factoryResetBlocked", n => { FactoryResetBlocked = n.GetBoolValue(); } },
@@ -1018,6 +1029,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"securityCommonCriteriaModeEnabled", n => { SecurityCommonCriteriaModeEnabled = n.GetBoolValue(); } },
                 {"securityDeveloperSettingsEnabled", n => { SecurityDeveloperSettingsEnabled = n.GetBoolValue(); } },
                 {"securityRequireVerifyApps", n => { SecurityRequireVerifyApps = n.GetBoolValue(); } },
+                {"shareDeviceLocationDisabled", n => { ShareDeviceLocationDisabled = n.GetBoolValue(); } },
                 {"shortHelpText", n => { ShortHelpText = n.GetObjectValue<AndroidDeviceOwnerUserFacingMessage>(AndroidDeviceOwnerUserFacingMessage.CreateFromDiscriminatorValue); } },
                 {"statusBarBlocked", n => { StatusBarBlocked = n.GetBoolValue(); } },
                 {"stayOnModes", n => { StayOnModes = n.GetCollectionOfEnumValues<AndroidDeviceOwnerBatteryPluggedMode>()?.ToList(); } },
@@ -1075,6 +1087,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("dataRoamingBlocked", DataRoamingBlocked);
             writer.WriteBoolValue("dateTimeConfigurationBlocked", DateTimeConfigurationBlocked);
             writer.WriteObjectValue<AndroidDeviceOwnerUserFacingMessage>("detailedHelpText", DetailedHelpText);
+            writer.WriteEnumValue<AndroidDeviceOwnerLocationMode>("deviceLocationMode", DeviceLocationMode);
             writer.WriteObjectValue<AndroidDeviceOwnerUserFacingMessage>("deviceOwnerLockScreenMessage", DeviceOwnerLockScreenMessage);
             writer.WriteEnumValue<AndroidDeviceOwnerEnrollmentProfileType>("enrollmentProfile", EnrollmentProfile);
             writer.WriteBoolValue("factoryResetBlocked", FactoryResetBlocked);
@@ -1164,6 +1177,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("securityCommonCriteriaModeEnabled", SecurityCommonCriteriaModeEnabled);
             writer.WriteBoolValue("securityDeveloperSettingsEnabled", SecurityDeveloperSettingsEnabled);
             writer.WriteBoolValue("securityRequireVerifyApps", SecurityRequireVerifyApps);
+            writer.WriteBoolValue("shareDeviceLocationDisabled", ShareDeviceLocationDisabled);
             writer.WriteObjectValue<AndroidDeviceOwnerUserFacingMessage>("shortHelpText", ShortHelpText);
             writer.WriteBoolValue("statusBarBlocked", StatusBarBlocked);
             writer.WriteCollectionOfEnumValues<AndroidDeviceOwnerBatteryPluggedMode>("stayOnModes", StayOnModes);

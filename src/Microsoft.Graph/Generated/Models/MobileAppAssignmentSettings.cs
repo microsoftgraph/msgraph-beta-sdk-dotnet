@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.macOsLobAppAssignmentSettings" => new MacOsLobAppAssignmentSettings(),
                 "#microsoft.graph.macOsVppAppAssignmentSettings" => new MacOsVppAppAssignmentSettings(),
                 "#microsoft.graph.microsoftStoreForBusinessAppAssignmentSettings" => new MicrosoftStoreForBusinessAppAssignmentSettings(),
+                "#microsoft.graph.win32CatalogAppAssignmentSettings" => new Win32CatalogAppAssignmentSettings(),
                 "#microsoft.graph.win32LobAppAssignmentSettings" => new Win32LobAppAssignmentSettings(),
                 "#microsoft.graph.windowsAppXAppAssignmentSettings" => new WindowsAppXAppAssignmentSettings(),
                 "#microsoft.graph.windowsUniversalAppXAppAssignmentSettings" => new WindowsUniversalAppXAppAssignmentSettings(),

@@ -22,6 +22,7 @@ using Microsoft.Graph.Beta.Users.Item.CloudPCs;
 using Microsoft.Graph.Beta.Users.Item.ContactFolders;
 using Microsoft.Graph.Beta.Users.Item.Contacts;
 using Microsoft.Graph.Beta.Users.Item.CreatedObjects;
+using Microsoft.Graph.Beta.Users.Item.DeletePasswordSingleSignOnCredentials;
 using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations;
 using Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents;
 using Microsoft.Graph.Beta.Users.Item.Devices;
@@ -48,6 +49,7 @@ using Microsoft.Graph.Beta.Users.Item.GetManagedDevicesWithAppFailures;
 using Microsoft.Graph.Beta.Users.Item.GetManagedDevicesWithFailedOrPendingApps;
 using Microsoft.Graph.Beta.Users.Item.GetMemberGroups;
 using Microsoft.Graph.Beta.Users.Item.GetMemberObjects;
+using Microsoft.Graph.Beta.Users.Item.GetPasswordSingleSignOnCredentials;
 using Microsoft.Graph.Beta.Users.Item.InferenceClassification;
 using Microsoft.Graph.Beta.Users.Item.InformationProtection;
 using Microsoft.Graph.Beta.Users.Item.Insights;
@@ -203,6 +205,10 @@ namespace Microsoft.Graph.Beta.Users.Item {
         public CreatedObjectsRequestBuilder CreatedObjects { get =>
             new CreatedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the deletePasswordSingleSignOnCredentials method.</summary>
+        public DeletePasswordSingleSignOnCredentialsRequestBuilder DeletePasswordSingleSignOnCredentials { get =>
+            new DeletePasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.user entity.</summary>
         public DeviceEnrollmentConfigurationsRequestBuilder DeviceEnrollmentConfigurations { get =>
             new DeviceEnrollmentConfigurationsRequestBuilder(PathParameters, RequestAdapter);
@@ -298,6 +304,10 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// <summary>Provides operations to call the getMemberObjects method.</summary>
         public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
             new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getPasswordSingleSignOnCredentials method.</summary>
+        public GetPasswordSingleSignOnCredentialsRequestBuilder GetPasswordSingleSignOnCredentials { get =>
+            new GetPasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the inferenceClassification property of the microsoft.graph.user entity.</summary>
         public InferenceClassificationRequestBuilder InferenceClassification { get =>

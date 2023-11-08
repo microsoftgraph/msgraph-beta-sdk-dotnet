@@ -71,6 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.configurationManagerCollectionAssignmentTarget" => new ConfigurationManagerCollectionAssignmentTarget(),
                 "#microsoft.graph.exclusionGroupAssignmentTarget" => new ExclusionGroupAssignmentTarget(),
                 "#microsoft.graph.groupAssignmentTarget" => new GroupAssignmentTarget(),
+                "#microsoft.graph.scopeTagGroupAssignmentTarget" => new ScopeTagGroupAssignmentTarget(),
                 _ => new DeviceAndAppManagementAssignmentTarget(),
             };
         }

@@ -12,14 +12,14 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
             set { BackingStore?.Set("AdditionalData", value); }
         }
-        /// <summary>The asn property</summary>
+        /// <summary>Specifies ASN of one end of IPSec tunnel (local or peer).</summary>
         public int? Asn {
             get { return BackingStore?.Get<int?>("asn"); }
             set { BackingStore?.Set("asn", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The bgpAddress property</summary>
+        /// <summary>Specifies BGP IPv4 address of one end of IPSec tunnel (local or peer).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BgpAddress {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("bgpAddress", value); }
         }
 #endif
-        /// <summary>The endpoint property</summary>
+        /// <summary>Specifies public IPv4 address of one end of IPSec tunnel (local or peer).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Endpoint {
