@@ -6,6 +6,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
     public class ParticipantEndpoint : Endpoint, IParsable {
+        /// <summary>Identity associated with the endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UserIdentity? AssociatedIdentity {
+            get { return BackingStore?.Get<UserIdentity?>("associatedIdentity"); }
+            set { BackingStore?.Set("associatedIdentity", value); }
+        }
+#nullable restore
+#else
+        public UserIdentity AssociatedIdentity {
+            get { return BackingStore?.Get<UserIdentity>("associatedIdentity"); }
+            set { BackingStore?.Set("associatedIdentity", value); }
+        }
+#endif
         /// <summary>CPU number of cores used by the media endpoint.</summary>
         public int? CpuCoresCount {
             get { return BackingStore?.Get<int?>("cpuCoresCount"); }
@@ -44,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("feedback", value); }
         }
 #endif
-        /// <summary>Identity associated with the endpoint.</summary>
+        /// <summary>The identity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.IdentitySet? Identity {
@@ -91,6 +105,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// </summary>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"associatedIdentity", n => { AssociatedIdentity = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
                 {"cpuCoresCount", n => { CpuCoresCount = n.GetIntValue(); } },
                 {"cpuName", n => { CpuName = n.GetStringValue(); } },
                 {"cpuProcessorSpeedInMhz", n => { CpuProcessorSpeedInMhz = n.GetIntValue(); } },
@@ -106,6 +121,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<UserIdentity>("associatedIdentity", AssociatedIdentity);
             writer.WriteIntValue("cpuCoresCount", CpuCoresCount);
             writer.WriteStringValue("cpuName", CpuName);
             writer.WriteIntValue("cpuProcessorSpeedInMhz", CpuProcessorSpeedInMhz);

@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement {
     public class AlertRule : Entity, IParsable {
-        /// <summary>The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.</summary>
+        /// <summary>The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.</summary>
         public Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate? AlertRuleTemplate {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate?>("alertRuleTemplate"); }
             set { BackingStore?.Set("alertRuleTemplate", value); }
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             get { return BackingStore?.Get<bool?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
-        /// <summary>Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only a few properties can be edited.</summary>
+        /// <summary>Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom-defined rule and can be edited. System rules are built in and only a few properties can be edited.</summary>
         public bool? IsSystemRule {
             get { return BackingStore?.Get<bool?>("isSystemRule"); }
             set { BackingStore?.Set("isSystemRule", value); }
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             get { return BackingStore?.Get<RuleSeverityType?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
-        /// <summary>The conditions to send alerts. For example, send alert when provisioning has failed for greater than or equal to 6 Cloud PCs.</summary>
+        /// <summary>The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs. This property is deprecated. Use conditions instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RuleThreshold? Threshold {

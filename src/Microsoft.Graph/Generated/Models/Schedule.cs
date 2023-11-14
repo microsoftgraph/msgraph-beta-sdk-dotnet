@@ -6,6 +6,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Schedule : Entity, IParsable {
+        /// <summary>The dayNotes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<DayNote>? DayNotes {
+            get { return BackingStore?.Get<List<DayNote>?>("dayNotes"); }
+            set { BackingStore?.Set("dayNotes", value); }
+        }
+#nullable restore
+#else
+        public List<DayNote> DayNotes {
+            get { return BackingStore?.Get<List<DayNote>>("dayNotes"); }
+            set { BackingStore?.Set("dayNotes", value); }
+        }
+#endif
         /// <summary>Indicates whether the schedule is enabled for the team. Required.</summary>
         public bool? Enabled {
             get { return BackingStore?.Get<bool?>("enabled"); }
@@ -250,6 +264,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"dayNotes", n => { DayNotes = n.GetCollectionOfObjectValues<DayNote>(DayNote.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"enabled", n => { Enabled = n.GetBoolValue(); } },
                 {"offerShiftRequests", n => { OfferShiftRequests = n.GetCollectionOfObjectValues<OfferShiftRequest>(OfferShiftRequest.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"offerShiftRequestsEnabled", n => { OfferShiftRequestsEnabled = n.GetBoolValue(); } },
@@ -280,6 +295,7 @@ namespace Microsoft.Graph.Beta.Models {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<DayNote>("dayNotes", DayNotes);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteCollectionOfObjectValues<OfferShiftRequest>("offerShiftRequests", OfferShiftRequests);
             writer.WriteBoolValue("offerShiftRequestsEnabled", OfferShiftRequestsEnabled);

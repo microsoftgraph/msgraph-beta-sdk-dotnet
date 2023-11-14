@@ -133,6 +133,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resourceGroupId", value); }
         }
 #endif
+        /// <summary>The scopeIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ScopeIds {
+            get { return BackingStore?.Get<List<string>?>("scopeIds"); }
+            set { BackingStore?.Set("scopeIds", value); }
+        }
+#nullable restore
+#else
+        public List<string> ScopeIds {
+            get { return BackingStore?.Get<List<string>>("scopeIds"); }
+            set { BackingStore?.Set("scopeIds", value); }
+        }
+#endif
         /// <summary>The ID of the target subnet. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -232,6 +246,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"managedBy", n => { ManagedBy = n.GetEnumValue<CloudPcManagementService>(); } },
                 {"organizationalUnit", n => { OrganizationalUnit = n.GetStringValue(); } },
                 {"resourceGroupId", n => { ResourceGroupId = n.GetStringValue(); } },
+                {"scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"subnetId", n => { SubnetId = n.GetStringValue(); } },
                 {"subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
                 {"subscriptionName", n => { SubscriptionName = n.GetStringValue(); } },
@@ -258,6 +273,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<CloudPcManagementService>("managedBy", ManagedBy);
             writer.WriteStringValue("organizationalUnit", OrganizationalUnit);
             writer.WriteStringValue("resourceGroupId", ResourceGroupId);
+            writer.WriteCollectionOfPrimitiveValues<string>("scopeIds", ScopeIds);
             writer.WriteStringValue("subnetId", SubnetId);
             writer.WriteStringValue("subscriptionId", SubscriptionId);
             writer.WriteStringValue("subscriptionName", SubscriptionName);

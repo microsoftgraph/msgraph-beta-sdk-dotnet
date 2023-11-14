@@ -14,6 +14,7 @@ using Microsoft.Graph.Beta.App.Calls.Item.Record;
 using Microsoft.Graph.Beta.App.Calls.Item.RecordResponse;
 using Microsoft.Graph.Beta.App.Calls.Item.Redirect;
 using Microsoft.Graph.Beta.App.Calls.Item.Reject;
+using Microsoft.Graph.Beta.App.Calls.Item.SendDtmfTones;
 using Microsoft.Graph.Beta.App.Calls.Item.SubscribeToTone;
 using Microsoft.Graph.Beta.App.Calls.Item.Transfer;
 using Microsoft.Graph.Beta.App.Calls.Item.Unmute;
@@ -92,6 +93,10 @@ namespace Microsoft.Graph.Beta.App.Calls.Item {
         /// <summary>Provides operations to call the reject method.</summary>
         public RejectRequestBuilder Reject { get =>
             new RejectRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the sendDtmfTones method.</summary>
+        public SendDtmfTonesRequestBuilder SendDtmfTones { get =>
+            new SendDtmfTonesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the subscribeToTone method.</summary>
         public SubscribeToToneRequestBuilder SubscribeToTone { get =>
@@ -204,7 +209,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
-            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -230,7 +235,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -257,7 +262,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

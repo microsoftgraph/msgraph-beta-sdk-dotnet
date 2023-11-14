@@ -23,5 +23,13 @@ namespace Microsoft.Graph.Beta.Models {
         PlaceUnderReview,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "createSnapshot")]
+        CreateSnapshot,
+        [EnumMember(Value = "powerOn")]
+        PowerOn,
+        [EnumMember(Value = "powerOff")]
+        PowerOff,
+        [EnumMember(Value = "moveRegion")]
+        MoveRegion,
     }
 }

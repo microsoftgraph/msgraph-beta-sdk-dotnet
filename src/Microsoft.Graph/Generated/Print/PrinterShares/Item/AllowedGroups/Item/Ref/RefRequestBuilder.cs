@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedGroups.Item.Ref {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
-            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

@@ -64,6 +64,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcDeviceImageOsStatus?>("osStatus"); }
             set { BackingStore?.Set("osStatus", value); }
         }
+        /// <summary>The scopeIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ScopeIds {
+            get { return BackingStore?.Get<List<string>?>("scopeIds"); }
+            set { BackingStore?.Set("scopeIds", value); }
+        }
+#nullable restore
+#else
+        public List<string> ScopeIds {
+            get { return BackingStore?.Get<List<string>>("scopeIds"); }
+            set { BackingStore?.Set("scopeIds", value); }
+        }
+#endif
         /// <summary>The ID of the source image resource on Azure. Required format: /subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,6 +135,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
                 {"osBuildNumber", n => { OsBuildNumber = n.GetStringValue(); } },
                 {"osStatus", n => { OsStatus = n.GetEnumValue<CloudPcDeviceImageOsStatus>(); } },
+                {"scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"sourceImageResourceId", n => { SourceImageResourceId = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<CloudPcDeviceImageStatus>(); } },
                 {"statusDetails", n => { StatusDetails = n.GetEnumValue<CloudPcDeviceImageStatusDetails>(); } },
@@ -140,6 +155,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("operatingSystem", OperatingSystem);
             writer.WriteStringValue("osBuildNumber", OsBuildNumber);
             writer.WriteEnumValue<CloudPcDeviceImageOsStatus>("osStatus", OsStatus);
+            writer.WriteCollectionOfPrimitiveValues<string>("scopeIds", ScopeIds);
             writer.WriteStringValue("sourceImageResourceId", SourceImageResourceId);
             writer.WriteEnumValue<CloudPcDeviceImageStatus>("status", Status);
             writer.WriteEnumValue<CloudPcDeviceImageStatusDetails>("statusDetails", StatusDetails);

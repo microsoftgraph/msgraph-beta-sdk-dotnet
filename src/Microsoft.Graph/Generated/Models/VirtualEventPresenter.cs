@@ -48,6 +48,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("presenterDetails", value); }
         }
 #endif
+        /// <summary>The profilePhoto property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public byte[]? ProfilePhoto {
+            get { return BackingStore?.Get<byte[]?>("profilePhoto"); }
+            set { BackingStore?.Set("profilePhoto", value); }
+        }
+#nullable restore
+#else
+        public byte[] ProfilePhoto {
+            get { return BackingStore?.Get<byte[]>("profilePhoto"); }
+            set { BackingStore?.Set("profilePhoto", value); }
+        }
+#endif
+        /// <summary>The sessions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<VirtualEventSession>? Sessions {
+            get { return BackingStore?.Get<List<VirtualEventSession>?>("sessions"); }
+            set { BackingStore?.Set("sessions", value); }
+        }
+#nullable restore
+#else
+        public List<VirtualEventSession> Sessions {
+            get { return BackingStore?.Get<List<VirtualEventSession>>("sessions"); }
+            set { BackingStore?.Set("sessions", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +92,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"email", n => { Email = n.GetStringValue(); } },
                 {"identity", n => { Identity = n.GetObjectValue<CommunicationsUserIdentity>(CommunicationsUserIdentity.CreateFromDiscriminatorValue); } },
                 {"presenterDetails", n => { PresenterDetails = n.GetObjectValue<VirtualEventPresenterDetails>(VirtualEventPresenterDetails.CreateFromDiscriminatorValue); } },
+                {"profilePhoto", n => { ProfilePhoto = n.GetByteArrayValue(); } },
+                {"sessions", n => { Sessions = n.GetCollectionOfObjectValues<VirtualEventSession>(VirtualEventSession.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -76,6 +106,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("email", Email);
             writer.WriteObjectValue<CommunicationsUserIdentity>("identity", Identity);
             writer.WriteObjectValue<VirtualEventPresenterDetails>("presenterDetails", PresenterDetails);
+            writer.WriteByteArrayValue("profilePhoto", ProfilePhoto);
+            writer.WriteCollectionOfObjectValues<VirtualEventSession>("sessions", Sessions);
         }
     }
 }

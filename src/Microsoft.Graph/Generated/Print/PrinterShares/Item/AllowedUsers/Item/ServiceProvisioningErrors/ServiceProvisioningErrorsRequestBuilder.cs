@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.Servic
         public ServiceProvisioningErrorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/printerShares/{printerShare%2Did}/allowedUsers/{user%2Did}/serviceProvisioningErrors{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).
+        /// Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.Servic
             return await RequestAdapter.SendAsync<ServiceProvisioningErrorCollectionResponse>(requestInfo, ServiceProvisioningErrorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).
+        /// Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans on 2023-06-13 and will be removed 2023-07-31")]
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.Servic
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item.Servic
             return new ServiceProvisioningErrorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).
+        /// Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.
         /// </summary>
         public class ServiceProvisioningErrorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

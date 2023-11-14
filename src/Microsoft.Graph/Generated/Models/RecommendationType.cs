@@ -67,5 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         OverprivilegedApps,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "longLivedCredentials")]
+        LongLivedCredentials,
+        [EnumMember(Value = "aadConnectDeprecated")]
+        AadConnectDeprecated,
+        [EnumMember(Value = "adalToMsalMigration")]
+        AdalToMsalMigration,
+        [EnumMember(Value = "ownerlessApps")]
+        OwnerlessApps,
+        [EnumMember(Value = "inactiveGuests")]
+        InactiveGuests,
     }
 }

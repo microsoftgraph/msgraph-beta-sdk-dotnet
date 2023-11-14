@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding.HeaderLogo {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
-            requestInfo.Headers.TryAdd("Accept", "image/bmp, image/jpg, image/jpeg, image/gif, image/vnd.microsoft.icon, image/png, image/tiff, application/json, application/json");
+            requestInfo.Headers.TryAdd("Accept", "image/bmp, image/jpg, image/jpeg, image/gif, image/vnd.microsoft.icon, image/png, image/tiff, application/json");
             return requestInfo;
         }
         /// <summary>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding.HeaderLogo {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
-            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetStreamContent(body, contentType);
             return requestInfo;
         }

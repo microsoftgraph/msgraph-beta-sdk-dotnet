@@ -204,6 +204,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcProvisioningType?>("provisioningType"); }
             set { BackingStore?.Set("provisioningType", value); }
         }
+        /// <summary>The scopeIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ScopeIds {
+            get { return BackingStore?.Get<List<string>?>("scopeIds"); }
+            set { BackingStore?.Set("scopeIds", value); }
+        }
+#nullable restore
+#else
+        public List<string> ScopeIds {
+            get { return BackingStore?.Get<List<string>>("scopeIds"); }
+            set { BackingStore?.Set("scopeIds", value); }
+        }
+#endif
         /// <summary>Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -249,6 +263,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"microsoftManagedDesktop", n => { MicrosoftManagedDesktop = n.GetObjectValue<Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>(Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop.CreateFromDiscriminatorValue); } },
                 {"onPremisesConnectionId", n => { OnPremisesConnectionId = n.GetStringValue(); } },
                 {"provisioningType", n => { ProvisioningType = n.GetEnumValue<CloudPcProvisioningType>(); } },
+                {"scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"windowsSettings", n => { WindowsSettings = n.GetObjectValue<CloudPcWindowsSettings>(CloudPcWindowsSettings.CreateFromDiscriminatorValue); } },
             };
         }
@@ -277,6 +292,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>("microsoftManagedDesktop", MicrosoftManagedDesktop);
             writer.WriteStringValue("onPremisesConnectionId", OnPremisesConnectionId);
             writer.WriteEnumValue<CloudPcProvisioningType>("provisioningType", ProvisioningType);
+            writer.WriteCollectionOfPrimitiveValues<string>("scopeIds", ScopeIds);
             writer.WriteObjectValue<CloudPcWindowsSettings>("windowsSettings", WindowsSettings);
         }
     }

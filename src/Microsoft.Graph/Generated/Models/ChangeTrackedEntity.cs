@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.dayNote" => new DayNote(),
                 "#microsoft.graph.offerShiftRequest" => new OfferShiftRequest(),
                 "#microsoft.graph.openShift" => new OpenShift(),
                 "#microsoft.graph.openShiftChangeRequest" => new OpenShiftChangeRequest(),

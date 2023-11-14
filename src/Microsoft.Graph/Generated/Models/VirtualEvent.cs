@@ -23,14 +23,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Description of the virtual event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
-            get { return BackingStore?.Get<string?>("description"); }
+        public ItemBody? Description {
+            get { return BackingStore?.Get<ItemBody?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
-            get { return BackingStore?.Get<string>("description"); }
+        public ItemBody Description {
+            get { return BackingStore?.Get<ItemBody>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
@@ -117,6 +117,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.virtualEventTownhall" => new VirtualEventTownhall(),
                 "#microsoft.graph.virtualEventWebinar" => new VirtualEventWebinar(),
                 _ => new VirtualEvent(),
             };
@@ -127,7 +128,7 @@ namespace Microsoft.Graph.Beta.Models {
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"createdBy", n => { CreatedBy = n.GetObjectValue<CommunicationsIdentitySet>(CommunicationsIdentitySet.CreateFromDiscriminatorValue); } },
-                {"description", n => { Description = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"endDateTime", n => { EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 {"presenters", n => { Presenters = n.GetCollectionOfObjectValues<VirtualEventPresenter>(VirtualEventPresenter.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -144,7 +145,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<CommunicationsIdentitySet>("createdBy", CreatedBy);
-            writer.WriteStringValue("description", Description);
+            writer.WriteObjectValue<ItemBody>("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<DateTimeTimeZone>("endDateTime", EndDateTime);
             writer.WriteCollectionOfObjectValues<VirtualEventPresenter>("presenters", Presenters);

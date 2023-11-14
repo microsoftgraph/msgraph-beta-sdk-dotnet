@@ -1729,7 +1729,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("securityIdentifier", value); }
         }
 #endif
-        /// <summary>Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.  Supports $filter (eq, not, for isResolved and serviceInstance).</summary>
+        /// <summary>Errors published by a federated service describing a nontransient, service-specific error regarding the properties or link from a user object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ServiceProvisioningError>? ServiceProvisioningErrors {
