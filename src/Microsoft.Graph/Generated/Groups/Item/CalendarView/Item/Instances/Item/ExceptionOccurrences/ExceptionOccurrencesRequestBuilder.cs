@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.CalendarView.Item.Instances.Item.Exce
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

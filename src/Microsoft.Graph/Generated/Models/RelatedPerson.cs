@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<PersonRelationship?>("relationship"); }
             set { BackingStore?.Set("relationship", value); }
         }
-        /// <summary>The userId property</summary>
+        /// <summary>The user&apos;s directory object ID (Microsoft Entra ID or CID).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId {
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userId", value); }
         }
 #endif
-        /// <summary>Email address or reference to person within organization.</summary>
+        /// <summary>Email address or reference to person within the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalName {

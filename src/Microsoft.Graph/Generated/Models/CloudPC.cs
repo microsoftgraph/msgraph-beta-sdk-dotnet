@@ -218,6 +218,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcProvisioningType?>("provisioningType"); }
             set { BackingStore?.Set("provisioningType", value); }
         }
+        /// <summary>The scopeIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ScopeIds {
+            get { return BackingStore?.Get<List<string>?>("scopeIds"); }
+            set { BackingStore?.Set("scopeIds", value); }
+        }
+#nullable restore
+#else
+        public List<string> ScopeIds {
+            get { return BackingStore?.Get<List<string>>("scopeIds"); }
+            set { BackingStore?.Set("scopeIds", value); }
+        }
+#endif
         /// <summary>The service plan ID of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -321,6 +335,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"provisioningPolicyId", n => { ProvisioningPolicyId = n.GetStringValue(); } },
                 {"provisioningPolicyName", n => { ProvisioningPolicyName = n.GetStringValue(); } },
                 {"provisioningType", n => { ProvisioningType = n.GetEnumValue<CloudPcProvisioningType>(); } },
+                {"scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"servicePlanId", n => { ServicePlanId = n.GetStringValue(); } },
                 {"servicePlanName", n => { ServicePlanName = n.GetStringValue(); } },
                 {"servicePlanType", n => { ServicePlanType = n.GetEnumValue<CloudPcServicePlanType>(); } },
@@ -356,6 +371,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("provisioningPolicyId", ProvisioningPolicyId);
             writer.WriteStringValue("provisioningPolicyName", ProvisioningPolicyName);
             writer.WriteEnumValue<CloudPcProvisioningType>("provisioningType", ProvisioningType);
+            writer.WriteCollectionOfPrimitiveValues<string>("scopeIds", ScopeIds);
             writer.WriteStringValue("servicePlanId", ServicePlanId);
             writer.WriteStringValue("servicePlanName", ServicePlanName);
             writer.WriteEnumValue<CloudPcServicePlanType>("servicePlanType", ServicePlanType);

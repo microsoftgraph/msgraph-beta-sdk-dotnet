@@ -12,6 +12,8 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnection
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSettings;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveScopedPermissions;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveTenantEncryptionSetting;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ServicePlans;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SharedUseServicePlans;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots;
@@ -83,6 +85,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         /// <summary>Provides operations to manage the reports property of the microsoft.graph.virtualEndpoint entity.</summary>
         public ReportsRequestBuilder Reports { get =>
             new ReportsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveScopedPermissions method.</summary>
+        public RetrieveScopedPermissionsRequestBuilder RetrieveScopedPermissions { get =>
+            new RetrieveScopedPermissionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveTenantEncryptionSetting method.</summary>
+        public RetrieveTenantEncryptionSettingRequestBuilder RetrieveTenantEncryptionSetting { get =>
+            new RetrieveTenantEncryptionSettingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the servicePlans property of the microsoft.graph.virtualEndpoint entity.</summary>
         public ServicePlansRequestBuilder ServicePlans { get =>
@@ -199,7 +209,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
-            requestInfo.Headers.TryAdd("Accept", "application/json, application/json");
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -225,7 +235,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -252,7 +262,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

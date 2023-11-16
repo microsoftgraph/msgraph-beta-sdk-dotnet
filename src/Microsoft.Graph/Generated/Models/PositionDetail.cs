@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("jobTitle", value); }
         }
 #endif
-        /// <summary>The layer property</summary>
+        /// <summary>The place where the employee is within the organizational hierarchy.</summary>
         public int? Layer {
             get { return BackingStore?.Get<int?>("layer"); }
             set { BackingStore?.Set("layer", value); }
         }
-        /// <summary>The level property</summary>
+        /// <summary>The employee’s experience or management level.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Level {
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Date?>("startMonthYear"); }
             set { BackingStore?.Set("startMonthYear", value); }
         }
-        /// <summary>Short summary of the position.</summary>
+        /// <summary>summary of the position.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Summary {

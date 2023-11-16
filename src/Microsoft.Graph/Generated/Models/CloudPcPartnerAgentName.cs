@@ -9,5 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
         UnknownFutureValue,
         [EnumMember(Value = "vMware")]
         VMware,
+        [EnumMember(Value = "hp")]
+        Hp,
     }
 }

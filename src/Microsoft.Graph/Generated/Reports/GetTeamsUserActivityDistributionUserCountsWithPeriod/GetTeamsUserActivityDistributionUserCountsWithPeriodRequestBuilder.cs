@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Reports.GetTeamsUserActivityDistributionUserCount
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
-            requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json, application/json");
+            requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json");
             return requestInfo;
         }
         /// <summary>

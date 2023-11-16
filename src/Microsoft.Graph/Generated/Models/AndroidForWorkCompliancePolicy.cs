@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("securityRequireCompanyPortalAppIntegrity"); }
             set { BackingStore?.Set("securityRequireCompanyPortalAppIntegrity", value); }
         }
-        /// <summary>An enum representing the Android SafetyNet attestation evaluation types.</summary>
+        /// <summary>An enum representing the Android Play Integrity API evaluation types.</summary>
         public AndroidSafetyNetEvaluationType? SecurityRequiredAndroidSafetyNetEvaluationType {
             get { return BackingStore?.Get<AndroidSafetyNetEvaluationType?>("securityRequiredAndroidSafetyNetEvaluationType"); }
             set { BackingStore?.Set("securityRequiredAndroidSafetyNetEvaluationType", value); }

@@ -95,6 +95,8 @@ namespace Microsoft.Graph.Beta.Models {
         ResourceAvailabilityCheckIntuneDefaultWindowsRestrictionViolation,
         [EnumMember(Value = "resourceAvailabilityCheckIntuneCustomWindowsRestrictionViolation")]
         ResourceAvailabilityCheckIntuneCustomWindowsRestrictionViolation,
+        [EnumMember(Value = "resourceAvailabilityCheckDeploymentQuotaLimitReached")]
+        ResourceAvailabilityCheckDeploymentQuotaLimitReached,
         [EnumMember(Value = "resourceAvailabilityCheckTransientServiceError")]
         ResourceAvailabilityCheckTransientServiceError,
         [EnumMember(Value = "resourceAvailabilityCheckUnknownError")]
