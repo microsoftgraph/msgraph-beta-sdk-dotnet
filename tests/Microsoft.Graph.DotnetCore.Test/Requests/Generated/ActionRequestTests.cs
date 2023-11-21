@@ -100,13 +100,13 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         /// Tests that an exception is thrown when the first of required parameters passed to an action request is null (assignLicence).
         /// </summary>
         [Fact]
-        public void MultipleRequiredParameters_FirstParameterNull()
+        public async Task MultipleRequiredParameters_FirstParameterNull()
         {
             var mockRequestAdapter = new Mock<IRequestAdapter>();
             var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
             var removeLicenses = new List<Guid> { new Guid() };
             
-            Assert.ThrowsAsync<ArgumentNullException>(() => graphServiceClient.Me.AssignLicense.PostAsync(null));
+            await Assert.ThrowsAsync<ArgumentNullException>(() => graphServiceClient.Me.AssignLicense.PostAsync(null));
         }
 
         /// <summary>
