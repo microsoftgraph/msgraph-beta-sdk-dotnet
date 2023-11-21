@@ -39,6 +39,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("schedulingGroupId", value); }
         }
 #endif
+        /// <summary>The schedulingGroupName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SchedulingGroupName {
+            get { return BackingStore?.Get<string?>("schedulingGroupName"); }
+            set { BackingStore?.Set("schedulingGroupName", value); }
+        }
+#nullable restore
+#else
+        public string SchedulingGroupName {
+            get { return BackingStore?.Get<string>("schedulingGroupName"); }
+            set { BackingStore?.Set("schedulingGroupName", value); }
+        }
+#endif
         /// <summary>A published open shift.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,6 +65,34 @@ namespace Microsoft.Graph.Beta.Models {
         public OpenShiftItem SharedOpenShift {
             get { return BackingStore?.Get<OpenShiftItem>("sharedOpenShift"); }
             set { BackingStore?.Set("sharedOpenShift", value); }
+        }
+#endif
+        /// <summary>The teamId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TeamId {
+            get { return BackingStore?.Get<string?>("teamId"); }
+            set { BackingStore?.Set("teamId", value); }
+        }
+#nullable restore
+#else
+        public string TeamId {
+            get { return BackingStore?.Get<string>("teamId"); }
+            set { BackingStore?.Set("teamId", value); }
+        }
+#endif
+        /// <summary>The teamName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TeamName {
+            get { return BackingStore?.Get<string?>("teamName"); }
+            set { BackingStore?.Set("teamName", value); }
+        }
+#nullable restore
+#else
+        public string TeamName {
+            get { return BackingStore?.Get<string>("teamName"); }
+            set { BackingStore?.Set("teamName", value); }
         }
 #endif
         /// <summary>
@@ -75,7 +117,10 @@ namespace Microsoft.Graph.Beta.Models {
                 {"draftOpenShift", n => { DraftOpenShift = n.GetObjectValue<OpenShiftItem>(OpenShiftItem.CreateFromDiscriminatorValue); } },
                 {"isStagedForDeletion", n => { IsStagedForDeletion = n.GetBoolValue(); } },
                 {"schedulingGroupId", n => { SchedulingGroupId = n.GetStringValue(); } },
+                {"schedulingGroupName", n => { SchedulingGroupName = n.GetStringValue(); } },
                 {"sharedOpenShift", n => { SharedOpenShift = n.GetObjectValue<OpenShiftItem>(OpenShiftItem.CreateFromDiscriminatorValue); } },
+                {"teamId", n => { TeamId = n.GetStringValue(); } },
+                {"teamName", n => { TeamName = n.GetStringValue(); } },
             };
         }
         /// <summary>

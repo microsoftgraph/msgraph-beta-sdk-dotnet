@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
-    public class ValidateOperation : LongRunningOperation, IParsable {
+    public class ValidateOperation : Microsoft.Graph.Beta.Models.LongRunningOperation, IParsable {
         /// <summary>Set of errors discovered through validation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("identity", value); }
         }
 #endif
-        /// <summary>The identityDetails property</summary>
+        /// <summary>An identity&apos;s information details. Inherited from finding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.IdentityDetails? IdentityDetails {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("permissionsCreepIndex", value); }
         }
 #endif
-        /// <summary>The privilegeEscalationDetails property</summary>
+        /// <summary>The list of escalations that the identity is capable of performing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PrivilegeEscalation>? PrivilegeEscalationDetails {

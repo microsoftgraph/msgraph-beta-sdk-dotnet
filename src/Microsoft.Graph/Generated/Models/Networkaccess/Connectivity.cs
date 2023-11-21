@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public class Connectivity : Entity, IParsable {
+    public class Connectivity : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>Branches represent locations for connectivity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -18,6 +18,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         public List<BranchSite> Branches {
             get { return BackingStore?.Get<List<BranchSite>>("branches"); }
             set { BackingStore?.Set("branches", value); }
+        }
+#endif
+        /// <summary>The webCategories property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<WebCategory>? WebCategories {
+            get { return BackingStore?.Get<List<WebCategory>?>("webCategories"); }
+            set { BackingStore?.Set("webCategories", value); }
+        }
+#nullable restore
+#else
+        public List<WebCategory> WebCategories {
+            get { return BackingStore?.Get<List<WebCategory>>("webCategories"); }
+            set { BackingStore?.Set("webCategories", value); }
         }
 #endif
         /// <summary>
@@ -34,6 +48,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"branches", n => { Branches = n.GetCollectionOfObjectValues<BranchSite>(BranchSite.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"webCategories", n => { WebCategories = n.GetCollectionOfObjectValues<WebCategory>(WebCategory.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -44,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<BranchSite>("branches", Branches);
+            writer.WriteCollectionOfObjectValues<WebCategory>("webCategories", WebCategories);
         }
     }
 }

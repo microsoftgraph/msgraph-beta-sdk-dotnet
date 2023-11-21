@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    public class ResourceConnection : Entity, IParsable {
+    public class ResourceConnection : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The state of the connection. The possible values are: connected, notAuthorized, notFound, unknownFutureValue.</summary>
         public ResourceConnectionState? State {
             get { return BackingStore?.Get<ResourceConnectionState?>("state"); }

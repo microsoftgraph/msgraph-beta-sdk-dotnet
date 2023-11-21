@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("identity", value); }
         }
 #endif
-        /// <summary>The identityDetails property</summary>
+        /// <summary>An identity&apos;s information details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.IdentityDetails? IdentityDetails {

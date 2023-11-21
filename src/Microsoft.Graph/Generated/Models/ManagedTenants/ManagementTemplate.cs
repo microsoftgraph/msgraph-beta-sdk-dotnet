@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class ManagementTemplate : Entity, IParsable {
+    public class ManagementTemplate : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.</summary>
         public ManagementCategory? Category {
             get { return BackingStore?.Get<ManagementCategory?>("category"); }

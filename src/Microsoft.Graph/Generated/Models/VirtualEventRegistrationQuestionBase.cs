@@ -5,27 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class VirtualEventRegistrationQuestion : Entity, IParsable {
-        /// <summary>Answer choices when answerInputType is singleChoice or multiChoice.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? AnswerChoices {
-            get { return BackingStore?.Get<List<string>?>("answerChoices"); }
-            set { BackingStore?.Set("answerChoices", value); }
-        }
-#nullable restore
-#else
-        public List<string> AnswerChoices {
-            get { return BackingStore?.Get<List<string>>("answerChoices"); }
-            set { BackingStore?.Set("answerChoices", value); }
-        }
-#endif
-        /// <summary>Input type of the registration question answer.</summary>
-        public VirtualEventRegistrationQuestionAnswerInputType? AnswerInputType {
-            get { return BackingStore?.Get<VirtualEventRegistrationQuestionAnswerInputType?>("answerInputType"); }
-            set { BackingStore?.Set("answerInputType", value); }
-        }
-        /// <summary>Display name of the registration question.</summary>
+    public class VirtualEventRegistrationQuestionBase : Entity, IParsable {
+        /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -39,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Indicates whether the question is required to answer. Default value is false.</summary>
+        /// <summary>The isRequired property</summary>
         public bool? IsRequired {
             get { return BackingStore?.Get<bool?>("isRequired"); }
             set { BackingStore?.Set("isRequired", value); }
@@ -48,17 +29,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VirtualEventRegistrationQuestion CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new VirtualEventRegistrationQuestionBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VirtualEventRegistrationQuestion();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.virtualEventRegistratioCustomQuestion" => new VirtualEventRegistratioCustomQuestion(),
+                "#microsoft.graph.virtualEventRegistrationPredefinedQuestion" => new VirtualEventRegistrationPredefinedQuestion(),
+                _ => new VirtualEventRegistrationQuestionBase(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"answerChoices", n => { AnswerChoices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"answerInputType", n => { AnswerInputType = n.GetEnumValue<VirtualEventRegistrationQuestionAnswerInputType>(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
             };
@@ -70,8 +54,6 @@ namespace Microsoft.Graph.Beta.Models {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfPrimitiveValues<string>("answerChoices", AnswerChoices);
-            writer.WriteEnumValue<VirtualEventRegistrationQuestionAnswerInputType>("answerInputType", AnswerInputType);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isRequired", IsRequired);
         }

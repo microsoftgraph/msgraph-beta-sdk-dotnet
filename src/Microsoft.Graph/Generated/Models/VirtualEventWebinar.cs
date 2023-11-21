@@ -25,17 +25,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("coOrganizers", value); }
         }
 #endif
-        /// <summary>Registration configuration of the webinar.</summary>
+        /// <summary>The registrationConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VirtualEventRegistrationConfiguration? RegistrationConfiguration {
-            get { return BackingStore?.Get<VirtualEventRegistrationConfiguration?>("registrationConfiguration"); }
+        public VirtualEventWebinarRegistrationConfiguration? RegistrationConfiguration {
+            get { return BackingStore?.Get<VirtualEventWebinarRegistrationConfiguration?>("registrationConfiguration"); }
             set { BackingStore?.Set("registrationConfiguration", value); }
         }
 #nullable restore
 #else
-        public VirtualEventRegistrationConfiguration RegistrationConfiguration {
-            get { return BackingStore?.Get<VirtualEventRegistrationConfiguration>("registrationConfiguration"); }
+        public VirtualEventWebinarRegistrationConfiguration RegistrationConfiguration {
+            get { return BackingStore?.Get<VirtualEventWebinarRegistrationConfiguration>("registrationConfiguration"); }
             set { BackingStore?.Set("registrationConfiguration", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"audience", n => { Audience = n.GetEnumValue<MeetingAudience>(); } },
                 {"coOrganizers", n => { CoOrganizers = n.GetCollectionOfObjectValues<CommunicationsUserIdentity>(CommunicationsUserIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"registrationConfiguration", n => { RegistrationConfiguration = n.GetObjectValue<VirtualEventRegistrationConfiguration>(VirtualEventRegistrationConfiguration.CreateFromDiscriminatorValue); } },
+                {"registrationConfiguration", n => { RegistrationConfiguration = n.GetObjectValue<VirtualEventWebinarRegistrationConfiguration>(VirtualEventWebinarRegistrationConfiguration.CreateFromDiscriminatorValue); } },
                 {"registrations", n => { Registrations = n.GetCollectionOfObjectValues<VirtualEventRegistration>(VirtualEventRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteEnumValue<MeetingAudience>("audience", Audience);
             writer.WriteCollectionOfObjectValues<CommunicationsUserIdentity>("coOrganizers", CoOrganizers);
-            writer.WriteObjectValue<VirtualEventRegistrationConfiguration>("registrationConfiguration", RegistrationConfiguration);
+            writer.WriteObjectValue<VirtualEventWebinarRegistrationConfiguration>("registrationConfiguration", RegistrationConfiguration);
             writer.WriteCollectionOfObjectValues<VirtualEventRegistration>("registrations", Registrations);
         }
     }

@@ -12,19 +12,19 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
             set { BackingStore?.Set("AdditionalData", value); }
         }
-        /// <summary>The assigned property</summary>
+        /// <summary>This is the number of authorization system actions that have been assigned to the identity.</summary>
         public int? Assigned {
             get { return BackingStore?.Get<int?>("assigned"); }
             set { BackingStore?.Set("assigned", value); }
         }
-        /// <summary>The available property</summary>
+        /// <summary>This is the number of authorization system actions that the identity has exercised in the last 90 days.</summary>
         public int? Available {
             get { return BackingStore?.Get<int?>("available"); }
             set { BackingStore?.Set("available", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The exercised property</summary>
+        /// <summary>This is the maximum number of actions that are available in the authorization system.</summary>
         public int? Exercised {
             get { return BackingStore?.Get<int?>("exercised"); }
             set { BackingStore?.Set("exercised", value); }

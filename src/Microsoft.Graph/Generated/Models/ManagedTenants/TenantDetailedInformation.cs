@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class TenantDetailedInformation : Entity, IParsable {
+    public class TenantDetailedInformation : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The city where the managed tenant is located. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

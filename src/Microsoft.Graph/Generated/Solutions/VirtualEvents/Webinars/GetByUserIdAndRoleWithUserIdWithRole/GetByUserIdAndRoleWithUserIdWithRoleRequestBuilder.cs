@@ -38,10 +38,10 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.GetByUserIdAndRo
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetByUserIdAndRoleWithUserIdWithRoleGetResponse?> GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponseAsync(Action<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetByUserIdAndRoleWithUserIdWithRoleGetResponse?> GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponseAsync(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<GetByUserIdAndRoleWithUserIdWithRoleGetResponse> GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponseAsync(Action<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetByUserIdAndRoleWithUserIdWithRoleGetResponse> GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponseAsync(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -58,10 +58,10 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.GetByUserIdAndRo
         [Obsolete("This method is obsolete. Use GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetByUserIdAndRoleWithUserIdWithRoleResponse?> GetAsync(Action<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetByUserIdAndRoleWithUserIdWithRoleResponse?> GetAsync(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<GetByUserIdAndRoleWithUserIdWithRoleResponse> GetAsync(Action<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetByUserIdAndRoleWithUserIdWithRoleResponse> GetAsync(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -76,23 +76,13 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.GetByUserIdAndRo
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
@@ -160,20 +150,8 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.GetByUserIdAndRo
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new getByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration : RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters> {
         }
     }
 }

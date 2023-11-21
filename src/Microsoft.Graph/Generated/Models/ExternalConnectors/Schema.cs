@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    public class Schema : Entity, IParsable {
+    public class Schema : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>Must be set to microsoft.graph.externalItem. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

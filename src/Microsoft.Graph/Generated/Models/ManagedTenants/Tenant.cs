@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class Tenant : Entity, IParsable {
+    public class Tenant : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The relationship details for the tenant with the managing entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

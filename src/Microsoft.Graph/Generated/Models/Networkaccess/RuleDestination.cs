@@ -48,6 +48,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
                 "#microsoft.graph.networkaccess.ipRange" => new IpRange(),
                 "#microsoft.graph.networkaccess.ipSubnet" => new IpSubnet(),
                 "#microsoft.graph.networkaccess.url" => new Url(),
+                "#microsoft.graph.networkaccess.webCategory" => new WebCategory(),
                 _ => new RuleDestination(),
             };
         }

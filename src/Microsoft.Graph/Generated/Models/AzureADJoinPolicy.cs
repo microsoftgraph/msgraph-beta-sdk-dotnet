@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class AzureAdJoinPolicy : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class AzureADJoinPolicy : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -67,9 +67,9 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new azureAdJoinPolicy and sets the default values.
+        /// Instantiates a new azureADJoinPolicy and sets the default values.
         /// </summary>
-        public AzureAdJoinPolicy() {
+        public AzureADJoinPolicy() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -77,9 +77,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AzureAdJoinPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static AzureADJoinPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AzureAdJoinPolicy();
+            return new AzureADJoinPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model

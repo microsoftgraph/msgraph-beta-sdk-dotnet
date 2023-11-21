@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AwsUser : AwsIdentity, IParsable {
-        /// <summary>The assumableRoles property</summary>
+        /// <summary>Roles assumed by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AwsRole>? AssumableRoles {

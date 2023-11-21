@@ -36,10 +36,10 @@ namespace Microsoft.Graph.Beta.Reports.GetRelyingPartyDetailedSummaryWithPeriod 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetRelyingPartyDetailedSummaryWithPeriodGetResponse?> GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponseAsync(Action<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetRelyingPartyDetailedSummaryWithPeriodGetResponse?> GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponseAsync(Action<RequestConfiguration<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<GetRelyingPartyDetailedSummaryWithPeriodGetResponse> GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponseAsync(Action<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetRelyingPartyDetailedSummaryWithPeriodGetResponse> GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponseAsync(Action<RequestConfiguration<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -56,10 +56,10 @@ namespace Microsoft.Graph.Beta.Reports.GetRelyingPartyDetailedSummaryWithPeriod 
         [Obsolete("This method is obsolete. Use GetAsGetRelyingPartyDetailedSummaryWithPeriodGetResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetRelyingPartyDetailedSummaryWithPeriodResponse?> GetAsync(Action<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetRelyingPartyDetailedSummaryWithPeriodResponse?> GetAsync(Action<RequestConfiguration<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<GetRelyingPartyDetailedSummaryWithPeriodResponse> GetAsync(Action<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetRelyingPartyDetailedSummaryWithPeriodResponse> GetAsync(Action<RequestConfiguration<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -74,23 +74,13 @@ namespace Microsoft.Graph.Beta.Reports.GetRelyingPartyDetailedSummaryWithPeriod 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
@@ -158,20 +148,8 @@ namespace Microsoft.Graph.Beta.Reports.GetRelyingPartyDetailedSummaryWithPeriod 
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new getRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetRequestConfiguration : RequestConfiguration<GetRelyingPartyDetailedSummaryWithPeriodRequestBuilderGetQueryParameters> {
         }
     }
 }

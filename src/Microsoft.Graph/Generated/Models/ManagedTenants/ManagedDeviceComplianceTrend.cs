@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class ManagedDeviceComplianceTrend : Entity, IParsable {
+    public class ManagedDeviceComplianceTrend : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The number of devices with a compliant status. Required. Read-only.</summary>
         public int? CompliantDeviceCount {
             get { return BackingStore?.Get<int?>("compliantDeviceCount"); }

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement {
-    public class Monitoring : Entity, IParsable {
+    public class Monitoring : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The collection of records of alert events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public class CrossTenantAccessSettings : Entity, IParsable {
+    public class CrossTenantAccessSettings : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The networkPacketTaggingStatus property</summary>
         public Status? NetworkPacketTaggingStatus {
             get { return BackingStore?.Get<Status?>("networkPacketTaggingStatus"); }

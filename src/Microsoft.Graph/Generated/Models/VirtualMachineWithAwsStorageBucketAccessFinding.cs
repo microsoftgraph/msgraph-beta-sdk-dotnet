@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class VirtualMachineWithAwsStorageBucketAccessFinding : Finding, IParsable {
-        /// <summary>The total number of storage buckets that the EC2 instance can access using the role</summary>
+        /// <summary>The total number of storage buckets that the EC2 instance can access using the role.</summary>
         public int? AccessibleCount {
             get { return BackingStore?.Get<int?>("accessibleCount"); }
             set { BackingStore?.Set("accessibleCount", value); }
         }
-        /// <summary>The total number of storage buckets in the authorization system that host the EC2 instance</summary>
+        /// <summary>The total number of storage buckets in the authorization system that hosts the EC2 instance.</summary>
         public int? BucketCount {
             get { return BackingStore?.Get<int?>("bucketCount"); }
             set { BackingStore?.Set("bucketCount", value); }

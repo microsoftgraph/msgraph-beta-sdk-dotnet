@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Count of transactions that were blocked.</summary>
+        /// <summary>The number of transactions that were blocked.</summary>
         public int? BlockedCount {
             get { return BackingStore?.Get<int?>("blockedCount"); }
             set { BackingStore?.Set("blockedCount", value); }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Count of transactions.</summary>
+        /// <summary>The total number of transactions.</summary>
         public int? TotalCount {
             get { return BackingStore?.Get<int?>("totalCount"); }
             set { BackingStore?.Set("totalCount", value); }

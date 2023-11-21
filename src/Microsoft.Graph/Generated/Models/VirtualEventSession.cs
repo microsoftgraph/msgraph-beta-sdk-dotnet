@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("presenters", value); }
         }
 #endif
-        /// <summary>Registration records of this virtual event session.</summary>
+        /// <summary>The registrations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<VirtualEventRegistration>? Registrations {

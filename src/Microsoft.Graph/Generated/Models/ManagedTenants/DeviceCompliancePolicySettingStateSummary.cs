@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class DeviceCompliancePolicySettingStateSummary : Entity, IParsable {
+    public class DeviceCompliancePolicySettingStateSummary : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The number of devices in a conflict state. Optional. Read-only.</summary>
         public int? ConflictDeviceCount {
             get { return BackingStore?.Get<int?>("conflictDeviceCount"); }

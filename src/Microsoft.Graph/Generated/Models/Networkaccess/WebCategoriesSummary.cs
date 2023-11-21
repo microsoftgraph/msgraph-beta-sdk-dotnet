@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The deviceCount property</summary>
+        /// <summary>The number of unique devices that were seen.</summary>
         public long? DeviceCount {
             get { return BackingStore?.Get<long?>("deviceCount"); }
             set { BackingStore?.Set("deviceCount", value); }
@@ -33,16 +33,30 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The transactionCount property</summary>
+        /// <summary>The number of transactions that were seen.</summary>
         public long? TransactionCount {
             get { return BackingStore?.Get<long?>("transactionCount"); }
             set { BackingStore?.Set("transactionCount", value); }
         }
-        /// <summary>The userCount property</summary>
+        /// <summary>The number of unique Microsoft Entra ID users that were seen.</summary>
         public long? UserCount {
             get { return BackingStore?.Get<long?>("userCount"); }
             set { BackingStore?.Set("userCount", value); }
         }
+        /// <summary>The webCategory property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.Networkaccess.WebCategory? WebCategory {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.WebCategory?>("webCategory"); }
+            set { BackingStore?.Set("webCategory", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.Networkaccess.WebCategory WebCategory {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.WebCategory>("webCategory"); }
+            set { BackingStore?.Set("webCategory", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new webCategoriesSummary and sets the default values.
         /// </summary>
@@ -67,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"transactionCount", n => { TransactionCount = n.GetLongValue(); } },
                 {"userCount", n => { UserCount = n.GetLongValue(); } },
+                {"webCategory", n => { WebCategory = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.WebCategory>(Microsoft.Graph.Beta.Models.Networkaccess.WebCategory.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -79,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteLongValue("transactionCount", TransactionCount);
             writer.WriteLongValue("userCount", UserCount);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.WebCategory>("webCategory", WebCategory);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

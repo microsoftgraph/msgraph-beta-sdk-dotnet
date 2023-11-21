@@ -28,6 +28,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("identifier", value); }
         }
 #endif
+        /// <summary>The identifier of the certificate issuer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IssuerSubjectIdentifier {
+            get { return BackingStore?.Get<string?>("issuerSubjectIdentifier"); }
+            set { BackingStore?.Set("issuerSubjectIdentifier", value); }
+        }
+#nullable restore
+#else
+        public string IssuerSubjectIdentifier {
+            get { return BackingStore?.Get<string>("issuerSubjectIdentifier"); }
+            set { BackingStore?.Set("issuerSubjectIdentifier", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,10 +56,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The identifier of the X.509 certificate policyOID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PolicyOidIdentifier {
+            get { return BackingStore?.Get<string?>("policyOidIdentifier"); }
+            set { BackingStore?.Set("policyOidIdentifier", value); }
+        }
+#nullable restore
+#else
+        public string PolicyOidIdentifier {
+            get { return BackingStore?.Get<string>("policyOidIdentifier"); }
+            set { BackingStore?.Set("policyOidIdentifier", value); }
+        }
+#endif
         /// <summary>The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue. Required.</summary>
         public Microsoft.Graph.Beta.Models.X509CertificateAuthenticationMode? X509CertificateAuthenticationMode {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.X509CertificateAuthenticationMode?>("x509CertificateAuthenticationMode"); }
             set { BackingStore?.Set("x509CertificateAuthenticationMode", value); }
+        }
+        /// <summary>The possible values are: low, high, unknownFutureValue.</summary>
+        public X509CertificateAffinityLevel? X509CertificateRequiredAffinityLevel {
+            get { return BackingStore?.Get<X509CertificateAffinityLevel?>("x509CertificateRequiredAffinityLevel"); }
+            set { BackingStore?.Set("x509CertificateRequiredAffinityLevel", value); }
         }
         /// <summary>The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue, issuerSubjectAndPolicyOID. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: issuerSubjectAndPolicyOID. Required.</summary>
         public Microsoft.Graph.Beta.Models.X509CertificateRuleType? X509CertificateRuleType {
@@ -73,8 +106,11 @@ namespace Microsoft.Graph.Beta.Models {
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"identifier", n => { Identifier = n.GetStringValue(); } },
+                {"issuerSubjectIdentifier", n => { IssuerSubjectIdentifier = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"policyOidIdentifier", n => { PolicyOidIdentifier = n.GetStringValue(); } },
                 {"x509CertificateAuthenticationMode", n => { X509CertificateAuthenticationMode = n.GetEnumValue<X509CertificateAuthenticationMode>(); } },
+                {"x509CertificateRequiredAffinityLevel", n => { X509CertificateRequiredAffinityLevel = n.GetEnumValue<X509CertificateAffinityLevel>(); } },
                 {"x509CertificateRuleType", n => { X509CertificateRuleType = n.GetEnumValue<X509CertificateRuleType>(); } },
             };
         }
@@ -85,8 +121,11 @@ namespace Microsoft.Graph.Beta.Models {
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("identifier", Identifier);
+            writer.WriteStringValue("issuerSubjectIdentifier", IssuerSubjectIdentifier);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteStringValue("policyOidIdentifier", PolicyOidIdentifier);
             writer.WriteEnumValue<X509CertificateAuthenticationMode>("x509CertificateAuthenticationMode", X509CertificateAuthenticationMode);
+            writer.WriteEnumValue<X509CertificateAffinityLevel>("x509CertificateRequiredAffinityLevel", X509CertificateRequiredAffinityLevel);
             writer.WriteEnumValue<X509CertificateRuleType>("x509CertificateRuleType", X509CertificateRuleType);
             writer.WriteAdditionalData(AdditionalData);
         }

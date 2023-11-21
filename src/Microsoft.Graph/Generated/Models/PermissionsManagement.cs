@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PermissionsManagement : Entity, IParsable {
-        /// <summary>The permissionsRequestChanges property</summary>
+        /// <summary>Represents a change event of the scheduledPermissionsRequest entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PermissionsRequestChange>? PermissionsRequestChanges {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("permissionsRequestChanges", value); }
         }
 #endif
-        /// <summary>The scheduledPermissionsRequests property</summary>
+        /// <summary>Represents a permissions request that Permissions Management uses to manage permissions for an identity on resources in the authorization system. This request can be granted, rejected or canceled by identities in Permissions Management.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ScheduledPermissionsRequest>? ScheduledPermissionsRequests {

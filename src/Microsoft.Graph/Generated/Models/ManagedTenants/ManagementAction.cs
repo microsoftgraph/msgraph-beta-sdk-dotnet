@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class ManagementAction : Entity, IParsable {
+    public class ManagementAction : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The category property</summary>
         public ManagementCategory? Category {
             get { return BackingStore?.Get<ManagementCategory?>("category"); }

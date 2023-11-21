@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AzureAuthorizationSystemResource : AuthorizationSystemResource, IParsable {
-        /// <summary>The service property</summary>
+        /// <summary>The service associated with the resource in an Azure authorization system. This object is auto-expanded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AuthorizationSystemTypeService? Service {

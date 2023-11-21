@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public class HostReputation : Entity, IParsable {
+    public class HostReputation : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The classification property</summary>
         public HostReputationClassification? Classification {
             get { return BackingStore?.Get<HostReputationClassification?>("classification"); }

@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AwsExternalSystemAccessRoleFinding : Finding, IParsable {
-        /// <summary>The accessibleSystemIds property</summary>
+        /// <summary>The IDs of the accounts that this role is able to access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AccessibleSystemIds {

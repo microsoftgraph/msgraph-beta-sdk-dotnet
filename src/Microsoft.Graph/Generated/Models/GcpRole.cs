@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class GcpRole : Entity, IParsable {
-        /// <summary>The displayName property</summary>
+        /// <summary>The name of the GCP role. Supports $filter and (eq,contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The externalId property</summary>
+        /// <summary>The ID of the GCP role as defined by GCP. Alternate key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalId {
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GcpRoleType?>("gcpRoleType"); }
             set { BackingStore?.Set("gcpRoleType", value); }
         }
-        /// <summary>The scopes property</summary>
+        /// <summary>Resources that an identity assigned this GCP role can perform actions on. Supports $filter and (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<GcpScope>? Scopes {

@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("allowUserConsentForRiskyApps"); }
             set { BackingStore?.Set("allowUserConsentForRiskyApps", value); }
         }
-        /// <summary>To disable the use of the Microsoft Graph PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the Microsoft Graph PowerShell module. This doesn&apos;t affect Microsoft Entra Connect or Microsoft Graph.</summary>
+        /// <summary>To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This doesn&apos;t affect Microsoft Entra Connect or Microsoft Graph.</summary>
         public bool? BlockMsolPowerShell {
             get { return BackingStore?.Get<bool?>("blockMsolPowerShell"); }
             set { BackingStore?.Set("blockMsolPowerShell", value); }

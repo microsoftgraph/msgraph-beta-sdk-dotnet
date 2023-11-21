@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthorizationSystemResource : Entity, IParsable {
-        /// <summary>The authorizationSystem property</summary>
+        /// <summary>The authorization system that the resource exists in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.AuthorizationSystem? AuthorizationSystem {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authorizationSystem", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The name of the resource. Read-only. Supports $filter (eq,contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The externalId property</summary>
+        /// <summary>The ID of the resource as defined by the authorization system provider. Read-only. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalId {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("externalId", value); }
         }
 #endif
-        /// <summary>The resourceType property</summary>
+        /// <summary>The type of the resource. Read-only. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceType {

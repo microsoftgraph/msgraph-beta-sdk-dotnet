@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
-    public class ParticipantBase : Entity, IParsable {
+    public class ParticipantBase : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The identity of the call participant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

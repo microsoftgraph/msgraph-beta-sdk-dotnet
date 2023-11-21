@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthorizationSystemIdentity : Entity, IParsable {
-        /// <summary>The authorizationSystem property</summary>
+        /// <summary>Navigation to the authorizationSystem object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.AuthorizationSystem? AuthorizationSystem {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authorizationSystem", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The name of the identity. Read-only. Supports $filter and (eq,contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The externalId property</summary>
+        /// <summary>Unique ID of the identity within the external system. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalId {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("externalId", value); }
         }
 #endif
-        /// <summary>The source property</summary>
+        /// <summary>Represents details of the source of the identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AuthorizationSystemIdentitySource? Source {

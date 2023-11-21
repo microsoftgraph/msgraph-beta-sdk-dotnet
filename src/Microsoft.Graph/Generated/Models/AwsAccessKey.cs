@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AwsAccessKey : AwsIdentity, IParsable {
-        /// <summary>The owner property</summary>
+        /// <summary>Represents the owner of the access key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AwsUser? Owner {

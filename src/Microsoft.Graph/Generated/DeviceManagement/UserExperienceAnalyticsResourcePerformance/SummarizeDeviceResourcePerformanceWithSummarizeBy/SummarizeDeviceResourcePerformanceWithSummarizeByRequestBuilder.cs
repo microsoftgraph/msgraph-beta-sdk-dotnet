@@ -36,10 +36,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse?> GetAsSummarizeDeviceResourcePerformanceWithSummarizeByGetResponseAsync(Action<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse?> GetAsSummarizeDeviceResourcePerformanceWithSummarizeByGetResponseAsync(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse> GetAsSummarizeDeviceResourcePerformanceWithSummarizeByGetResponseAsync(Action<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse> GetAsSummarizeDeviceResourcePerformanceWithSummarizeByGetResponseAsync(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -56,10 +56,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
         [Obsolete("This method is obsolete. Use GetAsSummarizeDeviceResourcePerformanceWithSummarizeByGetResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SummarizeDeviceResourcePerformanceWithSummarizeByResponse?> GetAsync(Action<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SummarizeDeviceResourcePerformanceWithSummarizeByResponse?> GetAsync(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<SummarizeDeviceResourcePerformanceWithSummarizeByResponse> GetAsync(Action<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SummarizeDeviceResourcePerformanceWithSummarizeByResponse> GetAsync(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -74,23 +74,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
@@ -158,20 +148,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new summarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetRequestConfiguration : RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters> {
         }
     }
 }

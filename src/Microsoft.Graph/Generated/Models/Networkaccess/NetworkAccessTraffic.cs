@@ -7,6 +7,11 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class NetworkAccessTraffic : IAdditionalDataHolder, IBackedModel, IParsable {
+        /// <summary>The action property</summary>
+        public FilteringPolicyAction? Action {
+            get { return BackingStore?.Get<FilteringPolicyAction?>("action"); }
+            set { BackingStore?.Set("action", value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -80,6 +85,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<int?>("destinationPort"); }
             set { BackingStore?.Set("destinationPort", value); }
         }
+        /// <summary>The destinationWebCategory property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public WebCategory? DestinationWebCategory {
+            get { return BackingStore?.Get<WebCategory?>("destinationWebCategory"); }
+            set { BackingStore?.Set("destinationWebCategory", value); }
+        }
+#nullable restore
+#else
+        public WebCategory DestinationWebCategory {
+            get { return BackingStore?.Get<WebCategory>("destinationWebCategory"); }
+            set { BackingStore?.Set("destinationWebCategory", value); }
+        }
+#endif
         /// <summary>Represents the category classification of a device within a network infrastructure. The possible values are: client, branch, unknownFutureValue. Supports $filter (eq) and $orderby.</summary>
         public Microsoft.Graph.Beta.Models.Networkaccess.DeviceCategory? DeviceCategory {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.DeviceCategory?>("deviceCategory"); }
@@ -401,12 +420,14 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// </summary>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"action", n => { Action = n.GetEnumValue<FilteringPolicyAction>(); } },
                 {"agentVersion", n => { AgentVersion = n.GetStringValue(); } },
                 {"connectionId", n => { ConnectionId = n.GetStringValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"destinationFQDN", n => { DestinationFQDN = n.GetStringValue(); } },
                 {"destinationIp", n => { DestinationIp = n.GetStringValue(); } },
                 {"destinationPort", n => { DestinationPort = n.GetIntValue(); } },
+                {"destinationWebCategory", n => { DestinationWebCategory = n.GetObjectValue<WebCategory>(WebCategory.CreateFromDiscriminatorValue); } },
                 {"deviceCategory", n => { DeviceCategory = n.GetEnumValue<DeviceCategory>(); } },
                 {"deviceId", n => { DeviceId = n.GetStringValue(); } },
                 {"deviceOperatingSystem", n => { DeviceOperatingSystem = n.GetStringValue(); } },
@@ -441,12 +462,14 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<FilteringPolicyAction>("action", Action);
             writer.WriteStringValue("agentVersion", AgentVersion);
             writer.WriteStringValue("connectionId", ConnectionId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("destinationFQDN", DestinationFQDN);
             writer.WriteStringValue("destinationIp", DestinationIp);
             writer.WriteIntValue("destinationPort", DestinationPort);
+            writer.WriteObjectValue<WebCategory>("destinationWebCategory", DestinationWebCategory);
             writer.WriteEnumValue<DeviceCategory>("deviceCategory", DeviceCategory);
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceOperatingSystem", DeviceOperatingSystem);

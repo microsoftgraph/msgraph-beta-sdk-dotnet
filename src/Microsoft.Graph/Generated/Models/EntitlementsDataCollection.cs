@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class EntitlementsDataCollection : EntitlementsDataCollectionInfo, IParsable {
-        /// <summary>The lastCollectionDateTime property</summary>
+        /// <summary>Last transformation time of entitlements.</summary>
         public DateTimeOffset? LastCollectionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastCollectionDateTime"); }
             set { BackingStore?.Set("lastCollectionDateTime", value); }

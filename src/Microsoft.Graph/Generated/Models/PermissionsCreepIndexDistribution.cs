@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authorizationSystem", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Defines when the PCI distribution was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }

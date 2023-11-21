@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AwsSource : AuthorizationSystemIdentitySource, IParsable {
-        /// <summary>The accountId property</summary>
+        /// <summary>AWS account ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId {

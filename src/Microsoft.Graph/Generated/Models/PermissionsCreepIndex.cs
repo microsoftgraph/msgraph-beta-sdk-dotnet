@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The score property</summary>
+        /// <summary>This value represents how much risk an identity poses. This risk range is classified in three buckets: 0-33: low, 34-66: medium, 67-100: high..</summary>
         public int? Score {
             get { return BackingStore?.Get<int?>("score"); }
             set { BackingStore?.Set("score", value); }

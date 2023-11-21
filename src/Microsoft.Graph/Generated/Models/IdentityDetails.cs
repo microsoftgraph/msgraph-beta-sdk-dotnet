@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>A date specifiying when the Identity was created, could be null</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The lastActiveDateTime property</summary>
+        /// <summary>A date specifiying when the Identity was active last time, could be null</summary>
         public DateTimeOffset? LastActiveDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActiveDateTime"); }
             set { BackingStore?.Set("lastActiveDateTime", value); }

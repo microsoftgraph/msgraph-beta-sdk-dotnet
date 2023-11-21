@@ -14,14 +14,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Registration questions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventRegistrationQuestion>? Questions {
-            get { return BackingStore?.Get<List<VirtualEventRegistrationQuestion>?>("questions"); }
+        public List<VirtualEventRegistrationQuestionBase>? Questions {
+            get { return BackingStore?.Get<List<VirtualEventRegistrationQuestionBase>?>("questions"); }
             set { BackingStore?.Set("questions", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventRegistrationQuestion> Questions {
-            get { return BackingStore?.Get<List<VirtualEventRegistrationQuestion>>("questions"); }
+        public List<VirtualEventRegistrationQuestionBase> Questions {
+            get { return BackingStore?.Get<List<VirtualEventRegistrationQuestionBase>>("questions"); }
             set { BackingStore?.Set("questions", value); }
         }
 #endif
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"capacity", n => { Capacity = n.GetIntValue(); } },
-                {"questions", n => { Questions = n.GetCollectionOfObjectValues<VirtualEventRegistrationQuestion>(VirtualEventRegistrationQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"questions", n => { Questions = n.GetCollectionOfObjectValues<VirtualEventRegistrationQuestionBase>(VirtualEventRegistrationQuestionBase.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"registrationWebUrl", n => { RegistrationWebUrl = n.GetStringValue(); } },
             };
         }
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("capacity", Capacity);
-            writer.WriteCollectionOfObjectValues<VirtualEventRegistrationQuestion>("questions", Questions);
+            writer.WriteCollectionOfObjectValues<VirtualEventRegistrationQuestionBase>("questions", Questions);
             writer.WriteStringValue("registrationWebUrl", RegistrationWebUrl);
         }
     }

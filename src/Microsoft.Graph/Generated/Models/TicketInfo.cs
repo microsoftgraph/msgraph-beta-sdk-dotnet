@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The ticketApproverIdentityId property</summary>
+        /// <summary>ID for the request approver.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TicketApproverIdentityId {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ticketNumber", value); }
         }
 #endif
-        /// <summary>The ticketSubmitterIdentityId property</summary>
+        /// <summary>ID for the request submitter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TicketSubmitterIdentityId {

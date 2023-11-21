@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class OpenAwsSecurityGroupFinding : Finding, IParsable {
-        /// <summary>The assignedComputeInstancesDetails property</summary>
+        /// <summary>A set of AWS EC2 compute instances related to this open security group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AssignedComputeInstanceDetails>? AssignedComputeInstancesDetails {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("securityGroup", value); }
         }
 #endif
-        /// <summary>The totalStorageBucketCount property</summary>
+        /// <summary>The number of storage buckets accessed by the assigned compute instances.</summary>
         public int? TotalStorageBucketCount {
             get { return BackingStore?.Get<int?>("totalStorageBucketCount"); }
             set { BackingStore?.Set("totalStorageBucketCount", value); }

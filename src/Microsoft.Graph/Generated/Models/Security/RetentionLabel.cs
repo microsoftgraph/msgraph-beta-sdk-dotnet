@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public class RetentionLabel : Entity, IParsable {
+    public class RetentionLabel : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>Specifies the action to take on a document with this label applied during the retention period. The possible values are: none, delete, startDispositionReview, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Security.ActionAfterRetentionPeriod? ActionAfterRetentionPeriod {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ActionAfterRetentionPeriod?>("actionAfterRetentionPeriod"); }

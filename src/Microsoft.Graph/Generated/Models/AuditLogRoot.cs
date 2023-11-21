@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The customSecurityAttributeAudits property</summary>
+        /// <summary>Represents a custom security attribute audit log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<CustomSecurityAttributeAudit>? CustomSecurityAttributeAudits {
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The provisioning property</summary>
+        /// <summary>Represents an action performed by the Microsoft Entra provisioning service and its associated properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ProvisioningObjectSummary>? Provisioning {

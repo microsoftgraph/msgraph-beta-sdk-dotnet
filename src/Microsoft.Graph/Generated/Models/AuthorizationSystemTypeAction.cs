@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthorizationSystemTypeAction : Entity, IParsable {
-        /// <summary>The actionType property</summary>
+        /// <summary>The type of action allowed in the authorization system&apos;s service. The possible values are: delete, read, unknownFutureValue. Supports $filter and (eq).</summary>
         public AuthorizationSystemActionType? ActionType {
             get { return BackingStore?.Get<AuthorizationSystemActionType?>("actionType"); }
             set { BackingStore?.Set("actionType", value); }
         }
-        /// <summary>The externalId property</summary>
+        /// <summary>The display name of an action. Read-only. Supports $filter and (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalId {
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("externalId", value); }
         }
 #endif
-        /// <summary>The resourceTypes property</summary>
+        /// <summary>The resource types in the authorization system&apos;s service where the action can be performed. Supports $filter and (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ResourceTypes {

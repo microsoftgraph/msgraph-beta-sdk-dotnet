@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
-    public class Session : Entity, IParsable {
+    public class Session : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>Endpoint that answered the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

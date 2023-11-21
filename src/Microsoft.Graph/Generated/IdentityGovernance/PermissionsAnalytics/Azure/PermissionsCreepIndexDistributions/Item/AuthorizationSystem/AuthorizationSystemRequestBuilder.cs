@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.Per
         public AuthorizationSystemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/permissionsAnalytics/azure/permissionsCreepIndexDistributions/{permissionsCreepIndexDistribution%2Did}/authorizationSystem{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get authorizationSystem from identityGovernance
+        /// Represents an authorization system onboarded to Permissions Management.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.AuthorizationSystem?> GetAsync(Action<AuthorizationSystemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.AuthorizationSystem?> GetAsync(Action<RequestConfiguration<AuthorizationSystemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.AuthorizationSystem> GetAsync(Action<AuthorizationSystemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.AuthorizationSystem> GetAsync(Action<RequestConfiguration<AuthorizationSystemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -48,28 +48,18 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.Per
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AuthorizationSystem>(requestInfo, Microsoft.Graph.Beta.Models.AuthorizationSystem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get authorizationSystem from identityGovernance
+        /// Represents an authorization system onboarded to Permissions Management.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<AuthorizationSystemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthorizationSystemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<AuthorizationSystemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthorizationSystemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new AuthorizationSystemRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
@@ -81,7 +71,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.Per
             return new AuthorizationSystemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get authorizationSystem from identityGovernance
+        /// Represents an authorization system onboarded to Permissions Management.
         /// </summary>
         public class AuthorizationSystemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
@@ -108,20 +98,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Azure.Per
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class AuthorizationSystemRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public AuthorizationSystemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AuthorizationSystemRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new authorizationSystemRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public AuthorizationSystemRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class AuthorizationSystemRequestBuilderGetRequestConfiguration : RequestConfiguration<AuthorizationSystemRequestBuilderGetQueryParameters> {
         }
     }
 }

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
-    public class LifecycleWorkflowsContainer : Entity, IParsable {
+    public class LifecycleWorkflowsContainer : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The customTaskExtension instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

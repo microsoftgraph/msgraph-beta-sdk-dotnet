@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PermissionsAnalytics : Entity, IParsable {
-        /// <summary>The findings property</summary>
+        /// <summary>The output of the permissions usage data analysis performed by Permissions Management to assess risk with identities and resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Finding>? Findings {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("findings", value); }
         }
 #endif
-        /// <summary>The permissionsCreepIndexDistributions property</summary>
+        /// <summary>Represents the Permissions Creep Index (PCI) for the authorization system. PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PermissionsCreepIndexDistribution>? PermissionsCreepIndexDistributions {

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    public class CatalogEntry : Entity, IParsable {
+    public class CatalogEntry : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? DeployableUntilDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("deployableUntilDateTime"); }

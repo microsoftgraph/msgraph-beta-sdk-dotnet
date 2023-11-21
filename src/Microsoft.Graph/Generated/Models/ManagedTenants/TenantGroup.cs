@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class TenantGroup : Entity, IParsable {
+    public class TenantGroup : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.</summary>
         public bool? AllTenantsIncluded {
             get { return BackingStore?.Get<bool?>("allTenantsIncluded"); }

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public class CaseOperation : Entity, IParsable {
+    public class CaseOperation : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData</summary>
         public CaseAction? Action {
             get { return BackingStore?.Get<CaseAction?>("action"); }

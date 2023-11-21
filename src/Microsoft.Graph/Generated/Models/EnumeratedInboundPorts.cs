@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class EnumeratedInboundPorts : InboundPorts, IParsable {
-        /// <summary>The ports property</summary>
+        /// <summary>Collection of ports that allow inbound traffic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Ports {

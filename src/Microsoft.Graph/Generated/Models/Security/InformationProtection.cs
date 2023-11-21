@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public class InformationProtection : Entity, IParsable {
+    public class InformationProtection : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>Read the Microsoft Purview Information Protection policy settings for the user or organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

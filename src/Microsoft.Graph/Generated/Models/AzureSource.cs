@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AzureSource : AuthorizationSystemIdentitySource, IParsable {
-        /// <summary>The subscriptionId property</summary>
+        /// <summary>Azure subscription ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionId {

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class ManagedTenant : Entity, IParsable {
+    public class ManagedTenant : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>Aggregate view of device compliance policies across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
