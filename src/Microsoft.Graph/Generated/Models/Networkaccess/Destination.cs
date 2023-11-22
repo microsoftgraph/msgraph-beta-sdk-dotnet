@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The deviceCount property</summary>
+        /// <summary>The number of unique devices that were seen.</summary>
         public int? DeviceCount {
             get { return BackingStore?.Get<int?>("deviceCount"); }
             set { BackingStore?.Set("deviceCount", value); }
         }
-        /// <summary>The fqdn property</summary>
+        /// <summary>The fully qualified domain name (FQDN) of the destination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Fqdn {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("fqdn", value); }
         }
 #endif
-        /// <summary>The ip property</summary>
+        /// <summary>The internet protocol (IP) used to access the destination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ip {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("ip", value); }
         }
 #endif
-        /// <summary>The lastAccessDateTime property</summary>
+        /// <summary>The most recent access DateTime.</summary>
         public DateTimeOffset? LastAccessDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastAccessDateTime"); }
             set { BackingStore?.Set("lastAccessDateTime", value); }
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The port property</summary>
+        /// <summary>The numeric identifier that is associated with a specific endpoint in a network.</summary>
         public int? Port {
             get { return BackingStore?.Get<int?>("port"); }
             set { BackingStore?.Set("port", value); }
@@ -81,12 +81,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
             set { BackingStore?.Set("trafficType", value); }
         }
-        /// <summary>The transactionCount property</summary>
+        /// <summary>The number of transactions.</summary>
         public int? TransactionCount {
             get { return BackingStore?.Get<int?>("transactionCount"); }
             set { BackingStore?.Set("transactionCount", value); }
         }
-        /// <summary>The userCount property</summary>
+        /// <summary>The number of unique Microsoft Entra ID users that were seen.</summary>
         public int? UserCount {
             get { return BackingStore?.Get<int?>("userCount"); }
             set { BackingStore?.Set("userCount", value); }

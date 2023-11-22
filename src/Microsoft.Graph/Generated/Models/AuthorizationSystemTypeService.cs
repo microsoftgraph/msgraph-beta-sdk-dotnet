@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthorizationSystemTypeService : Entity, IParsable {
-        /// <summary>The actions property</summary>
+        /// <summary>List of actions for the service in an authorization system that is onboarded to Permissions Management.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AuthorizationSystemTypeAction>? Actions {

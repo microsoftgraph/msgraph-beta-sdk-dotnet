@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
-    public class SourceSystemDefinition : Entity, IParsable {
+    public class SourceSystemDefinition : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The name of the source system. Maximum supported length is 100 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

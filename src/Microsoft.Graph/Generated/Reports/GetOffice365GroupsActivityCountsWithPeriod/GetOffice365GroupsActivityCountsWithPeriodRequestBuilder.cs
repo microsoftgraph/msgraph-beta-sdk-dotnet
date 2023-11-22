@@ -36,10 +36,10 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityCountsWithPerio
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetOffice365GroupsActivityCountsWithPeriodGetResponse?> GetAsGetOffice365GroupsActivityCountsWithPeriodGetResponseAsync(Action<GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOffice365GroupsActivityCountsWithPeriodGetResponse?> GetAsGetOffice365GroupsActivityCountsWithPeriodGetResponseAsync(Action<RequestConfiguration<GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<GetOffice365GroupsActivityCountsWithPeriodGetResponse> GetAsGetOffice365GroupsActivityCountsWithPeriodGetResponseAsync(Action<GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOffice365GroupsActivityCountsWithPeriodGetResponse> GetAsGetOffice365GroupsActivityCountsWithPeriodGetResponseAsync(Action<RequestConfiguration<GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -56,10 +56,10 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityCountsWithPerio
         [Obsolete("This method is obsolete. Use GetAsGetOffice365GroupsActivityCountsWithPeriodGetResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetOffice365GroupsActivityCountsWithPeriodResponse?> GetAsync(Action<GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOffice365GroupsActivityCountsWithPeriodResponse?> GetAsync(Action<RequestConfiguration<GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<GetOffice365GroupsActivityCountsWithPeriodResponse> GetAsync(Action<GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOffice365GroupsActivityCountsWithPeriodResponse> GetAsync(Action<RequestConfiguration<GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -74,23 +74,13 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityCountsWithPerio
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
@@ -158,20 +148,8 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityCountsWithPerio
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new getOffice365GroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration : RequestConfiguration<GetOffice365GroupsActivityCountsWithPeriodRequestBuilderGetQueryParameters> {
         }
     }
 }

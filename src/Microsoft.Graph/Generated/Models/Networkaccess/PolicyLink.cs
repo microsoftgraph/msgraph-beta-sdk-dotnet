@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public class PolicyLink : Entity, IParsable {
+    public class PolicyLink : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +47,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.networkaccess.filteringPolicyLink" => new FilteringPolicyLink(),
                 "#microsoft.graph.networkaccess.forwardingPolicyLink" => new ForwardingPolicyLink(),
                 _ => new PolicyLink(),
             };

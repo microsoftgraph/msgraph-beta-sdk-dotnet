@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class GcpAuthorizationSystem : AuthorizationSystem, IParsable {
-        /// <summary>The actions property</summary>
+        /// <summary>List of actions for service in authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<GcpAuthorizationSystemTypeAction>? Actions {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("actions", value); }
         }
 #endif
-        /// <summary>The associatedIdentities property</summary>
+        /// <summary>Identities in the authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GcpAssociatedIdentities? AssociatedIdentities {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("associatedIdentities", value); }
         }
 #endif
-        /// <summary>The resources property</summary>
+        /// <summary>Resources associated with the authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<GcpAuthorizationSystemResource>? Resources {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resources", value); }
         }
 #endif
-        /// <summary>The roles property</summary>
+        /// <summary>Roles associated with the authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<GcpRole>? Roles {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roles", value); }
         }
 #endif
-        /// <summary>The services property</summary>
+        /// <summary>Services associated with the authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AuthorizationSystemTypeService>? Services {

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class ManagementIntent : Entity, IParsable {
+    public class ManagementIntent : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The display name for the management intent. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

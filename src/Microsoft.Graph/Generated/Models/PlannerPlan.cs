@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("buckets", value); }
         }
 #endif
-        /// <summary>Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it&apos;s set, this property can’t be updated. Required.</summary>
+        /// <summary>Identifies the container of the plan. Either specify all properties, or specify only the url, the containerId, and type. After it&apos;s set, this property can’t be updated. It changes when a plan is moved from one container to another, using plan move to container. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerPlanContainer? Container {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("container", value); }
         }
 #endif
-        /// <summary>Read-only. Additional user experiences in which this plan is used, represented as plannerPlanContext entries.</summary>
+        /// <summary>Read-only. Other user experiences in which this plan is used, represented as plannerPlanContext entries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerPlanContextCollection? Contexts {
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("creationSource", value); }
         }
 #endif
-        /// <summary>Additional details about the plan. Read-only. Nullable.</summary>
+        /// <summary>Extra details about the plan. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerPlanDetails? Details {

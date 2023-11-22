@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public class DeviceLink : Entity, IParsable {
+    public class DeviceLink : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.</summary>
         public Microsoft.Graph.Beta.Models.Networkaccess.BandwidthCapacityInMbps? BandwidthCapacityInMbps {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.BandwidthCapacityInMbps?>("bandwidthCapacityInMbps"); }

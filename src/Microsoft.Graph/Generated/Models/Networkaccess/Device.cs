@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The deviceId property</summary>
+        /// <summary>A unique device ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceId {
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("deviceId", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -42,12 +42,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The isCompliant property</summary>
+        /// <summary>A value that indicates whether or not the device is compliant.</summary>
         public bool? IsCompliant {
             get { return BackingStore?.Get<bool?>("isCompliant"); }
             set { BackingStore?.Set("isCompliant", value); }
         }
-        /// <summary>The lastAccessDateTime property</summary>
+        /// <summary>The most recent access time for the device.</summary>
         public DateTimeOffset? LastAccessDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastAccessDateTime"); }
             set { BackingStore?.Set("lastAccessDateTime", value); }
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The operatingSystem property</summary>
+        /// <summary>The operating system on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperatingSystem {

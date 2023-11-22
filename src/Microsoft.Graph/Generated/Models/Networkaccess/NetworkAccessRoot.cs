@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public class NetworkAccessRoot : Entity, IParsable {
+    public class NetworkAccessRoot : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>Connectivity represents all the connectivity components in Global Secure Access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -18,6 +18,34 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         public Microsoft.Graph.Beta.Models.Networkaccess.Connectivity Connectivity {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Connectivity>("connectivity"); }
             set { BackingStore?.Set("connectivity", value); }
+        }
+#endif
+        /// <summary>A filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<FilteringPolicy>? FilteringPolicies {
+            get { return BackingStore?.Get<List<FilteringPolicy>?>("filteringPolicies"); }
+            set { BackingStore?.Set("filteringPolicies", value); }
+        }
+#nullable restore
+#else
+        public List<FilteringPolicy> FilteringPolicies {
+            get { return BackingStore?.Get<List<FilteringPolicy>>("filteringPolicies"); }
+            set { BackingStore?.Set("filteringPolicies", value); }
+        }
+#endif
+        /// <summary>A filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<FilteringProfile>? FilteringProfiles {
+            get { return BackingStore?.Get<List<FilteringProfile>?>("filteringProfiles"); }
+            set { BackingStore?.Set("filteringProfiles", value); }
+        }
+#nullable restore
+#else
+        public List<FilteringProfile> FilteringProfiles {
+            get { return BackingStore?.Get<List<FilteringProfile>>("filteringProfiles"); }
+            set { BackingStore?.Set("filteringProfiles", value); }
         }
 #endif
         /// <summary>A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It&apos;s then added to a forwarding profile.</summary>
@@ -118,6 +146,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"connectivity", n => { Connectivity = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Connectivity>(Microsoft.Graph.Beta.Models.Networkaccess.Connectivity.CreateFromDiscriminatorValue); } },
+                {"filteringPolicies", n => { FilteringPolicies = n.GetCollectionOfObjectValues<FilteringPolicy>(FilteringPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"filteringProfiles", n => { FilteringProfiles = n.GetCollectionOfObjectValues<FilteringProfile>(FilteringProfile.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"forwardingPolicies", n => { ForwardingPolicies = n.GetCollectionOfObjectValues<ForwardingPolicy>(ForwardingPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"forwardingProfiles", n => { ForwardingProfiles = n.GetCollectionOfObjectValues<ForwardingProfile>(ForwardingProfile.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"logs", n => { Logs = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Logs>(Microsoft.Graph.Beta.Models.Networkaccess.Logs.CreateFromDiscriminatorValue); } },
@@ -134,6 +164,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Connectivity>("connectivity", Connectivity);
+            writer.WriteCollectionOfObjectValues<FilteringPolicy>("filteringPolicies", FilteringPolicies);
+            writer.WriteCollectionOfObjectValues<FilteringProfile>("filteringProfiles", FilteringProfiles);
             writer.WriteCollectionOfObjectValues<ForwardingPolicy>("forwardingPolicies", ForwardingPolicies);
             writer.WriteCollectionOfObjectValues<ForwardingProfile>("forwardingProfiles", ForwardingProfiles);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Logs>("logs", Logs);

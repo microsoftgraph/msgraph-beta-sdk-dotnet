@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public class IntelligenceProfile : Entity, IParsable {
+    public class IntelligenceProfile : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>A list of commonly-known aliases for the threat intelligence included in the intelligenceProfile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

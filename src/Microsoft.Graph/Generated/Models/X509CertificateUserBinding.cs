@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
+        /// <summary>The affinity level of the username binding rule. The possible values are: low, high, unknownFutureValue.</summary>
+        public X509CertificateAffinityLevel? TrustAffinityLevel {
+            get { return BackingStore?.Get<X509CertificateAffinityLevel?>("trustAffinityLevel"); }
+            set { BackingStore?.Set("trustAffinityLevel", value); }
+        }
         /// <summary>Defines the Microsoft Entra user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, email. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"priority", n => { Priority = n.GetIntValue(); } },
+                {"trustAffinityLevel", n => { TrustAffinityLevel = n.GetEnumValue<X509CertificateAffinityLevel>(); } },
                 {"userProperty", n => { UserProperty = n.GetStringValue(); } },
                 {"x509CertificateField", n => { X509CertificateField = n.GetStringValue(); } },
             };
@@ -95,6 +101,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("priority", Priority);
+            writer.WriteEnumValue<X509CertificateAffinityLevel>("trustAffinityLevel", TrustAffinityLevel);
             writer.WriteStringValue("userProperty", UserProperty);
             writer.WriteStringValue("x509CertificateField", X509CertificateField);
             writer.WriteAdditionalData(AdditionalData);

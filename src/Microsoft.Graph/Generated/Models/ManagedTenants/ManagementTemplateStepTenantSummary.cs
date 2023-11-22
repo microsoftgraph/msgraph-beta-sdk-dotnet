@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class ManagementTemplateStepTenantSummary : Entity, IParsable {
+    public class ManagementTemplateStepTenantSummary : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The assignedTenantsCount property</summary>
         public int? AssignedTenantsCount {
             get { return BackingStore?.Get<int?>("assignedTenantsCount"); }

@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("registrationQuestionAnswers", value); }
         }
 #endif
-        /// <summary>Sessions of the webinar.</summary>
+        /// <summary>The sessions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<VirtualEventSession>? Sessions {
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sessions", value); }
         }
 #endif
-        /// <summary>Registration status of the registrant. Read-only. Possible values are: registered, canceled, waitlisted, pendingApproval, rejectedByOrganizer, unknownFutureValue.</summary>
+        /// <summary>Registration status of the registrant. Read-only.</summary>
         public VirtualEventAttendeeRegistrationStatus? Status {
             get { return BackingStore?.Get<VirtualEventAttendeeRegistrationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }

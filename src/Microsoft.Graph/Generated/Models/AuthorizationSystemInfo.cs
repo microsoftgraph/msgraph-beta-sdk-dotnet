@@ -12,14 +12,14 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
             set { BackingStore?.Set("AdditionalData", value); }
         }
-        /// <summary>The authorizationSystemType property</summary>
+        /// <summary>The type of authorization system.The possible values are: azure, gcp, aws, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.AuthorizationSystemType? AuthorizationSystemType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemType?>("authorizationSystemType"); }
             set { BackingStore?.Set("authorizationSystemType", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The displayName property</summary>
+        /// <summary>Display name for the authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for the authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id {

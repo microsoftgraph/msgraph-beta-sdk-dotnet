@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The deviceCount property</summary>
+        /// <summary>The number of devices that accessed the external tenant.</summary>
         public long? DeviceCount {
             get { return BackingStore?.Get<long?>("deviceCount"); }
             set { BackingStore?.Set("deviceCount", value); }
         }
-        /// <summary>The lastAccessDateTime property</summary>
+        /// <summary>The timestamp of the most recent access to the external tenant.</summary>
         public DateTimeOffset? LastAccessDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastAccessDateTime"); }
             set { BackingStore?.Set("lastAccessDateTime", value); }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The resourceTenantId property</summary>
+        /// <summary>The tenant ID of the external tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceTenantId {
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("resourceTenantId", value); }
         }
 #endif
-        /// <summary>The resourceTenantName property</summary>
+        /// <summary>The name of the external tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceTenantName {
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("resourceTenantName", value); }
         }
 #endif
-        /// <summary>The resourceTenantPrimaryDomain property</summary>
+        /// <summary>The domain of the external tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceTenantPrimaryDomain {
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.UsageStatus?>("usageStatus"); }
             set { BackingStore?.Set("usageStatus", value); }
         }
-        /// <summary>The userCount property</summary>
+        /// <summary>The number of users that accessed the external tenant.</summary>
         public long? UserCount {
             get { return BackingStore?.Get<long?>("userCount"); }
             set { BackingStore?.Set("userCount", value); }

@@ -8,7 +8,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
     /// <summary>
     /// Singleton entity that acts as a container for all device management functionality.
     /// </summary>
-    public class DeviceManagement : Entity, IParsable {
+    public class DeviceManagement : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The date &amp; time when tenant data moved between scaleunits.</summary>
         public DateTimeOffset? AccountMoveCompletionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("accountMoveCompletionDateTime"); }

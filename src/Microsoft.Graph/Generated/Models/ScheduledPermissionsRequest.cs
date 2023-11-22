@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ScheduledPermissionsRequest : Entity, IParsable {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Defines when the identity created the request.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The justification property</summary>
+        /// <summary>The identity&apos;s justification for the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Justification {
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("justification", value); }
         }
 #endif
-        /// <summary>The notes property</summary>
+        /// <summary>Additional context for the permissions request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes {
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requestedPermissions", value); }
         }
 #endif
-        /// <summary>The scheduleInfo property</summary>
+        /// <summary>When to assign the requested permissions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestSchedule? ScheduleInfo {
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.StatusDetail?>("statusDetail"); }
             set { BackingStore?.Set("statusDetail", value); }
         }
-        /// <summary>The ticketInfo property</summary>
+        /// <summary>Ticketing-related metadata that you can use to correlate to the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.TicketInfo? TicketInfo {

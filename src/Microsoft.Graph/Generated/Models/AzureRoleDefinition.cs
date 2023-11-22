@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AzureRoleDefinition : Entity, IParsable {
-        /// <summary>The assignableScopes property</summary>
+        /// <summary>Scopes at which the Azure role can be assigned. Supports $filter and (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AssignableScopes {
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AzureRoleDefinitionType?>("azureRoleDefinitionType"); }
             set { BackingStore?.Set("azureRoleDefinitionType", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>Name of the Azure role. Supports $filter and (eq,contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The externalId property</summary>
+        /// <summary>Identifier of an Azure role defined by Microsoft Azure. Alternate key. Supports $filter and eq.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalId {

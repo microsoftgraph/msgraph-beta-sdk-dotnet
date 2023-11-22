@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Impo
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ImportOffice365DeviceConfigurationPoliciesPostResponse?> PostAsImportOffice365DeviceConfigurationPoliciesPostResponseAsync(Action<ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ImportOffice365DeviceConfigurationPoliciesPostResponse?> PostAsImportOffice365DeviceConfigurationPoliciesPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<ImportOffice365DeviceConfigurationPoliciesPostResponse> PostAsImportOffice365DeviceConfigurationPoliciesPostResponseAsync(Action<ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ImportOffice365DeviceConfigurationPoliciesPostResponse> PostAsImportOffice365DeviceConfigurationPoliciesPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -54,10 +54,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Impo
         [Obsolete("This method is obsolete. Use PostAsImportOffice365DeviceConfigurationPoliciesPostResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ImportOffice365DeviceConfigurationPoliciesResponse?> PostAsync(Action<ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ImportOffice365DeviceConfigurationPoliciesResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<ImportOffice365DeviceConfigurationPoliciesResponse> PostAsync(Action<ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ImportOffice365DeviceConfigurationPoliciesResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -72,22 +72,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Impo
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.POST,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
@@ -101,18 +92,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Impo
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new importOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration and sets the default values.
-            /// </summary>
-            public ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class ImportOffice365DeviceConfigurationPoliciesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
     }
 }

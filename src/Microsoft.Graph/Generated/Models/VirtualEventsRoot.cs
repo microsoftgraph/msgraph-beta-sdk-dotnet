@@ -20,6 +20,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("events", value); }
         }
 #endif
+        /// <summary>The townhalls property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<VirtualEventTownhall>? Townhalls {
+            get { return BackingStore?.Get<List<VirtualEventTownhall>?>("townhalls"); }
+            set { BackingStore?.Set("townhalls", value); }
+        }
+#nullable restore
+#else
+        public List<VirtualEventTownhall> Townhalls {
+            get { return BackingStore?.Get<List<VirtualEventTownhall>>("townhalls"); }
+            set { BackingStore?.Set("townhalls", value); }
+        }
+#endif
         /// <summary>The webinars property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"events", n => { Events = n.GetCollectionOfObjectValues<VirtualEvent>(VirtualEvent.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"townhalls", n => { Townhalls = n.GetCollectionOfObjectValues<VirtualEventTownhall>(VirtualEventTownhall.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"webinars", n => { Webinars = n.GetCollectionOfObjectValues<VirtualEventWebinar>(VirtualEventWebinar.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -59,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<VirtualEvent>("events", Events);
+            writer.WriteCollectionOfObjectValues<VirtualEventTownhall>("townhalls", Townhalls);
             writer.WriteCollectionOfObjectValues<VirtualEventWebinar>("webinars", Webinars);
         }
     }

@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthorizationSystem : Entity, IParsable {
-        /// <summary>The authorizationSystemId property</summary>
+        /// <summary>ID of the authorization system retrieved from the customer cloud environment. Supports $filter(eq, contains) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthorizationSystemId {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authorizationSystemId", value); }
         }
 #endif
-        /// <summary>The authorizationSystemName property</summary>
+        /// <summary>Name of the authorization system detected after onboarding. Supports $filter(eq,contains) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthorizationSystemName {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authorizationSystemName", value); }
         }
 #endif
-        /// <summary>The authorizationSystemType property</summary>
+        /// <summary>The type of authorization system. Can be gcp, azure, or aws. Supports $filter(eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthorizationSystemType {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authorizationSystemType", value); }
         }
 #endif
-        /// <summary>The dataCollectionInfo property</summary>
+        /// <summary>Defines how and whether Permissions Management collects data from the onboarded authorization system. Supports $filter (eq) as follows:  $filter=dataCollectionInfo/entitlements/permissionsModificationCapability and $filter=dataCollectionInfo/entitlements/status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.DataCollectionInfo? DataCollectionInfo {

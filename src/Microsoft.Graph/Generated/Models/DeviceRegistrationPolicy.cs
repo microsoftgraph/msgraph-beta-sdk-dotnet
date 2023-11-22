@@ -9,14 +9,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Specifies the authorization policy for controlling registration of new devices using Microsoft Entra join within your organization. Required. For more information, see What is a device identity?.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AzureAdJoinPolicy? AzureADJoin {
-            get { return BackingStore?.Get<AzureAdJoinPolicy?>("azureADJoin"); }
+        public AzureADJoinPolicy? AzureADJoin {
+            get { return BackingStore?.Get<AzureADJoinPolicy?>("azureADJoin"); }
             set { BackingStore?.Set("azureADJoin", value); }
         }
 #nullable restore
 #else
-        public AzureAdJoinPolicy AzureADJoin {
-            get { return BackingStore?.Get<AzureAdJoinPolicy>("azureADJoin"); }
+        public AzureADJoinPolicy AzureADJoin {
+            get { return BackingStore?.Get<AzureADJoinPolicy>("azureADJoin"); }
             set { BackingStore?.Set("azureADJoin", value); }
         }
 #endif
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"azureADJoin", n => { AzureADJoin = n.GetObjectValue<AzureAdJoinPolicy>(AzureAdJoinPolicy.CreateFromDiscriminatorValue); } },
+                {"azureADJoin", n => { AzureADJoin = n.GetObjectValue<AzureADJoinPolicy>(AzureADJoinPolicy.CreateFromDiscriminatorValue); } },
                 {"azureADRegistration", n => { AzureADRegistration = n.GetObjectValue<AzureADRegistrationPolicy>(AzureADRegistrationPolicy.CreateFromDiscriminatorValue); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Models {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AzureAdJoinPolicy>("azureADJoin", AzureADJoin);
+            writer.WriteObjectValue<AzureADJoinPolicy>("azureADJoin", AzureADJoin);
             writer.WriteObjectValue<AzureADRegistrationPolicy>("azureADRegistration", AzureADRegistration);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);

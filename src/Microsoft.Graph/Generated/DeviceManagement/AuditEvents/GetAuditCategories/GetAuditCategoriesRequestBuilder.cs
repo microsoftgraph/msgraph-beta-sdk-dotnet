@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents.GetAuditCategories {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAuditCategoriesGetResponse?> GetAsGetAuditCategoriesGetResponseAsync(Action<GetAuditCategoriesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAuditCategoriesGetResponse?> GetAsGetAuditCategoriesGetResponseAsync(Action<RequestConfiguration<GetAuditCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<GetAuditCategoriesGetResponse> GetAsGetAuditCategoriesGetResponseAsync(Action<GetAuditCategoriesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAuditCategoriesGetResponse> GetAsGetAuditCategoriesGetResponseAsync(Action<RequestConfiguration<GetAuditCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -54,10 +54,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents.GetAuditCategories {
         [Obsolete("This method is obsolete. Use GetAsGetAuditCategoriesGetResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAuditCategoriesResponse?> GetAsync(Action<GetAuditCategoriesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAuditCategoriesResponse?> GetAsync(Action<RequestConfiguration<GetAuditCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<GetAuditCategoriesResponse> GetAsync(Action<GetAuditCategoriesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAuditCategoriesResponse> GetAsync(Action<RequestConfiguration<GetAuditCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -72,23 +72,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents.GetAuditCategories {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<GetAuditCategoriesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAuditCategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<GetAuditCategoriesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAuditCategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new GetAuditCategoriesRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
@@ -136,20 +126,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents.GetAuditCategories {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class GetAuditCategoriesRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public GetAuditCategoriesRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GetAuditCategoriesRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new getAuditCategoriesRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public GetAuditCategoriesRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class GetAuditCategoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<GetAuditCategoriesRequestBuilderGetQueryParameters> {
         }
     }
 }

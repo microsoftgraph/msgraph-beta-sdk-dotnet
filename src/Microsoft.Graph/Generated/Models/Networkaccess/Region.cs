@@ -41,6 +41,30 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         SouthAfricaNorth,
         [EnumMember(Value = "uaeNorth")]
         UaeNorth,
+        [EnumMember(Value = "australiaEast")]
+        AustraliaEast,
+        [EnumMember(Value = "westCentralUS")]
+        WestCentralUS,
+        [EnumMember(Value = "centralIndia")]
+        CentralIndia,
+        [EnumMember(Value = "southEastAsia")]
+        SouthEastAsia,
+        [EnumMember(Value = "swedenCentral")]
+        SwedenCentral,
+        [EnumMember(Value = "southIndia")]
+        SouthIndia,
+        [EnumMember(Value = "australiaSouthEast")]
+        AustraliaSouthEast,
+        [EnumMember(Value = "koreaCentral")]
+        KoreaCentral,
+        [EnumMember(Value = "polandCentral")]
+        PolandCentral,
+        [EnumMember(Value = "brazilSouth")]
+        BrazilSouth,
+        [EnumMember(Value = "japanEast")]
+        JapanEast,
+        [EnumMember(Value = "japanWest")]
+        JapanWest,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class DeviceHealthStatus : Entity, IParsable {
+    public class DeviceHealthStatus : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The blueScreenCount property</summary>
         public int? BlueScreenCount {
             get { return BackingStore?.Get<int?>("blueScreenCount"); }

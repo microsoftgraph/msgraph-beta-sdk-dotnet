@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public class ProtectionRule : Entity, IParsable {
+    public class ProtectionRule : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

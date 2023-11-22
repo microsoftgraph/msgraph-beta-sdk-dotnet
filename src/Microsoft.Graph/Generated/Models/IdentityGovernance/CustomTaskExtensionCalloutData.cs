@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
-    public class CustomTaskExtensionCalloutData : CustomExtensionData, IParsable {
+    public class CustomTaskExtensionCalloutData : Microsoft.Graph.Beta.Models.CustomExtensionData, IParsable {
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

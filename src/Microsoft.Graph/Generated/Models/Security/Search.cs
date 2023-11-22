@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public class Search : Entity, IParsable {
+    public class Search : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The contentQuery property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

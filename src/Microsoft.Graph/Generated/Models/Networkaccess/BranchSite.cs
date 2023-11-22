@@ -5,13 +5,13 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public class BranchSite : Entity, IParsable {
+    public class BranchSite : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.</summary>
         public long? BandwidthCapacity {
             get { return BackingStore?.Get<long?>("bandwidthCapacity"); }
             set { BackingStore?.Set("bandwidthCapacity", value); }
         }
-        /// <summary>The connectivityConfiguration property</summary>
+        /// <summary>Specifies the connectivity details of all device links associated with a branch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public BranchConnectivityConfiguration? ConnectivityConfiguration {

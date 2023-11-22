@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public class FilePlanDescriptor : Entity, IParsable {
+    public class FilePlanDescriptor : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>Represents the file plan descriptor of type authority applied to a particular retention label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

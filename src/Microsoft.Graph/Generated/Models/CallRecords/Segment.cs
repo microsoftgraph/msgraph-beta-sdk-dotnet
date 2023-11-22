@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
-    public class Segment : Entity, IParsable {
+    public class Segment : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>Endpoint that answered this segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

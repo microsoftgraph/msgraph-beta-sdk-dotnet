@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    public class UpdatePolicy : Entity, IParsable {
+    public class UpdatePolicy : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>Specifies the audience to target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

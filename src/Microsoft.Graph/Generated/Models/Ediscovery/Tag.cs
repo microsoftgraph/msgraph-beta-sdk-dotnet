@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    public class Tag : Entity, IParsable {
+    public class Tag : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.</summary>
         public Microsoft.Graph.Beta.Models.Ediscovery.ChildSelectability? ChildSelectability {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ChildSelectability?>("childSelectability"); }

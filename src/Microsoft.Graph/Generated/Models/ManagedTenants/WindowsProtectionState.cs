@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class WindowsProtectionState : Entity, IParsable {
+    public class WindowsProtectionState : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The anti-malware version for the managed device. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

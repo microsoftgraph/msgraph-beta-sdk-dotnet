@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class ManagementTemplateCollection : Entity, IParsable {
+    public class ManagementTemplateCollection : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The createdByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

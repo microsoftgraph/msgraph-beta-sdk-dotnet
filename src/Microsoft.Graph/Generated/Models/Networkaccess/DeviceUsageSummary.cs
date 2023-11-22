@@ -7,7 +7,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class DeviceUsageSummary : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>The number of distinct device IDs in the time frame between endDateTime and discoveryPivotDateTime.</summary>
+        /// <summary>The number of distinct device IDs between the discovery pivot time and the end of the reporting period.</summary>
         public int? ActiveDeviceCount {
             get { return BackingStore?.Get<int?>("activeDeviceCount"); }
             set { BackingStore?.Set("activeDeviceCount", value); }
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The number of distinct device IDs havn&apos;t seen in the time frame between endDateTime and discoveryPivotDateTime but have seen in the time frame between discoveryPivotDateTime and startDateTime.</summary>
+        /// <summary>The discovery pivot time and the end of the reporting period, but were seen between the start of the reporting period and the discovery pivot time.</summary>
         public int? InactiveDeviceCount {
             get { return BackingStore?.Get<int?>("inactiveDeviceCount"); }
             set { BackingStore?.Set("inactiveDeviceCount", value); }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The number of distinct device IDs in the time frame between startDateTime and endDateTime.</summary>
+        /// <summary>The total number of distinct device IDs that were seen during the reporting period.</summary>
         public int? TotalDeviceCount {
             get { return BackingStore?.Get<int?>("totalDeviceCount"); }
             set { BackingStore?.Set("totalDeviceCount", value); }

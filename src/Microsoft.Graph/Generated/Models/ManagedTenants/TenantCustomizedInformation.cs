@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class TenantCustomizedInformation : Entity, IParsable {
+    public class TenantCustomizedInformation : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The collection of contacts for the managed tenant. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

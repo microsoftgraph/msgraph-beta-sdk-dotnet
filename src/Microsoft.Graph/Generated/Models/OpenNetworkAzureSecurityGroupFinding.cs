@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("securityGroup", value); }
         }
 #endif
-        /// <summary>The virtualMachines property</summary>
+        /// <summary>Represents a virtual machine in an authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthorizationSystemResource>? VirtualMachines {
-            get { return BackingStore?.Get<List<AuthorizationSystemResource>?>("virtualMachines"); }
+        public List<VirtualMachineDetails>? VirtualMachines {
+            get { return BackingStore?.Get<List<VirtualMachineDetails>?>("virtualMachines"); }
             set { BackingStore?.Set("virtualMachines", value); }
         }
 #nullable restore
 #else
-        public List<AuthorizationSystemResource> VirtualMachines {
-            get { return BackingStore?.Get<List<AuthorizationSystemResource>>("virtualMachines"); }
+        public List<VirtualMachineDetails> VirtualMachines {
+            get { return BackingStore?.Get<List<VirtualMachineDetails>>("virtualMachines"); }
             set { BackingStore?.Set("virtualMachines", value); }
         }
 #endif
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"inboundPorts", n => { InboundPorts = n.GetObjectValue<Microsoft.Graph.Beta.Models.InboundPorts>(Microsoft.Graph.Beta.Models.InboundPorts.CreateFromDiscriminatorValue); } },
                 {"securityGroup", n => { SecurityGroup = n.GetObjectValue<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
-                {"virtualMachines", n => { VirtualMachines = n.GetCollectionOfObjectValues<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"virtualMachines", n => { VirtualMachines = n.GetCollectionOfObjectValues<VirtualMachineDetails>(VirtualMachineDetails.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.InboundPorts>("inboundPorts", InboundPorts);
             writer.WriteObjectValue<AuthorizationSystemResource>("securityGroup", SecurityGroup);
-            writer.WriteCollectionOfObjectValues<AuthorizationSystemResource>("virtualMachines", VirtualMachines);
+            writer.WriteCollectionOfObjectValues<VirtualMachineDetails>("virtualMachines", VirtualMachines);
         }
     }
 }

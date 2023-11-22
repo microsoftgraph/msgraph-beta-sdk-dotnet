@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AssignedComputeInstanceDetails : Entity, IParsable {
-        /// <summary>The accessedStorageBuckets property</summary>
+        /// <summary>Represents a set of S3 buckets accessed by this EC2 instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AuthorizationSystemResource>? AccessedStorageBuckets {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("accessedStorageBuckets", value); }
         }
 #endif
-        /// <summary>The assignedComputeInstance property</summary>
+        /// <summary>assigned EC2 instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AuthorizationSystemResource? AssignedComputeInstance {

@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appliedConditionalAccessPolicies", value); }
         }
 #endif
-        /// <summary>Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, that were triggered by the corresponding events in the sign-in event.</summary>
+        /// <summary>Detailed information about the listeners, such as Azure Logic Apps and Azure Functions, which were triggered by the corresponding events in the sign-in event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AppliedAuthenticationEventListener>? AppliedEventListeners {
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationProcessingDetails", value); }
         }
 #endif
-        /// <summary>Lists the protocol type or grant type used in the authentication. The possible values are: oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue, authenticationTransfer, and none. Use none for all authentications that do not have a specific value in that list.</summary>
+        /// <summary>Lists the protocol type or grant type used in the authentication. The possible values are: oAuth2, ropc, wsFederation, saml20, deviceCode, unknownFutureValue, authenticationTransfer, and none. Use none for all authentications that don&apos;t have a specific value in that list.</summary>
         public ProtocolType? AuthenticationProtocol {
             get { return BackingStore?.Get<ProtocolType?>("authenticationProtocol"); }
             set { BackingStore?.Set("authenticationProtocol", value); }
@@ -217,7 +217,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("clientAppUsed", value); }
         }
 #endif
-        /// <summary>Describes the credential type that a user client or service principal provided to Microsoft Entra ID to authenticate itself. You may wish to review clientCredentialType to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.</summary>
+        /// <summary>Describes the credential type that a user client or service principal provided to Microsoft Entra ID to authenticate itself. You can review this property to track and eliminate less secure credential types or to watch for clients and service principals using anomalous credential types. The possible values are: none, clientSecret, clientAssertion, federatedIdentityCredential, managedIdentity, certificate, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.ClientCredentialType? ClientCredentialType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClientCredentialType?>("clientCredentialType"); }
             set { BackingStore?.Set("clientCredentialType", value); }
@@ -246,7 +246,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue. If the sign in didn&apos;t cross tenant boundaries, the value is none.</summary>
+        /// <summary>Describes the type of cross-tenant access used by the actor to access the resource. Possible values are: none, b2bCollaboration, b2bDirectConnect, microsoftSupport, serviceProvider, unknownFutureValue, passthrough. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: passthrough. If the sign in didn&apos;t cross tenant boundaries, the value is none.</summary>
         public SignInAccessType? CrossTenantAccessType {
             get { return BackingStore?.Get<SignInAccessType?>("crossTenantAccessType"); }
             set { BackingStore?.Set("crossTenantAccessType", value); }
@@ -279,12 +279,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("federatedCredentialId", value); }
         }
 #endif
-        /// <summary>During a failed sign in, a user may select a button in the Azure portal to mark the failed event for tenant admins. If a user clicked the button to flag the failed sign in, this value is true.</summary>
+        /// <summary>During a failed sign-in, a user can select a button in the Azure portal to mark the failed event for tenant admins. If a user selects the button to flag the failed sign-in, this value is true.</summary>
         public bool? FlaggedForReview {
             get { return BackingStore?.Get<bool?>("flaggedForReview"); }
             set { BackingStore?.Set("flaggedForReview", value); }
         }
-        /// <summary>The tenant identifier of the user initiating the sign in. Not applicable in Managed Identity or service principal sign ins.</summary>
+        /// <summary>The tenant identifier of the user initiating the sign-in. Not applicable in Managed Identity or service principal sign ins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HomeTenantId {
@@ -312,7 +312,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("homeTenantName", value); }
         }
 #endif
-        /// <summary>Indicates the token types that were presented to Microsoft Entra ID to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Microsoft Entra ID may have also used token types not listed in this Enum type to authenticate the actor. Don&apos;t infer the lack of a token if it isn&apos;t one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.</summary>
+        /// <summary>Indicates the token types that were presented to Microsoft Entra ID to authenticate the actor in the sign in. The possible values are: none, primaryRefreshToken, saml11, saml20, unknownFutureValue, remoteDesktopToken.  NOTE Microsoft Entra ID might have also used token types not listed in this enum type to authenticate the actor. Don&apos;t infer the lack of a token if it isn&apos;t one of the types listed. Also, please note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: remoteDesktopToken.</summary>
         public Microsoft.Graph.Beta.Models.IncomingTokenType? IncomingTokenType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IncomingTokenType?>("incomingTokenType"); }
             set { BackingStore?.Set("incomingTokenType", value); }
@@ -331,7 +331,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ipAddress", value); }
         }
 #endif
-        /// <summary>The IP address a user used to reach a resource provider, used to determine Conditional Access compliance for some policies. For example, when a user interacts with Exchange Online, the IP address Exchange receives from the user may be recorded here. This value is often null.</summary>
+        /// <summary>The IP address a user used to reach a resource provider, used to determine Conditional Access compliance for some policies. For example, when a user interacts with Exchange Online, the IP address that Microsoft Exchange receives from the user can be recorded here. This value is often null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IpAddressFromResourceProvider {
@@ -505,7 +505,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resourceTenantId", value); }
         }
 #endif
-        /// <summary>The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that no action has been performed on the user or sign-in so far.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
+        /// <summary>The reason behind a specific state of a risky user, sign-in, or a risk event. Possible values: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, or unknownFutureValue. The value none means that Microsoft Entra risk detection has not flagged the user or the sign-in as a risky event so far.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
         public Microsoft.Graph.Beta.Models.RiskDetail? RiskDetail {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskDetail?>("riskDetail"); }
             set { BackingStore?.Set("riskDetail", value); }
@@ -524,7 +524,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("riskEventTypes_v2", value); }
         }
 #endif
-        /// <summary>The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in was not enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
+        /// <summary>The aggregated risk level. Possible values: none, low, medium, high, hidden, or unknownFutureValue. The value hidden means the user or sign-in wasn&apos;t enabled for Microsoft Entra ID Protection.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
         public RiskLevel? RiskLevelAggregated {
             get { return BackingStore?.Get<RiskLevel?>("riskLevelAggregated"); }
             set { BackingStore?.Set("riskLevelAggregated", value); }
@@ -609,7 +609,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sessionLifetimePolicies", value); }
         }
 #endif
-        /// <summary>Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne).</summary>
+        /// <summary>Indicates the category of sign in that the event represents. For user sign ins, the category can be interactiveUser or nonInteractiveUser and corresponds to the value for the isInteractive property on the signin resource. For managed identity sign ins, the category is managedIdentity. For service principal sign-ins, the category is servicePrincipal. Possible values are: interactiveUser, nonInteractiveUser, servicePrincipal, managedIdentity, unknownFutureValue.  Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SignInEventTypes {
@@ -623,7 +623,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("signInEventTypes", value); }
         }
 #endif
-        /// <summary>The identification that the user provided to sign in. It may be the userPrincipalName but it&apos;s also populated when a user signs in using other identifiers.</summary>
+        /// <summary>The identification that the user provided to sign in. It can be the userPrincipalName, but is also populated when a user signs in using other identifiers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SignInIdentifier {
@@ -642,7 +642,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInIdentifierType?>("signInIdentifierType"); }
             set { BackingStore?.Set("signInIdentifierType", value); }
         }
-        /// <summary>Token protection creates a cryptographically secure tie between the token and the device it&apos;s issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.</summary>
+        /// <summary>Token protection creates a cryptographically secure tie between the token and the device it is issued to. This field indicates whether the signin token was bound to the device or not. The possible values are: none, bound, unbound, unknownFutureValue.</summary>
         public TokenProtectionStatus? SignInTokenProtectionStatus {
             get { return BackingStore?.Get<TokenProtectionStatus?>("signInTokenProtectionStatus"); }
             set { BackingStore?.Set("signInTokenProtectionStatus", value); }

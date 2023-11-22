@@ -34,10 +34,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GenerateApplePushNotificationCertificateSigningRequestPostResponse?> PostAsGenerateApplePushNotificationCertificateSigningRequestPostResponseAsync(Action<GenerateApplePushNotificationCertificateSigningRequestRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GenerateApplePushNotificationCertificateSigningRequestPostResponse?> PostAsGenerateApplePushNotificationCertificateSigningRequestPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<GenerateApplePushNotificationCertificateSigningRequestPostResponse> PostAsGenerateApplePushNotificationCertificateSigningRequestPostResponseAsync(Action<GenerateApplePushNotificationCertificateSigningRequestRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GenerateApplePushNotificationCertificateSigningRequestPostResponse> PostAsGenerateApplePushNotificationCertificateSigningRequestPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -54,10 +54,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate
         [Obsolete("This method is obsolete. Use PostAsGenerateApplePushNotificationCertificateSigningRequestPostResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GenerateApplePushNotificationCertificateSigningRequestResponse?> PostAsync(Action<GenerateApplePushNotificationCertificateSigningRequestRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GenerateApplePushNotificationCertificateSigningRequestResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<GenerateApplePushNotificationCertificateSigningRequestResponse> PostAsync(Action<GenerateApplePushNotificationCertificateSigningRequestRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GenerateApplePushNotificationCertificateSigningRequestResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -72,22 +72,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<GenerateApplePushNotificationCertificateSigningRequestRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<GenerateApplePushNotificationCertificateSigningRequestRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.POST,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new GenerateApplePushNotificationCertificateSigningRequestRequestBuilderPostRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
@@ -101,18 +92,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class GenerateApplePushNotificationCertificateSigningRequestRequestBuilderPostRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new generateApplePushNotificationCertificateSigningRequestRequestBuilderPostRequestConfiguration and sets the default values.
-            /// </summary>
-            public GenerateApplePushNotificationCertificateSigningRequestRequestBuilderPostRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class GenerateApplePushNotificationCertificateSigningRequestRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
     }
 }

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
-    public class TaskDefinition : Entity, IParsable {
+    public class TaskDefinition : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The category property</summary>
         public LifecycleTaskCategory? Category {
             get { return BackingStore?.Get<LifecycleTaskCategory?>("category"); }

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    public class Identity : Entity, IParsable {
+    public class Identity : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The type of identity. Possible values are: user or group for Microsoft Entra identities and externalgroup for groups in an external system.</summary>
         public IdentityType? Type {
             get { return BackingStore?.Get<IdentityType?>("type"); }

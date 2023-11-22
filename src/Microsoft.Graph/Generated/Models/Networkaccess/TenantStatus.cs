@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public class TenantStatus : Entity, IParsable {
+    public class TenantStatus : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>Reflects a message to the user if there&apos;s an error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

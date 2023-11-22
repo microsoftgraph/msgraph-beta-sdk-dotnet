@@ -44,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.networkaccess.internetAccessForwardingRule" => new InternetAccessForwardingRule(),
                 "#microsoft.graph.networkaccess.m365ForwardingRule" => new M365ForwardingRule(),
                 "#microsoft.graph.networkaccess.privateAccessForwardingRule" => new PrivateAccessForwardingRule(),
                 _ => new ForwardingRule(),

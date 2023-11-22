@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    public class ConnectionOperation : Entity, IParsable {
+    public class ConnectionOperation : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>If status is failed, provides more information about the error that caused the failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

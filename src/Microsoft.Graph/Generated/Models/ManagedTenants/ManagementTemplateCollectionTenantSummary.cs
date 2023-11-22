@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class ManagementTemplateCollectionTenantSummary : Entity, IParsable {
+    public class ManagementTemplateCollectionTenantSummary : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The completeStepsCount property</summary>
         public int? CompleteStepsCount {
             get { return BackingStore?.Get<int?>("completeStepsCount"); }

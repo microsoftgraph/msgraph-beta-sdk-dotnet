@@ -6,17 +6,17 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PermissionsRequestChange : Entity, IParsable {
-        /// <summary>The activeOccurrenceStatus property</summary>
+        /// <summary>The status of the active occurence of the schedule if one exists. The possible values are: grantingFailed, granted, granting, revoked, revoking, revokingFailed, unknownFutureValue.</summary>
         public PermissionsRequestOccurrenceStatus? ActiveOccurrenceStatus {
             get { return BackingStore?.Get<PermissionsRequestOccurrenceStatus?>("activeOccurrenceStatus"); }
             set { BackingStore?.Set("activeOccurrenceStatus", value); }
         }
-        /// <summary>The modificationDateTime property</summary>
+        /// <summary>Time when the change occurred.</summary>
         public DateTimeOffset? ModificationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("modificationDateTime"); }
             set { BackingStore?.Set("modificationDateTime", value); }
         }
-        /// <summary>The permissionsRequestId property</summary>
+        /// <summary>The ID of the scheduledPermissionsRequest object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PermissionsRequestId {
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.StatusDetail?>("statusDetail"); }
             set { BackingStore?.Set("statusDetail", value); }
         }
-        /// <summary>The ticketId property</summary>
+        /// <summary>Represents the ticketing system identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TicketId {

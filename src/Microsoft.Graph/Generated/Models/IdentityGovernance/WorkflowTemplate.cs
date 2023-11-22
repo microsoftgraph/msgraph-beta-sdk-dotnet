@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
-    public class WorkflowTemplate : Entity, IParsable {
+    public class WorkflowTemplate : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The category property</summary>
         public LifecycleWorkflowCategory? Category {
             get { return BackingStore?.Get<LifecycleWorkflowCategory?>("category"); }

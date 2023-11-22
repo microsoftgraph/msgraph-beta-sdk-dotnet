@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public class ConditionalAccessSettings : Entity, IParsable {
+    public class ConditionalAccessSettings : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The signalingStatus property</summary>
         public Status? SignalingStatus {
             get { return BackingStore?.Get<Status?>("signalingStatus"); }

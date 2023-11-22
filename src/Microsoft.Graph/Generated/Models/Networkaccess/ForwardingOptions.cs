@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public class ForwardingOptions : Entity, IParsable {
+    public class ForwardingOptions : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The skipDnsLookupState property</summary>
         public Status? SkipDnsLookupState {
             get { return BackingStore?.Get<Status?>("skipDnsLookupState"); }

@@ -5,8 +5,22 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public class Logs : Entity, IParsable {
-        /// <summary>Represents a collection of log entries in the network access traffic log.</summary>
+    public class Logs : Microsoft.Graph.Beta.Models.Entity, IParsable {
+        /// <summary>A collection of remote network health events.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<RemoteNetworkHealthEvent>? RemoteNetworks {
+            get { return BackingStore?.Get<List<RemoteNetworkHealthEvent>?>("remoteNetworks"); }
+            set { BackingStore?.Set("remoteNetworks", value); }
+        }
+#nullable restore
+#else
+        public List<RemoteNetworkHealthEvent> RemoteNetworks {
+            get { return BackingStore?.Get<List<RemoteNetworkHealthEvent>>("remoteNetworks"); }
+            set { BackingStore?.Set("remoteNetworks", value); }
+        }
+#endif
+        /// <summary>A network access traffic log entry that contains comprehensive information about network traffic events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<NetworkAccessTraffic>? Traffic {
@@ -33,6 +47,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// </summary>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"remoteNetworks", n => { RemoteNetworks = n.GetCollectionOfObjectValues<RemoteNetworkHealthEvent>(RemoteNetworkHealthEvent.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"traffic", n => { Traffic = n.GetCollectionOfObjectValues<NetworkAccessTraffic>(NetworkAccessTraffic.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -43,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<RemoteNetworkHealthEvent>("remoteNetworks", RemoteNetworks);
             writer.WriteCollectionOfObjectValues<NetworkAccessTraffic>("traffic", Traffic);
         }
     }

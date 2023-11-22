@@ -9,5 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
         PolicyOID,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "issuerSubjectAndPolicyOID")]
+        IssuerSubjectAndPolicyOID,
     }
 }

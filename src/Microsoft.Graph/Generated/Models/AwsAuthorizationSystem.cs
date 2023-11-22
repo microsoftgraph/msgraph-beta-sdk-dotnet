@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AwsAuthorizationSystem : AuthorizationSystem, IParsable {
-        /// <summary>The actions property</summary>
+        /// <summary>List of actions for service in authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AwsAuthorizationSystemTypeAction>? Actions {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("actions", value); }
         }
 #endif
-        /// <summary>The associatedIdentities property</summary>
+        /// <summary>Identities in the authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AwsAssociatedIdentities? AssociatedIdentities {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("associatedIdentities", value); }
         }
 #endif
-        /// <summary>The policies property</summary>
+        /// <summary>Policies associated with the AWS authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AwsPolicy>? Policies {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("policies", value); }
         }
 #endif
-        /// <summary>The resources property</summary>
+        /// <summary>Resources associated with the authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AwsAuthorizationSystemResource>? Resources {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resources", value); }
         }
 #endif
-        /// <summary>The services property</summary>
+        /// <summary>Services associated with the authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AuthorizationSystemTypeService>? Services {

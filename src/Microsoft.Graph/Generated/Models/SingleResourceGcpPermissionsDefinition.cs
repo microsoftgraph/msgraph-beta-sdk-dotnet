@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("actionInfo", value); }
         }
 #endif
-        /// <summary>The resourceId property</summary>
+        /// <summary>Identifier for the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceId {

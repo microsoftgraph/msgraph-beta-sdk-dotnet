@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
-    public class IndustryDataActivity : Entity, IParsable {
+    public class IndustryDataActivity : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The name of the activity. Maximum supported length is 100 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

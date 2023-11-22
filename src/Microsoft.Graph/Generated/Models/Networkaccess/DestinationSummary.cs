@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Count of the aggregation.</summary>
+        /// <summary>The number of the destinationSummary objects, aggregated by Global Secure Access service.</summary>
         public int? Count {
             get { return BackingStore?.Get<int?>("count"); }
             set { BackingStore?.Set("count", value); }
         }
-        /// <summary>Destination FQDN or IP address.</summary>
+        /// <summary>The IP address or FQDN of the destination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Destination {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The trafficType property</summary>
+        /// <summary>The traffic classification. The allowed values are internet, private, microsoft365, all, and unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Networkaccess.TrafficType? TrafficType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
             set { BackingStore?.Set("trafficType", value); }

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.TermStore {
-    public class Term : Entity, IParsable {
+    public class Term : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>Children of current term.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

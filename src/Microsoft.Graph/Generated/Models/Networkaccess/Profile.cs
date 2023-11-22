@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public class Profile : Entity, IParsable {
+    public class Profile : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>Description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.networkaccess.filteringProfile" => new FilteringProfile(),
                 "#microsoft.graph.networkaccess.forwardingProfile" => new ForwardingProfile(),
                 _ => new Profile(),
             };

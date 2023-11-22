@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class AuditEvent : Entity, IParsable {
+    public class AuditEvent : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>A string that uniquely represents the operation that occurred. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

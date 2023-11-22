@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public class TriggerTypesRoot : Entity, IParsable {
+    public class TriggerTypesRoot : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The retentionEventTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

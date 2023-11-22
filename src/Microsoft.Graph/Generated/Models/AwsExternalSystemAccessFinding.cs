@@ -39,12 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("systemWithAccess", value); }
         }
 #endif
-        /// <summary>The trustedIdentityCount property</summary>
+        /// <summary>The number of identities in the external system that are trusted, if not all. Supports $orderby.</summary>
         public int? TrustedIdentityCount {
             get { return BackingStore?.Get<int?>("trustedIdentityCount"); }
             set { BackingStore?.Set("trustedIdentityCount", value); }
         }
-        /// <summary>The trustsAllIdentities property</summary>
+        /// <summary>Flag that determines if all identities in the external system are trusted, or only a subset.</summary>
         public bool? TrustsAllIdentities {
             get { return BackingStore?.Get<bool?>("trustsAllIdentities"); }
             set { BackingStore?.Set("trustsAllIdentities", value); }

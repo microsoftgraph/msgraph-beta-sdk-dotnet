@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class CredentialUserRegistrationsSummary : Entity, IParsable {
+    public class CredentialUserRegistrationsSummary : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.</summary>
         public DateTimeOffset? LastRefreshedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }

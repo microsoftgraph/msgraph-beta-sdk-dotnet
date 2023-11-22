@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    public class UpdatableAsset : Entity, IParsable {
+    public class UpdatableAsset : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

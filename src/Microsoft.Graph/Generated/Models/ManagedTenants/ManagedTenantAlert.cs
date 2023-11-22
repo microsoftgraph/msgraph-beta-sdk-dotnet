@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public class ManagedTenantAlert : Entity, IParsable {
+    public class ManagedTenantAlert : Microsoft.Graph.Beta.Models.Entity, IParsable {
         /// <summary>The alertData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

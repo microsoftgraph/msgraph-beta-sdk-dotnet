@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The humanCount property</summary>
+        /// <summary>This is the count of human identities that have been assigned to this riskScoreBracket,</summary>
         public int? HumanCount {
             get { return BackingStore?.Get<int?>("humanCount"); }
             set { BackingStore?.Set("humanCount", value); }
         }
-        /// <summary>The nonHumanCount property</summary>
+        /// <summary>This is the count of nonhuman identities that have been assigned to this riskScoreBracket</summary>
         public int? NonHumanCount {
             get { return BackingStore?.Get<int?>("nonHumanCount"); }
             set { BackingStore?.Set("nonHumanCount", value); }
