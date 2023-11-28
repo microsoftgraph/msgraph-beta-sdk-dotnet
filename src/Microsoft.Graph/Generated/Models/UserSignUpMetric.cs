@@ -7,17 +7,17 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class UserSignUpMetric : Entity, IParsable {
-        /// <summary>The count property</summary>
+        /// <summary>The total number of users who signed up in the specified period. Supports $filter (eq).</summary>
         public long? Count {
             get { return BackingStore?.Get<long?>("count"); }
             set { BackingStore?.Set("count", value); }
         }
-        /// <summary>The factDate property</summary>
+        /// <summary>The date of the user insight.</summary>
         public Date? FactDate {
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }
         }
-        /// <summary>The os property</summary>
+        /// <summary>The device plaform that the customers used. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Os {

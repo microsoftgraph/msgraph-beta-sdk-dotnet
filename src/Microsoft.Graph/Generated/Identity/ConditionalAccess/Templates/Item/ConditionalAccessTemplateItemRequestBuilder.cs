@@ -29,11 +29,12 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates.Item {
         public ConditionalAccessTemplateItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/conditionalAccess/templates/{conditionalAccessTemplate%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read the properties and relationships of a conditionalAccessTemplate object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a conditionalAccessTemplate object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/conditionalaccesstemplate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ConditionalAccessTemplate?> GetAsync(Action<RequestConfiguration<ConditionalAccessTemplateItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -49,9 +50,10 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates.Item {
             return await RequestAdapter.SendAsync<ConditionalAccessTemplate>(requestInfo, ConditionalAccessTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a conditionalAccessTemplate object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a conditionalAccessTemplate object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ConditionalAccessTemplateItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
@@ -68,11 +70,12 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates.Item {
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public ConditionalAccessTemplateItemRequestBuilder WithUrl(string rawUrl) {
             return new ConditionalAccessTemplateItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a conditionalAccessTemplate object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a conditionalAccessTemplate object.
         /// </summary>
         public class ConditionalAccessTemplateItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -29,11 +29,12 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item {
         public AuthenticationEventListenerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/authenticationEventListeners/{authenticationEventListener%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes an authenticationEventListener object. This API is available in the following national cloud deployments.
+        /// Deletes an authenticationEventListener object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventlistener-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -53,6 +54,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<AuthenticationEventListener?> GetAsync(Action<RequestConfiguration<AuthenticationEventListenerItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -68,12 +70,13 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item {
             return await RequestAdapter.SendAsync<AuthenticationEventListener>(requestInfo, AuthenticationEventListener.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update. This API is available in the following national cloud deployments.
+        /// Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventlistener-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<AuthenticationEventListener?> PatchAsync(AuthenticationEventListener body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -90,9 +93,10 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item {
             return await RequestAdapter.SendAsync<AuthenticationEventListener>(requestInfo, AuthenticationEventListener.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an authenticationEventListener object. This API is available in the following national cloud deployments.
+        /// Deletes an authenticationEventListener object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
@@ -109,6 +113,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item {
         /// Get authenticationEventListeners from identity
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthenticationEventListenerItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
@@ -122,10 +127,11 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update. This API is available in the following national cloud deployments.
+        /// Update the properties of an authenticationEventListener object. You must specify the @odata.type property and the value of the authenticationEventListener object type to update.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(AuthenticationEventListener body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
@@ -144,6 +150,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventListeners.Item {
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public AuthenticationEventListenerItemRequestBuilder WithUrl(string rawUrl) {
             return new AuthenticationEventListenerItemRequestBuilder(rawUrl, RequestAdapter);
         }

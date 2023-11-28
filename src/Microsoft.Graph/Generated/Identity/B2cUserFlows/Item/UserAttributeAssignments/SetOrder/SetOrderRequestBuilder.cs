@@ -28,12 +28,13 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignmen
         public SetOrderRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/b2cUserFlows/{b2cIdentityUserFlow%2Did}/userAttributeAssignments/setOrder", rawUrl) {
         }
         /// <summary>
-        /// Set the order of identityUserFlowAttributeAssignments being collected within a user flow. This API is available in the following national cloud deployments.
+        /// Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-setorder?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PostAsync(SetOrderPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -50,10 +51,11 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignmen
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set the order of identityUserFlowAttributeAssignments being collected within a user flow. This API is available in the following national cloud deployments.
+        /// Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(SetOrderPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
@@ -72,6 +74,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignmen
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public SetOrderRequestBuilder WithUrl(string rawUrl) {
             return new SetOrderRequestBuilder(rawUrl, RequestAdapter);
         }

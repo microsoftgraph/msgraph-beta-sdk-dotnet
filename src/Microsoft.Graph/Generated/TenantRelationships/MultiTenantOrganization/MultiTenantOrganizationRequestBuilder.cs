@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
         public MultiTenantOrganizationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/multiTenantOrganization{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get properties of the multitenant organization. This API is available in the following national cloud deployments.
+        /// Get properties of the multitenant organization.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganization-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MultiTenantOrganization>(requestInfo, Microsoft.Graph.Beta.Models.MultiTenantOrganization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new multi-tenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multi-tenant organization. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization. This API is available in the following national cloud deployments.
+        /// Create a new multi-tenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multi-tenant organization. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MultiTenantOrganization>(requestInfo, Microsoft.Graph.Beta.Models.MultiTenantOrganization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get properties of the multitenant organization. This API is available in the following national cloud deployments.
+        /// Get properties of the multitenant organization.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new multi-tenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multi-tenant organization. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization. This API is available in the following national cloud deployments.
+        /// Create a new multi-tenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multi-tenant organization. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
             return new MultiTenantOrganizationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get properties of the multitenant organization. This API is available in the following national cloud deployments.
+        /// Get properties of the multitenant organization.
         /// </summary>
         public class MultiTenantOrganizationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

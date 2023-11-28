@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a permission object on a site. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a permission object on a site.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-get-permission?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Permission>(requestInfo, Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the permission object on a site. This API is available in the following national cloud deployments.
+        /// Update the permission object on a site.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-update-permission?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a permission object on a site. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a permission object on a site.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the permission object on a site. This API is available in the following national cloud deployments.
+        /// Update the permission object on a site.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item {
         public class PermissionItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a permission object on a site. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a permission object on a site.
         /// </summary>
         public class PermissionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

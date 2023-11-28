@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Admin.People.ProfileCardProperties.Item {
         public ProfileCardPropertyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/people/profileCardProperties/{profileCardProperty%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete the profileCardProperty object specified by its directoryPropertyName from the organization&apos;s profile card, and remove any localized customizations for that property. This API is available in the following national cloud deployments.
+        /// Delete the profileCardProperty object specified by its directoryPropertyName from the organization&apos;s profile card, and remove any localized customizations for that property.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/profilecardproperty-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Admin.People.ProfileCardProperties.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property. This API is available in the following national cloud deployments.
+        /// Retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/profilecardproperty-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Admin.People.ProfileCardProperties.Item {
             return await RequestAdapter.SendAsync<ProfileCardProperty>(requestInfo, ProfileCardProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a profileCardProperty object, identified by its directoryPropertyName property. This API is available in the following national cloud deployments.
+        /// Update the properties of a profileCardProperty object, identified by its directoryPropertyName property.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/profilecardproperty-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Admin.People.ProfileCardProperties.Item {
             return await RequestAdapter.SendAsync<ProfileCardProperty>(requestInfo, ProfileCardProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the profileCardProperty object specified by its directoryPropertyName from the organization&apos;s profile card, and remove any localized customizations for that property. This API is available in the following national cloud deployments.
+        /// Delete the profileCardProperty object specified by its directoryPropertyName from the organization&apos;s profile card, and remove any localized customizations for that property.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Admin.People.ProfileCardProperties.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property. This API is available in the following national cloud deployments.
+        /// Retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Admin.People.ProfileCardProperties.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a profileCardProperty object, identified by its directoryPropertyName property. This API is available in the following national cloud deployments.
+        /// Update the properties of a profileCardProperty object, identified by its directoryPropertyName property.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.Admin.People.ProfileCardProperties.Item {
         public class ProfileCardPropertyItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property. This API is available in the following national cloud deployments.
+        /// Retrieve the properties of a profileCardProperty entity. The profileCardProperty is identified by its directoryPropertyName property.
         /// </summary>
         public class ProfileCardPropertyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

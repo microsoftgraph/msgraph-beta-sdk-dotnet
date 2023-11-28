@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
         public JoinRequestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/multiTenantOrganization/joinRequest{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the status of a tenant joining a multi-tenant organization. This API is available in the following national cloud deployments.
+        /// Get the status of a tenant joining a multi-tenant organization.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganizationjoinrequestrecord-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
             return await RequestAdapter.SendAsync<MultiTenantOrganizationJoinRequestRecord>(requestInfo, MultiTenantOrganizationJoinRequestRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending. Before a tenant added to a multi-tenant organization can participate in the multi-tenant organization, the administrator of the joining tenant must submit a join request. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization. Furthermore, to allow for asynchronous processing, you must wait up to 4 hours before joining a multi-tenant organization is completed. This API is available in the following national cloud deployments.
+        /// Join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending. Before a tenant added to a multi-tenant organization can participate in the multi-tenant organization, the administrator of the joining tenant must submit a join request. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization. Furthermore, to allow for asynchronous processing, you must wait up to 4 hours before joining a multi-tenant organization is completed.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganizationjoinrequestrecord-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
             return await RequestAdapter.SendAsync<MultiTenantOrganizationJoinRequestRecord>(requestInfo, MultiTenantOrganizationJoinRequestRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the status of a tenant joining a multi-tenant organization. This API is available in the following national cloud deployments.
+        /// Get the status of a tenant joining a multi-tenant organization.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
             return requestInfo;
         }
         /// <summary>
-        /// Join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending. Before a tenant added to a multi-tenant organization can participate in the multi-tenant organization, the administrator of the joining tenant must submit a join request. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization. Furthermore, to allow for asynchronous processing, you must wait up to 4 hours before joining a multi-tenant organization is completed. This API is available in the following national cloud deployments.
+        /// Join a multi-tenant organization, after the owner of the multi-tenant organization has added your tenant to the multi-tenant organization as pending. Before a tenant added to a multi-tenant organization can participate in the multi-tenant organization, the administrator of the joining tenant must submit a join request. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization. Furthermore, to allow for asynchronous processing, you must wait up to 4 hours before joining a multi-tenant organization is completed.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
             return new JoinRequestRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the status of a tenant joining a multi-tenant organization. This API is available in the following national cloud deployments.
+        /// Get the status of a tenant joining a multi-tenant organization.
         /// </summary>
         public class JoinRequestRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

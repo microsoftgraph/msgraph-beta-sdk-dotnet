@@ -42,7 +42,8 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions {
         public MfaCompletionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/mfaCompletions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get mfaCompletions from reports
+        /// Get a list of monthly MFA completions on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/monthlyuserinsightmetricsroot-list-mfacompletions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions {
             return await RequestAdapter.SendAsync<MfaCompletionMetricCollectionResponse>(requestInfo, MfaCompletionMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get mfaCompletions from reports
+        /// Get a list of monthly MFA completions on apps registered in your tenant configured for Microsoft Entra External ID for customers.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,7 +85,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions {
             return new MfaCompletionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get mfaCompletions from reports
+        /// Get a list of monthly MFA completions on apps registered in your tenant configured for Microsoft Entra External ID for customers.
         /// </summary>
         public class MfaCompletionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

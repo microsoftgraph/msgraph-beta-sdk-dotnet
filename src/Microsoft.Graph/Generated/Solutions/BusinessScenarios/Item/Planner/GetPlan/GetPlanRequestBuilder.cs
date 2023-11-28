@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.GetPlan 
         public GetPlanRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/businessScenarios/{businessScenario%2Did}/planner/getPlan", rawUrl) {
         }
         /// <summary>
-        /// Get information about the plannerPlan mapped to a given target. If a plannerPlan doesn&apos;t exist for the specified target at the time of the request, a new plan will be created for the businessScenario. This API is available in the following national cloud deployments.
+        /// Get information about the plannerPlan mapped to a given target. If a plannerPlan doesn&apos;t exist for the specified target at the time of the request, a new plan will be created for the businessScenario.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessscenarioplanner-getplan?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.GetPlan 
             return await RequestAdapter.SendAsync<BusinessScenarioPlanReference>(requestInfo, BusinessScenarioPlanReference.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get information about the plannerPlan mapped to a given target. If a plannerPlan doesn&apos;t exist for the specified target at the time of the request, a new plan will be created for the businessScenario. This API is available in the following national cloud deployments.
+        /// Get information about the plannerPlan mapped to a given target. If a plannerPlan doesn&apos;t exist for the specified target at the time of the request, a new plan will be created for the businessScenario.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

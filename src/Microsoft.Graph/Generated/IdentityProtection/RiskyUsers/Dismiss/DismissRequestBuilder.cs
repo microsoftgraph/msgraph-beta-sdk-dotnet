@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Dismiss {
         public DismissRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityProtection/riskyUsers/dismiss", rawUrl) {
         }
         /// <summary>
-        /// Dismiss the risk of one or more riskyUser objects. This action sets the targeted user&apos;s risk level to none. The maximum count of users to dismiss in one call is 60. This API is available in the following national cloud deployments.
+        /// Dismiss the risk of one or more riskyUser objects. This action sets the targeted user&apos;s risk level to none. The maximum count of users to dismiss in one call is 60.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskyusers-dismiss?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers.Dismiss {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Dismiss the risk of one or more riskyUser objects. This action sets the targeted user&apos;s risk level to none. The maximum count of users to dismiss in one call is 60. This API is available in the following national cloud deployments.
+        /// Dismiss the risk of one or more riskyUser objects. This action sets the targeted user&apos;s risk level to none. The maximum count of users to dismiss in one call is 60.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -29,11 +29,12 @@ namespace Microsoft.Graph.Beta.Identity.UserFlowAttributes.Item {
         public IdentityUserFlowAttributeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/userFlowAttributes/{identityUserFlowAttribute%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a custom identityUserFlowAttribute. This API is available in the following national cloud deployments.
+        /// Delete a custom identityUserFlowAttribute.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflowattribute-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -49,11 +50,12 @@ namespace Microsoft.Graph.Beta.Identity.UserFlowAttributes.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a identityUserFlowAttribute object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a identityUserFlowAttribute object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflowattribute-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<IdentityUserFlowAttribute?> GetAsync(Action<RequestConfiguration<IdentityUserFlowAttributeItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -69,12 +71,13 @@ namespace Microsoft.Graph.Beta.Identity.UserFlowAttributes.Item {
             return await RequestAdapter.SendAsync<IdentityUserFlowAttribute>(requestInfo, IdentityUserFlowAttribute.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a custom identityUserFlowAttribute object. This API is available in the following national cloud deployments.
+        /// Update the properties of a custom identityUserFlowAttribute object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflowattribute-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<IdentityUserFlowAttribute?> PatchAsync(IdentityUserFlowAttribute body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -91,9 +94,10 @@ namespace Microsoft.Graph.Beta.Identity.UserFlowAttributes.Item {
             return await RequestAdapter.SendAsync<IdentityUserFlowAttribute>(requestInfo, IdentityUserFlowAttribute.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a custom identityUserFlowAttribute. This API is available in the following national cloud deployments.
+        /// Delete a custom identityUserFlowAttribute.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
@@ -107,9 +111,10 @@ namespace Microsoft.Graph.Beta.Identity.UserFlowAttributes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a identityUserFlowAttribute object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a identityUserFlowAttribute object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IdentityUserFlowAttributeItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
@@ -123,10 +128,11 @@ namespace Microsoft.Graph.Beta.Identity.UserFlowAttributes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a custom identityUserFlowAttribute object. This API is available in the following national cloud deployments.
+        /// Update the properties of a custom identityUserFlowAttribute object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(IdentityUserFlowAttribute body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
@@ -145,6 +151,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlowAttributes.Item {
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public IdentityUserFlowAttributeItemRequestBuilder WithUrl(string rawUrl) {
             return new IdentityUserFlowAttributeItemRequestBuilder(rawUrl, RequestAdapter);
         }
@@ -155,7 +162,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlowAttributes.Item {
         public class IdentityUserFlowAttributeItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a identityUserFlowAttribute object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a identityUserFlowAttribute object.
         /// </summary>
         public class IdentityUserFlowAttributeItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

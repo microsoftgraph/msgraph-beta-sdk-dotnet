@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/mobileAppManagementPolicies/{mobilityManagementPolicy%2Did}/includedGroups/{group%2Did}/$ref{?%40id*}", rawUrl) {
         }
         /// <summary>
-        /// Delete a group from the list of groups included in a mobile app management policy. This API is available in the following national cloud deployments.
+        /// Delete a group from the list of groups included in a mobile app management policy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-delete-includedgroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a group from the list of groups included in a mobile app management policy. This API is available in the following national cloud deployments.
+        /// Delete a group from the list of groups included in a mobile app management policy.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete a group from the list of groups included in a mobile app management policy. This API is available in the following national cloud deployments.
+        /// Delete a group from the list of groups included in a mobile app management policy.
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters {
             /// <summary>Delete Uri</summary>

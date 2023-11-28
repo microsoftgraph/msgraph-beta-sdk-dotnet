@@ -42,7 +42,8 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Requests {
         public RequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/requests{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get requests from reports
+        /// Get a list of monthly user requests on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/monthlyuserinsightmetricsroot-list-requests?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Requests {
             return await RequestAdapter.SendAsync<UserRequestsMetricCollectionResponse>(requestInfo, UserRequestsMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get requests from reports
+        /// Get a list of monthly user requests on apps registered in your tenant configured for Microsoft Entra External ID for customers.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,7 +85,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Requests {
             return new RequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get requests from reports
+        /// Get a list of monthly user requests on apps registered in your tenant configured for Microsoft Entra External ID for customers.
         /// </summary>
         public class RequestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.RosterPlans {
         public RosterPlansRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/rosterPlans{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of plannerPlans that are contained by the plannerRosters of which the user is a member. This API is available in the following national cloud deployments.
+        /// Get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/planneruser-list-rosterplans?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.RosterPlans {
             return await RequestAdapter.SendAsync<PlannerPlanCollectionResponse>(requestInfo, PlannerPlanCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of plannerPlans that are contained by the plannerRosters of which the user is a member. This API is available in the following national cloud deployments.
+        /// Get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.RosterPlans {
             return new RosterPlansRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of plannerPlans that are contained by the plannerRosters of which the user is a member. This API is available in the following national cloud deployments.
+        /// Get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
         /// </summary>
         public class RosterPlansRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

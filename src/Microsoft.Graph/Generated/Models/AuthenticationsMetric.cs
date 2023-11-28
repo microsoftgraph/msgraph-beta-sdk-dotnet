@@ -7,7 +7,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationsMetric : Entity, IParsable {
-        /// <summary>The appid property</summary>
+        /// <summary>The ID of the Microsoft Entra application. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Appid {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appid", value); }
         }
 #endif
-        /// <summary>The attemptsCount property</summary>
+        /// <summary>The number of authentication requests made in the specified period. Supports $filter (eq).</summary>
         public long? AttemptsCount {
             get { return BackingStore?.Get<long?>("attemptsCount"); }
             set { BackingStore?.Set("attemptsCount", value); }
         }
-        /// <summary>The country property</summary>
+        /// <summary>The location where the customers authenticated from. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Country {
@@ -40,12 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("country", value); }
         }
 #endif
-        /// <summary>The factDate property</summary>
+        /// <summary>The date of the user insight.</summary>
         public Date? FactDate {
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }
         }
-        /// <summary>The os property</summary>
+        /// <summary>The platform for the device that the customers used. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Os {
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("os", value); }
         }
 #endif
-        /// <summary>The successCount property</summary>
+        /// <summary>Number of successful authentication requests. Supports $filter (eq).</summary>
         public long? SuccessCount {
             get { return BackingStore?.Get<long?>("successCount"); }
             set { BackingStore?.Set("successCount", value); }

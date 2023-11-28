@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
         public MultiTenantOrganizationMemberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/multiTenantOrganization/tenants/{multiTenantOrganizationMember%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Remove a tenant from a multitenant organization. A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed. This API is available in the following national cloud deployments.
+        /// Remove a tenant from a multitenant organization. A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganization-delete-tenants?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a tenant and its properties in the multi-tenant organization. This API is available in the following national cloud deployments.
+        /// Get a tenant and its properties in the multi-tenant organization.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganizationmember-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
             return await RequestAdapter.SendAsync<MultiTenantOrganizationMember>(requestInfo, MultiTenantOrganizationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a tenant from a multitenant organization. A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed. This API is available in the following national cloud deployments.
+        /// Remove a tenant from a multitenant organization. A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
             return requestInfo;
         }
         /// <summary>
-        /// Get a tenant and its properties in the multi-tenant organization. This API is available in the following national cloud deployments.
+        /// Get a tenant and its properties in the multi-tenant organization.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
         public class MultiTenantOrganizationMemberItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get a tenant and its properties in the multi-tenant organization. This API is available in the following national cloud deployments.
+        /// Get a tenant and its properties in the multi-tenant organization.
         /// </summary>
         public class MultiTenantOrganizationMemberItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

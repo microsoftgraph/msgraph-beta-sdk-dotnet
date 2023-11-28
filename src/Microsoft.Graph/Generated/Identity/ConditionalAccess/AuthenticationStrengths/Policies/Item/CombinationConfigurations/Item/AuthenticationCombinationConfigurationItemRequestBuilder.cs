@@ -29,12 +29,12 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         public AuthenticationCombinationConfigurationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/conditionalAccess/authenticationStrengths/policies/{authenticationStrengthPolicy%2Did}/combinationConfigurations/{authenticationCombinationConfiguration%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object. This API is available in the following national cloud deployments.
+        /// Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-delete-combinationconfigurations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove on 2023-02-01 and will be removed 2023-03-31")]
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -50,12 +50,12 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an authenticationCombinationConfiguration object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an authenticationCombinationConfiguration object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationcombinationconfiguration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove on 2023-02-01 and will be removed 2023-03-31")]
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<AuthenticationCombinationConfiguration?> GetAsync(Action<RequestConfiguration<AuthenticationCombinationConfigurationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -71,13 +71,13 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             return await RequestAdapter.SendAsync<AuthenticationCombinationConfiguration>(requestInfo, AuthenticationCombinationConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be updated as they&apos;re the only type of authenticationCombinationConfiguration that may be created. This API is available in the following national cloud deployments.
+        /// Update the properties of an authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be updated as they&apos;re the only type of authenticationCombinationConfiguration that may be created.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationcombinationconfiguration-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove on 2023-02-01 and will be removed 2023-03-31")]
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<AuthenticationCombinationConfiguration?> PatchAsync(AuthenticationCombinationConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -94,10 +94,10 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             return await RequestAdapter.SendAsync<AuthenticationCombinationConfiguration>(requestInfo, AuthenticationCombinationConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object. This API is available in the following national cloud deployments.
+        /// Delete an authenticationCombinationConfiguration  for a custom authenticationStrengthPolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove on 2023-02-01 and will be removed 2023-03-31")]
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
@@ -111,10 +111,10 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an authenticationCombinationConfiguration object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an authenticationCombinationConfiguration object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove on 2023-02-01 and will be removed 2023-03-31")]
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthenticationCombinationConfigurationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be updated as they&apos;re the only type of authenticationCombinationConfiguration that may be created. This API is available in the following national cloud deployments.
+        /// Update the properties of an authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be updated as they&apos;re the only type of authenticationCombinationConfiguration that may be created.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove on 2023-02-01 and will be removed 2023-03-31")]
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(AuthenticationCombinationConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove on 2023-02-01 and will be removed 2023-03-31")]
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public AuthenticationCombinationConfigurationItemRequestBuilder WithUrl(string rawUrl) {
             return new AuthenticationCombinationConfigurationItemRequestBuilder(rawUrl, RequestAdapter);
         }
@@ -162,7 +162,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         public class AuthenticationCombinationConfigurationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of an authenticationCombinationConfiguration object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an authenticationCombinationConfiguration object.
         /// </summary>
         public class AuthenticationCombinationConfigurationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

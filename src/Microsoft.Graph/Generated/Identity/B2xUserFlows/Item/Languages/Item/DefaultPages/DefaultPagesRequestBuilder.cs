@@ -17,11 +17,13 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.Languages.Item.Default
     /// </summary>
     public class DefaultPagesRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the defaultPages property of the microsoft.graph.userFlowLanguageConfiguration entity.</summary>
         /// <param name="position">The unique identifier of userFlowLanguagePage</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public UserFlowLanguagePageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userFlowLanguagePage%2Did", position);
@@ -42,11 +44,12 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.Languages.Item.Default
         public DefaultPagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/languages/{userFlowLanguageConfiguration%2Did}/defaultPages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow. This API is available in the following national cloud deployments.
+        /// Get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/userflowlanguageconfiguration-list-defaultpages?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<UserFlowLanguagePageCollectionResponse?> GetAsync(Action<RequestConfiguration<DefaultPagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -67,6 +70,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.Languages.Item.Default
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<UserFlowLanguagePage?> PostAsync(UserFlowLanguagePage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -83,9 +87,10 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.Languages.Item.Default
             return await RequestAdapter.SendAsync<UserFlowLanguagePage>(requestInfo, UserFlowLanguagePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow. This API is available in the following national cloud deployments.
+        /// Get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultPagesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
@@ -103,6 +108,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.Languages.Item.Default
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(UserFlowLanguagePage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
@@ -121,11 +127,12 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.Languages.Item.Default
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public DefaultPagesRequestBuilder WithUrl(string rawUrl) {
             return new DefaultPagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow. This API is available in the following national cloud deployments.
+        /// Get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow.
         /// </summary>
         public class DefaultPagesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

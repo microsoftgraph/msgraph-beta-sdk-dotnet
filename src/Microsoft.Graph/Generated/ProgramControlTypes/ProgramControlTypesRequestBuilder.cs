@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.ProgramControlTypes {
         public ProgramControlTypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/programControlTypes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// In the Microsoft Entra access reviews feature, list all the programControlType objects. This API is available in the following national cloud deployments.
+        /// In the Microsoft Entra access reviews feature, list all the programControlType objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/programcontroltype-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.ProgramControlTypes {
             return await RequestAdapter.SendAsync<ProgramControlType>(requestInfo, ProgramControlType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In the Microsoft Entra access reviews feature, list all the programControlType objects. This API is available in the following national cloud deployments.
+        /// In the Microsoft Entra access reviews feature, list all the programControlType objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.ProgramControlTypes {
             return new ProgramControlTypesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// In the Microsoft Entra access reviews feature, list all the programControlType objects. This API is available in the following national cloud deployments.
+        /// In the Microsoft Entra access reviews feature, list all the programControlType objects.
         /// </summary>
         public class ProgramControlTypesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup {
         public RenewGroupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/groupLifecyclePolicies/renewGroup", rawUrl) {
         }
         /// <summary>
-        /// Renew a group&apos;s expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy. This API is available in the following national cloud deployments.
+        /// Renew a group&apos;s expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-renewgroup?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup {
             return await RequestAdapter.SendAsync<RenewGroupPostResponse>(requestInfo, RenewGroupPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Renew a group&apos;s expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy. This API is available in the following national cloud deployments.
+        /// Renew a group&apos;s expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-renewgroup?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup {
             return await RequestAdapter.SendAsync<RenewGroupResponse>(requestInfo, RenewGroupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Renew a group&apos;s expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy. This API is available in the following national cloud deployments.
+        /// Renew a group&apos;s expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

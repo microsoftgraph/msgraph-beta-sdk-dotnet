@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item {
         public PlannerRosterItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/planner/rosters/{plannerRoster%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a plannerRoster object. This API is available in the following national cloud deployments.
+        /// Delete a plannerRoster object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerroster-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a plannerRoster object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a plannerRoster object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerroster-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item {
             return await RequestAdapter.SendAsync<PlannerRoster>(requestInfo, PlannerRoster.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a plannerRoster object. This API is available in the following national cloud deployments.
+        /// Delete a plannerRoster object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a plannerRoster object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a plannerRoster object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item {
         public class PlannerRosterItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a plannerRoster object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a plannerRoster object.
         /// </summary>
         public class PlannerRosterItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

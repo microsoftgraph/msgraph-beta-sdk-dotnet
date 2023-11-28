@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.CalendarView.Item.Attachments.I
         public AttachmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendars/{calendar%2Did}/calendarView/{event%2Did}/attachments/{attachment%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an attachment from a user calendar event, message, Outlook task, or post. This API is available in the following national cloud deployments.
+        /// Delete an attachment from a user calendar event, message, Outlook task, or post.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.CalendarView.Item.Attachments.I
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. This API is available in the following national cloud deployments.
+        /// Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/attachment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.CalendarView.Item.Attachments.I
             return await RequestAdapter.SendAsync<Attachment>(requestInfo, Attachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an attachment from a user calendar event, message, Outlook task, or post. This API is available in the following national cloud deployments.
+        /// Delete an attachment from a user calendar event, message, Outlook task, or post.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.CalendarView.Item.Attachments.I
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. This API is available in the following national cloud deployments.
+        /// Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.CalendarView.Item.Attachments.I
         public class AttachmentItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource. This API is available in the following national cloud deployments.
+        /// Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource.
         /// </summary>
         public class AttachmentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

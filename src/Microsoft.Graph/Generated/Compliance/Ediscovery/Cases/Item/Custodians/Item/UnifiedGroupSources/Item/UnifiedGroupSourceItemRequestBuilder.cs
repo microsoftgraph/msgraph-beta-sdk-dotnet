@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.
         public UnifiedGroupSourceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/custodians/{custodian%2Did}/unifiedGroupSources/{unifiedGroupSource%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a unifiedGroupSource object. This API is available in the following national cloud deployments.
+        /// Delete a unifiedGroupSource object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-unifiedgroupsource-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a unifiedGroupSource object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a unifiedGroupSource object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-unifiedgroupsource-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.
             return await RequestAdapter.SendAsync<UnifiedGroupSource>(requestInfo, UnifiedGroupSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a unifiedGroupSource object. This API is available in the following national cloud deployments.
+        /// Delete a unifiedGroupSource object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01")]
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a unifiedGroupSource object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a unifiedGroupSource object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01")]
@@ -167,7 +167,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.
         public class UnifiedGroupSourceItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a unifiedGroupSource object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a unifiedGroupSource object.
         /// </summary>
         public class UnifiedGroupSourceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Reports.Sla {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A placeholder to allow for the desired URL path for SLA.
+        /// Reports that relate to tenant-level Microsoft Entra SLA attainment.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Reports.Sla {
             return requestInfo;
         }
         /// <summary>
-        /// A placeholder to allow for the desired URL path for SLA.
+        /// Reports that relate to tenant-level Microsoft Entra SLA attainment.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.Reports.Sla {
         public class SlaRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// A placeholder to allow for the desired URL path for SLA.
+        /// Reports that relate to tenant-level Microsoft Entra SLA attainment.
         /// </summary>
         public class SlaRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

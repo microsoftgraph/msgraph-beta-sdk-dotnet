@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         public CloudPcProvisioningPolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a cloudPcProvisioningPolicy object. You can’t delete a policy that’s in use. This API is available in the following national cloud deployments.
+        /// Delete a cloudPcProvisioningPolicy object. You can’t delete a policy that’s in use.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a cloudPcProvisioningPolicy object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a cloudPcProvisioningPolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             return await RequestAdapter.SendAsync<CloudPcProvisioningPolicy>(requestInfo, CloudPcProvisioningPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a cloudPcProvisioningPolicy object. This API is available in the following national cloud deployments.
+        /// Update the properties of a cloudPcProvisioningPolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             return await RequestAdapter.SendAsync<CloudPcProvisioningPolicy>(requestInfo, CloudPcProvisioningPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a cloudPcProvisioningPolicy object. You can’t delete a policy that’s in use. This API is available in the following national cloud deployments.
+        /// Delete a cloudPcProvisioningPolicy object. You can’t delete a policy that’s in use.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30")]
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a cloudPcProvisioningPolicy object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a cloudPcProvisioningPolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId on 2023-03-16 and will be removed 2023-07-30")]
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a cloudPcProvisioningPolicy object. This API is available in the following national cloud deployments.
+        /// Update the properties of a cloudPcProvisioningPolicy object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         public class CloudPcProvisioningPolicyItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a cloudPcProvisioningPolicy object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a cloudPcProvisioningPolicy object.
         /// </summary>
         public class CloudPcProvisioningPolicyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

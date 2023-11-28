@@ -7,12 +7,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class InsightSummary : Entity, IParsable {
-        /// <summary>The activeUsers property</summary>
+        /// <summary>Daily active users.</summary>
         public long? ActiveUsers {
             get { return BackingStore?.Get<long?>("activeUsers"); }
             set { BackingStore?.Set("activeUsers", value); }
         }
-        /// <summary>The appId property</summary>
+        /// <summary>The ID of the Microsoft Entra application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppId {
@@ -26,22 +26,22 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appId", value); }
         }
 #endif
-        /// <summary>The authenticationCompletions property</summary>
+        /// <summary>Daily authentication completions.</summary>
         public long? AuthenticationCompletions {
             get { return BackingStore?.Get<long?>("authenticationCompletions"); }
             set { BackingStore?.Set("authenticationCompletions", value); }
         }
-        /// <summary>The authenticationRequests property</summary>
+        /// <summary>Daily authentication requests.</summary>
         public long? AuthenticationRequests {
             get { return BackingStore?.Get<long?>("authenticationRequests"); }
             set { BackingStore?.Set("authenticationRequests", value); }
         }
-        /// <summary>The factDate property</summary>
+        /// <summary>The date of the insight.</summary>
         public Date? FactDate {
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }
         }
-        /// <summary>The os property</summary>
+        /// <summary>The platform for the device that the customers used. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Os {
@@ -55,22 +55,22 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("os", value); }
         }
 #endif
-        /// <summary>The securityTextCompletions property</summary>
+        /// <summary>Daily MFA SMS completions.</summary>
         public long? SecurityTextCompletions {
             get { return BackingStore?.Get<long?>("securityTextCompletions"); }
             set { BackingStore?.Set("securityTextCompletions", value); }
         }
-        /// <summary>The securityTextRequests property</summary>
+        /// <summary>Daily MFA SMS requests.</summary>
         public long? SecurityTextRequests {
             get { return BackingStore?.Get<long?>("securityTextRequests"); }
             set { BackingStore?.Set("securityTextRequests", value); }
         }
-        /// <summary>The securityVoiceCompletions property</summary>
+        /// <summary>Daily MFA Voice completions.</summary>
         public long? SecurityVoiceCompletions {
             get { return BackingStore?.Get<long?>("securityVoiceCompletions"); }
             set { BackingStore?.Set("securityVoiceCompletions", value); }
         }
-        /// <summary>The securityVoiceRequests property</summary>
+        /// <summary>Daily MFA Voice requests.</summary>
         public long? SecurityVoiceRequests {
             get { return BackingStore?.Get<long?>("securityVoiceRequests"); }
             set { BackingStore?.Set("securityVoiceRequests", value); }

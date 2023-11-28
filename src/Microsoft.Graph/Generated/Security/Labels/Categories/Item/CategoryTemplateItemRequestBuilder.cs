@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item {
         public CategoryTemplateItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/categories/{categoryTemplate%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a categoryTemplate object. This API is available in the following national cloud deployments.
+        /// Delete a categoryTemplate object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-delete-categories?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a categoryTemplate object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a categoryTemplate object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-categorytemplate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.CategoryTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.CategoryTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a categoryTemplate object. This API is available in the following national cloud deployments.
+        /// Delete a categoryTemplate object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a categoryTemplate object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a categoryTemplate object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item {
         public class CategoryTemplateItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a categoryTemplate object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a categoryTemplate object.
         /// </summary>
         public class CategoryTemplateItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

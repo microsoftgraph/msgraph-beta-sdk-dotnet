@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+        /// Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+        /// Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30")]
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails.Item {
         public class CredentialUserRegistrationDetailsItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.
+        /// Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
         /// </summary>
         public class CredentialUserRegistrationDetailsItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Complete 
         public CompleteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/recommendations/{recommendation%2Did}/complete", rawUrl) {
         }
         /// <summary>
-        /// Complete a recommendation object and update its status to completedByUser. This API is available in the following national cloud deployments.
+        /// Complete a recommendation object and update its status to completedByUser.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/recommendation-complete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Complete 
             return await RequestAdapter.SendAsync<Recommendation>(requestInfo, Recommendation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Complete a recommendation object and update its status to completedByUser. This API is available in the following national cloud deployments.
+        /// Complete a recommendation object and update its status to completedByUser.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

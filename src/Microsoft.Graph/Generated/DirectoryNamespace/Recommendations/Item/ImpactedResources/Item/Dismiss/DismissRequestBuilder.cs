@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
         public DismissRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/recommendations/{recommendation%2Did}/impactedResources/{impactedResource%2Did}/dismiss", rawUrl) {
         }
         /// <summary>
-        /// Dismiss an impactedResources object and update its status to dismissed. This API is available in the following national cloud deployments.
+        /// Dismiss an impactedResources object and update its status to dismissed.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/impactedresource-dismiss?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
             return await RequestAdapter.SendAsync<ImpactedResource>(requestInfo, ImpactedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Dismiss an impactedResources object and update its status to dismissed. This API is available in the following national cloud deployments.
+        /// Dismiss an impactedResources object and update its status to dismissed.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

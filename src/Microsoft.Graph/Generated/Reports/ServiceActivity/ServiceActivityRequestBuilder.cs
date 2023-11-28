@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A placeholder to the Microsoft Entra service activity.
+        /// Reports that relate to tenant-level authentication activities in Microsoft Entra.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity {
             return requestInfo;
         }
         /// <summary>
-        /// A placeholder to the Microsoft Entra service activity.
+        /// Reports that relate to tenant-level authentication activities in Microsoft Entra.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -207,7 +207,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity {
         public class ServiceActivityRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// A placeholder to the Microsoft Entra service activity.
+        /// Reports that relate to tenant-level authentication activities in Microsoft Entra.
         /// </summary>
         public class ServiceActivityRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedChats {
         public DeletedChatsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork/deletedChats{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read the properties and relationships of a deletedChat object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a deletedChat object.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedChats {
             return await RequestAdapter.SendAsync<DeletedChat>(requestInfo, DeletedChat.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a deletedChat object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a deletedChat object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedChats {
             return new DeletedChatsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a deletedChat object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a deletedChat object.
         /// </summary>
         public class DeletedChatsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

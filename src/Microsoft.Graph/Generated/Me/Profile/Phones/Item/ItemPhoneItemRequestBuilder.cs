@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Phones.Item {
         public ItemPhoneItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/phones/{itemPhone%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an itemPhone object from the user&apos;s profile. This API is available in the following national cloud deployments.
+        /// Delete an itemPhone object from the user&apos;s profile.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/itemphone-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Phones.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an itemPhone object in a user&apos;s profile. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of an itemPhone object in a user&apos;s profile.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/itemphone-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Phones.Item {
             return await RequestAdapter.SendAsync<ItemPhone>(requestInfo, ItemPhone.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an itemPhone object in a user&apos;s profile. This API is available in the following national cloud deployments.
+        /// Update the properties of an itemPhone object in a user&apos;s profile.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/itemphone-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Phones.Item {
             return await RequestAdapter.SendAsync<ItemPhone>(requestInfo, ItemPhone.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an itemPhone object from the user&apos;s profile. This API is available in the following national cloud deployments.
+        /// Delete an itemPhone object from the user&apos;s profile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Phones.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an itemPhone object in a user&apos;s profile. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of an itemPhone object in a user&apos;s profile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Phones.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an itemPhone object in a user&apos;s profile. This API is available in the following national cloud deployments.
+        /// Update the properties of an itemPhone object in a user&apos;s profile.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Phones.Item {
         public class ItemPhoneItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an itemPhone object in a user&apos;s profile. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of an itemPhone object in a user&apos;s profile.
         /// </summary>
         public class ItemPhoneItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

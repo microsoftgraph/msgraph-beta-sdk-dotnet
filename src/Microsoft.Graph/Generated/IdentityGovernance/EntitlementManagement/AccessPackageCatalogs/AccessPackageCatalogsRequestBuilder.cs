@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         public AccessPackageCatalogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/accessPackageCatalogs{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of accessPackageCatalog objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of accessPackageCatalog objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/entitlementmanagement-list-accesspackagecatalogs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return await RequestAdapter.SendAsync<AccessPackageCatalogCollectionResponse>(requestInfo, AccessPackageCatalogCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new accessPackageCatalog object. This API is available in the following national cloud deployments.
+        /// Create a new accessPackageCatalog object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/entitlementmanagement-post-accesspackagecatalogs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessPackageCatalog>(requestInfo, Microsoft.Graph.Beta.Models.AccessPackageCatalog.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of accessPackageCatalog objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of accessPackageCatalog objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete(" as of 2022-10/PrivatePreview:MicrosofEntitlementManagementCustomextensions on 2023-03-01 and will be removed 2023-12-31")]
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return requestInfo;
         }
         /// <summary>
-        /// Create a new accessPackageCatalog object. This API is available in the following national cloud deployments.
+        /// Create a new accessPackageCatalog object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return new AccessPackageCatalogsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of accessPackageCatalog objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of accessPackageCatalog objects.
         /// </summary>
         public class AccessPackageCatalogsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

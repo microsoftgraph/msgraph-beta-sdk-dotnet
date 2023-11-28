@@ -17,11 +17,13 @@ namespace Microsoft.Graph.Beta.Identity.UserFlowAttributes {
     /// </summary>
     public class UserFlowAttributesRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.</summary>
         /// <param name="position">The unique identifier of identityUserFlowAttribute</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public IdentityUserFlowAttributeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityUserFlowAttribute%2Did", position);
@@ -42,11 +44,12 @@ namespace Microsoft.Graph.Beta.Identity.UserFlowAttributes {
         public UserFlowAttributesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/userFlowAttributes{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of identityUserFlowAttribute objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of identityUserFlowAttribute objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflowattribute-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<IdentityUserFlowAttributeCollectionResponse?> GetAsync(Action<RequestConfiguration<UserFlowAttributesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -62,12 +65,13 @@ namespace Microsoft.Graph.Beta.Identity.UserFlowAttributes {
             return await RequestAdapter.SendAsync<IdentityUserFlowAttributeCollectionResponse>(requestInfo, IdentityUserFlowAttributeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new custom identityUserFlowAttribute object. This API is available in the following national cloud deployments.
+        /// Create a new custom identityUserFlowAttribute object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflowattribute-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<IdentityUserFlowAttribute?> PostAsync(IdentityUserFlowAttribute body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -84,9 +88,10 @@ namespace Microsoft.Graph.Beta.Identity.UserFlowAttributes {
             return await RequestAdapter.SendAsync<IdentityUserFlowAttribute>(requestInfo, IdentityUserFlowAttribute.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of identityUserFlowAttribute objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of identityUserFlowAttribute objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserFlowAttributesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
@@ -100,10 +105,11 @@ namespace Microsoft.Graph.Beta.Identity.UserFlowAttributes {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new custom identityUserFlowAttribute object. This API is available in the following national cloud deployments.
+        /// Create a new custom identityUserFlowAttribute object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(IdentityUserFlowAttribute body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
@@ -122,11 +128,12 @@ namespace Microsoft.Graph.Beta.Identity.UserFlowAttributes {
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public UserFlowAttributesRequestBuilder WithUrl(string rawUrl) {
             return new UserFlowAttributesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of identityUserFlowAttribute objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of identityUserFlowAttribute objects.
         /// </summary>
         public class UserFlowAttributesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

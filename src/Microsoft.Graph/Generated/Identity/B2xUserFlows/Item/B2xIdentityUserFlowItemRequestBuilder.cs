@@ -20,22 +20,27 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item {
     /// </summary>
     public class B2xIdentityUserFlowItemRequestBuilder : BaseRequestBuilder {
         /// <summary>The apiConnectorConfiguration property</summary>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public ApiConnectorConfigurationRequestBuilder ApiConnectorConfiguration { get =>
             new ApiConnectorConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the identityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.</summary>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public IdentityProvidersRequestBuilder IdentityProviders { get =>
             new IdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the languages property of the microsoft.graph.b2xIdentityUserFlow entity.</summary>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public LanguagesRequestBuilder Languages { get =>
             new LanguagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2xIdentityUserFlow entity.</summary>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public UserAttributeAssignmentsRequestBuilder UserAttributeAssignments { get =>
             new UserAttributeAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userFlowIdentityProviders property of the microsoft.graph.b2xIdentityUserFlow entity.</summary>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public UserFlowIdentityProvidersRequestBuilder UserFlowIdentityProviders { get =>
             new UserFlowIdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -54,11 +59,12 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item {
         public B2xIdentityUserFlowItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a b2xIdentityUserFlow object. This API is available in the following national cloud deployments.
+        /// Delete a b2xIdentityUserFlow object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2xidentityuserflow-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -74,11 +80,12 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a b2xIdentityUserFlow object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a b2xIdentityUserFlow object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2xidentityuserflow-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<B2xIdentityUserFlow?> GetAsync(Action<RequestConfiguration<B2xIdentityUserFlowItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -99,6 +106,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item {
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<B2xIdentityUserFlow?> PatchAsync(B2xIdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -115,9 +123,10 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item {
             return await RequestAdapter.SendAsync<B2xIdentityUserFlow>(requestInfo, B2xIdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a b2xIdentityUserFlow object. This API is available in the following national cloud deployments.
+        /// Delete a b2xIdentityUserFlow object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
@@ -131,9 +140,10 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a b2xIdentityUserFlow object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a b2xIdentityUserFlow object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<B2xIdentityUserFlowItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
@@ -151,6 +161,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item {
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(B2xIdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
@@ -169,6 +180,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item {
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public B2xIdentityUserFlowItemRequestBuilder WithUrl(string rawUrl) {
             return new B2xIdentityUserFlowItemRequestBuilder(rawUrl, RequestAdapter);
         }
@@ -179,7 +191,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item {
         public class B2xIdentityUserFlowItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a b2xIdentityUserFlow object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a b2xIdentityUserFlow object.
         /// </summary>
         public class B2xIdentityUserFlowItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Anniversaries {
         public AnniversariesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/anniversaries{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of personAnniversary objects for the given user from their profile. This API is available in the following national cloud deployments.
+        /// Retrieve a list of personAnniversary objects for the given user from their profile.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-anniversaries?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Anniversaries {
             return await RequestAdapter.SendAsync<PersonAnnualEventCollectionResponse>(requestInfo, PersonAnnualEventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new personAnniversary object in a user&apos;s profile. This API is available in the following national cloud deployments.
+        /// Use this API to create a new personAnniversary object in a user&apos;s profile.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-anniversaries?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Anniversaries {
             return await RequestAdapter.SendAsync<PersonAnnualEvent>(requestInfo, PersonAnnualEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of personAnniversary objects for the given user from their profile. This API is available in the following national cloud deployments.
+        /// Retrieve a list of personAnniversary objects for the given user from their profile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Anniversaries {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new personAnniversary object in a user&apos;s profile. This API is available in the following national cloud deployments.
+        /// Use this API to create a new personAnniversary object in a user&apos;s profile.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Anniversaries {
             return new AnniversariesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of personAnniversary objects for the given user from their profile. This API is available in the following national cloud deployments.
+        /// Retrieve a list of personAnniversary objects for the given user from their profile.
         /// </summary>
         public class AnniversariesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

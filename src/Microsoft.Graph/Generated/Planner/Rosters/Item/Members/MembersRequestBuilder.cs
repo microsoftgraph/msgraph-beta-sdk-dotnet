@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Members {
         public MembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/planner/rosters/{plannerRoster%2Did}/members{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the list of plannerRosterMembers from a plannerRoster. This API is available in the following national cloud deployments.
+        /// Get the list of plannerRosterMembers from a plannerRoster.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerroster-list-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Members {
             return await RequestAdapter.SendAsync<PlannerRosterMemberCollectionResponse>(requestInfo, PlannerRosterMemberCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a member to the plannerRoster object. This API is available in the following national cloud deployments.
+        /// Add a member to the plannerRoster object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerroster-post-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Members {
             return await RequestAdapter.SendAsync<PlannerRosterMember>(requestInfo, PlannerRosterMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of plannerRosterMembers from a plannerRoster. This API is available in the following national cloud deployments.
+        /// Get the list of plannerRosterMembers from a plannerRoster.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Members {
             return requestInfo;
         }
         /// <summary>
-        /// Add a member to the plannerRoster object. This API is available in the following national cloud deployments.
+        /// Add a member to the plannerRoster object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Members {
             return new MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of plannerRosterMembers from a plannerRoster. This API is available in the following national cloud deployments.
+        /// Get the list of plannerRosterMembers from a plannerRoster.
         /// </summary>
         public class MembersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

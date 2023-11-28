@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.FeatureRolloutPolicies.Item.Ap
         public RefRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/featureRolloutPolicies/{featureRolloutPolicy%2Did}/appliesTo/{directoryObject%2Did}/$ref{?%40id*}", rawUrl) {
         }
         /// <summary>
-        /// Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout. This API is available in the following national cloud deployments.
+        /// Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/featurerolloutpolicy-delete-appliesto?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.FeatureRolloutPolicies.Item.Ap
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout. This API is available in the following national cloud deployments.
+        /// Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("Feature Rollout Policies have been grouped with other policies under /policies. The existing /directory/featureRolloutPolicies is deprecated and will stop returning data on 06/30/2021. Please use /policies/featureRolloutPolicies. as of 2021-01/DirectoryFeatureRolloutPolicies on 2021-03-05 and will be removed 2021-06-30")]
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.FeatureRolloutPolicies.Item.Ap
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout. This API is available in the following national cloud deployments.
+        /// Remove an appliesTo on a featureRolloutPolicy object to remove the directoryObject from feature rollout.
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters {
             /// <summary>Delete Uri</summary>

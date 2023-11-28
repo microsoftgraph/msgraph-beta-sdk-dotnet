@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Operations {
         public OperationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/operations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of long-running file validation operations and their statuses. This API is available in the following national cloud deployments.
+        /// Get a list of long-running file validation operations and their statuses.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-filevalidateoperation-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Operations {
             return await RequestAdapter.SendAsync<LongRunningOperation>(requestInfo, LongRunningOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of long-running file validation operations and their statuses. This API is available in the following national cloud deployments.
+        /// Get a list of long-running file validation operations and their statuses.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Operations {
             return new OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of long-running file validation operations and their statuses. This API is available in the following national cloud deployments.
+        /// Get a list of long-running file validation operations and their statuses.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

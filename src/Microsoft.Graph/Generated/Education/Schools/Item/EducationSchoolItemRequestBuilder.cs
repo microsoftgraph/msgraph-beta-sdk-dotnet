@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item {
         public EducationSchoolItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/schools/{educationSchool%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a school. This API is available in the following national cloud deployments.
+        /// Delete a school.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of the school object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of the school object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item {
             return await RequestAdapter.SendAsync<EducationSchool>(requestInfo, EducationSchool.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a school object. This API is available in the following national cloud deployments.
+        /// Update the properties of a school object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item {
             return await RequestAdapter.SendAsync<EducationSchool>(requestInfo, EducationSchool.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a school. This API is available in the following national cloud deployments.
+        /// Delete a school.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of the school object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of the school object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a school object. This API is available in the following national cloud deployments.
+        /// Update the properties of a school object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item {
         public class EducationSchoolItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of the school object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of the school object.
         /// </summary>
         public class EducationSchoolItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

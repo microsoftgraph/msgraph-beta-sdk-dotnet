@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel {
         public RetentionLabelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/retentionLabel{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Remove a retention label from a driveItem. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. This API is available in the following national cloud deployments.
+        /// Remove a retention label from a driveItem. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-removeretentionlabel?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel {
             return await RequestAdapter.SendAsync<ItemRetentionLabel>(requestInfo, ItemRetentionLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Apply (set) a retention label on a driveItem (files and folders). Retention labels don&apos;t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. This API is available in the following national cloud deployments.
+        /// Apply (set) a retention label on a driveItem (files and folders). Retention labels don&apos;t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel {
             return await RequestAdapter.SendAsync<ItemRetentionLabel>(requestInfo, ItemRetentionLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a retention label from a driveItem. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. This API is available in the following national cloud deployments.
+        /// Remove a retention label from a driveItem. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.RetentionLabel {
             return requestInfo;
         }
         /// <summary>
-        /// Apply (set) a retention label on a driveItem (files and folders). Retention labels don&apos;t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. This API is available in the following national cloud deployments.
+        /// Apply (set) a retention label on a driveItem (files and folders). Retention labels don&apos;t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

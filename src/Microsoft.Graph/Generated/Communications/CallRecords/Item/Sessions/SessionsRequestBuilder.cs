@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions {
         public SessionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/callRecords/{callRecord%2Did}/sessions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the list of sessions associated with a callRecord object. This API is available in the following national cloud deployments.
+        /// Retrieve the list of sessions associated with a callRecord object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/callrecords-callrecord-list-sessions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions {
             return await RequestAdapter.SendAsync<Session>(requestInfo, Session.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the list of sessions associated with a callRecord object. This API is available in the following national cloud deployments.
+        /// Retrieve the list of sessions associated with a callRecord object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions {
             return new SessionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the list of sessions associated with a callRecord object. This API is available in the following national cloud deployments.
+        /// Retrieve the list of sessions associated with a callRecord object.
         /// </summary>
         public class SessionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

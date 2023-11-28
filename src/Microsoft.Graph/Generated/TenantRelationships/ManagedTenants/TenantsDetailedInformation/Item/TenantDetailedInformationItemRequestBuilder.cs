@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsDetaile
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a tenantDetailedInformation object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a tenantDetailedInformation object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-tenantdetailedinformation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsDetaile
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a tenantDetailedInformation object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a tenantDetailedInformation object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsDetaile
         public class TenantDetailedInformationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a tenantDetailedInformation object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a tenantDetailedInformation object.
         /// </summary>
         public class TenantDetailedInformationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
         public DeploymentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/windows/updates/deployments/{deployment%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a deployment object. This API is available in the following national cloud deployments.
+        /// Delete a deployment object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-deployment-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a deployment object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a deployment object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-deployment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
             return await RequestAdapter.SendAsync<Deployment>(requestInfo, Deployment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a deployment object. This API is available in the following national cloud deployments.
+        /// Update the properties of a deployment object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-deployment-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
             return await RequestAdapter.SendAsync<Deployment>(requestInfo, Deployment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a deployment object. This API is available in the following national cloud deployments.
+        /// Delete a deployment object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a deployment object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a deployment object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a deployment object. This API is available in the following national cloud deployments.
+        /// Update the properties of a deployment object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
         public class DeploymentItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a deployment object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a deployment object.
         /// </summary>
         public class DeploymentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

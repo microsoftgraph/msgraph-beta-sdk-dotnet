@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item {
         public EventItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/events/{event%2Did}{?%24select}", rawUrl) {
         }
         /// <summary>
-        /// Delete an event object. This API is available in the following national cloud deployments.
+        /// Delete an event object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-delete-event?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get an event object. This API is available in the following national cloud deployments.
+        /// Get an event object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-get-event?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item {
             return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an event object. This API is available in the following national cloud deployments.
+        /// Update an event object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-update-event?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item {
             return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an event object. This API is available in the following national cloud deployments.
+        /// Delete an event object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,7 +167,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get an event object. This API is available in the following national cloud deployments.
+        /// Get an event object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -183,7 +183,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update an event object. This API is available in the following national cloud deployments.
+        /// Update an event object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -215,7 +215,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item {
         public class EventItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get an event object. This API is available in the following national cloud deployments.
+        /// Get an event object.
         /// </summary>
         public class EventItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>

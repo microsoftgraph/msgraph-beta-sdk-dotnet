@@ -7,12 +7,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class UserRequestsMetric : Entity, IParsable {
-        /// <summary>The factDate property</summary>
+        /// <summary>The date of the user insight.</summary>
         public Date? FactDate {
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }
         }
-        /// <summary>The requestCount property</summary>
+        /// <summary>Number of requests to the tenant. Supports $filter (eq).</summary>
         public long? RequestCount {
             get { return BackingStore?.Get<long?>("requestCount"); }
             set { BackingStore?.Set("requestCount", value); }

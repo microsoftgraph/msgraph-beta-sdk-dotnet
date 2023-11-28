@@ -39,8 +39,8 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration {
         public RegistrationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/onlineMeetings/{onlineMeeting%2Did}/registration{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistration-delete?view=graph-rest-1.0" />
+        /// Disable and delete the externalMeetingRegistration of an onlineMeeting.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -59,8 +59,8 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the externalMeetingRegistration details associated with an onlineMeeting. This API is available in the following national cloud deployments.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalmeetingregistration-get?view=graph-rest-1.0" />
+        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration {
             return await RequestAdapter.SendAsync<MeetingRegistration>(requestInfo, MeetingRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
+        /// Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration {
             return await RequestAdapter.SendAsync<MeetingRegistration>(requestInfo, MeetingRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
+        /// Disable and delete the externalMeetingRegistration of an onlineMeeting.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration {
             return requestInfo;
         }
         /// <summary>
-        /// Get the externalMeetingRegistration details associated with an onlineMeeting. This API is available in the following national cloud deployments.
+        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration {
             return requestInfo;
         }
         /// <summary>
-        /// Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer. This API is available in the following national cloud deployments.
+        /// Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration {
         public class RegistrationRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get the externalMeetingRegistration details associated with an onlineMeeting. This API is available in the following national cloud deployments.
+        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
         /// </summary>
         public class RegistrationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
