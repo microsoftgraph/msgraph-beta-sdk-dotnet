@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Search.Acronyms.Item {
         public AcronymItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/acronyms/{acronym%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes an acronym object. This API is available in the following national cloud deployments.
+        /// Deletes an acronym object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-acronym-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Search.Acronyms.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an acronym object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an acronym object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-acronym-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Search.Acronyms.Item {
             return await RequestAdapter.SendAsync<Acronym>(requestInfo, Acronym.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an acronym object. This API is available in the following national cloud deployments.
+        /// Update the properties of an acronym object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-acronym-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Search.Acronyms.Item {
             return await RequestAdapter.SendAsync<Acronym>(requestInfo, Acronym.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an acronym object. This API is available in the following national cloud deployments.
+        /// Deletes an acronym object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Search.Acronyms.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an acronym object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an acronym object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Search.Acronyms.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an acronym object. This API is available in the following national cloud deployments.
+        /// Update the properties of an acronym object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.Search.Acronyms.Item {
         public class AcronymItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of an acronym object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an acronym object.
         /// </summary>
         public class AcronymItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Search.Query {
         public QueryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/query", rawUrl) {
         }
         /// <summary>
-        /// Run a specified search query. Search results are provided in the response. This API is available in the following national cloud deployments.
+        /// Run a specified search query. Search results are provided in the response.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-query?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Search.Query {
             return await RequestAdapter.SendAsync<QueryPostResponse>(requestInfo, QueryPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Run a specified search query. Search results are provided in the response. This API is available in the following national cloud deployments.
+        /// Run a specified search query. Search results are provided in the response.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-query?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Search.Query {
             return await RequestAdapter.SendAsync<QueryResponse>(requestInfo, QueryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Run a specified search query. Search results are provided in the response. This API is available in the following national cloud deployments.
+        /// Run a specified search query. Search results are provided in the response.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

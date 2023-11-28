@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages {
         public GalleryImagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/galleryImages{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List the properties and relationships of the cloudPcGalleryImage objects. This API is available in the following national cloud deployments.
+        /// List the properties and relationships of the cloudPcGalleryImage objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-galleryimages?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages {
             return await RequestAdapter.SendAsync<CloudPcGalleryImage>(requestInfo, CloudPcGalleryImage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the properties and relationships of the cloudPcGalleryImage objects. This API is available in the following national cloud deployments.
+        /// List the properties and relationships of the cloudPcGalleryImage objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages {
             return new GalleryImagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the properties and relationships of the cloudPcGalleryImage objects. This API is available in the following national cloud deployments.
+        /// List the properties and relationships of the cloudPcGalleryImage objects.
         /// </summary>
         public class GalleryImagesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item {
         public OnlineMeetingItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/onlineMeetings/{onlineMeeting%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an onlineMeeting object. This API is available in the following national cloud deployments.
+        /// Delete an onlineMeeting object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item {
             return await RequestAdapter.SendAsync<OnlineMeeting>(requestInfo, OnlineMeeting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating. This API is available in the following national cloud deployments.
+        /// Update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item {
             return await RequestAdapter.SendAsync<OnlineMeeting>(requestInfo, OnlineMeeting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an onlineMeeting object. This API is available in the following national cloud deployments.
+        /// Delete an onlineMeeting object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating. This API is available in the following national cloud deployments.
+        /// Update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsersBreakdown
         public ActiveUsersBreakdownMetricItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/activeUsersBreakdown/{activeUsersBreakdownMetric%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get activeUsersBreakdown from reports
+        /// Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsersBreakdown
             return await RequestAdapter.SendAsync<ActiveUsersBreakdownMetric>(requestInfo, ActiveUsersBreakdownMetric.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get activeUsersBreakdown from reports
+        /// Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsersBreakdown
             return new ActiveUsersBreakdownMetricItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get activeUsersBreakdown from reports
+        /// Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
         /// </summary>
         public class ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

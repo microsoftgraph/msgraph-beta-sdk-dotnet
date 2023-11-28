@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
         public CaseItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a case object. This API is available in the following national cloud deployments.
+        /// Delete a case object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a case object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a case object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
             return await RequestAdapter.SendAsync<Case>(requestInfo, Case.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a case object. This API is available in the following national cloud deployments.
+        /// Update the properties of a case object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
             return await RequestAdapter.SendAsync<Case>(requestInfo, Case.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a case object. This API is available in the following national cloud deployments.
+        /// Delete a case object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01")]
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a case object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a case object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01")]
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a case object. This API is available in the following national cloud deployments.
+        /// Update the properties of a case object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -222,7 +222,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
         public class CaseItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a case object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of a case object.
         /// </summary>
         public class CaseItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

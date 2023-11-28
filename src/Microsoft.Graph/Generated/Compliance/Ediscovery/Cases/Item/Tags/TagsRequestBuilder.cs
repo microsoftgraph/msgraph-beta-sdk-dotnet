@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
         public TagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of tag objects from an eDiscovery case. This API is available in the following national cloud deployments.
+        /// Retrieve a list of tag objects from an eDiscovery case.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-list-tags?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
             return await RequestAdapter.SendAsync<TagCollectionResponse>(requestInfo, TagCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new tag for the specified case.  The tags are used in review sets while reviewing content. This API is available in the following national cloud deployments.
+        /// Create a new tag for the specified case.  The tags are used in review sets while reviewing content.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-post-tags?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
             return await RequestAdapter.SendAsync<Tag>(requestInfo, Tag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of tag objects from an eDiscovery case. This API is available in the following national cloud deployments.
+        /// Retrieve a list of tag objects from an eDiscovery case.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace on 2022-12-05 and will be removed 2023-02-01")]
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new tag for the specified case.  The tags are used in review sets while reviewing content. This API is available in the following national cloud deployments.
+        /// Create a new tag for the specified case.  The tags are used in review sets while reviewing content.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
             return new TagsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of tag objects from an eDiscovery case. This API is available in the following national cloud deployments.
+        /// Retrieve a list of tag objects from an eDiscovery case.
         /// </summary>
         public class TagsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

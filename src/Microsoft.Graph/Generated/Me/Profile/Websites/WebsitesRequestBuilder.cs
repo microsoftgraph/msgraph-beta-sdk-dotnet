@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites {
         public WebsitesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/websites{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of personWebsite objects from a user&apos;s profile. This API is available in the following national cloud deployments.
+        /// Retrieve a list of personWebsite objects from a user&apos;s profile.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-websites?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites {
             return await RequestAdapter.SendAsync<PersonWebsiteCollectionResponse>(requestInfo, PersonWebsiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new personWebsite object in a user&apos;s profile. This API is available in the following national cloud deployments.
+        /// Create a new personWebsite object in a user&apos;s profile.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-websites?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites {
             return await RequestAdapter.SendAsync<PersonWebsite>(requestInfo, PersonWebsite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of personWebsite objects from a user&apos;s profile. This API is available in the following national cloud deployments.
+        /// Retrieve a list of personWebsite objects from a user&apos;s profile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new personWebsite object in a user&apos;s profile. This API is available in the following national cloud deployments.
+        /// Create a new personWebsite object in a user&apos;s profile.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites {
             return new WebsitesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of personWebsite objects from a user&apos;s profile. This API is available in the following national cloud deployments.
+        /// Retrieve a list of personWebsite objects from a user&apos;s profile.
         /// </summary>
         public class WebsitesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

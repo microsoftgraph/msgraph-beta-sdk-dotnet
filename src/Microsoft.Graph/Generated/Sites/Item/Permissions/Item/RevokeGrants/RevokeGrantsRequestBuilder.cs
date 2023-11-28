@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item.RevokeGrants {
         public RevokeGrantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/permissions/{permission%2Did}/revokeGrants", rawUrl) {
         }
         /// <summary>
-        /// Revoke access to a listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link. This API is available in the following [national cloud deployments.
+        /// Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/permission-revokegrants?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item.RevokeGrants {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Permission>(requestInfo, Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Revoke access to a listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link. This API is available in the following [national cloud deployments.
+        /// Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

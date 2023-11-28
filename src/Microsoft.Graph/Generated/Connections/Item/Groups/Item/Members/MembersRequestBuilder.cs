@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Groups.Item.Members {
             return await RequestAdapter.SendAsync<IdentityCollectionResponse>(requestInfo, IdentityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new externalGroupMember object. This API is available in the following national cloud deployments.
+        /// Create a new externalGroupMember object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Groups.Item.Members {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new externalGroupMember object. This API is available in the following national cloud deployments.
+        /// Create a new externalGroupMember object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

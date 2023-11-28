@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities.Item {
         public AuthorityTemplateItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/authorities/{authorityTemplate%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a authorityTemplate object. This API is available in the following national cloud deployments.
+        /// Delete a authorityTemplate object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-delete-authorities?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a authorityTemplate object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a authorityTemplate object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-authoritytemplate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.AuthorityTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.AuthorityTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a authorityTemplate object. This API is available in the following national cloud deployments.
+        /// Delete a authorityTemplate object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a authorityTemplate object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a authorityTemplate object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities.Item {
         public class AuthorityTemplateItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a authorityTemplate object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a authorityTemplate object.
         /// </summary>
         public class AuthorityTemplateItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.MfaCompletions.Item {
         public MfaCompletionMetricItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/daily/mfaCompletions/{mfaCompletionMetric%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get mfaCompletions from reports
+        /// Insights for MFA usage on apps registered in the tenant for a specified period.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.MfaCompletions.Item {
             return await RequestAdapter.SendAsync<MfaCompletionMetric>(requestInfo, MfaCompletionMetric.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get mfaCompletions from reports
+        /// Insights for MFA usage on apps registered in the tenant for a specified period.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.MfaCompletions.Item {
             return new MfaCompletionMetricItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get mfaCompletions from reports
+        /// Insights for MFA usage on apps registered in the tenant for a specified period.
         /// </summary>
         public class MfaCompletionMetricItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

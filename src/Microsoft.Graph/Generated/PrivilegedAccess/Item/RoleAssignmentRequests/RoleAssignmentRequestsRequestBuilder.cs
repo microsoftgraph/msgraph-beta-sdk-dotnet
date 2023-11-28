@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests {
             return await RequestAdapter.SendAsync<GovernanceRoleAssignmentRequestCollectionResponse>(requestInfo, GovernanceRoleAssignmentRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a role assignment request to represent the operation you want on a role assignment. The following table lists the operations. This API is available in the following national cloud deployments.
+        /// Create a role assignment request to represent the operation you want on a role assignment. The following table lists the operations.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/governanceroleassignmentrequest-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests {
             return requestInfo;
         }
         /// <summary>
-        /// Create a role assignment request to represent the operation you want on a role assignment. The following table lists the operations. This API is available in the following national cloud deployments.
+        /// Create a role assignment request to represent the operation you want on a role assignment. The following table lists the operations.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

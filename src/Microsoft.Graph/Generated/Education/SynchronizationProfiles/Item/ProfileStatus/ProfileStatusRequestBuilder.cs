@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.ProfileSta
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync. This API is available in the following national cloud deployments.
+        /// Get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofilestatus-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.ProfileSta
             return requestInfo;
         }
         /// <summary>
-        /// Get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync. This API is available in the following national cloud deployments.
+        /// Get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.ProfileSta
         public class ProfileStatusRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync. This API is available in the following national cloud deployments.
+        /// Get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.
         /// </summary>
         public class ProfileStatusRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

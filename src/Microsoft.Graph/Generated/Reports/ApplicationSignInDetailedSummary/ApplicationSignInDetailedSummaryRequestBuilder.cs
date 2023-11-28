@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary {
         public ApplicationSignInDetailedSummaryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/applicationSignInDetailedSummary{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the applicationSignInDetailedSummary objects. This API is available in the following national cloud deployments.
+        /// Retrieve the applicationSignInDetailedSummary objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-list-applicationsignindetailedsummary?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>(requestInfo, Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the applicationSignInDetailedSummary objects. This API is available in the following national cloud deployments.
+        /// Retrieve the applicationSignInDetailedSummary objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary {
             return new ApplicationSignInDetailedSummaryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the applicationSignInDetailedSummary objects. This API is available in the following national cloud deployments.
+        /// Retrieve the applicationSignInDetailedSummary objects.
         /// </summary>
         public class ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

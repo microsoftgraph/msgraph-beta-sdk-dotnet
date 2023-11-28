@@ -121,14 +121,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>File metadata, if the item is a file. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FileObject? File {
-            get { return BackingStore?.Get<FileObject?>("file"); }
+        public Microsoft.Graph.Beta.Models.FileObject? FileObject {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileObject?>("file"); }
             set { BackingStore?.Set("file", value); }
         }
 #nullable restore
 #else
-        public FileObject File {
-            get { return BackingStore?.Get<FileObject>("file"); }
+        public Microsoft.Graph.Beta.Models.FileObject FileObject {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FileObject>("file"); }
             set { BackingStore?.Set("file", value); }
         }
 #endif
@@ -528,7 +528,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"children", n => { Children = n.GetCollectionOfObjectValues<DriveItem>(DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"content", n => { Content = n.GetByteArrayValue(); } },
                 {"deleted", n => { Deleted = n.GetObjectValue<Microsoft.Graph.Beta.Models.Deleted>(Microsoft.Graph.Beta.Models.Deleted.CreateFromDiscriminatorValue); } },
-                {"file", n => { File = n.GetObjectValue<FileObject>(FileObject.CreateFromDiscriminatorValue); } },
+                {"file", n => { FileObject = n.GetObjectValue<Microsoft.Graph.Beta.Models.FileObject>(Microsoft.Graph.Beta.Models.FileObject.CreateFromDiscriminatorValue); } },
                 {"fileSystemInfo", n => { FileSystemInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.FileSystemInfo>(Microsoft.Graph.Beta.Models.FileSystemInfo.CreateFromDiscriminatorValue); } },
                 {"folder", n => { Folder = n.GetObjectValue<Microsoft.Graph.Beta.Models.Folder>(Microsoft.Graph.Beta.Models.Folder.CreateFromDiscriminatorValue); } },
                 {"image", n => { Image = n.GetObjectValue<Microsoft.Graph.Beta.Models.Image>(Microsoft.Graph.Beta.Models.Image.CreateFromDiscriminatorValue); } },
@@ -573,7 +573,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteByteArrayValue("content", Content);
             writer.WriteStringValue("cTag", CTag);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Deleted>("deleted", Deleted);
-            writer.WriteObjectValue<FileObject>("file", File);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.FileObject>("file", FileObject);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.FileSystemInfo>("fileSystemInfo", FileSystemInfo);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Folder>("folder", Folder);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Image>("image", Image);

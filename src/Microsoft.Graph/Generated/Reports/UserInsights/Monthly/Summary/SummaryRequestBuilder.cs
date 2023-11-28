@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Summary {
         public SummaryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/summary{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get summary from reports
+        /// Summary of all usage insights on apps registered in the tenant for a specified period.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Summary {
             return await RequestAdapter.SendAsync<InsightSummaryCollectionResponse>(requestInfo, InsightSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get summary from reports
+        /// Summary of all usage insights on apps registered in the tenant for a specified period.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Summary {
             return new SummaryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get summary from reports
+        /// Summary of all usage insights on apps registered in the tenant for a specified period.
         /// </summary>
         public class SummaryRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item {
         public UpdatePolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an updatePolicy object. This API is available in the following national cloud deployments.
+        /// Delete an updatePolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an updatePolicy object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an updatePolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an updatePolicy object. This API is available in the following national cloud deployments.
+        /// Update the properties of an updatePolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an updatePolicy object. This API is available in the following national cloud deployments.
+        /// Delete an updatePolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an updatePolicy object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an updatePolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an updatePolicy object. This API is available in the following national cloud deployments.
+        /// Update the properties of an updatePolicy object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item {
         public class UpdatePolicyItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of an updatePolicy object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an updatePolicy object.
         /// </summary>
         public class UpdatePolicyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

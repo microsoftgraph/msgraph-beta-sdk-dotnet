@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Templates.MultiT
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization. This API is available in the following national cloud deployments.
+        /// Get the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganizationpartnerconfigurationtemplate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Templates.MultiT
             return await RequestAdapter.SendAsync<MultiTenantOrganizationPartnerConfigurationTemplate>(requestInfo, MultiTenantOrganizationPartnerConfigurationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization. This API is available in the following national cloud deployments.
+        /// Update the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganizationpartnerconfigurationtemplate-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Templates.MultiT
             return requestInfo;
         }
         /// <summary>
-        /// Get the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization. This API is available in the following national cloud deployments.
+        /// Get the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Templates.MultiT
             return requestInfo;
         }
         /// <summary>
-        /// Update the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization. This API is available in the following national cloud deployments.
+        /// Update the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Templates.MultiT
         public class MultiTenantOrganizationPartnerConfigurationRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization. This API is available in the following national cloud deployments.
+        /// Get the cross-tenant access policy template with inbound and outbound partner configuration settings for a multitenant organization.
         /// </summary>
         public class MultiTenantOrganizationPartnerConfigurationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

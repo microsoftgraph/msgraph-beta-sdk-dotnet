@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.Policies.Item {
         public TrustFrameworkPolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/trustFramework/policies/{trustFrameworkPolicy%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an existing trustFrameworkPolicy. This API is available in the following national cloud deployments.
+        /// Delete an existing trustFrameworkPolicy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframeworkpolicy-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.Policies.Item {
             return await RequestAdapter.SendAsync<TrustFrameworkPolicy>(requestInfo, TrustFrameworkPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an existing trustFrameworkPolicy. This API is available in the following national cloud deployments.
+        /// Delete an existing trustFrameworkPolicy.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

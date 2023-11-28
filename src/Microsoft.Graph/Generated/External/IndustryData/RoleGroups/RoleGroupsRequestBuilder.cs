@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.RoleGroups {
         public RoleGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/roleGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the roleGroup objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of the roleGroup objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-rolegroup-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.RoleGroups {
             return await RequestAdapter.SendAsync<RoleGroup>(requestInfo, RoleGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the roleGroup objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of the roleGroup objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.RoleGroups {
             return new RoleGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the roleGroup objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of the roleGroup objects and their properties.
         /// </summary>
         public class RoleGroupsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

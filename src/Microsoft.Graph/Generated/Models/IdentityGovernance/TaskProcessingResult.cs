@@ -57,14 +57,14 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// <summary>The task property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TaskObject? Task {
-            get { return BackingStore?.Get<TaskObject?>("task"); }
+        public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject? TaskObject {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject?>("task"); }
             set { BackingStore?.Set("task", value); }
         }
 #nullable restore
 #else
-        public TaskObject Task {
-            get { return BackingStore?.Get<TaskObject>("task"); }
+        public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject TaskObject {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject>("task"); }
             set { BackingStore?.Set("task", value); }
         }
 #endif
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
                 {"processingStatus", n => { ProcessingStatus = n.GetEnumValue<LifecycleWorkflowProcessingStatus>(); } },
                 {"startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"subject", n => { Subject = n.GetObjectValue<Microsoft.Graph.Beta.Models.User>(Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue); } },
-                {"task", n => { Task = n.GetObjectValue<TaskObject>(TaskObject.CreateFromDiscriminatorValue); } },
+                {"task", n => { TaskObject = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject>(Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             writer.WriteEnumValue<LifecycleWorkflowProcessingStatus>("processingStatus", ProcessingStatus);
             writer.WriteDateTimeOffsetValue("startedDateTime", StartedDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.User>("subject", Subject);
-            writer.WriteObjectValue<TaskObject>("task", Task);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject>("task", TaskObject);
         }
     }
 }

@@ -7,10 +7,10 @@ namespace Microsoft.Graph.Beta.Models {
         Attendee,
         [EnumMember(Value = "presenter")]
         Presenter,
-        [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
         [EnumMember(Value = "producer")]
         Producer,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
         [EnumMember(Value = "coorganizer")]
         Coorganizer,
     }

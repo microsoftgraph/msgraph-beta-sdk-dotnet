@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.ClockOut {
         public ClockOutRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/timeCards/{timeCard%2Did}/clockOut", rawUrl) {
         }
         /// <summary>
-        /// Clock out to end an open timeCard. This API is available in the following national cloud deployments.
+        /// Clock out to end an open timeCard.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-clockout?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.ClockOut {
             return await RequestAdapter.SendAsync<TimeCard>(requestInfo, TimeCard.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Clock out to end an open timeCard. This API is available in the following national cloud deployments.
+        /// Clock out to end an open timeCard.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

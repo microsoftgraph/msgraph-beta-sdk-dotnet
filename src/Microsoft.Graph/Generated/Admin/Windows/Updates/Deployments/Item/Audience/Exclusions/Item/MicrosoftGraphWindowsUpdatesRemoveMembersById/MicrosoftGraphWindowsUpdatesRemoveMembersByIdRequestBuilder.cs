@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.E
         public MicrosoftGraphWindowsUpdatesRemoveMembersByIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/windows/updates/deployments/{deployment%2Did}/audience/exclusions/{updatableAsset%2Did}/microsoft.graph.windowsUpdates.removeMembersById", rawUrl) {
         }
         /// <summary>
-        /// Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members. This API is available in the following national cloud deployments.
+        /// Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-removemembersbyid?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.E
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members. This API is available in the following national cloud deployments.
+        /// Remove members of the same type from an updatableAssetGroup. You can also use the method removeMembers to remove members.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

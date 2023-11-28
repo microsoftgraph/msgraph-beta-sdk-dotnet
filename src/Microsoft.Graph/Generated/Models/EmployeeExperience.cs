@@ -14,20 +14,6 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Represents a collection of goals in a Viva Goals organization.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public Microsoft.Graph.Beta.Models.Goals? Goals {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Goals?>("goals"); }
-            set { BackingStore?.Set("goals", value); }
-        }
-#nullable restore
-#else
-        public Microsoft.Graph.Beta.Models.Goals Goals {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Goals>("goals"); }
-            set { BackingStore?.Set("goals", value); }
-        }
-#endif
         /// <summary>The learningCourseActivities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,7 +76,6 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"goals", n => { Goals = n.GetObjectValue<Microsoft.Graph.Beta.Models.Goals>(Microsoft.Graph.Beta.Models.Goals.CreateFromDiscriminatorValue); } },
                 {"learningCourseActivities", n => { LearningCourseActivities = n.GetCollectionOfObjectValues<LearningCourseActivity>(LearningCourseActivity.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"learningProviders", n => { LearningProviders = n.GetCollectionOfObjectValues<LearningProvider>(LearningProvider.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -102,7 +87,6 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Goals>("goals", Goals);
             writer.WriteCollectionOfObjectValues<LearningCourseActivity>("learningCourseActivities", LearningCourseActivities);
             writer.WriteCollectionOfObjectValues<LearningProvider>("learningProviders", LearningProviders);
             writer.WriteStringValue("@odata.type", OdataType);

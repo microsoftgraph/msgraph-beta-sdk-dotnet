@@ -730,8 +730,6 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.gcpRole" => new GcpRole(),
                 "#microsoft.graph.gcpServiceAccount" => new GcpServiceAccount(),
                 "#microsoft.graph.gcpUser" => new GcpUser(),
-                "#microsoft.graph.goals" => new Goals(),
-                "#microsoft.graph.goalsExportJob" => new GoalsExportJob(),
                 "#microsoft.graph.governanceInsight" => new GovernanceInsight(),
                 "#microsoft.graph.governancePolicyTemplate" => new GovernancePolicyTemplate(),
                 "#microsoft.graph.governanceResource" => new GovernanceResource(),

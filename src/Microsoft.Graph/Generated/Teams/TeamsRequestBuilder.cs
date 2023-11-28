@@ -4,7 +4,6 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teams.AllMessages;
 using Microsoft.Graph.Beta.Teams.Count;
 using Microsoft.Graph.Beta.Teams.GetAllMessages;
-using Microsoft.Graph.Beta.Teams.GetOpenShifts;
 using Microsoft.Graph.Beta.Teams.Item;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -31,10 +30,6 @@ namespace Microsoft.Graph.Beta.Teams {
         public GetAllMessagesRequestBuilder GetAllMessages { get =>
             new GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to call the getOpenShifts method.</summary>
-        public GetOpenShiftsRequestBuilder GetOpenShifts { get =>
-            new GetOpenShiftsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the collection of team entities.</summary>
         /// <param name="position">The unique identifier of team</param>
         public TeamItemRequestBuilder this[string position] { get {
@@ -57,7 +52,7 @@ namespace Microsoft.Graph.Beta.Teams {
         public TeamsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List all teams in an organization. This API is available in the following national cloud deployments.
+        /// List all teams in an organization.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/teams-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +72,7 @@ namespace Microsoft.Graph.Beta.Teams {
             return await RequestAdapter.SendAsync<TeamCollectionResponse>(requestInfo, TeamCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new team. This API is available in the following national cloud deployments.
+        /// Create a new team.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -99,7 +94,7 @@ namespace Microsoft.Graph.Beta.Teams {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Team>(requestInfo, Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all teams in an organization. This API is available in the following national cloud deployments.
+        /// List all teams in an organization.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +110,7 @@ namespace Microsoft.Graph.Beta.Teams {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new team. This API is available in the following national cloud deployments.
+        /// Create a new team.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -141,7 +136,7 @@ namespace Microsoft.Graph.Beta.Teams {
             return new TeamsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all teams in an organization. This API is available in the following national cloud deployments.
+        /// List all teams in an organization.
         /// </summary>
         public class TeamsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

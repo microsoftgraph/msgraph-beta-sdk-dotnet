@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticationMethods", value); }
         }
 #endif
-        /// <summary>Details of the usage of self-service password reset and multi-factor authentication (MFA) for all registered users.</summary>
+        /// <summary>Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>? CredentialUserRegistrationDetails {
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("monthlyPrintUsageSummariesByUser", value); }
         }
 #endif
-        /// <summary>Provides the ability to launch a realistically simulated phishing attack that organizations can learn from.</summary>
+        /// <summary>Provides the ability to launch a simulated phishing attack that organizations can learn from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SecurityReportsRoot? Security {
@@ -202,7 +202,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("security", value); }
         }
 #endif
-        /// <summary>A placeholder to the Microsoft Entra service activity.</summary>
+        /// <summary>Reports that relate to tenant-level authentication activities in Microsoft Entra.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.ServiceActivity? ServiceActivity {
@@ -230,7 +230,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("servicePrincipalSignInActivities", value); }
         }
 #endif
-        /// <summary>A placeholder to allow for the desired URL path for SLA.</summary>
+        /// <summary>Reports that relate to tenant-level Microsoft Entra SLA attainment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ServiceLevelAgreementRoot? Sla {
@@ -258,7 +258,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userCredentialUsageDetails", value); }
         }
 #endif
-        /// <summary>The userInsights property</summary>
+        /// <summary>Represents a collection of user activities on applications in a tenant that is configured for Microsoft Entra External ID for customers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UserInsightsRoot? UserInsights {

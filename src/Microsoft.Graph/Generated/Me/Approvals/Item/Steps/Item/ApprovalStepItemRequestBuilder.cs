@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Me.Approvals.Item.Steps.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of an approvalStep object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties of an approvalStep object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/approvalstep-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Me.Approvals.Item.Steps.Item {
             return await RequestAdapter.SendAsync<ApprovalStep>(requestInfo, ApprovalStep.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Apply approve or deny decision on an approvalStep object. This API is available in the following national cloud deployments.
+        /// Apply approve or deny decision on an approvalStep object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/approvalstep-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Me.Approvals.Item.Steps.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of an approvalStep object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties of an approvalStep object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Me.Approvals.Item.Steps.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Apply approve or deny decision on an approvalStep object. This API is available in the following national cloud deployments.
+        /// Apply approve or deny decision on an approvalStep object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Me.Approvals.Item.Steps.Item {
         public class ApprovalStepItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties of an approvalStep object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties of an approvalStep object.
         /// </summary>
         public class ApprovalStepItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

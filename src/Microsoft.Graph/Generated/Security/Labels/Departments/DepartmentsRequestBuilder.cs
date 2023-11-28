@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Departments {
         public DepartmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/departments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the departmentTemplate objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of the departmentTemplate objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-list-departments?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Departments {
             return await RequestAdapter.SendAsync<DepartmentTemplateCollectionResponse>(requestInfo, DepartmentTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new departmentTemplate object. This API is available in the following national cloud deployments.
+        /// Create a new departmentTemplate object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-post-departments?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Departments {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.DepartmentTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.DepartmentTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the departmentTemplate objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of the departmentTemplate objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Departments {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new departmentTemplate object. This API is available in the following national cloud deployments.
+        /// Create a new departmentTemplate object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Departments {
             return new DepartmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the departmentTemplate objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of the departmentTemplate objects and their properties.
         /// </summary>
         public class DepartmentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

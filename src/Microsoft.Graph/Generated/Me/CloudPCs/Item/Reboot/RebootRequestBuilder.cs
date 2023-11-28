@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.Reboot {
         public RebootRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/cloudPCs/{cloudPC%2Did}/reboot", rawUrl) {
         }
         /// <summary>
-        /// Reboot a specific Cloud PC. This API is available in the following national cloud deployments.
+        /// Reboot a specific Cloud PC.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-reboot?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.Reboot {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Reboot a specific Cloud PC. This API is available in the following national cloud deployments.
+        /// Reboot a specific Cloud PC.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

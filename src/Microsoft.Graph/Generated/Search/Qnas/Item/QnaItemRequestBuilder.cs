@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Search.Qnas.Item {
         public QnaItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/qnas/{qna%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a qna object. This API is available in the following national cloud deployments.
+        /// Delete a qna object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-qna-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Search.Qnas.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a qna object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a qna object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-qna-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Search.Qnas.Item {
             return await RequestAdapter.SendAsync<Qna>(requestInfo, Qna.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a qna object. This API is available in the following national cloud deployments.
+        /// Update the properties of a qna object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-qna-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Search.Qnas.Item {
             return await RequestAdapter.SendAsync<Qna>(requestInfo, Qna.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a qna object. This API is available in the following national cloud deployments.
+        /// Delete a qna object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Search.Qnas.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a qna object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a qna object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Search.Qnas.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a qna object. This API is available in the following national cloud deployments.
+        /// Update the properties of a qna object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.Search.Qnas.Item {
         public class QnaItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a qna object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a qna object.
         /// </summary>
         public class QnaItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

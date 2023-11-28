@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve information about a specific forwarding profile. This API is available in the following national cloud deployments.
+        /// Retrieve information about a specific forwarding profile.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-forwardingprofile-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item {
             return await RequestAdapter.SendAsync<ForwardingProfile>(requestInfo, ForwardingProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an existing forwarding profile. This API is available in the following national cloud deployments.
+        /// Update an existing forwarding profile.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-forwardingprofile-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve information about a specific forwarding profile. This API is available in the following national cloud deployments.
+        /// Retrieve information about a specific forwarding profile.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update an existing forwarding profile. This API is available in the following national cloud deployments.
+        /// Update an existing forwarding profile.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item {
         public class ForwardingProfileItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve information about a specific forwarding profile. This API is available in the following national cloud deployments.
+        /// Retrieve information about a specific forwarding profile.
         /// </summary>
         public class ForwardingProfileItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

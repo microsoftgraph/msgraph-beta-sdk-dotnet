@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class UserInsightsRoot : Entity, IParsable {
-        /// <summary>The daily property</summary>
+        /// <summary>Summaries of daily user activities on apps registered in your tenant that is configured for Microsoft Entra External ID for customers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DailyUserInsightMetricsRoot? Daily {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("daily", value); }
         }
 #endif
-        /// <summary>The monthly property</summary>
+        /// <summary>Summaries of monthly user activities on apps registered in your tenant that is configured for Microsoft Entra External ID for customers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public MonthlyUserInsightMetricsRoot? Monthly {

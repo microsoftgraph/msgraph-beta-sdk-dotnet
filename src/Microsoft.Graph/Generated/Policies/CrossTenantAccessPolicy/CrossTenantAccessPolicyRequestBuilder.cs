@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a crossTenantAccessPolicy object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a crossTenantAccessPolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CrossTenantAccessPolicy>(requestInfo, Microsoft.Graph.Beta.Models.CrossTenantAccessPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a cross-tenant access policy. This API is available in the following national cloud deployments.
+        /// Update the properties of a cross-tenant access policy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a crossTenantAccessPolicy object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a crossTenantAccessPolicy object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a cross-tenant access policy. This API is available in the following national cloud deployments.
+        /// Update the properties of a cross-tenant access policy.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy {
         public class CrossTenantAccessPolicyRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a crossTenantAccessPolicy object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a crossTenantAccessPolicy object.
         /// </summary>
         public class CrossTenantAccessPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

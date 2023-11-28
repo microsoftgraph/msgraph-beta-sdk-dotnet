@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence.ClearPresence {
         public ClearPresenceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/presence/clearPresence", rawUrl) {
         }
         /// <summary>
-        /// Clear a presence session of an application for a user. If it is the user&apos;s only presence session, a successful clearPresence changes the user&apos;s presence to Offline/Offline. Read more about presence sessions and their time-out and expiration.  This API is available in the following national cloud deployments.
+        /// Clear a presence session of an application for a user. If it is the user&apos;s only presence session, a successful clearPresence changes the user&apos;s presence to Offline/Offline. Read more about presence sessions and their time-out and expiration. 
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Presence.ClearPresence {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Clear a presence session of an application for a user. If it is the user&apos;s only presence session, a successful clearPresence changes the user&apos;s presence to Offline/Offline. Read more about presence sessions and their time-out and expiration.  This API is available in the following national cloud deployments.
+        /// Clear a presence session of an application for a user. If it is the user&apos;s only presence session, a successful clearPresence changes the user&apos;s presence to Offline/Offline. Read more about presence sessions and their time-out and expiration. 
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
