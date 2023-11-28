@@ -7,6 +7,8 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+- Fixes namespace location for `Constants.cs` (https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/issues/765)
+
 ## [5.57.0-preview] - 2023-11-22
 
 - Reduces the size of the generated code (https://github.com/microsoft/kiota/issues/3651)
