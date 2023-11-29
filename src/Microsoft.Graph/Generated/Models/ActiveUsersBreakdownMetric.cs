@@ -7,7 +7,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ActiveUsersBreakdownMetric : Entity, IParsable {
-        /// <summary>The appId property</summary>
+        /// <summary>The ID of the Microsoft Entra application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppId {
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appId", value); }
         }
 #endif
-        /// <summary>The appName property</summary>
+        /// <summary>Name of the application users authenticated to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppName {
@@ -35,17 +35,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appName", value); }
         }
 #endif
-        /// <summary>The count property</summary>
+        /// <summary>The total number of users who made at least one authentication request within the specified time period.</summary>
         public long? Count {
             get { return BackingStore?.Get<long?>("count"); }
             set { BackingStore?.Set("count", value); }
         }
-        /// <summary>The factDate property</summary>
+        /// <summary>The date of the insight.</summary>
         public Date? FactDate {
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }
         }
-        /// <summary>The os property</summary>
+        /// <summary>The platform for the device that the customers used. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Os {

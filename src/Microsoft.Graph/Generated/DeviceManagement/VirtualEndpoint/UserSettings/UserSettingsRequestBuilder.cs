@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings {
         public UserSettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/userSettings{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of cloudPcUserSetting objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of cloudPcUserSetting objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-usersettings?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings {
             return await RequestAdapter.SendAsync<CloudPcUserSettingCollectionResponse>(requestInfo, CloudPcUserSettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new cloudPcUserSetting object. This API is available in the following national cloud deployments.
+        /// Create a new cloudPcUserSetting object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-post-usersettings?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings {
             return await RequestAdapter.SendAsync<CloudPcUserSetting>(requestInfo, CloudPcUserSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of cloudPcUserSetting objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of cloudPcUserSetting objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new cloudPcUserSetting object. This API is available in the following national cloud deployments.
+        /// Create a new cloudPcUserSetting object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings {
             return new UserSettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of cloudPcUserSetting objects. This API is available in the following national cloud deployments.
+        /// Retrieve a list of cloudPcUserSetting objects.
         /// </summary>
         public class UserSettingsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

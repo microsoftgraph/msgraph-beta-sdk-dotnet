@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Agents.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an onPremisesAgent object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of an onPremisesAgent object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onpremisesagent-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Agents.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an onPremisesAgent object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of an onPremisesAgent object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Agents.Item {
         public class OnPremisesAgentItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an onPremisesAgent object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of an onPremisesAgent object.
         /// </summary>
         public class OnPremisesAgentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

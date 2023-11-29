@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetFront
         public GetFrontlineReportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports/getFrontlineReport", rawUrl) {
         }
         /// <summary>
-        /// Get the Windows 365 Frontline reports, such as real-time or historical data reports. This API is available in the following national cloud deployments.
+        /// Get the Windows 365 Frontline reports, such as real-time or historical data reports.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcreports-getfrontlinereport?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetFront
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the Windows 365 Frontline reports, such as real-time or historical data reports. This API is available in the following national cloud deployments.
+        /// Get the Windows 365 Frontline reports, such as real-time or historical data reports.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRules {
         public AlertRulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/monitoring/alertRules{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the alertRule objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of the alertRule objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/devicemanagement-alertrule-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRules {
             return await RequestAdapter.SendAsync<AlertRuleCollectionResponse>(requestInfo, AlertRuleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an alertRule object. This API is available in the following national cloud deployments.
+        /// Create an alertRule object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/devicemanagement-alertrule-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRules {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the alertRule objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of the alertRule objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRules {
             return requestInfo;
         }
         /// <summary>
-        /// Create an alertRule object. This API is available in the following national cloud deployments.
+        /// Create an alertRule object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRules {
             return new AlertRulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the alertRule objects and their properties. This API is available in the following national cloud deployments.
+        /// Get a list of the alertRule objects and their properties.
         /// </summary>
         public class AlertRulesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

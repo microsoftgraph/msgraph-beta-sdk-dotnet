@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Group {
         public GroupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/classes/{educationClass%2Did}/group{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the Microsoft 365 group that corresponds to this educationClass. This API is available in the following national cloud deployments.
+        /// Retrieve the Microsoft 365 group that corresponds to this educationClass.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-get-group?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Group {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Group>(requestInfo, Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the Microsoft 365 group that corresponds to this educationClass. This API is available in the following national cloud deployments.
+        /// Retrieve the Microsoft 365 group that corresponds to this educationClass.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Group {
             return new GroupRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the Microsoft 365 group that corresponds to this educationClass. This API is available in the following national cloud deployments.
+        /// Retrieve the Microsoft 365 group that corresponds to this educationClass.
         /// </summary>
         public class GroupRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Co
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a Teams app icon associated with a specific definition of an app. This API is available in the following national cloud deployments.
+        /// Retrieve a Teams app icon associated with a specific definition of an app.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamsappicon-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Co
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a Teams app icon associated with a specific definition of an app. This API is available in the following national cloud deployments.
+        /// Retrieve a Teams app icon associated with a specific definition of an app.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Co
         public class ColorIconRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve a Teams app icon associated with a specific definition of an app. This API is available in the following national cloud deployments.
+        /// Retrieve a Teams app icon associated with a specific definition of an app.
         /// </summary>
         public class ColorIconRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

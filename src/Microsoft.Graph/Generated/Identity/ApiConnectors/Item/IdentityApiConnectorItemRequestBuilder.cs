@@ -16,6 +16,7 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item {
     /// </summary>
     public class IdentityApiConnectorItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to call the uploadClientCertificate method.</summary>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public UploadClientCertificateRequestBuilder UploadClientCertificate { get =>
             new UploadClientCertificateRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -34,11 +35,12 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item {
         public IdentityApiConnectorItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/apiConnectors/{identityApiConnector%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Deletes an identityApiConnector object. This API is available in the following national cloud deployments.
+        /// Deletes an identityApiConnector object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityapiconnector-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -54,11 +56,12 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties of an identityApiConnector object. This API is available in the following national cloud deployments.
+        /// Read the properties of an identityApiConnector object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityapiconnector-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<IdentityApiConnector?> GetAsync(Action<RequestConfiguration<IdentityApiConnectorItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -74,12 +77,13 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item {
             return await RequestAdapter.SendAsync<IdentityApiConnector>(requestInfo, IdentityApiConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an identityApiConnector object. This API is available in the following national cloud deployments.
+        /// Update the properties of an identityApiConnector object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityapiconnector-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<IdentityApiConnector?> PatchAsync(IdentityApiConnector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -96,9 +100,10 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item {
             return await RequestAdapter.SendAsync<IdentityApiConnector>(requestInfo, IdentityApiConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an identityApiConnector object. This API is available in the following national cloud deployments.
+        /// Deletes an identityApiConnector object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
@@ -112,9 +117,10 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties of an identityApiConnector object. This API is available in the following national cloud deployments.
+        /// Read the properties of an identityApiConnector object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IdentityApiConnectorItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
@@ -128,10 +134,11 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an identityApiConnector object. This API is available in the following national cloud deployments.
+        /// Update the properties of an identityApiConnector object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(IdentityApiConnector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
@@ -150,6 +157,7 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item {
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public IdentityApiConnectorItemRequestBuilder WithUrl(string rawUrl) {
             return new IdentityApiConnectorItemRequestBuilder(rawUrl, RequestAdapter);
         }
@@ -160,7 +168,7 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item {
         public class IdentityApiConnectorItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties of an identityApiConnector object. This API is available in the following national cloud deployments.
+        /// Read the properties of an identityApiConnector object.
         /// </summary>
         public class IdentityApiConnectorItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

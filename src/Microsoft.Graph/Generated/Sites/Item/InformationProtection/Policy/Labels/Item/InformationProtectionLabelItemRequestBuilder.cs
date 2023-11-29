@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an informationProtectionLabel object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of an informationProtectionLabel object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/informationprotectionlabel-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.It
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an informationProtectionLabel object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of an informationProtectionLabel object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels on 2021-02-15 and will be removed 2022-08-15")]
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.It
         public class InformationProtectionLabelItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an informationProtectionLabel object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of an informationProtectionLabel object.
         /// </summary>
         public class InformationProtectionLabelItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

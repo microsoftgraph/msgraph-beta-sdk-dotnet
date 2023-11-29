@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs {
         public CloudPCsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/cloudPCs{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// List the cloudPC devices that are attributed to the signed-in user.  This API is available in the following national cloud deployments.
+        /// List the cloudPC devices that are attributed to the signed-in user. 
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-cloudpcs?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudPC>(requestInfo, Microsoft.Graph.Beta.Models.CloudPC.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the cloudPC devices that are attributed to the signed-in user.  This API is available in the following national cloud deployments.
+        /// List the cloudPC devices that are attributed to the signed-in user. 
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs {
             return new CloudPCsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the cloudPC devices that are attributed to the signed-in user.  This API is available in the following national cloud deployments.
+        /// List the cloudPC devices that are attributed to the signed-in user. 
         /// </summary>
         public class CloudPCsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

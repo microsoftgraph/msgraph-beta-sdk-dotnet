@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsers.Item {
         public ActiveUsersMetricItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/activeUsers/{activeUsersMetric%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get activeUsers from reports
+        /// Insights for active users on apps registered in the tenant for a specified period.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsers.Item {
             return await RequestAdapter.SendAsync<ActiveUsersMetric>(requestInfo, ActiveUsersMetric.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get activeUsers from reports
+        /// Insights for active users on apps registered in the tenant for a specified period.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsers.Item {
             return new ActiveUsersMetricItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get activeUsers from reports
+        /// Insights for active users on apps registered in the tenant for a specified period.
         /// </summary>
         public class ActiveUsersMetricItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

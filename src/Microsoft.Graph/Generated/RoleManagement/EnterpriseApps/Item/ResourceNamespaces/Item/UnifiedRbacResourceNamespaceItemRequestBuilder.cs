@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamesp
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an unifiedRbacResourceNamespace object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an unifiedRbacResourceNamespace object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedrbacresourcenamespace-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamesp
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an unifiedRbacResourceNamespace object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an unifiedRbacResourceNamespace object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -163,7 +163,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamesp
         public class UnifiedRbacResourceNamespaceItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of an unifiedRbacResourceNamespace object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an unifiedRbacResourceNamespace object.
         /// </summary>
         public class UnifiedRbacResourceNamespaceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

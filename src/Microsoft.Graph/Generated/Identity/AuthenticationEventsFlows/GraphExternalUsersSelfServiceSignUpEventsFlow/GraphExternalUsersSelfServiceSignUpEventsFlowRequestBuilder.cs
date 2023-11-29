@@ -16,6 +16,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.GraphExternalU
     /// </summary>
     public class GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -38,6 +39,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.GraphExternalU
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ExternalUsersSelfServiceSignUpEventsFlowCollectionResponse?> GetAsync(Action<RequestConfiguration<GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -56,6 +58,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.GraphExternalU
         /// Get the items of type microsoft.graph.externalUsersSelfServiceSignUpEventsFlow in the microsoft.graph.authenticationEventsFlow collection
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
@@ -72,6 +75,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.GraphExternalU
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder WithUrl(string rawUrl) {
             return new GraphExternalUsersSelfServiceSignUpEventsFlowRequestBuilder(rawUrl, RequestAdapter);
         }

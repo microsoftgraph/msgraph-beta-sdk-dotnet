@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignmentsettings-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings {
             return await RequestAdapter.SendAsync<EducationAssignmentSettings>(requestInfo, EducationAssignmentSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an educationAssignmentSettings object. Only teachers can update these settings. This API is available in the following national cloud deployments.
+        /// Update the properties of an educationAssignmentSettings object. Only teachers can update these settings.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignmentsettings-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an educationAssignmentSettings object. Only teachers can update these settings. This API is available in the following national cloud deployments.
+        /// Update the properties of an educationAssignmentSettings object. Only teachers can update these settings.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings {
         public class AssignmentSettingsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation.
         /// </summary>
         public class AssignmentSettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

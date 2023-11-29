@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcsOvervi
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a cloudPcOverview object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a cloudPcOverview object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-cloudpcoverview-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcsOvervi
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a cloudPcOverview object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a cloudPcOverview object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcsOvervi
         public class CloudPcOverviewTenantItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a cloudPcOverview object. This API is available in the following national cloud deployments.
+        /// Read the properties and relationships of a cloudPcOverview object.
         /// </summary>
         public class CloudPcOverviewTenantItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

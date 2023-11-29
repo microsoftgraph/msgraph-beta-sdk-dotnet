@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Names.Item {
         public WorkbookNamedItemItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/names/{workbookNamedItem%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete a workbookNamedItem object. This API is available in the following national cloud deployments.
+        /// Delete a workbookNamedItem object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/nameditem-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Names.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of nameditem object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of nameditem object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/nameditem-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Names.Item {
             return await RequestAdapter.SendAsync<WorkbookNamedItem>(requestInfo, WorkbookNamedItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of nameditem object. This API is available in the following national cloud deployments.
+        /// Update the properties of nameditem object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/nameditem-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Names.Item {
             return await RequestAdapter.SendAsync<WorkbookNamedItem>(requestInfo, WorkbookNamedItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a workbookNamedItem object. This API is available in the following national cloud deployments.
+        /// Delete a workbookNamedItem object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Names.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of nameditem object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of nameditem object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Names.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of nameditem object. This API is available in the following national cloud deployments.
+        /// Update the properties of nameditem object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Names.Item {
         public class WorkbookNamedItemItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of nameditem object. This API is available in the following national cloud deployments.
+        /// Retrieve the properties and relationships of nameditem object.
         /// </summary>
         public class WorkbookNamedItemItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

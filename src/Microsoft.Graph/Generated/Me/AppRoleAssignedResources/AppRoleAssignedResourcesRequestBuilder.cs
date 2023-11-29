@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Me.AppRoleAssignedResources {
         public AppRoleAssignedResourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/appRoleAssignedResources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get the service principals to which the user has an app role assignment either directly or through group membership. This API is available in the following national cloud deployments.
+        /// Get the service principals to which the user has an app role assignment either directly or through group membership.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-approleassignedresources?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Me.AppRoleAssignedResources {
             return await RequestAdapter.SendAsync<ServicePrincipalCollectionResponse>(requestInfo, ServicePrincipalCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the service principals to which the user has an app role assignment either directly or through group membership. This API is available in the following national cloud deployments.
+        /// Get the service principals to which the user has an app role assignment either directly or through group membership.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Me.AppRoleAssignedResources {
             return new AppRoleAssignedResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the service principals to which the user has an app role assignment either directly or through group membership. This API is available in the following national cloud deployments.
+        /// Get the service principals to which the user has an app role assignment either directly or through group membership.
         /// </summary>
         public class AppRoleAssignedResourcesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

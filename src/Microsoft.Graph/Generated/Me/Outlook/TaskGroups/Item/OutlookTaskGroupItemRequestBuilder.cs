@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of the specified Outlook task group. This API is available in the following national cloud deployments.
+        /// Get the properties and relationships of the specified Outlook task group.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlooktaskgroup-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of the specified Outlook task group. This API is available in the following national cloud deployments.
+        /// Get the properties and relationships of the specified Outlook task group.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/ as of 2020-08/Outlook_Tasks on 2021-02-20 and will be removed 2023-02-20")]
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups.Item {
         public class OutlookTaskGroupItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get the properties and relationships of the specified Outlook task group. This API is available in the following national cloud deployments.
+        /// Get the properties and relationships of the specified Outlook task group.
         /// </summary>
         public class OutlookTaskGroupItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>

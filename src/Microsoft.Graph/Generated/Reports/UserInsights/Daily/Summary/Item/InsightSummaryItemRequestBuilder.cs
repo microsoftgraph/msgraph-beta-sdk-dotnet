@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.Summary.Item {
         public InsightSummaryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/daily/summary/{insightSummary%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get summary from reports
+        /// Summary of all usage insights on apps registered in the tenant for a specified period.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.Summary.Item {
             return await RequestAdapter.SendAsync<InsightSummary>(requestInfo, InsightSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get summary from reports
+        /// Summary of all usage insights on apps registered in the tenant for a specified period.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.Summary.Item {
             return new InsightSummaryItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get summary from reports
+        /// Summary of all usage insights on apps registered in the tenant for a specified period.
         /// </summary>
         public class InsightSummaryItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

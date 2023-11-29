@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Invitations {
             return await RequestAdapter.SendAsync<InvitationCollectionResponse>(requestInfo, InvitationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new invitation. The invitation adds an external user to the organization. The following options are available for creating an invitation: This API is available in the following national cloud deployments.
+        /// Create a new invitation. The invitation adds an external user to the organization. The following options are available for creating an invitation:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/invitation-post?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Invitations {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new invitation. The invitation adds an external user to the organization. The following options are available for creating an invitation: This API is available in the following national cloud deployments.
+        /// Create a new invitation. The invitation adds an external user to the organization. The following options are available for creating an invitation:
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

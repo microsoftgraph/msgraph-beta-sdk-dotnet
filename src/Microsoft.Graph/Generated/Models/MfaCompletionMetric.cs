@@ -7,7 +7,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class MfaCompletionMetric : Entity, IParsable {
-        /// <summary>The appId property</summary>
+        /// <summary>The ID of the Microsoft Entra application. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppId {
@@ -21,17 +21,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appId", value); }
         }
 #endif
-        /// <summary>The attemptsCount property</summary>
+        /// <summary>Number of users who attempted to sign up. Supports $filter (eq).</summary>
         public long? AttemptsCount {
             get { return BackingStore?.Get<long?>("attemptsCount"); }
             set { BackingStore?.Set("attemptsCount", value); }
         }
-        /// <summary>The factDate property</summary>
+        /// <summary>The date of the user insight.</summary>
         public Date? FactDate {
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }
         }
-        /// <summary>The mfaMethod property</summary>
+        /// <summary>The MFA authentication method used by the customers. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MfaMethod {
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mfaMethod", value); }
         }
 #endif
-        /// <summary>The os property</summary>
+        /// <summary>The platform of the device that the customers used. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Os {
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("os", value); }
         }
 #endif
-        /// <summary>The successCount property</summary>
+        /// <summary>Number of users who signed up successfully. Supports $filter (eq).</summary>
         public long? SuccessCount {
             get { return BackingStore?.Get<long?>("successCount"); }
             set { BackingStore?.Set("successCount", value); }

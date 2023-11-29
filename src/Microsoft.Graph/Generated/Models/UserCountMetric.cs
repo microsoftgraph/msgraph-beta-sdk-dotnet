@@ -7,12 +7,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class UserCountMetric : Entity, IParsable {
-        /// <summary>The count property</summary>
+        /// <summary>The total number of users in the tenant over time.</summary>
         public long? Count {
             get { return BackingStore?.Get<long?>("count"); }
             set { BackingStore?.Set("count", value); }
         }
-        /// <summary>The factDate property</summary>
+        /// <summary>The date of the insight.</summary>
         public Date? FactDate {
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails {
         public CredentialUserRegistrationDetailsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/credentialUserRegistrationDetails{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of credentialUserRegistrationDetails objects for a given tenant. This API is available in the following national cloud deployments.
+        /// Get a list of credentialUserRegistrationDetails objects for a given tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-list-credentialuserregistrationdetails?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>(requestInfo, Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of credentialUserRegistrationDetails objects for a given tenant. This API is available in the following national cloud deployments.
+        /// Get a list of credentialUserRegistrationDetails objects for a given tenant.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The Reporting credentialUserRegistrationDetails API is deprecated and will stop returning data on June 30, 2024. Please use the new userRegistrationDetails API. as of 2023-06/credentialUserRegistrationDetails on 2023-06-21 and will be removed 2024-06-30")]
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails {
             return new CredentialUserRegistrationDetailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of credentialUserRegistrationDetails objects for a given tenant. This API is available in the following national cloud deployments.
+        /// Get a list of credentialUserRegistrationDetails objects for a given tenant.
         /// </summary>
         public class CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

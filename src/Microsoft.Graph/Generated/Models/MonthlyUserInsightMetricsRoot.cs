@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class MonthlyUserInsightMetricsRoot : Entity, IParsable {
-        /// <summary>The activeUsers property</summary>
+        /// <summary>Insights for active users on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ActiveUsersMetric>? ActiveUsers {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("activeUsers", value); }
         }
 #endif
-        /// <summary>The activeUsersBreakdown property</summary>
+        /// <summary>Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ActiveUsersBreakdownMetric>? ActiveUsersBreakdown {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("activeUsersBreakdown", value); }
         }
 #endif
-        /// <summary>The authentications property</summary>
+        /// <summary>Insights for authentications on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AuthenticationsMetric>? Authentications {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("inactiveUsersByApplication", value); }
         }
 #endif
-        /// <summary>The mfaCompletions property</summary>
+        /// <summary>Insights for MFA usage on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<MfaCompletionMetric>? MfaCompletions {
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mfaCompletions", value); }
         }
 #endif
-        /// <summary>The requests property</summary>
+        /// <summary>Insights for all user requests on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UserRequestsMetric>? Requests {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requests", value); }
         }
 #endif
-        /// <summary>The signUps property</summary>
+        /// <summary>Total sign-ups on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<UserSignUpMetric>? SignUps {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("signUps", value); }
         }
 #endif
-        /// <summary>The summary property</summary>
+        /// <summary>Summary of all usage insights on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<InsightSummary>? Summary {
