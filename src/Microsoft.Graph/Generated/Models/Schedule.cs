@@ -162,7 +162,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("timeClockEnabled"); }
             set { BackingStore?.Set("timeClockEnabled", value); }
         }
-        /// <summary>The timeClockSettings property</summary>
+        /// <summary>The time clock location settings for this schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.TimeClockSettings? TimeClockSettings {
@@ -237,7 +237,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("timeZone", value); }
         }
 #endif
-        /// <summary>The workforceIntegrationIds property</summary>
+        /// <summary>The Ids for the workforce integrations associated with this schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? WorkforceIntegrationIds {

@@ -23,9 +23,9 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public MicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, DateTimeOffset? discoveryPivotDateTime = default, DateTimeOffset? endDateTime = default, DateTimeOffset? startDateTime = default) : base(requestAdapter, "{+baseurl}/networkAccess/reports/microsoft.graph.networkaccess.getCrossTenantSummary(startDateTime={startDateTime},endDateTime={endDateTime},discoveryPivotDateTime={discoveryPivotDateTime})", pathParameters) {
-            if (discoveryPivotDateTime is not null) PathParameters.Add("discoveryPivotDateTime", discoveryPivotDateTime);
-            if (endDateTime is not null) PathParameters.Add("endDateTime", endDateTime);
-            if (startDateTime is not null) PathParameters.Add("startDateTime", startDateTime);
+            if (discoveryPivotDateTime != null) PathParameters.Add("discoveryPivotDateTime", discoveryPivotDateTime);
+            if (endDateTime != null) PathParameters.Add("endDateTime", endDateTime);
+            if (startDateTime != null) PathParameters.Add("startDateTime", startDateTime);
         }
         /// <summary>
         /// Instantiates a new MicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTimeRequestBuilder and sets the default values.

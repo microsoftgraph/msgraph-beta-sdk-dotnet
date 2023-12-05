@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, DateTimeOffset? endDateTime = default, DateTimeOffset? startDateTime = default) : base(requestAdapter, "{+baseurl}/networkAccess/reports/microsoft.graph.networkaccess.webCategoryReport(startDateTime={startDateTime},endDateTime={endDateTime}){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
-            if (endDateTime is not null) PathParameters.Add("endDateTime", endDateTime);
-            if (startDateTime is not null) PathParameters.Add("startDateTime", startDateTime);
+            if (endDateTime != null) PathParameters.Add("endDateTime", endDateTime);
+            if (startDateTime != null) PathParameters.Add("startDateTime", startDateTime);
         }
         /// <summary>
         /// Instantiates a new MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTimeRequestBuilder and sets the default values.
