@@ -23,8 +23,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string aggregatedBy = "", DateTimeOffset? endDateTime = default, DateTimeOffset? startDateTime = default) : base(requestAdapter, "{+baseurl}/networkAccess/reports/microsoft.graph.networkaccess.getDestinationSummaries(startDateTime={startDateTime},endDateTime={endDateTime},aggregatedBy='{aggregatedBy}'){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(aggregatedBy)) PathParameters.Add("aggregatedBy", aggregatedBy);
-            if (endDateTime is not null) PathParameters.Add("endDateTime", endDateTime);
-            if (startDateTime is not null) PathParameters.Add("startDateTime", startDateTime);
+            if (endDateTime != null) PathParameters.Add("endDateTime", endDateTime);
+            if (startDateTime != null) PathParameters.Add("startDateTime", startDateTime);
         }
         /// <summary>
         /// Instantiates a new MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilder and sets the default values.

@@ -15,5 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
         UnknownFutureValue,
         [EnumMember(Value = "reassigned")]
         Reassigned,
+        [EnumMember(Value = "excused")]
+        Excused,
     }
 }

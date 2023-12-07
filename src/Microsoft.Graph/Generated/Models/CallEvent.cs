@@ -11,23 +11,23 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallEventType?>("callEventType"); }
             set { BackingStore?.Set("callEventType", value); }
         }
-        /// <summary>The direction property</summary>
-        public CallDirection? Direction {
-            get { return BackingStore?.Get<CallDirection?>("direction"); }
-            set { BackingStore?.Set("direction", value); }
+        /// <summary>The eventDateTime property</summary>
+        public DateTimeOffset? EventDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
+            set { BackingStore?.Set("eventDateTime", value); }
         }
-        /// <summary>The joinCallUrl property</summary>
+        /// <summary>The participants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JoinCallUrl {
-            get { return BackingStore?.Get<string?>("joinCallUrl"); }
-            set { BackingStore?.Set("joinCallUrl", value); }
+        public List<Participant>? Participants {
+            get { return BackingStore?.Get<List<Participant>?>("participants"); }
+            set { BackingStore?.Set("participants", value); }
         }
 #nullable restore
 #else
-        public string JoinCallUrl {
-            get { return BackingStore?.Get<string>("joinCallUrl"); }
-            set { BackingStore?.Set("joinCallUrl", value); }
+        public List<Participant> Participants {
+            get { return BackingStore?.Get<List<Participant>>("participants"); }
+            set { BackingStore?.Set("participants", value); }
         }
 #endif
         /// <summary>
@@ -44,8 +44,8 @@ namespace Microsoft.Graph.Beta.Models {
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"callEventType", n => { CallEventType = n.GetEnumValue<CallEventType>(); } },
-                {"direction", n => { Direction = n.GetEnumValue<CallDirection>(); } },
-                {"joinCallUrl", n => { JoinCallUrl = n.GetStringValue(); } },
+                {"eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
+                {"participants", n => { Participants = n.GetCollectionOfObjectValues<Participant>(Participant.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,8 +56,8 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<CallEventType>("callEventType", CallEventType);
-            writer.WriteEnumValue<CallDirection>("direction", Direction);
-            writer.WriteStringValue("joinCallUrl", JoinCallUrl);
+            writer.WriteDateTimeOffsetValue("eventDateTime", EventDateTime);
+            writer.WriteCollectionOfObjectValues<Participant>("participants", Participants);
         }
     }
 }

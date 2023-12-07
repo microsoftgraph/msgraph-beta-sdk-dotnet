@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.AllMessages;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Count;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.GetAllMessages;
+using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.GetAllRetainedMessages;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channels.Item;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -29,6 +30,10 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Channe
         /// <summary>Provides operations to call the getAllMessages method.</summary>
         public GetAllMessagesRequestBuilder GetAllMessages { get =>
             new GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getAllRetainedMessages method.</summary>
+        public GetAllRetainedMessagesRequestBuilder GetAllRetainedMessages { get =>
+            new GetAllRetainedMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the channels property of the microsoft.graph.team entity.</summary>
         /// <param name="position">The unique identifier of channel</param>

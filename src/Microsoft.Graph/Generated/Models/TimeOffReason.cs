@@ -6,6 +6,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class TimeOffReason : ChangeTrackedEntity, IParsable {
+        /// <summary>The code of the timeOffReason to represent an external identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Code {
+            get { return BackingStore?.Get<string?>("code"); }
+            set { BackingStore?.Set("code", value); }
+        }
+#nullable restore
+#else
+        public string Code {
+            get { return BackingStore?.Get<string>("code"); }
+            set { BackingStore?.Set("code", value); }
+        }
+#endif
         /// <summary>The name of the timeOffReason. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"code", n => { Code = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"iconType", n => { IconType = n.GetEnumValue<TimeOffReasonIconType>(); } },
                 {"isActive", n => { IsActive = n.GetBoolValue(); } },
@@ -61,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("code", Code);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteEnumValue<TimeOffReasonIconType>("iconType", IconType);
             writer.WriteBoolValue("isActive", IsActive);

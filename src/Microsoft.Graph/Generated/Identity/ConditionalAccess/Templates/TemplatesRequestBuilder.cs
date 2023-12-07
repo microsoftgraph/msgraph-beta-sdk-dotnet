@@ -17,13 +17,11 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates {
     /// </summary>
     public class TemplatesRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.</summary>
         /// <param name="position">The unique identifier of conditionalAccessTemplate</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public ConditionalAccessTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("conditionalAccessTemplate%2Did", position);
@@ -49,7 +47,6 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ConditionalAccessTemplateCollectionResponse?> GetAsync(Action<RequestConfiguration<TemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -68,7 +65,6 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates {
         /// Get a list of the conditionalAccessTemplate objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
@@ -85,7 +81,6 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates {
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public TemplatesRequestBuilder WithUrl(string rawUrl) {
             return new TemplatesRequestBuilder(rawUrl, RequestAdapter);
         }

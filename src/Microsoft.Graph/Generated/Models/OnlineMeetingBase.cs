@@ -6,47 +6,47 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class OnlineMeetingBase : Entity, IParsable {
-        /// <summary>The allowAttendeeToEnableCamera property</summary>
+        /// <summary>Indicates whether attendees can turn on their camera.</summary>
         public bool? AllowAttendeeToEnableCamera {
             get { return BackingStore?.Get<bool?>("allowAttendeeToEnableCamera"); }
             set { BackingStore?.Set("allowAttendeeToEnableCamera", value); }
         }
-        /// <summary>The allowAttendeeToEnableMic property</summary>
+        /// <summary>Indicates whether attendees can turn on their microphone.</summary>
         public bool? AllowAttendeeToEnableMic {
             get { return BackingStore?.Get<bool?>("allowAttendeeToEnableMic"); }
             set { BackingStore?.Set("allowAttendeeToEnableMic", value); }
         }
-        /// <summary>The allowedPresenters property</summary>
+        /// <summary>Specifies who can be a presenter in a meeting.</summary>
         public OnlineMeetingPresenters? AllowedPresenters {
             get { return BackingStore?.Get<OnlineMeetingPresenters?>("allowedPresenters"); }
             set { BackingStore?.Set("allowedPresenters", value); }
         }
-        /// <summary>The allowMeetingChat property</summary>
+        /// <summary>Specifies the mode of meeting chat.</summary>
         public MeetingChatMode? AllowMeetingChat {
             get { return BackingStore?.Get<MeetingChatMode?>("allowMeetingChat"); }
             set { BackingStore?.Set("allowMeetingChat", value); }
         }
-        /// <summary>The allowParticipantsToChangeName property</summary>
+        /// <summary>Specifies if participants are allowed to rename themselves in an instance of the meeting.</summary>
         public bool? AllowParticipantsToChangeName {
             get { return BackingStore?.Get<bool?>("allowParticipantsToChangeName"); }
             set { BackingStore?.Set("allowParticipantsToChangeName", value); }
         }
-        /// <summary>The allowRecording property</summary>
+        /// <summary>Indicates whether recording is enabled for the meeting.</summary>
         public bool? AllowRecording {
             get { return BackingStore?.Get<bool?>("allowRecording"); }
             set { BackingStore?.Set("allowRecording", value); }
         }
-        /// <summary>The allowTeamworkReactions property</summary>
+        /// <summary>Indicates if Teams reactions are enabled for the meeting.</summary>
         public bool? AllowTeamworkReactions {
             get { return BackingStore?.Get<bool?>("allowTeamworkReactions"); }
             set { BackingStore?.Set("allowTeamworkReactions", value); }
         }
-        /// <summary>The allowTranscription property</summary>
+        /// <summary>Indicates whether transcription is enabled for the meeting.</summary>
         public bool? AllowTranscription {
             get { return BackingStore?.Get<bool?>("allowTranscription"); }
             set { BackingStore?.Set("allowTranscription", value); }
         }
-        /// <summary>The anonymizeIdentityForRoles property</summary>
+        /// <summary>Specifies whose identity is anonymized in the meeting. Possible values are: attendee. The attendee value can&apos;t be removed through a PATCH operation once added.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OnlineMeetingRole?>? AnonymizeIdentityForRoles {
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("anonymizeIdentityForRoles", value); }
         }
 #endif
-        /// <summary>The attendanceReports property</summary>
+        /// <summary>The attendance reports of an online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<MeetingAttendanceReport>? AttendanceReports {
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("attendanceReports", value); }
         }
 #endif
-        /// <summary>The audioConferencing property</summary>
+        /// <summary>The phone access (dial-in) information for an online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.AudioConferencing? AudioConferencing {
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("audioConferencing", value); }
         }
 #endif
-        /// <summary>The chatInfo property</summary>
+        /// <summary>The chat information associated with this online meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.ChatInfo? ChatInfo {
@@ -121,12 +121,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isEndToEndEncryptionEnabled"); }
             set { BackingStore?.Set("isEndToEndEncryptionEnabled", value); }
         }
-        /// <summary>The isEntryExitAnnounced property</summary>
+        /// <summary>Indicates whether to announce when callers join or leave.</summary>
         public bool? IsEntryExitAnnounced {
             get { return BackingStore?.Get<bool?>("isEntryExitAnnounced"); }
             set { BackingStore?.Set("isEntryExitAnnounced", value); }
         }
-        /// <summary>The joinInformation property</summary>
+        /// <summary>The join information in the language and locale variant specified in &apos;Accept-Language&apos; request HTTP header. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ItemBody? JoinInformation {
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("joinInformation", value); }
         }
 #endif
-        /// <summary>The joinMeetingIdSettings property</summary>
+        /// <summary>Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode. Once an onlineMeeting is created, the joinMeetingIdSettings can&apos;t be modified. To make any changes to this property, the meeting needs to be canceled and a new one needs to be created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.JoinMeetingIdSettings? JoinMeetingIdSettings {
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("joinMeetingIdSettings", value); }
         }
 #endif
-        /// <summary>The joinWebUrl property</summary>
+        /// <summary>The join URL of the online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? JoinWebUrl {
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("joinWebUrl", value); }
         }
 #endif
-        /// <summary>The lobbyBypassSettings property</summary>
+        /// <summary>Specifies which participants can bypass the meeting lobby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.LobbyBypassSettings? LobbyBypassSettings {
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lobbyBypassSettings", value); }
         }
 #endif
-        /// <summary>The recordAutomatically property</summary>
+        /// <summary>Indicates whether to record the meeting automatically.</summary>
         public bool? RecordAutomatically {
             get { return BackingStore?.Get<bool?>("recordAutomatically"); }
             set { BackingStore?.Set("recordAutomatically", value); }
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<MeetingChatHistoryDefaultMode?>("shareMeetingChatHistoryDefault"); }
             set { BackingStore?.Set("shareMeetingChatHistoryDefault", value); }
         }
-        /// <summary>The subject property</summary>
+        /// <summary>The subject of the online meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject {
@@ -206,7 +206,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("subject", value); }
         }
 #endif
-        /// <summary>The videoTeleconferenceId property</summary>
+        /// <summary>The video teleconferencing ID. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VideoTeleconferenceId {
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("videoTeleconferenceId", value); }
         }
 #endif
-        /// <summary>The watermarkProtection property</summary>
+        /// <summary>Specifies whether the client application should apply a watermark to a content type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public WatermarkProtectionValues? WatermarkProtection {

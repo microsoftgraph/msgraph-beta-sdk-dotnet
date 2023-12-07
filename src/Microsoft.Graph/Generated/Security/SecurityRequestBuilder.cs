@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Graph.Beta.Security.Alerts;
 using Microsoft.Graph.Beta.Security.Alerts_v2;
 using Microsoft.Graph.Beta.Security.AttackSimulation;
+using Microsoft.Graph.Beta.Security.AuditLog;
 using Microsoft.Graph.Beta.Security.Cases;
 using Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles;
 using Microsoft.Graph.Beta.Security.DomainSecurityProfiles;
@@ -49,6 +50,10 @@ namespace Microsoft.Graph.Beta.Security {
         /// <summary>Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.</summary>
         public AttackSimulationRequestBuilder AttackSimulation { get =>
             new AttackSimulationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the auditLog property of the microsoft.graph.security entity.</summary>
+        public AuditLogRequestBuilder AuditLog { get =>
+            new AuditLogRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cases property of the microsoft.graph.security entity.</summary>
         public CasesRequestBuilder Cases { get =>

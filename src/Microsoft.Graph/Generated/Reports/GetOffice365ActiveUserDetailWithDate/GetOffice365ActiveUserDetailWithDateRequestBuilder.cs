@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithDate {
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public GetOffice365ActiveUserDetailWithDateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Date? date = default) : base(requestAdapter, "{+baseurl}/reports/getOffice365ActiveUserDetail(date={date}){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters) {
-            if (date is not null) PathParameters.Add("date", date);
+            if (date != null) PathParameters.Add("date", date);
         }
         /// <summary>
         /// Instantiates a new GetOffice365ActiveUserDetailWithDateRequestBuilder and sets the default values.

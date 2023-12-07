@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Teams.AllMessages;
 using Microsoft.Graph.Beta.Teams.Count;
 using Microsoft.Graph.Beta.Teams.GetAllMessages;
+using Microsoft.Graph.Beta.Teams.GetOpenShifts;
 using Microsoft.Graph.Beta.Teams.Item;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -29,6 +30,10 @@ namespace Microsoft.Graph.Beta.Teams {
         /// <summary>Provides operations to call the getAllMessages method.</summary>
         public GetAllMessagesRequestBuilder GetAllMessages { get =>
             new GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getOpenShifts method.</summary>
+        public GetOpenShiftsRequestBuilder GetOpenShifts { get =>
+            new GetOpenShiftsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of team entities.</summary>
         /// <param name="position">The unique identifier of team</param>

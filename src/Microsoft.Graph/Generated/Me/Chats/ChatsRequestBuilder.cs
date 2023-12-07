@@ -2,6 +2,7 @@
 using Microsoft.Graph.Beta.Me.Chats.AllMessages;
 using Microsoft.Graph.Beta.Me.Chats.Count;
 using Microsoft.Graph.Beta.Me.Chats.GetAllMessages;
+using Microsoft.Graph.Beta.Me.Chats.GetAllRetainedMessages;
 using Microsoft.Graph.Beta.Me.Chats.Item;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -29,6 +30,10 @@ namespace Microsoft.Graph.Beta.Me.Chats {
         /// <summary>Provides operations to call the getAllMessages method.</summary>
         public GetAllMessagesRequestBuilder GetAllMessages { get =>
             new GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getAllRetainedMessages method.</summary>
+        public GetAllRetainedMessagesRequestBuilder GetAllRetainedMessages { get =>
+            new GetAllRetainedMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the chats property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of chat</param>

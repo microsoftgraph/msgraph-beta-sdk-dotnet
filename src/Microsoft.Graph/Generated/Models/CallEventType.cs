@@ -9,5 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
         CallEnded,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "rosterUpdated")]
+        RosterUpdated,
     }
 }

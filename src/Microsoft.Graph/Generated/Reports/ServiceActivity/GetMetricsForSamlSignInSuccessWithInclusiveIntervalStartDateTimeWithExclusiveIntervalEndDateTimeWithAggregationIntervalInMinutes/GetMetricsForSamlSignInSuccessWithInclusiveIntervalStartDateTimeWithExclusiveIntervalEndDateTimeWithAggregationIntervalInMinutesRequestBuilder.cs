@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForSamlSignInSu
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public GetMetricsForSamlSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, DateTimeOffset? exclusiveIntervalEndDateTime = default, DateTimeOffset? inclusiveIntervalStartDateTime = default) : base(requestAdapter, "{+baseurl}/reports/serviceActivity/getMetricsForSamlSignInSuccess(inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime},exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime},aggregationIntervalInMinutes=@aggregationIntervalInMinutes){?aggregationIntervalInMinutes*,%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
-            if (exclusiveIntervalEndDateTime is not null) PathParameters.Add("exclusiveIntervalEndDateTime", exclusiveIntervalEndDateTime);
-            if (inclusiveIntervalStartDateTime is not null) PathParameters.Add("inclusiveIntervalStartDateTime", inclusiveIntervalStartDateTime);
+            if (exclusiveIntervalEndDateTime != null) PathParameters.Add("exclusiveIntervalEndDateTime", exclusiveIntervalEndDateTime);
+            if (inclusiveIntervalStartDateTime != null) PathParameters.Add("inclusiveIntervalStartDateTime", inclusiveIntervalStartDateTime);
         }
         /// <summary>
         /// Instantiates a new GetMetricsForSamlSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder and sets the default values.

@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("platformCredentialMethods", value); }
         }
 #endif
-        /// <summary>The settings and preferences for to the sign-in experience of a user.</summary>
+        /// <summary>The settings and preferences for to the sign-in experience of a user. Use this property to configure the user&apos;s default multifactor authentication (MFA) method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.SignInPreferences? SignInPreferences {
