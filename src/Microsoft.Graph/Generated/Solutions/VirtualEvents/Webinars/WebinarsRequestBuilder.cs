@@ -44,7 +44,8 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars {
         public WebinarsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Read the properties and relationships of a virtualEventWebinar object.
+        /// Get the list of all virtualEventWebinar objects created in a tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventsroot-list-webinars?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars {
             return await RequestAdapter.SendAsync<VirtualEventWebinar>(requestInfo, VirtualEventWebinar.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a virtualEventWebinar object.
+        /// Get the list of all virtualEventWebinar objects created in a tenant.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +145,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars {
             return new WebinarsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a virtualEventWebinar object.
+        /// Get the list of all virtualEventWebinar objects created in a tenant.
         /// </summary>
         public class WebinarsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

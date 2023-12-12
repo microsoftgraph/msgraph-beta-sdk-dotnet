@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.TokenLifetimePolicies {
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.applications.item.tokenLifetimePolicies.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of tokenLifetimePolicy</param>
         public TokenLifetimePolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tokenLifetimePolicy%2Did", position);

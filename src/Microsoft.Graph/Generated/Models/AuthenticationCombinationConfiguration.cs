@@ -29,6 +29,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.fido2CombinationConfiguration" => new Fido2CombinationConfiguration(),
+                "#microsoft.graph.x509CertificateCombinationConfiguration" => new X509CertificateCombinationConfiguration(),
                 _ => new AuthenticationCombinationConfiguration(),
             };
         }

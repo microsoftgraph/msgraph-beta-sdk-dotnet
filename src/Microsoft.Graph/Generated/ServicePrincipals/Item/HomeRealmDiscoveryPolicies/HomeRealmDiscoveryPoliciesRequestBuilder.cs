@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.HomeRealmDiscoveryPolicies
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.servicePrincipals.item.homeRealmDiscoveryPolicies.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of homeRealmDiscoveryPolicy</param>
         public HomeRealmDiscoveryPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("homeRealmDiscoveryPolicy%2Did", position);

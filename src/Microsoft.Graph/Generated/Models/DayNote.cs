@@ -7,12 +7,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DayNote : ChangeTrackedEntity, IParsable {
-        /// <summary>The dayNoteDate property</summary>
+        /// <summary>The date of the day note.</summary>
         public Date? DayNoteDate {
             get { return BackingStore?.Get<Date?>("dayNoteDate"); }
             set { BackingStore?.Set("dayNoteDate", value); }
         }
-        /// <summary>The draftDayNote property</summary>
+        /// <summary>The draft version of this day note that is viewable by managers. Only contentType text is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ItemBody? DraftDayNote {
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("draftDayNote", value); }
         }
 #endif
-        /// <summary>The sharedDayNote property</summary>
+        /// <summary>The shared version of this day note that is viewable by both employees and managers. Only contentType text is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ItemBody? SharedDayNote {

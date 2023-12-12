@@ -25,9 +25,9 @@ namespace Microsoft.Graph.Beta.Reports.ManagedDeviceEnrollmentAbandonmentDetails
         /// <param name="top">Usage: top={top}</param>
         public ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string filter = "", int? skip = default, string skipToken = "", int? top = default) : base(requestAdapter, "{+baseurl}/reports/managedDeviceEnrollmentAbandonmentDetails(skip={skip},top={top},filter='{filter}',skipToken='{skipToken}')", pathParameters) {
             if (!string.IsNullOrWhiteSpace(filter)) PathParameters.Add("filter", filter);
-            if (skip is not null) PathParameters.Add("skip", skip);
+            if (skip != null) PathParameters.Add("skip", skip);
             if (!string.IsNullOrWhiteSpace(skipToken)) PathParameters.Add("skipToken", skipToken);
-            if (top is not null) PathParameters.Add("top", top);
+            if (top != null) PathParameters.Add("top", top);
         }
         /// <summary>
         /// Instantiates a new ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder and sets the default values.

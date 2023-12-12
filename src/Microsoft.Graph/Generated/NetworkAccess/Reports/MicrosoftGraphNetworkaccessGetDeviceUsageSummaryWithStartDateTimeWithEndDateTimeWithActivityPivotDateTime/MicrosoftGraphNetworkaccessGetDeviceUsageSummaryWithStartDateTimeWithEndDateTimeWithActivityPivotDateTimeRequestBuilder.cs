@@ -23,9 +23,9 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, DateTimeOffset? activityPivotDateTime = default, DateTimeOffset? endDateTime = default, DateTimeOffset? startDateTime = default) : base(requestAdapter, "{+baseurl}/networkAccess/reports/microsoft.graph.networkaccess.getDeviceUsageSummary(startDateTime={startDateTime},endDateTime={endDateTime},activityPivotDateTime={activityPivotDateTime})", pathParameters) {
-            if (activityPivotDateTime is not null) PathParameters.Add("activityPivotDateTime", activityPivotDateTime);
-            if (endDateTime is not null) PathParameters.Add("endDateTime", endDateTime);
-            if (startDateTime is not null) PathParameters.Add("startDateTime", startDateTime);
+            if (activityPivotDateTime != null) PathParameters.Add("activityPivotDateTime", activityPivotDateTime);
+            if (endDateTime != null) PathParameters.Add("endDateTime", endDateTime);
+            if (startDateTime != null) PathParameters.Add("startDateTime", startDateTime);
         }
         /// <summary>
         /// Instantiates a new MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTimeRequestBuilder and sets the default values.

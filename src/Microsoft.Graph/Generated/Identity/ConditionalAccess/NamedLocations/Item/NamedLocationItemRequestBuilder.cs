@@ -29,12 +29,11 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item {
         public NamedLocationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/conditionalAccess/namedLocations/{namedLocation%2Did}{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Delete an ipNamedLocation object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0" />
+        /// Delete a countryNamedLocation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/countrynamedlocation-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -50,12 +49,11 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a countryNamedLocation object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/countrynamedlocation-get?view=graph-rest-1.0" />
+        /// Retrieve the properties and relationships of an ipNamedLocation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ipnamedlocation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<NamedLocation?> GetAsync(Action<RequestConfiguration<NamedLocationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -71,13 +69,12 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item {
             return await RequestAdapter.SendAsync<NamedLocation>(requestInfo, NamedLocation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a countryNamedLocation object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/countrynamedlocation-update?view=graph-rest-1.0" />
+        /// Update the properties of an ipNamedLocation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ipnamedlocation-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<NamedLocation?> PatchAsync(NamedLocation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -94,10 +91,9 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item {
             return await RequestAdapter.SendAsync<NamedLocation>(requestInfo, NamedLocation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an ipNamedLocation object.
+        /// Delete a countryNamedLocation object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
@@ -111,10 +107,9 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a countryNamedLocation object.
+        /// Retrieve the properties and relationships of an ipNamedLocation object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<NamedLocationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
@@ -128,11 +123,10 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a countryNamedLocation object.
+        /// Update the properties of an ipNamedLocation object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(NamedLocation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
@@ -151,7 +145,6 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item {
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public NamedLocationItemRequestBuilder WithUrl(string rawUrl) {
             return new NamedLocationItemRequestBuilder(rawUrl, RequestAdapter);
         }
@@ -162,7 +155,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item {
         public class NamedLocationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a countryNamedLocation object.
+        /// Retrieve the properties and relationships of an ipNamedLocation object.
         /// </summary>
         public class NamedLocationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

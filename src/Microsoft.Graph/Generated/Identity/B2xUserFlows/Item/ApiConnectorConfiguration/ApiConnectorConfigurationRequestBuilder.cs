@@ -18,17 +18,14 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.ApiConnectorConfigurat
     /// </summary>
     public class ApiConnectorConfigurationRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the postAttributeCollection property of the microsoft.graph.userFlowApiConnectorConfiguration entity.</summary>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public PostAttributeCollectionRequestBuilder PostAttributeCollection { get =>
             new PostAttributeCollectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the postFederationSignup property of the microsoft.graph.userFlowApiConnectorConfiguration entity.</summary>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public PostFederationSignupRequestBuilder PostFederationSignup { get =>
             new PostFederationSignupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the preTokenIssuance property of the microsoft.graph.userFlowApiConnectorConfiguration entity.</summary>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public PreTokenIssuanceRequestBuilder PreTokenIssuance { get =>
             new PreTokenIssuanceRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -51,7 +48,6 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.ApiConnectorConfigurat
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<UserFlowApiConnectorConfiguration?> GetAsync(Action<RequestConfiguration<ApiConnectorConfigurationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -70,7 +66,6 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.ApiConnectorConfigurat
         /// Configuration for enabling an API connector for use as part of the self-service sign-up user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ApiConnectorConfigurationRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
@@ -87,7 +82,6 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.ApiConnectorConfigurat
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public ApiConnectorConfigurationRequestBuilder WithUrl(string rawUrl) {
             return new ApiConnectorConfigurationRequestBuilder(rawUrl, RequestAdapter);
         }

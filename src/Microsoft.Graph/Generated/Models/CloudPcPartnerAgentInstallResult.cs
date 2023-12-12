@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The name of the partner agent, whether first party or third party. Possible values for third-party partners are Citrix and VMware. Read-Only.</summary>
+        /// <summary>The name of the first-party or third-party partner agent. Possible values for third-party partners are Citrix, VMware and HP. Read-Only.</summary>
         public CloudPcPartnerAgentName? PartnerAgentName {
             get { return BackingStore?.Get<CloudPcPartnerAgentName?>("partnerAgentName"); }
             set { BackingStore?.Set("partnerAgentName", value); }

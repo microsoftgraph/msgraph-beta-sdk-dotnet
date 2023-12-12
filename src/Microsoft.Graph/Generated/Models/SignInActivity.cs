@@ -52,6 +52,25 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastSignInRequestId", value); }
         }
 #endif
+        /// <summary>The datetime of the user&apos;s most recent successful sign in activity.</summary>
+        public DateTimeOffset? LastSuccessfulSignInDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastSuccessfulSignInDateTime"); }
+            set { BackingStore?.Set("lastSuccessfulSignInDateTime", value); }
+        }
+        /// <summary>The requestID of the last successful signIn.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastSuccessfulSignInRequestId {
+            get { return BackingStore?.Get<string?>("lastSuccessfulSignInRequestId"); }
+            set { BackingStore?.Set("lastSuccessfulSignInRequestId", value); }
+        }
+#nullable restore
+#else
+        public string LastSuccessfulSignInRequestId {
+            get { return BackingStore?.Get<string>("lastSuccessfulSignInRequestId"); }
+            set { BackingStore?.Set("lastSuccessfulSignInRequestId", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +109,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"lastNonInteractiveSignInRequestId", n => { LastNonInteractiveSignInRequestId = n.GetStringValue(); } },
                 {"lastSignInDateTime", n => { LastSignInDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastSignInRequestId", n => { LastSignInRequestId = n.GetStringValue(); } },
+                {"lastSuccessfulSignInDateTime", n => { LastSuccessfulSignInDateTime = n.GetDateTimeOffsetValue(); } },
+                {"lastSuccessfulSignInRequestId", n => { LastSuccessfulSignInRequestId = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -103,6 +124,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("lastNonInteractiveSignInRequestId", LastNonInteractiveSignInRequestId);
             writer.WriteDateTimeOffsetValue("lastSignInDateTime", LastSignInDateTime);
             writer.WriteStringValue("lastSignInRequestId", LastSignInRequestId);
+            writer.WriteDateTimeOffsetValue("lastSuccessfulSignInDateTime", LastSuccessfulSignInDateTime);
+            writer.WriteStringValue("lastSuccessfulSignInRequestId", LastSuccessfulSignInRequestId);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

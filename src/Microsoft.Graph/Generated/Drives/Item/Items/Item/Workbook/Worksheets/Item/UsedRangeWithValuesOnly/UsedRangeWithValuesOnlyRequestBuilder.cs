@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.U
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="valuesOnly">Usage: valuesOnly={valuesOnly}</param>
         public UsedRangeWithValuesOnlyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, bool? valuesOnly = default) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}/items/{driveItem%2Did}/workbook/worksheets/{workbookWorksheet%2Did}/usedRange(valuesOnly={valuesOnly})", pathParameters) {
-            if (valuesOnly is not null) PathParameters.Add("valuesOnly", valuesOnly);
+            if (valuesOnly != null) PathParameters.Add("valuesOnly", valuesOnly);
         }
         /// <summary>
         /// Instantiates a new UsedRangeWithValuesOnlyRequestBuilder and sets the default values.

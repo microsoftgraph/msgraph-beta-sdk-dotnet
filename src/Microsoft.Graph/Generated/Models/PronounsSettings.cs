@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PronounsSettings : Entity, IParsable {
-        /// <summary>true to enable pronouns in the organization, false otherwise. The default is false, and pronouns are disabled.</summary>
+        /// <summary>true to enable pronouns in the organization; otherwise, false. The default value is false, and pronouns are disabled.</summary>
         public bool? IsEnabledInOrganization {
             get { return BackingStore?.Get<bool?>("isEnabledInOrganization"); }
             set { BackingStore?.Set("isEnabledInOrganization", value); }
