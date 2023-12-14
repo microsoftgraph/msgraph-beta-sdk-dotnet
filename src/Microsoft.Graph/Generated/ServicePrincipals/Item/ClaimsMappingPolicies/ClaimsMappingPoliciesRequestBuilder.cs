@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsMappingPolicies {
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.servicePrincipals.item.claimsMappingPolicies.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of claimsMappingPolicy</param>
         public ClaimsMappingPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("claimsMappingPolicy%2Did", position);

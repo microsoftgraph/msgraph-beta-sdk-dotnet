@@ -12,39 +12,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
             set { BackingStore?.Set("AdditionalData", value); }
         }
-        /// <summary>The identifiers of the groups that are in the scope of the policy. Required when the appliesTo property is set to selected.</summary>
+        /// <summary>The allowedToJoin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedGroups {
-            get { return BackingStore?.Get<List<string>?>("allowedGroups"); }
-            set { BackingStore?.Set("allowedGroups", value); }
+        public DeviceRegistrationMembership? AllowedToJoin {
+            get { return BackingStore?.Get<DeviceRegistrationMembership?>("allowedToJoin"); }
+            set { BackingStore?.Set("allowedToJoin", value); }
         }
 #nullable restore
 #else
-        public List<string> AllowedGroups {
-            get { return BackingStore?.Get<List<string>>("allowedGroups"); }
-            set { BackingStore?.Set("allowedGroups", value); }
+        public DeviceRegistrationMembership AllowedToJoin {
+            get { return BackingStore?.Get<DeviceRegistrationMembership>("allowedToJoin"); }
+            set { BackingStore?.Set("allowedToJoin", value); }
         }
 #endif
-        /// <summary>The identifiers of users that are in the scope of the policy. Required when the appliesTo property is set to selected.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? AllowedUsers {
-            get { return BackingStore?.Get<List<string>?>("allowedUsers"); }
-            set { BackingStore?.Set("allowedUsers", value); }
-        }
-#nullable restore
-#else
-        public List<string> AllowedUsers {
-            get { return BackingStore?.Get<List<string>>("allowedUsers"); }
-            set { BackingStore?.Set("allowedUsers", value); }
-        }
-#endif
-        /// <summary>Specifies whether to block or allow fine-grained control of the policy scope. The possible values are: 0 (meaning none), 1 (meaning all), 2 (meaning selected), 3 (meaning unknownFutureValue). The default value is 1. When set to 2, at least one user or group identifier must be specified in either allowedUsers or allowedGroups.  Setting this property to 0 or 1 removes all identifiers in both allowedUsers and allowedGroups.</summary>
-        public PolicyScope? AppliesTo {
-            get { return BackingStore?.Get<PolicyScope?>("appliesTo"); }
-            set { BackingStore?.Set("appliesTo", value); }
-        }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies whether this policy scope is configurable by the admin. The default value is false. When an admin has enabled Intune (MEM) to manage devices, this property is set to false and appliesTo defaults to 1 (meaning all).</summary>
@@ -86,9 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"allowedGroups", n => { AllowedGroups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"allowedUsers", n => { AllowedUsers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"appliesTo", n => { AppliesTo = n.GetEnumValue<PolicyScope>(); } },
+                {"allowedToJoin", n => { AllowedToJoin = n.GetObjectValue<DeviceRegistrationMembership>(DeviceRegistrationMembership.CreateFromDiscriminatorValue); } },
                 {"isAdminConfigurable", n => { IsAdminConfigurable = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -99,9 +78,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("allowedGroups", AllowedGroups);
-            writer.WriteCollectionOfPrimitiveValues<string>("allowedUsers", AllowedUsers);
-            writer.WriteEnumValue<PolicyScope>("appliesTo", AppliesTo);
+            writer.WriteObjectValue<DeviceRegistrationMembership>("allowedToJoin", AllowedToJoin);
             writer.WriteBoolValue("isAdminConfigurable", IsAdminConfigurable);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

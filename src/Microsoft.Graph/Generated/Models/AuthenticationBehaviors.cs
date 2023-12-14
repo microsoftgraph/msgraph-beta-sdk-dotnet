@@ -14,6 +14,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The blockAzureADGraphAccess property</summary>
+        public bool? BlockAzureADGraphAccess {
+            get { return BackingStore?.Get<bool?>("blockAzureADGraphAccess"); }
+            set { BackingStore?.Set("blockAzureADGraphAccess", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"blockAzureADGraphAccess", n => { BlockAzureADGraphAccess = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"removeUnverifiedEmailClaim", n => { RemoveUnverifiedEmailClaim = n.GetBoolValue(); } },
                 {"requireClientServicePrincipal", n => { RequireClientServicePrincipal = n.GetBoolValue(); } },
@@ -69,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("blockAzureADGraphAccess", BlockAzureADGraphAccess);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("removeUnverifiedEmailClaim", RemoveUnverifiedEmailClaim);
             writer.WriteBoolValue("requireClientServicePrincipal", RequireClientServicePrincipal);

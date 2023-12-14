@@ -19,23 +19,19 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.UserAttributeAssignmen
     /// </summary>
     public class UserAttributeAssignmentsRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getOrder method.</summary>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public GetOrderRequestBuilder GetOrder { get =>
             new GetOrderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setOrder method.</summary>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public SetOrderRequestBuilder SetOrder { get =>
             new SetOrderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2xIdentityUserFlow entity.</summary>
         /// <param name="position">The unique identifier of identityUserFlowAttributeAssignment</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public IdentityUserFlowAttributeAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("identityUserFlowAttributeAssignment%2Did", position);
@@ -61,7 +57,6 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.UserAttributeAssignmen
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<IdentityUserFlowAttributeAssignmentCollectionResponse?> GetAsync(Action<RequestConfiguration<UserAttributeAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -83,7 +78,6 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.UserAttributeAssignmen
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<IdentityUserFlowAttributeAssignment?> PostAsync(IdentityUserFlowAttributeAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -103,7 +97,6 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.UserAttributeAssignmen
         /// Get the identityUserFlowAttributeAssignment resources from the userAttributeAssignments navigation property in a b2xIdentityUserFlow.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserAttributeAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
@@ -121,7 +114,6 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.UserAttributeAssignmen
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(IdentityUserFlowAttributeAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
@@ -140,7 +132,6 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.UserAttributeAssignmen
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public UserAttributeAssignmentsRequestBuilder WithUrl(string rawUrl) {
             return new UserAttributeAssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }

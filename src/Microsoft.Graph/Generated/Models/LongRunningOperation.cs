@@ -7,12 +7,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class LongRunningOperation : Entity, IParsable {
-        /// <summary>The start time of the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The time of the last action in the operation. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>The time of the last action in the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastActionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
@@ -59,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.attackSimulationOperation" => new AttackSimulationOperation(),
+                "#microsoft.graph.goalsExportJob" => new GoalsExportJob(),
                 "#microsoft.graph.industryData.fileValidateOperation" => new FileValidateOperation(),
                 "#microsoft.graph.industryData.validateOperation" => new ValidateOperation(),
                 "#microsoft.graph.richLongRunningOperation" => new RichLongRunningOperation(),

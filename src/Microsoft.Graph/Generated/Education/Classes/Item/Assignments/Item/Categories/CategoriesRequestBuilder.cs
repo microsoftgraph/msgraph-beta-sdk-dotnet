@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Categorie
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.education.classes.item.assignments.item.categories.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of educationCategory</param>
         public EducationCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("educationCategory%2Did", position);

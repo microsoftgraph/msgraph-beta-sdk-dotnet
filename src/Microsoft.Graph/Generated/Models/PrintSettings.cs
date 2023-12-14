@@ -33,6 +33,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The printerDiscoverySettings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.PrinterDiscoverySettings? PrinterDiscoverySettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrinterDiscoverySettings?>("printerDiscoverySettings"); }
+            set { BackingStore?.Set("printerDiscoverySettings", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.PrinterDiscoverySettings PrinterDiscoverySettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrinterDiscoverySettings>("printerDiscoverySettings"); }
+            set { BackingStore?.Set("printerDiscoverySettings", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new printSettings and sets the default values.
         /// </summary>
@@ -55,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"documentConversionEnabled", n => { DocumentConversionEnabled = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"printerDiscoverySettings", n => { PrinterDiscoverySettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrinterDiscoverySettings>(Microsoft.Graph.Beta.Models.PrinterDiscoverySettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -65,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("documentConversionEnabled", DocumentConversionEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrinterDiscoverySettings>("printerDiscoverySettings", PrinterDiscoverySettings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -29,33 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Refers to the conditional access policy conditions that aren&apos;t satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk, authenticationFlows, insiderRisk . You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk, authenticationFlows, insiderRisk. conditionalAccessConditions is a multi-valued enumeration and the property can contain multiple values in a comma-separated list.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<ConditionalAccessConditions?>? ConditionsNotSatisfied {
-            get { return BackingStore?.Get<List<ConditionalAccessConditions?>?>("conditionsNotSatisfied"); }
+        public ConditionalAccessConditions? ConditionsNotSatisfied {
+            get { return BackingStore?.Get<ConditionalAccessConditions?>("conditionsNotSatisfied"); }
             set { BackingStore?.Set("conditionsNotSatisfied", value); }
         }
-#nullable restore
-#else
-        public List<ConditionalAccessConditions?> ConditionsNotSatisfied {
-            get { return BackingStore?.Get<List<ConditionalAccessConditions?>>("conditionsNotSatisfied"); }
-            set { BackingStore?.Set("conditionsNotSatisfied", value); }
-        }
-#endif
         /// <summary>Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client,ipAddressSeenByAzureAD,ipAddressSeenByResourceProvider,unknownFutureValue,servicePrincipals,servicePrincipalRisk, authenticationFlows, insiderRisk. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals,servicePrincipalRisk, authenticationFlows, insiderRisk. conditionalAccessConditions is a multi-valued enumeration and the property can contain multiple values in a comma-separated list.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<ConditionalAccessConditions?>? ConditionsSatisfied {
-            get { return BackingStore?.Get<List<ConditionalAccessConditions?>?>("conditionsSatisfied"); }
+        public ConditionalAccessConditions? ConditionsSatisfied {
+            get { return BackingStore?.Get<ConditionalAccessConditions?>("conditionsSatisfied"); }
             set { BackingStore?.Set("conditionsSatisfied", value); }
         }
-#nullable restore
-#else
-        public List<ConditionalAccessConditions?> ConditionsSatisfied {
-            get { return BackingStore?.Get<List<ConditionalAccessConditions?>>("conditionsSatisfied"); }
-            set { BackingStore?.Set("conditionsSatisfied", value); }
-        }
-#endif
         /// <summary>Name of the conditional access policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -194,8 +176,8 @@ namespace Microsoft.Graph.Beta.Models {
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"authenticationStrength", n => { AuthenticationStrength = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationStrength>(Microsoft.Graph.Beta.Models.AuthenticationStrength.CreateFromDiscriminatorValue); } },
-                {"conditionsNotSatisfied", n => { ConditionsNotSatisfied = n.GetCollectionOfEnumValues<ConditionalAccessConditions>()?.ToList(); } },
-                {"conditionsSatisfied", n => { ConditionsSatisfied = n.GetCollectionOfEnumValues<ConditionalAccessConditions>()?.ToList(); } },
+                {"conditionsNotSatisfied", n => { ConditionsNotSatisfied = n.GetEnumValue<ConditionalAccessConditions>(); } },
+                {"conditionsSatisfied", n => { ConditionsSatisfied = n.GetEnumValue<ConditionalAccessConditions>(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"enforcedGrantControls", n => { EnforcedGrantControls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"enforcedSessionControls", n => { EnforcedSessionControls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -214,8 +196,8 @@ namespace Microsoft.Graph.Beta.Models {
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthenticationStrength>("authenticationStrength", AuthenticationStrength);
-            writer.WriteCollectionOfEnumValues<ConditionalAccessConditions>("conditionsNotSatisfied", ConditionsNotSatisfied);
-            writer.WriteCollectionOfEnumValues<ConditionalAccessConditions>("conditionsSatisfied", ConditionsSatisfied);
+            writer.WriteEnumValue<ConditionalAccessConditions>("conditionsNotSatisfied", ConditionsNotSatisfied);
+            writer.WriteEnumValue<ConditionalAccessConditions>("conditionsSatisfied", ConditionsSatisfied);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfPrimitiveValues<string>("enforcedGrantControls", EnforcedGrantControls);
             writer.WriteCollectionOfPrimitiveValues<string>("enforcedSessionControls", EnforcedSessionControls);

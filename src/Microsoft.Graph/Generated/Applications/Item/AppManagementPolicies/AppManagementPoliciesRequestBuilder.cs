@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.AppManagementPolicies {
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.applications.item.appManagementPolicies.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of appManagementPolicy</param>
         public AppManagementPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appManagementPolicy%2Did", position);

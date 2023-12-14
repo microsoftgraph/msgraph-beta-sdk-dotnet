@@ -6,7 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Schedule : Entity, IParsable {
-        /// <summary>The dayNotes property</summary>
+        /// <summary>Indicates whether copied shifts should include the activities.</summary>
+        public bool? ActivitiesIncludedWhenCopyingShiftsEnabled {
+            get { return BackingStore?.Get<bool?>("activitiesIncludedWhenCopyingShiftsEnabled"); }
+            set { BackingStore?.Set("activitiesIncludedWhenCopyingShiftsEnabled", value); }
+        }
+        /// <summary>The day notes in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DayNote>? DayNotes {
@@ -124,6 +129,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("shifts", value); }
         }
 #endif
+        /// <summary>Indicates the start day of the week.</summary>
+        public DayOfWeekObject? StartDayOfWeek {
+            get { return BackingStore?.Get<DayOfWeekObject?>("startDayOfWeek"); }
+            set { BackingStore?.Set("startDayOfWeek", value); }
+        }
         /// <summary>The swap requests for shifts in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -143,7 +153,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("swapShiftsRequestsEnabled"); }
             set { BackingStore?.Set("swapShiftsRequestsEnabled", value); }
         }
-        /// <summary>The timeCards property</summary>
+        /// <summary>The time cards in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<TimeCard>? TimeCards {
@@ -162,7 +172,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("timeClockEnabled"); }
             set { BackingStore?.Set("timeClockEnabled", value); }
         }
-        /// <summary>The timeClockSettings property</summary>
+        /// <summary>The time clock location settings for this schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.TimeClockSettings? TimeClockSettings {
@@ -237,7 +247,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("timeZone", value); }
         }
 #endif
-        /// <summary>The workforceIntegrationIds property</summary>
+        /// <summary>The Ids for the workforce integrations associated with this schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? WorkforceIntegrationIds {
@@ -264,6 +274,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activitiesIncludedWhenCopyingShiftsEnabled", n => { ActivitiesIncludedWhenCopyingShiftsEnabled = n.GetBoolValue(); } },
                 {"dayNotes", n => { DayNotes = n.GetCollectionOfObjectValues<DayNote>(DayNote.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"enabled", n => { Enabled = n.GetBoolValue(); } },
                 {"offerShiftRequests", n => { OfferShiftRequests = n.GetCollectionOfObjectValues<OfferShiftRequest>(OfferShiftRequest.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -275,6 +286,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"provisionStatusCode", n => { ProvisionStatusCode = n.GetStringValue(); } },
                 {"schedulingGroups", n => { SchedulingGroups = n.GetCollectionOfObjectValues<SchedulingGroup>(SchedulingGroup.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"shifts", n => { Shifts = n.GetCollectionOfObjectValues<Shift>(Shift.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"startDayOfWeek", n => { StartDayOfWeek = n.GetEnumValue<DayOfWeekObject>(); } },
                 {"swapShiftsChangeRequests", n => { SwapShiftsChangeRequests = n.GetCollectionOfObjectValues<SwapShiftsChangeRequest>(SwapShiftsChangeRequest.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"swapShiftsRequestsEnabled", n => { SwapShiftsRequestsEnabled = n.GetBoolValue(); } },
                 {"timeCards", n => { TimeCards = n.GetCollectionOfObjectValues<TimeCard>(TimeCard.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -295,6 +307,7 @@ namespace Microsoft.Graph.Beta.Models {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteBoolValue("activitiesIncludedWhenCopyingShiftsEnabled", ActivitiesIncludedWhenCopyingShiftsEnabled);
             writer.WriteCollectionOfObjectValues<DayNote>("dayNotes", DayNotes);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteCollectionOfObjectValues<OfferShiftRequest>("offerShiftRequests", OfferShiftRequests);
@@ -304,6 +317,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("openShiftsEnabled", OpenShiftsEnabled);
             writer.WriteCollectionOfObjectValues<SchedulingGroup>("schedulingGroups", SchedulingGroups);
             writer.WriteCollectionOfObjectValues<Shift>("shifts", Shifts);
+            writer.WriteEnumValue<DayOfWeekObject>("startDayOfWeek", StartDayOfWeek);
             writer.WriteCollectionOfObjectValues<SwapShiftsChangeRequest>("swapShiftsChangeRequests", SwapShiftsChangeRequests);
             writer.WriteBoolValue("swapShiftsRequestsEnabled", SwapShiftsRequestsEnabled);
             writer.WriteCollectionOfObjectValues<TimeCard>("timeCards", TimeCards);

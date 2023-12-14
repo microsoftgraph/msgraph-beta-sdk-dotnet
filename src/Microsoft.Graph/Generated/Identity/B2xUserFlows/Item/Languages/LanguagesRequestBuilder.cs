@@ -17,13 +17,11 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.Languages {
     /// </summary>
     public class LanguagesRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the languages property of the microsoft.graph.b2xIdentityUserFlow entity.</summary>
         /// <param name="position">The unique identifier of userFlowLanguageConfiguration</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public UserFlowLanguageConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userFlowLanguageConfiguration%2Did", position);
@@ -49,7 +47,6 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.Languages {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<UserFlowLanguageConfigurationCollectionResponse?> GetAsync(Action<RequestConfiguration<LanguagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -70,7 +67,6 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.Languages {
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<UserFlowLanguageConfiguration?> PostAsync(UserFlowLanguageConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -90,7 +86,6 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.Languages {
         /// Retrieve a list of languages supported for customization in a B2X user flow.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LanguagesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
@@ -108,7 +103,6 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.Languages {
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(UserFlowLanguageConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
@@ -127,7 +121,6 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.Languages {
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete(" as of 2023-08/PrivatePreview:changeManagement on 2023-08-23 and will be removed 2023-08-23")]
         public LanguagesRequestBuilder WithUrl(string rawUrl) {
             return new LanguagesRequestBuilder(rawUrl, RequestAdapter);
         }
