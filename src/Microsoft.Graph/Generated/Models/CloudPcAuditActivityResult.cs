@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
         Failure,
         [EnumMember(Value = "timeout")]
         Timeout,
-        [EnumMember(Value = "other")]
-        Other,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

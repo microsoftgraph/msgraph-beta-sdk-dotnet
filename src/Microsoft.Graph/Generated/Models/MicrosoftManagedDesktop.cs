@@ -14,6 +14,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The managedType property</summary>
+        public MicrosoftManagedDesktopType? ManagedType {
+            get { return BackingStore?.Get<MicrosoftManagedDesktopType?>("managedType"); }
+            set { BackingStore?.Set("managedType", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"managedType", n => { ManagedType = n.GetEnumValue<MicrosoftManagedDesktopType>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"profile", n => { Profile = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetEnumValue<MicrosoftManagedDesktopType>(); } },
@@ -78,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<MicrosoftManagedDesktopType>("managedType", ManagedType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("profile", Profile);
             writer.WriteEnumValue<MicrosoftManagedDesktopType>("type", Type);

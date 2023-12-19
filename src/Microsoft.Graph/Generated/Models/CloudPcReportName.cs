@@ -29,5 +29,9 @@ namespace Microsoft.Graph.Beta.Models {
         RawRemoteConnectionReports,
         [EnumMember(Value = "cloudPcUsageCategoryReports")]
         CloudPcUsageCategoryReports,
+        [EnumMember(Value = "performanceTrendReport")]
+        PerformanceTrendReport,
+        [EnumMember(Value = "inaccessibleCloudPcTrendReport")]
+        InaccessibleCloudPcTrendReport,
     }
 }

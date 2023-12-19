@@ -90,6 +90,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dueDate", value); }
         }
 #endif
+        /// <summary>The forms property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public PlannerFieldRules? Forms {
+            get { return BackingStore?.Get<PlannerFieldRules?>("forms"); }
+            set { BackingStore?.Set("forms", value); }
+        }
+#nullable restore
+#else
+        public PlannerFieldRules Forms {
+            get { return BackingStore?.Get<PlannerFieldRules>("forms"); }
+            set { BackingStore?.Set("forms", value); }
+        }
+#endif
         /// <summary>Rules and restrictions for moving the task between buckets or plans. Accepted values are allow, moveBetweenPlans, moveBetweenBuckets, and block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -241,6 +255,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"completionRequirements", n => { CompletionRequirements = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"delete", n => { Delete = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"dueDate", n => { DueDate = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"forms", n => { Forms = n.GetObjectValue<PlannerFieldRules>(PlannerFieldRules.CreateFromDiscriminatorValue); } },
                 {"move", n => { Move = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"notes", n => { Notes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"order", n => { Order = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -265,6 +280,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("completionRequirements", CompletionRequirements);
             writer.WriteCollectionOfPrimitiveValues<string>("delete", Delete);
             writer.WriteCollectionOfPrimitiveValues<string>("dueDate", DueDate);
+            writer.WriteObjectValue<PlannerFieldRules>("forms", Forms);
             writer.WriteCollectionOfPrimitiveValues<string>("move", Move);
             writer.WriteCollectionOfPrimitiveValues<string>("notes", Notes);
             writer.WriteCollectionOfPrimitiveValues<string>("order", Order);

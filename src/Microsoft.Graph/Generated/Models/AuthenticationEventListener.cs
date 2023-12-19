@@ -48,6 +48,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.onAttributeCollectionListener" => new OnAttributeCollectionListener(),
+                "#microsoft.graph.onAttributeCollectionStartListener" => new OnAttributeCollectionStartListener(),
+                "#microsoft.graph.onAttributeCollectionSubmitListener" => new OnAttributeCollectionSubmitListener(),
                 "#microsoft.graph.onAuthenticationMethodLoadStartListener" => new OnAuthenticationMethodLoadStartListener(),
                 "#microsoft.graph.onInteractiveAuthFlowStartListener" => new OnInteractiveAuthFlowStartListener(),
                 "#microsoft.graph.onTokenIssuanceStartListener" => new OnTokenIssuanceStartListener(),

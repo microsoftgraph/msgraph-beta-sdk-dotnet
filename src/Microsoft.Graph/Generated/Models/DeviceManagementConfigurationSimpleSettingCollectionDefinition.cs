@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSimpleSettingCollectionDefinition : DeviceManagementConfigurationSimpleSettingDefinition, IParsable {
-        /// <summary>Maximum number of simple settings in the collection</summary>
+        /// <summary>Maximum number of simple settings in the collection. Valid values 1 to 100</summary>
         public int? MaximumCount {
             get { return BackingStore?.Get<int?>("maximumCount"); }
             set { BackingStore?.Set("maximumCount", value); }
         }
-        /// <summary>Minimum number of simple settings in the collection</summary>
+        /// <summary>Minimum number of simple settings in the collection. Valid values 1 to 100</summary>
         public int? MinimumCount {
             get { return BackingStore?.Get<int?>("minimumCount"); }
             set { BackingStore?.Set("minimumCount", value); }

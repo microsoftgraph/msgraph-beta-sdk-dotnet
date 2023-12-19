@@ -20,6 +20,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onAttributeCollection", value); }
         }
 #endif
+        /// <summary>The onAttributeCollectionStart property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public OnAttributeCollectionStartHandler? OnAttributeCollectionStart {
+            get { return BackingStore?.Get<OnAttributeCollectionStartHandler?>("onAttributeCollectionStart"); }
+            set { BackingStore?.Set("onAttributeCollectionStart", value); }
+        }
+#nullable restore
+#else
+        public OnAttributeCollectionStartHandler OnAttributeCollectionStart {
+            get { return BackingStore?.Get<OnAttributeCollectionStartHandler>("onAttributeCollectionStart"); }
+            set { BackingStore?.Set("onAttributeCollectionStart", value); }
+        }
+#endif
+        /// <summary>The onAttributeCollectionSubmit property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public OnAttributeCollectionSubmitHandler? OnAttributeCollectionSubmit {
+            get { return BackingStore?.Get<OnAttributeCollectionSubmitHandler?>("onAttributeCollectionSubmit"); }
+            set { BackingStore?.Set("onAttributeCollectionSubmit", value); }
+        }
+#nullable restore
+#else
+        public OnAttributeCollectionSubmitHandler OnAttributeCollectionSubmit {
+            get { return BackingStore?.Get<OnAttributeCollectionSubmitHandler>("onAttributeCollectionSubmit"); }
+            set { BackingStore?.Set("onAttributeCollectionSubmit", value); }
+        }
+#endif
         /// <summary>Required. The configuration for what to invoke when authentication methods are ready to be presented to the user. Must have at least one identity provider linked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,6 +110,8 @@ namespace Microsoft.Graph.Beta.Models {
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"onAttributeCollection", n => { OnAttributeCollection = n.GetObjectValue<OnAttributeCollectionHandler>(OnAttributeCollectionHandler.CreateFromDiscriminatorValue); } },
+                {"onAttributeCollectionStart", n => { OnAttributeCollectionStart = n.GetObjectValue<OnAttributeCollectionStartHandler>(OnAttributeCollectionStartHandler.CreateFromDiscriminatorValue); } },
+                {"onAttributeCollectionSubmit", n => { OnAttributeCollectionSubmit = n.GetObjectValue<OnAttributeCollectionSubmitHandler>(OnAttributeCollectionSubmitHandler.CreateFromDiscriminatorValue); } },
                 {"onAuthenticationMethodLoadStart", n => { OnAuthenticationMethodLoadStart = n.GetObjectValue<OnAuthenticationMethodLoadStartHandler>(OnAuthenticationMethodLoadStartHandler.CreateFromDiscriminatorValue); } },
                 {"onInteractiveAuthFlowStart", n => { OnInteractiveAuthFlowStart = n.GetObjectValue<OnInteractiveAuthFlowStartHandler>(OnInteractiveAuthFlowStartHandler.CreateFromDiscriminatorValue); } },
                 {"onUserCreateStart", n => { OnUserCreateStart = n.GetObjectValue<OnUserCreateStartHandler>(OnUserCreateStartHandler.CreateFromDiscriminatorValue); } },
@@ -95,6 +125,8 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<OnAttributeCollectionHandler>("onAttributeCollection", OnAttributeCollection);
+            writer.WriteObjectValue<OnAttributeCollectionStartHandler>("onAttributeCollectionStart", OnAttributeCollectionStart);
+            writer.WriteObjectValue<OnAttributeCollectionSubmitHandler>("onAttributeCollectionSubmit", OnAttributeCollectionSubmit);
             writer.WriteObjectValue<OnAuthenticationMethodLoadStartHandler>("onAuthenticationMethodLoadStart", OnAuthenticationMethodLoadStart);
             writer.WriteObjectValue<OnInteractiveAuthFlowStartHandler>("onInteractiveAuthFlowStart", OnInteractiveAuthFlowStart);
             writer.WriteObjectValue<OnUserCreateStartHandler>("onUserCreateStart", OnUserCreateStart);

@@ -21,5 +21,9 @@ namespace Microsoft.Graph.Beta.Models {
         CreateChannel,
         [EnumMember(Value = "createChat")]
         CreateChat,
+        [EnumMember(Value = "archiveChannel")]
+        ArchiveChannel,
+        [EnumMember(Value = "unarchiveChannel")]
+        UnarchiveChannel,
     }
 }

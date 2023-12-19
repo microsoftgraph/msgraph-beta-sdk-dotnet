@@ -48,6 +48,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
+        /// <summary>The forms property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public PlannerFormsDictionary? Forms {
+            get { return BackingStore?.Get<PlannerFormsDictionary?>("forms"); }
+            set { BackingStore?.Set("forms", value); }
+        }
+#nullable restore
+#else
+        public PlannerFormsDictionary Forms {
+            get { return BackingStore?.Get<PlannerFormsDictionary>("forms"); }
+            set { BackingStore?.Set("forms", value); }
+        }
+#endif
         /// <summary>Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the &apos;description&apos; field. If this field hasn&apos;t previously been set but &apos;description&apos; has been, the existing description is synchronized to &apos;notes&apos; with minimal whitespace-preserving HTML markup. Setting both &apos;description&apos; and &apos;notes&apos; is an error and will result in an exception.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,6 +111,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"checklist", n => { Checklist = n.GetObjectValue<PlannerChecklistItems>(PlannerChecklistItems.CreateFromDiscriminatorValue); } },
                 {"completionRequirements", n => { CompletionRequirements = n.GetObjectValue<PlannerTaskCompletionRequirementDetails>(PlannerTaskCompletionRequirementDetails.CreateFromDiscriminatorValue); } },
                 {"description", n => { Description = n.GetStringValue(); } },
+                {"forms", n => { Forms = n.GetObjectValue<PlannerFormsDictionary>(PlannerFormsDictionary.CreateFromDiscriminatorValue); } },
                 {"notes", n => { Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
                 {"previewType", n => { PreviewType = n.GetEnumValue<PlannerPreviewType>(); } },
                 {"references", n => { References = n.GetObjectValue<PlannerExternalReferences>(PlannerExternalReferences.CreateFromDiscriminatorValue); } },
@@ -112,6 +127,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<PlannerChecklistItems>("checklist", Checklist);
             writer.WriteObjectValue<PlannerTaskCompletionRequirementDetails>("completionRequirements", CompletionRequirements);
             writer.WriteStringValue("description", Description);
+            writer.WriteObjectValue<PlannerFormsDictionary>("forms", Forms);
             writer.WriteObjectValue<ItemBody>("notes", Notes);
             writer.WriteEnumValue<PlannerPreviewType>("previewType", PreviewType);
             writer.WriteObjectValue<PlannerExternalReferences>("references", References);
