@@ -37,6 +37,25 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("anonymousJoinWebUrl", value); }
         }
 #endif
+        /// <summary>Custom label that can be stamped on this appointment by users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AppointmentLabel {
+            get { return BackingStore?.Get<string?>("appointmentLabel"); }
+            set { BackingStore?.Set("appointmentLabel", value); }
+        }
+#nullable restore
+#else
+        public string AppointmentLabel {
+            get { return BackingStore?.Get<string>("appointmentLabel"); }
+            set { BackingStore?.Set("appointmentLabel", value); }
+        }
+#endif
+        /// <summary>The createdDateTime property</summary>
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
+        }
         /// <summary>The SMTP address of the bookingCustomer who is booking the appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -244,6 +263,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("joinWebUrl", value); }
         }
 #endif
+        /// <summary>The lastUpdatedDateTime property</summary>
+        public DateTimeOffset? LastUpdatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
+            set { BackingStore?.Set("lastUpdatedDateTime", value); }
+        }
         /// <summary>The maximum number of customers allowed in an appointment. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment. To create a customer, use the Create bookingCustomer operation.</summary>
         public int? MaximumAttendeesCount {
             get { return BackingStore?.Get<int?>("maximumAttendeesCount"); }
@@ -420,6 +444,8 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },
                 {"anonymousJoinWebUrl", n => { AnonymousJoinWebUrl = n.GetStringValue(); } },
+                {"appointmentLabel", n => { AppointmentLabel = n.GetStringValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"customerEmailAddress", n => { CustomerEmailAddress = n.GetStringValue(); } },
                 {"customerId", n => { CustomerId = n.GetStringValue(); } },
                 {"customerLocation", n => { CustomerLocation = n.GetObjectValue<Location>(Location.CreateFromDiscriminatorValue); } },
@@ -438,6 +464,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"invoiceUrl", n => { InvoiceUrl = n.GetStringValue(); } },
                 {"isLocationOnline", n => { IsLocationOnline = n.GetBoolValue(); } },
                 {"joinWebUrl", n => { JoinWebUrl = n.GetStringValue(); } },
+                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"maximumAttendeesCount", n => { MaximumAttendeesCount = n.GetIntValue(); } },
                 {"onlineMeetingUrl", n => { OnlineMeetingUrl = n.GetStringValue(); } },
                 {"optOutOfCustomerEmail", n => { OptOutOfCustomerEmail = n.GetBoolValue(); } },
@@ -465,6 +492,8 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("additionalInformation", AdditionalInformation);
             writer.WriteStringValue("anonymousJoinWebUrl", AnonymousJoinWebUrl);
+            writer.WriteStringValue("appointmentLabel", AppointmentLabel);
+            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("customerEmailAddress", CustomerEmailAddress);
             writer.WriteStringValue("customerId", CustomerId);
             writer.WriteObjectValue<Location>("customerLocation", CustomerLocation);
@@ -481,6 +510,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("invoiceUrl", InvoiceUrl);
             writer.WriteBoolValue("isLocationOnline", IsLocationOnline);
             writer.WriteStringValue("joinWebUrl", JoinWebUrl);
+            writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteIntValue("maximumAttendeesCount", MaximumAttendeesCount);
             writer.WriteStringValue("onlineMeetingUrl", OnlineMeetingUrl);
             writer.WriteBoolValue("optOutOfCustomerEmail", OptOutOfCustomerEmail);

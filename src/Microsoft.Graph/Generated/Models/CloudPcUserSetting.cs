@@ -25,6 +25,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>The crossRegionDisasterRecoverySetting property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public CloudPcCrossRegionDisasterRecoverySetting? CrossRegionDisasterRecoverySetting {
+            get { return BackingStore?.Get<CloudPcCrossRegionDisasterRecoverySetting?>("crossRegionDisasterRecoverySetting"); }
+            set { BackingStore?.Set("crossRegionDisasterRecoverySetting", value); }
+        }
+#nullable restore
+#else
+        public CloudPcCrossRegionDisasterRecoverySetting CrossRegionDisasterRecoverySetting {
+            get { return BackingStore?.Get<CloudPcCrossRegionDisasterRecoverySetting>("crossRegionDisasterRecoverySetting"); }
+            set { BackingStore?.Set("crossRegionDisasterRecoverySetting", value); }
+        }
+#endif
         /// <summary>The setting name displayed in the user interface.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<CloudPcUserSettingAssignment>(CloudPcUserSettingAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"crossRegionDisasterRecoverySetting", n => { CrossRegionDisasterRecoverySetting = n.GetObjectValue<CloudPcCrossRegionDisasterRecoverySetting>(CloudPcCrossRegionDisasterRecoverySetting.CreateFromDiscriminatorValue); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"localAdminEnabled", n => { LocalAdminEnabled = n.GetBoolValue(); } },
@@ -105,6 +120,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<CloudPcUserSettingAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteObjectValue<CloudPcCrossRegionDisasterRecoverySetting>("crossRegionDisasterRecoverySetting", CrossRegionDisasterRecoverySetting);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteBoolValue("localAdminEnabled", LocalAdminEnabled);

@@ -218,6 +218,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("scopeIds", value); }
         }
 #endif
+        /// <summary>The windowsSetting property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public CloudPcWindowsSetting? WindowsSetting {
+            get { return BackingStore?.Get<CloudPcWindowsSetting?>("windowsSetting"); }
+            set { BackingStore?.Set("windowsSetting", value); }
+        }
+#nullable restore
+#else
+        public CloudPcWindowsSetting WindowsSetting {
+            get { return BackingStore?.Get<CloudPcWindowsSetting>("windowsSetting"); }
+            set { BackingStore?.Set("windowsSetting", value); }
+        }
+#endif
         /// <summary>Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -264,6 +278,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"onPremisesConnectionId", n => { OnPremisesConnectionId = n.GetStringValue(); } },
                 {"provisioningType", n => { ProvisioningType = n.GetEnumValue<CloudPcProvisioningType>(); } },
                 {"scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"windowsSetting", n => { WindowsSetting = n.GetObjectValue<CloudPcWindowsSetting>(CloudPcWindowsSetting.CreateFromDiscriminatorValue); } },
                 {"windowsSettings", n => { WindowsSettings = n.GetObjectValue<CloudPcWindowsSettings>(CloudPcWindowsSettings.CreateFromDiscriminatorValue); } },
             };
         }
@@ -293,6 +308,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("onPremisesConnectionId", OnPremisesConnectionId);
             writer.WriteEnumValue<CloudPcProvisioningType>("provisioningType", ProvisioningType);
             writer.WriteCollectionOfPrimitiveValues<string>("scopeIds", ScopeIds);
+            writer.WriteObjectValue<CloudPcWindowsSetting>("windowsSetting", WindowsSetting);
             writer.WriteObjectValue<CloudPcWindowsSettings>("windowsSettings", WindowsSettings);
         }
     }

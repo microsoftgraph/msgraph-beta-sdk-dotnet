@@ -14,6 +14,34 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>A collection of communities in Viva Engage.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Community>? Communities {
+            get { return BackingStore?.Get<List<Community>?>("communities"); }
+            set { BackingStore?.Set("communities", value); }
+        }
+#nullable restore
+#else
+        public List<Community> Communities {
+            get { return BackingStore?.Get<List<Community>>("communities"); }
+            set { BackingStore?.Set("communities", value); }
+        }
+#endif
+        /// <summary>A collection of long-running, asynchronous operations related to Viva Engage.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<EngagementAsyncOperation>? EngagementAsyncOperations {
+            get { return BackingStore?.Get<List<EngagementAsyncOperation>?>("engagementAsyncOperations"); }
+            set { BackingStore?.Set("engagementAsyncOperations", value); }
+        }
+#nullable restore
+#else
+        public List<EngagementAsyncOperation> EngagementAsyncOperations {
+            get { return BackingStore?.Get<List<EngagementAsyncOperation>>("engagementAsyncOperations"); }
+            set { BackingStore?.Set("engagementAsyncOperations", value); }
+        }
+#endif
         /// <summary>Represents a collection of goals in a Viva Goals organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +118,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"communities", n => { Communities = n.GetCollectionOfObjectValues<Community>(Community.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"engagementAsyncOperations", n => { EngagementAsyncOperations = n.GetCollectionOfObjectValues<EngagementAsyncOperation>(EngagementAsyncOperation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"goals", n => { Goals = n.GetObjectValue<Microsoft.Graph.Beta.Models.Goals>(Microsoft.Graph.Beta.Models.Goals.CreateFromDiscriminatorValue); } },
                 {"learningCourseActivities", n => { LearningCourseActivities = n.GetCollectionOfObjectValues<LearningCourseActivity>(LearningCourseActivity.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"learningProviders", n => { LearningProviders = n.GetCollectionOfObjectValues<LearningProvider>(LearningProvider.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -102,6 +132,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<Community>("communities", Communities);
+            writer.WriteCollectionOfObjectValues<EngagementAsyncOperation>("engagementAsyncOperations", EngagementAsyncOperations);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Goals>("goals", Goals);
             writer.WriteCollectionOfObjectValues<LearningCourseActivity>("learningCourseActivities", LearningCourseActivities);
             writer.WriteCollectionOfObjectValues<LearningProvider>("learningProviders", LearningProviders);

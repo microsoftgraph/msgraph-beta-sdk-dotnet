@@ -12,6 +12,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
             set { BackingStore?.Set("AdditionalData", value); }
         }
+        /// <summary>The approvalRequirement property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public PlannerApprovalRequirement? ApprovalRequirement {
+            get { return BackingStore?.Get<PlannerApprovalRequirement?>("approvalRequirement"); }
+            set { BackingStore?.Set("approvalRequirement", value); }
+        }
+#nullable restore
+#else
+        public PlannerApprovalRequirement ApprovalRequirement {
+            get { return BackingStore?.Get<PlannerApprovalRequirement>("approvalRequirement"); }
+            set { BackingStore?.Set("approvalRequirement", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Information about the requirements for completing the checklist.</summary>
@@ -26,6 +40,20 @@ namespace Microsoft.Graph.Beta.Models {
         public PlannerChecklistRequirement ChecklistRequirement {
             get { return BackingStore?.Get<PlannerChecklistRequirement>("checklistRequirement"); }
             set { BackingStore?.Set("checklistRequirement", value); }
+        }
+#endif
+        /// <summary>The formsRequirement property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public PlannerFormsRequirement? FormsRequirement {
+            get { return BackingStore?.Get<PlannerFormsRequirement?>("formsRequirement"); }
+            set { BackingStore?.Set("formsRequirement", value); }
+        }
+#nullable restore
+#else
+        public PlannerFormsRequirement FormsRequirement {
+            get { return BackingStore?.Get<PlannerFormsRequirement>("formsRequirement"); }
+            set { BackingStore?.Set("formsRequirement", value); }
         }
 #endif
         /// <summary>The OdataType property</summary>
@@ -62,7 +90,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"approvalRequirement", n => { ApprovalRequirement = n.GetObjectValue<PlannerApprovalRequirement>(PlannerApprovalRequirement.CreateFromDiscriminatorValue); } },
                 {"checklistRequirement", n => { ChecklistRequirement = n.GetObjectValue<PlannerChecklistRequirement>(PlannerChecklistRequirement.CreateFromDiscriminatorValue); } },
+                {"formsRequirement", n => { FormsRequirement = n.GetObjectValue<PlannerFormsRequirement>(PlannerFormsRequirement.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -72,7 +102,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<PlannerApprovalRequirement>("approvalRequirement", ApprovalRequirement);
             writer.WriteObjectValue<PlannerChecklistRequirement>("checklistRequirement", ChecklistRequirement);
+            writer.WriteObjectValue<PlannerFormsRequirement>("formsRequirement", FormsRequirement);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

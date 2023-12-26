@@ -10,5 +10,9 @@ namespace Microsoft.Graph.Beta.Models {
         ChecklistCompletion = 2,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue = 4,
+        [EnumMember(Value = "formCompletion")]
+        FormCompletion = 8,
+        [EnumMember(Value = "approvalCompletion")]
+        ApprovalCompletion = 16,
     }
 }

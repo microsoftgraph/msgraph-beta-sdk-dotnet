@@ -90,6 +90,8 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.customAccessPackageWorkflowExtension" => new CustomAccessPackageWorkflowExtension(),
                 "#microsoft.graph.customAuthenticationExtension" => new CustomAuthenticationExtension(),
                 "#microsoft.graph.identityGovernance.customTaskExtension" => new CustomTaskExtension(),
+                "#microsoft.graph.onAttributeCollectionStartCustomExtension" => new OnAttributeCollectionStartCustomExtension(),
+                "#microsoft.graph.onAttributeCollectionSubmitCustomExtension" => new OnAttributeCollectionSubmitCustomExtension(),
                 "#microsoft.graph.onTokenIssuanceStartCustomExtension" => new OnTokenIssuanceStartCustomExtension(),
                 _ => new CustomCalloutExtension(),
             };

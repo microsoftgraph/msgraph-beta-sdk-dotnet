@@ -20,6 +20,8 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.onAttributeCollectionStartCustomExtension" => new OnAttributeCollectionStartCustomExtension(),
+                "#microsoft.graph.onAttributeCollectionSubmitCustomExtension" => new OnAttributeCollectionSubmitCustomExtension(),
                 "#microsoft.graph.onTokenIssuanceStartCustomExtension" => new OnTokenIssuanceStartCustomExtension(),
                 _ => new CustomAuthenticationExtension(),
             };

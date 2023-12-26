@@ -62,6 +62,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alternateResourceUrl", value); }
         }
 #endif
+        /// <summary>The connectionType property</summary>
+        public CloudPcOnPremisesConnectionType? ConnectionType {
+            get { return BackingStore?.Get<CloudPcOnPremisesConnectionType?>("connectionType"); }
+            set { BackingStore?.Set("connectionType", value); }
+        }
         /// <summary>The display name for the Azure network connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,6 +86,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatus?>("healthCheckStatus"); }
             set { BackingStore?.Set("healthCheckStatus", value); }
         }
+        /// <summary>The healthCheckStatusDetail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public CloudPcOnPremisesConnectionStatusDetail? HealthCheckStatusDetail {
+            get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatusDetail?>("healthCheckStatusDetail"); }
+            set { BackingStore?.Set("healthCheckStatusDetail", value); }
+        }
+#nullable restore
+#else
+        public CloudPcOnPremisesConnectionStatusDetail HealthCheckStatusDetail {
+            get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatusDetail>("healthCheckStatusDetail"); }
+            set { BackingStore?.Set("healthCheckStatusDetail", value); }
+        }
+#endif
         /// <summary>The details of the connection&apos;s health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -239,8 +258,10 @@ namespace Microsoft.Graph.Beta.Models {
                 {"adDomainPassword", n => { AdDomainPassword = n.GetStringValue(); } },
                 {"adDomainUsername", n => { AdDomainUsername = n.GetStringValue(); } },
                 {"alternateResourceUrl", n => { AlternateResourceUrl = n.GetStringValue(); } },
+                {"connectionType", n => { ConnectionType = n.GetEnumValue<CloudPcOnPremisesConnectionType>(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"healthCheckStatus", n => { HealthCheckStatus = n.GetEnumValue<CloudPcOnPremisesConnectionStatus>(); } },
+                {"healthCheckStatusDetail", n => { HealthCheckStatusDetail = n.GetObjectValue<CloudPcOnPremisesConnectionStatusDetail>(CloudPcOnPremisesConnectionStatusDetail.CreateFromDiscriminatorValue); } },
                 {"healthCheckStatusDetails", n => { HealthCheckStatusDetails = n.GetObjectValue<CloudPcOnPremisesConnectionStatusDetails>(CloudPcOnPremisesConnectionStatusDetails.CreateFromDiscriminatorValue); } },
                 {"inUse", n => { InUse = n.GetBoolValue(); } },
                 {"managedBy", n => { ManagedBy = n.GetEnumValue<CloudPcManagementService>(); } },
@@ -266,8 +287,10 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("adDomainPassword", AdDomainPassword);
             writer.WriteStringValue("adDomainUsername", AdDomainUsername);
             writer.WriteStringValue("alternateResourceUrl", AlternateResourceUrl);
+            writer.WriteEnumValue<CloudPcOnPremisesConnectionType>("connectionType", ConnectionType);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteEnumValue<CloudPcOnPremisesConnectionStatus>("healthCheckStatus", HealthCheckStatus);
+            writer.WriteObjectValue<CloudPcOnPremisesConnectionStatusDetail>("healthCheckStatusDetail", HealthCheckStatusDetail);
             writer.WriteObjectValue<CloudPcOnPremisesConnectionStatusDetails>("healthCheckStatusDetails", HealthCheckStatusDetails);
             writer.WriteBoolValue("inUse", InUse);
             writer.WriteEnumValue<CloudPcManagementService>("managedBy", ManagedBy);

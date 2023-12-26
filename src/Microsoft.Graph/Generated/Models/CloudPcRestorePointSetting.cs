@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("frequencyInHours"); }
             set { BackingStore?.Set("frequencyInHours", value); }
         }
+        /// <summary>The frequencyType property</summary>
+        public CloudPcRestorePointFrequencyType? FrequencyType {
+            get { return BackingStore?.Get<CloudPcRestorePointFrequencyType?>("frequencyType"); }
+            set { BackingStore?.Set("frequencyType", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"frequencyInHours", n => { FrequencyInHours = n.GetIntValue(); } },
+                {"frequencyType", n => { FrequencyType = n.GetEnumValue<CloudPcRestorePointFrequencyType>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"userRestoreEnabled", n => { UserRestoreEnabled = n.GetBoolValue(); } },
             };
@@ -70,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("frequencyInHours", FrequencyInHours);
+            writer.WriteEnumValue<CloudPcRestorePointFrequencyType>("frequencyType", FrequencyType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("userRestoreEnabled", UserRestoreEnabled);
             writer.WriteAdditionalData(AdditionalData);

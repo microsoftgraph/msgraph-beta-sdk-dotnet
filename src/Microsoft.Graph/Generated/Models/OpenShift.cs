@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class OpenShift : ChangeTrackedEntity, IParsable {
-        /// <summary>An unpublished open shift.</summary>
+        /// <summary>Draft changes in the openShift are only visible to managers until they are shared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public OpenShiftItem? DraftOpenShift {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("draftOpenShift", value); }
         }
 #endif
-        /// <summary>The isStagedForDeletion property</summary>
+        /// <summary>The openShift is marked for deletion, a process that is finalized when the schedule is shared.</summary>
         public bool? IsStagedForDeletion {
             get { return BackingStore?.Get<bool?>("isStagedForDeletion"); }
             set { BackingStore?.Set("isStagedForDeletion", value); }
         }
-        /// <summary>ID for the scheduling group that the open shift belongs to.</summary>
+        /// <summary>The ID of the schedulingGroup that contains the openShift.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SchedulingGroupId {
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("schedulingGroupId", value); }
         }
 #endif
-        /// <summary>The schedulingGroupName property</summary>
+        /// <summary>The name of the schedulingGroup that contains the openShift.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SchedulingGroupName {
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("schedulingGroupName", value); }
         }
 #endif
-        /// <summary>A published open shift.</summary>
+        /// <summary>The shared version of this openShift that is viewable by both employees and managers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public OpenShiftItem? SharedOpenShift {
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sharedOpenShift", value); }
         }
 #endif
-        /// <summary>The teamId property</summary>
+        /// <summary>The ID of the team in which the openShift is located.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TeamId {
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("teamId", value); }
         }
 #endif
-        /// <summary>The teamName property</summary>
+        /// <summary>The name of the team in which the openShift is located.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TeamName {

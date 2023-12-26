@@ -6,6 +6,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerBucket : PlannerDelta, IParsable {
+        /// <summary>The archivalInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public PlannerArchivalInfo? ArchivalInfo {
+            get { return BackingStore?.Get<PlannerArchivalInfo?>("archivalInfo"); }
+            set { BackingStore?.Set("archivalInfo", value); }
+        }
+#nullable restore
+#else
+        public PlannerArchivalInfo ArchivalInfo {
+            get { return BackingStore?.Get<PlannerArchivalInfo>("archivalInfo"); }
+            set { BackingStore?.Set("archivalInfo", value); }
+        }
+#endif
         /// <summary>Contains information about the origin of the bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,6 +34,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("creationSource", value); }
         }
 #endif
+        /// <summary>The isArchived property</summary>
+        public bool? IsArchived {
+            get { return BackingStore?.Get<bool?>("isArchived"); }
+            set { BackingStore?.Set("isArchived", value); }
+        }
         /// <summary>Name of the bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,7 +108,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"archivalInfo", n => { ArchivalInfo = n.GetObjectValue<PlannerArchivalInfo>(PlannerArchivalInfo.CreateFromDiscriminatorValue); } },
                 {"creationSource", n => { CreationSource = n.GetObjectValue<PlannerBucketCreation>(PlannerBucketCreation.CreateFromDiscriminatorValue); } },
+                {"isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"orderHint", n => { OrderHint = n.GetStringValue(); } },
                 {"planId", n => { PlanId = n.GetStringValue(); } },
@@ -103,7 +124,9 @@ namespace Microsoft.Graph.Beta.Models {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<PlannerArchivalInfo>("archivalInfo", ArchivalInfo);
             writer.WriteObjectValue<PlannerBucketCreation>("creationSource", CreationSource);
+            writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("orderHint", OrderHint);
             writer.WriteStringValue("planId", PlanId);
