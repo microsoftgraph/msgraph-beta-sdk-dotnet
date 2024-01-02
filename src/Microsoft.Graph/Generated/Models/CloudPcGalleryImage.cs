@@ -59,6 +59,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("offerDisplayName", value); }
         }
 #endif
+        /// <summary>The offerName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OfferName {
+            get { return BackingStore?.Get<string?>("offerName"); }
+            set { BackingStore?.Set("offerName", value); }
+        }
+#nullable restore
+#else
+        public string OfferName {
+            get { return BackingStore?.Get<string>("offerName"); }
+            set { BackingStore?.Set("offerName", value); }
+        }
+#endif
         /// <summary>The publisher name of the gallery image. This value is passed to Azure to get the image resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +85,20 @@ namespace Microsoft.Graph.Beta.Models {
         public string Publisher {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
+        }
+#endif
+        /// <summary>The publisherName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PublisherName {
+            get { return BackingStore?.Get<string?>("publisherName"); }
+            set { BackingStore?.Set("publisherName", value); }
+        }
+#nullable restore
+#else
+        public string PublisherName {
+            get { return BackingStore?.Get<string>("publisherName"); }
+            set { BackingStore?.Set("publisherName", value); }
         }
 #endif
         /// <summary>Recommended Cloud PC SKU for this gallery image. Read-only.</summary>
@@ -120,6 +148,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("skuDisplayName", value); }
         }
 #endif
+        /// <summary>The skuName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SkuName {
+            get { return BackingStore?.Get<string?>("skuName"); }
+            set { BackingStore?.Set("skuName", value); }
+        }
+#nullable restore
+#else
+        public string SkuName {
+            get { return BackingStore?.Get<string>("skuName"); }
+            set { BackingStore?.Set("skuName", value); }
+        }
+#endif
         /// <summary>The date when the image becomes available. Read-only.</summary>
         public Date? StartDate {
             get { return BackingStore?.Get<Date?>("startDate"); }
@@ -148,11 +190,14 @@ namespace Microsoft.Graph.Beta.Models {
                 {"expirationDate", n => { ExpirationDate = n.GetDateValue(); } },
                 {"offer", n => { Offer = n.GetStringValue(); } },
                 {"offerDisplayName", n => { OfferDisplayName = n.GetStringValue(); } },
+                {"offerName", n => { OfferName = n.GetStringValue(); } },
                 {"publisher", n => { Publisher = n.GetStringValue(); } },
+                {"publisherName", n => { PublisherName = n.GetStringValue(); } },
                 {"recommendedSku", n => { RecommendedSku = n.GetStringValue(); } },
                 {"sizeInGB", n => { SizeInGB = n.GetIntValue(); } },
                 {"sku", n => { Sku = n.GetStringValue(); } },
                 {"skuDisplayName", n => { SkuDisplayName = n.GetStringValue(); } },
+                {"skuName", n => { SkuName = n.GetStringValue(); } },
                 {"startDate", n => { StartDate = n.GetDateValue(); } },
                 {"status", n => { Status = n.GetEnumValue<CloudPcGalleryImageStatus>(); } },
             };
@@ -169,11 +214,14 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateValue("expirationDate", ExpirationDate);
             writer.WriteStringValue("offer", Offer);
             writer.WriteStringValue("offerDisplayName", OfferDisplayName);
+            writer.WriteStringValue("offerName", OfferName);
             writer.WriteStringValue("publisher", Publisher);
+            writer.WriteStringValue("publisherName", PublisherName);
             writer.WriteStringValue("recommendedSku", RecommendedSku);
             writer.WriteIntValue("sizeInGB", SizeInGB);
             writer.WriteStringValue("sku", Sku);
             writer.WriteStringValue("skuDisplayName", SkuDisplayName);
+            writer.WriteStringValue("skuName", SkuName);
             writer.WriteDateValue("startDate", StartDate);
             writer.WriteEnumValue<CloudPcGalleryImageStatus>("status", Status);
         }

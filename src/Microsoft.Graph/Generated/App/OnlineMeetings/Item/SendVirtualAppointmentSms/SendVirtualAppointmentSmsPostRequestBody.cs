@@ -13,26 +13,26 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.SendVirtualAppointmentSms
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
             set { BackingStore?.Set("AdditionalData", value); }
         }
-        /// <summary>Stores model information.</summary>
-        public IBackingStore BackingStore { get; private set; }
-        /// <summary>The phoneNumbers property</summary>
+        /// <summary>The attendees property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PhoneNumbers {
-            get { return BackingStore?.Get<List<string>?>("phoneNumbers"); }
-            set { BackingStore?.Set("phoneNumbers", value); }
+        public List<AttendeeNotificationInfo>? Attendees {
+            get { return BackingStore?.Get<List<AttendeeNotificationInfo>?>("attendees"); }
+            set { BackingStore?.Set("attendees", value); }
         }
 #nullable restore
 #else
-        public List<string> PhoneNumbers {
-            get { return BackingStore?.Get<List<string>>("phoneNumbers"); }
-            set { BackingStore?.Set("phoneNumbers", value); }
+        public List<AttendeeNotificationInfo> Attendees {
+            get { return BackingStore?.Get<List<AttendeeNotificationInfo>>("attendees"); }
+            set { BackingStore?.Set("attendees", value); }
         }
 #endif
-        /// <summary>The smsType property</summary>
-        public VirtualAppointmentSmsType? SmsType {
-            get { return BackingStore?.Get<VirtualAppointmentSmsType?>("smsType"); }
-            set { BackingStore?.Set("smsType", value); }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
+        /// <summary>The messageType property</summary>
+        public VirtualAppointmentMessageType? MessageType {
+            get { return BackingStore?.Get<VirtualAppointmentMessageType?>("messageType"); }
+            set { BackingStore?.Set("messageType", value); }
         }
         /// <summary>
         /// Instantiates a new sendVirtualAppointmentSmsPostRequestBody and sets the default values.
@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.SendVirtualAppointmentSms
         /// </summary>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"phoneNumbers", n => { PhoneNumbers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"smsType", n => { SmsType = n.GetEnumValue<VirtualAppointmentSmsType>(); } },
+                {"attendees", n => { Attendees = n.GetCollectionOfObjectValues<AttendeeNotificationInfo>(AttendeeNotificationInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"messageType", n => { MessageType = n.GetEnumValue<VirtualAppointmentMessageType>(); } },
             };
         }
         /// <summary>
@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.SendVirtualAppointmentSms
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("phoneNumbers", PhoneNumbers);
-            writer.WriteEnumValue<VirtualAppointmentSmsType>("smsType", SmsType);
+            writer.WriteCollectionOfObjectValues<AttendeeNotificationInfo>("attendees", Attendees);
+            writer.WriteEnumValue<VirtualAppointmentMessageType>("messageType", MessageType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

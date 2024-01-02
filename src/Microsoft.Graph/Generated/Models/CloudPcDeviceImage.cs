@@ -21,6 +21,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The errorCode property</summary>
+        public CloudPcDeviceImageErrorCode? ErrorCode {
+            get { return BackingStore?.Get<CloudPcDeviceImageErrorCode?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
+        }
         /// <summary>The date the image became unavailable.</summary>
         public Date? ExpirationDate {
             get { return BackingStore?.Get<Date?>("expirationDate"); }
@@ -130,6 +135,7 @@ namespace Microsoft.Graph.Beta.Models {
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"errorCode", n => { ErrorCode = n.GetEnumValue<CloudPcDeviceImageErrorCode>(); } },
                 {"expirationDate", n => { ExpirationDate = n.GetDateValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
@@ -150,6 +156,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteEnumValue<CloudPcDeviceImageErrorCode>("errorCode", ErrorCode);
             writer.WriteDateValue("expirationDate", ExpirationDate);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("operatingSystem", OperatingSystem);

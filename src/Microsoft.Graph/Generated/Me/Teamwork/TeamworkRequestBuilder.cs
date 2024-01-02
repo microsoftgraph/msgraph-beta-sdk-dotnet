@@ -63,7 +63,8 @@ namespace Microsoft.Graph.Beta.Me.Teamwork {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A container for Microsoft Teams features available for the user. Read-only. Nullable.
+        /// Get the userTeamwork settings for a specified user, which includes the Microsoft Teams region and the locale chosen by the user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userteamwork-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -119,7 +120,7 @@ namespace Microsoft.Graph.Beta.Me.Teamwork {
             return requestInfo;
         }
         /// <summary>
-        /// A container for Microsoft Teams features available for the user. Read-only. Nullable.
+        /// Get the userTeamwork settings for a specified user, which includes the Microsoft Teams region and the locale chosen by the user.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,7 +168,7 @@ namespace Microsoft.Graph.Beta.Me.Teamwork {
         public class TeamworkRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// A container for Microsoft Teams features available for the user. Read-only. Nullable.
+        /// Get the userTeamwork settings for a specified user, which includes the Microsoft Teams region and the locale chosen by the user.
         /// </summary>
         public class TeamworkRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

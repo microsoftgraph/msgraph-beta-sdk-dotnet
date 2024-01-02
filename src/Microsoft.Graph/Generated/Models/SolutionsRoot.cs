@@ -14,6 +14,34 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The bookingBusinesses property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<BookingBusiness>? BookingBusinesses {
+            get { return BackingStore?.Get<List<BookingBusiness>?>("bookingBusinesses"); }
+            set { BackingStore?.Set("bookingBusinesses", value); }
+        }
+#nullable restore
+#else
+        public List<BookingBusiness> BookingBusinesses {
+            get { return BackingStore?.Get<List<BookingBusiness>>("bookingBusinesses"); }
+            set { BackingStore?.Set("bookingBusinesses", value); }
+        }
+#endif
+        /// <summary>The bookingCurrencies property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<BookingCurrency>? BookingCurrencies {
+            get { return BackingStore?.Get<List<BookingCurrency>?>("bookingCurrencies"); }
+            set { BackingStore?.Set("bookingCurrencies", value); }
+        }
+#nullable restore
+#else
+        public List<BookingCurrency> BookingCurrencies {
+            get { return BackingStore?.Get<List<BookingCurrency>>("bookingCurrencies"); }
+            set { BackingStore?.Set("bookingCurrencies", value); }
+        }
+#endif
         /// <summary>The businessScenarios property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +104,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"bookingBusinesses", n => { BookingBusinesses = n.GetCollectionOfObjectValues<BookingBusiness>(BookingBusiness.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"bookingCurrencies", n => { BookingCurrencies = n.GetCollectionOfObjectValues<BookingCurrency>(BookingCurrency.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"businessScenarios", n => { BusinessScenarios = n.GetCollectionOfObjectValues<BusinessScenario>(BusinessScenario.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"virtualEvents", n => { VirtualEvents = n.GetObjectValue<VirtualEventsRoot>(VirtualEventsRoot.CreateFromDiscriminatorValue); } },
@@ -87,6 +117,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<BookingBusiness>("bookingBusinesses", BookingBusinesses);
+            writer.WriteCollectionOfObjectValues<BookingCurrency>("bookingCurrencies", BookingCurrencies);
             writer.WriteCollectionOfObjectValues<BusinessScenario>("businessScenarios", BusinessScenarios);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<VirtualEventsRoot>("virtualEvents", VirtualEvents);

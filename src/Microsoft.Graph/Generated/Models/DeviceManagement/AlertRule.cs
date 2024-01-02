@@ -11,6 +11,20 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate?>("alertRuleTemplate"); }
             set { BackingStore?.Set("alertRuleTemplate", value); }
         }
+        /// <summary>The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<RuleCondition>? Conditions {
+            get { return BackingStore?.Get<List<RuleCondition>?>("conditions"); }
+            set { BackingStore?.Set("conditions", value); }
+        }
+#nullable restore
+#else
+        public List<RuleCondition> Conditions {
+            get { return BackingStore?.Get<List<RuleCondition>>("conditions"); }
+            set { BackingStore?.Set("conditions", value); }
+        }
+#endif
         /// <summary>The rule description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,6 +110,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"alertRuleTemplate", n => { AlertRuleTemplate = n.GetEnumValue<AlertRuleTemplate>(); } },
+                {"conditions", n => { Conditions = n.GetCollectionOfObjectValues<RuleCondition>(RuleCondition.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"enabled", n => { Enabled = n.GetBoolValue(); } },
@@ -113,6 +128,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<AlertRuleTemplate>("alertRuleTemplate", AlertRuleTemplate);
+            writer.WriteCollectionOfObjectValues<RuleCondition>("conditions", Conditions);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("enabled", Enabled);

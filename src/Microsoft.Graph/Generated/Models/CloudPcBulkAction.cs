@@ -61,6 +61,9 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.cloudPcBulkDisasterRecoveryFailback" => new CloudPcBulkDisasterRecoveryFailback(),
+                "#microsoft.graph.cloudPcBulkDisasterRecoveryFailover" => new CloudPcBulkDisasterRecoveryFailover(),
+                "#microsoft.graph.cloudPcBulkModifyDiskEncryptionType" => new CloudPcBulkModifyDiskEncryptionType(),
                 "#microsoft.graph.cloudPcBulkPowerOff" => new CloudPcBulkPowerOff(),
                 "#microsoft.graph.cloudPcBulkPowerOn" => new CloudPcBulkPowerOn(),
                 "#microsoft.graph.cloudPcBulkReprovision" => new CloudPcBulkReprovision(),

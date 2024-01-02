@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
             set { BackingStore?.Set("AdditionalData", value); }
         }
-        /// <summary>The allowedToRegister property</summary>
+        /// <summary>Determines if Microsoft Entra registered is allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DeviceRegistrationMembership? AllowedToRegister {
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Specifies whether this policy scope is configurable by the admin. The default value is false. When an admin has enabled Intune (MEM) to manage devices, this property is set to false and appliesTo defaults to 1 (meaning all).</summary>
+        /// <summary>Determines if administrators can modify this policy.</summary>
         public bool? IsAdminConfigurable {
             get { return BackingStore?.Get<bool?>("isAdminConfigurable"); }
             set { BackingStore?.Set("isAdminConfigurable", value); }

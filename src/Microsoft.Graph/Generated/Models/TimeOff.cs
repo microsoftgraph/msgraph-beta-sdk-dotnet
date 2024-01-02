@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class TimeOff : ChangeTrackedEntity, IParsable {
-        /// <summary>The draft version of this timeOff that is viewable by managers. Required.</summary>
+        /// <summary>Draft changes in the timeOff are only visible to managers until they&apos;re shared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public TimeOffItem? DraftTimeOff {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("draftTimeOff", value); }
         }
 #endif
-        /// <summary>The isStagedForDeletion property</summary>
+        /// <summary>The timeOff is marked for deletion, a process that is finalized when the schedule is shared.</summary>
         public bool? IsStagedForDeletion {
             get { return BackingStore?.Get<bool?>("isStagedForDeletion"); }
             set { BackingStore?.Set("isStagedForDeletion", value); }
         }
-        /// <summary>The shared version of this timeOff that is viewable by both employees and managers. Required.</summary>
+        /// <summary>The shared version of this timeOff that is viewable by both employees and managers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public TimeOffItem? SharedTimeOff {

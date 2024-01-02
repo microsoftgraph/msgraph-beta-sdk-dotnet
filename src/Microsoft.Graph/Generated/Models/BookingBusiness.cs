@@ -37,6 +37,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appointments", value); }
         }
 #endif
+        /// <summary>The bookingPageSettings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.BookingPageSettings? BookingPageSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BookingPageSettings?>("bookingPageSettings"); }
+            set { BackingStore?.Set("bookingPageSettings", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.BookingPageSettings BookingPageSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BookingPageSettings>("bookingPageSettings"); }
+            set { BackingStore?.Set("bookingPageSettings", value); }
+        }
+#endif
         /// <summary>The hours of operation for the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,6 +93,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("calendarView", value); }
         }
 #endif
+        /// <summary>The createdDateTime property</summary>
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
+        }
         /// <summary>All the customers of this business. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,6 +173,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("languageTag", value); }
         }
 #endif
+        /// <summary>The lastUpdatedDateTime property</summary>
+        public DateTimeOffset? LastUpdatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
+            set { BackingStore?.Set("lastUpdatedDateTime", value); }
+        }
         /// <summary>The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -259,15 +283,18 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"address", n => { Address = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
                 {"appointments", n => { Appointments = n.GetCollectionOfObjectValues<BookingAppointment>(BookingAppointment.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"bookingPageSettings", n => { BookingPageSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.BookingPageSettings>(Microsoft.Graph.Beta.Models.BookingPageSettings.CreateFromDiscriminatorValue); } },
                 {"businessHours", n => { BusinessHours = n.GetCollectionOfObjectValues<BookingWorkHours>(BookingWorkHours.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"businessType", n => { BusinessType = n.GetStringValue(); } },
                 {"calendarView", n => { CalendarView = n.GetCollectionOfObjectValues<BookingAppointment>(BookingAppointment.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"customQuestions", n => { CustomQuestions = n.GetCollectionOfObjectValues<BookingCustomQuestion>(BookingCustomQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"customers", n => { Customers = n.GetCollectionOfObjectValues<BookingCustomer>(BookingCustomer.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"defaultCurrencyIso", n => { DefaultCurrencyIso = n.GetStringValue(); } },
                 {"email", n => { Email = n.GetStringValue(); } },
                 {"isPublished", n => { IsPublished = n.GetBoolValue(); } },
                 {"languageTag", n => { LanguageTag = n.GetStringValue(); } },
+                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"phone", n => { Phone = n.GetStringValue(); } },
                 {"publicUrl", n => { PublicUrl = n.GetStringValue(); } },
                 {"schedulingPolicy", n => { SchedulingPolicy = n.GetObjectValue<BookingSchedulingPolicy>(BookingSchedulingPolicy.CreateFromDiscriminatorValue); } },
@@ -285,14 +312,17 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteObjectValue<PhysicalAddress>("address", Address);
             writer.WriteCollectionOfObjectValues<BookingAppointment>("appointments", Appointments);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.BookingPageSettings>("bookingPageSettings", BookingPageSettings);
             writer.WriteCollectionOfObjectValues<BookingWorkHours>("businessHours", BusinessHours);
             writer.WriteStringValue("businessType", BusinessType);
             writer.WriteCollectionOfObjectValues<BookingAppointment>("calendarView", CalendarView);
+            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteCollectionOfObjectValues<BookingCustomer>("customers", Customers);
             writer.WriteCollectionOfObjectValues<BookingCustomQuestion>("customQuestions", CustomQuestions);
             writer.WriteStringValue("defaultCurrencyIso", DefaultCurrencyIso);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("languageTag", LanguageTag);
+            writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteStringValue("phone", Phone);
             writer.WriteObjectValue<BookingSchedulingPolicy>("schedulingPolicy", SchedulingPolicy);
             writer.WriteCollectionOfObjectValues<BookingService>("services", Services);

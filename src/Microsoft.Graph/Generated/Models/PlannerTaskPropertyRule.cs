@@ -20,6 +20,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appliedCategories", value); }
         }
 #endif
+        /// <summary>The approvalAttachment property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public PlannerFieldRules? ApprovalAttachment {
+            get { return BackingStore?.Get<PlannerFieldRules?>("approvalAttachment"); }
+            set { BackingStore?.Set("approvalAttachment", value); }
+        }
+#nullable restore
+#else
+        public PlannerFieldRules ApprovalAttachment {
+            get { return BackingStore?.Get<PlannerFieldRules>("approvalAttachment"); }
+            set { BackingStore?.Set("approvalAttachment", value); }
+        }
+#endif
         /// <summary>Rules and restrictions for assignments. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, addSelf, addOther, remove, removeSelf, removeOther, block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +102,20 @@ namespace Microsoft.Graph.Beta.Models {
         public List<string> DueDate {
             get { return BackingStore?.Get<List<string>>("dueDate"); }
             set { BackingStore?.Set("dueDate", value); }
+        }
+#endif
+        /// <summary>The forms property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public PlannerFieldRules? Forms {
+            get { return BackingStore?.Get<PlannerFieldRules?>("forms"); }
+            set { BackingStore?.Set("forms", value); }
+        }
+#nullable restore
+#else
+        public PlannerFieldRules Forms {
+            get { return BackingStore?.Get<PlannerFieldRules>("forms"); }
+            set { BackingStore?.Set("forms", value); }
         }
 #endif
         /// <summary>Rules and restrictions for moving the task between buckets or plans. Accepted values are allow, moveBetweenPlans, moveBetweenBuckets, and block.</summary>
@@ -236,11 +264,13 @@ namespace Microsoft.Graph.Beta.Models {
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"appliedCategories", n => { AppliedCategories = n.GetObjectValue<PlannerFieldRules>(PlannerFieldRules.CreateFromDiscriminatorValue); } },
+                {"approvalAttachment", n => { ApprovalAttachment = n.GetObjectValue<PlannerFieldRules>(PlannerFieldRules.CreateFromDiscriminatorValue); } },
                 {"assignments", n => { Assignments = n.GetObjectValue<PlannerFieldRules>(PlannerFieldRules.CreateFromDiscriminatorValue); } },
                 {"checkLists", n => { CheckLists = n.GetObjectValue<PlannerFieldRules>(PlannerFieldRules.CreateFromDiscriminatorValue); } },
                 {"completionRequirements", n => { CompletionRequirements = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"delete", n => { Delete = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"dueDate", n => { DueDate = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"forms", n => { Forms = n.GetObjectValue<PlannerFieldRules>(PlannerFieldRules.CreateFromDiscriminatorValue); } },
                 {"move", n => { Move = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"notes", n => { Notes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"order", n => { Order = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -260,11 +290,13 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<PlannerFieldRules>("appliedCategories", AppliedCategories);
+            writer.WriteObjectValue<PlannerFieldRules>("approvalAttachment", ApprovalAttachment);
             writer.WriteObjectValue<PlannerFieldRules>("assignments", Assignments);
             writer.WriteObjectValue<PlannerFieldRules>("checkLists", CheckLists);
             writer.WriteCollectionOfPrimitiveValues<string>("completionRequirements", CompletionRequirements);
             writer.WriteCollectionOfPrimitiveValues<string>("delete", Delete);
             writer.WriteCollectionOfPrimitiveValues<string>("dueDate", DueDate);
+            writer.WriteObjectValue<PlannerFieldRules>("forms", Forms);
             writer.WriteCollectionOfPrimitiveValues<string>("move", Move);
             writer.WriteCollectionOfPrimitiveValues<string>("notes", Notes);
             writer.WriteCollectionOfPrimitiveValues<string>("order", Order);

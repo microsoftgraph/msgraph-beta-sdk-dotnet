@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
         Application,
         [EnumMember(Value = "partner")]
         Partner,
-        [EnumMember(Value = "unknown")]
-        Unknown,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

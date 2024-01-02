@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("answerOptions", value); }
         }
 #endif
+        /// <summary>The createdDateTime property</summary>
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
+        }
         /// <summary>Display name of this entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,6 +47,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The lastUpdatedDateTime property</summary>
+        public DateTimeOffset? LastUpdatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
+            set { BackingStore?.Set("lastUpdatedDateTime", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,7 +67,9 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"answerInputType", n => { AnswerInputType = n.GetEnumValue<AnswerInputType>(); } },
                 {"answerOptions", n => { AnswerOptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -69,7 +81,9 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteEnumValue<AnswerInputType>("answerInputType", AnswerInputType);
             writer.WriteCollectionOfPrimitiveValues<string>("answerOptions", AnswerOptions);
+            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
         }
     }
 }

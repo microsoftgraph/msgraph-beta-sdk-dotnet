@@ -7,5 +7,7 @@ namespace Microsoft.Graph.Beta.Models {
         Gallery,
         [EnumMember(Value = "custom")]
         Custom,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

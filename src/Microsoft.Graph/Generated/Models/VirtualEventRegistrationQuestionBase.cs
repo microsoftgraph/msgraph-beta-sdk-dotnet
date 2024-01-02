@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
-                "#microsoft.graph.virtualEventRegistratioCustomQuestion" => new VirtualEventRegistratioCustomQuestion(),
+                "#microsoft.graph.virtualEventRegistrationCustomQuestion" => new VirtualEventRegistrationCustomQuestion(),
                 "#microsoft.graph.virtualEventRegistrationPredefinedQuestion" => new VirtualEventRegistrationPredefinedQuestion(),
                 _ => new VirtualEventRegistrationQuestionBase(),
             };

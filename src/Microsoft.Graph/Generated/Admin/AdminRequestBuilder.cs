@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Admin.AppsAndServices;
 using Microsoft.Graph.Beta.Admin.Dynamics;
 using Microsoft.Graph.Beta.Admin.Edge;
 using Microsoft.Graph.Beta.Admin.Forms;
+using Microsoft.Graph.Beta.Admin.Microsoft365Apps;
 using Microsoft.Graph.Beta.Admin.People;
 using Microsoft.Graph.Beta.Admin.ReportSettings;
 using Microsoft.Graph.Beta.Admin.ServiceAnnouncement;
@@ -39,6 +40,10 @@ namespace Microsoft.Graph.Beta.Admin {
         /// <summary>Provides operations to manage the forms property of the microsoft.graph.admin entity.</summary>
         public FormsRequestBuilder Forms { get =>
             new FormsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the microsoft365Apps property of the microsoft.graph.admin entity.</summary>
+        public Microsoft365AppsRequestBuilder Microsoft365Apps { get =>
+            new Microsoft365AppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the people property of the microsoft.graph.admin entity.</summary>
         public PeopleRequestBuilder People { get =>

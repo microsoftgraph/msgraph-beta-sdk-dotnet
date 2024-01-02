@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class VirtualEvent : Entity, IParsable {
-        /// <summary>Identity information of who created the virtual event. Inherited from virtualEvent.</summary>
+        /// <summary>Identity information for the creator of the virtual event. Inherited from virtualEvent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CommunicationsIdentitySet? CreatedBy {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Display name of the virtual event</summary>
+        /// <summary>Display name of the virtual event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("endDateTime", value); }
         }
 #endif
-        /// <summary>Presenters&apos; information of the virtual event.</summary>
+        /// <summary>The virtual event presenters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<VirtualEventPresenter>? Presenters {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("presenters", value); }
         }
 #endif
-        /// <summary>Sessions of the virtual event.</summary>
+        /// <summary>Sessions for the virtual event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<VirtualEventSession>? Sessions {

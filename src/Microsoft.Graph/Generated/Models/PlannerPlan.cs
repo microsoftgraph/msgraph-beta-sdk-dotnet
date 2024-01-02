@@ -6,6 +6,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerPlan : PlannerDelta, IParsable {
+        /// <summary>The archivalInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public PlannerArchivalInfo? ArchivalInfo {
+            get { return BackingStore?.Get<PlannerArchivalInfo?>("archivalInfo"); }
+            set { BackingStore?.Set("archivalInfo", value); }
+        }
+#nullable restore
+#else
+        public PlannerArchivalInfo ArchivalInfo {
+            get { return BackingStore?.Get<PlannerArchivalInfo>("archivalInfo"); }
+            set { BackingStore?.Set("archivalInfo", value); }
+        }
+#endif
         /// <summary>Collection of buckets in the plan. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,6 +109,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("details", value); }
         }
 #endif
+        /// <summary>The isArchived property</summary>
+        public bool? IsArchived {
+            get { return BackingStore?.Get<bool?>("isArchived"); }
+            set { BackingStore?.Set("isArchived", value); }
+        }
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -164,6 +183,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"archivalInfo", n => { ArchivalInfo = n.GetObjectValue<PlannerArchivalInfo>(PlannerArchivalInfo.CreateFromDiscriminatorValue); } },
                 {"buckets", n => { Buckets = n.GetCollectionOfObjectValues<PlannerBucket>(PlannerBucket.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"container", n => { Container = n.GetObjectValue<PlannerPlanContainer>(PlannerPlanContainer.CreateFromDiscriminatorValue); } },
                 {"contexts", n => { Contexts = n.GetObjectValue<PlannerPlanContextCollection>(PlannerPlanContextCollection.CreateFromDiscriminatorValue); } },
@@ -171,6 +191,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"creationSource", n => { CreationSource = n.GetObjectValue<PlannerPlanCreation>(PlannerPlanCreation.CreateFromDiscriminatorValue); } },
                 {"details", n => { Details = n.GetObjectValue<PlannerPlanDetails>(PlannerPlanDetails.CreateFromDiscriminatorValue); } },
+                {"isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 {"owner", n => { Owner = n.GetStringValue(); } },
                 {"sharedWithContainers", n => { SharedWithContainers = n.GetCollectionOfObjectValues<PlannerSharedWithContainer>(PlannerSharedWithContainer.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<PlannerTask>(PlannerTask.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -184,6 +205,7 @@ namespace Microsoft.Graph.Beta.Models {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<PlannerArchivalInfo>("archivalInfo", ArchivalInfo);
             writer.WriteCollectionOfObjectValues<PlannerBucket>("buckets", Buckets);
             writer.WriteObjectValue<PlannerPlanContainer>("container", Container);
             writer.WriteObjectValue<PlannerPlanContextCollection>("contexts", Contexts);
@@ -191,6 +213,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<PlannerPlanCreation>("creationSource", CreationSource);
             writer.WriteObjectValue<PlannerPlanDetails>("details", Details);
+            writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteStringValue("owner", Owner);
             writer.WriteCollectionOfObjectValues<PlannerSharedWithContainer>("sharedWithContainers", SharedWithContainers);
             writer.WriteCollectionOfObjectValues<PlannerTask>("tasks", Tasks);

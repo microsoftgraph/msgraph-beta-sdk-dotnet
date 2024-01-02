@@ -48,6 +48,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("connectivityResult", value); }
         }
 #endif
+        /// <summary>The disasterRecoveryCapability property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public CloudPcDisasterRecoveryCapability? DisasterRecoveryCapability {
+            get { return BackingStore?.Get<CloudPcDisasterRecoveryCapability?>("disasterRecoveryCapability"); }
+            set { BackingStore?.Set("disasterRecoveryCapability", value); }
+        }
+#nullable restore
+#else
+        public CloudPcDisasterRecoveryCapability DisasterRecoveryCapability {
+            get { return BackingStore?.Get<CloudPcDisasterRecoveryCapability>("disasterRecoveryCapability"); }
+            set { BackingStore?.Set("disasterRecoveryCapability", value); }
+        }
+#endif
         /// <summary>The disk encryption applied to the Cloud PC. Possible values: notAvailable, notEncrypted, encryptedUsingPlatformManagedKey, encryptedUsingCustomerManagedKey, and unknownFutureValue.</summary>
         public CloudPcDiskEncryptionState? DiskEncryptionState {
             get { return BackingStore?.Get<CloudPcDiskEncryptionState?>("diskEncryptionState"); }
@@ -319,6 +333,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"aadDeviceId", n => { AadDeviceId = n.GetStringValue(); } },
                 {"connectionSettings", n => { ConnectionSettings = n.GetObjectValue<CloudPcConnectionSettings>(CloudPcConnectionSettings.CreateFromDiscriminatorValue); } },
                 {"connectivityResult", n => { ConnectivityResult = n.GetObjectValue<CloudPcConnectivityResult>(CloudPcConnectivityResult.CreateFromDiscriminatorValue); } },
+                {"disasterRecoveryCapability", n => { DisasterRecoveryCapability = n.GetObjectValue<CloudPcDisasterRecoveryCapability>(CloudPcDisasterRecoveryCapability.CreateFromDiscriminatorValue); } },
                 {"diskEncryptionState", n => { DiskEncryptionState = n.GetEnumValue<CloudPcDiskEncryptionState>(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"gracePeriodEndDateTime", n => { GracePeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
@@ -355,6 +370,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("aadDeviceId", AadDeviceId);
             writer.WriteObjectValue<CloudPcConnectionSettings>("connectionSettings", ConnectionSettings);
             writer.WriteObjectValue<CloudPcConnectivityResult>("connectivityResult", ConnectivityResult);
+            writer.WriteObjectValue<CloudPcDisasterRecoveryCapability>("disasterRecoveryCapability", DisasterRecoveryCapability);
             writer.WriteEnumValue<CloudPcDiskEncryptionState>("diskEncryptionState", DiskEncryptionState);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("gracePeriodEndDateTime", GracePeriodEndDateTime);

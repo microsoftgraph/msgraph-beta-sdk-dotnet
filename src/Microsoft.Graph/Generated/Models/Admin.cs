@@ -70,6 +70,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("forms", value); }
         }
 #endif
+        /// <summary>A container for the Microsoft 365 apps admin functionality.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public AdminMicrosoft365Apps? Microsoft365Apps {
+            get { return BackingStore?.Get<AdminMicrosoft365Apps?>("microsoft365Apps"); }
+            set { BackingStore?.Set("microsoft365Apps", value); }
+        }
+#nullable restore
+#else
+        public AdminMicrosoft365Apps Microsoft365Apps {
+            get { return BackingStore?.Get<AdminMicrosoft365Apps>("microsoft365Apps"); }
+            set { BackingStore?.Set("microsoft365Apps", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -192,6 +206,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"dynamics", n => { Dynamics = n.GetObjectValue<AdminDynamics>(AdminDynamics.CreateFromDiscriminatorValue); } },
                 {"edge", n => { Edge = n.GetObjectValue<Microsoft.Graph.Beta.Models.Edge>(Microsoft.Graph.Beta.Models.Edge.CreateFromDiscriminatorValue); } },
                 {"forms", n => { Forms = n.GetObjectValue<AdminForms>(AdminForms.CreateFromDiscriminatorValue); } },
+                {"microsoft365Apps", n => { Microsoft365Apps = n.GetObjectValue<AdminMicrosoft365Apps>(AdminMicrosoft365Apps.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"people", n => { People = n.GetObjectValue<PeopleAdminSettings>(PeopleAdminSettings.CreateFromDiscriminatorValue); } },
                 {"reportSettings", n => { ReportSettings = n.GetObjectValue<AdminReportSettings>(AdminReportSettings.CreateFromDiscriminatorValue); } },
@@ -211,6 +226,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<AdminDynamics>("dynamics", Dynamics);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Edge>("edge", Edge);
             writer.WriteObjectValue<AdminForms>("forms", Forms);
+            writer.WriteObjectValue<AdminMicrosoft365Apps>("microsoft365Apps", Microsoft365Apps);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<PeopleAdminSettings>("people", People);
             writer.WriteObjectValue<AdminReportSettings>("reportSettings", ReportSettings);

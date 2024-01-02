@@ -9,5 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
         Ready,
         [EnumMember(Value = "failed")]
         Failed,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

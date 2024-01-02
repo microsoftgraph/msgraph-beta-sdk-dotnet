@@ -67,6 +67,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("filesFolder", value); }
         }
 #endif
+        /// <summary>The isArchived property</summary>
+        public bool? IsArchived {
+            get { return BackingStore?.Get<bool?>("isArchived"); }
+            set { BackingStore?.Set("isArchived", value); }
+        }
         /// <summary>Indicates whether the channel should automatically be marked &apos;favorite&apos; for all members of the team. Can only be set programmatically with Create team. Default: false.</summary>
         public bool? IsFavoriteByDefault {
             get { return BackingStore?.Get<bool?>("isFavoriteByDefault"); }
@@ -207,6 +212,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"email", n => { Email = n.GetStringValue(); } },
                 {"filesFolder", n => { FilesFolder = n.GetObjectValue<DriveItem>(DriveItem.CreateFromDiscriminatorValue); } },
+                {"isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 {"isFavoriteByDefault", n => { IsFavoriteByDefault = n.GetBoolValue(); } },
                 {"members", n => { Members = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"membershipType", n => { MembershipType = n.GetEnumValue<ChannelMembershipType>(); } },
@@ -231,6 +237,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("email", Email);
             writer.WriteObjectValue<DriveItem>("filesFolder", FilesFolder);
+            writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isFavoriteByDefault", IsFavoriteByDefault);
             writer.WriteCollectionOfObjectValues<ConversationMember>("members", Members);
             writer.WriteEnumValue<ChannelMembershipType>("membershipType", MembershipType);

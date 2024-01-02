@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
         Delete,
         [EnumMember(Value = "patch")]
         Patch,
-        [EnumMember(Value = "other")]
-        Other,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }
