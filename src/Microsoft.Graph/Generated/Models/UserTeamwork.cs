@@ -34,6 +34,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("installedApps", value); }
         }
 #endif
+        /// <summary>Represents the chosen locale of a user in Microsoft Teams.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Locale {
+            get { return BackingStore?.Get<string?>("locale"); }
+            set { BackingStore?.Set("locale", value); }
+        }
+#nullable restore
+#else
+        public string Locale {
+            get { return BackingStore?.Get<string>("locale"); }
+            set { BackingStore?.Set("locale", value); }
+        }
+#endif
+        /// <summary>Represents the region of the user in Microsoft Teams.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Region {
+            get { return BackingStore?.Get<string?>("region"); }
+            set { BackingStore?.Set("region", value); }
+        }
+#nullable restore
+#else
+        public string Region {
+            get { return BackingStore?.Get<string>("region"); }
+            set { BackingStore?.Set("region", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,6 +77,8 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"associatedTeams", n => { AssociatedTeams = n.GetCollectionOfObjectValues<AssociatedTeamInfo>(AssociatedTeamInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"installedApps", n => { InstalledApps = n.GetCollectionOfObjectValues<UserScopeTeamsAppInstallation>(UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"locale", n => { Locale = n.GetStringValue(); } },
+                {"region", n => { Region = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -60,6 +90,8 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<AssociatedTeamInfo>("associatedTeams", AssociatedTeams);
             writer.WriteCollectionOfObjectValues<UserScopeTeamsAppInstallation>("installedApps", InstalledApps);
+            writer.WriteStringValue("locale", Locale);
+            writer.WriteStringValue("region", Region);
         }
     }
 }

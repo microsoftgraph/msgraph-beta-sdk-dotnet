@@ -12,6 +12,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
             set { BackingStore?.Set("AdditionalData", value); }
         }
+        /// <summary>The additionalDetail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AdditionalDetail {
+            get { return BackingStore?.Get<string?>("additionalDetail"); }
+            set { BackingStore?.Set("additionalDetail", value); }
+        }
+#nullable restore
+#else
+        public string AdditionalDetail {
+            get { return BackingStore?.Get<string>("additionalDetail"); }
+            set { BackingStore?.Set("additionalDetail", value); }
+        }
+#endif
         /// <summary>More details about the health check or the recommended action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +138,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"additionalDetail", n => { AdditionalDetail = n.GetStringValue(); } },
                 {"additionalDetails", n => { AdditionalDetails = n.GetStringValue(); } },
                 {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -141,6 +156,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("additionalDetail", AdditionalDetail);
             writer.WriteStringValue("additionalDetails", AdditionalDetails);
             writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteStringValue("displayName", DisplayName);

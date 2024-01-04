@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The clientConfiguration property</summary>
+        /// <summary>Optional. Configuration of calling external API, such as timeout, retryCount, retriableResponseCodes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CustomExtensionClientConfiguration? ClientConfiguration {

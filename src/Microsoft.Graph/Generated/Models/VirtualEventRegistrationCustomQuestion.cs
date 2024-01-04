@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class VirtualEventRegistratioCustomQuestion : VirtualEventRegistrationQuestionBase, IParsable {
+    public class VirtualEventRegistrationCustomQuestion : VirtualEventRegistrationQuestionBase, IParsable {
         /// <summary>The answerChoices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,18 +26,18 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("answerInputType", value); }
         }
         /// <summary>
-        /// Instantiates a new virtualEventRegistratioCustomQuestion and sets the default values.
+        /// Instantiates a new virtualEventRegistrationCustomQuestion and sets the default values.
         /// </summary>
-        public VirtualEventRegistratioCustomQuestion() : base() {
-            OdataType = "#microsoft.graph.virtualEventRegistratioCustomQuestion";
+        public VirtualEventRegistrationCustomQuestion() : base() {
+            OdataType = "#microsoft.graph.virtualEventRegistrationCustomQuestion";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VirtualEventRegistratioCustomQuestion CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new VirtualEventRegistrationCustomQuestion CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VirtualEventRegistratioCustomQuestion();
+            return new VirtualEventRegistrationCustomQuestion();
         }
         /// <summary>
         /// The deserialization information for the current model

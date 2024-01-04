@@ -19,10 +19,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("colorIndex"); }
             set { BackingStore?.Set("colorIndex", value); }
         }
+        /// <summary>The createdDateTime property</summary>
+        public DateTimeOffset? CreatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
+        }
         /// <summary>True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.</summary>
         public bool? IsEmailNotificationEnabled {
             get { return BackingStore?.Get<bool?>("isEmailNotificationEnabled"); }
             set { BackingStore?.Set("isEmailNotificationEnabled", value); }
+        }
+        /// <summary>The lastUpdatedDateTime property</summary>
+        public DateTimeOffset? LastUpdatedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
+            set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The membershipStatus property</summary>
         public BookingStaffMembershipStatus? MembershipStatus {
@@ -82,7 +92,9 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"availabilityIsAffectedByPersonalCalendar", n => { AvailabilityIsAffectedByPersonalCalendar = n.GetBoolValue(); } },
                 {"colorIndex", n => { ColorIndex = n.GetIntValue(); } },
+                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"isEmailNotificationEnabled", n => { IsEmailNotificationEnabled = n.GetBoolValue(); } },
+                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"membershipStatus", n => { MembershipStatus = n.GetEnumValue<BookingStaffMembershipStatus>(); } },
                 {"role", n => { Role = n.GetEnumValue<BookingStaffRole>(); } },
                 {"timeZone", n => { TimeZone = n.GetStringValue(); } },
@@ -99,7 +111,9 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteBoolValue("availabilityIsAffectedByPersonalCalendar", AvailabilityIsAffectedByPersonalCalendar);
             writer.WriteIntValue("colorIndex", ColorIndex);
+            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteBoolValue("isEmailNotificationEnabled", IsEmailNotificationEnabled);
+            writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteEnumValue<BookingStaffMembershipStatus>("membershipStatus", MembershipStatus);
             writer.WriteEnumValue<BookingStaffRole>("role", Role);
             writer.WriteStringValue("timeZone", TimeZone);

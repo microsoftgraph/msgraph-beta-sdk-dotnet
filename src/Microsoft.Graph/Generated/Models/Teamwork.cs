@@ -48,6 +48,25 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("devices", value); }
         }
 #endif
+        /// <summary>Indicates whether Microsoft Teams is enabled for the organization.</summary>
+        public bool? IsTeamsEnabled {
+            get { return BackingStore?.Get<bool?>("isTeamsEnabled"); }
+            set { BackingStore?.Set("isTeamsEnabled", value); }
+        }
+        /// <summary>Represents the region of the organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Region {
+            get { return BackingStore?.Get<string?>("region"); }
+            set { BackingStore?.Set("region", value); }
+        }
+#nullable restore
+#else
+        public string Region {
+            get { return BackingStore?.Get<string>("region"); }
+            set { BackingStore?.Set("region", value); }
+        }
+#endif
         /// <summary>Represents tenant-wide settings for all Teams apps in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,6 +125,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deletedChats", n => { DeletedChats = n.GetCollectionOfObjectValues<DeletedChat>(DeletedChat.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deletedTeams", n => { DeletedTeams = n.GetCollectionOfObjectValues<DeletedTeam>(DeletedTeam.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"devices", n => { Devices = n.GetCollectionOfObjectValues<TeamworkDevice>(TeamworkDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"isTeamsEnabled", n => { IsTeamsEnabled = n.GetBoolValue(); } },
+                {"region", n => { Region = n.GetStringValue(); } },
                 {"teamTemplates", n => { TeamTemplates = n.GetCollectionOfObjectValues<TeamTemplate>(TeamTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"teamsAppSettings", n => { TeamsAppSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamsAppSettings>(Microsoft.Graph.Beta.Models.TeamsAppSettings.CreateFromDiscriminatorValue); } },
                 {"workforceIntegrations", n => { WorkforceIntegrations = n.GetCollectionOfObjectValues<WorkforceIntegration>(WorkforceIntegration.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -121,6 +142,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<DeletedChat>("deletedChats", DeletedChats);
             writer.WriteCollectionOfObjectValues<DeletedTeam>("deletedTeams", DeletedTeams);
             writer.WriteCollectionOfObjectValues<TeamworkDevice>("devices", Devices);
+            writer.WriteBoolValue("isTeamsEnabled", IsTeamsEnabled);
+            writer.WriteStringValue("region", Region);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamsAppSettings>("teamsAppSettings", TeamsAppSettings);
             writer.WriteCollectionOfObjectValues<TeamTemplate>("teamTemplates", TeamTemplates);
             writer.WriteCollectionOfObjectValues<WorkforceIntegration>("workforceIntegrations", WorkforceIntegrations);

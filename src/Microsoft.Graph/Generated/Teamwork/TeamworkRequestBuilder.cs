@@ -64,7 +64,8 @@ namespace Microsoft.Graph.Beta.Teamwork {
         public TeamworkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork{?%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Get teamwork
+        /// Get the properties and relationships of a teamwork object, such as the region of the organization and whether Microsoft Teams is enabled.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamwork-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +105,7 @@ namespace Microsoft.Graph.Beta.Teamwork {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Teamwork>(requestInfo, Microsoft.Graph.Beta.Models.Teamwork.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get teamwork
+        /// Get the properties and relationships of a teamwork object, such as the region of the organization and whether Microsoft Teams is enabled.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +147,7 @@ namespace Microsoft.Graph.Beta.Teamwork {
             return new TeamworkRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get teamwork
+        /// Get the properties and relationships of a teamwork object, such as the region of the organization and whether Microsoft Teams is enabled.
         /// </summary>
         public class TeamworkRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -7,6 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
         Supported,
         [EnumMember(Value = "supportedWithWarning")]
         SupportedWithWarning,
+        [EnumMember(Value = "unknown")]
+        Unknown,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

@@ -15,5 +15,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         CloudPcInGracePeriodScenario,
         [EnumMember(Value = "cloudPcFrontlineInsufficientLicensesScenario")]
         CloudPcFrontlineInsufficientLicensesScenario,
+        [EnumMember(Value = "cloudPcInaccessibleScenario")]
+        CloudPcInaccessibleScenario,
     }
 }

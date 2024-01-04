@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Shift : ChangeTrackedEntity, IParsable {
-        /// <summary>The draft version of this shift that is viewable by managers. Required.</summary>
+        /// <summary>Draft changes in the shift are only visible to managers until they are shared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ShiftItem? DraftShift {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("draftShift", value); }
         }
 #endif
-        /// <summary>The isStagedForDeletion property</summary>
+        /// <summary>The shift is marked for deletion, a process that is finalized when the schedule is shared.</summary>
         public bool? IsStagedForDeletion {
             get { return BackingStore?.Get<bool?>("isStagedForDeletion"); }
             set { BackingStore?.Set("isStagedForDeletion", value); }
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("schedulingGroupId", value); }
         }
 #endif
-        /// <summary>The shared version of this shift that is viewable by both employees and managers. Required.</summary>
+        /// <summary>The shared version of this shift that is viewable by both employees and managers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ShiftItem? SharedShift {

@@ -22,6 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>Enable sending meeting invite to customers.</summary>
+        public bool? IsMeetingInviteToCustomersEnabled {
+            get { return BackingStore?.Get<bool?>("isMeetingInviteToCustomersEnabled"); }
+            set { BackingStore?.Set("isMeetingInviteToCustomersEnabled", value); }
+        }
         /// <summary>Maximum number of days in advance that a booking can be made. It follows the ISO 8601 format.</summary>
         public TimeSpan? MaximumAdvance {
             get { return BackingStore?.Get<TimeSpan?>("maximumAdvance"); }
@@ -77,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"allowStaffSelection", n => { AllowStaffSelection = n.GetBoolValue(); } },
+                {"isMeetingInviteToCustomersEnabled", n => { IsMeetingInviteToCustomersEnabled = n.GetBoolValue(); } },
                 {"maximumAdvance", n => { MaximumAdvance = n.GetTimeSpanValue(); } },
                 {"minimumLeadTime", n => { MinimumLeadTime = n.GetTimeSpanValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -91,6 +97,7 @@ namespace Microsoft.Graph.Beta.Models {
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowStaffSelection", AllowStaffSelection);
+            writer.WriteBoolValue("isMeetingInviteToCustomersEnabled", IsMeetingInviteToCustomersEnabled);
             writer.WriteTimeSpanValue("maximumAdvance", MaximumAdvance);
             writer.WriteTimeSpanValue("minimumLeadTime", MinimumLeadTime);
             writer.WriteStringValue("@odata.type", OdataType);

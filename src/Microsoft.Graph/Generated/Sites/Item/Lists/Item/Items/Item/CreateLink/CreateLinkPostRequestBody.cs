@@ -20,6 +20,20 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.CreateLink {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
+        /// <summary>The message property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Message {
+            get { return BackingStore?.Get<string?>("message"); }
+            set { BackingStore?.Set("message", value); }
+        }
+#nullable restore
+#else
+        public string Message {
+            get { return BackingStore?.Get<string>("message"); }
+            set { BackingStore?.Set("message", value); }
+        }
+#endif
         /// <summary>The password property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,6 +121,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.CreateLink {
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"message", n => { Message = n.GetStringValue(); } },
                 {"password", n => { Password = n.GetStringValue(); } },
                 {"recipients", n => { Recipients = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"retainInheritedPermissions", n => { RetainInheritedPermissions = n.GetBoolValue(); } },
@@ -122,6 +137,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Items.Item.CreateLink {
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
+            writer.WriteStringValue("message", Message);
             writer.WriteStringValue("password", Password);
             writer.WriteCollectionOfObjectValues<DriveRecipient>("recipients", Recipients);
             writer.WriteBoolValue("retainInheritedPermissions", RetainInheritedPermissions);

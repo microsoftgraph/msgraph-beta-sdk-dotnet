@@ -13,22 +13,22 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.SendVirtualAppointmentRem
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
             set { BackingStore?.Set("AdditionalData", value); }
         }
-        /// <summary>Stores model information.</summary>
-        public IBackingStore BackingStore { get; private set; }
-        /// <summary>The phoneNumbers property</summary>
+        /// <summary>The attendees property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PhoneNumbers {
-            get { return BackingStore?.Get<List<string>?>("phoneNumbers"); }
-            set { BackingStore?.Set("phoneNumbers", value); }
+        public List<AttendeeNotificationInfo>? Attendees {
+            get { return BackingStore?.Get<List<AttendeeNotificationInfo>?>("attendees"); }
+            set { BackingStore?.Set("attendees", value); }
         }
 #nullable restore
 #else
-        public List<string> PhoneNumbers {
-            get { return BackingStore?.Get<List<string>>("phoneNumbers"); }
-            set { BackingStore?.Set("phoneNumbers", value); }
+        public List<AttendeeNotificationInfo> Attendees {
+            get { return BackingStore?.Get<List<AttendeeNotificationInfo>>("attendees"); }
+            set { BackingStore?.Set("attendees", value); }
         }
 #endif
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The remindBeforeTimeInMinutesType property</summary>
         public Microsoft.Graph.Beta.Models.RemindBeforeTimeInMinutesType? RemindBeforeTimeInMinutesType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemindBeforeTimeInMinutesType?>("remindBeforeTimeInMinutesType"); }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.SendVirtualAppointmentRem
         /// </summary>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"phoneNumbers", n => { PhoneNumbers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"attendees", n => { Attendees = n.GetCollectionOfObjectValues<AttendeeNotificationInfo>(AttendeeNotificationInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"remindBeforeTimeInMinutesType", n => { RemindBeforeTimeInMinutesType = n.GetEnumValue<RemindBeforeTimeInMinutesType>(); } },
             };
         }
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.SendVirtualAppointmentRem
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("phoneNumbers", PhoneNumbers);
+            writer.WriteCollectionOfObjectValues<AttendeeNotificationInfo>("attendees", Attendees);
             writer.WriteEnumValue<RemindBeforeTimeInMinutesType>("remindBeforeTimeInMinutesType", RemindBeforeTimeInMinutesType);
             writer.WriteAdditionalData(AdditionalData);
         }
