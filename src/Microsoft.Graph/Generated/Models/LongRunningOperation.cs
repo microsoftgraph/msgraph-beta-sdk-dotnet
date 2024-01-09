@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resourceLocation", value); }
         }
 #endif
-        /// <summary>The status of the operation. The possible values are: notStarted, running, succeeded, failed, unknownFutureValue.</summary>
+        /// <summary>The status of the operation. The possible values are: notStarted, running, succeeded, failed, skipped, unknownFutureValue.</summary>
         public LongRunningOperationStatus? Status {
             get { return BackingStore?.Get<LongRunningOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }

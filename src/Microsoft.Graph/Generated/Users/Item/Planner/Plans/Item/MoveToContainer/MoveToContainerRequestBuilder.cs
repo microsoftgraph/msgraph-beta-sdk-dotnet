@@ -29,7 +29,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.MoveToContainer {
         public MoveToContainerRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/plans/{plannerPlan%2Did}/moveToContainer", rawUrl) {
         }
         /// <summary>
-        /// Invoke action moveToContainer
+        /// Move a planner plan object from one planner plan container to another. Planner plans can only be moved from a user container to a group container.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplan-movetocontainer?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +51,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.MoveToContainer {
             return await RequestAdapter.SendAsync<PlannerPlan>(requestInfo, PlannerPlan.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action moveToContainer
+        /// Move a planner plan object from one planner plan container to another. Planner plans can only be moved from a user container to a group container.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The permission property</summary>
+        /// <summary>The operations allowed on scoped resources for the authenticated user. Example permission is Microsoft.CloudPC/ProvisioningPolicies/Create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Permission {
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("permission", value); }
         }
 #endif
-        /// <summary>The scopeIds property</summary>
+        /// <summary>The scope IDs of corresponding permission. Currently, it&apos;s Intune scope tag ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ScopeIds {

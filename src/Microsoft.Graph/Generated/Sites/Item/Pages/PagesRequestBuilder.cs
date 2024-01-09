@@ -2,6 +2,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Sites.Item.Pages.Count;
+using Microsoft.Graph.Beta.Sites.Item.Pages.GraphSitePage;
 using Microsoft.Graph.Beta.Sites.Item.Pages.Item;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -19,6 +20,10 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to sitePage.</summary>
+        public GraphSitePageRequestBuilder GraphSitePage { get =>
+            new GraphSitePageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the pages property of the microsoft.graph.site entity.</summary>
         /// <param name="position">The unique identifier of baseSitePage</param>

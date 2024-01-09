@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetActio
         public GetActionStatusReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports/getActionStatusReports", rawUrl) {
         }
         /// <summary>
-        /// Invoke action getActionStatusReports
+        /// Get the remote action status reports, including data such as the Cloud PC ID, Cloud PC device display name, initiating user&apos;s principal name, device owner&apos;s user principal name, action taken, and action state.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcreports-getactionstatusreports?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetActio
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action getActionStatusReports
+        /// Get the remote action status reports, including data such as the Cloud PC ID, Cloud PC device display name, initiating user&apos;s principal name, device owner&apos;s user principal name, action taken, and action state.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
