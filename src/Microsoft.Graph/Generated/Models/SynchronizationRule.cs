@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The containerFilter property</summary>
+        /// <summary>The names and identifiers of organizational units that are in scope for a synchronization rule. containerFilter and groupFilter are mutually exclusive properties that cannot be configured in the same request. Currently only supported for Azure AD Connect cloud sync scenarios.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.ContainerFilter? ContainerFilter {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("editable"); }
             set { BackingStore?.Set("editable", value); }
         }
-        /// <summary>The groupFilter property</summary>
+        /// <summary>The names and identifiers of groups that are in scope for a synchronization rule. containerFilter and groupFilter are mutually exclusive properties that cannot be configured in the same request. Currently only supported for Azure AD Connect cloud sync scenarios.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.GroupFilter? GroupFilter {

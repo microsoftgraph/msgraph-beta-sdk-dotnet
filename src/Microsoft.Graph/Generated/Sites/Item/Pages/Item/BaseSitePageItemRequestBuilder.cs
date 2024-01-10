@@ -2,6 +2,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Sites.Item.Pages.Item.CreatedByUser;
+using Microsoft.Graph.Beta.Sites.Item.Pages.Item.GraphSitePage;
 using Microsoft.Graph.Beta.Sites.Item.Pages.Item.LastModifiedByUser;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -19,6 +20,10 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item {
         /// <summary>Provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.</summary>
         public CreatedByUserRequestBuilder CreatedByUser { get =>
             new CreatedByUserRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to sitePage.</summary>
+        public GraphSitePageRequestBuilder GraphSitePage { get =>
+            new GraphSitePageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.</summary>
         public LastModifiedByUserRequestBuilder LastModifiedByUser { get =>
