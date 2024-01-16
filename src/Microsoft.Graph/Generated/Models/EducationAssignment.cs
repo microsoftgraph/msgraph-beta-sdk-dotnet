@@ -6,17 +6,17 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationAssignment : Entity, IParsable {
-        /// <summary>Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment should not be assigned to new students.</summary>
+        /// <summary>Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none. Supported values are: none, assignIfOpen. For example, a teacher can use assignIfOpen to indicate that an assignment should be assigned to any new student who joins the class while the assignment is still open, and none to indicate that an assignment shouldn&apos;t be assigned to new students.</summary>
         public EducationAddedStudentAction? AddedStudentAction {
             get { return BackingStore?.Get<EducationAddedStudentAction?>("addedStudentAction"); }
             set { BackingStore?.Set("addedStudentAction", value); }
         }
-        /// <summary>Optional field to control the assignment behavior  for adding assignments to students&apos; and teachers&apos; calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.</summary>
+        /// <summary>Optional field to control the assignment behavior  for adding assignments to students&apos; and teachers&apos; calendars when the assignment is published. The possible values are: none, studentsAndPublisher, studentsAndTeamOwners, unknownFutureValue, and studentsOnly. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: studentsOnly. The default value is none.</summary>
         public EducationAddToCalendarOptions? AddToCalendarAction {
             get { return BackingStore?.Get<EducationAddToCalendarOptions?>("addToCalendarAction"); }
             set { BackingStore?.Set("addToCalendarAction", value); }
         }
-        /// <summary>Identifies whether students can submit after the due date. If this property is not specified during create, it defaults to true.</summary>
+        /// <summary>Identifies whether students can submit after the due date. If this property isn&apos;t specified during create, it defaults to true.</summary>
         public bool? AllowLateSubmissions {
             get { return BackingStore?.Get<bool?>("allowLateSubmissions"); }
             set { BackingStore?.Set("allowLateSubmissions", value); }
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("allowStudentsToAddResourcesToSubmission"); }
             set { BackingStore?.Set("allowStudentsToAddResourcesToSubmission", value); }
         }
-        /// <summary>The date when the assignment should become active.  If in the future, the assignment is not shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>The date when the assignment should become active.  If in the future, the assignment isn&apos;t shown to the student until this date.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? AssignDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("assignDateTime"); }
             set { BackingStore?.Set("assignDateTime", value); }
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("categories", value); }
         }
 #endif
-        /// <summary>Class which this assignment belongs.</summary>
+        /// <summary>Class to which this assignment belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClassId {
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("classId", value); }
         }
 #endif
-        /// <summary>Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment doesn&apos;t allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CloseDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("closeDateTime"); }
             set { BackingStore?.Set("closeDateTime", value); }
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("grading", value); }
         }
 #endif
-        /// <summary>The gradingCategory property</summary>
+        /// <summary>When set, enables users to weight assignments differently when computing a class average grade.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EducationGradingCategory? GradingCategory {
@@ -163,7 +163,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("gradingCategory", value); }
         }
 #endif
-        /// <summary>Instructions for the assignment.  This along with the display name tell the student what to do.</summary>
+        /// <summary>Instructions for the assignment. This property and the display name tell the student what to do.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EducationItemBody? Instructions {
@@ -210,7 +210,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("moduleUrl", value); }
         }
 #endif
-        /// <summary>Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.</summary>
+        /// <summary>Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl isn&apos;t allowed after the assignment has been published.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NotificationChannelUrl {
@@ -266,7 +266,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("rubric", value); }
         }
 #endif
-        /// <summary>Status of the Assignment.  You can not PATCH this value.  Possible values are: draft, scheduled, published, assigned, unknownFutureValue and inactive. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.</summary>
+        /// <summary>Status of the Assignment.  You can’t PATCH this value.  Possible values are: draft, scheduled, published, assigned, unknownFutureValue and inactive. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.</summary>
         public EducationAssignmentStatus? Status {
             get { return BackingStore?.Get<EducationAssignmentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }

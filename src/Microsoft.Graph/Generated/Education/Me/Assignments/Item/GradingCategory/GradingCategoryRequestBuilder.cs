@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.GradingCategory {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get gradingCategory from education
+        /// When set, enables users to weight assignments differently when computing a class average grade.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.GradingCategory {
             return requestInfo;
         }
         /// <summary>
-        /// Get gradingCategory from education
+        /// When set, enables users to weight assignments differently when computing a class average grade.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.GradingCategory {
         public class GradingCategoryRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get gradingCategory from education
+        /// When set, enables users to weight assignments differently when computing a class average grade.
         /// </summary>
         public class GradingCategoryRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

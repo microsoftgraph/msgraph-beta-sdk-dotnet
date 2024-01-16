@@ -37,17 +37,17 @@ namespace Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.CalendarVie
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CalendarViewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarView{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", pathParameters) {
+        public CalendarViewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarView{?startDateTime*,endDateTime*,%24top,%24skip,%24filter,%24count,%24orderby,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new CalendarViewRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CalendarViewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarView{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
+        public CalendarViewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendarGroups/{calendarGroup%2Did}/calendars/{calendar%2Did}/calendarView{?startDateTime*,endDateTime*,%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,from a user&apos;s default calendar (../me/calendarView) or some other calendar of the user&apos;s.
+        /// The calendar view for the calendar. Navigation property. Read-only.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-list-calendarview?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.CalendarVie
             return await RequestAdapter.SendAsync<EventCollectionResponse>(requestInfo, EventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,from a user&apos;s default calendar (../me/calendarView) or some other calendar of the user&apos;s.
+        /// The calendar view for the calendar. Navigation property. Read-only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,12 +90,22 @@ namespace Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.CalendarVie
             return new CalendarViewRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the occurrences, exceptions and single instances of events in a calendar view defined by a time range,from a user&apos;s default calendar (../me/calendarView) or some other calendar of the user&apos;s.
+        /// The calendar view for the calendar. Navigation property. Read-only.
         /// </summary>
         public class CalendarViewRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
+            /// <summary>The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("endDateTime")]
+            public string? EndDateTime { get; set; }
+#nullable restore
+#else
+            [QueryParameter("endDateTime")]
+            public string EndDateTime { get; set; }
+#endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,6 +139,16 @@ namespace Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.CalendarVie
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
             public int? Skip { get; set; }
+            /// <summary>The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("startDateTime")]
+            public string? StartDateTime { get; set; }
+#nullable restore
+#else
+            [QueryParameter("startDateTime")]
+            public string StartDateTime { get; set; }
+#endif
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
             public int? Top { get; set; }
