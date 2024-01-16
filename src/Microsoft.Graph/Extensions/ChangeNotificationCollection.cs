@@ -6,7 +6,7 @@ using System;
 using Microsoft.Kiota.Abstractions.Store;
 
 namespace Microsoft.Graph.Beta.Models {
-    public class ChangeNotificationCollection : IAdditionalDataHolder,IBackedModel, IParsable {
+    public class ChangeNotificationCollection : ITokenValidable<ChangeNotification, ChangeNotificationEncryptedContent>,IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         
