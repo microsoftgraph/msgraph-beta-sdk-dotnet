@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationAssignmentSettings : Entity, IParsable {
-        /// <summary>The gradingCategories property</summary>
+        /// <summary>When set, enables users to weight assignments differently when computing a class average grade.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<EducationGradingCategory>? GradingCategories {

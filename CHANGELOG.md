@@ -7,6 +7,11 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.62.0-preview] - 2024-01-09
+
+- Latest metadata updates from 9th January 2024.
+- Fixes missing methods for change notifications.
+
 ## [5.61.0-preview] - 2024-01-09
 
 - Latest metadata updates from 9th January 2024.

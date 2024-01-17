@@ -10,6 +10,7 @@ using Microsoft.Graph.Beta.Users.Item.Authentication.PasswordMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAuthenticatorMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.PhoneMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.PlatformCredentialMethods;
+using Microsoft.Graph.Beta.Users.Item.Authentication.SignInPreferences;
 using Microsoft.Graph.Beta.Users.Item.Authentication.SoftwareOathMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.TemporaryAccessPassMethods;
 using Microsoft.Graph.Beta.Users.Item.Authentication.WindowsHelloForBusinessMethods;
@@ -61,6 +62,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication {
         /// <summary>Provides operations to manage the platformCredentialMethods property of the microsoft.graph.authentication entity.</summary>
         public PlatformCredentialMethodsRequestBuilder PlatformCredentialMethods { get =>
             new PlatformCredentialMethodsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The signInPreferences property</summary>
+        public SignInPreferencesRequestBuilder SignInPreferences { get =>
+            new SignInPreferencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.</summary>
         public SoftwareOathMethodsRequestBuilder SoftwareOathMethods { get =>

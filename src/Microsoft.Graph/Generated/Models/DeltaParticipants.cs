@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DeltaParticipants : Entity, IParsable {
-        /// <summary>The participants property</summary>
+        /// <summary>The collection of participants that were updated since the last roster update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Participant>? Participants {
