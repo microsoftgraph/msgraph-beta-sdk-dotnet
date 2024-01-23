@@ -45,5 +45,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>This device is managed by Intune&apos;s MDM for AOSP (Android Open Source Project) devices</summary>
         [EnumMember(Value = "intuneAosp")]
         IntuneAosp,
+        /// <summary>Indicates the management agent to manage the device is Google.</summary>
+        [EnumMember(Value = "google")]
+        Google,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

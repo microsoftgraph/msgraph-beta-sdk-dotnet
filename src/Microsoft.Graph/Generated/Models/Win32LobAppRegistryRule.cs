@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("keyPath", value); }
         }
 #endif
-        /// <summary>Contains all supported registry data detection type.</summary>
+        /// <summary>A list of possible operations for rules used to make determinations about an application based on registry keys or values. Unless noted, the values can be used with either detection or requirement rules.</summary>
         public Win32LobAppRegistryRuleOperationType? OperationType {
             get { return BackingStore?.Get<Win32LobAppRegistryRuleOperationType?>("operationType"); }
             set { BackingStore?.Set("operationType", value); }

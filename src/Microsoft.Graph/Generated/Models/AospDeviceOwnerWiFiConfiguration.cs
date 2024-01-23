@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
         }
 #endif
-        /// <summary>List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as *.example.com.</summary>
+        /// <summary>List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ProxyExclusionList {

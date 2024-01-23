@@ -271,6 +271,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.mobileLobApp" => new MobileLobApp(),
                 "#microsoft.graph.officeSuiteApp" => new OfficeSuiteApp(),
                 "#microsoft.graph.webApp" => new WebApp(),
+                "#microsoft.graph.win32CatalogApp" => new Win32CatalogApp(),
                 "#microsoft.graph.win32LobApp" => new Win32LobApp(),
                 "#microsoft.graph.windowsAppX" => new WindowsAppX(),
                 "#microsoft.graph.windowsMicrosoftEdgeApp" => new WindowsMicrosoftEdgeApp(),

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("incidentApiUrl", value); }
         }
 #endif
-        /// <summary>Indicates the ServiceNow instance URL that Intune will connect to. Saved in the format of https://&lt;instance&gt;.service-now.com</summary>
+        /// <summary>Indicates the ServiceNow instance URL that Intune will connect to. Saved in the format of https://.service-now.com</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InstanceUrl {

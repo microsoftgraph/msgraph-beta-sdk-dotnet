@@ -136,12 +136,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("securityRequireGooglePlayServices"); }
             set { BackingStore?.Set("securityRequireGooglePlayServices", value); }
         }
-        /// <summary>Require the device to pass the SafetyNet basic integrity check.</summary>
+        /// <summary>Require the device to pass the Play Integrity basic integrity check.</summary>
         public bool? SecurityRequireSafetyNetAttestationBasicIntegrity {
             get { return BackingStore?.Get<bool?>("securityRequireSafetyNetAttestationBasicIntegrity"); }
             set { BackingStore?.Set("securityRequireSafetyNetAttestationBasicIntegrity", value); }
         }
-        /// <summary>Require the device to pass the SafetyNet certified device check.</summary>
+        /// <summary>Require the device to pass the Play Integrity device integrity check.</summary>
         public bool? SecurityRequireSafetyNetAttestationCertifiedDevice {
             get { return BackingStore?.Get<bool?>("securityRequireSafetyNetAttestationCertifiedDevice"); }
             set { BackingStore?.Set("securityRequireSafetyNetAttestationCertifiedDevice", value); }

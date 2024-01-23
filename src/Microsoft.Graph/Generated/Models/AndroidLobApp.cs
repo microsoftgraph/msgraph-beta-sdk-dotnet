@@ -9,34 +9,6 @@ namespace Microsoft.Graph.Beta.Models {
     /// Contains properties and inherited properties for Android Line Of Business apps.
     /// </summary>
     public class AndroidLobApp : MobileLobApp, IParsable {
-        /// <summary>The Identity Name. This property is being deprecated in 2302(February 2023).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IdentityName {
-            get { return BackingStore?.Get<string?>("identityName"); }
-            set { BackingStore?.Set("identityName", value); }
-        }
-#nullable restore
-#else
-        public string IdentityName {
-            get { return BackingStore?.Get<string>("identityName"); }
-            set { BackingStore?.Set("identityName", value); }
-        }
-#endif
-        /// <summary>The identity version. This property is being deprecated in 2302(February 2023).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IdentityVersion {
-            get { return BackingStore?.Get<string?>("identityVersion"); }
-            set { BackingStore?.Set("identityVersion", value); }
-        }
-#nullable restore
-#else
-        public string IdentityVersion {
-            get { return BackingStore?.Get<string>("identityVersion"); }
-            set { BackingStore?.Set("identityVersion", value); }
-        }
-#endif
         /// <summary>The value for the minimum applicable operating system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,8 +89,6 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"identityName", n => { IdentityName = n.GetStringValue(); } },
-                {"identityVersion", n => { IdentityVersion = n.GetStringValue(); } },
                 {"minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<AndroidMinimumOperatingSystem>(AndroidMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
                 {"packageId", n => { PackageId = n.GetStringValue(); } },
                 {"targetedPlatforms", n => { TargetedPlatforms = n.GetEnumValue<AndroidTargetedPlatforms>(); } },
@@ -133,8 +103,6 @@ namespace Microsoft.Graph.Beta.Models {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("identityName", IdentityName);
-            writer.WriteStringValue("identityVersion", IdentityVersion);
             writer.WriteObjectValue<AndroidMinimumOperatingSystem>("minimumSupportedOperatingSystem", MinimumSupportedOperatingSystem);
             writer.WriteStringValue("packageId", PackageId);
             writer.WriteEnumValue<AndroidTargetedPlatforms>("targetedPlatforms", TargetedPlatforms);

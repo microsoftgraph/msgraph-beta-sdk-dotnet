@@ -55,5 +55,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Android Enterprise Corporate Work Profile</summary>
         [EnumMember(Value = "androidEnterpriseCorporateWorkProfile")]
         AndroidEnterpriseCorporateWorkProfile,
+        /// <summary>Indicates the device enrollment is for android device owned by/associated with user using Android Open Source Project (AOSP) on a non-Google mobile services.</summary>
+        [EnumMember(Value = "androidAOSPUserOwnedDeviceEnrollment")]
+        AndroidAOSPUserOwnedDeviceEnrollment,
+        /// <summary>Indicates the device enrollment is for user less android device using Android Open Source Project (AOSP) on a non-Google mobile services.</summary>
+        [EnumMember(Value = "androidAOSPUserlessDeviceEnrollment")]
+        AndroidAOSPUserlessDeviceEnrollment,
     }
 }

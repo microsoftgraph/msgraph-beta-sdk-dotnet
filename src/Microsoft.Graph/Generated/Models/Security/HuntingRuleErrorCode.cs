@@ -21,5 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         PartialRowsFailed,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "noImpactedEntity")]
+        NoImpactedEntity,
     }
 }

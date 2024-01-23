@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Solutions.BookingBusinesses;
 using Microsoft.Graph.Beta.Solutions.BookingCurrencies;
 using Microsoft.Graph.Beta.Solutions.BusinessScenarios;
+using Microsoft.Graph.Beta.Solutions.BusinessScenariosWithUniqueName;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -33,6 +34,14 @@ namespace Microsoft.Graph.Beta.Solutions {
         /// <summary>Provides operations to manage the virtualEvents property of the microsoft.graph.solutionsRoot entity.</summary>
         public VirtualEventsRequestBuilder VirtualEvents { get =>
             new VirtualEventsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>
+        /// Provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.
+        /// </summary>
+        /// <param name="uniqueName">Alternate key of businessScenario</param>
+        public BusinessScenariosWithUniqueNameRequestBuilder BusinessScenariosWithUniqueName(string uniqueName) {
+            if(string.IsNullOrEmpty(uniqueName)) throw new ArgumentNullException(nameof(uniqueName));
+            return new BusinessScenariosWithUniqueNameRequestBuilder(PathParameters, RequestAdapter, uniqueName);
         }
         /// <summary>
         /// Instantiates a new SolutionsRequestBuilder and sets the default values.

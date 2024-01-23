@@ -112,5 +112,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates an action has been initiated to pause configuration refresh for the device.</summary>
         [EnumMember(Value = "pauseConfigurationRefresh")]
         PauseConfigurationRefresh,
+        /// <summary>Indicates remote device action to intiate Mobile Device Management (MDM) attestation if device is capable for it.</summary>
+        [EnumMember(Value = "initiateDeviceAttestation")]
+        InitiateDeviceAttestation,
     }
 }

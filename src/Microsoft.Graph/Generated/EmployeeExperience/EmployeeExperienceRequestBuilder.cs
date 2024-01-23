@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.EmployeeExperience.Communities;
 using Microsoft.Graph.Beta.EmployeeExperience.EngagementAsyncOperations;
 using Microsoft.Graph.Beta.EmployeeExperience.Goals;
 using Microsoft.Graph.Beta.EmployeeExperience.LearningCourseActivities;
+using Microsoft.Graph.Beta.EmployeeExperience.LearningCourseActivitiesWithExternalcourseActivityId;
 using Microsoft.Graph.Beta.EmployeeExperience.LearningProviders;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -71,6 +72,14 @@ namespace Microsoft.Graph.Beta.EmployeeExperience {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.EmployeeExperience>(requestInfo, Microsoft.Graph.Beta.Models.EmployeeExperience.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperience entity.
+        /// </summary>
+        /// <param name="externalcourseActivityId">Alternate key of learningCourseActivity</param>
+        public LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder LearningCourseActivitiesWithExternalcourseActivityId(string externalcourseActivityId) {
+            if(string.IsNullOrEmpty(externalcourseActivityId)) throw new ArgumentNullException(nameof(externalcourseActivityId));
+            return new LearningCourseActivitiesWithExternalcourseActivityIdRequestBuilder(PathParameters, RequestAdapter, externalcourseActivityId);
         }
         /// <summary>
         /// Update employeeExperience

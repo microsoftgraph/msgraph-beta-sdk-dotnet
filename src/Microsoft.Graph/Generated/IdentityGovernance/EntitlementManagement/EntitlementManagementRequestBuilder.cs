@@ -13,6 +13,7 @@ using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackag
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Settings;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.SubjectsWithObjectId;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -156,6 +157,14 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.EntitlementManagement>(requestInfo, Microsoft.Graph.Beta.Models.EntitlementManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.
+        /// </summary>
+        /// <param name="objectId">Alternate key of accessPackageSubject</param>
+        public SubjectsWithObjectIdRequestBuilder SubjectsWithObjectId(string objectId) {
+            if(string.IsNullOrEmpty(objectId)) throw new ArgumentNullException(nameof(objectId));
+            return new SubjectsWithObjectIdRequestBuilder(PathParameters, RequestAdapter, objectId);
         }
         /// <summary>
         /// Delete navigation property entitlementManagement for identityGovernance

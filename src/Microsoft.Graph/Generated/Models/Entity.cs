@@ -7,6 +7,8 @@ using Microsoft.Graph.Beta.Models.IdentityGovernance;
 using Microsoft.Graph.Beta.Models.IndustryData;
 using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Graph.Beta.Models.Networkaccess;
+using Microsoft.Graph.Beta.Models.Partners.Billing;
+using Microsoft.Graph.Beta.Models.Partners;
 using Microsoft.Graph.Beta.Models.Search;
 using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Graph.Beta.Models.TermStore;
@@ -1112,6 +1114,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.networkaccess.policyRule" => new PolicyRule(),
                 "#microsoft.graph.networkaccess.privateAccessForwardingRule" => new PrivateAccessForwardingRule(),
                 "#microsoft.graph.networkaccess.profile" => new Microsoft.Graph.Beta.Models.Networkaccess.Profile(),
+                "#microsoft.graph.networkaccess.remoteNetwork" => new RemoteNetwork(),
                 "#microsoft.graph.networkaccess.remoteNetworkHealthEvent" => new RemoteNetworkHealthEvent(),
                 "#microsoft.graph.networkaccess.reports" => new Microsoft.Graph.Beta.Models.Networkaccess.Reports(),
                 "#microsoft.graph.networkaccess.settings" => new Microsoft.Graph.Beta.Models.Networkaccess.Settings(),
@@ -1168,6 +1171,8 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.openShiftChangeRequest" => new OpenShiftChangeRequest(),
                 "#microsoft.graph.openTypeExtension" => new OpenTypeExtension(),
                 "#microsoft.graph.operation" => new Operation(),
+                "#microsoft.graph.operationApprovalPolicy" => new OperationApprovalPolicy(),
+                "#microsoft.graph.operationApprovalRequest" => new OperationApprovalRequest(),
                 "#microsoft.graph.organization" => new Organization(),
                 "#microsoft.graph.organizationalBranding" => new OrganizationalBranding(),
                 "#microsoft.graph.organizationalBrandingLocalization" => new OrganizationalBrandingLocalization(),
@@ -1189,6 +1194,16 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.participant" => new Participant(),
                 "#microsoft.graph.participantJoiningNotification" => new ParticipantJoiningNotification(),
                 "#microsoft.graph.participantLeftNotification" => new ParticipantLeftNotification(),
+                "#microsoft.graph.partners" => new Microsoft.Graph.Beta.Models.Partners.Partners(),
+                "#microsoft.graph.partners.billing.azureUsage" => new AzureUsage(),
+                "#microsoft.graph.partners.billing.billedUsage" => new BilledUsage(),
+                "#microsoft.graph.partners.billing.billing" => new Microsoft.Graph.Beta.Models.Partners.Billing.Billing(),
+                "#microsoft.graph.partners.billing.exportSuccessOperation" => new ExportSuccessOperation(),
+                "#microsoft.graph.partners.billing.failedOperation" => new FailedOperation(),
+                "#microsoft.graph.partners.billing.manifest" => new Manifest(),
+                "#microsoft.graph.partners.billing.operation" => new Microsoft.Graph.Beta.Models.Partners.Billing.Operation(),
+                "#microsoft.graph.partners.billing.runningOperation" => new RunningOperation(),
+                "#microsoft.graph.partners.billing.unbilledUsage" => new UnbilledUsage(),
                 "#microsoft.graph.passwordAuthenticationMethod" => new PasswordAuthenticationMethod(),
                 "#microsoft.graph.passwordlessMicrosoftAuthenticatorAuthenticationMethod" => new PasswordlessMicrosoftAuthenticatorAuthenticationMethod(),
                 "#microsoft.graph.payload" => new Payload(),
@@ -1367,6 +1382,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.secureScoreControlProfile" => new SecureScoreControlProfile(),
                 "#microsoft.graph.security" => new Microsoft.Graph.Beta.Models.Security.Security(),
                 "#microsoft.graph.security.alert" => new Microsoft.Graph.Beta.Models.Security.Alert(),
+                "#microsoft.graph.security.analyzedEmail" => new AnalyzedEmail(),
                 "#microsoft.graph.security.article" => new Article(),
                 "#microsoft.graph.security.articleIndicator" => new ArticleIndicator(),
                 "#microsoft.graph.security.artifact" => new Microsoft.Graph.Beta.Models.Security.Artifact(),
@@ -1379,6 +1395,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.security.casesRoot" => new CasesRoot(),
                 "#microsoft.graph.security.categoryTemplate" => new Microsoft.Graph.Beta.Models.Security.CategoryTemplate(),
                 "#microsoft.graph.security.citationTemplate" => new Microsoft.Graph.Beta.Models.Security.CitationTemplate(),
+                "#microsoft.graph.security.collaborationRoot" => new CollaborationRoot(),
                 "#microsoft.graph.security.dataSet" => new DataSet(),
                 "#microsoft.graph.security.dataSource" => new Microsoft.Graph.Beta.Models.Security.DataSource(),
                 "#microsoft.graph.security.dataSourceContainer" => new Microsoft.Graph.Beta.Models.Security.DataSourceContainer(),
@@ -1741,6 +1758,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.webApp" => new WebApp(),
                 "#microsoft.graph.webApplicationSegment" => new WebApplicationSegment(),
                 "#microsoft.graph.webPart" => new WebPart(),
+                "#microsoft.graph.win32CatalogApp" => new Win32CatalogApp(),
                 "#microsoft.graph.win32LobApp" => new Win32LobApp(),
                 "#microsoft.graph.windows10CertificateProfileBase" => new Windows10CertificateProfileBase(),
                 "#microsoft.graph.windows10CompliancePolicy" => new Windows10CompliancePolicy(),

@@ -1257,6 +1257,34 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             set { BackingStore?.Set("notificationMessageTemplates", value); }
         }
 #endif
+        /// <summary>The Operation Approval Policies</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.OperationApprovalPolicy>? OperationApprovalPolicies {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OperationApprovalPolicy>?>("operationApprovalPolicies"); }
+            set { BackingStore?.Set("operationApprovalPolicies", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.OperationApprovalPolicy> OperationApprovalPolicies {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OperationApprovalPolicy>>("operationApprovalPolicies"); }
+            set { BackingStore?.Set("operationApprovalPolicies", value); }
+        }
+#endif
+        /// <summary>The Operation Approval Requests</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.OperationApprovalRequest>? OperationApprovalRequests {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OperationApprovalRequest>?>("operationApprovalRequests"); }
+            set { BackingStore?.Set("operationApprovalRequests", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.OperationApprovalRequest> OperationApprovalRequests {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OperationApprovalRequest>>("operationApprovalRequests"); }
+            set { BackingStore?.Set("operationApprovalRequests", value); }
+        }
+#endif
         /// <summary>The endpoint privilege management elevation event entity contains elevation details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2568,6 +2596,8 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
                 {"monitoring", n => { Monitoring = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring>(Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring.CreateFromDiscriminatorValue); } },
                 {"ndesConnectors", n => { NdesConnectors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NdesConnector>(Microsoft.Graph.Beta.Models.NdesConnector.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"notificationMessageTemplates", n => { NotificationMessageTemplates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NotificationMessageTemplate>(Microsoft.Graph.Beta.Models.NotificationMessageTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"operationApprovalPolicies", n => { OperationApprovalPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OperationApprovalPolicy>(Microsoft.Graph.Beta.Models.OperationApprovalPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"operationApprovalRequests", n => { OperationApprovalRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OperationApprovalRequest>(Microsoft.Graph.Beta.Models.OperationApprovalRequest.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"privilegeManagementElevations", n => { PrivilegeManagementElevations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation>(Microsoft.Graph.Beta.Models.PrivilegeManagementElevation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"remoteActionAudits", n => { RemoteActionAudits = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteActionAudit>(Microsoft.Graph.Beta.Models.RemoteActionAudit.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"remoteAssistancePartners", n => { RemoteAssistancePartners = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteAssistancePartner>(Microsoft.Graph.Beta.Models.RemoteAssistancePartner.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -2755,6 +2785,8 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring>("monitoring", Monitoring);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NdesConnector>("ndesConnectors", NdesConnectors);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NotificationMessageTemplate>("notificationMessageTemplates", NotificationMessageTemplates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OperationApprovalPolicy>("operationApprovalPolicies", OperationApprovalPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OperationApprovalRequest>("operationApprovalRequests", OperationApprovalRequests);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation>("privilegeManagementElevations", PrivilegeManagementElevations);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteActionAudit>("remoteActionAudits", RemoteActionAudits);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteAssistancePartner>("remoteAssistancePartners", RemoteAssistancePartners);

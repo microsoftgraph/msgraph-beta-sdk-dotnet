@@ -60,5 +60,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Evolvable enum member</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        /// <summary>Indicates remote device action to intiate Mobile Device Management (MDM) attestation if device is capable for it</summary>
+        [EnumMember(Value = "initiateDeviceAttestation")]
+        InitiateDeviceAttestation,
     }
 }

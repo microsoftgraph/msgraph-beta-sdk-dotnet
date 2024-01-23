@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The offerAsOptional property</summary>
+        public bool? OfferAsOptional {
+            get { return BackingStore?.Get<bool?>("offerAsOptional"); }
+            set { BackingStore?.Set("offerAsOptional", value); }
+        }
         /// <summary>
         /// Instantiates a new userExperienceSettings and sets the default values.
         /// </summary>
@@ -55,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             return new Dictionary<string, Action<IParseNode>> {
                 {"daysUntilForcedReboot", n => { DaysUntilForcedReboot = n.GetIntValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"offerAsOptional", n => { OfferAsOptional = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -65,6 +71,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("daysUntilForcedReboot", DaysUntilForcedReboot);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteBoolValue("offerAsOptional", OfferAsOptional);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("fileOrFolderName", value); }
         }
 #endif
-        /// <summary>Contains all supported file system detection type.</summary>
+        /// <summary>A list of possible operations for rules used to make determinations about an application based on files or folders. Unless noted, can be used with either detection or requirement rules.</summary>
         public Win32LobAppFileSystemOperationType? OperationType {
             get { return BackingStore?.Get<Win32LobAppFileSystemOperationType?>("operationType"); }
             set { BackingStore?.Set("operationType", value); }

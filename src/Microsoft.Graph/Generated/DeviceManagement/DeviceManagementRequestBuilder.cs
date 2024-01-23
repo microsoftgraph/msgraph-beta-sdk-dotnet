@@ -93,6 +93,8 @@ using Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors;
 using Microsoft.Graph.Beta.DeviceManagement.Monitoring;
 using Microsoft.Graph.Beta.DeviceManagement.NdesConnectors;
 using Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates;
+using Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies;
+using Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests;
 using Microsoft.Graph.Beta.DeviceManagement.PrivilegeManagementElevations;
 using Microsoft.Graph.Beta.DeviceManagement.RemoteActionAudits;
 using Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners;
@@ -553,6 +555,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>Provides operations to manage the notificationMessageTemplates property of the microsoft.graph.deviceManagement entity.</summary>
         public NotificationMessageTemplatesRequestBuilder NotificationMessageTemplates { get =>
             new NotificationMessageTemplatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the operationApprovalPolicies property of the microsoft.graph.deviceManagement entity.</summary>
+        public OperationApprovalPoliciesRequestBuilder OperationApprovalPolicies { get =>
+            new OperationApprovalPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the operationApprovalRequests property of the microsoft.graph.deviceManagement entity.</summary>
+        public OperationApprovalRequestsRequestBuilder OperationApprovalRequests { get =>
+            new OperationApprovalRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the privilegeManagementElevations property of the microsoft.graph.deviceManagement entity.</summary>
         public PrivilegeManagementElevationsRequestBuilder PrivilegeManagementElevations { get =>

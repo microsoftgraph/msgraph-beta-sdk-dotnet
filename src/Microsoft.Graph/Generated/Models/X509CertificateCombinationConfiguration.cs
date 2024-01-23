@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class X509CertificateCombinationConfiguration : AuthenticationCombinationConfiguration, IParsable {
-        /// <summary>The allowedIssuerSkis property</summary>
+        /// <summary>A list of allowed subject key identifier values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedIssuerSkis {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowedIssuerSkis", value); }
         }
 #endif
-        /// <summary>The allowedPolicyOIDs property</summary>
+        /// <summary>A list of allowed policy OIDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedPolicyOIDs {

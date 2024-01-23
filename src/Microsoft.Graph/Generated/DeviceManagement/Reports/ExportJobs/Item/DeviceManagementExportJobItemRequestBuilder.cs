@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.ExportJobs.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Entity representing a job to export a report
+        /// Entity representing a job to export a report.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.ExportJobs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Entity representing a job to export a report
+        /// Entity representing a job to export a report.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.ExportJobs.Item {
         public class DeviceManagementExportJobItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Entity representing a job to export a report
+        /// Entity representing a job to export a report.
         /// </summary>
         public class DeviceManagementExportJobItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

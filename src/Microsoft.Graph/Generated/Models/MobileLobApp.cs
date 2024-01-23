@@ -75,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.macOSDmgApp" => new MacOSDmgApp(),
                 "#microsoft.graph.macOSLobApp" => new MacOSLobApp(),
                 "#microsoft.graph.macOSPkgApp" => new MacOSPkgApp(),
+                "#microsoft.graph.win32CatalogApp" => new Win32CatalogApp(),
                 "#microsoft.graph.win32LobApp" => new Win32LobApp(),
                 "#microsoft.graph.windowsAppX" => new WindowsAppX(),
                 "#microsoft.graph.windowsMobileMSI" => new WindowsMobileMSI(),

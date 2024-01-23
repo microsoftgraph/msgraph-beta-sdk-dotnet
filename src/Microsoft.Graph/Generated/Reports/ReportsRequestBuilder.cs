@@ -139,6 +139,7 @@ using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByPrinter;
 using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser;
 using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByPrinter;
 using Microsoft.Graph.Beta.Reports.MonthlyPrintUsageSummariesByUser;
+using Microsoft.Graph.Beta.Reports.Partners;
 using Microsoft.Graph.Beta.Reports.Security;
 using Microsoft.Graph.Beta.Reports.ServiceActivity;
 using Microsoft.Graph.Beta.Reports.ServicePrincipalSignInActivities;
@@ -257,6 +258,10 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>Provides operations to manage the monthlyPrintUsageSummariesByUser property of the microsoft.graph.reportRoot entity.</summary>
         public MonthlyPrintUsageSummariesByUserRequestBuilder MonthlyPrintUsageSummariesByUser { get =>
             new MonthlyPrintUsageSummariesByUserRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the partners property of the microsoft.graph.reportRoot entity.</summary>
+        public PartnersRequestBuilder Partners { get =>
+            new PartnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the security property of the microsoft.graph.reportRoot entity.</summary>
         public SecurityRequestBuilder Security { get =>

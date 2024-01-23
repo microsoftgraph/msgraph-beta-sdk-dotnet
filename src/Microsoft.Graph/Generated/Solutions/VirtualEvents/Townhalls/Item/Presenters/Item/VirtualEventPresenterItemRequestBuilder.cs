@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters.Item.ProfilePhoto;
 using Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters.Item.Sessions;
+using Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters.Item.SessionsWithJoinWebUrl;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -96,6 +97,14 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<VirtualEventPresenter>(requestInfo, VirtualEventPresenter.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the sessions property of the microsoft.graph.virtualEventPresenter entity.
+        /// </summary>
+        /// <param name="joinWebUrl">Alternate key of virtualEventSession</param>
+        public SessionsWithJoinWebUrlRequestBuilder SessionsWithJoinWebUrl(string joinWebUrl) {
+            if(string.IsNullOrEmpty(joinWebUrl)) throw new ArgumentNullException(nameof(joinWebUrl));
+            return new SessionsWithJoinWebUrlRequestBuilder(PathParameters, RequestAdapter, joinWebUrl);
         }
         /// <summary>
         /// Delete navigation property presenters for solutions

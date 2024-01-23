@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models {
     /// The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     /// </summary>
     public class ManagedAppPolicyDeploymentSummary : Entity, IParsable {
-        /// <summary>Not yet documented</summary>
+        /// <summary>The configurationDeployedUserCount property</summary>
         public int? ConfigurationDeployedUserCount {
             get { return BackingStore?.Get<int?>("configurationDeployedUserCount"); }
             set { BackingStore?.Set("configurationDeployedUserCount", value); }
         }
-        /// <summary>Not yet documented</summary>
+        /// <summary>The configurationDeploymentSummaryPerApp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ManagedAppPolicyDeploymentSummaryPerApp>? ConfigurationDeploymentSummaryPerApp {
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("configurationDeploymentSummaryPerApp", value); }
         }
 #endif
-        /// <summary>Not yet documented</summary>
+        /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Not yet documented</summary>
+        /// <summary>The lastRefreshTime property</summary>
         public DateTimeOffset? LastRefreshTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshTime"); }
             set { BackingStore?.Set("lastRefreshTime", value); }

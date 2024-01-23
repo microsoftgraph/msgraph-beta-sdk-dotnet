@@ -48,6 +48,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("favoritePlans", value); }
         }
 #endif
+        /// <summary>The myDayTasks property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<PlannerTask>? MyDayTasks {
+            get { return BackingStore?.Get<List<PlannerTask>?>("myDayTasks"); }
+            set { BackingStore?.Set("myDayTasks", value); }
+        }
+#nullable restore
+#else
+        public List<PlannerTask> MyDayTasks {
+            get { return BackingStore?.Get<List<PlannerTask>>("myDayTasks"); }
+            set { BackingStore?.Set("myDayTasks", value); }
+        }
+#endif
         /// <summary>The plans property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -134,6 +148,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"all", n => { All = n.GetCollectionOfObjectValues<PlannerDelta>(PlannerDelta.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"favoritePlanReferences", n => { FavoritePlanReferences = n.GetObjectValue<PlannerFavoritePlanReferenceCollection>(PlannerFavoritePlanReferenceCollection.CreateFromDiscriminatorValue); } },
                 {"favoritePlans", n => { FavoritePlans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"myDayTasks", n => { MyDayTasks = n.GetCollectionOfObjectValues<PlannerTask>(PlannerTask.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"plans", n => { Plans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"recentPlanReferences", n => { RecentPlanReferences = n.GetObjectValue<PlannerRecentPlanReferenceCollection>(PlannerRecentPlanReferenceCollection.CreateFromDiscriminatorValue); } },
                 {"recentPlans", n => { RecentPlans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -151,6 +166,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<PlannerDelta>("all", All);
             writer.WriteObjectValue<PlannerFavoritePlanReferenceCollection>("favoritePlanReferences", FavoritePlanReferences);
             writer.WriteCollectionOfObjectValues<PlannerPlan>("favoritePlans", FavoritePlans);
+            writer.WriteCollectionOfObjectValues<PlannerTask>("myDayTasks", MyDayTasks);
             writer.WriteCollectionOfObjectValues<PlannerPlan>("plans", Plans);
             writer.WriteObjectValue<PlannerRecentPlanReferenceCollection>("recentPlanReferences", RecentPlanReferences);
             writer.WriteCollectionOfObjectValues<PlannerPlan>("recentPlans", RecentPlans);

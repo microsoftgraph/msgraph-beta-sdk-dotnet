@@ -2,6 +2,7 @@
 using Microsoft.Graph.Beta.Models.Networkaccess;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches;
+using Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -18,6 +19,10 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity {
         /// <summary>Provides operations to manage the branches property of the microsoft.graph.networkaccess.connectivity entity.</summary>
         public BranchesRequestBuilder Branches { get =>
             new BranchesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the remoteNetworks property of the microsoft.graph.networkaccess.connectivity entity.</summary>
+        public RemoteNetworksRequestBuilder RemoteNetworks { get =>
+            new RemoteNetworksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new ConnectivityRequestBuilder and sets the default values.

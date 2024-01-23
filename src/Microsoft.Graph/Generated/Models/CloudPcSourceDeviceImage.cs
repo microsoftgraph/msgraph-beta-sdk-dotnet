@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The display name for the source image.</summary>
+        /// <summary>The display name for the source image. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The ID of the source image.</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The resourceId property</summary>
+        /// <summary>The fully qualified unique identifier (ID) of the source image resource in Azure. The ID format is: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}&apos;. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceId {
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resourceId", value); }
         }
 #endif
-        /// <summary>The display name of subscription that hosts the source image.</summary>
+        /// <summary>The display name of the subscription that hosts the source image. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionDisplayName {
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("subscriptionDisplayName", value); }
         }
 #endif
-        /// <summary>The ID of subscription that hosts the source image.</summary>
+        /// <summary>The unique identifier (ID) of the subscription that hosts the source image. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionId {
