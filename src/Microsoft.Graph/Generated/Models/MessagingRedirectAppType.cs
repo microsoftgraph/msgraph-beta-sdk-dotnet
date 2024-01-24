@@ -13,5 +13,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>App protection policy will allow messaging redirection only to specified applications in related App protection policy settings. See related settings `messagingRedirectAppDisplayName`, `messagingRedirectAppPackageId` and `messagingRedirectAppUrlScheme`.</summary>
         [EnumMember(Value = "specificApps")]
         SpecificApps,
+        /// <summary>App protection policy will block messaging redirection to any app.</summary>
+        [EnumMember(Value = "blocked")]
+        Blocked,
     }
 }

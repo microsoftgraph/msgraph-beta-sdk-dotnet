@@ -48,6 +48,20 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.SendActivityNotification {
             set { BackingStore?.Set("previewText", value); }
         }
 #endif
+        /// <summary>The teamsAppId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TeamsAppId {
+            get { return BackingStore?.Get<string?>("teamsAppId"); }
+            set { BackingStore?.Set("teamsAppId", value); }
+        }
+#nullable restore
+#else
+        public string TeamsAppId {
+            get { return BackingStore?.Get<string>("teamsAppId"); }
+            set { BackingStore?.Set("teamsAppId", value); }
+        }
+#endif
         /// <summary>The templateParameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,6 +113,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.SendActivityNotification {
                 {"activityType", n => { ActivityType = n.GetStringValue(); } },
                 {"chainId", n => { ChainId = n.GetLongValue(); } },
                 {"previewText", n => { PreviewText = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                {"teamsAppId", n => { TeamsAppId = n.GetStringValue(); } },
                 {"templateParameters", n => { TemplateParameters = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"topic", n => { Topic = n.GetObjectValue<TeamworkActivityTopic>(TeamworkActivityTopic.CreateFromDiscriminatorValue); } },
             };
@@ -112,6 +127,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.SendActivityNotification {
             writer.WriteStringValue("activityType", ActivityType);
             writer.WriteLongValue("chainId", ChainId);
             writer.WriteObjectValue<ItemBody>("previewText", PreviewText);
+            writer.WriteStringValue("teamsAppId", TeamsAppId);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("templateParameters", TemplateParameters);
             writer.WriteObjectValue<TeamworkActivityTopic>("topic", Topic);
             writer.WriteAdditionalData(AdditionalData);

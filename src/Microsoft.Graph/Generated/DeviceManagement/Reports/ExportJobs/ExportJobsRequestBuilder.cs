@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.ExportJobs {
         public ExportJobsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/reports/exportJobs{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Entity representing a job to export a report
+        /// Entity representing a job to export a report.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.ExportJobs {
             return await RequestAdapter.SendAsync<DeviceManagementExportJob>(requestInfo, DeviceManagementExportJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Entity representing a job to export a report
+        /// Entity representing a job to export a report.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.ExportJobs {
             return new ExportJobsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Entity representing a job to export a report
+        /// Entity representing a job to export a report.
         /// </summary>
         public class ExportJobsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -7,7 +7,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcGalleryImage : Entity, IParsable {
-        /// <summary>The official display name of the gallery image. Read-only.</summary>
+        /// <summary>The display name of this gallery image. For example, Windows 11 Enterprise + Microsoft 365 Apps 22H2. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -21,17 +21,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The date in which this image is no longer within long-term support. The Cloud PC continues to provide short-term support. Read-only.</summary>
+        /// <summary>The date when the status of image becomes supportedWithWarning. Users can still provision new Cloud PCs if the current time is later than endDate and earlier than expirationDate. For example, assume the endDate of a gallery image is 2023-9-14 and expirationDate is 2024-3-14, users are able to provision new Cloud PCs if today is 2023-10-01. Read-only.</summary>
         public Date? EndDate {
             get { return BackingStore?.Get<Date?>("endDate"); }
             set { BackingStore?.Set("endDate", value); }
         }
-        /// <summary>The date when the image is no longer available. Read-only.</summary>
+        /// <summary>The date when the image is no longer available. Users are unable to provision new Cloud PCs if the current time is later than expirationDate. The value is usually endDate plus six months. For example, if the startDate is 2025-10-14, the expirationDate is usually 2026-04-14. Read-only.</summary>
         public Date? ExpirationDate {
             get { return BackingStore?.Get<Date?>("expirationDate"); }
             set { BackingStore?.Set("expirationDate", value); }
         }
-        /// <summary>The offer name of the gallery image. This value is passed to Azure to get the image resource. Read-only.</summary>
+        /// <summary>The offer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Offer {
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("offer", value); }
         }
 #endif
-        /// <summary>The official display offer name of the gallery image. For example, Windows 10 Enterprise + OS Optimizations. Read-only.</summary>
+        /// <summary>The offerDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OfferDisplayName {
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("offerDisplayName", value); }
         }
 #endif
-        /// <summary>The offerName property</summary>
+        /// <summary>The offer name of this gallery image that is passed to ARM to retrieve the image resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OfferName {
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("offerName", value); }
         }
 #endif
-        /// <summary>The publisher name of the gallery image. This value is passed to Azure to get the image resource. Read-only.</summary>
+        /// <summary>The publisher property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Publisher {
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("publisher", value); }
         }
 #endif
-        /// <summary>The publisherName property</summary>
+        /// <summary>The publisher name of this gallery image that is passed to ARM to retrieve the image resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PublisherName {
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("publisherName", value); }
         }
 #endif
-        /// <summary>Recommended Cloud PC SKU for this gallery image. Read-only.</summary>
+        /// <summary>The recommendedSku property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecommendedSku {
@@ -115,12 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recommendedSku", value); }
         }
 #endif
-        /// <summary>The size of this image in gigabytes. Read-only.</summary>
+        /// <summary>Indicates the size of this image in gigabytes. For example, 64. Read-only.</summary>
         public int? SizeInGB {
             get { return BackingStore?.Get<int?>("sizeInGB"); }
             set { BackingStore?.Set("sizeInGB", value); }
         }
-        /// <summary>The SKU name of the gallery image. This value is passed to Azure to get the image resource. Read-only.</summary>
+        /// <summary>The sku property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sku {
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sku", value); }
         }
 #endif
-        /// <summary>The official display stock keeping unit (SKU) name of this gallery image. For example, 2004. Read-only.</summary>
+        /// <summary>The skuDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SkuDisplayName {
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("skuDisplayName", value); }
         }
 #endif
-        /// <summary>The skuName property</summary>
+        /// <summary>The SKU name of this image that is passed to ARM to retrieve the image resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SkuName {
@@ -162,12 +162,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("skuName", value); }
         }
 #endif
-        /// <summary>The date when the image becomes available. Read-only.</summary>
+        /// <summary>The date when the Cloud PC image is available for provisioning new Cloud PCs. For example, 2022-09-20. Read-only.</summary>
         public Date? StartDate {
             get { return BackingStore?.Get<Date?>("startDate"); }
             set { BackingStore?.Set("startDate", value); }
         }
-        /// <summary>The status of the gallery image on the Cloud PC. Possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. Read-only.</summary>
+        /// <summary>The status of the gallery image on the Cloud PC. Possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. The default value is supported. Read-only.</summary>
         public CloudPcGalleryImageStatus? Status {
             get { return BackingStore?.Get<CloudPcGalleryImageStatus?>("status"); }
             set { BackingStore?.Set("status", value); }

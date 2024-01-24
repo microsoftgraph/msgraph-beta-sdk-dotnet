@@ -239,6 +239,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ruleId", value); }
         }
 #endif
+        /// <summary>To identify if the elevation is initiated by system or user interaction</summary>
+        public bool? SystemInitiatedElevation {
+            get { return BackingStore?.Get<bool?>("systemInitiatedElevation"); }
+            set { BackingStore?.Set("systemInitiatedElevation", value); }
+        }
         /// <summary>The User Principal Name of the user who performed the elevation. Example: `john@domain.com`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -290,6 +295,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"productName", n => { ProductName = n.GetStringValue(); } },
                 {"result", n => { Result = n.GetIntValue(); } },
                 {"ruleId", n => { RuleId = n.GetStringValue(); } },
+                {"systemInitiatedElevation", n => { SystemInitiatedElevation = n.GetBoolValue(); } },
                 {"upn", n => { Upn = n.GetStringValue(); } },
                 {"userType", n => { UserType = n.GetEnumValue<PrivilegeManagementEndUserType>(); } },
             };
@@ -320,6 +326,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("productName", ProductName);
             writer.WriteIntValue("result", Result);
             writer.WriteStringValue("ruleId", RuleId);
+            writer.WriteBoolValue("systemInitiatedElevation", SystemInitiatedElevation);
             writer.WriteStringValue("upn", Upn);
             writer.WriteEnumValue<PrivilegeManagementEndUserType>("userType", UserType);
         }

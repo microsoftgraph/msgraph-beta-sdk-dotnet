@@ -7,6 +7,7 @@ using Microsoft.Graph.Beta.Security.AttackSimulation;
 using Microsoft.Graph.Beta.Security.AuditLog;
 using Microsoft.Graph.Beta.Security.Cases;
 using Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles;
+using Microsoft.Graph.Beta.Security.Collaboration;
 using Microsoft.Graph.Beta.Security.DomainSecurityProfiles;
 using Microsoft.Graph.Beta.Security.FileSecurityProfiles;
 using Microsoft.Graph.Beta.Security.HostSecurityProfiles;
@@ -62,6 +63,10 @@ namespace Microsoft.Graph.Beta.Security {
         /// <summary>Provides operations to manage the cloudAppSecurityProfiles property of the microsoft.graph.security entity.</summary>
         public CloudAppSecurityProfilesRequestBuilder CloudAppSecurityProfiles { get =>
             new CloudAppSecurityProfilesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the collaboration property of the microsoft.graph.security entity.</summary>
+        public CollaborationRequestBuilder Collaboration { get =>
+            new CollaborationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the domainSecurityProfiles property of the microsoft.graph.security entity.</summary>
         public DomainSecurityProfilesRequestBuilder DomainSecurityProfiles { get =>

@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageResource : Entity, IParsable {
-        /// <summary>Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment&apos;s originId.Supports $expand.</summary>
+        /// <summary>Contains the environment information for the resource. This environment can be set using either the @odata.bind annotation or the environment&apos;s originId. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment? AccessPackageResourceEnvironment {
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The display name of the resource, such as the application name, group name or site name.</summary>
+        /// <summary>The display name of the resource, such as the application name, group name, or site name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isPendingOnboarding"); }
             set { BackingStore?.Set("isPendingOnboarding", value); }
         }
-        /// <summary>The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, this is the identifier of the group.</summary>
+        /// <summary>The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, originId is the identifier of the group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginId {
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("originId", value); }
         }
 #endif
-        /// <summary>The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.</summary>
+        /// <summary>The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginSystem {

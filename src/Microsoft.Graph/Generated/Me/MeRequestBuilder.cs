@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Me.AgreementAcceptances;
 using Microsoft.Graph.Beta.Me.Analytics;
 using Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval;
 using Microsoft.Graph.Beta.Me.AppRoleAssignedResources;
+using Microsoft.Graph.Beta.Me.AppRoleAssignedResourcesWithAppId;
 using Microsoft.Graph.Beta.Me.AppRoleAssignments;
 using Microsoft.Graph.Beta.Me.Approvals;
 using Microsoft.Graph.Beta.Me.AssignLicense;
@@ -24,6 +25,7 @@ using Microsoft.Graph.Beta.Me.DeletePasswordSingleSignOnCredentials;
 using Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations;
 using Microsoft.Graph.Beta.Me.DeviceManagementTroubleshootingEvents;
 using Microsoft.Graph.Beta.Me.Devices;
+using Microsoft.Graph.Beta.Me.DevicesWithDeviceId;
 using Microsoft.Graph.Beta.Me.DirectReports;
 using Microsoft.Graph.Beta.Me.Drive;
 using Microsoft.Graph.Beta.Me.Drives;
@@ -69,6 +71,7 @@ using Microsoft.Graph.Beta.Me.Notifications;
 using Microsoft.Graph.Beta.Me.Oauth2PermissionGrants;
 using Microsoft.Graph.Beta.Me.Onenote;
 using Microsoft.Graph.Beta.Me.OnlineMeetings;
+using Microsoft.Graph.Beta.Me.OnlineMeetingsWithJoinWebUrl;
 using Microsoft.Graph.Beta.Me.Outlook;
 using Microsoft.Graph.Beta.Me.OwnedDevices;
 using Microsoft.Graph.Beta.Me.OwnedObjects;
@@ -538,6 +541,14 @@ namespace Microsoft.Graph.Beta.Me {
             new WipeManagedAppRegistrationsByDeviceTagRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
+        /// Provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.
+        /// </summary>
+        /// <param name="appId">Alternate key of servicePrincipal</param>
+        public AppRoleAssignedResourcesWithAppIdRequestBuilder AppRoleAssignedResourcesWithAppId(string appId) {
+            if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
+            return new AppRoleAssignedResourcesWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
+        }
+        /// <summary>
         /// Instantiates a new MeRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -550,6 +561,14 @@ namespace Microsoft.Graph.Beta.Me {
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public MeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me{?%24select,%24expand}", rawUrl) {
+        }
+        /// <summary>
+        /// Provides operations to manage the devices property of the microsoft.graph.user entity.
+        /// </summary>
+        /// <param name="deviceId">Alternate key of device</param>
+        public DevicesWithDeviceIdRequestBuilder DevicesWithDeviceId(string deviceId) {
+            if(string.IsNullOrEmpty(deviceId)) throw new ArgumentNullException(nameof(deviceId));
+            return new DevicesWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, deviceId);
         }
         /// <summary>
         /// Provides operations to call the exportDeviceAndAppManagementData method.
@@ -570,8 +589,8 @@ namespace Microsoft.Graph.Beta.Me {
             return new FindRoomsWithRoomListRequestBuilder(PathParameters, RequestAdapter, roomList);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-get?view=graph-rest-1.0" />
+        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -588,6 +607,14 @@ namespace Microsoft.Graph.Beta.Me {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
+        /// </summary>
+        /// <param name="joinWebUrl">Alternate key of onlineMeeting</param>
+        public OnlineMeetingsWithJoinWebUrlRequestBuilder OnlineMeetingsWithJoinWebUrl(string joinWebUrl) {
+            if(string.IsNullOrEmpty(joinWebUrl)) throw new ArgumentNullException(nameof(joinWebUrl));
+            return new OnlineMeetingsWithJoinWebUrlRequestBuilder(PathParameters, RequestAdapter, joinWebUrl);
         }
         /// <summary>
         /// Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
@@ -622,7 +649,7 @@ namespace Microsoft.Graph.Beta.Me {
             return new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance.
+        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -664,7 +691,7 @@ namespace Microsoft.Graph.Beta.Me {
             return new MeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance.
+        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
         /// </summary>
         public class MeRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

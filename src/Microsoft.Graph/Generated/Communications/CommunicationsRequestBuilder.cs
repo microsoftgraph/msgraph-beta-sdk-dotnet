@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Communications.CallRecords;
 using Microsoft.Graph.Beta.Communications.Calls;
 using Microsoft.Graph.Beta.Communications.GetPresencesByUserId;
 using Microsoft.Graph.Beta.Communications.OnlineMeetings;
+using Microsoft.Graph.Beta.Communications.OnlineMeetingsWithJoinWebUrl;
 using Microsoft.Graph.Beta.Communications.Presences;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -71,6 +72,14 @@ namespace Microsoft.Graph.Beta.Communications {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CloudCommunications>(requestInfo, CloudCommunications.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.
+        /// </summary>
+        /// <param name="joinWebUrl">Alternate key of onlineMeeting</param>
+        public OnlineMeetingsWithJoinWebUrlRequestBuilder OnlineMeetingsWithJoinWebUrl(string joinWebUrl) {
+            if(string.IsNullOrEmpty(joinWebUrl)) throw new ArgumentNullException(nameof(joinWebUrl));
+            return new OnlineMeetingsWithJoinWebUrlRequestBuilder(PathParameters, RequestAdapter, joinWebUrl);
         }
         /// <summary>
         /// Update communications

@@ -2,6 +2,8 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item.Applications;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item.ApplicationsWithAppId;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item.ApplicationsWithUniqueName;
 using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups.Item.Members;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +25,22 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
         /// <summary>Provides operations to manage the members property of the microsoft.graph.connectorGroup entity.</summary>
         public MembersRequestBuilder Members { get =>
             new MembersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>
+        /// Provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.
+        /// </summary>
+        /// <param name="appId">Alternate key of application</param>
+        public ApplicationsWithAppIdRequestBuilder ApplicationsWithAppId(string appId) {
+            if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
+            return new ApplicationsWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
+        }
+        /// <summary>
+        /// Provides operations to manage the applications property of the microsoft.graph.connectorGroup entity.
+        /// </summary>
+        /// <param name="uniqueName">Alternate key of application</param>
+        public ApplicationsWithUniqueNameRequestBuilder ApplicationsWithUniqueName(string uniqueName) {
+            if(string.IsNullOrEmpty(uniqueName)) throw new ArgumentNullException(nameof(uniqueName));
+            return new ApplicationsWithUniqueNameRequestBuilder(PathParameters, RequestAdapter, uniqueName);
         }
         /// <summary>
         /// Instantiates a new ConnectorGroupItemRequestBuilder and sets the default values.

@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationCombinationConfiguration : Entity, IParsable {
-        /// <summary>Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that&apos;s defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is &apos;fido2&apos;.</summary>
+        /// <summary>Which authentication method combinations this configuration applies to. Must be an allowedCombinations object defined for the authenticationStrengthPolicy. For fido2combinationConfigurations use &apos;fido2&apos;, for x509certificatecombinationconfiguration use &apos;x509CertificateSingleFactor&apos; or &apos;x509CertificateMultiFactor&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AuthenticationMethodModes?>? AppliesToCombinations {

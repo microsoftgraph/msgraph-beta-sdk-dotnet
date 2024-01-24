@@ -6,15 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Entity representing a job to export a report
+    /// Entity representing a job to export a report.
     /// </summary>
     public class DeviceManagementExportJob : Entity, IParsable {
-        /// <summary>Time that the exported report expires. This property is read-only.</summary>
+        /// <summary>Time that the exported report expires.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>Filters applied on the report</summary>
+        /// <summary>Filters applied on the report. The maximum length allowed for this property is 2000 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Filter {
@@ -28,17 +28,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("filter", value); }
         }
 #endif
-        /// <summary>Possible values for the file format of a report</summary>
+        /// <summary>Possible values for the file format of a report.</summary>
         public DeviceManagementReportFileFormat? Format {
             get { return BackingStore?.Get<DeviceManagementReportFileFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
-        /// <summary>Configures how the requested export job is localized</summary>
+        /// <summary>Configures how the requested export job is localized.</summary>
         public DeviceManagementExportJobLocalizationType? LocalizationType {
             get { return BackingStore?.Get<DeviceManagementExportJobLocalizationType?>("localizationType"); }
             set { BackingStore?.Set("localizationType", value); }
         }
-        /// <summary>Name of the report</summary>
+        /// <summary>Name of the report. The maximum length allowed for this property is 2000 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReportName {
@@ -52,12 +52,26 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("reportName", value); }
         }
 #endif
-        /// <summary>Time that the exported report was requested. This property is read-only.</summary>
+        /// <summary>Time that the exported report was requested.</summary>
         public DateTimeOffset? RequestDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("requestDateTime"); }
             set { BackingStore?.Set("requestDateTime", value); }
         }
-        /// <summary>Columns selected from the report</summary>
+        /// <summary>Configures a search term to filter the data. The maximum length allowed for this property is 100 characters.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Search {
+            get { return BackingStore?.Get<string?>("search"); }
+            set { BackingStore?.Set("search", value); }
+        }
+#nullable restore
+#else
+        public string Search {
+            get { return BackingStore?.Get<string>("search"); }
+            set { BackingStore?.Set("search", value); }
+        }
+#endif
+        /// <summary>Columns selected from the report. The maximum number of allowed columns names is 256. The maximum length allowed for each column name in this property is 1000 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Select {
@@ -71,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("select", value); }
         }
 #endif
-        /// <summary>A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.</summary>
+        /// <summary>A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id. The maximum length allowed for this property is 128 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SnapshotId {
@@ -85,12 +99,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("snapshotId", value); }
         }
 #endif
-        /// <summary>Possible statuses associated with a generated report</summary>
+        /// <summary>Possible statuses associated with a generated report.</summary>
         public DeviceManagementReportStatus? Status {
             get { return BackingStore?.Get<DeviceManagementReportStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>Temporary location of the exported report. This property is read-only.</summary>
+        /// <summary>Temporary location of the exported report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url {
@@ -123,6 +137,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"localizationType", n => { LocalizationType = n.GetEnumValue<DeviceManagementExportJobLocalizationType>(); } },
                 {"reportName", n => { ReportName = n.GetStringValue(); } },
                 {"requestDateTime", n => { RequestDateTime = n.GetDateTimeOffsetValue(); } },
+                {"search", n => { Search = n.GetStringValue(); } },
                 {"select", n => { Select = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"snapshotId", n => { SnapshotId = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<DeviceManagementReportStatus>(); } },
@@ -142,6 +157,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<DeviceManagementExportJobLocalizationType>("localizationType", LocalizationType);
             writer.WriteStringValue("reportName", ReportName);
             writer.WriteDateTimeOffsetValue("requestDateTime", RequestDateTime);
+            writer.WriteStringValue("search", Search);
             writer.WriteCollectionOfPrimitiveValues<string>("select", Select);
             writer.WriteStringValue("snapshotId", SnapshotId);
             writer.WriteEnumValue<DeviceManagementReportStatus>("status", Status);

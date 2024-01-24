@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Not yet documented</summary>
+        /// <summary>The calendarSyncEnabled property</summary>
         public bool? CalendarSyncEnabled {
             get { return BackingStore?.Get<bool?>("calendarSyncEnabled"); }
             set { BackingStore?.Set("calendarSyncEnabled", value); }
         }
-        /// <summary>Not yet documented</summary>
+        /// <summary>The deviceAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public WindowsDeviceAccount? DeviceAccount {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceAccount", value); }
         }
 #endif
-        /// <summary>Not yet documented</summary>
+        /// <summary>The deviceAccountEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceAccountEmail {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceAccountEmail", value); }
         }
 #endif
-        /// <summary>Not yet documented</summary>
+        /// <summary>The exchangeServer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExchangeServer {
@@ -75,12 +75,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Not yet documented</summary>
+        /// <summary>The passwordRotationEnabled property</summary>
         public bool? PasswordRotationEnabled {
             get { return BackingStore?.Get<bool?>("passwordRotationEnabled"); }
             set { BackingStore?.Set("passwordRotationEnabled", value); }
         }
-        /// <summary>Not yet documented</summary>
+        /// <summary>The sessionInitiationProtocalAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionInitiationProtocalAddress {

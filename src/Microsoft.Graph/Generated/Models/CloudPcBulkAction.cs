@@ -53,6 +53,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The scheduledDuringMaintenanceWindow property</summary>
+        public bool? ScheduledDuringMaintenanceWindow {
+            get { return BackingStore?.Get<bool?>("scheduledDuringMaintenanceWindow"); }
+            set { BackingStore?.Set("scheduledDuringMaintenanceWindow", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -83,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"cloudPcIds", n => { CloudPcIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"scheduledDuringMaintenanceWindow", n => { ScheduledDuringMaintenanceWindow = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -96,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("cloudPcIds", CloudPcIds);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteBoolValue("scheduledDuringMaintenanceWindow", ScheduledDuringMaintenanceWindow);
         }
     }
 }

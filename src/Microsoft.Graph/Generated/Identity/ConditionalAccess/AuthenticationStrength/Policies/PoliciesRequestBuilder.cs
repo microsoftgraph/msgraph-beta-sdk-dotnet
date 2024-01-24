@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         /// Provides operations to call the findByMethodMode method.
         /// </summary>
         /// <param name="authenticationMethodModes">Usage: authenticationMethodModes={authenticationMethodModes}</param>
-        [Obsolete("The findByMethodMode function is deprecated. Please use OData filter query instead. as of 2023-02/FindByMethodModeRemove on 2023-02-01 and will be removed 2023-03-31")]
+        [Obsolete("The findByMethodMode function is deprecated. Please use OData filter query instead. as of 2023-02/FindByMethodModeRemove")]
         public FindByMethodModeWithAuthenticationMethodModesRequestBuilder FindByMethodModeWithAuthenticationMethodModes(string authenticationMethodModes) {
             if(string.IsNullOrEmpty(authenticationMethodModes)) throw new ArgumentNullException(nameof(authenticationMethodModes));
             return new FindByMethodModeWithAuthenticationMethodModesRequestBuilder(PathParameters, RequestAdapter, authenticationMethodModes);

@@ -47,6 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.crossCloudAzureActiveDirectoryTenant" => new CrossCloudAzureActiveDirectoryTenant(),
                 "#microsoft.graph.domainIdentitySource" => new DomainIdentitySource(),
                 "#microsoft.graph.externalDomainFederation" => new ExternalDomainFederation(),
+                "#microsoft.graph.socialIdentitySource" => new SocialIdentitySource(),
                 _ => new IdentitySource(),
             };
         }

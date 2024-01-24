@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item.Comb
             return await RequestAdapter.SendAsync<AuthenticationCombinationConfiguration>(requestInfo, AuthenticationCombinationConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be updated as they&apos;re the only type of authenticationCombinationConfiguration that may be created.
+        /// Update the properties of an authenticationCombinationConfiguration object. The properties can be for one of the following derived types:* fido2combinationConfigurations* x509certificatecombinationconfiguration
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationcombinationconfiguration-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item.Comb
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an authenticationCombinationConfiguration object. In use, only fido2combinationConfigurations may be updated as they&apos;re the only type of authenticationCombinationConfiguration that may be created.
+        /// Update the properties of an authenticationCombinationConfiguration object. The properties can be for one of the following derived types:* fido2combinationConfigurations* x509certificatecombinationconfiguration
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

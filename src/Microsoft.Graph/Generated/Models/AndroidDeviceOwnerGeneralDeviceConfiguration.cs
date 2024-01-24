@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("detailedHelpText", value); }
         }
 #endif
-        /// <summary>Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE)</summary>
+        /// <summary>Indicates the location setting configuration for fully managed devices (COBO) and corporate owned devices with a work profile (COPE). Possible values are: notConfigured, disabled, unknownFutureValue.</summary>
         public AndroidDeviceOwnerLocationMode? DeviceLocationMode {
             get { return BackingStore?.Get<AndroidDeviceOwnerLocationMode?>("deviceLocationMode"); }
             set { BackingStore?.Set("deviceLocationMode", value); }

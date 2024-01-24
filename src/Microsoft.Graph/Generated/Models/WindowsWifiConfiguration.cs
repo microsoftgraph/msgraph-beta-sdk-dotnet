@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("proxyManualPort"); }
             set { BackingStore?.Set("proxyManualPort", value); }
         }
-        /// <summary>Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic.</summary>
+        /// <summary>Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic, unknownFutureValue.</summary>
         public WiFiProxySetting? ProxySetting {
             get { return BackingStore?.Get<WiFiProxySetting?>("proxySetting"); }
             set { BackingStore?.Set("proxySetting", value); }

@@ -6,10 +6,10 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Entity representing the configuration of a cached report
+    /// Entity representing the configuration of a cached report.
     /// </summary>
     public class DeviceManagementCachedReportConfiguration : Entity, IParsable {
-        /// <summary>Time that the cached report expires. This property is read-only.</summary>
+        /// <summary>Time that the cached report expires.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
@@ -28,12 +28,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("filter", value); }
         }
 #endif
-        /// <summary>Time that the cached report was last refreshed. This property is read-only.</summary>
+        /// <summary>Time that the cached report was last refreshed.</summary>
         public DateTimeOffset? LastRefreshDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshDateTime"); }
             set { BackingStore?.Set("lastRefreshDateTime", value); }
         }
-        /// <summary>Caller-managed metadata associated with the report</summary>
+        /// <summary>Caller-managed metadata associated with the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Metadata {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
-        /// <summary>Ordering of columns in the report</summary>
+        /// <summary>Ordering of columns in the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? OrderBy {
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("orderBy", value); }
         }
 #endif
-        /// <summary>Name of the report. This property is read-only.</summary>
+        /// <summary>Name of the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReportName {
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("reportName", value); }
         }
 #endif
-        /// <summary>Columns selected from the report</summary>
+        /// <summary>Columns selected from the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Select {
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("select", value); }
         }
 #endif
-        /// <summary>Possible statuses associated with a generated report</summary>
+        /// <summary>Possible statuses associated with a generated report.</summary>
         public DeviceManagementReportStatus? Status {
             get { return BackingStore?.Get<DeviceManagementReportStatus?>("status"); }
             set { BackingStore?.Set("status", value); }

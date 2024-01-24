@@ -306,20 +306,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceHealthScriptStates", value); }
         }
 #endif
-        /// <summary>Indicates the attestation status of the managed device. And in which way. Default: Unknown.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceIdentityAttestationDetail? DeviceIdentityAttestationDetail {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceIdentityAttestationDetail?>("deviceIdentityAttestationDetail"); }
-            set { BackingStore?.Set("deviceIdentityAttestationDetail", value); }
-        }
-#nullable restore
-#else
-        public Microsoft.Graph.Beta.Models.DeviceIdentityAttestationDetail DeviceIdentityAttestationDetail {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceIdentityAttestationDetail>("deviceIdentityAttestationDetail"); }
-            set { BackingStore?.Set("deviceIdentityAttestationDetail", value); }
-        }
-#endif
         /// <summary>Name of the device. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1018,7 +1004,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceFirmwareConfigurationInterfaceManaged", n => { DeviceFirmwareConfigurationInterfaceManaged = n.GetBoolValue(); } },
                 {"deviceHealthAttestationState", n => { DeviceHealthAttestationState = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceHealthAttestationState>(Microsoft.Graph.Beta.Models.DeviceHealthAttestationState.CreateFromDiscriminatorValue); } },
                 {"deviceHealthScriptStates", n => { DeviceHealthScriptStates = n.GetCollectionOfObjectValues<DeviceHealthScriptPolicyState>(DeviceHealthScriptPolicyState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceIdentityAttestationDetail", n => { DeviceIdentityAttestationDetail = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceIdentityAttestationDetail>(Microsoft.Graph.Beta.Models.DeviceIdentityAttestationDetail.CreateFromDiscriminatorValue); } },
                 {"deviceName", n => { DeviceName = n.GetStringValue(); } },
                 {"deviceRegistrationState", n => { DeviceRegistrationState = n.GetEnumValue<DeviceRegistrationState>(); } },
                 {"deviceType", n => { DeviceType = n.GetEnumValue<DeviceType>(); } },
@@ -1108,7 +1093,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<DeviceEnrollmentType>("deviceEnrollmentType", DeviceEnrollmentType);
             writer.WriteBoolValue("deviceFirmwareConfigurationInterfaceManaged", DeviceFirmwareConfigurationInterfaceManaged);
             writer.WriteCollectionOfObjectValues<DeviceHealthScriptPolicyState>("deviceHealthScriptStates", DeviceHealthScriptStates);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceIdentityAttestationDetail>("deviceIdentityAttestationDetail", DeviceIdentityAttestationDetail);
             writer.WriteEnumValue<DeviceRegistrationState>("deviceRegistrationState", DeviceRegistrationState);
             writer.WriteEnumValue<DeviceType>("deviceType", DeviceType);
             writer.WriteEnumValue<DeviceManagementExchangeAccessState>("exchangeAccessState", ExchangeAccessState);

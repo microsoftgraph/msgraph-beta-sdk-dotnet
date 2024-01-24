@@ -20,6 +20,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("branches", value); }
         }
 #endif
+        /// <summary>The remoteNetworks property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<RemoteNetwork>? RemoteNetworks {
+            get { return BackingStore?.Get<List<RemoteNetwork>?>("remoteNetworks"); }
+            set { BackingStore?.Set("remoteNetworks", value); }
+        }
+#nullable restore
+#else
+        public List<RemoteNetwork> RemoteNetworks {
+            get { return BackingStore?.Get<List<RemoteNetwork>>("remoteNetworks"); }
+            set { BackingStore?.Set("remoteNetworks", value); }
+        }
+#endif
         /// <summary>The webCategories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"branches", n => { Branches = n.GetCollectionOfObjectValues<BranchSite>(BranchSite.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"remoteNetworks", n => { RemoteNetworks = n.GetCollectionOfObjectValues<RemoteNetwork>(RemoteNetwork.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"webCategories", n => { WebCategories = n.GetCollectionOfObjectValues<WebCategory>(WebCategory.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -59,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<BranchSite>("branches", Branches);
+            writer.WriteCollectionOfObjectValues<RemoteNetwork>("remoteNetworks", RemoteNetworks);
             writer.WriteCollectionOfObjectValues<WebCategory>("webCategories", WebCategories);
         }
     }

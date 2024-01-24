@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DeviceManagementAutopilotPolicyType?>("policyType"); }
             set { BackingStore?.Set("policyType", value); }
         }
-        /// <summary>Indicates if this prolicy was tracked as part of the autopilot bootstrap enrollment sync session</summary>
+        /// <summary>Indicates if this policy was tracked as part of the autopilot bootstrap enrollment sync session</summary>
         public bool? TrackedOnEnrollmentStatus {
             get { return BackingStore?.Get<bool?>("trackedOnEnrollmentStatus"); }
             set { BackingStore?.Set("trackedOnEnrollmentStatus", value); }

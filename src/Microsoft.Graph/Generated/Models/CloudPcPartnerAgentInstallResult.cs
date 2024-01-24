@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The errorMessage property</summary>
+        /// <summary>Contains a detailed error message when the partner agent installation failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ErrorMessage {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcPartnerAgentInstallStatus?>("installStatus"); }
             set { BackingStore?.Set("installStatus", value); }
         }
-        /// <summary>Indicates if the partner agent is a third party. When &apos;TRUE&apos; the agent is a third-party (non-Microsoft) agent and when &apos;FALSE&apos; the agent is a Microsoft agent or isn&apos;t known.  The default value is &apos;FALSE&apos;</summary>
+        /// <summary>Indicates whether the partner agent is a third party. When true, the agent is a third-party (non-Microsoft) agent and when false, the agent is a Microsoft agent or isn&apos;t known.  The default value is false.</summary>
         public bool? IsThirdPartyPartner {
             get { return BackingStore?.Get<bool?>("isThirdPartyPartner"); }
             set { BackingStore?.Set("isThirdPartyPartner", value); }
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcPartnerAgentName?>("partnerAgentName"); }
             set { BackingStore?.Set("partnerAgentName", value); }
         }
-        /// <summary>Indicates if the partner agent is a third party. When &apos;TRUE&apos; the agent is a third-party (non-Microsoft) agent and when &apos;FALSE&apos; the agent is a Microsoft agent or isn&apos;t known. The default value is &apos;FALSE&apos;</summary>
+        /// <summary>Indicates whether the partner agent installation should be retried. The default value is false.</summary>
         public bool? Retriable {
             get { return BackingStore?.Get<bool?>("retriable"); }
             set { BackingStore?.Set("retriable", value); }

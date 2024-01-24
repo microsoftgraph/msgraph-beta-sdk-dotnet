@@ -48,8 +48,8 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskDetections.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of a collection of riskDetection objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0" />
+        /// Retrieve the properties of a riskDetection object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskDetections.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of a collection of riskDetection objects.
+        /// Retrieve the properties of a riskDetection object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskDetections.Item {
         public class RiskDetectionItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Retrieve the properties of a collection of riskDetection objects.
+        /// Retrieve the properties of a riskDetection object.
         /// </summary>
         public class RiskDetectionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceBatteriesDetails", value); }
         }
 #endif
-        /// <summary>Number of batteries in a user device. Valid values 1 to 2147483647</summary>
+        /// <summary>Number of batteries in a user device. Valid values 0 to 2147483647</summary>
         public int? DeviceBatteryCount {
             get { return BackingStore?.Get<int?>("deviceBatteryCount"); }
             set { BackingStore?.Set("deviceBatteryCount", value); }
@@ -38,6 +38,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("deviceBatteryHealthScore"); }
             set { BackingStore?.Set("deviceBatteryHealthScore", value); }
         }
+        /// <summary>Tags for computed information on how battery on the device is behaving. E.g. newbattery, batterycapacityred, designcapacityzero, etc.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? DeviceBatteryTags {
+            get { return BackingStore?.Get<List<string>?>("deviceBatteryTags"); }
+            set { BackingStore?.Set("deviceBatteryTags", value); }
+        }
+#nullable restore
+#else
+        public List<string> DeviceBatteryTags {
+            get { return BackingStore?.Get<List<string>>("deviceBatteryTags"); }
+            set { BackingStore?.Set("deviceBatteryTags", value); }
+        }
+#endif
         /// <summary>The unique identifier of the device, Intune DeviceID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,6 +145,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceBatteriesDetails", n => { DeviceBatteriesDetails = n.GetCollectionOfObjectValues<UserExperienceAnalyticsDeviceBatteryDetail>(UserExperienceAnalyticsDeviceBatteryDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deviceBatteryCount", n => { DeviceBatteryCount = n.GetIntValue(); } },
                 {"deviceBatteryHealthScore", n => { DeviceBatteryHealthScore = n.GetIntValue(); } },
+                {"deviceBatteryTags", n => { DeviceBatteryTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"deviceId", n => { DeviceId = n.GetStringValue(); } },
                 {"deviceName", n => { DeviceName = n.GetStringValue(); } },
                 {"estimatedRuntimeInMinutes", n => { EstimatedRuntimeInMinutes = n.GetIntValue(); } },
@@ -152,6 +167,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<UserExperienceAnalyticsDeviceBatteryDetail>("deviceBatteriesDetails", DeviceBatteriesDetails);
             writer.WriteIntValue("deviceBatteryCount", DeviceBatteryCount);
             writer.WriteIntValue("deviceBatteryHealthScore", DeviceBatteryHealthScore);
+            writer.WriteCollectionOfPrimitiveValues<string>("deviceBatteryTags", DeviceBatteryTags);
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteIntValue("estimatedRuntimeInMinutes", EstimatedRuntimeInMinutes);

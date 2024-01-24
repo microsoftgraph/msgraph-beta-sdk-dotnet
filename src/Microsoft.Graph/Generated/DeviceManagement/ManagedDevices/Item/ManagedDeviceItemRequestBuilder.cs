@@ -19,6 +19,7 @@ using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetCloudPcRemote
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetFileVaultKey;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetNonCompliantSettings;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.InitiateDeviceAttestation;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.InitiateMobileDeviceManagementKeyRecovery;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.InitiateOnDemandProactiveRemediation;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.LocateDevice;
@@ -150,6 +151,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item {
         /// <summary>Provides operations to call the getNonCompliantSettings method.</summary>
         public GetNonCompliantSettingsRequestBuilder GetNonCompliantSettings { get =>
             new GetNonCompliantSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the initiateDeviceAttestation method.</summary>
+        public InitiateDeviceAttestationRequestBuilder InitiateDeviceAttestation { get =>
+            new InitiateDeviceAttestationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the initiateMobileDeviceManagementKeyRecovery method.</summary>
         public InitiateMobileDeviceManagementKeyRecoveryRequestBuilder InitiateMobileDeviceManagementKeyRecovery { get =>

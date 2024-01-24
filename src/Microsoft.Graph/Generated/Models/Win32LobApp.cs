@@ -219,7 +219,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new Win32LobApp CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Win32LobApp();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.win32CatalogApp" => new Win32CatalogApp(),
+                _ => new Win32LobApp(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -7,7 +7,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Custom Extended Key Usage definition
+    /// The Custom Extended Key Usage definition
     /// </summary>
     public class ExtendedKeyUsage : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

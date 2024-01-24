@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.CachedReportConfiguratio
         public CachedReportConfigurationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/reports/cachedReportConfigurations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
         }
         /// <summary>
-        /// Entity representing the configuration of a cached report
+        /// Entity representing the configuration of a cached report.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.CachedReportConfiguratio
             return await RequestAdapter.SendAsync<DeviceManagementCachedReportConfiguration>(requestInfo, DeviceManagementCachedReportConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Entity representing the configuration of a cached report
+        /// Entity representing the configuration of a cached report.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.CachedReportConfiguratio
             return new CachedReportConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Entity representing the configuration of a cached report
+        /// Entity representing the configuration of a cached report.
         /// </summary>
         public class CachedReportConfigurationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

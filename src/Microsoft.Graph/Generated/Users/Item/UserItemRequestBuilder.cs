@@ -6,6 +6,7 @@ using Microsoft.Graph.Beta.Users.Item.AgreementAcceptances;
 using Microsoft.Graph.Beta.Users.Item.Analytics;
 using Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval;
 using Microsoft.Graph.Beta.Users.Item.AppRoleAssignedResources;
+using Microsoft.Graph.Beta.Users.Item.AppRoleAssignedResourcesWithAppId;
 using Microsoft.Graph.Beta.Users.Item.AppRoleAssignments;
 using Microsoft.Graph.Beta.Users.Item.Approvals;
 using Microsoft.Graph.Beta.Users.Item.AssignLicense;
@@ -26,6 +27,7 @@ using Microsoft.Graph.Beta.Users.Item.DeletePasswordSingleSignOnCredentials;
 using Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations;
 using Microsoft.Graph.Beta.Users.Item.DeviceManagementTroubleshootingEvents;
 using Microsoft.Graph.Beta.Users.Item.Devices;
+using Microsoft.Graph.Beta.Users.Item.DevicesWithDeviceId;
 using Microsoft.Graph.Beta.Users.Item.DirectReports;
 using Microsoft.Graph.Beta.Users.Item.Drive;
 using Microsoft.Graph.Beta.Users.Item.Drives;
@@ -71,6 +73,7 @@ using Microsoft.Graph.Beta.Users.Item.Notifications;
 using Microsoft.Graph.Beta.Users.Item.Oauth2PermissionGrants;
 using Microsoft.Graph.Beta.Users.Item.Onenote;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings;
+using Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl;
 using Microsoft.Graph.Beta.Users.Item.Outlook;
 using Microsoft.Graph.Beta.Users.Item.OwnedDevices;
 using Microsoft.Graph.Beta.Users.Item.OwnedObjects;
@@ -538,6 +541,14 @@ namespace Microsoft.Graph.Beta.Users.Item {
             new WipeManagedAppRegistrationsByDeviceTagRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
+        /// Provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.
+        /// </summary>
+        /// <param name="appId">Alternate key of servicePrincipal</param>
+        public AppRoleAssignedResourcesWithAppIdRequestBuilder AppRoleAssignedResourcesWithAppId(string appId) {
+            if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
+            return new AppRoleAssignedResourcesWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
+        }
+        /// <summary>
         /// Instantiates a new UserItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -570,6 +581,14 @@ namespace Microsoft.Graph.Beta.Users.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the devices property of the microsoft.graph.user entity.
+        /// </summary>
+        /// <param name="deviceId">Alternate key of device</param>
+        public DevicesWithDeviceIdRequestBuilder DevicesWithDeviceId(string deviceId) {
+            if(string.IsNullOrEmpty(deviceId)) throw new ArgumentNullException(nameof(deviceId));
+            return new DevicesWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, deviceId);
         }
         /// <summary>
         /// Provides operations to call the exportDeviceAndAppManagementData method.
@@ -608,6 +627,14 @@ namespace Microsoft.Graph.Beta.Users.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
+        /// </summary>
+        /// <param name="joinWebUrl">Alternate key of onlineMeeting</param>
+        public OnlineMeetingsWithJoinWebUrlRequestBuilder OnlineMeetingsWithJoinWebUrl(string joinWebUrl) {
+            if(string.IsNullOrEmpty(joinWebUrl)) throw new ArgumentNullException(nameof(joinWebUrl));
+            return new OnlineMeetingsWithJoinWebUrlRequestBuilder(PathParameters, RequestAdapter, joinWebUrl);
         }
         /// <summary>
         /// Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.

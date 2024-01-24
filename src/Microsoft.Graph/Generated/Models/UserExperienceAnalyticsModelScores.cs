@@ -43,6 +43,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("manufacturer", value); }
         }
 #endif
+        /// <summary>Indicates a calulated score indicating the health of the device&apos;s resource spike score . Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
+        public double? MeanResourceSpikeTimeScore {
+            get { return BackingStore?.Get<double?>("meanResourceSpikeTimeScore"); }
+            set { BackingStore?.Set("meanResourceSpikeTimeScore", value); }
+        }
         /// <summary>The model name of the device. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"endpointAnalyticsScore", n => { EndpointAnalyticsScore = n.GetDoubleValue(); } },
                 {"healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
                 {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                {"meanResourceSpikeTimeScore", n => { MeanResourceSpikeTimeScore = n.GetDoubleValue(); } },
                 {"model", n => { Model = n.GetStringValue(); } },
                 {"modelDeviceCount", n => { ModelDeviceCount = n.GetLongValue(); } },
                 {"startupPerformanceScore", n => { StartupPerformanceScore = n.GetDoubleValue(); } },
@@ -108,6 +114,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDoubleValue("endpointAnalyticsScore", EndpointAnalyticsScore);
             writer.WriteEnumValue<UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);
             writer.WriteStringValue("manufacturer", Manufacturer);
+            writer.WriteDoubleValue("meanResourceSpikeTimeScore", MeanResourceSpikeTimeScore);
             writer.WriteStringValue("model", Model);
             writer.WriteLongValue("modelDeviceCount", ModelDeviceCount);
             writer.WriteDoubleValue("startupPerformanceScore", StartupPerformanceScore);

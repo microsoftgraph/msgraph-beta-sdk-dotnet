@@ -20,6 +20,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("detectionAction", value); }
         }
 #endif
+        /// <summary>The detectorId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DetectorId {
+            get { return BackingStore?.Get<string?>("detectorId"); }
+            set { BackingStore?.Set("detectorId", value); }
+        }
+#nullable restore
+#else
+        public string DetectorId {
+            get { return BackingStore?.Get<string>("detectorId"); }
+            set { BackingStore?.Set("detectorId", value); }
+        }
+#endif
         /// <summary>The lastRunDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,6 +96,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"detectionAction", n => { DetectionAction = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.DetectionAction>(Microsoft.Graph.Beta.Models.Security.DetectionAction.CreateFromDiscriminatorValue); } },
+                {"detectorId", n => { DetectorId = n.GetStringValue(); } },
                 {"lastRunDetails", n => { LastRunDetails = n.GetObjectValue<RunDetails>(RunDetails.CreateFromDiscriminatorValue); } },
                 {"queryCondition", n => { QueryCondition = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.QueryCondition>(Microsoft.Graph.Beta.Models.Security.QueryCondition.CreateFromDiscriminatorValue); } },
                 {"schedule", n => { Schedule = n.GetObjectValue<RuleSchedule>(RuleSchedule.CreateFromDiscriminatorValue); } },
@@ -95,6 +110,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.DetectionAction>("detectionAction", DetectionAction);
+            writer.WriteStringValue("detectorId", DetectorId);
             writer.WriteObjectValue<RunDetails>("lastRunDetails", LastRunDetails);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.QueryCondition>("queryCondition", QueryCondition);
             writer.WriteObjectValue<RuleSchedule>("schedule", Schedule);

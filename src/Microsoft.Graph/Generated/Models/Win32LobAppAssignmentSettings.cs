@@ -9,20 +9,6 @@ namespace Microsoft.Graph.Beta.Models {
     /// Contains properties used to assign an Win32 LOB mobile app to a group.
     /// </summary>
     public class Win32LobAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
-        /// <summary>The auto-update settings to apply for this app assignment.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public Win32LobAppAutoUpdateSettings? AutoUpdateSettings {
-            get { return BackingStore?.Get<Win32LobAppAutoUpdateSettings?>("autoUpdateSettings"); }
-            set { BackingStore?.Set("autoUpdateSettings", value); }
-        }
-#nullable restore
-#else
-        public Win32LobAppAutoUpdateSettings AutoUpdateSettings {
-            get { return BackingStore?.Get<Win32LobAppAutoUpdateSettings>("autoUpdateSettings"); }
-            set { BackingStore?.Set("autoUpdateSettings", value); }
-        }
-#endif
         /// <summary>Contains value for delivery optimization priority.</summary>
         public Win32LobAppDeliveryOptimizationPriority? DeliveryOptimizationPriority {
             get { return BackingStore?.Get<Win32LobAppDeliveryOptimizationPriority?>("deliveryOptimizationPriority"); }
@@ -84,7 +70,6 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"autoUpdateSettings", n => { AutoUpdateSettings = n.GetObjectValue<Win32LobAppAutoUpdateSettings>(Win32LobAppAutoUpdateSettings.CreateFromDiscriminatorValue); } },
                 {"deliveryOptimizationPriority", n => { DeliveryOptimizationPriority = n.GetEnumValue<Win32LobAppDeliveryOptimizationPriority>(); } },
                 {"installTimeSettings", n => { InstallTimeSettings = n.GetObjectValue<MobileAppInstallTimeSettings>(MobileAppInstallTimeSettings.CreateFromDiscriminatorValue); } },
                 {"notifications", n => { Notifications = n.GetEnumValue<Win32LobAppNotification>(); } },
@@ -98,7 +83,6 @@ namespace Microsoft.Graph.Beta.Models {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<Win32LobAppAutoUpdateSettings>("autoUpdateSettings", AutoUpdateSettings);
             writer.WriteEnumValue<Win32LobAppDeliveryOptimizationPriority>("deliveryOptimizationPriority", DeliveryOptimizationPriority);
             writer.WriteObjectValue<MobileAppInstallTimeSettings>("installTimeSettings", InstallTimeSettings);
             writer.WriteEnumValue<Win32LobAppNotification>("notifications", Notifications);

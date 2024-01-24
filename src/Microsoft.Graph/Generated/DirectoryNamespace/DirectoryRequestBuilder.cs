@@ -14,6 +14,8 @@ using Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles;
 using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations;
 using Microsoft.Graph.Beta.DirectoryNamespace.SharedEmailDomains;
 using Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions;
+using Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithCommerceSubscriptionId;
+using Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithOcpSubscriptionId;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -142,6 +144,22 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DirectoryObject1>(requestInfo, DirectoryObject1.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the subscriptions property of the microsoft.graph.directory entity.
+        /// </summary>
+        /// <param name="commerceSubscriptionId">Alternate key of companySubscription</param>
+        public SubscriptionsWithCommerceSubscriptionIdRequestBuilder SubscriptionsWithCommerceSubscriptionId(string commerceSubscriptionId) {
+            if(string.IsNullOrEmpty(commerceSubscriptionId)) throw new ArgumentNullException(nameof(commerceSubscriptionId));
+            return new SubscriptionsWithCommerceSubscriptionIdRequestBuilder(PathParameters, RequestAdapter, commerceSubscriptionId);
+        }
+        /// <summary>
+        /// Provides operations to manage the subscriptions property of the microsoft.graph.directory entity.
+        /// </summary>
+        /// <param name="ocpSubscriptionId">Alternate key of companySubscription</param>
+        public SubscriptionsWithOcpSubscriptionIdRequestBuilder SubscriptionsWithOcpSubscriptionId(string ocpSubscriptionId) {
+            if(string.IsNullOrEmpty(ocpSubscriptionId)) throw new ArgumentNullException(nameof(ocpSubscriptionId));
+            return new SubscriptionsWithOcpSubscriptionIdRequestBuilder(PathParameters, RequestAdapter, ocpSubscriptionId);
         }
         /// <summary>
         /// Get directory

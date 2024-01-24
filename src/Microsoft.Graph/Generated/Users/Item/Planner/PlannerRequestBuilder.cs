@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.Planner.All;
 using Microsoft.Graph.Beta.Users.Item.Planner.FavoritePlans;
+using Microsoft.Graph.Beta.Users.Item.Planner.MyDayTasks;
 using Microsoft.Graph.Beta.Users.Item.Planner.Plans;
 using Microsoft.Graph.Beta.Users.Item.Planner.RecentPlans;
 using Microsoft.Graph.Beta.Users.Item.Planner.RosterPlans;
@@ -27,6 +28,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
         /// <summary>Provides operations to manage the favoritePlans property of the microsoft.graph.plannerUser entity.</summary>
         public FavoritePlansRequestBuilder FavoritePlans { get =>
             new FavoritePlansRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the myDayTasks property of the microsoft.graph.plannerUser entity.</summary>
+        public MyDayTasksRequestBuilder MyDayTasks { get =>
+            new MyDayTasksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the plans property of the microsoft.graph.plannerUser entity.</summary>
         public PlansRequestBuilder Plans { get =>
