@@ -10,6 +10,7 @@ using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackag
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResourceRoleScopes;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResources;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackages;
+using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AssignmentRequests;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Settings;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects;
@@ -72,6 +73,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement {
         /// <summary>Provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.</summary>
         public AccessPackagesRequestBuilder AccessPackages { get =>
             new AccessPackagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the assignmentRequests property of the microsoft.graph.entitlementManagement entity.</summary>
+        public AssignmentRequestsRequestBuilder AssignmentRequests { get =>
+            new AssignmentRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.</summary>
         public ConnectedOrganizationsRequestBuilder ConnectedOrganizations { get =>

@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("migrationValidationDetails", value); }
         }
 #endif
-        /// <summary>This identifier is used to identify the relying party to this Federation Service. It is used when issuing claims to the relying party.</summary>
+        /// <summary>This identifier is used to identify the relying party to this Federation Service. It&apos;s used when issuing claims to the relying party.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RelyingPartyId {
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("relyingPartyId", value); }
         }
 #endif
-        /// <summary>Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to log in.</summary>
+        /// <summary>Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to sign in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RelyingPartyName {
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("successfulSignInCount"); }
             set { BackingStore?.Set("successfulSignInCount", value); }
         }
-        /// <summary>Number of successful + failed sign ins failed sign ins on Active Directory Federation Service in the period specified.</summary>
+        /// <summary>Number of successful + failed sign ins on Active Directory Federation Service in the period specified.</summary>
         public long? TotalSignInCount {
             get { return BackingStore?.Get<long?>("totalSignInCount"); }
             set { BackingStore?.Set("totalSignInCount", value); }

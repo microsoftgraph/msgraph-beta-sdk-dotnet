@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("accessPackageAssignmentPolicies", value); }
         }
 #endif
-        /// <summary>Represents access package assignment requests created by or on behalf of a user.</summary>
+        /// <summary>Represents access package assignment requests created by or on behalf of a user. DO NOT USE. TO BE RETIRED SOON. Use the assignmentRequests relationship instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AccessPackageAssignmentRequest>? AccessPackageAssignmentRequests {
@@ -160,6 +160,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("accessPackages", value); }
         }
 #endif
+        /// <summary>Represents access package assignment requests created by or on behalf of a user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<AccessPackageAssignmentRequest>? AssignmentRequests {
+            get { return BackingStore?.Get<List<AccessPackageAssignmentRequest>?>("assignmentRequests"); }
+            set { BackingStore?.Set("assignmentRequests", value); }
+        }
+#nullable restore
+#else
+        public List<AccessPackageAssignmentRequest> AssignmentRequests {
+            get { return BackingStore?.Get<List<AccessPackageAssignmentRequest>>("assignmentRequests"); }
+            set { BackingStore?.Set("assignmentRequests", value); }
+        }
+#endif
         /// <summary>Represents references to a directory or domain of another organization whose users can request access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -226,6 +240,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"accessPackageResourceRoleScopes", n => { AccessPackageResourceRoleScopes = n.GetCollectionOfObjectValues<AccessPackageResourceRoleScope>(AccessPackageResourceRoleScope.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"accessPackageResources", n => { AccessPackageResources = n.GetCollectionOfObjectValues<AccessPackageResource>(AccessPackageResource.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"accessPackages", n => { AccessPackages = n.GetCollectionOfObjectValues<AccessPackage>(AccessPackage.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"assignmentRequests", n => { AssignmentRequests = n.GetCollectionOfObjectValues<AccessPackageAssignmentRequest>(AccessPackageAssignmentRequest.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"connectedOrganizations", n => { ConnectedOrganizations = n.GetCollectionOfObjectValues<ConnectedOrganization>(ConnectedOrganization.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"settings", n => { Settings = n.GetObjectValue<EntitlementManagementSettings>(EntitlementManagementSettings.CreateFromDiscriminatorValue); } },
                 {"subjects", n => { Subjects = n.GetCollectionOfObjectValues<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -249,6 +264,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<AccessPackageResourceRoleScope>("accessPackageResourceRoleScopes", AccessPackageResourceRoleScopes);
             writer.WriteCollectionOfObjectValues<AccessPackageResource>("accessPackageResources", AccessPackageResources);
             writer.WriteCollectionOfObjectValues<AccessPackage>("accessPackages", AccessPackages);
+            writer.WriteCollectionOfObjectValues<AccessPackageAssignmentRequest>("assignmentRequests", AssignmentRequests);
             writer.WriteCollectionOfObjectValues<ConnectedOrganization>("connectedOrganizations", ConnectedOrganizations);
             writer.WriteObjectValue<EntitlementManagementSettings>("settings", Settings);
             writer.WriteCollectionOfObjectValues<AccessPackageSubject>("subjects", Subjects);

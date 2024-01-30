@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("reassignedBy", value); }
         }
 #endif
-        /// <summary>Moment in time when the submission was reassigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>Moment in time when the submission was reassigned. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ReassignedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("reassignedDateTime"); }
             set { BackingStore?.Set("reassignedDateTime", value); }
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("returnedBy", value); }
         }
 #endif
-        /// <summary>Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>Moment in time when the submission was returned. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ReturnedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("returnedDateTime"); }
             set { BackingStore?.Set("returnedDateTime", value); }
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("submittedBy", value); }
         }
 #endif
-        /// <summary>Moment in time when the submission was moved into the submitted state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>Moment in time when the submission was moved into the submitted state. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? SubmittedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("submittedDateTime"); }
             set { BackingStore?.Set("submittedDateTime", value); }
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("unsubmittedBy", value); }
         }
 #endif
-        /// <summary>Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>Moment in time when the submission was moved from submitted into the working state. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? UnsubmittedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("unsubmittedDateTime"); }
             set { BackingStore?.Set("unsubmittedDateTime", value); }

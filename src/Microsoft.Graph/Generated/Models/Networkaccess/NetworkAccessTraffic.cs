@@ -31,6 +31,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("agentVersion", value); }
         }
 #endif
+        /// <summary>The applicationSnapshot property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot? ApplicationSnapshot {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot?>("applicationSnapshot"); }
+            set { BackingStore?.Set("applicationSnapshot", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot ApplicationSnapshot {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot>("applicationSnapshot"); }
+            set { BackingStore?.Set("applicationSnapshot", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents a unique identifier assigned to a connection. Supports $filter (eq) and $orderby.</summary>
@@ -277,6 +291,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("policyRuleName", value); }
         }
 #endif
+        /// <summary>The privateAccessDetails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails? PrivateAccessDetails {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails?>("privateAccessDetails"); }
+            set { BackingStore?.Set("privateAccessDetails", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails PrivateAccessDetails {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails>("privateAccessDetails"); }
+            set { BackingStore?.Set("privateAccessDetails", value); }
+        }
+#endif
         /// <summary>Represents the total number of bytes received in a network communication or data transfer. Supports $filter (eq) and $orderby.</summary>
         public long? ReceivedBytes {
             get { return BackingStore?.Get<long?>("receivedBytes"); }
@@ -422,6 +450,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             return new Dictionary<string, Action<IParseNode>> {
                 {"action", n => { Action = n.GetEnumValue<FilteringPolicyAction>(); } },
                 {"agentVersion", n => { AgentVersion = n.GetStringValue(); } },
+                {"applicationSnapshot", n => { ApplicationSnapshot = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot>(Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot.CreateFromDiscriminatorValue); } },
                 {"connectionId", n => { ConnectionId = n.GetStringValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"destinationFQDN", n => { DestinationFQDN = n.GetStringValue(); } },
@@ -442,6 +471,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
                 {"policyName", n => { PolicyName = n.GetStringValue(); } },
                 {"policyRuleId", n => { PolicyRuleId = n.GetStringValue(); } },
                 {"policyRuleName", n => { PolicyRuleName = n.GetStringValue(); } },
+                {"privateAccessDetails", n => { PrivateAccessDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails>(Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails.CreateFromDiscriminatorValue); } },
                 {"receivedBytes", n => { ReceivedBytes = n.GetLongValue(); } },
                 {"resourceTenantId", n => { ResourceTenantId = n.GetStringValue(); } },
                 {"sentBytes", n => { SentBytes = n.GetLongValue(); } },
@@ -464,6 +494,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<FilteringPolicyAction>("action", Action);
             writer.WriteStringValue("agentVersion", AgentVersion);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot>("applicationSnapshot", ApplicationSnapshot);
             writer.WriteStringValue("connectionId", ConnectionId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("destinationFQDN", DestinationFQDN);
@@ -484,6 +515,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             writer.WriteStringValue("policyName", PolicyName);
             writer.WriteStringValue("policyRuleId", PolicyRuleId);
             writer.WriteStringValue("policyRuleName", PolicyRuleName);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails>("privateAccessDetails", PrivateAccessDetails);
             writer.WriteLongValue("receivedBytes", ReceivedBytes);
             writer.WriteStringValue("resourceTenantId", ResourceTenantId);
             writer.WriteLongValue("sentBytes", SentBytes);

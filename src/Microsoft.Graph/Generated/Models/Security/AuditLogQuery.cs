@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class AuditLogQuery : Microsoft.Graph.Beta.Models.Entity, IParsable {
-        /// <summary>The administrativeUnitIdFilters property</summary>
+        /// <summary>The administrative units tagged to an audit log record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AdministrativeUnitIdFilters {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("administrativeUnitIdFilters", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the saved audit log query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -34,17 +34,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The filterEndDateTime property</summary>
+        /// <summary>The end date of the date range in the query.</summary>
         public DateTimeOffset? FilterEndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("filterEndDateTime"); }
             set { BackingStore?.Set("filterEndDateTime", value); }
         }
-        /// <summary>The filterStartDateTime property</summary>
+        /// <summary>The start date of the date range in the query.</summary>
         public DateTimeOffset? FilterStartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("filterStartDateTime"); }
             set { BackingStore?.Set("filterStartDateTime", value); }
         }
-        /// <summary>The ipAddressFilters property</summary>
+        /// <summary>The IP address of the device that was used when the activity was logged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? IpAddressFilters {
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("ipAddressFilters", value); }
         }
 #endif
-        /// <summary>The keywordFilter property</summary>
+        /// <summary>Free text field to search non-indexed properties of the audit log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? KeywordFilter {
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("keywordFilter", value); }
         }
 #endif
-        /// <summary>The objectIdFilters property</summary>
+        /// <summary>For SharePoint and OneDrive for Business activity, the full path name of the file or folder accessed by the user. For Exchange admin audit logging, the name of the object that was modified by the cmdlet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ObjectIdFilters {
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("objectIdFilters", value); }
         }
 #endif
-        /// <summary>The operationFilters property</summary>
+        /// <summary>The name of the user or admin activity. For a description of the most common operations/activities, see Search the audit log in the Office 365 Protection Center.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? OperationFilters {
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("operationFilters", value); }
         }
 #endif
-        /// <summary>The records property</summary>
+        /// <summary>An individual audit log record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AuditLogRecord>? Records {
@@ -142,12 +142,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("serviceFilters", value); }
         }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Describes the current status of the query. The possible values are: notStarted, running, succeeded, failed, cancelled, unknownFutureValue.</summary>
         public AuditLogQueryStatus? Status {
             get { return BackingStore?.Get<AuditLogQueryStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The userPrincipalNameFilters property</summary>
+        /// <summary>The UPN (user principal name) of the user who performed the action (specified in the operation property) that resulted in the record being logged; for example, myname@mydomain_name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? UserPrincipalNameFilters {
