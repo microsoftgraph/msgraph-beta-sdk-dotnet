@@ -81,6 +81,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
+        /// <summary>The dashboardCards property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<TeamsAppDashboardCardDefinition>? DashboardCards {
+            get { return BackingStore?.Get<List<TeamsAppDashboardCardDefinition>?>("dashboardCards"); }
+            set { BackingStore?.Set("dashboardCards", value); }
+        }
+#nullable restore
+#else
+        public List<TeamsAppDashboardCardDefinition> DashboardCards {
+            get { return BackingStore?.Get<List<TeamsAppDashboardCardDefinition>>("dashboardCards"); }
+            set { BackingStore?.Set("dashboardCards", value); }
+        }
+#endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -194,6 +208,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"bot", n => { Bot = n.GetObjectValue<TeamworkBot>(TeamworkBot.CreateFromDiscriminatorValue); } },
                 {"colorIcon", n => { ColorIcon = n.GetObjectValue<TeamsAppIcon>(TeamsAppIcon.CreateFromDiscriminatorValue); } },
                 {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"dashboardCards", n => { DashboardCards = n.GetCollectionOfObjectValues<TeamsAppDashboardCardDefinition>(TeamsAppDashboardCardDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -217,6 +232,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<TeamworkBot>("bot", Bot);
             writer.WriteObjectValue<TeamsAppIcon>("colorIcon", ColorIcon);
             writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
+            writer.WriteCollectionOfObjectValues<TeamsAppDashboardCardDefinition>("dashboardCards", DashboardCards);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);

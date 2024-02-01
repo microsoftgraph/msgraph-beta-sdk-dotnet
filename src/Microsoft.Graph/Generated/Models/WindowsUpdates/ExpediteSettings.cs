@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             get { return BackingStore?.Get<bool?>("isExpedited"); }
             set { BackingStore?.Set("isExpedited", value); }
         }
-        /// <summary>The isReadinessTest property</summary>
+        /// <summary>True indicates that the deployment is an expedite readiness test.</summary>
         public bool? IsReadinessTest {
             get { return BackingStore?.Get<bool?>("isReadinessTest"); }
             set { BackingStore?.Set("isReadinessTest", value); }

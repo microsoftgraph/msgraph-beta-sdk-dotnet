@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The offerAsOptional property</summary>
+        /// <summary>Specifies whether the update is offered as Optional rather than Required.</summary>
         public bool? OfferAsOptional {
             get { return BackingStore?.Get<bool?>("offerAsOptional"); }
             set { BackingStore?.Set("offerAsOptional", value); }
