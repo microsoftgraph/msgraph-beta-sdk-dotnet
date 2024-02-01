@@ -10,6 +10,7 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 ## [5.64.0-preview] - 2024-01-31
 
 - Latest metadata updates from 30th January 2024.
+- Fixes DateTimeTimeZone.ToDateTime returning incorrect parsed date(https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/2286)
 
 ## [5.63.0-preview] - 2024-01-24
 
@@ -206,7 +207,7 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [5.25.0-preview] - 2023-04-06
 
-### Changed 
+### Changed
 
 - Fixes missing dateTime query parameters for bookingBusinesses (https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1791)
 - Fixes missing expand clauses for calendars and contactFolder (https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/1788)
@@ -301,14 +302,14 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 - Adds OdataDeltaLink property to collection responses for delta
 - Changes the ResponeHandler parameter in request builders to be a RequestOption in dotnet [#1858](https://github.com/microsoft/kiota/issues/1858)
 - Latest metadata updates from 18th October 2022 snapshot
- 
+
 ## [5.12.0-preview] - 2022-09-28
 
 ### Changed
 
 - Fixes incorrect types for collection types referencing enums - [Kiota #1846](https://github.com/microsoft/kiota/pull/1846)
 - Fixes missing return object types for PATCH/POST/PUT calls - https://github.com/microsoftgraph/msgraph-beta-sdk-dotnet/issues/478
-- Fixes missing QueryParameters for odata functions e.g delta 
+- Fixes missing QueryParameters for odata functions e.g delta
 - Latest metadata updates from 27th September 2022 snapshot
 
 ## [5.11.0-preview] - 2022-09-13

@@ -22,26 +22,37 @@ namespace Microsoft.Graph.Beta.Models
         /// <returns></returns>
         public static DateTime ToDateTime(this DateTimeTimeZone dateTimeTimeZone)
         {
-            DateTime dateTime = DateTime.ParseExact(dateTimeTimeZone.DateTime, DateTimeFormat, CultureInfo.InvariantCulture);
+            DateTime parsedDateTime = DateTime.ParseExact(dateTimeTimeZone.DateTime, DateTimeFormat, CultureInfo.InvariantCulture);
 
             // Now we need to determine which DateTimeKind to set based on the time zone specified in the input object.
             TimeZoneInfo timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById(dateTimeTimeZone.TimeZone);
 
             DateTimeKind kind;
-            if (timeZoneInfo.Id == TimeZoneInfo.Utc.Id)
+            if(timeZoneInfo.StandardName == TimeZoneInfo.Utc.StandardName)
             {
                 kind = DateTimeKind.Utc;
+                // however, if the parsedDateTime.Kind is Local, we need to align to be utc too
+                if (parsedDateTime.Kind == DateTimeKind.Local)
+                {
+                    parsedDateTime = parsedDateTime.ToUniversalTime();
+                }
             }
-            else if (timeZoneInfo.Id == TimeZoneInfo.Local.Id)
+            else if (timeZoneInfo.StandardName == TimeZoneInfo.Local.StandardName)
             {
                 kind = DateTimeKind.Local;
+                // however, if the parsedDateTime.Kind is UTC, we need to align it to be local too
+                if (parsedDateTime.Kind == DateTimeKind.Utc)
+                {
+                    parsedDateTime = parsedDateTime.ToLocalTime();
+                }
             }
             else
             {
-                kind = DateTimeKind.Unspecified;
+                //if timeZoneInfo passed is not UTC or Local, then it is Unspecified
+                //Infer from parsedDateTime.Kind rather than blindly set it to Unspecified
+                kind = parsedDateTime.Kind;
             }
-
-            return DateTime.SpecifyKind(dateTime, kind);
+            return DateTime.SpecifyKind(parsedDateTime, kind);
         }
 
         /// <summary>
