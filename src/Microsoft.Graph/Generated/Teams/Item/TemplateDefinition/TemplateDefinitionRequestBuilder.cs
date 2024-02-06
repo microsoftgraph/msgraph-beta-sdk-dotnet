@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Teams.Item.TemplateDefinition {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TemplateDefinitionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/templateDefinition{?%24select,%24expand}", pathParameters) {
+        public TemplateDefinitionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/templateDefinition{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new TemplateDefinitionRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TemplateDefinitionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/templateDefinition{?%24select,%24expand}", rawUrl) {
+        public TemplateDefinitionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/templateDefinition{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Generic representation of a team template definition for a team with a specific structure and configuration.

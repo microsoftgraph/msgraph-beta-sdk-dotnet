@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>Timestamp of when the query in the custom detection rule was last updated.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The queryText property</summary>
+        /// <summary>Contents of the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? QueryText {

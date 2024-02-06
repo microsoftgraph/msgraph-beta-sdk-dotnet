@@ -25,14 +25,14 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EdiscoveryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery{?%24select,%24expand}", pathParameters) {
+        public EdiscoveryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new EdiscoveryRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EdiscoveryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery{?%24select,%24expand}", rawUrl) {
+        public EdiscoveryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property ediscovery for compliance

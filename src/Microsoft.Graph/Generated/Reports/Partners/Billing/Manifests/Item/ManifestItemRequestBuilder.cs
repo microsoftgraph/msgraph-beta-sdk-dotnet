@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Reports.Partners.Billing.Manifests.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ManifestItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/partners/billing/manifests/{manifest%2Did}{?%24select,%24expand}", pathParameters) {
+        public ManifestItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/partners/billing/manifests/{manifest%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ManifestItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ManifestItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/partners/billing/manifests/{manifest%2Did}{?%24select,%24expand}", rawUrl) {
+        public ManifestItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/partners/billing/manifests/{manifest%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property manifests for reports

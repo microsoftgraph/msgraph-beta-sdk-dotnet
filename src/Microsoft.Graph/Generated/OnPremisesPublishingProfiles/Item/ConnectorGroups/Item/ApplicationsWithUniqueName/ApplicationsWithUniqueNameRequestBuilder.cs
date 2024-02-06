@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="uniqueName">Alternate key of application</param>
-        public ApplicationsWithUniqueNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string uniqueName = "") : base(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications(uniqueName='{uniqueName}'){?%24select,%24expand}", pathParameters) {
+        public ApplicationsWithUniqueNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string uniqueName = "") : base(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications(uniqueName='{uniqueName}'){?%24expand,%24select}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(uniqueName)) PathParameters.Add("uniqueName", uniqueName);
         }
         /// <summary>
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApplicationsWithUniqueNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications(uniqueName='{uniqueName}'){?%24select,%24expand}", rawUrl) {
+        public ApplicationsWithUniqueNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications(uniqueName='{uniqueName}'){?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get applications from onPremisesPublishingProfiles

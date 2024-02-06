@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Me.Profile.Projects.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectParticipationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/projects/{projectParticipation%2Did}{?%24select,%24expand}", pathParameters) {
+        public ProjectParticipationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/projects/{projectParticipation%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ProjectParticipationItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectParticipationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/projects/{projectParticipation%2Did}{?%24select,%24expand}", rawUrl) {
+        public ProjectParticipationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/projects/{projectParticipation%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete a projectParticipation object from a user&apos;s profile.

@@ -32,14 +32,14 @@ namespace Microsoft.Graph.Beta.Me.People {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PeopleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/people{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}", pathParameters) {
+        public PeopleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/people{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PeopleRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PeopleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/people{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select}", rawUrl) {
+        public PeopleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/people{?%24count,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Retrieve a list of person objects ordered by their relevance to the user, which is determined by the user&apos;s communication and collaboration patterns, and business relationships.

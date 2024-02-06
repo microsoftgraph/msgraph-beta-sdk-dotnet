@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public class TrafficDistributionPoint : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class UsageProfilingPoint : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -54,9 +54,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("totalTrafficCount", value); }
         }
         /// <summary>
-        /// Instantiates a new trafficDistributionPoint and sets the default values.
+        /// Instantiates a new usageProfilingPoint and sets the default values.
         /// </summary>
-        public TrafficDistributionPoint() {
+        public UsageProfilingPoint() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -64,9 +64,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TrafficDistributionPoint CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static UsageProfilingPoint CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TrafficDistributionPoint();
+            return new UsageProfilingPoint();
         }
         /// <summary>
         /// The deserialization information for the current model

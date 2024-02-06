@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials {
         public GetPasswordSingleSignOnCredentialsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/getPasswordSingleSignOnCredentials", rawUrl) {
         }
         /// <summary>
-        /// Invoke action getPasswordSingleSignOnCredentials
+        /// Get the list of password-based single sign-on credentials for a given user. This API returns the encrypted passwords as null or empty strings.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-getpasswordsinglesignoncredentials?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -47,7 +48,8 @@ namespace Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials {
             return await RequestAdapter.SendAsync<GetPasswordSingleSignOnCredentialsPostResponse>(requestInfo, GetPasswordSingleSignOnCredentialsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action getPasswordSingleSignOnCredentials
+        /// Get the list of password-based single sign-on credentials for a given user. This API returns the encrypted passwords as null or empty strings.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-getpasswordsinglesignoncredentials?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,7 +69,7 @@ namespace Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials {
             return await RequestAdapter.SendAsync<GetPasswordSingleSignOnCredentialsResponse>(requestInfo, GetPasswordSingleSignOnCredentialsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action getPasswordSingleSignOnCredentials
+        /// Get the list of password-based single sign-on credentials for a given user. This API returns the encrypted passwords as null or empty strings.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

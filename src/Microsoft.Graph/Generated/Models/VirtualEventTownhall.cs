@@ -45,6 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isInviteOnly", value); }
         }
         /// <summary>
+        /// Instantiates a new virtualEventTownhall and sets the default values.
+        /// </summary>
+        public VirtualEventTownhall() : base() {
+            OdataType = "#microsoft.graph.virtualEventTownhall";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

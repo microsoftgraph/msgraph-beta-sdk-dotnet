@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
         /// <param name="appId">Alternate key of application</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApplicationsWithAppIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string appId = "") : base(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications(appId='{appId}'){?%24select,%24expand}", pathParameters) {
+        public ApplicationsWithAppIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string appId = "") : base(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications(appId='{appId}'){?%24expand,%24select}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(appId)) PathParameters.Add("appId", appId);
         }
         /// <summary>
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApplicationsWithAppIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications(appId='{appId}'){?%24select,%24expand}", rawUrl) {
+        public ApplicationsWithAppIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups/{connectorGroup%2Did}/applications(appId='{appId}'){?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get applications from onPremisesPublishingProfiles

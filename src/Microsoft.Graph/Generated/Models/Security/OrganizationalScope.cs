@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The scopeNames property</summary>
+        /// <summary>List of groups to which the custom detection rule applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ScopeNames {

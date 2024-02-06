@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthorityTemplateItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/authorities/{authorityTemplate%2Did}{?%24select,%24expand}", pathParameters) {
+        public AuthorityTemplateItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/authorities/{authorityTemplate%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new AuthorityTemplateItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthorityTemplateItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/authorities/{authorityTemplate%2Did}{?%24select,%24expand}", rawUrl) {
+        public AuthorityTemplateItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/authorities/{authorityTemplate%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete a authorityTemplate object.

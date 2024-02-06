@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Definition {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DefinitionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/pendingAccessReviewInstances/{accessReviewInstance%2Did}/definition{?%24select,%24expand}", pathParameters) {
+        public DefinitionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/pendingAccessReviewInstances/{accessReviewInstance%2Did}/definition{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new DefinitionRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DefinitionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/pendingAccessReviewInstances/{accessReviewInstance%2Did}/definition{?%24select,%24expand}", rawUrl) {
+        public DefinitionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/pendingAccessReviewInstances/{accessReviewInstance%2Did}/definition{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// There&apos;s exactly one accessReviewScheduleDefinition associated with each instance. It&apos;s the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.

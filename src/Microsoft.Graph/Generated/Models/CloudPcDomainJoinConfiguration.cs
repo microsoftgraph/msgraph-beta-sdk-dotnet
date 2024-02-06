@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The domainJoinType property</summary>
+        /// <summary>Specifies the method by which the provisioned Cloud PC joins Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave the regionName property empty. If you choose the azureADJoin type, provide a value for either the onPremisesConnectionId or the regionName property. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.</summary>
         public CloudPcDomainJoinType? DomainJoinType {
             get { return BackingStore?.Get<CloudPcDomainJoinType?>("domainJoinType"); }
             set { BackingStore?.Set("domainJoinType", value); }
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("regionName", value); }
         }
 #endif
-        /// <summary>Specifies how the provisioned Cloud PC will be joined to Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.</summary>
+        /// <summary>The type property</summary>
         public CloudPcDomainJoinType? Type {
             get { return BackingStore?.Get<CloudPcDomainJoinType?>("type"); }
             set { BackingStore?.Set("type", value); }

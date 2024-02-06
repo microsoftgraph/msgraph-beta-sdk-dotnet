@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.Share {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ShareRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}/share{?%24select,%24expand}", pathParameters) {
+        public ShareRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}/share{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ShareRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ShareRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}/share{?%24select,%24expand}", rawUrl) {
+        public ShareRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}/share{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get share from print

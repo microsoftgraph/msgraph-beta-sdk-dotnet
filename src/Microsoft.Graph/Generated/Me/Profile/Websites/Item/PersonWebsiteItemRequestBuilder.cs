@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonWebsiteItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/websites/{personWebsite%2Did}{?%24select,%24expand}", pathParameters) {
+        public PersonWebsiteItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/websites/{personWebsite%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PersonWebsiteItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonWebsiteItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/websites/{personWebsite%2Did}{?%24select,%24expand}", rawUrl) {
+        public PersonWebsiteItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/websites/{personWebsite%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Deletes a personWebsite object from a user&apos;s profile.

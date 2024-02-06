@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.</summary>
+        /// <summary>The frequencyInHours property</summary>
         public int? FrequencyInHours {
             get { return BackingStore?.Get<int?>("frequencyInHours"); }
             set { BackingStore?.Set("frequencyInHours", value); }
         }
-        /// <summary>The frequencyType property</summary>
+        /// <summary>The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.</summary>
         public CloudPcRestorePointFrequencyType? FrequencyType {
             get { return BackingStore?.Get<CloudPcRestorePointFrequencyType?>("frequencyType"); }
             set { BackingStore?.Set("frequencyType", value); }

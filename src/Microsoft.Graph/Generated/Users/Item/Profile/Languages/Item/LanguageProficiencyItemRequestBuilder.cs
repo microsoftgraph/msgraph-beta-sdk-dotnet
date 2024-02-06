@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Languages.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LanguageProficiencyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/languages/{languageProficiency%2Did}{?%24select,%24expand}", pathParameters) {
+        public LanguageProficiencyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/languages/{languageProficiency%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new LanguageProficiencyItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LanguageProficiencyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/languages/{languageProficiency%2Did}{?%24select,%24expand}", rawUrl) {
+        public LanguageProficiencyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/languages/{languageProficiency%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete a languageProficiency object from a user&apos;s profile.

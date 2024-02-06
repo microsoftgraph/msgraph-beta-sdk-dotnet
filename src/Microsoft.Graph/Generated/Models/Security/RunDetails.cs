@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The errorCode property</summary>
+        /// <summary>Error code of the most recent run that encountered an error. The possible values are: queryExecutionFailed, queryExecutionThrottling, queryExceededResultSize, queryLimitsExceeded, queryTimeout, alertCreationFailed, alertReportNotFound, partialRowsFailed, unknownFutureValue.</summary>
         public HuntingRuleErrorCode? ErrorCode {
             get { return BackingStore?.Get<HuntingRuleErrorCode?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
-        /// <summary>The failureReason property</summary>
+        /// <summary>Reason for failure when the custom detection last ran and failed. See the table below.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FailureReason {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("failureReason", value); }
         }
 #endif
-        /// <summary>The lastRunDateTime property</summary>
+        /// <summary>Timestamp when the custom detection was last run.</summary>
         public DateTimeOffset? LastRunDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRunDateTime"); }
             set { BackingStore?.Set("lastRunDateTime", value); }
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Status of custom detection when it was last run. The possible values are: running, completed, failed, partiallyFailed, unknownFutureValue.</summary>
         public HuntingRuleRunStatus? Status {
             get { return BackingStore?.Get<HuntingRuleRunStatus?>("status"); }
             set { BackingStore?.Set("status", value); }

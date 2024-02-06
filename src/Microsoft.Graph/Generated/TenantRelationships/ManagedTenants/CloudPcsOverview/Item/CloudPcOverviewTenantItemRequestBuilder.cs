@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcsOvervi
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CloudPcOverviewTenantItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/cloudPcsOverview/{cloudPcOverview%2DtenantId}{?%24select,%24expand}", pathParameters) {
+        public CloudPcOverviewTenantItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/cloudPcsOverview/{cloudPcOverview%2DtenantId}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new CloudPcOverviewTenantItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CloudPcOverviewTenantItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/cloudPcsOverview/{cloudPcOverview%2DtenantId}{?%24select,%24expand}", rawUrl) {
+        public CloudPcOverviewTenantItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/cloudPcsOverview/{cloudPcOverview%2DtenantId}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property cloudPcsOverview for tenantRelationships

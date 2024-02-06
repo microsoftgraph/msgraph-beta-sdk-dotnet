@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item.Defin
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GroupPolicyDefinitionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyCategories/{groupPolicyCategory%2Did}/definitions/{groupPolicyDefinition%2Did}{?%24select,%24expand}", pathParameters) {
+        public GroupPolicyDefinitionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyCategories/{groupPolicyCategory%2Did}/definitions/{groupPolicyDefinition%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new GroupPolicyDefinitionItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GroupPolicyDefinitionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyCategories/{groupPolicyCategory%2Did}/definitions/{groupPolicyDefinition%2Did}{?%24select,%24expand}", rawUrl) {
+        public GroupPolicyDefinitionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyCategories/{groupPolicyCategory%2Did}/definitions/{groupPolicyDefinition%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// The immediate GroupPolicyDefinition children of the category

@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoiceLines.Item.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemCategoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesInvoiceLines/{salesInvoiceLine%2Did}/item/itemCategory{?%24select,%24expand}", pathParameters) {
+        public ItemCategoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesInvoiceLines/{salesInvoiceLine%2Did}/item/itemCategory{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ItemCategoryRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemCategoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesInvoiceLines/{salesInvoiceLine%2Did}/item/itemCategory{?%24select,%24expand}", rawUrl) {
+        public ItemCategoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesInvoiceLines/{salesInvoiceLine%2Did}/item/itemCategory{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property itemCategory for financials

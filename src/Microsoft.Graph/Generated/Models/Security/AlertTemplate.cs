@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The category property</summary>
+        /// <summary>Category assigned to the alert triggered by the custom detection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category {
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("category", value); }
         }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>Description of the alert triggered by the custom detection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The impactedAssets property</summary>
+        /// <summary>Which asset or assets were impacted based on the alert triggered by the custom detection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ImpactedAsset>? ImpactedAssets {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("impactedAssets", value); }
         }
 #endif
-        /// <summary>The mitreTechniques property</summary>
+        /// <summary>MITRE technique assigned to the alert triggered by the custom detection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MitreTechniques {
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The recommendedActions property</summary>
+        /// <summary>Recommended actions to mitigate the threat related to the alert triggered by the custom detection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecommendedActions {
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<AlertSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
-        /// <summary>The title property</summary>
+        /// <summary>Name of the alert triggered by the custom detection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title {

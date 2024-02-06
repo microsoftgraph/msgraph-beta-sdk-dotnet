@@ -34,14 +34,14 @@ namespace Microsoft.Graph.Beta.Me.Outlook.Tasks {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TasksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/outlook/tasks{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", pathParameters) {
+        public TasksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/outlook/tasks{?%24count,%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new TasksRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TasksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/outlook/tasks{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
+        public TasksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/outlook/tasks{?%24count,%24filter,%24orderby,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Get all the Outlook tasks in the user&apos;s mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC.You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zonedifferent than UTC. See an example for getting a single task. You can apply the header similarly to get multiple tasks.

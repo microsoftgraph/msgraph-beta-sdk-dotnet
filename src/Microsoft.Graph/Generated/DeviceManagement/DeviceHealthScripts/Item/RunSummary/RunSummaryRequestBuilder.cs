@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.RunSumm
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RunSummaryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/runSummary{?%24select,%24expand}", pathParameters) {
+        public RunSummaryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/runSummary{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new RunSummaryRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RunSummaryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/runSummary{?%24select,%24expand}", rawUrl) {
+        public RunSummaryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/runSummary{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property runSummary for deviceManagement

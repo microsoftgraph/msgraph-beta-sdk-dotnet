@@ -39,14 +39,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ZebraFotaConnectorRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/zebraFotaConnector{?%24select,%24expand}", pathParameters) {
+        public ZebraFotaConnectorRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/zebraFotaConnector{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ZebraFotaConnectorRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ZebraFotaConnectorRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/zebraFotaConnector{?%24select,%24expand}", rawUrl) {
+        public ZebraFotaConnectorRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/zebraFotaConnector{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property zebraFotaConnector for deviceManagement

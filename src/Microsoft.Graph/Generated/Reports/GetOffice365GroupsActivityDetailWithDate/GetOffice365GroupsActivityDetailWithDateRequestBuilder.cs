@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithDate 
         /// <param name="date">Usage: date={date}</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetOffice365GroupsActivityDetailWithDateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Date? date = default) : base(requestAdapter, "{+baseurl}/reports/getOffice365GroupsActivityDetail(date={date}){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters) {
+        public GetOffice365GroupsActivityDetailWithDateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Date? date = default) : base(requestAdapter, "{+baseurl}/reports/getOffice365GroupsActivityDetail(date={date}){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
             if (date != null) PathParameters.Add("date", date);
         }
         /// <summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithDate 
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetOffice365GroupsActivityDetailWithDateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getOffice365GroupsActivityDetail(date={date}){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", rawUrl) {
+        public GetOffice365GroupsActivityDetailWithDateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getOffice365GroupsActivityDetail(date={date}){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function getOffice365GroupsActivityDetail
@@ -98,6 +98,16 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithDate 
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+#endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

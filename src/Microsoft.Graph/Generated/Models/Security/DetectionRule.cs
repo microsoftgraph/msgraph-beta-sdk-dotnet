@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class DetectionRule : ProtectionRule, IParsable {
-        /// <summary>The detectionAction property</summary>
+        /// <summary>Complex type representing the actions taken when a detection is made by this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Security.DetectionAction? DetectionAction {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("detectionAction", value); }
         }
 #endif
-        /// <summary>The detectorId property</summary>
+        /// <summary>The ID of the detector that triggered the alert. Also see the &apos;detectorId&apos; field in microsoft.graph.security.alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DetectorId {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("detectorId", value); }
         }
 #endif
-        /// <summary>The lastRunDetails property</summary>
+        /// <summary>Complex type holding details about the last run of this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RunDetails? LastRunDetails {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("lastRunDetails", value); }
         }
 #endif
-        /// <summary>The queryCondition property</summary>
+        /// <summary>Complex type holding data about the advanced hunting query of this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Security.QueryCondition? QueryCondition {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("queryCondition", value); }
         }
 #endif
-        /// <summary>The schedule property</summary>
+        /// <summary>Complex type holding data about the triggering schedule of this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RuleSchedule? Schedule {

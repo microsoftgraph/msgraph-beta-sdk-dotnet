@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.GovernanceRoleAssignments.Item.LinkedEligibleRole
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LinkedEligibleRoleAssignmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/governanceRoleAssignments/{governanceRoleAssignment%2Did}/linkedEligibleRoleAssignment{?%24select,%24expand}", pathParameters) {
+        public LinkedEligibleRoleAssignmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/governanceRoleAssignments/{governanceRoleAssignment%2Did}/linkedEligibleRoleAssignment{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new LinkedEligibleRoleAssignmentRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LinkedEligibleRoleAssignmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/governanceRoleAssignments/{governanceRoleAssignment%2Did}/linkedEligibleRoleAssignment{?%24select,%24expand}", rawUrl) {
+        public LinkedEligibleRoleAssignmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/governanceRoleAssignments/{governanceRoleAssignment%2Did}/linkedEligibleRoleAssignment{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.

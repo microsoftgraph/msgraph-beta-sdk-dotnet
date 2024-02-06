@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.ApplicationsWithUniqueName {
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="uniqueName">Alternate key of application</param>
-        public ApplicationsWithUniqueNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string uniqueName = "") : base(requestAdapter, "{+baseurl}/applications(uniqueName='{uniqueName}'){?%24select,%24expand}", pathParameters) {
+        public ApplicationsWithUniqueNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string uniqueName = "") : base(requestAdapter, "{+baseurl}/applications(uniqueName='{uniqueName}'){?%24expand,%24select}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(uniqueName)) PathParameters.Add("uniqueName", uniqueName);
         }
         /// <summary>
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.ApplicationsWithUniqueName {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApplicationsWithUniqueNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications(uniqueName='{uniqueName}'){?%24select,%24expand}", rawUrl) {
+        public ApplicationsWithUniqueNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications(uniqueName='{uniqueName}'){?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.

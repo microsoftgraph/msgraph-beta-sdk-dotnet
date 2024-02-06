@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UnitOfMeasureItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/unitsOfMeasure/{unitOfMeasure%2Did}{?%24select,%24expand}", pathParameters) {
+        public UnitOfMeasureItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/unitsOfMeasure/{unitOfMeasure%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new UnitOfMeasureItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UnitOfMeasureItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/unitsOfMeasure/{unitOfMeasure%2Did}{?%24select,%24expand}", rawUrl) {
+        public UnitOfMeasureItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/unitsOfMeasure/{unitOfMeasure%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property unitsOfMeasure for financials

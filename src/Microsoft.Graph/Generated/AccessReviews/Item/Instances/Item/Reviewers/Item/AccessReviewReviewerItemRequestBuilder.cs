@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.Reviewers.Item 
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccessReviewReviewerItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}/reviewers/{accessReviewReviewer%2Did}{?%24select,%24expand}", pathParameters) {
+        public AccessReviewReviewerItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}/reviewers/{accessReviewReviewer%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new AccessReviewReviewerItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccessReviewReviewerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}/reviewers/{accessReviewReviewer%2Did}{?%24select,%24expand}", rawUrl) {
+        public AccessReviewReviewerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}/reviewers/{accessReviewReviewer%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// In the Microsoft Entra access reviews feature, update an existing accessReview object to remove a user as a reviewer.  This operation is only permitted for an access review that isn&apos;t yet completed, and only for an access review where the reviewers are explicitly specified. This operation isn&apos;t permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers. 

@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRoomsWithRoomList {
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="roomList">Usage: RoomList=&apos;{RoomList}&apos;</param>
-        public FindRoomsWithRoomListRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string roomList = "") : base(requestAdapter, "{+baseurl}/users/{user%2Did}/findRooms(RoomList='{RoomList}'){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
+        public FindRoomsWithRoomListRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string roomList = "") : base(requestAdapter, "{+baseurl}/users/{user%2Did}/findRooms(RoomList='{RoomList}'){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(roomList)) PathParameters.Add("RoomList", roomList);
         }
         /// <summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRoomsWithRoomList {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FindRoomsWithRoomListRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/findRooms(RoomList='{RoomList}'){?%24top,%24skip,%24search,%24filter,%24count}", rawUrl) {
+        public FindRoomsWithRoomListRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/findRooms(RoomList='{RoomList}'){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function findRooms

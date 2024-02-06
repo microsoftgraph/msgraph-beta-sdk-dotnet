@@ -18,14 +18,14 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetCredentialUserRegistrationCountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getCredentialUserRegistrationCount(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters) {
+        public GetCredentialUserRegistrationCountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getCredentialUserRegistrationCount(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new GetCredentialUserRegistrationCountRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetCredentialUserRegistrationCountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getCredentialUserRegistrationCount(){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", rawUrl) {
+        public GetCredentialUserRegistrationCountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getCredentialUserRegistrationCount(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities.
@@ -98,6 +98,16 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+#endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.RosterPlans.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PlannerPlanItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/rosterPlans/{plannerPlan%2Did}{?%24select,%24expand}", pathParameters) {
+        public PlannerPlanItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/rosterPlans/{plannerPlan%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PlannerPlanItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PlannerPlanItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/rosterPlans/{plannerPlan%2Did}{?%24select,%24expand}", rawUrl) {
+        public PlannerPlanItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/planner/rosterPlans/{plannerPlan%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.

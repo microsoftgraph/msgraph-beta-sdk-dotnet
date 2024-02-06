@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.Commands.Item.Responsepay
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResponsepayloadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/commands/{command%2Did}/responsepayload{?%24select,%24expand}", pathParameters) {
+        public ResponsepayloadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/commands/{command%2Did}/responsepayload{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ResponsepayloadRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResponsepayloadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/commands/{command%2Did}/responsepayload{?%24select,%24expand}", rawUrl) {
+        public ResponsepayloadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/devices/{device%2Did}/commands/{command%2Did}/responsepayload{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get responsepayload from users

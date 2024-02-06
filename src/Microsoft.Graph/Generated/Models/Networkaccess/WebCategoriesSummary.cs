@@ -7,6 +7,11 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class WebCategoriesSummary : IAdditionalDataHolder, IBackedModel, IParsable {
+        /// <summary>The action property</summary>
+        public FilteringPolicyAction? Action {
+            get { return BackingStore?.Get<FilteringPolicyAction?>("action"); }
+            set { BackingStore?.Set("action", value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -77,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// </summary>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"action", n => { Action = n.GetEnumValue<FilteringPolicyAction>(); } },
                 {"deviceCount", n => { DeviceCount = n.GetLongValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"transactionCount", n => { TransactionCount = n.GetLongValue(); } },
@@ -90,6 +96,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<FilteringPolicyAction>("action", Action);
             writer.WriteLongValue("deviceCount", DeviceCount);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteLongValue("transactionCount", TransactionCount);

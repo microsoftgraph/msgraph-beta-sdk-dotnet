@@ -24,14 +24,14 @@ namespace Microsoft.Graph.Beta.Reports.Sla {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SlaRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/sla{?%24select,%24expand}", pathParameters) {
+        public SlaRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/sla{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new SlaRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SlaRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/sla{?%24select,%24expand}", rawUrl) {
+        public SlaRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/sla{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property sla for reports

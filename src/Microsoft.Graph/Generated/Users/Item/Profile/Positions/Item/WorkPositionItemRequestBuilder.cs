@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Positions.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorkPositionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/positions/{workPosition%2Did}{?%24select,%24expand}", pathParameters) {
+        public WorkPositionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/positions/{workPosition%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new WorkPositionItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorkPositionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/positions/{workPosition%2Did}{?%24select,%24expand}", rawUrl) {
+        public WorkPositionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/positions/{workPosition%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete a specific workPosition object from a user&apos;s profile.

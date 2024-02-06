@@ -24,14 +24,14 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomAuthenticationExtensionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}{?%24select,%24expand}", pathParameters) {
+        public CustomAuthenticationExtensionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new CustomAuthenticationExtensionItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomAuthenticationExtensionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}{?%24select,%24expand}", rawUrl) {
+        public CustomAuthenticationExtensionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete a customAuthenticationExtension object.
@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a customAuthenticationExtension object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-1.0" />
+        /// Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a customAuthenticationExtension object.
+        /// Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
         public class CustomAuthenticationExtensionItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a customAuthenticationExtension object.
+        /// Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
         /// </summary>
         public class CustomAuthenticationExtensionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public JoinRequestRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/multiTenantOrganization/joinRequest{?%24select,%24expand}", pathParameters) {
+        public JoinRequestRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/multiTenantOrganization/joinRequest{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new JoinRequestRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public JoinRequestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/multiTenantOrganization/joinRequest{?%24select,%24expand}", rawUrl) {
+        public JoinRequestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/multiTenantOrganization/joinRequest{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get the status of a tenant joining a multi-tenant organization.

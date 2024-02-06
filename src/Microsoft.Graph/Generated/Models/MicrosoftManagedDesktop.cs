@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The managedType property</summary>
+        /// <summary>Indicates the provisioning policy associated with Microsoft Managed Desktop settings. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue. The default value is notManaged.</summary>
         public MicrosoftManagedDesktopType? ManagedType {
             get { return BackingStore?.Get<MicrosoftManagedDesktopType?>("managedType"); }
             set { BackingStore?.Set("managedType", value); }
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("profile", value); }
         }
 #endif
-        /// <summary>Indicates whether the provisioning policy enables Microsoft Managed Desktop. It indicates the type of plan under which the device is managed if the provisioning policy is enabled. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue.</summary>
+        /// <summary>The type property</summary>
         public MicrosoftManagedDesktopType? Type {
             get { return BackingStore?.Get<MicrosoftManagedDesktopType?>("type"); }
             set { BackingStore?.Set("type", value); }

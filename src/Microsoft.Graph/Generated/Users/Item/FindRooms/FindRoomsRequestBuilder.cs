@@ -18,14 +18,14 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRooms {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FindRoomsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/findRooms(){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
+        public FindRoomsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/findRooms(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new FindRoomsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FindRoomsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/findRooms(){?%24top,%24skip,%24search,%24filter,%24count}", rawUrl) {
+        public FindRoomsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/findRooms(){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function findRooms

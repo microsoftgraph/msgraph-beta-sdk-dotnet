@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleDefinitions.Item.Rol
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoleSettingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/governanceResources/{governanceResource%2Did}/roleDefinitions/{governanceRoleDefinition%2Did}/roleSetting{?%24select,%24expand}", pathParameters) {
+        public RoleSettingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/governanceResources/{governanceResource%2Did}/roleDefinitions/{governanceRoleDefinition%2Did}/roleSetting{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new RoleSettingRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoleSettingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/governanceResources/{governanceResource%2Did}/roleDefinitions/{governanceRoleDefinition%2Did}/roleSetting{?%24select,%24expand}", rawUrl) {
+        public RoleSettingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/governanceResources/{governanceResource%2Did}/roleDefinitions/{governanceRoleDefinition%2Did}/roleSetting{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// The associated role setting for the role definition.

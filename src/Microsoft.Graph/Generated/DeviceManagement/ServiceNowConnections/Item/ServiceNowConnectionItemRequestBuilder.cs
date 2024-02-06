@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ServiceNowConnections.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ServiceNowConnectionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/serviceNowConnections/{serviceNowConnection%2Did}{?%24select,%24expand}", pathParameters) {
+        public ServiceNowConnectionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/serviceNowConnections/{serviceNowConnection%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ServiceNowConnectionItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ServiceNowConnectionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/serviceNowConnections/{serviceNowConnection%2Did}{?%24select,%24expand}", rawUrl) {
+        public ServiceNowConnectionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/serviceNowConnections/{serviceNowConnection%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property serviceNowConnections for deviceManagement

@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagementApp {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WindowsManagementAppRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/windowsManagementApp{?%24select,%24expand}", pathParameters) {
+        public WindowsManagementAppRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/windowsManagementApp{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new WindowsManagementAppRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WindowsManagementAppRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/windowsManagementApp{?%24select,%24expand}", rawUrl) {
+        public WindowsManagementAppRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/windowsManagementApp{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Windows management app.

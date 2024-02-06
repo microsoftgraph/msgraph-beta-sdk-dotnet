@@ -28,7 +28,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloud
         public GetCloudPcRecommendationReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports/getCloudPcRecommendationReports", rawUrl) {
         }
         /// <summary>
-        /// Invoke action getCloudPcRecommendationReports
+        /// Get the device recommendation reports for Cloud PCs, such as the usage category report. The usage category report categorizes a Cloud PC as Undersized, Oversized, Rightsized, or Underutilized, and also provides the recommended SKU when the Cloud PC isn&apos;t Rightsized.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcreports-getcloudpcrecommendationreports?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetCloud
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action getCloudPcRecommendationReports
+        /// Get the device recommendation reports for Cloud PCs, such as the usage category report. The usage category report categorizes a Cloud PC as Undersized, Oversized, Rightsized, or Underutilized, and also provides the recommended SKU when the Cloud PC isn&apos;t Rightsized.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

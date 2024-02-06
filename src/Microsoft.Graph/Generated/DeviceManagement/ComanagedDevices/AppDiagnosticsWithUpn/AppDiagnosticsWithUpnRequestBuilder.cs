@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.AppDiagnosticsW
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="upn">Usage: upn=&apos;{upn}&apos;</param>
-        public AppDiagnosticsWithUpnRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string upn = "") : base(requestAdapter, "{+baseurl}/deviceManagement/comanagedDevices/appDiagnostics(upn='{upn}'){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
+        public AppDiagnosticsWithUpnRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string upn = "") : base(requestAdapter, "{+baseurl}/deviceManagement/comanagedDevices/appDiagnostics(upn='{upn}'){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(upn)) PathParameters.Add("upn", upn);
         }
         /// <summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.AppDiagnosticsW
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AppDiagnosticsWithUpnRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/comanagedDevices/appDiagnostics(upn='{upn}'){?%24top,%24skip,%24search,%24filter,%24count}", rawUrl) {
+        public AppDiagnosticsWithUpnRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/comanagedDevices/appDiagnostics(upn='{upn}'){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function appDiagnostics

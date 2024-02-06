@@ -54,14 +54,14 @@ namespace Microsoft.Graph.Beta.Teamwork {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TeamworkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork{?%24select,%24expand}", pathParameters) {
+        public TeamworkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new TeamworkRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TeamworkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork{?%24select,%24expand}", rawUrl) {
+        public TeamworkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teamwork{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get the properties and relationships of a teamwork object, such as the region of the organization and whether Microsoft Teams is enabled.

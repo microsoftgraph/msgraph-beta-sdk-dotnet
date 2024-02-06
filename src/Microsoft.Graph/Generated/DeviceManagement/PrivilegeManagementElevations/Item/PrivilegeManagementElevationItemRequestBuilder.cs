@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.PrivilegeManagementElevations.It
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrivilegeManagementElevationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/privilegeManagementElevations/{privilegeManagementElevation%2Did}{?%24select,%24expand}", pathParameters) {
+        public PrivilegeManagementElevationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/privilegeManagementElevations/{privilegeManagementElevation%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PrivilegeManagementElevationItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrivilegeManagementElevationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/privilegeManagementElevations/{privilegeManagementElevation%2Did}{?%24select,%24expand}", rawUrl) {
+        public PrivilegeManagementElevationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/privilegeManagementElevations/{privilegeManagementElevation%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property privilegeManagementElevations for deviceManagement

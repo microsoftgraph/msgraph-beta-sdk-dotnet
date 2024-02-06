@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Publish {
+namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Publish {
     /// <summary>
     /// Provides operations to call the publish method.
     /// </summary>
@@ -18,14 +18,14 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Publish {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PublishRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/publish", pathParameters) {
+        public PublishRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/publish", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PublishRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PublishRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/publish", rawUrl) {
+        public PublishRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/publish", rawUrl) {
         }
         /// <summary>
         /// Invoke action publish

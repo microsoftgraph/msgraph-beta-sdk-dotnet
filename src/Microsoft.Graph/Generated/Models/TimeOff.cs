@@ -39,6 +39,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sharedTimeOff", value); }
         }
 #endif
+        /// <summary>The teamInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public ShiftsTeamInfo? TeamInfo {
+            get { return BackingStore?.Get<ShiftsTeamInfo?>("teamInfo"); }
+            set { BackingStore?.Set("teamInfo", value); }
+        }
+#nullable restore
+#else
+        public ShiftsTeamInfo TeamInfo {
+            get { return BackingStore?.Get<ShiftsTeamInfo>("teamInfo"); }
+            set { BackingStore?.Set("teamInfo", value); }
+        }
+#endif
         /// <summary>ID of the user assigned to the timeOff. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,6 +65,20 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
+        }
+#endif
+        /// <summary>The userInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public ShiftsUserInfo? UserInfo {
+            get { return BackingStore?.Get<ShiftsUserInfo?>("userInfo"); }
+            set { BackingStore?.Set("userInfo", value); }
+        }
+#nullable restore
+#else
+        public ShiftsUserInfo UserInfo {
+            get { return BackingStore?.Get<ShiftsUserInfo>("userInfo"); }
+            set { BackingStore?.Set("userInfo", value); }
         }
 #endif
         /// <summary>
@@ -75,7 +103,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"draftTimeOff", n => { DraftTimeOff = n.GetObjectValue<TimeOffItem>(TimeOffItem.CreateFromDiscriminatorValue); } },
                 {"isStagedForDeletion", n => { IsStagedForDeletion = n.GetBoolValue(); } },
                 {"sharedTimeOff", n => { SharedTimeOff = n.GetObjectValue<TimeOffItem>(TimeOffItem.CreateFromDiscriminatorValue); } },
+                {"teamInfo", n => { TeamInfo = n.GetObjectValue<ShiftsTeamInfo>(ShiftsTeamInfo.CreateFromDiscriminatorValue); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
+                {"userInfo", n => { UserInfo = n.GetObjectValue<ShiftsUserInfo>(ShiftsUserInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

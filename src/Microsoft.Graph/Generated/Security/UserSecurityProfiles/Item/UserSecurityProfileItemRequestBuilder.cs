@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Security.UserSecurityProfiles.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserSecurityProfileItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/userSecurityProfiles/{userSecurityProfile%2Did}{?%24select,%24expand}", pathParameters) {
+        public UserSecurityProfileItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/userSecurityProfiles/{userSecurityProfile%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new UserSecurityProfileItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserSecurityProfileItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/userSecurityProfiles/{userSecurityProfile%2Did}{?%24select,%24expand}", rawUrl) {
+        public UserSecurityProfileItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/userSecurityProfiles/{userSecurityProfile%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property userSecurityProfiles for security

@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.Mentions.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MentionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/messages/{message%2Did}/mentions/{mention%2Did}{?%24select,%24expand}", pathParameters) {
+        public MentionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/messages/{message%2Did}/mentions/{mention%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new MentionItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MentionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/messages/{message%2Did}/mentions/{mention%2Did}{?%24select,%24expand}", rawUrl) {
+        public MentionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/messages/{message%2Did}/mentions/{mention%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete a message in the specified user&apos;s mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message.

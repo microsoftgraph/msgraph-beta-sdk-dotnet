@@ -39,14 +39,14 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphMacOSPkg
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GraphMacOSPkgAppRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.macOSPkgApp{?%24select,%24expand}", pathParameters) {
+        public GraphMacOSPkgAppRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.macOSPkgApp{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new GraphMacOSPkgAppRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GraphMacOSPkgAppRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.macOSPkgApp{?%24select,%24expand}", rawUrl) {
+        public GraphMacOSPkgAppRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.macOSPkgApp{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.macOSPkgApp

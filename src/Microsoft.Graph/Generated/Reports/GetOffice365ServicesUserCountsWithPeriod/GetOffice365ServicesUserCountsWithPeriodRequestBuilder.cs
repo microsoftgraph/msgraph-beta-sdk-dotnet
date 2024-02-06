@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod 
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetOffice365ServicesUserCountsWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = "") : base(requestAdapter, "{+baseurl}/reports/getOffice365ServicesUserCounts(period='{period}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters) {
+        public GetOffice365ServicesUserCountsWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = "") : base(requestAdapter, "{+baseurl}/reports/getOffice365ServicesUserCounts(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(period)) PathParameters.Add("period", period);
         }
         /// <summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod 
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetOffice365ServicesUserCountsWithPeriodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getOffice365ServicesUserCounts(period='{period}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", rawUrl) {
+        public GetOffice365ServicesUserCountsWithPeriodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getOffice365ServicesUserCounts(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function getOffice365ServicesUserCounts
@@ -98,6 +98,16 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod 
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+#endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CustomerPayments.Item.C
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PaymentTermRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/customerPayments/{customerPayment%2Did}/customer/paymentTerm{?%24select,%24expand}", pathParameters) {
+        public PaymentTermRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/customerPayments/{customerPayment%2Did}/customer/paymentTerm{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PaymentTermRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PaymentTermRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/customerPayments/{customerPayment%2Did}/customer/paymentTerm{?%24select,%24expand}", rawUrl) {
+        public PaymentTermRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/customerPayments/{customerPayment%2Did}/customer/paymentTerm{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property paymentTerm for financials

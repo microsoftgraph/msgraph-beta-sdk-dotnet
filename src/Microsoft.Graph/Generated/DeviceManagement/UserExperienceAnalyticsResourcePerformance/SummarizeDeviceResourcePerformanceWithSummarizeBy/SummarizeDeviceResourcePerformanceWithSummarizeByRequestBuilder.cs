@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="summarizeBy">Usage: summarizeBy=&apos;{summarizeBy}&apos;</param>
-        public SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string summarizeBy = "") : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsResourcePerformance/summarizeDeviceResourcePerformance(summarizeBy='{summarizeBy}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters) {
+        public SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string summarizeBy = "") : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsResourcePerformance/summarizeDeviceResourcePerformance(summarizeBy='{summarizeBy}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(summarizeBy)) PathParameters.Add("summarizeBy", summarizeBy);
         }
         /// <summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsResourcePerformance/summarizeDeviceResourcePerformance(summarizeBy='{summarizeBy}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", rawUrl) {
+        public SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsResourcePerformance/summarizeDeviceResourcePerformance(summarizeBy='{summarizeBy}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function summarizeDeviceResourcePerformance
@@ -98,6 +98,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+#endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

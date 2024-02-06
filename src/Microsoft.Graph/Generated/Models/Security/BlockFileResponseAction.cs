@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class BlockFileResponseAction : ResponseAction, IParsable {
-        /// <summary>The deviceGroupNames property</summary>
+        /// <summary>Device groups to which the actions set in the custom detection rule are applied. More information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DeviceGroupNames {

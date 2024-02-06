@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.ContactMergeSuggestions {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ContactMergeSuggestionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/settings/contactMergeSuggestions{?%24select,%24expand}", pathParameters) {
+        public ContactMergeSuggestionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/settings/contactMergeSuggestions{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ContactMergeSuggestionsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ContactMergeSuggestionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/settings/contactMergeSuggestions{?%24select,%24expand}", rawUrl) {
+        public ContactMergeSuggestionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/settings/contactMergeSuggestions{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property contactMergeSuggestions for users

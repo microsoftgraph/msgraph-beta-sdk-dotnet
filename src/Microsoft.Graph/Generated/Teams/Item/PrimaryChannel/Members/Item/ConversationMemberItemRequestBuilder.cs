@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Members.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConversationMemberItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel/members/{conversationMember%2Did}{?%24select,%24expand}", pathParameters) {
+        public ConversationMemberItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel/members/{conversationMember%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ConversationMemberItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConversationMemberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel/members/{conversationMember%2Did}{?%24select,%24expand}", rawUrl) {
+        public ConversationMemberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/primaryChannel/members/{conversationMember%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
@@ -69,8 +69,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Members.Item {
             return await RequestAdapter.SendAsync<ConversationMember>(requestInfo, ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-update-members?view=graph-rest-1.0" />
+        /// Update the role of a conversationMember in a team.or channel.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationmember-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel.Members.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the role of a conversationMember in a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+        /// Update the role of a conversationMember in a team.or channel.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

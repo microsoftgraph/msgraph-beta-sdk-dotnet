@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.GroupsWithUniqueName {
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="uniqueName">Alternate key of group</param>
-        public GroupsWithUniqueNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string uniqueName = "") : base(requestAdapter, "{+baseurl}/groups(uniqueName='{uniqueName}'){?%24select,%24expand}", pathParameters) {
+        public GroupsWithUniqueNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string uniqueName = "") : base(requestAdapter, "{+baseurl}/groups(uniqueName='{uniqueName}'){?%24expand,%24select}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(uniqueName)) PathParameters.Add("uniqueName", uniqueName);
         }
         /// <summary>
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.GroupsWithUniqueName {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GroupsWithUniqueNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups(uniqueName='{uniqueName}'){?%24select,%24expand}", rawUrl) {
+        public GroupsWithUniqueNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups(uniqueName='{uniqueName}'){?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Deletes a group. When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This isn&apos;t applicable to Security groups and Distribution groups that are permanently deleted immediately. To learn more, see deletedItems.

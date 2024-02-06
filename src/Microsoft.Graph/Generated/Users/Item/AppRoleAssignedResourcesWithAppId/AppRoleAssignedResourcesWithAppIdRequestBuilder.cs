@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AppRoleAssignedResourcesWithAppId {
         /// <param name="appId">Alternate key of servicePrincipal</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AppRoleAssignedResourcesWithAppIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string appId = "") : base(requestAdapter, "{+baseurl}/users/{user%2Did}/appRoleAssignedResources(appId='{appId}'){?%24select,%24expand}", pathParameters) {
+        public AppRoleAssignedResourcesWithAppIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string appId = "") : base(requestAdapter, "{+baseurl}/users/{user%2Did}/appRoleAssignedResources(appId='{appId}'){?%24expand,%24select}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(appId)) PathParameters.Add("appId", appId);
         }
         /// <summary>
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AppRoleAssignedResourcesWithAppId {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AppRoleAssignedResourcesWithAppIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/appRoleAssignedResources(appId='{appId}'){?%24select,%24expand}", rawUrl) {
+        public AppRoleAssignedResourcesWithAppIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/appRoleAssignedResources(appId='{appId}'){?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get appRoleAssignedResources from users

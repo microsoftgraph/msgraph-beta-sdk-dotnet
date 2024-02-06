@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The organizationalScope property</summary>
+        /// <summary>Groups to which the custom detection rule applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Security.OrganizationalScope? OrganizationalScope {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("organizationalScope", value); }
         }
 #endif
-        /// <summary>The responseActions property</summary>
+        /// <summary>Actions taken on impacted assets as set in the custom detection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ResponseAction>? ResponseActions {

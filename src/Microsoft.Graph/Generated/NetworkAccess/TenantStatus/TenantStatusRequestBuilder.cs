@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.NetworkAccess.TenantStatus {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TenantStatusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/tenantStatus{?%24select,%24expand}", pathParameters) {
+        public TenantStatusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/tenantStatus{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new TenantStatusRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TenantStatusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/tenantStatus{?%24select,%24expand}", rawUrl) {
+        public TenantStatusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/tenantStatus{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property tenantStatus for networkAccess

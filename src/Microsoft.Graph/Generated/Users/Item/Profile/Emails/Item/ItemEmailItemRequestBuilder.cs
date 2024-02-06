@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Emails.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemEmailItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/emails/{itemEmail%2Did}{?%24select,%24expand}", pathParameters) {
+        public ItemEmailItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/emails/{itemEmail%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ItemEmailItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemEmailItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/emails/{itemEmail%2Did}{?%24select,%24expand}", rawUrl) {
+        public ItemEmailItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/emails/{itemEmail%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete an itemEmail object from a user&apos;s profile.

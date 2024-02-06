@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item.GetScope
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="userid">Usage: userid=&apos;{userid}&apos;</param>
-        public GetScopesForUserWithUseridRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string userid = "") : base(requestAdapter, "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}/getScopesForUser(userid='{userid}'){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
+        public GetScopesForUserWithUseridRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string userid = "") : base(requestAdapter, "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}/getScopesForUser(userid='{userid}'){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(userid)) PathParameters.Add("userid", userid);
         }
         /// <summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item.GetScope
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetScopesForUserWithUseridRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}/getScopesForUser(userid='{userid}'){?%24top,%24skip,%24search,%24filter,%24count}", rawUrl) {
+        public GetScopesForUserWithUseridRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}/getScopesForUser(userid='{userid}'){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function getScopesForUser

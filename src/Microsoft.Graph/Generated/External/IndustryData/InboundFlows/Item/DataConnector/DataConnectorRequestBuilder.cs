@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item.DataConne
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DataConnectorRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/dataConnector{?%24select,%24expand}", pathParameters) {
+        public DataConnectorRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/dataConnector{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new DataConnectorRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DataConnectorRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/dataConnector{?%24select,%24expand}", rawUrl) {
+        public DataConnectorRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/inboundFlows/{inboundFlow%2Did}/dataConnector{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// The data connector in the context of which this flow pulls in data from a source system.

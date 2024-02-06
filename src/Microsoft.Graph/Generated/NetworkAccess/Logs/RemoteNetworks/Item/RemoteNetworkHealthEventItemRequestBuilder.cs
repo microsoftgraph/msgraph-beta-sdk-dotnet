@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.RemoteNetworks.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RemoteNetworkHealthEventItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/logs/remoteNetworks/{remoteNetworkHealthEvent%2Did}{?%24select,%24expand}", pathParameters) {
+        public RemoteNetworkHealthEventItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/logs/remoteNetworks/{remoteNetworkHealthEvent%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new RemoteNetworkHealthEventItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RemoteNetworkHealthEventItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/logs/remoteNetworks/{remoteNetworkHealthEvent%2Did}{?%24select,%24expand}", rawUrl) {
+        public RemoteNetworkHealthEventItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/logs/remoteNetworks/{remoteNetworkHealthEvent%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property remoteNetworks for networkAccess

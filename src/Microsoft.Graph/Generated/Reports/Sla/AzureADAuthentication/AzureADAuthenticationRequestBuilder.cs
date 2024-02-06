@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Reports.Sla.AzureADAuthentication {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AzureADAuthenticationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/sla/azureADAuthentication{?%24select,%24expand}", pathParameters) {
+        public AzureADAuthenticationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/sla/azureADAuthentication{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new AzureADAuthenticationRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AzureADAuthenticationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/sla/azureADAuthentication{?%24select,%24expand}", rawUrl) {
+        public AzureADAuthenticationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/sla/azureADAuthentication{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property azureADAuthentication for reports

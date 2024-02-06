@@ -5,6 +5,8 @@ using Microsoft.Graph.Beta.Teams.AllMessages;
 using Microsoft.Graph.Beta.Teams.Count;
 using Microsoft.Graph.Beta.Teams.GetAllMessages;
 using Microsoft.Graph.Beta.Teams.GetOpenShifts;
+using Microsoft.Graph.Beta.Teams.GetShifts;
+using Microsoft.Graph.Beta.Teams.GetTimesOff;
 using Microsoft.Graph.Beta.Teams.Item;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -35,6 +37,14 @@ namespace Microsoft.Graph.Beta.Teams {
         public GetOpenShiftsRequestBuilder GetOpenShifts { get =>
             new GetOpenShiftsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the getShifts method.</summary>
+        public GetShiftsRequestBuilder GetShifts { get =>
+            new GetShiftsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getTimesOff method.</summary>
+        public GetTimesOffRequestBuilder GetTimesOff { get =>
+            new GetTimesOffRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the collection of team entities.</summary>
         /// <param name="position">The unique identifier of team</param>
         public TeamItemRequestBuilder this[string position] { get {
@@ -47,14 +57,14 @@ namespace Microsoft.Graph.Beta.Teams {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TeamsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public TeamsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new TeamsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TeamsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public TeamsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// List all teams in an organization.

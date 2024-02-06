@@ -39,6 +39,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("schedulingGroupId", value); }
         }
 #endif
+        /// <summary>The schedulingGroupInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.SchedulingGroupInfo? SchedulingGroupInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SchedulingGroupInfo?>("schedulingGroupInfo"); }
+            set { BackingStore?.Set("schedulingGroupInfo", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.SchedulingGroupInfo SchedulingGroupInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SchedulingGroupInfo>("schedulingGroupInfo"); }
+            set { BackingStore?.Set("schedulingGroupInfo", value); }
+        }
+#endif
         /// <summary>The shared version of this shift that is viewable by both employees and managers. Updates to the sharedShift property send notifications to users in the Teams client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +67,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sharedShift", value); }
         }
 #endif
+        /// <summary>The teamInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public ShiftsTeamInfo? TeamInfo {
+            get { return BackingStore?.Get<ShiftsTeamInfo?>("teamInfo"); }
+            set { BackingStore?.Set("teamInfo", value); }
+        }
+#nullable restore
+#else
+        public ShiftsTeamInfo TeamInfo {
+            get { return BackingStore?.Get<ShiftsTeamInfo>("teamInfo"); }
+            set { BackingStore?.Set("teamInfo", value); }
+        }
+#endif
         /// <summary>ID of the user assigned to the shift. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,6 +93,20 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
+        }
+#endif
+        /// <summary>The userInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public ShiftsUserInfo? UserInfo {
+            get { return BackingStore?.Get<ShiftsUserInfo?>("userInfo"); }
+            set { BackingStore?.Set("userInfo", value); }
+        }
+#nullable restore
+#else
+        public ShiftsUserInfo UserInfo {
+            get { return BackingStore?.Get<ShiftsUserInfo>("userInfo"); }
+            set { BackingStore?.Set("userInfo", value); }
         }
 #endif
         /// <summary>
@@ -89,8 +131,11 @@ namespace Microsoft.Graph.Beta.Models {
                 {"draftShift", n => { DraftShift = n.GetObjectValue<ShiftItem>(ShiftItem.CreateFromDiscriminatorValue); } },
                 {"isStagedForDeletion", n => { IsStagedForDeletion = n.GetBoolValue(); } },
                 {"schedulingGroupId", n => { SchedulingGroupId = n.GetStringValue(); } },
+                {"schedulingGroupInfo", n => { SchedulingGroupInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.SchedulingGroupInfo>(Microsoft.Graph.Beta.Models.SchedulingGroupInfo.CreateFromDiscriminatorValue); } },
                 {"sharedShift", n => { SharedShift = n.GetObjectValue<ShiftItem>(ShiftItem.CreateFromDiscriminatorValue); } },
+                {"teamInfo", n => { TeamInfo = n.GetObjectValue<ShiftsTeamInfo>(ShiftsTeamInfo.CreateFromDiscriminatorValue); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
+                {"userInfo", n => { UserInfo = n.GetObjectValue<ShiftsUserInfo>(ShiftsUserInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

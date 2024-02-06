@@ -24,18 +24,18 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Complia
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ComplianceChangeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/complianceChanges/{complianceChange%2Did}{?%24select,%24expand}", pathParameters) {
+        public ComplianceChangeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/complianceChanges/{complianceChange%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ComplianceChangeItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ComplianceChangeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/complianceChanges/{complianceChange%2Did}{?%24select,%24expand}", rawUrl) {
+        public ComplianceChangeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/windows/updates/updatePolicies/{updatePolicy%2Did}/complianceChanges/{complianceChange%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Delete a contentApproval object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-delete?view=graph-rest-1.0" />
+        /// Delete a complianceChange object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Complia
             return await RequestAdapter.SendAsync<ComplianceChange>(requestInfo, ComplianceChange.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a contentApproval object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-update?view=graph-rest-1.0" />
+        /// Update the properties of a complianceChange object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-update?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Complia
             return await RequestAdapter.SendAsync<ComplianceChange>(requestInfo, ComplianceChange.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a contentApproval object.
+        /// Delete a complianceChange object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Complia
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a contentApproval object.
+        /// Update the properties of a complianceChange object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

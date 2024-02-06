@@ -34,14 +34,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TaskGroupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/taskGroups{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", pathParameters) {
+        public TaskGroupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/taskGroups{?%24count,%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new TaskGroupsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TaskGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/taskGroups{?%24top,%24skip,%24filter,%24count,%24orderby,%24select}", rawUrl) {
+        public TaskGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook/taskGroups{?%24count,%24filter,%24orderby,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Get all the Outlook task groups in the user&apos;s mailbox. The response always includes the default task group My Tasks, and any other task groups that have been created in the mailbox.

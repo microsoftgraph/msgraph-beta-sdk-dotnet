@@ -18,14 +18,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePerm
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetEffectivePermissionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/getEffectivePermissions(){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
+        public GetEffectivePermissionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/getEffectivePermissions(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new GetEffectivePermissionsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetEffectivePermissionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/getEffectivePermissions(){?%24top,%24skip,%24search,%24filter,%24count}", rawUrl) {
+        public GetEffectivePermissionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/getEffectivePermissions(){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function getEffectivePermissions

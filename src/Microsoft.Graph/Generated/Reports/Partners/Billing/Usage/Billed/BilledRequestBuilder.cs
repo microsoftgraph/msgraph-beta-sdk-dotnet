@@ -24,14 +24,14 @@ namespace Microsoft.Graph.Beta.Reports.Partners.Billing.Usage.Billed {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BilledRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/partners/billing/usage/billed{?%24select,%24expand}", pathParameters) {
+        public BilledRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/partners/billing/usage/billed{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new BilledRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BilledRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/partners/billing/usage/billed{?%24select,%24expand}", rawUrl) {
+        public BilledRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/partners/billing/usage/billed{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property billed for reports

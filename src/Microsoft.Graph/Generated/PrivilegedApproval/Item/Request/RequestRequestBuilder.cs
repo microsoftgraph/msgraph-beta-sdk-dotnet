@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.Request {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RequestRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}/request{?%24select,%24expand}", pathParameters) {
+        public RequestRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}/request{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new RequestRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RequestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}/request{?%24select,%24expand}", rawUrl) {
+        public RequestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}/request{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get request from privilegedApproval

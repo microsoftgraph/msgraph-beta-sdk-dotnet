@@ -8,8 +8,9 @@ using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessEnti
 using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetCrossTenantSummaryWithStartDateTimeWithEndDateTimeWithDiscoveryPivotDateTime;
 using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedBy;
 using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTime;
-using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessTrafficDistributionWithStartDateTimeWithEndDateTime;
+using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTime;
 using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTime;
+using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBy;
 using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTime;
 using Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTime;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -30,14 +31,14 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/reports{?%24select,%24expand}", pathParameters) {
+        public ReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/reports{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ReportsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/reports{?%24select,%24expand}", rawUrl) {
+        public ReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/reports{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property reports for networkAccess
@@ -154,14 +155,14 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports {
             return new MicrosoftGraphNetworkaccessGetDeviceUsageSummaryWithStartDateTimeWithEndDateTimeWithActivityPivotDateTimeRequestBuilder(PathParameters, RequestAdapter, activityPivotDateTime, endDateTime, startDateTime);
         }
         /// <summary>
-        /// Provides operations to call the trafficDistribution method.
+        /// Provides operations to call the getDiscoveredApplicationSegmentReport method.
         /// </summary>
         /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
-        public MicrosoftGraphNetworkaccessTrafficDistributionWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphNetworkaccessTrafficDistributionWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime) {
+        public MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime) {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
             _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
-            return new MicrosoftGraphNetworkaccessTrafficDistributionWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
+            return new MicrosoftGraphNetworkaccessGetDiscoveredApplicationSegmentReportWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
         /// Provides operations to call the transactionSummaries method.
@@ -172,6 +173,18 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
             _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
             return new MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
+        }
+        /// <summary>
+        /// Provides operations to call the usageProfiling method.
+        /// </summary>
+        /// <param name="aggregatedBy">Usage: aggregatedBy=&apos;{aggregatedBy}&apos;</param>
+        /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
+        /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
+        public MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilder MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBy(string aggregatedBy, DateTimeOffset? endDateTime, DateTimeOffset? startDateTime) {
+            if(string.IsNullOrEmpty(aggregatedBy)) throw new ArgumentNullException(nameof(aggregatedBy));
+            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
+            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            return new MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilder(PathParameters, RequestAdapter, aggregatedBy, endDateTime, startDateTime);
         }
         /// <summary>
         /// Provides operations to call the userReport method.

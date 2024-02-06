@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.Permissi
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PermissionsRequestChangeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/permissionsManagement/permissionsRequestChanges/{permissionsRequestChange%2Did}{?%24select,%24expand}", pathParameters) {
+        public PermissionsRequestChangeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/permissionsManagement/permissionsRequestChanges/{permissionsRequestChange%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PermissionsRequestChangeItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PermissionsRequestChangeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/permissionsManagement/permissionsRequestChanges/{permissionsRequestChange%2Did}{?%24select,%24expand}", rawUrl) {
+        public PermissionsRequestChangeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/permissionsManagement/permissionsRequestChanges/{permissionsRequestChange%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property permissionsRequestChanges for identityGovernance

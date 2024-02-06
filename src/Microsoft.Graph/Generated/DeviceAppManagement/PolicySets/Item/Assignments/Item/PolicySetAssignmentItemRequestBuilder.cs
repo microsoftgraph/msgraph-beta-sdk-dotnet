@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Assignments.I
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PolicySetAssignmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/policySets/{policySet%2Did}/assignments/{policySetAssignment%2Did}{?%24select,%24expand}", pathParameters) {
+        public PolicySetAssignmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/policySets/{policySet%2Did}/assignments/{policySetAssignment%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PolicySetAssignmentItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PolicySetAssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/policySets/{policySet%2Did}/assignments/{policySetAssignment%2Did}{?%24select,%24expand}", rawUrl) {
+        public PolicySetAssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/policySets/{policySet%2Did}/assignments/{policySetAssignment%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property assignments for deviceAppManagement

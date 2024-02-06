@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects
         /// <param name="objectId">Alternate key of accessPackageSubject</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubjectsWithObjectIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string objectId = "") : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/subjects(objectId='{objectId}'){?%24select,%24expand}", pathParameters) {
+        public SubjectsWithObjectIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string objectId = "") : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/subjects(objectId='{objectId}'){?%24expand,%24select}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(objectId)) PathParameters.Add("objectId", objectId);
         }
         /// <summary>
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubjectsWithObjectIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/subjects(objectId='{objectId}'){?%24select,%24expand}", rawUrl) {
+        public SubjectsWithObjectIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement/subjects(objectId='{objectId}'){?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property subjects for identityGovernance

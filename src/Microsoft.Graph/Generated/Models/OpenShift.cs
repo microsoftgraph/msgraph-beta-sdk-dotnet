@@ -39,18 +39,18 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("schedulingGroupId", value); }
         }
 #endif
-        /// <summary>The name of the schedulingGroup that contains the openShift.</summary>
+        /// <summary>The schedulingGroupInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SchedulingGroupName {
-            get { return BackingStore?.Get<string?>("schedulingGroupName"); }
-            set { BackingStore?.Set("schedulingGroupName", value); }
+        public Microsoft.Graph.Beta.Models.SchedulingGroupInfo? SchedulingGroupInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SchedulingGroupInfo?>("schedulingGroupInfo"); }
+            set { BackingStore?.Set("schedulingGroupInfo", value); }
         }
 #nullable restore
 #else
-        public string SchedulingGroupName {
-            get { return BackingStore?.Get<string>("schedulingGroupName"); }
-            set { BackingStore?.Set("schedulingGroupName", value); }
+        public Microsoft.Graph.Beta.Models.SchedulingGroupInfo SchedulingGroupInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SchedulingGroupInfo>("schedulingGroupInfo"); }
+            set { BackingStore?.Set("schedulingGroupInfo", value); }
         }
 #endif
         /// <summary>The shared version of this openShift that is viewable by both employees and managers.</summary>
@@ -67,32 +67,18 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sharedOpenShift", value); }
         }
 #endif
-        /// <summary>The ID of the team in which the openShift is located.</summary>
+        /// <summary>The teamInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamId {
-            get { return BackingStore?.Get<string?>("teamId"); }
-            set { BackingStore?.Set("teamId", value); }
+        public ShiftsTeamInfo? TeamInfo {
+            get { return BackingStore?.Get<ShiftsTeamInfo?>("teamInfo"); }
+            set { BackingStore?.Set("teamInfo", value); }
         }
 #nullable restore
 #else
-        public string TeamId {
-            get { return BackingStore?.Get<string>("teamId"); }
-            set { BackingStore?.Set("teamId", value); }
-        }
-#endif
-        /// <summary>The name of the team in which the openShift is located.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TeamName {
-            get { return BackingStore?.Get<string?>("teamName"); }
-            set { BackingStore?.Set("teamName", value); }
-        }
-#nullable restore
-#else
-        public string TeamName {
-            get { return BackingStore?.Get<string>("teamName"); }
-            set { BackingStore?.Set("teamName", value); }
+        public ShiftsTeamInfo TeamInfo {
+            get { return BackingStore?.Get<ShiftsTeamInfo>("teamInfo"); }
+            set { BackingStore?.Set("teamInfo", value); }
         }
 #endif
         /// <summary>
@@ -117,10 +103,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"draftOpenShift", n => { DraftOpenShift = n.GetObjectValue<OpenShiftItem>(OpenShiftItem.CreateFromDiscriminatorValue); } },
                 {"isStagedForDeletion", n => { IsStagedForDeletion = n.GetBoolValue(); } },
                 {"schedulingGroupId", n => { SchedulingGroupId = n.GetStringValue(); } },
-                {"schedulingGroupName", n => { SchedulingGroupName = n.GetStringValue(); } },
+                {"schedulingGroupInfo", n => { SchedulingGroupInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.SchedulingGroupInfo>(Microsoft.Graph.Beta.Models.SchedulingGroupInfo.CreateFromDiscriminatorValue); } },
                 {"sharedOpenShift", n => { SharedOpenShift = n.GetObjectValue<OpenShiftItem>(OpenShiftItem.CreateFromDiscriminatorValue); } },
-                {"teamId", n => { TeamId = n.GetStringValue(); } },
-                {"teamName", n => { TeamName = n.GetStringValue(); } },
+                {"teamInfo", n => { TeamInfo = n.GetObjectValue<ShiftsTeamInfo>(ShiftsTeamInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

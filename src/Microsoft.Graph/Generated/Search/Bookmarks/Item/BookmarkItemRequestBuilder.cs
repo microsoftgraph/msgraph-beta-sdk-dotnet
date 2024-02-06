@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Search.Bookmarks.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BookmarkItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/bookmarks/{bookmark%2Did}{?%24select,%24expand}", pathParameters) {
+        public BookmarkItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/bookmarks/{bookmark%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new BookmarkItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BookmarkItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/bookmarks/{bookmark%2Did}{?%24select,%24expand}", rawUrl) {
+        public BookmarkItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/bookmarks/{bookmark%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete a bookmark object.

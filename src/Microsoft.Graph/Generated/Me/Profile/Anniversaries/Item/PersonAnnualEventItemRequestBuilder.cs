@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Me.Profile.Anniversaries.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonAnnualEventItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/anniversaries/{personAnnualEvent%2Did}{?%24select,%24expand}", pathParameters) {
+        public PersonAnnualEventItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/anniversaries/{personAnnualEvent%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PersonAnnualEventItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonAnnualEventItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/anniversaries/{personAnnualEvent%2Did}{?%24select,%24expand}", rawUrl) {
+        public PersonAnnualEventItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/profile/anniversaries/{personAnnualEvent%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete a personAnniversary object from the user&apos;s profile.

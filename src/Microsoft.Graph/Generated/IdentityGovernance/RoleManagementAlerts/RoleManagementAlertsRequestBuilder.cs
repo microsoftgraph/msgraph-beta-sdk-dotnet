@@ -39,14 +39,14 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoleManagementAlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts{?%24select,%24expand}", pathParameters) {
+        public RoleManagementAlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new RoleManagementAlertsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoleManagementAlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts{?%24select,%24expand}", rawUrl) {
+        public RoleManagementAlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property roleManagementAlerts for identityGovernance

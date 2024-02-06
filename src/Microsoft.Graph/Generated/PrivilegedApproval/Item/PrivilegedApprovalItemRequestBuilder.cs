@@ -29,14 +29,14 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrivilegedApprovalItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}{?%24select,%24expand}", pathParameters) {
+        public PrivilegedApprovalItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PrivilegedApprovalItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrivilegedApprovalItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}{?%24select,%24expand}", rawUrl) {
+        public PrivilegedApprovalItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedApproval/{privilegedApproval%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete entity from privilegedApproval

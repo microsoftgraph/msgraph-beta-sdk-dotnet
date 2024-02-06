@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonAwardItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/awards/{personAward%2Did}{?%24select,%24expand}", pathParameters) {
+        public PersonAwardItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/awards/{personAward%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PersonAwardItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonAwardItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/awards/{personAward%2Did}{?%24select,%24expand}", rawUrl) {
+        public PersonAwardItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/profile/awards/{personAward%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Deletes a personAward object from a user&apos;s profile.

@@ -29,14 +29,14 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PermissionsManagementRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/permissionsManagement{?%24select,%24expand}", pathParameters) {
+        public PermissionsManagementRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/permissionsManagement{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PermissionsManagementRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PermissionsManagementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/permissionsManagement{?%24select,%24expand}", rawUrl) {
+        public PermissionsManagementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/permissionsManagement{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property permissionsManagement for identityGovernance

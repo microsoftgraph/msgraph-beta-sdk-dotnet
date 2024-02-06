@@ -72,6 +72,20 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The informationLinks property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.ActionUrl>? InformationLinks {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActionUrl>?>("informationLinks"); }
+            set { BackingStore?.Set("informationLinks", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.ActionUrl> InformationLinks {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActionUrl>>("informationLinks"); }
+            set { BackingStore?.Set("informationLinks", value); }
+        }
+#endif
         /// <summary>The lastActionByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +138,20 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
+        /// <summary>The userImpact property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserImpact {
+            get { return BackingStore?.Get<string?>("userImpact"); }
+            set { BackingStore?.Set("userImpact", value); }
+        }
+#nullable restore
+#else
+        public string UserImpact {
+            get { return BackingStore?.Get<string>("userImpact"); }
+            set { BackingStore?.Set("userImpact", value); }
+        }
+#endif
         /// <summary>The versions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,11 +185,13 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"informationLinks", n => { InformationLinks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActionUrl>(Microsoft.Graph.Beta.Models.ActionUrl.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
                 {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
                 {"managementTemplate", n => { ManagementTemplate = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate.CreateFromDiscriminatorValue); } },
                 {"portalLink", n => { PortalLink = n.GetObjectValue<Microsoft.Graph.Beta.Models.ActionUrl>(Microsoft.Graph.Beta.Models.ActionUrl.CreateFromDiscriminatorValue); } },
                 {"priority", n => { Priority = n.GetIntValue(); } },
+                {"userImpact", n => { UserImpact = n.GetStringValue(); } },
                 {"versions", n => { Versions = n.GetCollectionOfObjectValues<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -178,11 +208,13 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActionUrl>("informationLinks", InformationLinks);
             writer.WriteStringValue("lastActionByUserId", LastActionByUserId);
             writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate>("managementTemplate", ManagementTemplate);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ActionUrl>("portalLink", PortalLink);
             writer.WriteIntValue("priority", Priority);
+            writer.WriteStringValue("userImpact", UserImpact);
             writer.WriteCollectionOfObjectValues<ManagementTemplateStepVersion>("versions", Versions);
         }
     }

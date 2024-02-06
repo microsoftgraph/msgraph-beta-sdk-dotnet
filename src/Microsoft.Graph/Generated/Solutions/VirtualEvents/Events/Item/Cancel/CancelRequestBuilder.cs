@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Cancel {
+namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Cancel {
     /// <summary>
     /// Provides operations to call the cancel method.
     /// </summary>
@@ -18,14 +18,14 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Cancel {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CancelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/cancel", pathParameters) {
+        public CancelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/cancel", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new CancelRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CancelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/cancel", rawUrl) {
+        public CancelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/events/{virtualEvent%2Did}/cancel", rawUrl) {
         }
         /// <summary>
         /// Invoke action cancel

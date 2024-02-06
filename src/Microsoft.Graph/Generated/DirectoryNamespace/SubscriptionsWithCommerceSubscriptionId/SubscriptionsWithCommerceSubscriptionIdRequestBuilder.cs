@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithCommerceSubsc
         /// <param name="commerceSubscriptionId">Alternate key of companySubscription</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsWithCommerceSubscriptionIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string commerceSubscriptionId = "") : base(requestAdapter, "{+baseurl}/directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}'){?%24select,%24expand}", pathParameters) {
+        public SubscriptionsWithCommerceSubscriptionIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string commerceSubscriptionId = "") : base(requestAdapter, "{+baseurl}/directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}'){?%24expand,%24select}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(commerceSubscriptionId)) PathParameters.Add("commerceSubscriptionId", commerceSubscriptionId);
         }
         /// <summary>
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithCommerceSubsc
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsWithCommerceSubscriptionIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}'){?%24select,%24expand}", rawUrl) {
+        public SubscriptionsWithCommerceSubscriptionIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}'){?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property subscriptions for directory

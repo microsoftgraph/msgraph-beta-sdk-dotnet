@@ -99,6 +99,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<int?>("destinationPort"); }
             set { BackingStore?.Set("destinationPort", value); }
         }
+        /// <summary>The destinationUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DestinationUrl {
+            get { return BackingStore?.Get<string?>("destinationUrl"); }
+            set { BackingStore?.Set("destinationUrl", value); }
+        }
+#nullable restore
+#else
+        public string DestinationUrl {
+            get { return BackingStore?.Get<string>("destinationUrl"); }
+            set { BackingStore?.Set("destinationUrl", value); }
+        }
+#endif
         /// <summary>The destinationWebCategory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -376,6 +390,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
+        /// <summary>The threatType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ThreatType {
+            get { return BackingStore?.Get<string?>("threatType"); }
+            set { BackingStore?.Set("threatType", value); }
+        }
+#nullable restore
+#else
+        public string ThreatType {
+            get { return BackingStore?.Get<string>("threatType"); }
+            set { BackingStore?.Set("threatType", value); }
+        }
+#endif
         /// <summary>The trafficType property</summary>
         public Microsoft.Graph.Beta.Models.Networkaccess.TrafficType? TrafficType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
@@ -456,6 +484,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
                 {"destinationFQDN", n => { DestinationFQDN = n.GetStringValue(); } },
                 {"destinationIp", n => { DestinationIp = n.GetStringValue(); } },
                 {"destinationPort", n => { DestinationPort = n.GetIntValue(); } },
+                {"destinationUrl", n => { DestinationUrl = n.GetStringValue(); } },
                 {"destinationWebCategory", n => { DestinationWebCategory = n.GetObjectValue<WebCategory>(WebCategory.CreateFromDiscriminatorValue); } },
                 {"deviceCategory", n => { DeviceCategory = n.GetEnumValue<DeviceCategory>(); } },
                 {"deviceId", n => { DeviceId = n.GetStringValue(); } },
@@ -479,6 +508,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
                 {"sourceIp", n => { SourceIp = n.GetStringValue(); } },
                 {"sourcePort", n => { SourcePort = n.GetIntValue(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"threatType", n => { ThreatType = n.GetStringValue(); } },
                 {"trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
                 {"transactionId", n => { TransactionId = n.GetStringValue(); } },
                 {"transportProtocol", n => { TransportProtocol = n.GetEnumValue<NetworkingProtocol>(); } },
@@ -500,6 +530,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             writer.WriteStringValue("destinationFQDN", DestinationFQDN);
             writer.WriteStringValue("destinationIp", DestinationIp);
             writer.WriteIntValue("destinationPort", DestinationPort);
+            writer.WriteStringValue("destinationUrl", DestinationUrl);
             writer.WriteObjectValue<WebCategory>("destinationWebCategory", DestinationWebCategory);
             writer.WriteEnumValue<DeviceCategory>("deviceCategory", DeviceCategory);
             writer.WriteStringValue("deviceId", DeviceId);
@@ -523,6 +554,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             writer.WriteStringValue("sourceIp", SourceIp);
             writer.WriteIntValue("sourcePort", SourcePort);
             writer.WriteStringValue("tenantId", TenantId);
+            writer.WriteStringValue("threatType", ThreatType);
             writer.WriteEnumValue<TrafficType>("trafficType", TrafficType);
             writer.WriteStringValue("transactionId", TransactionId);
             writer.WriteEnumValue<NetworkingProtocol>("transportProtocol", TransportProtocol);

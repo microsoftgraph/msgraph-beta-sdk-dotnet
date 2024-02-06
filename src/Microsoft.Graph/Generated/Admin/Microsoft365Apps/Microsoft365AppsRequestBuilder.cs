@@ -24,14 +24,14 @@ namespace Microsoft.Graph.Beta.Admin.Microsoft365Apps {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Microsoft365AppsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/microsoft365Apps{?%24select,%24expand}", pathParameters) {
+        public Microsoft365AppsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/microsoft365Apps{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new Microsoft365AppsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Microsoft365AppsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/microsoft365Apps{?%24select,%24expand}", rawUrl) {
+        public Microsoft365AppsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/microsoft365Apps{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property microsoft365Apps for admin

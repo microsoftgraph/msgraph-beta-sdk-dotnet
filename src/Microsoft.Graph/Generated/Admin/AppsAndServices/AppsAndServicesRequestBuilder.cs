@@ -19,14 +19,14 @@ namespace Microsoft.Graph.Beta.Admin.AppsAndServices {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AppsAndServicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/appsAndServices{?%24select,%24expand}", pathParameters) {
+        public AppsAndServicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/appsAndServices{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new AppsAndServicesRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AppsAndServicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/appsAndServices{?%24select,%24expand}", rawUrl) {
+        public AppsAndServicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/appsAndServices{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property appsAndServices for admin

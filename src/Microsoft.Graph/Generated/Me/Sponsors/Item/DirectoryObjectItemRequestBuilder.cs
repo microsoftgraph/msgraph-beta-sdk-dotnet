@@ -19,34 +19,14 @@ namespace Microsoft.Graph.Beta.Me.Sponsors.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DirectoryObjectItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/sponsors/{directoryObject%2Did}{?%24select,%24expand}", pathParameters) {
+        public DirectoryObjectItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/sponsors/{directoryObject%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DirectoryObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/sponsors/{directoryObject%2Did}{?%24select,%24expand}", rawUrl) {
-        }
-        /// <summary>
-        /// Remove a user&apos;s sponsor.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-delete-sponsors?view=graph-rest-1.0" />
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
-#nullable restore
-#else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
-#endif
-            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+        public DirectoryObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/sponsors/{directoryObject%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// The users and groups responsible for this guest user&apos;s privileges in the tenant and keep the guest user&apos;s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
@@ -66,22 +46,6 @@ namespace Microsoft.Graph.Beta.Me.Sponsors.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Remove a user&apos;s sponsor.
-        /// </summary>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
-#nullable restore
-#else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
-#endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            return requestInfo;
         }
         /// <summary>
         /// The users and groups responsible for this guest user&apos;s privileges in the tenant and keep the guest user&apos;s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
@@ -105,12 +69,6 @@ namespace Microsoft.Graph.Beta.Me.Sponsors.Item {
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public DirectoryObjectItemRequestBuilder WithUrl(string rawUrl) {
             return new DirectoryObjectItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DirectoryObjectItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
         /// The users and groups responsible for this guest user&apos;s privileges in the tenant and keep the guest user&apos;s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.
