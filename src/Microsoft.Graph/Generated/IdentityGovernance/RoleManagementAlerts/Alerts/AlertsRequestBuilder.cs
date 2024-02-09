@@ -27,31 +27,34 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts {
         }
         /// <summary>Provides operations to manage the alerts property of the microsoft.graph.roleManagementAlert entity.</summary>
         /// <param name="position">The unique identifier of unifiedRoleManagementAlert</param>
+        /// <returns>A <cref="UnifiedRoleManagementAlertItemRequestBuilder"></returns>
         public UnifiedRoleManagementAlertItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("unifiedRoleManagementAlert%2Did", position);
             return new UnifiedRoleManagementAlertItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new AlertsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AlertsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts/alerts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public AlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts/alerts{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new AlertsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AlertsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts/alerts{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public AlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/roleManagementAlerts/alerts{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Get a list of the unifiedRoleManagementAlert objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/rolemanagementalert-list-alerts?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="UnifiedRoleManagementAlertCollectionResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<UnifiedRoleManagementAlertCollectionResponse?> GetAsync(Action<RequestConfiguration<AlertsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -61,17 +64,18 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<UnifiedRoleManagementAlertCollectionResponse>(requestInfo, UnifiedRoleManagementAlertCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to alerts for identityGovernance
         /// </summary>
+        /// <returns>A <cref="UnifiedRoleManagementAlert"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<UnifiedRoleManagementAlert?> PostAsync(UnifiedRoleManagementAlert body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -82,14 +86,14 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<UnifiedRoleManagementAlert>(requestInfo, UnifiedRoleManagementAlert.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the unifiedRoleManagementAlert objects and their properties.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,6 +110,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts {
         /// <summary>
         /// Create new navigation property to alerts for identityGovernance
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +121,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts {
         public RequestInformation ToPostRequestInformation(UnifiedRoleManagementAlert body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/identityGovernance/roleManagementAlerts/alerts", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -125,6 +130,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="AlertsRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public AlertsRequestBuilder WithUrl(string rawUrl) {
             return new AlertsRequestBuilder(rawUrl, RequestAdapter);

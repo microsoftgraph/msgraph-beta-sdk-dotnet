@@ -23,6 +23,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.cloudPcProvisioningPolicy entity.</summary>
         /// <param name="position">The unique identifier of cloudPcProvisioningPolicyAssignment</param>
+        /// <returns>A <cref="CloudPcProvisioningPolicyAssignmentItemRequestBuilder"></returns>
         [Obsolete("The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId")]
         public CloudPcProvisioningPolicyAssignmentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
@@ -30,24 +31,26 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             return new CloudPcProvisioningPolicyAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new AssignmentsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AssignmentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AssignmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/assignments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public AssignmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/assignments{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new AssignmentsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AssignmentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AssignmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/assignments{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public AssignmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/assignments{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
         /// </summary>
+        /// <returns>A <cref="CloudPcProvisioningPolicyAssignmentCollectionResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,17 +61,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CloudPcProvisioningPolicyAssignmentCollectionResponse>(requestInfo, CloudPcProvisioningPolicyAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to assignments for deviceManagement
         /// </summary>
+        /// <returns>A <cref="CloudPcProvisioningPolicyAssignment"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,14 +84,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CloudPcProvisioningPolicyAssignment>(requestInfo, CloudPcProvisioningPolicyAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A defined collection of provisioning policy assignments. Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have provisioning policy assigned. Returned only on $expand. For an example about how to get the assignments relationship, see Get cloudPcProvisioningPolicy.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -105,6 +109,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         /// <summary>
         /// Create new navigation property to assignments for deviceManagement
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId")]
@@ -116,7 +121,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         public RequestInformation ToPostRequestInformation(CloudPcProvisioningPolicyAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/deviceManagement/virtualEndpoint/provisioningPolicies/{cloudPcProvisioningPolicy%2Did}/assignments", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -125,6 +130,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="AssignmentsRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The onPremisesConnectionId property is deprecated and will stop returning on July 30, 2023. as of 2023-03/onPremisesConnectionId")]
         public AssignmentsRequestBuilder WithUrl(string rawUrl) {

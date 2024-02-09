@@ -15,24 +15,25 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
     /// </summary>
     public class PeopleInsightsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new PeopleInsightsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PeopleInsightsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PeopleInsightsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organization/{organization%2Did}/settings/peopleInsights{?%24select,%24expand}", pathParameters) {
+        public PeopleInsightsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organization/{organization%2Did}/settings/peopleInsights{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new PeopleInsightsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PeopleInsightsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PeopleInsightsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organization/{organization%2Did}/settings/peopleInsights{?%24select,%24expand}", rawUrl) {
+        public PeopleInsightsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organization/{organization%2Did}/settings/peopleInsights{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property peopleInsights for organization
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -42,8 +43,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -51,8 +51,10 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
         /// Get the properties of an insightsSettings object for displaying or returning people insights in an organization. To learn how to customize privacy for people insights in an organization, see Customize people insights privacy in Microsoft Graph.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationsettings-list-peopleinsights?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="InsightsSettings"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<InsightsSettings?> GetAsync(Action<RequestConfiguration<PeopleInsightsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -62,8 +64,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<InsightsSettings>(requestInfo, InsightsSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -71,9 +72,11 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
         /// Update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="InsightsSettings"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<InsightsSettings?> PatchAsync(InsightsSettings body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -84,14 +87,14 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<InsightsSettings>(requestInfo, InsightsSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property peopleInsights for organization
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,7 +103,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/organization/{organization%2Did}/settings/peopleInsights", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -108,6 +111,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
         /// <summary>
         /// Get the properties of an insightsSettings object for displaying or returning people insights in an organization. To learn how to customize privacy for people insights in an organization, see Customize people insights privacy in Microsoft Graph.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +128,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
         /// <summary>
         /// Update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +139,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
         public RequestInformation ToPatchRequestInformation(InsightsSettings body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/organization/{organization%2Did}/settings/peopleInsights", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -143,6 +148,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="PeopleInsightsRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public PeopleInsightsRequestBuilder WithUrl(string rawUrl) {
             return new PeopleInsightsRequestBuilder(rawUrl, RequestAdapter);

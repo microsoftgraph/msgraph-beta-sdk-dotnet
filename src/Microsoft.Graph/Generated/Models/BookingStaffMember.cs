@@ -19,17 +19,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("colorIndex"); }
             set { BackingStore?.Set("colorIndex", value); }
         }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date, time and timezone when the staff member was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.</summary>
+        /// <summary>Indicates that a staff members are  notified via email when a booking assigned to them is created or changed. The default value is true</summary>
         public bool? IsEmailNotificationEnabled {
             get { return BackingStore?.Get<bool?>("isEmailNotificationEnabled"); }
             set { BackingStore?.Set("isEmailNotificationEnabled", value); }
         }
-        /// <summary>The lastUpdatedDateTime property</summary>
+        /// <summary>The date, time and timezone when the staff member was last updated.</summary>
         public DateTimeOffset? LastUpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("useBusinessHours"); }
             set { BackingStore?.Set("useBusinessHours", value); }
         }
-        /// <summary>The range of hours each day of the week that the staff member is available for booking. By default, they are initialized to be the same as the businessHours property of the business.</summary>
+        /// <summary>The range of hours each day of the week that the staff member is available for booking. By default, they&apos;re initialized to be the same as the businessHours property of the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<BookingWorkHours>? WorkingHours {
@@ -80,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="BookingStaffMember"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new BookingStaffMember CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -88,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"availabilityIsAffectedByPersonalCalendar", n => { AvailabilityIsAffectedByPersonalCalendar = n.GetBoolValue(); } },

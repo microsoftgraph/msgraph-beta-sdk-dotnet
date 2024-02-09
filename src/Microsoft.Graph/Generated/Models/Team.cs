@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Settings to configure use of Giphy, memes, and stickers in the team.</summary>
+        /// <summary>Settings to configure the use of Giphy, memes, and stickers in the team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public TeamFunSettings? FunSettings {
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("installedApps", value); }
         }
 #endif
-        /// <summary>A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.</summary>
+        /// <summary>A unique ID for the team used in a few places such as the audit log/Office 365 Management Activity API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InternalId {
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isArchived"); }
             set { BackingStore?.Set("isArchived", value); }
         }
-        /// <summary>If set to true, the team is currently in the owner-only team membership state and not accessible by other team members, such as students.</summary>
+        /// <summary>If set to true, the team is currently in the owner-only team membership state and inaccessible by other team members, such as students.</summary>
         public bool? IsMembershipLimitedToOwners {
             get { return BackingStore?.Get<bool?>("isMembershipLimitedToOwners"); }
             set { BackingStore?.Set("isMembershipLimitedToOwners", value); }
@@ -245,7 +245,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("operations", value); }
         }
 #endif
-        /// <summary>The list of this team&apos;s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user delegated permissions, no owner can be specified (the current user is the owner). Owner must be specified as an object ID (GUID), not a UPN.</summary>
+        /// <summary>The list of this team&apos;s owners. Currently, when creating a team using application permissions, exactly one owner must be specified. When using user-delegated permissions, no owner can be specified (the current user is the owner). The owner must be specified as an object ID (GUID), not a UPN.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<User>? Owners {
@@ -320,7 +320,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<TeamSpecialization?>("specialization"); }
             set { BackingStore?.Set("specialization", value); }
         }
-        /// <summary>Contains summary information about the team, including number of owners, members, and guests.</summary>
+        /// <summary>Contains summary information about the team, including the number of owners, members, and guests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public TeamSummary? Summary {
@@ -395,7 +395,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<TeamVisibilityType?>("visibility"); }
             set { BackingStore?.Set("visibility", value); }
         }
-        /// <summary>A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.</summary>
+        /// <summary>A hyperlink that goes to the team in the Microsoft Teams client. It is the URL you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebUrl {
@@ -412,6 +412,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="Team"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new Team CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -420,6 +421,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"allChannels", n => { AllChannels = n.GetCollectionOfObjectValues<Channel>(Channel.CreateFromDiscriminatorValue)?.ToList(); } },

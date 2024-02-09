@@ -22,30 +22,33 @@ namespace Microsoft.Graph.Beta.Me.TransitiveReports {
         }
         /// <summary>Provides operations to manage the transitiveReports property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of directoryObject</param>
+        /// <returns>A <cref="DirectoryObjectItemRequestBuilder"></returns>
         public DirectoryObjectItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("directoryObject%2Did", position);
             return new DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new TransitiveReportsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TransitiveReportsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TransitiveReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/transitiveReports{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public TransitiveReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/transitiveReports{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new TransitiveReportsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TransitiveReportsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TransitiveReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/transitiveReports{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public TransitiveReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/transitiveReports{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// The transitive reports for a user. Read-only.
         /// </summary>
+        /// <returns>A <cref="DirectoryObjectCollectionResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<TransitiveReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -55,14 +58,14 @@ namespace Microsoft.Graph.Beta.Me.TransitiveReports {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The transitive reports for a user. Read-only.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,6 +82,7 @@ namespace Microsoft.Graph.Beta.Me.TransitiveReports {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="TransitiveReportsRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public TransitiveReportsRequestBuilder WithUrl(string rawUrl) {
             return new TransitiveReportsRequestBuilder(rawUrl, RequestAdapter);

@@ -23,6 +23,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
         }
         /// <summary>Provides operations to manage the deviceLinks property of the microsoft.graph.networkaccess.branchSite entity.</summary>
         /// <param name="position">The unique identifier of deviceLink</param>
+        /// <returns>A <cref="DeviceLinkItemRequestBuilder"></returns>
         [Obsolete("The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess")]
         public DeviceLinkItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
@@ -30,25 +31,27 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
             return new DeviceLinkItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new DeviceLinksRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DeviceLinksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceLinksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/deviceLinks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public DeviceLinksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/deviceLinks{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new DeviceLinksRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DeviceLinksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceLinksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/deviceLinks{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public DeviceLinksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/deviceLinks{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Retrieve a list of device links associated with a specific branch.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-branchsite-list-devicelinks?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="DeviceLinkCollectionResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,8 +62,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceLinkCollectionResponse>(requestInfo, DeviceLinkCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -68,9 +70,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
         /// Create a branch site with associated device links.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-branchsite-post-devicelinks?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="DeviceLink"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,14 +86,14 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceLink>(requestInfo, DeviceLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of device links associated with a specific branch.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,6 +111,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
         /// <summary>
         /// Create a branch site with associated device links.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess")]
@@ -118,7 +123,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
         public RequestInformation ToPostRequestInformation(DeviceLink body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/networkAccess/connectivity/branches/{branchSite%2Did}/deviceLinks", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -127,6 +132,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="DeviceLinksRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The Branches API is deprecated and will stop returning data on January 20, 2024. Please use the new Remote Network API. as of 2022-06/PrivatePreview:NetworkAccess")]
         public DeviceLinksRequestBuilder WithUrl(string rawUrl) {

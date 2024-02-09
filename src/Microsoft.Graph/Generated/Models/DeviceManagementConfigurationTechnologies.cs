@@ -41,5 +41,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue = 2048,
+        /// <summary>Setting can be deployed using the Operating System Recovery channel</summary>
+        [EnumMember(Value = "windowsOsRecovery")]
+        WindowsOsRecovery = 4096,
     }
 }

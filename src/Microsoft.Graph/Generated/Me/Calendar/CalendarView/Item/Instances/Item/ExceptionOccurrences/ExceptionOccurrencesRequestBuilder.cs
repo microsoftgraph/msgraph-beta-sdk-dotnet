@@ -27,30 +27,33 @@ namespace Microsoft.Graph.Beta.Me.Calendar.CalendarView.Item.Instances.Item.Exce
         }
         /// <summary>Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.</summary>
         /// <param name="position">The unique identifier of event</param>
+        /// <returns>A <cref="Microsoft.Graph.Beta.Me.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item.EventItemRequestBuilder"></returns>
         public Microsoft.Graph.Beta.Me.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item.EventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("event%2Did2", position);
             return new Microsoft.Graph.Beta.Me.Calendar.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item.EventItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new ExceptionOccurrencesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ExceptionOccurrencesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExceptionOccurrencesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendar/calendarView/{event%2Did}/instances/{event%2Did1}/exceptionOccurrences{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public ExceptionOccurrencesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendar/calendarView/{event%2Did}/instances/{event%2Did1}/exceptionOccurrences{?%24count,%24expand,%24filter,%24orderby,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ExceptionOccurrencesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ExceptionOccurrencesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExceptionOccurrencesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendar/calendarView/{event%2Did}/instances/{event%2Did1}/exceptionOccurrences{?%24top,%24skip,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public ExceptionOccurrencesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/calendar/calendarView/{event%2Did}/instances/{event%2Did1}/exceptionOccurrences{?%24count,%24expand,%24filter,%24orderby,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Get exceptionOccurrences from me
         /// </summary>
+        /// <returns>A <cref="EventCollectionResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<EventCollectionResponse?> GetAsync(Action<RequestConfiguration<ExceptionOccurrencesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -60,14 +63,14 @@ namespace Microsoft.Graph.Beta.Me.Calendar.CalendarView.Item.Instances.Item.Exce
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<EventCollectionResponse>(requestInfo, EventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get exceptionOccurrences from me
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,6 +87,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.CalendarView.Item.Instances.Item.Exce
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="ExceptionOccurrencesRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ExceptionOccurrencesRequestBuilder WithUrl(string rawUrl) {
             return new ExceptionOccurrencesRequestBuilder(rawUrl, RequestAdapter);

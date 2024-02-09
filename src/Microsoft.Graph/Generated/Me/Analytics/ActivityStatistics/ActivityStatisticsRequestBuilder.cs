@@ -22,30 +22,33 @@ namespace Microsoft.Graph.Beta.Me.Analytics.ActivityStatistics {
         }
         /// <summary>Provides operations to manage the activityStatistics property of the microsoft.graph.userAnalytics entity.</summary>
         /// <param name="position">The unique identifier of activityStatistics</param>
+        /// <returns>A <cref="ActivityStatisticsItemRequestBuilder"></returns>
         public ActivityStatisticsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("activityStatistics%2Did", position);
             return new ActivityStatisticsItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new ActivityStatisticsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ActivityStatisticsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActivityStatisticsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/analytics/activityStatistics{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public ActivityStatisticsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/analytics/activityStatistics{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ActivityStatisticsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ActivityStatisticsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActivityStatisticsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/analytics/activityStatistics{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public ActivityStatisticsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/analytics/activityStatistics{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
         /// </summary>
+        /// <returns>A <cref="ActivityStatisticsCollectionResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ActivityStatisticsCollectionResponse?> GetAsync(Action<RequestConfiguration<ActivityStatisticsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -55,17 +58,18 @@ namespace Microsoft.Graph.Beta.Me.Analytics.ActivityStatistics {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ActivityStatisticsCollectionResponse>(requestInfo, ActivityStatisticsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to activityStatistics for me
         /// </summary>
+        /// <returns>A <cref="Microsoft.Graph.Beta.Models.ActivityStatistics"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.ActivityStatistics?> PostAsync(Microsoft.Graph.Beta.Models.ActivityStatistics body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -76,14 +80,14 @@ namespace Microsoft.Graph.Beta.Me.Analytics.ActivityStatistics {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ActivityStatistics>(requestInfo, Microsoft.Graph.Beta.Models.ActivityStatistics.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +104,7 @@ namespace Microsoft.Graph.Beta.Me.Analytics.ActivityStatistics {
         /// <summary>
         /// Create new navigation property to activityStatistics for me
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +115,7 @@ namespace Microsoft.Graph.Beta.Me.Analytics.ActivityStatistics {
         public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ActivityStatistics body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/me/analytics/activityStatistics", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -119,6 +124,7 @@ namespace Microsoft.Graph.Beta.Me.Analytics.ActivityStatistics {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="ActivityStatisticsRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ActivityStatisticsRequestBuilder WithUrl(string rawUrl) {
             return new ActivityStatisticsRequestBuilder(rawUrl, RequestAdapter);

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabe
         }
 #endif
         /// <summary>
-        /// Instantiates a new evaluateApplicationPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="EvaluateApplicationPostRequestBody"/> and sets the default values.
         /// </summary>
         public EvaluateApplicationPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabe
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="EvaluateApplicationPostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static EvaluateApplicationPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -61,6 +62,7 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabe
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"contentInfo", n => { ContentInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.ContentInfo>(Microsoft.Graph.Beta.Models.Security.ContentInfo.CreateFromDiscriminatorValue); } },

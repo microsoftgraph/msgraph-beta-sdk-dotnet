@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new managedIdentity and sets the default values.
+        /// Instantiates a new <see cref="ManagedIdentity"/> and sets the default values.
         /// </summary>
         public ManagedIdentity() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -85,6 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="ManagedIdentity"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static ManagedIdentity CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -93,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"associatedResourceId", n => { AssociatedResourceId = n.GetStringValue(); } },

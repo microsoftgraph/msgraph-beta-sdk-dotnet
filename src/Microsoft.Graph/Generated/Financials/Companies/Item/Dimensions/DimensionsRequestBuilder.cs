@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions {
         }
         /// <summary>Provides operations to manage the dimensions property of the microsoft.graph.company entity.</summary>
         /// <param name="position">The unique identifier of dimension</param>
+        /// <returns>A <cref="DimensionItemRequestBuilder"></returns>
         public DimensionItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("dimension%2Did", position);
@@ -29,6 +30,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions {
         } }
         /// <summary>Provides operations to manage the dimensions property of the microsoft.graph.company entity.</summary>
         /// <param name="position">The unique identifier of dimension</param>
+        /// <returns>A <cref="DimensionItemRequestBuilder"></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public DimensionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
@@ -36,24 +38,26 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions {
             return new DimensionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new DimensionsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DimensionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DimensionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/dimensions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public DimensionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/dimensions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new DimensionsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DimensionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DimensionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/dimensions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public DimensionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/dimensions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Get dimensions from financials
         /// </summary>
+        /// <returns>A <cref="DimensionCollectionResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<DimensionCollectionResponse?> GetAsync(Action<RequestConfiguration<DimensionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -63,14 +67,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DimensionCollectionResponse>(requestInfo, DimensionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get dimensions from financials
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +91,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Dimensions {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="DimensionsRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public DimensionsRequestBuilder WithUrl(string rawUrl) {
             return new DimensionsRequestBuilder(rawUrl, RequestAdapter);

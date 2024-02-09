@@ -22,30 +22,33 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHe
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsBatteryHealthDevicePerformance property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of userExperienceAnalyticsBatteryHealthDevicePerformance</param>
+        /// <returns>A <cref="UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilder"></returns>
         public UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsBatteryHealthDevicePerformance%2Did", position);
             return new UserExperienceAnalyticsBatteryHealthDevicePerformanceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsBatteryHealthDevicePerformance{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsBatteryHealthDevicePerformance{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsBatteryHealthDevicePerformance{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsBatteryHealthDevicePerformance{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// User Experience Analytics Battery Health Device Performance
         /// </summary>
+        /// <returns>A <cref="UserExperienceAnalyticsBatteryHealthDevicePerformanceCollectionResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<UserExperienceAnalyticsBatteryHealthDevicePerformanceCollectionResponse?> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -55,17 +58,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHe
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<UserExperienceAnalyticsBatteryHealthDevicePerformanceCollectionResponse>(requestInfo, UserExperienceAnalyticsBatteryHealthDevicePerformanceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to userExperienceAnalyticsBatteryHealthDevicePerformance for deviceManagement
         /// </summary>
+        /// <returns>A <cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance?> PostAsync(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -76,14 +80,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHe
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance>(requestInfo, Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// User Experience Analytics Battery Health Device Performance
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +104,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHe
         /// <summary>
         /// Create new navigation property to userExperienceAnalyticsBatteryHealthDevicePerformance for deviceManagement
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +115,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHe
         public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/deviceManagement/userExperienceAnalyticsBatteryHealthDevicePerformance", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -119,6 +124,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHe
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder WithUrl(string rawUrl) {
             return new UserExperienceAnalyticsBatteryHealthDevicePerformanceRequestBuilder(rawUrl, RequestAdapter);

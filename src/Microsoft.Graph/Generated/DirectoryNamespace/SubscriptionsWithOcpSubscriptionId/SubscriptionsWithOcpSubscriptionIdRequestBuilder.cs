@@ -15,26 +15,27 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithOcpSubscripti
     /// </summary>
     public class SubscriptionsWithOcpSubscriptionIdRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new SubscriptionsWithOcpSubscriptionIdRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SubscriptionsWithOcpSubscriptionIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="ocpSubscriptionId">Alternate key of companySubscription</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsWithOcpSubscriptionIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string ocpSubscriptionId = "") : base(requestAdapter, "{+baseurl}/directory/subscriptions(ocpSubscriptionId='{ocpSubscriptionId}'){?%24select,%24expand}", pathParameters) {
+        public SubscriptionsWithOcpSubscriptionIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string ocpSubscriptionId = "") : base(requestAdapter, "{+baseurl}/directory/subscriptions(ocpSubscriptionId='{ocpSubscriptionId}'){?%24expand,%24select}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(ocpSubscriptionId)) PathParameters.Add("ocpSubscriptionId", ocpSubscriptionId);
         }
         /// <summary>
-        /// Instantiates a new SubscriptionsWithOcpSubscriptionIdRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SubscriptionsWithOcpSubscriptionIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsWithOcpSubscriptionIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/subscriptions(ocpSubscriptionId='{ocpSubscriptionId}'){?%24select,%24expand}", rawUrl) {
+        public SubscriptionsWithOcpSubscriptionIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/subscriptions(ocpSubscriptionId='{ocpSubscriptionId}'){?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property subscriptions for directory
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -44,8 +45,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithOcpSubscripti
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -53,8 +53,10 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithOcpSubscripti
         /// Get a specific commercial subscription that an organization has acquired.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/companysubscription-get?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="CompanySubscription"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<CompanySubscription?> GetAsync(Action<RequestConfiguration<SubscriptionsWithOcpSubscriptionIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -64,17 +66,18 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithOcpSubscripti
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CompanySubscription>(requestInfo, CompanySubscription.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property subscriptions in directory
         /// </summary>
+        /// <returns>A <cref="CompanySubscription"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<CompanySubscription?> PatchAsync(CompanySubscription body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -85,14 +88,14 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithOcpSubscripti
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CompanySubscription>(requestInfo, CompanySubscription.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property subscriptions for directory
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,7 +104,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithOcpSubscripti
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/directory/subscriptions(ocpSubscriptionId='{ocpSubscriptionId}')", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -109,6 +112,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithOcpSubscripti
         /// <summary>
         /// Get a specific commercial subscription that an organization has acquired.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,6 +129,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithOcpSubscripti
         /// <summary>
         /// Update the navigation property subscriptions in directory
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,7 +140,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithOcpSubscripti
         public RequestInformation ToPatchRequestInformation(CompanySubscription body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/directory/subscriptions(ocpSubscriptionId='{ocpSubscriptionId}')", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -144,6 +149,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.SubscriptionsWithOcpSubscripti
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="SubscriptionsWithOcpSubscriptionIdRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public SubscriptionsWithOcpSubscriptionIdRequestBuilder WithUrl(string rawUrl) {
             return new SubscriptionsWithOcpSubscriptionIdRequestBuilder(rawUrl, RequestAdapter);

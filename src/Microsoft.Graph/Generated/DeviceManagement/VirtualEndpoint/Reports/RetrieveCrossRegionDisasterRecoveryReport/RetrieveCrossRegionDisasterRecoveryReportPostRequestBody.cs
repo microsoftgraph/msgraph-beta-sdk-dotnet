@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.Retrieve
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new retrieveCrossRegionDisasterRecoveryReportPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="RetrieveCrossRegionDisasterRecoveryReportPostRequestBody"/> and sets the default values.
         /// </summary>
         public RetrieveCrossRegionDisasterRecoveryReportPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -104,6 +104,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.Retrieve
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="RetrieveCrossRegionDisasterRecoveryReportPostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static RetrieveCrossRegionDisasterRecoveryReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -112,6 +113,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.Retrieve
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"filter", n => { Filter = n.GetStringValue(); } },

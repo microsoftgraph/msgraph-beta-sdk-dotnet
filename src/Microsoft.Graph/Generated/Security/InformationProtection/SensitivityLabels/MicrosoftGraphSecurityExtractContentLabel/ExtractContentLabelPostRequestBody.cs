@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.
         }
 #endif
         /// <summary>
-        /// Instantiates a new extractContentLabelPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="ExtractContentLabelPostRequestBody"/> and sets the default values.
         /// </summary>
         public ExtractContentLabelPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -39,6 +39,7 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="ExtractContentLabelPostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static ExtractContentLabelPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -47,6 +48,7 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"contentInfo", n => { ContentInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.ContentInfo>(Microsoft.Graph.Beta.Models.Security.ContentInfo.CreateFromDiscriminatorValue); } },

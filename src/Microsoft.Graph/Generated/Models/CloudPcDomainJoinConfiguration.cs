@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The domainJoinType property</summary>
+        /// <summary>Specifies the method by which the provisioned Cloud PC joins Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave the regionName property empty. If you choose the azureADJoin type, provide a value for either the onPremisesConnectionId or the regionName property. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.</summary>
         public CloudPcDomainJoinType? DomainJoinType {
             get { return BackingStore?.Get<CloudPcDomainJoinType?>("domainJoinType"); }
             set { BackingStore?.Set("domainJoinType", value); }
@@ -66,13 +66,13 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("regionName", value); }
         }
 #endif
-        /// <summary>Specifies how the provisioned Cloud PC will be joined to Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.</summary>
+        /// <summary>The type property</summary>
         public CloudPcDomainJoinType? Type {
             get { return BackingStore?.Get<CloudPcDomainJoinType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new cloudPcDomainJoinConfiguration and sets the default values.
+        /// Instantiates a new <see cref="CloudPcDomainJoinConfiguration"/> and sets the default values.
         /// </summary>
         public CloudPcDomainJoinConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -81,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="CloudPcDomainJoinConfiguration"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static CloudPcDomainJoinConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -89,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"domainJoinType", n => { DomainJoinType = n.GetEnumValue<CloudPcDomainJoinType>(); } },

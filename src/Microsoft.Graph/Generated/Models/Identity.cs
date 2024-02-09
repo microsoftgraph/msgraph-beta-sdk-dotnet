@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won&apos;t show up as having changed when using delta.</summary>
+        /// <summary>The display name of the identity. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn&apos;t included in the response.</summary>
+        /// <summary>The identifier of the identity. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id {
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new identity and sets the default values.
+        /// Instantiates a new <see cref="Identity"/> and sets the default values.
         /// </summary>
         public Identity() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -68,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="Identity"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static Identity CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -102,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },

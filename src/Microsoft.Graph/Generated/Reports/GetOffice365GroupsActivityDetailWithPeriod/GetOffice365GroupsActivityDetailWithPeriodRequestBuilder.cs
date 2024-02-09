@@ -14,26 +14,28 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithPerio
     /// </summary>
     public class GetOffice365GroupsActivityDetailWithPeriodRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new GetOffice365GroupsActivityDetailWithPeriodRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GetOffice365GroupsActivityDetailWithPeriodRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetOffice365GroupsActivityDetailWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = "") : base(requestAdapter, "{+baseurl}/reports/getOffice365GroupsActivityDetail(period='{period}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters) {
+        public GetOffice365GroupsActivityDetailWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = "") : base(requestAdapter, "{+baseurl}/reports/getOffice365GroupsActivityDetail(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(period)) PathParameters.Add("period", period);
         }
         /// <summary>
-        /// Instantiates a new GetOffice365GroupsActivityDetailWithPeriodRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GetOffice365GroupsActivityDetailWithPeriodRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetOffice365GroupsActivityDetailWithPeriodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getOffice365GroupsActivityDetail(period='{period}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", rawUrl) {
+        public GetOffice365GroupsActivityDetailWithPeriodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getOffice365GroupsActivityDetail(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function getOffice365GroupsActivityDetail
         /// </summary>
+        /// <returns>A <cref="GetOffice365GroupsActivityDetailWithPeriodGetResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<GetOffice365GroupsActivityDetailWithPeriodGetResponse?> GetAsGetOffice365GroupsActivityDetailWithPeriodGetResponseAsync(Action<RequestConfiguration<GetOffice365GroupsActivityDetailWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -43,17 +45,18 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithPerio
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetOffice365GroupsActivityDetailWithPeriodGetResponse>(requestInfo, GetOffice365GroupsActivityDetailWithPeriodGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getOffice365GroupsActivityDetail
         /// </summary>
+        /// <returns>A <cref="GetOffice365GroupsActivityDetailWithPeriodResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsGetOffice365GroupsActivityDetailWithPeriodGetResponse instead.")]
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This method is obsolete. Use {TypeName} instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<GetOffice365GroupsActivityDetailWithPeriodResponse?> GetAsync(Action<RequestConfiguration<GetOffice365GroupsActivityDetailWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -63,14 +66,14 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithPerio
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetOffice365GroupsActivityDetailWithPeriodResponse>(requestInfo, GetOffice365GroupsActivityDetailWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getOffice365GroupsActivityDetail
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +90,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithPerio
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="GetOffice365GroupsActivityDetailWithPeriodRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public GetOffice365GroupsActivityDetailWithPeriodRequestBuilder WithUrl(string rawUrl) {
             return new GetOffice365GroupsActivityDetailWithPeriodRequestBuilder(rawUrl, RequestAdapter);
@@ -98,6 +102,16 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithPerio
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+#endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

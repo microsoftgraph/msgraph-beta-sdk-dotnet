@@ -15,14 +15,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignedRoleDetails {
     /// </summary>
     public class GetAssignedRoleDetailsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new GetAssignedRoleDetailsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GetAssignedRoleDetailsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public GetAssignedRoleDetailsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/getAssignedRoleDetails()", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new GetAssignedRoleDetailsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GetAssignedRoleDetailsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,8 +31,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignedRoleDetails {
         /// <summary>
         /// Retrieves the assigned role definitions and role assignments of the currently authenticated user.
         /// </summary>
+        /// <returns>A <cref="DeviceAndAppManagementAssignedRoleDetails"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<DeviceAndAppManagementAssignedRoleDetails?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -42,14 +44,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignedRoleDetails {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceAndAppManagementAssignedRoleDetails>(requestInfo, DeviceAndAppManagementAssignedRoleDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the assigned role definitions and role assignments of the currently authenticated user.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +68,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignedRoleDetails {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="GetAssignedRoleDetailsRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public GetAssignedRoleDetailsRequestBuilder WithUrl(string rawUrl) {
             return new GetAssignedRoleDetailsRequestBuilder(rawUrl, RequestAdapter);

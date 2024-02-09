@@ -22,30 +22,33 @@ namespace Microsoft.Graph.Beta.Users.Item.WindowsInformationProtectionDeviceRegi
         }
         /// <summary>Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of windowsInformationProtectionDeviceRegistration</param>
+        /// <returns>A <cref="WindowsInformationProtectionDeviceRegistrationItemRequestBuilder"></returns>
         public WindowsInformationProtectionDeviceRegistrationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("windowsInformationProtectionDeviceRegistration%2Did", position);
             return new WindowsInformationProtectionDeviceRegistrationItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new WindowsInformationProtectionDeviceRegistrationsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WindowsInformationProtectionDeviceRegistrationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WindowsInformationProtectionDeviceRegistrationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/windowsInformationProtectionDeviceRegistrations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public WindowsInformationProtectionDeviceRegistrationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/windowsInformationProtectionDeviceRegistrations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WindowsInformationProtectionDeviceRegistrationsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WindowsInformationProtectionDeviceRegistrationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WindowsInformationProtectionDeviceRegistrationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/windowsInformationProtectionDeviceRegistrations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public WindowsInformationProtectionDeviceRegistrationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/windowsInformationProtectionDeviceRegistrations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Zero or more WIP device registrations that belong to the user.
         /// </summary>
+        /// <returns>A <cref="WindowsInformationProtectionDeviceRegistrationCollectionResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<WindowsInformationProtectionDeviceRegistrationCollectionResponse?> GetAsync(Action<RequestConfiguration<WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -55,14 +58,14 @@ namespace Microsoft.Graph.Beta.Users.Item.WindowsInformationProtectionDeviceRegi
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<WindowsInformationProtectionDeviceRegistrationCollectionResponse>(requestInfo, WindowsInformationProtectionDeviceRegistrationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Zero or more WIP device registrations that belong to the user.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,6 +82,7 @@ namespace Microsoft.Graph.Beta.Users.Item.WindowsInformationProtectionDeviceRegi
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="WindowsInformationProtectionDeviceRegistrationsRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WindowsInformationProtectionDeviceRegistrationsRequestBuilder WithUrl(string rawUrl) {
             return new WindowsInformationProtectionDeviceRegistrationsRequestBuilder(rawUrl, RequestAdapter);

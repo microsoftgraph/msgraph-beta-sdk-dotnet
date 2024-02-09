@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsReceivable 
         }
         /// <summary>Provides operations to manage the agedAccountsReceivable property of the microsoft.graph.company entity.</summary>
         /// <param name="position">The unique identifier of agedAccountsReceivable</param>
+        /// <returns>A <cref="AgedAccountsReceivableItemRequestBuilder"></returns>
         public AgedAccountsReceivableItemRequestBuilder this[Guid position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("agedAccountsReceivable%2Did", position);
@@ -29,6 +30,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsReceivable 
         } }
         /// <summary>Provides operations to manage the agedAccountsReceivable property of the microsoft.graph.company entity.</summary>
         /// <param name="position">The unique identifier of agedAccountsReceivable</param>
+        /// <returns>A <cref="AgedAccountsReceivableItemRequestBuilder"></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
         public AgedAccountsReceivableItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
@@ -36,24 +38,26 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsReceivable 
             return new AgedAccountsReceivableItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new AgedAccountsReceivableRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AgedAccountsReceivableRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AgedAccountsReceivableRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/agedAccountsReceivable{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public AgedAccountsReceivableRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/agedAccountsReceivable{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new AgedAccountsReceivableRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AgedAccountsReceivableRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AgedAccountsReceivableRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/agedAccountsReceivable{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public AgedAccountsReceivableRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/agedAccountsReceivable{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Get agedAccountsReceivable from financials
         /// </summary>
+        /// <returns>A <cref="AgedAccountsReceivableCollectionResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<AgedAccountsReceivableCollectionResponse?> GetAsync(Action<RequestConfiguration<AgedAccountsReceivableRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -63,14 +67,14 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsReceivable 
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AgedAccountsReceivableCollectionResponse>(requestInfo, AgedAccountsReceivableCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get agedAccountsReceivable from financials
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +91,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsReceivable 
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="AgedAccountsReceivableRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public AgedAccountsReceivableRequestBuilder WithUrl(string rawUrl) {
             return new AgedAccountsReceivableRequestBuilder(rawUrl, RequestAdapter);

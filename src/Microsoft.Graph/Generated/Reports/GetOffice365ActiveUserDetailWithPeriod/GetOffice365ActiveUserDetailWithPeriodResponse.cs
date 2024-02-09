@@ -5,11 +5,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithPeriod {
-    [Obsolete("This class is obsolete. Use getOffice365ActiveUserDetailWithPeriodGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
     public class GetOffice365ActiveUserDetailWithPeriodResponse : GetOffice365ActiveUserDetailWithPeriodGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="GetOffice365ActiveUserDetailWithPeriodResponse"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new GetOffice365ActiveUserDetailWithPeriodResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));

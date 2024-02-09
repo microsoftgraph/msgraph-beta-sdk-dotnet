@@ -22,31 +22,34 @@ namespace Microsoft.Graph.Beta.Security.Labels.Citations {
         }
         /// <summary>Provides operations to manage the citations property of the microsoft.graph.security.labelsRoot entity.</summary>
         /// <param name="position">The unique identifier of citationTemplate</param>
+        /// <returns>A <cref="CitationTemplateItemRequestBuilder"></returns>
         public CitationTemplateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("citationTemplate%2Did", position);
             return new CitationTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new CitationsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CitationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CitationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/citations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public CitationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/citations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new CitationsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CitationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CitationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/citations{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public CitationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/citations{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Get a list of the citationTemplate objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-list-citations?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="CitationTemplateCollectionResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<CitationTemplateCollectionResponse?> GetAsync(Action<RequestConfiguration<CitationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -56,8 +59,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Citations {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CitationTemplateCollectionResponse>(requestInfo, CitationTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -65,9 +67,11 @@ namespace Microsoft.Graph.Beta.Security.Labels.Citations {
         /// Create a new citationTemplate object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-post-citations?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="Microsoft.Graph.Beta.Models.Security.CitationTemplate"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.Security.CitationTemplate?> PostAsync(Microsoft.Graph.Beta.Models.Security.CitationTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -78,14 +82,14 @@ namespace Microsoft.Graph.Beta.Security.Labels.Citations {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.CitationTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.CitationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the citationTemplate objects and their properties.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +106,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Citations {
         /// <summary>
         /// Create a new citationTemplate object.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +117,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Citations {
         public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.Security.CitationTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/security/labels/citations", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -121,6 +126,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Citations {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="CitationsRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public CitationsRequestBuilder WithUrl(string rawUrl) {
             return new CitationsRequestBuilder(rawUrl, RequestAdapter);

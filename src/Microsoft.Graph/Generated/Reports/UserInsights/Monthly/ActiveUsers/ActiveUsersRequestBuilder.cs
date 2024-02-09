@@ -22,31 +22,34 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsers {
         }
         /// <summary>Provides operations to manage the activeUsers property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.</summary>
         /// <param name="position">The unique identifier of activeUsersMetric</param>
+        /// <returns>A <cref="ActiveUsersMetricItemRequestBuilder"></returns>
         public ActiveUsersMetricItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("activeUsersMetric%2Did", position);
             return new ActiveUsersMetricItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new ActiveUsersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ActiveUsersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActiveUsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/activeUsers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public ActiveUsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/activeUsers{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ActiveUsersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ActiveUsersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActiveUsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/activeUsers{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public ActiveUsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/activeUsers{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Get a list of monthly active users on apps registered in your tenant configured for Microsoft Entra External ID for customers.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/monthlyuserinsightmetricsroot-list-activeusers?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="ActiveUsersMetricCollectionResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ActiveUsersMetricCollectionResponse?> GetAsync(Action<RequestConfiguration<ActiveUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -56,14 +59,14 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsers {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ActiveUsersMetricCollectionResponse>(requestInfo, ActiveUsersMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of monthly active users on apps registered in your tenant configured for Microsoft Entra External ID for customers.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +83,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsers {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="ActiveUsersRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ActiveUsersRequestBuilder WithUrl(string rawUrl) {
             return new ActiveUsersRequestBuilder(rawUrl, RequestAdapter);

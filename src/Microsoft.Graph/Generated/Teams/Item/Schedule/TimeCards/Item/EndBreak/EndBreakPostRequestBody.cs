@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.EndBreak {
         }
 #endif
         /// <summary>
-        /// Instantiates a new endBreakPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="EndBreakPostRequestBody"/> and sets the default values.
         /// </summary>
         public EndBreakPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -44,6 +44,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.EndBreak {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="EndBreakPostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static EndBreakPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -52,6 +53,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards.Item.EndBreak {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"atApprovedLocation", n => { AtApprovedLocation = n.GetBoolValue(); } },

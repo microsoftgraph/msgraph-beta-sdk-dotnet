@@ -22,31 +22,34 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceC
         }
         /// <summary>Provides operations to manage the managedDeviceComplianceTrends property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
         /// <param name="position">The unique identifier of managedDeviceComplianceTrend</param>
+        /// <returns>A <cref="ManagedDeviceComplianceTrendItemRequestBuilder"></returns>
         public ManagedDeviceComplianceTrendItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDeviceComplianceTrend%2Did", position);
             return new ManagedDeviceComplianceTrendItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new ManagedDeviceComplianceTrendsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ManagedDeviceComplianceTrendsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ManagedDeviceComplianceTrendsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/managedDeviceComplianceTrends{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public ManagedDeviceComplianceTrendsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/managedDeviceComplianceTrends{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ManagedDeviceComplianceTrendsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ManagedDeviceComplianceTrendsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ManagedDeviceComplianceTrendsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/managedDeviceComplianceTrends{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public ManagedDeviceComplianceTrendsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/managedDeviceComplianceTrends{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Get a list of the managedDeviceComplianceTrend objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-manageddevicecompliancetrends?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="ManagedDeviceComplianceTrendCollectionResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ManagedDeviceComplianceTrendCollectionResponse?> GetAsync(Action<RequestConfiguration<ManagedDeviceComplianceTrendsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -56,17 +59,18 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceC
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ManagedDeviceComplianceTrendCollectionResponse>(requestInfo, ManagedDeviceComplianceTrendCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to managedDeviceComplianceTrends for tenantRelationships
         /// </summary>
+        /// <returns>A <cref="ManagedDeviceComplianceTrend"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ManagedDeviceComplianceTrend?> PostAsync(ManagedDeviceComplianceTrend body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -77,14 +81,14 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceC
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ManagedDeviceComplianceTrend>(requestInfo, ManagedDeviceComplianceTrend.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the managedDeviceComplianceTrend objects and their properties.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,6 +105,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceC
         /// <summary>
         /// Create new navigation property to managedDeviceComplianceTrends for tenantRelationships
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +116,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceC
         public RequestInformation ToPostRequestInformation(ManagedDeviceComplianceTrend body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/tenantRelationships/managedTenants/managedDeviceComplianceTrends", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -120,6 +125,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceC
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="ManagedDeviceComplianceTrendsRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ManagedDeviceComplianceTrendsRequestBuilder WithUrl(string rawUrl) {
             return new ManagedDeviceComplianceTrendsRequestBuilder(rawUrl, RequestAdapter);

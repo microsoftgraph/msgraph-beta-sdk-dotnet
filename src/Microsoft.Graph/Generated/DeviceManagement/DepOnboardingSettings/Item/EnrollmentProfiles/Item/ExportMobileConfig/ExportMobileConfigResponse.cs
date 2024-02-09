@@ -5,11 +5,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.ExportMobileConfig {
-    [Obsolete("This class is obsolete. Use exportMobileConfigGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
     public class ExportMobileConfigResponse : ExportMobileConfigGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="ExportMobileConfigResponse"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new ExportMobileConfigResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));

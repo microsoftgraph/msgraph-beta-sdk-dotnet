@@ -14,26 +14,28 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSto
     /// </summary>
     public class GetStorageAccountsWithSubscriptionIdRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new GetStorageAccountsWithSubscriptionIdRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GetStorageAccountsWithSubscriptionIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="subscriptionId">Usage: subscriptionId=&apos;{subscriptionId}&apos;</param>
-        public GetStorageAccountsWithSubscriptionIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string subscriptionId = "") : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/snapshots/getStorageAccounts(subscriptionId='{subscriptionId}'){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
+        public GetStorageAccountsWithSubscriptionIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string subscriptionId = "") : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/snapshots/getStorageAccounts(subscriptionId='{subscriptionId}'){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(subscriptionId)) PathParameters.Add("subscriptionId", subscriptionId);
         }
         /// <summary>
-        /// Instantiates a new GetStorageAccountsWithSubscriptionIdRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GetStorageAccountsWithSubscriptionIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetStorageAccountsWithSubscriptionIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/snapshots/getStorageAccounts(subscriptionId='{subscriptionId}'){?%24top,%24skip,%24search,%24filter,%24count}", rawUrl) {
+        public GetStorageAccountsWithSubscriptionIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/snapshots/getStorageAccounts(subscriptionId='{subscriptionId}'){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function getStorageAccounts
         /// </summary>
+        /// <returns>A <cref="GetStorageAccountsWithSubscriptionIdGetResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<GetStorageAccountsWithSubscriptionIdGetResponse?> GetAsGetStorageAccountsWithSubscriptionIdGetResponseAsync(Action<RequestConfiguration<GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -43,17 +45,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSto
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetStorageAccountsWithSubscriptionIdGetResponse>(requestInfo, GetStorageAccountsWithSubscriptionIdGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getStorageAccounts
         /// </summary>
+        /// <returns>A <cref="GetStorageAccountsWithSubscriptionIdResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsGetStorageAccountsWithSubscriptionIdGetResponse instead.")]
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This method is obsolete. Use {TypeName} instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<GetStorageAccountsWithSubscriptionIdResponse?> GetAsync(Action<RequestConfiguration<GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -63,14 +66,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSto
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetStorageAccountsWithSubscriptionIdResponse>(requestInfo, GetStorageAccountsWithSubscriptionIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getStorageAccounts
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +90,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSto
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="GetStorageAccountsWithSubscriptionIdRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public GetStorageAccountsWithSubscriptionIdRequestBuilder WithUrl(string rawUrl) {
             return new GetStorageAccountsWithSubscriptionIdRequestBuilder(rawUrl, RequestAdapter);

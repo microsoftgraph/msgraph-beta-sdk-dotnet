@@ -22,31 +22,34 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
         }
         /// <summary>Provides operations to manage the connectorGroups property of the microsoft.graph.onPremisesPublishingProfile entity.</summary>
         /// <param name="position">The unique identifier of connectorGroup</param>
+        /// <returns>A <cref="ConnectorGroupItemRequestBuilder"></returns>
         public ConnectorGroupItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("connectorGroup%2Did", position);
             return new ConnectorGroupItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new ConnectorGroupsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ConnectorGroupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectorGroupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public ConnectorGroupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ConnectorGroupsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ConnectorGroupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectorGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public ConnectorGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Retrieve a list of connectorGroup objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectorgroup-list?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="ConnectorGroupCollectionResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ConnectorGroupCollectionResponse?> GetAsync(Action<RequestConfiguration<ConnectorGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -56,18 +59,19 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ConnectorGroupCollectionResponse>(requestInfo, ConnectorGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new connectorGroup.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectorgroup-post-connectorgroups?view=graph-rest-1.0" />
+        /// Create a connectorGroup object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectorgroup-post?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="Microsoft.Graph.Beta.Models.ConnectorGroup"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.ConnectorGroup?> PostAsync(Microsoft.Graph.Beta.Models.ConnectorGroup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -78,14 +82,14 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ConnectorGroup>(requestInfo, Microsoft.Graph.Beta.Models.ConnectorGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of connectorGroup objects.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,8 +104,9 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             return requestInfo;
         }
         /// <summary>
-        /// Create a new connectorGroup.
+        /// Create a connectorGroup object.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +117,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
         public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ConnectorGroup body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/onPremisesPublishingProfiles/{onPremisesPublishingProfile%2Did}/connectorGroups", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -121,6 +126,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="ConnectorGroupsRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ConnectorGroupsRequestBuilder WithUrl(string rawUrl) {
             return new ConnectorGroupsRequestBuilder(rawUrl, RequestAdapter);

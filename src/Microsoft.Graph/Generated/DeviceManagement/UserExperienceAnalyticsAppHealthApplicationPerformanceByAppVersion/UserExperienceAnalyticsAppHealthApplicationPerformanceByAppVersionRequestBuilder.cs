@@ -22,30 +22,33 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealth
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of userExperienceAnalyticsAppHealthAppPerformanceByAppVersion</param>
+        /// <returns>A <cref="UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionItemRequestBuilder"></returns>
         public UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsAppHealthAppPerformanceByAppVersion%2Did", position);
             return new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// User experience analytics appHealth Application Performance by App Version
         /// </summary>
+        /// <returns>A <cref="UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionCollectionResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionCollectionResponse?> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -55,17 +58,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealth
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionCollectionResponse>(requestInfo, UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion for deviceManagement
         /// </summary>
+        /// <returns>A <cref="UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion?> PostAsync(UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -76,14 +80,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealth
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>(requestInfo, UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// User experience analytics appHealth Application Performance by App Version
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +104,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealth
         /// <summary>
         /// Create new navigation property to userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion for deviceManagement
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +115,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealth
         public RequestInformation ToPostRequestInformation(UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/deviceManagement/userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -119,6 +124,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealth
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder WithUrl(string rawUrl) {
             return new UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionRequestBuilder(rawUrl, RequestAdapter);

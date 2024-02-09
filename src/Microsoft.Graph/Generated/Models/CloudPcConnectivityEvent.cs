@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new cloudPcConnectivityEvent and sets the default values.
+        /// Instantiates a new <see cref="CloudPcConnectivityEvent"/> and sets the default values.
         /// </summary>
         public CloudPcConnectivityEvent() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -81,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="CloudPcConnectivityEvent"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static CloudPcConnectivityEvent CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -89,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },

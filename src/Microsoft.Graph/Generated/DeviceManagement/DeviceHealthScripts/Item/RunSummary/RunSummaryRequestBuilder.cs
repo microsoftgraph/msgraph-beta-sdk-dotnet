@@ -15,24 +15,25 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.RunSumm
     /// </summary>
     public class RunSummaryRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new RunSummaryRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RunSummaryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RunSummaryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/runSummary{?%24select,%24expand}", pathParameters) {
+        public RunSummaryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/runSummary{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new RunSummaryRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RunSummaryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RunSummaryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/runSummary{?%24select,%24expand}", rawUrl) {
+        public RunSummaryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/runSummary{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property runSummary for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -42,16 +43,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.RunSumm
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// High level run summary for device health script.
         /// </summary>
+        /// <returns>A <cref="DeviceHealthScriptRunSummary"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<DeviceHealthScriptRunSummary?> GetAsync(Action<RequestConfiguration<RunSummaryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -61,17 +63,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.RunSumm
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceHealthScriptRunSummary>(requestInfo, DeviceHealthScriptRunSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property runSummary in deviceManagement
         /// </summary>
+        /// <returns>A <cref="DeviceHealthScriptRunSummary"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<DeviceHealthScriptRunSummary?> PatchAsync(DeviceHealthScriptRunSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -82,14 +85,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.RunSumm
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceHealthScriptRunSummary>(requestInfo, DeviceHealthScriptRunSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property runSummary for deviceManagement
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,7 +101,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.RunSumm
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/runSummary", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -106,6 +109,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.RunSumm
         /// <summary>
         /// High level run summary for device health script.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,6 +126,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.RunSumm
         /// <summary>
         /// Update the navigation property runSummary in deviceManagement
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,7 +137,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.RunSumm
         public RequestInformation ToPatchRequestInformation(DeviceHealthScriptRunSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/runSummary", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -141,6 +146,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.RunSumm
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="RunSummaryRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public RunSummaryRequestBuilder WithUrl(string rawUrl) {
             return new RunSummaryRequestBuilder(rawUrl, RequestAdapter);

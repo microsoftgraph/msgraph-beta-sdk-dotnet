@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("updateBuildRevision", value); }
         }
         /// <summary>
-        /// Instantiates a new buildVersionDetails and sets the default values.
+        /// Instantiates a new <see cref="BuildVersionDetails"/> and sets the default values.
         /// </summary>
         public BuildVersionDetails() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -58,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="BuildVersionDetails"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static BuildVersionDetails CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -66,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"buildNumber", n => { BuildNumber = n.GetIntValue(); } },

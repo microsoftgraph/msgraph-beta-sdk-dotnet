@@ -14,14 +14,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ApproveFotaAp
     /// </summary>
     public class ApproveFotaAppsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new ApproveFotaAppsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ApproveFotaAppsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ApproveFotaAppsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/zebraFotaConnector/approveFotaApps", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ApproveFotaAppsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ApproveFotaAppsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -30,8 +30,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ApproveFotaAp
         /// <summary>
         /// Invoke action approveFotaApps
         /// </summary>
+        /// <returns>A <cref="ApproveFotaAppsPostResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ApproveFotaAppsPostResponse?> PostAsApproveFotaAppsPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -41,17 +43,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ApproveFotaAp
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ApproveFotaAppsPostResponse>(requestInfo, ApproveFotaAppsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action approveFotaApps
         /// </summary>
+        /// <returns>A <cref="ApproveFotaAppsResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsApproveFotaAppsPostResponse instead.")]
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This method is obsolete. Use {TypeName} instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ApproveFotaAppsResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -61,14 +64,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ApproveFotaAp
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ApproveFotaAppsResponse>(requestInfo, ApproveFotaAppsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action approveFotaApps
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,6 +88,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ApproveFotaAp
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="ApproveFotaAppsRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ApproveFotaAppsRequestBuilder WithUrl(string rawUrl) {
             return new ApproveFotaAppsRequestBuilder(rawUrl, RequestAdapter);

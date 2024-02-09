@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         }
 #endif
         /// <summary>
-        /// Instantiates a new completeSignupPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="CompleteSignupPostRequestBody"/> and sets the default values.
         /// </summary>
         public CompleteSignupPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -38,6 +38,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="CompleteSignupPostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static CompleteSignupPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -46,6 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"enterpriseToken", n => { EnterpriseToken = n.GetStringValue(); } },

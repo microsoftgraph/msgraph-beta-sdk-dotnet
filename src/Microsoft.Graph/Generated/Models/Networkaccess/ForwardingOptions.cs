@@ -14,6 +14,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="ForwardingOptions"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new ForwardingOptions CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -22,6 +23,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"skipDnsLookupState", n => { SkipDnsLookupState = n.GetEnumValue<Status>(); } },

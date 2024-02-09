@@ -23,28 +23,30 @@ namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval {
         }
         /// <summary>Provides operations to manage the appConsentRequestsForApproval property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of appConsentRequest</param>
+        /// <returns>A <cref="AppConsentRequestItemRequestBuilder"></returns>
         public AppConsentRequestItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("appConsentRequest%2Did", position);
             return new AppConsentRequestItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new AppConsentRequestsForApprovalRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AppConsentRequestsForApprovalRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AppConsentRequestsForApprovalRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/appConsentRequestsForApproval{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public AppConsentRequestsForApprovalRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/appConsentRequestsForApproval{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new AppConsentRequestsForApprovalRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AppConsentRequestsForApprovalRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AppConsentRequestsForApprovalRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/appConsentRequestsForApproval{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public AppConsentRequestsForApprovalRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/appConsentRequestsForApproval{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Provides operations to call the filterByCurrentUser method.
         /// </summary>
+        /// <returns>A <cref="FilterByCurrentUserWithOnRequestBuilder"></returns>
         /// <param name="on">Usage: on=&apos;{on}&apos;</param>
         public FilterByCurrentUserWithOnRequestBuilder FilterByCurrentUserWithOn(string on) {
             if(string.IsNullOrEmpty(on)) throw new ArgumentNullException(nameof(on));
@@ -53,8 +55,10 @@ namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval {
         /// <summary>
         /// Get appConsentRequestsForApproval from users
         /// </summary>
+        /// <returns>A <cref="AppConsentRequestCollectionResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<AppConsentRequestCollectionResponse?> GetAsync(Action<RequestConfiguration<AppConsentRequestsForApprovalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -64,17 +68,18 @@ namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AppConsentRequestCollectionResponse>(requestInfo, AppConsentRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to appConsentRequestsForApproval for users
         /// </summary>
+        /// <returns>A <cref="AppConsentRequest"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<AppConsentRequest?> PostAsync(AppConsentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -85,14 +90,14 @@ namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AppConsentRequest>(requestInfo, AppConsentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get appConsentRequestsForApproval from users
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +114,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval {
         /// <summary>
         /// Create new navigation property to appConsentRequestsForApproval for users
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,7 +125,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval {
         public RequestInformation ToPostRequestInformation(AppConsentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/users/{user%2Did}/appConsentRequestsForApproval", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -128,6 +134,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="AppConsentRequestsForApprovalRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public AppConsentRequestsForApprovalRequestBuilder WithUrl(string rawUrl) {
             return new AppConsentRequestsForApprovalRequestBuilder(rawUrl, RequestAdapter);

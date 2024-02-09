@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
             set { BackingStore?.Set("exportLocation", value); }
         }
         /// <summary>
-        /// Instantiates a new exportReportPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="ExportReportPostRequestBody"/> and sets the default values.
         /// </summary>
         public ExportReportPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -68,6 +68,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="ExportReportPostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static ExportReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -76,6 +77,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"additionalOptions", n => { AdditionalOptions = n.GetEnumValue<AdditionalOptions>(); } },
