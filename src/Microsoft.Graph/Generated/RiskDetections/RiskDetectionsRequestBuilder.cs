@@ -17,31 +17,34 @@ namespace Microsoft.Graph.Beta.RiskDetections {
     public class RiskDetectionsRequestBuilder : BaseRequestBuilder {
         /// <summary>Provides operations to manage the collection of riskDetection entities.</summary>
         /// <param name="position">The unique identifier of riskDetection</param>
+        /// <returns>A <see cref="RiskDetectionItemRequestBuilder"/></returns>
         public RiskDetectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("riskDetection%2Did", position);
             return new RiskDetectionItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new RiskDetectionsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RiskDetectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RiskDetectionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/riskDetections{?%24top,%24search,%24filter,%24orderby,%24select,%24expand}", pathParameters) {
+        public RiskDetectionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/riskDetections{?%24expand,%24filter,%24orderby,%24search,%24select,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new RiskDetectionsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RiskDetectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RiskDetectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/riskDetections{?%24top,%24search,%24filter,%24orderby,%24select,%24expand}", rawUrl) {
+        public RiskDetectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/riskDetections{?%24expand,%24filter,%24orderby,%24search,%24select,%24top}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve the properties of a riskDetection object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0" />
+        /// Retrieve the properties of a collection of riskDetection objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <see cref="RiskDetectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<RiskDetectionCollectionResponse?> GetAsync(Action<RequestConfiguration<RiskDetectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -51,17 +54,18 @@ namespace Microsoft.Graph.Beta.RiskDetections {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<RiskDetectionCollectionResponse>(requestInfo, RiskDetectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to riskDetections
         /// </summary>
+        /// <returns>A <see cref="RiskDetection"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<RiskDetection?> PostAsync(RiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -72,14 +76,14 @@ namespace Microsoft.Graph.Beta.RiskDetections {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<RiskDetection>(requestInfo, RiskDetection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of a riskDetection object.
+        /// Retrieve the properties of a collection of riskDetection objects.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,6 +100,7 @@ namespace Microsoft.Graph.Beta.RiskDetections {
         /// <summary>
         /// Add new entity to riskDetections
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +111,7 @@ namespace Microsoft.Graph.Beta.RiskDetections {
         public RequestInformation ToPostRequestInformation(RiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/riskDetections", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -115,12 +120,13 @@ namespace Microsoft.Graph.Beta.RiskDetections {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="RiskDetectionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public RiskDetectionsRequestBuilder WithUrl(string rawUrl) {
             return new RiskDetectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties of a riskDetection object.
+        /// Retrieve the properties of a collection of riskDetection objects.
         /// </summary>
         public class RiskDetectionsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

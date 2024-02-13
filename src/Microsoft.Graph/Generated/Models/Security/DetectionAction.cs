@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The organizationalScope property</summary>
+        /// <summary>Groups to which the custom detection rule applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Security.OrganizationalScope? OrganizationalScope {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("organizationalScope", value); }
         }
 #endif
-        /// <summary>The responseActions property</summary>
+        /// <summary>Actions taken on impacted assets as set in the custom detection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ResponseAction>? ResponseActions {
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new detectionAction and sets the default values.
+        /// Instantiates a new <see cref="DetectionAction"/> and sets the default values.
         /// </summary>
         public DetectionAction() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -80,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="DetectionAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static DetectionAction CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -88,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"alertTemplate", n => { AlertTemplate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.AlertTemplate>(Microsoft.Graph.Beta.Models.Security.AlertTemplate.CreateFromDiscriminatorValue); } },

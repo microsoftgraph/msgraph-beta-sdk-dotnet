@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetFailedMobileAppsRepor
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new getFailedMobileAppsReportPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="GetFailedMobileAppsReportPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetFailedMobileAppsReportPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -132,6 +132,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetFailedMobileAppsRepor
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="GetFailedMobileAppsReportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static GetFailedMobileAppsReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -140,6 +141,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetFailedMobileAppsRepor
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"filter", n => { Filter = n.GetStringValue(); } },

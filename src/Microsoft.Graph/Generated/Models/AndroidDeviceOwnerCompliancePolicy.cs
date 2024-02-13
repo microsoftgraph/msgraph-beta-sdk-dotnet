@@ -131,6 +131,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("requireNoPendingSystemUpdates"); }
             set { BackingStore?.Set("requireNoPendingSystemUpdates", value); }
         }
+        /// <summary>Require a specific Play Integrity evaluation type for compliance.</summary>
+        public AndroidSafetyNetEvaluationType? SecurityRequiredAndroidSafetyNetEvaluationType {
+            get { return BackingStore?.Get<AndroidSafetyNetEvaluationType?>("securityRequiredAndroidSafetyNetEvaluationType"); }
+            set { BackingStore?.Set("securityRequiredAndroidSafetyNetEvaluationType", value); }
+        }
         /// <summary>If setting is set to true, checks that the Intune app installed on fully managed, dedicated, or corporate-owned work profile Android Enterprise enrolled devices, is the one provided by Microsoft from the Managed Google Playstore. If the check fails, the device will be reported as non-compliant.</summary>
         public bool? SecurityRequireIntuneAppIntegrity {
             get { return BackingStore?.Get<bool?>("securityRequireIntuneAppIntegrity"); }
@@ -152,7 +157,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
         /// <summary>
-        /// Instantiates a new androidDeviceOwnerCompliancePolicy and sets the default values.
+        /// Instantiates a new <see cref="AndroidDeviceOwnerCompliancePolicy"/> and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerCompliancePolicy() : base() {
             OdataType = "#microsoft.graph.androidDeviceOwnerCompliancePolicy";
@@ -160,6 +165,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="AndroidDeviceOwnerCompliancePolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new AndroidDeviceOwnerCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -168,6 +174,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"advancedThreatProtectionRequiredSecurityLevel", n => { AdvancedThreatProtectionRequiredSecurityLevel = n.GetEnumValue<DeviceThreatProtectionLevel>(); } },
@@ -192,6 +199,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"securityRequireIntuneAppIntegrity", n => { SecurityRequireIntuneAppIntegrity = n.GetBoolValue(); } },
                 {"securityRequireSafetyNetAttestationBasicIntegrity", n => { SecurityRequireSafetyNetAttestationBasicIntegrity = n.GetBoolValue(); } },
                 {"securityRequireSafetyNetAttestationCertifiedDevice", n => { SecurityRequireSafetyNetAttestationCertifiedDevice = n.GetBoolValue(); } },
+                {"securityRequiredAndroidSafetyNetEvaluationType", n => { SecurityRequiredAndroidSafetyNetEvaluationType = n.GetEnumValue<AndroidSafetyNetEvaluationType>(); } },
                 {"storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
             };
         }
@@ -221,6 +229,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("passwordRequired", PasswordRequired);
             writer.WriteEnumValue<AndroidDeviceOwnerRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
             writer.WriteBoolValue("requireNoPendingSystemUpdates", RequireNoPendingSystemUpdates);
+            writer.WriteEnumValue<AndroidSafetyNetEvaluationType>("securityRequiredAndroidSafetyNetEvaluationType", SecurityRequiredAndroidSafetyNetEvaluationType);
             writer.WriteBoolValue("securityRequireIntuneAppIntegrity", SecurityRequireIntuneAppIntegrity);
             writer.WriteBoolValue("securityRequireSafetyNetAttestationBasicIntegrity", SecurityRequireSafetyNetAttestationBasicIntegrity);
             writer.WriteBoolValue("securityRequireSafetyNetAttestationCertifiedDevice", SecurityRequireSafetyNetAttestationCertifiedDevice);

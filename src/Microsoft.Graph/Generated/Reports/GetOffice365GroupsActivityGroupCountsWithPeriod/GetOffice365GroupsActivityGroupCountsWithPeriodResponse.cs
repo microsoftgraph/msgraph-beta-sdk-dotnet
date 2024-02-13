@@ -5,11 +5,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityGroupCountsWithPeriod {
-    [Obsolete("This class is obsolete. Use getOffice365GroupsActivityGroupCountsWithPeriodGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
     public class GetOffice365GroupsActivityGroupCountsWithPeriodResponse : GetOffice365GroupsActivityGroupCountsWithPeriodGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="GetOffice365GroupsActivityGroupCountsWithPeriodResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new GetOffice365GroupsActivityGroupCountsWithPeriodResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));

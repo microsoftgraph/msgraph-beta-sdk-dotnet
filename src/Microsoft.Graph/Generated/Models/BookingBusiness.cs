@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appointments", value); }
         }
 #endif
-        /// <summary>The bookingPageSettings property</summary>
+        /// <summary>Settings for the published booking page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.BookingPageSettings? BookingPageSettings {
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("calendarView", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date, time and timezone when the booking business was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("customers", value); }
         }
 #endif
-        /// <summary>All the custom questions of this business. Read-only. Nullable.</summary>
+        /// <summary>All custom questions of this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<BookingCustomQuestion>? CustomQuestions {
@@ -173,7 +173,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("languageTag", value); }
         }
 #endif
-        /// <summary>The lastUpdatedDateTime property</summary>
+        /// <summary>The date, time and timezone when the booking business was last updated.</summary>
         public DateTimeOffset? LastUpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
@@ -263,7 +263,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new bookingBusiness and sets the default values.
+        /// Instantiates a new <see cref="BookingBusiness"/> and sets the default values.
         /// </summary>
         public BookingBusiness() : base() {
             OdataType = "#microsoft.graph.bookingBusiness";
@@ -271,6 +271,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="BookingBusiness"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new BookingBusiness CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -279,6 +280,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"address", n => { Address = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },

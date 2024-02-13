@@ -39,6 +39,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sharedTimeOff", value); }
         }
 #endif
+        /// <summary>Information of the team that the timeOff is in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public ShiftsTeamInfo? TeamInfo {
+            get { return BackingStore?.Get<ShiftsTeamInfo?>("teamInfo"); }
+            set { BackingStore?.Set("teamInfo", value); }
+        }
+#nullable restore
+#else
+        public ShiftsTeamInfo TeamInfo {
+            get { return BackingStore?.Get<ShiftsTeamInfo>("teamInfo"); }
+            set { BackingStore?.Set("teamInfo", value); }
+        }
+#endif
         /// <summary>ID of the user assigned to the timeOff. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,8 +67,22 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userId", value); }
         }
 #endif
+        /// <summary>Information of the user assigned to the timeOff.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public ShiftsUserInfo? UserInfo {
+            get { return BackingStore?.Get<ShiftsUserInfo?>("userInfo"); }
+            set { BackingStore?.Set("userInfo", value); }
+        }
+#nullable restore
+#else
+        public ShiftsUserInfo UserInfo {
+            get { return BackingStore?.Get<ShiftsUserInfo>("userInfo"); }
+            set { BackingStore?.Set("userInfo", value); }
+        }
+#endif
         /// <summary>
-        /// Instantiates a new timeOff and sets the default values.
+        /// Instantiates a new <see cref="TimeOff"/> and sets the default values.
         /// </summary>
         public TimeOff() : base() {
             OdataType = "#microsoft.graph.timeOff";
@@ -62,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="TimeOff"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new TimeOff CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -70,12 +99,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"draftTimeOff", n => { DraftTimeOff = n.GetObjectValue<TimeOffItem>(TimeOffItem.CreateFromDiscriminatorValue); } },
                 {"isStagedForDeletion", n => { IsStagedForDeletion = n.GetBoolValue(); } },
                 {"sharedTimeOff", n => { SharedTimeOff = n.GetObjectValue<TimeOffItem>(TimeOffItem.CreateFromDiscriminatorValue); } },
+                {"teamInfo", n => { TeamInfo = n.GetObjectValue<ShiftsTeamInfo>(ShiftsTeamInfo.CreateFromDiscriminatorValue); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
+                {"userInfo", n => { UserInfo = n.GetObjectValue<ShiftsUserInfo>(ShiftsUserInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

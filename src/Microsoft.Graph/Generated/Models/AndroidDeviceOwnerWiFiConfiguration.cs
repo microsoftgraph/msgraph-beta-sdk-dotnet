@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("connectWhenNetworkNameIsHidden"); }
             set { BackingStore?.Set("connectWhenNetworkNameIsHidden", value); }
         }
+        /// <summary>The MAC address randomization mode for Android device Wi-Fi configuration. Possible values include automatic and hardware. Default value is automatic.</summary>
+        public Microsoft.Graph.Beta.Models.MacAddressRandomizationMode? MacAddressRandomizationMode {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacAddressRandomizationMode?>("macAddressRandomizationMode"); }
+            set { BackingStore?.Set("macAddressRandomizationMode", value); }
+        }
         /// <summary>Network Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,7 +129,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("wiFiSecurityType", value); }
         }
         /// <summary>
-        /// Instantiates a new androidDeviceOwnerWiFiConfiguration and sets the default values.
+        /// Instantiates a new <see cref="AndroidDeviceOwnerWiFiConfiguration"/> and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerWiFiConfiguration() : base() {
             OdataType = "#microsoft.graph.androidDeviceOwnerWiFiConfiguration";
@@ -132,6 +137,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="AndroidDeviceOwnerWiFiConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new AndroidDeviceOwnerWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -144,10 +150,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"connectAutomatically", n => { ConnectAutomatically = n.GetBoolValue(); } },
                 {"connectWhenNetworkNameIsHidden", n => { ConnectWhenNetworkNameIsHidden = n.GetBoolValue(); } },
+                {"macAddressRandomizationMode", n => { MacAddressRandomizationMode = n.GetEnumValue<MacAddressRandomizationMode>(); } },
                 {"networkName", n => { NetworkName = n.GetStringValue(); } },
                 {"preSharedKey", n => { PreSharedKey = n.GetStringValue(); } },
                 {"preSharedKeyIsSet", n => { PreSharedKeyIsSet = n.GetBoolValue(); } },
@@ -169,6 +177,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteBoolValue("connectAutomatically", ConnectAutomatically);
             writer.WriteBoolValue("connectWhenNetworkNameIsHidden", ConnectWhenNetworkNameIsHidden);
+            writer.WriteEnumValue<MacAddressRandomizationMode>("macAddressRandomizationMode", MacAddressRandomizationMode);
             writer.WriteStringValue("networkName", NetworkName);
             writer.WriteStringValue("preSharedKey", PreSharedKey);
             writer.WriteBoolValue("preSharedKeyIsSet", PreSharedKeyIsSet);

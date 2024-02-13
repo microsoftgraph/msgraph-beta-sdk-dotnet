@@ -14,26 +14,28 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWi
     /// </summary>
     public class GetLicensesForAppWithBundleIdRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new GetLicensesForAppWithBundleIdRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GetLicensesForAppWithBundleIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="bundleId">Usage: bundleId=&apos;{bundleId}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetLicensesForAppWithBundleIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string bundleId = "") : base(requestAdapter, "{+baseurl}/deviceAppManagement/vppTokens/getLicensesForApp(bundleId='{bundleId}'){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
+        public GetLicensesForAppWithBundleIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string bundleId = "") : base(requestAdapter, "{+baseurl}/deviceAppManagement/vppTokens/getLicensesForApp(bundleId='{bundleId}'){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(bundleId)) PathParameters.Add("bundleId", bundleId);
         }
         /// <summary>
-        /// Instantiates a new GetLicensesForAppWithBundleIdRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GetLicensesForAppWithBundleIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetLicensesForAppWithBundleIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/vppTokens/getLicensesForApp(bundleId='{bundleId}'){?%24top,%24skip,%24search,%24filter,%24count}", rawUrl) {
+        public GetLicensesForAppWithBundleIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/vppTokens/getLicensesForApp(bundleId='{bundleId}'){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function getLicensesForApp
         /// </summary>
+        /// <returns>A <see cref="GetLicensesForAppWithBundleIdGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<GetLicensesForAppWithBundleIdGetResponse?> GetAsGetLicensesForAppWithBundleIdGetResponseAsync(Action<RequestConfiguration<GetLicensesForAppWithBundleIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -43,17 +45,18 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWi
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetLicensesForAppWithBundleIdGetResponse>(requestInfo, GetLicensesForAppWithBundleIdGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getLicensesForApp
         /// </summary>
+        /// <returns>A <see cref="GetLicensesForAppWithBundleIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsGetLicensesForAppWithBundleIdGetResponse instead.")]
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This method is obsolete. Use {TypeName} instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<GetLicensesForAppWithBundleIdResponse?> GetAsync(Action<RequestConfiguration<GetLicensesForAppWithBundleIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -63,14 +66,14 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWi
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetLicensesForAppWithBundleIdResponse>(requestInfo, GetLicensesForAppWithBundleIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getLicensesForApp
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +90,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWi
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="GetLicensesForAppWithBundleIdRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public GetLicensesForAppWithBundleIdRequestBuilder WithUrl(string rawUrl) {
             return new GetLicensesForAppWithBundleIdRequestBuilder(rawUrl, RequestAdapter);

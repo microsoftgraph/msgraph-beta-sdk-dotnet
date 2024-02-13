@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sourceType", value); }
         }
         /// <summary>
-        /// Instantiates a new teamsAppDashboardCardContentSource and sets the default values.
+        /// Instantiates a new <see cref="TeamsAppDashboardCardContentSource"/> and sets the default values.
         /// </summary>
         public TeamsAppDashboardCardContentSource() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -57,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="TeamsAppDashboardCardContentSource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static TeamsAppDashboardCardContentSource CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -65,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"botConfiguration", n => { BotConfiguration = n.GetObjectValue<TeamsAppDashboardCardBotConfiguration>(TeamsAppDashboardCardBotConfiguration.CreateFromDiscriminatorValue); } },

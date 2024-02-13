@@ -15,14 +15,14 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.GetPasswordSingleSignOnCre
     /// </summary>
     public class GetPasswordSingleSignOnCredentialsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new GetPasswordSingleSignOnCredentialsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GetPasswordSingleSignOnCredentialsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public GetPasswordSingleSignOnCredentialsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/getPasswordSingleSignOnCredentials", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new GetPasswordSingleSignOnCredentialsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GetPasswordSingleSignOnCredentialsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -32,9 +32,11 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.GetPasswordSingleSignOnCre
         /// Get a list of single sign-on credentials using a password for a user or group.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-getpasswordsinglesignoncredentials?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <see cref="PasswordSingleSignOnCredentialSet"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<PasswordSingleSignOnCredentialSet?> PostAsync(GetPasswordSingleSignOnCredentialsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -45,14 +47,14 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.GetPasswordSingleSignOnCre
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<PasswordSingleSignOnCredentialSet>(requestInfo, PasswordSingleSignOnCredentialSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of single sign-on credentials using a password for a user or group.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,6 +74,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.GetPasswordSingleSignOnCre
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="GetPasswordSingleSignOnCredentialsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public GetPasswordSingleSignOnCredentialsRequestBuilder WithUrl(string rawUrl) {
             return new GetPasswordSingleSignOnCredentialsRequestBuilder(rawUrl, RequestAdapter);

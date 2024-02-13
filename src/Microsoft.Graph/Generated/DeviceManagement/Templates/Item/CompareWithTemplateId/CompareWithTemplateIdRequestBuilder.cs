@@ -14,26 +14,28 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CompareWithTempla
     /// </summary>
     public class CompareWithTemplateIdRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new CompareWithTemplateIdRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CompareWithTemplateIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="templateId">Usage: templateId=&apos;{templateId}&apos;</param>
-        public CompareWithTemplateIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string templateId = "") : base(requestAdapter, "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/compare(templateId='{templateId}'){?%24top,%24skip,%24search,%24filter,%24count}", pathParameters) {
+        public CompareWithTemplateIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string templateId = "") : base(requestAdapter, "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/compare(templateId='{templateId}'){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(templateId)) PathParameters.Add("templateId", templateId);
         }
         /// <summary>
-        /// Instantiates a new CompareWithTemplateIdRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CompareWithTemplateIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CompareWithTemplateIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/compare(templateId='{templateId}'){?%24top,%24skip,%24search,%24filter,%24count}", rawUrl) {
+        public CompareWithTemplateIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/templates/{deviceManagementTemplate%2Did}/compare(templateId='{templateId}'){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function compare
         /// </summary>
+        /// <returns>A <see cref="CompareWithTemplateIdGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<CompareWithTemplateIdGetResponse?> GetAsCompareWithTemplateIdGetResponseAsync(Action<RequestConfiguration<CompareWithTemplateIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -43,17 +45,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CompareWithTempla
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CompareWithTemplateIdGetResponse>(requestInfo, CompareWithTemplateIdGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function compare
         /// </summary>
+        /// <returns>A <see cref="CompareWithTemplateIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsCompareWithTemplateIdGetResponse instead.")]
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This method is obsolete. Use {TypeName} instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<CompareWithTemplateIdResponse?> GetAsync(Action<RequestConfiguration<CompareWithTemplateIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -63,14 +66,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CompareWithTempla
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CompareWithTemplateIdResponse>(requestInfo, CompareWithTemplateIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function compare
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +90,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CompareWithTempla
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="CompareWithTemplateIdRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public CompareWithTemplateIdRequestBuilder WithUrl(string rawUrl) {
             return new CompareWithTemplateIdRequestBuilder(rawUrl, RequestAdapter);

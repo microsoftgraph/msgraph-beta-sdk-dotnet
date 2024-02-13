@@ -156,8 +156,43 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("storageRequireEncryption"); }
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
+        /// <summary>Minutes of inactivity before the screen times out.</summary>
+        public int? WorkProfileInactiveBeforeScreenLockInMinutes {
+            get { return BackingStore?.Get<int?>("workProfileInactiveBeforeScreenLockInMinutes"); }
+            set { BackingStore?.Set("workProfileInactiveBeforeScreenLockInMinutes", value); }
+        }
+        /// <summary>Number of days before the work profile password expires. Valid values 1 to 365</summary>
+        public int? WorkProfilePasswordExpirationInDays {
+            get { return BackingStore?.Get<int?>("workProfilePasswordExpirationInDays"); }
+            set { BackingStore?.Set("workProfilePasswordExpirationInDays", value); }
+        }
+        /// <summary>Minimum length of work profile password. Valid values 4 to 16</summary>
+        public int? WorkProfilePasswordMinimumLength {
+            get { return BackingStore?.Get<int?>("workProfilePasswordMinimumLength"); }
+            set { BackingStore?.Set("workProfilePasswordMinimumLength", value); }
+        }
+        /// <summary>Android For Work required password type.</summary>
+        public AndroidForWorkRequiredPasswordType? WorkProfilePasswordRequiredType {
+            get { return BackingStore?.Get<AndroidForWorkRequiredPasswordType?>("workProfilePasswordRequiredType"); }
+            set { BackingStore?.Set("workProfilePasswordRequiredType", value); }
+        }
+        /// <summary>Number of previous work profile passwords to block. Valid values 0 to 24</summary>
+        public int? WorkProfilePreviousPasswordBlockCount {
+            get { return BackingStore?.Get<int?>("workProfilePreviousPasswordBlockCount"); }
+            set { BackingStore?.Set("workProfilePreviousPasswordBlockCount", value); }
+        }
+        /// <summary>The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.</summary>
+        public AndroidRequiredPasswordComplexity? WorkProfileRequiredPasswordComplexity {
+            get { return BackingStore?.Get<AndroidRequiredPasswordComplexity?>("workProfileRequiredPasswordComplexity"); }
+            set { BackingStore?.Set("workProfileRequiredPasswordComplexity", value); }
+        }
+        /// <summary>Password is required or not for work profile</summary>
+        public bool? WorkProfileRequirePassword {
+            get { return BackingStore?.Get<bool?>("workProfileRequirePassword"); }
+            set { BackingStore?.Set("workProfileRequirePassword", value); }
+        }
         /// <summary>
-        /// Instantiates a new androidForWorkCompliancePolicy and sets the default values.
+        /// Instantiates a new <see cref="AndroidForWorkCompliancePolicy"/> and sets the default values.
         /// </summary>
         public AndroidForWorkCompliancePolicy() : base() {
             OdataType = "#microsoft.graph.androidForWorkCompliancePolicy";
@@ -165,6 +200,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="AndroidForWorkCompliancePolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new AndroidForWorkCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -173,6 +209,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"deviceThreatProtectionEnabled", n => { DeviceThreatProtectionEnabled = n.GetBoolValue(); } },
@@ -199,6 +236,13 @@ namespace Microsoft.Graph.Beta.Models {
                 {"securityRequireVerifyApps", n => { SecurityRequireVerifyApps = n.GetBoolValue(); } },
                 {"securityRequiredAndroidSafetyNetEvaluationType", n => { SecurityRequiredAndroidSafetyNetEvaluationType = n.GetEnumValue<AndroidSafetyNetEvaluationType>(); } },
                 {"storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
+                {"workProfileInactiveBeforeScreenLockInMinutes", n => { WorkProfileInactiveBeforeScreenLockInMinutes = n.GetIntValue(); } },
+                {"workProfilePasswordExpirationInDays", n => { WorkProfilePasswordExpirationInDays = n.GetIntValue(); } },
+                {"workProfilePasswordMinimumLength", n => { WorkProfilePasswordMinimumLength = n.GetIntValue(); } },
+                {"workProfilePasswordRequiredType", n => { WorkProfilePasswordRequiredType = n.GetEnumValue<AndroidForWorkRequiredPasswordType>(); } },
+                {"workProfilePreviousPasswordBlockCount", n => { WorkProfilePreviousPasswordBlockCount = n.GetIntValue(); } },
+                {"workProfileRequirePassword", n => { WorkProfileRequirePassword = n.GetBoolValue(); } },
+                {"workProfileRequiredPasswordComplexity", n => { WorkProfileRequiredPasswordComplexity = n.GetEnumValue<AndroidRequiredPasswordComplexity>(); } },
             };
         }
         /// <summary>
@@ -232,6 +276,13 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("securityRequireUpToDateSecurityProviders", SecurityRequireUpToDateSecurityProviders);
             writer.WriteBoolValue("securityRequireVerifyApps", SecurityRequireVerifyApps);
             writer.WriteBoolValue("storageRequireEncryption", StorageRequireEncryption);
+            writer.WriteIntValue("workProfileInactiveBeforeScreenLockInMinutes", WorkProfileInactiveBeforeScreenLockInMinutes);
+            writer.WriteIntValue("workProfilePasswordExpirationInDays", WorkProfilePasswordExpirationInDays);
+            writer.WriteIntValue("workProfilePasswordMinimumLength", WorkProfilePasswordMinimumLength);
+            writer.WriteEnumValue<AndroidForWorkRequiredPasswordType>("workProfilePasswordRequiredType", WorkProfilePasswordRequiredType);
+            writer.WriteIntValue("workProfilePreviousPasswordBlockCount", WorkProfilePreviousPasswordBlockCount);
+            writer.WriteEnumValue<AndroidRequiredPasswordComplexity>("workProfileRequiredPasswordComplexity", WorkProfileRequiredPasswordComplexity);
+            writer.WriteBoolValue("workProfileRequirePassword", WorkProfileRequirePassword);
         }
     }
 }

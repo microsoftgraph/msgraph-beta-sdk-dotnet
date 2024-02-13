@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new androidDeviceOwnerEnterpriseWiFiConfiguration and sets the default values.
+        /// Instantiates a new <see cref="AndroidDeviceOwnerEnterpriseWiFiConfiguration"/> and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerEnterpriseWiFiConfiguration() : base() {
             OdataType = "#microsoft.graph.androidDeviceOwnerEnterpriseWiFiConfiguration";
@@ -108,6 +108,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="AndroidDeviceOwnerEnterpriseWiFiConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new AndroidDeviceOwnerEnterpriseWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -116,6 +117,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<WiFiAuthenticationMethod>(); } },

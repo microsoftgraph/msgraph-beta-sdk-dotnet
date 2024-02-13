@@ -9,14 +9,14 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Identity associated with the endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? AssociatedIdentity {
-            get { return BackingStore?.Get<UserIdentity?>("associatedIdentity"); }
+        public Microsoft.Graph.Beta.Models.Identity? AssociatedIdentity {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity?>("associatedIdentity"); }
             set { BackingStore?.Set("associatedIdentity", value); }
         }
 #nullable restore
 #else
-        public UserIdentity AssociatedIdentity {
-            get { return BackingStore?.Get<UserIdentity>("associatedIdentity"); }
+        public Microsoft.Graph.Beta.Models.Identity AssociatedIdentity {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity>("associatedIdentity"); }
             set { BackingStore?.Set("associatedIdentity", value); }
         }
 #endif
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         }
 #endif
         /// <summary>
-        /// Instantiates a new participantEndpoint and sets the default values.
+        /// Instantiates a new <see cref="ParticipantEndpoint"/> and sets the default values.
         /// </summary>
         public ParticipantEndpoint() : base() {
             OdataType = "#microsoft.graph.callRecords.participantEndpoint";
@@ -95,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="ParticipantEndpoint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new ParticipantEndpoint CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -103,9 +104,10 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"associatedIdentity", n => { AssociatedIdentity = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                {"associatedIdentity", n => { AssociatedIdentity = n.GetObjectValue<Microsoft.Graph.Beta.Models.Identity>(Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
                 {"cpuCoresCount", n => { CpuCoresCount = n.GetIntValue(); } },
                 {"cpuName", n => { CpuName = n.GetStringValue(); } },
                 {"cpuProcessorSpeedInMhz", n => { CpuProcessorSpeedInMhz = n.GetIntValue(); } },
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<UserIdentity>("associatedIdentity", AssociatedIdentity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Identity>("associatedIdentity", AssociatedIdentity);
             writer.WriteIntValue("cpuCoresCount", CpuCoresCount);
             writer.WriteStringValue("cpuName", CpuName);
             writer.WriteIntValue("cpuProcessorSpeedInMhz", CpuProcessorSpeedInMhz);

@@ -129,6 +129,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("shifts", value); }
         }
 #endif
+        /// <summary>The shiftsRoleDefinitions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<ShiftsRoleDefinition>? ShiftsRoleDefinitions {
+            get { return BackingStore?.Get<List<ShiftsRoleDefinition>?>("shiftsRoleDefinitions"); }
+            set { BackingStore?.Set("shiftsRoleDefinitions", value); }
+        }
+#nullable restore
+#else
+        public List<ShiftsRoleDefinition> ShiftsRoleDefinitions {
+            get { return BackingStore?.Get<List<ShiftsRoleDefinition>>("shiftsRoleDefinitions"); }
+            set { BackingStore?.Set("shiftsRoleDefinitions", value); }
+        }
+#endif
         /// <summary>Indicates the start day of the week.</summary>
         public DayOfWeekObject? StartDayOfWeek {
             get { return BackingStore?.Get<DayOfWeekObject?>("startDayOfWeek"); }
@@ -264,6 +278,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="Schedule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new Schedule CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -272,6 +287,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"activitiesIncludedWhenCopyingShiftsEnabled", n => { ActivitiesIncludedWhenCopyingShiftsEnabled = n.GetBoolValue(); } },
@@ -286,6 +302,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"provisionStatusCode", n => { ProvisionStatusCode = n.GetStringValue(); } },
                 {"schedulingGroups", n => { SchedulingGroups = n.GetCollectionOfObjectValues<SchedulingGroup>(SchedulingGroup.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"shifts", n => { Shifts = n.GetCollectionOfObjectValues<Shift>(Shift.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"shiftsRoleDefinitions", n => { ShiftsRoleDefinitions = n.GetCollectionOfObjectValues<ShiftsRoleDefinition>(ShiftsRoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"startDayOfWeek", n => { StartDayOfWeek = n.GetEnumValue<DayOfWeekObject>(); } },
                 {"swapShiftsChangeRequests", n => { SwapShiftsChangeRequests = n.GetCollectionOfObjectValues<SwapShiftsChangeRequest>(SwapShiftsChangeRequest.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"swapShiftsRequestsEnabled", n => { SwapShiftsRequestsEnabled = n.GetBoolValue(); } },
@@ -317,6 +334,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("openShiftsEnabled", OpenShiftsEnabled);
             writer.WriteCollectionOfObjectValues<SchedulingGroup>("schedulingGroups", SchedulingGroups);
             writer.WriteCollectionOfObjectValues<Shift>("shifts", Shifts);
+            writer.WriteCollectionOfObjectValues<ShiftsRoleDefinition>("shiftsRoleDefinitions", ShiftsRoleDefinitions);
             writer.WriteEnumValue<DayOfWeekObject>("startDayOfWeek", StartDayOfWeek);
             writer.WriteCollectionOfObjectValues<SwapShiftsChangeRequest>("swapShiftsChangeRequests", SwapShiftsChangeRequests);
             writer.WriteBoolValue("swapShiftsRequestsEnabled", SwapShiftsRequestsEnabled);

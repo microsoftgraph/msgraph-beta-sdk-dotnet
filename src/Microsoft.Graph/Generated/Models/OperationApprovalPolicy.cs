@@ -61,6 +61,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<OperationApprovalPolicyPlatform?>("policyPlatform"); }
             set { BackingStore?.Set("policyPlatform", value); }
         }
+        /// <summary>Indicates areas of the Intune UX that could support MAA UX for the current logged in user. This property is required, and is defined by the user in order to correctly show the expected experience.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public OperationApprovalPolicySet? PolicySet {
+            get { return BackingStore?.Get<OperationApprovalPolicySet?>("policySet"); }
+            set { BackingStore?.Set("policySet", value); }
+        }
+#nullable restore
+#else
+        public OperationApprovalPolicySet PolicySet {
+            get { return BackingStore?.Get<OperationApprovalPolicySet>("policySet"); }
+            set { BackingStore?.Set("policySet", value); }
+        }
+#endif
         /// <summary>The set of available policy types that can be configured for approval. There is no default value for this enum, indicating that the policy type must always be chosen.</summary>
         public OperationApprovalPolicyType? PolicyType {
             get { return BackingStore?.Get<OperationApprovalPolicyType?>("policyType"); }
@@ -69,6 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="OperationApprovalPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new OperationApprovalPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -77,6 +92,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"approverGroupIds", n => { ApproverGroupIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -84,6 +100,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"policyPlatform", n => { PolicyPlatform = n.GetEnumValue<OperationApprovalPolicyPlatform>(); } },
+                {"policySet", n => { PolicySet = n.GetObjectValue<OperationApprovalPolicySet>(OperationApprovalPolicySet.CreateFromDiscriminatorValue); } },
                 {"policyType", n => { PolicyType = n.GetEnumValue<OperationApprovalPolicyType>(); } },
             };
         }
@@ -98,6 +115,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteEnumValue<OperationApprovalPolicyPlatform>("policyPlatform", PolicyPlatform);
+            writer.WriteObjectValue<OperationApprovalPolicySet>("policySet", PolicySet);
             writer.WriteEnumValue<OperationApprovalPolicyType>("policyType", PolicyType);
         }
     }

@@ -337,7 +337,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("wallpaperModificationBlocked", value); }
         }
         /// <summary>
-        /// Instantiates a new macOSGeneralDeviceConfiguration and sets the default values.
+        /// Instantiates a new <see cref="MacOSGeneralDeviceConfiguration"/> and sets the default values.
         /// </summary>
         public MacOSGeneralDeviceConfiguration() : base() {
             OdataType = "#microsoft.graph.macOSGeneralDeviceConfiguration";
@@ -345,6 +345,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="MacOSGeneralDeviceConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new MacOSGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -353,6 +354,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"activationLockWhenSupervisedAllowed", n => { ActivationLockWhenSupervisedAllowed = n.GetBoolValue(); } },

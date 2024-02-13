@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalInformation", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date, time and timezone when the Service was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>True if an anonymousJoinWebUrl(webrtcUrl) will be generated for the appointment booked for this service.</summary>
+        /// <summary>Indicates if an anonymousJoinWebUrl(webrtcUrl) is generated for the appointment booked for this service. The default value is false.</summary>
         public bool? IsAnonymousJoinEnabled {
             get { return BackingStore?.Get<bool?>("isAnonymousJoinEnabled"); }
             set { BackingStore?.Set("isAnonymousJoinEnabled", value); }
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isHiddenFromCustomers"); }
             set { BackingStore?.Set("isHiddenFromCustomers", value); }
         }
-        /// <summary>True indicates that the appointments for the service will be held online. Default value is false.</summary>
+        /// <summary>Indicates that the appointments for the service are held online. The default value is false.</summary>
         public bool? IsLocationOnline {
             get { return BackingStore?.Get<bool?>("isLocationOnline"); }
             set { BackingStore?.Set("isLocationOnline", value); }
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("languageTag", value); }
         }
 #endif
-        /// <summary>The lastUpdatedDateTime property</summary>
+        /// <summary>The date, time and timezone when the Service  was last updated.</summary>
         public DateTimeOffset? LastUpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
@@ -210,7 +210,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new bookingService and sets the default values.
+        /// Instantiates a new <see cref="BookingService"/> and sets the default values.
         /// </summary>
         public BookingService() : base() {
             OdataType = "#microsoft.graph.bookingService";
@@ -218,6 +218,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="BookingService"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new BookingService CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -226,6 +227,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },

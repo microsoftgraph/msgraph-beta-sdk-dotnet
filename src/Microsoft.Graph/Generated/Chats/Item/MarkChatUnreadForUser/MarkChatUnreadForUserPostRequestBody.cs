@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.MarkChatUnreadForUser {
         }
 #endif
         /// <summary>
-        /// Instantiates a new markChatUnreadForUserPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="MarkChatUnreadForUserPostRequestBody"/> and sets the default values.
         /// </summary>
         public MarkChatUnreadForUserPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -58,6 +58,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.MarkChatUnreadForUser {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="MarkChatUnreadForUserPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static MarkChatUnreadForUserPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -66,6 +67,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.MarkChatUnreadForUser {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"lastMessageReadDateTime", n => { LastMessageReadDateTime = n.GetDateTimeOffsetValue(); } },

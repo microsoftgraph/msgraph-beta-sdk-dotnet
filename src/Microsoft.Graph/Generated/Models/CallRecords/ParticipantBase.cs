@@ -9,20 +9,21 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>The identity of the call participant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? Identity {
-            get { return BackingStore?.Get<UserIdentity?>("identity"); }
+        public Microsoft.Graph.Beta.Models.CommunicationsIdentitySet? Identity {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CommunicationsIdentitySet?>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #nullable restore
 #else
-        public UserIdentity Identity {
-            get { return BackingStore?.Get<UserIdentity>("identity"); }
+        public Microsoft.Graph.Beta.Models.CommunicationsIdentitySet Identity {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CommunicationsIdentitySet>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="ParticipantBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new ParticipantBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -36,9 +37,10 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"identity", n => { Identity = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                {"identity", n => { Identity = n.GetObjectValue<Microsoft.Graph.Beta.Models.CommunicationsIdentitySet>(Microsoft.Graph.Beta.Models.CommunicationsIdentitySet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<UserIdentity>("identity", Identity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CommunicationsIdentitySet>("identity", Identity);
         }
     }
 }

@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath {
             new TermStoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new GetByPathWithPathRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GetByPathWithPathRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="path">Usage: path=&apos;{path}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath {
             if (!string.IsNullOrWhiteSpace(path)) PathParameters.Add("path", path);
         }
         /// <summary>
-        /// Instantiates a new GetByPathWithPathRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GetByPathWithPathRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -126,6 +126,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath {
         /// <summary>
         /// Provides operations to call the getActivitiesByInterval method.
         /// </summary>
+        /// <returns>A <see cref="GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder"/></returns>
         /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
         /// <param name="interval">Usage: interval=&apos;{interval}&apos;</param>
         /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
@@ -138,6 +139,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath {
         /// <summary>
         /// Provides operations to call the getApplicableContentTypesForList method.
         /// </summary>
+        /// <returns>A <see cref="GetApplicableContentTypesForListWithListIdRequestBuilder"/></returns>
         /// <param name="listId">Usage: listId=&apos;{listId}&apos;</param>
         public GetApplicableContentTypesForListWithListIdRequestBuilder GetApplicableContentTypesForListWithListId(string listId) {
             if(string.IsNullOrEmpty(listId)) throw new ArgumentNullException(nameof(listId));
@@ -146,8 +148,10 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath {
         /// <summary>
         /// Invoke function getByPath
         /// </summary>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Site"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.Site?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -157,14 +161,14 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Site>(requestInfo, Microsoft.Graph.Beta.Models.Site.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the getByPath method.
         /// </summary>
+        /// <returns>A <see cref="GetByPathWithPath1RequestBuilder"/></returns>
         /// <param name="path1">Usage: path=&apos;{path1}&apos;</param>
         public GetByPathWithPath1RequestBuilder GetByPathWithPath1(string path1) {
             if(string.IsNullOrEmpty(path1)) throw new ArgumentNullException(nameof(path1));
@@ -173,6 +177,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath {
         /// <summary>
         /// Invoke function getByPath
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -189,6 +194,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="GetByPathWithPathRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public GetByPathWithPathRequestBuilder WithUrl(string rawUrl) {
             return new GetByPathWithPathRequestBuilder(rawUrl, RequestAdapter);

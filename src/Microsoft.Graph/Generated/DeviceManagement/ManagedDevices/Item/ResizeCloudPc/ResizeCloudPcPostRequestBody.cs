@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ResizeCloudP
         }
 #endif
         /// <summary>
-        /// Instantiates a new resizeCloudPcPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="ResizeCloudPcPostRequestBody"/> and sets the default values.
         /// </summary>
         public ResizeCloudPcPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -38,6 +38,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ResizeCloudP
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="ResizeCloudPcPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static ResizeCloudPcPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -46,6 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ResizeCloudP
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"targetServicePlanId", n => { TargetServicePlanId = n.GetStringValue(); } },

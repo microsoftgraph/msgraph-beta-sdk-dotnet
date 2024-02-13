@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The managedType property</summary>
+        /// <summary>Indicates the provisioning policy associated with Microsoft Managed Desktop settings. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue. The default value is notManaged.</summary>
         public MicrosoftManagedDesktopType? ManagedType {
             get { return BackingStore?.Get<MicrosoftManagedDesktopType?>("managedType"); }
             set { BackingStore?.Set("managedType", value); }
@@ -47,13 +47,13 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("profile", value); }
         }
 #endif
-        /// <summary>Indicates whether the provisioning policy enables Microsoft Managed Desktop. It indicates the type of plan under which the device is managed if the provisioning policy is enabled. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue.</summary>
+        /// <summary>The type property</summary>
         public MicrosoftManagedDesktopType? Type {
             get { return BackingStore?.Get<MicrosoftManagedDesktopType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new microsoftManagedDesktop and sets the default values.
+        /// Instantiates a new <see cref="MicrosoftManagedDesktop"/> and sets the default values.
         /// </summary>
         public MicrosoftManagedDesktop() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -62,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="MicrosoftManagedDesktop"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static MicrosoftManagedDesktop CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -70,6 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"managedType", n => { ManagedType = n.GetEnumValue<MicrosoftManagedDesktopType>(); } },

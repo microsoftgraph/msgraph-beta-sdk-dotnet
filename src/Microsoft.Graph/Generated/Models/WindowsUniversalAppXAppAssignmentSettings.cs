@@ -9,13 +9,13 @@ namespace Microsoft.Graph.Beta.Models {
     /// Contains properties used when assigning a Windows Universal AppX mobile app to a group.
     /// </summary>
     public class WindowsUniversalAppXAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
-        /// <summary>If true, uses device execution context for Windows Universal AppX mobile app. Device-context install is not allowed when this type of app is targeted with Available intent. Defaults to false.</summary>
+        /// <summary>Whether or not to use device execution context for Windows Universal AppX mobile app.</summary>
         public bool? UseDeviceContext {
             get { return BackingStore?.Get<bool?>("useDeviceContext"); }
             set { BackingStore?.Set("useDeviceContext", value); }
         }
         /// <summary>
-        /// Instantiates a new windowsUniversalAppXAppAssignmentSettings and sets the default values.
+        /// Instantiates a new <see cref="WindowsUniversalAppXAppAssignmentSettings"/> and sets the default values.
         /// </summary>
         public WindowsUniversalAppXAppAssignmentSettings() : base() {
             OdataType = "#microsoft.graph.windowsUniversalAppXAppAssignmentSettings";
@@ -23,6 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="WindowsUniversalAppXAppAssignmentSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new WindowsUniversalAppXAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -31,6 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"useDeviceContext", n => { UseDeviceContext = n.GetBoolValue(); } },

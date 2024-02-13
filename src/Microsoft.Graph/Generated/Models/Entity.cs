@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new entity and sets the default values.
+        /// Instantiates a new <see cref="Entity"/> and sets the default values.
         /// </summary>
         public Entity() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -66,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="Entity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static Entity CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -972,6 +973,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.managedAppStatusRaw" => new ManagedAppStatusRaw(),
                 "#microsoft.graph.managedDevice" => new ManagedDevice(),
                 "#microsoft.graph.managedDeviceCertificateState" => new ManagedDeviceCertificateState(),
+                "#microsoft.graph.managedDeviceCleanupRule" => new ManagedDeviceCleanupRule(),
                 "#microsoft.graph.managedDeviceEncryptionState" => new ManagedDeviceEncryptionState(),
                 "#microsoft.graph.managedDeviceMobileAppConfiguration" => new ManagedDeviceMobileAppConfiguration(),
                 "#microsoft.graph.managedDeviceMobileAppConfigurationAssignment" => new ManagedDeviceMobileAppConfigurationAssignment(),
@@ -1521,6 +1523,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.sharepointSettings" => new SharepointSettings(),
                 "#microsoft.graph.shift" => new Shift(),
                 "#microsoft.graph.shiftPreferences" => new ShiftPreferences(),
+                "#microsoft.graph.shiftsRoleDefinition" => new ShiftsRoleDefinition(),
                 "#microsoft.graph.signIn" => new SignIn(),
                 "#microsoft.graph.simulation" => new Simulation(),
                 "#microsoft.graph.simulationAutomation" => new SimulationAutomation(),
@@ -1944,6 +1947,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"id", n => { Id = n.GetStringValue(); } },

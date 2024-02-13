@@ -15,24 +15,26 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.ConditionalA
     /// </summary>
     public class ConditionalAccessPolicyItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new ConditionalAccessPolicyItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ConditionalAccessPolicyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConditionalAccessPolicyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/filteringProfiles/{filteringProfile%2Did}/conditionalAccessPolicies/{conditionalAccessPolicy%2Did}{?%24select,%24expand}", pathParameters) {
+        public ConditionalAccessPolicyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/filteringProfiles/{filteringProfile%2Did}/conditionalAccessPolicies/{conditionalAccessPolicy%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ConditionalAccessPolicyItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ConditionalAccessPolicyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConditionalAccessPolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/filteringProfiles/{filteringProfile%2Did}/conditionalAccessPolicies/{conditionalAccessPolicy%2Did}{?%24select,%24expand}", rawUrl) {
+        public ConditionalAccessPolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/filteringProfiles/{filteringProfile%2Did}/conditionalAccessPolicies/{conditionalAccessPolicy%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// A set of associated policies defined to regulate access to resources or systems based on specific conditions. Automatically expanded.
         /// </summary>
+        /// <returns>A <see cref="ConditionalAccessPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ConditionalAccessPolicy?> GetAsync(Action<RequestConfiguration<ConditionalAccessPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -42,14 +44,14 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.ConditionalA
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ConditionalAccessPolicy>(requestInfo, ConditionalAccessPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A set of associated policies defined to regulate access to resources or systems based on specific conditions. Automatically expanded.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +68,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item.ConditionalA
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ConditionalAccessPolicyItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ConditionalAccessPolicyItemRequestBuilder WithUrl(string rawUrl) {
             return new ConditionalAccessPolicyItemRequestBuilder(rawUrl, RequestAdapter);

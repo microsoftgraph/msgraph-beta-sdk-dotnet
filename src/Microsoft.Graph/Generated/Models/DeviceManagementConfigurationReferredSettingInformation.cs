@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Setting definition id that is being referred to a setting. Applicable for reusable setting</summary>
+        /// <summary>Setting definition id that is being referred to a setting. Applicable for reusable setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SettingDefinitionId {
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new deviceManagementConfigurationReferredSettingInformation and sets the default values.
+        /// Instantiates a new <see cref="DeviceManagementConfigurationReferredSettingInformation"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationReferredSettingInformation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -55,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="DeviceManagementConfigurationReferredSettingInformation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static DeviceManagementConfigurationReferredSettingInformation CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -63,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },

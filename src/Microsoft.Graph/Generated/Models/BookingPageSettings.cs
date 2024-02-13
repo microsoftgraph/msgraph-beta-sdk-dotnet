@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Custom color for bookings page. Value should be in Hex format. Example: `#123456`.</summary>
+        /// <summary>Custom color for the bookings page. The value should be in Hex format. Example: #123456.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BookingPageColorCode {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("bookingPageColorCode", value); }
         }
 #endif
-        /// <summary>The time zone of the customer. For a list of possible values, see [dateTimeTimeZone](https://learn.microsoft.com/en-us/graph/api/resources/datetimetimezone?view=graph-rest-beta).</summary>
+        /// <summary>The time zone of the customer. For a list of possible values, see dateTimeTimeZone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessTimeZone {
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("businessTimeZone", value); }
         }
 #endif
-        /// <summary>Customer consent message that is displayed in the Booking page.</summary>
+        /// <summary>The personal data collection and usage consent message in the bookings page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomerConsentMessage {
@@ -61,27 +61,27 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("customerConsentMessage", value); }
         }
 #endif
-        /// <summary>Enforcing One Time Password (OTP) during appointment creation.</summary>
+        /// <summary>Determines if the one-time password is required to create an appointment. The default value is false.</summary>
         public bool? EnforceOneTimePassword {
             get { return BackingStore?.Get<bool?>("enforceOneTimePassword"); }
             set { BackingStore?.Set("enforceOneTimePassword", value); }
         }
-        /// <summary>Enable display of business logo display on the Bookings page.</summary>
+        /// <summary>Indicates if the business logo is displayed on the bookings page. The default value is false.</summary>
         public bool? IsBusinessLogoDisplayEnabled {
             get { return BackingStore?.Get<bool?>("isBusinessLogoDisplayEnabled"); }
             set { BackingStore?.Set("isBusinessLogoDisplayEnabled", value); }
         }
-        /// <summary>Enforces customer consent on the customer consent message before appointment is booked.</summary>
+        /// <summary>Enables personal data collection and the usage consent toggle on the bookings page. The default value is false.</summary>
         public bool? IsCustomerConsentEnabled {
             get { return BackingStore?.Get<bool?>("isCustomerConsentEnabled"); }
             set { BackingStore?.Set("isCustomerConsentEnabled", value); }
         }
-        /// <summary>Disable booking page to be indexed by search engines. False by default.</summary>
+        /// <summary>Ensures that the web crawlers don&apos;t index this page. The defaults value is false.</summary>
         public bool? IsSearchEngineIndexabilityDisabled {
             get { return BackingStore?.Get<bool?>("isSearchEngineIndexabilityDisabled"); }
             set { BackingStore?.Set("isSearchEngineIndexabilityDisabled", value); }
         }
-        /// <summary>If business time zone the default value for the time slots that we show in the bookings page. False by default.</summary>
+        /// <summary>Displays the booking time slots in the business time zone. The default value is false.</summary>
         public bool? IsTimeSlotTimeZoneSetToBusinessTimeZone {
             get { return BackingStore?.Get<bool?>("isTimeSlotTimeZoneSetToBusinessTimeZone"); }
             set { BackingStore?.Set("isTimeSlotTimeZoneSetToBusinessTimeZone", value); }
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The URL of the business&apos; Privacy Policy.</summary>
+        /// <summary>RL of a webpage that provides the terms and conditions of the business. If a privacy policy isn&apos;t included, the following text appears on the bookings page as default: &apos;The policies and practices of &lt;booking business&apos;s name&gt; apply to the use of your data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrivacyPolicyWebUrl {
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("privacyPolicyWebUrl", value); }
         }
 #endif
-        /// <summary>The URL of the business&apos; Terms and Conditions.</summary>
+        /// <summary>URL of a webpage that provides the terms and conditions of the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TermsAndConditionsWebUrl {
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new bookingPageSettings and sets the default values.
+        /// Instantiates a new <see cref="BookingPageSettings"/> and sets the default values.
         /// </summary>
         public BookingPageSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -138,6 +138,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="BookingPageSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static BookingPageSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -146,6 +147,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <see cref="IDictionary<string, Action<IParseNode>>"/></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"accessControl", n => { AccessControl = n.GetEnumValue<BookingPageAccessControl>(); } },
