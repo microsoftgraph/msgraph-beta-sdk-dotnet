@@ -1070,6 +1070,20 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             set { BackingStore?.Set("macOSSoftwareUpdateAccountSummaries", value); }
         }
 #endif
+        /// <summary>Device cleanup rule V2</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule>? ManagedDeviceCleanupRules {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule>?>("managedDeviceCleanupRules"); }
+            set { BackingStore?.Set("managedDeviceCleanupRules", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule> ManagedDeviceCleanupRules {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule>>("managedDeviceCleanupRules"); }
+            set { BackingStore?.Set("managedDeviceCleanupRules", value); }
+        }
+#endif
         /// <summary>Device cleanup rule</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2493,6 +2507,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="DeviceManagement"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new DeviceManagement CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -2501,6 +2516,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"accountMoveCompletionDateTime", n => { AccountMoveCompletionDateTime = n.GetDateTimeOffsetValue(); } },
@@ -2582,6 +2598,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
                 {"lastReportAggregationDateTime", n => { LastReportAggregationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"legacyPcManangementEnabled", n => { LegacyPcManangementEnabled = n.GetBoolValue(); } },
                 {"macOSSoftwareUpdateAccountSummaries", n => { MacOSSoftwareUpdateAccountSummaries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary>(Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"managedDeviceCleanupRules", n => { ManagedDeviceCleanupRules = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule>(Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managedDeviceCleanupSettings", n => { ManagedDeviceCleanupSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings>(Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings.CreateFromDiscriminatorValue); } },
                 {"managedDeviceEncryptionStates", n => { ManagedDeviceEncryptionStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState>(Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managedDeviceOverview", n => { ManagedDeviceOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedDeviceOverview>(Microsoft.Graph.Beta.Models.ManagedDeviceOverview.CreateFromDiscriminatorValue); } },
@@ -2771,6 +2788,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IntuneBrandingProfile>("intuneBrandingProfiles", IntuneBrandingProfiles);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IosUpdateDeviceStatus>("iosUpdateStatuses", IosUpdateStatuses);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary>("macOSSoftwareUpdateAccountSummaries", MacOSSoftwareUpdateAccountSummaries);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule>("managedDeviceCleanupRules", ManagedDeviceCleanupRules);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings>("managedDeviceCleanupSettings", ManagedDeviceCleanupSettings);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState>("managedDeviceEncryptionStates", ManagedDeviceEncryptionStates);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedDeviceOverview>("managedDeviceOverview", ManagedDeviceOverview);

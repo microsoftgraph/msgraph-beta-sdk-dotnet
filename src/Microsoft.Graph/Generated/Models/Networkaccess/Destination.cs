@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<int?>("deviceCount"); }
             set { BackingStore?.Set("deviceCount", value); }
         }
+        /// <summary>The firstAccessDateTime property</summary>
+        public DateTimeOffset? FirstAccessDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("firstAccessDateTime"); }
+            set { BackingStore?.Set("firstAccessDateTime", value); }
+        }
         /// <summary>The fully qualified domain name (FQDN) of the destination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +81,21 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<int?>("port"); }
             set { BackingStore?.Set("port", value); }
         }
+        /// <summary>The threatCount property</summary>
+        public int? ThreatCount {
+            get { return BackingStore?.Get<int?>("threatCount"); }
+            set { BackingStore?.Set("threatCount", value); }
+        }
+        /// <summary>The totalBytesReceived property</summary>
+        public long? TotalBytesReceived {
+            get { return BackingStore?.Get<long?>("totalBytesReceived"); }
+            set { BackingStore?.Set("totalBytesReceived", value); }
+        }
+        /// <summary>The totalBytesSent property</summary>
+        public long? TotalBytesSent {
+            get { return BackingStore?.Get<long?>("totalBytesSent"); }
+            set { BackingStore?.Set("totalBytesSent", value); }
+        }
         /// <summary>The trafficType property</summary>
         public Microsoft.Graph.Beta.Models.Networkaccess.TrafficType? TrafficType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
@@ -92,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("userCount", value); }
         }
         /// <summary>
-        /// Instantiates a new destination and sets the default values.
+        /// Instantiates a new <see cref="Destination"/> and sets the default values.
         /// </summary>
         public Destination() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -101,6 +121,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="Destination"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static Destination CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -109,15 +130,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"deviceCount", n => { DeviceCount = n.GetIntValue(); } },
+                {"firstAccessDateTime", n => { FirstAccessDateTime = n.GetDateTimeOffsetValue(); } },
                 {"fqdn", n => { Fqdn = n.GetStringValue(); } },
                 {"ip", n => { Ip = n.GetStringValue(); } },
                 {"lastAccessDateTime", n => { LastAccessDateTime = n.GetDateTimeOffsetValue(); } },
                 {"networkingProtocol", n => { NetworkingProtocol = n.GetEnumValue<NetworkingProtocol>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"port", n => { Port = n.GetIntValue(); } },
+                {"threatCount", n => { ThreatCount = n.GetIntValue(); } },
+                {"totalBytesReceived", n => { TotalBytesReceived = n.GetLongValue(); } },
+                {"totalBytesSent", n => { TotalBytesSent = n.GetLongValue(); } },
                 {"trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
                 {"transactionCount", n => { TransactionCount = n.GetIntValue(); } },
                 {"userCount", n => { UserCount = n.GetIntValue(); } },
@@ -130,12 +156,16 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("deviceCount", DeviceCount);
+            writer.WriteDateTimeOffsetValue("firstAccessDateTime", FirstAccessDateTime);
             writer.WriteStringValue("fqdn", Fqdn);
             writer.WriteStringValue("ip", Ip);
             writer.WriteDateTimeOffsetValue("lastAccessDateTime", LastAccessDateTime);
             writer.WriteEnumValue<NetworkingProtocol>("networkingProtocol", NetworkingProtocol);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("port", Port);
+            writer.WriteIntValue("threatCount", ThreatCount);
+            writer.WriteLongValue("totalBytesReceived", TotalBytesReceived);
+            writer.WriteLongValue("totalBytesSent", TotalBytesSent);
             writer.WriteEnumValue<TrafficType>("trafficType", TrafficType);
             writer.WriteIntValue("transactionCount", TransactionCount);
             writer.WriteIntValue("userCount", UserCount);

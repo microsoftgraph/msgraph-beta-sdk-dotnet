@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Shift : ChangeTrackedEntity, IParsable {
-        /// <summary>Draft changes in the shift. Draft changes are only visible to managers. The changes are visible to employees when they are shared, which copies the changes from the draftShift to the sharedShift property.</summary>
+        /// <summary>Draft changes in the shift. Draft changes are only visible to managers. The changes are visible to employees when they&apos;re shared, which copies the changes from the draftShift to the sharedShift property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ShiftItem? DraftShift {
@@ -39,6 +39,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("schedulingGroupId", value); }
         }
 #endif
+        /// <summary>Information of the scheduling group the shift is part of.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.SchedulingGroupInfo? SchedulingGroupInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SchedulingGroupInfo?>("schedulingGroupInfo"); }
+            set { BackingStore?.Set("schedulingGroupInfo", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.SchedulingGroupInfo SchedulingGroupInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SchedulingGroupInfo>("schedulingGroupInfo"); }
+            set { BackingStore?.Set("schedulingGroupInfo", value); }
+        }
+#endif
         /// <summary>The shared version of this shift that is viewable by both employees and managers. Updates to the sharedShift property send notifications to users in the Teams client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,6 +65,20 @@ namespace Microsoft.Graph.Beta.Models {
         public ShiftItem SharedShift {
             get { return BackingStore?.Get<ShiftItem>("sharedShift"); }
             set { BackingStore?.Set("sharedShift", value); }
+        }
+#endif
+        /// <summary>Information of the team that the shift is in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public ShiftsTeamInfo? TeamInfo {
+            get { return BackingStore?.Get<ShiftsTeamInfo?>("teamInfo"); }
+            set { BackingStore?.Set("teamInfo", value); }
+        }
+#nullable restore
+#else
+        public ShiftsTeamInfo TeamInfo {
+            get { return BackingStore?.Get<ShiftsTeamInfo>("teamInfo"); }
+            set { BackingStore?.Set("teamInfo", value); }
         }
 #endif
         /// <summary>ID of the user assigned to the shift. Required.</summary>
@@ -67,8 +95,22 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userId", value); }
         }
 #endif
+        /// <summary>Information of the user assigned to the shift.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public ShiftsUserInfo? UserInfo {
+            get { return BackingStore?.Get<ShiftsUserInfo?>("userInfo"); }
+            set { BackingStore?.Set("userInfo", value); }
+        }
+#nullable restore
+#else
+        public ShiftsUserInfo UserInfo {
+            get { return BackingStore?.Get<ShiftsUserInfo>("userInfo"); }
+            set { BackingStore?.Set("userInfo", value); }
+        }
+#endif
         /// <summary>
-        /// Instantiates a new shift and sets the default values.
+        /// Instantiates a new <see cref="Shift"/> and sets the default values.
         /// </summary>
         public Shift() : base() {
             OdataType = "#microsoft.graph.shift";
@@ -76,6 +118,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="Shift"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new Shift CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -84,13 +127,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"draftShift", n => { DraftShift = n.GetObjectValue<ShiftItem>(ShiftItem.CreateFromDiscriminatorValue); } },
                 {"isStagedForDeletion", n => { IsStagedForDeletion = n.GetBoolValue(); } },
                 {"schedulingGroupId", n => { SchedulingGroupId = n.GetStringValue(); } },
+                {"schedulingGroupInfo", n => { SchedulingGroupInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.SchedulingGroupInfo>(Microsoft.Graph.Beta.Models.SchedulingGroupInfo.CreateFromDiscriminatorValue); } },
                 {"sharedShift", n => { SharedShift = n.GetObjectValue<ShiftItem>(ShiftItem.CreateFromDiscriminatorValue); } },
+                {"teamInfo", n => { TeamInfo = n.GetObjectValue<ShiftsTeamInfo>(ShiftsTeamInfo.CreateFromDiscriminatorValue); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
+                {"userInfo", n => { UserInfo = n.GetObjectValue<ShiftsUserInfo>(ShiftsUserInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

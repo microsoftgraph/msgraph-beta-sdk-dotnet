@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("enrollmentType", value); }
         }
 #endif
-        /// <summary>Contains extension attributes 1-15 for the device. The individual extension attributes are not selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Microsoft Entra ID. Supports $filter (eq, not, startsWith, and eq on null values).</summary>
+        /// <summary>Contains extension attributes 1-15 for the device. The individual extension attributes aren&apos;t selectable. These properties are mastered in cloud and can be set during creation or update of a device object in Microsoft Entra ID. Supports $filter (eq, not, startsWith, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public OnPremisesExtensionAttributes? ExtensionAttributes {
@@ -256,7 +256,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managementType", value); }
         }
 #endif
-        /// <summary>Manufacturer of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.</summary>
+        /// <summary>Manufacturer of the device. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Manufacturer {
@@ -298,7 +298,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("memberOf", value); }
         }
 #endif
-        /// <summary>Model of the device. Only returned if the user signs in with a Microsoft account as part of Project Rome.</summary>
+        /// <summary>Model of the device. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Model {
@@ -495,7 +495,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
 #endif
-        /// <summary>Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more details, see Introduction to device management in Microsoft Entra ID.</summary>
+        /// <summary>Type of trust for the joined device. Read-only. Possible values: Workplace (indicates bring your own personal devices), AzureAd (Cloud only joined devices), ServerAd (on-premises domain joined devices joined to Microsoft Entra ID). For more information, see Introduction to device management in Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TrustType {
@@ -524,7 +524,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new device and sets the default values.
+        /// Instantiates a new <see cref="Device"/> and sets the default values.
         /// </summary>
         public Device() : base() {
             OdataType = "#microsoft.graph.device";
@@ -532,6 +532,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="Device"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new Device CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -540,6 +541,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"accountEnabled", n => { AccountEnabled = n.GetBoolValue(); } },

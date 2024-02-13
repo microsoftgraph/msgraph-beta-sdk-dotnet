@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class DetectionRule : ProtectionRule, IParsable {
-        /// <summary>The detectionAction property</summary>
+        /// <summary>Complex type representing the actions taken when a detection is made by this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Security.DetectionAction? DetectionAction {
@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("detectionAction", value); }
         }
 #endif
-        /// <summary>The detectorId property</summary>
+        /// <summary>The ID of the detector that triggered the alert. Also see the &apos;detectorId&apos; field in microsoft.graph.security.alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DetectorId {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("detectorId", value); }
         }
 #endif
-        /// <summary>The lastRunDetails property</summary>
+        /// <summary>Complex type holding details about the last run of this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RunDetails? LastRunDetails {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("lastRunDetails", value); }
         }
 #endif
-        /// <summary>The queryCondition property</summary>
+        /// <summary>Complex type holding data about the advanced hunting query of this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Security.QueryCondition? QueryCondition {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("queryCondition", value); }
         }
 #endif
-        /// <summary>The schedule property</summary>
+        /// <summary>Complex type holding data about the triggering schedule of this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RuleSchedule? Schedule {
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new detectionRule and sets the default values.
+        /// Instantiates a new <see cref="DetectionRule"/> and sets the default values.
         /// </summary>
         public DetectionRule() : base() {
             OdataType = "#microsoft.graph.security.detectionRule";
@@ -85,6 +85,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="DetectionRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new DetectionRule CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -93,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"detectionAction", n => { DetectionAction = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.DetectionAction>(Microsoft.Graph.Beta.Models.Security.DetectionAction.CreateFromDiscriminatorValue); } },

@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl.SendVirtu
             set { BackingStore?.Set("remindBeforeTimeInMinutesType", value); }
         }
         /// <summary>
-        /// Instantiates a new sendVirtualAppointmentReminderSmsPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="SendVirtualAppointmentReminderSmsPostRequestBody"/> and sets the default values.
         /// </summary>
         public SendVirtualAppointmentReminderSmsPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -44,6 +44,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl.SendVirtu
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="SendVirtualAppointmentReminderSmsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static SendVirtualAppointmentReminderSmsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -52,6 +53,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetingsWithJoinWebUrl.SendVirtu
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"attendees", n => { Attendees = n.GetCollectionOfObjectValues<AttendeeNotificationInfo>(AttendeeNotificationInfo.CreateFromDiscriminatorValue)?.ToList(); } },

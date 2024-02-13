@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The errorCode property</summary>
+        /// <summary>Error code of the most recent run that encountered an error. The possible values are: queryExecutionFailed, queryExecutionThrottling, queryExceededResultSize, queryLimitsExceeded, queryTimeout, alertCreationFailed, alertReportNotFound, partialRowsFailed, unknownFutureValue.</summary>
         public HuntingRuleErrorCode? ErrorCode {
             get { return BackingStore?.Get<HuntingRuleErrorCode?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
-        /// <summary>The failureReason property</summary>
+        /// <summary>Reason for failure when the custom detection last ran and failed. See the table below.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FailureReason {
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("failureReason", value); }
         }
 #endif
-        /// <summary>The lastRunDateTime property</summary>
+        /// <summary>Timestamp when the custom detection was last run.</summary>
         public DateTimeOffset? LastRunDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRunDateTime"); }
             set { BackingStore?.Set("lastRunDateTime", value); }
@@ -52,13 +52,13 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Status of custom detection when it was last run. The possible values are: running, completed, failed, partiallyFailed, unknownFutureValue.</summary>
         public HuntingRuleRunStatus? Status {
             get { return BackingStore?.Get<HuntingRuleRunStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new runDetails and sets the default values.
+        /// Instantiates a new <see cref="RunDetails"/> and sets the default values.
         /// </summary>
         public RunDetails() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -67,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="RunDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static RunDetails CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -75,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"errorCode", n => { ErrorCode = n.GetEnumValue<HuntingRuleErrorCode>(); } },

@@ -22,5 +22,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        /// <summary>Set to expire when Approved for is elapsed or ExpireDate is elapsed, whichever is sooner.</summary>
+        [EnumMember(Value = "revoked")]
+        Revoked,
     }
 }

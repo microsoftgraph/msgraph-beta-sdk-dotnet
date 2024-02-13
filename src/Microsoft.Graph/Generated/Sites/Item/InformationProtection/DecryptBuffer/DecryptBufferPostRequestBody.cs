@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.DecryptBuffer {
         }
 #endif
         /// <summary>
-        /// Instantiates a new decryptBufferPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="DecryptBufferPostRequestBody"/> and sets the default values.
         /// </summary>
         public DecryptBufferPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.DecryptBuffer {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="DecryptBufferPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static DecryptBufferPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -60,6 +61,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.DecryptBuffer {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"encryptedBuffer", n => { EncryptedBuffer = n.GetByteArrayValue(); } },

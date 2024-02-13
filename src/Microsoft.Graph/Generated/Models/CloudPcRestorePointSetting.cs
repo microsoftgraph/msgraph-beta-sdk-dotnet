@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours.</summary>
+        /// <summary>The frequencyInHours property</summary>
         public int? FrequencyInHours {
             get { return BackingStore?.Get<int?>("frequencyInHours"); }
             set { BackingStore?.Set("frequencyInHours", value); }
         }
-        /// <summary>The frequencyType property</summary>
+        /// <summary>The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are: default, fourHours, sixHours, twelveHours, sixteenHours, twentyFourHours, unknownFutureValue. The default value is default that indicates that the time interval for automatic capturing of restore point snapshots is set to 12 hours.</summary>
         public CloudPcRestorePointFrequencyType? FrequencyType {
             get { return BackingStore?.Get<CloudPcRestorePointFrequencyType?>("frequencyType"); }
             set { BackingStore?.Set("frequencyType", value); }
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userRestoreEnabled", value); }
         }
         /// <summary>
-        /// Instantiates a new cloudPcRestorePointSetting and sets the default values.
+        /// Instantiates a new <see cref="CloudPcRestorePointSetting"/> and sets the default values.
         /// </summary>
         public CloudPcRestorePointSetting() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="CloudPcRestorePointSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static CloudPcRestorePointSetting CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -61,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"frequencyInHours", n => { FrequencyInHours = n.GetIntValue(); } },
