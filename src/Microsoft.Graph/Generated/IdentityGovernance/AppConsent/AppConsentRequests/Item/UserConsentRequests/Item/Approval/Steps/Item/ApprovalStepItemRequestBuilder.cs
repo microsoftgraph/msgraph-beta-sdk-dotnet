@@ -15,24 +15,25 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
     /// </summary>
     public class ApprovalStepItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new ApprovalStepItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ApprovalStepItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApprovalStepItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/appConsent/appConsentRequests/{appConsentRequest%2Did}/userConsentRequests/{userConsentRequest%2Did}/approval/steps/{approvalStep%2Did}{?%24select,%24expand}", pathParameters) {
+        public ApprovalStepItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/appConsent/appConsentRequests/{appConsentRequest%2Did}/userConsentRequests/{userConsentRequest%2Did}/approval/steps/{approvalStep%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ApprovalStepItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ApprovalStepItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApprovalStepItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/appConsent/appConsentRequests/{appConsentRequest%2Did}/userConsentRequests/{userConsentRequest%2Did}/approval/steps/{approvalStep%2Did}{?%24select,%24expand}", rawUrl) {
+        public ApprovalStepItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/appConsent/appConsentRequests/{appConsentRequest%2Did}/userConsentRequests/{userConsentRequest%2Did}/approval/steps/{approvalStep%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property steps for identityGovernance
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -42,8 +43,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -51,8 +51,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
         /// Retrieve the properties of an approvalStep object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/approvalstep-get?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="ApprovalStep"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ApprovalStep?> GetAsync(Action<RequestConfiguration<ApprovalStepItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -62,8 +64,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ApprovalStep>(requestInfo, ApprovalStep.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -71,9 +72,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
         /// Apply approve or deny decision on an approvalStep object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/approvalstep-update?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="ApprovalStep"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ApprovalStep?> PatchAsync(ApprovalStep body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -84,14 +87,14 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ApprovalStep>(requestInfo, ApprovalStep.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property steps for identityGovernance
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,7 +103,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/identityGovernance/appConsent/appConsentRequests/{appConsentRequest%2Did}/userConsentRequests/{userConsentRequest%2Did}/approval/steps/{approvalStep%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -108,6 +111,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
         /// <summary>
         /// Retrieve the properties of an approvalStep object.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +128,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
         /// <summary>
         /// Apply approve or deny decision on an approvalStep object.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +139,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
         public RequestInformation ToPatchRequestInformation(ApprovalStep body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/identityGovernance/appConsent/appConsentRequests/{appConsentRequest%2Did}/userConsentRequests/{userConsentRequest%2Did}/approval/steps/{approvalStep%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -143,6 +148,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="ApprovalStepItemRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ApprovalStepItemRequestBuilder WithUrl(string rawUrl) {
             return new ApprovalStepItemRequestBuilder(rawUrl, RequestAdapter);

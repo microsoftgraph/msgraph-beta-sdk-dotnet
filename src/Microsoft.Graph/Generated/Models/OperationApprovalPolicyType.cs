@@ -4,6 +4,9 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The set of available policy types that can be configured for approval. There is no default value for this enum, indicating that the policy type must always be chosen.</summary>
     public enum OperationApprovalPolicyType {
+        /// <summary>Default. Indicates that the configured policy type is unknown. This property is not allowed on an OperationApprovalRequest unless the PolicySet contains a different OperationApprovalPolicyType.</summary>
+        [EnumMember(Value = "unknown")]
+        Unknown,
         /// <summary>Indicates that the configured policy type is for a Device Action.</summary>
         [EnumMember(Value = "deviceAction")]
         DeviceAction,
@@ -53,8 +56,8 @@ namespace Microsoft.Graph.Beta.Models {
         [EnumMember(Value = "app")]
         App,
         /// <summary>Indicates that the configured policy type is a script type, such as Powershell scripts or remediation scripts.</summary>
-        [EnumMember(Value = "scripts")]
-        Scripts,
+        [EnumMember(Value = "script")]
+        Script,
         /// <summary>Indicates that the configured policy type is for a Role.</summary>
         [EnumMember(Value = "role")]
         Role,

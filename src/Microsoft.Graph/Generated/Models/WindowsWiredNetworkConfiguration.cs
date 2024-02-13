@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new windowsWiredNetworkConfiguration and sets the default values.
+        /// Instantiates a new <see cref="WindowsWiredNetworkConfiguration"/> and sets the default values.
         /// </summary>
         public WindowsWiredNetworkConfiguration() : base() {
             OdataType = "#microsoft.graph.windowsWiredNetworkConfiguration";
@@ -201,6 +201,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="WindowsWiredNetworkConfiguration"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new WindowsWiredNetworkConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -209,6 +210,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"authenticationBlockPeriodInMinutes", n => { AuthenticationBlockPeriodInMinutes = n.GetIntValue(); } },

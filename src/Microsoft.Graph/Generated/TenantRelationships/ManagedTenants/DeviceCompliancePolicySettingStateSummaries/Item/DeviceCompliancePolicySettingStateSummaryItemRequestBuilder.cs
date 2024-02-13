@@ -15,24 +15,25 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
     /// </summary>
     public class DeviceCompliancePolicySettingStateSummaryItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new DeviceCompliancePolicySettingStateSummaryItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DeviceCompliancePolicySettingStateSummaryItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceCompliancePolicySettingStateSummaryItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/deviceCompliancePolicySettingStateSummaries/{deviceCompliancePolicySettingStateSummary%2Did}{?%24select,%24expand}", pathParameters) {
+        public DeviceCompliancePolicySettingStateSummaryItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/deviceCompliancePolicySettingStateSummaries/{deviceCompliancePolicySettingStateSummary%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new DeviceCompliancePolicySettingStateSummaryItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DeviceCompliancePolicySettingStateSummaryItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceCompliancePolicySettingStateSummaryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/deviceCompliancePolicySettingStateSummaries/{deviceCompliancePolicySettingStateSummary%2Did}{?%24select,%24expand}", rawUrl) {
+        public DeviceCompliancePolicySettingStateSummaryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/managedTenants/deviceCompliancePolicySettingStateSummaries/{deviceCompliancePolicySettingStateSummary%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property deviceCompliancePolicySettingStateSummaries for tenantRelationships
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -42,8 +43,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -51,8 +51,10 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
         /// Read the properties and relationships of a deviceCompliancePolicySettingStateSummary object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-devicecompliancepolicysettingstatesummary-get?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="DeviceCompliancePolicySettingStateSummary"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<DeviceCompliancePolicySettingStateSummary?> GetAsync(Action<RequestConfiguration<DeviceCompliancePolicySettingStateSummaryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -62,17 +64,18 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceCompliancePolicySettingStateSummary>(requestInfo, DeviceCompliancePolicySettingStateSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property deviceCompliancePolicySettingStateSummaries in tenantRelationships
         /// </summary>
+        /// <returns>A <cref="DeviceCompliancePolicySettingStateSummary"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<DeviceCompliancePolicySettingStateSummary?> PatchAsync(DeviceCompliancePolicySettingStateSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -83,14 +86,14 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceCompliancePolicySettingStateSummary>(requestInfo, DeviceCompliancePolicySettingStateSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property deviceCompliancePolicySettingStateSummaries for tenantRelationships
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,7 +102,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/tenantRelationships/managedTenants/deviceCompliancePolicySettingStateSummaries/{deviceCompliancePolicySettingStateSummary%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -107,6 +110,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
         /// <summary>
         /// Read the properties and relationships of a deviceCompliancePolicySettingStateSummary object.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,6 +127,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
         /// <summary>
         /// Update the navigation property deviceCompliancePolicySettingStateSummaries in tenantRelationships
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -133,7 +138,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
         public RequestInformation ToPatchRequestInformation(DeviceCompliancePolicySettingStateSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/tenantRelationships/managedTenants/deviceCompliancePolicySettingStateSummaries/{deviceCompliancePolicySettingStateSummary%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -142,6 +147,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="DeviceCompliancePolicySettingStateSummaryItemRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public DeviceCompliancePolicySettingStateSummaryItemRequestBuilder WithUrl(string rawUrl) {
             return new DeviceCompliancePolicySettingStateSummaryItemRequestBuilder(rawUrl, RequestAdapter);

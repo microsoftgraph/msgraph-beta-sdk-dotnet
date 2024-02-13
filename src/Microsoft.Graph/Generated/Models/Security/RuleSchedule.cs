@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The nextRunDateTime property</summary>
+        /// <summary>Timestamp of the custom detection rule&apos;s next scheduled run.</summary>
         public DateTimeOffset? NextRunDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("nextRunDateTime"); }
             set { BackingStore?.Set("nextRunDateTime", value); }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The period property</summary>
+        /// <summary>How often the detection rule is set to run. The allowed values are: 0, 1H, 3H, 12H, or 24H. &apos;0&apos; signifies the rule is run continuously.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Period {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
 #endif
         /// <summary>
-        /// Instantiates a new ruleSchedule and sets the default values.
+        /// Instantiates a new <see cref="RuleSchedule"/> and sets the default values.
         /// </summary>
         public RuleSchedule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -57,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="RuleSchedule"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static RuleSchedule CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -65,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"nextRunDateTime", n => { NextRunDateTime = n.GetDateTimeOffsetValue(); } },

@@ -14,14 +14,14 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.RenewGroup {
     /// </summary>
     public class RenewGroupRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new RenewGroupRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RenewGroupRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public RenewGroupRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groupLifecyclePolicies/renewGroup", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new RenewGroupRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RenewGroupRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,9 +31,11 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.RenewGroup {
         /// Renew a group&apos;s expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-renewgroup?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="RenewGroupPostResponse"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<RenewGroupPostResponse?> PostAsRenewGroupPostResponseAsync(RenewGroupPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -44,8 +46,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.RenewGroup {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<RenewGroupPostResponse>(requestInfo, RenewGroupPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -53,10 +54,12 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.RenewGroup {
         /// Renew a group&apos;s expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-renewgroup?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="RenewGroupResponse"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsRenewGroupPostResponse instead.")]
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This method is obsolete. Use {TypeName} instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<RenewGroupResponse?> PostAsync(RenewGroupPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -67,14 +70,14 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.RenewGroup {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<RenewGroupResponse>(requestInfo, RenewGroupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Renew a group&apos;s expiration. When a group is renewed, the group expiration is extended by the number of days defined in the policy.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,6 +97,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.RenewGroup {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="RenewGroupRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public RenewGroupRequestBuilder WithUrl(string rawUrl) {
             return new RenewGroupRequestBuilder(rawUrl, RequestAdapter);

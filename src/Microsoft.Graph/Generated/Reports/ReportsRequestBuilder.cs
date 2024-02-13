@@ -288,24 +288,26 @@ namespace Microsoft.Graph.Beta.Reports {
             new UserInsightsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new ReportsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ReportsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports{?%24select,%24expand}", pathParameters) {
+        public ReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ReportsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ReportsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports{?%24select,%24expand}", rawUrl) {
+        public ReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get reports
         /// </summary>
+        /// <returns>A <cref="ReportRoot"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ReportRoot?> GetAsync(Action<RequestConfiguration<ReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -315,14 +317,14 @@ namespace Microsoft.Graph.Beta.Reports {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ReportRoot>(requestInfo, ReportRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the getAzureADApplicationSignInSummary method.
         /// </summary>
+        /// <returns>A <cref="GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder GetAzureADApplicationSignInSummaryWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -331,6 +333,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getBrowserDistributionUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetBrowserDistributionUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetBrowserDistributionUserCountsWithPeriodRequestBuilder GetBrowserDistributionUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -339,6 +342,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getBrowserUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetBrowserUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetBrowserUserCountsWithPeriodRequestBuilder GetBrowserUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -347,6 +351,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getBrowserUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetBrowserUserDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetBrowserUserDetailWithPeriodRequestBuilder GetBrowserUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -355,6 +360,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getCredentialUsageSummary method.
         /// </summary>
+        /// <returns>A <cref="GetCredentialUsageSummaryWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetCredentialUsageSummaryWithPeriodRequestBuilder GetCredentialUsageSummaryWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -363,6 +369,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getEmailActivityCounts method.
         /// </summary>
+        /// <returns>A <cref="GetEmailActivityCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetEmailActivityCountsWithPeriodRequestBuilder GetEmailActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -371,6 +378,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getEmailActivityUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetEmailActivityUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetEmailActivityUserCountsWithPeriodRequestBuilder GetEmailActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -379,6 +387,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getEmailActivityUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetEmailActivityUserDetailWithDateRequestBuilder"></returns>
         /// <param name="date">Usage: date={date}</param>
         public GetEmailActivityUserDetailWithDateRequestBuilder GetEmailActivityUserDetailWithDate(Date? date) {
             _ = date ?? throw new ArgumentNullException(nameof(date));
@@ -387,6 +396,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getEmailActivityUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetEmailActivityUserDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetEmailActivityUserDetailWithPeriodRequestBuilder GetEmailActivityUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -395,6 +405,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getEmailAppUsageAppsUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetEmailAppUsageAppsUserCountsWithPeriodRequestBuilder GetEmailAppUsageAppsUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -403,6 +414,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getEmailAppUsageUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetEmailAppUsageUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetEmailAppUsageUserCountsWithPeriodRequestBuilder GetEmailAppUsageUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -411,6 +423,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getEmailAppUsageUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetEmailAppUsageUserDetailWithDateRequestBuilder"></returns>
         /// <param name="date">Usage: date={date}</param>
         public GetEmailAppUsageUserDetailWithDateRequestBuilder GetEmailAppUsageUserDetailWithDate(Date? date) {
             _ = date ?? throw new ArgumentNullException(nameof(date));
@@ -419,6 +432,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getEmailAppUsageUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetEmailAppUsageUserDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetEmailAppUsageUserDetailWithPeriodRequestBuilder GetEmailAppUsageUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -427,6 +441,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getEmailAppUsageVersionsUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetEmailAppUsageVersionsUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetEmailAppUsageVersionsUserCountsWithPeriodRequestBuilder GetEmailAppUsageVersionsUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -435,6 +450,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getFormsUserActivityCounts method.
         /// </summary>
+        /// <returns>A <cref="GetFormsUserActivityCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetFormsUserActivityCountsWithPeriodRequestBuilder GetFormsUserActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -443,6 +459,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getFormsUserActivityUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetFormsUserActivityUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetFormsUserActivityUserCountsWithPeriodRequestBuilder GetFormsUserActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -451,6 +468,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getFormsUserActivityUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetFormsUserActivityUserDetailWithDateRequestBuilder"></returns>
         /// <param name="date">Usage: date={date}</param>
         public GetFormsUserActivityUserDetailWithDateRequestBuilder GetFormsUserActivityUserDetailWithDate(Date? date) {
             _ = date ?? throw new ArgumentNullException(nameof(date));
@@ -459,6 +477,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getFormsUserActivityUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetFormsUserActivityUserDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetFormsUserActivityUserDetailWithPeriodRequestBuilder GetFormsUserActivityUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -467,6 +486,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getGroupArchivedPrintJobs method.
         /// </summary>
+        /// <returns>A <cref="GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder"></returns>
         /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
         /// <param name="groupId">Usage: groupId=&apos;{groupId}&apos;</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
@@ -479,6 +499,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getM365AppPlatformUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetM365AppPlatformUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetM365AppPlatformUserCountsWithPeriodRequestBuilder GetM365AppPlatformUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -487,6 +508,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getM365AppUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetM365AppUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetM365AppUserCountsWithPeriodRequestBuilder GetM365AppUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -495,6 +517,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getM365AppUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetM365AppUserDetailWithDateRequestBuilder"></returns>
         /// <param name="date">Usage: date={date}</param>
         public GetM365AppUserDetailWithDateRequestBuilder GetM365AppUserDetailWithDate(Date? date) {
             _ = date ?? throw new ArgumentNullException(nameof(date));
@@ -503,6 +526,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getM365AppUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetM365AppUserDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetM365AppUserDetailWithPeriodRequestBuilder GetM365AppUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -511,6 +535,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getMailboxUsageDetail method.
         /// </summary>
+        /// <returns>A <cref="GetMailboxUsageDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetMailboxUsageDetailWithPeriodRequestBuilder GetMailboxUsageDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -519,6 +544,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getMailboxUsageMailboxCounts method.
         /// </summary>
+        /// <returns>A <cref="GetMailboxUsageMailboxCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetMailboxUsageMailboxCountsWithPeriodRequestBuilder GetMailboxUsageMailboxCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -527,6 +553,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getMailboxUsageQuotaStatusMailboxCounts method.
         /// </summary>
+        /// <returns>A <cref="GetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetMailboxUsageQuotaStatusMailboxCountsWithPeriodRequestBuilder GetMailboxUsageQuotaStatusMailboxCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -535,6 +562,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getMailboxUsageStorage method.
         /// </summary>
+        /// <returns>A <cref="GetMailboxUsageStorageWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetMailboxUsageStorageWithPeriodRequestBuilder GetMailboxUsageStorageWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -543,6 +571,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOffice365ActiveUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetOffice365ActiveUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetOffice365ActiveUserCountsWithPeriodRequestBuilder GetOffice365ActiveUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -551,6 +580,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOffice365ActiveUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetOffice365ActiveUserDetailWithDateRequestBuilder"></returns>
         /// <param name="date">Usage: date={date}</param>
         public GetOffice365ActiveUserDetailWithDateRequestBuilder GetOffice365ActiveUserDetailWithDate(Date? date) {
             _ = date ?? throw new ArgumentNullException(nameof(date));
@@ -559,6 +589,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOffice365ActiveUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetOffice365ActiveUserDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetOffice365ActiveUserDetailWithPeriodRequestBuilder GetOffice365ActiveUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -567,6 +598,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOffice365GroupsActivityCounts method.
         /// </summary>
+        /// <returns>A <cref="GetOffice365GroupsActivityCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetOffice365GroupsActivityCountsWithPeriodRequestBuilder GetOffice365GroupsActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -575,6 +607,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOffice365GroupsActivityDetail method.
         /// </summary>
+        /// <returns>A <cref="GetOffice365GroupsActivityDetailWithDateRequestBuilder"></returns>
         /// <param name="date">Usage: date={date}</param>
         public GetOffice365GroupsActivityDetailWithDateRequestBuilder GetOffice365GroupsActivityDetailWithDate(Date? date) {
             _ = date ?? throw new ArgumentNullException(nameof(date));
@@ -583,6 +616,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOffice365GroupsActivityDetail method.
         /// </summary>
+        /// <returns>A <cref="GetOffice365GroupsActivityDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetOffice365GroupsActivityDetailWithPeriodRequestBuilder GetOffice365GroupsActivityDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -591,6 +625,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOffice365GroupsActivityFileCounts method.
         /// </summary>
+        /// <returns>A <cref="GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder GetOffice365GroupsActivityFileCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -599,6 +634,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOffice365GroupsActivityGroupCounts method.
         /// </summary>
+        /// <returns>A <cref="GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetOffice365GroupsActivityGroupCountsWithPeriodRequestBuilder GetOffice365GroupsActivityGroupCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -607,6 +643,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOffice365GroupsActivityStorage method.
         /// </summary>
+        /// <returns>A <cref="GetOffice365GroupsActivityStorageWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetOffice365GroupsActivityStorageWithPeriodRequestBuilder GetOffice365GroupsActivityStorageWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -615,6 +652,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOffice365ServicesUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetOffice365ServicesUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetOffice365ServicesUserCountsWithPeriodRequestBuilder GetOffice365ServicesUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -623,6 +661,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOneDriveActivityFileCounts method.
         /// </summary>
+        /// <returns>A <cref="GetOneDriveActivityFileCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetOneDriveActivityFileCountsWithPeriodRequestBuilder GetOneDriveActivityFileCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -631,6 +670,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOneDriveActivityUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetOneDriveActivityUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetOneDriveActivityUserCountsWithPeriodRequestBuilder GetOneDriveActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -639,6 +679,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOneDriveActivityUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetOneDriveActivityUserDetailWithDateRequestBuilder"></returns>
         /// <param name="date">Usage: date={date}</param>
         public GetOneDriveActivityUserDetailWithDateRequestBuilder GetOneDriveActivityUserDetailWithDate(Date? date) {
             _ = date ?? throw new ArgumentNullException(nameof(date));
@@ -647,6 +688,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOneDriveActivityUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetOneDriveActivityUserDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetOneDriveActivityUserDetailWithPeriodRequestBuilder GetOneDriveActivityUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -655,6 +697,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOneDriveUsageAccountCounts method.
         /// </summary>
+        /// <returns>A <cref="GetOneDriveUsageAccountCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetOneDriveUsageAccountCountsWithPeriodRequestBuilder GetOneDriveUsageAccountCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -663,6 +706,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOneDriveUsageAccountDetail method.
         /// </summary>
+        /// <returns>A <cref="GetOneDriveUsageAccountDetailWithDateRequestBuilder"></returns>
         /// <param name="date">Usage: date={date}</param>
         public GetOneDriveUsageAccountDetailWithDateRequestBuilder GetOneDriveUsageAccountDetailWithDate(Date? date) {
             _ = date ?? throw new ArgumentNullException(nameof(date));
@@ -671,6 +715,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOneDriveUsageAccountDetail method.
         /// </summary>
+        /// <returns>A <cref="GetOneDriveUsageAccountDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetOneDriveUsageAccountDetailWithPeriodRequestBuilder GetOneDriveUsageAccountDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -679,6 +724,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOneDriveUsageFileCounts method.
         /// </summary>
+        /// <returns>A <cref="GetOneDriveUsageFileCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetOneDriveUsageFileCountsWithPeriodRequestBuilder GetOneDriveUsageFileCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -687,6 +733,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getOneDriveUsageStorage method.
         /// </summary>
+        /// <returns>A <cref="GetOneDriveUsageStorageWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetOneDriveUsageStorageWithPeriodRequestBuilder GetOneDriveUsageStorageWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -695,6 +742,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getPrinterArchivedPrintJobs method.
         /// </summary>
+        /// <returns>A <cref="GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder"></returns>
         /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
         /// <param name="printerId">Usage: printerId=&apos;{printerId}&apos;</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
@@ -707,6 +755,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getRelyingPartyDetailedSummary method.
         /// </summary>
+        /// <returns>A <cref="GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetRelyingPartyDetailedSummaryWithPeriodRequestBuilder GetRelyingPartyDetailedSummaryWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -715,6 +764,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSharePointActivityFileCounts method.
         /// </summary>
+        /// <returns>A <cref="GetSharePointActivityFileCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSharePointActivityFileCountsWithPeriodRequestBuilder GetSharePointActivityFileCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -723,6 +773,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSharePointActivityPages method.
         /// </summary>
+        /// <returns>A <cref="GetSharePointActivityPagesWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSharePointActivityPagesWithPeriodRequestBuilder GetSharePointActivityPagesWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -731,6 +782,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSharePointActivityUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetSharePointActivityUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSharePointActivityUserCountsWithPeriodRequestBuilder GetSharePointActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -739,6 +791,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSharePointActivityUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetSharePointActivityUserDetailWithDateRequestBuilder"></returns>
         /// <param name="date">Usage: date={date}</param>
         public GetSharePointActivityUserDetailWithDateRequestBuilder GetSharePointActivityUserDetailWithDate(Date? date) {
             _ = date ?? throw new ArgumentNullException(nameof(date));
@@ -747,6 +800,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSharePointActivityUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetSharePointActivityUserDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSharePointActivityUserDetailWithPeriodRequestBuilder GetSharePointActivityUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -755,6 +809,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSharePointSiteUsageDetail method.
         /// </summary>
+        /// <returns>A <cref="GetSharePointSiteUsageDetailWithDateRequestBuilder"></returns>
         /// <param name="date">Usage: date={date}</param>
         public GetSharePointSiteUsageDetailWithDateRequestBuilder GetSharePointSiteUsageDetailWithDate(Date? date) {
             _ = date ?? throw new ArgumentNullException(nameof(date));
@@ -763,6 +818,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSharePointSiteUsageDetail method.
         /// </summary>
+        /// <returns>A <cref="GetSharePointSiteUsageDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSharePointSiteUsageDetailWithPeriodRequestBuilder GetSharePointSiteUsageDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -771,6 +827,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSharePointSiteUsageFileCounts method.
         /// </summary>
+        /// <returns>A <cref="GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSharePointSiteUsageFileCountsWithPeriodRequestBuilder GetSharePointSiteUsageFileCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -779,6 +836,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSharePointSiteUsagePages method.
         /// </summary>
+        /// <returns>A <cref="GetSharePointSiteUsagePagesWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSharePointSiteUsagePagesWithPeriodRequestBuilder GetSharePointSiteUsagePagesWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -787,6 +845,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSharePointSiteUsageSiteCounts method.
         /// </summary>
+        /// <returns>A <cref="GetSharePointSiteUsageSiteCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSharePointSiteUsageSiteCountsWithPeriodRequestBuilder GetSharePointSiteUsageSiteCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -795,6 +854,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSharePointSiteUsageStorage method.
         /// </summary>
+        /// <returns>A <cref="GetSharePointSiteUsageStorageWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSharePointSiteUsageStorageWithPeriodRequestBuilder GetSharePointSiteUsageStorageWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -803,6 +863,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessActivityCounts method.
         /// </summary>
+        /// <returns>A <cref="GetSkypeForBusinessActivityCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSkypeForBusinessActivityCountsWithPeriodRequestBuilder GetSkypeForBusinessActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -811,6 +872,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessActivityUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetSkypeForBusinessActivityUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSkypeForBusinessActivityUserCountsWithPeriodRequestBuilder GetSkypeForBusinessActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -819,6 +881,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessActivityUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder"></returns>
         /// <param name="date">Usage: date={date}</param>
         public GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder GetSkypeForBusinessActivityUserDetailWithDate(Date? date) {
             _ = date ?? throw new ArgumentNullException(nameof(date));
@@ -827,6 +890,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessActivityUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSkypeForBusinessActivityUserDetailWithPeriodRequestBuilder GetSkypeForBusinessActivityUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -835,6 +899,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessDeviceUsageDistributionUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriodRequestBuilder GetSkypeForBusinessDeviceUsageDistributionUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -843,6 +908,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessDeviceUsageUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSkypeForBusinessDeviceUsageUserCountsWithPeriodRequestBuilder GetSkypeForBusinessDeviceUsageUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -851,6 +917,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessDeviceUsageUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder"></returns>
         /// <param name="date">Usage: date={date}</param>
         public GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder GetSkypeForBusinessDeviceUsageUserDetailWithDate(Date? date) {
             _ = date ?? throw new ArgumentNullException(nameof(date));
@@ -859,6 +926,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessDeviceUsageUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetSkypeForBusinessDeviceUsageUserDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSkypeForBusinessDeviceUsageUserDetailWithPeriodRequestBuilder GetSkypeForBusinessDeviceUsageUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -867,6 +935,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessOrganizerActivityCounts method.
         /// </summary>
+        /// <returns>A <cref="GetSkypeForBusinessOrganizerActivityCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSkypeForBusinessOrganizerActivityCountsWithPeriodRequestBuilder GetSkypeForBusinessOrganizerActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -875,6 +944,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessOrganizerActivityMinuteCounts method.
         /// </summary>
+        /// <returns>A <cref="GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriodRequestBuilder GetSkypeForBusinessOrganizerActivityMinuteCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -883,6 +953,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessOrganizerActivityUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSkypeForBusinessOrganizerActivityUserCountsWithPeriodRequestBuilder GetSkypeForBusinessOrganizerActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -891,6 +962,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessParticipantActivityCounts method.
         /// </summary>
+        /// <returns>A <cref="GetSkypeForBusinessParticipantActivityCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSkypeForBusinessParticipantActivityCountsWithPeriodRequestBuilder GetSkypeForBusinessParticipantActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -899,6 +971,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessParticipantActivityMinuteCounts method.
         /// </summary>
+        /// <returns>A <cref="GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriodRequestBuilder GetSkypeForBusinessParticipantActivityMinuteCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -907,6 +980,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessParticipantActivityUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetSkypeForBusinessParticipantActivityUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSkypeForBusinessParticipantActivityUserCountsWithPeriodRequestBuilder GetSkypeForBusinessParticipantActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -915,6 +989,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessPeerToPeerActivityCounts method.
         /// </summary>
+        /// <returns>A <cref="GetSkypeForBusinessPeerToPeerActivityCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSkypeForBusinessPeerToPeerActivityCountsWithPeriodRequestBuilder GetSkypeForBusinessPeerToPeerActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -923,6 +998,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessPeerToPeerActivityMinuteCounts method.
         /// </summary>
+        /// <returns>A <cref="GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriodRequestBuilder GetSkypeForBusinessPeerToPeerActivityMinuteCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -931,6 +1007,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getSkypeForBusinessPeerToPeerActivityUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriodRequestBuilder GetSkypeForBusinessPeerToPeerActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -939,6 +1016,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsDeviceUsageDistributionTotalUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriodRequestBuilder GetTeamsDeviceUsageDistributionTotalUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -947,6 +1025,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsDeviceUsageDistributionUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsDeviceUsageDistributionUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetTeamsDeviceUsageDistributionUserCountsWithPeriodRequestBuilder GetTeamsDeviceUsageDistributionUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -955,6 +1034,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsDeviceUsageTotalUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetTeamsDeviceUsageTotalUserCountsWithPeriodRequestBuilder GetTeamsDeviceUsageTotalUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -963,6 +1043,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsDeviceUsageUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetTeamsDeviceUsageUserCountsWithPeriodRequestBuilder GetTeamsDeviceUsageUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -971,6 +1052,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsDeviceUsageUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsDeviceUsageUserDetailWithDateRequestBuilder"></returns>
         /// <param name="date">Usage: date={date}</param>
         public GetTeamsDeviceUsageUserDetailWithDateRequestBuilder GetTeamsDeviceUsageUserDetailWithDate(Date? date) {
             _ = date ?? throw new ArgumentNullException(nameof(date));
@@ -979,6 +1061,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsDeviceUsageUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsDeviceUsageUserDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetTeamsDeviceUsageUserDetailWithPeriodRequestBuilder GetTeamsDeviceUsageUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -987,6 +1070,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsTeamActivityCounts method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsTeamActivityCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetTeamsTeamActivityCountsWithPeriodRequestBuilder GetTeamsTeamActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -995,6 +1079,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsTeamActivityDetail method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsTeamActivityDetailWithDateRequestBuilder"></returns>
         /// <param name="date">Usage: date={date}</param>
         public GetTeamsTeamActivityDetailWithDateRequestBuilder GetTeamsTeamActivityDetailWithDate(Date? date) {
             _ = date ?? throw new ArgumentNullException(nameof(date));
@@ -1003,6 +1088,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsTeamActivityDetail method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsTeamActivityDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetTeamsTeamActivityDetailWithPeriodRequestBuilder GetTeamsTeamActivityDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1011,6 +1097,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsTeamActivityDistributionCounts method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsTeamActivityDistributionCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetTeamsTeamActivityDistributionCountsWithPeriodRequestBuilder GetTeamsTeamActivityDistributionCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1019,6 +1106,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsTeamCounts method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsTeamCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetTeamsTeamCountsWithPeriodRequestBuilder GetTeamsTeamCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1027,6 +1115,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsUserActivityCounts method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsUserActivityCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetTeamsUserActivityCountsWithPeriodRequestBuilder GetTeamsUserActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1035,6 +1124,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsUserActivityDistributionTotalUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetTeamsUserActivityDistributionTotalUserCountsWithPeriodRequestBuilder GetTeamsUserActivityDistributionTotalUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1043,6 +1133,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsUserActivityDistributionUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsUserActivityDistributionUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetTeamsUserActivityDistributionUserCountsWithPeriodRequestBuilder GetTeamsUserActivityDistributionUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1051,6 +1142,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsUserActivityTotalCounts method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsUserActivityTotalCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetTeamsUserActivityTotalCountsWithPeriodRequestBuilder GetTeamsUserActivityTotalCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1059,6 +1151,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsUserActivityTotalDistributionCounts method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsUserActivityTotalDistributionCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetTeamsUserActivityTotalDistributionCountsWithPeriodRequestBuilder GetTeamsUserActivityTotalDistributionCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1067,6 +1160,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsUserActivityTotalUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsUserActivityTotalUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetTeamsUserActivityTotalUserCountsWithPeriodRequestBuilder GetTeamsUserActivityTotalUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1075,6 +1169,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsUserActivityUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsUserActivityUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetTeamsUserActivityUserCountsWithPeriodRequestBuilder GetTeamsUserActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1083,6 +1178,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsUserActivityUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsUserActivityUserDetailWithDateRequestBuilder"></returns>
         /// <param name="date">Usage: date={date}</param>
         public GetTeamsUserActivityUserDetailWithDateRequestBuilder GetTeamsUserActivityUserDetailWithDate(Date? date) {
             _ = date ?? throw new ArgumentNullException(nameof(date));
@@ -1091,6 +1187,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getTeamsUserActivityUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetTeamsUserActivityUserDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetTeamsUserActivityUserDetailWithPeriodRequestBuilder GetTeamsUserActivityUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1099,6 +1196,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getUserArchivedPrintJobs method.
         /// </summary>
+        /// <returns>A <cref="GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder"></returns>
         /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         /// <param name="userId">Usage: userId=&apos;{userId}&apos;</param>
@@ -1111,6 +1209,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getYammerActivityCounts method.
         /// </summary>
+        /// <returns>A <cref="GetYammerActivityCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetYammerActivityCountsWithPeriodRequestBuilder GetYammerActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1119,6 +1218,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getYammerActivityUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetYammerActivityUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetYammerActivityUserCountsWithPeriodRequestBuilder GetYammerActivityUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1127,6 +1227,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getYammerActivityUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetYammerActivityUserDetailWithDateRequestBuilder"></returns>
         /// <param name="date">Usage: date={date}</param>
         public GetYammerActivityUserDetailWithDateRequestBuilder GetYammerActivityUserDetailWithDate(Date? date) {
             _ = date ?? throw new ArgumentNullException(nameof(date));
@@ -1135,6 +1236,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getYammerActivityUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetYammerActivityUserDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetYammerActivityUserDetailWithPeriodRequestBuilder GetYammerActivityUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1143,6 +1245,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getYammerDeviceUsageDistributionUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetYammerDeviceUsageDistributionUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetYammerDeviceUsageDistributionUserCountsWithPeriodRequestBuilder GetYammerDeviceUsageDistributionUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1151,6 +1254,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getYammerDeviceUsageUserCounts method.
         /// </summary>
+        /// <returns>A <cref="GetYammerDeviceUsageUserCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetYammerDeviceUsageUserCountsWithPeriodRequestBuilder GetYammerDeviceUsageUserCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1159,6 +1263,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getYammerDeviceUsageUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetYammerDeviceUsageUserDetailWithDateRequestBuilder"></returns>
         /// <param name="date">Usage: date={date}</param>
         public GetYammerDeviceUsageUserDetailWithDateRequestBuilder GetYammerDeviceUsageUserDetailWithDate(Date? date) {
             _ = date ?? throw new ArgumentNullException(nameof(date));
@@ -1167,6 +1272,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getYammerDeviceUsageUserDetail method.
         /// </summary>
+        /// <returns>A <cref="GetYammerDeviceUsageUserDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetYammerDeviceUsageUserDetailWithPeriodRequestBuilder GetYammerDeviceUsageUserDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1175,6 +1281,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getYammerGroupsActivityCounts method.
         /// </summary>
+        /// <returns>A <cref="GetYammerGroupsActivityCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetYammerGroupsActivityCountsWithPeriodRequestBuilder GetYammerGroupsActivityCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1183,6 +1290,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getYammerGroupsActivityDetail method.
         /// </summary>
+        /// <returns>A <cref="GetYammerGroupsActivityDetailWithDateRequestBuilder"></returns>
         /// <param name="date">Usage: date={date}</param>
         public GetYammerGroupsActivityDetailWithDateRequestBuilder GetYammerGroupsActivityDetailWithDate(Date? date) {
             _ = date ?? throw new ArgumentNullException(nameof(date));
@@ -1191,6 +1299,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getYammerGroupsActivityDetail method.
         /// </summary>
+        /// <returns>A <cref="GetYammerGroupsActivityDetailWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetYammerGroupsActivityDetailWithPeriodRequestBuilder GetYammerGroupsActivityDetailWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1199,6 +1308,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the getYammerGroupsActivityGroupCounts method.
         /// </summary>
+        /// <returns>A <cref="GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public GetYammerGroupsActivityGroupCountsWithPeriodRequestBuilder GetYammerGroupsActivityGroupCountsWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1207,6 +1317,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the managedDeviceEnrollmentAbandonmentDetails method.
         /// </summary>
+        /// <returns>A <cref="ManagedDeviceEnrollmentAbandonmentDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder"></returns>
         /// <param name="filter">Usage: filter=&apos;{filter}&apos;</param>
         /// <param name="skip">Usage: skip={skip}</param>
         /// <param name="skipToken">Usage: skipToken=&apos;{skipToken}&apos;</param>
@@ -1221,6 +1332,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the managedDeviceEnrollmentAbandonmentSummary method.
         /// </summary>
+        /// <returns>A <cref="ManagedDeviceEnrollmentAbandonmentSummaryWithSkipWithTopWithFilterWithSkipTokenRequestBuilder"></returns>
         /// <param name="filter">Usage: filter=&apos;{filter}&apos;</param>
         /// <param name="skip">Usage: skip={skip}</param>
         /// <param name="skipToken">Usage: skipToken=&apos;{skipToken}&apos;</param>
@@ -1235,6 +1347,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the managedDeviceEnrollmentFailureDetails method.
         /// </summary>
+        /// <returns>A <cref="ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder"></returns>
         /// <param name="filter">Usage: filter=&apos;{filter}&apos;</param>
         /// <param name="skip">Usage: skip={skip}</param>
         /// <param name="skipToken">Usage: skipToken=&apos;{skipToken}&apos;</param>
@@ -1249,6 +1362,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Provides operations to call the managedDeviceEnrollmentTopFailures method.
         /// </summary>
+        /// <returns>A <cref="ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder"></returns>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         public ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder ManagedDeviceEnrollmentTopFailuresWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
@@ -1257,9 +1371,11 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Update reports
         /// </summary>
+        /// <returns>A <cref="ReportRoot"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ReportRoot?> PatchAsync(ReportRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -1270,14 +1386,14 @@ namespace Microsoft.Graph.Beta.Reports {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ReportRoot>(requestInfo, ReportRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get reports
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1294,6 +1410,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Update reports
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1304,7 +1421,7 @@ namespace Microsoft.Graph.Beta.Reports {
         public RequestInformation ToPatchRequestInformation(ReportRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/reports", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -1313,6 +1430,7 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="ReportsRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ReportsRequestBuilder WithUrl(string rawUrl) {
             return new ReportsRequestBuilder(rawUrl, RequestAdapter);

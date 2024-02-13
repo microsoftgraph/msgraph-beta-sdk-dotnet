@@ -81,6 +81,7 @@ using Microsoft.Graph.Beta.DeviceManagement.Intents;
 using Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles;
 using Microsoft.Graph.Beta.DeviceManagement.IosUpdateStatuses;
 using Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceCleanupRules;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceEncryptionStates;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDeviceOverview;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices;
@@ -508,6 +509,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         public MacOSSoftwareUpdateAccountSummariesRequestBuilder MacOSSoftwareUpdateAccountSummaries { get =>
             new MacOSSoftwareUpdateAccountSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the managedDeviceCleanupRules property of the microsoft.graph.deviceManagement entity.</summary>
+        public ManagedDeviceCleanupRulesRequestBuilder ManagedDeviceCleanupRules { get =>
+            new ManagedDeviceCleanupRulesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the managedDeviceEncryptionStates property of the microsoft.graph.deviceManagement entity.</summary>
         public ManagedDeviceEncryptionStatesRequestBuilder ManagedDeviceEncryptionStates { get =>
             new ManagedDeviceEncryptionStatesRequestBuilder(PathParameters, RequestAdapter);
@@ -901,24 +906,26 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
             new ZebraFotaDeploymentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DeviceManagementRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceManagementRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement{?%24select,%24expand}", pathParameters) {
+        public DeviceManagementRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DeviceManagementRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceManagementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement{?%24select,%24expand}", rawUrl) {
+        public DeviceManagementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get deviceManagement
         /// </summary>
+        /// <returns>A <cref="Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement?> GetAsync(Action<RequestConfiguration<DeviceManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -928,14 +935,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the getEffectivePermissions method.
         /// </summary>
+        /// <returns>A <cref="GetEffectivePermissionsWithScopeRequestBuilder"></returns>
         /// <param name="scope">Usage: scope=&apos;{scope}&apos;</param>
         public GetEffectivePermissionsWithScopeRequestBuilder GetEffectivePermissionsWithScope(string scope) {
             if(string.IsNullOrEmpty(scope)) throw new ArgumentNullException(nameof(scope));
@@ -944,6 +951,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>
         /// Provides operations to call the getRoleScopeTagsByIds method.
         /// </summary>
+        /// <returns>A <cref="GetRoleScopeTagsByIdsWithIdsRequestBuilder"></returns>
         /// <param name="ids">Usage: ids={ids}</param>
         public GetRoleScopeTagsByIdsWithIdsRequestBuilder GetRoleScopeTagsByIdsWithIds(string ids) {
             if(string.IsNullOrEmpty(ids)) throw new ArgumentNullException(nameof(ids));
@@ -952,6 +960,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>
         /// Provides operations to call the getRoleScopeTagsByResource method.
         /// </summary>
+        /// <returns>A <cref="GetRoleScopeTagsByResourceWithResourceRequestBuilder"></returns>
         /// <param name="resource">Usage: resource=&apos;{resource}&apos;</param>
         public GetRoleScopeTagsByResourceWithResourceRequestBuilder GetRoleScopeTagsByResourceWithResource(string resource) {
             if(string.IsNullOrEmpty(resource)) throw new ArgumentNullException(nameof(resource));
@@ -960,6 +969,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>
         /// Provides operations to call the getSuggestedEnrollmentLimit method.
         /// </summary>
+        /// <returns>A <cref="GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder"></returns>
         /// <param name="enrollmentType">Usage: enrollmentType=&apos;{enrollmentType}&apos;</param>
         public GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder GetSuggestedEnrollmentLimitWithEnrollmentType(string enrollmentType) {
             if(string.IsNullOrEmpty(enrollmentType)) throw new ArgumentNullException(nameof(enrollmentType));
@@ -968,9 +978,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>
         /// Update deviceManagement
         /// </summary>
+        /// <returns>A <cref="Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement?> PatchAsync(Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -981,14 +993,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the scopedForResource method.
         /// </summary>
+        /// <returns>A <cref="ScopedForResourceWithResourceRequestBuilder"></returns>
         /// <param name="resource">Usage: resource=&apos;{resource}&apos;</param>
         public ScopedForResourceWithResourceRequestBuilder ScopedForResourceWithResource(string resource) {
             if(string.IsNullOrEmpty(resource)) throw new ArgumentNullException(nameof(resource));
@@ -997,6 +1009,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>
         /// Get deviceManagement
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1013,6 +1026,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>
         /// Update deviceManagement
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1023,7 +1037,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/deviceManagement", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -1032,6 +1046,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>
         /// Provides operations to call the verifyWindowsEnrollmentAutoDiscovery method.
         /// </summary>
+        /// <returns>A <cref="VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder"></returns>
         /// <param name="domainName">Usage: domainName=&apos;{domainName}&apos;</param>
         public VerifyWindowsEnrollmentAutoDiscoveryWithDomainNameRequestBuilder VerifyWindowsEnrollmentAutoDiscoveryWithDomainName(string domainName) {
             if(string.IsNullOrEmpty(domainName)) throw new ArgumentNullException(nameof(domainName));
@@ -1040,6 +1055,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="DeviceManagementRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public DeviceManagementRequestBuilder WithUrl(string rawUrl) {
             return new DeviceManagementRequestBuilder(rawUrl, RequestAdapter);

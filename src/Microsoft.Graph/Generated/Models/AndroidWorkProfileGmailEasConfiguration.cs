@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class AndroidWorkProfileGmailEasConfiguration : AndroidWorkProfileEasEmailProfileBase, IParsable {
         /// <summary>
-        /// Instantiates a new androidWorkProfileGmailEasConfiguration and sets the default values.
+        /// Instantiates a new <see cref="AndroidWorkProfileGmailEasConfiguration"/> and sets the default values.
         /// </summary>
         public AndroidWorkProfileGmailEasConfiguration() : base() {
             OdataType = "#microsoft.graph.androidWorkProfileGmailEasConfiguration";
@@ -18,6 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="AndroidWorkProfileGmailEasConfiguration"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new AndroidWorkProfileGmailEasConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -26,6 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
             };

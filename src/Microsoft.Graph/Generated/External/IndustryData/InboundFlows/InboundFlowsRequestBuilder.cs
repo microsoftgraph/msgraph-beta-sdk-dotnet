@@ -22,31 +22,34 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
         }
         /// <summary>Provides operations to manage the inboundFlows property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
         /// <param name="position">The unique identifier of inboundFlow</param>
+        /// <returns>A <cref="InboundFlowItemRequestBuilder"></returns>
         public InboundFlowItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("inboundFlow%2Did", position);
             return new InboundFlowItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new InboundFlowsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="InboundFlowsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InboundFlowsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/inboundFlows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public InboundFlowsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/inboundFlows{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new InboundFlowsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="InboundFlowsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InboundFlowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/inboundFlows{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public InboundFlowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/inboundFlows{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Get a list of the inboundFlow objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundflow-list?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="InboundFlowCollectionResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<InboundFlowCollectionResponse?> GetAsync(Action<RequestConfiguration<InboundFlowsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -56,18 +59,19 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<InboundFlowCollectionResponse>(requestInfo, InboundFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-1.0" />
+        /// Create a new inboundFileFlow object. The following prerequisite resources are required when you create an inboundFileFlow:
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-post?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="InboundFlow"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<InboundFlow?> PostAsync(InboundFlow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -78,14 +82,14 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<InboundFlow>(requestInfo, InboundFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the inboundFlow objects and their properties.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,8 +104,9 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
+        /// Create a new inboundFileFlow object. The following prerequisite resources are required when you create an inboundFileFlow:
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +117,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
         public RequestInformation ToPostRequestInformation(InboundFlow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/external/industryData/inboundFlows", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -121,6 +126,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="InboundFlowsRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public InboundFlowsRequestBuilder WithUrl(string rawUrl) {
             return new InboundFlowsRequestBuilder(rawUrl, RequestAdapter);

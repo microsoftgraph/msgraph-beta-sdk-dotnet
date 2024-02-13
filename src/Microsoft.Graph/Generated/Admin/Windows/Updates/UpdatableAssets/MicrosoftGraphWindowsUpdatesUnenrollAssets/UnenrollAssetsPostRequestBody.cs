@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.MicrosoftGr
             set { BackingStore?.Set("updateCategory", value); }
         }
         /// <summary>
-        /// Instantiates a new unenrollAssetsPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="UnenrollAssetsPostRequestBody"/> and sets the default values.
         /// </summary>
         public UnenrollAssetsPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -44,6 +44,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.MicrosoftGr
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="UnenrollAssetsPostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static UnenrollAssetsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -52,6 +53,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.MicrosoftGr
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"assets", n => { Assets = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },

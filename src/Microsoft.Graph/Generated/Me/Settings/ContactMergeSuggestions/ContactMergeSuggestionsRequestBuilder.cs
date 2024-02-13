@@ -15,24 +15,25 @@ namespace Microsoft.Graph.Beta.Me.Settings.ContactMergeSuggestions {
     /// </summary>
     public class ContactMergeSuggestionsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new ContactMergeSuggestionsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ContactMergeSuggestionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ContactMergeSuggestionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/settings/contactMergeSuggestions{?%24select,%24expand}", pathParameters) {
+        public ContactMergeSuggestionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/settings/contactMergeSuggestions{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ContactMergeSuggestionsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ContactMergeSuggestionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ContactMergeSuggestionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/settings/contactMergeSuggestions{?%24select,%24expand}", rawUrl) {
+        public ContactMergeSuggestionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/settings/contactMergeSuggestions{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property contactMergeSuggestions for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -42,8 +43,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ContactMergeSuggestions {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -51,8 +51,10 @@ namespace Microsoft.Graph.Beta.Me.Settings.ContactMergeSuggestions {
         /// Read the properties and relationships of a contactMergeSuggestions object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactmergesuggestions-get?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="Microsoft.Graph.Beta.Models.ContactMergeSuggestions"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.ContactMergeSuggestions?> GetAsync(Action<RequestConfiguration<ContactMergeSuggestionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -62,8 +64,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ContactMergeSuggestions {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ContactMergeSuggestions>(requestInfo, Microsoft.Graph.Beta.Models.ContactMergeSuggestions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -71,9 +72,11 @@ namespace Microsoft.Graph.Beta.Me.Settings.ContactMergeSuggestions {
         /// Update the properties of a contactMergeSuggestions object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactmergesuggestions-update?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="Microsoft.Graph.Beta.Models.ContactMergeSuggestions"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.ContactMergeSuggestions?> PatchAsync(Microsoft.Graph.Beta.Models.ContactMergeSuggestions body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -84,14 +87,14 @@ namespace Microsoft.Graph.Beta.Me.Settings.ContactMergeSuggestions {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ContactMergeSuggestions>(requestInfo, Microsoft.Graph.Beta.Models.ContactMergeSuggestions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property contactMergeSuggestions for me
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,7 +103,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ContactMergeSuggestions {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/me/settings/contactMergeSuggestions", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -108,6 +111,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ContactMergeSuggestions {
         /// <summary>
         /// Read the properties and relationships of a contactMergeSuggestions object.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +128,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ContactMergeSuggestions {
         /// <summary>
         /// Update the properties of a contactMergeSuggestions object.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +139,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ContactMergeSuggestions {
         public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.ContactMergeSuggestions body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/me/settings/contactMergeSuggestions", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -143,6 +148,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ContactMergeSuggestions {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="ContactMergeSuggestionsRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ContactMergeSuggestionsRequestBuilder WithUrl(string rawUrl) {
             return new ContactMergeSuggestionsRequestBuilder(rawUrl, RequestAdapter);

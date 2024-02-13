@@ -20,24 +20,25 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity {
     /// </summary>
     public class ServiceActivityRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new ServiceActivityRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ServiceActivityRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ServiceActivityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/serviceActivity{?%24select,%24expand}", pathParameters) {
+        public ServiceActivityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/serviceActivity{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ServiceActivityRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ServiceActivityRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ServiceActivityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/serviceActivity{?%24select,%24expand}", rawUrl) {
+        public ServiceActivityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/serviceActivity{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property serviceActivity for reports
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -47,16 +48,17 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Reports that relate to tenant-level authentication activities in Microsoft Entra.
         /// </summary>
+        /// <returns>A <cref="Microsoft.Graph.Beta.Models.ServiceActivity"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.ServiceActivity?> GetAsync(Action<RequestConfiguration<ServiceActivityRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -66,14 +68,14 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ServiceActivity>(requestInfo, Microsoft.Graph.Beta.Models.ServiceActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the getMetricsForConditionalAccessCompliantDevicesSignInSuccess method.
         /// </summary>
+        /// <returns>A <cref="GetMetricsForConditionalAccessCompliantDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"></returns>
         /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
         /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
         public GetMetricsForConditionalAccessCompliantDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForConditionalAccessCompliantDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime) {
@@ -84,6 +86,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity {
         /// <summary>
         /// Provides operations to call the getMetricsForConditionalAccessManagedDevicesSignInSuccess method.
         /// </summary>
+        /// <returns>A <cref="GetMetricsForConditionalAccessManagedDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"></returns>
         /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
         /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
         public GetMetricsForConditionalAccessManagedDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForConditionalAccessManagedDevicesSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime) {
@@ -94,6 +97,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity {
         /// <summary>
         /// Provides operations to call the getMetricsForMfaSignInFailure method.
         /// </summary>
+        /// <returns>A <cref="GetMetricsForMfaSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"></returns>
         /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
         /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
         public GetMetricsForMfaSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForMfaSignInFailureWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime) {
@@ -104,6 +108,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity {
         /// <summary>
         /// Provides operations to call the getMetricsForMfaSignInSuccess method.
         /// </summary>
+        /// <returns>A <cref="GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"></returns>
         /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
         /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
         public GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime) {
@@ -114,6 +119,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity {
         /// <summary>
         /// Provides operations to call the getMetricsForSamlSignInSuccess method.
         /// </summary>
+        /// <returns>A <cref="GetMetricsForSamlSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder"></returns>
         /// <param name="exclusiveIntervalEndDateTime">Usage: exclusiveIntervalEndDateTime={exclusiveIntervalEndDateTime}</param>
         /// <param name="inclusiveIntervalStartDateTime">Usage: inclusiveIntervalStartDateTime={inclusiveIntervalStartDateTime}</param>
         public GetMetricsForSamlSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder GetMetricsForSamlSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutes(DateTimeOffset? exclusiveIntervalEndDateTime, DateTimeOffset? inclusiveIntervalStartDateTime) {
@@ -124,9 +130,11 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity {
         /// <summary>
         /// Update the navigation property serviceActivity in reports
         /// </summary>
+        /// <returns>A <cref="Microsoft.Graph.Beta.Models.ServiceActivity"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.ServiceActivity?> PatchAsync(Microsoft.Graph.Beta.Models.ServiceActivity body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -137,14 +145,14 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ServiceActivity>(requestInfo, Microsoft.Graph.Beta.Models.ServiceActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property serviceActivity for reports
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,7 +161,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/reports/serviceActivity", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -161,6 +169,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity {
         /// <summary>
         /// Reports that relate to tenant-level authentication activities in Microsoft Entra.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -177,6 +186,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity {
         /// <summary>
         /// Update the navigation property serviceActivity in reports
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -187,7 +197,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity {
         public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.ServiceActivity body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/reports/serviceActivity", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -196,6 +206,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="ServiceActivityRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ServiceActivityRequestBuilder WithUrl(string rawUrl) {
             return new ServiceActivityRequestBuilder(rawUrl, RequestAdapter);

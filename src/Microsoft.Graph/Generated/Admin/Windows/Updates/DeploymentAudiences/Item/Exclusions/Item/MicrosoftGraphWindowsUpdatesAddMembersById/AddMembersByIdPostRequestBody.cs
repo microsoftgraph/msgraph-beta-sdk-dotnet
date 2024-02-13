@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Ex
         }
 #endif
         /// <summary>
-        /// Instantiates a new addMembersByIdPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="AddMembersByIdPostRequestBody"/> and sets the default values.
         /// </summary>
         public AddMembersByIdPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Ex
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="AddMembersByIdPostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static AddMembersByIdPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -60,6 +61,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Ex
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },

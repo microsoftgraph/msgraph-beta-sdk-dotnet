@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Creat
         }
 #endif
         /// <summary>
-        /// Instantiates a new createCopyPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="CreateCopyPostRequestBody"/> and sets the default values.
         /// </summary>
         public CreateCopyPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Creat
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="CreateCopyPostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static CreateCopyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -60,6 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Creat
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"description", n => { Description = n.GetStringValue(); } },

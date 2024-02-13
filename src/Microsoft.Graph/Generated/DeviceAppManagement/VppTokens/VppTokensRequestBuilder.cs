@@ -28,30 +28,33 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens {
         }
         /// <summary>Provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.</summary>
         /// <param name="position">The unique identifier of vppToken</param>
+        /// <returns>A <cref="VppTokenItemRequestBuilder"></returns>
         public VppTokenItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("vppToken%2Did", position);
             return new VppTokenItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new VppTokensRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="VppTokensRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VppTokensRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/vppTokens{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public VppTokensRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/vppTokens{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new VppTokensRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="VppTokensRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VppTokensRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/vppTokens{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public VppTokensRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/vppTokens{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// List of Vpp tokens for this organization.
         /// </summary>
+        /// <returns>A <cref="VppTokenCollectionResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<VppTokenCollectionResponse?> GetAsync(Action<RequestConfiguration<VppTokensRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -61,14 +64,14 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<VppTokenCollectionResponse>(requestInfo, VppTokenCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the getLicensesForApp method.
         /// </summary>
+        /// <returns>A <cref="GetLicensesForAppWithBundleIdRequestBuilder"></returns>
         /// <param name="bundleId">Usage: bundleId=&apos;{bundleId}&apos;</param>
         public GetLicensesForAppWithBundleIdRequestBuilder GetLicensesForAppWithBundleId(string bundleId) {
             if(string.IsNullOrEmpty(bundleId)) throw new ArgumentNullException(nameof(bundleId));
@@ -77,9 +80,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens {
         /// <summary>
         /// Create new navigation property to vppTokens for deviceAppManagement
         /// </summary>
+        /// <returns>A <cref="VppToken"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<VppToken?> PostAsync(VppToken body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -90,14 +95,14 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<VppToken>(requestInfo, VppToken.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List of Vpp tokens for this organization.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,6 +119,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens {
         /// <summary>
         /// Create new navigation property to vppTokens for deviceAppManagement
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -124,7 +130,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens {
         public RequestInformation ToPostRequestInformation(VppToken body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/deviceAppManagement/vppTokens", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -133,6 +139,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="VppTokensRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public VppTokensRequestBuilder WithUrl(string rawUrl) {
             return new VppTokensRequestBuilder(rawUrl, RequestAdapter);

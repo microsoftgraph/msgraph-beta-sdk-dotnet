@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             set { BackingStore?.Set("policySettings", value); }
         }
         /// <summary>
-        /// Instantiates a new applyConfigPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="ApplyConfigPostRequestBody"/> and sets the default values.
         /// </summary>
         public ApplyConfigPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -44,6 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="ApplyConfigPostRequestBody"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static ApplyConfigPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -52,6 +53,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"cloudPcIds", n => { CloudPcIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },

@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The locale property</summary>
+        /// <summary>The Windows language or region tag to use for language pack configuration and localization of the Cloud PC. The default value is en-US, which corresponds to English (United States).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Locale {
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new cloudPcWindowsSetting and sets the default values.
+        /// Instantiates a new <see cref="CloudPcWindowsSetting"/> and sets the default values.
         /// </summary>
         public CloudPcWindowsSetting() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="CloudPcWindowsSetting"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static CloudPcWindowsSetting CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -60,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"locale", n => { Locale = n.GetStringValue(); } },

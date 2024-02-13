@@ -15,24 +15,25 @@ namespace Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings {
     /// </summary>
     public class RegionalAndLanguageSettingsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new RegionalAndLanguageSettingsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RegionalAndLanguageSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegionalAndLanguageSettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/settings/regionalAndLanguageSettings{?%24select,%24expand}", pathParameters) {
+        public RegionalAndLanguageSettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/settings/regionalAndLanguageSettings{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new RegionalAndLanguageSettingsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RegionalAndLanguageSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegionalAndLanguageSettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/settings/regionalAndLanguageSettings{?%24select,%24expand}", rawUrl) {
+        public RegionalAndLanguageSettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/settings/regionalAndLanguageSettings{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property regionalAndLanguageSettings for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -42,8 +43,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -51,8 +51,10 @@ namespace Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings {
         /// Retrieve the properties of a user&apos;s regionalAndLanguageSettings.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/regionalandlanguagesettings-get?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings?> GetAsync(Action<RequestConfiguration<RegionalAndLanguageSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -62,8 +64,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings>(requestInfo, Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -71,9 +72,11 @@ namespace Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings {
         /// Update some or all of the properties of a regionalAndLanguageSettings object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/regionalandlanguagesettings-update?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings?> PatchAsync(Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -84,14 +87,14 @@ namespace Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings>(requestInfo, Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property regionalAndLanguageSettings for me
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,7 +103,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/me/settings/regionalAndLanguageSettings", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -108,6 +111,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings {
         /// <summary>
         /// Retrieve the properties of a user&apos;s regionalAndLanguageSettings.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +128,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings {
         /// <summary>
         /// Update some or all of the properties of a regionalAndLanguageSettings object.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +139,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings {
         public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/me/settings/regionalAndLanguageSettings", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -143,6 +148,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="RegionalAndLanguageSettingsRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public RegionalAndLanguageSettingsRequestBuilder WithUrl(string rawUrl) {
             return new RegionalAndLanguageSettingsRequestBuilder(rawUrl, RequestAdapter);

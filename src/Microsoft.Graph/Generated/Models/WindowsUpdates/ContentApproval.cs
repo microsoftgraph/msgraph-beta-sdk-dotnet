@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
 #endif
         /// <summary>
-        /// Instantiates a new contentApproval and sets the default values.
+        /// Instantiates a new <see cref="ContentApproval"/> and sets the default values.
         /// </summary>
         public ContentApproval() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.contentApproval";
@@ -57,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="ContentApproval"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new ContentApproval CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -65,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"content", n => { Content = n.GetObjectValue<DeployableContent>(DeployableContent.CreateFromDiscriminatorValue); } },

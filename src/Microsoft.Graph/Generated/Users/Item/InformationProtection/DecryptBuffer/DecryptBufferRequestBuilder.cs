@@ -15,14 +15,14 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.DecryptBuffer {
     /// </summary>
     public class DecryptBufferRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new DecryptBufferRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DecryptBufferRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public DecryptBufferRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/informationProtection/decryptBuffer", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new DecryptBufferRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DecryptBufferRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,9 +31,11 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.DecryptBuffer {
         /// <summary>
         /// Invoke action decryptBuffer
         /// </summary>
+        /// <returns>A <cref="BufferDecryptionResult"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,14 +47,14 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.DecryptBuffer {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<BufferDecryptionResult>(requestInfo, BufferDecryptionResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action decryptBuffer
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels")]
@@ -73,6 +75,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.DecryptBuffer {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="DecryptBufferRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("This API will no longer be accessible, please see microsoft.graph.security.informationProtection APIs. as of 2021-02/Beta_SensitivityLabels")]
         public DecryptBufferRequestBuilder WithUrl(string rawUrl) {

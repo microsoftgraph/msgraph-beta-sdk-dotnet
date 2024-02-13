@@ -16,24 +16,25 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item {
     /// </summary>
     public class ResourceOperationItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new ResourceOperationItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ResourceOperationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResourceOperationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}{?%24select,%24expand}", pathParameters) {
+        public ResourceOperationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ResourceOperationItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ResourceOperationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResourceOperationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}{?%24select,%24expand}", rawUrl) {
+        public ResourceOperationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property resourceOperations for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -43,16 +44,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The Resource Operations.
         /// </summary>
+        /// <returns>A <cref="ResourceOperation"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ResourceOperation?> GetAsync(Action<RequestConfiguration<ResourceOperationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -62,14 +64,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ResourceOperation>(requestInfo, ResourceOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the getScopesForUser method.
         /// </summary>
+        /// <returns>A <cref="GetScopesForUserWithUseridRequestBuilder"></returns>
         /// <param name="userid">Usage: userid=&apos;{userid}&apos;</param>
         public GetScopesForUserWithUseridRequestBuilder GetScopesForUserWithUserid(string userid) {
             if(string.IsNullOrEmpty(userid)) throw new ArgumentNullException(nameof(userid));
@@ -78,9 +80,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item {
         /// <summary>
         /// Update the navigation property resourceOperations in deviceManagement
         /// </summary>
+        /// <returns>A <cref="ResourceOperation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ResourceOperation?> PatchAsync(ResourceOperation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -91,14 +95,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ResourceOperation>(requestInfo, ResourceOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property resourceOperations for deviceManagement
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,7 +111,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -115,6 +119,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item {
         /// <summary>
         /// The Resource Operations.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,6 +136,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item {
         /// <summary>
         /// Update the navigation property resourceOperations in deviceManagement
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +147,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item {
         public RequestInformation ToPatchRequestInformation(ResourceOperation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/deviceManagement/resourceOperations/{resourceOperation%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -150,6 +156,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="ResourceOperationItemRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ResourceOperationItemRequestBuilder WithUrl(string rawUrl) {
             return new ResourceOperationItemRequestBuilder(rawUrl, RequestAdapter);

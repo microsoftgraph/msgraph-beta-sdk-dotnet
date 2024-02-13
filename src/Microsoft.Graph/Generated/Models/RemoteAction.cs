@@ -115,5 +115,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates remote device action to intiate Mobile Device Management (MDM) attestation if device is capable for it.</summary>
         [EnumMember(Value = "initiateDeviceAttestation")]
         InitiateDeviceAttestation,
+        /// <summary>Indicates remote device action to override assignments for a Device.</summary>
+        [EnumMember(Value = "changeAssignments")]
+        ChangeAssignments,
     }
 }

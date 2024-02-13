@@ -6,12 +6,12 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSettingGroupCollectionDefinition : DeviceManagementConfigurationSettingGroupDefinition, IParsable {
-        /// <summary>Maximum number of setting group count in the collection</summary>
+        /// <summary>Maximum number of setting group count in the collection. Valid values 1 to 100</summary>
         public int? MaximumCount {
             get { return BackingStore?.Get<int?>("maximumCount"); }
             set { BackingStore?.Set("maximumCount", value); }
         }
-        /// <summary>Minimum number of setting group count in the collection</summary>
+        /// <summary>Minimum number of setting group count in the collection. Valid values 1 to 100</summary>
         public int? MinimumCount {
             get { return BackingStore?.Get<int?>("minimumCount"); }
             set { BackingStore?.Set("minimumCount", value); }
@@ -19,6 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <cref="DeviceManagementConfigurationSettingGroupCollectionDefinition"></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new DeviceManagementConfigurationSettingGroupCollectionDefinition CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -27,6 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A <cref="IDictionary<string, Action<IParseNode>>"></returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"maximumCount", n => { MaximumCount = n.GetIntValue(); } },

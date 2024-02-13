@@ -14,28 +14,30 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.GetProv
     /// </summary>
     public class GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="groupId">Usage: groupId=&apos;{groupId}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="servicePlanId">Usage: servicePlanId=&apos;{servicePlanId}&apos;</param>
-        public GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string groupId = "", string servicePlanId = "") : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/getProvisionedCloudPCs(groupId='{groupId}',servicePlanId='{servicePlanId}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters) {
+        public GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string groupId = "", string servicePlanId = "") : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/getProvisionedCloudPCs(groupId='{groupId}',servicePlanId='{servicePlanId}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(groupId)) PathParameters.Add("groupId", groupId);
             if (!string.IsNullOrWhiteSpace(servicePlanId)) PathParameters.Add("servicePlanId", servicePlanId);
         }
         /// <summary>
-        /// Instantiates a new GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/getProvisionedCloudPCs(groupId='{groupId}',servicePlanId='{servicePlanId}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", rawUrl) {
+        public GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/cloudPCs/getProvisionedCloudPCs(groupId='{groupId}',servicePlanId='{servicePlanId}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function getProvisionedCloudPCs
         /// </summary>
+        /// <returns>A <cref="GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse?> GetAsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponseAsync(Action<RequestConfiguration<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -45,17 +47,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.GetProv
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse>(requestInfo, GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getProvisionedCloudPCs
         /// </summary>
+        /// <returns>A <cref="GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse"></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsGetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse instead.")]
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This method is obsolete. Use {TypeName} instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse?> GetAsync(Action<RequestConfiguration<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -65,14 +68,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.GetProv
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse>(requestInfo, GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getProvisionedCloudPCs
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,6 +92,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.GetProv
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder WithUrl(string rawUrl) {
             return new GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder(rawUrl, RequestAdapter);
@@ -100,6 +104,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.GetProv
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+#endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

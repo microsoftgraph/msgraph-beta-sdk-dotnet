@@ -15,14 +15,14 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate {
     /// </summary>
     public class UploadCertificateRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new UploadCertificateRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UploadCertificateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public UploadCertificateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/trustFramework/keySets/{trustFrameworkKeySet%2Did}/uploadCertificate", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new UploadCertificateRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UploadCertificateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -32,9 +32,11 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate {
         /// Upload a certificate to a trustFrameworkKeyset. The input is a base-64 encoded value of the certificate contents. This method returns trustFrameworkKey.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframeworkkeyset-uploadcertificate?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <cref="TrustFrameworkKey"></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<TrustFrameworkKey?> PostAsync(UploadCertificatePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -45,14 +47,14 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<TrustFrameworkKey>(requestInfo, TrustFrameworkKey.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Upload a certificate to a trustFrameworkKeyset. The input is a base-64 encoded value of the certificate contents. This method returns trustFrameworkKey.
         /// </summary>
+        /// <returns>A <cref="RequestInformation"></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,6 +74,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <cref="UploadCertificateRequestBuilder"></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public UploadCertificateRequestBuilder WithUrl(string rawUrl) {
             return new UploadCertificateRequestBuilder(rawUrl, RequestAdapter);
