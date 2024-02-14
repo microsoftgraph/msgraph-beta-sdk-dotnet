@@ -43,5 +43,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Evolvable enumeration sentinel value. Do not use</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        /// <summary>Indicates Mobile Application Management (MAM) for Windows devices.</summary>
+        [EnumMember(Value = "windowsMobileApplicationManagement")]
+        WindowsMobileApplicationManagement,
     }
 }

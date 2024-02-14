@@ -129,6 +129,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("productVersion", value); }
         }
 #endif
+        /// <summary>The list of base64 encoded certificate for each signer, for example, string[encoded_leaf_cert1, encoded_leaf_cert2....]</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PublisherCert {
+            get { return BackingStore?.Get<string?>("publisherCert"); }
+            set { BackingStore?.Set("publisherCert", value); }
+        }
+#nullable restore
+#else
+        public string PublisherCert {
+            get { return BackingStore?.Get<string>("publisherCert"); }
+            set { BackingStore?.Set("publisherCert", value); }
+        }
+#endif
         /// <summary>The certificate issuer name of the certificate used to sign the application, for example, &apos;Sectigo Public Code Signing CA R36&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -144,7 +158,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new applicationDetail and sets the default values.
+        /// Instantiates a new <see cref="ApplicationDetail"/> and sets the default values.
         /// </summary>
         public ApplicationDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -153,6 +167,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="ApplicationDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static ApplicationDetail CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -161,6 +176,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"fileDescription", n => { FileDescription = n.GetStringValue(); } },
@@ -171,6 +187,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"productInternalName", n => { ProductInternalName = n.GetStringValue(); } },
                 {"productName", n => { ProductName = n.GetStringValue(); } },
                 {"productVersion", n => { ProductVersion = n.GetStringValue(); } },
+                {"publisherCert", n => { PublisherCert = n.GetStringValue(); } },
                 {"publisherName", n => { PublisherName = n.GetStringValue(); } },
             };
         }
@@ -188,6 +205,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("productInternalName", ProductInternalName);
             writer.WriteStringValue("productName", ProductName);
             writer.WriteStringValue("productVersion", ProductVersion);
+            writer.WriteStringValue("publisherCert", PublisherCert);
             writer.WriteStringValue("publisherName", PublisherName);
             writer.WriteAdditionalData(AdditionalData);
         }

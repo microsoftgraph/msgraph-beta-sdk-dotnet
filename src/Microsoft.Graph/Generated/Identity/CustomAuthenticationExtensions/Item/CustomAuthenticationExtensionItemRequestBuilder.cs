@@ -20,18 +20,18 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
             new ValidateAuthenticationConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new CustomAuthenticationExtensionItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CustomAuthenticationExtensionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomAuthenticationExtensionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}{?%24select,%24expand}", pathParameters) {
+        public CustomAuthenticationExtensionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new CustomAuthenticationExtensionItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CustomAuthenticationExtensionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomAuthenticationExtensionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}{?%24select,%24expand}", rawUrl) {
+        public CustomAuthenticationExtensionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete a customAuthenticationExtension object.
@@ -39,6 +39,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -48,17 +49,18 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a customAuthenticationExtension object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-1.0" />
+        /// Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <see cref="CustomAuthenticationExtension"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<CustomAuthenticationExtension?> GetAsync(Action<RequestConfiguration<CustomAuthenticationExtensionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -68,17 +70,18 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CustomAuthenticationExtension>(requestInfo, CustomAuthenticationExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property customAuthenticationExtensions in identity
         /// </summary>
+        /// <returns>A <see cref="CustomAuthenticationExtension"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<CustomAuthenticationExtension?> PatchAsync(CustomAuthenticationExtension body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -89,14 +92,14 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CustomAuthenticationExtension>(requestInfo, CustomAuthenticationExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a customAuthenticationExtension object.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,14 +108,15 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a customAuthenticationExtension object.
+        /// Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,6 +133,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
         /// <summary>
         /// Update the navigation property customAuthenticationExtensions in identity
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,7 +144,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
         public RequestInformation ToPatchRequestInformation(CustomAuthenticationExtension body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -148,6 +153,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="CustomAuthenticationExtensionItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public CustomAuthenticationExtensionItemRequestBuilder WithUrl(string rawUrl) {
             return new CustomAuthenticationExtensionItemRequestBuilder(rawUrl, RequestAdapter);
@@ -159,7 +165,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
         public class CustomAuthenticationExtensionItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Read the properties and relationships of a customAuthenticationExtension object.
+        /// Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
         /// </summary>
         public class CustomAuthenticationExtensionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

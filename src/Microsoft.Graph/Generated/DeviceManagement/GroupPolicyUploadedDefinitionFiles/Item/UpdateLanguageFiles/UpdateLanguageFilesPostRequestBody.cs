@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         }
 #endif
         /// <summary>
-        /// Instantiates a new updateLanguageFilesPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="UpdateLanguageFilesPostRequestBody"/> and sets the default values.
         /// </summary>
         public UpdateLanguageFilesPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -39,6 +39,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="UpdateLanguageFilesPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static UpdateLanguageFilesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -47,6 +48,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"groupPolicyUploadedLanguageFiles", n => { GroupPolicyUploadedLanguageFiles = n.GetCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>(GroupPolicyUploadedLanguageFile.CreateFromDiscriminatorValue)?.ToList(); } },

@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         }
 #endif
         /// <summary>
-        /// Instantiates a new noncustodialDataSource and sets the default values.
+        /// Instantiates a new <see cref="NoncustodialDataSource"/> and sets the default values.
         /// </summary>
         public NoncustodialDataSource() : base() {
             OdataType = "#microsoft.graph.ediscovery.noncustodialDataSource";
@@ -34,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="NoncustodialDataSource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new NoncustodialDataSource CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -42,6 +43,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"applyHoldToSource", n => { ApplyHoldToSource = n.GetBoolValue(); } },

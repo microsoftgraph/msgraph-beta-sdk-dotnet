@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Mi
         }
 #endif
         /// <summary>
-        /// Instantiates a new updateIndexPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="UpdateIndexPostRequestBody"/> and sets the default values.
         /// </summary>
         public UpdateIndexPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -38,6 +38,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Mi
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="UpdateIndexPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static UpdateIndexPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -46,6 +47,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.Mi
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },

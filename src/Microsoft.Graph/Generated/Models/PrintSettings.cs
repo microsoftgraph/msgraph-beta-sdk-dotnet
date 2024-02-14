@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Specifies whether document conversion is enabled for the tenant. If document conversion is enabled, Universal Print service will automatically convert documents into a format compatible with the printer (xps to pdf) when needed.</summary>
+        /// <summary>Specifies whether document conversion is enabled for the tenant. If document conversion is enabled, Universal Print service converts documents into a format compatible with the printer (xps to pdf) when needed.</summary>
         public bool? DocumentConversionEnabled {
             get { return BackingStore?.Get<bool?>("documentConversionEnabled"); }
             set { BackingStore?.Set("documentConversionEnabled", value); }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The printerDiscoverySettings property</summary>
+        /// <summary>Specifies settings that affect printer discovery when using Universal Print.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.PrinterDiscoverySettings? PrinterDiscoverySettings {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new printSettings and sets the default values.
+        /// Instantiates a new <see cref="PrintSettings"/> and sets the default values.
         /// </summary>
         public PrintSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -57,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="PrintSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static PrintSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -65,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"documentConversionEnabled", n => { DocumentConversionEnabled = n.GetBoolValue(); } },

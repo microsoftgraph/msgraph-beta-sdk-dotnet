@@ -5,11 +5,12 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item.CompareWithTemplateId {
-    [Obsolete("This class is obsolete. Use compareWithTemplateIdGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
     public class CompareWithTemplateIdResponse : CompareWithTemplateIdGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="CompareWithTemplateIdResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new CompareWithTemplateIdResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));

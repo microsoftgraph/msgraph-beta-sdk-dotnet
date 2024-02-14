@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new property and sets the default values.
+        /// Instantiates a new <see cref="Property"/> and sets the default values.
         /// </summary>
         public Property() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -124,6 +124,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="Property"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static Property CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -132,6 +133,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"aliases", n => { Aliases = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },

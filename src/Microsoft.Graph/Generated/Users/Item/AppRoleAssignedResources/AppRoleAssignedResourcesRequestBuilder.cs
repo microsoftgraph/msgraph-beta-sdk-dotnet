@@ -22,31 +22,34 @@ namespace Microsoft.Graph.Beta.Users.Item.AppRoleAssignedResources {
         }
         /// <summary>Provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of servicePrincipal</param>
+        /// <returns>A <see cref="ServicePrincipalItemRequestBuilder"/></returns>
         public ServicePrincipalItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("servicePrincipal%2Did", position);
             return new ServicePrincipalItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new AppRoleAssignedResourcesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AppRoleAssignedResourcesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AppRoleAssignedResourcesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/appRoleAssignedResources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public AppRoleAssignedResourcesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/appRoleAssignedResources{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new AppRoleAssignedResourcesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AppRoleAssignedResourcesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AppRoleAssignedResourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/appRoleAssignedResources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public AppRoleAssignedResourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/appRoleAssignedResources{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Get the service principals to which the user has an app role assignment either directly or through group membership.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-approleassignedresources?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <see cref="ServicePrincipalCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ServicePrincipalCollectionResponse?> GetAsync(Action<RequestConfiguration<AppRoleAssignedResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -56,14 +59,14 @@ namespace Microsoft.Graph.Beta.Users.Item.AppRoleAssignedResources {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ServicePrincipalCollectionResponse>(requestInfo, ServicePrincipalCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the service principals to which the user has an app role assignment either directly or through group membership.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +83,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AppRoleAssignedResources {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="AppRoleAssignedResourcesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public AppRoleAssignedResourcesRequestBuilder WithUrl(string rawUrl) {
             return new AppRoleAssignedResourcesRequestBuilder(rawUrl, RequestAdapter);

@@ -15,43 +15,45 @@ namespace Microsoft.Graph.Beta.Me.AppRoleAssignedResourcesWithAppId {
     /// </summary>
     public class AppRoleAssignedResourcesWithAppIdRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new AppRoleAssignedResourcesWithAppIdRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AppRoleAssignedResourcesWithAppIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="appId">Alternate key of servicePrincipal</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AppRoleAssignedResourcesWithAppIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string appId = "") : base(requestAdapter, "{+baseurl}/me/appRoleAssignedResources(appId='{appId}'){?%24select,%24expand}", pathParameters) {
+        public AppRoleAssignedResourcesWithAppIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string appId = "") : base(requestAdapter, "{+baseurl}/me/appRoleAssignedResources(appId='{appId}'){?%24expand,%24select}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(appId)) PathParameters.Add("appId", appId);
         }
         /// <summary>
-        /// Instantiates a new AppRoleAssignedResourcesWithAppIdRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AppRoleAssignedResourcesWithAppIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AppRoleAssignedResourcesWithAppIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/appRoleAssignedResources(appId='{appId}'){?%24select,%24expand}", rawUrl) {
+        public AppRoleAssignedResourcesWithAppIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/appRoleAssignedResources(appId='{appId}'){?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Get appRoleAssignedResources from me
         /// </summary>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ServicePrincipal"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ServicePrincipal?> GetAsync(Action<RequestConfiguration<AppRoleAssignedResourcesWithAppIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.ServicePrincipal?> GetAsync(Action<RequestConfiguration<AppRoleAssignedResourcesWithAppIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<ServicePrincipal> GetAsync(Action<RequestConfiguration<AppRoleAssignedResourcesWithAppIdRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.ServicePrincipal> GetAsync(Action<RequestConfiguration<AppRoleAssignedResourcesWithAppIdRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ServicePrincipal>(requestInfo, ServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ServicePrincipal>(requestInfo, Microsoft.Graph.Beta.Models.ServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get appRoleAssignedResources from me
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +70,7 @@ namespace Microsoft.Graph.Beta.Me.AppRoleAssignedResourcesWithAppId {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="AppRoleAssignedResourcesWithAppIdRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public AppRoleAssignedResourcesWithAppIdRequestBuilder WithUrl(string rawUrl) {
             return new AppRoleAssignedResourcesWithAppIdRequestBuilder(rawUrl, RequestAdapter);

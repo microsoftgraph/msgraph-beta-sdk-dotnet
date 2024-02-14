@@ -6,6 +6,11 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ScheduledPermissionsRequest : Entity, IParsable {
+        /// <summary>The action property</summary>
+        public UnifiedRoleScheduleRequestActions? Action {
+            get { return BackingStore?.Get<UnifiedRoleScheduleRequestActions?>("action"); }
+            set { BackingStore?.Set("action", value); }
+        }
         /// <summary>Defines when the identity created the request.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -89,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="ScheduledPermissionsRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new ScheduledPermissionsRequest CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -97,8 +103,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"action", n => { Action = n.GetEnumValue<UnifiedRoleScheduleRequestActions>(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"justification", n => { Justification = n.GetStringValue(); } },
                 {"notes", n => { Notes = n.GetStringValue(); } },
@@ -115,6 +123,7 @@ namespace Microsoft.Graph.Beta.Models {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<UnifiedRoleScheduleRequestActions>("action", Action);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("justification", Justification);
             writer.WriteStringValue("notes", Notes);

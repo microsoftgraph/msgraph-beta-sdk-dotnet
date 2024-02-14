@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
 #endif
         /// <summary>
-        /// Instantiates a new windowsKioskConfiguration and sets the default values.
+        /// Instantiates a new <see cref="WindowsKioskConfiguration"/> and sets the default values.
         /// </summary>
         public WindowsKioskConfiguration() : base() {
             OdataType = "#microsoft.graph.windowsKioskConfiguration";
@@ -113,6 +113,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="WindowsKioskConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new WindowsKioskConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -121,6 +122,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"edgeKioskEnablePublicBrowsing", n => { EdgeKioskEnablePublicBrowsing = n.GetBoolValue(); } },

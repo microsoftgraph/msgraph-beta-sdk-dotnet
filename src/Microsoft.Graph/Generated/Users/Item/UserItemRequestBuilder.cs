@@ -543,24 +543,25 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// <summary>
         /// Provides operations to manage the appRoleAssignedResources property of the microsoft.graph.user entity.
         /// </summary>
+        /// <returns>A <see cref="AppRoleAssignedResourcesWithAppIdRequestBuilder"/></returns>
         /// <param name="appId">Alternate key of servicePrincipal</param>
         public AppRoleAssignedResourcesWithAppIdRequestBuilder AppRoleAssignedResourcesWithAppId(string appId) {
             if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
             return new AppRoleAssignedResourcesWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
         }
         /// <summary>
-        /// Instantiates a new UserItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UserItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}{?%24select,%24expand}", pathParameters) {
+        public UserItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}{?%24expand,%24select}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new UserItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UserItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}{?%24select,%24expand}", rawUrl) {
+        public UserItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
@@ -568,6 +569,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -577,14 +579,14 @@ namespace Microsoft.Graph.Beta.Users.Item {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to manage the devices property of the microsoft.graph.user entity.
         /// </summary>
+        /// <returns>A <see cref="DevicesWithDeviceIdRequestBuilder"/></returns>
         /// <param name="deviceId">Alternate key of device</param>
         public DevicesWithDeviceIdRequestBuilder DevicesWithDeviceId(string deviceId) {
             if(string.IsNullOrEmpty(deviceId)) throw new ArgumentNullException(nameof(deviceId));
@@ -593,6 +595,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// <summary>
         /// Provides operations to call the exportDeviceAndAppManagementData method.
         /// </summary>
+        /// <returns>A <see cref="ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder"/></returns>
         /// <param name="skip">Usage: skip={skip}</param>
         /// <param name="top">Usage: top={top}</param>
         public ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder ExportDeviceAndAppManagementDataWithSkipWithTop(int? skip, int? top) {
@@ -603,6 +606,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// <summary>
         /// Provides operations to call the findRooms method.
         /// </summary>
+        /// <returns>A <see cref="FindRoomsWithRoomListRequestBuilder"/></returns>
         /// <param name="roomList">Usage: RoomList=&apos;{RoomList}&apos;</param>
         public FindRoomsWithRoomListRequestBuilder FindRoomsWithRoomList(string roomList) {
             if(string.IsNullOrEmpty(roomList)) throw new ArgumentNullException(nameof(roomList));
@@ -612,8 +616,10 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-get?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.User"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.User?> GetAsync(Action<RequestConfiguration<UserItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -623,14 +629,14 @@ namespace Microsoft.Graph.Beta.Users.Item {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.
         /// </summary>
+        /// <returns>A <see cref="OnlineMeetingsWithJoinWebUrlRequestBuilder"/></returns>
         /// <param name="joinWebUrl">Alternate key of onlineMeeting</param>
         public OnlineMeetingsWithJoinWebUrlRequestBuilder OnlineMeetingsWithJoinWebUrl(string joinWebUrl) {
             if(string.IsNullOrEmpty(joinWebUrl)) throw new ArgumentNullException(nameof(joinWebUrl));
@@ -640,9 +646,11 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0" />
         /// </summary>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.User"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.User?> PatchAsync(Microsoft.Graph.Beta.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -653,14 +661,14 @@ namespace Microsoft.Graph.Beta.Users.Item {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the reminderView method.
         /// </summary>
+        /// <returns>A <see cref="ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder"/></returns>
         /// <param name="endDateTime">Usage: EndDateTime=&apos;{EndDateTime}&apos;</param>
         /// <param name="startDateTime">Usage: StartDateTime=&apos;{StartDateTime}&apos;</param>
         public ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder ReminderViewWithStartDateTimeWithEndDateTime(string endDateTime, string startDateTime) {
@@ -671,6 +679,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// <summary>
         /// Delete user.   When deleted, user resources are moved to a temporary container and can be restored within 30 days.  After that time, they are permanently deleted.  To learn more, see deletedItems.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -679,7 +688,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/users/{user%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -687,6 +696,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// <summary>
         /// Retrieve the properties and relationships of user object. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option. Because the user resource supports extensions, you can also use the GET operation to get custom properties and extension data in a user instance.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -703,6 +713,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// <summary>
         /// Update the properties of a user object. Not all properties can be updated by Member or Guest users with their default permissions without Administrator roles. Compare member and guest default permissions to see properties they can manage.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -713,7 +724,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
         public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/users/{user%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -722,6 +733,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="UserItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public UserItemRequestBuilder WithUrl(string rawUrl) {
             return new UserItemRequestBuilder(rawUrl, RequestAdapter);

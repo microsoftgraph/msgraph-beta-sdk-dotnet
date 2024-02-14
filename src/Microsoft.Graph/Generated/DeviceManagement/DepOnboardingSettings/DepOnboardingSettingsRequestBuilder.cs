@@ -23,30 +23,33 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings {
         }
         /// <summary>Provides operations to manage the depOnboardingSettings property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of depOnboardingSetting</param>
+        /// <returns>A <see cref="DepOnboardingSettingItemRequestBuilder"/></returns>
         public DepOnboardingSettingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("depOnboardingSetting%2Did", position);
             return new DepOnboardingSettingItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new DepOnboardingSettingsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DepOnboardingSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DepOnboardingSettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/depOnboardingSettings{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", pathParameters) {
+        public DepOnboardingSettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/depOnboardingSettings{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new DepOnboardingSettingsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DepOnboardingSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DepOnboardingSettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/depOnboardingSettings{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}", rawUrl) {
+        public DepOnboardingSettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/depOnboardingSettings{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// This collections of multiple DEP tokens per-tenant.
         /// </summary>
+        /// <returns>A <see cref="DepOnboardingSettingCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<DepOnboardingSettingCollectionResponse?> GetAsync(Action<RequestConfiguration<DepOnboardingSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -56,14 +59,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DepOnboardingSettingCollectionResponse>(requestInfo, DepOnboardingSettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the getExpiringVppTokenCount method.
         /// </summary>
+        /// <returns>A <see cref="GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder"/></returns>
         /// <param name="expiringBeforeDateTime">Usage: expiringBeforeDateTime=&apos;{expiringBeforeDateTime}&apos;</param>
         public GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder GetExpiringVppTokenCountWithExpiringBeforeDateTime(string expiringBeforeDateTime) {
             if(string.IsNullOrEmpty(expiringBeforeDateTime)) throw new ArgumentNullException(nameof(expiringBeforeDateTime));
@@ -72,9 +75,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings {
         /// <summary>
         /// Create new navigation property to depOnboardingSettings for deviceManagement
         /// </summary>
+        /// <returns>A <see cref="DepOnboardingSetting"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<DepOnboardingSetting?> PostAsync(DepOnboardingSetting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -85,14 +90,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DepOnboardingSetting>(requestInfo, DepOnboardingSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// This collections of multiple DEP tokens per-tenant.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +114,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings {
         /// <summary>
         /// Create new navigation property to depOnboardingSettings for deviceManagement
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,7 +125,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings {
         public RequestInformation ToPostRequestInformation(DepOnboardingSetting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/deviceManagement/depOnboardingSettings", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -128,6 +134,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="DepOnboardingSettingsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public DepOnboardingSettingsRequestBuilder WithUrl(string rawUrl) {
             return new DepOnboardingSettingsRequestBuilder(rawUrl, RequestAdapter);

@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ErfC_Pr
         }
 #endif
         /// <summary>
-        /// Instantiates a new erfC_PrecisePostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="ErfC_PrecisePostRequestBody"/> and sets the default values.
         /// </summary>
         public ErfC_PrecisePostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -39,6 +39,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ErfC_Pr
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="ErfC_PrecisePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static ErfC_PrecisePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -47,6 +48,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Functions.ErfC_Pr
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"X", n => { X = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },

@@ -15,30 +15,31 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceHealthScriptStates.W
     /// </summary>
     public class WithIdWithPolicyIdWithDeviceIdRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new WithIdWithPolicyIdWithDeviceIdRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithIdWithPolicyIdWithDeviceIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="deviceId">Property in multi-part unique identifier of deviceHealthScriptPolicyState</param>
         /// <param name="id">Property in multi-part unique identifier of deviceHealthScriptPolicyState</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="policyId">Property in multi-part unique identifier of deviceHealthScriptPolicyState</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIdWithPolicyIdWithDeviceIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string deviceId = "", string id = "", string policyId = "") : base(requestAdapter, "{+baseurl}/me/managedDevices/{managedDevice%2Did}/deviceHealthScriptStates/id='{id}',policyId='{policyId}',deviceId='{deviceId}'{?%24select,%24expand}", pathParameters) {
+        public WithIdWithPolicyIdWithDeviceIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string deviceId = "", string id = "", string policyId = "") : base(requestAdapter, "{+baseurl}/me/managedDevices/{managedDevice%2Did}/deviceHealthScriptStates/id='{id}',policyId='{policyId}',deviceId='{deviceId}'{?%24expand,%24select}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(deviceId)) PathParameters.Add("deviceId", deviceId);
             if (!string.IsNullOrWhiteSpace(id)) PathParameters.Add("id", id);
             if (!string.IsNullOrWhiteSpace(policyId)) PathParameters.Add("policyId", policyId);
         }
         /// <summary>
-        /// Instantiates a new WithIdWithPolicyIdWithDeviceIdRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithIdWithPolicyIdWithDeviceIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIdWithPolicyIdWithDeviceIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/managedDevices/{managedDevice%2Did}/deviceHealthScriptStates/id='{id}',policyId='{policyId}',deviceId='{deviceId}'{?%24select,%24expand}", rawUrl) {
+        public WithIdWithPolicyIdWithDeviceIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/managedDevices/{managedDevice%2Did}/deviceHealthScriptStates/id='{id}',policyId='{policyId}',deviceId='{deviceId}'{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
         /// Delete navigation property deviceHealthScriptStates for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -48,16 +49,17 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceHealthScriptStates.W
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
         /// </summary>
+        /// <returns>A <see cref="DeviceHealthScriptPolicyState"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<DeviceHealthScriptPolicyState?> GetAsync(Action<RequestConfiguration<WithIdWithPolicyIdWithDeviceIdRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -67,17 +69,18 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceHealthScriptStates.W
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceHealthScriptPolicyState>(requestInfo, DeviceHealthScriptPolicyState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property deviceHealthScriptStates in me
         /// </summary>
+        /// <returns>A <see cref="DeviceHealthScriptPolicyState"/></returns>
         /// <param name="body">Contains properties for policy run state of the device health script.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<DeviceHealthScriptPolicyState?> PatchAsync(DeviceHealthScriptPolicyState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -88,14 +91,14 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceHealthScriptStates.W
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceHealthScriptPolicyState>(requestInfo, DeviceHealthScriptPolicyState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property deviceHealthScriptStates for me
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,7 +107,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceHealthScriptStates.W
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/me/managedDevices/{managedDevice%2Did}/deviceHealthScriptStates/id='{id}',policyId='{policyId}',deviceId='{deviceId}'", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -112,6 +115,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceHealthScriptStates.W
         /// <summary>
         /// Results of device health scripts that ran for this device. Default is empty list. This property is read-only.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,6 +132,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceHealthScriptStates.W
         /// <summary>
         /// Update the navigation property deviceHealthScriptStates in me
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Contains properties for policy run state of the device health script.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -138,7 +143,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceHealthScriptStates.W
         public RequestInformation ToPatchRequestInformation(DeviceHealthScriptPolicyState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/me/managedDevices/{managedDevice%2Did}/deviceHealthScriptStates/id='{id}',policyId='{policyId}',deviceId='{deviceId}'", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -147,6 +152,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceHealthScriptStates.W
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithIdWithPolicyIdWithDeviceIdRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithIdWithPolicyIdWithDeviceIdRequestBuilder WithUrl(string rawUrl) {
             return new WithIdWithPolicyIdWithDeviceIdRequestBuilder(rawUrl, RequestAdapter);

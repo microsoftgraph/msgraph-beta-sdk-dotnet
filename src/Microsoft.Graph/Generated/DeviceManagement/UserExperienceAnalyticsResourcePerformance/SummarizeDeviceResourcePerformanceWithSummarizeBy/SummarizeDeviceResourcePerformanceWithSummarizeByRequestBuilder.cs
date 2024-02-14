@@ -14,26 +14,28 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
     /// </summary>
     public class SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="summarizeBy">Usage: summarizeBy=&apos;{summarizeBy}&apos;</param>
-        public SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string summarizeBy = "") : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsResourcePerformance/summarizeDeviceResourcePerformance(summarizeBy='{summarizeBy}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", pathParameters) {
+        public SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string summarizeBy = "") : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsResourcePerformance/summarizeDeviceResourcePerformance(summarizeBy='{summarizeBy}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
             if (!string.IsNullOrWhiteSpace(summarizeBy)) PathParameters.Add("summarizeBy", summarizeBy);
         }
         /// <summary>
-        /// Instantiates a new SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsResourcePerformance/summarizeDeviceResourcePerformance(summarizeBy='{summarizeBy}'){?%24top,%24skip,%24search,%24filter,%24count,%24select,%24orderby}", rawUrl) {
+        public SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsResourcePerformance/summarizeDeviceResourcePerformance(summarizeBy='{summarizeBy}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
         /// Invoke function summarizeDeviceResourcePerformance
         /// </summary>
+        /// <returns>A <see cref="SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse?> GetAsSummarizeDeviceResourcePerformanceWithSummarizeByGetResponseAsync(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -43,17 +45,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse>(requestInfo, SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function summarizeDeviceResourcePerformance
         /// </summary>
+        /// <returns>A <see cref="SummarizeDeviceResourcePerformanceWithSummarizeByResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsSummarizeDeviceResourcePerformanceWithSummarizeByGetResponse instead.")]
+        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This method is obsolete. Use {TypeName} instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<SummarizeDeviceResourcePerformanceWithSummarizeByResponse?> GetAsync(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -63,14 +66,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
+                {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SummarizeDeviceResourcePerformanceWithSummarizeByResponse>(requestInfo, SummarizeDeviceResourcePerformanceWithSummarizeByResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function summarizeDeviceResourcePerformance
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +90,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder WithUrl(string rawUrl) {
             return new SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder(rawUrl, RequestAdapter);
@@ -98,6 +102,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+#endif
             /// <summary>Filter items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

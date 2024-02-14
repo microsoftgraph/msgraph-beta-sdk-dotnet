@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC.Enable {
             set { BackingStore?.Set("enable", value); }
         }
         /// <summary>
-        /// Instantiates a new enablePostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="EnablePostRequestBody"/> and sets the default values.
         /// </summary>
         public EnablePostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -29,6 +29,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC.Enable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="EnablePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static EnablePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -37,6 +38,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC.Enable {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"enable", n => { Enable = n.GetBoolValue(); } },

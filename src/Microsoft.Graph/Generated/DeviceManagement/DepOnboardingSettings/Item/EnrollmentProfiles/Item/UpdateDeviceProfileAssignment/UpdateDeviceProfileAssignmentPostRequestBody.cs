@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Enrol
         }
 #endif
         /// <summary>
-        /// Instantiates a new updateDeviceProfileAssignmentPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="UpdateDeviceProfileAssignmentPostRequestBody"/> and sets the default values.
         /// </summary>
         public UpdateDeviceProfileAssignmentPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
@@ -38,6 +38,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Enrol
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="UpdateDeviceProfileAssignmentPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static UpdateDeviceProfileAssignmentPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -46,6 +47,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Enrol
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"deviceIds", n => { DeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
