@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateApplication {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use EvaluateApplicationPostResponse instead.")]
     public class EvaluateApplicationResponse : EvaluateApplicationPostResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Comments.Item.TaskNamespace.Comment.Replies.Item.TaskNamespace.Changes.Count {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use CountGetResponse instead.")]
     public class CountResponse : CountGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

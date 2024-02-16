@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use GetByUserIdAndRoleWithUserIdWithRoleGetResponse instead.")]
     public class GetByUserIdAndRoleWithUserIdWithRoleResponse : GetByUserIdAndRoleWithUserIdWithRoleGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

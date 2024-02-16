@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Categories.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use {TypeName} instead.")]
+        [Obsolete("This method is obsolete. Use GetAsDeltaGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<DeltaResponse?> GetAsync(Action<RequestConfiguration<DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {

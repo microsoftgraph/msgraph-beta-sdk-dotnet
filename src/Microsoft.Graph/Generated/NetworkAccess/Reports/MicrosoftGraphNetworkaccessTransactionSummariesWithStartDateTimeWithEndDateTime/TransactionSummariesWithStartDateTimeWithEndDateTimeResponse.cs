@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTime {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use TransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse instead.")]
     public class TransactionSummariesWithStartDateTimeWithEndDateTimeResponse : TransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

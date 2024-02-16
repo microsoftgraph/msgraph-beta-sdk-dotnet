@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Me.InformationProtection.Policy.Labels.EvaluateRemoval {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use EvaluateRemovalPostResponse instead.")]
     public class EvaluateRemovalResponse : EvaluateRemovalPostResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

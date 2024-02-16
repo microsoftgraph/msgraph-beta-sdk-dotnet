@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPeriod {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use GetAzureADApplicationSignInSummaryWithPeriodGetResponse instead.")]
     public class GetAzureADApplicationSignInSummaryWithPeriodResponse : GetAzureADApplicationSignInSummaryWithPeriodGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

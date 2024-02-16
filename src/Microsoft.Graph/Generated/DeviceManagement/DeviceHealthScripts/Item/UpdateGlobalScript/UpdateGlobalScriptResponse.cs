@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.UpdateGlobalScript {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use UpdateGlobalScriptPostResponse instead.")]
     public class UpdateGlobalScriptResponse : UpdateGlobalScriptPostResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

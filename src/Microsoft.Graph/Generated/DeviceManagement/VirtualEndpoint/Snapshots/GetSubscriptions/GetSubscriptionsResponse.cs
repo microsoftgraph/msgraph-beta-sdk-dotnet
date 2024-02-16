@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use GetSubscriptionsGetResponse instead.")]
     public class GetSubscriptionsResponse : GetSubscriptionsGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

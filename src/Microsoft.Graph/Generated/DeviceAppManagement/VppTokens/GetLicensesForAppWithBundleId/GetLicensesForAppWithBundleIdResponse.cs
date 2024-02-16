@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use GetLicensesForAppWithBundleIdGetResponse instead.")]
     public class GetLicensesForAppWithBundleIdResponse : GetLicensesForAppWithBundleIdGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

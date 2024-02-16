@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUserReportWithStartDateTimeWithEndDateTime {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use UserReportWithStartDateTimeWithEndDateTimeGetResponse instead.")]
     public class UserReportWithStartDateTimeWithEndDateTimeResponse : UserReportWithStartDateTimeWithEndDateTimeGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

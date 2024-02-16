@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityGroupCountsWithPeriod {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use GetOffice365GroupsActivityGroupCountsWithPeriodGetResponse instead.")]
     public class GetOffice365GroupsActivityGroupCountsWithPeriodResponse : GetOffice365GroupsActivityGroupCountsWithPeriodGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

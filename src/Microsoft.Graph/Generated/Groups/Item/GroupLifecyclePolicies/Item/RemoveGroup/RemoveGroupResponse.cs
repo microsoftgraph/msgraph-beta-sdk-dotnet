@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Item.RemoveGroup {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use RemoveGroupPostResponse instead.")]
     public class RemoveGroupResponse : RemoveGroupPostResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

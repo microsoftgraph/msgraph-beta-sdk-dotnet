@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetCloudPcRemoteActionResults {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use GetCloudPcRemoteActionResultsGetResponse instead.")]
     public class GetCloudPcRemoteActionResultsResponse : GetCloudPcRemoteActionResultsGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

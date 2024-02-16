@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.GenerateApplePushNotificationCertificateSigningRequest {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use GenerateApplePushNotificationCertificateSigningRequestPostResponse instead.")]
     public class GenerateApplePushNotificationCertificateSigningRequestResponse : GenerateApplePushNotificationCertificateSigningRequestPostResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

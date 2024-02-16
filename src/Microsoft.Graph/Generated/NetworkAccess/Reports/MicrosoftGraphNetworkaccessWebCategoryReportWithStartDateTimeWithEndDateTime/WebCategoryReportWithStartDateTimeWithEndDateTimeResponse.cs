@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTime {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use WebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse instead.")]
     public class WebCategoryReportWithStartDateTimeWithEndDateTimeResponse : WebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

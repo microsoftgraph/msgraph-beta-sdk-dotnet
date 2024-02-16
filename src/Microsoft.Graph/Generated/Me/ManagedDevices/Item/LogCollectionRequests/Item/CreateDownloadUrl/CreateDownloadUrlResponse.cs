@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use CreateDownloadUrlPostResponse instead.")]
     public class CreateDownloadUrlResponse : CreateDownloadUrlPostResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.SearchExistingIdentities {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use SearchExistingIdentitiesPostResponse instead.")]
     public class SearchExistingIdentitiesResponse : SearchExistingIdentitiesPostResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

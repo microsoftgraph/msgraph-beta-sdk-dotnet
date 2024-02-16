@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use QueryByPlatformTypePostResponse instead.")]
     public class QueryByPlatformTypeResponse : QueryByPlatformTypePostResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
