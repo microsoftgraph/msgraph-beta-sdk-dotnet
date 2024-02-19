@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Unfavorite {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use {TypeName} instead.")]
+        [Obsolete("This method is obsolete. Use PostAsUnfavoritePostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<UnfavoriteResponse?> PostAsync(UnfavoritePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {

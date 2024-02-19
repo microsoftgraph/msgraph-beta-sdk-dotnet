@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicators {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use DeleteTiIndicatorsPostResponse instead.")]
     public class DeleteTiIndicatorsResponse : DeleteTiIndicatorsPostResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetFileVaultKey {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use GetFileVaultKeyGetResponse instead.")]
     public class GetFileVaultKeyResponse : GetFileVaultKeyGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

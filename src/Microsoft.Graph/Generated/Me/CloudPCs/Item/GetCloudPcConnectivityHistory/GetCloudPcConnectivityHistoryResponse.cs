@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcConnectivityHistory {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use GetCloudPcConnectivityHistoryGetResponse instead.")]
     public class GetCloudPcConnectivityHistoryResponse : GetCloudPcConnectivityHistoryGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

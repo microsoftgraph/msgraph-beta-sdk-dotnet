@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdGetResponse instead.")]
     public class AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponse : AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

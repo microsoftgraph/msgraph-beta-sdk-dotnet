@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Solutions.BookingBusinesses.Item.GetStaffAvailability {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use GetStaffAvailabilityPostResponse instead.")]
     public class GetStaffAvailabilityResponse : GetStaffAvailabilityPostResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

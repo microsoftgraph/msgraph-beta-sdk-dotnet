@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.RetrieveMyRequests {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use RetrieveMyRequestsGetResponse instead.")]
     public class RetrieveMyRequestsResponse : RetrieveMyRequestsGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

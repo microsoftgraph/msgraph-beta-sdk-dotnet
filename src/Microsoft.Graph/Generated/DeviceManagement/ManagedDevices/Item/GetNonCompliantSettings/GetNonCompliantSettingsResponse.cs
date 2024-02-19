@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetNonCompliantSettings {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use GetNonCompliantSettingsGetResponse instead.")]
     public class GetNonCompliantSettingsResponse : GetNonCompliantSettingsGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.HasPayloadLinks {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use HasPayloadLinksPostResponse instead.")]
     public class HasPayloadLinksResponse : HasPayloadLinksPostResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

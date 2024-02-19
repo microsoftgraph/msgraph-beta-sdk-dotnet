@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Reports.GetOffice365ServicesUserCountsWithPeriod {
-    [Obsolete("This class is obsolete. Use {TypeName} instead.")]
+    [Obsolete("This class is obsolete. Use GetOffice365ServicesUserCountsWithPeriodGetResponse instead.")]
     public class GetOffice365ServicesUserCountsWithPeriodResponse : GetOffice365ServicesUserCountsWithPeriodGetResponse, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
