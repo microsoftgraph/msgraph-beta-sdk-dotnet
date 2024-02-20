@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Devices {
         public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/devices{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
-        /// Retrieve a list of devices registered in the directory. 
+        /// Retrieve a list of devices registered in the directory.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/device-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceCollectionResponse"/></returns>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Devices {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Device>(requestInfo, Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of devices registered in the directory. 
+        /// Retrieve a list of devices registered in the directory.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Devices {
             return new DevicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of devices registered in the directory. 
+        /// Retrieve a list of devices registered in the directory.
         /// </summary>
         public class DevicesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

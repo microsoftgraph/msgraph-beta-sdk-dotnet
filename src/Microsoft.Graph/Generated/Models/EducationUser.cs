@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("givenName", value); }
         }
 #endif
-        /// <summary>The SMTP address for the user; for example, &apos;jeff@contoso.onmicrosoft.com&apos;. Read-Only. Supports /$filter.</summary>
+        /// <summary>The SMTP address for the user; for example, &apos;jeff@contoso.com&apos;. Read-Only. Supports /$filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Mail {

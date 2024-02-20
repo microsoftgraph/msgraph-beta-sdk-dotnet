@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isInitial"); }
             set { BackingStore?.Set("isInitial", value); }
         }
-        /// <summary>The domain name; for example, contoso.onmicrosoft.com.</summary>
+        /// <summary>The domain name; for example, contoso.com`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name {
