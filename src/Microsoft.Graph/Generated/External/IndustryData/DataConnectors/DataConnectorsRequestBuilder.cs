@@ -43,8 +43,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
         public DataConnectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/dataConnectors{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
-        /// Get a list of the azureDataLakeConnector objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-list?view=graph-rest-1.0" />
+        /// Get the industryDataConnector resources from the dataConnector navigation property.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="IndustryDataConnectorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
             return await RequestAdapter.SendAsync<IndustryDataConnectorCollectionResponse>(requestInfo, IndustryDataConnectorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new industryDataConnector object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-post?view=graph-rest-1.0" />
+        /// Create a new azureDataLakeConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-post?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="IndustryDataConnector"/></returns>
         /// <param name="body">The request body</param>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
             return await RequestAdapter.SendAsync<IndustryDataConnector>(requestInfo, IndustryDataConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the azureDataLakeConnector objects and their properties.
+        /// Get the industryDataConnector resources from the dataConnector navigation property.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new industryDataConnector object.
+        /// Create a new azureDataLakeConnector object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
             return new DataConnectorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the azureDataLakeConnector objects and their properties.
+        /// Get the industryDataConnector resources from the dataConnector navigation property.
         /// </summary>
         public class DataConnectorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

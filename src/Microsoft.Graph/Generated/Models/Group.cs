@@ -365,7 +365,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("licenseProcessingState", value); }
         }
 #endif
-        /// <summary>The SMTP address for the group, for example, &apos;serviceadmins@contoso.onmicrosoft.com&apos;. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>The SMTP address for the group, for example, &apos;serviceadmins@contoso.com&apos;. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Mail {

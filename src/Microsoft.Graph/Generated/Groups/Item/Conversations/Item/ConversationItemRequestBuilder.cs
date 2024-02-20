@@ -34,8 +34,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item {
         public ConversationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}{?%24select}", rawUrl) {
         }
         /// <summary>
-        /// Delete conversation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversation-delete?view=graph-rest-1.0" />
+        /// Delete a conversation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-delete-conversation?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item {
             return await RequestAdapter.SendAsync<Conversation>(requestInfo, Conversation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete conversation.
+        /// Delete a conversation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

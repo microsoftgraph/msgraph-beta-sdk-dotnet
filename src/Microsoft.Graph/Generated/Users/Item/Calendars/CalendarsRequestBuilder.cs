@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars {
         public CalendarsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/calendars{?%24count,%24expand,%24filter,%24orderby,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
-        /// Get all the user&apos;s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+        /// Get all the user&apos;s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-calendars?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CalendarCollectionResponse"/></returns>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Calendar>(requestInfo, Microsoft.Graph.Beta.Models.Calendar.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all the user&apos;s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+        /// Get all the user&apos;s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars {
             return new CalendarsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all the user&apos;s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+        /// Get all the user&apos;s calendars (/calendars navigation property), get the calendars from the default calendar group or from a specific calendar group.
         /// </summary>
         public class CalendarsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

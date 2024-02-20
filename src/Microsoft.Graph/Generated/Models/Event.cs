@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("calendar", value); }
         }
 #endif
-        /// <summary>Contains occurrenceId property values of cancelled instances in a recurring series, if the event is the series master. Instances in a recurring series that are cancelled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).</summary>
+        /// <summary>Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called cancelledOccurences.Returned only on $select in a Get operation which specifies the id of a series master event (that is, the seriesMasterId property value).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? CancelledOccurrences {
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Importance?>("importance"); }
             set { BackingStore?.Set("importance", value); }
         }
-        /// <summary>The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.</summary>
+        /// <summary>The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn&apos;t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Event>? Instances {

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Array of custom tags associated with an incident.</summary>
+        /// <summary>The collection of custom tags that are associated with an incident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? CustomTags {
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("customTags", value); }
         }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>A rich text string describing the incident</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdateDateTime"); }
             set { BackingStore?.Set("lastUpdateDateTime", value); }
         }
-        /// <summary>The recommendedActions property</summary>
+        /// <summary>A rich text string that represents the actions that are reccomnded to take in order to resolve the incident</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecommendedActions {
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("recommendedActions", value); }
         }
 #endif
-        /// <summary>The recommendedHuntingQueries property</summary>
+        /// <summary>List of hunting Kusto Query Language (KQL) queries related to the incident</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<RecommendedHuntingQuery>? RecommendedHuntingQueries {
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<IncidentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The systemTags property</summary>
+        /// <summary>The collection of system tags that are associated with the incident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SystemTags {

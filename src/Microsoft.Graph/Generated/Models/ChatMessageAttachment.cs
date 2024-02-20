@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("content", value); }
         }
 #endif
-        /// <summary>The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentTypes supported by the Bot Framework&apos;s Attachment objectapplication/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.</summary>
+        /// <summary>The media type of the content attachment. It can have the following values: reference: Attachment is a link to another file. Populate the contentURL with the link to the object.Any contentType that is supported by the Bot Framework&apos;s Attachment object.application/vnd.microsoft.card.codesnippet: A code snippet. application/vnd.microsoft.card.announcement: An announcement header.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentType {
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contentType", value); }
         }
 #endif
-        /// <summary>URL for the content of the attachment. Supported protocols: http, https, file and data.</summary>
+        /// <summary>The URL for the content of the attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentUrl {
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contentUrl", value); }
         }
 #endif
-        /// <summary>Read-only. Unique id of the attachment.</summary>
+        /// <summary>Read-only. The unique id of the attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id {
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.</summary>
+        /// <summary>The ID of the Teams app that is associated with the attachment. The property is used to attribute a Teams message card to the specified app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TeamsAppId {
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("teamsAppId", value); }
         }
 #endif
-        /// <summary>URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user clicks the image, the channel would open the document.</summary>
+        /// <summary>The URL to a thumbnail image that the channel can use if it supports using an alternative, smaller form of content or contentUrl. For example, if you set contentType to application/word and set contentUrl to the location of the Word document, you might include a thumbnail image that represents the document. The channel could display the thumbnail image instead of the document. When the user selects the image, the channel would open the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ThumbnailUrl {

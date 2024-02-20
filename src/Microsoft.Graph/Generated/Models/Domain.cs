@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isDefault"); }
             set { BackingStore?.Set("isDefault", value); }
         }
-        /// <summary>true if this is the initial domain created by Microsoft Online Services (companyname.onmicrosoft.com). There is only one initial domain per company. Not nullable</summary>
+        /// <summary>true if this is the initial domain created by Microsoft Online Services (contoso.com). There is only one initial domain per company. Not nullable</summary>
         public bool? IsInitial {
             get { return BackingStore?.Get<bool?>("isInitial"); }
             set { BackingStore?.Set("isInitial", value); }

@@ -271,7 +271,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<AlertStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The systemTags property</summary>
+        /// <summary>The system tags associated with the alert</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SystemTags {

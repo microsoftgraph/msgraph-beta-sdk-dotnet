@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The geographic region code for where this site collection resides. Read-only.</summary>
+        /// <summary>The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DataLocationCode {
