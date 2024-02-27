@@ -297,6 +297,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("city", value); }
         }
 #endif
+        /// <summary>The cloudClipboard property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public CloudClipboardRoot? CloudClipboard {
+            get { return BackingStore?.Get<CloudClipboardRoot?>("cloudClipboard"); }
+            set { BackingStore?.Set("cloudClipboard", value); }
+        }
+#nullable restore
+#else
+        public CloudClipboardRoot CloudClipboard {
+            get { return BackingStore?.Get<CloudClipboardRoot>("cloudClipboard"); }
+            set { BackingStore?.Set("cloudClipboard", value); }
+        }
+#endif
         /// <summary>The cloudPCs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2034,6 +2048,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"calendars", n => { Calendars = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Calendar>(Microsoft.Graph.Beta.Models.Calendar.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"chats", n => { Chats = n.GetCollectionOfObjectValues<Chat>(Chat.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"city", n => { City = n.GetStringValue(); } },
+                {"cloudClipboard", n => { CloudClipboard = n.GetObjectValue<CloudClipboardRoot>(CloudClipboardRoot.CreateFromDiscriminatorValue); } },
                 {"cloudPCs", n => { CloudPCs = n.GetCollectionOfObjectValues<CloudPC>(CloudPC.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"cloudRealtimeCommunicationInfo", n => { CloudRealtimeCommunicationInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.CloudRealtimeCommunicationInfo>(Microsoft.Graph.Beta.Models.CloudRealtimeCommunicationInfo.CreateFromDiscriminatorValue); } },
                 {"companyName", n => { CompanyName = n.GetStringValue(); } },
@@ -2195,6 +2210,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<Event>("calendarView", CalendarView);
             writer.WriteCollectionOfObjectValues<Chat>("chats", Chats);
             writer.WriteStringValue("city", City);
+            writer.WriteObjectValue<CloudClipboardRoot>("cloudClipboard", CloudClipboard);
             writer.WriteCollectionOfObjectValues<CloudPC>("cloudPCs", CloudPCs);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CloudRealtimeCommunicationInfo>("cloudRealtimeCommunicationInfo", CloudRealtimeCommunicationInfo);
             writer.WriteStringValue("companyName", CompanyName);

@@ -5,12 +5,14 @@ using Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities;
 using Microsoft.Graph.Beta.DirectoryNamespace.CustomSecurityAttributeDefinitions;
 using Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems;
 using Microsoft.Graph.Beta.DirectoryNamespace.DeviceLocalCredentials;
+using Microsoft.Graph.Beta.DirectoryNamespace.ExternalUserProfiles;
 using Microsoft.Graph.Beta.DirectoryNamespace.FeatureRolloutPolicies;
 using Microsoft.Graph.Beta.DirectoryNamespace.FederationConfigurations;
 using Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources;
 using Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles;
 using Microsoft.Graph.Beta.DirectoryNamespace.OnPremisesSynchronization;
 using Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles;
+using Microsoft.Graph.Beta.DirectoryNamespace.PendingExternalUserProfiles;
 using Microsoft.Graph.Beta.DirectoryNamespace.Recommendations;
 using Microsoft.Graph.Beta.DirectoryNamespace.SharedEmailDomains;
 using Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions;
@@ -55,6 +57,10 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
         public DeviceLocalCredentialsRequestBuilder DeviceLocalCredentials { get =>
             new DeviceLocalCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the externalUserProfiles property of the microsoft.graph.directory entity.</summary>
+        public ExternalUserProfilesRequestBuilder ExternalUserProfiles { get =>
+            new ExternalUserProfilesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the featureRolloutPolicies property of the microsoft.graph.directory entity.</summary>
         public FeatureRolloutPoliciesRequestBuilder FeatureRolloutPolicies { get =>
             new FeatureRolloutPoliciesRequestBuilder(PathParameters, RequestAdapter);
@@ -78,6 +84,10 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
         /// <summary>Provides operations to manage the outboundSharedUserProfiles property of the microsoft.graph.directory entity.</summary>
         public OutboundSharedUserProfilesRequestBuilder OutboundSharedUserProfiles { get =>
             new OutboundSharedUserProfilesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the pendingExternalUserProfiles property of the microsoft.graph.directory entity.</summary>
+        public PendingExternalUserProfilesRequestBuilder PendingExternalUserProfiles { get =>
+            new PendingExternalUserProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the recommendations property of the microsoft.graph.directory entity.</summary>
         public RecommendationsRequestBuilder Recommendations { get =>

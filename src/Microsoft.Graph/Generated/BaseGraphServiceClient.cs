@@ -79,6 +79,7 @@ using Microsoft.Graph.Beta.Organization;
 using Microsoft.Graph.Beta.PayloadResponse;
 using Microsoft.Graph.Beta.PermissionGrants;
 using Microsoft.Graph.Beta.Places;
+using Microsoft.Graph.Beta.PlacesWithPlaceId;
 using Microsoft.Graph.Beta.Planner;
 using Microsoft.Graph.Beta.Policies;
 using Microsoft.Graph.Beta.Print;
@@ -650,6 +651,15 @@ namespace Microsoft.Graph.Beta {
         public GroupsWithUniqueNameRequestBuilder GroupsWithUniqueName(string uniqueName) {
             if(string.IsNullOrEmpty(uniqueName)) throw new ArgumentNullException(nameof(uniqueName));
             return new GroupsWithUniqueNameRequestBuilder(PathParameters, RequestAdapter, uniqueName);
+        }
+        /// <summary>
+        /// Provides operations to manage the collection of place entities.
+        /// </summary>
+        /// <returns>A <see cref="PlacesWithPlaceIdRequestBuilder"/></returns>
+        /// <param name="placeId">Alternate key of place</param>
+        public PlacesWithPlaceIdRequestBuilder PlacesWithPlaceId(string placeId) {
+            if(string.IsNullOrEmpty(placeId)) throw new ArgumentNullException(nameof(placeId));
+            return new PlacesWithPlaceIdRequestBuilder(PathParameters, RequestAdapter, placeId);
         }
         /// <summary>
         /// Provides operations to manage the collection of servicePrincipal entities.

@@ -72,6 +72,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("shiftPreferences", value); }
         }
 #endif
+        /// <summary>The windows property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<WindowsSetting>? Windows {
+            get { return BackingStore?.Get<List<WindowsSetting>?>("windows"); }
+            set { BackingStore?.Set("windows", value); }
+        }
+#nullable restore
+#else
+        public List<WindowsSetting> Windows {
+            get { return BackingStore?.Get<List<WindowsSetting>>("windows"); }
+            set { BackingStore?.Set("windows", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -93,6 +107,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"itemInsights", n => { ItemInsights = n.GetObjectValue<UserInsightsSettings>(UserInsightsSettings.CreateFromDiscriminatorValue); } },
                 {"regionalAndLanguageSettings", n => { RegionalAndLanguageSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings>(Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings.CreateFromDiscriminatorValue); } },
                 {"shiftPreferences", n => { ShiftPreferences = n.GetObjectValue<Microsoft.Graph.Beta.Models.ShiftPreferences>(Microsoft.Graph.Beta.Models.ShiftPreferences.CreateFromDiscriminatorValue); } },
+                {"windows", n => { Windows = n.GetCollectionOfObjectValues<WindowsSetting>(WindowsSetting.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -108,6 +123,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<UserInsightsSettings>("itemInsights", ItemInsights);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings>("regionalAndLanguageSettings", RegionalAndLanguageSettings);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ShiftPreferences>("shiftPreferences", ShiftPreferences);
+            writer.WriteCollectionOfObjectValues<WindowsSetting>("windows", Windows);
         }
     }
 }

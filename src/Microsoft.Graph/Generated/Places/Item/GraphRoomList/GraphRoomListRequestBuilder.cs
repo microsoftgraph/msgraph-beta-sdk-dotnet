@@ -2,7 +2,9 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Places.Item.GraphRoomList.Rooms;
+using Microsoft.Graph.Beta.Places.Item.GraphRoomList.RoomsWithPlaceId;
 using Microsoft.Graph.Beta.Places.Item.GraphRoomList.Workspaces;
+using Microsoft.Graph.Beta.Places.Item.GraphRoomList.WorkspacesWithPlaceId;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -59,6 +61,15 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoomList {
             return await RequestAdapter.SendAsync<RoomList>(requestInfo, RoomList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Provides operations to manage the rooms property of the microsoft.graph.roomList entity.
+        /// </summary>
+        /// <returns>A <see cref="RoomsWithPlaceIdRequestBuilder"/></returns>
+        /// <param name="placeId">Alternate key of room</param>
+        public RoomsWithPlaceIdRequestBuilder RoomsWithPlaceId(string placeId) {
+            if(string.IsNullOrEmpty(placeId)) throw new ArgumentNullException(nameof(placeId));
+            return new RoomsWithPlaceIdRequestBuilder(PathParameters, RequestAdapter, placeId);
+        }
+        /// <summary>
         /// Get the item of type microsoft.graph.place as microsoft.graph.roomList
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -82,6 +93,15 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoomList {
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public GraphRoomListRequestBuilder WithUrl(string rawUrl) {
             return new GraphRoomListRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Provides operations to manage the workspaces property of the microsoft.graph.roomList entity.
+        /// </summary>
+        /// <returns>A <see cref="WorkspacesWithPlaceIdRequestBuilder"/></returns>
+        /// <param name="placeId">Alternate key of workspace</param>
+        public WorkspacesWithPlaceIdRequestBuilder WorkspacesWithPlaceId(string placeId) {
+            if(string.IsNullOrEmpty(placeId)) throw new ArgumentNullException(nameof(placeId));
+            return new WorkspacesWithPlaceIdRequestBuilder(PathParameters, RequestAdapter, placeId);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.place as microsoft.graph.roomList

@@ -49,6 +49,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<DateTimeOffset?>("firstImpactedDateTime"); }
             set { BackingStore?.Set("firstImpactedDateTime", value); }
         }
+        /// <summary>The relatedResources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<RelatedResource>? RelatedResources {
+            get { return BackingStore?.Get<List<RelatedResource>?>("relatedResources"); }
+            set { BackingStore?.Set("relatedResources", value); }
+        }
+#nullable restore
+#else
+        public List<RelatedResource> RelatedResources {
+            get { return BackingStore?.Get<List<RelatedResource>>("relatedResources"); }
+            set { BackingStore?.Set("relatedResources", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,6 +83,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
                 {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"firstImpactedDateTime", n => { FirstImpactedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"relatedResources", n => { RelatedResources = n.GetCollectionOfObjectValues<RelatedResource>(RelatedResource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -83,6 +98,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             writer.WriteDateTimeOffsetValue("creationDateTime", CreationDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteDateTimeOffsetValue("firstImpactedDateTime", FirstImpactedDateTime);
+            writer.WriteCollectionOfObjectValues<RelatedResource>("relatedResources", RelatedResources);
         }
     }
 }

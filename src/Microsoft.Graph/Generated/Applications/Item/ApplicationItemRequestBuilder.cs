@@ -8,6 +8,7 @@ using Microsoft.Graph.Beta.Applications.Item.ConnectorGroup;
 using Microsoft.Graph.Beta.Applications.Item.CreatedOnBehalfOf;
 using Microsoft.Graph.Beta.Applications.Item.ExtensionProperties;
 using Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials;
+using Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentialsWithName;
 using Microsoft.Graph.Beta.Applications.Item.GetMemberGroups;
 using Microsoft.Graph.Beta.Applications.Item.GetMemberObjects;
 using Microsoft.Graph.Beta.Applications.Item.HomeRealmDiscoveryPolicies;
@@ -157,6 +158,15 @@ namespace Microsoft.Graph.Beta.Applications.Item {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.application entity.
+        /// </summary>
+        /// <returns>A <see cref="FederatedIdentityCredentialsWithNameRequestBuilder"/></returns>
+        /// <param name="name">Alternate key of federatedIdentityCredential</param>
+        public FederatedIdentityCredentialsWithNameRequestBuilder FederatedIdentityCredentialsWithName(string name) {
+            if(string.IsNullOrEmpty(name)) throw new ArgumentNullException(nameof(name));
+            return new FederatedIdentityCredentialsWithNameRequestBuilder(PathParameters, RequestAdapter, name);
         }
         /// <summary>
         /// Get the properties and relationships of an application object.

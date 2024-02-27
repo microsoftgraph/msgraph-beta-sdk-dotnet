@@ -14,5 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         FormCompletion = 8,
         [EnumMember(Value = "approvalCompletion")]
         ApprovalCompletion = 16,
+        [EnumMember(Value = "completionInHostedApp")]
+        CompletionInHostedApp = 32,
     }
 }

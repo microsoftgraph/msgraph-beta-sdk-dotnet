@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Partners.Billing;
 using Microsoft.Graph.Beta.Reports.Partners.Billing.Manifests;
 using Microsoft.Graph.Beta.Reports.Partners.Billing.Operations;
+using Microsoft.Graph.Beta.Reports.Partners.Billing.Reconciliation;
 using Microsoft.Graph.Beta.Reports.Partners.Billing.Usage;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -24,6 +25,10 @@ namespace Microsoft.Graph.Beta.Reports.Partners.Billing {
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.partners.billing.billing entity.</summary>
         public OperationsRequestBuilder Operations { get =>
             new OperationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the reconciliation property of the microsoft.graph.partners.billing.billing entity.</summary>
+        public ReconciliationRequestBuilder Reconciliation { get =>
+            new ReconciliationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the usage property of the microsoft.graph.partners.billing.billing entity.</summary>
         public UsageRequestBuilder Usage { get =>

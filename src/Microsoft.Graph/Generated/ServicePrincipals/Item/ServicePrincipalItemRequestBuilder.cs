@@ -14,6 +14,7 @@ using Microsoft.Graph.Beta.ServicePrincipals.Item.DelegatedPermissionClassificat
 using Microsoft.Graph.Beta.ServicePrincipals.Item.DeletePasswordSingleSignOnCredentials;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.Endpoints;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.FederatedIdentityCredentials;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.FederatedIdentityCredentialsWithName;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.GetMemberGroups;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.GetMemberObjects;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.GetPasswordSingleSignOnCredentials;
@@ -192,6 +193,15 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.servicePrincipal entity.
+        /// </summary>
+        /// <returns>A <see cref="FederatedIdentityCredentialsWithNameRequestBuilder"/></returns>
+        /// <param name="name">Alternate key of federatedIdentityCredential</param>
+        public FederatedIdentityCredentialsWithNameRequestBuilder FederatedIdentityCredentialsWithName(string name) {
+            if(string.IsNullOrEmpty(name)) throw new ArgumentNullException(nameof(name));
+            return new FederatedIdentityCredentialsWithNameRequestBuilder(PathParameters, RequestAdapter, name);
         }
         /// <summary>
         /// Retrieve the properties and relationships of a servicePrincipal object.

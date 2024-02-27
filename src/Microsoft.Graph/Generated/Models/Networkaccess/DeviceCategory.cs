@@ -9,5 +9,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         Branch,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "remoteNetwork")]
+        RemoteNetwork,
     }
 }

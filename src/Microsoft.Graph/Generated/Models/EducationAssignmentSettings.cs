@@ -6,6 +6,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationAssignmentSettings : Entity, IParsable {
+        /// <summary>The defaultGradingScheme property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public EducationGradingScheme? DefaultGradingScheme {
+            get { return BackingStore?.Get<EducationGradingScheme?>("defaultGradingScheme"); }
+            set { BackingStore?.Set("defaultGradingScheme", value); }
+        }
+#nullable restore
+#else
+        public EducationGradingScheme DefaultGradingScheme {
+            get { return BackingStore?.Get<EducationGradingScheme>("defaultGradingScheme"); }
+            set { BackingStore?.Set("defaultGradingScheme", value); }
+        }
+#endif
         /// <summary>When set, enables users to weight assignments differently when computing a class average grade.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -18,6 +32,20 @@ namespace Microsoft.Graph.Beta.Models {
         public List<EducationGradingCategory> GradingCategories {
             get { return BackingStore?.Get<List<EducationGradingCategory>>("gradingCategories"); }
             set { BackingStore?.Set("gradingCategories", value); }
+        }
+#endif
+        /// <summary>The gradingSchemes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<EducationGradingScheme>? GradingSchemes {
+            get { return BackingStore?.Get<List<EducationGradingScheme>?>("gradingSchemes"); }
+            set { BackingStore?.Set("gradingSchemes", value); }
+        }
+#nullable restore
+#else
+        public List<EducationGradingScheme> GradingSchemes {
+            get { return BackingStore?.Get<List<EducationGradingScheme>>("gradingSchemes"); }
+            set { BackingStore?.Set("gradingSchemes", value); }
         }
 #endif
         /// <summary>Indicates whether turn-in celebration animation will be shown. If true, the animation won&apos;t be shown. The default value is false.</summary>
@@ -40,7 +68,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"defaultGradingScheme", n => { DefaultGradingScheme = n.GetObjectValue<EducationGradingScheme>(EducationGradingScheme.CreateFromDiscriminatorValue); } },
                 {"gradingCategories", n => { GradingCategories = n.GetCollectionOfObjectValues<EducationGradingCategory>(EducationGradingCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"gradingSchemes", n => { GradingSchemes = n.GetCollectionOfObjectValues<EducationGradingScheme>(EducationGradingScheme.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"submissionAnimationDisabled", n => { SubmissionAnimationDisabled = n.GetBoolValue(); } },
             };
         }
@@ -51,7 +81,9 @@ namespace Microsoft.Graph.Beta.Models {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<EducationGradingScheme>("defaultGradingScheme", DefaultGradingScheme);
             writer.WriteCollectionOfObjectValues<EducationGradingCategory>("gradingCategories", GradingCategories);
+            writer.WriteCollectionOfObjectValues<EducationGradingScheme>("gradingSchemes", GradingSchemes);
             writer.WriteBoolValue("submissionAnimationDisabled", SubmissionAnimationDisabled);
         }
     }

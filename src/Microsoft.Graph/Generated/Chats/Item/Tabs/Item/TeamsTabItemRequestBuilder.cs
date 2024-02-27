@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Tabs.Item {
             return await RequestAdapter.SendAsync<TeamsTab>(requestInfo, TeamsTab.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of the specified tab in a chat. This can be used to configure the content of the tab.
+        /// Update the properties of the specified tab in a chat. This API can be used to configure the content of the tab.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-patch-tabs?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TeamsTab"/></returns>
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Tabs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of the specified tab in a chat. This can be used to configure the content of the tab.
+        /// Update the properties of the specified tab in a chat. This API can be used to configure the content of the tab.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

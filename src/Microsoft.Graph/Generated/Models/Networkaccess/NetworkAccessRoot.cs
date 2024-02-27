@@ -6,6 +6,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class NetworkAccessRoot : Microsoft.Graph.Beta.Models.Entity, IParsable {
+        /// <summary>The alerts property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Alert>? Alerts {
+            get { return BackingStore?.Get<List<Alert>?>("alerts"); }
+            set { BackingStore?.Set("alerts", value); }
+        }
+#nullable restore
+#else
+        public List<Alert> Alerts {
+            get { return BackingStore?.Get<List<Alert>>("alerts"); }
+            set { BackingStore?.Set("alerts", value); }
+        }
+#endif
         /// <summary>Connectivity represents all the connectivity components in Global Secure Access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -147,6 +161,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"alerts", n => { Alerts = n.GetCollectionOfObjectValues<Alert>(Alert.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"connectivity", n => { Connectivity = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Connectivity>(Microsoft.Graph.Beta.Models.Networkaccess.Connectivity.CreateFromDiscriminatorValue); } },
                 {"filteringPolicies", n => { FilteringPolicies = n.GetCollectionOfObjectValues<FilteringPolicy>(FilteringPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"filteringProfiles", n => { FilteringProfiles = n.GetCollectionOfObjectValues<FilteringProfile>(FilteringProfile.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -165,6 +180,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<Alert>("alerts", Alerts);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Connectivity>("connectivity", Connectivity);
             writer.WriteCollectionOfObjectValues<FilteringPolicy>("filteringPolicies", FilteringPolicies);
             writer.WriteCollectionOfObjectValues<FilteringProfile>("filteringProfiles", FilteringProfiles);

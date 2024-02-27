@@ -17,6 +17,7 @@ using Microsoft.Graph.Beta.Security.IpSecurityProfiles;
 using Microsoft.Graph.Beta.Security.Labels;
 using Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityRunHuntingQuery;
 using Microsoft.Graph.Beta.Security.ProviderTenantSettings;
+using Microsoft.Graph.Beta.Security.Rules;
 using Microsoft.Graph.Beta.Security.SecureScoreControlProfiles;
 using Microsoft.Graph.Beta.Security.SecureScores;
 using Microsoft.Graph.Beta.Security.SecurityActions;
@@ -103,6 +104,10 @@ namespace Microsoft.Graph.Beta.Security {
         /// <summary>Provides operations to manage the providerTenantSettings property of the microsoft.graph.security entity.</summary>
         public ProviderTenantSettingsRequestBuilder ProviderTenantSettings { get =>
             new ProviderTenantSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the rules property of the microsoft.graph.security entity.</summary>
+        public RulesRequestBuilder Rules { get =>
+            new RulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.</summary>
         public SecureScoreControlProfilesRequestBuilder SecureScoreControlProfiles { get =>

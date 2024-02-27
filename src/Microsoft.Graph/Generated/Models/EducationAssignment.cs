@@ -163,6 +163,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("gradingCategory", value); }
         }
 #endif
+        /// <summary>The gradingScheme property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public EducationGradingScheme? GradingScheme {
+            get { return BackingStore?.Get<EducationGradingScheme?>("gradingScheme"); }
+            set { BackingStore?.Set("gradingScheme", value); }
+        }
+#nullable restore
+#else
+        public EducationGradingScheme GradingScheme {
+            get { return BackingStore?.Get<EducationGradingScheme>("gradingScheme"); }
+            set { BackingStore?.Set("gradingScheme", value); }
+        }
+#endif
         /// <summary>Instructions for the assignment. This property and the display name tell the student what to do.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -266,7 +280,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("rubric", value); }
         }
 #endif
-        /// <summary>Status of the Assignment.  You can’t PATCH this value.  Possible values are: draft, scheduled, published, assigned, unknownFutureValue and inactive. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.</summary>
+        /// <summary>Status of the assignment. You can&apos;t PATCH this value. Possible values are: draft, scheduled, published, assigned, unknownFutureValue, inactive. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: inactive.</summary>
         public EducationAssignmentStatus? Status {
             get { return BackingStore?.Get<EducationAssignmentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
@@ -331,6 +345,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"feedbackResourcesFolderUrl", n => { FeedbackResourcesFolderUrl = n.GetStringValue(); } },
                 {"grading", n => { Grading = n.GetObjectValue<EducationAssignmentGradeType>(EducationAssignmentGradeType.CreateFromDiscriminatorValue); } },
                 {"gradingCategory", n => { GradingCategory = n.GetObjectValue<EducationGradingCategory>(EducationGradingCategory.CreateFromDiscriminatorValue); } },
+                {"gradingScheme", n => { GradingScheme = n.GetObjectValue<EducationGradingScheme>(EducationGradingScheme.CreateFromDiscriminatorValue); } },
                 {"instructions", n => { Instructions = n.GetObjectValue<EducationItemBody>(EducationItemBody.CreateFromDiscriminatorValue); } },
                 {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -363,6 +378,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("dueDateTime", DueDateTime);
             writer.WriteObjectValue<EducationAssignmentGradeType>("grading", Grading);
             writer.WriteObjectValue<EducationGradingCategory>("gradingCategory", GradingCategory);
+            writer.WriteObjectValue<EducationGradingScheme>("gradingScheme", GradingScheme);
             writer.WriteObjectValue<EducationItemBody>("instructions", Instructions);
             writer.WriteStringValue("moduleUrl", ModuleUrl);
             writer.WriteStringValue("notificationChannelUrl", NotificationChannelUrl);

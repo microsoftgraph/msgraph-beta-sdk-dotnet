@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class DeploymentAudience : Microsoft.Graph.Beta.Models.Entity, IParsable {
-        /// <summary>Content eligible to deploy to devices in the audience. Not nullable. Read-only.</summary>
+        /// <summary>The applicableContent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent>? ApplicableContent {

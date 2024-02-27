@@ -28,14 +28,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The invitedAttendees property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CommunicationsUserIdentity>? InvitedAttendees {
-            get { return BackingStore?.Get<List<CommunicationsUserIdentity>?>("invitedAttendees"); }
+        public List<Identity>? InvitedAttendees {
+            get { return BackingStore?.Get<List<Identity>?>("invitedAttendees"); }
             set { BackingStore?.Set("invitedAttendees", value); }
         }
 #nullable restore
 #else
-        public List<CommunicationsUserIdentity> InvitedAttendees {
-            get { return BackingStore?.Get<List<CommunicationsUserIdentity>>("invitedAttendees"); }
+        public List<Identity> InvitedAttendees {
+            get { return BackingStore?.Get<List<Identity>>("invitedAttendees"); }
             set { BackingStore?.Set("invitedAttendees", value); }
         }
 #endif
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"audience", n => { Audience = n.GetEnumValue<MeetingAudience>(); } },
                 {"coOrganizers", n => { CoOrganizers = n.GetCollectionOfObjectValues<CommunicationsUserIdentity>(CommunicationsUserIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"invitedAttendees", n => { InvitedAttendees = n.GetCollectionOfObjectValues<CommunicationsUserIdentity>(CommunicationsUserIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"invitedAttendees", n => { InvitedAttendees = n.GetCollectionOfObjectValues<Identity>(Identity.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"isInviteOnly", n => { IsInviteOnly = n.GetBoolValue(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteEnumValue<MeetingAudience>("audience", Audience);
             writer.WriteCollectionOfObjectValues<CommunicationsUserIdentity>("coOrganizers", CoOrganizers);
-            writer.WriteCollectionOfObjectValues<CommunicationsUserIdentity>("invitedAttendees", InvitedAttendees);
+            writer.WriteCollectionOfObjectValues<Identity>("invitedAttendees", InvitedAttendees);
             writer.WriteBoolValue("isInviteOnly", IsInviteOnly);
         }
     }

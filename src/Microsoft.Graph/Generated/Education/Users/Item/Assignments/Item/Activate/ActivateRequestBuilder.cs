@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Activate {
         public ActivateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/users/{educationUser%2Did}/assignments/{educationAssignment%2Did}/activate", rawUrl) {
         }
         /// <summary>
-        /// Activate an inactive educationAssignment to signal that the assignment has further action items for teachers and students. This action can only be performed by a teacher on currently inactive assignments.
+        /// Activate an inactive educationAssignment to signal that the assignment has further action items for teachers or students. This action can only be performed by a teacher on currently inactive assignments.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-activate?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EducationAssignment"/></returns>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Activate {
             return await RequestAdapter.SendAsync<EducationAssignment>(requestInfo, EducationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Activate an inactive educationAssignment to signal that the assignment has further action items for teachers and students. This action can only be performed by a teacher on currently inactive assignments.
+        /// Activate an inactive educationAssignment to signal that the assignment has further action items for teachers or students. This action can only be performed by a teacher on currently inactive assignments.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

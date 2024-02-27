@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamsAppDashboardCardDefinition : Entity, IParsable {
-        /// <summary>The contentSource property</summary>
+        /// <summary>The configuration for the source of the card content. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public TeamsAppDashboardCardContentSource? ContentSource {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contentSource", value); }
         }
 #endif
-        /// <summary>The defaultSize property</summary>
+        /// <summary>The size of the card. The possible values are: medium, large, unknownFutureValue. Required.</summary>
         public TeamsAppDashboardCardSize? DefaultSize {
             get { return BackingStore?.Get<TeamsAppDashboardCardSize?>("defaultSize"); }
             set { BackingStore?.Set("defaultSize", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>The description for the card. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The name of the card. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The icon property</summary>
+        /// <summary>Configuration for the display of the icon in the card picker. If neither this nor any of its properties (iconUrl and officeUIFabricIconName) are specified, the color icon of the app is used. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public TeamsAppDashboardCardIcon? Icon {
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("icon", value); }
         }
 #endif
-        /// <summary>The pickerGroupId property</summary>
+        /// <summary>ID for the group in the card picker. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PickerGroupId {

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("installedApps", value); }
         }
 #endif
-        /// <summary>Represents the chosen locale of a user in Microsoft Teams.</summary>
+        /// <summary>The chosen locale of a user in Microsoft Teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Locale {
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("locale", value); }
         }
 #endif
-        /// <summary>Represents the region of the user in Microsoft Teams.</summary>
+        /// <summary>The region of the user in Microsoft Teams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region {

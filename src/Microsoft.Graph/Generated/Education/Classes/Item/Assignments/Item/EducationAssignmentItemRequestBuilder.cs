@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Activate;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Categories;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Deactivate;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.GradingCategory;
+using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.GradingScheme;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Publish;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Resources;
 using Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Rubric;
@@ -39,6 +40,10 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item {
         /// <summary>Provides operations to manage the gradingCategory property of the microsoft.graph.educationAssignment entity.</summary>
         public GradingCategoryRequestBuilder GradingCategory { get =>
             new GradingCategoryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the gradingScheme property of the microsoft.graph.educationAssignment entity.</summary>
+        public GradingSchemeRequestBuilder GradingScheme { get =>
+            new GradingSchemeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the publish method.</summary>
         public PublishRequestBuilder Publish { get =>
@@ -99,7 +104,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class. You can use the Prefer header in your request to get the inactive status in case the assignment is deactivated; otherwise, you will get an unknownFutureValue value in the response.
+        /// Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class. You can use the Prefer header in your request to get the inactive status in case the assignment is deactivated; otherwise, the response value for the status property is unknownFutureValue.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EducationAssignment"/></returns>
@@ -160,7 +165,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class. You can use the Prefer header in your request to get the inactive status in case the assignment is deactivated; otherwise, you will get an unknownFutureValue value in the response.
+        /// Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class. You can use the Prefer header in your request to get the inactive status in case the assignment is deactivated; otherwise, the response value for the status property is unknownFutureValue.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -211,7 +216,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item {
         public class EducationAssignmentItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class. You can use the Prefer header in your request to get the inactive status in case the assignment is deactivated; otherwise, you will get an unknownFutureValue value in the response.
+        /// Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class. You can use the Prefer header in your request to get the inactive status in case the assignment is deactivated; otherwise, the response value for the status property is unknownFutureValue.
         /// </summary>
         public class EducationAssignmentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
