@@ -34,6 +34,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("includes", value); }
         }
 #endif
+        /// <summary>The resource type the pre-approval policy applies to. Possible values: group for groups and teams, chat for chats, tenant for all supported resources in the tenant. Required.</summary>
+        public Microsoft.Graph.Beta.Models.ResourceScopeType? ResourceScopeType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceScopeType?>("resourceScopeType"); }
+            set { BackingStore?.Set("resourceScopeType", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="PermissionGrantPolicy"/> and sets the default values.
         /// </summary>
@@ -57,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"excludes", n => { Excludes = n.GetCollectionOfObjectValues<PermissionGrantConditionSet>(PermissionGrantConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"includes", n => { Includes = n.GetCollectionOfObjectValues<PermissionGrantConditionSet>(PermissionGrantConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"resourceScopeType", n => { ResourceScopeType = n.GetEnumValue<ResourceScopeType>(); } },
             };
         }
         /// <summary>
@@ -68,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<PermissionGrantConditionSet>("excludes", Excludes);
             writer.WriteCollectionOfObjectValues<PermissionGrantConditionSet>("includes", Includes);
+            writer.WriteEnumValue<ResourceScopeType>("resourceScopeType", ResourceScopeType);
         }
     }
 }

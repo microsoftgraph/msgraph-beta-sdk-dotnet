@@ -34,6 +34,20 @@ namespace Microsoft.Graph.Beta.Models.Partners.Billing {
             set { BackingStore?.Set("operations", value); }
         }
 #endif
+        /// <summary>The reconciliation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public BillingReconciliation? Reconciliation {
+            get { return BackingStore?.Get<BillingReconciliation?>("reconciliation"); }
+            set { BackingStore?.Set("reconciliation", value); }
+        }
+#nullable restore
+#else
+        public BillingReconciliation Reconciliation {
+            get { return BackingStore?.Get<BillingReconciliation>("reconciliation"); }
+            set { BackingStore?.Set("reconciliation", value); }
+        }
+#endif
         /// <summary>The usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models.Partners.Billing {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"manifests", n => { Manifests = n.GetCollectionOfObjectValues<Manifest>(Manifest.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"operations", n => { Operations = n.GetCollectionOfObjectValues<Operation>(Operation.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"reconciliation", n => { Reconciliation = n.GetObjectValue<BillingReconciliation>(BillingReconciliation.CreateFromDiscriminatorValue); } },
                 {"usage", n => { Usage = n.GetObjectValue<AzureUsage>(AzureUsage.CreateFromDiscriminatorValue); } },
             };
         }
@@ -77,6 +92,7 @@ namespace Microsoft.Graph.Beta.Models.Partners.Billing {
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<Manifest>("manifests", Manifests);
             writer.WriteCollectionOfObjectValues<Operation>("operations", Operations);
+            writer.WriteObjectValue<BillingReconciliation>("reconciliation", Reconciliation);
             writer.WriteObjectValue<AzureUsage>("usage", Usage);
         }
     }

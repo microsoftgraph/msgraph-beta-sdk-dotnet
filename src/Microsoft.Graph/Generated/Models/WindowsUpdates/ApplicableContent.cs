@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("catalogEntry", value); }
         }
 #endif
-        /// <summary>Collection of devices and recommendations for applicable catalog content.</summary>
+        /// <summary>The matchedDevices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ApplicableContentDeviceMatch>? MatchedDevices {

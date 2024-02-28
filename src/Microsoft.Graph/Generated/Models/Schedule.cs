@@ -30,6 +30,16 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
+        /// <summary>Indicates whether approval is required by a manager of this schedule for cross location shift requests.</summary>
+        public bool? IsCrossLocationShiftRequestApprovalRequired {
+            get { return BackingStore?.Get<bool?>("isCrossLocationShiftRequestApprovalRequired"); }
+            set { BackingStore?.Set("isCrossLocationShiftRequestApprovalRequired", value); }
+        }
+        /// <summary>Indicates whether the cross-location marketplace feature is enabled for this schedule.</summary>
+        public bool? IsCrossLocationShiftsEnabled {
+            get { return BackingStore?.Get<bool?>("isCrossLocationShiftsEnabled"); }
+            set { BackingStore?.Set("isCrossLocationShiftsEnabled", value); }
+        }
         /// <summary>The offer requests for shifts in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -143,7 +153,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("shiftsRoleDefinitions", value); }
         }
 #endif
-        /// <summary>Indicates the start day of the week.</summary>
+        /// <summary>Indicates the start day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.</summary>
         public DayOfWeekObject? StartDayOfWeek {
             get { return BackingStore?.Get<DayOfWeekObject?>("startDayOfWeek"); }
             set { BackingStore?.Set("startDayOfWeek", value); }
@@ -261,7 +271,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("timeZone", value); }
         }
 #endif
-        /// <summary>The Ids for the workforce integrations associated with this schedule.</summary>
+        /// <summary>The IDs for the workforce integrations associated with this schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? WorkforceIntegrationIds {
@@ -293,6 +303,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"activitiesIncludedWhenCopyingShiftsEnabled", n => { ActivitiesIncludedWhenCopyingShiftsEnabled = n.GetBoolValue(); } },
                 {"dayNotes", n => { DayNotes = n.GetCollectionOfObjectValues<DayNote>(DayNote.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"enabled", n => { Enabled = n.GetBoolValue(); } },
+                {"isCrossLocationShiftRequestApprovalRequired", n => { IsCrossLocationShiftRequestApprovalRequired = n.GetBoolValue(); } },
+                {"isCrossLocationShiftsEnabled", n => { IsCrossLocationShiftsEnabled = n.GetBoolValue(); } },
                 {"offerShiftRequests", n => { OfferShiftRequests = n.GetCollectionOfObjectValues<OfferShiftRequest>(OfferShiftRequest.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"offerShiftRequestsEnabled", n => { OfferShiftRequestsEnabled = n.GetBoolValue(); } },
                 {"openShiftChangeRequests", n => { OpenShiftChangeRequests = n.GetCollectionOfObjectValues<OpenShiftChangeRequest>(OpenShiftChangeRequest.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -327,6 +339,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("activitiesIncludedWhenCopyingShiftsEnabled", ActivitiesIncludedWhenCopyingShiftsEnabled);
             writer.WriteCollectionOfObjectValues<DayNote>("dayNotes", DayNotes);
             writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteBoolValue("isCrossLocationShiftRequestApprovalRequired", IsCrossLocationShiftRequestApprovalRequired);
+            writer.WriteBoolValue("isCrossLocationShiftsEnabled", IsCrossLocationShiftsEnabled);
             writer.WriteCollectionOfObjectValues<OfferShiftRequest>("offerShiftRequests", OfferShiftRequests);
             writer.WriteBoolValue("offerShiftRequestsEnabled", OfferShiftRequestsEnabled);
             writer.WriteCollectionOfObjectValues<OpenShiftChangeRequest>("openShiftChangeRequests", OpenShiftChangeRequests);

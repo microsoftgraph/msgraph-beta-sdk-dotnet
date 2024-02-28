@@ -98,6 +98,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("personalSiteWebUrl", value); }
         }
 #endif
+        /// <summary>The content stream of the presenter&apos;s photo.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public byte[]? Photo {
+            get { return BackingStore?.Get<byte[]?>("photo"); }
+            set { BackingStore?.Set("photo", value); }
+        }
+#nullable restore
+#else
+        public byte[] Photo {
+            get { return BackingStore?.Get<byte[]>("photo"); }
+            set { BackingStore?.Set("photo", value); }
+        }
+#endif
         /// <summary>The presenter&apos;s Twitter profile URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -140,6 +154,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"linkedInProfileWebUrl", n => { LinkedInProfileWebUrl = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"personalSiteWebUrl", n => { PersonalSiteWebUrl = n.GetStringValue(); } },
+                {"photo", n => { Photo = n.GetByteArrayValue(); } },
                 {"twitterProfileWebUrl", n => { TwitterProfileWebUrl = n.GetStringValue(); } },
             };
         }
@@ -155,6 +170,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("linkedInProfileWebUrl", LinkedInProfileWebUrl);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("personalSiteWebUrl", PersonalSiteWebUrl);
+            writer.WriteByteArrayValue("photo", Photo);
             writer.WriteStringValue("twitterProfileWebUrl", TwitterProfileWebUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

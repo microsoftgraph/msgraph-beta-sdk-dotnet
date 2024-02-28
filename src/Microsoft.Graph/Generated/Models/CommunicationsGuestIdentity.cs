@@ -6,6 +6,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CommunicationsGuestIdentity : Identity, IParsable {
+        /// <summary>The email of the guest user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Email {
+            get { return BackingStore?.Get<string?>("email"); }
+            set { BackingStore?.Set("email", value); }
+        }
+#nullable restore
+#else
+        public string Email {
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="CommunicationsGuestIdentity"/> and sets the default values.
         /// </summary>
@@ -27,6 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"email", n => { Email = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -36,6 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("email", Email);
         }
     }
 }

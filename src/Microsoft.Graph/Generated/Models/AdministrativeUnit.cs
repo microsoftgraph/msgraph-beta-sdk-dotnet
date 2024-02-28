@@ -67,6 +67,48 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("members", value); }
         }
 #endif
+        /// <summary>Dynamic membership rule for the administrative unit. For more about the rules that you can use for dynamic administrative units and dynamic groups, see Using attributes to create advanced rules.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MembershipRule {
+            get { return BackingStore?.Get<string?>("membershipRule"); }
+            set { BackingStore?.Set("membershipRule", value); }
+        }
+#nullable restore
+#else
+        public string MembershipRule {
+            get { return BackingStore?.Get<string>("membershipRule"); }
+            set { BackingStore?.Set("membershipRule", value); }
+        }
+#endif
+        /// <summary>Used to control whether the dynamic membership rule is actively processed. Set to On when you want the dynamic membership rule to be active and Paused if you want to stop updating membership dynamically. If not set, the default behavior is Paused.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MembershipRuleProcessingState {
+            get { return BackingStore?.Get<string?>("membershipRuleProcessingState"); }
+            set { BackingStore?.Set("membershipRuleProcessingState", value); }
+        }
+#nullable restore
+#else
+        public string MembershipRuleProcessingState {
+            get { return BackingStore?.Get<string>("membershipRuleProcessingState"); }
+            set { BackingStore?.Set("membershipRuleProcessingState", value); }
+        }
+#endif
+        /// <summary>Membership type for the administrative unit. Can be dynamic or assigned. If not set, the default behavior is assigned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MembershipType {
+            get { return BackingStore?.Get<string?>("membershipType"); }
+            set { BackingStore?.Set("membershipType", value); }
+        }
+#nullable restore
+#else
+        public string MembershipType {
+            get { return BackingStore?.Get<string>("membershipType"); }
+            set { BackingStore?.Set("membershipType", value); }
+        }
+#endif
         /// <summary>Scoped-role members of this administrative unit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,6 +163,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"isMemberManagementRestricted", n => { IsMemberManagementRestricted = n.GetBoolValue(); } },
                 {"members", n => { Members = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"membershipRule", n => { MembershipRule = n.GetStringValue(); } },
+                {"membershipRuleProcessingState", n => { MembershipRuleProcessingState = n.GetStringValue(); } },
+                {"membershipType", n => { MembershipType = n.GetStringValue(); } },
                 {"scopedRoleMembers", n => { ScopedRoleMembers = n.GetCollectionOfObjectValues<ScopedRoleMembership>(ScopedRoleMembership.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"visibility", n => { Visibility = n.GetStringValue(); } },
             };
@@ -137,6 +182,9 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
             writer.WriteBoolValue("isMemberManagementRestricted", IsMemberManagementRestricted);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("members", Members);
+            writer.WriteStringValue("membershipRule", MembershipRule);
+            writer.WriteStringValue("membershipRuleProcessingState", MembershipRuleProcessingState);
+            writer.WriteStringValue("membershipType", MembershipType);
             writer.WriteCollectionOfObjectValues<ScopedRoleMembership>("scopedRoleMembers", ScopedRoleMembers);
             writer.WriteStringValue("visibility", Visibility);
         }

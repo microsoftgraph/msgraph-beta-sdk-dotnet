@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("customTags", value); }
         }
 #endif
-        /// <summary>A rich text string describing the incident</summary>
+        /// <summary>Description of the incident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("incidentWebUrl", value); }
         }
 #endif
-        /// <summary>The lastModifiedBy property</summary>
+        /// <summary>The identity that last modified the incident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastModifiedBy {

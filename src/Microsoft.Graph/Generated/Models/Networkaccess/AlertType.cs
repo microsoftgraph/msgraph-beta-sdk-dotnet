@@ -17,5 +17,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         ThreatIntelligenceTransactions,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "webContentBlocked")]
+        WebContentBlocked,
     }
 }

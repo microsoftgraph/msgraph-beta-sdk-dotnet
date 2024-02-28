@@ -11,6 +11,16 @@ namespace Microsoft.Graph.Beta.Models {
         Presentation,
         [EnumMember(Value = "screenRecording")]
         ScreenRecording,
+        [EnumMember(Value = "story")]
+        Story,
+        [EnumMember(Value = "profile")]
+        Profile,
+        [EnumMember(Value = "chat")]
+        Chat,
+        [EnumMember(Value = "note")]
+        Note,
+        [EnumMember(Value = "comment")]
+        Comment,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

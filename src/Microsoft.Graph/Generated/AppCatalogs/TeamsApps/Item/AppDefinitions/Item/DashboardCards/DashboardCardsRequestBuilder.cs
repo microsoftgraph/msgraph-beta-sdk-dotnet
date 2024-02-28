@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Da
         public DashboardCardsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/appCatalogs/teamsApps/{teamsApp%2Did}/appDefinitions/{teamsAppDefinition%2Did}/dashboardCards{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
-        /// Get dashboardCards from appCatalogs
+        /// Dashboard cards specified in the Teams app manifest.
         /// </summary>
         /// <returns>A <see cref="TeamsAppDashboardCardDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Da
             return await RequestAdapter.SendAsync<TeamsAppDashboardCardDefinition>(requestInfo, TeamsAppDashboardCardDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get dashboardCards from appCatalogs
+        /// Dashboard cards specified in the Teams app manifest.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Da
             return new DashboardCardsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get dashboardCards from appCatalogs
+        /// Dashboard cards specified in the Teams app manifest.
         /// </summary>
         public class DashboardCardsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

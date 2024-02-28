@@ -244,6 +244,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("invoiceUrl", value); }
         }
 #endif
+        /// <summary>The isCustomerAllowedToManageBooking property</summary>
+        public bool? IsCustomerAllowedToManageBooking {
+            get { return BackingStore?.Get<bool?>("isCustomerAllowedToManageBooking"); }
+            set { BackingStore?.Set("isCustomerAllowedToManageBooking", value); }
+        }
         /// <summary>True indicates that the appointment will be held online. Default value is false.</summary>
         public bool? IsLocationOnline {
             get { return BackingStore?.Get<bool?>("isLocationOnline"); }
@@ -464,6 +469,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"invoiceId", n => { InvoiceId = n.GetStringValue(); } },
                 {"invoiceStatus", n => { InvoiceStatus = n.GetEnumValue<BookingInvoiceStatus>(); } },
                 {"invoiceUrl", n => { InvoiceUrl = n.GetStringValue(); } },
+                {"isCustomerAllowedToManageBooking", n => { IsCustomerAllowedToManageBooking = n.GetBoolValue(); } },
                 {"isLocationOnline", n => { IsLocationOnline = n.GetBoolValue(); } },
                 {"joinWebUrl", n => { JoinWebUrl = n.GetStringValue(); } },
                 {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -510,6 +516,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("invoiceId", InvoiceId);
             writer.WriteEnumValue<BookingInvoiceStatus>("invoiceStatus", InvoiceStatus);
             writer.WriteStringValue("invoiceUrl", InvoiceUrl);
+            writer.WriteBoolValue("isCustomerAllowedToManageBooking", IsCustomerAllowedToManageBooking);
             writer.WriteBoolValue("isLocationOnline", IsLocationOnline);
             writer.WriteStringValue("joinWebUrl", JoinWebUrl);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);

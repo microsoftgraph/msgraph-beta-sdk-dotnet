@@ -22,6 +22,34 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>collection of custom availabilities for a given time range.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<BookingsAvailabilityWindow>? CustomAvailabilities {
+            get { return BackingStore?.Get<List<BookingsAvailabilityWindow>?>("customAvailabilities"); }
+            set { BackingStore?.Set("customAvailabilities", value); }
+        }
+#nullable restore
+#else
+        public List<BookingsAvailabilityWindow> CustomAvailabilities {
+            get { return BackingStore?.Get<List<BookingsAvailabilityWindow>>("customAvailabilities"); }
+            set { BackingStore?.Set("customAvailabilities", value); }
+        }
+#endif
+        /// <summary>General availability </summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public BookingsAvailability? GeneralAvailability {
+            get { return BackingStore?.Get<BookingsAvailability?>("generalAvailability"); }
+            set { BackingStore?.Set("generalAvailability", value); }
+        }
+#nullable restore
+#else
+        public BookingsAvailability GeneralAvailability {
+            get { return BackingStore?.Get<BookingsAvailability>("generalAvailability"); }
+            set { BackingStore?.Set("generalAvailability", value); }
+        }
+#endif
         /// <summary>Indicates if the meeting invite is sent to the customers. The default value is false</summary>
         public bool? IsMeetingInviteToCustomersEnabled {
             get { return BackingStore?.Get<bool?>("isMeetingInviteToCustomersEnabled"); }
@@ -84,6 +112,8 @@ namespace Microsoft.Graph.Beta.Models {
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"allowStaffSelection", n => { AllowStaffSelection = n.GetBoolValue(); } },
+                {"customAvailabilities", n => { CustomAvailabilities = n.GetCollectionOfObjectValues<BookingsAvailabilityWindow>(BookingsAvailabilityWindow.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"generalAvailability", n => { GeneralAvailability = n.GetObjectValue<BookingsAvailability>(BookingsAvailability.CreateFromDiscriminatorValue); } },
                 {"isMeetingInviteToCustomersEnabled", n => { IsMeetingInviteToCustomersEnabled = n.GetBoolValue(); } },
                 {"maximumAdvance", n => { MaximumAdvance = n.GetTimeSpanValue(); } },
                 {"minimumLeadTime", n => { MinimumLeadTime = n.GetTimeSpanValue(); } },
@@ -99,6 +129,8 @@ namespace Microsoft.Graph.Beta.Models {
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowStaffSelection", AllowStaffSelection);
+            writer.WriteCollectionOfObjectValues<BookingsAvailabilityWindow>("customAvailabilities", CustomAvailabilities);
+            writer.WriteObjectValue<BookingsAvailability>("generalAvailability", GeneralAvailability);
             writer.WriteBoolValue("isMeetingInviteToCustomersEnabled", IsMeetingInviteToCustomersEnabled);
             writer.WriteTimeSpanValue("maximumAdvance", MaximumAdvance);
             writer.WriteTimeSpanValue("minimumLeadTime", MinimumLeadTime);

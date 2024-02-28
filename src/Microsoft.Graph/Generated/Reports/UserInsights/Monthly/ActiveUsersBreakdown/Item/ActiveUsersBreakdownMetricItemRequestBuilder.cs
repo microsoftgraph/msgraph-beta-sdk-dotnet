@@ -29,12 +29,13 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsersBreakdown
         public ActiveUsersBreakdownMetricItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/activeUsersBreakdown/{activeUsersBreakdownMetric%2Did}{?%24expand,%24select}", rawUrl) {
         }
         /// <summary>
-        /// Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
+        /// Get activeUsersBreakdown from reports
         /// </summary>
         /// <returns>A <see cref="ActiveUsersBreakdownMetric"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ActiveUsersBreakdownMetric?> GetAsync(Action<RequestConfiguration<ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -49,10 +50,11 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsersBreakdown
             return await RequestAdapter.SendAsync<ActiveUsersBreakdownMetric>(requestInfo, ActiveUsersBreakdownMetric.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
+        /// Get activeUsersBreakdown from reports
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
@@ -70,11 +72,12 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsersBreakdown
         /// </summary>
         /// <returns>A <see cref="ActiveUsersBreakdownMetricItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs")]
         public ActiveUsersBreakdownMetricItemRequestBuilder WithUrl(string rawUrl) {
             return new ActiveUsersBreakdownMetricItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Insights for the breakdown of users who were active on apps registered in the tenant for a specified period.
+        /// Get activeUsersBreakdown from reports
         /// </summary>
         public class ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

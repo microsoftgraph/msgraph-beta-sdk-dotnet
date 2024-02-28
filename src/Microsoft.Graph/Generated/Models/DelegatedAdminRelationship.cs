@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("customer", value); }
         }
 #endif
-        /// <summary>The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and can&apos;t be changed by the customer.</summary>
+        /// <summary>The display name of the relationship used for ease of identification. Must be unique across all delegated admin relationships of the partner. This is set by the partner only when the relationship is in the created status and can&apos;t be changed by the customer. Maximum length is 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {

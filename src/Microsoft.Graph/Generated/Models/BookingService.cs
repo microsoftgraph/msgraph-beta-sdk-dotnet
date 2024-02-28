@@ -104,6 +104,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isAnonymousJoinEnabled"); }
             set { BackingStore?.Set("isAnonymousJoinEnabled", value); }
         }
+        /// <summary>The isCustomerAllowedToManageBooking property</summary>
+        public bool? IsCustomerAllowedToManageBooking {
+            get { return BackingStore?.Get<bool?>("isCustomerAllowedToManageBooking"); }
+            set { BackingStore?.Set("isCustomerAllowedToManageBooking", value); }
+        }
         /// <summary>True means this service isn&apos;t available to customers for booking.</summary>
         public bool? IsHiddenFromCustomers {
             get { return BackingStore?.Get<bool?>("isHiddenFromCustomers"); }
@@ -240,6 +245,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"defaultReminders", n => { DefaultReminders = n.GetCollectionOfObjectValues<BookingReminder>(BookingReminder.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"isAnonymousJoinEnabled", n => { IsAnonymousJoinEnabled = n.GetBoolValue(); } },
+                {"isCustomerAllowedToManageBooking", n => { IsCustomerAllowedToManageBooking = n.GetBoolValue(); } },
                 {"isHiddenFromCustomers", n => { IsHiddenFromCustomers = n.GetBoolValue(); } },
                 {"isLocationOnline", n => { IsLocationOnline = n.GetBoolValue(); } },
                 {"languageTag", n => { LanguageTag = n.GetStringValue(); } },
@@ -271,6 +277,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<BookingReminder>("defaultReminders", DefaultReminders);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("isAnonymousJoinEnabled", IsAnonymousJoinEnabled);
+            writer.WriteBoolValue("isCustomerAllowedToManageBooking", IsCustomerAllowedToManageBooking);
             writer.WriteBoolValue("isHiddenFromCustomers", IsHiddenFromCustomers);
             writer.WriteBoolValue("isLocationOnline", IsLocationOnline);
             writer.WriteStringValue("languageTag", LanguageTag);

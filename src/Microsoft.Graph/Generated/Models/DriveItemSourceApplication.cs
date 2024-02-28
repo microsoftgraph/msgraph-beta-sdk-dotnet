@@ -17,6 +17,12 @@ namespace Microsoft.Graph.Beta.Models {
         PowerPoint,
         [EnumMember(Value = "office")]
         Office,
+        [EnumMember(Value = "loki")]
+        Loki,
+        [EnumMember(Value = "loop")]
+        Loop,
+        [EnumMember(Value = "other")]
+        Other,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

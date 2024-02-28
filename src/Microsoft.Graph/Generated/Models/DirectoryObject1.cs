@@ -90,6 +90,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceLocalCredentials", value); }
         }
 #endif
+        /// <summary>Collection of external user profiles that represent collaborators in the directory.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<ExternalUserProfile>? ExternalUserProfiles {
+            get { return BackingStore?.Get<List<ExternalUserProfile>?>("externalUserProfiles"); }
+            set { BackingStore?.Set("externalUserProfiles", value); }
+        }
+#nullable restore
+#else
+        public List<ExternalUserProfile> ExternalUserProfiles {
+            get { return BackingStore?.Get<List<ExternalUserProfile>>("externalUserProfiles"); }
+            set { BackingStore?.Set("externalUserProfiles", value); }
+        }
+#endif
         /// <summary>The featureRolloutPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,6 +188,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("outboundSharedUserProfiles", value); }
         }
 #endif
+        /// <summary>Collection of pending external user profiles representing collaborators in the directory that are unredeemed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<PendingExternalUserProfile>? PendingExternalUserProfiles {
+            get { return BackingStore?.Get<List<PendingExternalUserProfile>?>("pendingExternalUserProfiles"); }
+            set { BackingStore?.Set("pendingExternalUserProfiles", value); }
+        }
+#nullable restore
+#else
+        public List<PendingExternalUserProfile> PendingExternalUserProfiles {
+            get { return BackingStore?.Get<List<PendingExternalUserProfile>>("pendingExternalUserProfiles"); }
+            set { BackingStore?.Set("pendingExternalUserProfiles", value); }
+        }
+#endif
         /// <summary>List of recommended improvements to improve tenant posture.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -237,12 +265,14 @@ namespace Microsoft.Graph.Beta.Models {
                 {"customSecurityAttributeDefinitions", n => { CustomSecurityAttributeDefinitions = n.GetCollectionOfObjectValues<CustomSecurityAttributeDefinition>(CustomSecurityAttributeDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deletedItems", n => { DeletedItems = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deviceLocalCredentials", n => { DeviceLocalCredentials = n.GetCollectionOfObjectValues<DeviceLocalCredentialInfo>(DeviceLocalCredentialInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"externalUserProfiles", n => { ExternalUserProfiles = n.GetCollectionOfObjectValues<ExternalUserProfile>(ExternalUserProfile.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"featureRolloutPolicies", n => { FeatureRolloutPolicies = n.GetCollectionOfObjectValues<FeatureRolloutPolicy>(FeatureRolloutPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"federationConfigurations", n => { FederationConfigurations = n.GetCollectionOfObjectValues<IdentityProviderBase>(IdentityProviderBase.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"impactedResources", n => { ImpactedResources = n.GetCollectionOfObjectValues<ImpactedResource>(ImpactedResource.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"inboundSharedUserProfiles", n => { InboundSharedUserProfiles = n.GetCollectionOfObjectValues<InboundSharedUserProfile>(InboundSharedUserProfile.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"onPremisesSynchronization", n => { OnPremisesSynchronization = n.GetCollectionOfObjectValues<OnPremisesDirectorySynchronization>(OnPremisesDirectorySynchronization.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"outboundSharedUserProfiles", n => { OutboundSharedUserProfiles = n.GetCollectionOfObjectValues<OutboundSharedUserProfile>(OutboundSharedUserProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"pendingExternalUserProfiles", n => { PendingExternalUserProfiles = n.GetCollectionOfObjectValues<PendingExternalUserProfile>(PendingExternalUserProfile.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"recommendations", n => { Recommendations = n.GetCollectionOfObjectValues<Recommendation>(Recommendation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"sharedEmailDomains", n => { SharedEmailDomains = n.GetCollectionOfObjectValues<SharedEmailDomain>(SharedEmailDomain.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<CompanySubscription>(CompanySubscription.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -261,12 +291,14 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<CustomSecurityAttributeDefinition>("customSecurityAttributeDefinitions", CustomSecurityAttributeDefinitions);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("deletedItems", DeletedItems);
             writer.WriteCollectionOfObjectValues<DeviceLocalCredentialInfo>("deviceLocalCredentials", DeviceLocalCredentials);
+            writer.WriteCollectionOfObjectValues<ExternalUserProfile>("externalUserProfiles", ExternalUserProfiles);
             writer.WriteCollectionOfObjectValues<FeatureRolloutPolicy>("featureRolloutPolicies", FeatureRolloutPolicies);
             writer.WriteCollectionOfObjectValues<IdentityProviderBase>("federationConfigurations", FederationConfigurations);
             writer.WriteCollectionOfObjectValues<ImpactedResource>("impactedResources", ImpactedResources);
             writer.WriteCollectionOfObjectValues<InboundSharedUserProfile>("inboundSharedUserProfiles", InboundSharedUserProfiles);
             writer.WriteCollectionOfObjectValues<OnPremisesDirectorySynchronization>("onPremisesSynchronization", OnPremisesSynchronization);
             writer.WriteCollectionOfObjectValues<OutboundSharedUserProfile>("outboundSharedUserProfiles", OutboundSharedUserProfiles);
+            writer.WriteCollectionOfObjectValues<PendingExternalUserProfile>("pendingExternalUserProfiles", PendingExternalUserProfiles);
             writer.WriteCollectionOfObjectValues<Recommendation>("recommendations", Recommendations);
             writer.WriteCollectionOfObjectValues<SharedEmailDomain>("sharedEmailDomains", SharedEmailDomains);
             writer.WriteCollectionOfObjectValues<CompanySubscription>("subscriptions", Subscriptions);

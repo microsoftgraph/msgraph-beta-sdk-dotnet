@@ -20,17 +20,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("email", value); }
         }
 #endif
-        /// <summary>Identity information of the presenter.</summary>
+        /// <summary>Identity information of the presenter. The supported identites are: communicationsGuestIdentity and communicationsUserIdentity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CommunicationsUserIdentity? Identity {
-            get { return BackingStore?.Get<CommunicationsUserIdentity?>("identity"); }
+        public Microsoft.Graph.Beta.Models.Identity? Identity {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity?>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #nullable restore
 #else
-        public CommunicationsUserIdentity Identity {
-            get { return BackingStore?.Get<CommunicationsUserIdentity>("identity"); }
+        public Microsoft.Graph.Beta.Models.Identity Identity {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #endif
@@ -46,20 +46,6 @@ namespace Microsoft.Graph.Beta.Models {
         public VirtualEventPresenterDetails PresenterDetails {
             get { return BackingStore?.Get<VirtualEventPresenterDetails>("presenterDetails"); }
             set { BackingStore?.Set("presenterDetails", value); }
-        }
-#endif
-        /// <summary>The profilePhoto property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public byte[]? ProfilePhoto {
-            get { return BackingStore?.Get<byte[]?>("profilePhoto"); }
-            set { BackingStore?.Set("profilePhoto", value); }
-        }
-#nullable restore
-#else
-        public byte[] ProfilePhoto {
-            get { return BackingStore?.Get<byte[]>("profilePhoto"); }
-            set { BackingStore?.Set("profilePhoto", value); }
         }
 #endif
         /// <summary>The sessions property</summary>
@@ -92,9 +78,8 @@ namespace Microsoft.Graph.Beta.Models {
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"email", n => { Email = n.GetStringValue(); } },
-                {"identity", n => { Identity = n.GetObjectValue<CommunicationsUserIdentity>(CommunicationsUserIdentity.CreateFromDiscriminatorValue); } },
+                {"identity", n => { Identity = n.GetObjectValue<Microsoft.Graph.Beta.Models.Identity>(Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
                 {"presenterDetails", n => { PresenterDetails = n.GetObjectValue<VirtualEventPresenterDetails>(VirtualEventPresenterDetails.CreateFromDiscriminatorValue); } },
-                {"profilePhoto", n => { ProfilePhoto = n.GetByteArrayValue(); } },
                 {"sessions", n => { Sessions = n.GetCollectionOfObjectValues<VirtualEventSession>(VirtualEventSession.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -106,9 +91,8 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("email", Email);
-            writer.WriteObjectValue<CommunicationsUserIdentity>("identity", Identity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Identity>("identity", Identity);
             writer.WriteObjectValue<VirtualEventPresenterDetails>("presenterDetails", PresenterDetails);
-            writer.WriteByteArrayValue("profilePhoto", ProfilePhoto);
             writer.WriteCollectionOfObjectValues<VirtualEventSession>("sessions", Sessions);
         }
     }

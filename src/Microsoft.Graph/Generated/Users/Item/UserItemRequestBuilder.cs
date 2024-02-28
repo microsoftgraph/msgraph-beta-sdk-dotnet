@@ -19,6 +19,7 @@ using Microsoft.Graph.Beta.Users.Item.ChangePassword;
 using Microsoft.Graph.Beta.Users.Item.Chats;
 using Microsoft.Graph.Beta.Users.Item.CheckMemberGroups;
 using Microsoft.Graph.Beta.Users.Item.CheckMemberObjects;
+using Microsoft.Graph.Beta.Users.Item.CloudClipboard;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs;
 using Microsoft.Graph.Beta.Users.Item.ContactFolders;
 using Microsoft.Graph.Beta.Users.Item.Contacts;
@@ -191,6 +192,10 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// <summary>Provides operations to call the checkMemberObjects method.</summary>
         public CheckMemberObjectsRequestBuilder CheckMemberObjects { get =>
             new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the cloudClipboard property of the microsoft.graph.user entity.</summary>
+        public CloudClipboardRequestBuilder CloudClipboard { get =>
+            new CloudClipboardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudPCs property of the microsoft.graph.user entity.</summary>
         public CloudPCsRequestBuilder CloudPCs { get =>

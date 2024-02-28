@@ -62,6 +62,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("phone", value); }
         }
 #endif
+        /// <summary>An alternate immutable unique identifier of the place.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PlaceId {
+            get { return BackingStore?.Get<string?>("placeId"); }
+            set { BackingStore?.Set("placeId", value); }
+        }
+#nullable restore
+#else
+        public string PlaceId {
+            get { return BackingStore?.Get<string>("placeId"); }
+            set { BackingStore?.Set("placeId", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -87,6 +101,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"geoCoordinates", n => { GeoCoordinates = n.GetObjectValue<OutlookGeoCoordinates>(OutlookGeoCoordinates.CreateFromDiscriminatorValue); } },
                 {"phone", n => { Phone = n.GetStringValue(); } },
+                {"placeId", n => { PlaceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -100,6 +115,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<OutlookGeoCoordinates>("geoCoordinates", GeoCoordinates);
             writer.WriteStringValue("phone", Phone);
+            writer.WriteStringValue("placeId", PlaceId);
         }
     }
 }

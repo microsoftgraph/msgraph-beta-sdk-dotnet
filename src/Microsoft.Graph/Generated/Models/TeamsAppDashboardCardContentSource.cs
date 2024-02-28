@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The botConfiguration property</summary>
+        /// <summary>The configuration for the bot source. Required if sourceType is set to bot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public TeamsAppDashboardCardBotConfiguration? BotConfiguration {
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The sourceType property</summary>
+        /// <summary>Represents the type of source that powers the content of the dashboard card. The possible values are: bot, unknownFutureValue.</summary>
         public TeamsAppDashboardCardSourceType? SourceType {
             get { return BackingStore?.Get<TeamsAppDashboardCardSourceType?>("sourceType"); }
             set { BackingStore?.Set("sourceType", value); }

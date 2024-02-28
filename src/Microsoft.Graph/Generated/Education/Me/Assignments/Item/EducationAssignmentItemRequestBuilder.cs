@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Activate;
 using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Categories;
 using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Deactivate;
 using Microsoft.Graph.Beta.Education.Me.Assignments.Item.GradingCategory;
+using Microsoft.Graph.Beta.Education.Me.Assignments.Item.GradingScheme;
 using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Publish;
 using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Resources;
 using Microsoft.Graph.Beta.Education.Me.Assignments.Item.Rubric;
@@ -39,6 +40,10 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item {
         /// <summary>Provides operations to manage the gradingCategory property of the microsoft.graph.educationAssignment entity.</summary>
         public GradingCategoryRequestBuilder GradingCategory { get =>
             new GradingCategoryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the gradingScheme property of the microsoft.graph.educationAssignment entity.</summary>
+        public GradingSchemeRequestBuilder GradingScheme { get =>
+            new GradingSchemeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the publish method.</summary>
         public PublishRequestBuilder Publish { get =>

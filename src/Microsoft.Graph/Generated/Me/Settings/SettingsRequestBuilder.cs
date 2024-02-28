@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Me.Settings.ContactMergeSuggestions;
 using Microsoft.Graph.Beta.Me.Settings.ItemInsights;
 using Microsoft.Graph.Beta.Me.Settings.RegionalAndLanguageSettings;
 using Microsoft.Graph.Beta.Me.Settings.ShiftPreferences;
+using Microsoft.Graph.Beta.Me.Settings.Windows;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -33,6 +34,10 @@ namespace Microsoft.Graph.Beta.Me.Settings {
         /// <summary>Provides operations to manage the shiftPreferences property of the microsoft.graph.userSettings entity.</summary>
         public ShiftPreferencesRequestBuilder ShiftPreferences { get =>
             new ShiftPreferencesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the windows property of the microsoft.graph.userSettings entity.</summary>
+        public WindowsRequestBuilder Windows { get =>
+            new WindowsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="SettingsRequestBuilder"/> and sets the default values.

@@ -133,6 +133,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("meetingAttendanceReport", value); }
         }
 #endif
+        /// <summary>The ID of the meeting template.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MeetingTemplateId {
+            get { return BackingStore?.Get<string?>("meetingTemplateId"); }
+            set { BackingStore?.Set("meetingTemplateId", value); }
+        }
+#nullable restore
+#else
+        public string MeetingTemplateId {
+            get { return BackingStore?.Get<string>("meetingTemplateId"); }
+            set { BackingStore?.Set("meetingTemplateId", value); }
+        }
+#endif
         /// <summary>The participants associated with the online meeting, including the organizer and the attendees.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -240,6 +254,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isBroadcast", n => { IsBroadcast = n.GetBoolValue(); } },
                 {"joinUrl", n => { JoinUrl = n.GetStringValue(); } },
                 {"meetingAttendanceReport", n => { MeetingAttendanceReport = n.GetObjectValue<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>(Microsoft.Graph.Beta.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue); } },
+                {"meetingTemplateId", n => { MeetingTemplateId = n.GetStringValue(); } },
                 {"participants", n => { Participants = n.GetObjectValue<MeetingParticipants>(MeetingParticipants.CreateFromDiscriminatorValue); } },
                 {"recording", n => { Recording = n.GetByteArrayValue(); } },
                 {"recordings", n => { Recordings = n.GetCollectionOfObjectValues<CallRecording>(CallRecording.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -266,6 +281,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isBroadcast", IsBroadcast);
             writer.WriteStringValue("joinUrl", JoinUrl);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>("meetingAttendanceReport", MeetingAttendanceReport);
+            writer.WriteStringValue("meetingTemplateId", MeetingTemplateId);
             writer.WriteObjectValue<MeetingParticipants>("participants", Participants);
             writer.WriteByteArrayValue("recording", Recording);
             writer.WriteCollectionOfObjectValues<CallRecording>("recordings", Recordings);

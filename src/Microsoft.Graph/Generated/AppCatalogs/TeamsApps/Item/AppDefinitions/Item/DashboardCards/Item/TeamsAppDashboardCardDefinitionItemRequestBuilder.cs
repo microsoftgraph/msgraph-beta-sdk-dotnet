@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Da
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get dashboardCards from appCatalogs
+        /// Dashboard cards specified in the Teams app manifest.
         /// </summary>
         /// <returns>A <see cref="TeamsAppDashboardCardDefinition"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Da
             return requestInfo;
         }
         /// <summary>
-        /// Get dashboardCards from appCatalogs
+        /// Dashboard cards specified in the Teams app manifest.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Da
         public class TeamsAppDashboardCardDefinitionItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
-        /// Get dashboardCards from appCatalogs
+        /// Dashboard cards specified in the Teams app manifest.
         /// </summary>
         public class TeamsAppDashboardCardDefinitionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
