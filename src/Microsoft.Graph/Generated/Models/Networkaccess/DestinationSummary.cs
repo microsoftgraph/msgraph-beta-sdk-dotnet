@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of the destinationSummary objects, aggregated by Global Secure Access service.</summary>
-        public int? Count {
-            get { return BackingStore?.Get<int?>("count"); }
+        public long? Count {
+            get { return BackingStore?.Get<long?>("count"); }
             set { BackingStore?.Set("count", value); }
         }
         /// <summary>The IP address or FQDN of the destination.</summary>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"count", n => { Count = n.GetIntValue(); } },
+                {"count", n => { Count = n.GetLongValue(); } },
                 {"destination", n => { Destination = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("count", Count);
+            writer.WriteLongValue("count", Count);
             writer.WriteStringValue("destination", Destination);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<TrafficType>("trafficType", TrafficType);

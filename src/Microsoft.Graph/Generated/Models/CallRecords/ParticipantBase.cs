@@ -6,6 +6,20 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
     public class ParticipantBase : Microsoft.Graph.Beta.Models.Entity, IParsable {
+        /// <summary>List of administrativeUnitInfo of the call participant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<AdministrativeUnitInfo>? AdministrativeUnitInfos {
+            get { return BackingStore?.Get<List<AdministrativeUnitInfo>?>("administrativeUnitInfos"); }
+            set { BackingStore?.Set("administrativeUnitInfos", value); }
+        }
+#nullable restore
+#else
+        public List<AdministrativeUnitInfo> AdministrativeUnitInfos {
+            get { return BackingStore?.Get<List<AdministrativeUnitInfo>>("administrativeUnitInfos"); }
+            set { BackingStore?.Set("administrativeUnitInfos", value); }
+        }
+#endif
         /// <summary>The identity of the call participant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"administrativeUnitInfos", n => { AdministrativeUnitInfos = n.GetCollectionOfObjectValues<AdministrativeUnitInfo>(AdministrativeUnitInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"identity", n => { Identity = n.GetObjectValue<Microsoft.Graph.Beta.Models.CommunicationsIdentitySet>(Microsoft.Graph.Beta.Models.CommunicationsIdentitySet.CreateFromDiscriminatorValue); } },
             };
         }
@@ -50,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public override void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<AdministrativeUnitInfo>("administrativeUnitInfos", AdministrativeUnitInfos);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CommunicationsIdentitySet>("identity", Identity);
         }
     }

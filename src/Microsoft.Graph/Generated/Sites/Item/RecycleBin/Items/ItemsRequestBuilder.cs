@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items {
         public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/sites/{site%2Did}/recycleBin/items{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
-        /// Get a collection of recycleBinItem resources in the recyleBin of the specified SharePoint site.
+        /// Get a collection of recycleBinItem resources in the recycleBin of the specified SharePoint site.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/recyclebin-list-items?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="RecycleBinItemCollectionResponse"/></returns>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items {
             return await RequestAdapter.SendAsync<RecycleBinItem>(requestInfo, RecycleBinItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a collection of recycleBinItem resources in the recyleBin of the specified SharePoint site.
+        /// Get a collection of recycleBinItem resources in the recycleBin of the specified SharePoint site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items {
             return new ItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a collection of recycleBinItem resources in the recyleBin of the specified SharePoint site.
+        /// Get a collection of recycleBinItem resources in the recycleBin of the specified SharePoint site.
         /// </summary>
         public class ItemsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

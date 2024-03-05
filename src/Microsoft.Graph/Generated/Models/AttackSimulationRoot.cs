@@ -104,6 +104,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("simulations", value); }
         }
 #endif
+        /// <summary>The trainingCampaigns property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<TrainingCampaign>? TrainingCampaigns {
+            get { return BackingStore?.Get<List<TrainingCampaign>?>("trainingCampaigns"); }
+            set { BackingStore?.Set("trainingCampaigns", value); }
+        }
+#nullable restore
+#else
+        public List<TrainingCampaign> TrainingCampaigns {
+            get { return BackingStore?.Get<List<TrainingCampaign>>("trainingCampaigns"); }
+            set { BackingStore?.Set("trainingCampaigns", value); }
+        }
+#endif
         /// <summary>Represents details about attack simulation trainings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -140,6 +154,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"payloads", n => { Payloads = n.GetCollectionOfObjectValues<Payload>(Payload.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"simulationAutomations", n => { SimulationAutomations = n.GetCollectionOfObjectValues<SimulationAutomation>(SimulationAutomation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"simulations", n => { Simulations = n.GetCollectionOfObjectValues<Simulation>(Simulation.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"trainingCampaigns", n => { TrainingCampaigns = n.GetCollectionOfObjectValues<TrainingCampaign>(TrainingCampaign.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"trainings", n => { Trainings = n.GetCollectionOfObjectValues<Training>(Training.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -157,6 +172,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<Payload>("payloads", Payloads);
             writer.WriteCollectionOfObjectValues<SimulationAutomation>("simulationAutomations", SimulationAutomations);
             writer.WriteCollectionOfObjectValues<Simulation>("simulations", Simulations);
+            writer.WriteCollectionOfObjectValues<TrainingCampaign>("trainingCampaigns", TrainingCampaigns);
             writer.WriteCollectionOfObjectValues<Training>("trainings", Trainings);
         }
     }

@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     public class EnumeratedDomains : ValidatingDomains, IParsable {
-        /// <summary>The domainNames property</summary>
+        /// <summary>List of federated or managed root domains that Microsoft Entra ID validates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DomainNames {

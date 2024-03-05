@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The catalogEntry property</summary>
+        /// <summary>Catalog entry for the update or content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry? CatalogEntry {
@@ -28,7 +28,21 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("catalogEntry", value); }
         }
 #endif
-        /// <summary>The matchedDevices property</summary>
+        /// <summary>ID of the catalog entry for the applicable content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CatalogEntryId {
+            get { return BackingStore?.Get<string?>("catalogEntryId"); }
+            set { BackingStore?.Set("catalogEntryId", value); }
+        }
+#nullable restore
+#else
+        public string CatalogEntryId {
+            get { return BackingStore?.Get<string>("catalogEntryId"); }
+            set { BackingStore?.Set("catalogEntryId", value); }
+        }
+#endif
+        /// <summary>Collection of devices and recommendations for applicable catalog content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ApplicableContentDeviceMatch>? MatchedDevices {
@@ -79,6 +93,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"catalogEntry", n => { CatalogEntry = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>(Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry.CreateFromDiscriminatorValue); } },
+                {"catalogEntryId", n => { CatalogEntryId = n.GetStringValue(); } },
                 {"matchedDevices", n => { MatchedDevices = n.GetCollectionOfObjectValues<ApplicableContentDeviceMatch>(ApplicableContentDeviceMatch.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -90,6 +105,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>("catalogEntry", CatalogEntry);
+            writer.WriteStringValue("catalogEntryId", CatalogEntryId);
             writer.WriteCollectionOfObjectValues<ApplicableContentDeviceMatch>("matchedDevices", MatchedDevices);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("shifts", value); }
         }
 #endif
-        /// <summary>The shiftsRoleDefinitions property</summary>
+        /// <summary>The definitions of the roles in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ShiftsRoleDefinition>? ShiftsRoleDefinitions {

@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
             set { BackingStore?.Set("creationDateTime", value); }
         }
-        /// <summary>The meeting end time in UTC.</summary>
+        /// <summary>The meeting end time in UTC. Required when you create an online meeting.</summary>
         public DateTimeOffset? EndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("registration", value); }
         }
 #endif
-        /// <summary>The meeting start time in UTC.</summary>
+        /// <summary>The meeting start time in UTC. Required when you create an online meeting.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }

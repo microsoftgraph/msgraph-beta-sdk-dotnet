@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
         public OnPremisesConnectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/onPremisesConnections{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
-        /// List properties and relationships of the cloudPcOnPremisesConnection objects.
+        /// Get a list of the cloudPcOnPremisesConnection objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-onpremisesconnections?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CloudPcOnPremisesConnectionCollectionResponse"/></returns>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
             return await RequestAdapter.SendAsync<CloudPcOnPremisesConnection>(requestInfo, CloudPcOnPremisesConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the cloudPcOnPremisesConnection objects.
+        /// Get a list of the cloudPcOnPremisesConnection objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
             return new OnPremisesConnectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the cloudPcOnPremisesConnection objects.
+        /// Get a list of the cloudPcOnPremisesConnection objects and their properties.
         /// </summary>
         public class OnPremisesConnectionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

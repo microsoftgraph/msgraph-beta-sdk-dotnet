@@ -30,6 +30,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>The customUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomUrl {
+            get { return BackingStore?.Get<string?>("customUrl"); }
+            set { BackingStore?.Set("customUrl", value); }
+        }
+#nullable restore
+#else
+        public string CustomUrl {
+            get { return BackingStore?.Get<string>("customUrl"); }
+            set { BackingStore?.Set("customUrl", value); }
+        }
+#endif
         /// <summary>The description for the training.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,6 +171,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"availabilityStatus", n => { AvailabilityStatus = n.GetEnumValue<TrainingAvailabilityStatus>(); } },
                 {"createdBy", n => { CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"customUrl", n => { CustomUrl = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"durationInMinutes", n => { DurationInMinutes = n.GetIntValue(); } },
@@ -180,6 +195,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<TrainingAvailabilityStatus>("availabilityStatus", AvailabilityStatus);
             writer.WriteObjectValue<EmailIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteStringValue("customUrl", CustomUrl);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteIntValue("durationInMinutes", DurationInMinutes);

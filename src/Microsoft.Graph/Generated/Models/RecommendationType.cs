@@ -77,5 +77,11 @@ namespace Microsoft.Graph.Beta.Models {
         OwnerlessApps,
         [EnumMember(Value = "inactiveGuests")]
         InactiveGuests,
+        [EnumMember(Value = "aadGraphDeprecationApplication")]
+        AadGraphDeprecationApplication,
+        [EnumMember(Value = "aadGraphDeprecationServicePrincipal")]
+        AadGraphDeprecationServicePrincipal,
+        [EnumMember(Value = "mfaServerDeprecation")]
+        MfaServerDeprecation,
     }
 }

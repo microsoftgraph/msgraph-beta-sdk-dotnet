@@ -19,5 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
         UnknownFutureValue,
         [EnumMember(Value = "oAuthConsentGrant")]
         OAuthConsentGrant,
+        [EnumMember(Value = "phishTraining")]
+        PhishTraining,
     }
 }

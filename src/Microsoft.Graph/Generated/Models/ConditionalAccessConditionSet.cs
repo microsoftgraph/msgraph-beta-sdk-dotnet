@@ -26,6 +26,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("applications", value); }
         }
 #endif
+        /// <summary>Authentication flows included in the policy scope. For more information, see Conditional Access: Authentication flows.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public ConditionalAccessAuthenticationFlows? AuthenticationFlows {
+            get { return BackingStore?.Get<ConditionalAccessAuthenticationFlows?>("authenticationFlows"); }
+            set { BackingStore?.Set("authenticationFlows", value); }
+        }
+#nullable restore
+#else
+        public ConditionalAccessAuthenticationFlows AuthenticationFlows {
+            get { return BackingStore?.Get<ConditionalAccessAuthenticationFlows>("authenticationFlows"); }
+            set { BackingStore?.Set("authenticationFlows", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.</summary>
@@ -205,6 +219,7 @@ namespace Microsoft.Graph.Beta.Models {
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"applications", n => { Applications = n.GetObjectValue<ConditionalAccessApplications>(ConditionalAccessApplications.CreateFromDiscriminatorValue); } },
+                {"authenticationFlows", n => { AuthenticationFlows = n.GetObjectValue<ConditionalAccessAuthenticationFlows>(ConditionalAccessAuthenticationFlows.CreateFromDiscriminatorValue); } },
                 {"clientAppTypes", n => { ClientAppTypes = n.GetCollectionOfEnumValues<ConditionalAccessClientApp>()?.ToList(); } },
                 {"clientApplications", n => { ClientApplications = n.GetObjectValue<ConditionalAccessClientApplications>(ConditionalAccessClientApplications.CreateFromDiscriminatorValue); } },
                 {"deviceStates", n => { DeviceStates = n.GetObjectValue<ConditionalAccessDeviceStates>(ConditionalAccessDeviceStates.CreateFromDiscriminatorValue); } },
@@ -225,6 +240,7 @@ namespace Microsoft.Graph.Beta.Models {
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<ConditionalAccessApplications>("applications", Applications);
+            writer.WriteObjectValue<ConditionalAccessAuthenticationFlows>("authenticationFlows", AuthenticationFlows);
             writer.WriteObjectValue<ConditionalAccessClientApplications>("clientApplications", ClientApplications);
             writer.WriteCollectionOfEnumValues<ConditionalAccessClientApp>("clientAppTypes", ClientAppTypes);
             writer.WriteObjectValue<ConditionalAccessDevices>("devices", Devices);

@@ -67,5 +67,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         JapanWest,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "koreaSouth")]
+        KoreaSouth,
     }
 }

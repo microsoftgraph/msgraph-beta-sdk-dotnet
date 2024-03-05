@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
             set { BackingStore?.Set("AdditionalData", value); }
         }
-        /// <summary>The allowTextOnly property</summary>
+        /// <summary>Indicates whether only text is allowed in the meeting chat. Optional.</summary>
         public bool? AllowTextOnly {
             get { return BackingStore?.Get<bool?>("allowTextOnly"); }
             set { BackingStore?.Set("allowTextOnly", value); }

@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.ShiftsRoleDefinitions {
         public ShiftsRoleDefinitionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team%2Did}/schedule/shiftsRoleDefinitions{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
         }
         /// <summary>
-        /// Get shiftsRoleDefinitions from teams
+        /// The definitions of the roles in the schedule.
         /// </summary>
         /// <returns>A <see cref="ShiftsRoleDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.ShiftsRoleDefinitions {
             return await RequestAdapter.SendAsync<ShiftsRoleDefinition>(requestInfo, ShiftsRoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get shiftsRoleDefinitions from teams
+        /// The definitions of the roles in the schedule.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.ShiftsRoleDefinitions {
             return new ShiftsRoleDefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get shiftsRoleDefinitions from teams
+        /// The definitions of the roles in the schedule.
         /// </summary>
         public class ShiftsRoleDefinitionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

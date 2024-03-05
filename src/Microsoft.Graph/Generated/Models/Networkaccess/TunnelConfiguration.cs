@@ -42,6 +42,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("preSharedKey", value); }
         }
 #endif
+        /// <summary>The zoneRedundancyPreSharedKey property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ZoneRedundancyPreSharedKey {
+            get { return BackingStore?.Get<string?>("zoneRedundancyPreSharedKey"); }
+            set { BackingStore?.Set("zoneRedundancyPreSharedKey", value); }
+        }
+#nullable restore
+#else
+        public string ZoneRedundancyPreSharedKey {
+            get { return BackingStore?.Get<string>("zoneRedundancyPreSharedKey"); }
+            set { BackingStore?.Set("zoneRedundancyPreSharedKey", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="TunnelConfiguration"/> and sets the default values.
         /// </summary>
@@ -71,6 +85,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"preSharedKey", n => { PreSharedKey = n.GetStringValue(); } },
+                {"zoneRedundancyPreSharedKey", n => { ZoneRedundancyPreSharedKey = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -81,6 +96,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("preSharedKey", PreSharedKey);
+            writer.WriteStringValue("zoneRedundancyPreSharedKey", ZoneRedundancyPreSharedKey);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

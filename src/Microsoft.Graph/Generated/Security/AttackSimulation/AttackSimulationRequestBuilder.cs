@@ -8,6 +8,7 @@ using Microsoft.Graph.Beta.Security.AttackSimulation.Operations;
 using Microsoft.Graph.Beta.Security.AttackSimulation.Payloads;
 using Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations;
 using Microsoft.Graph.Beta.Security.AttackSimulation.Simulations;
+using Microsoft.Graph.Beta.Security.AttackSimulation.TrainingCampaigns;
 using Microsoft.Graph.Beta.Security.AttackSimulation.Trainings;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -49,6 +50,10 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation {
         /// <summary>Provides operations to manage the simulations property of the microsoft.graph.attackSimulationRoot entity.</summary>
         public SimulationsRequestBuilder Simulations { get =>
             new SimulationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the trainingCampaigns property of the microsoft.graph.attackSimulationRoot entity.</summary>
+        public TrainingCampaignsRequestBuilder TrainingCampaigns { get =>
+            new TrainingCampaignsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the trainings property of the microsoft.graph.attackSimulationRoot entity.</summary>
         public TrainingsRequestBuilder Trainings { get =>
