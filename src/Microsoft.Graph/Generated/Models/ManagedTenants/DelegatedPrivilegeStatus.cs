@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public enum DelegatedPrivilegeStatus {
+    public enum DelegatedPrivilegeStatus
+    {
         [EnumMember(Value = "none")]
         None,
         [EnumMember(Value = "delegatedAdminPrivileges")]

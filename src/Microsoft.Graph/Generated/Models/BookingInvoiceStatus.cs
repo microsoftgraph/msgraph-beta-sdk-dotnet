@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum BookingInvoiceStatus {
+    public enum BookingInvoiceStatus
+    {
         [EnumMember(Value = "draft")]
         Draft,
         [EnumMember(Value = "reviewing")]

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Describes the TemplateFamily for the Template entity</summary>
-    public enum DeviceManagementConfigurationTemplateFamily {
+    public enum DeviceManagementConfigurationTemplateFamily
+    {
         /// <summary>Default for Template Family when Policy is not linked to a Template</summary>
         [EnumMember(Value = "none")]
         None,

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Indicates the type of execution status of the device management script.</summary>
-    public enum RemediationState {
+    public enum RemediationState
+    {
         /// <summary>Unknown result.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

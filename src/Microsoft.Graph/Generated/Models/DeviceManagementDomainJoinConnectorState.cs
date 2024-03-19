@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The ODJ request states.</summary>
-    public enum DeviceManagementDomainJoinConnectorState {
+    public enum DeviceManagementDomainJoinConnectorState
+    {
         /// <summary>Connector is actively pinging Intune.</summary>
         [EnumMember(Value = "active")]
         Active,

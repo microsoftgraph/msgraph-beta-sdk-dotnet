@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Admin consent state.</summary>
-    public enum AdminConsentState {
+    public enum AdminConsentState
+    {
         /// <summary>Admin did not configure the item</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

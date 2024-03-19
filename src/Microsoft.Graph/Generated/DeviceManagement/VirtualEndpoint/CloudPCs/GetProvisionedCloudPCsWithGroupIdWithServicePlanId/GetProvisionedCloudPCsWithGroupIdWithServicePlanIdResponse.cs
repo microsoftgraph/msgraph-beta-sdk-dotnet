@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.GetProvisionedCloudPCsWithGroupIdWithServicePlanId {
     [Obsolete("This class is obsolete. Use GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse instead.")]
-    public class GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse : GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse, IParsable {
+    public class GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse : GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse();
         }

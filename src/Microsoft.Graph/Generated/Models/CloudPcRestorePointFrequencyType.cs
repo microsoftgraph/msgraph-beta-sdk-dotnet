@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum CloudPcRestorePointFrequencyType {
+    public enum CloudPcRestorePointFrequencyType
+    {
         [EnumMember(Value = "default")]
         Default,
         [EnumMember(Value = "fourHours")]

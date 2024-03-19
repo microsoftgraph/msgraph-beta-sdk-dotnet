@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Enum type that represent the status of log collection</summary>
-    public enum MicrosoftTunnelLogCollectionStatus {
+    public enum MicrosoftTunnelLogCollectionStatus
+    {
         /// <summary>Indicates that the log collection is in progress</summary>
         [EnumMember(Value = "pending")]
         Pending,

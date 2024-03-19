@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum DeviceManagementConfigurationStringFormat {
+    public enum DeviceManagementConfigurationStringFormat
+    {
         /// <summary>Indicates a string with no well-defined format expected.</summary>
         [EnumMember(Value = "none")]
         None,

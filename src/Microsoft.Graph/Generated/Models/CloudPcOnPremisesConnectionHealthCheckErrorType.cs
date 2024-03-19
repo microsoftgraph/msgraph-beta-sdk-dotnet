@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum CloudPcOnPremisesConnectionHealthCheckErrorType {
+    public enum CloudPcOnPremisesConnectionHealthCheckErrorType
+    {
         [EnumMember(Value = "dnsCheckFqdnNotFound")]
         DnsCheckFqdnNotFound,
         [EnumMember(Value = "dnsCheckNameWithInvalidCharacter")]

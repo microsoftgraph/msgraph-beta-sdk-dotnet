@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum PrinterProcessingStateReason {
+    public enum PrinterProcessingStateReason
+    {
         [EnumMember(Value = "paused")]
         Paused,
         [EnumMember(Value = "mediaJam")]

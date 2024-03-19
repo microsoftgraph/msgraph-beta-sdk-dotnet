@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
-    public enum ConfirmedBy {
+    public enum ConfirmedBy
+    {
         [EnumMember(Value = "none")]
         None = 1,
         [EnumMember(Value = "user")]

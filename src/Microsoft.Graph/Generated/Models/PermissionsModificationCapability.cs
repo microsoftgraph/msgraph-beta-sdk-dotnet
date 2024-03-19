@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum PermissionsModificationCapability {
+    public enum PermissionsModificationCapability
+    {
         [EnumMember(Value = "enabled")]
         Enabled,
         [EnumMember(Value = "notConfigured")]

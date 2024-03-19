@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Indicates the status of the device in the correlation group. Eg: Device status can be anomalous, affected, at risk.</summary>
-    public enum UserExperienceAnalyticsDeviceStatus {
+    public enum UserExperienceAnalyticsDeviceStatus
+    {
         /// <summary>Indicates the the device is part of the anomaly.</summary>
         [EnumMember(Value = "anomalous")]
         Anomalous,

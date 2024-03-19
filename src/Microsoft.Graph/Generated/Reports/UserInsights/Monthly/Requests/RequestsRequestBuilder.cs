@@ -15,32 +15,40 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Requests {
     /// <summary>
     /// Provides operations to manage the requests property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
     /// </summary>
-    public class RequestsRequestBuilder : BaseRequestBuilder {
+    public class RequestsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count
+        {
+            get =>             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the requests property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.</summary>
         /// <param name="position">The unique identifier of userRequestsMetric</param>
         /// <returns>A <see cref="UserRequestsMetricItemRequestBuilder"/></returns>
-        public UserRequestsMetricItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("userRequestsMetric%2Did", position);
-            return new UserRequestsMetricItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public UserRequestsMetricItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("userRequestsMetric%2Did", position);
+                return new UserRequestsMetricItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="RequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RequestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/requests{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public RequestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/requests{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/requests{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public RequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/requests{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Get a list of monthly user requests on apps registered in your tenant configured for Microsoft Entra External ID for customers.
@@ -52,13 +60,16 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Requests {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserRequestsMetricCollectionResponse?> GetAsync(Action<RequestConfiguration<RequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserRequestsMetricCollectionResponse?> GetAsync(Action<RequestConfiguration<RequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<UserRequestsMetricCollectionResponse> GetAsync(Action<RequestConfiguration<RequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserRequestsMetricCollectionResponse> GetAsync(Action<RequestConfiguration<RequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<UserRequestsMetricCollectionResponse>(requestInfo, UserRequestsMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -70,10 +81,12 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Requests {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RequestsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RequestsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -85,13 +98,15 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Requests {
         /// </summary>
         /// <returns>A <see cref="RequestsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RequestsRequestBuilder WithUrl(string rawUrl) {
+        public RequestsRequestBuilder WithUrl(string rawUrl)
+        {
             return new RequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of monthly user requests on apps registered in your tenant configured for Microsoft Entra External ID for customers.
         /// </summary>
-        public class RequestsRequestBuilderGetQueryParameters {
+        public class RequestsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -156,7 +171,8 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Requests {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RequestsRequestBuilderGetRequestConfiguration : RequestConfiguration<RequestsRequestBuilderGetQueryParameters> {
+        public class RequestsRequestBuilderGetRequestConfiguration : RequestConfiguration<RequestsRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

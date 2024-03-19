@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Processor architecture</summary>
-    public enum ManagedDeviceArchitecture {
+    public enum ManagedDeviceArchitecture
+    {
         /// <summary>Unknown architecture</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

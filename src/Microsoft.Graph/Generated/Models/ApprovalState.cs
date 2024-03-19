@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum ApprovalState {
+    public enum ApprovalState
+    {
         [EnumMember(Value = "pending")]
         Pending,
         [EnumMember(Value = "approved")]

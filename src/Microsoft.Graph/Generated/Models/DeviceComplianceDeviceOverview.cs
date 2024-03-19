@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class DeviceComplianceDeviceOverview : Entity, IParsable {
+    public class DeviceComplianceDeviceOverview : Entity, IParsable 
+    {
         /// <summary>Version of the policy for that overview</summary>
         public int? ConfigurationVersion {
             get { return BackingStore?.Get<int?>("configurationVersion"); }
@@ -56,7 +57,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="DeviceComplianceDeviceOverview"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceComplianceDeviceOverview CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new DeviceComplianceDeviceOverview CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DeviceComplianceDeviceOverview();
         }
@@ -64,8 +66,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"configurationVersion", n => { ConfigurationVersion = n.GetIntValue(); } },
                 {"conflictCount", n => { ConflictCount = n.GetIntValue(); } },
                 {"errorCount", n => { ErrorCount = n.GetIntValue(); } },
@@ -81,7 +85,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("configurationVersion", ConfigurationVersion);

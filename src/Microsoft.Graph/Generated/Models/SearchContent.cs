@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
-    public enum SearchContent {
+    public enum SearchContent
+    {
         [EnumMember(Value = "sharedContent")]
         SharedContent = 1,
         [EnumMember(Value = "privateContent")]

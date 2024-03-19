@@ -9,7 +9,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Blocked actions on the company portal as per platform and device ownership types
     /// </summary>
-    public class CompanyPortalBlockedAction : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class CompanyPortalBlockedAction : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Action on a device that can be executed in the Company Portal</summary>
         public CompanyPortalAction? Action {
             get { return BackingStore?.Get<CompanyPortalAction?>("action"); }
@@ -49,7 +50,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="CompanyPortalBlockedAction"/> and sets the default values.
         /// </summary>
-        public CompanyPortalBlockedAction() {
+        public CompanyPortalBlockedAction()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -58,7 +60,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="CompanyPortalBlockedAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CompanyPortalBlockedAction CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static CompanyPortalBlockedAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new CompanyPortalBlockedAction();
         }
@@ -66,8 +69,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"action", n => { Action = n.GetEnumValue<CompanyPortalAction>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"ownerType", n => { OwnerType = n.GetEnumValue<OwnerType>(); } },
@@ -78,7 +83,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<CompanyPortalAction>("action", Action);
             writer.WriteStringValue("@odata.type", OdataType);

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum ConnectorGroupRegion {
+    public enum ConnectorGroupRegion
+    {
         [EnumMember(Value = "nam")]
         Nam,
         [EnumMember(Value = "eur")]

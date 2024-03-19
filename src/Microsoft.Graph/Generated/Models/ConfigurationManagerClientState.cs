@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Configuration manager client state</summary>
-    public enum ConfigurationManagerClientState {
+    public enum ConfigurationManagerClientState
+    {
         /// <summary>Configuration manager agent is older than 1806 or not installed or this device has not checked into Intune for over 30 days.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

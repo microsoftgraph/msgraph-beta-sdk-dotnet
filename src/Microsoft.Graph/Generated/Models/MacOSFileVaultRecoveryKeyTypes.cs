@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Recovery key types for macOS FileVault</summary>
     [Flags]
-    public enum MacOSFileVaultRecoveryKeyTypes {
+    public enum MacOSFileVaultRecoveryKeyTypes
+    {
         /// <summary>Device default value, no intent.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured = 1,

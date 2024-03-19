@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provider type for Derived Credentials.</summary>
-    public enum DerivedCredentialProviderType {
+    public enum DerivedCredentialProviderType
+    {
         /// <summary>No Derived Credential Provider Configured.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

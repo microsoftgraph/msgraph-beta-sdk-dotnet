@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values for LanManagerAuthenticationLevel</summary>
-    public enum LanManagerAuthenticationLevel {
+    public enum LanManagerAuthenticationLevel
+    {
         /// <summary>Send LM &amp; NTLM responses</summary>
         [EnumMember(Value = "lmAndNltm")]
         LmAndNltm,

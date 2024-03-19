@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum BookingPageAccessControl {
+    public enum BookingPageAccessControl
+    {
         [EnumMember(Value = "unrestricted")]
         Unrestricted,
         [EnumMember(Value = "restrictedToOrganization")]

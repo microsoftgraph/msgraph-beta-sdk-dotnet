@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Flag enum representing the allowed macOS system extension types.</summary>
     [Flags]
-    public enum MacOSSystemExtensionType {
+    public enum MacOSSystemExtensionType
+    {
         /// <summary>Enables driver extensions.</summary>
         [EnumMember(Value = "driverExtensionsAllowed")]
         DriverExtensionsAllowed = 1,

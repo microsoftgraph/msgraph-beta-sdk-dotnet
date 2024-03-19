@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public class EmailThreatSubmission : ThreatSubmission, IParsable {
+    public class EmailThreatSubmission : ThreatSubmission, IParsable 
+    {
         /// <summary>If the email is phishing simulation, this field won&apos;t be null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,7 +118,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>
         /// Instantiates a new <see cref="EmailThreatSubmission"/> and sets the default values.
         /// </summary>
-        public EmailThreatSubmission() : base() {
+        public EmailThreatSubmission() : base()
+        {
             OdataType = "#microsoft.graph.security.emailThreatSubmission";
         }
         /// <summary>
@@ -125,10 +127,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// </summary>
         /// <returns>A <see cref="EmailThreatSubmission"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EmailThreatSubmission CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new EmailThreatSubmission CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.security.emailContentThreatSubmission" => new EmailContentThreatSubmission(),
                 "#microsoft.graph.security.emailUrlThreatSubmission" => new EmailUrlThreatSubmission(),
                 _ => new EmailThreatSubmission(),
@@ -138,8 +142,10 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"attackSimulationInfo", n => { AttackSimulationInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo>(Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo.CreateFromDiscriminatorValue); } },
                 {"internetMessageId", n => { InternetMessageId = n.GetStringValue(); } },
                 {"originalCategory", n => { OriginalCategory = n.GetEnumValue<SubmissionCategory>(); } },
@@ -155,7 +161,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo>("attackSimulationInfo", AttackSimulationInfo);

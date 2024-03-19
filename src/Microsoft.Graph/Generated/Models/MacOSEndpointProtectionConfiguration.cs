@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// MacOS endpoint protection configuration profile.
     /// </summary>
-    public class MacOSEndpointProtectionConfiguration : DeviceConfiguration, IParsable {
+    public class MacOSEndpointProtectionConfiguration : DeviceConfiguration, IParsable 
+    {
         /// <summary>Possible values of a property</summary>
         public Enablement? AdvancedThreatProtectionAutomaticSampleSubmission {
             get { return BackingStore?.Get<Enablement?>("advancedThreatProtectionAutomaticSampleSubmission"); }
@@ -204,7 +205,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="MacOSEndpointProtectionConfiguration"/> and sets the default values.
         /// </summary>
-        public MacOSEndpointProtectionConfiguration() : base() {
+        public MacOSEndpointProtectionConfiguration() : base()
+        {
             OdataType = "#microsoft.graph.macOSEndpointProtectionConfiguration";
         }
         /// <summary>
@@ -212,7 +214,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="MacOSEndpointProtectionConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSEndpointProtectionConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new MacOSEndpointProtectionConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MacOSEndpointProtectionConfiguration();
         }
@@ -220,8 +223,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"advancedThreatProtectionAutomaticSampleSubmission", n => { AdvancedThreatProtectionAutomaticSampleSubmission = n.GetEnumValue<Enablement>(); } },
                 {"advancedThreatProtectionCloudDelivered", n => { AdvancedThreatProtectionCloudDelivered = n.GetEnumValue<Enablement>(); } },
                 {"advancedThreatProtectionDiagnosticDataCollection", n => { AdvancedThreatProtectionDiagnosticDataCollection = n.GetEnumValue<Enablement>(); } },
@@ -252,7 +257,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<Enablement>("advancedThreatProtectionAutomaticSampleSubmission", AdvancedThreatProtectionAutomaticSampleSubmission);

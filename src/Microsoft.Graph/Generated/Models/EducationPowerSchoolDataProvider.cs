@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class EducationPowerSchoolDataProvider : EducationSynchronizationDataProvider, IParsable {
+    public class EducationPowerSchoolDataProvider : EducationSynchronizationDataProvider, IParsable 
+    {
         /// <summary>Indicates whether the source has multiple identifiers for a single student or teacher.</summary>
         public bool? AllowTeachersInMultipleSchools {
             get { return BackingStore?.Get<bool?>("allowTeachersInMultipleSchools"); }
@@ -98,7 +99,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="EducationPowerSchoolDataProvider"/> and sets the default values.
         /// </summary>
-        public EducationPowerSchoolDataProvider() : base() {
+        public EducationPowerSchoolDataProvider() : base()
+        {
             OdataType = "#microsoft.graph.educationPowerSchoolDataProvider";
         }
         /// <summary>
@@ -106,7 +108,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="EducationPowerSchoolDataProvider"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationPowerSchoolDataProvider CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new EducationPowerSchoolDataProvider CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new EducationPowerSchoolDataProvider();
         }
@@ -114,8 +117,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"allowTeachersInMultipleSchools", n => { AllowTeachersInMultipleSchools = n.GetBoolValue(); } },
                 {"clientId", n => { ClientId = n.GetStringValue(); } },
                 {"clientSecret", n => { ClientSecret = n.GetStringValue(); } },
@@ -129,7 +134,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowTeachersInMultipleSchools", AllowTeachersInMultipleSchools);

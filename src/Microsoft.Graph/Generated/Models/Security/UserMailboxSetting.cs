@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     [Flags]
-    public enum UserMailboxSetting {
+    public enum UserMailboxSetting
+    {
         [EnumMember(Value = "none")]
         None = 1,
         [EnumMember(Value = "junkMailDeletion")]

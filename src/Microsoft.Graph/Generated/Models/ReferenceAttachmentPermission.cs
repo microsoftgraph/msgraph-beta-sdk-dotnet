@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum ReferenceAttachmentPermission {
+    public enum ReferenceAttachmentPermission
+    {
         [EnumMember(Value = "other")]
         Other,
         [EnumMember(Value = "view")]

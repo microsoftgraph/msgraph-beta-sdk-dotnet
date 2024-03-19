@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Indicates if machine is physical or virtual. Possible values are: physical or virtual</summary>
-    public enum UserExperienceAnalyticsMachineType {
+    public enum UserExperienceAnalyticsMachineType
+    {
         /// <summary>Indicates that the type is unknown.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetIosAvailableUpdateVersions {
     [Obsolete("This class is obsolete. Use GetIosAvailableUpdateVersionsGetResponse instead.")]
-    public class GetIosAvailableUpdateVersionsResponse : GetIosAvailableUpdateVersionsGetResponse, IParsable {
+    public class GetIosAvailableUpdateVersionsResponse : GetIosAvailableUpdateVersionsGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="GetIosAvailableUpdateVersionsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetIosAvailableUpdateVersionsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new GetIosAvailableUpdateVersionsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GetIosAvailableUpdateVersionsResponse();
         }

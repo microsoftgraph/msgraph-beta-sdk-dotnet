@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Subject Alternative Name Options.</summary>
     [Flags]
-    public enum SubjectAlternativeNameType {
+    public enum SubjectAlternativeNameType
+    {
         /// <summary>No subject alternative name.</summary>
         [EnumMember(Value = "none")]
         None = 1,

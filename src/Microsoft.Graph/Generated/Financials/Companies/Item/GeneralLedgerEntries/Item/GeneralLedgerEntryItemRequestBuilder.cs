@@ -14,24 +14,28 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.It
     /// <summary>
     /// Provides operations to manage the generalLedgerEntries property of the microsoft.graph.company entity.
     /// </summary>
-    public class GeneralLedgerEntryItemRequestBuilder : BaseRequestBuilder {
+    public class GeneralLedgerEntryItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the account property of the microsoft.graph.generalLedgerEntry entity.</summary>
-        public AccountRequestBuilder Account { get =>
-            new AccountRequestBuilder(PathParameters, RequestAdapter);
+        public AccountRequestBuilder Account
+        {
+            get =>             new AccountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="GeneralLedgerEntryItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GeneralLedgerEntryItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/generalLedgerEntries/{generalLedgerEntry%2Did}{?%24expand,%24select}", pathParameters) {
+        public GeneralLedgerEntryItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/generalLedgerEntries/{generalLedgerEntry%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GeneralLedgerEntryItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GeneralLedgerEntryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/generalLedgerEntries/{generalLedgerEntry%2Did}{?%24expand,%24select}", rawUrl) {
+        public GeneralLedgerEntryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/generalLedgerEntries/{generalLedgerEntry%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get generalLedgerEntries from financials
@@ -42,13 +46,16 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.It
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GeneralLedgerEntry?> GetAsync(Action<RequestConfiguration<GeneralLedgerEntryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GeneralLedgerEntry?> GetAsync(Action<RequestConfiguration<GeneralLedgerEntryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GeneralLedgerEntry> GetAsync(Action<RequestConfiguration<GeneralLedgerEntryItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GeneralLedgerEntry> GetAsync(Action<RequestConfiguration<GeneralLedgerEntryItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GeneralLedgerEntry>(requestInfo, GeneralLedgerEntry.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -60,10 +67,12 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GeneralLedgerEntryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GeneralLedgerEntryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GeneralLedgerEntryItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GeneralLedgerEntryItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -75,13 +84,15 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.It
         /// </summary>
         /// <returns>A <see cref="GeneralLedgerEntryItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GeneralLedgerEntryItemRequestBuilder WithUrl(string rawUrl) {
+        public GeneralLedgerEntryItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new GeneralLedgerEntryItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get generalLedgerEntries from financials
         /// </summary>
-        public class GeneralLedgerEntryItemRequestBuilderGetQueryParameters {
+        public class GeneralLedgerEntryItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,7 +118,8 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.It
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GeneralLedgerEntryItemRequestBuilderGetRequestConfiguration : RequestConfiguration<GeneralLedgerEntryItemRequestBuilderGetQueryParameters> {
+        public class GeneralLedgerEntryItemRequestBuilderGetRequestConfiguration : RequestConfiguration<GeneralLedgerEntryItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

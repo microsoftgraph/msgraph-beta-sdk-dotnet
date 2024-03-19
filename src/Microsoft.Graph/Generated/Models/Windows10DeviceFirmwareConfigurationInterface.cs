@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Graph properties for Device Firmware Configuration Interface 
     /// </summary>
-    public class Windows10DeviceFirmwareConfigurationInterface : DeviceConfiguration, IParsable {
+    public class Windows10DeviceFirmwareConfigurationInterface : DeviceConfiguration, IParsable 
+    {
         /// <summary>Possible values of a property</summary>
         public Enablement? Bluetooth {
             get { return BackingStore?.Get<Enablement?>("bluetooth"); }
@@ -117,7 +118,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="Windows10DeviceFirmwareConfigurationInterface"/> and sets the default values.
         /// </summary>
-        public Windows10DeviceFirmwareConfigurationInterface() : base() {
+        public Windows10DeviceFirmwareConfigurationInterface() : base()
+        {
             OdataType = "#microsoft.graph.windows10DeviceFirmwareConfigurationInterface";
         }
         /// <summary>
@@ -125,7 +127,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="Windows10DeviceFirmwareConfigurationInterface"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows10DeviceFirmwareConfigurationInterface CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Windows10DeviceFirmwareConfigurationInterface CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Windows10DeviceFirmwareConfigurationInterface();
         }
@@ -133,8 +136,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"bluetooth", n => { Bluetooth = n.GetEnumValue<Enablement>(); } },
                 {"bootFromBuiltInNetworkAdapters", n => { BootFromBuiltInNetworkAdapters = n.GetEnumValue<Enablement>(); } },
                 {"bootFromExternalMedia", n => { BootFromExternalMedia = n.GetEnumValue<Enablement>(); } },
@@ -162,7 +167,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<Enablement>("bluetooth", Bluetooth);

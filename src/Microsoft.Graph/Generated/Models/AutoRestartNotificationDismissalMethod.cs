@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Auto restart required notification dismissal method</summary>
-    public enum AutoRestartNotificationDismissalMethod {
+    public enum AutoRestartNotificationDismissalMethod
+    {
         /// <summary>Not configured</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

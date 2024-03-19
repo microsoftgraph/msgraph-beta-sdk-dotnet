@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Computer endpoint protection state</summary>
     [Flags]
-    public enum WindowsDeviceHealthState {
+    public enum WindowsDeviceHealthState
+    {
         /// <summary>Computer is clean and no action is required</summary>
         [EnumMember(Value = "clean")]
         Clean = 1,

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible statuses associated with a generated report.</summary>
-    public enum DeviceManagementReportStatus {
+    public enum DeviceManagementReportStatus
+    {
         /// <summary>Report generation status is unknown.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

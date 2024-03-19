@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    public enum PropertyType {
+    public enum PropertyType
+    {
         [EnumMember(Value = "string")]
         String,
         [EnumMember(Value = "int64")]

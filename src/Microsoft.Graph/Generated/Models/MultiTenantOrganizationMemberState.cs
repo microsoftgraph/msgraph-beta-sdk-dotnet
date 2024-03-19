@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum MultiTenantOrganizationMemberState {
+    public enum MultiTenantOrganizationMemberState
+    {
         [EnumMember(Value = "pending")]
         Pending,
         [EnumMember(Value = "active")]

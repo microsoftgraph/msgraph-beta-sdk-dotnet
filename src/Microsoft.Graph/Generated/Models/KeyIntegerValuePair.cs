@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// A key-value pair with a string key and an integer value.
     /// </summary>
-    public class KeyIntegerValuePair : KeyTypedValuePair, IParsable {
+    public class KeyIntegerValuePair : KeyTypedValuePair, IParsable 
+    {
         /// <summary>The integer value of the key-value pair.</summary>
         public int? Value {
             get { return BackingStore?.Get<int?>("value"); }
@@ -17,7 +18,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="KeyIntegerValuePair"/> and sets the default values.
         /// </summary>
-        public KeyIntegerValuePair() : base() {
+        public KeyIntegerValuePair() : base()
+        {
             OdataType = "#microsoft.graph.keyIntegerValuePair";
         }
         /// <summary>
@@ -25,7 +27,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="KeyIntegerValuePair"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new KeyIntegerValuePair CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new KeyIntegerValuePair CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new KeyIntegerValuePair();
         }
@@ -33,8 +36,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"value", n => { Value = n.GetIntValue(); } },
             };
         }
@@ -42,7 +47,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("value", Value);

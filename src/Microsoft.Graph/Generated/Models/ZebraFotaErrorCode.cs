@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>An error code indicating the failure reason, when the deployment state is createFailed. Possible values: See zebraFotaErrorCode enum.</summary>
-    public enum ZebraFotaErrorCode {
+    public enum ZebraFotaErrorCode
+    {
         /// <summary>Default error code indicating success (no error).</summary>
         [EnumMember(Value = "success")]
         Success,

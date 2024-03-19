@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.DimensionValues.Item {
     /// <summary>
     /// Provides operations to manage the dimensionValues property of the microsoft.graph.company entity.
     /// </summary>
-    public class DimensionValueItemRequestBuilder : BaseRequestBuilder {
+    public class DimensionValueItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="DimensionValueItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DimensionValueItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/dimensionValues/{dimensionValue%2Did}{?%24expand,%24select}", pathParameters) {
+        public DimensionValueItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/dimensionValues/{dimensionValue%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="DimensionValueItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DimensionValueItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/dimensionValues/{dimensionValue%2Did}{?%24expand,%24select}", rawUrl) {
+        public DimensionValueItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/dimensionValues/{dimensionValue%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get dimensionValues from financials
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.DimensionValues.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DimensionValue?> GetAsync(Action<RequestConfiguration<DimensionValueItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DimensionValue?> GetAsync(Action<RequestConfiguration<DimensionValueItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<DimensionValue> GetAsync(Action<RequestConfiguration<DimensionValueItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DimensionValue> GetAsync(Action<RequestConfiguration<DimensionValueItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DimensionValue>(requestInfo, DimensionValue.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.DimensionValues.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DimensionValueItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DimensionValueItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DimensionValueItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DimensionValueItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.DimensionValues.Item {
         /// </summary>
         /// <returns>A <see cref="DimensionValueItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DimensionValueItemRequestBuilder WithUrl(string rawUrl) {
+        public DimensionValueItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new DimensionValueItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get dimensionValues from financials
         /// </summary>
-        public class DimensionValueItemRequestBuilderGetQueryParameters {
+        public class DimensionValueItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.DimensionValues.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DimensionValueItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DimensionValueItemRequestBuilderGetQueryParameters> {
+        public class DimensionValueItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DimensionValueItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

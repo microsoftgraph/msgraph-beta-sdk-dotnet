@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Represents source of assignment.</summary>
-    public enum DeviceAndAppManagementAssignmentSource {
+    public enum DeviceAndAppManagementAssignmentSource
+    {
         /// <summary>Direct indicates a direct assignment.</summary>
         [EnumMember(Value = "direct")]
         Direct,

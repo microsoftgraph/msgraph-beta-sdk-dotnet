@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Advanced BitLocker State</summary>
     [Flags]
-    public enum AdvancedBitLockerState {
+    public enum AdvancedBitLockerState
+    {
         /// <summary>Advanced BitLocker State Success</summary>
         [EnumMember(Value = "success")]
         Success = 1,

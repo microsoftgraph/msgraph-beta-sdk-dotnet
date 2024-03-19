@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum CloudPcDiskEncryptionType {
+    public enum CloudPcDiskEncryptionType
+    {
         [EnumMember(Value = "platformManagedKey")]
         PlatformManagedKey,
         [EnumMember(Value = "customerManagedKey")]

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum Alignment {
+    public enum Alignment
+    {
         [EnumMember(Value = "left")]
         Left,
         [EnumMember(Value = "right")]

@@ -12,20 +12,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePoliciesRep
     /// <summary>
     /// Provides operations to call the getCompliancePoliciesReportForDevice method.
     /// </summary>
-    public class GetCompliancePoliciesReportForDeviceRequestBuilder : BaseRequestBuilder {
+    public class GetCompliancePoliciesReportForDeviceRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetCompliancePoliciesReportForDeviceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetCompliancePoliciesReportForDeviceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/reports/getCompliancePoliciesReportForDevice", pathParameters) {
+        public GetCompliancePoliciesReportForDeviceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/reports/getCompliancePoliciesReportForDevice", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GetCompliancePoliciesReportForDeviceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetCompliancePoliciesReportForDeviceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/reports/getCompliancePoliciesReportForDevice", rawUrl) {
+        public GetCompliancePoliciesReportForDeviceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/reports/getCompliancePoliciesReportForDevice", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke action getCompliancePoliciesReportForDevice
@@ -37,14 +40,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePoliciesRep
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(GetCompliancePoliciesReportForDevicePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> PostAsync(GetCompliancePoliciesReportForDevicePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(GetCompliancePoliciesReportForDevicePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> PostAsync(GetCompliancePoliciesReportForDevicePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -57,10 +63,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePoliciesRep
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(GetCompliancePoliciesReportForDevicePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(GetCompliancePoliciesReportForDevicePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(GetCompliancePoliciesReportForDevicePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(GetCompliancePoliciesReportForDevicePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -74,14 +82,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetCompliancePoliciesRep
         /// </summary>
         /// <returns>A <see cref="GetCompliancePoliciesReportForDeviceRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetCompliancePoliciesReportForDeviceRequestBuilder WithUrl(string rawUrl) {
+        public GetCompliancePoliciesReportForDeviceRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetCompliancePoliciesReportForDeviceRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetCompliancePoliciesReportForDeviceRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class GetCompliancePoliciesReportForDeviceRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

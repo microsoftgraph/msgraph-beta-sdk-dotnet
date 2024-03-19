@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum AuthorizationSystemType {
+    public enum AuthorizationSystemType
+    {
         [EnumMember(Value = "azure")]
         Azure,
         [EnumMember(Value = "gcp")]

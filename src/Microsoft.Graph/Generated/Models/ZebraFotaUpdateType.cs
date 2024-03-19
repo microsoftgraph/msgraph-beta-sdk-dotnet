@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Represents various update types for Zebra FOTA deployment.</summary>
-    public enum ZebraFotaUpdateType {
+    public enum ZebraFotaUpdateType
+    {
         /// <summary>Custom update where the user selects specific BSP, OS version, and patch number to update to.</summary>
         [EnumMember(Value = "custom")]
         Custom,

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Contains all supported registry data detection type.</summary>
-    public enum Win32LobAppRegistryDetectionType {
+    public enum Win32LobAppRegistryDetectionType
+    {
         /// <summary>Not configured.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

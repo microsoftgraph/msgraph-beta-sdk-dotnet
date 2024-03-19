@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
     /// <summary>
     /// Singleton entity that acts as a container for all device management functionality.
     /// </summary>
-    public class DeviceManagement : Microsoft.Graph.Beta.Models.Entity, IParsable {
+    public class DeviceManagement : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    {
         /// <summary>The date &amp; time when tenant data moved between scaleunits.</summary>
         public DateTimeOffset? AccountMoveCompletionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("accountMoveCompletionDateTime"); }
@@ -2509,7 +2510,8 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// </summary>
         /// <returns>A <see cref="DeviceManagement"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagement CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new DeviceManagement CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DeviceManagement();
         }
@@ -2517,8 +2519,10 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"accountMoveCompletionDateTime", n => { AccountMoveCompletionDateTime = n.GetDateTimeOffsetValue(); } },
                 {"adminConsent", n => { AdminConsent = n.GetObjectValue<Microsoft.Graph.Beta.Models.AdminConsent>(Microsoft.Graph.Beta.Models.AdminConsent.CreateFromDiscriminatorValue); } },
                 {"advancedThreatProtectionOnboardingStateSummary", n => { AdvancedThreatProtectionOnboardingStateSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary>(Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary.CreateFromDiscriminatorValue); } },
@@ -2709,7 +2713,8 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("accountMoveCompletionDateTime", AccountMoveCompletionDateTime);

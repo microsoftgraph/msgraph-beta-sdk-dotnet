@@ -9,7 +9,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Base class to detect a Win32 App
     /// </summary>
-    public class Win32LobAppRequirement : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class Win32LobAppRequirement : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -53,7 +54,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="Win32LobAppRequirement"/> and sets the default values.
         /// </summary>
-        public Win32LobAppRequirement() {
+        public Win32LobAppRequirement()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -62,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="Win32LobAppRequirement"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Win32LobAppRequirement CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static Win32LobAppRequirement CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.win32LobAppFileSystemRequirement" => new Win32LobAppFileSystemRequirement(),
                 "#microsoft.graph.win32LobAppPowerShellScriptRequirement" => new Win32LobAppPowerShellScriptRequirement(),
                 "#microsoft.graph.win32LobAppRegistryRequirement" => new Win32LobAppRegistryRequirement(),
@@ -76,8 +80,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"detectionValue", n => { DetectionValue = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"operator", n => { Operator = n.GetEnumValue<Win32LobAppDetectionOperator>(); } },
@@ -87,7 +93,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("detectionValue", DetectionValue);
             writer.WriteStringValue("@odata.type", OdataType);

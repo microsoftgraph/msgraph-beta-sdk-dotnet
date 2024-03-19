@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Non-EAP methods for authentication.</summary>
-    public enum NonEapAuthenticationMethodForEapTtlsType {
+    public enum NonEapAuthenticationMethodForEapTtlsType
+    {
         /// <summary>Unencrypted password (PAP).</summary>
         [EnumMember(Value = "unencryptedPassword")]
         UnencryptedPassword,

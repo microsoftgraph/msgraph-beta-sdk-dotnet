@@ -11,6 +11,7 @@ using Microsoft.Graph.Beta.Models.Partners.Billing;
 using Microsoft.Graph.Beta.Models.Partners;
 using Microsoft.Graph.Beta.Models.Search;
 using Microsoft.Graph.Beta.Models.Security;
+using Microsoft.Graph.Beta.Models.TeamsUserConfiguration;
 using Microsoft.Graph.Beta.Models.TermStore;
 using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -20,7 +21,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class Entity : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class Entity : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -59,7 +61,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="Entity"/> and sets the default values.
         /// </summary>
-        public Entity() {
+        public Entity()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -68,10 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="Entity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Entity CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static Entity CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.aadUserConversationMember" => new AadUserConversationMember(),
                 "#microsoft.graph.accessPackage" => new AccessPackage(),
                 "#microsoft.graph.accessPackageAssignment" => new AccessPackageAssignment(),
@@ -1065,6 +1070,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.microsoftTunnelSite" => new MicrosoftTunnelSite(),
                 "#microsoft.graph.mobileApp" => new MobileApp(),
                 "#microsoft.graph.mobileAppAssignment" => new MobileAppAssignment(),
+                "#microsoft.graph.mobileAppCatalogPackage" => new MobileAppCatalogPackage(),
                 "#microsoft.graph.mobileAppCategory" => new MobileAppCategory(),
                 "#microsoft.graph.mobileAppContent" => new MobileAppContent(),
                 "#microsoft.graph.mobileAppContentFile" => new MobileAppContentFile(),
@@ -1591,6 +1597,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.teamsAsyncOperation" => new TeamsAsyncOperation(),
                 "#microsoft.graph.teamsTab" => new TeamsTab(),
                 "#microsoft.graph.teamsTemplate" => new TeamsTemplate(),
+                "#microsoft.graph.teamsUserConfiguration.teamsAdminRoot" => new TeamsAdminRoot(),
                 "#microsoft.graph.teamTemplate" => new TeamTemplate(),
                 "#microsoft.graph.teamTemplateDefinition" => new TeamTemplateDefinition(),
                 "#microsoft.graph.teamwork" => new Teamwork(),
@@ -1639,6 +1646,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.tooManyGlobalAdminsAssignedToTenantAlertConfiguration" => new TooManyGlobalAdminsAssignedToTenantAlertConfiguration(),
                 "#microsoft.graph.tooManyGlobalAdminsAssignedToTenantAlertIncident" => new TooManyGlobalAdminsAssignedToTenantAlertIncident(),
                 "#microsoft.graph.training" => new Training(),
+                "#microsoft.graph.trainingCampaign" => new TrainingCampaign(),
                 "#microsoft.graph.trainingLanguageDetail" => new TrainingLanguageDetail(),
                 "#microsoft.graph.trending" => new Trending(),
                 "#microsoft.graph.trustedCertificateAuthorityAsEntityBase" => new TrustedCertificateAuthorityAsEntityBase(),
@@ -1774,6 +1782,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.webPart" => new WebPart(),
                 "#microsoft.graph.win32CatalogApp" => new Win32CatalogApp(),
                 "#microsoft.graph.win32LobApp" => new Win32LobApp(),
+                "#microsoft.graph.win32MobileAppCatalogPackage" => new Win32MobileAppCatalogPackage(),
                 "#microsoft.graph.windows10CertificateProfileBase" => new Windows10CertificateProfileBase(),
                 "#microsoft.graph.windows10CompliancePolicy" => new Windows10CompliancePolicy(),
                 "#microsoft.graph.windows10CustomConfiguration" => new Windows10CustomConfiguration(),
@@ -1873,7 +1882,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.windowsUpdateForBusinessConfiguration" => new WindowsUpdateForBusinessConfiguration(),
                 "#microsoft.graph.windowsUpdates.azureADDevice" => new AzureADDevice(),
                 "#microsoft.graph.windowsUpdates.catalog" => new Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog(),
-                "#microsoft.graph.windowsUpdates.catalogEntry" => new CatalogEntry(),
+                "#microsoft.graph.windowsUpdates.catalogEntry" => new Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry(),
                 "#microsoft.graph.windowsUpdates.complianceChange" => new ComplianceChange(),
                 "#microsoft.graph.windowsUpdates.contentApproval" => new ContentApproval(),
                 "#microsoft.graph.windowsUpdates.deployment" => new Deployment(),
@@ -1959,8 +1968,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -1969,7 +1980,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);

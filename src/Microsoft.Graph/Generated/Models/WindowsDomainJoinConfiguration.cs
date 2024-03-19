@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Windows Domain Join device configuration.
     /// </summary>
-    public class WindowsDomainJoinConfiguration : DeviceConfiguration, IParsable {
+    public class WindowsDomainJoinConfiguration : DeviceConfiguration, IParsable 
+    {
         /// <summary>Active Directory domain name to join.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("computerNameSuffixRandomCharCount"); }
             set { BackingStore?.Set("computerNameSuffixRandomCharCount", value); }
         }
-        /// <summary>Reference to device configurations required for network connectivity</summary>
+        /// <summary>Reference to device configurations required for network connectivity. This collection can contain a maximum of 2 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DeviceConfiguration>? NetworkAccessConfigurations {
@@ -73,7 +74,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="WindowsDomainJoinConfiguration"/> and sets the default values.
         /// </summary>
-        public WindowsDomainJoinConfiguration() : base() {
+        public WindowsDomainJoinConfiguration() : base()
+        {
             OdataType = "#microsoft.graph.windowsDomainJoinConfiguration";
         }
         /// <summary>
@@ -81,7 +83,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="WindowsDomainJoinConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsDomainJoinConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new WindowsDomainJoinConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WindowsDomainJoinConfiguration();
         }
@@ -89,8 +92,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"activeDirectoryDomainName", n => { ActiveDirectoryDomainName = n.GetStringValue(); } },
                 {"computerNameStaticPrefix", n => { ComputerNameStaticPrefix = n.GetStringValue(); } },
                 {"computerNameSuffixRandomCharCount", n => { ComputerNameSuffixRandomCharCount = n.GetIntValue(); } },
@@ -102,7 +107,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("activeDirectoryDomainName", ActiveDirectoryDomainName);

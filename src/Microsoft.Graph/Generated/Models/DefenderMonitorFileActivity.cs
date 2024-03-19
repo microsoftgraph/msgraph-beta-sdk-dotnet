@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values for monitoring file activity.</summary>
-    public enum DefenderMonitorFileActivity {
+    public enum DefenderMonitorFileActivity
+    {
         /// <summary>User Defined, default value, no intent.</summary>
         [EnumMember(Value = "userDefined")]
         UserDefined,

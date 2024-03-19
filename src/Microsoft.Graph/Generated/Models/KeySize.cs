@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Key Size Options.</summary>
-    public enum KeySize {
+    public enum KeySize
+    {
         /// <summary>1024 Bits.</summary>
         [EnumMember(Value = "size1024")]
         Size1024,

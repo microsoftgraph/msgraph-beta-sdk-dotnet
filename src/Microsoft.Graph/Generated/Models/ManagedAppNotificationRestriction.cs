@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Restrict managed app notification</summary>
-    public enum ManagedAppNotificationRestriction {
+    public enum ManagedAppNotificationRestriction
+    {
         /// <summary>Share all notifications.</summary>
         [EnumMember(Value = "allow")]
         Allow,

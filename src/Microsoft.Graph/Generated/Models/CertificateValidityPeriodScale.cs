@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Certificate Validity Period Options.</summary>
-    public enum CertificateValidityPeriodScale {
+    public enum CertificateValidityPeriodScale
+    {
         /// <summary>Days.</summary>
         [EnumMember(Value = "days")]
         Days,

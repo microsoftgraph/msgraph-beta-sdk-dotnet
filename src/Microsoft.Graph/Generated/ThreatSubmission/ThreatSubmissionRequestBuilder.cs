@@ -17,36 +17,43 @@ namespace Microsoft.Graph.Beta.ThreatSubmission {
     /// <summary>
     /// Provides operations to manage the threatSubmissionRoot singleton.
     /// </summary>
-    public class ThreatSubmissionRequestBuilder : BaseRequestBuilder {
+    public class ThreatSubmissionRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the emailThreats property of the microsoft.graph.security.threatSubmissionRoot entity.</summary>
-        public EmailThreatsRequestBuilder EmailThreats { get =>
-            new EmailThreatsRequestBuilder(PathParameters, RequestAdapter);
+        public EmailThreatsRequestBuilder EmailThreats
+        {
+            get =>             new EmailThreatsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the emailThreatSubmissionPolicies property of the microsoft.graph.security.threatSubmissionRoot entity.</summary>
-        public EmailThreatSubmissionPoliciesRequestBuilder EmailThreatSubmissionPolicies { get =>
-            new EmailThreatSubmissionPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        public EmailThreatSubmissionPoliciesRequestBuilder EmailThreatSubmissionPolicies
+        {
+            get =>             new EmailThreatSubmissionPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the fileThreats property of the microsoft.graph.security.threatSubmissionRoot entity.</summary>
-        public FileThreatsRequestBuilder FileThreats { get =>
-            new FileThreatsRequestBuilder(PathParameters, RequestAdapter);
+        public FileThreatsRequestBuilder FileThreats
+        {
+            get =>             new FileThreatsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the urlThreats property of the microsoft.graph.security.threatSubmissionRoot entity.</summary>
-        public UrlThreatsRequestBuilder UrlThreats { get =>
-            new UrlThreatsRequestBuilder(PathParameters, RequestAdapter);
+        public UrlThreatsRequestBuilder UrlThreats
+        {
+            get =>             new UrlThreatsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="ThreatSubmissionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ThreatSubmissionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/threatSubmission{?%24expand,%24select}", pathParameters) {
+        public ThreatSubmissionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/threatSubmission{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ThreatSubmissionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ThreatSubmissionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/threatSubmission{?%24expand,%24select}", rawUrl) {
+        public ThreatSubmissionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/threatSubmission{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get threatSubmission
@@ -57,13 +64,16 @@ namespace Microsoft.Graph.Beta.ThreatSubmission {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ThreatSubmissionRoot?> GetAsync(Action<RequestConfiguration<ThreatSubmissionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ThreatSubmissionRoot?> GetAsync(Action<RequestConfiguration<ThreatSubmissionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ThreatSubmissionRoot> GetAsync(Action<RequestConfiguration<ThreatSubmissionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ThreatSubmissionRoot> GetAsync(Action<RequestConfiguration<ThreatSubmissionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ThreatSubmissionRoot>(requestInfo, ThreatSubmissionRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -78,14 +88,17 @@ namespace Microsoft.Graph.Beta.ThreatSubmission {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ThreatSubmissionRoot?> PatchAsync(ThreatSubmissionRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ThreatSubmissionRoot?> PatchAsync(ThreatSubmissionRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ThreatSubmissionRoot> PatchAsync(ThreatSubmissionRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ThreatSubmissionRoot> PatchAsync(ThreatSubmissionRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ThreatSubmissionRoot>(requestInfo, ThreatSubmissionRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -97,10 +110,12 @@ namespace Microsoft.Graph.Beta.ThreatSubmission {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ThreatSubmissionRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ThreatSubmissionRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ThreatSubmissionRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ThreatSubmissionRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -115,10 +130,12 @@ namespace Microsoft.Graph.Beta.ThreatSubmission {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(ThreatSubmissionRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(ThreatSubmissionRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(ThreatSubmissionRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(ThreatSubmissionRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/threatSubmission", PathParameters);
@@ -132,13 +149,15 @@ namespace Microsoft.Graph.Beta.ThreatSubmission {
         /// </summary>
         /// <returns>A <see cref="ThreatSubmissionRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ThreatSubmissionRequestBuilder WithUrl(string rawUrl) {
+        public ThreatSubmissionRequestBuilder WithUrl(string rawUrl)
+        {
             return new ThreatSubmissionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get threatSubmission
         /// </summary>
-        public class ThreatSubmissionRequestBuilderGetQueryParameters {
+        public class ThreatSubmissionRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -164,13 +183,15 @@ namespace Microsoft.Graph.Beta.ThreatSubmission {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ThreatSubmissionRequestBuilderGetRequestConfiguration : RequestConfiguration<ThreatSubmissionRequestBuilderGetQueryParameters> {
+        public class ThreatSubmissionRequestBuilderGetRequestConfiguration : RequestConfiguration<ThreatSubmissionRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ThreatSubmissionRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class ThreatSubmissionRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

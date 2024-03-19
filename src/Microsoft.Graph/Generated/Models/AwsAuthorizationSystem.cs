@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class AwsAuthorizationSystem : AuthorizationSystem, IParsable {
+    public class AwsAuthorizationSystem : AuthorizationSystem, IParsable 
+    {
         /// <summary>List of actions for service in authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,7 +80,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="AwsAuthorizationSystem"/> and sets the default values.
         /// </summary>
-        public AwsAuthorizationSystem() : base() {
+        public AwsAuthorizationSystem() : base()
+        {
             OdataType = "#microsoft.graph.awsAuthorizationSystem";
         }
         /// <summary>
@@ -87,7 +89,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="AwsAuthorizationSystem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AwsAuthorizationSystem CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new AwsAuthorizationSystem CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AwsAuthorizationSystem();
         }
@@ -95,8 +98,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"actions", n => { Actions = n.GetCollectionOfObjectValues<AwsAuthorizationSystemTypeAction>(AwsAuthorizationSystemTypeAction.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"associatedIdentities", n => { AssociatedIdentities = n.GetObjectValue<AwsAssociatedIdentities>(AwsAssociatedIdentities.CreateFromDiscriminatorValue); } },
                 {"policies", n => { Policies = n.GetCollectionOfObjectValues<AwsPolicy>(AwsPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -108,7 +113,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<AwsAuthorizationSystemTypeAction>("actions", Actions);

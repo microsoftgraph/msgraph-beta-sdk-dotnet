@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>VPN Authentication Method.</summary>
-    public enum VpnAuthenticationMethod {
+    public enum VpnAuthenticationMethod
+    {
         /// <summary>Authenticate with a certificate.</summary>
         [EnumMember(Value = "certificate")]
         Certificate,

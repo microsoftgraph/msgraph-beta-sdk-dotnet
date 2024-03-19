@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum X509CertificateAffinityLevel {
+    public enum X509CertificateAffinityLevel
+    {
         [EnumMember(Value = "low")]
         Low,
         [EnumMember(Value = "high")]

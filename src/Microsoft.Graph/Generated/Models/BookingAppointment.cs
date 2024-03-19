@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Represents a booked appointment of a service by a customer in a business.
     /// </summary>
-    public class BookingAppointment : Entity, IParsable {
+    public class BookingAppointment : Entity, IParsable 
+    {
         /// <summary>Additional information that is sent to the customer when an appointment is confirmed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("anonymousJoinWebUrl", value); }
         }
 #endif
-        /// <summary>Custom label that can be stamped on this appointment by the user.</summary>
+        /// <summary>The user can stamp a custom label on the appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppointmentLabel {
@@ -51,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appointmentLabel", value); }
         }
 #endif
-        /// <summary>The date, time and timezone when the appointment was created.</summary>
+        /// <summary>The date, time, and timezone when the appointment was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
@@ -244,12 +245,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("invoiceUrl", value); }
         }
 #endif
-        /// <summary>The isCustomerAllowedToManageBooking property</summary>
+        /// <summary>Indicates that the customer can manage bookings created by the staff. The default value is false.</summary>
         public bool? IsCustomerAllowedToManageBooking {
             get { return BackingStore?.Get<bool?>("isCustomerAllowedToManageBooking"); }
             set { BackingStore?.Set("isCustomerAllowedToManageBooking", value); }
         }
-        /// <summary>True indicates that the appointment will be held online. Default value is false.</summary>
+        /// <summary>Indicates that the appointment is held online. The default value is false.</summary>
         public bool? IsLocationOnline {
             get { return BackingStore?.Get<bool?>("isLocationOnline"); }
             set { BackingStore?.Set("isLocationOnline", value); }
@@ -331,7 +332,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("reminders", value); }
         }
 #endif
-        /// <summary>An additional tracking ID for the appointment, if the appointment has been created directly by the customer on the scheduling page, as opposed to by a staff member on the behalf of the customer.</summary>
+        /// <summary>Another tracking ID for the appointment, if the appointment was created directly by the customer on the scheduling page, as opposed to by a staff member on behalf of customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SelfServiceAppointmentId {
@@ -439,7 +440,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="BookingAppointment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BookingAppointment CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new BookingAppointment CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new BookingAppointment();
         }
@@ -447,8 +449,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },
                 {"anonymousJoinWebUrl", n => { AnonymousJoinWebUrl = n.GetStringValue(); } },
                 {"appointmentLabel", n => { AppointmentLabel = n.GetStringValue(); } },
@@ -495,7 +499,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("additionalInformation", AdditionalInformation);

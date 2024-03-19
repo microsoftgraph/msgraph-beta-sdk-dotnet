@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum DefenderAvStatus {
+    public enum DefenderAvStatus
+    {
         [EnumMember(Value = "notReporting")]
         NotReporting,
         [EnumMember(Value = "disabled")]

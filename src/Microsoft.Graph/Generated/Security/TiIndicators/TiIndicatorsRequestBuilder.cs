@@ -19,48 +19,60 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
     /// <summary>
     /// Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.
     /// </summary>
-    public class TiIndicatorsRequestBuilder : BaseRequestBuilder {
+    public class TiIndicatorsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count
+        {
+            get =>             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deleteTiIndicators method.</summary>
-        public DeleteTiIndicatorsRequestBuilder DeleteTiIndicators { get =>
-            new DeleteTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
+        public DeleteTiIndicatorsRequestBuilder DeleteTiIndicators
+        {
+            get =>             new DeleteTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deleteTiIndicatorsByExternalId method.</summary>
-        public DeleteTiIndicatorsByExternalIdRequestBuilder DeleteTiIndicatorsByExternalId { get =>
-            new DeleteTiIndicatorsByExternalIdRequestBuilder(PathParameters, RequestAdapter);
+        public DeleteTiIndicatorsByExternalIdRequestBuilder DeleteTiIndicatorsByExternalId
+        {
+            get =>             new DeleteTiIndicatorsByExternalIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the submitTiIndicators method.</summary>
-        public SubmitTiIndicatorsRequestBuilder SubmitTiIndicators { get =>
-            new SubmitTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
+        public SubmitTiIndicatorsRequestBuilder SubmitTiIndicators
+        {
+            get =>             new SubmitTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateTiIndicators method.</summary>
-        public UpdateTiIndicatorsRequestBuilder UpdateTiIndicators { get =>
-            new UpdateTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
+        public UpdateTiIndicatorsRequestBuilder UpdateTiIndicators
+        {
+            get =>             new UpdateTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.</summary>
         /// <param name="position">The unique identifier of tiIndicator</param>
         /// <returns>A <see cref="TiIndicatorItemRequestBuilder"/></returns>
-        public TiIndicatorItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("tiIndicator%2Did", position);
-            return new TiIndicatorItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public TiIndicatorItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("tiIndicator%2Did", position);
+                return new TiIndicatorItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="TiIndicatorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TiIndicatorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/tiIndicators{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public TiIndicatorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/tiIndicators{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="TiIndicatorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TiIndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/tiIndicators{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public TiIndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/tiIndicators{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Retrieve a list of tiIndicator objects.
@@ -72,13 +84,16 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TiIndicatorCollectionResponse?> GetAsync(Action<RequestConfiguration<TiIndicatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TiIndicatorCollectionResponse?> GetAsync(Action<RequestConfiguration<TiIndicatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<TiIndicatorCollectionResponse> GetAsync(Action<RequestConfiguration<TiIndicatorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TiIndicatorCollectionResponse> GetAsync(Action<RequestConfiguration<TiIndicatorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<TiIndicatorCollectionResponse>(requestInfo, TiIndicatorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -94,14 +109,17 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TiIndicator?> PostAsync(TiIndicator body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TiIndicator?> PostAsync(TiIndicator body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<TiIndicator> PostAsync(TiIndicator body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TiIndicator> PostAsync(TiIndicator body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<TiIndicator>(requestInfo, TiIndicator.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -113,10 +131,12 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TiIndicatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TiIndicatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TiIndicatorsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TiIndicatorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -131,10 +151,12 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(TiIndicator body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(TiIndicator body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(TiIndicator body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(TiIndicator body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/security/tiIndicators", PathParameters);
@@ -148,13 +170,15 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         /// </summary>
         /// <returns>A <see cref="TiIndicatorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TiIndicatorsRequestBuilder WithUrl(string rawUrl) {
+        public TiIndicatorsRequestBuilder WithUrl(string rawUrl)
+        {
             return new TiIndicatorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of tiIndicator objects.
         /// </summary>
-        public class TiIndicatorsRequestBuilderGetQueryParameters {
+        public class TiIndicatorsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -219,13 +243,15 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TiIndicatorsRequestBuilderGetRequestConfiguration : RequestConfiguration<TiIndicatorsRequestBuilderGetQueryParameters> {
+        public class TiIndicatorsRequestBuilderGetRequestConfiguration : RequestConfiguration<TiIndicatorsRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TiIndicatorsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class TiIndicatorsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

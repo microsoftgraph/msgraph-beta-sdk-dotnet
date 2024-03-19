@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Type of accounts that are allowed to share the PC.</summary>
     [Flags]
-    public enum SharedPCAllowedAccountType {
+    public enum SharedPCAllowedAccountType
+    {
         /// <summary>Not configured. Default value.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured = 1,

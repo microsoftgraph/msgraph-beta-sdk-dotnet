@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum SharingCapabilities {
+    public enum SharingCapabilities
+    {
         [EnumMember(Value = "disabled")]
         Disabled,
         [EnumMember(Value = "externalUserSharingOnly")]

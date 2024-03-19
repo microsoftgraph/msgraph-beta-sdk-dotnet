@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Device scope configuration query operator. Possible values are: equals, notEquals, contains, notContains, greaterThan, lessThan. Default value: equals.</summary>
-    public enum DeviceScopeOperator {
+    public enum DeviceScopeOperator
+    {
         /// <summary>No operator set for the device scope configuration.</summary>
         [EnumMember(Value = "none")]
         None,

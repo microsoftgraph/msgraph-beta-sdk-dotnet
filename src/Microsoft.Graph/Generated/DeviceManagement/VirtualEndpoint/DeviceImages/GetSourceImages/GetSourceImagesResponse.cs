@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages {
     [Obsolete("This class is obsolete. Use GetSourceImagesGetResponse instead.")]
-    public class GetSourceImagesResponse : GetSourceImagesGetResponse, IParsable {
+    public class GetSourceImagesResponse : GetSourceImagesGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="GetSourceImagesResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetSourceImagesResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new GetSourceImagesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GetSourceImagesResponse();
         }

@@ -28,72 +28,88 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
     /// <summary>
     /// Provides operations to manage the reports property of the microsoft.graph.virtualEndpoint entity.
     /// </summary>
-    public class ReportsRequestBuilder : BaseRequestBuilder {
+    public class ReportsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.</summary>
-        public ExportJobsRequestBuilder ExportJobs { get =>
-            new ExportJobsRequestBuilder(PathParameters, RequestAdapter);
+        public ExportJobsRequestBuilder ExportJobs
+        {
+            get =>             new ExportJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getActionStatusReports method.</summary>
-        public GetActionStatusReportsRequestBuilder GetActionStatusReports { get =>
-            new GetActionStatusReportsRequestBuilder(PathParameters, RequestAdapter);
+        public GetActionStatusReportsRequestBuilder GetActionStatusReports
+        {
+            get =>             new GetActionStatusReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCloudPcPerformanceReport method.</summary>
-        public GetCloudPcPerformanceReportRequestBuilder GetCloudPcPerformanceReport { get =>
-            new GetCloudPcPerformanceReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetCloudPcPerformanceReportRequestBuilder GetCloudPcPerformanceReport
+        {
+            get =>             new GetCloudPcPerformanceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCloudPcRecommendationReports method.</summary>
-        public GetCloudPcRecommendationReportsRequestBuilder GetCloudPcRecommendationReports { get =>
-            new GetCloudPcRecommendationReportsRequestBuilder(PathParameters, RequestAdapter);
+        public GetCloudPcRecommendationReportsRequestBuilder GetCloudPcRecommendationReports
+        {
+            get =>             new GetCloudPcRecommendationReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getConnectionQualityReports method.</summary>
-        public GetConnectionQualityReportsRequestBuilder GetConnectionQualityReports { get =>
-            new GetConnectionQualityReportsRequestBuilder(PathParameters, RequestAdapter);
+        public GetConnectionQualityReportsRequestBuilder GetConnectionQualityReports
+        {
+            get =>             new GetConnectionQualityReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getDailyAggregatedRemoteConnectionReports method.</summary>
-        public GetDailyAggregatedRemoteConnectionReportsRequestBuilder GetDailyAggregatedRemoteConnectionReports { get =>
-            new GetDailyAggregatedRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
+        public GetDailyAggregatedRemoteConnectionReportsRequestBuilder GetDailyAggregatedRemoteConnectionReports
+        {
+            get =>             new GetDailyAggregatedRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getFrontlineReport method.</summary>
-        public GetFrontlineReportRequestBuilder GetFrontlineReport { get =>
-            new GetFrontlineReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetFrontlineReportRequestBuilder GetFrontlineReport
+        {
+            get =>             new GetFrontlineReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getInaccessibleCloudPcReports method.</summary>
-        public GetInaccessibleCloudPcReportsRequestBuilder GetInaccessibleCloudPcReports { get =>
-            new GetInaccessibleCloudPcReportsRequestBuilder(PathParameters, RequestAdapter);
+        public GetInaccessibleCloudPcReportsRequestBuilder GetInaccessibleCloudPcReports
+        {
+            get =>             new GetInaccessibleCloudPcReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getRawRemoteConnectionReports method.</summary>
-        public GetRawRemoteConnectionReportsRequestBuilder GetRawRemoteConnectionReports { get =>
-            new GetRawRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
+        public GetRawRemoteConnectionReportsRequestBuilder GetRawRemoteConnectionReports
+        {
+            get =>             new GetRawRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getRemoteConnectionHistoricalReports method.</summary>
-        public GetRemoteConnectionHistoricalReportsRequestBuilder GetRemoteConnectionHistoricalReports { get =>
-            new GetRemoteConnectionHistoricalReportsRequestBuilder(PathParameters, RequestAdapter);
+        public GetRemoteConnectionHistoricalReportsRequestBuilder GetRemoteConnectionHistoricalReports
+        {
+            get =>             new GetRemoteConnectionHistoricalReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getSharedUseLicenseUsageReport method.</summary>
-        public GetSharedUseLicenseUsageReportRequestBuilder GetSharedUseLicenseUsageReport { get =>
-            new GetSharedUseLicenseUsageReportRequestBuilder(PathParameters, RequestAdapter);
+        public GetSharedUseLicenseUsageReportRequestBuilder GetSharedUseLicenseUsageReport
+        {
+            get =>             new GetSharedUseLicenseUsageReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getTotalAggregatedRemoteConnectionReports method.</summary>
-        public GetTotalAggregatedRemoteConnectionReportsRequestBuilder GetTotalAggregatedRemoteConnectionReports { get =>
-            new GetTotalAggregatedRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
+        public GetTotalAggregatedRemoteConnectionReportsRequestBuilder GetTotalAggregatedRemoteConnectionReports
+        {
+            get =>             new GetTotalAggregatedRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveCrossRegionDisasterRecoveryReport method.</summary>
-        public RetrieveCrossRegionDisasterRecoveryReportRequestBuilder RetrieveCrossRegionDisasterRecoveryReport { get =>
-            new RetrieveCrossRegionDisasterRecoveryReportRequestBuilder(PathParameters, RequestAdapter);
+        public RetrieveCrossRegionDisasterRecoveryReportRequestBuilder RetrieveCrossRegionDisasterRecoveryReport
+        {
+            get =>             new RetrieveCrossRegionDisasterRecoveryReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="ReportsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports{?%24expand,%24select}", pathParameters) {
+        public ReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ReportsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports{?%24expand,%24select}", rawUrl) {
+        public ReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property reports for deviceManagement
@@ -103,13 +119,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -123,13 +142,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPcReports?> GetAsync(Action<RequestConfiguration<ReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CloudPcReports?> GetAsync(Action<RequestConfiguration<ReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<CloudPcReports> GetAsync(Action<RequestConfiguration<ReportsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CloudPcReports> GetAsync(Action<RequestConfiguration<ReportsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CloudPcReports>(requestInfo, CloudPcReports.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -139,7 +161,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         /// </summary>
         /// <returns>A <see cref="GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder"/></returns>
         /// <param name="cloudPcId">Usage: cloudPcId=&apos;{cloudPcId}&apos;</param>
-        public GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder GetRealTimeRemoteConnectionLatencyWithCloudPcId(string cloudPcId) {
+        public GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder GetRealTimeRemoteConnectionLatencyWithCloudPcId(string cloudPcId)
+        {
             if(string.IsNullOrEmpty(cloudPcId)) throw new ArgumentNullException(nameof(cloudPcId));
             return new GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder(PathParameters, RequestAdapter, cloudPcId);
         }
@@ -148,7 +171,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         /// </summary>
         /// <returns>A <see cref="GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder"/></returns>
         /// <param name="cloudPcId">Usage: cloudPcId=&apos;{cloudPcId}&apos;</param>
-        public GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder GetRealTimeRemoteConnectionStatusWithCloudPcId(string cloudPcId) {
+        public GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder GetRealTimeRemoteConnectionStatusWithCloudPcId(string cloudPcId)
+        {
             if(string.IsNullOrEmpty(cloudPcId)) throw new ArgumentNullException(nameof(cloudPcId));
             return new GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder(PathParameters, RequestAdapter, cloudPcId);
         }
@@ -162,14 +186,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPcReports?> PatchAsync(CloudPcReports body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CloudPcReports?> PatchAsync(CloudPcReports body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<CloudPcReports> PatchAsync(CloudPcReports body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CloudPcReports> PatchAsync(CloudPcReports body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CloudPcReports>(requestInfo, CloudPcReports.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -181,10 +208,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/deviceManagement/virtualEndpoint/reports", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -198,10 +227,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ReportsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ReportsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -216,10 +247,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(CloudPcReports body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(CloudPcReports body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(CloudPcReports body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(CloudPcReports body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/deviceManagement/virtualEndpoint/reports", PathParameters);
@@ -233,19 +266,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         /// </summary>
         /// <returns>A <see cref="ReportsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ReportsRequestBuilder WithUrl(string rawUrl) {
+        public ReportsRequestBuilder WithUrl(string rawUrl)
+        {
             return new ReportsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ReportsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class ReportsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Cloud PC related reports.
         /// </summary>
-        public class ReportsRequestBuilderGetQueryParameters {
+        public class ReportsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -271,13 +307,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ReportsRequestBuilderGetRequestConfiguration : RequestConfiguration<ReportsRequestBuilderGetQueryParameters> {
+        public class ReportsRequestBuilderGetRequestConfiguration : RequestConfiguration<ReportsRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ReportsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class ReportsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

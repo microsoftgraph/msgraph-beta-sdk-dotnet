@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Describes current lifecycle state of a template</summary>
-    public enum DeviceManagementTemplateLifecycleState {
+    public enum DeviceManagementTemplateLifecycleState
+    {
         /// <summary>Invalid</summary>
         [EnumMember(Value = "invalid")]
         Invalid,

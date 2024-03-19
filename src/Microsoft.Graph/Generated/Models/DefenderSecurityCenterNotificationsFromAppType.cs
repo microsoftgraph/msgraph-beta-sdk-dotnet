@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values for defenderSecurityCenterNotificationsFromApp</summary>
-    public enum DefenderSecurityCenterNotificationsFromAppType {
+    public enum DefenderSecurityCenterNotificationsFromAppType
+    {
         /// <summary>Not Configured</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

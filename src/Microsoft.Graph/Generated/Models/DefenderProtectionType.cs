@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values of Defender PUA Protection</summary>
-    public enum DefenderProtectionType {
+    public enum DefenderProtectionType
+    {
         /// <summary>Device default value, no intent.</summary>
         [EnumMember(Value = "userDefined")]
         UserDefined,

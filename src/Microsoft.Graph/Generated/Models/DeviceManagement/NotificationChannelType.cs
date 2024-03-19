@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement {
-    public enum NotificationChannelType {
+    public enum NotificationChannelType
+    {
         [EnumMember(Value = "portal")]
         Portal,
         [EnumMember(Value = "email")]

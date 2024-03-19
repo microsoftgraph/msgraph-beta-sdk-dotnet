@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Contains properties and inherited properties for Windows Universal AppX Line Of Business apps. Inherits from `mobileLobApp`.
     /// </summary>
-    public class WindowsUniversalAppX : MobileLobApp, IParsable {
+    public class WindowsUniversalAppX : MobileLobApp, IParsable 
+    {
         /// <summary>Contains properties for Windows architecture.</summary>
         public WindowsArchitecture? ApplicableArchitectures {
             get { return BackingStore?.Get<WindowsArchitecture?>("applicableArchitectures"); }
@@ -19,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<WindowsDeviceType?>("applicableDeviceTypes"); }
             set { BackingStore?.Set("applicableDeviceTypes", value); }
         }
-        /// <summary>The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.</summary>
+        /// <summary>The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<MobileContainedApp>? CommittedContainedApps {
@@ -111,7 +112,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="WindowsUniversalAppX"/> and sets the default values.
         /// </summary>
-        public WindowsUniversalAppX() : base() {
+        public WindowsUniversalAppX() : base()
+        {
             OdataType = "#microsoft.graph.windowsUniversalAppX";
         }
         /// <summary>
@@ -119,7 +121,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="WindowsUniversalAppX"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsUniversalAppX CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new WindowsUniversalAppX CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WindowsUniversalAppX();
         }
@@ -127,8 +130,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<WindowsArchitecture>(); } },
                 {"applicableDeviceTypes", n => { ApplicableDeviceTypes = n.GetEnumValue<WindowsDeviceType>(); } },
                 {"committedContainedApps", n => { CommittedContainedApps = n.GetCollectionOfObjectValues<MobileContainedApp>(MobileContainedApp.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -144,7 +149,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<WindowsArchitecture>("applicableArchitectures", ApplicableArchitectures);

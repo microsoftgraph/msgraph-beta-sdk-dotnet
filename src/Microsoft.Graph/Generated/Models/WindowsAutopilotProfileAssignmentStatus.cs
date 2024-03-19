@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum WindowsAutopilotProfileAssignmentStatus {
+    public enum WindowsAutopilotProfileAssignmentStatus
+    {
         /// <summary>Unknown assignment status</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

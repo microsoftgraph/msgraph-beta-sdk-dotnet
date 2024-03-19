@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class EventMessage : Message, IParsable {
+    public class EventMessage : Message, IParsable 
+    {
         /// <summary>The end time of the requested meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,22 +35,22 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("event", value); }
         }
 #endif
-        /// <summary>The isAllDay property</summary>
+        /// <summary>Indicates whether the event lasts the entire day. Adjusting this property requires adjusting the startDateTime and endDateTime properties of the event as well.</summary>
         public bool? IsAllDay {
             get { return BackingStore?.Get<bool?>("isAllDay"); }
             set { BackingStore?.Set("isAllDay", value); }
         }
-        /// <summary>The isDelegated property</summary>
+        /// <summary>True if this meeting request is accessible to a delegate, false otherwise. Default is false.</summary>
         public bool? IsDelegated {
             get { return BackingStore?.Get<bool?>("isDelegated"); }
             set { BackingStore?.Set("isDelegated", value); }
         }
-        /// <summary>The isOutOfDate property</summary>
+        /// <summary>Indicates whether this meeting request has been made out-of-date by a more recent request.</summary>
         public bool? IsOutOfDate {
             get { return BackingStore?.Get<bool?>("isOutOfDate"); }
             set { BackingStore?.Set("isOutOfDate", value); }
         }
-        /// <summary>The location property</summary>
+        /// <summary>The location of the requested meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Location? Location {
@@ -63,12 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("location", value); }
         }
 #endif
-        /// <summary>The meetingMessageType property</summary>
+        /// <summary>The type of event message: none, meetingRequest, meetingCancelled, meetingAccepted, meetingTentativelyAccepted, meetingDeclined.</summary>
         public Microsoft.Graph.Beta.Models.MeetingMessageType? MeetingMessageType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeetingMessageType?>("meetingMessageType"); }
             set { BackingStore?.Set("meetingMessageType", value); }
         }
-        /// <summary>The recurrence property</summary>
+        /// <summary>The recurrence pattern of the requested meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PatternedRecurrence? Recurrence {
@@ -82,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recurrence", value); }
         }
 #endif
-        /// <summary>The startDateTime property</summary>
+        /// <summary>The start time of the requested meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DateTimeTimeZone? StartDateTime {
@@ -96,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The type of requested meeting: singleInstance, occurence, exception, seriesMaster.</summary>
         public EventType? Type {
             get { return BackingStore?.Get<EventType?>("type"); }
             set { BackingStore?.Set("type", value); }
@@ -104,7 +105,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="EventMessage"/> and sets the default values.
         /// </summary>
-        public EventMessage() : base() {
+        public EventMessage() : base()
+        {
             OdataType = "#microsoft.graph.eventMessage";
         }
         /// <summary>
@@ -112,10 +114,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="EventMessage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EventMessage CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new EventMessage CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.eventMessageRequest" => new EventMessageRequest(),
                 "#microsoft.graph.eventMessageResponse" => new EventMessageResponse(),
                 _ => new EventMessage(),
@@ -125,8 +129,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"endDateTime", n => { EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 {"event", n => { Event = n.GetObjectValue<Microsoft.Graph.Beta.Models.Event>(Microsoft.Graph.Beta.Models.Event.CreateFromDiscriminatorValue); } },
                 {"isAllDay", n => { IsAllDay = n.GetBoolValue(); } },
@@ -143,7 +149,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<DateTimeTimeZone>("endDateTime", EndDateTime);

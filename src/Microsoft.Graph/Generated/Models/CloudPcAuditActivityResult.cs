@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum CloudPcAuditActivityResult {
+    public enum CloudPcAuditActivityResult
+    {
         [EnumMember(Value = "success")]
         Success,
         [EnumMember(Value = "clientError")]

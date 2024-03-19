@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Deployment states for Autopilot devices</summary>
-    public enum WindowsAutopilotDeploymentState {
+    public enum WindowsAutopilotDeploymentState
+    {
         /// <summary>The deployment state is unknown.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

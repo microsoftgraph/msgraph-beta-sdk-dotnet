@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Represents wipe requests issued by tenant admin for Bring-Your-Own-Device(BYOD) Windows devices.
     /// </summary>
-    public class WindowsInformationProtectionWipeAction : Entity, IParsable {
+    public class WindowsInformationProtectionWipeAction : Entity, IParsable 
+    {
         /// <summary>Last checkin time of the device that was targeted by this wipe action.</summary>
         public DateTimeOffset? LastCheckInDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastCheckInDateTime"); }
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="WindowsInformationProtectionWipeAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsInformationProtectionWipeAction CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new WindowsInformationProtectionWipeAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WindowsInformationProtectionWipeAction();
         }
@@ -88,8 +90,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"lastCheckInDateTime", n => { LastCheckInDateTime = n.GetDateTimeOffsetValue(); } },
                 {"status", n => { Status = n.GetEnumValue<ActionState>(); } },
                 {"targetedDeviceMacAddress", n => { TargetedDeviceMacAddress = n.GetStringValue(); } },
@@ -102,7 +106,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("lastCheckInDateTime", LastCheckInDateTime);

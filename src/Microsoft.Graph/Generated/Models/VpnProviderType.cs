@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provider type for per-app VPN.</summary>
-    public enum VpnProviderType {
+    public enum VpnProviderType
+    {
         /// <summary>Tunnel traffic is not explicitly configured.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

@@ -8,18 +8,19 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Describes a dependency type between two mobile apps.
     /// </summary>
-    public class MobileAppDependency : MobileAppRelationship, IParsable {
+    public class MobileAppDependency : MobileAppRelationship, IParsable 
+    {
         /// <summary>Indicates the dependency type associated with a relationship between two mobile apps.</summary>
         public MobileAppDependencyType? DependencyType {
             get { return BackingStore?.Get<MobileAppDependencyType?>("dependencyType"); }
             set { BackingStore?.Set("dependencyType", value); }
         }
-        /// <summary>The total number of apps that directly or indirectly depend on the parent app.</summary>
+        /// <summary>The total number of apps that directly or indirectly depend on the parent app. This property is read-only.</summary>
         public int? DependentAppCount {
             get { return BackingStore?.Get<int?>("dependentAppCount"); }
             set { BackingStore?.Set("dependentAppCount", value); }
         }
-        /// <summary>The total number of apps the child app directly or indirectly depends on.</summary>
+        /// <summary>The total number of apps the child app directly or indirectly depends on. This property is read-only.</summary>
         public int? DependsOnAppCount {
             get { return BackingStore?.Get<int?>("dependsOnAppCount"); }
             set { BackingStore?.Set("dependsOnAppCount", value); }
@@ -27,7 +28,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="MobileAppDependency"/> and sets the default values.
         /// </summary>
-        public MobileAppDependency() : base() {
+        public MobileAppDependency() : base()
+        {
             OdataType = "#microsoft.graph.mobileAppDependency";
         }
         /// <summary>
@@ -35,7 +37,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="MobileAppDependency"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileAppDependency CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new MobileAppDependency CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MobileAppDependency();
         }
@@ -43,8 +46,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"dependencyType", n => { DependencyType = n.GetEnumValue<MobileAppDependencyType>(); } },
                 {"dependentAppCount", n => { DependentAppCount = n.GetIntValue(); } },
                 {"dependsOnAppCount", n => { DependsOnAppCount = n.GetIntValue(); } },
@@ -54,12 +59,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<MobileAppDependencyType>("dependencyType", DependencyType);
-            writer.WriteIntValue("dependentAppCount", DependentAppCount);
-            writer.WriteIntValue("dependsOnAppCount", DependsOnAppCount);
         }
     }
 }

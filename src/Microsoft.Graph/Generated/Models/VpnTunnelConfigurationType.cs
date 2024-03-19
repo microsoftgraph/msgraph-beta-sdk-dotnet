@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The type of tunnels that will be present to the VPN client for configuration</summary>
-    public enum VpnTunnelConfigurationType {
+    public enum VpnTunnelConfigurationType
+    {
         /// <summary>WiFi and Cellular Tunnels</summary>
         [EnumMember(Value = "wifiAndCellular")]
         WifiAndCellular,

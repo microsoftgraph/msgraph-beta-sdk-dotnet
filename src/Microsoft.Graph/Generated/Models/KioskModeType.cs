@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values of Android Kiosk Mode.</summary>
-    public enum KioskModeType {
+    public enum KioskModeType
+    {
         /// <summary>Not configured</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

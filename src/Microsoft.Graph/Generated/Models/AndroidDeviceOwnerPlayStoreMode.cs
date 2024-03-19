@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Android Device Owner Play Store mode type.</summary>
-    public enum AndroidDeviceOwnerPlayStoreMode {
+    public enum AndroidDeviceOwnerPlayStoreMode
+    {
         /// <summary>Not Configured</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

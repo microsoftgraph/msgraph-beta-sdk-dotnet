@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum UserAssetIdentifier {
+    public enum UserAssetIdentifier
+    {
         [EnumMember(Value = "accountObjectId")]
         AccountObjectId,
         [EnumMember(Value = "accountSid")]

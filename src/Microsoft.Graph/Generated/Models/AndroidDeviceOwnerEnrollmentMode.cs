@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The enrollment mode for an enrollment profile.</summary>
-    public enum AndroidDeviceOwnerEnrollmentMode {
+    public enum AndroidDeviceOwnerEnrollmentMode
+    {
         [EnumMember(Value = "corporateOwnedDedicatedDevice")]
         CorporateOwnedDedicatedDevice,
         [EnumMember(Value = "corporateOwnedFullyManaged")]

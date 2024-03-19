@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum BandwidthCapacityInMbps {
+    public enum BandwidthCapacityInMbps
+    {
         [EnumMember(Value = "mbps250")]
         Mbps250,
         [EnumMember(Value = "mbps500")]

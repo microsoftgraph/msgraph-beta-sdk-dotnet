@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Represents a booking customer or staff member.
     /// </summary>
-    public class BookingPerson : BookingNamedEntity, IParsable {
+    public class BookingPerson : BookingNamedEntity, IParsable 
+    {
         /// <summary>The email address of the person.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,7 +27,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="BookingPerson"/> and sets the default values.
         /// </summary>
-        public BookingPerson() : base() {
+        public BookingPerson() : base()
+        {
             OdataType = "#microsoft.graph.bookingPerson";
         }
         /// <summary>
@@ -34,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="BookingPerson"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BookingPerson CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new BookingPerson CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.bookingCustomer" => new BookingCustomer(),
                 "#microsoft.graph.bookingStaffMember" => new BookingStaffMember(),
                 _ => new BookingPerson(),
@@ -47,8 +51,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"emailAddress", n => { EmailAddress = n.GetStringValue(); } },
             };
         }
@@ -56,7 +62,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("emailAddress", EmailAddress);

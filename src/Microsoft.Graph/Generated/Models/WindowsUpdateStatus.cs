@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Windows update for business configuration device states</summary>
-    public enum WindowsUpdateStatus {
+    public enum WindowsUpdateStatus
+    {
         /// <summary>There are no pending updates, no pending reboot updates and no failed updates.</summary>
         [EnumMember(Value = "upToDate")]
         UpToDate,

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Subject Name Format Options for Apple devices.</summary>
-    public enum AppleSubjectNameFormat {
+    public enum AppleSubjectNameFormat
+    {
         /// <summary>Common name.</summary>
         [EnumMember(Value = "commonName")]
         CommonName,

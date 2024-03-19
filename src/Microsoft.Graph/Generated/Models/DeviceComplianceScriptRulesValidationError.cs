@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Error code for rule validation.</summary>
-    public enum DeviceComplianceScriptRulesValidationError {
+    public enum DeviceComplianceScriptRulesValidationError
+    {
         /// <summary>None error.</summary>
         [EnumMember(Value = "none")]
         None,

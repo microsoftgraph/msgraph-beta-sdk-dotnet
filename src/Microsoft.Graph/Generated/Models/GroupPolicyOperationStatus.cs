@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Type of Group Policy operation status.</summary>
-    public enum GroupPolicyOperationStatus {
+    public enum GroupPolicyOperationStatus
+    {
         /// <summary>Group Policy unknown operation status.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

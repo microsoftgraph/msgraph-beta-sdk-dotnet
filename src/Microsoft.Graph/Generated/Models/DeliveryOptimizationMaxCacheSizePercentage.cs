@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Delivery Optimization Max cache size percentage types.
     /// </summary>
-    public class DeliveryOptimizationMaxCacheSizePercentage : DeliveryOptimizationMaxCacheSize, IParsable {
+    public class DeliveryOptimizationMaxCacheSizePercentage : DeliveryOptimizationMaxCacheSize, IParsable 
+    {
         /// <summary>Specifies the maximum cache size that Delivery Optimization can utilize, as a percentage of disk size (1-100). Valid values 1 to 100</summary>
         public int? MaximumCacheSizePercentage {
             get { return BackingStore?.Get<int?>("maximumCacheSizePercentage"); }
@@ -17,7 +18,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="DeliveryOptimizationMaxCacheSizePercentage"/> and sets the default values.
         /// </summary>
-        public DeliveryOptimizationMaxCacheSizePercentage() : base() {
+        public DeliveryOptimizationMaxCacheSizePercentage() : base()
+        {
             OdataType = "#microsoft.graph.deliveryOptimizationMaxCacheSizePercentage";
         }
         /// <summary>
@@ -25,7 +27,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="DeliveryOptimizationMaxCacheSizePercentage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeliveryOptimizationMaxCacheSizePercentage CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new DeliveryOptimizationMaxCacheSizePercentage CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DeliveryOptimizationMaxCacheSizePercentage();
         }
@@ -33,8 +36,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"maximumCacheSizePercentage", n => { MaximumCacheSizePercentage = n.GetIntValue(); } },
             };
         }
@@ -42,7 +47,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("maximumCacheSizePercentage", MaximumCacheSizePercentage);

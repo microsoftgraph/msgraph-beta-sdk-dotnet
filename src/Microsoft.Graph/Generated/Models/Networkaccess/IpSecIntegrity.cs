@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum IpSecIntegrity {
+    public enum IpSecIntegrity
+    {
         [EnumMember(Value = "gcmAes128")]
         GcmAes128,
         [EnumMember(Value = "gcmAes192")]

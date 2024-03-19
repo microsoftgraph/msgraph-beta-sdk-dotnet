@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum CloudPcResizeValidationCode {
+    public enum CloudPcResizeValidationCode
+    {
         [EnumMember(Value = "success")]
         Success,
         [EnumMember(Value = "cloudPcNotFound")]

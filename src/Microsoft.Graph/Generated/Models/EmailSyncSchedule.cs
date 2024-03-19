@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values for email sync schedule.</summary>
-    public enum EmailSyncSchedule {
+    public enum EmailSyncSchedule
+    {
         /// <summary>User Defined, default value, no intent.</summary>
         [EnumMember(Value = "userDefined")]
         UserDefined,

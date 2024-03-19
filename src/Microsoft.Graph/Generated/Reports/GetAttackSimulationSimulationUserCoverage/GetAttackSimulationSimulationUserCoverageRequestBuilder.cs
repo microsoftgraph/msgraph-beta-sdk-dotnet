@@ -12,20 +12,23 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationSimulationUserCoverage
     /// <summary>
     /// Provides operations to call the getAttackSimulationSimulationUserCoverage method.
     /// </summary>
-    public class GetAttackSimulationSimulationUserCoverageRequestBuilder : BaseRequestBuilder {
+    public class GetAttackSimulationSimulationUserCoverageRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetAttackSimulationSimulationUserCoverageRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetAttackSimulationSimulationUserCoverageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getAttackSimulationSimulationUserCoverage(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
+        public GetAttackSimulationSimulationUserCoverageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getAttackSimulationSimulationUserCoverage(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GetAttackSimulationSimulationUserCoverageRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetAttackSimulationSimulationUserCoverageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getAttackSimulationSimulationUserCoverage(){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
+        public GetAttackSimulationSimulationUserCoverageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getAttackSimulationSimulationUserCoverage(){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function getAttackSimulationSimulationUserCoverage
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationSimulationUserCoverage
         [Obsolete("This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAttackSimulationSimulationUserCoverageGetResponse?> GetAsGetAttackSimulationSimulationUserCoverageGetResponseAsync(Action<RequestConfiguration<GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAttackSimulationSimulationUserCoverageGetResponse?> GetAsGetAttackSimulationSimulationUserCoverageGetResponseAsync(Action<RequestConfiguration<GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetAttackSimulationSimulationUserCoverageGetResponse> GetAsGetAttackSimulationSimulationUserCoverageGetResponseAsync(Action<RequestConfiguration<GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAttackSimulationSimulationUserCoverageGetResponse> GetAsGetAttackSimulationSimulationUserCoverageGetResponseAsync(Action<RequestConfiguration<GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetAttackSimulationSimulationUserCoverageGetResponse>(requestInfo, GetAttackSimulationSimulationUserCoverageGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -58,13 +64,16 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationSimulationUserCoverage
         [Obsolete("This method is obsolete. Use GetAsGetAttackSimulationSimulationUserCoverageGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAttackSimulationSimulationUserCoverageResponse?> GetAsync(Action<RequestConfiguration<GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAttackSimulationSimulationUserCoverageResponse?> GetAsync(Action<RequestConfiguration<GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetAttackSimulationSimulationUserCoverageResponse> GetAsync(Action<RequestConfiguration<GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAttackSimulationSimulationUserCoverageResponse> GetAsync(Action<RequestConfiguration<GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetAttackSimulationSimulationUserCoverageResponse>(requestInfo, GetAttackSimulationSimulationUserCoverageResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -77,10 +86,12 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationSimulationUserCoverage
         [Obsolete("This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -93,13 +104,15 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationSimulationUserCoverage
         /// <returns>A <see cref="GetAttackSimulationSimulationUserCoverageRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("This report function api is deprecated and will stop returning data on August 20, 2022. Api is now moved to /reports/security. Please use the new API. as of 2022-05/Tasks_And_Plans")]
-        public GetAttackSimulationSimulationUserCoverageRequestBuilder WithUrl(string rawUrl) {
+        public GetAttackSimulationSimulationUserCoverageRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetAttackSimulationSimulationUserCoverageRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getAttackSimulationSimulationUserCoverage
         /// </summary>
-        public class GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters {
+        public class GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -134,7 +147,8 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationSimulationUserCoverage
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetAttackSimulationSimulationUserCoverageRequestBuilderGetRequestConfiguration : RequestConfiguration<GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters> {
+        public class GetAttackSimulationSimulationUserCoverageRequestBuilderGetRequestConfiguration : RequestConfiguration<GetAttackSimulationSimulationUserCoverageRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

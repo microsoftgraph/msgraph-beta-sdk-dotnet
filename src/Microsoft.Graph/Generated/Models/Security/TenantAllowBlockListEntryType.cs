@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum TenantAllowBlockListEntryType {
+    public enum TenantAllowBlockListEntryType
+    {
         [EnumMember(Value = "url")]
         Url,
         [EnumMember(Value = "fileHash")]

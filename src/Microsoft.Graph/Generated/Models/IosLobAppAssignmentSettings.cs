@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Contains properties used to assign an iOS LOB mobile app to a group.
     /// </summary>
-    public class IosLobAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
+    public class IosLobAppAssignmentSettings : MobileAppAssignmentSettings, IParsable 
+    {
         /// <summary>When TRUE, indicates that the app can be uninstalled by the user. When FALSE, indicates that the app cannot be uninstalled by the user. By default, this property is set to null which internally is treated as TRUE.</summary>
         public bool? IsRemovable {
             get { return BackingStore?.Get<bool?>("isRemovable"); }
@@ -19,12 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("preventManagedAppBackup"); }
             set { BackingStore?.Set("preventManagedAppBackup", value); }
         }
-        /// <summary>Whether or not to uninstall the app when device is removed from Intune.</summary>
+        /// <summary>When TRUE, indicates that the app should be uninstalled when the device is removed from Intune. When FALSE, indicates that the app will not be uninstalled when the device is removed from Intune. By default, property is set to null which internally is treated as TRUE.</summary>
         public bool? UninstallOnDeviceRemoval {
             get { return BackingStore?.Get<bool?>("uninstallOnDeviceRemoval"); }
             set { BackingStore?.Set("uninstallOnDeviceRemoval", value); }
         }
-        /// <summary>The VPN Configuration Id to apply for this app.</summary>
+        /// <summary>This is the unique identifier (Id) of the VPN Configuration to apply to the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VpnConfigurationId {
@@ -41,7 +42,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="IosLobAppAssignmentSettings"/> and sets the default values.
         /// </summary>
-        public IosLobAppAssignmentSettings() : base() {
+        public IosLobAppAssignmentSettings() : base()
+        {
             OdataType = "#microsoft.graph.iosLobAppAssignmentSettings";
         }
         /// <summary>
@@ -49,7 +51,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="IosLobAppAssignmentSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosLobAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new IosLobAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new IosLobAppAssignmentSettings();
         }
@@ -57,8 +60,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"isRemovable", n => { IsRemovable = n.GetBoolValue(); } },
                 {"preventManagedAppBackup", n => { PreventManagedAppBackup = n.GetBoolValue(); } },
                 {"uninstallOnDeviceRemoval", n => { UninstallOnDeviceRemoval = n.GetBoolValue(); } },
@@ -69,7 +74,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("isRemovable", IsRemovable);

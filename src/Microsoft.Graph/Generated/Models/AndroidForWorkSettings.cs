@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Settings for Android For Work.
     /// </summary>
-    public class AndroidForWorkSettings : Entity, IParsable {
+    public class AndroidForWorkSettings : Entity, IParsable 
+    {
         /// <summary>Bind status of the tenant with the Google EMM API</summary>
         public AndroidForWorkBindStatus? BindStatus {
             get { return BackingStore?.Get<AndroidForWorkBindStatus?>("bindStatus"); }
@@ -86,7 +87,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="AndroidForWorkSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidForWorkSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new AndroidForWorkSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AndroidForWorkSettings();
         }
@@ -94,8 +96,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"bindStatus", n => { BindStatus = n.GetEnumValue<AndroidForWorkBindStatus>(); } },
                 {"deviceOwnerManagementEnabled", n => { DeviceOwnerManagementEnabled = n.GetBoolValue(); } },
                 {"enrollmentTarget", n => { EnrollmentTarget = n.GetEnumValue<AndroidForWorkEnrollmentTarget>(); } },
@@ -111,7 +115,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<AndroidForWorkBindStatus>("bindStatus", BindStatus);

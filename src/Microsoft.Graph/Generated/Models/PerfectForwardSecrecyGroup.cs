@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Forward Secrecy Group values for Windows10 VPN policies with IKEv2 connection type.</summary>
-    public enum PerfectForwardSecrecyGroup {
+    public enum PerfectForwardSecrecyGroup
+    {
         /// <summary>PFS1</summary>
         [EnumMember(Value = "pfs1")]
         Pfs1,

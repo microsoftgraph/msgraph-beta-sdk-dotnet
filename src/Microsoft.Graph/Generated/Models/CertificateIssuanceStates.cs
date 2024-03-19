@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Certificate Issuance State Options.</summary>
-    public enum CertificateIssuanceStates {
+    public enum CertificateIssuanceStates
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "challengeIssued")]

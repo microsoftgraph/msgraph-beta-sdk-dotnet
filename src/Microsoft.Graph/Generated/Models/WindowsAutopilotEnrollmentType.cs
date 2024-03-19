@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum WindowsAutopilotEnrollmentType {
+    public enum WindowsAutopilotEnrollmentType
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "azureADJoinedWithAutopilotProfile")]

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum AzureAccessType {
+    public enum AzureAccessType
+    {
         [EnumMember(Value = "public")]
         Public,
         [EnumMember(Value = "private")]

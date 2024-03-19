@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum AuditLogQueryStatus {
+    public enum AuditLogQueryStatus
+    {
         [EnumMember(Value = "notStarted")]
         NotStarted,
         [EnumMember(Value = "running")]

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum ReferenceAttachmentProvider {
+    public enum ReferenceAttachmentProvider
+    {
         [EnumMember(Value = "other")]
         Other,
         [EnumMember(Value = "oneDriveBusiness")]

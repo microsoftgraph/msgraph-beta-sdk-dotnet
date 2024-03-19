@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum DelegatedAdminRelationshipStatus {
+    public enum DelegatedAdminRelationshipStatus
+    {
         [EnumMember(Value = "activating")]
         Activating,
         [EnumMember(Value = "active")]

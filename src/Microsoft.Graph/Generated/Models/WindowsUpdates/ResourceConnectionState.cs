@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    public enum ResourceConnectionState {
+    public enum ResourceConnectionState
+    {
         [EnumMember(Value = "connected")]
         Connected,
         [EnumMember(Value = "notAuthorized")]

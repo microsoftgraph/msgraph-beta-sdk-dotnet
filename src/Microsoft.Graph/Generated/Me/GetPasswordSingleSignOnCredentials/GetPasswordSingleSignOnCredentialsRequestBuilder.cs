@@ -12,20 +12,23 @@ namespace Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials {
     /// <summary>
     /// Provides operations to call the getPasswordSingleSignOnCredentials method.
     /// </summary>
-    public class GetPasswordSingleSignOnCredentialsRequestBuilder : BaseRequestBuilder {
+    public class GetPasswordSingleSignOnCredentialsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetPasswordSingleSignOnCredentialsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetPasswordSingleSignOnCredentialsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/getPasswordSingleSignOnCredentials", pathParameters) {
+        public GetPasswordSingleSignOnCredentialsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/getPasswordSingleSignOnCredentials", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GetPasswordSingleSignOnCredentialsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetPasswordSingleSignOnCredentialsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/getPasswordSingleSignOnCredentials", rawUrl) {
+        public GetPasswordSingleSignOnCredentialsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/getPasswordSingleSignOnCredentials", rawUrl)
+        {
         }
         /// <summary>
         /// Get the list of password-based single sign-on credentials for a given user. This API returns the encrypted passwords as null or empty strings.
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetPasswordSingleSignOnCredentialsPostResponse?> PostAsGetPasswordSingleSignOnCredentialsPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetPasswordSingleSignOnCredentialsPostResponse?> PostAsGetPasswordSingleSignOnCredentialsPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetPasswordSingleSignOnCredentialsPostResponse> PostAsGetPasswordSingleSignOnCredentialsPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetPasswordSingleSignOnCredentialsPostResponse> PostAsGetPasswordSingleSignOnCredentialsPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetPasswordSingleSignOnCredentialsPostResponse>(requestInfo, GetPasswordSingleSignOnCredentialsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -59,13 +65,16 @@ namespace Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials {
         [Obsolete("This method is obsolete. Use PostAsGetPasswordSingleSignOnCredentialsPostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetPasswordSingleSignOnCredentialsResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetPasswordSingleSignOnCredentialsResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetPasswordSingleSignOnCredentialsResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetPasswordSingleSignOnCredentialsResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetPasswordSingleSignOnCredentialsResponse>(requestInfo, GetPasswordSingleSignOnCredentialsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -77,10 +86,12 @@ namespace Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -92,14 +103,16 @@ namespace Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials {
         /// </summary>
         /// <returns>A <see cref="GetPasswordSingleSignOnCredentialsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetPasswordSingleSignOnCredentialsRequestBuilder WithUrl(string rawUrl) {
+        public GetPasswordSingleSignOnCredentialsRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetPasswordSingleSignOnCredentialsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetPasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class GetPasswordSingleSignOnCredentialsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

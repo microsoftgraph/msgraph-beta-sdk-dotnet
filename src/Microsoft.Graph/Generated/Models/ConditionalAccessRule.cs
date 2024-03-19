@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum ConditionalAccessRule {
+    public enum ConditionalAccessRule
+    {
         [EnumMember(Value = "allApps")]
         AllApps,
         [EnumMember(Value = "firstPartyApps")]

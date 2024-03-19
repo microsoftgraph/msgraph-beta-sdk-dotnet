@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
-    public enum ExternalSystemAccessMethods {
+    public enum ExternalSystemAccessMethods
+    {
         [EnumMember(Value = "direct")]
         Direct = 1,
         [EnumMember(Value = "roleChaining")]

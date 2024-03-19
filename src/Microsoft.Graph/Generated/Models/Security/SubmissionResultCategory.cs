@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum SubmissionResultCategory {
+    public enum SubmissionResultCategory
+    {
         [EnumMember(Value = "notJunk")]
         NotJunk,
         [EnumMember(Value = "spam")]

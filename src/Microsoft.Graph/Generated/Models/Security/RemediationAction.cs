@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum RemediationAction {
+    public enum RemediationAction
+    {
         [EnumMember(Value = "moveToJunk")]
         MoveToJunk,
         [EnumMember(Value = "moveToInbox")]

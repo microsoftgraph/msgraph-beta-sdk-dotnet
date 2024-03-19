@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
     [Flags]
-    public enum ContentExperienceType {
+    public enum ContentExperienceType
+    {
         [EnumMember(Value = "search")]
         Search = 1,
         [EnumMember(Value = "compliance")]

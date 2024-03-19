@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The type of VPN security association encryption algorithm</summary>
-    public enum VpnEncryptionAlgorithmType {
+    public enum VpnEncryptionAlgorithmType
+    {
         /// <summary>AES-256</summary>
         [EnumMember(Value = "aes256")]
         Aes256,

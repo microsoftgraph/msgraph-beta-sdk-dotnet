@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
-    public enum SensitivityLabelTarget {
+    public enum SensitivityLabelTarget
+    {
         [EnumMember(Value = "email")]
         Email = 1,
         [EnumMember(Value = "site")]

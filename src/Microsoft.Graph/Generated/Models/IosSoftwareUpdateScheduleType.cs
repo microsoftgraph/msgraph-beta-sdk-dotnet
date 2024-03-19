@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Update schedule type for iOS software updates.</summary>
-    public enum IosSoftwareUpdateScheduleType {
+    public enum IosSoftwareUpdateScheduleType
+    {
         /// <summary>Update outside of active hours.</summary>
         [EnumMember(Value = "updateOutsideOfActiveHours")]
         UpdateOutsideOfActiveHours,

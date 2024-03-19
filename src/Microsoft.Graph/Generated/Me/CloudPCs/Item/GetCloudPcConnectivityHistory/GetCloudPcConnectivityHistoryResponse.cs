@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcConnectivityHistory {
     [Obsolete("This class is obsolete. Use GetCloudPcConnectivityHistoryGetResponse instead.")]
-    public class GetCloudPcConnectivityHistoryResponse : GetCloudPcConnectivityHistoryGetResponse, IParsable {
+    public class GetCloudPcConnectivityHistoryResponse : GetCloudPcConnectivityHistoryGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="GetCloudPcConnectivityHistoryResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetCloudPcConnectivityHistoryResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new GetCloudPcConnectivityHistoryResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GetCloudPcConnectivityHistoryResponse();
         }

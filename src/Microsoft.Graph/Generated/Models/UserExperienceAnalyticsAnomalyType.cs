@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Indicates the category of the anomaly. Eg: anomaly type can be device, application, stop error, driver or other.</summary>
-    public enum UserExperienceAnalyticsAnomalyType {
+    public enum UserExperienceAnalyticsAnomalyType
+    {
         /// <summary>Indicates the detected anomaly is due to certain devices.</summary>
         [EnumMember(Value = "device")]
         Device,

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum RemindBeforeTimeInMinutesType {
+    public enum RemindBeforeTimeInMinutesType
+    {
         [EnumMember(Value = "mins15")]
         Mins15,
         [EnumMember(Value = "unknownFutureValue")]

@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public class NetworkAccessTraffic : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class NetworkAccessTraffic : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>The action property</summary>
         public FilteringPolicyAction? Action {
             get { return BackingStore?.Get<FilteringPolicyAction?>("action"); }
@@ -459,7 +460,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>
         /// Instantiates a new <see cref="NetworkAccessTraffic"/> and sets the default values.
         /// </summary>
-        public NetworkAccessTraffic() {
+        public NetworkAccessTraffic()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -468,7 +470,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// </summary>
         /// <returns>A <see cref="NetworkAccessTraffic"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static NetworkAccessTraffic CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static NetworkAccessTraffic CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new NetworkAccessTraffic();
         }
@@ -476,8 +479,10 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"action", n => { Action = n.GetEnumValue<FilteringPolicyAction>(); } },
                 {"agentVersion", n => { AgentVersion = n.GetStringValue(); } },
                 {"applicationSnapshot", n => { ApplicationSnapshot = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot>(Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot.CreateFromDiscriminatorValue); } },
@@ -522,7 +527,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<FilteringPolicyAction>("action", Action);
             writer.WriteStringValue("agentVersion", AgentVersion);

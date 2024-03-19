@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum SectionEmphasisType {
+    public enum SectionEmphasisType
+    {
         [EnumMember(Value = "none")]
         None,
         [EnumMember(Value = "neutral")]

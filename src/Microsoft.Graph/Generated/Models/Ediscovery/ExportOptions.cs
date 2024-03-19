@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
     [Flags]
-    public enum ExportOptions {
+    public enum ExportOptions
+    {
         [EnumMember(Value = "originalFiles")]
         OriginalFiles = 1,
         [EnumMember(Value = "text")]

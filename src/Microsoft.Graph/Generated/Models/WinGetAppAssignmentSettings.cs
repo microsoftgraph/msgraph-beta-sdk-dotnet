@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Contains properties used to assign a WinGet app to a group.
     /// </summary>
-    public class WinGetAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
+    public class WinGetAppAssignmentSettings : MobileAppAssignmentSettings, IParsable 
+    {
         /// <summary>The install time settings to apply for this app assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,7 +46,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="WinGetAppAssignmentSettings"/> and sets the default values.
         /// </summary>
-        public WinGetAppAssignmentSettings() : base() {
+        public WinGetAppAssignmentSettings() : base()
+        {
             OdataType = "#microsoft.graph.winGetAppAssignmentSettings";
         }
         /// <summary>
@@ -53,7 +55,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="WinGetAppAssignmentSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WinGetAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new WinGetAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WinGetAppAssignmentSettings();
         }
@@ -61,8 +64,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"installTimeSettings", n => { InstallTimeSettings = n.GetObjectValue<WinGetAppInstallTimeSettings>(WinGetAppInstallTimeSettings.CreateFromDiscriminatorValue); } },
                 {"notifications", n => { Notifications = n.GetEnumValue<WinGetAppNotification>(); } },
                 {"restartSettings", n => { RestartSettings = n.GetObjectValue<WinGetAppRestartSettings>(WinGetAppRestartSettings.CreateFromDiscriminatorValue); } },
@@ -72,7 +77,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<WinGetAppInstallTimeSettings>("installTimeSettings", InstallTimeSettings);

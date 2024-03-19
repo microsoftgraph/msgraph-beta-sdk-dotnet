@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Cancel or confirm scheduled retire </summary>
-    public enum ScheduledRetireState {
+    public enum ScheduledRetireState
+    {
         /// <summary>CancelRetire</summary>
         [EnumMember(Value = "cancelRetire")]
         CancelRetire,

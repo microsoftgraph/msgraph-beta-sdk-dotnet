@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum CloudPcAuditActorType {
+    public enum CloudPcAuditActorType
+    {
         [EnumMember(Value = "itPro")]
         ItPro,
         [EnumMember(Value = "application")]

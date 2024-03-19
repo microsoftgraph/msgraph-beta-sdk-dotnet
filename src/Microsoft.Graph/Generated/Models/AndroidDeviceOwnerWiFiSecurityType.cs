@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Wi-Fi Security Types for Android Device Owner.</summary>
-    public enum AndroidDeviceOwnerWiFiSecurityType {
+    public enum AndroidDeviceOwnerWiFiSecurityType
+    {
         /// <summary>Open (No Authentication).</summary>
         [EnumMember(Value = "open")]
         Open,

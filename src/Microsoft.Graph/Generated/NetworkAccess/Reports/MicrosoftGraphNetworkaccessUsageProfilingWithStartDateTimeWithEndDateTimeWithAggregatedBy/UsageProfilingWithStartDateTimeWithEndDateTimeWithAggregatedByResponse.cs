@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBy {
     [Obsolete("This class is obsolete. Use UsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse instead.")]
-    public class UsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByResponse : UsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse, IParsable {
+    public class UsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByResponse : UsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="UsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new UsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new UsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByResponse();
         }

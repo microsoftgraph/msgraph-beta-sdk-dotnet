@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum AlertType {
+    public enum AlertType
+    {
         [EnumMember(Value = "unhealthyRemoteNetworks")]
         UnhealthyRemoteNetworks,
         [EnumMember(Value = "unhealthyConnectors")]
