@@ -43,6 +43,7 @@ extends:
           outputs:
           - output: pipelineArtifact
             displayName: 'Publish Artifact: Microsoft.Graph.Beta.nupkg and release pipeline scripts'
+            artifactName: ReadyForReleasePipeline
             targetPath: '$(Build.ArtifactStagingDirectory)'
         steps:
         - pwsh: git config --system core.longpaths true
